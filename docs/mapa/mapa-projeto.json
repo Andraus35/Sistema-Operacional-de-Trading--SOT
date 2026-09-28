@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-28",
-  "digest": "6e483edddf7200e2b59d12635e69eef024376e8fb6ad5654faeb1cd9f680ce76",
+  "digest": "4e104dcd249c6a30a578842f0a2e1628911127c941c8f859464a4c08e0737f48",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 117,
+   "in": 118,
    "out": 35
   },
   {
@@ -728,6 +728,13 @@
    "out": 5
   },
   {
+   "path": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "area": "governance",
+   "title": "DHR-SPEC002-VERBATIM-001 — Ata de Decisão — Captura Verbatim Diferida (RULE-ECC-04) na Abertura da SPEC-002",
+   "in": 0,
+   "out": 7
+  },
+  {
    "path": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
    "area": "governance",
    "title": "DHR-SPEC019-001 — Ata de Homologação — SPEC-019 v1.0 (Harness Governance & Evolution)",
@@ -780,7 +787,7 @@
    "path": "governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md",
    "area": "governance",
    "title": "DHR-VERBATIM-SRC-001 — Ata de Homologação — Captura Verbatim de Fonte (RULE-ECC-04)",
-   "in": 10,
+   "in": 11,
    "out": 10
   },
   {
@@ -1004,7 +1011,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 133,
+   "in": 134,
    "out": 15
   },
   {
@@ -1200,21 +1207,21 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 13,
+   "in": 14,
    "out": 3
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 68,
+   "in": 69,
    "out": 4
   },
   {
    "path": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness)",
-   "in": 4,
+   "in": 5,
    "out": 12
   },
   {
@@ -1305,7 +1312,7 @@
    "path": "specs/features/SPEC-046/plan.md",
    "area": "specs",
    "title": "SPEC-046 — Spec-Time Context Caching Harness (Especificador/Revisor)",
-   "in": 18,
+   "in": 19,
    "out": 21
   },
   {
@@ -1691,6 +1698,11 @@
    "cited_by": 6
   },
   {
+   "id": "DHR-SPEC002-VERBATIM-001",
+   "defined_in": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "cited_by": 0
+  },
+  {
    "id": "DHR-SPEC019-001",
    "defined_in": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
    "cited_by": 15
@@ -1728,7 +1740,7 @@
   {
    "id": "DHR-VERBATIM-SRC-001",
    "defined_in": "governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "EUA-E01",
@@ -2058,12 +2070,12 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "RULE-ECC-03",
@@ -2073,7 +2085,7 @@
   {
    "id": "RULE-ECC-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 19
+   "cited_by": 20
   },
   {
    "id": "RULE-EPI",
@@ -2248,7 +2260,7 @@
   {
    "id": "RULE-HG-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-HG-08",
@@ -2393,7 +2405,7 @@
   {
    "id": "RULE-MECH-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "RULE-MECH-02",
@@ -2418,7 +2430,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 37
+   "cited_by": 38
   },
   {
    "id": "RULE-MET-02",
@@ -2658,7 +2670,7 @@
   {
    "id": "SPEC-002",
    "defined_in": "ROADMAP.md",
-   "cited_by": 83
+   "cited_by": 84
   },
   {
    "id": "SPEC-003",
@@ -2878,7 +2890,7 @@
   {
    "id": "SPEC-046",
    "defined_in": "specs/features/SPEC-046/plan.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "SPEC-047",
@@ -8110,6 +8122,41 @@
   {
    "from": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
    "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "to": "governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "to": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "to": "specs/features/SPEC-046/plan.md",
    "type": "id"
   },
   {
