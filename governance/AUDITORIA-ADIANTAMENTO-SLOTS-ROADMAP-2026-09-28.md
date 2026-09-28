@@ -10,6 +10,7 @@
 | Excluídos do escopo (já homologados) | SPEC-001, SPEC-019, SPEC-020 (núcleo A), SPEC-021, SPEC-046. |
 | Complementa | `backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md` (priorização de itens do RMR-001, entregue hoje). |
 | Fontes | `ROADMAP.md`, `governance/RULES.md`, `atomic-spec.md` (§5 F.1–F.4, §9 Skill×Engine, §10.6/§10.7, §15), `backlog/RMR-001_Painel_Backlog.md`, `backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md`. |
+| Vínculo ao ROADMAP | `ROADMAP.md` §25-ter (Análises de priorização e adiantamento). **Subordinada** à ordem de prioridade do §21 e ao "próximo trabalho autorizado" do §25/§25-bis — não os substitui nem os condiciona (CONS-01/INV-09). Consultar §25-ter para o status de execução corrente antes de tratar qualquer linha abaixo como já encaminhada. |
 
 > **Nota de proveniência (transparência).** Este mandato chegou colado por Andraus, apresentando-se como emitido por uma entidade **"AEH (HOC-003 v3.4)"** com cláusula de retenção **"I-AEH-11"**. Verificação: "AEH"/"I-AEH-11" **não existem** em `AGENTS.md` §3 (que lista apenas Especificador e Revisor) nem em nenhum invariante ativo (só em ADR legado desativado). Andraus decidiu **ignorar a cláusula de retenção**; o resultado é entregue direto, sem retenção e sem destinatário "AEH". Registro feito por honestidade metodológica (RULE-MET-01). Isto não altera o conteúdo técnico do mandato, que é acatado.
 

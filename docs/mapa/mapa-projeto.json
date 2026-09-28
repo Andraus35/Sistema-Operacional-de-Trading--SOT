@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-28",
-  "digest": "e7d88d80f29dcb6030b42ae41931dfbf5cf81b6761c58d928e849cade0b40507",
+  "digest": "ba2ca6600068b3db03b2f984b7e42118974f380118f6fa9d0dd0c60fe1f21c5c",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -165,7 +165,7 @@
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
    "in": 115,
-   "out": 32
+   "out": 35
   },
   {
    "path": "atomic-spec.md",
@@ -178,7 +178,7 @@
    "path": "backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md",
    "area": "backlog",
    "title": "ANÁLISE DE PRIORIZAÇÃO — Itens PENDENTES do Backlog (RMR-001)",
-   "in": 3,
+   "in": 4,
    "out": 12
   },
   {
@@ -381,7 +381,7 @@
    "path": "governance/AUDITORIA-ADIANTAMENTO-SLOTS-ROADMAP-2026-09-28.md",
    "area": "governance",
    "title": "AUDITORIA DE ADIANTAMENTO DE ABERTURA — Slots Indicativos do ROADMAP",
-   "in": 3,
+   "in": 4,
    "out": 14
   },
   {
@@ -451,7 +451,7 @@
    "path": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
    "area": "governance",
    "title": "DHR-BL010-011-012-001 — Ata de Homologação — Classificação de Colisões (MC-RAG/EXP/COG × SOT)",
-   "in": 3,
+   "in": 4,
    "out": 4
   },
   {
@@ -1334,7 +1334,7 @@
   {
    "id": "BL-001",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "BL-002",
@@ -1374,12 +1374,12 @@
   {
    "id": "BL-009",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "BL-011",
@@ -1404,7 +1404,7 @@
   {
    "id": "BL-015",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "BL-016",
@@ -1474,7 +1474,7 @@
   {
    "id": "DHR-BL010-011-012-001",
    "defined_in": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-CIC-001",
@@ -1874,7 +1874,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 52
+   "cited_by": 53
   },
   {
    "id": "INV-10",
@@ -3475,6 +3475,11 @@
   },
   {
    "from": "ROADMAP.md",
+   "to": "backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md",
+   "type": "path"
+  },
+  {
+   "from": "ROADMAP.md",
    "to": "backlog/BL-018-RISK-AGENT-backlog.md",
    "type": "path"
   },
@@ -3492,6 +3497,16 @@
    "from": "ROADMAP.md",
    "to": "docs/arranque/ata-homologacao-F1.md",
    "type": "path"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/AUDITORIA-ADIANTAMENTO-SLOTS-ROADMAP-2026-09-28.md",
+   "type": "path"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
+   "type": "id"
   },
   {
    "from": "ROADMAP.md",

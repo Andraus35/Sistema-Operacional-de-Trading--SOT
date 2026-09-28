@@ -425,6 +425,19 @@ Origem: `reference/externo/CACHING SOT.MD` (RPIR/HOD-001) → parecer de auditor
 
 ---
 
+## 25-ter. Análises de priorização e adiantamento (não-normativas)
+
+Duas análises do Especificador (2026-09-28) avaliam ganho/risco 4Es sobre itens do RMR-001 e sobre os slots indicativos deste ROADMAP. **Nenhuma das duas é normativa, abre Spec, promove item ou altera a ordem dos §21/§25/§25-bis** — são `[PROPOSTA]` de leitura auxiliar (TRACE-06); só passam a fato normativo quando um ato de Andraus/DHR específico as executa, registrado no RMR-001 ou neste ROADMAP. Vinculadas aqui para que nenhum agente as leia como sequência autoritativa paralela ao §21 (ordem de prioridade) ou ao §25 (próximo trabalho autorizado).
+
+| Documento | Escopo | Relação com este ROADMAP | Status de execução (verificar RMR-001 para o estado corrente) |
+|---|---|---|---|
+| `backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md` | 13 itens `Em espera`/`Proposto` do RMR-001 (BL-001..018), ordenados por ganho 4Es × risco | Não re-sequencia Specs; só recomenda trabalho preparatório de spec-time (classificação, auditoria, promoção administrativa) que **não** promove nem abre nada por si | **Parcial**: BL-009 e BL-010/011/012 executados e homologados (`Absorvido`/DHR-BL010-011-012-001); BL-017 (promoção `Proposto`→`Em espera`) e BL-018 (análise preparatória RISK-MASTER×N8–N17) seguem pendentes de ato de Andraus; BL-015 opcional, não feito |
+| `governance/AUDITORIA-ADIANTAMENTO-SLOTS-ROADMAP-2026-09-28.md` | Todo slot indicativo SPEC-002..047 ainda não aberto, classificado Bloco S/R × Risco NULO–CRÍTICO | Explicitamente subordinada ao §21/§25/§25-bis (mesmo texto do documento, §0: "SPEC-002 é o próximo passo regular... nenhuma recomendação aqui bloqueia, atrasa ou condiciona SPEC-002") | **Parcial**: SPEC-002 (abertura pela ordem regular, §25) segue não iniciada; SPEC-022 (parte S — taxonomia adversarial) recomendada ADIANTAR, sem Dossiê produzido; SPEC-025 (sliver S) tinha a condição de bloqueio (I-001) satisfeita em 2026-09-28 (DHR-I001-001) — decisão de abrir Dossiê antecipado permanece separada e pendente |
+
+**Regra de leitura:** consultar sempre o §21 (ordem de prioridade) e o §25/§25-bis (próximo trabalho autorizado + exceções homologadas) como a sequência vigente; as duas análises acima são material de apoio para a decisão de Andraus, não substituem nem prevalecem sobre eles (CONS-01/INV-09).
+
+---
+
 ## 26. Capacidades exigidas (cobertura) — EUA-E21
 
 Lista **derivada dos títulos dos slots** acima (nenhuma capacidade foi inventada) e mantida como **restrição de cobertura** (RULE-ECC-01, item 4): cada Spec, ao ser aberta, declara quais capacidades cobre; **capacidade sem Spec ao fim de uma fase = achado de gate** (nada é descartado em silêncio). Só SPEC-001 e SPEC-019 estão abertas; as demais linhas são **indicativas** até a abertura. Atualizada por registro aditivo (INV-07).
