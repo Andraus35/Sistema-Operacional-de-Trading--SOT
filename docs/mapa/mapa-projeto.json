@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-28",
-  "digest": "46ca5e0b1853c680b2907608223513a79b7f7455216e21918a02e8bbc1c1287c",
+  "digest": "e7d88d80f29dcb6030b42ae41931dfbf5cf81b6761c58d928e849cade0b40507",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -165,7 +165,7 @@
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
    "in": 115,
-   "out": 31
+   "out": 32
   },
   {
    "path": "atomic-spec.md",
@@ -766,7 +766,7 @@
    "path": "governance/DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md",
    "area": "governance",
    "title": "DHR-SPEC046-003 — Ata de Homologação — SPEC-046 v1.1 (Emenda: Caching Inter-Sessão / CACHE-ISS-001)",
-   "in": 2,
+   "in": 3,
    "out": 8
   },
   {
@@ -1704,7 +1704,7 @@
   {
    "id": "DHR-SPEC046-003",
    "defined_in": "governance/DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-TAX-001",
@@ -3576,6 +3576,11 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md",
    "type": "id"
   },
   {
