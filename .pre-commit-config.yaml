@@ -1,0 +1,29 @@
+repos:
+  - repo: local
+    hooks:
+      - id: validate-schemas
+        name: Validate JSON schemas
+        language: node
+        entry: node tests/validate-schemas.js
+        pass_filenames: false
+        types: [json]
+
+      - id: lint-specs
+        name: Lint SOT spec files
+        language: node
+        entry: node tests/lint-specs.js
+        pass_filenames: false
+        types: [markdown]
+
+      - id: project-map-fresh
+        name: Project map up to date (regenerate with scripts/build_map.py)
+        language: system
+        entry: python scripts/build_map.py --check
+        pass_filenames: false
+        types: [markdown]
+
+      - id: gate-check
+        name: Constitutional gate check
+        language: node
+        entry: node scripts/gate-check.js
+        pass_filenames: false

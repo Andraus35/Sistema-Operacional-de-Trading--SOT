@@ -1,0 +1,17 @@
+FONTE [EXTERNO]
+ID: SRC-01
+Ferramenta: audit-prompt-caching (sernote)
+URL: https://github.com/sernote/audit-prompt-caching
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado:
+"It does not capture live traffic by itself."
+
+Trecho literal capturado (2):
+"moving that context later preserves all the information and gives repeated requests a longer identical beginning"
+
+Trecho literal capturado (3):
+"A stable local prefix alone establishes none of them" [referindo-se a que similaridade textual não prova cache HIT real — evidência do provedor é exigida]
+
+Contexto da citação: descreve que a ferramenta é um framework de auditoria ESTÁTICA (não captura tráfego ao vivo por si mesma), que opera sobre telemetria já fornecida (request payloads, dados de uso do provedor, traces, métricas), e que sua análise de estabilidade de prefixo é sobre POSIÇÃO/ORDEM do conteúdo no prompt, não sobre validade de conteúdo por hash/versão de arquivo-fonte.

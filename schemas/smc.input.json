@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/smc.input",
+  "title": "SMC Specialist — Input",
+  "description": "Dados recebidos pelo SMC Specialist para análise institucional contextualizada",
+  "type": "object",
+  "required": ["elliott_hypothesis", "luxalgo_smc", "luxalgo_market_structure"],
+  "properties": {
+    "elliott_hypothesis": {
+      "type": "object",
+      "description": "Hipótese Elliott para contextualização de todos os eventos SMC",
+      "required": ["count_label", "degree", "bias", "current_wave", "pivots"],
+      "properties": {
+        "count_label": { "type": "string" },
+        "degree": { "type": "string" },
+        "bias": { "type": "string", "enum": ["bullish", "bearish", "neutral", "ambiguous"] },
+        "conviction_pct": { "type": "number" },
+        "current_wave": {
+          "type": "string",
+          "description": "Onda Elliott em que o mercado se encontra atualmente — contexto para interpretar cada evento SMC"
+        },
+        "pivots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "wave": { "type": "string" },
+              "price": { "type": "number" },
+              "timestamp": { "type": "string", "format": "date-time" }
+            }
+          }
+        }
+      }
+    },
+    "luxalgo_smc": {
+      "type": "object",
+      "description": "Payload do indicador LuxAlgo SMC Concepts (via TradingView webhook)",
+      "properties": {
+        "ob_type": {
+          "type": "string",
+          "enum": ["bullish", "bearish", "none"],
+          "description": "Tipo do Order Block identificado"
+        },
+        "ob_high": {
+          "type": ["number", "null"],
+          "description": "Topo do Order Block. Null se ob_type = none."
+        },
+        "ob_low": {
+          "type": ["number", "null"],
+          "description": "Base do Order Block. Null se ob_type = none."
+        },
+        "ob_mitigated": {
+          "type": "boolean",
+          "description": "True = OB mitigado (fechamento com candle oposto). OB mitigado é descartado."
+        },
+        "ob_origin_wave": {
+          "type": ["string", "null"],
+          "description": "Onda Elliott em que o OB foi criado (enriquecido pelo agente, não vem do LuxAlgo)"
+        },
+        "fvg_present": {
+          "type": "boolean",
+          "description": "Fair Value Gap presente na vela do OB"
+        },
+        "fvg_high": { "type": ["number", "null"] },
+        "fvg_low": { "type": ["number", "null"] },
+        "fvg_mitigated": {
+          "type": "boolean",
+          "description": "True = FVG já preenchido pelo preço"
+        },
+        "liquidity_swept": {
+          "type": "boolean",
+          "description": "True = sweep de liquidez recente confirmado"
+        },
+        "sweep_side": {
+          "type": "string",
+          "enum": ["buy_side", "sell_side", "none"],
+          "description": "Lado da liquidez varrida"
+        },
+        "sweep_returned_to_range": {
+          "type": "boolean",
+          "description": "True = preço retornou ao range após sweep. Sweep sem retorno = inválido para layer SMC."
+        }
+      }
+    },
+    "luxalgo_market_structure": {
+      "type": "object",
+      "description": "Payload do indicador LuxAlgo Market Structure (via TradingView webhook)",
+      "properties": {
+        "choch": {
+          "type": "boolean",
+          "description": "Change of Character identificado"
+        },
+        "choch_direction": {
+          "type": "string",
+          "enum": ["bullish", "bearish", "none"]
+        },
+        "choch_timeframe": {
+          "type": ["string", "null"]
+        },
+        "choch_timestamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "bos": {
+          "type": "boolean",
+          "description": "Break of Structure identificado"
+        },
+        "bos_direction": {
+          "type": "string",
+          "enum": ["bullish", "bearish", "none"]
+        },
+        "bos_preceded_by_choch": {
+          "type": "boolean",
+          "description": "False = BOS sem CHoCH prévio = peso reduzido. Enriquecido pelo agente."
+        },
+        "inducement_swept": {
+          "type": "boolean"
+        },
+        "sweep_type": {
+          "type": "string",
+          "enum": ["external_liquidity", "internal_liquidity", "equal_highs", "equal_lows", "none"]
+        },
+        "structure_bias": {
+          "type": "string",
+          "enum": ["bullish", "bearish", "neutral"],
+          "description": "Bias estrutural do indicador (subordinado ao bias Elliott)"
+        }
+      }
+    },
+    "fibonacci_levels": {
+      "type": ["array", "null"],
+      "description": "Níveis Fibonacci relevantes do Fibonacci Validator — contexto para avaliar qualidade dos OBs",
+      "items": {
+        "type": "object",
+        "properties": {
+          "price": { "type": "number" },
+          "ratio": { "type": "number" },
+          "type": { "type": "string" },
+          "timeframe": { "type": "string" }
+        }
+      }
+    }
+  }
+}

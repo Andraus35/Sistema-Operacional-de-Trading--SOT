@@ -1,0 +1,98 @@
+[
+  {
+    "id": "A001",
+    "severity": "BROKEN",
+    "source": "AGENTS.md",
+    "claim": "Path cite `docs/mapa/.stale`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\docs\\mapa\\.stale"
+  },
+  {
+    "id": "A002",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/SKILL.md",
+    "claim": "Path cite `.agents/skills`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.agents\\skills; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\.agents\\skills"
+  },
+  {
+    "id": "A003",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/SKILL.md",
+    "claim": "Path cite `.cursor/skills`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.cursor\\skills; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\.cursor\\skills"
+  },
+  {
+    "id": "A004",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/SKILL.md",
+    "claim": "Path cite `lib/...`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\lib\\...; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\lib\\..."
+  },
+  {
+    "id": "A005",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/SKILL.md",
+    "claim": "Path cite `test/...`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\test\\...; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\test\\..."
+  },
+  {
+    "id": "A006",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/SKILL.md",
+    "claim": "Path cite `.agents/...`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.agents\\...; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\.agents\\..."
+  },
+  {
+    "id": "A008",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/SKILL.md",
+    "claim": "Path cite `.agents/\u2026`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.agents\\\u2026; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\.agents\\\u2026"
+  },
+  {
+    "id": "A009",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/references/PROTOCOL.md",
+    "claim": "Path cite `.agents/skills`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.agents\\skills; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\references\\.agents\\skills; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\.agents\\skills"
+  },
+  {
+    "id": "A010",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/references/PROTOCOL.md",
+    "claim": "Path cite `.cursor/skills`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.cursor\\skills; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\references\\.cursor\\skills; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\.cursor\\skills"
+  },
+  {
+    "id": "A011",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/references/PROTOCOL.md",
+    "claim": "Path cite `bin/console`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\bin\\console; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\references\\bin\\console; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\bin\\console"
+  },
+  {
+    "id": "A012",
+    "severity": "BROKEN",
+    "source": ".claude/skills/harness-eval/references/PROTOCOL.md",
+    "claim": "Path cite `references/view.md`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\references\\view.md; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\references\\references\\view.md; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.claude\\skills\\harness-eval\\references\\view.md; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.agents\\skills\\harness-eval\\references\\view.md"
+  },
+  {
+    "id": "A015",
+    "severity": "BROKEN",
+    "source": ".clinerules/sot-map.md",
+    "claim": "Path cite `docs/mapa/.stale`",
+    "reality": "File does not exist (case-sensitive check)",
+    "evidence": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\docs\\mapa\\.stale; C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness\\.clinerules\\docs\\mapa\\.stale"
+  }
+]

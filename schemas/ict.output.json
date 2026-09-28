@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/ict.output",
+  "title": "ICT Specialist — Output",
+  "description": "Plano operacional de execução de máxima eficiência. Null se agente estava INATIVO.",
+  "type": "object",
+  "required": ["ict_active", "ict_score"],
+  "properties": {
+    "symbol": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "ict_active": {
+      "type": "boolean",
+      "description": "False = agente estava INATIVO (sem hipótese aprovada). Todos os demais campos são null."
+    },
+    "ict_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "Score do layer ICT para o Synthesis Agent. 0 se ict_active=false. 0=execução bloqueada; 1=condições parciais; 2=boas condições; 3=condições ótimas (OTE+killzone+FVG+MSS)"
+    },
+    "execution_blocked": {
+      "type": "boolean",
+      "default": false,
+      "description": "True = condição de bloqueio detectada. Nenhum sinal emitido."
+    },
+    "blocking_reason": {
+      "type": ["string", "null"],
+      "description": "Motivo do bloqueio se execution_blocked=true. Ex: 'R:R calculado 2.4:1 < mínimo 3:1' (mínimo 3:1 = 1:3 risco:retorno, Q-004)"
+    },
+    "operational_plan": {
+      "type": ["object", "null"],
+      "description": "Plano operacional completo. Null se ict_active=false ou execution_blocked=true.",
+      "required": ["direction", "entry_zone", "entry_trigger", "stop_zone", "invalidation", "target_1", "target_2", "risk_reward", "execution_confidence"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "enum": ["long", "short"]
+        },
+        "entry_zone": {
+          "type": "object",
+          "properties": {
+            "low": { "type": "number" },
+            "high": { "type": "number" },
+            "description": { "type": "string", "description": "Ex: 'OTE dentro do OB bullish em H1'" }
+          }
+        },
+        "entry_trigger": {
+          "type": "string",
+          "description": "Gatilho específico de entrada. Ex: 'MSS bullish em M5 dentro da zona OTE + FVG'"
+        },
+        "stop_zone": {
+          "type": "object",
+          "properties": {
+            "level": { "type": "number" },
+            "description": {
+              "type": "string",
+              "description": "Descrição estrutural do stop. Ex: 'Abaixo do low da Onda 2 = invalida hipótese'"
+            }
+          }
+        },
+        "invalidation": {
+          "type": "string",
+          "description": "Condição que invalida o plano operacional (diferente do stop: é a leitura estrutural)"
+        },
+        "target_1": {
+          "type": "object",
+          "properties": {
+            "price": { "type": "number" },
+            "method": { "type": "string", "description": "Ex: 'Liquidez sell-side acima equal highs'" },
+            "rr_ratio": { "type": "number" }
+          }
+        },
+        "target_2": {
+          "type": "object",
+          "properties": {
+            "price": { "type": "number" },
+            "method": { "type": "string" },
+            "rr_ratio": { "type": "number" }
+          }
+        },
+        "target_final": {
+          "type": ["object", "null"],
+          "description": "Alvo de extensão máxima Fibonacci",
+          "properties": {
+            "price": { "type": "number" },
+            "method": { "type": "string" }
+          }
+        },
+        "risk_reward": {
+          "type": "number",
+          "minimum": 3.0,
+          "description": "R:R calculado (retorno:risco). Nunca < 3.0 em nenhum plano emitido (mínimo 3:1 = 1:3 risco:retorno, Q-004)."
+        },
+        "execution_confidence": {
+          "type": "string",
+          "enum": ["very_high", "high", "medium"],
+          "description": "Confiança na execução: very_high = OTE+killzone+FVG+MSS+Judas; medium = condições parciais"
+        }
+      }
+    },
+    "killzone": {
+      "type": "object",
+      "properties": {
+        "active": { "type": "boolean" },
+        "name": {
+          "type": ["string", "null"],
+          "enum": ["London_Open", "NewYork_Open", "NewYork_Afternoon", "Asia", null],
+          "description": "London: 5h-8h BRT / NY Open: 9h30-12h BRT / NY Tarde: 14h-16h BRT"
+        },
+        "time_brt": { "type": ["string", "null"] },
+        "score_impact": {
+          "type": "string",
+          "enum": ["neutral", "minus_1_point"],
+          "description": "minus_1_point quando killzone inativa"
+        }
+      }
+    },
+    "judas_swing": {
+      "type": "object",
+      "properties": {
+        "identified": { "type": "boolean" },
+        "direction": {
+          "type": ["string", "null"],
+          "enum": ["false_bullish", "false_bearish", null]
+        },
+        "description": {
+          "type": ["string", "null"],
+          "description": "Ex: 'Spike bullish em London open revertendo — confirma viés bearish'"
+        }
+      }
+    },
+    "ote_analysis": {
+      "type": "object",
+      "properties": {
+        "zone_low": { "type": ["number", "null"] },
+        "zone_high": { "type": ["number", "null"] },
+        "current_price_in_ote": { "type": "boolean" },
+        "retracement_pct": {
+          "type": ["number", "null"],
+          "description": "% de retração atual do dealing range"
+        }
+      }
+    },
+    "mss_m5": {
+      "type": "object",
+      "description": "Market Structure Shift em M5 — gatilho de confirmação ICT",
+      "properties": {
+        "confirmed": { "type": "boolean" },
+        "direction": { "type": "string", "enum": ["bullish", "bearish", "none"] },
+        "timestamp": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "suggested_sizing": {
+      "type": ["object", "null"],
+      "description": "Sizing calculado a partir do capital de referência. Informativo — não obrigatório.",
+      "properties": {
+        "position_size": { "type": "number" },
+        "leverage": { "type": "number" },
+        "risk_amount": { "type": "number" },
+        "risk_pct": { "type": "number" }
+      }
+    }
+  }
+}

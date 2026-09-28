@@ -1,0 +1,53 @@
+{
+  "audit": "thedotmack/claude-mem plugin compatibility review",
+  "started_at": "2026-09-25T08:50:27.189-04:00",
+  "plugin": {
+    "name": "claude-mem",
+    "repository": "https://github.com/thedotmack/claude-mem",
+    "summary": "Persistent memory compression system built for Claude Code with lifecycle hooks, worker service, SQLite, and optional vector search."
+  },
+  "scope": [
+    "Verify whether the repo already matches installed plugin expectations",
+    "Check for local Claude Code plugin integration points",
+    "Assess applicability of the plugin to this repo without modifying source files",
+    "Produce recommendations and dependency notes"
+  ],
+  "modification_policy": "No existing repository files were modified; only this audit folder was created.",
+  "environment": {
+    "working_directory": "C:\\Users\\André\\Desktop\\SOT ENGINER\\SOT-Harness",
+    "git_repository_detected": false,
+    "detected_harnesses": ["claude-code", "cline"]
+  },
+  "evidence": {
+    "repo_local_claude_files": [
+      ".claude/settings.json",
+      ".claude/agents/especificador.md",
+      ".claude/agents/revisor.md",
+      ".claude/agents/sot-schema-validator.md",
+      ".claude/agents/sot-spec-reviewer.md",
+      ".claude/commands/update-spec.md",
+      ".claude/commands/validate-harness.md",
+      ".claude/skills/SKILL.md",
+      ".claude/skills/harness-eval/SKILL.md"
+    ],
+    "plugin_requirements_found_in_upstream_readme": [
+      "Install via /plugin marketplace add thedotmack/claude-mem",
+      "Install via /plugin install claude-mem",
+      "Sets up lifecycle hooks for Claude Code",
+      "Uses worker service and SQLite backend",
+      "Supports local settings file in ~/.claude-mem/settings.json",
+      "Requires Node.js 20+ and Bun"
+    ],
+    "repo_matches": [
+      "Claude Code scaffolding exists in .claude/",
+      "Hooks are already configured in .claude/settings.json",
+      "The repo has validation hooks and guardrails"
+    ],
+    "repo_gaps": [
+      "No plugin manifest or installed memory worker in the repo",
+      "No evidence of ~/.claude-mem settings or plugin runtime data in local workspace",
+      "No explicit memory storage or search schema for this project",
+      "No explicit memory retention/privacy policy yet"
+    ]
+  }
+}

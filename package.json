@@ -1,0 +1,20 @@
+{
+  "name": "sot-harness",
+  "version": "1.0.0",
+  "description": "Specification harness for the SOT multi-agent trading system",
+  "private": true,
+  "scripts": {
+    "test": "node tests/validate-schemas.js",
+    "lint": "node tests/lint-specs.js",
+    "test:hooks": "node tests/test-hooks.js && node tests/test-map-sync.js",
+    "test:py": "python -m unittest discover -s tests -p test_*.py",
+    "map": "python scripts/build_map.py",
+    "map:check": "python scripts/build_map.py --check",
+    "sync": "python scripts/check_doc_sync.py",
+    "sync:strict": "python scripts/check_doc_sync.py --strict",
+    "eval": "npx harness-score",
+    "score": "npx harness-score --json",
+    "score:diff": "npx harness-score --diff"
+  },
+  "devDependencies": {}
+}

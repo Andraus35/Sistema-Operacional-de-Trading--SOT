@@ -1,0 +1,70 @@
+{
+  "audit": "headroomlabs-ai/headroom compatibility review",
+  "started_at": "2026-09-25T09:28:39.946-04:00",
+  "plugin_or_tool": {
+    "name": "headroom",
+    "repository": "https://github.com/headroomlabs-ai/headroom",
+    "summary": "Local context compression layer for AI agents, tool outputs, logs, files, RAG chunks, and conversation history."
+  },
+  "scope": [
+    "Inspect upstream capabilities and installation modes",
+    "Compare Headroom with the repository's Claude Code harness",
+    "Identify safe adoption paths and integration risks",
+    "Produce recommendations without modifying existing repository files"
+  ],
+  "modification_policy": "No existing repository files were modified. Only this audit folder was created.",
+  "environment": {
+    "working_directory": "C:\\Users\\André\\Desktop\\SOT ENGINER\\SOT-Harness",
+    "git_repository_detected": false,
+    "detected_harnesses": [
+      "claude-code",
+      "cline"
+    ]
+  },
+  "upstream_evidence": {
+    "repository": "https://github.com/headroomlabs-ai/headroom",
+    "readme_reviewed": true,
+    "capabilities": [
+      "Python and TypeScript compression libraries",
+      "Local proxy mode",
+      "Agent wrapping for Claude, Codex, Copilot, Cursor, Cline, and others",
+      "MCP server with headroom_compress, headroom_retrieve, and headroom_stats",
+      "Local original-content cache with on-demand retrieval",
+      "Cross-agent memory and headroom learn"
+    ],
+    "reported_requirements": [
+      "Node.js 20+",
+      "Python package/runtime for CLI",
+      "Bun for some deployment and process management paths",
+      "Optional model/runtime dependencies depending on compression mode"
+    ],
+    "recommended_install_modes": [
+      "uv tool install --python 3.13 \"headroom-ai[all]\"",
+      "pip install \"headroom-ai[all]\"",
+      "npm install headroom-ai for TypeScript SDK only"
+    ]
+  },
+  "repository_evidence": {
+    "relevant_files": [
+      "package.json",
+      ".claude/settings.json",
+      ".github/workflows/ci.yml",
+      "governance/RULES.md",
+      "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+      "reference/camadas/CAMADA DE HARNESS.MD",
+      "reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md"
+    ],
+    "existing_alignment": [
+      "Token economy is already a governed concern.",
+      "RULES.md references stable_prefix and context handling.",
+      "Claude Code hooks and deterministic validation already exist.",
+      "RAG files and schemas provide candidate inputs for controlled compression."
+    ],
+    "not_detected": [
+      "Headroom dependency in package.json",
+      "Headroom proxy or MCP configuration",
+      "headroom wrap/deploy scripts",
+      "Compression benchmark or fidelity test in this repository"
+    ]
+  }
+}

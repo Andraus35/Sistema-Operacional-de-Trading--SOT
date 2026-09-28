@@ -1,0 +1,14 @@
+FONTE [EXTERNO]
+ID: SRC-03
+Ferramenta: prompt-cache-skills (OnlyTerp)
+URL: https://github.com/OnlyTerp/prompt-cache-skills
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado:
+"Most popular open-source agent harnesses leave 30-90% off your API bill on the table because their prompt-caching code is subtly wrong, off-by-default, or missing for some providers."
+
+Trecho literal capturado (2):
+"The agent reads each SKILL.md, checks if it applies to your setup, lands the diff, and verifies the fix on the wire. Every skill ships with a Verify section that captures the wire and confirms the fix landed."
+
+Contexto da citação: ferramenta de CORREÇÃO/implementação (aplica patches automaticamente ao harness do agente), não de auditoria passiva nem de benchmark. Aplica-se a "the LLM agent harness you use" de forma genérica (múltiplos harnesses/provedores) via patches específicos por combinação harness+provedor. Risco explícito para o SOT: aplicação automática de diffs em arquivos do harness sem confirmação humana explícita colide com ENF-03 (LLM não é seu próprio gate) e com "sem baseline informal" (INV-09) se usada sem revisão.

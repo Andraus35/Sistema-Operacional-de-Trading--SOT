@@ -1,0 +1,37 @@
+# Environment and secrets
+.env
+.env.*
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+out/
+*.min.js
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp / scratch
+tmp/
+temp/
+*.tmp
+*.bak

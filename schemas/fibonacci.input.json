@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/fibonacci.input",
+  "title": "Fibonacci Validator — Input",
+  "description": "Dados recebidos pelo Fibonacci Validator para validação geométrica da hipótese Elliott",
+  "type": "object",
+  "required": ["elliott_hypothesis", "market_digital_twin"],
+  "properties": {
+    "elliott_hypothesis": {
+      "type": "object",
+      "description": "Hipótese principal do Elliott Specialist com pivôs identificados",
+      "required": ["count_label", "degree", "bias", "pivots"],
+      "properties": {
+        "count_label": { "type": "string" },
+        "degree": { "type": "string" },
+        "bias": { "type": "string", "enum": ["bullish", "bearish", "neutral", "ambiguous"] },
+        "conviction_pct": { "type": "number" },
+        "current_wave": { "type": "string" },
+        "pivots": {
+          "type": "array",
+          "description": "Pivôs com preço e timestamp por onda — base do cálculo Fibonacci",
+          "items": {
+            "type": "object",
+            "required": ["wave", "price", "timestamp"],
+            "properties": {
+              "wave": {
+                "type": "string",
+                "description": "Identificador da onda (ex: '0', '1', '2', '3', '4', '5', 'A', 'B', 'C')"
+              },
+              "price": { "type": "number" },
+              "timestamp": { "type": "string", "format": "date-time" },
+              "timeframe": { "type": "string" }
+            }
+          }
+        },
+        "alternative_hypothesis": {
+          "type": ["object", "null"],
+          "description": "Hipótese alternativa — verificar se Fibonacci se encaixa melhor nela quando principal falha",
+          "properties": {
+            "count_label": { "type": "string" },
+            "bias": { "type": "string" },
+            "pivots": { "type": "array" }
+          }
+        }
+      }
+    },
+    "market_digital_twin": {
+      "type": "object",
+      "description": "Preços OHLCV por timeframe para cálculo de confluências multi-TF",
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframes": {
+          "type": "object",
+          "properties": {
+            "D1": { "$ref": "#/definitions/ohlcv_series" },
+            "H4": { "$ref": "#/definitions/ohlcv_series" },
+            "H1": { "$ref": "#/definitions/ohlcv_series" },
+            "M5": { "$ref": "#/definitions/ohlcv_series" }
+          }
+        }
+      }
+    },
+    "session_dealing_range": {
+      "type": ["object", "null"],
+      "description": "Range da sessão ativa — necessário para cálculo do OTE (61.8–78.6%)",
+      "properties": {
+        "session": {
+          "type": "string",
+          "enum": ["London", "NewYork", "Asia", "LondonClose"]
+        },
+        "range_high": { "type": "number" },
+        "range_low": { "type": "number" },
+        "range_established": { "type": "boolean" }
+      }
+    }
+  },
+  "definitions": {
+    "ohlcv_series": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "open": { "type": "number" },
+          "high": { "type": "number" },
+          "low": { "type": "number" },
+          "close": { "type": "number" },
+          "volume": { "type": "number" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/ict.input",
+  "title": "ICT Specialist — Input",
+  "description": "Dados recebidos pelo ICT Specialist para localizar execução de eficiência máxima",
+  "type": "object",
+  "required": ["approved_hypothesis", "smc_context", "market_digital_twin", "session_context"],
+  "properties": {
+    "approved_hypothesis": {
+      "type": ["object", "null"],
+      "description": "Hipótese estrutural aprovada pelo Conviction Engine com convicção suficiente. NULL = ICT permanece INATIVO.",
+      "required": ["bias", "conviction_pct", "current_wave", "invalidation_level"],
+      "properties": {
+        "bias": {
+          "type": "string",
+          "enum": ["bullish", "bearish"],
+          "description": "Direção da hipótese aprovada. Nunca 'neutral' — ICT inativo se neutro."
+        },
+        "conviction_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "current_wave": { "type": "string" },
+        "degree": { "type": "string" },
+        "invalidation_level": { "type": "number" },
+        "projected_target_1": { "type": ["number", "null"] },
+        "projected_target_2": { "type": ["number", "null"] },
+        "elliott_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      }
+    },
+    "smc_context": {
+      "type": "object",
+      "description": "Output do SMC Specialist — contexto institucional para ICT",
+      "properties": {
+        "active_order_block": {
+          "type": ["object", "null"],
+          "properties": {
+            "type": { "type": "string" },
+            "zone_high": { "type": "number" },
+            "zone_low": { "type": "number" },
+            "status": { "type": "string" },
+            "has_fvg": { "type": "boolean" },
+            "fvg_zone": {
+              "type": ["object", "null"],
+              "properties": {
+                "high": { "type": "number" },
+                "low": { "type": "number" }
+              }
+            }
+          }
+        },
+        "liquidity_sweep": {
+          "type": "object",
+          "properties": {
+            "occurred": { "type": "boolean" },
+            "direction": { "type": "string" },
+            "validity": { "type": "string" }
+          }
+        },
+        "elliott_alignment": {
+          "type": "string",
+          "enum": ["confirms", "weakens", "neutral", "contradicts"]
+        },
+        "directional_conflict": { "type": "boolean" },
+        "smc_score": { "type": "integer", "minimum": 0, "maximum": 3 }
+      }
+    },
+    "market_digital_twin": {
+      "type": "object",
+      "description": "OHLCV em M5 e H1 para análise de execução (ICT usa apenas esses timeframes)",
+      "required": ["symbol"],
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframes": {
+          "type": "object",
+          "properties": {
+            "H1": { "$ref": "#/definitions/ohlcv_series" },
+            "M5": { "$ref": "#/definitions/ohlcv_series" }
+          }
+        }
+      }
+    },
+    "session_context": {
+      "type": "object",
+      "description": "Contexto temporal para verificação de killzones",
+      "required": ["timestamp_utc", "timestamp_brt"],
+      "properties": {
+        "timestamp_utc": { "type": "string", "format": "date-time" },
+        "timestamp_brt": { "type": "string", "format": "date-time" },
+        "active_session": {
+          "type": "string",
+          "enum": ["Asia", "London", "NewYork", "LondonClose", "OffSession"]
+        },
+        "session_dealing_range": {
+          "type": ["object", "null"],
+          "description": "Range da sessão para cálculo do OTE (61.8–78.6%)",
+          "properties": {
+            "range_high": { "type": "number" },
+            "range_low": { "type": "number" },
+            "range_established": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "capital_context": {
+      "type": ["object", "null"],
+      "description": "Capital de referência para sizing sugerido",
+      "properties": {
+        "account_size": { "type": "number" },
+        "risk_pct_per_trade": {
+          "type": "number",
+          "description": "% do capital a arriscar por operação (ex: 1.0 = 1%)"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ohlcv_series": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "open": { "type": "number" },
+          "high": { "type": "number" },
+          "low": { "type": "number" },
+          "close": { "type": "number" },
+          "volume": { "type": "number" }
+        }
+      }
+    }
+  }
+}

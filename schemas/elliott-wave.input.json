@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/elliott-wave.input",
+  "title": "Elliott Wave Specialist — Input",
+  "description": "Dados recebidos pelo Elliott Wave Specialist para construção do Modelo Estrutural Vivo",
+  "type": "object",
+  "required": ["market_digital_twin", "blackboard_context"],
+  "properties": {
+    "market_digital_twin": {
+      "type": "object",
+      "description": "Estado atual do Market Digital Twin com OHLCV por timeframe",
+      "required": ["symbol", "timeframes"],
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "enum": ["BTCUSDT", "XAUUSD", "NAS100"],
+          "description": "Instrumento sendo analisado"
+        },
+        "timestamp_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timeframes": {
+          "type": "object",
+          "description": "OHLCV por grau hierárquico (S1→M5). Análise sempre top-down.",
+          "properties": {
+            "S1": { "$ref": "#/definitions/ohlcv_series" },
+            "D1": { "$ref": "#/definitions/ohlcv_series" },
+            "H4": { "$ref": "#/definitions/ohlcv_series" },
+            "H1": { "$ref": "#/definitions/ohlcv_series" },
+            "M5": { "$ref": "#/definitions/ohlcv_series" }
+          }
+        }
+      }
+    },
+    "webhook_payload": {
+      "type": "object",
+      "description": "Payload do indicador Elliott Wave Advanced (TradingView webhook). Opcional — pode chegar null se análise for manual.",
+      "properties": {
+        "wave_label": {
+          "type": "string",
+          "description": "Rótulo da onda identificada pelo indicador (ex: '3', 'C', 'B')"
+        },
+        "wave_degree": {
+          "type": "string",
+          "enum": ["Supercycle", "Cycle", "Primary", "Intermediate", "Minor", "Minute", "Minuette"],
+          "description": "Grau da onda"
+        },
+        "bias": {
+          "type": "string",
+          "enum": ["bullish", "bearish", "neutral", "ambiguous"]
+        },
+        "sub_wave": {
+          "type": "string",
+          "description": "Sub-onda atual se aplicável (ex: 'iii' de 3)"
+        },
+        "fib_target_1": {
+          "type": "number",
+          "description": "Primeiro alvo Fibonacci calculado pelo indicador"
+        },
+        "fib_target_2": {
+          "type": "number",
+          "description": "Segundo alvo Fibonacci calculado pelo indicador"
+        },
+        "invalidation_level": {
+          "type": "number",
+          "description": "Nível de preço que invalida a contagem atual"
+        },
+        "atr_stop": {
+          "type": "number",
+          "description": "Stop baseado em ATR sugerido pelo indicador"
+        }
+      }
+    },
+    "blackboard_context": {
+      "type": "object",
+      "description": "Estado do Blackboard Cognitivo — missão ativa e hipótese anterior",
+      "properties": {
+        "active_mission_id": {
+          "type": ["string", "null"],
+          "description": "ID da missão ativa (TMP). Null se não houver missão em andamento."
+        },
+        "previous_hypothesis": {
+          "type": ["object", "null"],
+          "description": "Hipótese principal publicada na última análise. Null se for primeira análise.",
+          "properties": {
+            "count": { "type": "string" },
+            "bias": { "type": "string" },
+            "conviction": { "type": "number" },
+            "invalidation_level": { "type": "number" },
+            "published_at": { "type": "string", "format": "date-time" }
+          }
+        },
+        "cognitive_state": {
+          "type": "string",
+          "enum": ["INACTIVE", "OBSERVING", "INVESTIGATING", "HYPOTHESIS_BUILDING", "VALIDATING", "MONITORING", "REVISING", "CONFIRMED", "INVALIDATED"],
+          "description": "Estado cognitivo atual do agente"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ohlcv_series": {
+      "type": "array",
+      "description": "Série de candles OHLCV, do mais antigo ao mais recente",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "open", "high", "low", "close", "volume"],
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "open": { "type": "number" },
+          "high": { "type": "number" },
+          "low": { "type": "number" },
+          "close": { "type": "number" },
+          "volume": { "type": "number" }
+        }
+      }
+    }
+  }
+}

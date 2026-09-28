@@ -1,0 +1,244 @@
+# CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)
+
+**Função:** Single Source of Truth do estado/versão/baseline de todo artefato oficial (GMC-001 Cap.4).
+**Autoridade:** Controlador (registro) · Andraus (homologação).
+**Atualização:** 2026-09-20 — Camada Principiológica **completa e vinculante**: PAP-001 v1.2 (Bloco 7 VPD), CIC-001 v1.3, RMR-001 v1.0 (backlog), SES-001 (especialização Trading) e atomic-spec v1.4 homologados; 1º ciclo de Hygiene fechado; K-PAP-001..005 e K-PEPR-001 resolvidas. (Base: registro 2026-09-16 da Camada Principiológica + correção de status stale da §6.)
+**Nota:** substitui o snapshot `CATALOGO_OFICIAL_ORYX.md` (2026-07-13). Histórico preservado; nenhum registro removido, apenas superseded.
+
+---
+
+## 0. MAPA DE PASTAS (índice de localização — HOD-001/DHR-HOD-001)
+
+**Locator único de "onde encontrar o quê" (findability + 4Es). Este mapa é a fonte autoritativa de localização; citações históricas em atas a caminhos antigos (ex.: "…, raiz") resolvem-se por aqui, sem reescrever a ata (INV-07).**
+
+| Tipo de documento | Pasta | Exemplos |
+|---|---|---|
+| **Caminho-quente** (leitura constante dos agentes) | **raiz** `/` | AGENTS.md · atomic-spec.md · ROADMAP.md · GLOSSARIO.md · README.md |
+| **Normas vivas** | `governance/` | CONSTITUTION · RULES · GPR-001 · PAP-001 · SES-001 · MAN-001 · CONFLICT-MAP · CATALOGO · CIC-001 · RCH-001 |
+| **ADRs (Architecture Decision Records)** | `governance/` (ADR-*) | ADR-MANAGER-001 · ADR-MISSION-TYPES-001 · ADR-CONFLUENCE-001-v3 *(F2 futura: `governance/adrs/`)* |
+| **Emendas** | `governance/` (EUA-E04..E16, HOD-001) | *(F2 futura: `governance/emendas/`)* |
+| **Atas** | `governance/` (DHR-*) | *(F2 futura: `governance/atas/`)* |
+| **Backlog** | `backlog/` | RMR-001 · BL-018-RISK-AGENT-backlog |
+| **Modelos canônicos** | `canon/` | CEM/CHM/GMC/SAS/CEE/PPQ/SDD/CR |
+| **Referências externas (camadas)** — NÃO-normativas | **`reference/camadas/`** *(movidas da raiz por HOD-001 — F1, 2026-09-21)* | 12× `CAMADA *.MD` (HCH/CMHP/MEG/MSC/MOC/MIQG/MCC/MCF/MUN/MPB/MDC/MC-001) + `MC-COG-001…` + `MC-RAG-001…` + `CAMADA MEMÓRIA.MD` (MC-EXP) + `CAMADA GOVERNANÇA CONHECIMENTO.MD` (MC-GOV) |
+| **Referência de escopo (Risk)** — NÃO-normativa | `reference/` | `SOT-RISK-MASTER-001_Consolidado.md` — escopo de referência da família RISK (BL-018; fonte de requisitos RISK-SPEC-*) |
+| **Referências externas (fora do padrão camadas)** — NÃO-normativas | **`reference/externo/`** *(RPIR, 2026-09-28)* | `CACHING SOT.MD` — proposta de arquitetura de skills de caching acopladas ao SOT, para agentes cognitivos internos (estrutural/institucional/operacional/manager/risco) e para Especificador/Revisor (spec-time) (BL-024; fonte de requisitos para futura Spec de caching; parecer de auditoria do Revisor SOT 2026-09-28 anexo ao item de backlog) |
+| **Guias de fundo / origem** | `RETOMADA/` (GEH-001) · `docs/fundamentos/` (ENGENHARIA-GERAL, ARIA, KERNEL) | — |
+| **Arquivo (obsoleto/superado)** | `docs/_legacy/` | INV-07 — nunca deletado. Inclui: `AUDITORIA-TAXONOMICA/` (material de trabalho HOC-003, 2026-09-26) · `BRIEFING-CLAUDECODE-RISK-AGENT.md` (proposta supersedida por EUA-E19a) |
+| **Auditorias e upgrades de tooling** | `UPGRADES/` | Auditorias Claude Code setup (2026-09-24/25) · `understand-anything-graph/knowledge-graph.json` (artefato de conhecimento — verificar status em RMR-001) |
+| **Mapa do projeto (gerado)** — NÃO-normativo | `docs/mapa/` (`MAPA-PROJETO.md` · `mapa-projeto.json`) | Mapa de leitura rápida gerado por `scripts/build_map.py` (BL-019, ATIVADO e Absorvido 2026-09-26 — RMR-001): camadas, hubs de ID, cadeia de Specs, documentos sem referência de entrada. **Regenerável; nunca editar à mão; este CATALOGO segue como locator autoritativo (em conflito, vale o documento de origem — INV-09).** Mantido por hooks (`.claude/settings.json`) + CI/pre-commit (`build_map.py --check`); regra em `AGENTS.md` §5/§8. Substitui, na prática, o grafo `UPGRADES/understand-anything-graph/` (0 arestas entre arquivos), preservado por INV-07. |
+| **Regras de tooling (Cline/Claude Code)** | `.clinerules/` | sot-rag.md · sot-schemas.md · sot-specs.md — configuração operacional; não-normativo |
+| **Skills e avaliações** | `.claude/skills/` e `.claude/agents/` | validate-sot-spec.md · update-harness.md · especificador.md · revisor.md · harness-eval/runs (histórico de avaliações) |
+| **Intake pendente (raiz, transitório)** | **raiz** até triagem | *(nenhum — BL-014 Absorvido 2026-09-21: `CAMADA APRENDIZADO.MD` auditada = MC-LRN-001 → BL-015, movida para `reference/camadas/`; `AUDITORIA TAXONOMICA/` processado 2026-09-26 per HOD-001 RPIR; `CACHING SOT.MD` — achado ACHADO-C1 do parecer do Revisor SOT 2026-09-28: intake não-registrado na raiz — auditado = proposta de caching → BL-024, movido para `reference/externo/` per RPIR/HOD-001)* |
+
+> **F1 executada (Ciclo de Hygiene #2, DHR-HOD-001):** as 16 referências externas saíram da raiz para `reference/camadas/`. F2 (governance/emendas+atas+partida) e F3 (reference/externo: MANUAL_UNIVERSAL, GEH-001) **diferidas** — exigiriam tocar atas congeladas (INV-07) / reparar ~30 refs a GEH-001; resolvem-se por este Mapa até decisão de execução.
+
+---
+
+> **MODELO ARQUITETURAL — DUAS TRILHAS (registrado 2026-09-16)**
+>
+> Este projeto opera em duas trilhas paralelas com interface única:
+>
+> | Trilha | Domínio | Índice de sequência | Próximo artefato |
+> |---|---|---|---|
+> | **A — Principiológica** | Governança de princípios (GPR-001, PAP-001, CIC-001, RMR-001) | §7 deste Catálogo | Hygiene contínuo; backlog RMR-001 |
+> | **B — Harness Cognitivo** | Specs de componente (SPEC-001..N) | `ROADMAP.md` | **SPEC-002** (FASE GOV CONCLUÍDA — DHR-SPEC021-001, 2026-09-28; SPEC-019+020+021 homologadas) <!-- [LEGADO snapshot anterior = SPEC-002; substituído por DHR-EUA-E17; ver §7 linhas 150-151] --> · **+ SPEC-046 em paralelo, fora de ordem — HOMOLOGADA BASELINE** (tooling de caching spec-time, Especificador/Revisor; DHR-SPEC046-001 abertura + DHR-SPEC046-002 baseline, 2026-09-28 — ROADMAP §25-bis) |
+>
+> **Interface (vinculante):** PAP-001 Bloco 6 (gate do Revisor por classe) + **Bloco 7 (VPD — vínculo em tempo de decisão)** + CIC-001 (inventário) + RMR-001 (backlog com gatilho de ativação; ROADMAP §23 passo 11-bis). Toda spec homologada da Trilha B ganha linha no CIC-001; specs de decisão exigem VPD.
+> **Regra anti-colisão:** o "próximo passo" de cada trilha só se lê no índice da própria trilha. Não usar o ROADMAP para decidir passos da Trilha A, nem este §7 para sequenciar specs.
+
+---
+
+## 1. Modelos Canônicos
+
+| Código | Nome | Versão | Status | Localização no repo |
+|---|---|---|---|---|
+| **CHM-001** | Canonical Hypothesis Model | 1.0 | **BASELINED** (Q-001; aprovado por Andraus 12/07/2026, registro efetivado 2026-09-14) | `canon/CHM-001-canonical-hypothesis-model.md` |
+| **CEM-001** | Canonical Evidence Model | 1.0 | **BASELINED** (Q-001) | `canon/CEM-001-canonical-evidence-model.md` |
+| CCM-001 | Canonical Conviction Model | — | **PENDENTE DE REDAÇÃO** — responsabilidade da SPEC-003 | — |
+| CDM-001 | Canonical Decision Model | — | **PENDENTE DE REDAÇÃO** | — |
+| CNM-001 | Canonical Narrative Model | — | **PENDENTE DE REDAÇÃO** | — |
+
+> Enquanto CCM/CDM/CNM não forem redigidos e baselined, **não** acionam CONST-01 (não há canônico a proteger). Ver GLOSSARIO.md §4.
+
+## 2. Modelos de Governança / Processo
+
+| Código | Nome | Versão | Status | Localização |
+|---|---|---|---|---|
+| GMC-001 | Canonical Models Governance | 1.0 | **BASELINED** | `canon/GMC-001-governance-canonical-models.md` |
+| CEE-001 | Cognitive Economy & Efficiency | **2.0** | **BASELINED** (emenda v2.0: §11 Salvaguardas de Sinal + §12 4Es — Q-003/Q-009) | `canon/CEE-001-cognitive-economy-efficiency-v2.0.md` |
+| SDD-001 | Spec-Driven Development | 1.1 | **BASELINED** | `canon/SDD-001-spec-driven-development.md` |
+| PPQ-001 | Project/Process/Quality | 1.2 | **BASELINED — com superseção parcial (Q-010):** o FLUXO de aprovação está supersedido pelo trio Especificador→Revisor→Andraus; o **dial GES** (rigor proporcional ao impacto) permanece ATIVO via RULE-PPQ-001. | `canon/PPQ-001-project-process-quality.md` |
+| CR-001 | Compliance Record | 1.0 (parcial, Cap.1-6) | **BASELINED (parcial)** | `canon/CR-001-compliance-record.md` |
+| SAS-001 | Structural Agent Specification | 1.0 | **BASELINED** | `canon/SAS-001-structural-agent-spec.md` |
+| SES-001 | Especialização Cognitiva e Funcional (Trading) | 1.0 | **BASELINED** (DHR-SES-001, 2026-09-20) — regra superior às specs (§67); incorporada ao atomic-spec v1.4 | `governance/SES-001_Especializacao_Cognitiva_Trading.md` |
+
+## 3. Camada F.1 — Feedforward (autoridade normativa do harness) — Q-011
+
+| Artefato | Status | Localização |
+|---|---|---|
+| CONSTITUTION | **BASELINED F.1** (Andraus 2026-09-14, após correções Q-002/Q-004/Q-005/Q-006/Q-008/Q-009/Q-015) | `governance/CONSTITUTION.md` |
+| RULES | **BASELINED F.1** (após correções Q-002/Q-003/Q-004/Q-006/Q-010) | `governance/RULES.md` |
+| CONFLICT-MAP | **BASELINED F.1** (após correções Q-002/Q-004) | `governance/CONFLICT-MAP.md` |
+| GLOSSARIO | **BASELINED F.1** (Q-014/Q-015) | `GLOSSARIO.md` (raiz) |
+
+## 4. Método e Sequência (raiz — leitura obrigatória)
+
+| Artefato | Versão | Status | Localização |
+|---|---|---|---|
+| ROADMAP | baseline + Questionário v1 | HOMOLOGADO | `ROADMAP.md` (raiz) |
+| ATOMIC-SPEC | **v1.4** | HOMOLOGADO (EUA-E03, DHR-SES-001, 2026-09-20: +17 campos SES-001 §59 + cadeia §60 + CC-06/CC-07) | `atomic-spec.md` (raiz) |
+| EUA-E04 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E04, 2026-09-20): bloco §8.3 Herança/Delta + CC-08 + RULE-HD-01..04. **Incorporação ao atomic-spec v1.5 diferida ao piloto em SPEC-002** (P4/A-03). | `governance/EUA-E04_Heranca_Delta_PROPOSTA.md` |
+| MAN-001 | 1.0 | **HOMOLOGADO — vigência imediata** (DHR-MAN-001, 2026-09-20): Mapa da Arquitetura Normativa — nós N1–N8 + interfaces + matriz de convergência + sensor de drift horizontal (rotina do Hygiene RCH-001). Nó **N8 (Epistêmico)** acrescentado por DHR-EUA-E05. | `governance/MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md` |
+| EUA-E05 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E05, 2026-09-20): Epistemic Check no §11 (anti-conversão RULE-EPI-01..03; estados de gate incl. INDETERMINADO; INV-EPI-01..10) + CC-09 + nó N8 no MAN-001. **Incorporação ao atomic-spec v1.5 diferida ao piloto SPEC-002** (Q5, junto com EUA-E04). | `governance/EUA-E05_Epistemic_Check_PROPOSTA.md` |
+| EUA-E06 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E06, 2026-09-20): Terminologia Concorrente por Escola (GLOSSARIO) + RULE-SEM-01..04 + CC-10 + nó N9 no MAN-001. **Incorporação ao GLOSSARIO/atomic-spec v1.5 diferida ao piloto SPEC-002** (Q6, junto com EUA-E04/E05). | `governance/EUA-E06_Camada_Semantica_PROPOSTA.md` |
+| EUA-E07 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E07, 2026-09-20): RULE-ONT-01/02 (observacional vs teórico; autoexpansão governada) + nó N10 no MAN-001; verificada sob CC-09. Substância ontológica diferida aos Modelos Canônicos (CCM/CDM/CNM). **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E07_Camada_Ontologica_PROPOSTA.md` |
+| EUA-E08 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E08, 2026-09-20): RULE-INQ-01/02/03 (questão→método; evidência discriminante; critério de encerramento) + nó N11 no MAN-001; verificada sob CC-09. Sensores operacionais (INV-INQ/INQ-S/GATE-INQ) diferidos ao harness-eval/GEH. **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E08_Camada_Inquerito_PROPOSTA.md` |
+| EUA-E09 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E09, 2026-09-20): RULE-CAU-01/02/03 (mecanismo obrigatório; regime de validade; guard pós-hoc) + nó N12 no MAN-001; verificada sob CC-09. Intervenção/contrafactual → nó futuro; vocabulário estatístico → CCM. **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E09_Camada_Causal_PROPOSTA.md` |
+| EUA-E10 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E10, 2026-09-20): RULE-CTF-01/02/03 (baseline+intervenção mínima+anti-hindsight; condicional+gradação; contrafactual de invalidação) + nó N13 no MAN-001; verificada sob CC-09. Qualificação probabilística → nós Incerteza/Probabilística; árvores → backtest. **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E10_Camada_Contrafactual_PROPOSTA.md` |
+| EUA-E11 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E11, 2026-09-20): RULE-UNC-01/02/03 (localizar/tipificar; não-contaminação; incerteza≠probabilidade) + nó N14 no MAN-001; verificada sob CC-09. **Não toca J-001/Conviction.** Calibração/sensibilidade → Conviction/CCM; quantificação → Probabilística. **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E11_Camada_Incerteza_PROPOSTA.md` |
+| EUA-E12 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E12, 2026-09-20): RULE-PRB-01/02 (evento bem-formado: evento+condição+horizonte; não quantificar sem base) + nó N15 no MAN-001; verificada sob CC-09. **Não toca J-001/Conviction.** Calibração/risco/priors/distribuição → CCM-001; decisão → Decisional. **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E12_Camada_Probabilistica_PROPOSTA.md` |
+| EUA-E13 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E13, 2026-09-21): RULE-DEC-01/02/03 (decisão≠execução+autoridade; decisão condicional/INDETERMINADO; processo≠resultado) + nó N16 no MAN-001; verificada sob CC-09. **Reforça INV-05/P14/B-001 — não redefine; não toca J-001/CDM-001.** Modelagem decisional (multicritério/utilidade/robustez/opcionalidade) → CDM-001/Synthesis; vieses → Metacognição. **Fecha as camadas §68 com documento.** **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E13_Camada_Decisional_PROPOSTA.md` |
+| EUA-E14 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E14, 2026-09-21): RULE-MET-01/02/03 (honestidade/não-fabricação; abstenção produtiva/anti-censura; autonegação/revisibilidade) + nó **N17 transversal/2ª ordem** no MAN-001; verificada sob CC-09. **Camada transversal — monitora N8–N16, não cria domínio novo; não toca J-001/CCM-001** (calibração → CCM-001; runtime → harness-eval/GEH; especialização → SES-001). Sensor metacognitivo enxertado no Hygiene RCH-001 (Q5). **FECHA todo o §68 — fim do ciclo de camadas.** **Incorporação ao RULES.md v1.5 diferida ao piloto SPEC-002.** | `governance/EUA-E14_Camada_Metacognicao_PROPOSTA.md` |
+| EUA-E15 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E15, 2026-09-21): redesignação aditiva do piloto de incorporação das 11 emendas (EUA-E04..E14) de "SPEC-002" para **auditoria retroativa da SPEC-001**; regime auditoria-não-reescrita (D-DHR-PAP-001-01); achados→CIC-001, Crítico→re-homologação; BL-008 ATIVADO/absorvido; SPEC-002 não é mais pré-requisito; deriva atomic-spec v1.5. Não reescreve SPEC-001 (INV-09); não apaga a Q5 das atas (INV-07). | `governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md` |
+| EUA-E16 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E16, 2026-09-21): sincronização dos agentes (especificador/revisor) com as homologações 19–21/09 (lista de leitura expandida, Constitution Check CC-01..CC-10, N8–N17, fluxo EUA-E15, "Conviction 4D"→8D, model→opus-4-8) + **RPSA** (carimbo `sincronizado-até`, Gate de Sincronização, gate bloqueante RMR-001, sensor RCH-001 passo 7). | `governance/EUA-E16_Sincronizacao_Agentes_PROPOSTA.md` |
+| EUA-E17 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E17, 2026-09-21): reposiciona SPEC-019/020/021 para uma **FASE GOV** entre SPEC-001 e SPEC-002; renumera Fases 10–17→8–15 (números de Specs inalterados). Q1–Q6 = Sim: SPEC-019 integral **+ Contrato de Herança Vertical** (normativiza GEH-001 §6; resolve L-001); SPEC-020 **faseada** (núcleo A constitutivo agora; dimensões B — RAG faithfulness/tool correctness/decision traceability — diferidas a SPEC-007/038/014, CONS-01); SPEC-021 após núcleo A. Método da FASE GOV = atomic-spec v1.4 (ou v1.5 se homologada antes); independente do piloto EUA-E15. Renumeração editorial de cabeçalhos = passo diferido. **Próximo autorizado da Trilha B: SPEC-019.** | `governance/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA.md` |
+| EUA-E18 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E18, 2026-09-21): §7-bis "Autopré-check de Redução de Viés" no `especificador.md` (Blocos A casos de negação D8 / B herança obrigação-a-obrigação CC-08 / C epistêmico RULE-EPI/CAU/PRB-CC-09 / D ponteiro p/ §7) + Passo 5-bis "Verificação Adversarial e de Conservação de Herança" no `revisor.md` (seções A/B/C, anti-leniência N8–N17), obrigatórios para HIGH/CRITICAL. Passou por 1º parecer NÃO CONFORME RECUPERÁVEL (v2) → v3 tratou os 6 achados → CONFORME. Delimita explicitamente que o Bloco B/seção A NÃO antecipam a regra escrita de conservação-como-conjunto da SPEC-019 (escopo já homologado por Q1 da EUA-E17; conteúdo ainda a redigir). Q7: checagem qualitativa de proporcionalidade ao final das 3 primeiras specs da FASE GOV (SPEC-021), sem tooling novo. | `governance/EUA-E18_Reducao_Vies_Sincronizacao_SpecLean_PROPOSTA.md` |
+| EUA-E19 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E19, 2026-09-21): roteamento de modelo por papel na camada meta — `especificador.md` mantém `claude-opus-4-8` (esforço médio); `revisor.md` passa a `claude-sonnet-4-6` (esforço alto, compensa a economia de modelo). Esforço = política operacional não-persistida (frontmatter de subagente não suporta "reasoning effort" — RULE-MET-01 respeitada, sem fabricar campo). Estende o dial GES (RULE-PPQ-001) ao **escopo de leitura obrigatória** (núcleo sempre obrigatório incl. checagem `ATIVADO` do RMR-001; lista completa só HIGH/CRITICAL; reduzida LOW/MEDIUM) e cria short-circuit de releitura das atas via `sincronizado-até` vs. último DHR do CATALOGO. CEE-001/RULE-CEE-002/003 citadas por analogia (não estendidas — permanecem escopadas ao ORYX AGENT/Trilha B, spec-only). Passou por 1º parecer NÃO CONFORME RECUPERÁVEL (v1: A-01/A-02 Médios) → v2 tratou os achados → CONFORME. | `governance/EUA-E19_Economia_Tokens_Camada_Meta_PROPOSTA.md` |
+| EUA-E22 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E22, 2026-09-26): regra **R-MAPA** — todo agente mantém o mapa do projeto (`docs/mapa/`, BL-019; NÃO-normativo, regenerável) atualizado; garantia por hooks (PostToolUse/Stop/SubagentStop/SessionStart) + marcador `.stale` + `build_map.py --check` **bloqueante** no CI/pre-commit + regra escrita (AGENTS.md, Autopré-check, `.clinerules/sot-map.md`); Revisor apenas observa (ENF-03). Regulariza retroativamente edições aplicadas por diretiva de Andraus. Q1–Q4 = Sim; parecer do Revisor CONFORME (2 Menores + 1 observação). Compat. Minor; nenhuma decisão aberta tocada; `sincronizado-até` → DHR-EUA-E22 (RPSA). |
+| EUA-E21 (emenda) | — | **HOMOLOGADA — vigência imediata** (DHR-EUA-E21, 2026-09-26): **Especificação Emergente** — o ROADMAP fixa direção e restrições e **não** pré-determina Specs nem quantidades; cada Spec é definida **na abertura**, por proposta do Especificador após **Dossiê de Pesquisa** (estado da arte/melhores práticas na web; fail-closed; auditado pelo Revisor) e homologação de Andraus (RULE-ECC-01/02); SPEC-002…045 = slots indicativos (nunca apagados); SPEC-001/019 inalteradas; SPEC-020 núcleo A = piloto; RULE-ECC-03 **RESERVADA**; supersede o "Passo 1 — Proposta de Redistribuição" da DHR-PROV-WEB-001. Revisor CONFORME na v2 (após NÃO CONFORME RECUPERÁVEL na v1). Decisões abertas novas: ECC-VAL-001, ECC-03-001. |
+| HOD-001 (plano/regra) | — | **HOMOLOGADO — vigência imediata** (DHR-HOD-001, 2026-09-21): plano de higiene documental (taxonomia + reparo de referências grep-zero) + **RPIR** (raiz = intake; tratado→pasta ou excluído; garantia tripla: gate + RMR intake + RCH passo 8; arquivar por padrão, delete físico só duplicata/lixo com autorização). Execução F1..F5 = Ciclo de Hygiene #2 (pendente). BL-014 (CAMADA APRENDIZADO) ATIVADO. | `governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md` |
+| AGENTS (config) | — | ativo | `AGENTS.md` (raiz) |
+
+> **Referências externas não-normativas (pano de fundo conceitual, mesmo status do GEH-001):**
+> *(Localização atualizada por HOD-001/F1 — todas em `reference/camadas/` desde 2026-09-21; as menções "…, raiz" abaixo são históricas e resolvem-se pelo §0 Mapa de Pastas.)*
+> - **HCH-001** (`CAMADA DE HARNESS.MD`, raiz) — harness. Importada só a mecânica de herança-por-delta (EUA-E04). Fora de adoção: H0–H4; "3Es+Economicidade" (vs. 4Es CEE-001 §12); L0–L4 (vs. Quality Gates L1–L4 / harness-score); M0–M7 (vs. Marcos).
+> - **CMHP-001** (`CAMADA PRINCIPIOLÓGICA.MD`, raiz) — principiológico. Importada só a mecânica de convergência horizontal (MAN-001). Fora de adoção: L0–L6 (vs. Quality Gates L1–L4 / harness-score / maturidade GPR L0–L5); I-01..I-12 (vs. INV / PC / PB / HCH-INV).
+> - **MEG-001** (`CAMADA EPISTÊMICA.MD`, raiz) — epistêmico. Importada só a mecânica de verificação epistêmica (EUA-E05). Fora de adoção: maturidade "Nível 0–6" (vs. Quality Gates L1–L4 / harness-score / maturidade GPR L0–L5); unidade EPI-ID (§100, já coberta por BASpec/Enforcement Contract).
+> - **MSC-001** (`CAMADA SEMÂNTICA.MD`, raiz) — semântico. Importada só a mecânica de terminologia concorrente + transparência semântica (EUA-E06). Fora de adoção por duplicação: §53 Não-colapsação (= RULE-EPI, EUA-E05).
+> - **MOC-001** (`CAMADA ONTOLÓGICA.MD`, raiz) — ontológico. Importada só a distinção observacional/teórico + autoexpansão governada (EUA-E07). Fora de adoção por duplicação: nome≠entidade (= RULE-SEM/RULE-EPI); relação≠causa (= RULE-EPI-02); catálogo genérico de tipos (§5) e maturidade (§57) = CEM/CHM/SAS.
+> - **MIQG-001** (`CAMADA INQUÉRITO.MD`, raiz) — inquérito. Importada só a classificação de questão→método (§9/§14), evidência discriminante (§20) e critério de encerramento (§37) via EUA-E08. Fora de adoção: catálogo operacional §62–66 (runtime → harness-eval/GEH); ordem "3Es" §87 (conflita com 4Es CEE-001 §12).
+> - **MCC-001** (`CAMADA DE CAUSALIDADE.MD`, raiz) — causal. Importada só mecanismo obrigatório (§3/§54), regime de validade (§45) e guard pós-hoc (§47–48) via EUA-E09. Fora de adoção: §53 (= RULE-EPI-02/RULE-ONT/AP-02); intervenção/contrafactual §28/§58 (→ nó futuro Contrafactuais); vocabulário estatístico §17 (→ CCM).
+> - **MCF-001** (`CAMADA CONFRACTUAL.MD`, raiz) — contrafactual. Importada só baseline/intervenção mínima/anti-hindsight (§3/§13/§20), gradação (§14) e contrafactual de invalidação (§25/§38) via EUA-E10. Fora de adoção: §20/§57 (= RULE-CAU-03); §31/§32 qualificação probabilística (→ nós Incerteza/Probabilística); §16–18 árvores/propagação (→ backtest).
+> - **MUN-001** (`CAMADA INCERTEZA.MD`, raiz) — incerteza. Importada só localização/tipificação (§5/§15), não-contaminação (§18) e incerteza≠probabilidade (§30/§31) via EUA-E11. **Não toca J-001/Conviction.** Fora de adoção: preservação/abstenção (= PB-10/INDETERMINADO/PCO); falsa precisão (= RULE-EPI); calibração/sensibilidade (→ Conviction/CCM); quantificação (→ Probabilística).
+> - **MPB-001** (`CAMADA PROBABILISTICA.MD`, raiz) — probabilística. Importada só evento bem-formado (§4/§5) e não-quantificar-sem-base (§10/§57/§59) via EUA-E12. **Não toca J-001/Conviction.** Fora de adoção: calibração/risco/valor esperado/priors/distribuição (→ CCM-001/Conviction, J-001 aberto); decisão (→ Decisional); backtest (→ specs).
+> - **MDC-001** (`CAMADA DECISIONAL.MD`, raiz) — decisional. Importada só decisão≠execução+autoridade (§52/§53/§54), decisão condicional (§63/§66) e processo≠resultado (§64/§65) via EUA-E13. **Reforça INV-05/P14/B-001 — não redefine; não toca J-001/CDM-001.** Fora de adoção por duplicação: §27 (=RULE-UNC/EPI), §28 (=RULE-CAU), §40/41 (=RULE-CTF), §18/19 (=RULE-UNC/PB-10), §50 (=RULE-CTF-03/INV-02), §14–17 (=RULE-INQ), §55–57 (=TRACE-06/RULE-010), §44/45/71 (=GES/4Es), §5 (=RULE-PRB). Fora de adoção por diferimento: multicritério/utilidade/robustez/opcionalidade/risco (→ CDM-001/Synthesis); vieses (→ Metacognição); 2ª ordem/adversarialidade (→ Modelos Canônicos).
+> - **MC-001** (`CAMADA METACOGNIÇÃO.MD`, raiz) — metacognição (transversal / 2ª ordem — monitora N8–N16). Importada só honestidade/não-fabricação (§110/§111), abstenção produtiva/anti-censura (§21/§89) e autonegação/revisibilidade (§83/§108) via EUA-E14. **Não toca J-001/CCM-001.** Fora de adoção por duplicação (13): §10/§41 (=RULE-DEC-03), §45/46/47 (=RULE-CTF/CAU), §27/37 (=RULE-CAU), §28/56/73 (=RULE-CTF/INV-02), §29 (=RULE-UNC), §22/26/25 (=RULE-SEM/ONT), §16/58/70 (=RULE-004), §38/96 (=RULE-INQ), §35/77/95 (=GES/4Es), §52/53/85 (=RULE-007/PCO/INDETERMINADO), §109/79 (=TRACE-06/INV-EPI), §30 (=fronteira N16), §64 (=RULE-PRB/EPI). Fora de adoção por diferimento: calibração §65 (→ CCM-001/J-001); deriva/métricas/adversarial §74/§99/§100 (→ harness-eval/GEH); especialização Trading §66/§102 (→ SES-001).
+> - **MC-RAG-001** (`MC-RAG-001_Master_Contract_Camada_RAG.md`, raiz) — camada RAG / conhecimento. **Admitido ao backlog** como **BL-010 (Em espera)** — fonte de requisitos de SPEC-007 (+006/024) e canon (CEM/CHM/CCM); **NÃO é baseline nem nó** (autodeclaração "Baseline" sem efeito normativo — INV-09). Ativa em `spec:SPEC-007 em redação ∨ milestone:FASE 3`. Não adotar sem tratamento: Quality Gates G0–G8 (colidem com L1–L4/L0–L4); ordem 4Es §1 (colide com CEE-001 §12); I-RAG-01..10 / RAG-P01..P14 (usar como locais, ancorados nos canônicos); RAG-SPEC-018 (=RULE-004/RULE-MET-01). Fronteiras conformes: confidence≠Conviction (J-001), Evidence Packet projeta CEM (CC-02), RAG não decide/executa (INV-05), feedback≠autorização (INV-09). [DHR-MC-RAG-001]
+> - **MC-EXP-001** (`CAMADA MEMÓRIA.MD`, raiz) — camada de Experiência e Memória. **Admitido ao backlog** como **BL-011 (Em espera)** — fonte de requisitos de SPEC-004/006/009/018 e canon (CEM/CHM/CCM); **NÃO é baseline nem nó** (autodeclarações "BASELINE"/"BASELINE PROPOSTA" sem efeito — INV-09). Ativa em `spec:SPEC-006 ∨ SPEC-009 em redação ∨ milestone:FASE 3`. Não adotar sem tratamento: Quality Gates G0–G8 (colidem com L1–L4/L0–L4); I-EXP-01..12 / EXP-P01..P14 (locais, ancorados nos canônicos); Working Memory §7.6 (→ SPEC-004/Blackboard); dup. EXP-SPEC-021↔RAG-SPEC-018 (=RULE-004). Fronteiras conformes: Experience Record/Packet projetam CEM/CHM (CC-02), confidence/metrics≠Conviction (J-001), memória sem autoridade decisional (INV-05), imutabilidade histórica REFORÇA RULE-BB-004/INV-07. [DHR-MC-EXP-001]
+> - **MC-COG-001** (`MC-COG-001_Master_Contract_Camada_Cognicao.md`, raiz) — camada de Cognição (hub do trio). **Admitido ao backlog** como **BL-012 (Em espera)** — empacota o núcleo cognitivo já normativo (N8–N17 + agentes + Synthesis + Conviction); **NÃO é baseline nem nó** (autodeclaração "Baseline" sem efeito — INV-09). ~80% já é FATO NORMATIVO. Ativa em `spec:SPEC-002 homologada ∨ evento:consolidação cognitiva`. Não adotar sem tratamento: **estados §7 (CONFLITAM com CHM-001 — usar CHM, CC-02)**; Quality Gates G0–G9 (→ L1–L4); I-COG-01..12 / COG-P01..P15 (locais, ancorados em N8–N17); calibração/risco §15/§16 (→ CCM-001/J-001). Fronteiras conformes: probabilístico/confidence≠Conviction (J-001), análise≠autoridade (INV-05), feedback≠fabricação (RULE-MET-01/INV-09), fato≠inferência (RULE-EPI/TRACE-06). Delta útil = schemas §6/§19 + contratos de integração §18. [DHR-MC-COG-001]
+> - **MC-GOV-001** (`CAMADA GOVERNANÇA CONHECIMENTO.MD`, raiz) — camada de Governança (topo do stack §75). **Admitido ao backlog** como **BL-013 (Em espera)** — descreve a governança que o SOT já opera; ~80% já é FATO NORMATIVO VIVO (trio Especificador→Revisor→Andraus, GMC-001/RULE-GMC-005, PAP-001, RMR-001, INV-07/09, Constitution Check). **NÃO é baseline nem nó; NÃO substitui a governança viva de spec-time** (R-06: entra SUBORDINADO, escopo runtime = SPEC-018/019/L-001; Andraus = Decisor Final). Ativa em `spec:SPEC-018 ∨ SPEC-019 em redação ∨ decisao:L-001 ∨ evento:governança de runtime`. Não adotar sem tratamento: Quality Gates G0–G11 (→ L1–L4); I-GOV-01..15 / GOV-P01..P15 (locais, ancorados nos canônicos vivos); estados §13 (Change Record de runtime, ≠ CHM/RMR). Espelha (não recria): I-GOV-02/03/06/08, §10/§28/§46, I-GOV-12/13. Delta útil = §7/§30/§34/§43/§45 → SPEC-018/019. [DHR-MC-GOV-001]
+> - **MC-LRN-001** (`reference/camadas/CAMADA APRENDIZADO.MD`) — camada de Learning (propositor). **Admitido ao backlog** como **BL-015 (Em espera)** — fonte de requisitos de SPEC-018 (L-001) + K-001 + backtest; **NÃO é baseline nem nó**. Face inversa do MC-GOV §34 (Learning propõe, Governance decide — LRN-P08/P14/I-LRN-12 = INV-09/I-GOV-13; sem dupla autoridade). Ativa em `spec:SPEC-018 ∨ decisao:K-001 ∨ evento:governança de runtime`. Não adotar sem tratamento: Quality Gates G0–G10 (→ L1–L4); I-LRN-01..15 / LRN-P01..P14 (locais, ancorados: I-LRN-02=RULE-CAU, I-LRN-11=INV-07/RULE-BB-004, I-LRN-12=INV-09); estados §9 = Learning Candidate (≠ CHM/Change Record); calibração de parâmetros §28/§43 → CCM-001/J-001/N-001. Sem o conflito grave do MC-COG. [DHR-MC-LRN-001]
+> - **MC-SKL-001** (`reference/camadas/CAMADAS SKILLS.MD`) — camada de Skills (competência). **Admitido ao backlog** como **BL-016 (Em espera)** — fonte de requisitos de SPEC-025 (I-001); **NÃO é baseline nem nó**. 6º e último da família. Ativa em `spec:SPEC-025 ∨ decisao:I-001`. **R-ARCH:** Skill≠agente (Elliott/SMC/ICT como competências) DIFERIDO a SPEC-025 — NÃO toca CC-01/hierarquia/RULE-EW-SM-ICT vigentes. Não adotar sem tratamento: Quality Gates G0–G13 + Skill Depth LEVEL 0–5 (→ locais); I-SKL-01..20 / SKL-P01..P24 (locais ancorados); calibração (→ CCM-001/J-001). [DHR-MC-SKL-001]
+> Colisões anotadas no CONFLICT-MAP (K-MAN-01/02/04/05/06/07/08/09/10/11/12/13/14/15/16/17/18/19).
+>
+> **Camadas §68 (MSC-001) — TODAS FECHADAS:** ~~Ontologia~~ (→ N10) · ~~Inquérito~~ (→ N11) · ~~Causalidade~~ (→ N12) · ~~Contrafactuais~~ (→ N13) · ~~Incerteza~~ (→ N14) · ~~Probabilística~~ (→ N15) · ~~Decisional~~ (→ N16) · ~~Metacognição~~ (→ N17, transversal). **Fim do ciclo de camadas cognitivas.**
+
+## 5. Decisões (Questionário de Resolução v1 — 2026-09-14)
+
+- **Fechadas:** Q-001 (CHM/CEM baselined), Q-003 (§10 vs §11), Q-004 (R:R 1:3), Q-005 (PRIMARY/SUB), Q-006 (estados CHM), Q-007 (B-001: Fusion→Conviction→Synthesis), Q-008 (8 dimensões), Q-009 (4Es), Q-010 (PPQ parcial), Q-011 (F.1 baselined), Q-012 (PP-SPEC-001 removido), Q-013 (paths), Q-014/Q-015 (glossário/identidade).
+- **Abertas remanescentes (na data do Questionário v1, 2026-09-14):** J-001 (fórmula/pesos/limiares definitivos), G-001, H-001, ~~I-001~~ → **FECHADA** (Andraus, 2026-09-28, DHR-I001-001: Skills = híbrido por Classe, Opção C — Classe D formaliza como Skill separada; detalhe diferido ao Dossiê de abertura da SPEC-025), K-001, ~~L-001~~ → **FECHADA** (DHR-SPEC019-001, 2026-09-22 — governança do próprio harness, dimensão spec-time; governança de runtime não é resíduo desta decisão, pertence a SPEC-018/K-001), C-001, **M-001** (estados do Blackboard p/ objetos não-hipótese — SPEC-004), **N-001** (pesos por ativo do Conviction Vector).
+- **Aberta — achado do Revisor (parecer CONFORME, 2026-09-28):** **RULE-REG-001** — 10 famílias RULE (RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC, EUA-E04–E13, +RULE-MET/EUA-E14) já FATO NORMATIVO, mas com incorporação ao `RULES.md` diferida ao piloto SPEC-002/v1.5 pelas próprias atas; `governance/RULES.md` já cita algumas como `[Fonte: ...]` de regra registrada (RULE-HG-02). Gatilho: `spec:SPEC-002 em redação`. Ver `scripts/check_doc_sync.py` (D3) e `ROADMAP.md` "Decisões abertas ativas".
+- **Fechada (2026-09-28, DHR-DOCSYNC-002):** ~~RMR-EST-001~~ (Estado `Diferido` do BL-013 corrigido para `Em espera` — não havia estado formal novo, só a palavra de encaminhamento do gate).
+
+---
+
+## 6. Registro de Homologação — Baseline F.1 (Controlador)
+
+```
+Ato de Homologação — Baseline F.1 do Harness
+  Etapa 1 — Aplicação das decisões ..... ✅ Especificador (Questionário v1, Q-001…Q-015)
+  Etapa 2 — Parecer de integridade ..... ✅ CONFORME (Revisor, 2026-09-15 — docs/arranque/parecer-revisor-F1.md)
+  Etapa 3 — Consenso .................... ✅ Andraus (Decisor Final), 2026-09-15
+  Etapa 4 — Registro Oficial ............ ✅ EFETIVADO (Controlador)
+```
+
+**Objeto homologado:** camada F.1 (`governance/CONSTITUTION.md`, `governance/RULES.md`, `governance/CONFLICT-MAP.md`) + emenda **CEE-001 v2.0** (`canon/CEE-001-…v2.0.md`) + incorporação das 15 decisões do Questionário v1 nos documentos-raiz (ROADMAP, ATOMIC-SPEC v1.3, GLOSSARIO, AGENTS) e reconhecimento de **CHM-001/CEM-001 como BASELINED**.
+
+**Evidência de conformidade:** parecer do Revisor **CONFORME**; `npm test` 11/11; `npm run lint` 5/5; harness-score **L4 · 102/108 (94%)**.
+
+> **Documentos de arranque em `docs/arranque/`:** além do `parecer-revisor-F1.md` aqui citado, esta pasta contém: `PARECER-RISK-AGENT-auditoria-semantica.md` (auditoria semântica do Risk Agent, 2026-09-22 — referência histórica) e `PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md` (parecer da camada principiológica hierárquica — referência histórica). Ambos são documentos de arranque de fundo; não-normativos por si mesmos.
+
+**Efeito original (2026-09-15):** gate BLOCO 4/Q-011 satisfeito. SPEC-001 liberada para arranque.
+**Status atualizado (2026-09-16):** ~~SPEC-001 está liberada para arranque~~ → **SPEC-001 HOMOLOGADO** (Andraus, 2026-09-15). ~~Próximo da Trilha B: SPEC-002~~.
+**Status atualizado (2026-09-21, DHR-EUA-E17):** próximo da Trilha B → **SPEC-019** (Fase GOV, posição 1). A FASE GOV (SPEC-019 → SPEC-020 núcleo A → SPEC-021) precede SPEC-002 (ver `ROADMAP.md` + `governance/EUA-E17_…_PROPOSTA.md`).
+**Status atualizado (2026-09-27, DHR-SPEC020-001):** **SPEC-020 (núcleo A) HOMOLOGADA — BASELINE.** SPEC-020-PRINC-001 FECHADA (efetiva). Próximo da Trilha B → **SPEC-021** (Fase GOV, posição 3).
+**Status atualizado (2026-09-28, DHR-SPEC021-001):** **SPEC-021 HOMOLOGADA — BASELINE.** Escada de maturidade por-Spec `L0→L4` vigente (RULE-MM-01..07). **FASE GOV CONCLUÍDA.** Próximo da Trilha B → **SPEC-002** (retomada do caminho de domínio).
+
+Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
+
+---
+
+## 7. Camada Principiológica (Trilha A — Governança de Princípios)
+
+Registrado em 2026-09-16. Reflete as homologações de 2026-09-15 (DHR-PAP-001).
+
+### 7.1 Documentos normativos
+
+| Código | Nome | Versão | Status | Localização |
+|---|---|---|---|---|
+| **GPR-001** | Guia de Princípios, Relações e Organicidade do SOT | 1.0 | **HOMOLOGADO — BASELINE** (Andraus, 2026-09-15) | `governance/GPR-001_Guia_Principios_Relacoes_SOT.md` |
+| **PP-PAP-001** | Pacote de Partida — Protocolo de Adesão Progressiva ao GPR-001 | 1.0 | **HOMOLOGADO — BASELINE** (Andraus, 2026-09-15) | `governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md` |
+| **PE-PR-PAP-001** | Prompts do Especificador e do Revisor para o PAP-001 | 1.1 | **HOMOLOGADO — BASELINE** (re-homologado DHR-PAP-001-A, 2026-09-15; K-PEPR-001 resolvida) | `governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md` |
+| **PAP-001** | Protocolo de Adesão Progressiva ao GPR-001 | **1.2** | **HOMOLOGADO — BASELINE** (DHR-PAP-001-B 2026-09-15 + Bloco 7 VPD/wiring RMR DHR-PAP-001-C 2026-09-19) | `governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md` |
+| **CIC-001** | Inventário de Conformidade de Princípios | **1.3** | **HOMOLOGADO — BASELINE** (DHR-CIC-001 2026-09-15; +VPD §3-bis; Hygiene #1 fechado 2026-09-20 → 27 PASS/0 FLAG/9 N/A) | `governance/CIC-001_Inventario_Conformidade.md` |
+| **RMR-001** | Painel Vivo de Backlog e Rastreabilidade de Ativação | 1.0 | **HOMOLOGADO — BASELINE** (DHR-PAP-001-C, 2026-09-19) — backlog com gatilho de ativação; vinculante (ROADMAP §23 11-bis) | `backlog/RMR-001_Painel_Backlog.md` |
+| **RCH-001** | Registro de Ciclos de Hygiene | log | Ativo — Ciclo #1 FECHADO (2026-09-20) | `governance/RCH-001_Registro_Ciclos_Hygiene.md` |
+
+### 7.2 Referência externa (não normativa por si mesma)
+
+| Documento | Classificação | Localização | Nota |
+|---|---|---|---|
+| Manual Universal de Engenharia de Princípios Agênticos v2.0 | Referência externa classificável | `governance/MANUAL_UNIVERSAL_ENGENHARIA_DE_PRINCIPIOS_AGENTICOS.md` | Qualquer princípio importado requer ficha quadripartite + justificativa + homologação de Andraus (D-DHR-PAP-001-02). *(Renomeado 2026-09-26: sufixo "(1)" removido — convenção de arquivo, não de governança.)* |
+
+### 7.3 Atas e decisões da Camada Principiológica
+
+| Código | Documento | Data | Status |
+|---|---|---|---|
+| **DHR-PAP-001** | Homologação da Camada de Princípios (GPR/PP-PAP/PE-PR) + Anexo A (correção de caminhos) | 2026-09-15 | **REGISTRADO** |
+| **DHR-PAP-001-A** | Re-homologação PE-PR-PAP-001 v1.1 (K-PEPR-001 resolvida: GEH-001 → `RETOMADA/` v1.1) | 2026-09-15 | **REGISTRADO** |
+| **DHR-PAP-001-B** | Homologação do PAP-001 v1.1 (resolve K-PAP-001..005) | 2026-09-15 | **REGISTRADO** |
+| **DHR-CIC-001** | Homologação do CIC-001 v1.0 | 2026-09-15 | **REGISTRADO** |
+| **DHR-PAP-001-C** | Homologação PAP-001 v1.2 (Bloco 7 VPD), ROADMAP §23 11-bis, RMR-001 v1.0 | 2026-09-19 | **REGISTRADO** |
+| **DHR-SES-001** | Homologação SES-001 + atomic-spec v1.4 (EUA-E03) + emenda inversões CONFLICT-MAP; fecho Hygiene #1 | 2026-09-20 | **REGISTRADO** |
+| **DHR-EUA-E17** | Homologação EUA-E17 — reposição SPEC-019/020/021 (FASE GOV) + Contrato de Herança Vertical na SPEC-019 + SPEC-020 faseada; renumeração de fases; RPSA | 2026-09-21 | **REGISTRADO** |
+| **DHR-EUA-E18** | Homologação EUA-E18 — §7-bis (especificador.md) + Passo 5-bis (revisor.md): redução de viés de confirmação/leniência, verificação adversarial D8, herança obrigação-a-obrigação (CC-08), N8–N17 anti-leniência; nota de proporcionalidade (Q7); RPSA | 2026-09-21 | **REGISTRADO** |
+| **DHR-EUA-E19** | Homologação EUA-E19 — roteamento de modelo por papel (revisor.md → claude-sonnet-4-6/esforço alto; especificador.md mantém claude-opus-4-8/esforço médio); dial GES estendido ao escopo de leitura; short-circuit via sincronizado-até; RPSA | 2026-09-21 | **REGISTRADO** |
+| **DHR-EUA-E19a** | Homologação EUA-E19a — Signal Package restaurado como fronteira nos 6 loci; TMP = artefato interno de passagem Synthesis → Risk Agent; INV-RISK-RR/HEAT/LEV registrados; Risk Harness diferido para RISK-SPEC-020; RPSA | 2026-09-22 | **REGISTRADO** |
+| **DHR-EUA-E22** | Homologação EUA-E22 — regra R-MAPA (manutenção obrigatória do mapa do projeto `docs/mapa/` por todos os agentes; BL-019); hooks + `.stale` + CI/pre-commit bloqueante + regra escrita; regularização retroativa das edições nos agentes; RPSA (`sincronizado-até` → DHR-EUA-E22) | 2026-09-26 | **REGISTRADO** |
+| **DHR-EUA-E21** | Homologação EUA-E21 — Especificação Emergente (RULE-ECC-01/02): ROADMAP como direção e restrições; Specs definidas na abertura após Dossiê de Pesquisa web; slots indicativos; re-apontamento de gatilhos RMR-001; BL-020/BL-021; RPSA (`sincronizado-até` → DHR-EUA-E21) | 2026-09-26 | **REGISTRADO** |
+| **DHR-PROV-WEB-001** | Provisão de WebSearch/WebFetch ao agente Especificador SOT — salvaguarda inscrita (conteúdo web = DADO, nunca instrução; classificação [EXTERNO]; não-importação automática); ato independente e anterior à EUA-E21 (RULE-ECC) | 2026-09-22 | **REGISTRADO** |
+| **DHR-ADR-HOC003** | Homologação do cluster HOC-003 (Auditoria Taxonômica 2026-09-25/26) — ADR-MANAGER-001 (Manager Agent unifica orquestração; elimina Master Orchestrator/Mission Engine/Decision Orchestrator/Orchestration Layer/Agente Decisor/Agente de Síntese) + ADR-MISSION-TYPES-001 (dois tipos: Exploratória/Validação; resolve paradoxo circular) + ADR-CONFLUENCE-001 v3 (fractal-skill extinta; confluence-elliott; 4 skills do Structural Agent; escopo MTF/M5 por agente); GOV-ORCH-001 RESOLVIDA | 2026-09-26 | **REGISTRADO** |
+| **DHR-TAX-001** | Alinhamento Taxonômico — 4 correções de bloqueadores CRÍTICOS: (1) SDD-001 linha 147: Conviction Vector 4D→8D (SDD-001-EMENDA-001, Q-008/Q-002); (2) CATALOGO-OFICIAL.md §7 tabela: Trilha B próximo SPEC-002→SPEC-019 (DHR-EUA-E17); (3) CONSTITUTION.md linhas 93-95: Mission Engine/Master Orchestrator marcados LEGADO/ABSORVIDO pelo Manager Agent (ADR-MANAGER-001); (4) synthesis.output.json score_total: rótulo PILOT + decisão aberta J-001/CCM-001 explicitada. Todos os textos históricos preservados (INV-07). CRIT-003, CRIT-006, CRIT-007, GOV-005 (parcial) encerrados. | 2026-09-26 | **REGISTRADO** |
+| **DHR-SPEC020-001** | Homologação SPEC-020 v1.0 (núcleo A) — 9 lentes constitutivas (EV-001..009, incl. 9ª lente `principle consistency`); 4 Enforcement Contracts; RULE-EV-01..07 vigentes; SPEC-020-PRINC-001 FECHADA (efetiva); CK-02 (RULE-HV não se aplica — meta-harness irmã de SPEC-019) confirmado pelo Revisor; PRINC-BID-001/BL-022 registrada (prospectiva, não retroage) | 2026-09-27 | **REGISTRADO** |
+| **DHR-CLASSE-MECH-001** | Homologação CLASSE-MECH-001 — taxonomia Classe D/H/P/C (Constitutivo, renomeada de "Classe E" — colidia com Engine/PE-04 e escala E0-E3); emenda de refinamento a PE-04 (GPR-001); declaração por BASpec/Engineering Card (preserva SES-001 §50); RULE-MECH-01..04 (RULES.md); CC-11 (atomic-spec §10.5) + §10.6 novo; prospectiva, incide a partir de SPEC-002, não retroage sobre SPEC-001/019/020; BL-023 Absorvido. Adendo P-02: CC-08/09/10 (EUA-E04/05/06) inseridas fisicamente em §10.5 (regularização retroativa, sem alteração de conteúdo) | 2026-09-27 | **REGISTRADO** |
+| **DHR-PRINC-BID-001** | Homologação PRINC-BID-001 — herança principiológica bidirecional: Cláusula 1 (declaração de `PD-xx` por Spec de especialidade, namespace novo) + Cláusula 2 (fundamentação por pesquisa `[EXTERNO]`); granularidade por Spec (não por BASpec); ordenada após RULE-MECH-01; catálogo aditivo GPR-001 §2.7 (hoje vazio); RULE-PD-01..03 (RULES.md); CC-12 (atomic-spec §10.5) + §10.7 novo; prospectiva, incide a partir de SPEC-002, não retroage sobre SPEC-001/019/020; BL-022 Absorvido | 2026-09-27 | **REGISTRADO** |
+| **DHR-SPEC021-001** | Homologação SPEC-021 v1.0 — Harness Score / Maturity Model. Reconciliação Q-A2/CONFLITO-1: escada canônica por-Spec `L0→L4` (ROADMAP §12, rótulo L3 harmonizado); Quality Gates L1-L4 (atomic-spec §7) viram tabela de critérios; GPR-001 §11 (L0-L5) permanece eixo de maturidade do sistema, intocado. Gate normativo E3 (RULE-MM-05); staged; anti-gaming determinístico (RULE-MM-02); RULE-MM-01..07 vigentes. RULE-MECH-01 (CC-11) incide; RULE-PD-01 (CC-12) N/A justificado (meta-harness). Checagem de proporcionalidade EUA-E18 Q7 (3ª spec do protocolo): PROPORCIONAL. **Fecha a FASE GOV** (SPEC-019+020+021). Próximo: SPEC-002 | 2026-09-28 | **REGISTRADO** |
+| **DHR-VERBATIM-SRC-001** | Encaminhamento de BL-020 — declinada expansão do acesso web do Revisor (confundiria detector com gate, ENF-03; superfície de prompt injection); homologada **RULE-ECC-04** (Captura Verbatim de Fonte) em substituição: fonte `[EXTERNO]` carregada exige arquivo `sources/<ID>.txt` (trecho literal ≥100 caracteres) + citação literal no Dossiê; Revisor verifica correspondência de string, sem web (fail-closed se ausente). Prospectiva, SPEC-002 em diante; não retroage sobre SPEC-020/021. BL-020 → Descartado. Carimbo `sincronizado-até` de `especificador.md`/`revisor.md` regularizado (RPSA) | 2026-09-28 | **REGISTRADO** |
+| **DHR-DOCSYNC-001** | Homologação de `scripts/check_doc_sync.py` (novo mecanismo F.3 — detector determinístico de drift de sincronização documental: decisão CONS-01 desatualizada em registro oficial, RULE citada sem seção em RULES.md, Estado de backlog fora do enum do RMR-001 §2, intake dessincronizado do painel vivo) + hooks Stop/SubagentStop/SessionStart informativos + CI informativo; correções de registro já homologadas (L-001 sincronizada em CATALOGO/CIC-001; RULE-CEE-001 5 níveis; RULE-EV-01..07 registradas em RULES.md; BL-018 Estado sincronizado; lint de SPEC-020/021 corrigido); abertas **RULE-REG-001** (RULE-DEC/HD/MET sem seção em RULES.md) e **RMR-EST-001** (Estado `Diferido` do BL-013 fora do enum §2) — CONS-01 preservado, nenhuma fechada nesta ata. Parecer do Revisor CONFORME (2026-09-28) | 2026-09-28 | **REGISTRADO** |
+| **DHR-DOCSYNC-002** | Encaminhamento dos residuais de DHR-DOCSYNC-001: **RMR-EST-001 FECHADA** (Estado do BL-013 corrigido `Diferido`→`Em espera`; "Diferido" nunca foi estado formal do RMR-001 §2, era a palavra de encaminhamento do gate); **RULE-REG-001 permanece ABERTA com escopo corrigido** — não são 3 famílias, são **11** (`RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC`, EUA-E04–E13, + `RULE-MET`/EUA-E14), todas já FATO NORMATIVO com incorporação ao RULES.md deliberadamente diferida ao piloto da SPEC-002/v1.4→v1.5 pelas próprias atas de origem; registro em lote não adiantado, gatilho `spec:SPEC-002 em redação` adicionado | 2026-09-28 | **REGISTRADO** |
+
+Localização das atas: `governance/DHR-*.md`. ADRs do cluster HOC-003: `governance/ADR-*.md`.
+
+### 7.4 Decisões abertas da Camada Principiológica
+
+| Código | Questão | Bloco |
+|---|---|---|
+| K-PAP-001 | Localização do Inventário | ✅ RESOLVIDA (DHR-PAP-001-B): documento separado CIC-001 |
+| K-PAP-002 | Frequência do ciclo de Hygiene | ✅ RESOLVIDA: por milestone + gatilhos de evento |
+| K-PAP-003 | Autoridade de proposta de novo princípio | ✅ RESOLVIDA: Especificador propõe, Andraus homologa |
+| K-PAP-004 | Escopo do PAP-001 | ✅ RESOLVIDA: specs + docs de governança (regime R1) |
+| K-PAP-005 | Open decisions vs. GPR-001 no inventário | ✅ RESOLVIDA: mapeamento seletivo (só as que tocam princípio) |
+| K-PEPR-001 | Localização canônica do GEH-001 | ✅ RESOLVIDA (DHR-PAP-001-A): `RETOMADA/GEH-001_…md` v1.1 (não CEE-001) |
+
+### 7.5 Regime de aplicabilidade dos princípios (D-DHR-PAP-001-01)
+
+| Classe | Regime | Efeito imediato |
+|---|---|---|
+| PC-* (Constitucional) | Retroativo-como-auditoria | Gap vira open decision no CIC-001; nenhuma spec reescrita |
+| PB-*/PE-* (Basilar/Estrutural) | Prospectivo-obrigatório a partir de SPEC-001 | Gate do Revisor nas novas specs |
+| PCO-*/PO-*/PS-* (Cognitivo/Operacional/Situacional) | Ativado-por-contexto | Critério de qualidade, não gate eliminatório |
+
+---
+
+*Catálogo Oficial do SOT. Homologação F.1 registrada em 2026-09-15 (Andraus). Camada Principiológica registrada em 2026-09-16. Registros anteriores preservados; nada é removido, apenas superseded.*

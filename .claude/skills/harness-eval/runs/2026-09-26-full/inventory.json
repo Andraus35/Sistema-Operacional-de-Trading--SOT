@@ -1,0 +1,89 @@
+{
+  "root": "C:\\Users\\Andr\u00e9\\Desktop\\SOT ENGINER\\SOT-Harness",
+  "generated_at": "2026-09-27T03:47:55.443469+00:00",
+  "t0": [
+    "AGENTS.md"
+  ],
+  "t1": [
+    ".claude/skills/harness-eval/SKILL.md",
+    ".claude/skills/SKILL.md",
+    ".claude/skills/sot-especificador-pap001/SKILL.md"
+  ],
+  "t2": [
+    ".claude/agents/especificador.md",
+    ".claude/agents/revisor.md",
+    ".claude/skills/harness-eval/references/GLOSSARY.md",
+    ".claude/skills/harness-eval/references/PROTOCOL.md",
+    ".claude/skills/harness-eval/references/claims.schema.json",
+    ".claude/skills/harness-eval/references/judge-prompts.md",
+    ".clinerules/sot-map.md",
+    "GLOSSARIO.md",
+    "RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
+    "ROADMAP.md",
+    "atomic-spec.md",
+    "backlog/BL-018-RISK-AGENT-backlog.md",
+    "docs/mapa/MAPA-PROJETO.md",
+    "governance/CATALOGO-OFICIAL.md",
+    "governance/CONFLICT-MAP.md",
+    "governance/CONSTITUTION.md",
+    "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
+    "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
+    "governance/RULES.md"
+  ],
+  "manifests": [
+    "package.json"
+  ],
+  "manifest_commands": [
+    "test",
+    "lint",
+    "test:hooks",
+    "test:py",
+    "map",
+    "map:check",
+    "eval",
+    "score",
+    "score:diff"
+  ],
+  "doc_scope": {
+    "included_optional_docs": [
+      ".claude/agents/especificador.md",
+      ".claude/agents/revisor.md",
+      ".clinerules/sot-map.md",
+      "GLOSSARIO.md",
+      "RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
+      "ROADMAP.md",
+      "atomic-spec.md",
+      "backlog/BL-018-RISK-AGENT-backlog.md",
+      "docs/mapa/MAPA-PROJETO.md",
+      "governance/CATALOGO-OFICIAL.md",
+      "governance/CONFLICT-MAP.md",
+      "governance/CONSTITUTION.md",
+      "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
+      "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
+      "governance/RULES.md"
+    ],
+    "included_doc_types": [
+      ".claude",
+      ".clinerules",
+      "GLOSSARIO.md",
+      "RETOMADA",
+      "ROADMAP.md",
+      "atomic-spec.md",
+      "backlog",
+      "docs/mapa",
+      "governance"
+    ],
+    "excluded_decision_record_count": 0,
+    "optional_type_count": {
+      ".claude": 2,
+      ".clinerules": 1,
+      "GLOSSARIO.md": 1,
+      "RETOMADA": 1,
+      "ROADMAP.md": 1,
+      "atomic-spec.md": 1,
+      "backlog": 1,
+      "docs/mapa": 1,
+      "governance": 6
+    }
+  }
+}

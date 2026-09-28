@@ -1,0 +1,14 @@
+FONTE [EXTERNO]
+ID: SRC-04
+Ferramenta: CacheEval (BudEcosystem)
+URL: https://github.com/BudEcosystem/CacheEval
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado:
+"GPTCache's realistic default has a 68% false-hit rate — and 96% on adversarial pairs"
+
+Trecho literal capturado (2):
+"If the response will contain a token from the prompt, that token is answer-determining and must match exactly."
+
+Contexto da citação: benchmark de CORREÇÃO de cache semântico (não de prompt-prefix caching nativo) — dataset de 2.000 linhas, 10 domínios (QA factual/aberto, matemática, código, conversacional, tool use, criativo, personalizado, multi-turn, multilíngue), taxonomia de equivalência de 5 classes (EQUIV/PARA_SAFE=HIT; RELATED_UNSAFE/ADVERSARIAL/UNRELATED=MISS). Métrica central: False-Hit Rate (FHR). Relevância ao SOT: mede exatamente o risco que o Grupo A (fora de escopo desta abertura) teria com cache semântico de hipóteses/evidências — não se aplica a caching de PREFIXO EXATO (Grupo B), que não usa similaridade semântica.

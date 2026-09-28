@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sot.example.invalid/schemas/memory-record.draft.json",
+  "title": "SOT Claude Mem Record (Draft)",
+  "description": "Non-operational proposal for a governed Claude Mem observation record.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "project_key",
+    "record_type",
+    "observed_at",
+    "source",
+    "summary",
+    "sensitivity",
+    "retention"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "pattern": "^cm-[A-Za-z0-9][A-Za-z0-9._-]{7,127}$"
+    },
+    "project_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "decision",
+        "rule",
+        "specification",
+        "bugfix",
+        "validation",
+        "workflow",
+        "observation"
+      ]
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "human",
+        "agent",
+        "tool",
+        "repository-document"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "repository_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 512
+      },
+      "maxItems": 32,
+      "uniqueItems": true
+    },
+    "sensitivity": {
+      "type": "string",
+      "enum": [
+        "public-project-context",
+        "internal-project-context",
+        "restricted",
+        "blocked"
+      ]
+    },
+    "retention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class",
+        "expires_at"
+      ],
+      "properties": {
+        "class": {
+          "type": "string",
+          "enum": [
+            "short",
+            "standard",
+            "review-required"
+          ]
+        },
+        "expires_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

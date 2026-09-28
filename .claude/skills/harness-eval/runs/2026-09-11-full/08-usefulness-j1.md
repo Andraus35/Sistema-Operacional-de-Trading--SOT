@@ -1,0 +1,17 @@
+# Usefulness Judge1
+> run: 2026-09-11-full
+> model: copilot-default
+
+Counts: KEEP-CORE 6; MIXED 1; SLIM 2; ROUTING-ONLY 0; UNCLEAR 0.
+
+| ID | Overall | Keep-core | Slim | Overlap cites | Evidence | Confidence |
+|---|---|---|---|---|---|---|
+| S001 | KEEP-CORE | `KEEP: architecture responsibilities, methodology hierarchy, constitutional thresholds/guards, spec conventions, and validation commands (BEHAVIOR-CHANGING)` | `CUT: none; directory overview can be shortened only if those contracts remain (BEHAVIOR-CHANGING)` | — | `AGENTS.md` | High |
+| S002 | KEEP-CORE | `KEEP: questionnaire gates, scope rules, track ordering, fan-in/mixed-apply safety rules, and execution instructions (BEHAVIOR-CHANGING)` | `CUT: none; retain the concrete command and safety checklists (BEHAVIOR-CHANGING)` | — | `.claude/skills/harness-eval/SKILL.md` | High |
+| S003 | MIXED | `KEEP: 4E/ETCLOVG governance constraints, lazy activation hierarchy, BASpec and D0-D9 requirements, quality gates, constitutional guards, and validation criteria (BEHAVIOR-CHANGING)` | `CUT: explanatory quotations, extended generic architecture exposition, sprint roadmap, coverage snapshot, and repeated examples after the normative template/checklists remain (THEORY; OVERLAP)` | `.claude/skills/harness-eval/SKILL.md` | `.claude/skills/SKILL.md`; `AGENTS.md` | High |
+| S004 | MIXED | `KEEP: definitions of Track A/B/C, trap gate, Hold, fan-in blocked, section tags, and Mixed/Slim decisions (BEHAVIOR-CHANGING; ROUTING-ONLY)` | `CUT: duplicated prose, token/certainty tables, and explanatory wording once the named definitions and actions remain (OVERLAP; THEORY)` | `.claude/skills/harness-eval/SKILL.md` | `.claude/skills/harness-eval/SKILL.md`; `.claude/skills/harness-eval/references/GLOSSARY.md` | High |
+| S005 | KEEP-CORE | `KEEP: surface tiers/doc scope, Track C counterfactual and evidence rules, fan-in gate, model-sensitivity rules, safety constraints, and operator flow (BEHAVIOR-CHANGING)` | `CUT: none; any repeated glossary wording is secondary to the normative protocol (BEHAVIOR-CHANGING)` | `.claude/skills/harness-eval/SKILL.md` | `.claude/skills/harness-eval/references/PROTOCOL.md` | High |
+| S006 | KEEP-CORE | `KEEP: exact judge prompts, forbidden-file boundaries, required table schema, allowed classes/tags, actionable Mixed requirements, and output paths (BEHAVIOR-CHANGING)` | `CUT: none; preserve the prompt contract and parser-facing header/table details (BEHAVIOR-CHANGING)` | `.claude/skills/harness-eval/SKILL.md` | `.claude/skills/harness-eval/references/judge-prompts.md` | High |
+| S901 | SLIM | `KEEP: no substantive contract; at most a one-line reminder to write readable code (THEORY)` | `CUT: variable-naming, SOLID, layering, comments, and inheritance advice (THEORY)` | — | `.harness-eval/runs/2026-09-11-full/surfaces.md` | High |
+| S902 | SLIM | `KEEP: no harness behavior; remove the surface (THEORY)` | `CUT: all natural-language/productivity claims and “most efficient first step” claim (THEORY)` | — | `.harness-eval/runs/2026-09-11-full/surfaces.md` | High |
+| S903 | KEEP-CORE | `KEEP: public-API-only access, no private storage/repository imports, owner-module data access, and declared cross-module transaction boundary (BEHAVIOR-CHANGING)` | `CUT: none; keep every prohibition and the transaction-boundary exception (BEHAVIOR-CHANGING)` | — | `SOT-Harness/AGENTS.md`; `.claude/skills/SKILL.md` | High |

@@ -1,0 +1,85 @@
+name: SOT Harness CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    name: Validate SOT Harness
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate JSON schemas
+        run: npm test
+
+      - name: Lint spec files
+        run: npm run lint
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Informativo (não bloqueia): integridade de referências cruzadas.
+      # Promover a bloqueante só no nível ERRO após período estável — nunca --strict/--info.
+      - name: Check cross-references (informative)
+        run: python scripts/check_refs.py
+        continue-on-error: true
+
+      # Informativo (não bloqueia): BL-006 — imprime itens ATIVADOS / gatilhos disparados do RMR-001.
+      - name: Backlog triggers (informative)
+        run: python scripts/backlog_triggers.py
+        continue-on-error: true
+
+      # Informativo (não bloqueia): sincronização documental — decisão CONS-01 desatualizada
+      # em registro oficial, RULE citada como normativa sem seção em RULES.md, Estado de
+      # backlog fora do enum do RMR-001 §2, intake dessincronizado do painel vivo.
+      # Promover a bloqueante só no nível ERRO após período estável — nunca --strict.
+      - name: Check documentation sync (informative)
+        run: python scripts/check_doc_sync.py
+        continue-on-error: true
+
+      # BLOQUEANTE: o mapa do projeto (BL-019) deve refletir os documentos. Corrigir com:
+      #   python scripts/build_map.py   (os hooks .claude/settings.json já fazem isso localmente)
+      - name: Project map up to date
+        run: |
+          python scripts/build_map.py --check || {
+            echo "::error title=Mapa do projeto desatualizado::Rode 'python scripts/build_map.py' e inclua docs/mapa/ no commit (hooks do Claude Code fazem isso localmente)."
+            exit 1
+          }
+
+      - name: Check required files present
+        run: |
+          required_files=(
+            "governance/CONSTITUTION.md" "governance/RULES.md" "governance/CONFLICT-MAP.md" "AGENTS.md"
+            "specs/elliott-wave.spec.md" "specs/fibonacci.spec.md"
+            "specs/smc.spec.md" "specs/ict.spec.md" "specs/synthesis.spec.md"
+            "schemas/elliott-wave.input.json" "schemas/elliott-wave.output.json"
+            "schemas/fibonacci.input.json" "schemas/fibonacci.output.json"
+            "schemas/smc.input.json" "schemas/smc.output.json"
+            "schemas/ict.input.json" "schemas/ict.output.json"
+            "schemas/synthesis.input.json" "schemas/synthesis.output.json"
+            "rag/elliott-wave.knowledge.md" "rag/fibonacci.knowledge.md"
+            "rag/smc.knowledge.md" "rag/ict.knowledge.md"
+          )
+          missing=0
+          for f in "${required_files[@]}"; do
+            if [ ! -f "$f" ]; then echo "MISSING: $f"; missing=$((missing+1)); fi
+          done
+          if [ $missing -gt 0 ]; then echo "ERROR: $missing required files missing"; exit 1; fi
+          echo "All required harness files present"
+
+      - name: Run harness score
+        run: npx harness-score
+        continue-on-error: true

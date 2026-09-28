@@ -1,0 +1,5087 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "SOT-Harness",
+    "languages": [
+      "javascript",
+      "json",
+      "markdown",
+      "python",
+      "yaml"
+    ],
+    "frameworks": [],
+    "description": "Understand-Anything structural knowledge graph for the SOT-Harness specification repository.",
+    "analyzedAt": "2026-09-24T14:12:56.532Z",
+    "gitCommitHash": "uncommitted"
+  },
+  "nodes": [
+    {
+      "id": "file:.agents/.skill-lock.json",
+      "type": "file",
+      "name": ".skill-lock.json",
+      "filePath": ".agents/.skill-lock.json",
+      "summary": "config file (json, 16 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/agents/especificador.md",
+      "type": "file",
+      "name": "especificador.md",
+      "filePath": ".claude/agents/especificador.md",
+      "summary": "docs file (markdown, 334 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/agents/revisor.md",
+      "type": "file",
+      "name": "revisor.md",
+      "filePath": ".claude/agents/revisor.md",
+      "summary": "docs file (markdown, 372 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/agents/sot-schema-validator.md",
+      "type": "file",
+      "name": "sot-schema-validator.md",
+      "filePath": ".claude/agents/sot-schema-validator.md",
+      "summary": "docs file (markdown, 38 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/agents/sot-spec-reviewer.md",
+      "type": "file",
+      "name": "sot-spec-reviewer.md",
+      "filePath": ".claude/agents/sot-spec-reviewer.md",
+      "summary": "docs file (markdown, 42 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/commands/update-spec.md",
+      "type": "file",
+      "name": "update-spec.md",
+      "filePath": ".claude/commands/update-spec.md",
+      "summary": "docs file (markdown, 22 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/commands/validate-harness.md",
+      "type": "file",
+      "name": "validate-harness.md",
+      "filePath": ".claude/commands/validate-harness.md",
+      "summary": "docs file (markdown, 19 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/settings.json",
+      "type": "file",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "config file (json, 26 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/SKILL.md",
+      "summary": "docs file (markdown, 488 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/.skill-meta.json",
+      "type": "file",
+      "name": ".skill-meta.json",
+      "filePath": ".claude/skills/harness-eval/.skill-meta.json",
+      "summary": "config file (json, 3 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/harness-eval/SKILL.md",
+      "summary": "docs file (markdown, 268 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/references/GLOSSARY.md",
+      "type": "file",
+      "name": "GLOSSARY.md",
+      "filePath": ".claude/skills/harness-eval/references/GLOSSARY.md",
+      "summary": "docs file (markdown, 57 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/references/PROTOCOL.md",
+      "type": "file",
+      "name": "PROTOCOL.md",
+      "filePath": ".claude/skills/harness-eval/references/PROTOCOL.md",
+      "summary": "docs file (markdown, 180 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/references/claims.schema.json",
+      "type": "file",
+      "name": "claims.schema.json",
+      "filePath": ".claude/skills/harness-eval/references/claims.schema.json",
+      "summary": "config file (json, 20 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/references/judge-prompts.md",
+      "type": "file",
+      "name": "judge-prompts.md",
+      "filePath": ".claude/skills/harness-eval/references/judge-prompts.md",
+      "summary": "docs file (markdown, 177 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.json",
+      "type": "file",
+      "name": "04-correctness.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.json",
+      "summary": "config file (json, 82 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.md",
+      "type": "file",
+      "name": "04-correctness.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.md",
+      "summary": "docs file (markdown, 124 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/claims.jsonl",
+      "type": "file",
+      "name": "claims.jsonl",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/claims.jsonl",
+      "summary": "code file (jsonl, 120 lines)",
+      "tags": [
+        "jsonl",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/claims.md",
+      "type": "file",
+      "name": "claims.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/claims.md",
+      "summary": "docs file (markdown, 148 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/inventory.json",
+      "type": "file",
+      "name": "inventory.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/inventory.json",
+      "summary": "config file (json, 33 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.json",
+      "type": "file",
+      "name": "optional-docs-candidates.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.json",
+      "summary": "config file (json, 11 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.md",
+      "type": "file",
+      "name": "optional-docs-candidates.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.md",
+      "summary": "docs file (markdown, 21 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-09-full/trap-key.json",
+      "type": "file",
+      "name": "trap-key.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-09-full/trap-key.json",
+      "summary": "config file (json, 42 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.json",
+      "type": "file",
+      "name": "04-correctness.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.json",
+      "summary": "config file (json, 82 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.md",
+      "type": "file",
+      "name": "04-correctness.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.md",
+      "summary": "docs file (markdown, 124 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/05-redundancy-j1.md",
+      "type": "file",
+      "name": "05-redundancy-j1.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/05-redundancy-j1.md",
+      "summary": "docs file (markdown, 204 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/06-blind-scores.md",
+      "type": "file",
+      "name": "06-blind-scores.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/06-blind-scores.md",
+      "summary": "docs file (markdown, 204 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/07-agreement.md",
+      "type": "file",
+      "name": "07-agreement.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/07-agreement.md",
+      "summary": "docs file (markdown, 64 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/08-usefulness-j1.md",
+      "type": "file",
+      "name": "08-usefulness-j1.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/08-usefulness-j1.md",
+      "summary": "docs file (markdown, 17 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/09-usefulness-j2.md",
+      "type": "file",
+      "name": "09-usefulness-j2.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/09-usefulness-j2.md",
+      "summary": "docs file (markdown, 23 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/10-usefulness-agreement.md",
+      "type": "file",
+      "name": "10-usefulness-agreement.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/10-usefulness-agreement.md",
+      "summary": "docs file (markdown, 92 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/11-mixed-apply.md",
+      "type": "file",
+      "name": "11-mixed-apply.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/11-mixed-apply.md",
+      "summary": "docs file (markdown, 51 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/claims.jsonl",
+      "type": "file",
+      "name": "claims.jsonl",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/claims.jsonl",
+      "summary": "code file (jsonl, 196 lines)",
+      "tags": [
+        "jsonl",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/claims.md",
+      "type": "file",
+      "name": "claims.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/claims.md",
+      "summary": "docs file (markdown, 224 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/inventory.json",
+      "type": "file",
+      "name": "inventory.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/inventory.json",
+      "summary": "config file (json, 33 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.json",
+      "type": "file",
+      "name": "optional-docs-candidates.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.json",
+      "summary": "config file (json, 11 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.md",
+      "type": "file",
+      "name": "optional-docs-candidates.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.md",
+      "summary": "docs file (markdown, 21 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/slim-fanin.json",
+      "type": "file",
+      "name": "slim-fanin.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/slim-fanin.json",
+      "summary": "config file (json, 4 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/surfaces.json",
+      "type": "file",
+      "name": "surfaces.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/surfaces.json",
+      "summary": "config file (json, 237 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/surfaces.md",
+      "type": "file",
+      "name": "surfaces.md",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/surfaces.md",
+      "summary": "docs file (markdown, 1275 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/trap-key.json",
+      "type": "file",
+      "name": "trap-key.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/trap-key.json",
+      "summary": "config file (json, 42 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/runs/2026-09-11-full/usefulness-trap-key.json",
+      "type": "file",
+      "name": "usefulness-trap-key.json",
+      "filePath": ".claude/skills/harness-eval/runs/2026-09-11-full/usefulness-trap-key.json",
+      "summary": "config file (json, 21 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "type": "file",
+      "name": "doc_scope.py",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "summary": "code file (python, 194 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/doc_scope.py:normalize_rel",
+      "type": "function",
+      "name": "normalize_rel",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "lineRange": [
+        31,
+        36
+      ],
+      "summary": "Function normalize_rel in .claude/skills/harness-eval/scripts/doc_scope.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/doc_scope.py:is_agent_harness_ref",
+      "type": "function",
+      "name": "is_agent_harness_ref",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "lineRange": [
+        39,
+        42
+      ],
+      "summary": "Function is_agent_harness_ref in .claude/skills/harness-eval/scripts/doc_scope.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/doc_scope.py:is_excluded_decision_record",
+      "type": "function",
+      "name": "is_excluded_decision_record",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "lineRange": [
+        45,
+        48
+      ],
+      "summary": "Function is_excluded_decision_record in .claude/skills/harness-eval/scripts/doc_scope.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/doc_scope.py:optional_doc_type",
+      "type": "function",
+      "name": "optional_doc_type",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "lineRange": [
+        51,
+        62
+      ],
+      "summary": "Function optional_doc_type in .claude/skills/harness-eval/scripts/doc_scope.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/doc_scope.py:classify_t2_cite",
+      "type": "function",
+      "name": "classify_t2_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "lineRange": [
+        65,
+        75
+      ],
+      "summary": "Function classify_t2_cite in .claude/skills/harness-eval/scripts/doc_scope.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/doc_scope.py:filter_t2_paths",
+      "type": "function",
+      "name": "filter_t2_paths",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "lineRange": [
+        78,
+        132
+      ],
+      "summary": "Function filter_t2_paths in .claude/skills/harness-eval/scripts/doc_scope.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/doc_scope.py:write_optional_docs_md",
+      "type": "function",
+      "name": "write_optional_docs_md",
+      "filePath": ".claude/skills/harness-eval/scripts/doc_scope.py",
+      "lineRange": [
+        135,
+        194
+      ],
+      "summary": "Function write_optional_docs_md in .claude/skills/harness-eval/scripts/doc_scope.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "type": "file",
+      "name": "inventory_extract.py",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "summary": "code file (python, 897 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:default_out",
+      "type": "function",
+      "name": "default_out",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        84,
+        85
+      ],
+      "summary": "Function default_out in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:rel",
+      "type": "function",
+      "name": "rel",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        88,
+        89
+      ],
+      "summary": "Function rel in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:is_readme",
+      "type": "function",
+      "name": "is_readme",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        92,
+        93
+      ],
+      "summary": "Function is_readme in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:normalize_cite",
+      "type": "function",
+      "name": "normalize_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        96,
+        100
+      ],
+      "summary": "Function normalize_cite in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:glob_files",
+      "type": "function",
+      "name": "glob_files",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        103,
+        104
+      ],
+      "summary": "Function glob_files in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t0",
+      "type": "function",
+      "name": "discover_t0",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        107,
+        117
+      ],
+      "summary": "Function discover_t0 in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t1_skills",
+      "type": "function",
+      "name": "discover_t1_skills",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        120,
+        125
+      ],
+      "summary": "Function discover_t1_skills in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:resolve_skill_by_name",
+      "type": "function",
+      "name": "resolve_skill_by_name",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        128,
+        140
+      ],
+      "summary": "Function resolve_skill_by_name in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_skill_refs",
+      "type": "function",
+      "name": "extract_skill_refs",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        143,
+        165
+      ],
+      "summary": "Function extract_skill_refs in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_from_seeds",
+      "type": "function",
+      "name": "discover_from_seeds",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        168,
+        190
+      ],
+      "summary": "Function discover_from_seeds in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:strip_fenced_code",
+      "type": "function",
+      "name": "strip_fenced_code",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        199,
+        201
+      ],
+      "summary": "Function strip_fenced_code in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_outbound_paths",
+      "type": "function",
+      "name": "extract_outbound_paths",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        204,
+        233
+      ],
+      "summary": "Function extract_outbound_paths in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:resolve_cite",
+      "type": "function",
+      "name": "resolve_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        236,
+        247
+      ],
+      "summary": "Function resolve_cite in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t2_candidates",
+      "type": "function",
+      "name": "discover_t2_candidates",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        250,
+        271
+      ],
+      "summary": "Function discover_t2_candidates in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t2",
+      "type": "function",
+      "name": "discover_t2",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        274,
+        289
+      ],
+      "summary": "Function discover_t2 in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_uniq",
+      "type": "function",
+      "name": "_uniq",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        292,
+        299
+      ],
+      "summary": "Function _uniq in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_makefile_targets",
+      "type": "function",
+      "name": "_parse_makefile_targets",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        302,
+        308
+      ],
+      "summary": "Function _parse_makefile_targets in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_taskfile_tasks",
+      "type": "function",
+      "name": "_parse_taskfile_tasks",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        311,
+        328
+      ],
+      "summary": "Function _parse_taskfile_tasks in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_rakefile_tasks",
+      "type": "function",
+      "name": "_parse_rakefile_tasks",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        331,
+        364
+      ],
+      "summary": "Function _parse_rakefile_tasks in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_gradle_tasks",
+      "type": "function",
+      "name": "_parse_gradle_tasks",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        367,
+        376
+      ],
+      "summary": "Function _parse_gradle_tasks in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_pom_exec_ids",
+      "type": "function",
+      "name": "_parse_pom_exec_ids",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        379,
+        381
+      ],
+      "summary": "Function _parse_pom_exec_ids in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_discover_bin_commands",
+      "type": "function",
+      "name": "_discover_bin_commands",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        384,
+        400
+      ],
+      "summary": "Function _discover_bin_commands in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:load_manifest_commands",
+      "type": "function",
+      "name": "load_manifest_commands",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        403,
+        494
+      ],
+      "summary": "Function load_manifest_commands in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:strip_frontmatter",
+      "type": "function",
+      "name": "strip_frontmatter",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        497,
+        503
+      ],
+      "summary": "Function strip_frontmatter in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:frontmatter_description",
+      "type": "function",
+      "name": "frontmatter_description",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        506,
+        523
+      ],
+      "summary": "Function frontmatter_description in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_is_noise_line",
+      "type": "function",
+      "name": "_is_noise_line",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        526,
+        538
+      ],
+      "summary": "Function _is_noise_line in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:iter_atomic_from_text",
+      "type": "function",
+      "name": "iter_atomic_from_text",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        541,
+        603
+      ],
+      "summary": "Function iter_atomic_from_text in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_claims_from_file",
+      "type": "function",
+      "name": "extract_claims_from_file",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        606,
+        617
+      ],
+      "summary": "Function extract_claims_from_file in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:build_plants",
+      "type": "function",
+      "name": "build_plants",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        629,
+        687
+      ],
+      "summary": "Function build_plants in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:write_claims_md",
+      "type": "function",
+      "name": "write_claims_md",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        690,
+        727
+      ],
+      "summary": "Function write_claims_md in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        730,
+        893
+      ],
+      "summary": "Function main in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:.claude/skills/harness-eval/scripts/inventory_extract.py:Claim",
+      "type": "class",
+      "name": "Claim",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        63,
+        70
+      ],
+      "summary": "Class Claim in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:.claude/skills/harness-eval/scripts/inventory_extract.py:Inventory",
+      "type": "class",
+      "name": "Inventory",
+      "filePath": ".claude/skills/harness-eval/scripts/inventory_extract.py",
+      "lineRange": [
+        74,
+        81
+      ],
+      "summary": "Class Inventory in .claude/skills/harness-eval/scripts/inventory_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/scripts/merge_agreement.py",
+      "type": "file",
+      "name": "merge_agreement.py",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_agreement.py",
+      "summary": "code file (python, 171 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:family",
+      "type": "function",
+      "name": "family",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_agreement.py",
+      "lineRange": [
+        20,
+        25
+      ],
+      "summary": "Function family in .claude/skills/harness-eval/scripts/merge_agreement.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:parse_scores",
+      "type": "function",
+      "name": "parse_scores",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_agreement.py",
+      "lineRange": [
+        28,
+        37
+      ],
+      "summary": "Function parse_scores in .claude/skills/harness-eval/scripts/merge_agreement.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:load_claims",
+      "type": "function",
+      "name": "load_claims",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_agreement.py",
+      "lineRange": [
+        40,
+        46
+      ],
+      "summary": "Function load_claims in .claude/skills/harness-eval/scripts/merge_agreement.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_agreement.py",
+      "lineRange": [
+        49,
+        167
+      ],
+      "summary": "Function main in .claude/skills/harness-eval/scripts/merge_agreement.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "type": "file",
+      "name": "merge_usefulness.py",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "summary": "code file (python, 439 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:family",
+      "type": "function",
+      "name": "family",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "lineRange": [
+        47,
+        59
+      ],
+      "summary": "Function family in .claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:parse_scores",
+      "type": "function",
+      "name": "parse_scores",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "lineRange": [
+        62,
+        94
+      ],
+      "summary": "Function parse_scores in .claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:load_surfaces",
+      "type": "function",
+      "name": "load_surfaces",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "lineRange": [
+        97,
+        99
+      ],
+      "summary": "Function load_surfaces in .claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:cell_or_missing",
+      "type": "function",
+      "name": "cell_or_missing",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "lineRange": [
+        102,
+        110
+      ],
+      "summary": "Function cell_or_missing in .claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:write_mixed_apply",
+      "type": "function",
+      "name": "write_mixed_apply",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "lineRange": [
+        113,
+        181
+      ],
+      "summary": "Function write_mixed_apply in .claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "lineRange": [
+        184,
+        435
+      ],
+      "summary": "Function main in .claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "type": "file",
+      "name": "slim_fanin.py",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "summary": "code file (python, 199 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:normalize_cite",
+      "type": "function",
+      "name": "normalize_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        46,
+        50
+      ],
+      "summary": "Function normalize_cite in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:rel",
+      "type": "function",
+      "name": "rel",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        53,
+        54
+      ],
+      "summary": "Function rel in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:is_readme",
+      "type": "function",
+      "name": "is_readme",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        57,
+        58
+      ],
+      "summary": "Function is_readme in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:glob_files",
+      "type": "function",
+      "name": "glob_files",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        61,
+        62
+      ],
+      "summary": "Function glob_files in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:discover_harness_markdown",
+      "type": "function",
+      "name": "discover_harness_markdown",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        65,
+        82
+      ],
+      "summary": "Function discover_harness_markdown in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:path_aliases",
+      "type": "function",
+      "name": "path_aliases",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        85,
+        107
+      ],
+      "summary": "Function path_aliases in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:_line_span",
+      "type": "function",
+      "name": "_line_span",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        110,
+        115
+      ],
+      "summary": "Function _line_span in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:_mandate_window",
+      "type": "function",
+      "name": "_mandate_window",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        118,
+        132
+      ],
+      "summary": "Function _mandate_window in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:find_mandate_fanin",
+      "type": "function",
+      "name": "find_mandate_fanin",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        135,
+        176
+      ],
+      "summary": "Function find_mandate_fanin in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:infer_root_from_run_dir",
+      "type": "function",
+      "name": "infer_root_from_run_dir",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        179,
+        184
+      ],
+      "summary": "Function infer_root_from_run_dir in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".claude/skills/harness-eval/scripts/slim_fanin.py",
+      "lineRange": [
+        187,
+        195
+      ],
+      "summary": "Function main in .claude/skills/harness-eval/scripts/slim_fanin.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "type": "file",
+      "name": "surfaces_extract.py",
+      "filePath": ".claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "summary": "code file (python, 219 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:default_run",
+      "type": "function",
+      "name": "default_run",
+      "filePath": ".claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "lineRange": [
+        59,
+        60
+      ],
+      "summary": "Function default_run in .claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:section_outline",
+      "type": "function",
+      "name": "section_outline",
+      "filePath": ".claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "lineRange": [
+        63,
+        72
+      ],
+      "summary": "Function section_outline in .claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:truncate",
+      "type": "function",
+      "name": "truncate",
+      "filePath": ".claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "lineRange": [
+        75,
+        78
+      ],
+      "summary": "Function truncate in .claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "lineRange": [
+        81,
+        215
+      ],
+      "summary": "Function main in .claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "type": "file",
+      "name": "track_a_correctness.py",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "summary": "code file (python, 711 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:default_out",
+      "type": "function",
+      "name": "default_out",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        157,
+        158
+      ],
+      "summary": "Function default_out in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:rel",
+      "type": "function",
+      "name": "rel",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        161,
+        162
+      ],
+      "summary": "Function rel in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_readme",
+      "type": "function",
+      "name": "is_readme",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        165,
+        166
+      ],
+      "summary": "Function is_readme in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:normalize_cite",
+      "type": "function",
+      "name": "normalize_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        169,
+        173
+      ],
+      "summary": "Function normalize_cite in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:strip_fenced_code",
+      "type": "function",
+      "name": "strip_fenced_code",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        176,
+        178
+      ],
+      "summary": "Function strip_fenced_code in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:mentioned_skill_names",
+      "type": "function",
+      "name": "mentioned_skill_names",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        211,
+        217
+      ],
+      "summary": "Function mentioned_skill_names in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:has_mandate_near_cite",
+      "type": "function",
+      "name": "has_mandate_near_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        220,
+        229
+      ],
+      "summary": "Function has_mandate_near_cite in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_code_tree_cite",
+      "type": "function",
+      "name": "is_code_tree_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        232,
+        233
+      ],
+      "summary": "Function is_code_tree_cite in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_placeholder_cite",
+      "type": "function",
+      "name": "is_placeholder_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        236,
+        248
+      ],
+      "summary": "Function is_placeholder_cite in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_concrete_checkable_cite",
+      "type": "function",
+      "name": "is_concrete_checkable_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        251,
+        257
+      ],
+      "summary": "Function is_concrete_checkable_cite in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:looks_like_path",
+      "type": "function",
+      "name": "looks_like_path",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        260,
+        269
+      ],
+      "summary": "Function looks_like_path in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:extract_cites",
+      "type": "function",
+      "name": "extract_cites",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        272,
+        284
+      ],
+      "summary": "Function extract_cites in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:extract_surface_cites",
+      "type": "function",
+      "name": "extract_surface_cites",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        287,
+        289
+      ],
+      "summary": "Function extract_surface_cites in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:resolve_cite",
+      "type": "function",
+      "name": "resolve_cite",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        292,
+        337
+      ],
+      "summary": "Function resolve_cite in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:check_file",
+      "type": "function",
+      "name": "check_file",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        340,
+        394
+      ],
+      "summary": "Function check_file in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_runner_kind",
+      "type": "function",
+      "name": "_runner_kind",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        397,
+        423
+      ],
+      "summary": "Function _runner_kind in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_command_ok",
+      "type": "function",
+      "name": "_command_ok",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        426,
+        442
+      ],
+      "summary": "Function _command_ok in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_command_findings",
+      "type": "function",
+      "name": "_command_findings",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        445,
+        493
+      ],
+      "summary": "Function _command_findings in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:render_report",
+      "type": "function",
+      "name": "render_report",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        496,
+        647
+      ],
+      "summary": "Function render_report in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        650,
+        707
+      ],
+      "summary": "Function main in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:.claude/skills/harness-eval/scripts/track_a_correctness.py:Finding",
+      "type": "class",
+      "name": "Finding",
+      "filePath": ".claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "lineRange": [
+        148,
+        154
+      ],
+      "summary": "Class Finding in .claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.claude/skills/sot-especificador-pap001/SKILL.md",
+      "type": "file",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/sot-especificador-pap001/SKILL.md",
+      "summary": "docs file (markdown, 223 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/update-harness.md",
+      "type": "file",
+      "name": "update-harness.md",
+      "filePath": ".claude/skills/update-harness.md",
+      "summary": "docs file (markdown, 28 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.claude/skills/validate-sot-spec.md",
+      "type": "file",
+      "name": "validate-sot-spec.md",
+      "filePath": ".claude/skills/validate-sot-spec.md",
+      "summary": "docs file (markdown, 28 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.clinerules/sot-rag.md",
+      "type": "file",
+      "name": "sot-rag.md",
+      "filePath": ".clinerules/sot-rag.md",
+      "summary": "docs file (markdown, 44 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.clinerules/sot-schemas.md",
+      "type": "file",
+      "name": "sot-schemas.md",
+      "filePath": ".clinerules/sot-schemas.md",
+      "summary": "docs file (markdown, 46 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.clinerules/sot-specs.md",
+      "type": "file",
+      "name": "sot-specs.md",
+      "filePath": ".clinerules/sot-specs.md",
+      "summary": "docs file (markdown, 52 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.github/workflows/ci.yml",
+      "type": "file",
+      "name": "ci.yml",
+      "filePath": ".github/workflows/ci.yml",
+      "summary": "infra file (yaml, 52 lines)",
+      "tags": [
+        "yaml",
+        "infra"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.pre-commit-config.yaml",
+      "type": "file",
+      "name": ".pre-commit-config.yaml",
+      "filePath": ".pre-commit-config.yaml",
+      "summary": "config file (yaml, 22 lines)",
+      "tags": [
+        "yaml",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:AGENTS.md",
+      "type": "file",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "docs file (markdown, 128 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:GLOSSARIO.md",
+      "type": "file",
+      "name": "GLOSSARIO.md",
+      "filePath": "GLOSSARIO.md",
+      "summary": "docs file (markdown, 87 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:README.md",
+      "type": "file",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "docs file (markdown, 49 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
+      "type": "file",
+      "name": "GEH-001_Guia_Agente_Especificacoes_Harness.md",
+      "filePath": "RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
+      "summary": "docs file (markdown, 432 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:ROADMAP.md",
+      "type": "file",
+      "name": "ROADMAP.md",
+      "filePath": "ROADMAP.md",
+      "summary": "docs file (markdown, 406 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:atomic-spec.md",
+      "type": "file",
+      "name": "atomic-spec.md",
+      "filePath": "atomic-spec.md",
+      "summary": "docs file (markdown, 366 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backlog/BL-018-RISK-AGENT-backlog.md",
+      "type": "file",
+      "name": "BL-018-RISK-AGENT-backlog.md",
+      "filePath": "backlog/BL-018-RISK-AGENT-backlog.md",
+      "summary": "docs file (markdown, 103 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backlog/RMR-001_Painel_Backlog.md",
+      "type": "file",
+      "name": "RMR-001_Painel_Backlog.md",
+      "filePath": "backlog/RMR-001_Painel_Backlog.md",
+      "summary": "docs file (markdown, 142 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
+      "type": "file",
+      "name": "CEE-001-cognitive-economy-efficiency-v2.0.md",
+      "filePath": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
+      "summary": "docs file (markdown, 346 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/CEM-001-canonical-evidence-model.md",
+      "type": "file",
+      "name": "CEM-001-canonical-evidence-model.md",
+      "filePath": "canon/CEM-001-canonical-evidence-model.md",
+      "summary": "docs file (markdown, 946 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/CHM-001-canonical-hypothesis-model.md",
+      "type": "file",
+      "name": "CHM-001-canonical-hypothesis-model.md",
+      "filePath": "canon/CHM-001-canonical-hypothesis-model.md",
+      "summary": "docs file (markdown, 944 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/CR-001-compliance-record.md",
+      "type": "file",
+      "name": "CR-001-compliance-record.md",
+      "filePath": "canon/CR-001-compliance-record.md",
+      "summary": "docs file (markdown, 835 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/GMC-001-governance-canonical-models.md",
+      "type": "file",
+      "name": "GMC-001-governance-canonical-models.md",
+      "filePath": "canon/GMC-001-governance-canonical-models.md",
+      "summary": "docs file (markdown, 431 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/PPQ-001-project-process-quality.md",
+      "type": "file",
+      "name": "PPQ-001-project-process-quality.md",
+      "filePath": "canon/PPQ-001-project-process-quality.md",
+      "summary": "docs file (markdown, 387 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/SAS-001-structural-agent-spec.md",
+      "type": "file",
+      "name": "SAS-001-structural-agent-spec.md",
+      "filePath": "canon/SAS-001-structural-agent-spec.md",
+      "summary": "docs file (markdown, 1047 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:canon/SDD-001-spec-driven-development.md",
+      "type": "file",
+      "name": "SDD-001-spec-driven-development.md",
+      "filePath": "canon/SDD-001-spec-driven-development.md",
+      "summary": "docs file (markdown, 292 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/BRIEFING-CLAUDECODE-RISK-AGENT.md",
+      "type": "file",
+      "name": "BRIEFING-CLAUDECODE-RISK-AGENT.md",
+      "filePath": "docs/BRIEFING-CLAUDECODE-RISK-AGENT.md",
+      "summary": "docs file (markdown, 352 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/_legacy/AGENTSV2.md",
+      "type": "file",
+      "name": "AGENTSV2.md",
+      "filePath": "docs/_legacy/AGENTSV2.md",
+      "summary": "docs file (markdown, 144 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/_legacy/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA_rascunho-chat.md",
+      "type": "file",
+      "name": "EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA_rascunho-chat.md",
+      "filePath": "docs/_legacy/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA_rascunho-chat.md",
+      "summary": "docs file (markdown, 247 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/_legacy/EUA-E18_Eliminacao_Vies_Sincronizacao_SpecLean_PROPOSTA_rascunho-chat.md",
+      "type": "file",
+      "name": "EUA-E18_Eliminacao_Vies_Sincronizacao_SpecLean_PROPOSTA_rascunho-chat.md",
+      "filePath": "docs/_legacy/EUA-E18_Eliminacao_Vies_Sincronizacao_SpecLean_PROPOSTA_rascunho-chat.md",
+      "summary": "docs file (markdown, 334 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/_legacy/HARNESS-REPORT.md",
+      "type": "file",
+      "name": "HARNESS-REPORT.md",
+      "filePath": "docs/_legacy/HARNESS-REPORT.md",
+      "summary": "docs file (markdown, 302 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO.md",
+      "type": "file",
+      "name": "PROMPT_HARNESS_ESPECIFICACAO.md",
+      "filePath": "docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO.md",
+      "summary": "docs file (markdown, 458 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO_1.md",
+      "type": "file",
+      "name": "PROMPT_HARNESS_ESPECIFICACAO_1.md",
+      "filePath": "docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO_1.md",
+      "summary": "docs file (markdown, 537 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
+      "type": "file",
+      "name": "AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
+      "filePath": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
+      "summary": "docs file (markdown, 599 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/MANIFESTO-reorganizacao.md",
+      "type": "file",
+      "name": "MANIFESTO-reorganizacao.md",
+      "filePath": "docs/arranque/MANIFESTO-reorganizacao.md",
+      "summary": "docs file (markdown, 88 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
+      "type": "file",
+      "name": "PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
+      "filePath": "docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
+      "summary": "docs file (markdown, 45 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
+      "type": "file",
+      "name": "PARECER-RISK-AGENT-auditoria-semantica.md",
+      "filePath": "docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
+      "summary": "docs file (markdown, 51 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/ata-homologacao-F1.md",
+      "type": "file",
+      "name": "ata-homologacao-F1.md",
+      "filePath": "docs/arranque/ata-homologacao-F1.md",
+      "summary": "docs file (markdown, 52 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/auditoria-saude-harness.md",
+      "type": "file",
+      "name": "auditoria-saude-harness.md",
+      "filePath": "docs/arranque/auditoria-saude-harness.md",
+      "summary": "docs file (markdown, 98 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/parecer-revisor-F1.md",
+      "type": "file",
+      "name": "parecer-revisor-F1.md",
+      "filePath": "docs/arranque/parecer-revisor-F1.md",
+      "summary": "docs file (markdown, 63 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/questionario-resolucao-v1.md",
+      "type": "file",
+      "name": "questionario-resolucao-v1.md",
+      "filePath": "docs/arranque/questionario-resolucao-v1.md",
+      "summary": "docs file (markdown, 492 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/arranque/respostas-questionario-v1.md",
+      "type": "file",
+      "name": "respostas-questionario-v1.md",
+      "filePath": "docs/arranque/respostas-questionario-v1.md",
+      "summary": "docs file (markdown, 329 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/fundamentos/ARIA-plano-mestre.md",
+      "type": "file",
+      "name": "ARIA-plano-mestre.md",
+      "filePath": "docs/fundamentos/ARIA-plano-mestre.md",
+      "summary": "docs file (markdown, 783 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/fundamentos/AUDITORIA-ideias-nao-implementadas.md",
+      "type": "file",
+      "name": "AUDITORIA-ideias-nao-implementadas.md",
+      "filePath": "docs/fundamentos/AUDITORIA-ideias-nao-implementadas.md",
+      "summary": "docs file (markdown, 3323 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/fundamentos/ENGENHARIA-GERAL.md",
+      "type": "file",
+      "name": "ENGENHARIA-GERAL.md",
+      "filePath": "docs/fundamentos/ENGENHARIA-GERAL.md",
+      "summary": "docs file (markdown, 5761 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/fundamentos/KERNEL-V2.md",
+      "type": "file",
+      "name": "KERNEL-V2.md",
+      "filePath": "docs/fundamentos/KERNEL-V2.md",
+      "summary": "docs file (markdown, 2555 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/CATALOGO-OFICIAL.md",
+      "type": "file",
+      "name": "CATALOGO-OFICIAL.md",
+      "filePath": "governance/CATALOGO-OFICIAL.md",
+      "summary": "docs file (markdown, 216 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/CIC-001_Inventario_Conformidade.md",
+      "type": "file",
+      "name": "CIC-001_Inventario_Conformidade.md",
+      "filePath": "governance/CIC-001_Inventario_Conformidade.md",
+      "summary": "docs file (markdown, 286 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/CONFLICT-MAP.md",
+      "type": "file",
+      "name": "CONFLICT-MAP.md",
+      "filePath": "governance/CONFLICT-MAP.md",
+      "summary": "docs file (markdown, 142 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/CONSTITUTION.md",
+      "type": "file",
+      "name": "CONSTITUTION.md",
+      "filePath": "governance/CONSTITUTION.md",
+      "summary": "docs file (markdown, 242 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
+      "type": "file",
+      "name": "DHR-CIC-001_Ata_Homologacao_CIC-001.md",
+      "filePath": "governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
+      "summary": "docs file (markdown, 72 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
+      "type": "file",
+      "name": "DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
+      "filePath": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
+      "summary": "docs file (markdown, 61 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md",
+      "type": "file",
+      "name": "DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md",
+      "filePath": "governance/DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md",
+      "summary": "docs file (markdown, 65 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E06_Ata_Homologacao_Camada_Semantica.md",
+      "type": "file",
+      "name": "DHR-EUA-E06_Ata_Homologacao_Camada_Semantica.md",
+      "filePath": "governance/DHR-EUA-E06_Ata_Homologacao_Camada_Semantica.md",
+      "summary": "docs file (markdown, 67 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E07_Ata_Homologacao_Camada_Ontologica.md",
+      "type": "file",
+      "name": "DHR-EUA-E07_Ata_Homologacao_Camada_Ontologica.md",
+      "filePath": "governance/DHR-EUA-E07_Ata_Homologacao_Camada_Ontologica.md",
+      "summary": "docs file (markdown, 66 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E08_Ata_Homologacao_Camada_Inquerito.md",
+      "type": "file",
+      "name": "DHR-EUA-E08_Ata_Homologacao_Camada_Inquerito.md",
+      "filePath": "governance/DHR-EUA-E08_Ata_Homologacao_Camada_Inquerito.md",
+      "summary": "docs file (markdown, 65 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E09_Ata_Homologacao_Camada_Causal.md",
+      "type": "file",
+      "name": "DHR-EUA-E09_Ata_Homologacao_Camada_Causal.md",
+      "filePath": "governance/DHR-EUA-E09_Ata_Homologacao_Camada_Causal.md",
+      "summary": "docs file (markdown, 65 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E10_Ata_Homologacao_Camada_Contrafactual.md",
+      "type": "file",
+      "name": "DHR-EUA-E10_Ata_Homologacao_Camada_Contrafactual.md",
+      "filePath": "governance/DHR-EUA-E10_Ata_Homologacao_Camada_Contrafactual.md",
+      "summary": "docs file (markdown, 66 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E11_Ata_Homologacao_Camada_Incerteza.md",
+      "type": "file",
+      "name": "DHR-EUA-E11_Ata_Homologacao_Camada_Incerteza.md",
+      "filePath": "governance/DHR-EUA-E11_Ata_Homologacao_Camada_Incerteza.md",
+      "summary": "docs file (markdown, 66 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E12_Ata_Homologacao_Camada_Probabilistica.md",
+      "type": "file",
+      "name": "DHR-EUA-E12_Ata_Homologacao_Camada_Probabilistica.md",
+      "filePath": "governance/DHR-EUA-E12_Ata_Homologacao_Camada_Probabilistica.md",
+      "summary": "docs file (markdown, 64 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
+      "type": "file",
+      "name": "DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
+      "filePath": "governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
+      "summary": "docs file (markdown, 69 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md",
+      "type": "file",
+      "name": "DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md",
+      "filePath": "governance/DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md",
+      "summary": "docs file (markdown, 72 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md",
+      "type": "file",
+      "name": "DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md",
+      "filePath": "governance/DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md",
+      "summary": "docs file (markdown, 66 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+      "type": "file",
+      "name": "DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+      "filePath": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+      "summary": "docs file (markdown, 54 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
+      "type": "file",
+      "name": "DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
+      "filePath": "governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
+      "summary": "docs file (markdown, 93 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
+      "type": "file",
+      "name": "DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
+      "filePath": "governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
+      "summary": "docs file (markdown, 85 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+      "type": "file",
+      "name": "DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+      "filePath": "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+      "summary": "docs file (markdown, 86 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+      "type": "file",
+      "name": "DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+      "filePath": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+      "summary": "docs file (markdown, 50 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
+      "type": "file",
+      "name": "DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
+      "filePath": "governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
+      "summary": "docs file (markdown, 61 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md",
+      "type": "file",
+      "name": "DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md",
+      "filePath": "governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md",
+      "summary": "docs file (markdown, 59 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md",
+      "type": "file",
+      "name": "DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md",
+      "filePath": "governance/DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md",
+      "summary": "docs file (markdown, 72 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md",
+      "type": "file",
+      "name": "DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md",
+      "filePath": "governance/DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md",
+      "summary": "docs file (markdown, 72 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-MC-GOV-001_Ata_Admissao_Backlog_BL-013.md",
+      "type": "file",
+      "name": "DHR-MC-GOV-001_Ata_Admissao_Backlog_BL-013.md",
+      "filePath": "governance/DHR-MC-GOV-001_Ata_Admissao_Backlog_BL-013.md",
+      "summary": "docs file (markdown, 73 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md",
+      "type": "file",
+      "name": "DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md",
+      "filePath": "governance/DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md",
+      "summary": "docs file (markdown, 74 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md",
+      "type": "file",
+      "name": "DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md",
+      "filePath": "governance/DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md",
+      "summary": "docs file (markdown, 71 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md",
+      "type": "file",
+      "name": "DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md",
+      "filePath": "governance/DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md",
+      "summary": "docs file (markdown, 75 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+      "type": "file",
+      "name": "DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+      "filePath": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+      "summary": "docs file (markdown, 76 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+      "type": "file",
+      "name": "DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+      "filePath": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+      "summary": "docs file (markdown, 69 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+      "type": "file",
+      "name": "DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+      "filePath": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+      "summary": "docs file (markdown, 72 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+      "type": "file",
+      "name": "DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+      "filePath": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+      "summary": "docs file (markdown, 146 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+      "type": "file",
+      "name": "DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+      "filePath": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+      "summary": "docs file (markdown, 36 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
+      "type": "file",
+      "name": "DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
+      "filePath": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
+      "summary": "docs file (markdown, 75 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+      "type": "file",
+      "name": "DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+      "filePath": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+      "summary": "docs file (markdown, 57 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E04_Heranca_Delta_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E04_Heranca_Delta_PROPOSTA.md",
+      "filePath": "governance/EUA-E04_Heranca_Delta_PROPOSTA.md",
+      "summary": "docs file (markdown, 181 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E05_Epistemic_Check_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E05_Epistemic_Check_PROPOSTA.md",
+      "filePath": "governance/EUA-E05_Epistemic_Check_PROPOSTA.md",
+      "summary": "docs file (markdown, 164 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E06_Camada_Semantica_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E06_Camada_Semantica_PROPOSTA.md",
+      "filePath": "governance/EUA-E06_Camada_Semantica_PROPOSTA.md",
+      "summary": "docs file (markdown, 162 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E07_Camada_Ontologica_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E07_Camada_Ontologica_PROPOSTA.md",
+      "filePath": "governance/EUA-E07_Camada_Ontologica_PROPOSTA.md",
+      "summary": "docs file (markdown, 119 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E08_Camada_Inquerito_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E08_Camada_Inquerito_PROPOSTA.md",
+      "filePath": "governance/EUA-E08_Camada_Inquerito_PROPOSTA.md",
+      "summary": "docs file (markdown, 116 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E09_Camada_Causal_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E09_Camada_Causal_PROPOSTA.md",
+      "filePath": "governance/EUA-E09_Camada_Causal_PROPOSTA.md",
+      "summary": "docs file (markdown, 117 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E10_Camada_Contrafactual_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E10_Camada_Contrafactual_PROPOSTA.md",
+      "filePath": "governance/EUA-E10_Camada_Contrafactual_PROPOSTA.md",
+      "summary": "docs file (markdown, 121 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E11_Camada_Incerteza_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E11_Camada_Incerteza_PROPOSTA.md",
+      "filePath": "governance/EUA-E11_Camada_Incerteza_PROPOSTA.md",
+      "summary": "docs file (markdown, 119 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E12_Camada_Probabilistica_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E12_Camada_Probabilistica_PROPOSTA.md",
+      "filePath": "governance/EUA-E12_Camada_Probabilistica_PROPOSTA.md",
+      "summary": "docs file (markdown, 118 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E13_Camada_Decisional_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E13_Camada_Decisional_PROPOSTA.md",
+      "filePath": "governance/EUA-E13_Camada_Decisional_PROPOSTA.md",
+      "summary": "docs file (markdown, 163 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E14_Camada_Metacognicao_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E14_Camada_Metacognicao_PROPOSTA.md",
+      "filePath": "governance/EUA-E14_Camada_Metacognicao_PROPOSTA.md",
+      "summary": "docs file (markdown, 172 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
+      "filePath": "governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
+      "summary": "docs file (markdown, 147 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E16_Sincronizacao_Agentes_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E16_Sincronizacao_Agentes_PROPOSTA.md",
+      "filePath": "governance/EUA-E16_Sincronizacao_Agentes_PROPOSTA.md",
+      "summary": "docs file (markdown, 169 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA.md",
+      "filePath": "governance/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA.md",
+      "summary": "docs file (markdown, 307 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E18_Reducao_Vies_Sincronizacao_SpecLean_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E18_Reducao_Vies_Sincronizacao_SpecLean_PROPOSTA.md",
+      "filePath": "governance/EUA-E18_Reducao_Vies_Sincronizacao_SpecLean_PROPOSTA.md",
+      "summary": "docs file (markdown, 460 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E19_Economia_Tokens_Camada_Meta_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E19_Economia_Tokens_Camada_Meta_PROPOSTA.md",
+      "filePath": "governance/EUA-E19_Economia_Tokens_Camada_Meta_PROPOSTA.md",
+      "summary": "docs file (markdown, 155 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
+      "type": "file",
+      "name": "EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
+      "filePath": "governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
+      "summary": "docs file (markdown, 231 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
+      "type": "file",
+      "name": "GPR-001_Guia_Principios_Relacoes_SOT.md",
+      "filePath": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
+      "summary": "docs file (markdown, 718 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
+      "type": "file",
+      "name": "HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
+      "filePath": "governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
+      "summary": "docs file (markdown, 209 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md",
+      "type": "file",
+      "name": "MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md",
+      "filePath": "governance/MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md",
+      "summary": "docs file (markdown, 168 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/MANUAL_UNIVERSAL_ENGENHARIA_DE_PRINCIPIOS_AGENTICOS (1).md",
+      "type": "file",
+      "name": "MANUAL_UNIVERSAL_ENGENHARIA_DE_PRINCIPIOS_AGENTICOS (1).md",
+      "filePath": "governance/MANUAL_UNIVERSAL_ENGENHARIA_DE_PRINCIPIOS_AGENTICOS (1).md",
+      "summary": "docs file (markdown, 3122 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
+      "type": "file",
+      "name": "PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
+      "filePath": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
+      "summary": "docs file (markdown, 321 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
+      "type": "file",
+      "name": "PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
+      "filePath": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
+      "summary": "docs file (markdown, 450 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
+      "type": "file",
+      "name": "PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
+      "filePath": "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
+      "summary": "docs file (markdown, 260 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/RCH-001_Registro_Ciclos_Hygiene.md",
+      "type": "file",
+      "name": "RCH-001_Registro_Ciclos_Hygiene.md",
+      "filePath": "governance/RCH-001_Registro_Ciclos_Hygiene.md",
+      "summary": "docs file (markdown, 115 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/RULES.md",
+      "type": "file",
+      "name": "RULES.md",
+      "filePath": "governance/RULES.md",
+      "summary": "docs file (markdown, 413 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:governance/SES-001_Especializacao_Cognitiva_Trading.md",
+      "type": "file",
+      "name": "SES-001_Especializacao_Cognitiva_Trading.md",
+      "filePath": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
+      "summary": "docs file (markdown, 1458 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:package.json",
+      "type": "file",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "config file (json, 14 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:rag/elliott-wave.knowledge.md",
+      "type": "file",
+      "name": "elliott-wave.knowledge.md",
+      "filePath": "rag/elliott-wave.knowledge.md",
+      "summary": "docs file (markdown, 281 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:rag/fibonacci.knowledge.md",
+      "type": "file",
+      "name": "fibonacci.knowledge.md",
+      "filePath": "rag/fibonacci.knowledge.md",
+      "summary": "docs file (markdown, 240 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:rag/ict.knowledge.md",
+      "type": "file",
+      "name": "ict.knowledge.md",
+      "filePath": "rag/ict.knowledge.md",
+      "summary": "docs file (markdown, 257 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:rag/smc.knowledge.md",
+      "type": "file",
+      "name": "smc.knowledge.md",
+      "filePath": "rag/smc.knowledge.md",
+      "summary": "docs file (markdown, 239 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:rag/synthesis.knowledge.md",
+      "type": "file",
+      "name": "synthesis.knowledge.md",
+      "filePath": "rag/synthesis.knowledge.md",
+      "summary": "docs file (markdown, 280 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/SOT-RISK-MASTER-001_Consolidado.md",
+      "type": "file",
+      "name": "SOT-RISK-MASTER-001_Consolidado.md",
+      "filePath": "reference/SOT-RISK-MASTER-001_Consolidado.md",
+      "summary": "docs file (markdown, 396 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA APRENDIZADO.MD",
+      "type": "file",
+      "name": "CAMADA APRENDIZADO.MD",
+      "filePath": "reference/camadas/CAMADA APRENDIZADO.MD",
+      "summary": "docs file (markdown, 1513 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA CONFRACTUAL.MD",
+      "type": "file",
+      "name": "CAMADA CONFRACTUAL.MD",
+      "filePath": "reference/camadas/CAMADA CONFRACTUAL.MD",
+      "summary": "docs file (markdown, 1688 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA DE CAUSALIDADE.MD",
+      "type": "file",
+      "name": "CAMADA DE CAUSALIDADE.MD",
+      "filePath": "reference/camadas/CAMADA DE CAUSALIDADE.MD",
+      "summary": "docs file (markdown, 1433 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA DE HARNESS.MD",
+      "type": "file",
+      "name": "CAMADA DE HARNESS.MD",
+      "filePath": "reference/camadas/CAMADA DE HARNESS.MD",
+      "summary": "docs file (markdown, 2449 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA DECISIONAL.MD",
+      "type": "file",
+      "name": "CAMADA DECISIONAL.MD",
+      "filePath": "reference/camadas/CAMADA DECISIONAL.MD",
+      "summary": "docs file (markdown, 1673 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA EPISTÊMICA.MD",
+      "type": "file",
+      "name": "CAMADA EPISTÊMICA.MD",
+      "filePath": "reference/camadas/CAMADA EPISTÊMICA.MD",
+      "summary": "docs file (markdown, 2822 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA GOVERNANÇA CONHECIMENTO.MD",
+      "type": "file",
+      "name": "CAMADA GOVERNANÇA CONHECIMENTO.MD",
+      "filePath": "reference/camadas/CAMADA GOVERNANÇA CONHECIMENTO.MD",
+      "summary": "docs file (markdown, 1521 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA INCERTEZA.MD",
+      "type": "file",
+      "name": "CAMADA INCERTEZA.MD",
+      "filePath": "reference/camadas/CAMADA INCERTEZA.MD",
+      "summary": "docs file (markdown, 1444 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA INQUÉRITO.MD",
+      "type": "file",
+      "name": "CAMADA INQUÉRITO.MD",
+      "filePath": "reference/camadas/CAMADA INQUÉRITO.MD",
+      "summary": "docs file (markdown, 2768 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA MEMÓRIA.MD",
+      "type": "file",
+      "name": "CAMADA MEMÓRIA.MD",
+      "filePath": "reference/camadas/CAMADA MEMÓRIA.MD",
+      "summary": "docs file (markdown, 1531 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA METACOGNIÇÃO.MD",
+      "type": "file",
+      "name": "CAMADA METACOGNIÇÃO.MD",
+      "filePath": "reference/camadas/CAMADA METACOGNIÇÃO.MD",
+      "summary": "docs file (markdown, 2060 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA ONTOLÓGICA.MD",
+      "type": "file",
+      "name": "CAMADA ONTOLÓGICA.MD",
+      "filePath": "reference/camadas/CAMADA ONTOLÓGICA.MD",
+      "summary": "docs file (markdown, 1887 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA PRINCIPIOLÓGICA.MD",
+      "type": "file",
+      "name": "CAMADA PRINCIPIOLÓGICA.MD",
+      "filePath": "reference/camadas/CAMADA PRINCIPIOLÓGICA.MD",
+      "summary": "docs file (markdown, 2085 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA PROBABILISTICA.MD",
+      "type": "file",
+      "name": "CAMADA PROBABILISTICA.MD",
+      "filePath": "reference/camadas/CAMADA PROBABILISTICA.MD",
+      "summary": "docs file (markdown, 2497 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADA SEMÂNTICA.MD",
+      "type": "file",
+      "name": "CAMADA SEMÂNTICA.MD",
+      "filePath": "reference/camadas/CAMADA SEMÂNTICA.MD",
+      "summary": "docs file (markdown, 1413 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/CAMADAS SKILLS.MD",
+      "type": "file",
+      "name": "CAMADAS SKILLS.MD",
+      "filePath": "reference/camadas/CAMADAS SKILLS.MD",
+      "summary": "docs file (markdown, 1298 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md",
+      "type": "file",
+      "name": "MC-COG-001_Master_Contract_Camada_Cognicao.md",
+      "filePath": "reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md",
+      "summary": "docs file (markdown, 1077 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md",
+      "type": "file",
+      "name": "MC-RAG-001_Master_Contract_Camada_RAG.md",
+      "filePath": "reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md",
+      "summary": "docs file (markdown, 1117 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:schemas/elliott-wave.input.json",
+      "type": "file",
+      "name": "elliott-wave.input.json",
+      "filePath": "schemas/elliott-wave.input.json",
+      "summary": "config file (json, 120 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/elliott-wave.output.json",
+      "type": "file",
+      "name": "elliott-wave.output.json",
+      "filePath": "schemas/elliott-wave.output.json",
+      "summary": "config file (json, 124 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/fibonacci.input.json",
+      "type": "file",
+      "name": "fibonacci.input.json",
+      "filePath": "schemas/fibonacci.input.json",
+      "summary": "config file (json, 93 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/fibonacci.output.json",
+      "type": "file",
+      "name": "fibonacci.output.json",
+      "filePath": "schemas/fibonacci.output.json",
+      "summary": "config file (json, 144 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/ict.input.json",
+      "type": "file",
+      "name": "ict.input.json",
+      "filePath": "schemas/ict.input.json",
+      "summary": "config file (json, 138 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/ict.output.json",
+      "type": "file",
+      "name": "ict.output.json",
+      "filePath": "schemas/ict.output.json",
+      "summary": "config file (json, 164 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/inference-context-envelope.json",
+      "type": "file",
+      "name": "inference-context-envelope.json",
+      "filePath": "schemas/inference-context-envelope.json",
+      "summary": "config file (json, 79 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/smc.input.json",
+      "type": "file",
+      "name": "smc.input.json",
+      "filePath": "schemas/smc.input.json",
+      "summary": "config file (json, 144 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/smc.output.json",
+      "type": "file",
+      "name": "smc.output.json",
+      "filePath": "schemas/smc.output.json",
+      "summary": "config file (json, 141 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/synthesis.input.json",
+      "type": "file",
+      "name": "synthesis.input.json",
+      "filePath": "schemas/synthesis.input.json",
+      "summary": "config file (json, 123 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:schemas/synthesis.output.json",
+      "type": "file",
+      "name": "synthesis.output.json",
+      "filePath": "schemas/synthesis.output.json",
+      "summary": "config file (json, 171 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/gate-check.js",
+      "type": "file",
+      "name": "gate-check.js",
+      "filePath": "scripts/gate-check.js",
+      "summary": "code file (javascript, 43 lines)",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/post-edit-check.js",
+      "type": "file",
+      "name": "post-edit-check.js",
+      "filePath": "scripts/post-edit-check.js",
+      "summary": "code file (javascript, 21 lines)",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/validate_spec_sot.py",
+      "type": "file",
+      "name": "validate_spec_sot.py",
+      "filePath": "scripts/validate_spec_sot.py",
+      "summary": "code file (python, 388 lines)",
+      "tags": [
+        "python",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check",
+      "type": "function",
+      "name": "check",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        39,
+        44
+      ],
+      "summary": "Function check in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_header",
+      "type": "function",
+      "name": "check_header",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        56,
+        75
+      ],
+      "summary": "Function check_header in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_constitution",
+      "type": "function",
+      "name": "check_constitution",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        82,
+        96
+      ],
+      "summary": "Function check_constitution in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_etiquetagem",
+      "type": "function",
+      "name": "check_etiquetagem",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        103,
+        114
+      ],
+      "summary": "Function check_etiquetagem in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_ears",
+      "type": "function",
+      "name": "check_ears",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        121,
+        135
+      ],
+      "summary": "Function check_ears in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_baspec",
+      "type": "function",
+      "name": "check_baspec",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        142,
+        160
+      ],
+      "summary": "Function check_baspec in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_enforcement",
+      "type": "function",
+      "name": "check_enforcement",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        167,
+        190
+      ],
+      "summary": "Function check_enforcement in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_conviction_nao_fechado",
+      "type": "function",
+      "name": "check_conviction_nao_fechado",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        197,
+        226
+      ],
+      "summary": "Function check_conviction_nao_fechado in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_status_epistemologico",
+      "type": "function",
+      "name": "check_status_epistemologico",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        233,
+        249
+      ],
+      "summary": "Function check_status_epistemologico in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_profundidade_compativel",
+      "type": "function",
+      "name": "check_profundidade_compativel",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        256,
+        274
+      ],
+      "summary": "Function check_profundidade_compativel in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:check_cons01",
+      "type": "function",
+      "name": "check_cons01",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        281,
+        318
+      ],
+      "summary": "Function check_cons01 in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:run_checks",
+      "type": "function",
+      "name": "run_checks",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        325,
+        373
+      ],
+      "summary": "Function run_checks in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/validate_spec_sot.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/validate_spec_sot.py",
+      "lineRange": [
+        376,
+        384
+      ],
+      "summary": "Function main in scripts/validate_spec_sot.py",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:specs/elliott-wave.spec.md",
+      "type": "file",
+      "name": "elliott-wave.spec.md",
+      "filePath": "specs/elliott-wave.spec.md",
+      "summary": "docs file (markdown, 98 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/features/SPEC-001/checks.md",
+      "type": "file",
+      "name": "checks.md",
+      "filePath": "specs/features/SPEC-001/checks.md",
+      "summary": "docs file (markdown, 305 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/features/SPEC-001/plan.md",
+      "type": "file",
+      "name": "plan.md",
+      "filePath": "specs/features/SPEC-001/plan.md",
+      "summary": "docs file (markdown, 854 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/features/SPEC-019/checks.md",
+      "type": "file",
+      "name": "checks.md",
+      "filePath": "specs/features/SPEC-019/checks.md",
+      "summary": "docs file (markdown, 139 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/features/SPEC-019/plan.md",
+      "type": "file",
+      "name": "plan.md",
+      "filePath": "specs/features/SPEC-019/plan.md",
+      "summary": "docs file (markdown, 749 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/fibonacci.spec.md",
+      "type": "file",
+      "name": "fibonacci.spec.md",
+      "filePath": "specs/fibonacci.spec.md",
+      "summary": "docs file (markdown, 82 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/ict.spec.md",
+      "type": "file",
+      "name": "ict.spec.md",
+      "filePath": "specs/ict.spec.md",
+      "summary": "docs file (markdown, 101 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/smc.spec.md",
+      "type": "file",
+      "name": "smc.spec.md",
+      "filePath": "specs/smc.spec.md",
+      "summary": "docs file (markdown, 95 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:specs/synthesis.spec.md",
+      "type": "file",
+      "name": "synthesis.spec.md",
+      "filePath": "specs/synthesis.spec.md",
+      "summary": "docs file (markdown, 112 lines)",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/lint-specs.js",
+      "type": "file",
+      "name": "lint-specs.js",
+      "filePath": "tests/lint-specs.js",
+      "summary": "code file (javascript, 53 lines)",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/validate-schemas.js",
+      "type": "file",
+      "name": "validate-schemas.js",
+      "filePath": "tests/validate-schemas.js",
+      "summary": "code file (javascript, 61 lines)",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/validate-schemas.js:check",
+      "type": "function",
+      "name": "check",
+      "filePath": "tests/validate-schemas.js",
+      "lineRange": [
+        11,
+        18
+      ],
+      "summary": "Function check in tests/validate-schemas.js",
+      "tags": [],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "file",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "config file (json, 17 lines)",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "target": "function:.claude/skills/harness-eval/scripts/doc_scope.py:normalize_rel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "target": "function:.claude/skills/harness-eval/scripts/doc_scope.py:is_agent_harness_ref",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "target": "function:.claude/skills/harness-eval/scripts/doc_scope.py:is_excluded_decision_record",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "target": "function:.claude/skills/harness-eval/scripts/doc_scope.py:optional_doc_type",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "target": "function:.claude/skills/harness-eval/scripts/doc_scope.py:classify_t2_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "target": "function:.claude/skills/harness-eval/scripts/doc_scope.py:filter_t2_paths",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+      "target": "function:.claude/skills/harness-eval/scripts/doc_scope.py:write_optional_docs_md",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:default_out",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:rel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:is_readme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:normalize_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:glob_files",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t0",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t1_skills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:resolve_skill_by_name",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_skill_refs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_from_seeds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:strip_fenced_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_outbound_paths",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:resolve_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t2_candidates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t2",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_uniq",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_makefile_targets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_taskfile_tasks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_rakefile_tasks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_gradle_tasks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_pom_exec_ids",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_discover_bin_commands",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:load_manifest_commands",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:strip_frontmatter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:frontmatter_description",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_is_noise_line",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:iter_atomic_from_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_claims_from_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:build_plants",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:write_claims_md",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/inventory_extract.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "class:.claude/skills/harness-eval/scripts/inventory_extract.py:Claim",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+      "target": "class:.claude/skills/harness-eval/scripts/inventory_extract.py:Inventory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_agreement.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:family",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_agreement.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:parse_scores",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_agreement.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:load_claims",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_agreement.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_agreement.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:family",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:parse_scores",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:load_surfaces",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:cell_or_missing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:write_mixed_apply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:normalize_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:rel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:is_readme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:glob_files",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:discover_harness_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:path_aliases",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:_line_span",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:_mandate_window",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:find_mandate_fanin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:infer_root_from_run_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+      "target": "function:.claude/skills/harness-eval/scripts/slim_fanin.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:default_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:section_outline",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:truncate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/surfaces_extract.py",
+      "target": "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:default_out",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:rel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_readme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:normalize_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:strip_fenced_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:mentioned_skill_names",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:has_mandate_near_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_code_tree_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_placeholder_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_concrete_checkable_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:looks_like_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:extract_cites",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:extract_surface_cites",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:resolve_cite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:check_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_runner_kind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_command_ok",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_command_findings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:render_report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+      "target": "class:.claude/skills/harness-eval/scripts/track_a_correctness.py:Finding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_header",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_constitution",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_etiquetagem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_ears",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_baspec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_enforcement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_conviction_nao_fechado",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_status_epistemologico",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_profundidade_compativel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:check_cons01",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:run_checks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/validate_spec_sot.py",
+      "target": "function:scripts/validate_spec_sot.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/validate-schemas.js",
+      "target": "function:tests/validate-schemas.js:check",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:core",
+      "name": "Core",
+      "description": "Core application files",
+      "nodeIds": [
+        "file:.agents/.skill-lock.json",
+        "file:.claude/agents/especificador.md",
+        "file:.claude/agents/revisor.md",
+        "file:.claude/agents/sot-schema-validator.md",
+        "file:.claude/agents/sot-spec-reviewer.md",
+        "file:.claude/commands/update-spec.md",
+        "file:.claude/commands/validate-harness.md",
+        "file:.claude/settings.json",
+        "file:.claude/skills/SKILL.md",
+        "file:.claude/skills/harness-eval/.skill-meta.json",
+        "file:.claude/skills/harness-eval/SKILL.md",
+        "file:.claude/skills/harness-eval/references/GLOSSARY.md",
+        "file:.claude/skills/harness-eval/references/PROTOCOL.md",
+        "file:.claude/skills/harness-eval/references/claims.schema.json",
+        "file:.claude/skills/harness-eval/references/judge-prompts.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/claims.jsonl",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/claims.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/inventory.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/trap-key.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/05-redundancy-j1.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/06-blind-scores.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/07-agreement.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/08-usefulness-j1.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/09-usefulness-j2.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/10-usefulness-agreement.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/11-mixed-apply.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/claims.jsonl",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/claims.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/inventory.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/slim-fanin.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/surfaces.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/surfaces.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/trap-key.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/usefulness-trap-key.json",
+        "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+        "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+        "file:.claude/skills/harness-eval/scripts/merge_agreement.py",
+        "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+        "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+        "file:.claude/skills/harness-eval/scripts/surfaces_extract.py",
+        "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+        "file:.claude/skills/sot-especificador-pap001/SKILL.md",
+        "file:.claude/skills/update-harness.md",
+        "file:.claude/skills/validate-sot-spec.md",
+        "file:.clinerules/sot-rag.md",
+        "file:.clinerules/sot-schemas.md",
+        "file:.clinerules/sot-specs.md",
+        "file:.github/workflows/ci.yml",
+        "file:.pre-commit-config.yaml",
+        "file:AGENTS.md",
+        "file:GLOSSARIO.md",
+        "file:README.md",
+        "file:RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
+        "file:ROADMAP.md",
+        "file:atomic-spec.md",
+        "file:backlog/BL-018-RISK-AGENT-backlog.md",
+        "file:backlog/RMR-001_Painel_Backlog.md",
+        "file:canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
+        "file:canon/CEM-001-canonical-evidence-model.md",
+        "file:canon/CHM-001-canonical-hypothesis-model.md",
+        "file:canon/CR-001-compliance-record.md",
+        "file:canon/GMC-001-governance-canonical-models.md",
+        "file:canon/PPQ-001-project-process-quality.md",
+        "file:canon/SAS-001-structural-agent-spec.md",
+        "file:canon/SDD-001-spec-driven-development.md",
+        "file:docs/BRIEFING-CLAUDECODE-RISK-AGENT.md",
+        "file:docs/_legacy/AGENTSV2.md",
+        "file:docs/_legacy/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA_rascunho-chat.md",
+        "file:docs/_legacy/EUA-E18_Eliminacao_Vies_Sincronizacao_SpecLean_PROPOSTA_rascunho-chat.md",
+        "file:docs/_legacy/HARNESS-REPORT.md",
+        "file:docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO.md",
+        "file:docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO_1.md",
+        "file:docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
+        "file:docs/arranque/MANIFESTO-reorganizacao.md",
+        "file:docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
+        "file:docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
+        "file:docs/arranque/ata-homologacao-F1.md",
+        "file:docs/arranque/auditoria-saude-harness.md",
+        "file:docs/arranque/parecer-revisor-F1.md",
+        "file:docs/arranque/questionario-resolucao-v1.md",
+        "file:docs/arranque/respostas-questionario-v1.md",
+        "file:docs/fundamentos/ARIA-plano-mestre.md",
+        "file:docs/fundamentos/AUDITORIA-ideias-nao-implementadas.md",
+        "file:docs/fundamentos/ENGENHARIA-GERAL.md",
+        "file:docs/fundamentos/KERNEL-V2.md",
+        "file:governance/CATALOGO-OFICIAL.md",
+        "file:governance/CIC-001_Inventario_Conformidade.md",
+        "file:governance/CONFLICT-MAP.md",
+        "file:governance/CONSTITUTION.md",
+        "file:governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
+        "file:governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
+        "file:governance/DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md",
+        "file:governance/DHR-EUA-E06_Ata_Homologacao_Camada_Semantica.md",
+        "file:governance/DHR-EUA-E07_Ata_Homologacao_Camada_Ontologica.md",
+        "file:governance/DHR-EUA-E08_Ata_Homologacao_Camada_Inquerito.md",
+        "file:governance/DHR-EUA-E09_Ata_Homologacao_Camada_Causal.md",
+        "file:governance/DHR-EUA-E10_Ata_Homologacao_Camada_Contrafactual.md",
+        "file:governance/DHR-EUA-E11_Ata_Homologacao_Camada_Incerteza.md",
+        "file:governance/DHR-EUA-E12_Ata_Homologacao_Camada_Probabilistica.md",
+        "file:governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
+        "file:governance/DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md",
+        "file:governance/DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md",
+        "file:governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+        "file:governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
+        "file:governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
+        "file:governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+        "file:governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+        "file:governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
+        "file:governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md",
+        "file:governance/DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md",
+        "file:governance/DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md",
+        "file:governance/DHR-MC-GOV-001_Ata_Admissao_Backlog_BL-013.md",
+        "file:governance/DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md",
+        "file:governance/DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md",
+        "file:governance/DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md",
+        "file:governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+        "file:governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+        "file:governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+        "file:governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+        "file:governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+        "file:governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
+        "file:governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+        "file:governance/EUA-E04_Heranca_Delta_PROPOSTA.md",
+        "file:governance/EUA-E05_Epistemic_Check_PROPOSTA.md",
+        "file:governance/EUA-E06_Camada_Semantica_PROPOSTA.md",
+        "file:governance/EUA-E07_Camada_Ontologica_PROPOSTA.md",
+        "file:governance/EUA-E08_Camada_Inquerito_PROPOSTA.md",
+        "file:governance/EUA-E09_Camada_Causal_PROPOSTA.md",
+        "file:governance/EUA-E10_Camada_Contrafactual_PROPOSTA.md",
+        "file:governance/EUA-E11_Camada_Incerteza_PROPOSTA.md",
+        "file:governance/EUA-E12_Camada_Probabilistica_PROPOSTA.md",
+        "file:governance/EUA-E13_Camada_Decisional_PROPOSTA.md",
+        "file:governance/EUA-E14_Camada_Metacognicao_PROPOSTA.md",
+        "file:governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
+        "file:governance/EUA-E16_Sincronizacao_Agentes_PROPOSTA.md",
+        "file:governance/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA.md",
+        "file:governance/EUA-E18_Reducao_Vies_Sincronizacao_SpecLean_PROPOSTA.md",
+        "file:governance/EUA-E19_Economia_Tokens_Camada_Meta_PROPOSTA.md",
+        "file:governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
+        "file:governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
+        "file:governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
+        "file:governance/MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md",
+        "file:governance/MANUAL_UNIVERSAL_ENGENHARIA_DE_PRINCIPIOS_AGENTICOS (1).md",
+        "file:governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
+        "file:governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
+        "file:governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
+        "file:governance/RCH-001_Registro_Ciclos_Hygiene.md",
+        "file:governance/RULES.md",
+        "file:governance/SES-001_Especializacao_Cognitiva_Trading.md",
+        "file:package.json",
+        "file:rag/elliott-wave.knowledge.md",
+        "file:rag/fibonacci.knowledge.md",
+        "file:rag/ict.knowledge.md",
+        "file:rag/smc.knowledge.md",
+        "file:rag/synthesis.knowledge.md",
+        "file:reference/SOT-RISK-MASTER-001_Consolidado.md",
+        "file:reference/camadas/CAMADA APRENDIZADO.MD",
+        "file:reference/camadas/CAMADA CONFRACTUAL.MD",
+        "file:reference/camadas/CAMADA DE CAUSALIDADE.MD",
+        "file:reference/camadas/CAMADA DE HARNESS.MD",
+        "file:reference/camadas/CAMADA DECISIONAL.MD",
+        "file:reference/camadas/CAMADA EPISTÊMICA.MD",
+        "file:reference/camadas/CAMADA GOVERNANÇA CONHECIMENTO.MD",
+        "file:reference/camadas/CAMADA INCERTEZA.MD",
+        "file:reference/camadas/CAMADA INQUÉRITO.MD",
+        "file:reference/camadas/CAMADA MEMÓRIA.MD",
+        "file:reference/camadas/CAMADA METACOGNIÇÃO.MD",
+        "file:reference/camadas/CAMADA ONTOLÓGICA.MD",
+        "file:reference/camadas/CAMADA PRINCIPIOLÓGICA.MD",
+        "file:reference/camadas/CAMADA PROBABILISTICA.MD",
+        "file:reference/camadas/CAMADA SEMÂNTICA.MD",
+        "file:reference/camadas/CAMADAS SKILLS.MD",
+        "file:reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md",
+        "file:reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md",
+        "file:scripts/gate-check.js",
+        "file:scripts/post-edit-check.js",
+        "file:scripts/validate_spec_sot.py",
+        "file:tsconfig.json"
+      ]
+    },
+    {
+      "id": "layer:data-layer",
+      "name": "Data Layer",
+      "description": "Data models, database access, and persistence",
+      "nodeIds": [
+        "file:schemas/elliott-wave.input.json",
+        "file:schemas/elliott-wave.output.json",
+        "file:schemas/fibonacci.input.json",
+        "file:schemas/fibonacci.output.json",
+        "file:schemas/ict.input.json",
+        "file:schemas/ict.output.json",
+        "file:schemas/inference-context-envelope.json",
+        "file:schemas/smc.input.json",
+        "file:schemas/smc.output.json",
+        "file:schemas/synthesis.input.json",
+        "file:schemas/synthesis.output.json"
+      ]
+    },
+    {
+      "id": "layer:test-layer",
+      "name": "Test Layer",
+      "description": "Test files and test utilities",
+      "nodeIds": [
+        "file:specs/elliott-wave.spec.md",
+        "file:specs/features/SPEC-001/checks.md",
+        "file:specs/features/SPEC-001/plan.md",
+        "file:specs/features/SPEC-019/checks.md",
+        "file:specs/features/SPEC-019/plan.md",
+        "file:specs/fibonacci.spec.md",
+        "file:specs/ict.spec.md",
+        "file:specs/smc.spec.md",
+        "file:specs/synthesis.spec.md",
+        "file:tests/lint-specs.js",
+        "file:tests/validate-schemas.js"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Core",
+      "description": "Core application files. Key files: .skill-lock.json, especificador.md, revisor.md, sot-schema-validator.md, sot-spec-reviewer.md, update-spec.md, validate-harness.md, settings.json, SKILL.md, .skill-meta.json, SKILL.md, GLOSSARY.md, PROTOCOL.md, claims.schema.json, judge-prompts.md, 04-correctness.json, 04-correctness.md, claims.jsonl, claims.md, inventory.json, optional-docs-candidates.json, optional-docs-candidates.md, trap-key.json, 04-correctness.json, 04-correctness.md, 05-redundancy-j1.md, 06-blind-scores.md, 07-agreement.md, 08-usefulness-j1.md, 09-usefulness-j2.md, 10-usefulness-agreement.md, 11-mixed-apply.md, claims.jsonl, claims.md, inventory.json, optional-docs-candidates.json, optional-docs-candidates.md, slim-fanin.json, surfaces.json, surfaces.md, trap-key.json, usefulness-trap-key.json, doc_scope.py, inventory_extract.py, merge_agreement.py, merge_usefulness.py, slim_fanin.py, surfaces_extract.py, track_a_correctness.py, SKILL.md, update-harness.md, validate-sot-spec.md, sot-rag.md, sot-schemas.md, sot-specs.md, ci.yml, .pre-commit-config.yaml, AGENTS.md, GLOSSARIO.md, README.md, GEH-001_Guia_Agente_Especificacoes_Harness.md, ROADMAP.md, atomic-spec.md, BL-018-RISK-AGENT-backlog.md, RMR-001_Painel_Backlog.md, CEE-001-cognitive-economy-efficiency-v2.0.md, CEM-001-canonical-evidence-model.md, CHM-001-canonical-hypothesis-model.md, CR-001-compliance-record.md, GMC-001-governance-canonical-models.md, PPQ-001-project-process-quality.md, SAS-001-structural-agent-spec.md, SDD-001-spec-driven-development.md, BRIEFING-CLAUDECODE-RISK-AGENT.md, AGENTSV2.md, EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA_rascunho-chat.md, EUA-E18_Eliminacao_Vies_Sincronizacao_SpecLean_PROPOSTA_rascunho-chat.md, HARNESS-REPORT.md, PROMPT_HARNESS_ESPECIFICACAO.md, PROMPT_HARNESS_ESPECIFICACAO_1.md, AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md, MANIFESTO-reorganizacao.md, PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md, PARECER-RISK-AGENT-auditoria-semantica.md, ata-homologacao-F1.md, auditoria-saude-harness.md, parecer-revisor-F1.md, questionario-resolucao-v1.md, respostas-questionario-v1.md, ARIA-plano-mestre.md, AUDITORIA-ideias-nao-implementadas.md, ENGENHARIA-GERAL.md, KERNEL-V2.md, CATALOGO-OFICIAL.md, CIC-001_Inventario_Conformidade.md, CONFLICT-MAP.md, CONSTITUTION.md, DHR-CIC-001_Ata_Homologacao_CIC-001.md, DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md, DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md, DHR-EUA-E06_Ata_Homologacao_Camada_Semantica.md, DHR-EUA-E07_Ata_Homologacao_Camada_Ontologica.md, DHR-EUA-E08_Ata_Homologacao_Camada_Inquerito.md, DHR-EUA-E09_Ata_Homologacao_Camada_Causal.md, DHR-EUA-E10_Ata_Homologacao_Camada_Contrafactual.md, DHR-EUA-E11_Ata_Homologacao_Camada_Incerteza.md, DHR-EUA-E12_Ata_Homologacao_Camada_Probabilistica.md, DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md, DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md, DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md, DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md, DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md, DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md, DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md, DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md, DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md, DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md, DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md, DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md, DHR-MC-GOV-001_Ata_Admissao_Backlog_BL-013.md, DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md, DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md, DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md, DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md, DHR-PAP-001-B_Ata_Homologacao_PAP-001.md, DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md, DHR-PAP-001_Ata_Homologacao_Camada_Principios.md, DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md, DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md, DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md, EUA-E04_Heranca_Delta_PROPOSTA.md, EUA-E05_Epistemic_Check_PROPOSTA.md, EUA-E06_Camada_Semantica_PROPOSTA.md, EUA-E07_Camada_Ontologica_PROPOSTA.md, EUA-E08_Camada_Inquerito_PROPOSTA.md, EUA-E09_Camada_Causal_PROPOSTA.md, EUA-E10_Camada_Contrafactual_PROPOSTA.md, EUA-E11_Camada_Incerteza_PROPOSTA.md, EUA-E12_Camada_Probabilistica_PROPOSTA.md, EUA-E13_Camada_Decisional_PROPOSTA.md, EUA-E14_Camada_Metacognicao_PROPOSTA.md, EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md, EUA-E16_Sincronizacao_Agentes_PROPOSTA.md, EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA.md, EUA-E18_Reducao_Vies_Sincronizacao_SpecLean_PROPOSTA.md, EUA-E19_Economia_Tokens_Camada_Meta_PROPOSTA.md, EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md, GPR-001_Guia_Principios_Relacoes_SOT.md, HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md, MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md, MANUAL_UNIVERSAL_ENGENHARIA_DE_PRINCIPIOS_AGENTICOS (1).md, PAP-001_Protocolo_Adesao_Progressiva_Principios.md, PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md, PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md, RCH-001_Registro_Ciclos_Hygiene.md, RULES.md, SES-001_Especializacao_Cognitiva_Trading.md, package.json, elliott-wave.knowledge.md, fibonacci.knowledge.md, ict.knowledge.md, smc.knowledge.md, synthesis.knowledge.md, SOT-RISK-MASTER-001_Consolidado.md, CAMADA APRENDIZADO.MD, CAMADA CONFRACTUAL.MD, CAMADA DE CAUSALIDADE.MD, CAMADA DE HARNESS.MD, CAMADA DECISIONAL.MD, CAMADA EPISTÊMICA.MD, CAMADA GOVERNANÇA CONHECIMENTO.MD, CAMADA INCERTEZA.MD, CAMADA INQUÉRITO.MD, CAMADA MEMÓRIA.MD, CAMADA METACOGNIÇÃO.MD, CAMADA ONTOLÓGICA.MD, CAMADA PRINCIPIOLÓGICA.MD, CAMADA PROBABILISTICA.MD, CAMADA SEMÂNTICA.MD, CAMADAS SKILLS.MD, MC-COG-001_Master_Contract_Camada_Cognicao.md, MC-RAG-001_Master_Contract_Camada_RAG.md, gate-check.js, post-edit-check.js, validate_spec_sot.py, tsconfig.json.",
+      "nodeIds": [
+        "file:.agents/.skill-lock.json",
+        "file:.claude/agents/especificador.md",
+        "file:.claude/agents/revisor.md",
+        "file:.claude/agents/sot-schema-validator.md",
+        "file:.claude/agents/sot-spec-reviewer.md",
+        "file:.claude/commands/update-spec.md",
+        "file:.claude/commands/validate-harness.md",
+        "file:.claude/settings.json",
+        "file:.claude/skills/SKILL.md",
+        "file:.claude/skills/harness-eval/.skill-meta.json",
+        "file:.claude/skills/harness-eval/SKILL.md",
+        "file:.claude/skills/harness-eval/references/GLOSSARY.md",
+        "file:.claude/skills/harness-eval/references/PROTOCOL.md",
+        "file:.claude/skills/harness-eval/references/claims.schema.json",
+        "file:.claude/skills/harness-eval/references/judge-prompts.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/04-correctness.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/claims.jsonl",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/claims.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/inventory.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/optional-docs-candidates.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-09-full/trap-key.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/04-correctness.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/05-redundancy-j1.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/06-blind-scores.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/07-agreement.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/08-usefulness-j1.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/09-usefulness-j2.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/10-usefulness-agreement.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/11-mixed-apply.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/claims.jsonl",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/claims.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/inventory.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/optional-docs-candidates.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/slim-fanin.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/surfaces.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/surfaces.md",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/trap-key.json",
+        "file:.claude/skills/harness-eval/runs/2026-09-11-full/usefulness-trap-key.json",
+        "file:.claude/skills/harness-eval/scripts/doc_scope.py",
+        "file:.claude/skills/harness-eval/scripts/inventory_extract.py",
+        "file:.claude/skills/harness-eval/scripts/merge_agreement.py",
+        "file:.claude/skills/harness-eval/scripts/merge_usefulness.py",
+        "file:.claude/skills/harness-eval/scripts/slim_fanin.py",
+        "file:.claude/skills/harness-eval/scripts/surfaces_extract.py",
+        "file:.claude/skills/harness-eval/scripts/track_a_correctness.py",
+        "file:.claude/skills/sot-especificador-pap001/SKILL.md",
+        "file:.claude/skills/update-harness.md",
+        "file:.claude/skills/validate-sot-spec.md",
+        "file:.clinerules/sot-rag.md",
+        "file:.clinerules/sot-schemas.md",
+        "file:.clinerules/sot-specs.md",
+        "file:.github/workflows/ci.yml",
+        "file:.pre-commit-config.yaml",
+        "file:AGENTS.md",
+        "file:GLOSSARIO.md",
+        "file:README.md",
+        "file:RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
+        "file:ROADMAP.md",
+        "file:atomic-spec.md",
+        "file:backlog/BL-018-RISK-AGENT-backlog.md",
+        "file:backlog/RMR-001_Painel_Backlog.md",
+        "file:canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
+        "file:canon/CEM-001-canonical-evidence-model.md",
+        "file:canon/CHM-001-canonical-hypothesis-model.md",
+        "file:canon/CR-001-compliance-record.md",
+        "file:canon/GMC-001-governance-canonical-models.md",
+        "file:canon/PPQ-001-project-process-quality.md",
+        "file:canon/SAS-001-structural-agent-spec.md",
+        "file:canon/SDD-001-spec-driven-development.md",
+        "file:docs/BRIEFING-CLAUDECODE-RISK-AGENT.md",
+        "file:docs/_legacy/AGENTSV2.md",
+        "file:docs/_legacy/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA_rascunho-chat.md",
+        "file:docs/_legacy/EUA-E18_Eliminacao_Vies_Sincronizacao_SpecLean_PROPOSTA_rascunho-chat.md",
+        "file:docs/_legacy/HARNESS-REPORT.md",
+        "file:docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO.md",
+        "file:docs/_legacy/PROMPT_HARNESS_ESPECIFICACAO_1.md",
+        "file:docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
+        "file:docs/arranque/MANIFESTO-reorganizacao.md",
+        "file:docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
+        "file:docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
+        "file:docs/arranque/ata-homologacao-F1.md",
+        "file:docs/arranque/auditoria-saude-harness.md",
+        "file:docs/arranque/parecer-revisor-F1.md",
+        "file:docs/arranque/questionario-resolucao-v1.md",
+        "file:docs/arranque/respostas-questionario-v1.md",
+        "file:docs/fundamentos/ARIA-plano-mestre.md",
+        "file:docs/fundamentos/AUDITORIA-ideias-nao-implementadas.md",
+        "file:docs/fundamentos/ENGENHARIA-GERAL.md",
+        "file:docs/fundamentos/KERNEL-V2.md",
+        "file:governance/CATALOGO-OFICIAL.md",
+        "file:governance/CIC-001_Inventario_Conformidade.md",
+        "file:governance/CONFLICT-MAP.md",
+        "file:governance/CONSTITUTION.md",
+        "file:governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
+        "file:governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
+        "file:governance/DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md",
+        "file:governance/DHR-EUA-E06_Ata_Homologacao_Camada_Semantica.md",
+        "file:governance/DHR-EUA-E07_Ata_Homologacao_Camada_Ontologica.md",
+        "file:governance/DHR-EUA-E08_Ata_Homologacao_Camada_Inquerito.md",
+        "file:governance/DHR-EUA-E09_Ata_Homologacao_Camada_Causal.md",
+        "file:governance/DHR-EUA-E10_Ata_Homologacao_Camada_Contrafactual.md",
+        "file:governance/DHR-EUA-E11_Ata_Homologacao_Camada_Incerteza.md",
+        "file:governance/DHR-EUA-E12_Ata_Homologacao_Camada_Probabilistica.md",
+        "file:governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
+        "file:governance/DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md",
+        "file:governance/DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md",
+        "file:governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+        "file:governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
+        "file:governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
+        "file:governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+        "file:governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+        "file:governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
+        "file:governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md",
+        "file:governance/DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md",
+        "file:governance/DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md",
+        "file:governance/DHR-MC-GOV-001_Ata_Admissao_Backlog_BL-013.md",
+        "file:governance/DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md",
+        "file:governance/DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md",
+        "file:governance/DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md",
+        "file:governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+        "file:governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+        "file:governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+        "file:governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+        "file:governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+        "file:governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
+        "file:governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+        "file:governance/EUA-E04_Heranca_Delta_PROPOSTA.md",
+        "file:governance/EUA-E05_Epistemic_Check_PROPOSTA.md",
+        "file:governance/EUA-E06_Camada_Semantica_PROPOSTA.md",
+        "file:governance/EUA-E07_Camada_Ontologica_PROPOSTA.md",
+        "file:governance/EUA-E08_Camada_Inquerito_PROPOSTA.md",
+        "file:governance/EUA-E09_Camada_Causal_PROPOSTA.md",
+        "file:governance/EUA-E10_Camada_Contrafactual_PROPOSTA.md",
+        "file:governance/EUA-E11_Camada_Incerteza_PROPOSTA.md",
+        "file:governance/EUA-E12_Camada_Probabilistica_PROPOSTA.md",
+        "file:governance/EUA-E13_Camada_Decisional_PROPOSTA.md",
+        "file:governance/EUA-E14_Camada_Metacognicao_PROPOSTA.md",
+        "file:governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
+        "file:governance/EUA-E16_Sincronizacao_Agentes_PROPOSTA.md",
+        "file:governance/EUA-E17_Reposicionamento_Specs_Governanca_Harness_PROPOSTA.md",
+        "file:governance/EUA-E18_Reducao_Vies_Sincronizacao_SpecLean_PROPOSTA.md",
+        "file:governance/EUA-E19_Economia_Tokens_Camada_Meta_PROPOSTA.md",
+        "file:governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
+        "file:governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
+        "file:governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
+        "file:governance/MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md",
+        "file:governance/MANUAL_UNIVERSAL_ENGENHARIA_DE_PRINCIPIOS_AGENTICOS (1).md",
+        "file:governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
+        "file:governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
+        "file:governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
+        "file:governance/RCH-001_Registro_Ciclos_Hygiene.md",
+        "file:governance/RULES.md",
+        "file:governance/SES-001_Especializacao_Cognitiva_Trading.md",
+        "file:package.json",
+        "file:rag/elliott-wave.knowledge.md",
+        "file:rag/fibonacci.knowledge.md",
+        "file:rag/ict.knowledge.md",
+        "file:rag/smc.knowledge.md",
+        "file:rag/synthesis.knowledge.md",
+        "file:reference/SOT-RISK-MASTER-001_Consolidado.md",
+        "file:reference/camadas/CAMADA APRENDIZADO.MD",
+        "file:reference/camadas/CAMADA CONFRACTUAL.MD",
+        "file:reference/camadas/CAMADA DE CAUSALIDADE.MD",
+        "file:reference/camadas/CAMADA DE HARNESS.MD",
+        "file:reference/camadas/CAMADA DECISIONAL.MD",
+        "file:reference/camadas/CAMADA EPISTÊMICA.MD",
+        "file:reference/camadas/CAMADA GOVERNANÇA CONHECIMENTO.MD",
+        "file:reference/camadas/CAMADA INCERTEZA.MD",
+        "file:reference/camadas/CAMADA INQUÉRITO.MD",
+        "file:reference/camadas/CAMADA MEMÓRIA.MD",
+        "file:reference/camadas/CAMADA METACOGNIÇÃO.MD",
+        "file:reference/camadas/CAMADA ONTOLÓGICA.MD",
+        "file:reference/camadas/CAMADA PRINCIPIOLÓGICA.MD",
+        "file:reference/camadas/CAMADA PROBABILISTICA.MD",
+        "file:reference/camadas/CAMADA SEMÂNTICA.MD",
+        "file:reference/camadas/CAMADAS SKILLS.MD",
+        "file:reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md",
+        "file:reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md",
+        "file:scripts/gate-check.js",
+        "file:scripts/post-edit-check.js",
+        "file:scripts/validate_spec_sot.py",
+        "file:tsconfig.json"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Data Layer",
+      "description": "Data models, database access, and persistence. Key files: elliott-wave.input.json, elliott-wave.output.json, fibonacci.input.json, fibonacci.output.json, ict.input.json, ict.output.json, inference-context-envelope.json, smc.input.json, smc.output.json, synthesis.input.json, synthesis.output.json.",
+      "nodeIds": [
+        "file:schemas/elliott-wave.input.json",
+        "file:schemas/elliott-wave.output.json",
+        "file:schemas/fibonacci.input.json",
+        "file:schemas/fibonacci.output.json",
+        "file:schemas/ict.input.json",
+        "file:schemas/ict.output.json",
+        "file:schemas/inference-context-envelope.json",
+        "file:schemas/smc.input.json",
+        "file:schemas/smc.output.json",
+        "file:schemas/synthesis.input.json",
+        "file:schemas/synthesis.output.json"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Test Layer",
+      "description": "Test files and test utilities. Key files: elliott-wave.spec.md, checks.md, plan.md, checks.md, plan.md, fibonacci.spec.md, ict.spec.md, smc.spec.md, synthesis.spec.md, lint-specs.js, validate-schemas.js.",
+      "nodeIds": [
+        "file:specs/elliott-wave.spec.md",
+        "file:specs/features/SPEC-001/checks.md",
+        "file:specs/features/SPEC-001/plan.md",
+        "file:specs/features/SPEC-019/checks.md",
+        "file:specs/features/SPEC-019/plan.md",
+        "file:specs/fibonacci.spec.md",
+        "file:specs/ict.spec.md",
+        "file:specs/smc.spec.md",
+        "file:specs/synthesis.spec.md",
+        "file:tests/lint-specs.js",
+        "file:tests/validate-schemas.js"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Supporting Components",
+      "description": "Additional supporting files: normalize_rel, is_agent_harness_ref, is_excluded_decision_record, optional_doc_type, classify_t2_cite, filter_t2_paths, write_optional_docs_md, default_out, rel, is_readme, normalize_cite, glob_files, discover_t0, discover_t1_skills, resolve_skill_by_name, extract_skill_refs, discover_from_seeds, strip_fenced_code, extract_outbound_paths, resolve_cite, discover_t2_candidates, discover_t2, _uniq, _parse_makefile_targets, _parse_taskfile_tasks, _parse_rakefile_tasks, _parse_gradle_tasks, _parse_pom_exec_ids, _discover_bin_commands, load_manifest_commands, strip_frontmatter, frontmatter_description, _is_noise_line, iter_atomic_from_text, extract_claims_from_file, build_plants, write_claims_md, main, Claim, Inventory, family, parse_scores, load_claims, main, family, parse_scores, load_surfaces, cell_or_missing, write_mixed_apply, main, normalize_cite, rel, is_readme, glob_files, discover_harness_markdown, path_aliases, _line_span, _mandate_window, find_mandate_fanin, infer_root_from_run_dir, main, default_run, section_outline, truncate, main, default_out, rel, is_readme, normalize_cite, strip_fenced_code, mentioned_skill_names, has_mandate_near_cite, is_code_tree_cite, is_placeholder_cite, is_concrete_checkable_cite, looks_like_path, extract_cites, extract_surface_cites, resolve_cite, check_file, _runner_kind, _command_ok, _command_findings, render_report, main, Finding, check, check_header, check_constitution, check_etiquetagem, check_ears, check_baspec, check_enforcement, check_conviction_nao_fechado, check_status_epistemologico, check_profundidade_compativel, check_cons01, run_checks, main, check.",
+      "nodeIds": [
+        "function:.claude/skills/harness-eval/scripts/doc_scope.py:normalize_rel",
+        "function:.claude/skills/harness-eval/scripts/doc_scope.py:is_agent_harness_ref",
+        "function:.claude/skills/harness-eval/scripts/doc_scope.py:is_excluded_decision_record",
+        "function:.claude/skills/harness-eval/scripts/doc_scope.py:optional_doc_type",
+        "function:.claude/skills/harness-eval/scripts/doc_scope.py:classify_t2_cite",
+        "function:.claude/skills/harness-eval/scripts/doc_scope.py:filter_t2_paths",
+        "function:.claude/skills/harness-eval/scripts/doc_scope.py:write_optional_docs_md",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:default_out",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:rel",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:is_readme",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:normalize_cite",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:glob_files",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t0",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t1_skills",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:resolve_skill_by_name",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_skill_refs",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_from_seeds",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:strip_fenced_code",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_outbound_paths",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:resolve_cite",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t2_candidates",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:discover_t2",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_uniq",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_makefile_targets",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_taskfile_tasks",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_rakefile_tasks",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_gradle_tasks",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_parse_pom_exec_ids",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_discover_bin_commands",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:load_manifest_commands",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:strip_frontmatter",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:frontmatter_description",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:_is_noise_line",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:iter_atomic_from_text",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:extract_claims_from_file",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:build_plants",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:write_claims_md",
+        "function:.claude/skills/harness-eval/scripts/inventory_extract.py:main",
+        "class:.claude/skills/harness-eval/scripts/inventory_extract.py:Claim",
+        "class:.claude/skills/harness-eval/scripts/inventory_extract.py:Inventory",
+        "function:.claude/skills/harness-eval/scripts/merge_agreement.py:family",
+        "function:.claude/skills/harness-eval/scripts/merge_agreement.py:parse_scores",
+        "function:.claude/skills/harness-eval/scripts/merge_agreement.py:load_claims",
+        "function:.claude/skills/harness-eval/scripts/merge_agreement.py:main",
+        "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:family",
+        "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:parse_scores",
+        "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:load_surfaces",
+        "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:cell_or_missing",
+        "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:write_mixed_apply",
+        "function:.claude/skills/harness-eval/scripts/merge_usefulness.py:main",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:normalize_cite",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:rel",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:is_readme",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:glob_files",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:discover_harness_markdown",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:path_aliases",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:_line_span",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:_mandate_window",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:find_mandate_fanin",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:infer_root_from_run_dir",
+        "function:.claude/skills/harness-eval/scripts/slim_fanin.py:main",
+        "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:default_run",
+        "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:section_outline",
+        "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:truncate",
+        "function:.claude/skills/harness-eval/scripts/surfaces_extract.py:main",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:default_out",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:rel",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_readme",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:normalize_cite",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:strip_fenced_code",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:mentioned_skill_names",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:has_mandate_near_cite",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_code_tree_cite",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_placeholder_cite",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:is_concrete_checkable_cite",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:looks_like_path",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:extract_cites",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:extract_surface_cites",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:resolve_cite",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:check_file",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_runner_kind",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_command_ok",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:_command_findings",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:render_report",
+        "function:.claude/skills/harness-eval/scripts/track_a_correctness.py:main",
+        "class:.claude/skills/harness-eval/scripts/track_a_correctness.py:Finding",
+        "function:scripts/validate_spec_sot.py:check",
+        "function:scripts/validate_spec_sot.py:check_header",
+        "function:scripts/validate_spec_sot.py:check_constitution",
+        "function:scripts/validate_spec_sot.py:check_etiquetagem",
+        "function:scripts/validate_spec_sot.py:check_ears",
+        "function:scripts/validate_spec_sot.py:check_baspec",
+        "function:scripts/validate_spec_sot.py:check_enforcement",
+        "function:scripts/validate_spec_sot.py:check_conviction_nao_fechado",
+        "function:scripts/validate_spec_sot.py:check_status_epistemologico",
+        "function:scripts/validate_spec_sot.py:check_profundidade_compativel",
+        "function:scripts/validate_spec_sot.py:check_cons01",
+        "function:scripts/validate_spec_sot.py:run_checks",
+        "function:scripts/validate_spec_sot.py:main",
+        "function:tests/validate-schemas.js:check"
+      ]
+    }
+  ],
+  "kind": "codebase"
+}

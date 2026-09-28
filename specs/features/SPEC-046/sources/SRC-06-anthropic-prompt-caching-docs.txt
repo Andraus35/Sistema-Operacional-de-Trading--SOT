@@ -1,0 +1,17 @@
+FONTE [EXTERNO]
+ID: SRC-06
+Fonte: Documentação oficial Anthropic — Prompt Caching
+URL: https://platform.claude.com/docs/en/build-with-claude/prompt-caching
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado (mecanismo de escrita/leitura de cache):
+"Cache writes happen only at your breakpoint. Marking a block with cache_control writes exactly one cache entry: a hash of the prefix ending at that block. The system does not write entries for any earlier position. Because the hash is cumulative, covering everything up to and including the breakpoint, changing any block at or before the breakpoint produces a different hash on the next request."
+
+Trecho literal capturado (2 — exact matching):
+"Exact matching: Cache hits require 100% identical prompt segments, including all text and images up to and including the block marked with cache control."
+
+Trecho literal capturado (3 — TTL):
+"By default, the cache has a 5-minute lifetime. The cache is refreshed for no additional cost each time the cached content is used."
+
+Contexto da citação: descreve o mecanismo NATIVO de prompt caching da Anthropic (usado pelos harnesses Claude Code/Claude Agent SDK, incluindo Especificador/Revisor do SOT). PONTO DECISIVO para o Enforcement Contract desta abertura: o cache nativo é keyed por hash cumulativo de prefixo — QUALQUER alteração de conteúdo em um bloco no ou antes do breakpoint produz um hash DIFERENTE, portanto vira automaticamente um cache MISS (recomputação), NUNCA um HIT servindo conteúdo desatualizado daquele bloco específico. O mecanismo nativo, portanto, já é fail-safe quanto a "servir bytes antigos de um bloco que mudou dentro da mesma requisição". O risco real de staleness documental para o Grupo B não está no mecanismo de cache nativo em si, mas no nível acima dele: o agente lê um arquivo-fonte UMA VEZ no início da sessão/turno, mantém esse conteúdo em contexto (não é re-lido a cada turno), e o arquivo-fonte muda no repositório DURANTE a sessão (por outro agente, por Andraus, por hook) — a cópia em contexto do agente fica stale independentemente de cache_control, porque é uma questão de re-leitura, não de invalidação de cache HTTP.

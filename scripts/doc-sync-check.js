@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+// Roda scripts/check_doc_sync.py de forma INFORMATIVA nos hooks Stop/SubagentStop/
+// SessionStart — mesma garantia determinística de "não depende de o agente lembrar"
+// que scripts/map-sync.js já dá ao mapa do projeto (BL-019), aplicada agora à
+// sincronização documental (decisões CONS-01, RULE não registrada, Estado de backlog
+// fora do enum, intake dessincronizado do painel vivo).
+//
+// Nunca bloqueia o agente (exit 0 sempre) — é DETECTOR, não GATE (ENF-03): um achado de
+// drift de sincronização exige julgamento humano (Revisor audita, Andraus decide), o
+// script python nunca promove nem fecha nada. Only prints a nudge; a promoção a
+// bloqueante no CI segue a mesma régua já aplicada a check_refs.py/backlog_triggers.py
+// (nunca --strict aqui; período estável antes de qualquer bloqueio).
+//
+//   node scripts/doc-sync-check.js stop            Stop/SubagentStop
+//   node scripts/doc-sync-check.js session-start    SessionStart
+
+const { spawnSync } = require('child_process');
+const path = require('path');
+
+const ROOT = path.join(__dirname, '..');
+const CHECK = path.join(__dirname, 'check_doc_sync.py');
+
+function pythonUnavailable(r) {
+  if (r.error) return true;
+  if (r.status === 9009) return true;
+  return /Python was not found|Microsoft Store|não foi encontrado/i.test(String(r.stderr) + String(r.stdout));
+}
+
+function run() {
+  for (const [exe, pre] of [['python', []], ['python3', []], ['py', ['-3']]]) {
+    const r = spawnSync(exe, [...pre, CHECK], { cwd: ROOT, encoding: 'utf8' });
+    if (!pythonUnavailable(r)) return r;
+  }
+  return null;
+}
+
+const mode = process.argv[2];
+if (mode !== 'stop' && mode !== 'session-start') {
+  console.error('uso: node scripts/doc-sync-check.js stop|session-start');
+  process.exit(0);
+}
+
+const r = run();
+if (!r) {
+  // Python indisponível: silencioso aqui (map-sync.js já sinaliza isso para o mapa;
+  // não duplicar o aviso). O backstop continua sendo o CI (setup-python garantido).
+  process.exit(0);
+}
+const m = String(r.stdout || '').match(/ERRO=(\d+) WARN=(\d+)/);
+if (m && (Number(m[1]) > 0 || Number(m[2]) > 0)) {
+  console.log(
+    `doc-sync: ${m[1]} achado(s) ERRO, ${m[2]} WARN de sincronização documental — ` +
+    'rode "python scripts/check_doc_sync.py" para ver o detalhe (achado de gate; Revisor/Andraus decidem, não este hook).'
+  );
+}
+process.exit(0);

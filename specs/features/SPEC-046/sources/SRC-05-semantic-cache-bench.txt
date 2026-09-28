@@ -1,0 +1,14 @@
+FONTE [EXTERNO]
+ID: SRC-05
+Ferramenta: semantic-cache-bench (Akshitha024)
+URL: https://github.com/Akshitha024/semantic-cache-bench
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado:
+"The semantic cache wins by 4.7x on cost savings. It catches near-duplicates that exact LRU cannot see"
+
+Trecho literal capturado (2):
+"No Cache (baseline): 0% hit rate, baseline costs; Exact LRU: 15.3% hit rate, matches only identical queries; FAISS Semantic (HNSW): 71.4% hit rate, catches near-duplicates via cosine similarity"
+
+Contexto da citação: benchmark de DESEMPENHO (hit rate, custo, latência, evictions) comparando ausência de cache, LRU exato e cache semântico (FAISS/HNSW), com 12.000 consultas sintéticas, embedding dim=128, capacidade=2.000, limiar de similaridade=0.92. Não mede correção/False-Hit Rate (isso é CacheEval, SRC-04). Relevância ao SOT: "Exact LRU" (correspondência exata, sem similaridade semântica) é o regime mais próximo do caching de prefixo exato do Grupo B — 15.3% de hit rate nesse benchmark sintético não é diretamente transferível ao padrão de releitura de arquivos-fonte do SOT (cargas muito diferentes), mas confirma que correspondência exata é uma estratégia mensurável e mais simples de auditar que a semântica.

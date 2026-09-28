@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/elliott-wave.output",
+  "title": "Elliott Wave Specialist — Output",
+  "description": "Modelo Estrutural Vivo publicado no Blackboard pelo Elliott Wave Specialist",
+  "type": "object",
+  "required": ["symbol", "timestamp_utc", "primary_hypothesis", "alternative_hypotheses", "regime", "elliott_score", "ambiguity_level"],
+  "properties": {
+    "symbol": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "cognitive_state": {
+      "type": "string",
+      "enum": ["OBSERVING", "INVESTIGATING", "HYPOTHESIS_BUILDING", "VALIDATING", "MONITORING", "REVISING", "CONFIRMED", "INVALIDATED"]
+    },
+    "regime": {
+      "type": "string",
+      "enum": ["trending_up", "trending_down", "corrective", "lateral", "compression", "expansion"],
+      "description": "Regime de mercado identificado. Segmentado ANTES da contagem (Doc04 §5-1)."
+    },
+    "primary_hypothesis": {
+      "type": "object",
+      "description": "Contagem principal com maior convicção. Obrigatório.",
+      "required": ["count_label", "degree", "bias", "conviction_pct", "invalidation_level", "projection"],
+      "properties": {
+        "count_label": {
+          "type": "string",
+          "description": "Descrição textual da contagem (ex: 'Impulso (1)-(2)-(3)-(4)-(5) em Primary, no final de onda 3')"
+        },
+        "degree": {
+          "type": "string",
+          "enum": ["Supercycle", "Cycle", "Primary", "Intermediate", "Minor", "Minute", "Minuette"]
+        },
+        "current_wave": {
+          "type": "string",
+          "description": "Onda atual em desenvolvimento (ex: '3', 'C', 'iv')"
+        },
+        "bias": {
+          "type": "string",
+          "enum": ["bullish", "bearish", "neutral", "ambiguous"]
+        },
+        "conviction_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Convicção da hipótese principal em %. Nunca emitir bias com < 50%."
+        },
+        "invalidation_level": {
+          "type": "number",
+          "description": "Nível de preço que invalida esta contagem. Obrigatório."
+        },
+        "invalidation_condition": {
+          "type": "string",
+          "description": "Condição narrativa de invalidação (ex: 'Fechamento abaixo do início da Onda 1')"
+        },
+        "projection": {
+          "type": "object",
+          "properties": {
+            "target_1": { "type": "number" },
+            "target_2": { "type": "number" },
+            "target_extension": { "type": "number" },
+            "method": { "type": "string", "description": "Método de projeção (ex: 'Extensão 161.8% de Onda 1')" }
+          }
+        },
+        "pivots": {
+          "type": "array",
+          "description": "Pivôs identificados por grau (início/fim de cada onda)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "wave": { "type": "string" },
+              "price": { "type": "number" },
+              "timestamp": { "type": "string", "format": "date-time" },
+              "timeframe": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "alternative_hypotheses": {
+      "type": "array",
+      "description": "Hipóteses alternativas concorrentes. Mínimo 1 obrigatório.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["count_label", "bias", "conviction_pct", "activation_condition"],
+        "properties": {
+          "count_label": { "type": "string" },
+          "bias": { "type": "string", "enum": ["bullish", "bearish", "neutral"] },
+          "conviction_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+          "activation_condition": {
+            "type": "string",
+            "description": "Evento que promoveria esta hipótese a principal"
+          }
+        }
+      }
+    },
+    "elliott_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "Score do layer Elliott para o Synthesis Agent. 0=estrutura ambígua/inválida, 1=estrutura básica, 2=estrutura clara, 3=estrutura forte com confluência multi-TF"
+    },
+    "ambiguity_level": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Nível de ambiguidade entre contagens. > 0.3 = ambiguidade explícita declarada."
+    },
+    "ambiguity_resolution_event": {
+      "type": ["string", "null"],
+      "description": "Evento de mercado que resolveria a ambiguidade. Obrigatório quando ambiguity_level > 0.3."
+    },
+    "fractal_coherence": {
+      "type": "object",
+      "description": "Coerência entre timeframes (para FCES)",
+      "properties": {
+        "S1_D1_aligned": { "type": "boolean" },
+        "D1_H4_aligned": { "type": "boolean" },
+        "H4_H1_aligned": { "type": "boolean" },
+        "H1_M5_aligned": { "type": "boolean" }
+      }
+    }
+  }
+}

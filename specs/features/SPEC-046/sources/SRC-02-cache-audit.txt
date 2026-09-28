@@ -1,0 +1,16 @@
+FONTE [EXTERNO]
+ID: SRC-02
+Ferramenta: cache-audit (ussumant)
+URL: https://github.com/ussumant/cache-audit
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado (as 6 regras, conforme README):
+"1. Ordering — Dynamic data (timestamps, git status) in the system prompt
+2. Message injection — Editing the system prompt mid-session instead of using <system-reminder> tags
+3. Tool stability — Adding/removing tools mid-conversation
+4. Model switching — Switching models in the same conversation thread
+5. Dynamic content size — Injecting thousands of tokens of dynamic data per session
+6. Fork safety — Compaction/subagent calls that don't share the parent's prefix"
+
+Contexto da citação: ferramenta é uma Skill do Claude Code especificamente (requer "Claude Code installed"), auditando 6 regras operacionais de prompt caching nativo (ordenação, injeção de mensagem, estabilidade de ferramentas, troca de modelo, tamanho de conteúdo dinâmico, segurança de fork/subagente). Nenhuma das 6 regras trata de invalidação por mudança de conteúdo de arquivo-fonte do repositório — é auditoria de comportamento de sessão, não de staleness documental.

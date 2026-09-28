@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/fibonacci.output",
+  "title": "Fibonacci Validator — Output",
+  "description": "Validação geométrica da hipótese Elliott com confluências e projeções Fibonacci",
+  "type": "object",
+  "required": ["validation_status", "fibonacci_levels", "geometric_conviction_pct"],
+  "properties": {
+    "symbol": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "validation_status": {
+      "type": "string",
+      "enum": ["confirmed", "conflict", "inconclusive"],
+      "description": "confirmed = proporções validam hipótese; conflict = proporções violam hipótese; inconclusive = dados insuficientes"
+    },
+    "wave_validations": {
+      "type": "array",
+      "description": "Resultado de validação por onda identificada",
+      "items": {
+        "type": "object",
+        "required": ["wave", "expected_ratios", "observed_ratio", "status"],
+        "properties": {
+          "wave": {
+            "type": "string",
+            "description": "Onda validada (ex: '2', '3', '4', '5')"
+          },
+          "expected_ratios": {
+            "type": "array",
+            "description": "Ratios Fibonacci esperados para esta onda segundo a teoria",
+            "items": { "type": "number" },
+            "examples": [
+              [0.5, 0.618, 0.764],
+              [1.618, 2.618, 4.236]
+            ]
+          },
+          "observed_ratio": {
+            "type": "number",
+            "description": "Ratio observado no mercado"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["within_tolerance", "outside_tolerance", "not_calculable"],
+            "description": "within_tolerance = confirma; outside_tolerance = conflito"
+          },
+          "tolerance_pct": {
+            "type": "number",
+            "default": 2.0,
+            "description": "Tolerância aceitável em % do nível esperado"
+          },
+          "conflict_detail": {
+            "type": ["string", "null"],
+            "description": "Descrição do conflito se status = outside_tolerance"
+          }
+        }
+      }
+    },
+    "fibonacci_levels": {
+      "type": "array",
+      "description": "Níveis Fibonacci relevantes identificados — alimenta o SMC Specialist",
+      "items": {
+        "type": "object",
+        "required": ["price", "ratio", "type", "timeframe"],
+        "properties": {
+          "price": { "type": "number" },
+          "ratio": { "type": "number", "description": "Ex: 0.618, 1.618" },
+          "type": {
+            "type": "string",
+            "enum": ["retracement", "extension", "projection", "ote"]
+          },
+          "wave_reference": {
+            "type": "string",
+            "description": "Onda de referência do cálculo (ex: 'Onda 1 para Onda 2')"
+          },
+          "timeframe": { "type": "string" },
+          "quality": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Qualidade: high = confluência multi-TF, medium = único TF, low = estimativa"
+          }
+        }
+      }
+    },
+    "confluence_zones": {
+      "type": "array",
+      "description": "Zonas onde múltiplos timeframes convergem no mesmo nível Fibonacci",
+      "items": {
+        "type": "object",
+        "required": ["zone_low", "zone_high", "converging_timeframes"],
+        "properties": {
+          "zone_low": { "type": "number" },
+          "zone_high": { "type": "number" },
+          "converging_timeframes": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Ex: ['D1', 'H4', 'H1']"
+          },
+          "confluence_strength": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 5,
+            "description": "Número de timeframes convergindo"
+          }
+        }
+      }
+    },
+    "ote_zone": {
+      "type": ["object", "null"],
+      "description": "Optimal Trade Entry: 61.8–78.6% do dealing range. Null se dealing range não disponível.",
+      "properties": {
+        "zone_low": { "type": "number" },
+        "zone_high": { "type": "number" },
+        "current_price_in_ote": { "type": "boolean" },
+        "session": { "type": "string" }
+      }
+    },
+    "projected_targets": {
+      "type": "array",
+      "description": "Alvos projetados por extensões e projeções Fibonacci",
+      "items": {
+        "type": "object",
+        "properties": {
+          "price": { "type": "number" },
+          "method": { "type": "string", "description": "Ex: 'Extensão 161.8% Onda 1'" },
+          "wave_target": { "type": "string", "description": "Ex: 'Alvo Onda 3'" }
+        }
+      }
+    },
+    "geometric_conviction_pct": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Score de convicção geométrica para o Synthesis Agent. 100% = proporções perfeitas."
+    },
+    "conflict_detail": {
+      "type": ["string", "null"],
+      "description": "Se validation_status = conflict, descrição detalhada. Elliott Specialist deve ser notificado."
+    },
+    "fits_alternative_better": {
+      "type": "boolean",
+      "default": false,
+      "description": "True quando as proporções se encaixam melhor na hipótese alternativa"
+    }
+  }
+}

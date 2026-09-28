@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sot.oryx-agent/schemas/inference-context-envelope.json",
+  "title": "InferenceContextEnvelope",
+  "description": "Schema de envelope para chamadas LLM — separa stable_prefix (cacheable) do variable_payload (por candle). Fonte: CEE-001 §6.1",
+  "type": "object",
+  "required": ["stable_prefix", "variable_payload", "cache_control"],
+  "additionalProperties": false,
+  "properties": {
+    "stable_prefix": {
+      "type": "object",
+      "description": "Contexto imutável por sessão — apto para prompt caching. Contém constituição, regras e hierarquia metodológica.",
+      "required": ["constitution_version", "agent_id", "rules_hash"],
+      "additionalProperties": true,
+      "properties": {
+        "constitution_version": {
+          "type": "string",
+          "description": "Versão semântica da CONSTITUTION.md",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "agent_id": {
+          "type": "string",
+          "description": "Identificador do agente que está fazendo a chamada",
+          "enum": ["ElliottSpecialist", "FibonacciValidator", "SMCSpecialist", "ICTSpecialist", "SynthesisAgent"]
+        },
+        "rules_hash": {
+          "type": "string",
+          "description": "Hash SHA-256 do RULES.md vigente — muda apenas com nova versão de regras"
+        },
+        "methodology_hierarchy": {
+          "type": "array",
+          "description": "Hierarquia metodológica inviolável",
+          "items": { "type": "string" },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      }
+    },
+    "variable_payload": {
+      "type": "object",
+      "description": "Dados que mudam por chamada (outputs de agentes, estado de mercado, contexto de capital). NUNCA cacheados.",
+      "additionalProperties": true,
+      "properties": {
+        "timestamp_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "active_mission_id": {
+          "type": "string"
+        }
+      }
+    },
+    "cache_control": {
+      "type": "object",
+      "description": "Política de cache para o provider LLM.",
+      "required": ["stable_prefix_ttl_seconds", "variable_payload_cacheable"],
+      "additionalProperties": false,
+      "properties": {
+        "stable_prefix_ttl_seconds": {
+          "type": "integer",
+          "description": "TTL em segundos para cache do stable_prefix. Recomendado: 3600 (1 hora).",
+          "minimum": 0,
+          "maximum": 86400,
+          "default": 3600
+        },
+        "variable_payload_cacheable": {
+          "type": "boolean",
+          "description": "DEVE ser false — variable_payload nunca deve ser cacheado.",
+          "const": false
+        },
+        "cache_type": {
+          "type": "string",
+          "description": "Tipo de cache conforme provider (ex: anthropic_ephemeral)",
+          "enum": ["anthropic_ephemeral", "openai_prefix", "none"]
+        }
+      }
+    }
+  }
+}

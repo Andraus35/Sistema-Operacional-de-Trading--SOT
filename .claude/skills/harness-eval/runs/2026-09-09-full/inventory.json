@@ -1,0 +1,33 @@
+{
+  "root": "C:\\Users\\Andr\u00e9\\Desktop\\ORYX AGENT\\SOT-Harness",
+  "generated_at": "2026-09-09T22:16:22.385538+00:00",
+  "t0": [
+    "AGENTS.md"
+  ],
+  "t1": [
+    ".claude/skills/harness-eval/SKILL.md",
+    ".claude/skills/SKILL.md"
+  ],
+  "t2": [
+    ".claude/skills/harness-eval/references/GLOSSARY.md",
+    ".claude/skills/harness-eval/references/PROTOCOL.md",
+    ".claude/skills/harness-eval/references/claims.schema.json",
+    ".claude/skills/harness-eval/references/judge-prompts.md"
+  ],
+  "manifests": [
+    "package.json"
+  ],
+  "manifest_commands": [
+    "test",
+    "lint",
+    "eval",
+    "score",
+    "score:diff"
+  ],
+  "doc_scope": {
+    "included_optional_docs": [],
+    "included_doc_types": [],
+    "excluded_decision_record_count": 0,
+    "optional_type_count": {}
+  }
+}

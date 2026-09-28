@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/smc.output",
+  "title": "SMC Specialist — Output",
+  "description": "Análise institucional contextualizada para o Synthesis Agent e o ICT Specialist",
+  "type": "object",
+  "required": ["smc_score", "elliott_alignment", "institutional_narrative"],
+  "properties": {
+    "symbol": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "active_order_block": {
+      "type": ["object", "null"],
+      "description": "Order Block ativo identificado. Null se nenhum OB válido (não-mitigado) encontrado.",
+      "required": ["type", "zone_high", "zone_low", "origin_wave", "status", "quality"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["bullish", "bearish"]
+        },
+        "zone_high": { "type": "number" },
+        "zone_low": { "type": "number" },
+        "origin_wave": {
+          "type": "string",
+          "description": "Onda Elliott em que o OB foi criado. Contextualiza relevância."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "mitigated", "partially_mitigated"],
+          "description": "active = zona válida; mitigated = descartado do layer SMC"
+        },
+        "quality": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "high = origem em onda impulsiva chave; low = origem em correção"
+        },
+        "has_fvg": { "type": "boolean" },
+        "fvg_zone": {
+          "type": ["object", "null"],
+          "properties": {
+            "high": { "type": "number" },
+            "low": { "type": "number" }
+          }
+        }
+      }
+    },
+    "liquidity_sweep": {
+      "type": "object",
+      "properties": {
+        "occurred": { "type": "boolean" },
+        "type": {
+          "type": "string",
+          "enum": ["external_liquidity", "internal_liquidity", "equal_highs", "equal_lows", "none"]
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["buy_side", "sell_side", "none"]
+        },
+        "returned_to_range": {
+          "type": "boolean",
+          "description": "False = sweep inválido para o layer SMC"
+        },
+        "validity": {
+          "type": "string",
+          "enum": ["valid", "invalid_no_return", "pending"],
+          "description": "invalid_no_return = sweep sem retorno ao range"
+        }
+      }
+    },
+    "choch": {
+      "type": "object",
+      "properties": {
+        "confirmed": { "type": "boolean" },
+        "direction": { "type": "string", "enum": ["bullish", "bearish", "none"] },
+        "timeframe": { "type": ["string", "null"] },
+        "timestamp": { "type": ["string", "null"], "format": "date-time" },
+        "elliott_context": {
+          "type": "string",
+          "description": "Em qual onda Elliott ocorreu. Ex: 'Após quinta falhada' = alta relevância; 'em lateralização' = baixa relevância"
+        },
+        "relevance": {
+          "type": "string",
+          "enum": ["very_high", "high", "medium", "low"],
+          "description": "Relevância contextualizada pelo Elliott. Não pontuar isoladamente."
+        }
+      }
+    },
+    "bos": {
+      "type": "object",
+      "properties": {
+        "confirmed": { "type": "boolean" },
+        "direction": { "type": "string", "enum": ["bullish", "bearish", "none"] },
+        "preceded_by_choch": { "type": "boolean" },
+        "elliott_context": {
+          "type": "string",
+          "description": "Em qual onda Elliott ocorreu. Onda 3 = alta relevância; Onda B = baixa relevância"
+        },
+        "relevance": {
+          "type": "string",
+          "enum": ["very_high", "high", "medium", "low"]
+        }
+      }
+    },
+    "smc_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "Score do layer SMC para o Synthesis Agent. 0=sem evidência institucional; 1=evidência fraca; 2=evidência moderada alinhada ao Elliott; 3=evidência forte + alinhada ao Elliott"
+    },
+    "elliott_alignment": {
+      "type": "string",
+      "enum": ["confirms", "weakens", "neutral", "contradicts"],
+      "description": "Como as evidências SMC se relacionam com a hipótese Elliott. contradicts = conflito a reportar."
+    },
+    "directional_conflict": {
+      "type": "boolean",
+      "description": "True = SMC aponta direção oposta ao Elliott. Synthesis Agent deve emitir NEUTRO."
+    },
+    "institutional_narrative": {
+      "type": "string",
+      "description": "Sequência de eventos SMC interpretada em contexto Elliott. Narrativa institucional completa."
+    },
+    "dual_narrative": {
+      "type": "object",
+      "description": "Dupla Narrativa: Estrutural (Elliott) × Institucional (SMC) para o Synthesis Agent",
+      "properties": {
+        "structural_narrative": {
+          "type": "string",
+          "description": "Resumo da narrativa estrutural Elliott"
+        },
+        "institutional_narrative": {
+          "type": "string",
+          "description": "Resumo da narrativa institucional SMC"
+        },
+        "convergence": {
+          "type": "string",
+          "enum": ["aligned", "neutral", "divergent"]
+        }
+      }
+    }
+  }
+}

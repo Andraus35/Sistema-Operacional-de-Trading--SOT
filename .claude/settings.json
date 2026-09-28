@@ -1,0 +1,79 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/gate-check.js"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/post-edit-check.js"
+          },
+          {
+            "type": "command",
+            "command": "node scripts/map-sync.js post-edit",
+            "timeout": 120
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/map-sync.js stop",
+            "timeout": 120
+          },
+          {
+            "type": "command",
+            "command": "node scripts/doc-sync-check.js stop",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/map-sync.js stop",
+            "timeout": 120
+          },
+          {
+            "type": "command",
+            "command": "node scripts/doc-sync-check.js stop",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/map-sync.js session-start",
+            "timeout": 120
+          },
+          {
+            "type": "command",
+            "command": "node scripts/doc-sync-check.js session-start",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

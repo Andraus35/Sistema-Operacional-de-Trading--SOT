@@ -1,0 +1,17 @@
+FONTE [EXTERNO]
+ID: SRC-07
+Fonte: "Cache Invalidation for AI: Why Every Cache Layer Gets Harder When the Answer Can Change" — TianPan.co
+URL: https://tianpan.co/blog/2026-04-20-cache-invalidation-ai-semantic-rag
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado (chave de cache por hash de conteúdo):
+"Include a hash of the source document's content in the retrieval cache key. When a document changes, its fingerprint changes, and all cache entries that reference it naturally miss"
+
+Trecho literal capturado (2 — rastreamento de dependência/invalidação por evento):
+"When a document changes, emit an event that invalidates only the cached queries that retrieved that specific document. This requires tracking, per cached query, which documents contributed to the response."
+
+Trecho literal capturado (3 — falha real por ausência desse padrão):
+"the retrieval cache was keyed on query embeddings, not document IDs, so there was no clean invalidation path"
+
+Contexto da citação: artigo de prática de engenharia (não é benchmark nem ferramenta) sobre invalidação de cache em sistemas com "a resposta pode mudar" (RAG, bases documentais mutáveis). Padrão central citado: chave de cache = hash do conteúdo do documento-fonte (não apenas ID/timestamp), com rastreamento de dependência documento→resposta-cacheada para invalidação por evento de escrita, em vez de TTL cego. Este é o padrão de maior aderência direta ao Grupo B do SOT: os "documentos-fonte" são ROADMAP.md, atomic-spec.md, governance/RULES.md, governance/CATALOGO-OFICIAL.md, backlog/RMR-001_Painel_Backlog.md — cada um pode ser versionado por hash de conteúdo (ex.: SHA-256) + evento de escrita (mtime/git), e a precondição de HIT do EC desta abertura adota esse padrão adaptado (ver PROPOSTA-ABERTURA.md, EC-SPEC046-01).

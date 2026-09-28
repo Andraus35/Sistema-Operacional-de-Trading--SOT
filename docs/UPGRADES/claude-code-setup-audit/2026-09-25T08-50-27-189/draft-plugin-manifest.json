@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "draft": true,
+  "operational": false,
+  "name": "claude-mem-sot-adapter",
+  "upstream": "https://github.com/thedotmack/claude-mem",
+  "purpose": "Proposta de integração governada de memória persistente para sessões Claude Code do SOT.",
+  "installation": {
+    "mode": "user-environment-only",
+    "repository_changes_required": false,
+    "activation": "explicit-human-approval"
+  },
+  "permissions": {
+    "read_memory": true,
+    "write_memory": true,
+    "delete_memory": false,
+    "export_memory": false,
+    "execute_orders": false
+  },
+  "constraints": [
+    "Memory is supplemental context, never normative authority.",
+    "Memory must not override AGENTS.md, governance, canon, ROADMAP.md, or atomic-spec.md.",
+    "Raw secrets, credentials, private keys, and tokens must not be persisted.",
+    "No memory runtime data may be committed to the repository.",
+    "Deletion and retention changes require explicit human approval."
+  ],
+  "review_required_before_activation": [
+    "privacy and retention policy approved",
+    "secret filtering validated",
+    "hook coexistence with existing .claude/settings.json verified",
+    "manual smoke test completed in a disposable Claude Code profile"
+  ]
+}

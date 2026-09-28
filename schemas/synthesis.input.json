@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/synthesis.input",
+  "title": "Synthesis Agent — Input",
+  "description": "Todos os outputs dos especialistas + contexto para árbitro final",
+  "type": "object",
+  "required": ["elliott_output", "fibonacci_output", "smc_output", "ict_output"],
+  "properties": {
+    "symbol": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "elliott_output": {
+      "type": "object",
+      "description": "Output completo do Elliott Wave Specialist",
+      "required": ["primary_hypothesis", "elliott_score", "regime", "ambiguity_level"],
+      "properties": {
+        "primary_hypothesis": {
+          "type": "object",
+          "properties": {
+            "count_label": { "type": "string" },
+            "degree": { "type": "string" },
+            "bias": { "type": "string", "enum": ["bullish", "bearish", "neutral", "ambiguous"] },
+            "conviction_pct": { "type": "number" },
+            "invalidation_level": { "type": "number" },
+            "invalidation_condition": { "type": "string" },
+            "projection": {
+              "type": "object",
+              "properties": {
+                "target_1": { "type": "number" },
+                "target_2": { "type": "number" },
+                "target_extension": { "type": "number" }
+              }
+            }
+          }
+        },
+        "alternative_hypotheses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "count_label": { "type": "string" },
+              "bias": { "type": "string" },
+              "conviction_pct": { "type": "number" },
+              "activation_condition": { "type": "string" }
+            }
+          }
+        },
+        "elliott_score": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "regime": { "type": "string" },
+        "ambiguity_level": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "fibonacci_output": {
+      "type": "object",
+      "description": "Output completo do Fibonacci Validator",
+      "required": ["validation_status", "geometric_conviction_pct"],
+      "properties": {
+        "validation_status": { "type": "string", "enum": ["confirmed", "conflict", "inconclusive"] },
+        "fibonacci_levels": { "type": "array" },
+        "confluence_zones": { "type": "array" },
+        "ote_zone": { "type": ["object", "null"] },
+        "projected_targets": { "type": "array" },
+        "geometric_conviction_pct": { "type": "number" },
+        "conflict_detail": { "type": ["string", "null"] },
+        "fits_alternative_better": { "type": "boolean" }
+      }
+    },
+    "smc_output": {
+      "type": "object",
+      "description": "Output completo do SMC Specialist",
+      "required": ["smc_score", "elliott_alignment", "directional_conflict"],
+      "properties": {
+        "active_order_block": { "type": ["object", "null"] },
+        "liquidity_sweep": { "type": "object" },
+        "choch": { "type": "object" },
+        "bos": { "type": "object" },
+        "smc_score": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "elliott_alignment": { "type": "string", "enum": ["confirms", "weakens", "neutral", "contradicts"] },
+        "directional_conflict": { "type": "boolean" },
+        "institutional_narrative": { "type": "string" },
+        "dual_narrative": { "type": "object" }
+      }
+    },
+    "ict_output": {
+      "type": "object",
+      "description": "Output completo do ICT Specialist",
+      "required": ["ict_active", "ict_score"],
+      "properties": {
+        "ict_active": { "type": "boolean" },
+        "ict_score": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "execution_blocked": { "type": "boolean" },
+        "blocking_reason": { "type": ["string", "null"] },
+        "operational_plan": { "type": ["object", "null"] },
+        "killzone": { "type": "object" },
+        "judas_swing": { "type": "object" },
+        "ote_analysis": { "type": "object" },
+        "suggested_sizing": { "type": ["object", "null"] }
+      }
+    },
+    "capital_context": {
+      "type": ["object", "null"],
+      "description": "Capital e risco para cálculo de sizing final",
+      "properties": {
+        "account_size": { "type": "number" },
+        "risk_pct_per_trade": { "type": "number" },
+        "max_leverage": { "type": "number" }
+      }
+    },
+    "pattern_memory": {
+      "type": ["array", "null"],
+      "description": "Histórico de setups similares do pattern_memory — contexto para calibração de convicção",
+      "items": {
+        "type": "object",
+        "properties": {
+          "setup_type": { "type": "string" },
+          "win_rate": { "type": "number" },
+          "avg_rr": { "type": "number" },
+          "sample_size": { "type": "integer" },
+          "last_updated": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  }
+}
