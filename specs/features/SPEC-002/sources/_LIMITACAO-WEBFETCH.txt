@@ -1,0 +1,29 @@
+LIMITAÇÃO DE AMBIENTE — HONESTIDADE METODOLÓGICA (RULE-MET-01)
+Data: 2026-09-28
+Autor: Especificador Principal SOT
+
+RESUMO: Nesta sessão, a ferramenta WebSearch FUNCIONOU (pesquisa real, resultados
+reais, URLs reais). A ferramenta WebFetch está BLOQUEADA POR POLÍTICA DE EGRESSO
+da organização (EGRESS_BLOCKED em arxiv.org, en.wikipedia.org, sciencedirect.com,
+book.gradepro.org, geeksforgeeks.org — confirmado; /root/.ccr/README.md classifica
+isso como negação de política, NÃO-retryável, "report the blocked host").
+
+CONSEQUÊNCIA PARA RULE-ECC-04 (Captura Verbatim de Fonte):
+RULE-ECC-04 exige, para cada fonte [EXTERNO] que sustenta alegação carregada, um
+arquivo com "trecho literal capturado NO MOMENTO DO FETCH (não resumo/paráfrase,
+≥100 caracteres)". A captura verbatim canônica depende de WebFetch da página real
+(foi assim que a SPEC-046 produziu seus SRC-01..07). Como WebFetch está bloqueado
+neste ambiente, os arquivos SRC-01..07 desta pasta NÃO SÃO capturas verbatim de
+WebFetch. Eles registram, honestamente:
+ - a URL real e a data de acesso;
+ - o MÉTODO de captura = WebSearch (não WebFetch);
+ - o trecho retornado pelo subsistema de busca (que pode ser sintetizado/parafraseado
+   pelo próprio buscador — NÃO garantidamente idêntico ao texto da página).
+
+PORTANTO: RULE-ECC-04 NÃO está satisfeita nesta entrega. Isto é uma limitação de
+AMBIENTE (WebFetch bloqueado), não uma escolha metodológica, e NÃO é fabricação:
+nenhuma fonte foi inventada; todas as URLs são resultados reais de WebSearch.
+Fail-closed de RULE-ECC-04 (ausência de captura verbatim para fonte carregada =
+NÃO CONFORME Crítica) permanece — é matéria de [DECISÃO NECESSÁRIA] de Andraus
+(ver DOSSIE-PESQUISA.md §0 e §6). NÃO tratar estes arquivos como prova verbatim.
+</content>

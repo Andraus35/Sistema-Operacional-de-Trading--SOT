@@ -1,0 +1,20 @@
+FONTE [EXTERNO] — REGISTRO DE PESQUISA (NÃO é captura verbatim WebFetch; ver _LIMITACAO-WEBFETCH.txt)
+ID: SRC-02
+Tema: Proveniência ponta-a-ponta em pipelines de ML; chain-of-custody; evidência à prova de adulteração; reprodutibilidade
+Tipo: Prática/Evidência (artigos revisados) + Experimento
+URLs (resultados reais de WebSearch, 2026-09-28):
+  - https://www.sciencedirect.com/science/article/pii/S0306437924001534  (Capturing end-to-end provenance for ML pipelines)
+  - https://arxiv.org/pdf/2006.12117  (ML Pipelines: Provenance, Reproducibility and FAIR Data Principles)
+  - https://arxiv.org/pdf/2609.12582  (NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs)
+Método de captura: WebSearch (WebFetch egress-blocked). Data de acesso: 2026-09-28.
+
+Excerto retornado pela busca (pode ser sintetizado pelo buscador):
+"FG-Trac defines an explicit mechanism for capturing and verifying sample lifecycle events across preprocessing and training, and anchors traces to tamper-evident cryptographic commitments. This evidence assembles into a chain of custody for the agent."
+"Data provenance records the data used, its changes, and the analysis processes, allowing researchers to recreate a study's original conditions accurately."
+"researchers have introduced comprehensive PROV-compliant provenance models that capture end-to-end provenance traces of ML pipelines."
+"The provenance chain from data origins through experiment tracking and versioning to production monitoring is what separates teams that can answer 'what changed?' from those left guessing."
+
+Pertinência ao SPEC-002: chain-of-custody + versionamento imutável de proveniência = base para a camada
+operacional de provenance/versão da Evidência (Fonte→Dado→Evidência) e para auditabilidade D9.
+Compara com CEM-001 Cap.4 (imutabilidade pós-publicação) e INV-07 (versionamento monotônico).
+</content>
