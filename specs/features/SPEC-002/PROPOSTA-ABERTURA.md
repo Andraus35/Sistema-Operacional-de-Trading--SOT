@@ -3,7 +3,7 @@
 **Método:** ROADMAP.md §23 passo 1-bis + atomic-spec.md §15 (RULE-ECC-01/02)
 **Autor:** Especificador Principal SOT
 **Data:** 2026-09-28
-**Status:** `[PROPOSTA]` — aguarda parecer do Revisor sobre o Dossiê + homologação de Andraus da **definição**, ANTES do Plan (AGENTS.md §5; ROADMAP §23; atomic-spec §15)
+**Status:** **ABERTURA HOMOLOGADA** (Andraus, 2026-09-28, DHR-SPEC002-001). Parecer do Revisor sobre o gate de abertura: CONFORME (1 achado Menor ACH-MEN-01, não-bloqueante, tratar no Plan). **NÃO é baseline** — o Plan (`plan.md`/`checks.md`) ainda não foi escrito; esse é o próximo gate (ROADMAP §23; atomic-spec §15).
 **Depende de:** `DOSSIE-PESQUISA.md` (mesmo diretório) — leia primeiro, inclusive o §0 (limitação WebFetch / RULE-ECC-04).
 
 ---
@@ -62,7 +62,7 @@ Avaliei se "Evidence" e "Evidence Provenance" deveriam ser duas Specs:
 | **(A) 1 Spec unificada — ESCOLHIDA** | O CEM-001 já trata evidência e proveniência como um único contrato (Cap. 3 conteúdo + Cap. 5 rastreabilidade indissociáveis); proveniência sem o objeto que ela descreve é vazia; cabe numa sessão de revisão como camada operacional coesa; espelha SPEC-001 (que unificou hipótese + registry + protocolo). | Spec densa (mitigado por profundidade adaptativa e BASpecs atômicas). |
 | (B) 2 Specs (Evidence / Provenance) | Unidades menores | Fragmenta um contrato canônico único; cria fronteira artificial; proveniência ficaria órfã do objeto; re-trabalho de rastreabilidade. |
 
-**Decisão proposta:** **(A) 1 Spec.** Registrado como `[DECISÃO NECESSÁRIA: SPEC-002-SPLIT-001]` para confirmação de Andraus (a quantidade é definida na abertura — RULE-ECC-01).
+**Decisão:** **(A) 1 Spec unificada — CONFIRMADA por Andraus** (2026-09-28, DHR-SPEC002-001). `SPEC-002-SPLIT-001` resolvida nesta abertura (não é decisão aberta residual — RULE-ECC-01, quantidade definida na abertura).
 
 ---
 

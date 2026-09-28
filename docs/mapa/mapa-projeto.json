@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-28",
-  "digest": "4e104dcd249c6a30a578842f0a2e1628911127c941c8f859464a4c08e0737f48",
+  "digest": "949f107c505ca23d762a181f9f436cc423aeed59deccee28e2d43139d53310d1",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,8 +164,8 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 118,
-   "out": 35
+   "in": 119,
+   "out": 37
   },
   {
    "path": "atomic-spec.md",
@@ -206,7 +206,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 86,
+   "in": 87,
    "out": 69
   },
   {
@@ -220,14 +220,14 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 52,
+   "in": 53,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 46,
+   "in": 47,
    "out": 0
   },
   {
@@ -728,10 +728,17 @@
    "out": 5
   },
   {
+   "path": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "area": "governance",
+   "title": "DHR-SPEC002-001 — Ata de Homologação — Abertura da SPEC-002 (Evidence & Evidence Provenance Harness)",
+   "in": 2,
+   "out": 11
+  },
+  {
    "path": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
    "area": "governance",
    "title": "DHR-SPEC002-VERBATIM-001 — Ata de Decisão — Captura Verbatim Diferida (RULE-ECC-04) na Abertura da SPEC-002",
-   "in": 0,
+   "in": 2,
    "out": 7
   },
   {
@@ -1011,7 +1018,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 134,
+   "in": 135,
    "out": 15
   },
   {
@@ -1207,29 +1214,29 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 14,
+   "in": 15,
    "out": 3
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 69,
+   "in": 70,
    "out": 4
   },
   {
    "path": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness)",
-   "in": 5,
+   "in": 6,
    "out": 12
   },
   {
    "path": "specs/features/SPEC-002/PROPOSTA-ABERTURA.md",
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-002: Evidence & Evidence Provenance Harness",
-   "in": 3,
-   "out": 14
+   "in": 4,
+   "out": 15
   },
   {
    "path": "specs/features/SPEC-019/checks.md",
@@ -1242,7 +1249,7 @@
    "path": "specs/features/SPEC-019/plan.md",
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
-   "in": 61,
+   "in": 62,
    "out": 16
   },
   {
@@ -1277,7 +1284,7 @@
    "path": "specs/features/SPEC-021/plan.md",
    "area": "specs",
    "title": "SPEC-021 — Harness Score / Maturity Model",
-   "in": 28,
+   "in": 29,
    "out": 15
   },
   {
@@ -1312,7 +1319,7 @@
    "path": "specs/features/SPEC-046/plan.md",
    "area": "specs",
    "title": "SPEC-046 — Spec-Time Context Caching Harness (Especificador/Revisor)",
-   "in": 19,
+   "in": 20,
    "out": 21
   },
   {
@@ -1410,7 +1417,7 @@
   {
    "id": "BL-012",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "BL-013",
@@ -1698,9 +1705,14 @@
    "cited_by": 6
   },
   {
+   "id": "DHR-SPEC002-001",
+   "defined_in": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "cited_by": 2
+  },
+  {
    "id": "DHR-SPEC002-VERBATIM-001",
    "defined_in": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
-   "cited_by": 0
+   "cited_by": 2
   },
   {
    "id": "DHR-SPEC019-001",
@@ -2070,12 +2082,12 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 37
+   "cited_by": 38
   },
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "RULE-ECC-03",
@@ -2405,7 +2417,7 @@
   {
    "id": "RULE-MECH-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "RULE-MECH-02",
@@ -2470,7 +2482,7 @@
   {
    "id": "RULE-MM-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-MM-06",
@@ -2500,7 +2512,7 @@
   {
    "id": "RULE-PD-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "RULE-PD-02",
@@ -2535,7 +2547,7 @@
   {
    "id": "RULE-REG-001",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-SDD",
@@ -2665,12 +2677,12 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 65
+   "cited_by": 66
   },
   {
    "id": "SPEC-002",
    "defined_in": "ROADMAP.md",
-   "cited_by": 84
+   "cited_by": 85
   },
   {
    "id": "SPEC-003",
@@ -2755,7 +2767,7 @@
   {
    "id": "SPEC-019",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 44
+   "cited_by": 45
   },
   {
    "id": "SPEC-020",
@@ -2765,7 +2777,7 @@
   {
    "id": "SPEC-021",
    "defined_in": "specs/features/SPEC-021/plan.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "SPEC-022",
@@ -2890,7 +2902,7 @@
   {
    "id": "SPEC-046",
    "defined_in": "specs/features/SPEC-046/plan.md",
-   "cited_by": 19
+   "cited_by": 20
   },
   {
    "id": "SPEC-047",
@@ -3592,6 +3604,16 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-PRINC-BID-001_Ata_Homologacao_Heranca_Bidirecional.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
    "type": "id"
   },
   {
@@ -8125,6 +8147,76 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-002/PROPOSTA-ABERTURA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-019/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-021/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
+   "to": "specs/features/SPEC-046/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -11207,6 +11299,11 @@
   {
    "from": "specs/features/SPEC-002/PROPOSTA-ABERTURA.md",
    "to": "governance/CONFLICT-MAP.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-002/PROPOSTA-ABERTURA.md",
+   "to": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
    "type": "id"
   },
   {
