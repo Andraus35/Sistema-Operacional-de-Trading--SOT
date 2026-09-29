@@ -920,3 +920,58 @@ RULE-MET-03: Autonegação / revisibilidade legítima. Uma conclusão anterior d
              ante nova evidência/regime/observação, sem que isso seja tratado como falha operacional.
              Estende RULE-007/PCO-01 e os gatilhos de reavaliação (RULE-CTF-03).
              [Fonte: EUA-E14; DHR-EUA-E14; RULE-007/PCO-01; RULE-CTF-03]
+
+---
+
+## Regras de Evidence Harness (RULE-EPH) — SPEC-002
+
+<!-- Registradas pelo Controlador na homologação do Plan da SPEC-002 (DHR-SPEC002-002, 2026-09-29).
+     Redigidas como [PROPOSTA] no plan.md; tornam-se normativas nesta homologação. Texto verbatim
+     preservado do plan.md (INV-07) — etiqueta [PROPOSTA] mantida no corpo como registro histórico
+     da redação. Prospectiva a partir da SPEC-002; camada Harness/operacional sobre CEM-001
+     (CONST-01 — não redefine o modelo canônico). -->
+
+RULE-EPH-01: Toda publicação de Evidência pela camada Harness DEVE passar por gate determinístico de
+             conformidade ao contrato CEM-001 (Cap.3: identidade, origem, conteúdo, rastreabilidade
+             completos) e de produtor autorizado (CEM-001 Cap.2/6). Publicação incompleta é REJEITADA
+             (fail-closed). [Fonte: DHR-SPEC002-002; CEM-001 Cap.3/6 "proibido publicar Evidências incompletas"; ENF-04]  [PROPOSTA]
+
+RULE-EPH-02: A camada Harness DEVE registrar a proveniência operacional da transformação
+             Fonte→Dado→Evidência, incluindo a ferramenta/Skill produtora, preservando a fronteira
+             Observação(Skill) ≠ Evidência(Agente). Uma Observação de Skill NÃO DEVE ser publicada
+             como Evidência sem interpretação de Agente. [Fonte: DHR-SPEC002-002; INV-06; CEM-001 Cap.2; SRC-04]  [PROPOSTA]
+
+RULE-EPH-03: A camada Harness DEVE tratar confiabilidade histórica do produtor e força do relato
+             (Evidence Strength) como DOIS EIXOS INDEPENDENTES; um não DEVE influenciar o outro. A
+             confiabilidade histórica é modelada como extensão Categoria B do CEM-001 via GMC-001
+             (novo campo opcional, compatível — sem alterar semântica existente; processo formal Cap.5,
+             GMC-CEM001-EXT-001). [Fonte: DHR-SPEC002-001 §2 DN-1; DHR-SPEC002-002 (ACH-001); SRC-02; GMC-001 Cap.3/5; GMC-CEM001-EXT-001]  [PROPOSTA]
+
+RULE-EPH-04: A confiabilidade histórica do produtor é metadado descritivo/filtro e NUNCA DEVE entrar
+             como dimensão, insumo ou peso do Conviction Vector (INV-04). [Fonte: DHR-SPEC002-002; INV-04; DHR-SPEC002-001 §2 DN-1; CONS-01]  [PROPOSTA]
+
+RULE-EPH-05: A taxonomia operacional de evidência DEVE distinguir favorável / contraevidência /
+             inconclusiva e DEVE prover um tipo/estado "ausente" como gancho de extensibilidade; a
+             semântica de quando a ausência é significativa NÃO DEVE ser fixada nesta Spec (deferida a
+             SPEC-010+). [Fonte: DHR-SPEC002-002; RULE-009; DHR-SPEC002-001 §2 DN-3]  [PROPOSTA]
+
+RULE-EPH-06: Evidência é APPEND-ONLY: atualização de conhecimento cria NOVA evidência e transita a
+             anterior para SUPERSEDED, preservando Lineage; NENHUMA evidência DEVE ser deletada
+             (INV-07; CEM-001 Cap.4). [Fonte: DHR-SPEC002-002; INV-07; CEM-001 Cap.4]  [PROPOSTA]
+
+RULE-EPH-07: A invalidação de Evidência DEVE seguir as transições permitidas do CEM-001 (ACTIVE→
+             INVALIDATED; INVALIDATED→ACTIVE PROIBIDA), emitir o evento *Evidence Invalidated* e
+             INICIAR (não executar em cascata automática) avaliação de impacto sobre derivadas pelo
+             Fusion Engine. Detector ≠ Gate. [Fonte: DHR-SPEC002-002; CEM-001 Cap.4/5; ENF-03]  [PROPOSTA]
+
+RULE-EPH-08: A camada Harness DEVE registrar metadados de independência/correlação (substrato de
+             RULE-004) e de conflito (substrato de RULE-005) com granularidade suficiente para
+             detecção DOWNSTREAM, sem computar confluência nem resolver conflito nesta Spec.
+             [Fonte: DHR-SPEC002-002; RULE-004; RULE-005; RULE-SY-001; research.md §6.2]  [PROPOSTA]
+
+RULE-EPH-09: A camada Harness DEVE suportar temporalidade/staleness como metadado, sem fixar qualquer
+             fórmula de decaimento/aging (deferida a J-001/SPEC-003). [Fonte: DHR-SPEC002-002; J-001; SRC-05; CONS-01]  [PROPOSTA]
+
+RULE-EPH-10: O vínculo evidência→hipótese DEVE ser por REFERÊNCIA (CHM-001), preservando a
+             independência da evidência (uma evidência pode sustentar múltiplas hipóteses — CEM-001
+             Princípio 5). A camada NÃO DEVE redefinir a hipótese. [Fonte: DHR-SPEC002-002; CHM-001; CEM-001 Princípio 5; INV-10]  [PROPOSTA]

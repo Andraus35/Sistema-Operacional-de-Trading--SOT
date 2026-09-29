@@ -1,6 +1,7 @@
 # CEM-001 — Canonical Evidence Model Specification
 ## Versão Consolidada Pós-Auditoria
 **Status:** BASELINED — divergências DIV-CEM-2..6 corrigidas inline (2026-09-26, DHR-TAX-001). Texto histórico preservado (INV-07).
+**Versão:** v1.1 (2026-09-29) — evolução **Categoria B** (GMC-001 Cap.3/5): campo opcional `Producer Historical Reliability` acrescentado à Camada 2. Aditiva/compatível — nenhum campo, estado ou transição existente foi alterado (INV-07/CONST-01). Ver `governance/GMC-CEM001-EXT-001_Proposta_Extensao_Confiabilidade_Produtor_CEM-001.md` e `governance/DHR-SPEC002-002_Ata_Homologacao_Plan_SPEC-002.md`.
 **Projeto:** SOT SISTEMA TRADING  <!-- DIV-CEM-6 corrigida: "ORYX AGENT" era nome histórico; nome canônico = SOT SISTEMA TRADING (GLOSSÁRIO) -->  
 **Categoria:** Modelo Canônico  
 **Governança:** GMC-001
@@ -281,6 +282,13 @@ Exemplos: Structural Agent, Institutional Agent, Fusion Engine.
 Natureza da origem cognitiva. Valores válidos:
 - `PRIMARY` — produzida diretamente a partir de observações do mercado. Permitido apenas para `AGENT`.
 - `DERIVED` — produzida a partir de outras Evidências. Permitido apenas para `ENGINE`.
+
+**Producer Historical Reliability** *(campo opcional — v1.1, Categoria B, GMC-CEM001-EXT-001)*
+Confiabilidade histórica (track-record) do produtor — eixo **independente** da força do relato específico (`Evidence Strength`, Camada 3): reliability da fonte ≠ credibility do relato (doutrina Admiralty/NATO AJP-2.1, adotada como princípio, não como códigos literais).
+- **Opcional/nullable.** Ausência = `INDETERMINADO` (produtor sem histórico registrado) — nunca um default arbitrário.
+- **Domínio:** Governed Enumeration (tiers ordinais de confiabilidade), valores governados por GMC-001.
+- **Mutabilidade:** segue a regra geral da Camada 1/Cap.4 — imutável após publicação da Evidência; atualização de track-record só em nova Evidência/versão, nunca por mutação retroativa.
+- **Trava constitucional (INV-04):** este campo é metadado descritivo/filtro — **NUNCA** entra como dimensão, insumo ou peso do Conviction Vector. Enforcement na camada consumidora (SPEC-002, BASpec-EPH-004, efeito E3).
 
 ---
 

@@ -73,7 +73,7 @@ Todas com 1 condição · 1 comportamento · ≤2 RULES · 1 cenário. Classe po
 
 ## 5. Constitution Check (CC-01..CC-12)
 
-Preenchido no plan.md. **Críticos aplicáveis PASS:** CC-01 (hierarquia protegida — infraestrutural), CC-02 (CEM-001 não redefinido; extensão Categoria A via GMC-001 — CONST-01), CC-03 (Conviction 8D fechada; definitivos = J-001 aberto; confiabilidade NUNCA no Conviction — INV-04), CC-04 (salvaguardas intocadas), CC-08 (Herança/Delta presente; INHERITS/ADDED c/ ID+versão; REMOVED vazio), CC-11 (Classe por BASpec — INCIDE). **CC-05** = CRITICAL/D0–D8. **CC-06/CC-07** = N/A justificado (Spec/Plan, não Engineering Card). **CC-09** = Epistemic Check completo (§7-bis Bloco C). **CC-10** = N/A justificado (infraestrutural; termos externos rejeitados como baseline). **CC-12** = N/A justificado (neutra de domínio; nenhum PD-xx; research.md §3). **PASS.**
+Preenchido no plan.md. **Críticos aplicáveis PASS:** CC-01 (hierarquia protegida — infraestrutural), CC-02 (CEM-001 não redefinido; extensão **Categoria B** — novo campo opcional — via GMC-001, processo formal Cap.5 GMC-CEM001-EXT-001; ACH-001 resolvido — CONST-01), CC-03 (Conviction 8D fechada; definitivos = J-001 aberto; confiabilidade NUNCA no Conviction — INV-04), CC-04 (salvaguardas intocadas), CC-08 (Herança/Delta presente; INHERITS/ADDED c/ ID+versão; REMOVED vazio), CC-11 (Classe por BASpec — INCIDE). **CC-05** = CRITICAL/D0–D8. **CC-06/CC-07** = N/A justificado (Spec/Plan, não Engineering Card). **CC-09** = Epistemic Check completo (§7-bis Bloco C). **CC-10** = N/A justificado (infraestrutural; termos externos rejeitados como baseline). **CC-12** = N/A justificado (neutra de domínio; nenhum PD-xx; research.md §3). **PASS.**
 
 ---
 
@@ -109,7 +109,7 @@ Preenchido no plan.md. **Críticos aplicáveis PASS:** CC-01 (hierarquia protegi
 | J-001 NÃO fechada; nenhum limiar/fórmula de convicção ou aging fixado (EPH-009/010; ADV-EPH-08) | ✔ |
 | INV-04 preservado (confiabilidade-de-fonte NUNCA no Conviction — EPH-004; ADV-EPH-04) | ✔ |
 | INV-07 preservado (append-only; nada deletado — EPH-006; ADV-EPH-06) | ✔ |
-| CONST-01 preservado (CEM-001 não redefinido; extensão Categoria A via GMC-001 — ADV-EPH-07) | ✔ |
+| CONST-01 preservado (CEM-001 não redefinido; extensão Categoria B via GMC-001, processo formal Cap.5 — ADV-EPH-07; GMC-CEM001-EXT-001) | ✔ |
 | DN-3 honrada (só o gancho "ausente"; semântica deferida — EPH-005; ADV-EPH-09) | ✔ |
 | M-001/H-001/N-001/K-001/G-001/C-001/RISK-CONV-001/ECC-VAL-001 referenciadas como ABERTAS, não fechadas | ✔ |
 | Nova decisão EPH-GMC-001 marcada [DECISÃO NECESSÁRIA] (não fechada por mim — RULE-MET-01) | ✔ |
@@ -180,7 +180,7 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 
 | ID | Achado | Severidade | Encaminhamento |
 |---|---|---|---|
-| CK-01 | **EPH-GMC-001** — tensão entre "Categoria A" homologada (DN-1) e as definições do GMC-001 Cap.3 (novo campo = Categoria B). Modelado como Governed Enumeration para permanecer Categoria A; mecânica física deixada ao GMC-001/Controlador. | Média | Andraus/Controlador confirmam a via GMC-001 (enum governada vs. novo campo opcional) |
+| CK-01 | **EPH-GMC-001 — RESOLVIDO (DHR-SPEC002-002).** Tensão entre "Categoria A" nomeada na abertura (DN-1) e o GMC-001 Cap.3 (novo campo, mesmo opcional = Categoria B; Categoria A = só novos valores de enumeração já existente). Revisor CONFORME com achado Médio **ACH-001**: não há enum compatível pronta no CEM-001 → exige campo novo → **Categoria B**. Andraus (2026-09-29) reclassificou para **Categoria B** e mandou conduzir o processo formal GMC-001 Cap.5 (proposta + análise de impacto + registro do Controlador), sem exceção/override. Processo em `governance/GMC-CEM001-EXT-001`. Substância inalterada (INV-04: nunca no Conviction). | Média → **RESOLVIDA** | Reclassificado A→B; proposta formal GMC-CEM001-EXT-001 conduzida; incorporação física ao `canon/CEM-001` (v1.1) = ato do Controlador (CATALOGO §1) |
 | CK-02 | Nota de eixo de herança (CC-08 vs RULE-HV) por [INFERÊNCIA]: herança sobre modelo canônico é obrigação-a-obrigação; conservação-como-conjunto = conteúdo futuro da SPEC-019 | Menor | Revisor confirma o eixo de herança |
 | CK-03 | D9 auditoria por referência; mecanismo físico delegado a KG/SPEC-006 (H-001 aberta) e SPEC-041; L4 só em runtime | Menor | Consistente com alvo spec-first; teto L3 (RULE-MM-04) |
 | CK-04 | Consumo em runtime (E3/E4/E6, `evidence_ref`/`evidence_classification`) por [INFERÊNCIA]/adiado — RULE-ECC-06 não disparada (SPEC-002 não é agente do fluxo) | Menor | Revisor confirma a não-incidência de RULE-ECC-06/07 (research.md §4/§5) |
@@ -190,6 +190,6 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 
 ## Resultado da verificação de spec
 
-**Estruturalmente CONFORME** (well-formedness). BASpecs (EPH-001..012 com Classe), EARS (10), Enforcement (EC-EPH-001..004; ENF-03 Detector≠Gate; ENF-04 fail-closed E3), Constitution Check (CC-01..12; CC-11 incide; CC-06/07/10/12 N/A justificado), Herança/Delta (CEM-001 v1.0), §7-bis completo (Blocos A–D; Bloco C não-resumido), CONS-01 e gate RMR-001 satisfeitos. 5 achados não-bloqueantes (CK-01..CK-05) encaminhados; 1 nova decisão (EPH-GMC-001) marcada [DECISÃO NECESSÁRIA].
+**Estruturalmente CONFORME** (well-formedness). BASpecs (EPH-001..012 com Classe), EARS (10), Enforcement (EC-EPH-001..004; ENF-03 Detector≠Gate; ENF-04 fail-closed E3), Constitution Check (CC-01..12; CC-11 incide; CC-06/07/10/12 N/A justificado), Herança/Delta (CEM-001 v1.0 + extensão Categoria B v1.1), §7-bis completo (Blocos A–D; Bloco C não-resumido), CONS-01 e gate RMR-001 satisfeitos. 5 achados não-bloqueantes (CK-01..CK-05); **CK-01/EPH-GMC-001 RESOLVIDO** (reclassificação Categoria A → B via processo formal GMC-001 Cap.5, GMC-CEM001-EXT-001).
 
-> Este resultado é **feedback interno de verificação de spec** — NÃO é o parecer do Revisor (GRE-001/HRE-001) nem homologação de Andraus. Próximo passo: gate determinístico `python scripts/validate_spec_sot.py specs/features/SPEC-002/plan.md` (a rodar pelo coordenador — sem Bash neste agente) + submissão ao Revisor SOT.
+> **Atualização (2026-09-29):** o Revisor emitiu parecer **CONFORME** (1 achado Médio ACH-001, não-bloqueante); Andraus decidiu a reclassificação Categoria B e **homologou o Plan v1.1 como BASELINE** (DHR-SPEC002-002). Este arquivo permanece o feedback interno de verificação de spec — não substitui o parecer do Revisor nem a ata de homologação. Pendências de execução para o coordenador (sem Bash neste agente — RULE-MET-01): re-rodar `python scripts/validate_spec_sot.py specs/features/SPEC-002/plan.md`, `check_refs.py`, `check_doc_sync.py`, `backlog_triggers.py`, `build_map.py`.

@@ -3,28 +3,29 @@
 | Campo | Valor |
 |---|---|
 | ID | SPEC-002 — Evidence & Evidence Provenance Harness (camada Harness/operacional sobre CEM-001) |
-| Versão | 1.0 (candidata — NÃO baseline) |
-| Status | **PROPOSTA** — Plan candidato. Abertura HOMOLOGADA (DHR-SPEC002-001, 2026-09-29); o Plan ainda não foi homologado (próximo gate: `DHR-SPEC002-002`). Documentado ≠ homologado (TRACE-06). |
+| Versão | 1.1 (**BASELINE** — homologada) |
+| Status | **HOMOLOGADA — BASELINE** (Andraus, 2026-09-29, DHR-SPEC002-002). Abertura HOMOLOGADA (DHR-SPEC002-001, 2026-09-29); Plan escrito → Revisor CONFORME (1 achado Médio ACH-001) → Andraus decide Categoria B → correção aplicada (v1.1) → Plan homologado. ACH-001 resolvido: extensão DN-1 reclassificada Categoria A → **Categoria B** (processo formal GMC-001 Cap.5 — GMC-CEM001-EXT-001). |
 | Fonte | ROADMAP §4 (SPEC-002, linhas 138-142); `specs/features/SPEC-002/research.md` (Dossiê de abertura HOMOLOGADO 2026-09-29); DHR-SPEC002-001; atomic-spec.md **v1.5**; **RULE-ECC-01/02** (Especificação Emergente) |
 | Complexidade | **CRITICAL** [FONTE: ROADMAP §4 linha 139; DHR-SPEC002-001 §2 DN-2] |
 | Profundidade-alvo | **D0–D8** (standard + adversarial — CRITICAL) [FONTE: DHR-SPEC002-001 §2 DN-2; AGENTS.md §4 tabela PINADA] |
 | Profile (Claude Code) | standard + adversarial (CRITICAL) — §7-bis aplicado (obrigatório CRITICAL), D8 pleno |
 | Nível de maturidade-alvo (desta Spec) | **L3 Testável** — teto de spec-first para CRITICAL (RULE-MM-04; atomic-spec §7) |
 | Método | atomic-spec.md **v1.5** (LOTE RULE-REG-001 incorporado; DHR-SPEC002-001 §5) |
-| Regime normativo citado | **RULE-ECC-01/02** (abertura/Dossiê), **RULE-ECC-04** (captura verbatim), **RULE-MECH-01..04** (Classe por BASpec — INCIDE), **RULE-PD-01** (PD-xx — NÃO incide, infraestrutural), **RULE-HD-01..04** (Herança/Delta), **GMC-001** (evolução Categoria A do CEM-001 — DN-1) |
+| Regime normativo citado | **RULE-ECC-01/02** (abertura/Dossiê), **RULE-ECC-04** (captura verbatim), **RULE-MECH-01..04** (Classe por BASpec — INCIDE), **RULE-PD-01** (PD-xx — NÃO incide, infraestrutural), **RULE-HD-01..04** (Herança/Delta), **GMC-001** (evolução Categoria B do CEM-001 — DN-1; ACH-001 do Revisor; processo formal Cap.5 — GMC-CEM001-EXT-001) |
 | Classe predominante (orientação de leitura — não vinculante; §10.6) | **D** (Determinístico), com **H** em publicação (gate de conformidade de contrato) e **C** em travas constitutivas (anti-INV-04, invalidação irreversível) |
 | Posição no caminho crítico | FASE 1 — Núcleo Cognitivo, posição 1; após FASE GOV concluída (019/020/021 homologadas), antes de SPEC-003 [FONTE: ROADMAP §21; §4 linha 239] |
 | Autor | Especificador Principal (Claude Code, Opus 4.8) |
 | Data | 2026-09-29 |
 | Abertura | Dossiê de Pesquisa homologado por Andraus em **2026-09-29** (research.md; DHR-SPEC002-001); Plan iniciado no mesmo dia, dentro da validade do Dossiê (ECC-VAL-001 permanece **aberta** — sem prazo geral fixado; ver Decisões abertas) |
 
-Status: **PROPOSTA** (candidata a baseline). Complexidade: CRITICAL. Profundidade-alvo: D0–D8. [FONTE: ROADMAP §4; DHR-SPEC002-001; AGENTS.md §4]
+Status: **HOMOLOGADA — BASELINE** (v1.1, Andraus 2026-09-29, DHR-SPEC002-002). Complexidade: CRITICAL. Profundidade-alvo: D0–D8. [FONTE: ROADMAP §4; DHR-SPEC002-001; DHR-SPEC002-002; AGENTS.md §4]
 
 ### Histórico de versões
 
 | Versão | Data | Alterações |
 |---|---|---|
-| 1.0 | 2026-09-29 | Plan candidato inicial. Camada Harness/operacional de proveniência/qualidade/ciclo-de-vida de evidência SOBRE CEM-001 (não redefine — CONST-01). Incorpora DN-1 (confiabilidade histórica do produtor = extensão Categoria A do CEM-001 via GMC-001), DN-2 (D0–D8), DN-3 (gancho "ausente", semântica deferida). 12 BASpecs (EPH-001..012) com Classe (RULE-MECH-01). §7-bis completo (CRITICAL). |
+| 1.0 | 2026-09-29 | Plan candidato inicial. Camada Harness/operacional de proveniência/qualidade/ciclo-de-vida de evidência SOBRE CEM-001 (não redefine — CONST-01). Incorpora DN-1 (confiabilidade histórica do produtor = extensão do CEM-001 via GMC-001 — classificada **Categoria A** na redação inicial), DN-2 (D0–D8), DN-3 (gancho "ausente", semântica deferida). 12 BASpecs (EPH-001..012) com Classe (RULE-MECH-01). §7-bis completo (CRITICAL). |
+| 1.1 | 2026-09-29 | **Resolução do ACH-001 (EPH-GMC-001) — reclassificação Categoria A → Categoria B (aditiva, INV-07 — registro histórico da discussão A vs B preservado).** O Revisor (parecer CONFORME, 1 achado Médio ACH-001) conferiu o GMC-001 Cap.3: um **campo novo** no CEM-001 (mesmo opcional) é **Categoria B** pela classificação literal (só **novos valores de enumeração já existente** são Categoria A; não há enum compatível pronta no CEM-001). Andraus decidiu (2026-09-29) **reclassificar como Categoria B** e conduzir o **processo formal do GMC-001 Cap.5** (proposta + análise de impacto + registro do Controlador), em vez de exceção/override. Extensão formalizada em `governance/GMC-CEM001-EXT-001_Proposta_Extensao_Confiabilidade_Produtor_CEM-001.md`. **Substância inalterada:** confiabilidade continua metadado descritivo, NUNCA dimensão do Conviction Vector (INV-04) — só o PROCESSO de extensão (A→B) muda. Plan homologado como BASELINE (DHR-SPEC002-002). |
 
 ---
 
@@ -45,7 +46,7 @@ Status: **PROPOSTA** (candidata a baseline). Complexidade: CRITICAL. Profundidad
 ## Constitution Check (CC-01..CC-12 — atomic-spec §10.5 v1.5)
 
 - [x] **CC-01 — Hierarquia Elliott→Fibonacci→Fractal→SMC→ICT respeitada:** a SPEC-002 é **infraestrutural/neutra de domínio** — carrega o *envelope* de proveniência de evidência produzida por qualquer escola, sem realizar análise de nenhuma escola nem inverter a hierarquia. Não cria hipótese estrutural (isso é do Structural Agent/Elliott, SPEC-010) nem executa (ICT/SPEC-013, INV-02). O metadado de conflito (EPH-009) apenas **registra** o substrato para que `directional_conflict` (RULE-005, Elliott×SMC) seja detectável downstream; **não resolve** conflito (Synthesis). A camada **protege** a hierarquia; não a toca. [INFERÊNCIA; FONTE: CEM-001 Princípio 1; INV-01/INV-02]
-- [x] **CC-02 — Não redefine Modelo Canônico baselined (CEM/CHM/CCM/CDM/CNM):** **CONST-01 preservado.** A SPEC-002 constrói **SOBRE** CEM-001 (idioma canônico, INV-10) — não redefine nenhum de seus campos, estados ou transições. A confiabilidade histórica do produtor (DN-1) entra como **extensão Categoria A (aditiva)** do CEM-001 **via GMC-001**, sem alterar semântica existente. CCM-001 permanece **pendente (SPEC-003)** — nenhum limiar/fórmula de convicção é fixado aqui. Ver Herança/Delta e EPH-003. [FONTE: CONST-01; CEM-001; GMC-001 Cap.3; DHR-SPEC002-001 §2 DN-1]
+- [x] **CC-02 — Não redefine Modelo Canônico baselined (CEM/CHM/CCM/CDM/CNM):** **CONST-01 preservado.** A SPEC-002 constrói **SOBRE** CEM-001 (idioma canônico, INV-10) — não redefine nenhum de seus campos, estados ou transições. A confiabilidade histórica do produtor (DN-1) entra como **extensão Categoria B (novo campo opcional, compatível — GMC-001 Cap.3)** do CEM-001 **via GMC-001**, sem alterar semântica existente e sem quebrar produtores/consumidores (adaptação opcional). Reclassificada de Categoria A para **Categoria B** na resolução do ACH-001 (Revisor CONFORME; Andraus 2026-09-29): um campo novo, ainda que opcional, é Categoria B pela classificação literal do GMC-001 Cap.3 (Categoria A = apenas novos valores de enumeração já existente). Processo formal conduzido em `GMC-CEM001-EXT-001` (Cap.5). CCM-001 permanece **pendente (SPEC-003)** — nenhum limiar/fórmula de convicção é fixado aqui. Ver Herança/Delta e EPH-003. [FONTE: CONST-01; CEM-001; GMC-001 Cap.3/5; DHR-SPEC002-001 §2 DN-1; DHR-SPEC002-002 (ACH-001)]
 - [x] **CC-03 — Conviction Vector:** dimensionalidade=8 permanece **fechada**; fórmula/pesos/limiares definitivos = **J-001 (aberto/pendente)**. A SPEC-002 **não** computa convicção nem fixa qualquer limiar numérico ligado a convicção. A confiabilidade-de-fonte (DN-1/EPH-003) é **metadado descritivo/filtro** e **NUNCA** entra como dimensão do Conviction Vector — trava explícita em EPH-004 (**INV-04**). [FONTE: INV-03; INV-04; J-001 pendente]
 - [x] **CC-04 — Salvaguardas Constitucionais (CEE-001 §10/§11):** nenhuma violada. Custo/qualidade-de-fonte não entram em nada análogo a convicção (INV-04 = Salvaguarda 4 do §10, honrada por EPH-004). Nenhuma salvaguarda de Sinal (§11: invalidação, score, conflito direcional, convicção, R:R) é tocada — a SPEC-002 não emite sinal. Economicidade (4Es) nunca rebaixa os pisos de enforcement E2/E3. [FONTE: INV-04; CEE-001 §10/§11]
 - [x] **CC-05 — Complexidade declarada:** **CRITICAL, D0–D8** (DHR-SPEC002-001 §2 DN-2). Maturidade-alvo = L3 (teto spec-first).
@@ -103,7 +104,8 @@ ADDED (delta local — o que esta spec acrescenta como camada Harness/operaciona
   - Proveniência da transformação `Fonte → Dado → Evidência`: granularidade ferramenta/Skill produtora
     + fronteira operacional Observação(Skill) ≠ Evidência(Agente) (EPH-002; INV-06)
   - Dois eixos independentes de qualidade (princípio Admiralty ADAPTADO, não os códigos A-F/1-6):
-    confiabilidade histórica do produtor (DN-1, extensão Categoria A do CEM-001 via GMC-001) SEPARADA
+    confiabilidade histórica do produtor (DN-1, extensão Categoria B do CEM-001 via GMC-001 —
+    novo campo opcional; proposta formal GMC-CEM001-EXT-001, Cap.5) SEPARADA
     da força do relato (Evidence Strength, já em CEM-001) (EPH-003)
   - Trava constitutiva anti-INV-04: confiabilidade-de-fonte NUNCA entra no Conviction Vector (EPH-004)
   - Taxonomia operacional favorável / contraevidência / inconclusiva + gancho "ausente" (DN-3, semântica
@@ -118,7 +120,9 @@ ADDED (delta local — o que esta spec acrescenta como camada Harness/operaciona
 
 MODIFIED (especialização de regra herdada):
   - (nenhuma regra herdada é modificada em texto) — a SPEC-002 ESPECIALIZA operacionalmente o CEM-001
-    sem alterar seu contrato. A extensão DN-1 é ADITIVA (Categoria A, GMC-001), não modificação.
+    sem alterar seu contrato. A extensão DN-1 é ADITIVA e COMPATÍVEL (Categoria B — novo campo
+    opcional, GMC-001 Cap.3; processo formal Cap.5 GMC-CEM001-EXT-001), não modificação de campo existente
+    (não reclassifica para Categoria C: campo opcional, sem alterar produtores/consumidores existentes).
 
 REMOVED (só com governança — nunca implícito):
   - (vazio)
@@ -130,7 +134,7 @@ REMOVED (só com governança — nunca implícito):
 
 ## D0 — Missão (Intenção)
 
-A SPEC-002 especifica **a camada Harness/operacional que opera o ciclo de vida, a proveniência e a qualidade intrínseca das Evidências Cognitivas do SOT**, construindo **sobre** o CEM-001 (idioma canônico, baseline — INV-10/CONST-01) sem redefini-lo. Define: (1) o **protocolo operacional** de criar, publicar, superseder, invalidar e arquivar evidência, com gate determinístico de conformidade ao contrato CEM-001 e produtor autorizado (fail-closed em publicação incompleta); (2) a **proveniência da transformação** `Fonte → Dado → Evidência` — qual ferramenta/Skill produziu, preservando a fronteira Observação(Skill) ≠ Evidência(Agente) (INV-06); (3) os **dois eixos independentes de qualidade** — confiabilidade histórica do produtor (metadado descritivo, extensão Categoria A do CEM-001 via GMC-001 — DN-1) SEPARADA da força do relato específico (Evidence Strength, já canônico) — com a **trava** de que a confiabilidade da fonte **nunca** entra no Conviction Vector (INV-04); (4) a **taxonomia operacional** favorável / contraevidência / inconclusiva, mais o **gancho** "ausente" cuja semântica é DEFERIDA (DN-3); (5) os **metadados de substrato** — independência/correlação (para RULE-004 downstream), conflito (para RULE-005 downstream) e temporalidade/staleness — que a camada **registra** mas **não interpreta**; (6) o **vínculo evidência→hipótese por referência** (CHM-001) e o **suporte à auditabilidade/reconstrução bitemporal** append-only (delegando o mecanismo físico ao KG/SPEC-006 e à auditoria/SPEC-041). [FONTE: ROADMAP §4 linhas 138-142; research.md §6.2/§7.2; DHR-SPEC002-001]
+A SPEC-002 especifica **a camada Harness/operacional que opera o ciclo de vida, a proveniência e a qualidade intrínseca das Evidências Cognitivas do SOT**, construindo **sobre** o CEM-001 (idioma canônico, baseline — INV-10/CONST-01) sem redefini-lo. Define: (1) o **protocolo operacional** de criar, publicar, superseder, invalidar e arquivar evidência, com gate determinístico de conformidade ao contrato CEM-001 e produtor autorizado (fail-closed em publicação incompleta); (2) a **proveniência da transformação** `Fonte → Dado → Evidência` — qual ferramenta/Skill produziu, preservando a fronteira Observação(Skill) ≠ Evidência(Agente) (INV-06); (3) os **dois eixos independentes de qualidade** — confiabilidade histórica do produtor (metadado descritivo, extensão Categoria B do CEM-001 via GMC-001, novo campo opcional — DN-1; ACH-001 resolvido) SEPARADA da força do relato específico (Evidence Strength, já canônico) — com a **trava** de que a confiabilidade da fonte **nunca** entra no Conviction Vector (INV-04); (4) a **taxonomia operacional** favorável / contraevidência / inconclusiva, mais o **gancho** "ausente" cuja semântica é DEFERIDA (DN-3); (5) os **metadados de substrato** — independência/correlação (para RULE-004 downstream), conflito (para RULE-005 downstream) e temporalidade/staleness — que a camada **registra** mas **não interpreta**; (6) o **vínculo evidência→hipótese por referência** (CHM-001) e o **suporte à auditabilidade/reconstrução bitemporal** append-only (delegando o mecanismo físico ao KG/SPEC-006 e à auditoria/SPEC-041). [FONTE: ROADMAP §4 linhas 138-142; research.md §6.2/§7.2; DHR-SPEC002-001]
 
 A SPEC-002 é o **envelope** da evidência; o **conteúdo** analítico (a interpretação de escola) pertence aos agentes produtores (SPEC-010..014); a **fusão/convicção** pertence à SPEC-003. É a camada que todo agente downstream consome — seu *blast radius* motiva o alvo D0–D8 (integridade/anti-adulteração de proveniência — DN-2).
 
@@ -143,7 +147,7 @@ A SPEC-002 é o **envelope** da evidência; o **conteúdo** analítico (a interp
 - Não emite **Signal Package**/risco (INV-05) → família RISK-SPEC. [FONTE: INV-05]
 - Não define **mecanismos criptográficos/on-chain** de tamper-evidence (rejeitados como baseline — Economicidade; research.md §6.3).
 
-**Status epistemológico:** a SPEC-002 é FATO ARQUITETURAL candidato a baseline. CEM-001 v1.0, GMC-001 v1.0, CHM-001 v1.0, atomic-spec v1.5, INV-*, ENF-*, RULE-MECH-01..04, RULE-HD-01..04, RULE-004/005/009 são FATO NORMATIVO. As RULE-EPH-* propostas abaixo são **[PROPOSTA]**. Fontes externas (research.md §2, SRC-01..05) são **[EXTERNO]** — DADO, nunca baseline; documentado ≠ homologado (TRACE-06).
+**Status epistemológico:** a SPEC-002 v1.1 é **FATO NORMATIVO** (homologada BASELINE — DHR-SPEC002-002). CEM-001 v1.0 (+ extensão Categoria B v1.1 aprovada via GMC-CEM001-EXT-001), GMC-001 v1.0, CHM-001 v1.0, atomic-spec v1.5, INV-*, ENF-*, RULE-MECH-01..04, RULE-HD-01..04, RULE-004/005/009 são FATO NORMATIVO. As RULE-EPH-* abaixo tornaram-se normativas com a homologação (etiqueta **[PROPOSTA]** mantida no corpo como registro histórico da redação — INV-07; registro físico em `governance/RULES.md` = ato do Controlador). Fontes externas (research.md §2, SRC-01..05) são **[EXTERNO]** — DADO, nunca baseline; documentado ≠ homologado (TRACE-06).
 
 ---
 
@@ -155,7 +159,7 @@ A SPEC-002 é o **envelope** da evidência; o **conteúdo** analítico (a interp
 |---|---|---|
 | S1 | **Protocolo operacional** de criar/publicar/superseder/invalidar/arquivar evidência sobre o ciclo de vida CEM-001 (gate de conformidade + produtor autorizado; fail-closed incompleto) | CEM-001 Cap.4/6; research.md §6.2 |
 | S2 | **Proveniência da transformação** `Fonte → Dado → Evidência` — ferramenta/Skill produtora; fronteira Observação(Skill) ≠ Evidência(Agente) | INV-06; ROADMAP §4 linha 142; SRC-04 |
-| S3 | **Dois eixos independentes de qualidade**: confiabilidade histórica do produtor (DN-1, extensão Categoria A CEM via GMC-001) × força do relato (Evidence Strength) | DHR-SPEC002-001 §2 DN-1; SRC-02 |
+| S3 | **Dois eixos independentes de qualidade**: confiabilidade histórica do produtor (DN-1, extensão Categoria B CEM via GMC-001 — novo campo opcional; GMC-CEM001-EXT-001) × força do relato (Evidence Strength) | DHR-SPEC002-001 §2 DN-1; DHR-SPEC002-002; SRC-02 |
 | S4 | **Trava anti-INV-04**: confiabilidade-de-fonte NUNCA entra no Conviction Vector | INV-04; DHR-SPEC002-001 §2 DN-1 |
 | S5 | **Taxonomia operacional** favorável / contraevidência / inconclusiva + **gancho "ausente"** (semântica deferida) | RULE-009; DHR-SPEC002-001 §2 DN-3 |
 | S6 | **Metadado de independência/correlação** (substrato de RULE-004 para SPEC-003; NÃO computa confluência) | RULE-004; SRC-05; research.md §6.2 |
@@ -183,7 +187,7 @@ A SPEC-002 é o **envelope** da evidência; o **conteúdo** analítico (a interp
 
 ## D2 — Regras
 
-> **Etiqueta:** as RULE-EPH-* abaixo são **[PROPOSTA]** — tornam-se normativas apenas na homologação de Andraus + registro no `governance/RULES.md` pelo Controlador (nova seção "Regras de Evidence Harness (RULE-EPH)"). Até lá, não são invocáveis como FATO NORMATIVO (RULE-HG-02). As RULE/INV/ENF citadas como fundamento (**CEM-001**, **GMC-001**, **CHM-001**, **RULE-MECH-01..04**, RULE-004/005/009, ENF-01..08, INV-04/06/07/10) **já existem** e são FATO NORMATIVO.
+> **Etiqueta:** as RULE-EPH-* abaixo foram redigidas como **[PROPOSTA]** e **tornaram-se normativas com a homologação do Plan** (Andraus, DHR-SPEC002-002); o **registro físico** na nova seção "Regras de Evidence Harness (RULE-EPH)" de `governance/RULES.md` é ato do Controlador (pendente). A etiqueta [PROPOSTA] permanece nos corpos abaixo como registro histórico da redação (INV-07). As RULE/INV/ENF citadas como fundamento (**CEM-001**, **GMC-001**, **CHM-001**, **RULE-MECH-01..04**, RULE-004/005/009, ENF-01..08, INV-04/06/07/10) **já existem** e são FATO NORMATIVO.
 
 ```
 RULE-EPH-01: Toda publicação de Evidência pela camada Harness DEVE passar por gate determinístico de
@@ -198,8 +202,9 @@ RULE-EPH-02: A camada Harness DEVE registrar a proveniência operacional da tran
 
 RULE-EPH-03: A camada Harness DEVE tratar confiabilidade histórica do produtor e força do relato
              (Evidence Strength) como DOIS EIXOS INDEPENDENTES; um não DEVE influenciar o outro. A
-             confiabilidade histórica é modelada como extensão Categoria A do CEM-001 via GMC-001
-             (aditiva, sem alterar semântica existente). [Fonte: DHR-SPEC002-001 §2 DN-1; SRC-02; GMC-001 Cap.3]  [PROPOSTA]
+             confiabilidade histórica é modelada como extensão Categoria B do CEM-001 via GMC-001
+             (novo campo opcional, compatível — sem alterar semântica existente; processo formal Cap.5,
+             GMC-CEM001-EXT-001). [Fonte: DHR-SPEC002-001 §2 DN-1; DHR-SPEC002-002 (ACH-001); SRC-02; GMC-001 Cap.3/5]  [PROPOSTA]
 
 RULE-EPH-04: A confiabilidade histórica do produtor é metadado descritivo/filtro e NUNCA DEVE entrar
              como dimensão, insumo ou peso do Conviction Vector (INV-04). [Fonte: INV-04; DHR-SPEC002-001 §2 DN-1; CONS-01]  [PROPOSTA]
@@ -303,12 +308,12 @@ BASpec-EPH-002:
 BASpec-EPH-003:
   QUANDO:       Uma Evidência é publicada por um produtor com histórico registrado
   ENTÃO:        A camada associa à Evidência a confiabilidade histórica do produtor como metadado
-                descritivo (extensão Categoria A do CEM-001 via GMC-001), MANTIDA SEPARADA e
+                descritivo (extensão Categoria B do CEM-001 via GMC-001 — novo campo opcional; GMC-CEM001-EXT-001), MANTIDA SEPARADA e
                 independente da Evidence Strength (força do relato específico); um eixo não altera o outro
   PORQUE:       Doutrina Admiralty (SRC-02): "the reliability of the source does not influence the
                 assessed accuracy of the report" — confiabilidade de fonte é propriedade intrínseca da
                 evidência (pertence ao CEM-001), eixo independente da acurácia do conteúdo (DN-1)
-  REFERÊNCIA:   RULE-EPH-03; DHR-SPEC002-001 §2 DN-1; SRC-02; GMC-001 Cap.3 (Categoria A)
+  REFERÊNCIA:   RULE-EPH-03; DHR-SPEC002-001 §2 DN-1; DHR-SPEC002-002 (ACH-001); SRC-02; GMC-001 Cap.3/5 (Categoria B; GMC-CEM001-EXT-001)
   CLASSE:       D (Determinístico — associação de metadado governado)
   MECANISMO:    Regra: grava o tier de confiabilidade (Governed Enumeration sob GMC-001) sem acoplar ao valor de Evidence Strength
   CRITÉRIO 4Es: Eficácia — a separação de eixos preserva a semântica da doutrina; misturá-los degradaria a interpretação
@@ -728,7 +733,7 @@ VERIFICAÇÃO INV-07 preservado; ARCHIVED é o único caminho de "saída" da cam
 DADO        a camada tenta introduzir um novo estado de ciclo de vida ou renomear um campo canônico do CEM-001
 QUANDO      o gate de conformidade avalia contra o contrato canônico (CEM-001)
 ENTÃO       operação RECUSADA, "CANONICAL_MODEL_REDEFINITION"; extensões só via GMC-001 (Categoria A/B)
-VERIFICAÇÃO CONST-01 preservado; DN-1 entrou como extensão Categoria A via GMC-001, não como redefinição
+VERIFICAÇÃO CONST-01 preservado; DN-1 entrou como extensão Categoria B (novo campo opcional) via GMC-001/Cap.5, não como redefinição
 ```
 
 ### ADV-EPH-08 — Fixar fórmula de aging/convicção na camada de evidência (violar CONS-01/J-001)
@@ -760,7 +765,7 @@ A reconstrução completa da decisão (P13) é **capacidade do Knowledge Graph**
 ## I/O Schemas (por referência — não redefinir)
 
 - **Contrato da Evidência:** CEM-001 Cap.3 (idioma canônico — INV-10). A SPEC-002 **não** cria schema de Evidência concorrente; usa o contrato canônico.
-- **Extensão DN-1:** confiabilidade histórica do produtor como **Governed Enumeration** sob GMC-001 (Categoria A) — o artefato formal de evolução do CEM-001 (proposta + análise de impacto GMC-001 Cap.3/5) é ato de governança do Controlador/GMC-001, **não** fechado por este Plan (ver Decisões abertas / EPH-GMC-001).
+- **Extensão DN-1:** confiabilidade histórica do produtor como **novo campo opcional** do CEM-001 cujos valores são uma **Governed Enumeration** (tiers ordinais de confiabilidade) sob GMC-001 — extensão **Categoria B** (novo campo opcional, compatível; GMC-001 Cap.3). O artefato formal de evolução do CEM-001 (proposta + análise de impacto + registro do Controlador — GMC-001 Cap.5) foi **conduzido** em `governance/GMC-CEM001-EXT-001_Proposta_Extensao_Confiabilidade_Produtor_CEM-001.md`; a incorporação física ao `canon/CEM-001` (campo + versão → v1.1) é ato de registro do Controlador (ver EPH-GMC-001 — RESOLVIDO).
 - **Consumo em runtime:** os schemas `runtime-workflow.conviction-report.json` (E3/E4/E6, campos `evidence_ref`/`evidence_classification`) são **preenchidos** com a proveniência/classificação definidas aqui — o **consumo** é dos agentes (SPEC-010/012/013), adiado (research.md §4). [FONTE: WORKFLOW.md §5/§7-bis.2]
 
 ---
@@ -870,7 +875,7 @@ Obrigações herdadas do CEM-001 v1.0 e evidência de satisfação nesta Spec:
 | Consumidor não altera/reinterpreta (Cap.6) | D6 passo 5; EPH-011 (vínculo por referência, não redefinição) |
 | Neutralidade de domínio (Princípio 1) | CC-01/CC-12: infraestrutural; nenhuma análise de escola |
 | Independência da evidência (Princípio 5) | EPH-011 (uma evidência sustenta múltiplas hipóteses) |
-| Evolução só via GMC-001 (Cap.7) | DN-1 como extensão Categoria A via GMC-001; ADV-EPH-07 |
+| Evolução só via GMC-001 (Cap.7) | DN-1 como extensão Categoria B via GMC-001 (processo formal Cap.5 — GMC-CEM001-EXT-001); ADV-EPH-07 |
 
 Nenhuma obrigação herdada foi silenciosamente removida/enfraquecida (RULE-HD-03) nem contradita por ADDED/MODIFIED (RULE-HD-02). REMOVED vazio. Nenhuma obrigação ficou sem evidência de satisfação.
 
@@ -912,23 +917,24 @@ Nenhuma decisão aberta é fechada por esta entrega. Permanecem **ABERTAS/penden
 | **RISK-CONV-001** | "convicção de risco" vs Conviction Vector 8D (aberta) | Fora de escopo — a SPEC-002 não computa convicção (pendente) |
 | **ECC-VAL-001** | Validade/prazo do Dossiê de Pesquisa (aberta) | Plan iniciado no mesmo dia da abertura; regra geral permanece aberta (pendente) |
 
-**Nova decisão revelada por este Plan (para Andraus/Controlador):**
+**Decisão revelada por este Plan e RESOLVIDA na homologação (Andraus/Controlador):**
 
 | ID | Questão | Encaminhamento |
 |---|---|---|
-| **EPH-GMC-001** `[DECISÃO NECESSÁRIA]` | A homologação DN-1 nomeia a extensão como **Categoria A** ("aditiva, sem mudar semântica existente"). Pelas definições do **GMC-001 Cap.3**, novos **valores de Governed Enumeration** são Categoria A, mas um **novo campo** (mesmo opcional) reclassificaria para **Categoria B**. Modelar a confiabilidade histórica como valor de Governed Enumeration mantém-na Categoria A; se exigir um novo campo-container, a mecânica formal (proposta + análise de impacto + classificação A/B) é ato do processo GMC-001 (Cap.3/5). **Não fecho** a mecânica (RULE-MET-01) — a substância homologada (aditiva, não redefine, nunca no Conviction) é preservada; a classificação física exata é do Controlador/GMC-001. | Andraus/Controlador confirmam a via GMC-001 (valor de enum governada vs. novo campo opcional) antes/na homologação do Plan |
+| **EPH-GMC-001** `[RESOLVIDO — 2026-09-29, DHR-SPEC002-002]` | **Registro histórico da discussão A vs B (INV-07 — preservado):** a homologação da abertura (DN-1) nomeou a extensão como **Categoria A** ("aditiva, sem mudar semântica existente"). Pelas definições do **GMC-001 Cap.3**, novos **valores de Governed Enumeration** são Categoria A, mas um **novo campo** (mesmo opcional) é **Categoria B**. Na redação inicial tentou-se modelar a confiabilidade como valor de enumeração para permanecê-la Categoria A; o Revisor (parecer CONFORME, achado Médio **ACH-001**) conferiu o GMC-001 Cap.3 e confirmou que **não há enumeração compatível pronta no CEM-001** — logo a extensão exige um **campo novo** = **Categoria B**. **Resolução (Andraus, 2026-09-29):** reclassificar como **Categoria B** e conduzir o **processo formal do GMC-001 Cap.5** (proposta + análise de impacto + registro do Controlador), em vez de exceção/override. Extensão formalizada em `governance/GMC-CEM001-EXT-001_Proposta_Extensao_Confiabilidade_Produtor_CEM-001.md`. **Substância inalterada:** confiabilidade permanece metadado descritivo, NUNCA no Conviction Vector (INV-04); só o PROCESSO de extensão muda de A para B. | **RESOLVIDO** — processo Categoria B conduzido (GMC-CEM001-EXT-001); registro/incorporação física ao `canon/CEM-001` (v1.1) é ato do Controlador (CATALOGO §1). |
 
 ---
 
 ## Etiquetagem e status epistemológico (TRACE-06)
 
-- **FATO NORMATIVO:** CEM-001 v1.0, GMC-001 v1.0, CHM-001 v1.0 (baselined); atomic-spec v1.5; INV-01..10 + INV-RISK-*; ENF-01..08; RULE-MECH-01..04; RULE-HD-01..04; RULE-004/005/009; DN-1/DN-2/DN-3 (homologadas — DHR-SPEC002-001).
-- **FATO ARQUITETURAL:** esta SPEC-002 (candidata a baseline); a topologia Fusion→Conviction→Synthesis (B-001 fechada).
-- **PROPOSTA:** RULE-EPH-01..10; EC-EPH-001..004; BASpec-EPH-001..012; escada de estados operacionais DRAFT_CANDIDATE/REJECTED_INCOMPLETE.
+- **FATO NORMATIVO:** CEM-001 v1.0 (+ extensão Categoria B v1.1 via GMC-CEM001-EXT-001, homologada DHR-SPEC002-002), GMC-001 v1.0, CHM-001 v1.0 (baselined); atomic-spec v1.5; INV-01..10 + INV-RISK-*; ENF-01..08; RULE-MECH-01..04; RULE-HD-01..04; RULE-004/005/009; DN-1/DN-2/DN-3 (homologadas — DHR-SPEC002-001); esta SPEC-002 v1.1 (homologada BASELINE — DHR-SPEC002-002).
+- **FATO ARQUITETURAL:** a topologia Fusion→Conviction→Synthesis (B-001 fechada).
+- **PROPOSTA:** RULE-EPH-01..10; EC-EPH-001..004; BASpec-EPH-001..012; escada de estados operacionais DRAFT_CANDIDATE/REJECTED_INCOMPLETE (vigentes com a homologação; etiqueta [PROPOSTA] mantida no corpo como registro histórico da redação — INV-07).
 - **INFERÊNCIA:** determinação infraestrutural (CC-01/CC-12); nota de eixo de herança (CC-08 vs RULE-HV); mapeamento de consumo em runtime (E3/E4/E6).
-- **DECISÃO NECESSÁRIA:** EPH-GMC-001 (mecânica GMC-001 da extensão DN-1); J-001/M-001/H-001/N-001/K-001/G-001/C-001/RISK-CONV-001/ECC-VAL-001 (referenciadas como pendentes).
+- **RESOLVIDO:** EPH-GMC-001 (extensão DN-1 = Categoria B, processo GMC-001 Cap.5 conduzido — GMC-CEM001-EXT-001; DHR-SPEC002-002).
+- **DECISÃO NECESSÁRIA (permanecem ABERTAS — não fechadas por este Plan):** J-001/M-001/H-001/N-001/K-001/G-001/C-001/RISK-CONV-001/ECC-VAL-001 (referenciadas como pendentes — CONS-01).
 - **EXTERNO:** SRC-01..05 (research.md §2) — DADO, nunca baseline; documentado ≠ homologado.
 
 ---
 
-*SPEC-002 — Plan candidato (PROPOSTA). Método: atomic-spec.md v1.5. Constrói SOBRE CEM-001 (CONST-01) — não redefine. Não fecha decisão aberta (CONS-01). Não fabrica resultado de execução (RULE-MET-01). Pronto para verificação de spec (checks.md) e submissão ao Revisor após o gate determinístico.*
+*SPEC-002 — Plan v1.1 **HOMOLOGADO — BASELINE** (Andraus, 2026-09-29, DHR-SPEC002-002; Revisor CONFORME com achado Médio ACH-001 resolvido). Método: atomic-spec.md v1.5. Constrói SOBRE CEM-001 (CONST-01) — não redefine; extensão DN-1 = Categoria B via processo formal GMC-001 Cap.5 (GMC-CEM001-EXT-001). Não fecha decisão aberta (CONS-01). Não fabrica resultado de execução (RULE-MET-01).*
