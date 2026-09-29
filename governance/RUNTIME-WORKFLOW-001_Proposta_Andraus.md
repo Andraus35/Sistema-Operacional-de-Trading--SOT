@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Código | **RUNTIME-WORKFLOW-001** |
-| Versão | **v2 (2026-09-29)** — atualização do workflow por Andraus (mais detalhada que a v1) + schemas de contrato de dados. **v1 preservada integralmente (INV-07 — nada deletado).** Ver §1 (v1 verbatim), §1-bis (v2 verbatim), §2-bis (decomposição v1→v2), §6 (schemas). |
+| Versão | **v3 (2026-09-29)** — complemento de Andraus: tabela fixa de pareamento de timeframes contexto↔entrada (3 pares) + restrição nos schemas. **v1 e v2 preservadas integralmente (INV-07 — nada deletado).** Ver §1 (v1 verbatim), §1-bis (v2 verbatim), §1-ter (v3 verbatim — tabela de pareamento), §2-bis (decomposição, atualizada com o pareamento), §6 (schemas, atualizados). |
 | Natureza | **Documento de insumo** (não-normativo) — registro verbatim de uma proposta de **fluxo de acionamento e formação de convicção entre os agentes cognitivos** ("workflow de runtime" no sentido de **orquestração cognitiva do Harness**, não de software — ver §0-bis), trazida por Andraus em chat, com decomposição preliminar mapeada contra o baseline. **NÃO é Spec, NÃO é emenda, NÃO fecha decisão aberta.** |
 | Status epistemológico | **INSUMO — `[FONTE]` (registro de diretiva) + `[INFERÊNCIA]` (decomposição/mapeamento) + `[DECISÃO NECESSÁRIA]` (o que depende de Andraus).** Não é baseline. Não é FATO NORMATIVO nem FATO ARQUITETURAL. |
 | Origem | Andraus (dono do projeto), chat, 2026-09-29 — mesma diretiva que originou a EUA-E23. |
@@ -54,6 +54,56 @@ Este documento **registra uma proposta de Andraus como insumo** — não a homol
 | Δ9 | Manager envia ao Risk Agent **"dados da oportunidade"** (v1: "dados de risco-retorno") — o risco-retorno passa a ser **análise do próprio Risk Agent** | `[FONTE]` — realoca a análise risco-retorno |
 | Δ10 | Risk Agent decide **"por convicção"** se envia sinal (reforça convicção de risco — tensão RISK-CONV-001) | `[DECISÃO NECESSÁRIA]` |
 
+## 1-ter. Complemento v3 — Tabela de pareamento de timeframes contexto↔entrada (Andraus, 2026-09-29) `[FONTE]`
+
+> "Segue tabela de timeframes de Contexto para análise estrutural e institucional, e de entrada para análise de confluência multitimeframe e do operacional
+>
+> Macro
+> D1
+> H4
+> H1
+>
+> Micro
+> H1
+> M15
+> M5
+>
+> Análise macro em D1 entrada em H1
+> Análise macro em H4 entrada em M15
+> Análise macro em H1 entrada em M5"
+
+*(Transcrição literal — RCN-001/PC-06. Grafia original preservada.)*
+
+### Leitura do dado — 3 pares fixos, não produto cartesiano `[FONTE]`/`[INFERÊNCIA]`
+
+O texto de Andraus é preciso: cada par de contexto→entrada é citado **uma vez**, com "Análise macro em X entrada em Y". Portanto são **exatamente 3 pares fixos** — **não** um produto cartesiano livre entre {D1,H4,H1} e {H1,M15,M5} (que geraria 9 combinações). Registro como fato observado; não há ambiguidade a resolver (RULE-MET-01 — não fabricar combinações não ditas).
+
+| # | Papel Macro (contexto) | Papel Micro (entrada) | Usado por |
+|---|---|---|---|
+| Par 1 | **D1** | **H1** | Contexto: estrutural (E3) + institucional (E4). Entrada: estrutural (E3) + operacional (E6). |
+| Par 2 | **H4** | **M15** | idem |
+| Par 3 | **H1** | **M5** | idem |
+
+**Nota sobre o H1 (registro de fato, não contradição) `[FONTE]`:** o H1 aparece em **dois papéis distintos** — como TF de **contexto** no Par 3 (entrada M5) e como TF de **entrada** no Par 1 (contexto D1). São usos distintos do mesmo TF em pares diferentes, **não** uma contradição nem uma quarta combinação. Não colapsar em erro nem inferir par adicional.
+
+### Onde a restrição se aplica na decomposição E1–E8 (mapeamento) `[INFERÊNCIA]`
+
+- **E1 (mission dispatch):** o parâmetro "timeframe de análise" que o operador aponta deixa, na prática, de ser **dois campos livres** (contexto + entrada independentes) e passa a ser a **escolha de UM dos 3 pares**. Nos schemas, `mission_parameters.context_timeframe` + `mission_parameters.entry_timeframe` ficam acoplados por um `oneOf` de 3 pares (ver §6).
+- **E3 (agente estrutural — contexto E entrada):** opera dentro do TF de contexto **e** do TF de entrada **do par escolhido** (ex.: par D1→H1 ⇒ analisa D1 e H1).
+- **E4 (agente institucional — só contexto):** opera no TF de **contexto** do par escolhido.
+- **E6 (agente operacional — só entrada):** opera no TF de **entrada** do par escolhido.
+
+### Achado — M15 ausente dos schemas de 1a geração `[FONTE]`/`[DECISÃO NECESSÁRIA]`
+
+A tabela de Andraus usa **D1/H4/H1/M15/M5**, incluindo **M15**. Os schemas de 1a geração (`elliott-wave.*`, `smc.*`, `ict.*`, `synthesis.*`) usam o conjunto **S1/D1/H4/H1/M5** — **sem M15** (e com S1, que a tabela de Andraus não cita). Isto é uma **lacuna registrada**, não resolvida aqui:
+
+- Os schemas `runtime-workflow.*` (desta proposta) tiveram **M15 adicionado** aos enums de timeframe, com nota de origem.
+- Os schemas de 1a geração **NÃO foram tocados** (fora do escopo desta proposta; possuem histórico próprio — RULE-MET-01 / INV-07). Propagar M15 a eles, ou reconciliar o conjunto de TFs (S1 vs M15) entre 1a geração e runtime-workflow, é **`[DECISÃO NECESSÁRIA]`** para a abertura da Spec correspondente (SPEC-010/011/012/013/014). Não inventar M15 nos schemas antigos.
+
+### `[DECISÃO NECESSÁRIA]` nova introduzida pela tabela — exaustividade dos pares
+
+O texto de Andraus lista 3 pares, mas **não declara** se esses 3 pares são **exaustivos e fixos** (lista fechada e definitiva) ou se são os pares **iniciais** de uma lista que pode crescer (ex.: acrescentar W1→H4 ou D1→M15 no futuro). Isto **não está claro** no texto e **não deve ser inventado** (RULE-MET-01 / CONS-01). **Proponho o identificador `RUNTIME-TF-PAIR-001`** (só proposta de identificador — só Andraus cunha/abre) para rastrear: *"a tabela de pareamento contexto↔entrada é uma lista fechada e definitiva de 3 pares, ou um conjunto inicial extensível?"*. Impacto se for lista aberta: o `oneOf` de 3 pares nos schemas precisará virar extensível/versionado. **`[DECISÃO NECESSÁRIA]` — Andraus.** Enquanto isso, os schemas codificam **os 3 pares literais** que Andraus deu (fail-closed: só aceita o que foi dito).
+
 ## 2. Decomposição preliminar (mapeamento contra o baseline) `[INFERÊNCIA]`
 
 Etapas e atores citados por Andraus, mapeados contra o ROADMAP/AGENTS.md. **A coluna "Baseline correlato" indica onde a etapa provavelmente se especifica; a coluna "Depende de" indica a decisão aberta ou Spot que a governa.**
@@ -83,6 +133,8 @@ A v2 introduz uma etapa nova de **distribuição de missão pelo Manager** (E2) 
 | E7 | Manager forma **convicção global** e decide envio ao Risk Agent com **dados da oportunidade** (não risco-retorno pré-calculado) | Manager + Risk Agent | SPEC-014 · TMP (SPEC-016 repurposada) · Risk Agent (BL-018) | J-001 · RISK-CONV-001 | `runtime-workflow.manager-conviction-envelope` (`global` + `dispatch_to_risk`) |
 | E8 | **Agente de risco** faz **sua própria análise de risco-retorno** e decide **por convicção** se envia sinal ao **bot finance externo** | Risk Agent | RISK-SPEC-* (BL-018) · Signal Package (D-RISK-SP-001, RISK-SPEC-022) · INV-05 | RISK-ARR-LOC-001 · RISK-CONV-001 · SPEC-045-RUNTIME-001 | `runtime-workflow.risk-decision` |
 
+**Atualização v3 — pareamento de timeframes (ver §1-ter):** os TFs de contexto e de entrada citados em **E1** (mission dispatch), **E3** (estrutural, contexto E entrada), **E4** (institucional, só contexto) e **E6** (operacional, só entrada) deixam de ser livres e passam a ser regidos por **um dos 3 pares fixos** de Andraus (D1→H1, H4→M15, H1→M5). E1 aponta o par (não dois campos livres); E3/E4 operam no contexto do par; E3/E6 operam na entrada do par. Restrição codificada por `oneOf` em `runtime-workflow.mission-dispatch.json` (§6). Exaustividade dos pares = `[DECISÃO NECESSÁRIA]` RUNTIME-TF-PAIR-001 (§1-ter).
+
 ## 3. Pontos de atenção / tensões com o baseline (a tratar na abertura, não aqui) `[INFERÊNCIA]`/`[DECISÃO NECESSÁRIA]`
 
 1. **Hierarquia analítica.** O fluxo E2→E3→E5 (estrutural→institucional→operacional/ICT) é **coerente** com a hierarquia inviolável Elliott→Fibonacci→Fractal→SMC→ICT (AGENTS.md §6.1) e com "ICT não cria hipótese" (§6.2). `[INFERÊNCIA]` — a confirmar por Spec.
@@ -111,8 +163,8 @@ Atendendo à diretiva de Andraus (2026-09-29 — "elabore o schema e/ou demais m
 
 | Schema | Etapa(s) | O que cobre | O que reaproveita / não redefine |
 |---|---|---|---|
-| `schemas/runtime-workflow.mission-dispatch.json` | E1, E2 | Parâmetros de missão do operador (ativo, tipo de missão, tipo de trade, TFs) + distribuição da missão pelo Manager ao estrutural | enum de symbol e conjunto de TFs dos schemas de 1a geração; alavancagem marcada como implicação/`[DECISÃO NECESSÁRIA]` (RISK-LEV-001) |
-| `schemas/runtime-workflow.conviction-report.json` | E3, E4, E6 | Entrega genérica de convicção por agente especializado (estrutural/institucional/operacional): TF analisado, classificação de evidência, ref. de hipótese, convicção | reaproveita o conceito `conviction_pct` de `elliott-wave.output.json`; hipótese=CHM-001, evidência=CEM-001; `hypothesis_ref=null` para ICT (invariante) |
+| `schemas/runtime-workflow.mission-dispatch.json` | E1, E2 | Parâmetros de missão do operador (ativo, tipo de missão, tipo de trade, TFs) + distribuição da missão pelo Manager ao estrutural. **v3:** par contexto/entrada restringido a 3 pares fixos via `oneOf` (D1→H1, H4→M15, H1→M5); M15 adicionado ao enum de TF | enum de symbol e base de TFs dos schemas de 1a geração (S1/D1/H4/H1/M5) + M15 (v3, tabela de Andraus); alavancagem marcada como implicação/`[DECISÃO NECESSÁRIA]` (RISK-LEV-001); exaustividade dos pares = `[DECISÃO NECESSÁRIA]` RUNTIME-TF-PAIR-001 |
+| `schemas/runtime-workflow.conviction-report.json` | E3, E4, E6 | Entrega genérica de convicção por agente especializado (estrutural/institucional/operacional): TF analisado, classificação de evidência, ref. de hipótese, convicção. **v3:** M15 adicionado ao enum de `analyzed_timeframes` | reaproveita o conceito `conviction_pct` de `elliott-wave.output.json`; hipótese=CHM-001, evidência=CEM-001; `hypothesis_ref=null` para ICT (invariante); M15 (v3) — TFs devem pertencer ao par fixo da missão |
 | `schemas/runtime-workflow.alarm-trigger.json` | E5 | Alarme-gatilho: nível de preço, condição, janela de ativação (após Killzone OU outro momento), status | enum de symbol; máquina de estados definitiva deferida a SPEC-008/M-001 |
 | `schemas/runtime-workflow.manager-conviction-envelope.json` | E5, E7 | Dois momentos do Manager (convicção macro de contexto vs global) + payload "dados da oportunidade" ao Risk Agent | referencia Conviction Vector 8D (`synthesis.output.json`) sem redefinir; TMP=SPEC-016 repurposada (não redefinido) |
 | `schemas/runtime-workflow.risk-decision.json` | E8 | Saída do Risk Agent: análise risco-retorno própria, convicção de risco, decisão ACCEPT/WAIT/REJECT/ABSTAIN, enviar/não sinal | estados de `SOT-RISK-MASTER-001 §3.5`; **NÃO define o Signal Package** — contrato deferido a RISK-SPEC-022 (`[DECISÃO NECESSÁRIA — D-RISK-SP-001]`) |
@@ -126,7 +178,8 @@ Atendendo à diretiva de Andraus (2026-09-29 — "elabore o schema e/ou demais m
 - Não altera a hierarquia analítica, R:R 1:3, convicção ≥70% / score ≥7/9, Conviction Vector 8D, Signal Package, INV-05.
 - Não é ordem de implementação nem autorização de abertura de Spec — a abertura segue RULE-ECC-01/02 (passo 1-bis do ROADMAP §23).
 - Não fecha `RISK-LEV-001` (alavancagem por convicção — proposta de identificador da v2) nem `D-RISK-SP-001` (contrato do Signal Package). Os schemas da §6 são `[PROPOSTA]`, não baseline.
+- Não fecha `RUNTIME-TF-PAIR-001` (v3 — se a tabela de 3 pares contexto↔entrada é lista fechada e definitiva ou conjunto inicial extensível). Os schemas codificam **literalmente os 3 pares** que Andraus deu; a exaustividade é `[DECISÃO NECESSÁRIA]` — só Andraus. Não propaga M15 aos schemas de 1a geração (lacuna registrada em §1-ter).
 
 ---
 
-*Insumo registrado pelo Especificador (Claude Code), 2026-09-29 (v1) e atualizado para v2 (2026-09-29, atualização de workflow + 5 schemas), a partir de diretiva de Andraus em chat. Não-normativo; sujeito à homologação da EUA-E23 para adquirir o vínculo de leitura obrigatória da §4. v1 preservada integralmente (INV-07 — nada removido).*
+*Insumo registrado pelo Especificador (Claude Code), 2026-09-29 (v1), atualizado para v2 (2026-09-29, atualização de workflow + 5 schemas) e para v3 (2026-09-29, complemento: tabela de pareamento de timeframes contexto↔entrada — 3 pares fixos — + restrição `oneOf` nos schemas mission-dispatch/conviction-report e adição de M15), a partir de diretiva de Andraus em chat. Não-normativo; sujeito à homologação da EUA-E23 para adquirir o vínculo de leitura obrigatória da §4. v1 e v2 preservadas integralmente (INV-07 — nada removido).*

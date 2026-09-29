@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "sot://schemas/runtime-workflow.conviction-report",
   "title": "Runtime Workflow — Conviction Report por Agente Especializado (E2/E3/E5)",
-  "description": "Contrato genérico de entrega de um agente especializado (estrutural/institucional/operacional) ao Manager: observação → marcação → classificação → tratamento de evidência/hipótese → formação de convicção. Reaproveita o conceito de conviction_pct de schemas/elliott-wave.output.json (primary_hypothesis.conviction_pct) e não redefine o Conviction Vector 8D (schemas/synthesis.output.json). Insumo estrutural do RUNTIME-WORKFLOW-001 v2.",
+  "description": "Contrato genérico de entrega de um agente especializado (estrutural/institucional/operacional) ao Manager: observação → marcação → classificação → tratamento de evidência/hipótese → formação de convicção. Reaproveita o conceito de conviction_pct de schemas/elliott-wave.output.json (primary_hypothesis.conviction_pct) e não redefine o Conviction Vector 8D (schemas/synthesis.output.json). Insumo estrutural do RUNTIME-WORKFLOW-001 v3. Enum de analyzed_timeframes acrescido de M15 na v3 (origem: tabela de pareamento de Andraus 2026-09-29).",
   "$comment": "status: PROPOSTA — não homologado; ver governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md. Não fecha J-001 (fórmula/pesos/limiares do Conviction Vector) nem RISK-CONV-001. CONS-01. O objeto de hipótese permanece regido por CHM-001 e o de evidência por CEM-001 (não redefinidos — CONST-01).",
   "type": "object",
   "required": ["agent_role", "symbol", "analyzed_timeframes", "opportunity_flagged", "conviction"],
@@ -20,11 +20,11 @@
     "timestamp_utc": { "type": "string", "format": "date-time" },
     "analyzed_timeframes": {
       "type": "array",
-      "description": "Qual(is) timeframe(s) este agente efetivamente analisou (campo novo, explicitado na v2). structural: contexto E entrada; institutional: apenas contexto; operational: apenas entrada.",
+      "description": "Qual(is) timeframe(s) este agente efetivamente analisou (campo novo, explicitado na v2). structural: contexto E entrada; institutional: apenas contexto; operational: apenas entrada. Os TFs declarados devem pertencer ao par fixo da missão (tabela de Andraus 2026-09-29: contexto ∈ {D1,H4,H1}, entrada ∈ {H1,M15,M5}; pares D1→H1, H4→M15, H1→M5 — restrição do par imposta em runtime-workflow.mission-dispatch.json). M15 ADICIONADO ao enum na v3; ACHADO: M15 não existe nos schemas de 1a geração (S1/D1/H4/H1/M5) — lacuna registrada, não propagada aos schemas antigos.",
       "minItems": 1,
       "items": {
         "type": "string",
-        "enum": ["S1", "D1", "H4", "H1", "M5"]
+        "enum": ["S1", "D1", "H4", "H1", "M15", "M5"]
       }
     },
     "evidence_classification": {
