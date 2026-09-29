@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-29",
-  "digest": "a6c080a00b52853e444023f975bf52c3387af16f1ec92e123ff12d2e87530ba0",
+  "digest": "6c4d809428e6d5ab067f7d8accf1ad2e31f896287ebf5b999ec74559aee145fa",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -423,7 +423,7 @@
    "path": "governance/CONFLICT-MAP.md",
    "area": "governance",
    "title": "Conflict Map — SOT (Sistema Operacional de Trading)",
-   "in": 41,
+   "in": 42,
    "out": 33
   },
   {
@@ -556,7 +556,7 @@
    "path": "governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
    "area": "governance",
    "title": "DHR-EUA-E13 — Ata de Homologação da Emenda EUA-E13 (Camada Decisional)",
-   "in": 14,
+   "in": 12,
    "out": 4
   },
   {
@@ -759,7 +759,7 @@
    "path": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
    "area": "governance",
    "title": "DHR-SPEC002-001 — Ata de Homologação — Abertura da SPEC-002 (Evidence & Evidence Provenance Harness)",
-   "in": 7,
+   "in": 8,
    "out": 23
   },
   {
@@ -1771,7 +1771,7 @@
   {
    "id": "DHR-SPEC002-001",
    "defined_in": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-SPEC019-001",
@@ -1876,7 +1876,7 @@
   {
    "id": "EUA-E13",
    "defined_in": "governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
-   "cited_by": 14
+   "cited_by": 12
   },
   {
    "id": "EUA-E14",
@@ -2141,7 +2141,7 @@
   {
    "id": "RULE-DEC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 14
+   "cited_by": 13
   },
   {
    "id": "RULE-DEC-02",
@@ -2321,12 +2321,12 @@
   {
    "id": "RULE-HD-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 15
+   "cited_by": 14
   },
   {
    "id": "RULE-HD-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 8
+   "cited_by": 7
   },
   {
    "id": "RULE-HD-04",
@@ -2346,7 +2346,7 @@
   {
    "id": "RULE-HG-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 15
+   "cited_by": 14
   },
   {
    "id": "RULE-HG-03",
@@ -2536,12 +2536,12 @@
   {
    "id": "RULE-MET",
    "defined_in": "governance/RULES.md",
-   "cited_by": 17
+   "cited_by": 16
   },
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 46
+   "cited_by": 45
   },
   {
    "id": "RULE-MET-02",
@@ -3517,11 +3517,6 @@
   },
   {
    "from": "AGENTS.md",
-   "to": "governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
-   "type": "id"
-  },
-  {
-   "from": "AGENTS.md",
    "to": "governance/DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md",
    "type": "id"
   },
@@ -3543,6 +3538,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-EUA-E24_Ata_Homologacao_WORKFLOW_Raiz.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md",
    "type": "id"
   },
   {
@@ -3687,6 +3687,11 @@
   },
   {
    "from": "ROADMAP.md",
+   "to": "governance/CONFLICT-MAP.md",
+   "type": "path"
+  },
+  {
+   "from": "ROADMAP.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
    "type": "id"
   },
@@ -3698,11 +3703,6 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
-   "type": "id"
-  },
-  {
-   "from": "ROADMAP.md",
-   "to": "governance/DHR-EUA-E13_Ata_Homologacao_Camada_Decisional.md",
    "type": "id"
   },
   {
