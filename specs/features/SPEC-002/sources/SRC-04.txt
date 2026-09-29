@@ -1,0 +1,11 @@
+SRC-04 — Execution provenance & evidence tracing em agentes LLM
+URL: https://arxiv.org/html/2606.04990v1
+Data de acesso: 2026-09-29
+Classe: Evidência (survey acadêmico; arXiv 2606.04990 — posterior ao corte de treino, tomado como DADO não verificado)
+
+TRECHO LITERAL CAPTURADO (verbatim, via WebFetch, 2026-09-29):
+"Evidence tracing and execution provenance address this gap by modeling how retrieved evidence, tool outputs, memory items, environment observations, intermediate claims, actions, and final answers are connected"
+
+Nota de captura: título "From Agent Traces to Trust: Evidence Tracing and Execution Provenance in LLM Agents".
+Limitação declarada pelos autores (da busca, NÃO verbatim): sistemas atuais raramente oferecem
+suporte claim-level, memory lineage e cross-agent provenance propagation.

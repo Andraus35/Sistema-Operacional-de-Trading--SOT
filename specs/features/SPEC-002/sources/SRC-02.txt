@@ -1,0 +1,10 @@
+SRC-02 — Admiralty code / NATO AJP-2.1 (STANAG 2511) source reliability × information credibility
+URL: https://en.wikipedia.org/wiki/Admiralty_code
+Data de acesso: 2026-09-29
+Classe: Padrão (esquema de avaliação de fonte de dois eixos, usado em inteligência/fusion centers)
+
+TRECHO LITERAL CAPTURADO (verbatim, via WebFetch, 2026-09-29):
+"Each descriptor is considered in isolation to ensure that the reliability of the source does not influence the assessed accuracy of the report."
+
+Nota de captura: página-título retornado "Admiralty code". O esquema separa reliability da FONTE
+(A-F) da credibility do RELATO específico (1-6) — dois eixos avaliados independentemente.

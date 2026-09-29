@@ -1,0 +1,12 @@
+SRC-01 — Data Provenance definition (provenance-standard family: CASRAI / W3C PROV)
+URL: https://casrai.org/guides/data-provenance
+Data de acesso: 2026-09-29
+Classe: Padrão (definição de referência de proveniência de dados; família W3C PROV)
+
+TRECHO LITERAL CAPTURADO (verbatim, via WebFetch, 2026-09-29):
+"Data provenance is the documented history of a research data object: where it came from, what happened to it, and who or what acted on it"
+
+Nota de captura: página-título retornado "Data Provenance: Definition & Standards — CASRAI".
+Contexto adicional (da busca, NÃO verbatim de fetch): a família W3C PROV modela proveniência
+como Entities / Activities / Agents (3 superclasses + 7 relações) — usado apenas como DADO de
+contexto arquitetural, não como alegação carregada isolada.

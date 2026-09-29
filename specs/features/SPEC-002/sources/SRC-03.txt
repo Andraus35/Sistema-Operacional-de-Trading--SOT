@@ -1,0 +1,11 @@
+SRC-03 — Audit trail & data lineage em dados financeiros (compliance)
+URL: https://www.neoxam.com/datahub/ensure-audit-lineage-data-quality/
+Data de acesso: 2026-09-29
+Classe: Prática (prática de indústria — data lineage/audit trail em sistemas financeiros)
+
+TRECHO LITERAL CAPTURADO (verbatim, via WebFetch, 2026-09-29):
+"Audit trail and traceability refer to the systematic logging and historical tracking of data activities within an enterprise system."
+
+Nota de captura: página-título retornado "Audit Trail and Traceability in Financial Data | NeoXam DataHub".
+Contexto adicional (da busca, NÃO verbatim): regimes MiFID II/Basel III exigem lineage bitemporal —
+"what information you knew and when and how you knew it has changed over time" (retenção 5-7 anos).

@@ -1,0 +1,11 @@
+SRC-05 — Correlação de evidência vs. premissa de independência (raciocínio evidencial)
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC12116114/
+Data de acesso: 2026-09-29
+Classe: Evidência (artigo revisado por pares — evidential reasoning com correlação)
+
+TRECHO LITERAL CAPTURADO (verbatim, via WebFetch, 2026-09-29):
+"The Bayesian probabilistic foundation of ER rules requires evidence independence, which may be violated in complex systems with inherent indicator correlations."
+
+Nota de captura: título "A New Evidential Reasoning Rule Considering Evidence Correlation with
+Maximum Information Coefficient and Application in Fault Diagnosis". Sustenta a alegação de que
+independência de evidência é premissa forte e frequentemente violada — mapeia a RULE-004 (SOT).
