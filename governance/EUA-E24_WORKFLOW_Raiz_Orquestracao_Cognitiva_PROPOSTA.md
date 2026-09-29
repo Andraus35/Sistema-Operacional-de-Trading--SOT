@@ -7,7 +7,7 @@
 | Natureza | Emenda **de organização documental + método de leitura** — (1) cria o documento de raiz `WORKFLOW.md` (síntese canônica legível da orquestração cognitiva dos agentes especificados, em runtime cognitivo); (2) inclui `WORKFLOW.md` como **4º item de leitura obrigatória** de todo agente (ao lado de `ROADMAP.md` e `atomic-spec.md`, em pé de igualdade hierárquica com `AGENTS.md`); (3) **emenda o whitelist de raiz do HOD-001 §6b.1** para admitir `WORKFLOW.md`. Toca: `governance/HOD-001…PROPOSTA.md` (§2, §3, §6b.1), `AGENTS.md` (§1, §2), `governance/CATALOGO-OFICIAL.md`, e cria `WORKFLOW.md` na raiz. |
 | Compatibilidade | **Minor** (aditiva; nenhum documento removido, nenhuma norma reescrita, nenhum identificador reutilizado — INV-07/INV-09; nenhuma decisão aberta fechada — CONS-01). Classificação final = parecer do Revisor. |
 | Complexidade declarada | **MEDIUM** — emenda de método/organização, aditiva, sem criar RULE nova, sem lente de domínio, sem fechar decisão aberta, sem redefinir canônico. Justificativa da classificação em §8. |
-| Status epistemológico | **PROPOSTA — NADA aplicado.** As mudanças da §4 (incl. a criação física do `WORKFLOW.md` na raiz e a emenda ao whitelist) só ocorrem **após** parecer CONFORME do Revisor e homologação de Andraus. `[FATO]` = verificado nos arquivos citados; `[PROPOSTA]` = o que se pede. |
+| Status epistemológico | **HOMOLOGADA — BASELINE** (DHR-EUA-E24, Andraus, 2026-09-29; Revisor CONFORME condicional). As mudanças da §4 foram aplicadas, **com as modificações de Andraus**: Q1 (ênfase reforçada para o Especificador na SPEC-002) e Q6 ("INTEGRAR E UNIFICAR EM WORKFLOW.MD" — o `/WORKFLOW.md` criado unifica o conteúdo integral do RUNTIME-WORKFLOW-001, indo além da síntese-que-aponta do Anexo A, que fica SUPERSEDIDO). F-01 do Revisor (LICENSE ausente da tabela §3 do HOD-001) corrigido na aplicação. `[FATO]` = verificado nos arquivos. |
 | Autoria | Especificador (Claude Code, Opus 4.8), 2026-09-29 |
 | Origem | Diretiva de Andraus (chat, 2026-09-29): *"CRIAR O WORKFLOW.MD NA RAIZ DO REPO EM PÉ DE IGUALDADE HIERÁRQUICA QUE AGENTS.MD MAS NÃO CONFLITANDO COM NENHUM ARQUIVO DE LEITURA DIRETIVA"* + escolha explícita de Andraus, quando confrontado com o conflito do whitelist HOD-001 §6b.1: **"Emendar o HOD-001"**. |
 | Fundamento no baseline | HOD-001 §6b.1 (whitelist de raiz — DHR-HOD-001, FATO NORMATIVO) · AGENTS.md §1 (leitura obrigatória) / §2 (mapa do repo) · RULE-ECC-06 / EUA-E23 (RUNTIME-WORKFLOW-001 = insumo de leitura obrigatória em Dossiê) · `governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md` v4 (fonte a sintetizar) · INV-07 (nada deletado; RUNTIME-WORKFLOW-001 permanece) · INV-09 (não reescreve norma) · CONS-01 · RULE-MET-01 (não-fabricação) · RULE-HG-01..08 (governança de mudança) · 4Es (CEE-001) |
@@ -139,10 +139,11 @@ Classificada **MEDIUM** (não HIGH como a EUA-E23) porque: (a) é **aditiva e de
 ```
 Etapa 1 — Diretiva de Andraus (chat, 2026-09-29: "criar WORKFLOW.md na raiz…" + "Emendar o HOD-001") .... ✅
 Etapa 2 — Formalização (esta proposta v1 + Anexo A — NADA aplicado) ...................................... ✅ (este documento)
-Etapa 3 — Parecer do Revisor (contra HOD-001 §6b.1, INV-07/09, CONS-01, CONST-01, 4Es, RULE-ECC-06) ..... ⏳
-Etapa 4 — Consenso de Andraus (Q1–Q6) .................................................................. ⏳
-Etapa 5 — Aplicação da §4 (criar /WORKFLOW.md a partir do Anexo A; emendar HOD-001 §6b.1/§2/§3;
-          AGENTS.md §1/§2; CATALOGO; sincronizado-até; build_map.py --check) + DHR-EUA-E24 ............ ⏳
+Etapa 3 — Parecer do Revisor (contra HOD-001 §6b.1, INV-07/09, CONS-01, CONST-01, 4Es, RULE-ECC-06) ..... ✅ CONFORME condicional (0 Crítico/Médio; 1 Menor F-01)
+Etapa 4 — Consenso de Andraus (Q1–Q6) .................................................................. ✅ Q1/Q6 MODIFICADOS (ver DHR-EUA-E24 §2)
+Etapa 5 — Aplicação da §4 (criar /WORKFLOW.md UNIFICADO [Q6]; emendar HOD-001 §6b.1/§2/§3 [+F-01 LICENSE];
+          AGENTS.md §1/§2; RULES.md/atomic-spec §15 [RULE-ECC-06→/WORKFLOW.md]; CATALOGO; sincronizado-até;
+          banner superseded em RUNTIME-WORKFLOW-001 e Anexo A) + DHR-EUA-E24 ......................... ✅ EFETIVADO (build_map.py --check = pendência do coordenador, sem Bash)
 ```
 
 ## 11. Evidências (âncoras)

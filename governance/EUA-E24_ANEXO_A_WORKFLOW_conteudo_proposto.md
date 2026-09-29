@@ -1,3 +1,5 @@
+> **SUPERSEDIDO pela decisão de Andraus (Q6 — "INTEGRAR E UNIFICAR EM WORKFLOW.MD", DHR-EUA-E24, 2026-09-29):** o `/WORKFLOW.md` efetivamente criado **unifica também** o conteúdo integral de `RUNTIME-WORKFLOW-001` (v1→v4, decomposição E1–E8, tabela de pares, 5 schemas, decisões abertas), indo **além** desta proposta de síntese-que-aponta-para-o-insumo. Ver `/WORKFLOW.md` (raiz) para o conteúdo vigente. Este anexo é preservado como registro do processo (INV-07 — não deletado).
+
 # EUA-E24 — Anexo A: conteúdo proposto de `/WORKFLOW.md`
 
 > **STATUS DESTE ARQUIVO:** `[PROPOSTA]` — anexo da emenda `EUA-E24`. O texto abaixo (da linha `================ INÍCIO DO CONTEÚDO DE /WORKFLOW.md ================` em diante) é o **conteúdo integral proposto** para o futuro `/WORKFLOW.md` na raiz. **Nada é promovido para a raiz até a homologação da EUA-E24** (Q1/Q2/Q5). Enquanto não homologado, este anexo vive em `governance/` (não viola o whitelist HOD-001 §6b.1, pois não está na raiz). Na Etapa 5 da EUA-E24, o bloco abaixo é copiado para `/WORKFLOW.md` (sem esta cabeça de anexo).

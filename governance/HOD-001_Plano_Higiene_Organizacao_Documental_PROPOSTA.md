@@ -29,7 +29,7 @@ Hoje a **raiz** acumula ~22 `.md/.MD`, dos quais **16 são referências externas
 
 ```
 / (RAIZ — só caminho-quente)
-  AGENTS.md · atomic-spec.md · ROADMAP.md · GLOSSARIO.md · README.md · LICENSE · (configs)
+  AGENTS.md · atomic-spec.md · ROADMAP.md · WORKFLOW.md · GLOSSARIO.md · README.md · LICENSE · (configs)
 
 governance/ (NORMAS VIVAS + índice)
   CONSTITUTION · RULES · GPR-001 · PAP-001 · SES-001 · MAN-001 ·
@@ -57,7 +57,7 @@ docs/ (já organizado)
 
 | Categoria | Documentos | Destino | Risco de referência |
 |---|---|---|---|
-| **Caminho-quente (raiz)** | AGENTS, atomic-spec, ROADMAP, GLOSSARIO, README | **fica na raiz** | — |
+| **Caminho-quente (raiz)** | AGENTS, atomic-spec, ROADMAP, WORKFLOW, GLOSSARIO, README, LICENSE | **fica na raiz** | — |
 | **Normas vivas (governance raiz)** | CONSTITUTION, RULES, GPR-001, PAP-001, SES-001, MAN-001, CONFLICT-MAP, CATALOGO, CIC-001, RCH-001 | **fica em governance/** | — |
 | **Emendas homologadas** | EUA-E04..E16 (13) | `governance/emendas/` | **Alto** — citadas por caminho em CATALOGO, DHR, MAN-001 |
 | **Atas** | DHR-* (25) | `governance/atas/` | Médio — citadas entre si e no CATALOGO |
@@ -110,7 +110,7 @@ Extensão permanente do HOD-001 (paralela à RPSA da EUA-E16). Torna a raiz uma 
 
 ### 6b.1 Raiz = zona de intake, não de repouso
 A raiz só **repousa** o **whitelist de caminho-quente** (explícito — A-01):
-- **Docs:** `AGENTS.md · atomic-spec.md · ROADMAP.md · GLOSSARIO.md · README.md · LICENSE`
+- **Docs:** `AGENTS.md · atomic-spec.md · ROADMAP.md · WORKFLOW.md · GLOSSARIO.md · README.md · LICENSE` *(WORKFLOW.md acrescentado pela EUA-E24 / DHR-EUA-E24, 2026-09-29 — 4º documento de leitura obrigatória; F-01 do Revisor reconciliado: LICENSE agora presente nas três listas §2/§3/§6b.1)*
 - **Config (por extensão/nome):** `package.json · package-lock.json · tsconfig.json · .eslintrc.json · .prettierrc · .gitignore · .pre-commit-config.yaml` e dotfiles/dotdirs de tooling (`.claude/`, `.github/`, `.agents/`, `.clinerules/`, `.harness-eval/`)
 
 Qualquer outro `.md/.MD` na raiz é um **intake não-tratado** (transitório). A regra de whitelist incide sobre documentos (`.md/.MD`); arquivos de config e dotfiles ficam fora do escopo de intake.

@@ -1,3 +1,7 @@
+> **SUPERSEDIDO — conteúdo integrado e unificado em `WORKFLOW.md` (EUA-E24, DHR-EUA-E24, 2026-09-29). Este arquivo permanece como registro histórico do processo de elaboração (v1→v4) — não editar; ver `WORKFLOW.md` para o conteúdo vigente.**
+>
+> *Preservado em `governance/` (não movido para `docs/_legacy/`) por ter valor de auditoria/rastreabilidade das decisões — é citado em DHR-EUA-E23 como fonte da RULE-ECC-06 (INV-07: nada apagado). A obrigação de leitura da RULE-ECC-06 aponta agora para `WORKFLOW.md` (correção de referência consequente — DHR-EUA-E24), que absorveu este conteúdo integralmente.*
+
 # RUNTIME-WORKFLOW-001 — Proposta de Workflow de Runtime do SOT (insumo de Andraus)
 
 | Campo | Valor |

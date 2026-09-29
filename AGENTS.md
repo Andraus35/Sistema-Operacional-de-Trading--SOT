@@ -19,6 +19,9 @@
 |---|---|
 | `ROADMAP.md` | Sequência oficial de Specs, Spec autorizada, decisões abertas ativas |
 | `atomic-spec.md` | Método vigente (BASpec, D0–D9, Enforcement Contract, etiquetagem) |
+| `WORKFLOW.md` | Orquestração cognitiva dos agentes especificados em runtime (sequência de acionamento, formação de convicção em camadas, pares de timeframe, alarme-gatilho, decisão de sinal) — **não** define sequência de Specs (ROADMAP) nem método (atomic-spec) |
+
+`WORKFLOW.md` é **núcleo sempre-obrigatório** (EUA-E24 / DHR-EUA-E24, Q3): lido em toda sessão por todo agente, no mesmo patamar de leitura de `AGENTS.md`, **independente do dial de complexidade GES/EUA-E19**. Tem **ênfase reforçada para o Especificador na abertura da SPEC-002 e Specs de domínio subsequentes** (Q1, DHR-EUA-E24): ali a leitura de `WORKFLOW.md` é passo obrigatório reforçado do Dossiê de Pesquisa (RULE-ECC-06), não apenas mais uma fonte de contexto geral.
 
 Se qualquer um faltar na raiz: o Especificador para e reporta a Andraus; o Revisor emite NÃO CONFORME Crítica.
 
@@ -32,6 +35,7 @@ Se qualquer um faltar na raiz: o Especificador para e reporta a Andraus; o Revis
 raiz/
 ├── ROADMAP.md              ← sequência de Specs (leitura obrigatória)
 ├── atomic-spec.md          ← método (leitura obrigatória)
+├── WORKFLOW.md             ← orquestração cognitiva em runtime (leitura obrigatória — núcleo sempre-obrigatório)
 ├── AGENTS.md               ← este arquivo
 ├── GLOSSARIO.md            ← identidade, equivalências de nomes, termos canônicos
 ├── governance/             ← autoridade normativa F.1 do harness

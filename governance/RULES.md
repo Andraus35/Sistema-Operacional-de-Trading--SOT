@@ -492,17 +492,20 @@ RULE-ECC-05: Além da lente arquitetural já exigida (RULE-ECC-02 item 3), o Dos
              partir de SPEC-002; não retroage sobre SPEC-020/021/046.
              [Fonte: DHR-EUA-E23; RULE-ECC-02; RULE-PD-01/02; AGENTS.md §6; DHR-PROV-WEB-001 §2.1]
 
-RULE-ECC-06: O documento governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md (registro verbatim do
-             workflow de ORQUESTRAÇÃO COGNITIVA de Andraus) é leitura obrigatória do Dossiê de
-             Pesquisa de qualquer Spec cuja abertura abra ou toque K-001, SPEC-018 ou
-             SPEC-045-RUNTIME-001, ou que especifique um agente operacional, manager/contexto/
-             orquestrador (SPEC-014/023/024) ou o agente de risco (RISK-SPEC-*). O Dossiê dessas
-             Specs DEVE citá-lo e registrar, por etapa E1–E7/E8, uma decisão adotar/adaptar/
-             rejeitar/adiar, SEM fechar nenhuma decisão aberta (CONS-01). O insumo vincula a
-             obrigação de considerá-lo, NÃO o conteúdo da Spec. Ausência da consideração numa Spec
-             aplicável = Médio (Dossiê incompleto); tratar o insumo como decisão fechada = Crítico
-             (viola CONS-01/RULE-MET-01). Prospectiva — incide a partir de SPEC-002.
-             [Fonte: DHR-EUA-E23; RULE-ECC-02; AGENTS.md §9; CONS-01; RULE-MET-01]
+RULE-ECC-06: O documento /WORKFLOW.md (raiz — documento único e canônico da ORQUESTRAÇÃO
+             COGNITIVA do SOT em runtime, que unificou e absorveu o insumo verbatim de Andraus)
+             é leitura obrigatória do Dossiê de Pesquisa de qualquer Spec cuja abertura abra ou
+             toque K-001, SPEC-018 ou SPEC-045-RUNTIME-001, ou que especifique um agente
+             operacional, manager/contexto/orquestrador (SPEC-014/023/024) ou o agente de risco
+             (RISK-SPEC-*). O Dossiê dessas Specs DEVE citá-lo e registrar, por etapa E1–E7/E8,
+             uma decisão adotar/adaptar/rejeitar/adiar, SEM fechar nenhuma decisão aberta
+             (CONS-01). O documento vincula a obrigação de considerá-lo, NÃO o conteúdo da Spec.
+             Ausência da consideração numa Spec aplicável = Médio (Dossiê incompleto); tratar o
+             workflow como decisão fechada = Crítico (viola CONS-01/RULE-MET-01). Prospectiva —
+             incide a partir de SPEC-002. NOTA (DHR-EUA-E24, 2026-09-29): a fonte vigente é
+             /WORKFLOW.md; o histórico de elaboração (v1→v4) permanece em
+             governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md (SUPERSEDIDO, não deletado — INV-07).
+             [Fonte: DHR-EUA-E23; DHR-EUA-E24; RULE-ECC-02; AGENTS.md §9; CONS-01; RULE-MET-01]
 
 ---
 
