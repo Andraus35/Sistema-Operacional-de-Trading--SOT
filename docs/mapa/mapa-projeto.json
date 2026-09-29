@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-29",
-  "digest": "5e56651dbb8967ab6b3708dda85851800253f2697800a78615efab200a8ffd6c",
+  "digest": "369901befa5e4b61fe4dad1257911bca4eaa059113d5e033a3c22775cc6e0537",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -626,7 +626,7 @@
    "path": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
    "area": "governance",
    "title": "DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades formais separadas?)",
-   "in": 5,
+   "in": 6,
    "out": 8
   },
   {
@@ -928,7 +928,7 @@
    "area": "governance",
    "title": "EUA-E23 — Lentes de domínio obrigatórias no Dossiê de Pesquisa (Elliott/Fibonacci · SMC · ICT · risco-retorno), com proporcionalidade; e registro do workflow de orquestração cognitiva de Andraus como insumo obrigatório de leitura (PROPOSTA)",
    "in": 1,
-   "out": 21
+   "out": 23
   },
   {
    "path": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
@@ -1235,7 +1235,7 @@
    "path": "specs/features/SPEC-019/plan.md",
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
-   "in": 61,
+   "in": 62,
    "out": 16
   },
   {
@@ -1613,7 +1613,7 @@
   {
    "id": "DHR-I001-001",
    "defined_in": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-MAN-001",
@@ -1978,7 +1978,7 @@
   {
    "id": "RULE-CAU",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "RULE-CAU-01",
@@ -2018,7 +2018,7 @@
   {
    "id": "RULE-CTF",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "RULE-CTF-01",
@@ -2038,7 +2038,7 @@
   {
    "id": "RULE-DEC",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "RULE-DEC-01",
@@ -2193,7 +2193,7 @@
   {
    "id": "RULE-HD",
    "defined_in": "ROADMAP.md",
-   "cited_by": 25
+   "cited_by": 26
   },
   {
    "id": "RULE-HD-01",
@@ -2373,7 +2373,7 @@
   {
    "id": "RULE-INQ",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "RULE-INQ-01",
@@ -2418,7 +2418,7 @@
   {
    "id": "RULE-MET",
    "defined_in": "ROADMAP.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "RULE-MET-01",
@@ -2478,7 +2478,7 @@
   {
    "id": "RULE-ONT",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "RULE-ONT-01",
@@ -2513,7 +2513,7 @@
   {
    "id": "RULE-PRB",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-PRB-01",
@@ -2543,7 +2543,7 @@
   {
    "id": "RULE-SEM",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "RULE-SEM-01",
@@ -2633,7 +2633,7 @@
   {
    "id": "RULE-UNC",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "RULE-UNC-01",
@@ -2748,7 +2748,7 @@
   {
    "id": "SPEC-019",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 44
+   "cited_by": 45
   },
   {
    "id": "SPEC-020",
@@ -10014,6 +10014,11 @@
   },
   {
    "from": "governance/EUA-E23_Lentes_Dominio_Dossie_Pesquisa_PROPOSTA.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Lentes_Dominio_Dossie_Pesquisa_PROPOSTA.md",
    "to": "governance/DHR-PRINC-BID-001_Ata_Homologacao_Heranca_Bidirecional.md",
    "type": "id"
   },
@@ -10046,6 +10051,11 @@
    "from": "governance/EUA-E23_Lentes_Dominio_Dossie_Pesquisa_PROPOSTA.md",
    "to": "governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md",
    "type": "path"
+  },
+  {
+   "from": "governance/EUA-E23_Lentes_Dominio_Dossie_Pesquisa_PROPOSTA.md",
+   "to": "specs/features/SPEC-019/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/EUA-E23_Lentes_Dominio_Dossie_Pesquisa_PROPOSTA.md",

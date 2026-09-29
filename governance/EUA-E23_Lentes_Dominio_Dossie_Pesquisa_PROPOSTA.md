@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Código | **EUA-E23** (próximo código livre: EUA-E22 é a última homologada; E20 nunca foi emitida — a FASE RISK usou EUA-E19a; verificado em `governance/` e `CATALOGO-OFICIAL.md`). **Atribuição final = Controlador.** |
-| Versão | v1 |
+| Versão | **v2** — trata o parecer do Revisor sobre a v1 (**NÃO CONFORME RECUPERÁVEL**, 2026-09-29: F-01 §7-bis Bloco C cobria só RULE-EPI/MET/DEC — faltavam as rubricas N8–N17 · F-02 "Vínculo normativo" do insumo sem tag `[PROPOSTA]` · F-03 I-001 listada como aberta · F-04 RULE-REG-001 ausente da lista de abertas · F-05 referência informal "N3 da EUA-E21"). A v1 e o parecer ficam registrados aqui; nada foi removido, só acrescentado/corrigido (INV-07/09). |
 | Natureza | Emenda **normativa de método** — amplia o **conteúdo mínimo do Dossiê de Pesquisa** (RULE-ECC-02 / `atomic-spec.md` §15) exigindo, além da lente arquitetural já vigente, **lentes de domínio de trading** (Elliott/Fibonacci, SMC, ICT, risco-retorno) **com proporcionalidade**; e cria o insumo `RUNTIME-WORKFLOW-001`. Toca: `atomic-spec.md`, `governance/RULES.md`, `ROADMAP.md`, `.claude/agents/especificador.md`, `.claude/agents/revisor.md`. |
 | Compatibilidade | **Minor** (aditiva; nenhum objeto removido, nenhuma Spec homologada reescrita, nenhum identificador reutilizado — INV-07). Classificação final = parecer do Revisor. |
 | Status epistemológico | **PROPOSTA — nada aplicado.** As mudanças da §4 só serão aplicadas **após** parecer do Revisor e homologação de Andraus. `[FATO]` = verificado nos arquivos citados; `[PROPOSTA]` = o que se pede. |
@@ -91,7 +91,9 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 
 - **Hierarquia Elliott→Fibonacci→Fractal→SMC→ICT, R:R 1:3, convicção ≥70%/score ≥7/9, Conviction Vector 8D, Signal Package, INV-05: intocados.**
 - **Nenhum modelo canônico baselined é redefinido** (CONST-01): CHM-001, CEM-001, CEE-001 v2.0, GMC-001, SDD-001, PPQ-001, SAS-001, CR-001.
-- **Nenhuma decisão aberta é fechada** (CONS-01): J-001, G-001, H-001, I-001 (fechada anteriormente), K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, RISK-ARR-LOC-001, RISK-CONV-001, ECC-VAL-001, ECC-03-001. **RULE-ECC-03 permanece RESERVADA.**
+- **Nenhuma decisão aberta é fechada** (CONS-01): J-001, G-001, H-001, K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, RISK-ARR-LOC-001, RISK-CONV-001, ECC-VAL-001, ECC-03-001 e **RULE-REG-001**. **RULE-ECC-03 permanece RESERVADA.**
+- **Nota sobre RULE-REG-001 (F-04):** a decisão aberta RULE-REG-001 (incorporação física ao `RULES.md` do lote de 10+1 famílias RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC + RULE-MET, diferida ao piloto SPEC-002 sob atomic-spec v1.5 — `ROADMAP.md:31`, gatilho `spec:SPEC-002 em redação`) **permanece intocada**. Esta emenda **não** a antecipa nem a fecha: RULE-ECC-05/06 pertencem à família **RULE-ECC**, que **já está fisicamente registrada** em `governance/RULES.md` e **não** integra o lote diferido (§1 item 8) — por isso podem ser registradas na homologação sem violar RULE-HG-02 nem o gatilho da SPEC-002.
+- **Decisões já fechadas, não reabertas (F-03):** **I-001** (FECHADA — DHR-I001-001: Skills = híbrido por Classe) e **L-001** (FECHADA — SPEC-019) permanecem fechadas; esta emenda não as toca.
 - **Não força as 4 lentes em toda Spec** — só as aplicáveis; infraestrutura pura pode não ter nenhuma (declarado e justificado).
 - **Não cria uma segunda pesquisa** paralela à do `PD-xx` — reaproveita a mesma pesquisa (RULE-ECC-05 item 4).
 - **Não altera RULE-ECC-01/02/03/04**, nem RULE-PD-01/02/03, nem RULE-MECH; apenas as **estende** com uma exigência aditiva de cobertura.
@@ -126,11 +128,24 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 | N4 | ECC-05 | Pesquisa de uma lente **inconclusiva/contraditória** tratada como PASS forçado. | Sim — o Dossiê deve declarar **INDETERMINADO**. | Estado válido INDETERMINADO; não força decisão nem fecha decisão aberta. |
 | N5 | ECC-05/06 | Uma lente ou o insumo **fecha decisão aberta** (ex.: adota fórmula de convicção fechando J-001). | Sim — Revisor verifica CONS-01; qualquer fechamento de decisão aberta via pesquisa/insumo = achado. | **Crítico** (CONS-01/RULE-MET-01). |
 | N6 | ECC-06 | Spec de agente operacional/manager/risco **ignora** `RUNTIME-WORKFLOW-001`. | Sim — Revisor verifica citação e decisão por etapa E1–E7. | **Médio (incompleto)**. |
-| N7 | ECC-05 | Web indisponível para uma lente aplicável no momento da abertura. | Sim — Especificador não produz a lente. | **Fail-closed** (RULE-ECC-02/N3 da EUA-E21); exceção só por RULE-HG-07. |
+| N7 | ECC-05 | Web indisponível para uma lente aplicável no momento da abertura. | Sim — Especificador não produz a lente. | **Fail-closed** herdado da cláusula de web indisponível da **RULE-ECC-02** (`governance/RULES.md:446-451`; `atomic-spec.md:439` — "Web indisponível = abertura suspensa"); exceção só por RULE-HG-07. |
 
 **Bloco B — compatibilidade com RULE-HG-01..08, obrigação a obrigação:** HG-01 (trio Especificador→Revisor→Andraus→Controlador) → §9; HG-02 (RULE em proposta permanece `[PROPOSTA]`, não vinculante) → §4 só aplica após homologação; RULE-ECC-05/06 registráveis em RULES.md pois RULE-ECC já está registrada (não é da família diferida RULE-REG-001 — §1 item 8); HG-03 (CONFORME ≠ vigência) → Etapas 3/4 separadas; HG-04 (análise de impacto) → §4 + §5 (não fecha decisão, não redefine canônico); HG-05 (versionamento monotônico) → RULE-ECC-05/06 novos IDs, sem reutilização; HG-06 (Constitution Check) → N/A (emenda, não Spec); HG-07 (exceção com justificativa e prazo) → N7; HG-08 (registro por DHR) → §9 Etapa 5.
 
-**Bloco C — epistêmico (RULE-EPI/MET/DEC):** a pesquisa das lentes é **evidência externa**, não fato SOT (`[EXTERNO]` ≠ homologado); nenhuma lente nem o insumo fecham decisão aberta (CONS-01); pesquisa inconclusiva = INDETERMINADO (abstenção produtiva); decisão ≠ execução (RULE-DEC-01) — a adoção de uma prática de escola é **proposta** até homologação de Andraus; o workflow de Andraus é insumo de **orquestração cognitiva**, não requisito de software (não-fabricação — não inferir arquitetura técnica de uma proposta de fluxo cognitivo).
+**Bloco C — disciplinas cognitivas N8–N17, família a família** (registro explícito exigido para proposta HIGH sob EUA-E18; cada família = "verificado sem achado" com justificativa, ou achado declarado):
+
+| Família (nó) | Rubrica | Resultado |
+|---|---|---|
+| **RULE-EPI** (N9) | Hipótese ≠ fato; pesquisa das lentes é **evidência externa**, não fato SOT (`[EXTERNO]` ≠ homologado — TRACE-06). | Verificado sem achado. |
+| **RULE-SEM** (N10) | Terminologia concorrente. "Lente de domínio" é **termo novo** introduzido por esta emenda, **sem conflito** com terminologia existente (nenhum outro doc usa "lente" com sentido incompatível — verificado). A desambiguação de "runtime" → **orquestração cognitiva** já está tratada no `RUNTIME-WORKFLOW-001` §0-bis e no §0 desta emenda. | Verificado sem achado adicional (desambiguação já coberta). |
+| **RULE-ONT** (N11) | Categorização ontológica. As 4 lentes são **eixos de pesquisa**, não novas entidades do modelo canônico; não criam objeto no Blackboard/KG nem redefinem CEM/CHM. | Verificado sem achado. |
+| **RULE-INQ** (N12) | Método de investigação. A emenda **exige** formular questões e estratégia de busca por lente (item do Dossiê); não substitui investigação por asserção. | Verificado sem achado. |
+| **RULE-CAU** (N13) | Causalidade. A emenda não faz afirmação causal ("lente X garante sinal melhor"); apenas amplia a **cobertura** da pesquisa. Nenhuma correlação tratada como causa. | Verificado sem achado. |
+| **RULE-CTF** (N14) | Contrafactual. Os casos de negação N1–N7 (Bloco A) são o registro contrafactual ("se a regra falhasse, o que seria observável?"). | Verificado — coberto por Bloco A. |
+| **RULE-UNC** (N15) | Incerteza. Pesquisa inconclusiva de uma lente = **INDETERMINADO** (estado válido; abstenção produtiva), não PASS/FAIL forçado. | Verificado sem achado. |
+| **RULE-PRB** (N16) | Probabilidade. A emenda **não** declara nenhuma probabilidade nem precisão numérica; a natureza probabilística da pesquisa está registrada como risco residual §6.7 sem quantificação infundada. | Verificado sem achado. |
+| **RULE-DEC** (N17) | Decisão ≠ execução. A adoção de uma prática de escola é **proposta** até homologação de Andraus (RULE-DEC-01); a emenda define método de pesquisa, não executa decisão de trading. | Verificado sem achado. |
+| **RULE-MET** (N8) | Não-fabricação. Nenhuma lente nem o insumo fecham decisão aberta (CONS-01); o workflow de Andraus é insumo de **orquestração cognitiva**, **não** requisito de software — não se infere arquitetura técnica de uma proposta de fluxo cognitivo; a sigla "ECC" não é expandida (§0). | Verificado sem achado. |
 
 ## 8. `[DECISÃO NECESSÁRIA]` — Andraus
 
@@ -149,7 +164,8 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 ```
 Etapa 1 — Diretiva de Andraus (chat, 2026-09-29) ....................... ✅
 Etapa 2 — Formalização (esta proposta v1 — NADA aplicado) ............... ✅
-Etapa 3 — Parecer do Revisor ............................................ ⏳
+Etapa 3 — Parecer do Revisor (v1) ...................................... ✅ NÃO CONFORME RECUPERÁVEL (F-01 bloqueante MÉDIO + F-02..F-05 Menores; nenhum Crítico)
+Etapa 3b — v2 (F-01..F-05 corrigidos) → revisão focada em F-01 ......... ⏳
 Etapa 4 — Consenso de Andraus (Q1–Q7) ................................... ⏳
 Etapa 5 — Aplicação das mudanças da §4 + DHR + sincronizado-até + CATALOGO + RMR-001 (11-bis) ... ⏳ (só após a Etapa 4)
 ```
