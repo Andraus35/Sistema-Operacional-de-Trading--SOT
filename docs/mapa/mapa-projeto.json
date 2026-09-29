@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-29",
-  "digest": "2a9b8c141df15e21aa0252a93a5ff904e7a752001140aeeebe42825fe113aa39",
+  "digest": "535d4665024fc2653219cdcf5f0ac2f08cea365db57403e60bb316fd4c4b98ef",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1018,7 +1018,7 @@
    "path": "governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md",
    "area": "governance",
    "title": "RUNTIME-WORKFLOW-001 — Proposta de Workflow de Runtime do SOT (insumo de Andraus)",
-   "in": 1,
+   "in": 2,
    "out": 6
   },
   {

@@ -20,7 +20,7 @@
     "timestamp_utc": { "type": "string", "format": "date-time" },
     "analyzed_timeframes": {
       "type": "array",
-      "description": "Qual(is) timeframe(s) este agente efetivamente analisou (campo novo, explicitado na v2). structural: contexto E entrada; institutional: apenas contexto; operational: apenas entrada. Os TFs declarados devem pertencer ao par fixo da missão (tabela de Andraus 2026-09-29: contexto ∈ {D1,H4,H1}, entrada ∈ {H1,M15,M5}; pares D1→H1, H4→M15, H1→M5 — restrição do par imposta em runtime-workflow.mission-dispatch.json). M15 ADICIONADO ao enum na v3; ACHADO: M15 não existe nos schemas de 1a geração (S1/D1/H4/H1/M5) — lacuna registrada, não propagada aos schemas antigos.",
+      "description": "Qual(is) timeframe(s) este agente efetivamente analisou (campo novo, explicitado na v2). structural: contexto E entrada; institutional: apenas contexto; operational: apenas entrada. Os TFs declarados devem pertencer ao par da missão (tabela de Andraus 2026-09-29: contexto ∈ {D1,H4,H1}, entrada ∈ {H1,M15,M5}; pares D1→H1, H4→M15, H1→M5 — restrição do par imposta em runtime-workflow.mission-dispatch.json). A lista de pares é conjunto inicial EXTENSÍVEL (decisão de Andraus, 2026-09-29 — RUNTIME-TF-PAIR-001; ver RUNTIME-WORKFLOW-001 §1-quater): não é lista fechada/definitiva; pares futuros por atualização de schema. M15 ADICIONADO ao enum na v3; ACHADO: M15 não existe nos schemas de 1a geração (S1/D1/H4/H1/M5) — lacuna registrada, não propagada aos schemas antigos.",
       "minItems": 1,
       "items": {
         "type": "string",

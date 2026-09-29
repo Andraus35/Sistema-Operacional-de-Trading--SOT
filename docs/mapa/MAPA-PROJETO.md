@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-09-29** · digest `2a9b8c141df15e21` · **191** documentos · **1856** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-09-29** · digest `535d4665024fc265` · **191** documentos · **1856** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -270,7 +270,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md](../../governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md) | PP-PAP-001 — Pacote de Partida do PAP-001 | 9 | 4 |
 | [RCH-001_Registro_Ciclos_Hygiene.md](../../governance/RCH-001_Registro_Ciclos_Hygiene.md) | RCH-001 — Registro de Ciclos de Hygiene de Princípios | 19 | 21 |
 | [RULES.md](../../governance/RULES.md) | Rules — SOT (Sistema Operacional de Trading) | 133 | 15 |
-| [RUNTIME-WORKFLOW-001_Proposta_Andraus.md](../../governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md) | RUNTIME-WORKFLOW-001 — Proposta de Workflow de Runtime do SOT (insumo de Andr... | 1 | 6 |
+| [RUNTIME-WORKFLOW-001_Proposta_Andraus.md](../../governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md) | RUNTIME-WORKFLOW-001 — Proposta de Workflow de Runtime do SOT (insumo de Andr... | 2 | 6 |
 | [SES-001_Especializacao_Cognitiva_Trading.md](../../governance/SES-001_Especializacao_Cognitiva_Trading.md) | EMENDA SES-001 | 40 | 3 |
 
 ### canon
