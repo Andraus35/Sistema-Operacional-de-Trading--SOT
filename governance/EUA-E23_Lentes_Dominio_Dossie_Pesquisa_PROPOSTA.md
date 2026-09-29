@@ -1,12 +1,12 @@
-# EUA-E23 — Lentes de domínio obrigatórias no Dossiê de Pesquisa (Elliott/Fibonacci · SMC · ICT · risco-retorno), com proporcionalidade; e registro do workflow de orquestração cognitiva de Andraus como insumo obrigatório de leitura (PROPOSTA)
+# EUA-E23 — Lentes de domínio obrigatórias no Dossiê de Pesquisa (6 lentes: Elliott · Fibonacci · SMC · ICT · Confluência intra-escola · risco-retorno), com proporcionalidade; e registro do workflow de orquestração cognitiva de Andraus como insumo obrigatório de leitura (HOMOLOGADA)
 
 | Campo | Valor |
 |---|---|
 | Código | **EUA-E23** (próximo código livre: EUA-E22 é a última homologada; E20 nunca foi emitida — a FASE RISK usou EUA-E19a; verificado em `governance/` e `CATALOGO-OFICIAL.md`). **Atribuição final = Controlador.** |
-| Versão | **v2** — trata o parecer do Revisor sobre a v1 (**NÃO CONFORME RECUPERÁVEL**, 2026-09-29: F-01 §7-bis Bloco C cobria só RULE-EPI/MET/DEC — faltavam as rubricas N8–N17 · F-02 "Vínculo normativo" do insumo sem tag `[PROPOSTA]` · F-03 I-001 listada como aberta · F-04 RULE-REG-001 ausente da lista de abertas · F-05 referência informal "N3 da EUA-E21"). A v1 e o parecer ficam registrados aqui; nada foi removido, só acrescentado/corrigido (INV-07/09). |
-| Natureza | Emenda **normativa de método** — amplia o **conteúdo mínimo do Dossiê de Pesquisa** (RULE-ECC-02 / `atomic-spec.md` §15) exigindo, além da lente arquitetural já vigente, **lentes de domínio de trading** (Elliott/Fibonacci, SMC, ICT, risco-retorno) **com proporcionalidade**; e cria o insumo `RUNTIME-WORKFLOW-001`. Toca: `atomic-spec.md`, `governance/RULES.md`, `ROADMAP.md`, `.claude/agents/especificador.md`, `.claude/agents/revisor.md`. |
-| Compatibilidade | **Minor** (aditiva; nenhum objeto removido, nenhuma Spec homologada reescrita, nenhum identificador reutilizado — INV-07). Classificação final = parecer do Revisor. |
-| Status epistemológico | **PROPOSTA — nada aplicado.** As mudanças da §4 só serão aplicadas **após** parecer do Revisor e homologação de Andraus. `[FATO]` = verificado nos arquivos citados; `[PROPOSTA]` = o que se pede. |
+| Versão | **v3 — decisão de Andraus (Q2 modificado), 2026-09-29** — Andraus homologou a emenda modificando a Q2: **não são 4 lentes, são 6**, nesta ordem — **(1) Elliott, (2) Fibonacci (SEPARADA de Elliott — na v2 eram uma lente combinada), (3) SMC, (4) ICT, (5) Confluência (confluência DENTRO do campo de análise de cada escola — intra-escola — NÃO confluência entre escolas, que é a hierarquia analítica), (6) risco-retorno** (confirmada como 6ª lente). As respostas de Andraus a Q1/Q3–Q7 = Sim. O texto normativo da RULE-ECC-05 e todas as menções a "4 lentes" foram atualizados para 6 lentes. **v1/v2 e os pareceres preservados integralmente (INV-07) — nada removido, só acrescentado/corrigido.** ▪ **v2** — tratou o parecer do Revisor sobre a v1 (**NÃO CONFORME RECUPERÁVEL**, 2026-09-29: F-01 §7-bis Bloco C cobria só RULE-EPI/MET/DEC — faltavam as rubricas N8–N17 · F-02 "Vínculo normativo" do insumo sem tag `[PROPOSTA]` · F-03 I-001 listada como aberta · F-04 RULE-REG-001 ausente da lista de abertas · F-05 referência informal "N3 da EUA-E21"). v1 e o parecer ficam registrados aqui; nada removido, só acrescentado/corrigido (INV-07/09). Revisor emitiu **CONFORME** na v2. |
+| Natureza | Emenda **normativa de método** — amplia o **conteúdo mínimo do Dossiê de Pesquisa** (RULE-ECC-02 / `atomic-spec.md` §15) exigindo, além da lente arquitetural já vigente, **6 lentes de domínio de trading** (Elliott · Fibonacci · SMC · ICT · Confluência intra-escola · risco-retorno) **com proporcionalidade**; e cria o insumo `RUNTIME-WORKFLOW-001`. Toca: `atomic-spec.md`, `governance/RULES.md`, `ROADMAP.md`, `.claude/agents/especificador.md`, `.claude/agents/revisor.md`, `governance/CATALOGO-OFICIAL.md`. |
+| Compatibilidade | **Minor** (aditiva; nenhum objeto removido, nenhuma Spec homologada reescrita, nenhum identificador reutilizado — INV-07). Classificação final = parecer do Revisor (CONFORME, v2). |
+| Status epistemológico | **HOMOLOGADA — vigência imediata** (DHR-EUA-E23, Andraus, 2026-09-29; Revisor CONFORME na v2 após NÃO CONFORME RECUPERÁVEL na v1). *[texto original preservado — INV-07]* Estado anterior: **PROPOSTA — nada aplicado.** As mudanças da §4 foram aplicadas **após** parecer CONFORME do Revisor e homologação de Andraus (Q1–Q7; Q2 modificado para 6 lentes). `[FATO]` = verificado nos arquivos citados; `[PROPOSTA]` = o que se pediu (agora aplicado). |
 | Autoria | Especificador (Claude Code), 2026-09-29 |
 | Origem | Diretiva de Andraus (chat, 2026-09-29): a pesquisa externa que guia a especificação hoje só usa a **lente de arquitetura**; Andraus quer pesquisa mais robusta que contemple **tanto o workflow dele quanto o estado da arte arquitetural E principalmente do Trading** (escolas Elliott, SMC, ICT e análise de risco-retorno). |
 | Fundamento no baseline | RULE-ECC-02 / `atomic-spec.md` §15 (Dossiê de Pesquisa — DHR-EUA-E21) · RULE-PD-01/02 (Princípios de Domínio por Spec de especialidade — DHR-PRINC-BID-001) · AGENTS.md §6 (hierarquia Elliott→Fibonacci→Fractal→SMC→ICT; R:R 1:3; convicção; Conviction Vector 8D) · CHM-001 / CEM-001 / CEE-001 v2.0 (canônicos baselined) · DHR-PROV-WEB-001 §2.1 (salvaguarda web) · RULE-HG-01..08 (governança de mudança) · INV-07 · CONS-01 · RULE-MET-01 (não-fabricação) |
@@ -30,25 +30,29 @@
 | 4 | Já existe uma exigência de **Princípios de Domínio** (`PD-xx`) fundamentados em pesquisa `[EXTERNO]` para **Spec de especialidade** (RULE-PD-01/02), mas ela **pressupõe** que o Dossiê tenha coberto o domínio — sem exigir explicitamente as **lentes de escola** que alimentam esses `PD-xx`. Há sinergia a explicitar, não duplicar. | `governance/RULES.md:550-561`; `atomic-spec.md:336` (§10.7) |
 | 5 | Os slots de agentes de domínio existem e mapeiam diretamente às escolas: SPEC-010 (Elliott), SPEC-011 (Fibonacci/Fractal), SPEC-012 (SMC), SPEC-013 (ICT), SPEC-014 (Synthesis/Decisão) e Risk Agent (BL-018/RISK-SPEC-*). | `ROADMAP.md:195-217`; `backlog/BL-018-RISK-AGENT-backlog.md` |
 | 6 | Andraus trouxe um **workflow de orquestração cognitiva** (Killzone → estrutural → institucional → manager → operacional → risco → Signal Package) que toca K-001, SPEC-018 e SPEC-045-RUNTIME-001 e o §9 do AGENTS.md — hoje **sem registro** como insumo de pesquisa. | Diretiva 2026-09-29; `ROADMAP.md:227-228, :330`; `AGENTS.md:§9` |
-| 7 | Nem toda Spec toca as 4 escolas (ex.: infraestrutura pura — Blackboard, Event Bus, Scheduler). Forçar as 4 lentes sempre violaria os 4Es (Economicidade) e geraria pesquisa irrelevante. | `AGENTS.md:§6 item 11` (4Es); `atomic-spec.md:441` (proporcionalidade do Dossiê) |
+| 7 | Nem toda Spec toca as escolas de domínio (ex.: infraestrutura pura — Blackboard, Event Bus, Scheduler). Forçar as 6 lentes sempre violaria os 4Es (Economicidade) e geraria pesquisa irrelevante. | `AGENTS.md:§6 item 11` (4Es); `atomic-spec.md:441` (proporcionalidade do Dossiê) |
 | 8 | RULE-ECC-01/02/03/04 **já estão fisicamente registradas** em `governance/RULES.md` (§ "Regras de Especificação Emergente") — o diferimento ao piloto SPEC-002 aplica-se à **família RULE-REG-001** (HD/EPI/SEM/…), **não** a RULE-ECC. Logo, RULE-ECC-05/06 podem ser registradas em RULES.md na homologação (como RULE-ECC-04 já foi), sem violar RULE-HG-02 nem o gatilho `spec:SPEC-002 em redação`. | `governance/RULES.md:424-470`; `ROADMAP.md:31` (RULE-REG-001) |
 
 ## 2. Regras propostas `[PROPOSTA]`
 
 ### RULE-ECC-05 — Lentes de domínio obrigatórias no Dossiê de Pesquisa (com proporcionalidade)
 
-> Além da **lente arquitetural** já exigida (RULE-ECC-02, item 3 — arquitetura SOT + modelos canônicos), o Dossiê de Pesquisa de qualquer Spec que **toque o domínio de trading** DEVE pesquisar o estado da arte e as melhores práticas sob as **lentes de domínio** aplicáveis, cada uma etiquetada `[EXTERNO]` e classificada (Padrão/Prática/Benchmark/Evidência/Experimento/Opinião):
+> Além da **lente arquitetural** já exigida (RULE-ECC-02, item 3 — arquitetura SOT + modelos canônicos), o Dossiê de Pesquisa de qualquer Spec que **toque o domínio de trading** DEVE pesquisar o estado da arte e as melhores práticas sob as **6 lentes de domínio** aplicáveis, **nesta ordem** (decisão de Andraus, Q2 modificado, 2026-09-29), cada uma etiquetada `[EXTERNO]` e classificada (Padrão/Prática/Benchmark/Evidência/Experimento/Opinião):
 >
-> - **(a) Lente Elliott / Fibonacci / estrutura de ondas** — contagem, maturidade, proporcionalidade, confluência, fractalidade.
-> - **(b) Lente SMC (Smart Money Concepts)** — liquidez, BOS/CHOCH/MSS, FVG, order blocks, intenção institucional.
-> - **(c) Lente ICT** — timing, killzones, OTE, entrada/stop/target (execução; **ICT não cria hipótese** — AGENTS.md §6.2).
-> - **(d) Lente de gestão de risco-retorno** — position sizing, R:R (mín. 1:3 — invariante), gestão de risco de portfólio, heat/exposição.
+> - **(1) Lente Elliott / estrutura de ondas** — contagem, grau de onda, maturidade, alternância, projeção estrutural.
+> - **(2) Lente Fibonacci** *(SEPARADA da Elliott — decisão de Andraus, Q2)* — retrações, extensões, projeções, clusters/confluência de níveis, proporcionalidade geométrica.
+> - **(3) Lente SMC (Smart Money Concepts)** — liquidez, BOS/CHOCH/MSS, FVG, order blocks, intenção institucional.
+> - **(4) Lente ICT** — timing, killzones, OTE, entrada/stop/target (execução; **ICT não cria hipótese** — AGENTS.md §6.2).
+> - **(5) Lente Confluência (intra-escola)** *(decisão de Andraus, Q2)* — convergência de sinais **DENTRO do campo de análise de uma mesma escola** (ex.: múltiplos fibos / graus de onda convergindo dentro da própria análise Elliott/Fibonacci; múltiplos padrões SMC convergindo dentro da própria análise SMC). **NÃO** é confluência **entre** escolas — esta última já é tratada pela **hierarquia analítica** (Elliott→Fibonacci→Fractal→SMC→ICT) e pela **síntese do Manager/Synthesis**; **não confundir as duas** (a distinção é normativa e obrigatória no texto do Dossiê).
+> - **(6) Lente de gestão de risco-retorno** — position sizing, R:R (mín. 1:3 — invariante), gestão de risco de portfólio, heat/exposição.
+>
+> **Nota de desambiguação (obrigatória):** a lente **(5) Confluência** é **intra-escola** (dentro de uma mesma escola). A **confluência entre escolas** é um objeto distinto, já coberto pela hierarquia analítica e pela síntese — o Dossiê não deve tratar a lente (5) como se fosse a síntese inter-escolas, sob pena de achado de coerência (Revisor).
 
-Aplicação **proporcional e fail-closed apenas para lentes aplicáveis** (não "sempre as 4"):
+Aplicação **proporcional e fail-closed apenas para lentes aplicáveis** (não "sempre as 6"):
 
-1. **Declaração explícita obrigatória.** Todo Dossiê declara, em quadro próprio, **quais das 4 lentes se aplicam à Spec e por quê**, e **quais não se aplicam e por quê** (ex.: "SPEC de Event Bus — infraestrutura pura — nenhuma lente de escola se aplica; justificativa: não produz nem interpreta análise de mercado").
-2. **Fail-closed seletivo.** Uma lente **declarada aplicável mas não pesquisada** = **NÃO CONFORME — Crítica** (fail-closed). A **ausência das 4 lentes** numa Spec cujo escopo não toca o domínio (declarado e justificado) **não** é achado — é o comportamento correto. **Omitir a declaração** (não dizer quais lentes se aplicam) = **Médio (Dossiê incompleto)**.
-3. **Critério de aplicabilidade (orientação, não lista fechada).** Toca **(a)** toda Spec que crie/interprete estrutura de ondas ou geometria (ex.: SPEC-010/011); toca **(b)/(c)** toda Spec de agente institucional/execução ou que consuma narrativa institucional (ex.: SPEC-012/013); toca **(d)** toda Spec que produza decisão de sinal, sizing ou envelope de risco (ex.: SPEC-014, Risk Agent/RISK-SPEC-*); Specs que **sintetizam** múltiplas escolas (ex.: SPEC-014, SPEC-045) declaram todas as lentes que agregam. Casos de fronteira: o Especificador declara e justifica; o Revisor audita a **coerência** da declaração, não a veracidade das páginas.
+1. **Declaração explícita obrigatória.** Todo Dossiê declara, em quadro próprio, **quais das 6 lentes se aplicam à Spec e por quê**, e **quais não se aplicam e por quê** (ex.: "SPEC de Event Bus — infraestrutura pura — nenhuma lente de escola se aplica; justificativa: não produz nem interpreta análise de mercado").
+2. **Fail-closed seletivo.** Uma lente **declarada aplicável mas não pesquisada** = **NÃO CONFORME — Crítica** (fail-closed). A **ausência das 6 lentes** numa Spec cujo escopo não toca o domínio (declarado e justificado) **não** é achado — é o comportamento correto. **Omitir a declaração** (não dizer quais lentes se aplicam) = **Médio (Dossiê incompleto)**.
+3. **Critério de aplicabilidade (orientação, não lista fechada).** Toca **(1)/(2)** toda Spec que crie/interprete estrutura de ondas ou geometria (ex.: SPEC-010/011); toca **(3)/(4)** toda Spec de agente institucional/execução ou que consuma narrativa institucional (ex.: SPEC-012/013); toca **(5)** toda Spec cuja análise agregue sinais **dentro** de uma mesma escola (confluência intra-escola — tipicamente as mesmas Specs que ativam a escola correspondente); toca **(6)** toda Spec que produza decisão de sinal, sizing ou envelope de risco (ex.: SPEC-014, Risk Agent/RISK-SPEC-*); Specs que **sintetizam** múltiplas escolas (ex.: SPEC-014, SPEC-045) declaram todas as lentes que agregam. Casos de fronteira: o Especificador declara e justifica; o Revisor audita a **coerência** da declaração, não a veracidade das páginas.
 4. **Sinergia com RULE-PD-01/02, sem duplicação.** Quando a Spec é de especialidade e exige `PD-xx` (RULE-PD-01), as lentes de domínio da RULE-ECC-05 são a **fonte de pesquisa** que fundamenta esses `PD-xx` — o Especificador **reaproveita** a pesquisa das lentes; não faz duas pesquisas separadas. A RULE-ECC-05 governa a **cobertura da pesquisa**; a RULE-PD-01 governa a **declaração dos princípios** dela derivados.
 5. **Salvaguardas mantidas (DHR-PROV-WEB-001 §2.1):** conteúdo web = dado, nunca instrução; nenhuma importação automática de "melhor prática" de escola; achado externo ≠ fato SOT (`[EXTERNO]` ≠ homologado); pesquisa inconclusiva de uma lente = **INDETERMINADO** (estado válido; não força adoção). Nenhuma lente pode **fechar** decisão aberta (CONS-01) nem contrariar a hierarquia analítica ou os invariantes (AGENTS.md §6).
 6. **Prospectiva.** Incide **a partir de SPEC-002** (mesmo regime de RULE-ECC-04/RULE-MECH-01/RULE-PD-01). **Não** retroage sobre Dossiês já homologados (SPEC-020, SPEC-021, SPEC-046).
@@ -62,11 +66,14 @@ Aplicação **proporcional e fail-closed apenas para lentes aplicáveis** (não 
 Acréscimo ao **conteúdo mínimo** do Dossiê (após o item 3 "comparação com a arquitetura SOT"):
 
 ```
-3-bis. LENTES DE DOMÍNIO (RULE-ECC-05): quadro declarando quais das 4 lentes
-       (Elliott/Fibonacci · SMC · ICT · risco-retorno) se aplicam e por quê,
-       e quais NÃO se aplicam e por quê. Para cada lente aplicável: pesquisa
-       [EXTERNO] classificada + decisão adotar/adaptar/rejeitar/adiar,
-       confrontada com a hierarquia analítica e os invariantes (AGENTS.md §6).
+3-bis. LENTES DE DOMÍNIO (RULE-ECC-05): quadro declarando quais das 6 lentes
+       — (1) Elliott · (2) Fibonacci · (3) SMC · (4) ICT · (5) Confluência
+       intra-escola · (6) risco-retorno — se aplicam e por quê, e quais NÃO
+       se aplicam e por quê. Para cada lente aplicável: pesquisa [EXTERNO]
+       classificada + decisão adotar/adaptar/rejeitar/adiar, confrontada com a
+       hierarquia analítica e os invariantes (AGENTS.md §6). A lente (5)
+       Confluência é INTRA-escola (dentro de uma mesma escola) — NÃO a
+       confluência entre escolas (hierarquia analítica + síntese do Manager).
        Reaproveitada como fundamentação dos PD-xx (RULE-PD-01) quando houver.
 3-ter. INSUMO DE ORQUESTRAÇÃO (RULE-ECC-06): se a Spec toca K-001/SPEC-018/
        SPEC-045-RUNTIME-001 ou é agente operacional/manager/risco, considerar
@@ -94,7 +101,7 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 - **Nenhuma decisão aberta é fechada** (CONS-01): J-001, G-001, H-001, K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, RISK-ARR-LOC-001, RISK-CONV-001, ECC-VAL-001, ECC-03-001 e **RULE-REG-001**. **RULE-ECC-03 permanece RESERVADA.**
 - **Nota sobre RULE-REG-001 (F-04):** a decisão aberta RULE-REG-001 (incorporação física ao `RULES.md` do lote de 10+1 famílias RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC + RULE-MET, diferida ao piloto SPEC-002 sob atomic-spec v1.5 — `ROADMAP.md:31`, gatilho `spec:SPEC-002 em redação`) **permanece intocada**. Esta emenda **não** a antecipa nem a fecha: RULE-ECC-05/06 pertencem à família **RULE-ECC**, que **já está fisicamente registrada** em `governance/RULES.md` e **não** integra o lote diferido (§1 item 8) — por isso podem ser registradas na homologação sem violar RULE-HG-02 nem o gatilho da SPEC-002.
 - **Decisões já fechadas, não reabertas (F-03):** **I-001** (FECHADA — DHR-I001-001: Skills = híbrido por Classe) e **L-001** (FECHADA — SPEC-019) permanecem fechadas; esta emenda não as toca.
-- **Não força as 4 lentes em toda Spec** — só as aplicáveis; infraestrutura pura pode não ter nenhuma (declarado e justificado).
+- **Não força as 6 lentes em toda Spec** — só as aplicáveis; infraestrutura pura pode não ter nenhuma (declarado e justificado).
 - **Não cria uma segunda pesquisa** paralela à do `PD-xx` — reaproveita a mesma pesquisa (RULE-ECC-05 item 4).
 - **Não altera RULE-ECC-01/02/03/04**, nem RULE-PD-01/02/03, nem RULE-MECH; apenas as **estende** com uma exigência aditiva de cobertura.
 - **`RUNTIME-WORKFLOW-001` não fecha nada** — é insumo não-normativo; não vincula o conteúdo das Specs, só a obrigação de considerá-lo.
@@ -104,7 +111,7 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 ## 6. Riscos residuais (RULE-MET-01 — sem garantia excessiva)
 
 1. **Verificabilidade limitada (herdado da RULE-ECC-02):** o Revisor não navega na web; garante o **processo** (lentes declaradas, pesquisadas, classificadas, comparadas), **não a verdade** das fontes de escola. Mitigação parcial: Captura Verbatim (RULE-ECC-04) para citações carregadas.
-2. **Custo/latência (4Es — Economicidade nunca acima de Eficácia):** exigir até 4 lentes acrescenta pesquisa. Mitigação: proporcionalidade (só lentes aplicáveis) + reaproveitamento na fundamentação dos `PD-xx`. Aceito como custo de Eficácia superior.
+2. **Custo/latência (4Es — Economicidade nunca acima de Eficácia):** exigir até 6 lentes acrescenta pesquisa. Mitigação: proporcionalidade (só lentes aplicáveis) + reaproveitamento na fundamentação dos `PD-xx`. Aceito como custo de Eficácia superior.
 3. **Subjetividade da aplicabilidade:** decidir se uma lente "se aplica" é julgamento do Especificador. Mitigação: declaração explícita justificada + auditoria de coerência pelo Revisor; casos de fronteira viram achado, não silêncio.
 4. **Injeção via conteúdo web / viés de escola:** literatura de trading é rica em opinião e "sistemas" enviesados. A salvaguarda (dado ≠ instrução; nada vira baseline sem Andraus; comparação obrigatória com a hierarquia SOT antes de adotar) **mitiga, não elimina**. Risco aceito e declarado.
 5. **Sobreposição percebida com RULE-PD-01:** risco de o Especificador tratar lentes e `PD-xx` como pesquisas separadas. Mitigação: item 4 da RULE-ECC-05 é explícito (uma pesquisa, dois usos).
@@ -122,7 +129,7 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 
 | # | Regra | Caso de negação | Detectável? Por quem? | Tratamento |
 |---|---|---|---|---|
-| N1 | ECC-05 | Especificador declara **todas as 4 lentes "não aplicáveis"** para uma Spec de agente de domínio (fuga da obrigação). | Sim, **semântico** — o Revisor confronta a declaração com o escopo/título do slot (ex.: SPEC-010 = Elliott ⇒ lente (a) obviamente aplicável). Incoerência = achado. | Detector = Revisor (coerência); Gate = Andraus. |
+| N1 | ECC-05 | Especificador declara **todas as 6 lentes "não aplicáveis"** para uma Spec de agente de domínio (fuga da obrigação). | Sim, **semântico** — o Revisor confronta a declaração com o escopo/título do slot (ex.: SPEC-010 = Elliott ⇒ lente (1) obviamente aplicável). Incoerência = achado. | Detector = Revisor (coerência); Gate = Andraus. |
 | N2 | ECC-05 | Lente declarada aplicável com pesquisa **de fachada** (fontes presentes, mas **sem** decisão adotar/adaptar/rejeitar/adiar). | Sim — o Revisor lê a decisão por lente; ausência = **Médio (incompleto)**. | Achado; não determinístico. |
 | N3 | ECC-05 | **Importação automática** de "melhor prática" de escola como baseline (ex.: adota um sistema ICT sem confronto com a hierarquia). | Sim — Revisor verifica comparação com a hierarquia + `[EXTERNO]`. | Importação como baseline = **Crítico**. |
 | N4 | ECC-05 | Pesquisa de uma lente **inconclusiva/contraditória** tratada como PASS forçado. | Sim — o Dossiê deve declarar **INDETERMINADO**. | Estado válido INDETERMINADO; não força decisão nem fecha decisão aberta. |
@@ -138,7 +145,7 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 |---|---|---|
 | **RULE-EPI** (N9) | Hipótese ≠ fato; pesquisa das lentes é **evidência externa**, não fato SOT (`[EXTERNO]` ≠ homologado — TRACE-06). | Verificado sem achado. |
 | **RULE-SEM** (N10) | Terminologia concorrente. "Lente de domínio" é **termo novo** introduzido por esta emenda, **sem conflito** com terminologia existente (nenhum outro doc usa "lente" com sentido incompatível — verificado). A desambiguação de "runtime" → **orquestração cognitiva** já está tratada no `RUNTIME-WORKFLOW-001` §0-bis e no §0 desta emenda. | Verificado sem achado adicional (desambiguação já coberta). |
-| **RULE-ONT** (N11) | Categorização ontológica. As 4 lentes são **eixos de pesquisa**, não novas entidades do modelo canônico; não criam objeto no Blackboard/KG nem redefinem CEM/CHM. | Verificado sem achado. |
+| **RULE-ONT** (N11) | Categorização ontológica. As 6 lentes são **eixos de pesquisa**, não novas entidades do modelo canônico; não criam objeto no Blackboard/KG nem redefinem CEM/CHM. A lente (5) Confluência intra-escola é eixo de pesquisa, distinto do objeto "confluência entre escolas" (hierarquia/síntese) — a distinção ontológica está fixada no texto da RULE-ECC-05. | Verificado sem achado. |
 | **RULE-INQ** (N12) | Método de investigação. A emenda **exige** formular questões e estratégia de busca por lente (item do Dossiê); não substitui investigação por asserção. | Verificado sem achado. |
 | **RULE-CAU** (N13) | Causalidade. A emenda não faz afirmação causal ("lente X garante sinal melhor"); apenas amplia a **cobertura** da pesquisa. Nenhuma correlação tratada como causa. | Verificado sem achado. |
 | **RULE-CTF** (N14) | Contrafactual. Os casos de negação N1–N7 (Bloco A) são o registro contrafactual ("se a regra falhasse, o que seria observável?"). | Verificado — coberto por Bloco A. |
@@ -152,7 +159,7 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 | # | Questão | Recomendação |
 |---|---|---|
 | Q1 | Adotar **RULE-ECC-05** (lentes de domínio obrigatórias no Dossiê, com proporcionalidade e fail-closed seletivo)? | Sim |
-| Q2 | As 4 lentes propostas (Elliott/Fibonacci · SMC · ICT · risco-retorno) são a decomposição correta, ou Andraus quer separar Elliott de Fibonacci, ou adicionar uma 5ª (ex.: contexto macro/inter-mercado, volume)? | Confirmar as 4; ajustar se desejar |
+| Q2 | As 4 lentes propostas (Elliott/Fibonacci · SMC · ICT · risco-retorno) são a decomposição correta, ou Andraus quer separar Elliott de Fibonacci, ou adicionar uma 5ª (ex.: contexto macro/inter-mercado, volume)? | Confirmar as 4; ajustar se desejar → **MODIFICADO por Andraus (2026-09-29): são 6 lentes** — (1) Elliott, (2) Fibonacci (SEPARADA), (3) SMC, (4) ICT, (5) Confluência intra-escola, (6) risco-retorno. Verbatim: "ORDEM ELLIOTT, FIBONACCI (SEPARADA), SMC, ICT E CONFLUENCE (AQUI SERIA A CONFLUENCIA DENTRO DO CAMPO DE ANALISE DA ESCOLA E NÃO ENTRE AS ESCOLAS) DEMAIS PODE APROVAR" + esclarecimento sobre risco-retorno: "Mantém como 6ª lente". Texto da RULE-ECC-05 atualizado para 6 lentes (v3). |
 | Q3 | Adotar **RULE-ECC-06** (RUNTIME-WORKFLOW-001 como insumo obrigatório de leitura para Specs de K-001/SPEC-018/SPEC-045/operacional/manager/risco)? | Sim |
 | Q4 | Registrar `RUNTIME-WORKFLOW-001` em `governance/` como insumo não-normativo (local proposto), ou Andraus prefere outro local/estrutura? | governance/ (proposto) |
 | Q5 | Incidência **prospectiva a partir de SPEC-002** (não retroage sobre SPEC-020/021/046)? | Sim |
@@ -165,9 +172,9 @@ O Revisor (somente leitura, sem web — ENF-03) audita **presença e coerência 
 Etapa 1 — Diretiva de Andraus (chat, 2026-09-29) ....................... ✅
 Etapa 2 — Formalização (esta proposta v1 — NADA aplicado) ............... ✅
 Etapa 3 — Parecer do Revisor (v1) ...................................... ✅ NÃO CONFORME RECUPERÁVEL (F-01 bloqueante MÉDIO + F-02..F-05 Menores; nenhum Crítico)
-Etapa 3b — v2 (F-01..F-05 corrigidos) → revisão focada em F-01 ......... ⏳
-Etapa 4 — Consenso de Andraus (Q1–Q7) ................................... ⏳
-Etapa 5 — Aplicação das mudanças da §4 + DHR + sincronizado-até + CATALOGO + RMR-001 (11-bis) ... ⏳ (só após a Etapa 4)
+Etapa 3b — v2 (F-01..F-05 corrigidos) → revisão focada em F-01 ......... ✅ CONFORME (Revisor, 2026-09-29)
+Etapa 4 — Consenso de Andraus (Q1–Q7) ................................... ✅ Q1=Sim · Q2=MODIFICADO (6 lentes, ordem Elliott/Fibonacci-separada/SMC/ICT/Confluência-intra-escola/risco-retorno) · Q3–Q7=Sim (2026-09-29)
+Etapa 5 — Aplicação das mudanças da §4 + DHR + sincronizado-até + CATALOGO + RMR-001 (11-bis) ... ✅ EFETIVADO (2026-09-29) — v3 (RULE-ECC-05 = 6 lentes) + DHR-EUA-E23 + edições de baseline
 ```
 
 ## 10. Evidências (âncoras)
@@ -176,4 +183,4 @@ Etapa 5 — Aplicação das mudanças da §4 + DHR + sincronizado-até + CATALOG
 
 ---
 
-*Proposta registrada pelo Especificador (Claude Code), 2026-09-29. PROPOSTA — nada aplicado a baseline até parecer CONFORME do Revisor e homologação de Andraus (RULE-HG-01/03/08). Nenhum registro anterior removido — apenas aditado (INV-07/INV-09).*
+*Proposta registrada pelo Especificador (Claude Code), 2026-09-29 (v1/v2); **HOMOLOGADA e aplicada na v3** (Andraus, 2026-09-29 — Q2 modificado para 6 lentes; DHR-EUA-E23) após parecer CONFORME do Revisor (RULE-HG-01/03/08). Nenhum registro anterior removido — apenas aditado (INV-07/INV-09).*

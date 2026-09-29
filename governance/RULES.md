@@ -469,6 +469,41 @@ RULE-ECC-04: Cada fonte `[EXTERNO]` citada num Dossiê de Pesquisa (RULE-ECC-02)
              não retroage sobre Dossiês já homologados (SPEC-020, SPEC-021).
              [Fonte: DHR-VERBATIM-SRC-001; PC-06/RCN-001; RULE-ECC-02; ENF-03]
 
+RULE-ECC-05: Além da lente arquitetural já exigida (RULE-ECC-02 item 3), o Dossiê de Pesquisa de
+             qualquer Spec que TOQUE o domínio de trading DEVE pesquisar o estado da arte e as
+             melhores práticas sob as 6 LENTES DE DOMÍNIO aplicáveis, nesta ordem (decisão de
+             Andraus, Q2, 2026-09-29): (1) Elliott — estrutura de ondas; (2) Fibonacci — SEPARADA
+             da Elliott (retrações/extensões/projeções/clusters/proporcionalidade geométrica);
+             (3) SMC — liquidez, BOS/CHOCH/MSS, FVG, order blocks; (4) ICT — timing, killzones, OTE
+             (ICT não cria hipótese — AGENTS.md §6.2); (5) Confluência INTRA-escola — convergência de
+             sinais DENTRO do campo de análise de uma mesma escola (ex.: múltiplos fibos/graus de
+             onda dentro da própria Elliott/Fibonacci; múltiplos padrões SMC dentro da própria SMC),
+             que NÃO é a confluência ENTRE escolas (essa é a hierarquia analítica
+             Elliott→Fibonacci→Fractal→SMC→ICT + a síntese do Manager/Synthesis — não confundir);
+             (6) risco-retorno — sizing, R:R ≥ 1:3 (invariante), heat/exposição. Cada lente aplicável:
+             pesquisa [EXTERNO] classificada + decisão adotar/adaptar/rejeitar/adiar, confrontada com
+             a hierarquia analítica e os invariantes. Proporcionalidade e fail-closed SELETIVO: o
+             Dossiê declara em quadro próprio quais das 6 lentes se aplicam e por quê e quais NÃO se
+             aplicam e por quê; lente declarada aplicável mas não pesquisada = NÃO CONFORME Crítica;
+             declaração ausente = Médio; ausência justificada das 6 lentes (Spec fora do domínio) =
+             correto, não é achado. Reaproveitada como fundamentação dos PD-xx (RULE-PD-01), sem
+             pesquisa duplicada. Salvaguardas da DHR-PROV-WEB-001 §2.1 mantidas; nenhuma lente fecha
+             decisão aberta (CONS-01); pesquisa inconclusiva = INDETERMINADO. Prospectiva — incide a
+             partir de SPEC-002; não retroage sobre SPEC-020/021/046.
+             [Fonte: DHR-EUA-E23; RULE-ECC-02; RULE-PD-01/02; AGENTS.md §6; DHR-PROV-WEB-001 §2.1]
+
+RULE-ECC-06: O documento governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md (registro verbatim do
+             workflow de ORQUESTRAÇÃO COGNITIVA de Andraus) é leitura obrigatória do Dossiê de
+             Pesquisa de qualquer Spec cuja abertura abra ou toque K-001, SPEC-018 ou
+             SPEC-045-RUNTIME-001, ou que especifique um agente operacional, manager/contexto/
+             orquestrador (SPEC-014/023/024) ou o agente de risco (RISK-SPEC-*). O Dossiê dessas
+             Specs DEVE citá-lo e registrar, por etapa E1–E7/E8, uma decisão adotar/adaptar/
+             rejeitar/adiar, SEM fechar nenhuma decisão aberta (CONS-01). O insumo vincula a
+             obrigação de considerá-lo, NÃO o conteúdo da Spec. Ausência da consideração numa Spec
+             aplicável = Médio (Dossiê incompleto); tratar o insumo como decisão fechada = Crítico
+             (viola CONS-01/RULE-MET-01). Prospectiva — incide a partir de SPEC-002.
+             [Fonte: DHR-EUA-E23; RULE-ECC-02; AGENTS.md §9; CONS-01; RULE-MET-01]
+
 ---
 
 ## Regras de Classe/Mecanismo (RULE-MECH)
