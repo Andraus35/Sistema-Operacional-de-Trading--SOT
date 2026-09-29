@@ -10,7 +10,7 @@
 | Spec | SPEC-002 — Evidence & Evidence Provenance Harness (camada Harness/operacional sobre CEM-001) |
 | Fase / posição | FASE 1 — Núcleo Cognitivo; caminho crítico após FASE GOV (019/020/021 homologadas), antes de SPEC-003 [FONTE: ROADMAP §21] |
 | Complexidade declarada | **CRITICAL** [FONTE: ROADMAP §4 linha 139 — "P0 — CRITICAL"] |
-| Profundidade-alvo | **D0–D7** (ROADMAP linha 139), com **D8 adversarial seletivo** em integridade/anti-adulteração de proveniência — `[PROPOSTA]` a confirmar na homologação |
+| Profundidade-alvo | **D0–D8** — CONFIRMADO na homologação da abertura (DN-2, Andraus 2026-09-29; ver §8.4). *(A proposta original era D0–D7 do ROADMAP linha 139 + D8 adversarial seletivo; Andraus confirmou D0–D8 pleno por simetria com a tabela PINADA de AGENTS.md §4 para CRITICAL.)* |
 | Nível de maturidade-alvo | **L3 (Testável)** — teto de spec-first para CRITICAL (RULE-MM-04) |
 | Autor | Especificador Principal (Claude Code, Opus 4.8) |
 | Data de acesso web | **2026-09-29** (todas as fontes `[EXTERNO]` abaixo) |
@@ -186,6 +186,23 @@ Permanecem **ABERTAS** (não tocadas): J-001, G-001, H-001, C-001, K-001, M-001,
 - **RULE-REG-001** — gatilho `spec:SPEC-002 em redação` **dispara com a abertura desta Spec**: registrar o lote de **10+1 famílias RULE** (RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC + RULE-MET) em `governance/RULES.md` e promover `atomic-spec` a **v1.5** (incorporação física das atas EUA-E04..E14, hoje `[Fonte: ...]` sem seção). Ação do Controlador na homologação da abertura.
 - **BL-012** (MC-COG-001) — gatilho `spec:SPEC-002 homologada (consolidação cognitiva v1.5)` dispara **na homologação do Plan** (não da abertura). Registrar como IMINENTE.
 - **Validação pendente (sem Bash):** `python scripts/validate_spec_sot.py` (STRUCT-11 Dossiê presente), `check_refs.py`, `build_map.py --check`, `backlog_triggers.py` — a rodar pelo coordenador; mapa `docs/mapa/` a regenerar (novos arquivos em `specs/features/SPEC-002/`).
+
+### 8.4 Resolução de Andraus (2026-09-29) — DN-1 / DN-2 / DN-3 `[FATO NORMATIVO — homologado]`
+
+> **Registro aditivo (INV-07):** as perguntas originais de §8.2 (DN-1/DN-2/DN-3) permanecem preservadas acima como foram formuladas. Esta subseção acrescenta a decisão de Andraus (chat, 2026-09-29), adotando as recomendações do coordenador, sob a instrução explícita **"mantendo simetria com o SOT como um todo"**. Ata: `governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md`. Status epistemológico: **FATO NORMATIVO** desta abertura (não fecha nenhuma decisão aberta de mérito de outra Spec — CONS-01).
+
+**DN-1 — Confiabilidade histórica do produtor de evidência → RESOLVIDA (verbatim):**
+"Entra como **extensão formal do CEM-001 via GMC-001** (Categoria A — aditiva, sem mudar semântica existente), **não** como metadado solto na camada Harness."
+- *Leitura/justificativa registrada:* confiabilidade de fonte é **propriedade intrínseca da evidência** (pertence ao CEM-001), não do harness que a processa; a doutrina Admiralty (SRC-02) já trata isso como **eixo independente** da acurácia de conteúdo (dois eixos: confiabilidade da fonte × credibilidade do relato).
+- **Trava (INV-04 intocado):** esse campo é **só metadado descritivo/filtro** — **NUNCA** entra como dimensão do Conviction Vector (custo/qualidade-de-fonte ≠ convicção; CONS-01/J-001 preservados). A extensão é **Categoria A (aditiva)** — não redefine nenhum campo existente do CEM-001 (CONST-01). A modelagem física (campo/enum via GMC-001 RULE-GMC-005) é detalhada no **Plan**, não aqui.
+
+**DN-2 — Profundidade → RESOLVIDA (verbatim):** "**D0–D8**" (não D0–D7 como o ROADMAP indicava).
+- *Justificativa registrada:* `AGENTS.md` §4 já tem a tabela **PINADA** CRITICAL→D0–D8 (standard + adversarial em D8); a SPEC-002 foi classificada **CRITICAL**; usar D7 seria **exceção silenciosa** a uma tabela pinada, sem justificativa (proibido elevar/rebaixar profile em silêncio). O *blast radius* da camada de evidência — consumida por **todo agente downstream** — pede D8 adversarial (integridade/anti-adulteração de proveniência). A antecipação `[PROPOSTA]` de "D8 adversarial seletivo" de §7.1 fica **confirmada como D0–D8 pleno**.
+
+**DN-3 — "Evidência de ausência" → RESOLVIDA (verbatim):** "**só o gancho de extensibilidade agora**" — a SPEC-002 entrega o **tipo/estado "ausente"** na taxonomia de evidência (CEM-001/camada Harness) **sem fechar a porta**; a **semântica de quando a ausência é significativa fica DEFERIDA** para o Dossiê de cada Spec consumidora (SPEC-010 em diante).
+- *Padrão adotado:* mesmo de **RISK-LEV-001** — decisão de **timing**, não de mérito. Nenhuma regra de "quando ausência importa" é fixada aqui (CONS-01); apenas o gancho taxonômico entra no escopo IN da SPEC-002.
+
+**Efeito no Dossiê:** a definição da SPEC-002 fica **homologada** — nome "Evidence & Evidence Provenance Harness", **CRITICAL**, **D0–D8**, construir sobre CEM-001 (não redefinir — CONST-01). Escopo IN de §7.2 mantido, com DN-3 confirmando o gancho "ausente"; DN-1 realocando a confiabilidade-de-fonte para extensão Categoria A do CEM-001 via GMC-001 (a ser modelada no Plan). Non-goals (§7.3) inalterados.
 
 ---
 

@@ -7,6 +7,7 @@
 <!-- Acréscimo homologado por Andraus 2026-09-27 (DHR-PRINC-BID-001, compatibilidade Minor): RULE-PD-01..03 (Herança Principiológica Bidirecional — declaração de PD-xx por Spec de especialidade + fundamentação por pesquisa [EXTERNO], prospectiva desde SPEC-002, ordenada após RULE-MECH-01). Não altera baseline anterior — INV-07. -->
 <!-- Acréscimo homologado por Andraus 2026-09-28 (DHR-SPEC021-001, compatibilidade Minor): RULE-MM-01..07 (Maturidade do Harness — escada canônica por-Spec L0-L4, gate normativo E3, staged, anti-gaming). Fecha a FASE GOV (SPEC-019+020+021). Não altera baseline anterior — INV-07. -->
 <!-- Acréscimo homologado por Andraus 2026-09-28 (DHR-VERBATIM-SRC-001, compatibilidade Minor): RULE-ECC-04 (Captura Verbatim de Fonte — substitui BL-020/acesso web do Revisor; Revisor verifica correspondência de string sem web). Não altera baseline anterior — INV-07. -->
+<!-- Acréscimo homologado por Andraus 2026-09-29 (DHR-SPEC002-001, piloto SPEC-002, compatibilidade Minor): LOTE RULE-REG-001 — incorporação física das 10+1 famílias cognitivas RULE-HD (EUA-E04) / RULE-EPI (E05) / RULE-SEM (E06) / RULE-ONT (E07) / RULE-INQ (E08) / RULE-CAU (E09) / RULE-CTF (E10) / RULE-UNC (E11) / RULE-PRB (E12) / RULE-DEC (E13) / RULE-MET (E14), todas já FATO NORMATIVO (vigência imediata desde 2026-09-20/21) com incorporação diferida ao piloto SPEC-002/atomic-spec v1.5. Texto = transcrição das atas. Resolve F-01/RULE-HG-02. Não altera baseline anterior — INV-07. -->
 
 ---
 
@@ -366,7 +367,7 @@ RULE-HG-02: RULE nova (ou emenda de RULE) SÓ é normativa após homologação d
 RULE-HG-03: Parecer CONFORME do Revisor NÃO autoriza vigência; apenas atesta integridade.
             A vigência decorre exclusivamente da homologação de Andraus (decisão ≠ execução).
             [Fonte: RULE-DEC-01 (EUA-E13); GMC-001 Cap.5 (segregação); PAP-001]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-DEC-01 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [RULE-REG-001 RESOLVIDA: seção "Regras Decisionais (RULE-DEC)" registrada neste arquivo — DHR-SPEC002-001, 2026-09-29]
 
 RULE-HG-04: Toda proposta de alteração DEVE conter Análise de Impacto explícita sobre
             schemas, RAG, Skills, testes e modelos dependentes, e classificação de compatibilidade
@@ -407,13 +408,13 @@ RULE-HV-02: Requisito herdado do pai NÃO PODE ser suprimido na filha fora do ca
             referência de homologação de Andraus. Supressão silenciosa entre níveis =
             NÃO CONFORME Crítica. (Extensão vertical de RULE-HD-03.)
             [Fonte: RULE-HD-03; EUA-E17 §1.1 Dep.3]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-HD-03 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [RULE-REG-001 RESOLVIDA: seção "Regras de Herança/Delta (RULE-HD)" registrada neste arquivo — DHR-SPEC002-001, 2026-09-29]
 
 RULE-HV-03: Requisito local da filha NÃO PODE contradizer requisito do pai (coerência vertical).
             Precedência em conflito: pai (macro) > filha (micro); PC > PB/PE > regra local.
             (Extensão vertical de RULE-HD-02.)
             [Fonte: RULE-HD-02; INV-01]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-HD-02 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [RULE-REG-001 RESOLVIDA: seção "Regras de Herança/Delta (RULE-HD)" registrada neste arquivo — DHR-SPEC002-001, 2026-09-29]
 
 RULE-HV-04: A conformidade inter-nível DEVE ser verificável: a cobertura do CONJUNTO de obrigações
             do pai pelo conjunto conservado da filha é auditável pelo Revisor como conjunto (não
@@ -450,7 +451,7 @@ RULE-ECC-02: Toda abertura de Spec DEVE ser precedida de Dossiê de Pesquisa pro
              RULE-HG-07. Profundidade proporcional à complexidade (sem dispensar o Dossiê);
              validade do Dossiê = decisão aberta ECC-VAL-001.
              [Fonte: DHR-EUA-E21; DHR-PROV-WEB-001 §2.1; RULE-HG-07; RULE-MET-01]
-             [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-MET-01 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+             [RULE-REG-001 RESOLVIDA: seção "Regras Metacognitivas (RULE-MET)" registrada neste arquivo — DHR-SPEC002-001, 2026-09-29]
 
 RULE-ECC-03: RESERVADA (sem texto). Pendente de definição por Andraus (decisão aberta ECC-03-001);
              seu conteúdo só será definido por emenda subsequente — nunca por inferência.
@@ -584,7 +585,7 @@ RULE-EV-02: A avaliação de cada lente DEVE separar DETECTOR de GATE: component
 RULE-EV-03: A lente hallucination é DETECTOR, não gate autônomo: um sinal de alucinação alimenta o
             Revisor/gate determinístico, nunca aprova nem reprova sozinho por juízo de LLM.
             [Fonte: ENF-03; RULE-MET-01; SPEC-020/plan.md §D2]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-MET-01 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [RULE-REG-001 RESOLVIDA: seção "Regras Metacognitivas (RULE-MET)" registrada neste arquivo — DHR-SPEC002-001, 2026-09-29]
 
 RULE-EV-04: Achado adversarial (D8 / §7-bis / Passo 5-bis) que revele falha constitutiva DEVE ser
             convertido em caso de regressão VERSIONADO e preservado (nunca deletado).
@@ -669,3 +670,253 @@ RULE-MM-07: O `harness-score` por-spec (staged) NÃO substitui o score repo-glob
             coexistem. A maturidade por-spec agrega ordinalmente os critérios das 9 lentes da SPEC-020
             já avaliados, sem redefinir nem duplicá-las.
             [Fonte: DHR-SPEC021-001; ROADMAP §12; SPEC-020 RULE-EV-01]
+
+---
+
+<!-- ============================================================================
+     LOTE RULE-REG-001 — 10+1 FAMÍLIAS COGNITIVAS (EUA-E04 a EUA-E14)
+     Registro pelo Controlador — piloto SPEC-002 executado (DHR-SPEC002-001, 2026-09-29).
+     Todas HOMOLOGADAS — FATO NORMATIVO com VIGÊNCIA IMEDIATA desde 2026-09-20/21; a
+     incorporação FÍSICA a este arquivo estava diferida ao piloto SPEC-002 sob atomic-spec v1.5
+     pelas próprias atas de origem (não era omissão isolada). Texto abaixo = transcrição das
+     atas de origem (não reescrito). Resolve o achado F-01/RULE-HG-02 (RULE-DEC-01/HD-02/HD-03/
+     MET-01 citadas como [Fonte:] sem seção registrada). Escopo prospectivo desde SPEC-002 +
+     retroativo-como-auditoria para specs homologadas (D-DHR-PAP-001-01). Verificadas sob CC-08
+     (RULE-HD) / CC-09 (demais); nós N8–N17 no MAN-001 e K-MAN-* no CONFLICT-MAP = ato correlato
+     do Controlador (fora do escopo estrito de RULE-REG-001).
+     ============================================================================ -->
+
+## Regras de Herança/Delta (RULE-HD)
+<!-- Fonte: atomic-spec §8.3 / EUA-E04 | HOMOLOGADA DHR-EUA-E04 (2026-09-20). Verificada sob CC-08. -->
+
+RULE-HD-01: Toda spec de componente e toda Engineering Card DEVE declarar o bloco Herança/Delta
+            (§8.3) com INHERITS e ADDED preenchidos.
+            [Fonte: atomic-spec §8.3 / EUA-E04; DHR-EUA-E04]
+
+RULE-HD-02: Item em ADDED/MODIFIED NÃO DEVE contradizer item herdado em INHERITS (coerência
+            vertical). Precedência em conflito: PC > PB/PE > regra local (alinha INV-01 e regime PAP).
+            [Fonte: atomic-spec §8.3 / EUA-E04; DHR-EUA-E04; INV-01]
+
+RULE-HD-03: Nenhum item herdado PODE ser suprimido fora do campo REMOVED; item em REMOVED sem
+            referência de homologação de Andraus = NÃO CONFORME Crítica.
+            [Fonte: atomic-spec §8.3 / EUA-E04; DHR-EUA-E04]
+
+RULE-HD-04: O bloco NÃO DEVE copiar o conteúdo herdado — apenas referenciá-lo por ID + VERSÃO
+            baseline. Referência a versão superseded é achado (sensor de drift).
+            [Fonte: atomic-spec §8.3 / EUA-E04; DHR-EUA-E04]
+
+---
+
+## Regras Epistêmicas (RULE-EPI)
+<!-- Fonte: atomic-spec §11 / EUA-E05 | HOMOLOGADA DHR-EUA-E05 (2026-09-20). Verificada sob CC-09.
+     Nó N8 (Epistêmico) no MAN-001; INV-EPI-01..10 (§4.3 da EUA-E05) integram esta camada. -->
+
+RULE-EPI-01: Afirmação material NÃO DEVE subir de status epistêmico sem justificativa proporcional
+             explícita (evidência/método). Transição silenciosa = achado.
+             [Fonte: atomic-spec §11 / EUA-E05; DHR-EUA-E05]
+
+RULE-EPI-02: Afirmação causal exige método compatível com causalidade; correlação/associação NÃO
+             basta (alinha AP-02, RULE-004).
+             [Fonte: atomic-spec §11 / EUA-E05; DHR-EUA-E05; AP-02; RULE-004]
+
+RULE-EPI-03: Conclusão NÃO DEVE exceder o escopo da evidência (scope overreach); generalização
+             declara seu limite (alinha SES-001 §36).
+             [Fonte: atomic-spec §11 / EUA-E05; DHR-EUA-E05; SES-001 §36]
+
+---
+
+## Regras Semânticas (RULE-SEM)
+<!-- Fonte: GLOSSARIO / EUA-E06 | HOMOLOGADA DHR-EUA-E06 (2026-09-20). Verificada sob CC-10.
+     Nó N9 (Semântico) no MAN-001. Não-colapsação por referência a RULE-EPI (sem duplicar). -->
+
+RULE-SEM-01: Quando um termo tem acepção concorrente por escola (registro do GLOSSARIO) e o sentido
+             é decisivo para o comportamento, a spec DEVE declarar explicitamente qual acepção usa
+             (transparência semântica).
+             [Fonte: GLOSSARIO / EUA-E06; DHR-EUA-E06]
+
+RULE-SEM-02: Não-colapsação semântica (conceito→fato, correlação→causa, interpretação→verdade,
+             nome→entidade) segue RULE-EPI-01..03 (EUA-E05). Esta regra NÃO cria regra paralela.
+             [Fonte: GLOSSARIO / EUA-E06; DHR-EUA-E06; RULE-EPI-01..03]
+
+RULE-SEM-03: Transformação semântica (normalização/tradução) NÃO DEVE eliminar modalidade/nuance
+             material ("pode" ≠ "será"); a forma original permanece recuperável (alinha PB-10,
+             TRACE-06).
+             [Fonte: GLOSSARIO / EUA-E06; DHR-EUA-E06; PB-10; TRACE-06]
+
+RULE-SEM-04: Termo já canônico no GLOSSARIO NÃO DEVE ser redefinido por spec; acepção de escola é
+             adição contextual, não substituição (alinha PC-05/INV-10, RULE-HD-02).
+             [Fonte: GLOSSARIO / EUA-E06; DHR-EUA-E06; PC-05/INV-10; RULE-HD-02]
+
+---
+
+## Regras Ontológicas (RULE-ONT)
+<!-- Fonte: EUA-E07 | HOMOLOGADA DHR-EUA-E07 (2026-09-20). Verificada sob CC-09 (sem novo CC).
+     Nó N10 (Ontológico) no MAN-001. Substância ontológica → Modelos Canônicos (CCM/CDM/CNM). -->
+
+RULE-ONT-01: A spec DEVE distinguir entidade observacional (diretamente medida/observada) de
+             construção teórica (postulada para explicar — ex.: order block, liquidez, "pressão
+             compradora"). Entidade latente/teórica NÃO DEVE ser promovida a real sem tratamento
+             epistêmico (segue RULE-EPI; não cria regra paralela). Alinha INV-06/PC-03.
+             [Fonte: EUA-E07; DHR-EUA-E07; RULE-EPI; INV-06/PC-03]
+
+RULE-ONT-02: Nova entidade/categoria ontológica é resultado cognitivo válido, mas entra por
+             governança (propõe → homologa): segue PO-05/PC-08. NÃO DEVE ser auto-adotada como
+             baseline (INV-09).
+             [Fonte: EUA-E07; DHR-EUA-E07; PO-05/PC-08; INV-09]
+
+---
+
+## Regras de Inquérito (RULE-INQ)
+<!-- Fonte: EUA-E08 | HOMOLOGADA DHR-EUA-E08 (2026-09-20). Verificada sob CC-09 (sem novo CC).
+     Nó N11 (Inquérito) no MAN-001. Sensores INV-INQ/INQ-S/GATE-INQ diferidos ao harness-eval/GEH. -->
+
+RULE-INQ-01: Antes de investigar/especificar comportamento com incerteza material, a spec DEVE
+             classificar o tipo de questão (factual/descritiva/explicativa/preditiva/diagnóstica/
+             verificação/comparativa) e usar método compatível (§9/§14). Método escolhido antes da
+             pergunta = achado.
+             [Fonte: EUA-E08; DHR-EUA-E08]
+
+RULE-INQ-02: Havendo hipóteses concorrentes (PCO-01), a investigação DEVE buscar evidência
+             discriminante ("que observação diferencia H1 de H2?"), não apenas confirmatória.
+             Estende PCO-02; não cria regra paralela.
+             [Fonte: EUA-E08; DHR-EUA-E08; PCO-01/02]
+
+RULE-INQ-03: Toda investigação material DEVE declarar critério de encerramento (suficiência
+             proporcional ao risco — GES/D0–D9). Sem suficiência → estado INDETERMINADO (RULE-EPI),
+             não conclusão forçada nem investigação infinita.
+             [Fonte: EUA-E08; DHR-EUA-E08; GES/D0–D9; RULE-EPI (INDETERMINADO)]
+
+---
+
+## Regras Causais (RULE-CAU)
+<!-- Fonte: EUA-E09 | HOMOLOGADA DHR-EUA-E09 (2026-09-20). Verificada sob CC-09 (sem novo CC).
+     Nó N12 (Causal) no MAN-001. Intervenção/contrafactual → nó N13; vocabulário estatístico → CCM. -->
+
+RULE-CAU-01: Afirmação causal (A→B) é hipótese e DEVE declarar o mecanismo que a sustenta (como A
+             produz B), além de condições e direção. Correlação/precedência/padrão histórico NÃO
+             bastam (estende RULE-EPI-02; não cria regra paralela).
+             [Fonte: EUA-E09; DHR-EUA-E09; RULE-EPI-02]
+
+RULE-CAU-02: Relação causal material DEVE declarar o regime/condição de validade (a mesma relação
+             pode mudar ou desaparecer entre regimes). Alinha SES-001 (regime) e GPR-001 §3.6
+             (inversões).
+             [Fonte: EUA-E09; DHR-EUA-E09; SES-001 §33; GPR-001 §3.6]
+
+RULE-CAU-03: Explicação causal formulada após o resultado DEVE ser marcada como pós-hoc, sem o
+             status de hipótese pré-testada. Teste: "poderia ter sido formulada antes do resultado?"
+             (estende AP-10).
+             [Fonte: EUA-E09; DHR-EUA-E09; AP-10]
+
+---
+
+## Regras Contrafactuais (RULE-CTF)
+<!-- Fonte: EUA-E10 | HOMOLOGADA DHR-EUA-E10 (2026-09-20). Verificada sob CC-09 (sem novo CC).
+     Nó N13 (Contrafactual) no MAN-001. Qualificação probabilística → N14/N15; árvores → backtest. -->
+
+RULE-CTF-01: Todo raciocínio contrafactual/backtest DEVE declarar o baseline (mundo de referência),
+             alterar apenas a premissa indicada (intervenção mínima) e não usar o resultado
+             conhecido como premissa (anti-hindsight). Estende RULE-CAU-03; não cria regra paralela.
+             [Fonte: EUA-E10; DHR-EUA-E10; RULE-CAU-03]
+
+RULE-CTF-02: Contrafactual é condicional: NÃO DEVE ser apresentado como fato nem convertido em
+             previsão. Consequências DEVEM ser graduadas (necessária / plausível / possível /
+             especulativa), coerente com TRACE-06 e RULE-EPI.
+             [Fonte: EUA-E10; DHR-EUA-E10; TRACE-06; RULE-EPI]
+
+RULE-CTF-03: Contrafactual de invalidação ("que alteração mínima invalida esta leitura?") DEVE
+             conectar-se ao invalidador declarado da hipótese (INV-02/Elliott-ICT), não a um
+             invalidador ad hoc.
+             [Fonte: EUA-E10; DHR-EUA-E10; INV-02]
+
+---
+
+## Regras de Incerteza (RULE-UNC)
+<!-- Fonte: EUA-E11 | HOMOLOGADA DHR-EUA-E11 (2026-09-20). Verificada sob CC-09 (sem novo CC).
+     Nó N14 (Incerteza) no MAN-001. NÃO toca J-001/Conviction; calibração → Conviction/CCM;
+     quantificação → RULE-PRB (N15). -->
+
+RULE-UNC-01: Ao declarar incerteza material, a spec DEVE localizá-la (onde: dado/modelo/causa/
+             semântica/regime/estrutura/decisão) e tipificá-la, em vez de "há incerteza" genérico.
+             Estende PB-10 (preservar → localizar).
+             [Fonte: EUA-E11; DHR-EUA-E11; PB-10]
+
+RULE-UNC-02: Incerteza é localizada: uma incerteza local NÃO DEVE rebaixar partes bem estabelecidas
+             do raciocínio (nem o inverso — certeza artificial local). Dependências entre incertezas
+             declaradas quando materiais.
+             [Fonte: EUA-E11; DHR-EUA-E11]
+
+RULE-UNC-03: Incerteza NÃO DEVE ser convertida em probabilidade sem base: "não distingo A de B" ≠
+             "A e B igualmente prováveis" (anti-falsa-precisão; segue RULE-EPI). Quantificação
+             pertence ao nó Probabilística / Conviction Engine.
+             [Fonte: EUA-E11; DHR-EUA-E11; RULE-EPI; J-001 (aberto — fronteira preservada, CONS-01)]
+
+---
+
+## Regras Probabilísticas (RULE-PRB)
+<!-- Fonte: EUA-E12 | HOMOLOGADA DHR-EUA-E12 (2026-09-20). Verificada sob CC-09 (sem novo CC).
+     Nó N15 (Probabilística) no MAN-001. NÃO toca J-001/Conviction; calibração/risco/priors/
+     distribuição → CCM-001 (J-001 aberto); decisão → RULE-DEC (N16). -->
+
+RULE-PRB-01: Afirmação probabilística material DEVE ser bem-formada: declarar evento, condição/
+             contexto e horizonte. "X%" isolado (sem evento/condição/horizonte) é achado. Não se
+             aplica ao Conviction Vector, cujo contrato é o CCM-001 (J-001 aberto).
+             [Fonte: EUA-E12; DHR-EUA-E12; J-001 (aberto — fronteira preservada, CONS-01)]
+
+RULE-PRB-02: Não quantificar sem base: quando faltar fundamento (incerteza estrutural/profunda,
+             evento mal definido, modelo inadequado), usar ordenação qualitativa ou INDETERMINADO em
+             vez de número fabricado. Estende RULE-UNC-03; anti-falsa-precisão (RULE-EPI).
+             [Fonte: EUA-E12; DHR-EUA-E12; RULE-UNC-03; RULE-EPI]
+
+---
+
+## Regras Decisionais (RULE-DEC)
+<!-- Fonte: EUA-E13 | HOMOLOGADA DHR-EUA-E13 (2026-09-21). Verificada sob CC-09 (sem novo CC).
+     Nó N16 (Decisional) no MAN-001. Reforça INV-05/P14/B-001 — NÃO redefine; modelagem decisional
+     (multicritério/utilidade/robustez/opcionalidade) → CDM-001/Synthesis; vieses → RULE-MET (N17). -->
+
+RULE-DEC-01: Toda saída decisional material DEVE declarar que produz recomendação/orientação
+             decisional (TMP), não execução, e sob qual autoridade ela é emitida (o SOT recomenda; a
+             execução e a decisão final permanecem na camada/autoridade competente — Andraus/humano).
+             Reforça e referencia INV-05, P14 e a topologia Synthesis/B-001 — não os redefine.
+             Confundir recomendação com autoridade, ou apresentar análise como ação automática, é
+             achado.
+             [Fonte: EUA-E13; DHR-EUA-E13; INV-05; CONSTITUTION P14; B-001 (fechada)]
+
+RULE-DEC-02: Sob informação faltante ou preferência não disponível, o sistema DEVE poder produzir
+             decisão condicional — se X → A / se ¬X → B / se X permanecer desconhecido →
+             INDETERMINADO/HOLD — em vez de fabricar uma decisão única ou inventar a preferência
+             ausente. Estende INDETERMINADO (EUA-E05) e RULE-UNC (EUA-E11) ao plano decisional.
+             [Fonte: EUA-E13; DHR-EUA-E13; RULE-EPI (INDETERMINADO); RULE-UNC]
+
+RULE-DEC-03: Qualidade do processo decisional ≠ qualidade do resultado. Uma decisão bem fundamentada
+             pode produzir resultado ruim e vice-versa; a avaliação retrospectiva NÃO DEVE julgar o
+             processo apenas pelo resultado (anti-hindsight). Estende RULE-CAU-03/AP-10; crítico para
+             avaliação de backtest e revisão de sinais.
+             [Fonte: EUA-E13; DHR-EUA-E13; RULE-CAU-03; AP-10]
+
+---
+
+## Regras Metacognitivas (RULE-MET)
+<!-- Fonte: EUA-E14 | HOMOLOGADA DHR-EUA-E14 (2026-09-21). Verificada sob CC-09 (sem novo CC).
+     Nó N17 (Metacognição) no MAN-001 — TRANSVERSAL / 2ª ordem (monitora N8–N16, não cria domínio
+     novo). NÃO toca J-001/CCM-001 (calibração → CCM-001); runtime → harness-eval/GEH;
+     especialização Trading → SES-001. Fecha o §68 (MSC-001). -->
+
+RULE-MET-01: Honestidade / não-fabricação metacognitiva. O sistema NÃO DEVE declarar validação que
+             não realizou, ferramenta que não usou, causalidade que não demonstrou nem independência
+             entre evidências que não verificou. Quando não puder determinar um atributo
+             metacognitivo (ex.: se duas evidências são independentes), DEVE declarar a limitação em
+             vez de afirmá-lo sem base. Estende RULE-SY-005, RULE-EPI e RULE-004.
+             [Fonte: EUA-E14; DHR-EUA-E14; RULE-SY-005; RULE-EPI; RULE-004]
+
+RULE-MET-02: Abstenção produtiva (anti-censura cognitiva). INDETERMINADO/incerteza NÃO DEVE
+             degenerar em "não é possível saber". Toda abstenção material DEVE localizar: o que é
+             incerto · o que a incerteza afeta · sob qual condição a conclusão muda · qual informação
+             a reduziria. Torna o INDETERMINADO (EUA-E05) informativo; estende RULE-UNC (EUA-E11).
+             [Fonte: EUA-E14; DHR-EUA-E14; RULE-EPI (INDETERMINADO); RULE-UNC]
+
+RULE-MET-03: Autonegação / revisibilidade legítima. Uma conclusão anterior do próprio sistema NÃO se
+             torna irrevogável por ter sido produzida antes; DEVE poder ser revista ou abandonada
+             ante nova evidência/regime/observação, sem que isso seja tratado como falha operacional.
+             Estende RULE-007/PCO-01 e os gatilhos de reavaliação (RULE-CTF-03).
+             [Fonte: EUA-E14; DHR-EUA-E14; RULE-007/PCO-01; RULE-CTF-03]

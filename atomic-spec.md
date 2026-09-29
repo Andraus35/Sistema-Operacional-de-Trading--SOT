@@ -1,13 +1,14 @@
 # atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT
 
-**Versão:** v1.4 (EUA-E03 — HOMOLOGADO, DHR-SES-001, 2026-09-20; v1.3 preservada — INV-07)  
-**Status:** v1.4 HOMOLOGADO (Andraus — v1.3: 2026-09-14; EUA-E03: 2026-09-20)  
+**Versão:** v1.5 (piloto SPEC-002 — DHR-SPEC002-001, 2026-09-29; v1.4/v1.3 preservadas — INV-07)  
+**Status:** v1.5 HOMOLOGADO (Andraus — v1.3: 2026-09-14; EUA-E03/v1.4: 2026-09-20; v1.5: 2026-09-29)  
 **Emenda EUA-E03:** Incorpora SES-001 §59 (17 campos Engineering Card) + §60 (cadeia de derivação) + C4 (verificação Revisor)  
 **Emenda EUA-E21 (DHR-EUA-E21, 2026-09-26):** Abertura de Spec e Dossiê de Pesquisa (§15) — o ROADMAP não pré-determina Specs nem quantidades; a definição ocorre na abertura, após pesquisa web de estado da arte pelo Especificador.  
 **Emenda CLASSE-MECH-001 (DHR-CLASSE-MECH-001, 2026-09-27):** Declaração de Classe/Mecanismo por BASpec (§9, §10.5 CC-11, §10.6 nova) — refina PE-04 (GPR-001) em 4 sub-classes (D/H/P/C); prospectiva, não retroage sobre Specs já homologadas (SPEC-001/019/020).  
 **Regularização retroativa P-02 (Adendo DHR-CLASSE-MECH-001, 2026-09-27):** CC-08 (EUA-E04, 2026-09-20), CC-09 (EUA-E05, 2026-09-20) e CC-10 (EUA-E06, 2026-09-20) inseridos fisicamente em §10.5 — já eram vigentes/citados desde suas homologações originais; esta é reconciliação de texto-fonte, não nova obrigação nem achado retroativo.  
 **Emenda PRINC-BID-001 (DHR-PRINC-BID-001, 2026-09-27):** Declaração de Princípios de Domínio por Spec de especialidade (§8 sequência, §10.5 CC-12, §10.7 nova) — herança principiológica bidirecional (GPR-001 §2.7/§14); prospectiva, incide a partir de SPEC-002, ordenada após RULE-MECH-01 (Classe declarada primeiro).  
 **Emenda RULE-ECC-04 (DHR-VERBATIM-SRC-001, 2026-09-28):** Captura Verbatim de Fonte (§15 "Verificação") — substitui BL-020 (acesso web do Revisor, declinado); Revisor verifica correspondência de string entre citação e arquivo de captura, sem web; prospectiva, incide a partir de SPEC-002.  
+**Promoção a v1.5 (LOTE RULE-REG-001, DHR-SPEC002-001, piloto SPEC-002, 2026-09-29):** o piloto de incorporação das 11 emendas cognitivas (EUA-E04..E14 — RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC/MET), homologadas com vigência imediata em 2026-09-20/21 e cuja incorporação física estava diferida "ao piloto SPEC-002 sob atomic-spec v1.5", foi EXECUTADO: as 10+1 famílias estão agora registradas fisicamente em `governance/RULES.md` (seções próprias) e o método sobe a **v1.5**. O Constitution Check §10.5 já referencia essas famílias — CC-08 (RULE-HD-02), CC-09 (RULE-EPI-01..03 e demais camadas N8–N17 verificadas sob CC-09), CC-10 (RULE-SEM) — que deixam de ser citação `[Fonte:]` sem seção e passam a apontar para o texto vigente do `RULES.md`. Registro dos nós N8–N17 no MAN-001 e K-MAN-* no CONFLICT-MAP = ato correlato do Controlador (fora do escopo estrito de RULE-REG-001). Não altera conteúdo normativo das camadas (apenas materializa o já homologado — INV-07).  
 **Edição operacional:** Claude Code (Opus 4.8, esforço alto, skill `tlc-spec-lean`)  
 **Autoridade literal:** documentos-base v1.0 + emendas EUA-E01/EUA-E02 no repositório do projeto  
 **Arquivos raiz obrigatórios:** `roadmap.md` (sequência) · `atomic-spec.md` (este arquivo — método)
@@ -426,7 +427,7 @@ As Salvaguardas Constitucionais do CEE-001 são invioláveis (Q-003, CEE-001 v2.
 
 ---
 
-*Unidade Atômica v1.4 (baseline) — núcleo normativo (M0 homologado) + camada de enforcement (EUA-E01/E02) + campos SES-001 §59 para Engineering Cards (EUA-E03, HOMOLOGADO 2026-09-20 DHR-SES-001) + Abertura de Spec/Dossiê de Pesquisa (§15, EUA-E21) + lentes de domínio (6) e insumo de orquestração no Dossiê (§15, EUA-E23 — DHR-EUA-E23, 2026-09-29) + operação no Claude Code. Autoridade literal: documentos-base + emendas no projeto. Próximo trabalho autorizado: ver `roadmap.md`.*
+*Unidade Atômica v1.5 (baseline) — núcleo normativo (M0 homologado) + camada de enforcement (EUA-E01/E02) + campos SES-001 §59 para Engineering Cards (EUA-E03, HOMOLOGADO 2026-09-20 DHR-SES-001) + Abertura de Spec/Dossiê de Pesquisa (§15, EUA-E21) + lentes de domínio (6) e insumo de orquestração no Dossiê (§15, EUA-E23 — DHR-EUA-E23, 2026-09-29) + incorporação física das 10+1 famílias cognitivas RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC/MET ao `RULES.md` (LOTE RULE-REG-001, piloto SPEC-002 — DHR-SPEC002-001, 2026-09-29) + operação no Claude Code. Autoridade literal: documentos-base + emendas no projeto. Próximo trabalho autorizado: ver `roadmap.md`.*
 
 ---
 

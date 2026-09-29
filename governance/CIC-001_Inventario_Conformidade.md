@@ -198,7 +198,6 @@ Conforme K-PAP-005 (DHR-PAP-001-B ss3), apenas as open decisions que tocam um pr
 | Open Decision | Questao | Justificativa |
 |---|---|---|
 | **C-001** | Granularidade EARS multi-condicao | Decisao de formato de especificacao (notacao); nao toca principio do GPR-001. `[INFERENCIA]` |
-| **RULE-REG-001** | 10 familias RULE (RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC, EUA-E04-E13, +RULE-MET/EUA-E14) ja FATO NORMATIVO, incorporacao ao RULES.md diferida ao piloto SPEC-002/v1.5 pelas proprias atas; RULES.md ja cita algumas via [Fonte:] de regra registrada (RULE-HG-02) | Lacuna de registro do harness, nao de principio do GPR-001; gatilho `spec:SPEC-002 em redacao`; achado do Revisor (parecer CONFORME, 2026-09-28) via scripts/check_doc_sync.py (D3). `[FONTE]` |
 
 ### 5.3 Open decisions FECHADAS (registro historico)
 
@@ -207,6 +206,7 @@ Conforme K-PAP-005 (DHR-PAP-001-B ss3), apenas as open decisions que tocam um pr
 | **B-001** | Conviction Engine separado do Synthesis? | FECHADA (Q-007): Conviction Engine e SEPARADO. Topologia Fusion -> Conviction -> Synthesis. | 2026-09-14 |
 | **L-001** | Governanca do proprio harness / policy versionada | FECHADA (DHR-SPEC019-001): homologacao da SPEC-019 fecha L-001 na dimensao spec-time. Governanca de runtime NAO e residuo de L-001 -- pertence a SPEC-018/K-001 (K-001 segue aberta em ss5.1). | 2026-09-22 |
 | **RMR-EST-001** | Estado `Diferido` do BL-013 fora do enum de 5 valores do RMR-001 ss2 | FECHADA (DHR-DOCSYNC-002): nao era estado formal novo, era a palavra de encaminhamento do gate (Passo 11-bis); Estado do BL-013 corrigido para `Em espera` (definicao do ss2 ja descrevia a situacao). | 2026-09-28 |
+| **RULE-REG-001** | 10+1 familias RULE (RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC, EUA-E04-E13, +RULE-MET/EUA-E14) ja FATO NORMATIVO, com incorporacao fisica ao RULES.md diferida ao piloto SPEC-002/v1.5 | RESOLVIDA POR EXECUCAO (DHR-SPEC002-001): gatilho `spec:SPEC-002 em redacao` disparado pela abertura da SPEC-002; as 10+1 familias foram registradas fisicamente em RULES.md (secoes proprias) + atomic-spec -> v1.5; unico conteudo pendente (registro fisico) sanado; mérito nunca esteve aberto. Residual correlato (nos N8-N17 no MAN-001 + K-MAN-* no CONFLICT-MAP + secao Terminologia Concorrente no GLOSSARIO) = ato pendente do Controlador, fora do escopo estrito de RULE-REG-001. | 2026-09-29 |
 
 `[FONTE: atomic-spec.md ss12; roadmap.md "Estado atual do ciclo"]`
 
