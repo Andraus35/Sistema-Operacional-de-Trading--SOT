@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/runtime-workflow.alarm-trigger",
+  "title": "Runtime Workflow — Alarme-Gatilho de Nível de Preço (E4)",
+  "description": "Contrato do alarme-gatilho que o Manager adiciona em um nível de preço quando a convicção macro de contexto é conclusiva. O alarme pode ser ativado ou não após a abertura da Killzone OU em outro momento (explicitado na v2). Insumo estrutural do RUNTIME-WORKFLOW-001 v2. Reaproveita o enum de symbol dos schemas de 1a geração.",
+  "$comment": "status: PROPOSTA — não homologado; ver governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md. Mecanismo de armar/observar/ativar em runtime pertence a K-001/SPEC-018/SPEC-045-RUNTIME-001 e SPEC-008 (Scheduler) — todas ABERTAS/não homologadas. Não fecha nenhuma delas (CONS-01).",
+  "type": "object",
+  "required": ["alarm_id", "symbol", "price_level", "activation_window", "status"],
+  "additionalProperties": true,
+  "properties": {
+    "alarm_id": { "type": "string", "description": "Identificador do alarme-gatilho." },
+    "mission_id": { "type": "string", "description": "Missão à qual o alarme pertence (SPEC-015 — não fechado aqui)." },
+    "symbol": {
+      "type": "string",
+      "enum": ["BTCUSDT", "XAUUSD", "NAS100"]
+    },
+    "created_by": {
+      "type": "string",
+      "enum": ["manager"],
+      "description": "O alarme-gatilho é adicionado pelo Manager após formar a convicção macro de contexto (E4)."
+    },
+    "price_level": {
+      "type": "number",
+      "description": "Nível de preço a ser observado para ativação."
+    },
+    "activation_condition": {
+      "type": ["string", "null"],
+      "description": "Condição narrativa de ativação (ex.: 'toque e rejeição no nível X'). Detalhe do gatilho = matéria de SPEC-008/SPEC-045-RUNTIME-001, não fechado aqui."
+    },
+    "activation_window": {
+      "type": "string",
+      "enum": ["after_killzone", "other_moment"],
+      "description": "Janela temporal de ativação. v1: apenas 'após abertura da Killzone'. v2: 'após abertura da Killzone OU mesmo em outro momento' — 'other_moment' é o acréscimo da v2."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["armed", "triggered", "expired", "cancelled", "invalidated"],
+      "description": "Estado do alarme. Máquina de estados definitiva pertence a SPEC-008/M-001 (estados do Blackboard p/ objetos não-hipótese — ABERTA); enum aqui é preliminar."
+    },
+    "armed_at": { "type": "string", "format": "date-time" },
+    "triggered_at": { "type": ["string", "null"], "format": "date-time" }
+  }
+}

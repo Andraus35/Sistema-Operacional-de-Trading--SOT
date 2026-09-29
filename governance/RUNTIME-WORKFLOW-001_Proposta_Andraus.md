@@ -3,6 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Código | **RUNTIME-WORKFLOW-001** |
+| Versão | **v2 (2026-09-29)** — atualização do workflow por Andraus (mais detalhada que a v1) + schemas de contrato de dados. **v1 preservada integralmente (INV-07 — nada deletado).** Ver §1 (v1 verbatim), §1-bis (v2 verbatim), §2-bis (decomposição v1→v2), §6 (schemas). |
 | Natureza | **Documento de insumo** (não-normativo) — registro verbatim de uma proposta de **fluxo de acionamento e formação de convicção entre os agentes cognitivos** ("workflow de runtime" no sentido de **orquestração cognitiva do Harness**, não de software — ver §0-bis), trazida por Andraus em chat, com decomposição preliminar mapeada contra o baseline. **NÃO é Spec, NÃO é emenda, NÃO fecha decisão aberta.** |
 | Status epistemológico | **INSUMO — `[FONTE]` (registro de diretiva) + `[INFERÊNCIA]` (decomposição/mapeamento) + `[DECISÃO NECESSÁRIA]` (o que depende de Andraus).** Não é baseline. Não é FATO NORMATIVO nem FATO ARQUITETURAL. |
 | Origem | Andraus (dono do projeto), chat, 2026-09-29 — mesma diretiva que originou a EUA-E23. |
@@ -32,6 +33,27 @@ Este documento **registra uma proposta de Andraus como insumo** — não a homol
 
 *(Transcrição literal — RCN-001/PC-06. Grafia original preservada, incluindo "Está"/"evidencia".)*
 
+## 1-bis. Workflow verbatim — ATUALIZAÇÃO v2 (Andraus, 2026-09-29) `[FONTE]`
+
+> "Antes da abertura da Killzone coloco o sistema para rodar. Aponto o ativo alvo, o tipo da missão: se de exploração ou de validação, o tipo de Trading: position, swing ou day Trading (Implicação na alavancagem a depender do nível da convicção e tipo da oportunidade) e o time frame de analise O manager agente começara a distribuição da missão com o Agente estrutural que irá verificar a estrutura de ondas no time frame de contexto e no de entrada e após observar, marcar, classificar tratar evidencia, hipótese e formar convicção entrega sua convicção. Se houver oportunidade apontada (a depender da convicção especializada), o agente institucional entra em cena e fará o mesmo procedimento no time frame de contexto apenas. Após sua análise e entrega, o manager agente formará a convicção macro de contexto e se houver oportunidade conclusiva deverá adicionar um alarme-gatilho no nível de preço a ser ativado ou não após abertura da Killzone ou mesmo em outro momento. Se ativado e válido, o agente operacional entra com sua análise do time frame da entrada (difere do de contexto) fazendo o devido tratamento e entrega ao manager. Após colher os dados do operacional o manager formará convicção global e decidirá envio com dados da oportunidade ao agente de risco que por sua vez fará sua análise de risco-retorno e decidirá por convicção se envia sinal ou não ao bot finance externo com dados da entrada."
+
+*(Transcrição literal — RCN-001/PC-06. Grafia original preservada.)*
+
+### Diferenças notáveis v1 → v2 (registro de fato, não resolução) `[FONTE]`/`[DECISÃO NECESSÁRIA]`
+
+| # | Mudança da v2 frente à v1 | Natureza |
+|---|---|---|
+| Δ1 | Novos parâmetros de missão explícitos: **ativo alvo** e **tipo de missão (exploração vs validação)** | `[FONTE]` — acréscimo de input |
+| Δ2 | **Alavancagem** deixa de ser input e passa a ser **implicação** do nível de convicção + tipo de oportunidade | `[DECISÃO NECESSÁRIA]` — fórmula/derivação não dita (ver §3, tensão 8) |
+| Δ3 | O **Manager distribui ativamente a missão** ao agente estrutural (na v1 o acionamento do estrutural era implícito) | `[FONTE]` — novo ator/etapa |
+| Δ4 | O **agente estrutural analisa dois timeframes** (contexto E entrada), não só um | `[FONTE]` |
+| Δ5 | Menção explícita a **classificar** evidência (v1: só "tratar evidência, hipótese") | `[FONTE]` |
+| Δ6 | O **agente institucional atua apenas no timeframe de contexto** (explicitado) | `[FONTE]` |
+| Δ7 | Alarme-gatilho ativável "após a Killzone **ou mesmo em outro momento**" (v1: só após a Killzone) | `[FONTE]` |
+| Δ8 | Alarme ativado exige **"ativado E válido"** antes de acionar o operacional (v2 acrescenta "e válido") | `[FONTE]` |
+| Δ9 | Manager envia ao Risk Agent **"dados da oportunidade"** (v1: "dados de risco-retorno") — o risco-retorno passa a ser **análise do próprio Risk Agent** | `[FONTE]` — realoca a análise risco-retorno |
+| Δ10 | Risk Agent decide **"por convicção"** se envia sinal (reforça convicção de risco — tensão RISK-CONV-001) | `[DECISÃO NECESSÁRIA]` |
+
 ## 2. Decomposição preliminar (mapeamento contra o baseline) `[INFERÊNCIA]`
 
 Etapas e atores citados por Andraus, mapeados contra o ROADMAP/AGENTS.md. **A coluna "Baseline correlato" indica onde a etapa provavelmente se especifica; a coluna "Depende de" indica a decisão aberta ou Spot que a governa.**
@@ -46,6 +68,21 @@ Etapas e atores citados por Andraus, mapeados contra o ROADMAP/AGENTS.md. **A co
 | E6 | Manager forma **convicção global** e decide envio com **dados de risco-retorno** ao **agente de risco** | Manager + Risk Agent | SPEC-014 (Synthesis→Decisão) · Conviction Vector 8D · Risk Agent (BL-018) | J-001 · RISK-CONV-001 |
 | E7 | **Agente de risco** analisa e decide se **envia sinal** ao **bot finance externo** com dados de entrada | Risk Agent | RISK-SPEC-* (BL-018) · **Signal Package** para o Bot Trade Finance (AGENTS.md §9) · TMP = artefato interno Synthesis→Risk (EUA-E19a) | RISK-ARR-LOC-001 · RISK-CONV-001 · SPEC-045-RUNTIME-001 |
 
+## 2-bis. Decomposição v2 (renumerada — reflete a atualização) `[INFERÊNCIA]`
+
+A v2 introduz uma etapa nova de **distribuição de missão pelo Manager** (E2) e um passo de **validade do alarme** (E6); as etapas foram renumeradas E1–E8. Cada linha carrega, em `Schema`, o contrato de dados proposto na §6 (insumo estrutural — não homologado).
+
+| # | Etapa (v2) | Ator | Baseline correlato (slot indicativo) | Depende de | Schema (§6) |
+|---|---|---|---|---|---|
+| E1 | Operador arma o sistema; aponta **ativo alvo**, **tipo de missão** (exploração/validação), **tipo de trade** (position/swing/day) e **timeframes** (contexto e entrada). Alavancagem = implicação, não input | Operador (Andraus) | Parâmetros de sessão — sem slot dedicado; toca SPEC-008/009 | K-001 · G-001 · **RISK-LEV-001 (proposto)** | `runtime-workflow.mission-dispatch` (`mission_parameters`) |
+| E2 | **Manager distribui a missão** ao agente estrutural (novo na v2) | Manager | SPEC-014/023 (orquestração) | K-001 | `runtime-workflow.mission-dispatch` (`manager_dispatch`) |
+| E3 | **Agente estrutural** verifica ondas no **timeframe de contexto E de entrada**; observa, marca, **classifica**, trata evidência+hipótese, forma convicção; entrega | Agente estrutural | SPEC-010 · SPEC-011 · CHM-001 · CEM-001 | J-001 | `runtime-workflow.conviction-report` (`agent_role=structural`) |
+| E4 | Se há oportunidade (a depender da convicção especializada), **agente institucional** faz o mesmo **apenas no timeframe de contexto** | Agente institucional | SPEC-012 · sub-hipótese `parent_id` (Q-005) | J-001 | `runtime-workflow.conviction-report` (`agent_role=institutional`) |
+| E5 | **Manager** forma **convicção macro de contexto**; se conclusiva, adiciona **alarme-gatilho** no nível de preço, ativável após a Killzone **ou em outro momento** | Manager | SPEC-014/023 · Conviction Engine (B-001 fechada) · SPEC-008 (Scheduler) | J-001 · M-001 · K-001 | `runtime-workflow.manager-conviction-envelope` (`macro_context`) + `runtime-workflow.alarm-trigger` |
+| E6 | Se o alarme é **ativado E válido**, **agente operacional** analisa o **timeframe de entrada** (difere do de contexto); trata e entrega | Agente operacional | SPEC-013 (ICT) — **INVARIANTE: ICT NÃO cria hipótese** | — | `runtime-workflow.conviction-report` (`agent_role=operational`, `hypothesis_ref=null`) |
+| E7 | Manager forma **convicção global** e decide envio ao Risk Agent com **dados da oportunidade** (não risco-retorno pré-calculado) | Manager + Risk Agent | SPEC-014 · TMP (SPEC-016 repurposada) · Risk Agent (BL-018) | J-001 · RISK-CONV-001 | `runtime-workflow.manager-conviction-envelope` (`global` + `dispatch_to_risk`) |
+| E8 | **Agente de risco** faz **sua própria análise de risco-retorno** e decide **por convicção** se envia sinal ao **bot finance externo** | Risk Agent | RISK-SPEC-* (BL-018) · Signal Package (D-RISK-SP-001, RISK-SPEC-022) · INV-05 | RISK-ARR-LOC-001 · RISK-CONV-001 · SPEC-045-RUNTIME-001 | `runtime-workflow.risk-decision` |
+
 ## 3. Pontos de atenção / tensões com o baseline (a tratar na abertura, não aqui) `[INFERÊNCIA]`/`[DECISÃO NECESSÁRIA]`
 
 1. **Hierarquia analítica.** O fluxo E2→E3→E5 (estrutural→institucional→operacional/ICT) é **coerente** com a hierarquia inviolável Elliott→Fibonacci→Fractal→SMC→ICT (AGENTS.md §6.1) e com "ICT não cria hipótese" (§6.2). `[INFERÊNCIA]` — a confirmar por Spec.
@@ -55,6 +92,7 @@ Etapas e atores citados por Andraus, mapeados contra o ROADMAP/AGENTS.md. **A co
 5. **Alarme-gatilho em nível de preço, ativável após a Killzone.** Mecanismo de runtime (armar/observar/ativar) — pertence a **K-001 / SPEC-018 (governança de runtime) / SPEC-045-RUNTIME-001** e a SPEC-008 (Scheduler). Não especificado hoje (§22 do ROADMAP). `[DECISÃO NECESSÁRIA]`.
 6. **Timeframe de contexto ≠ timeframe de entrada** (E4 vs E5). Coerente com herança fractal/multi-timeframe (SPEC-009/010/011). `[INFERÊNCIA]`.
 7. **Localização do agente de risco / arranjo (D-ARR-001) permanece RISK-ARR-LOC-001 (aberta).** O workflow não a fecha. `[DECISÃO NECESSÁRIA]`.
+8. **Alavancagem como implicação do nível de convicção + tipo de oportunidade (Δ2, v2).** A v2 diz que a alavancagem **decorre** da convicção e do tipo de oportunidade — não é input do operador. Isso cria uma **dependência funcional convicção→alavancagem** que hoje **não tem regra no baseline**: toca **J-001** (fórmula/pesos/limiares da convicção, ABERTA) e **RISK-CONV-001** (convicção de risco ≠ Conviction Vector 8D, ABERTA), e possivelmente o dimensionamento do Risk Agent (BL-018). **Verifiquei o ROADMAP §Decisões abertas e o AGENTS.md §7:** não há decisão aberta que cubra especificamente "alavancagem por convicção". **Proponho o identificador `RISK-LEV-001`** (padrão RISK-*, seguindo RISK-CONV-001/RISK-ARR-LOC-001) para rastrear essa lacuna — **`[DECISÃO NECESSÁRIA]`; é proposta de identificador, não fato**: só Andraus cunha/abre a decisão. Não resolver aqui (CONS-01). Nota constitucional: `sizing_sugerido.alavancagem` já existe em `schemas/synthesis.output.json` como campo, mas **a regra de derivação convicção→alavancagem não está especificada** — o campo existir não fecha a decisão.
 
 ## 4. Uso obrigatório deste insumo (vínculo com a EUA-E23 / RULE-ECC-06) `[PROPOSTA→homologação]`
 
@@ -65,13 +103,30 @@ Após homologação da EUA-E23, este documento é **leitura obrigatória do Doss
 
 O Dossiê dessas Specs **DEVE** citar este insumo, confrontar a proposta de Andraus com o estado da arte pesquisado (lente arquitetural + lentes de domínio da RULE-ECC-05) e registrar, por etapa E1–E7, uma decisão **adotar / adaptar / rejeitar / adiar** — **sem** fechar nenhuma decisão aberta (CONS-01). Este insumo **não vincula o conteúdo** da Spec; vincula a **obrigação de considerá-lo**.
 
+## 6. Schemas de contrato de dados (v2 — insumo estrutural) `[PROPOSTA]`
+
+Atendendo à diretiva de Andraus (2026-09-29 — "elabore o schema e/ou demais mecanismo de entrega de dados estruturados para facilitar a leitura e especificação tanto do especificador quanto do revisor"), a v2 acompanha **5 JSON Schemas (Draft-07)** que modelam o workflow como **contratos de dados entre os agentes cognitivos**. Ficam em `schemas/`, seguindo a convenção dos schemas de 1a geração (`$id: sot://schemas/<nome>`, enum de symbol `BTCUSDT/XAUUSD/NAS100`, timeframes hierárquicos `S1/D1/H4/H1/M5`).
+
+**Status epistemológico (idêntico ao deste documento e da EUA-E23):** `[PROPOSTA]` — **não homologados**. Cada arquivo carrega o campo `$comment` no topo com `status: PROPOSTA — não homologado; ver governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md`. Aguardam Revisor + homologação de Andraus. **Não fecham** nenhuma decisão aberta (J-001, RISK-CONV-001, RISK-ARR-LOC-001, M-001, K-001, D-RISK-SP-001 permanecem abertas). Não redefinem modelo canônico baselined (CONST-01): a hipótese continua CHM-001, a evidência CEM-001, o Conviction Vector 8D é **referenciado, não redefinido**.
+
+| Schema | Etapa(s) | O que cobre | O que reaproveita / não redefine |
+|---|---|---|---|
+| `schemas/runtime-workflow.mission-dispatch.json` | E1, E2 | Parâmetros de missão do operador (ativo, tipo de missão, tipo de trade, TFs) + distribuição da missão pelo Manager ao estrutural | enum de symbol e conjunto de TFs dos schemas de 1a geração; alavancagem marcada como implicação/`[DECISÃO NECESSÁRIA]` (RISK-LEV-001) |
+| `schemas/runtime-workflow.conviction-report.json` | E3, E4, E6 | Entrega genérica de convicção por agente especializado (estrutural/institucional/operacional): TF analisado, classificação de evidência, ref. de hipótese, convicção | reaproveita o conceito `conviction_pct` de `elliott-wave.output.json`; hipótese=CHM-001, evidência=CEM-001; `hypothesis_ref=null` para ICT (invariante) |
+| `schemas/runtime-workflow.alarm-trigger.json` | E5 | Alarme-gatilho: nível de preço, condição, janela de ativação (após Killzone OU outro momento), status | enum de symbol; máquina de estados definitiva deferida a SPEC-008/M-001 |
+| `schemas/runtime-workflow.manager-conviction-envelope.json` | E5, E7 | Dois momentos do Manager (convicção macro de contexto vs global) + payload "dados da oportunidade" ao Risk Agent | referencia Conviction Vector 8D (`synthesis.output.json`) sem redefinir; TMP=SPEC-016 repurposada (não redefinido) |
+| `schemas/runtime-workflow.risk-decision.json` | E8 | Saída do Risk Agent: análise risco-retorno própria, convicção de risco, decisão ACCEPT/WAIT/REJECT/ABSTAIN, enviar/não sinal | estados de `SOT-RISK-MASTER-001 §3.5`; **NÃO define o Signal Package** — contrato deferido a RISK-SPEC-022 (`[DECISÃO NECESSÁRIA — D-RISK-SP-001]`) |
+
+**Validação de sintaxe:** o Especificador não tem Bash; a validade sintática JSON não foi executada. **Pendência a confirmar por Andraus/operador:** rodar `python -m json.tool` em cada arquivo novo (ou `npm test`, atento a que o schema-lint do projeto pode tratar todos os schemas de `schemas/` como obrigatórios — os 5 novos são PROPOSTA, não baseline). Nenhum resultado de execução é reportado aqui (RULE-MET-01 — não-fabricação).
+
 ## 5. O que este documento NÃO faz `[FONTE]`
 
 - Não fecha K-001, SPEC-018, SPEC-045-RUNTIME-001, RISK-CONV-001, RISK-ARR-LOC-001, J-001, G-001, H-001, M-001, N-001, C-001.
 - Não redefine modelo canônico baselined (CONST-01): CHM-001, CEM-001, CEE-001 v2.0, GMC/SDD/PPQ/SAS/CR intocados.
 - Não altera a hierarquia analítica, R:R 1:3, convicção ≥70% / score ≥7/9, Conviction Vector 8D, Signal Package, INV-05.
 - Não é ordem de implementação nem autorização de abertura de Spec — a abertura segue RULE-ECC-01/02 (passo 1-bis do ROADMAP §23).
+- Não fecha `RISK-LEV-001` (alavancagem por convicção — proposta de identificador da v2) nem `D-RISK-SP-001` (contrato do Signal Package). Os schemas da §6 são `[PROPOSTA]`, não baseline.
 
 ---
 
-*Insumo registrado pelo Especificador (Claude Code), 2026-09-29, a partir de diretiva de Andraus em chat. Não-normativo; sujeito à homologação da EUA-E23 para adquirir o vínculo de leitura obrigatória da §4. Nenhum registro anterior removido (INV-07).*
+*Insumo registrado pelo Especificador (Claude Code), 2026-09-29 (v1) e atualizado para v2 (2026-09-29, atualização de workflow + 5 schemas), a partir de diretiva de Andraus em chat. Não-normativo; sujeito à homologação da EUA-E23 para adquirir o vínculo de leitura obrigatória da §4. v1 preservada integralmente (INV-07 — nada removido).*

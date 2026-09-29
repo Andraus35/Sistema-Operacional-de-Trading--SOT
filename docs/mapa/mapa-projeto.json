@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-29",
-  "digest": "369901befa5e4b61fe4dad1257911bca4eaa059113d5e033a3c22775cc6e0537",
+  "digest": "4e94bee85164557e77569414878fc1f1918fd7103e888e4e7245e2d3a3db6f31",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1067,7 +1067,7 @@
    "path": "reference/SOT-RISK-MASTER-001_Consolidado.md",
    "area": "reference",
    "title": "SOT-RISK-MASTER-001 — Master Document: Risk Agent SOT",
-   "in": 6,
+   "in": 7,
    "out": 14
   },
   {
@@ -2733,7 +2733,7 @@
   {
    "id": "SPEC-016",
    "defined_in": "ROADMAP.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "SPEC-017",

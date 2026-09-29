@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/runtime-workflow.risk-decision",
+  "title": "Runtime Workflow — Risk Decision (E7)",
+  "description": "Contrato da saída do Agente de Risco: análise de risco-retorno (feita pelo PRÓPRIO Risk Agent, não recebida pronta do Manager — mudança da v2), convicção de risco e decisão de enviar ou não o sinal ao bot finance externo. NÃO define o Signal Package (contrato deferido — ver $comment). Insumo estrutural do RUNTIME-WORKFLOW-001 v2. Estados decisionais reaproveitados de reference/SOT-RISK-MASTER-001_Consolidado.md §3.5.",
+  "$comment": "status: PROPOSTA preliminar — não homologado; ver governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md. NÃO redefine o Signal Package: seu contrato exato é [DECISÃO NECESSÁRIA — D-RISK-SP-001], deferido à RISK-SPEC-022 (reference/SOT-RISK-MASTER-001_Consolidado.md). RISK-CONV-001 (convicção de risco vs Conviction Vector 8D) e RISK-ARR-LOC-001 (localização do Risk Agent) permanecem ABERTAS. A família RISK-SPEC só é autorizada via EUA-E20 (ainda não homologada). CONS-01. INV-05: SOT não executa ordem — decide emitir/não-emitir sinal.",
+  "type": "object",
+  "required": ["symbol", "decision", "send_signal"],
+  "additionalProperties": true,
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "enum": ["BTCUSDT", "XAUUSD", "NAS100"]
+    },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "opportunity_ref": {
+      "type": ["string", "null"],
+      "description": "Referência à oportunidade recebida do Manager (via TMP / manager-conviction-envelope.dispatch_to_risk)."
+    },
+    "risk_reward_analysis": {
+      "type": ["object", "null"],
+      "description": "Análise risco-retorno feita pelo próprio Risk Agent (E7). risk_reward >= 3.0 é invariante de sinal (R:R 1:3, Q-004) — ver schemas/synthesis.output.json.risk_reward.",
+      "additionalProperties": true,
+      "properties": {
+        "risk_reward": {
+          "type": ["number", "null"],
+          "minimum": 3.0,
+          "description": "R:R (retorno:risco). Nunca < 3.0 se send_signal=true (mínimo 3:1 = 1:3 risco:retorno, Q-004)."
+        }
+      }
+    },
+    "risk_conviction": {
+      "type": ["object", "null"],
+      "description": "Convicção de risco formada pelo Risk Agent ('decidirá por convicção', v2). NÃO é o Conviction Vector 8D analítico — a distinção é RISK-CONV-001 (ABERTA); não confundir (INV-RISK-02). Estrutura preliminar.",
+      "additionalProperties": true,
+      "properties": {
+        "risk_conviction_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }
+      },
+      "$comment": "[DECISÃO NECESSÁRIA] RISK-CONV-001 — 'convicção de risco' vs Conviction Vector 8D/J-001. Não fechar aqui."
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["ACCEPT", "WAIT", "REJECT", "ABSTAIN"],
+      "description": "Estado decisional do Risk Agent. Reaproveitado de reference/SOT-RISK-MASTER-001_Consolidado.md §3.5. ABSTAIN é comportamento desejável (não falha) — herda INDETERMINADO/HOLD (EUA-E05, INV-RISK-12)."
+    },
+    "send_signal": {
+      "type": "boolean",
+      "description": "Decisão de enviar (ou não) o sinal ao bot finance externo. true apenas quando decision=ACCEPT e invariantes/limiares satisfeitos. INV-RISK-08: não emitir sem Risk Harness aprovado (gate E3) — pré-condição a especificar em RISK-SPEC-020."
+    },
+    "rdr_ref": {
+      "type": ["string", "null"],
+      "description": "Referência ao Risk Decision Record (objeto cognitivo interno do Risk Agent, permanece interno — NÃO vai ao Bot Finance). Contrato do RDR depende de CDM-001 (não redigido) — [DECISÃO NECESSÁRIA]."
+    },
+    "signal_package_ref": {
+      "type": ["string", "null"],
+      "description": "Referência (por ID) ao Signal Package emitido, quando send_signal=true. O CONTRATO/CAMPOS do Signal Package NÃO são definidos aqui: são [DECISÃO NECESSÁRIA — D-RISK-SP-001], deferidos à RISK-SPEC-022. Este schema apenas registra o ponteiro, não o payload.",
+      "$comment": "NÃO expandir para os campos do Signal Package — contrato deferido a RISK-SPEC-022 (D-RISK-SP-001). Definir aqui violaria CONS-01 e o faseamento EUA-E19a/E20."
+    }
+  }
+}

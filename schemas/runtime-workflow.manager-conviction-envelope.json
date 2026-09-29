@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/runtime-workflow.manager-conviction-envelope",
+  "title": "Runtime Workflow — Manager Conviction Envelope (E4/E6) + Opportunity Payload ao Risk Agent",
+  "description": "Contrato dos dois momentos distintos de convicção do Manager: convicção macro de contexto (E4, após estrutural+institucional) e convicção global (E6, após colher dados do operacional). Inclui o payload de 'dados da oportunidade' enviado ao Risk Agent quando o Manager decide o envio. Insumo estrutural do RUNTIME-WORKFLOW-001 v2. Não redefine o Conviction Vector 8D (schemas/synthesis.output.json) nem o TMP.",
+  "$comment": "status: PROPOSTA — não homologado; ver governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md. B-001 FECHADA (Fusion→Conviction→Synthesis) deve ser respeitada. J-001 (fórmula/pesos/limiares) e RISK-CONV-001 permanecem ABERTAS. O TMP (handoff interno Synthesis→Risk) é regido por SPEC-016 repurposada — não redefinido aqui. CONS-01.",
+  "type": "object",
+  "required": ["envelope_stage", "symbol", "conviction"],
+  "additionalProperties": true,
+  "properties": {
+    "envelope_stage": {
+      "type": "string",
+      "enum": ["macro_context", "global"],
+      "description": "Momento do Manager: 'macro_context' (E4 — após estrutural+institucional; pode gerar alarme-gatilho) vs 'global' (E6 — após dados do operacional; decide envio ao Risk Agent). São dois momentos distintos do mesmo agente."
+    },
+    "symbol": {
+      "type": "string",
+      "enum": ["BTCUSDT", "XAUUSD", "NAS100"]
+    },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "mission_id": { "type": "string" },
+    "inputs_collected": {
+      "type": "array",
+      "description": "Convicções especializadas colhidas para formar esta convicção do Manager (referências a runtime-workflow.conviction-report por ID/role).",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "agent_role": { "type": "string", "enum": ["structural", "institutional", "operational"] },
+          "report_ref": { "type": "string" }
+        }
+      }
+    },
+    "conviction": {
+      "type": "object",
+      "description": "Convicção formada pelo Manager neste estágio. Referencia o Conviction Vector 8D (não redefine). Fórmula/pesos/limiares = J-001 (ABERTA).",
+      "required": ["conviction_pct"],
+      "additionalProperties": true,
+      "properties": {
+        "conviction_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "conviction_vector_ref": {
+          "type": ["object", "null"],
+          "description": "Referência às 8 dimensões do Conviction Vector (schemas/synthesis.output.json). Estrutura referenciada, não redefinida."
+        }
+      }
+    },
+    "conclusive_opportunity": {
+      "type": ["boolean", "null"],
+      "description": "Em envelope_stage=macro_context: se a oportunidade é conclusiva (dispara adição de alarme-gatilho, E4). Ver schemas/runtime-workflow.alarm-trigger.json."
+    },
+    "dispatch_to_risk": {
+      "type": ["object", "null"],
+      "description": "Presente apenas quando envelope_stage=global e o Manager decide enviar. Payload de 'DADOS DA OPORTUNIDADE' ao Risk Agent (mudança da v2: o Manager envia dados da oportunidade, NÃO 'dados de risco-retorno' já calculados — a análise risco-retorno passa a ser feita pelo próprio Risk Agent, E6/E7). O contrato de handoff é o TMP (SPEC-016 repurposada, snapshot imutável/versionado/timestamp, INV-RISK-00) — aqui apenas o payload lógico da oportunidade, sem redefinir o TMP.",
+      "additionalProperties": true,
+      "properties": {
+        "opportunity_id": { "type": "string" },
+        "tmp_ref": {
+          "type": ["string", "null"],
+          "description": "Referência ao TMP (handoff interno Synthesis→Risk). Contrato do TMP = SPEC-016 repurposada — não redefinido aqui."
+        },
+        "opportunity_data": {
+          "type": "object",
+          "description": "Dados da oportunidade (não da análise de risco). Campos exatos = [DECISÃO NECESSÁRIA] — dependem de SPEC-014 (Synthesis) e SPEC-016 (TMP).",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

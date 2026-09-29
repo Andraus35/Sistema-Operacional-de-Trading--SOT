@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/runtime-workflow.conviction-report",
+  "title": "Runtime Workflow — Conviction Report por Agente Especializado (E2/E3/E5)",
+  "description": "Contrato genérico de entrega de um agente especializado (estrutural/institucional/operacional) ao Manager: observação → marcação → classificação → tratamento de evidência/hipótese → formação de convicção. Reaproveita o conceito de conviction_pct de schemas/elliott-wave.output.json (primary_hypothesis.conviction_pct) e não redefine o Conviction Vector 8D (schemas/synthesis.output.json). Insumo estrutural do RUNTIME-WORKFLOW-001 v2.",
+  "$comment": "status: PROPOSTA — não homologado; ver governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md. Não fecha J-001 (fórmula/pesos/limiares do Conviction Vector) nem RISK-CONV-001. CONS-01. O objeto de hipótese permanece regido por CHM-001 e o de evidência por CEM-001 (não redefinidos — CONST-01).",
+  "type": "object",
+  "required": ["agent_role", "symbol", "analyzed_timeframes", "opportunity_flagged", "conviction"],
+  "additionalProperties": true,
+  "properties": {
+    "agent_role": {
+      "type": "string",
+      "enum": ["structural", "institutional", "operational"],
+      "description": "Papel do agente especializado. structural=Elliott (hipótese PRIMARY, Q-005); institutional=SMC (sub-hipótese com parent_id); operational=ICT (INVARIANTE: NÃO cria hipótese — só executa/confirma entrada, AGENTS.md §6.2)."
+    },
+    "symbol": {
+      "type": "string",
+      "enum": ["BTCUSDT", "XAUUSD", "NAS100"]
+    },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "analyzed_timeframes": {
+      "type": "array",
+      "description": "Qual(is) timeframe(s) este agente efetivamente analisou (campo novo, explicitado na v2). structural: contexto E entrada; institutional: apenas contexto; operational: apenas entrada.",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["S1", "D1", "H4", "H1", "M5"]
+      }
+    },
+    "evidence_classification": {
+      "type": "array",
+      "description": "Classificação da evidência tratada (campo novo — a v2 menciona explicitamente 'classificar' evidência, além de 'tratar'). O contrato canônico da Evidence é CEM-001 (não redefinido aqui — este campo apenas registra a rotulagem operacional que o agente aplicou).",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "evidence_ref": { "type": "string", "description": "Referência ao objeto Evidence (CEM-001) por ID, não por cópia." },
+          "classification": {
+            "type": "string",
+            "enum": ["favoravel", "contraevidencia", "inconclusiva", "ausente"],
+            "description": "Rótulo operacional. Taxonomia detalhada da Evidence é matéria da SPEC-002 (CEM-001) — não fechada aqui."
+          }
+        }
+      }
+    },
+    "hypothesis_ref": {
+      "type": ["string", "null"],
+      "description": "Referência à hipótese (CHM-001) que este agente criou/atualizou, por ID. DEVE ser null para agent_role=operational (ICT não cria hipótese — INV-01/02). Estrutura da hipótese = CHM-001 (não redefinida)."
+    },
+    "opportunity_flagged": {
+      "type": "boolean",
+      "description": "Se o agente apontou oportunidade. A cadeia condicional do workflow depende disto: só se há oportunidade (a depender da convicção especializada) o próximo agente/etapa entra em cena (E3/E5)."
+    },
+    "conviction": {
+      "type": "object",
+      "description": "Convicção especializada entregue. conviction_pct reaproveita o conceito de elliott-wave.output.json (primary_hypothesis.conviction_pct). A relação entre esta convicção especializada e o Conviction Vector 8D global é matéria de J-001 (ABERTA) — não fechar aqui.",
+      "required": ["conviction_pct"],
+      "additionalProperties": true,
+      "properties": {
+        "conviction_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Convicção da entrega deste agente em %. Limiar de acionamento do próximo agente = [DECISÃO NECESSÁRIA] (depende de J-001)."
+        },
+        "conviction_vector_contribution": {
+          "type": ["object", "null"],
+          "description": "Contribuição opcional deste agente às dimensões do Conviction Vector 8D (estrutural/geometrica/fractal/institucional/operacional/temporal/volume/historico — ver schemas/synthesis.output.json). Estrutura referenciada, NÃO redefinida. Pesos/agregação = J-001 (ABERTA).",
+          "$comment": "[DECISÃO NECESSÁRIA] J-001 — fórmula/pesos/limiares definitivos do Conviction Vector."
+        }
+      }
+    }
+  }
+}

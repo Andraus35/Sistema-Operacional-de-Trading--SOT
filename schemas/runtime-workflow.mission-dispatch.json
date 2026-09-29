@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sot://schemas/runtime-workflow.mission-dispatch",
+  "title": "Runtime Workflow — Mission Parameters & Manager Mission Dispatch (E1→E2)",
+  "description": "Contrato de dados dos parâmetros de missão apontados pelo operador antes da Killzone (mission_parameters) e da distribuição da missão pelo Manager ao agente estrutural (manager_dispatch). Insumo estrutural do RUNTIME-WORKFLOW-001 v2. Reaproveita o enum de symbol de schemas/elliott-wave.input.json e o conjunto de timeframes hierárquicos S1/D1/H4/H1/M5 usado pelos schemas de 1a geração.",
+  "$comment": "status: PROPOSTA — não homologado; insumo estrutural sujeito a Revisor + homologação de Andraus; ver governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md. Não fecha decisão aberta (J-001, K-001, M-001, N-001, RISK-CONV-001 permanecem abertas). CONS-01.",
+  "type": "object",
+  "required": ["mission_parameters"],
+  "additionalProperties": true,
+  "properties": {
+    "mission_parameters": {
+      "type": "object",
+      "description": "E1 — o que o operador (Andraus) aponta antes da abertura da Killzone ao colocar o sistema para rodar.",
+      "required": ["symbol", "mission_type", "trading_type", "context_timeframe", "entry_timeframe"],
+      "additionalProperties": true,
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "enum": ["BTCUSDT", "XAUUSD", "NAS100"],
+          "description": "Ativo alvo. Mesmo enum de schemas/elliott-wave.input.json (reaproveitado)."
+        },
+        "mission_type": {
+          "type": "string",
+          "enum": ["exploration", "validation"],
+          "description": "Tipo de missão apontado por Andraus: exploração (varrer estrutura em busca de oportunidade) vs validação (validar uma tese pré-existente). Novo na v2 do workflow — não havia na v1."
+        },
+        "trading_type": {
+          "type": "string",
+          "enum": ["position", "swing", "day"],
+          "description": "Tipo de trading. Presente desde a v1 do workflow."
+        },
+        "context_timeframe": {
+          "type": "string",
+          "enum": ["S1", "D1", "H4", "H1", "M5"],
+          "description": "Timeframe de contexto (macro) — analisado pelo agente estrutural e pelo institucional. Conjunto de TFs reaproveitado dos schemas de 1a geração."
+        },
+        "entry_timeframe": {
+          "type": "string",
+          "enum": ["S1", "D1", "H4", "H1", "M5"],
+          "description": "Timeframe de entrada (difere do de contexto) — analisado pelo agente estrutural (v2: também no contexto) e pelo agente operacional. Invariante do workflow: entry_timeframe != context_timeframe (E5)."
+        },
+        "leverage_note": {
+          "type": ["string", "null"],
+          "description": "NÃO é input do operador. A alavancagem é IMPLICAÇÃO do nível de convicção + tipo de oportunidade (texto de Andraus v2). Campo mantido apenas como marcador de rastreabilidade. Fórmula/derivação = [DECISÃO NECESSÁRIA] — toca J-001 (convicção) e a proposta RISK-LEV-001 (alavancagem por convicção). Não preencher com valor derivado até homologação.",
+          "$comment": "[DECISÃO NECESSÁRIA] RISK-LEV-001 (proposta de identificador — ver RUNTIME-WORKFLOW-001 v2 §2-bis). Não fechar aqui (CONS-01)."
+        }
+      }
+    },
+    "manager_dispatch": {
+      "type": ["object", "null"],
+      "description": "E2 — o Manager distribui ativamente a missão ao agente estrutural (explicitado na v2; na v1 o acionamento do estrutural era implícito). Contrato do que o Manager envia ao agente especializado ao iniciar a distribuição.",
+      "required": ["mission_id", "target_agent", "assigned_timeframes"],
+      "additionalProperties": true,
+      "properties": {
+        "mission_id": {
+          "type": "string",
+          "description": "Identificador da missão. Ciclo de vida da missão pertence a SPEC-015 (não fechado aqui)."
+        },
+        "target_agent": {
+          "type": "string",
+          "enum": ["structural", "institutional", "operational"],
+          "description": "Agente especializado que recebe a distribuição. O Manager inicia a distribuição pelo agente estrutural (E2)."
+        },
+        "assigned_timeframes": {
+          "type": "array",
+          "description": "Timeframes que o agente designado deve analisar. Na v2 o agente estrutural recebe DOIS timeframes (contexto E entrada); o institucional recebe apenas o de contexto; o operacional apenas o de entrada.",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": ["S1", "D1", "H4", "H1", "M5"]
+          }
+        },
+        "dispatched_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}
