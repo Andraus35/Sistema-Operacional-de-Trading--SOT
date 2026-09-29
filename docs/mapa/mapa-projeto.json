@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-29",
-  "digest": "2718b4161fe93906938590fdd06e9e4acfb0f13369c75fab3d02f9a096a6c962",
+  "digest": "a4aa0c2d3995af8e3eca01c77a11695244d3b42f92fe6fcd433025f8fb938d12",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 22,
-   "out": 30
+   "out": 31
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
-   "in": 25,
-   "out": 26
+   "in": 26,
+   "out": 27
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -164,22 +164,22 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 123,
-   "out": 34
+   "in": 124,
+   "out": 35
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW.md — Orquestração Cognitiva do SOT em Runtime (documento único e canônico)",
-   "in": 10,
-   "out": 16
+   "in": 12,
+   "out": 17
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 74,
-   "out": 28
+   "in": 75,
+   "out": 29
   },
   {
    "path": "backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md",
@@ -213,28 +213,28 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 91,
+   "in": 92,
    "out": 69
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 62,
+   "in": 63,
    "out": 1
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 57,
+   "in": 58,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 51,
+   "in": 52,
    "out": 0
   },
   {
@@ -248,7 +248,7 @@
    "path": "canon/GMC-001-governance-canonical-models.md",
    "area": "canon",
    "title": "GMC-001 — Canonical Models Governance Specification",
-   "in": 48,
+   "in": 49,
    "out": 0
   },
   {
@@ -402,8 +402,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 40,
-   "out": 124
+   "in": 41,
+   "out": 126
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -423,7 +423,7 @@
    "path": "governance/CONFLICT-MAP.md",
    "area": "governance",
    "title": "Conflict Map — SOT (Sistema Operacional de Trading)",
-   "in": 89,
+   "in": 90,
    "out": 33
   },
   {
@@ -577,7 +577,7 @@
    "path": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
    "area": "governance",
    "title": "DHR-EUA-E16 — Ata de Homologação da Sincronização dos Agentes + RPSA",
-   "in": 22,
+   "in": 23,
    "out": 6
   },
   {
@@ -612,7 +612,7 @@
    "path": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
    "area": "governance",
    "title": "DHR-EUA-E21 — Ata de Homologação: Especificação Emergente (ROADMAP como direção e restrições; Specs definidas na abertura após Dossiê de Pesquisa web)",
-   "in": 29,
+   "in": 30,
    "out": 15
   },
   {
@@ -633,8 +633,15 @@
    "path": "governance/DHR-EUA-E24_Ata_Homologacao_WORKFLOW_Raiz.md",
    "area": "governance",
    "title": "DHR-EUA-E24 — Ata de Homologação: criação do `/WORKFLOW.md` na raiz (4º documento de leitura obrigatória) unificando o conteúdo do RUNTIME-WORKFLOW-001",
-   "in": 13,
+   "in": 14,
    "out": 16
+  },
+  {
+   "path": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "area": "governance",
+   "title": "DHR-EUA-E25 — Ata de Homologação: Enforcement do fluxo de orquestração cognitiva (E1→E8) — Tabela vinculante + `RULE-ECC-07`",
+   "in": 8,
+   "out": 14
   },
   {
    "path": "governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
@@ -969,8 +976,8 @@
    "path": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
    "area": "governance",
    "title": "EUA-E25 — Enforcement do Fluxo de Runtime (RULE-ECC-07) — PROPOSTA",
-   "in": 1,
-   "out": 8
+   "in": 3,
+   "out": 10
   },
   {
    "path": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
@@ -1053,14 +1060,14 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 139,
-   "out": 17
+   "in": 140,
+   "out": 18
   },
   {
    "path": "governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md",
    "area": "governance",
    "title": "RUNTIME-WORKFLOW-001 — Proposta de Workflow de Runtime do SOT (insumo de Andraus)",
-   "in": 11,
+   "in": 12,
    "out": 8
   },
   {
@@ -1109,7 +1116,7 @@
    "path": "reference/SOT-RISK-MASTER-001_Consolidado.md",
    "area": "reference",
    "title": "SOT-RISK-MASTER-001 — Master Document: Risk Agent SOT",
-   "in": 8,
+   "in": 10,
    "out": 14
   },
   {
@@ -1263,7 +1270,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 68,
+   "in": 69,
    "out": 4
   },
   {
@@ -1480,7 +1487,7 @@
   {
    "id": "BL-019",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "BL-020",
@@ -1655,7 +1662,12 @@
   {
    "id": "DHR-EUA-E24",
    "defined_in": "governance/DHR-EUA-E24_Ata_Homologacao_WORKFLOW_Raiz.md",
-   "cited_by": 12
+   "cited_by": 13
+  },
+  {
+   "id": "DHR-EUA-E25",
+   "defined_in": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "cited_by": 8
   },
   {
    "id": "DHR-HOD-001",
@@ -1860,7 +1872,7 @@
   {
    "id": "EUA-E16",
    "defined_in": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "EUA-E17",
@@ -1890,7 +1902,7 @@
   {
    "id": "EUA-E21",
    "defined_in": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "EUA-E22",
@@ -1909,8 +1921,8 @@
   },
   {
    "id": "EUA-E25",
-   "defined_in": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
-   "cited_by": 1
+   "defined_in": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "cited_by": 6
   },
   {
    "id": "INV-01",
@@ -1935,7 +1947,7 @@
   {
    "id": "INV-05",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 40
+   "cited_by": 41
   },
   {
    "id": "INV-06",
@@ -1945,7 +1957,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 95
+   "cited_by": 96
   },
   {
    "id": "INV-08",
@@ -1955,7 +1967,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 56
+   "cited_by": 57
   },
   {
    "id": "INV-10",
@@ -2120,12 +2132,12 @@
   {
    "id": "RULE-ECC",
    "defined_in": "governance/RULES.md",
-   "cited_by": 6
+   "cited_by": 8
   },
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "RULE-ECC-02",
@@ -2135,7 +2147,7 @@
   {
    "id": "RULE-ECC-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-ECC-04",
@@ -2145,12 +2157,17 @@
   {
    "id": "RULE-ECC-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 14
+   "cited_by": 15
+  },
+  {
+   "id": "RULE-ECC-07",
+   "defined_in": "governance/RULES.md",
+   "cited_by": 8
   },
   {
    "id": "RULE-EPI",
@@ -2295,7 +2312,7 @@
   {
    "id": "RULE-HG-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "RULE-HG-02",
@@ -2310,7 +2327,7 @@
   {
    "id": "RULE-HG-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-HG-05",
@@ -2330,7 +2347,7 @@
   {
    "id": "RULE-HG-08",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-HH-001",
@@ -2495,7 +2512,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 43
+   "cited_by": 44
   },
   {
    "id": "RULE-MET-02",
@@ -2600,7 +2617,7 @@
   {
    "id": "RULE-REG-001",
    "defined_in": "governance/RULES.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "RULE-SDD",
@@ -2730,12 +2747,12 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 65
+   "cited_by": 66
   },
   {
    "id": "SPEC-002",
    "defined_in": "ROADMAP.md",
-   "cited_by": 87
+   "cited_by": 89
   },
   {
    "id": "SPEC-003",
@@ -2765,7 +2782,7 @@
   {
    "id": "SPEC-008",
    "defined_in": "ROADMAP.md",
-   "cited_by": 6
+   "cited_by": 8
   },
   {
    "id": "SPEC-009",
@@ -3076,6 +3093,11 @@
   },
   {
    "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-PRINC-BID-001_Ata_Homologacao_Heranca_Bidirecional.md",
    "type": "id"
   },
@@ -3148,6 +3170,11 @@
    "from": ".claude/agents/revisor.md",
    "to": "ROADMAP.md",
    "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
   },
   {
    "from": ".claude/agents/revisor.md",
@@ -3226,6 +3253,11 @@
   },
   {
    "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-PRINC-BID-001_Ata_Homologacao_Heranca_Bidirecional.md",
    "type": "id"
   },
@@ -3248,11 +3280,6 @@
    "from": ".claude/agents/revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
-  },
-  {
-   "from": ".claude/agents/revisor.md",
-   "to": "governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md",
-   "type": "path"
   },
   {
    "from": ".claude/agents/revisor.md",
@@ -3696,6 +3723,11 @@
   },
   {
    "from": "ROADMAP.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
    "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
    "type": "id"
   },
@@ -3871,6 +3903,16 @@
   },
   {
    "from": "WORKFLOW.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "type": "id"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "type": "path"
+  },
+  {
+   "from": "WORKFLOW.md",
    "to": "governance/EUA-E23_Lentes_Dominio_Dossie_Pesquisa_PROPOSTA.md",
    "type": "path"
   },
@@ -3878,11 +3920,6 @@
    "from": "WORKFLOW.md",
    "to": "governance/EUA-E24_WORKFLOW_Raiz_Orquestracao_Cognitiva_PROPOSTA.md",
    "type": "path"
-  },
-  {
-   "from": "WORKFLOW.md",
-   "to": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
-   "type": "id"
   },
   {
    "from": "WORKFLOW.md",
@@ -3987,6 +4024,11 @@
   {
    "from": "atomic-spec.md",
    "to": "governance/DHR-EUA-E24_Ata_Homologacao_WORKFLOW_Raiz.md",
+   "type": "id"
+  },
+  {
+   "from": "atomic-spec.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
    "type": "id"
   },
   {
@@ -5776,6 +5818,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
    "type": "id"
   },
@@ -5972,6 +6019,11 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/EUA-E24_WORKFLOW_Raiz_Orquestracao_Cognitiva_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
    "type": "path"
   },
   {
@@ -8041,6 +8093,91 @@
   },
   {
    "from": "governance/DHR-EUA-E24_Ata_Homologacao_WORKFLOW_Raiz.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/CONFLICT-MAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/DHR-EUA-E24_Ata_Homologacao_WORKFLOW_Raiz.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "to": "reference/SOT-RISK-MASTER-001_Consolidado.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
   },
@@ -10771,12 +10908,22 @@
   },
   {
    "from": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
   {
    "from": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
    "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md",
+   "to": "reference/SOT-RISK-MASTER-001_Consolidado.md",
    "type": "path"
   },
   {
@@ -11692,6 +11839,11 @@
   {
    "from": "governance/RULES.md",
    "to": "governance/DHR-EUA-E24_Ata_Homologacao_WORKFLOW_Raiz.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/RULES.md",
+   "to": "governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md",
    "type": "id"
   },
   {

@@ -507,6 +507,33 @@ RULE-ECC-06: O documento /WORKFLOW.md (raiz — documento único e canônico da 
              governance/RUNTIME-WORKFLOW-001_Proposta_Andraus.md (SUPERSEDIDO, não deletado — INV-07).
              [Fonte: DHR-EUA-E23; DHR-EUA-E24; RULE-ECC-02; AGENTS.md §9; CONS-01; RULE-MET-01]
 
+RULE-ECC-07: Toda Spec (SPEC-002 em diante) que especifique um AGENTE do fluxo de runtime
+             (estrutural, institucional, operacional, manager/contexto/orquestrador ou de risco)
+             ou uma TRANSIÇÃO entre etapas do fluxo (E1→E8 de WORKFLOW.md §3) DEVE declarar seu
+             próprio Enforcement Contract (atomic-spec §10.3, ENF-01..08) para cada handoff/efeito
+             correspondente, e esse contrato DEVE ser COMPATÍVEL com a Tabela de Enforcement do
+             fluxo de runtime (WORKFLOW.md §7-bis.2): a Spec ADOTA a linha aplicável da Tabela,
+             ADAPTA-a com justificativa, ou JUSTIFICA o desvio — NUNCA a ignora em silêncio.
+             A compatibilidade preserva, no mínimo: (i) Detector ≠ Gate (ENF-03) — validação
+             determinística de forma é Detector; convicção/qualidade reportada por LLM é sinal,
+             nunca gate; (ii) as duas classes de falha (forma = hard-stop determinístico;
+             ausência de oportunidade/convicção insuficiente = fluxo normal, não falha); (iii)
+             fail-closed em efeito crítico irreversível (ENF-04) — emissão externa (E8) é E3.
+             A RULE-ECC-07 vincula a OBRIGAÇÃO de declarar enforcement compatível, NÃO o conteúdo
+             substantivo da Spec; NÃO fecha nenhuma decisão aberta (CONS-01) — limiares de convicção
+             usados em gates permanecem em J-001 (Fase Piloto interino); estados de alarme em
+             M-001/SPEC-008; contrato do Signal Package em D-RISK-SP-001; convicção de risco em
+             RISK-CONV-001; localização em RISK-ARR-LOC-001; camada hospedeira em ENF-LOC-001
+             (proposta). O Revisor verifica PRESENÇA e COMPATIBILIDADE declarada (Detector), não o
+             mérito de runtime; ausência de Enforcement Contract onde exigível = NÃO CONFORME
+             Crítica (fail-closed); desvio da Tabela sem justificativa = Médio. Prospectiva —
+             incide a partir de SPEC-002; não retroage sobre SPEC-001/019/020/021/046 (INV-07).
+             NOTA: WORKFLOW.md §7-bis é não-normativa por natureza (herda o status do documento);
+             sua força vinculante decorre DESTA regra (mesmo padrão da RULE-ECC-06).
+             [Fonte: DHR-EUA-E25; diretiva de Andraus 2026-09-29 ("PODE VINCULAR"); atomic-spec §10
+              (ENF-01..08); ENF-03/ENF-04; RULE-ECC-06 (padrão de vínculo); WORKFLOW.md §7-bis;
+              CONS-01; RULE-MET-01]
+
 ---
 
 ## Regras de Classe/Mecanismo (RULE-MECH)

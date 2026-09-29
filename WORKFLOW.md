@@ -187,9 +187,10 @@ O Dossiê dessas Specs **DEVE** citar este documento, confrontar a proposta de A
 
 ---
 
-## 7-bis. Enforcement do fluxo de runtime (E1→E8) — DESENHO `[PROPOSTA]`, VINCULANTE via RULE-ECC-07 (proposta EUA-E25)
+## 7-bis. Enforcement do fluxo de runtime (E1→E8) — DESENHO descritivo; COMPATIBILIDADE da Tabela §7-bis.2 VINCULANTE via RULE-ECC-07 (HOMOLOGADA — DHR-EUA-E25, 2026-09-29)
 
-> **Origem `[FONTE]`:** diretiva de Andraus em chat (2026-09-29) — *"SIM POIS O WORKFLOW PODE SER ATUALIZADO ATÉ O FIM DO PROJETO. IMPORTANTE AGORA MESMO É CONDUZIR O DOSSIE POR ESSAS LENTES. PODE RASCUNHAR E VINCULAR."* Esta seção é o **rascunho** pedido; o **vínculo** é proposto por emenda formal **EUA-E25 (RULE-ECC-07)** — ver §7-bis.5. Status: `[PROPOSTA]`/`[INFERÊNCIA]` — **não homologado**; herda o caráter não-normativo do documento (§0) até a homologação da EUA-E25.
+> **Origem `[FONTE]`:** diretiva de Andraus em chat (2026-09-29) — *"SIM POIS O WORKFLOW PODE SER ATUALIZADO ATÉ O FIM DO PROJETO. IMPORTANTE AGORA MESMO É CONDUZIR O DOSSIE POR ESSAS LENTES. PODE RASCUNHAR E VINCULAR."* Esta seção nasceu como o **rascunho** pedido; o **vínculo** foi formalizado pela emenda **EUA-E25 (RULE-ECC-07)** — ver §7-bis.5.
+> **Status (atualizado — DHR-EUA-E25, 2026-09-29):** o documento permanece **não-normativo e descritivo por natureza** (§0), MAS a **exigência de COMPATIBILIDADE de Enforcement Contract da Tabela §7-bis.2** é agora **VINCULANTE para Specs de agente/transição do fluxo (SPEC-002 em diante)** por força da **RULE-ECC-07** (HOMOLOGADA por Andraus — "SIM", DHR-EUA-E25). A força vinculante reside na regra em `RULES.md` (mesmo padrão da RULE-ECC-06); o restante desta §7-bis (diagnóstico, princípios, "onde vive") permanece descritivo/`[INFERÊNCIA]`. Nenhuma decisão aberta foi fechada (CONS-01).
 
 ### 7-bis.0 — O que esta seção acrescenta (e o que NÃO acrescenta)
 
@@ -225,9 +226,9 @@ Numeração de etapa = a **canônica da §3 (E1–E8)** — autoritativa. *(Acha
 
 `J-001` (todos os limiares de convicção usados nos gates de fluxo E3→E4, E5→E6, E7→E8 — Fase Piloto interino, recalibrável) · `M-001` (estados do alarme) · `SPEC-045-RUNTIME-001`/`SPEC-008`/`K-001` (mecanismo de armar/observar/ativar o alarme e a definição determinística de "válido") · `RISK-CONV-001` (gate de convicção de risco) · `RISK-LEV-001` (alavancagem — mérito adiado) · `D-RISK-SP-001` (contrato/campos do Signal Package emitido em E8) · `RISK-ARR-LOC-001` (onde o gate/agente de risco vive) · `ENF-LOC-001` (`[PROPOSTA]` — camada que hospeda o enforcement) · reconciliação editorial dos rótulos E-antigos nos `$comment` dos schemas da §5 (`[DECISÃO NECESSÁRIA]` editorial). Nenhuma é presumida aqui.
 
-### 7-bis.5 — Mecanismo de vínculo `[PROPOSTA]` (EUA-E25 / RULE-ECC-07)
+### 7-bis.5 — Mecanismo de vínculo (EUA-E25 / RULE-ECC-07 — HOMOLOGADA, DHR-EUA-E25)
 
-Este documento é **não-normativo por natureza** (§0); uma seção descritiva aqui **não** se torna vinculante sozinha. O vínculo segue **exatamente o padrão já provado da RULE-ECC-06** (uma regra normativa em `RULES.md` cria a obrigação e **referencia** este documento não-normativo). Proposta: **nova regra `RULE-ECC-07`** (próximo livre da família ECC; ECC-03 permanece RESERVADA) via emenda **EUA-E25**, exigindo que **toda Spec que especifique um agente do fluxo (estrutural/institucional/operacional/manager/risco) ou uma transição E1→E8 DECLARE seu próprio Enforcement Contract (ENF-0x) COMPATÍVEL com esta Tabela (§7-bis.2)** — **adotar / adaptar / justificar desvio — nunca ignorar em silêncio**. Texto integral da regra e diagnóstico: `governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md`. Até a homologação de Andraus, esta §7-bis e a RULE-ECC-07 são `[PROPOSTA]`.
+Este documento é **não-normativo por natureza** (§0); uma seção descritiva aqui **não** se torna vinculante sozinha. O vínculo segue **exatamente o padrão já provado da RULE-ECC-06** (uma regra normativa em `RULES.md` cria a obrigação e **referencia** este documento não-normativo). **Homologado (Andraus, "SIM", DHR-EUA-E25, 2026-09-29):** a regra **`RULE-ECC-07`** (próximo livre da família ECC; ECC-03 permanece RESERVADA), criada pela emenda **EUA-E25**, exige que **toda Spec que especifique um agente do fluxo (estrutural/institucional/operacional/manager/risco) ou uma transição E1→E8 DECLARE seu próprio Enforcement Contract (ENF-0x) COMPATÍVEL com esta Tabela (§7-bis.2)** — **adotar / adaptar / justificar desvio — nunca ignorar em silêncio**. Texto integral vigente da regra: `governance/RULES.md` (seção RULE-ECC); diagnóstico e desenho: `governance/EUA-E25_Enforcement_Fluxo_Runtime_PROPOSTA.md` (HOMOLOGADA) + `governance/DHR-EUA-E25_Ata_Homologacao_Enforcement_Fluxo_Runtime.md`. A RULE-ECC-07 vincula a **obrigação de declarar enforcement compatível**, não o conteúdo substantivo da Spec, e **não fecha nenhuma decisão aberta** (CONS-01).
 
 ### 7-bis.6 — Ponte para a abertura da SPEC-002 `[FONTE]`/`[INFERÊNCIA]`
 

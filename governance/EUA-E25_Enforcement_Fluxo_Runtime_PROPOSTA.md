@@ -7,7 +7,7 @@
 | Tipo | Emenda de método (mesmo padrão EUA-E21..E24) |
 | Autor | Especificador SOT (Claude Opus 4.8, skill `tlc-spec-lean`, overlay GUS-TLC-001) |
 | Data | 2026-09-29 |
-| Status | **`[PROPOSTA]` — NÃO homologado.** Aguarda parecer do Revisor (GRE-001/HRE-001) e homologação de Andraus. |
+| Status | **HOMOLOGADA — BASELINE** (Andraus, "SIM", 2026-09-29; DHR-EUA-E25). Parecer do Revisor: CONFORME condicional (0 achados Crítico/Médio; 1 Menor F-01 não-bloqueante — WARNs de `check_refs.py` por INV-RISK-08/12 citados de `reference/SOT-RISK-MASTER-001_Consolidado.md`, fora da cobertura do script, não fabricados). RULE-ECC-07 vigente em `governance/RULES.md`; §7-bis.2 do `WORKFLOW.md` com força vinculante efetiva. |
 | Origem `[FONTE]` | Diretiva de Andraus em chat (2026-09-29): *"SIM POIS O WORKFLOW PODE SER ATUALIZADO ATÉ O FIM DO PROJETO. IMPORTANTE AGORA MESMO É CONDUZIR O DOSSIE POR ESSAS LENTES. PODE RASCUNHAR E VINCULAR."* |
 | Compatibilidade (RULE-HG-04) | **Minor** — aditiva; não altera baseline anterior (INV-07); nenhuma decisão aberta fechada (CONS-01); nenhum canônico redefinido (CONST-01). |
 | Artefatos tocados | `WORKFLOW.md` (nova §7-bis — já rascunhada, `[PROPOSTA]`) · `governance/RULES.md` (nova `RULE-ECC-07` — **a inserir na homologação**, não antes — RULE-HG-02) · `atomic-spec.md §15` (nota de vínculo — **a inserir na homologação**) · `governance/CATALOGO-OFICIAL.md §4` (linha EUA-E25 — **registro do Controlador na homologação**) |
@@ -87,13 +87,17 @@ RULE-ECC-07: Toda Spec (SPEC-002 em diante) que especifique um AGENTE do fluxo d
 ## 7. Fluxo de autoridade
 
 ```
-Especificador (esta proposta + §7-bis rascunhada) → Revisor (parecer) → Andraus homologa (DHR-EUA-E25)
-  → Controlador registra RULE-ECC-07 em RULES.md + nota em atomic-spec §15 + linha em CATALOGO §4
-  → sincronizado-até de ambos os agentes → DHR-EUA-E25 (RPSA)
+Etapa 1 — Diretiva de Andraus (chat, 2026-09-29, "PODE RASCUNHAR E VINCULAR") ...... ✅
+Etapa 2 — Formalização (esta proposta + §7-bis rascunhada no WORKFLOW.md) .......... ✅ Especificador — nada aplicado a baseline
+Etapa 3 — Parecer do Revisor ...................................................... ✅ CONFORME condicional (0 Crítico/Médio; 1 Menor F-01 não-bloqueante)
+Etapa 4 — Decisão de Andraus (pergunta única: homologar RULE-ECC-07 + §7-bis.2) ... ✅ "SIM" (2026-09-29)
+Etapa 5 — Registro Oficial / aplicação ........................................... ✅ EFETIVADO — DHR-EUA-E25 + RULE-ECC-07 em RULES.md + nota em atomic-spec §15
+                                                                                     + status vinculante da §7-bis do WORKFLOW.md + linha em CATALOGO §4/§7.3
+                                                                                     + sincronizado-até de ambos os agentes → DHR-EUA-E25 (RPSA)
 ```
 
-**Parecer CONFORME do Revisor ≠ vigência (RULE-HG-03). Só Andraus homologa.** Até lá, `RULE-ECC-07` e `WORKFLOW.md §7-bis` são `[PROPOSTA]`.
+**Parecer CONFORME do Revisor ≠ vigência (RULE-HG-03). Só Andraus homologa — e homologou ("SIM", 2026-09-29).** `RULE-ECC-07` e a exigência de compatibilidade da `WORKFLOW.md §7-bis.2` são agora vinculantes (SPEC-002 em diante).
 
 ---
 
-*EUA-E25 — PROPOSTA. Rascunho do Enforcement do fluxo de runtime + mecanismo de vínculo (RULE-ECC-07), por diretiva de Andraus (2026-09-29, "PODE RASCUNHAR E VINCULAR"). Não-homologado.*
+*EUA-E25 — HOMOLOGADA (DHR-EUA-E25, 2026-09-29). Enforcement do fluxo de runtime + mecanismo de vínculo (RULE-ECC-07), por diretiva de Andraus (2026-09-29, "PODE RASCUNHAR E VINCULAR") e homologação ("SIM"). Corpo da proposta preservado (INV-07).*
