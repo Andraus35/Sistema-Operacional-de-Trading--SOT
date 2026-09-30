@@ -1,0 +1,14 @@
+SRC-01 — Weighted Combination Method for Conflicting Evidence in Multi-Sensor Data Fusion
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC5982568/
+Fonte alternativa (DOI): https://doi.org/10.3390/s18051487 (Sensors 2018, 18, 1487)
+Data de acesso: 2026-09-30
+Classe: Evidência / Padrão (método de fusão)
+Questão: Q-R1 / Q-R3 (fusão de evidência multi-fonte; tratamento de conflito)
+
+TRECHO LITERAL (verbatim, capturado no fetch):
+"Dempster–Shafer evidence theory is effective to model both of the uncertainty and imprecision without prior information, so it is widely applied in various fields for information fusion. Nevertheless, it may result in counter-intuitive results when combining highly conflicting pieces of evidence."
+
+TRECHO LITERAL 2 (verbatim):
+"Hence, in this paper, a weighted combination method for conflicting pieces of evidence in multi-sensor data fusion is proposed to resolve fusion problem of highly conflicting evidence."
+
+Uso no Dossiê: sustenta a decisão ADAPTAR (não ADOTAR literalmente) da regra de combinação de Dempster para fusão de evidência conflitante — a combinação clássica produz resultados contra-intuitivos sob alto conflito, exigindo ponderação/pré-processamento. Confirma que fusão de evidência é problema próprio da SPEC-003 (Fusion Engine), não da SPEC-002.

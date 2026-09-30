@@ -1,0 +1,13 @@
+SRC-03 — Calibration Meets Reality: Making Machine Learning Predictions Trustworthy
+URL: https://arxiv.org/abs/2509.23665
+Data de acesso: 2026-09-30
+Classe: Evidência
+Questão: Q-R2 (calibração de confiança; relação confiança-predita × acurácia-empírica; superconfiança; limiar)
+
+TRECHO LITERAL (verbatim, capturado no fetch do abstract):
+"Post-hoc calibration methods are widely used to improve the reliability of probabilistic predictions from machine learning models."
+
+Contexto complementar (WebSearch, NÃO usado como citação carregada):
+"Calibration is the agreement between predicted confidence and empirical accuracy, and good calibration implies trustworthy uncertainty" e "Modern deep networks are systematically overconfident ... and calibration degrades under distribution shift" e "As confidence thresholds increase, models become less conservative".
+
+Uso no Dossiê: sustenta a decisão ADIAR a calibração/limiares definitivos para pós-backtest (J-001) — um score de convicção só é confiável se calibrado contra frequência empírica de acerto; sem backtest não há base para fixar a fórmula/limiar definitivo (falsa precisão = CC-09). Justifica desenhar CCM-001 com limiar de Fase Piloto (>=70%, 7/9) como PARÂMETRO substituível, não constante hardcoded.

@@ -1,0 +1,13 @@
+SRC-05 — A comparison of various aggregation functions in multi-criteria decision analysis for drug benefit-risk assessment
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC7612697/
+Data de acesso: 2026-09-30
+Classe: Evidência / Experimento (comparação empírica de funções de agregação)
+Questão: Q-R4 (escolha da função de agregação; compensatório vs não-compensatório; efeito de veto)
+
+TRECHO LITERAL (verbatim, capturado no fetch):
+"One argument against the linear model is that a treatment which has either no benefit or extreme risk could be recommended over other alternatives without such extreme characteristics."
+
+TRECHO LITERAL 2 (verbatim):
+"In most clear cases (i.e. when one treatment has more benefit and less risk than the competitor), all AM gave similar recommendations. However, in cases where one treatment had either no benefit or extreme risk, the models which penalised undesirable values more (the product and SLoS models) gave more desirable recommendations."
+
+Uso no Dossiê: sustenta a decisão ADAPTAR — a função de agregação do Conviction Vector NÃO pode ser puramente compensatória (linear/média), sob pena de um valor extremo (ex.: conflito direcional Elliott x SMC, ou dimensão estrutural nula) ser "compensado" por outras dimensões e produzir sinal indevido. Uma função que penaliza valores indesejáveis (não-compensatória / com veto) é coerente com a hierarquia analítica (Elliott tem veto — RULE-SY-001) e com as Salvaguardas de Sinal (CEE-001 §11). Fundamenta a distinção entre agregação e veto no CCM-001.

@@ -1,0 +1,13 @@
+SRC-04 — Multi-criteria Rank-based Aggregation for Explainable AI
+URL: https://arxiv.org/html/2505.24612
+Data de acesso: 2026-09-30
+Classe: Evidência
+Questão: Q-R5 (explicabilidade e robustez da agregação multi-critério/multi-fonte)
+
+TRECHO LITERAL (verbatim, capturado no fetch):
+"After applying the MCDM algorithm, the resulting weights are passed onto a weighted rank-aggregation algorithm to combine the component explanations, which are themselves rankings of feature importance."
+
+TRECHO LITERAL 2 (verbatim):
+"To improve explanation quality, some methods aggregate multiple explanations to create a more robust explanation."
+
+Uso no Dossiê: sustenta a decisão ADOTAR o princípio de explicabilidade da agregação — a convicção global deve ser rastreável à contribuição de cada dimensão (explicabilidade por design; INV-10 / RULE-010 "toda alteração de convicção rastreável com justificativa"), e ADAPTAR agregação ponderada com robustez (análise de sensibilidade). O CCM-001 não pode ser caixa-preta: o Conviction Vector 8D deve expor a contribuição dimensional.

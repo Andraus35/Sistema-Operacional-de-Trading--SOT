@@ -1,0 +1,16 @@
+SRC-02 — Bayesian Classifier Fusion with an Explicit Model of Correlation
+URL: https://arxiv.org/abs/2106.01770
+Data de acesso: 2026-09-30
+Classe: Evidência (método)
+Questão: Q-R3 (independência estatística / correlação / dupla contagem entre evidências)
+
+TRECHO LITERAL (verbatim, capturado no fetch do abstract):
+"This distribution explicitly models positive correlations between marginally Dirichlet-distributed random vectors thereby allowing explicit modeling of correlations between base classifiers or experts."
+
+TRECHO LITERAL 2 (verbatim):
+"naturally accommodates the classic Independent Opinion Pool and other independent fusion algorithms as special cases"
+
+Contexto complementar (WebSearch, mesma consulta, NÃO usado como citação carregada):
+"Failing to consider cross-correlation in a distributed fusion architecture leads to overconfident results and even divergence of the fusion algorithm" e "The direct summation rule requires evidence to be independent, however there is no well-defined notion of evidence independence in the literature."
+
+Uso no Dossiê: sustenta a decisão ADAPTAR o princípio de modelagem explícita de correlação entre fontes — combinar evidências correlacionadas como independentes gera superconfiança (overconfident). Ancora RULE-004 (evidências causalmente relacionadas contadas como uma única) e o requisito de metadado de independência da SPEC-002 (§lente 5). Reforça SRC-05 da SPEC-002 (evidence correlation ER rule).
