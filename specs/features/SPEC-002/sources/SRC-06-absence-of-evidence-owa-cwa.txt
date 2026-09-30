@@ -1,0 +1,23 @@
+FONTE [EXTERNO] — REGISTRO DE PESQUISA (NÃO é captura verbatim WebFetch; ver _LIMITACAO-WEBFETCH.txt)
+ID: SRC-06
+Tema: Ausência de evidência; raciocínio sob open-world vs closed-world; negação-por-falha; evidência inconclusiva
+Tipo: Padrão/Teoria (lógica/KR) + Experimento (LLM negative reasoning)
+URLs (resultados reais de WebSearch, 2026-09-28):
+  - https://en.wikipedia.org/wiki/Closed-world_assumption  (Closed-world assumption)
+  - https://arxiv.org/html/2608.04591v1  (When Absence Is Evidence: Completeness-Sensitive Negative Reasoning in LLMs)
+  - https://reliablecontext.com/articles/unknown-vs-false-open-world-systems  (Open World Assumption: Why Unknown Is Not False)
+Método de captura: WebSearch (WebFetch egress-blocked). Data de acesso: 2026-09-28.
+
+Excerto retornado pela busca (pode ser sintetizado pelo buscador):
+"The closed-world assumption treats missing facts as false, while the open-world assumption treats them as unknown."
+"The Open-World Assumption postulates that if a statement is not in the knowledge base, it may nevertheless be true in the real world, embodying the principle that absence of evidence is not evidence of absence."
+"Under the open world assumption, an absent statement remains unknown, so missing evidence alone cannot justify a negative claim."
+"in logic programming languages like Prolog, failure to prove a goal is interpreted as false through negation as failure."
+
+Pertinência ao SPEC-002: o escopo do slot inclui "evidência ausente" e "inconclusiva". OWA/CWA dá o
+vocabulário rigoroso: no SOT, a AUSÊNCIA de evidência deve ser representada como estado explícito
+(unknown/INDETERMINADO), NÃO convertida silenciosamente em evidência contrária (coerente com RULE-EPI-01,
+RULE-UNC, CC-09 — INDETERMINADO como estado válido). Recomendação: ADOTAR o princípio (open-world por
+padrão para o registro de evidência) + ADAPTAR a representação de "ausente/inconclusiva" como natureza
+de evidência de primeira classe.
+</content>

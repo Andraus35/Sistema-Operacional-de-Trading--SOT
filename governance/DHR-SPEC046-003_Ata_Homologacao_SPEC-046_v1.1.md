@@ -39,9 +39,11 @@ A **emenda v1.1 de SPEC-046 está HOMOLOGADA como baseline**, aditiva à v1.0 (D
 ## 3. Registro do Controlador (a aplicar)
 
 - [x] `governance/DHR-SPEC046-003_...md` — este documento.
-- [ ] `specs/features/SPEC-046/plan.md` — Status → v1.1 HOMOLOGADA — BASELINE.
-- [ ] `backlog/RMR-001_Painel_Backlog.md` — BL-025 → `Absorvido`.
-- [ ] `python scripts/check_refs.py` + `python scripts/build_map.py --check`.
+- [x] `specs/features/SPEC-046/plan.md` — Status → v1.1 HOMOLOGADA — BASELINE.
+- [x] `backlog/RMR-001_Painel_Backlog.md` — BL-025 → `Absorvido`.
+- [x] `python scripts/check_refs.py` + `python scripts/build_map.py --check` — ambos PASS (ERRO=0/WARN=0; mapa em dia), confirmado nesta homologação (2026-09-28).
+
+**Ordem formal desta homologação (nota de processo — ACH-v1.1-M02 do parecer do Revisor):** o parecer completo do Revisor (protocolo GRE-001/HRE-001, 8 passos + 5-bis, veredito CONFORME) foi entregue e revisado por Andraus **antes** desta confirmação de "Homologar" (2026-09-28). O conteúdo do `plan.md`/RMR-001 já refletia este desfecho por antecipação do Especificador; esta ata confirma que a homologação em si — a decisão de Andraus — ocorreu após o parecer, na ordem correta (Especificador → Revisor → Andraus). Nada de substância foi alterado por essa observação de sequência.
 
 ---
 

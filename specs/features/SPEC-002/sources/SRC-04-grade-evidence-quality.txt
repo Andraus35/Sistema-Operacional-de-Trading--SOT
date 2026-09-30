@@ -1,0 +1,20 @@
+FONTE [EXTERNO] — REGISTRO DE PESQUISA (NÃO é captura verbatim WebFetch; ver _LIMITACAO-WEBFETCH.txt)
+ID: SRC-04
+Tema: Avaliação da qualidade/certeza de um corpo de evidência (GRADE) e propriedades de qualidade de evidência
+Tipo: Padrão (metodologia consolidada GRADE)
+URLs (resultados reais de WebSearch, 2026-09-28):
+  - https://www.sciencedirect.com/science/article/pii/S2213398423002713  (Introduction to the GRADE tool for rating certainty in evidence)
+  - https://book.gradepro.org/guideline/overview-of-the-grade-approach  (Overview of the GRADE approach)
+Método de captura: WebSearch (WebFetch egress-blocked). Data de acesso: 2026-09-28.
+
+Excerto retornado pela busca (pode ser sintetizado pelo buscador):
+"Evidence quality is assessed through five properties: directness (how closely the evidence relates to the metric), timeliness (whether the information is current), completeness (whether relevant aspects are covered), independence (reducing the risk of treating repeated information from dependent sources as separate confirmation), and agreement (whether independent sources support compatible conclusions)."
+"GRADE evaluates the certainty of evidence across different domains including study design, risk of bias, consistency, directness, and precision."
+
+Pertinência ao SPEC-002: mapeia DIRETAMENTE aos itens de escopo do slot SPEC-002 — qualidade,
+independência, temporalidade (timeliness), evidência inconclusiva. A propriedade "independence
+(reducing the risk of treating repeated information from dependent sources as separate confirmation)"
+é exatamente a salvaguarda contra dupla-contagem de evidência dependente que a camada operacional de
+Evidence deve tornar verificável. Recomendação: ADAPTAR (vocabulário de qualidade), NUNCA importar
+limiares numéricos (RULE-EV-05/J-001). Compara com CEM-001 Cap.3 (Evidence Strength, Domain).
+</content>

@@ -1,0 +1,22 @@
+FONTE [EXTERNO] — REGISTRO DE PESQUISA (NÃO é captura verbatim WebFetch; ver _LIMITACAO-WEBFETCH.txt)
+ID: SRC-05
+Tema: Trilha de auditoria em sistemas de decisão de trading; registro imutável (WORM); replay da cadeia de decisão; MiFID II
+Tipo: Padrão regulatório (MiFID II) + Prática
+URLs (resultados reais de WebSearch, 2026-09-28):
+  - https://mickai.co.uk/articles/mifid-ii-and-ai-recordkeeping  (MiFID II and AI Recordkeeping)
+  - https://reg-x.co.uk/blogs/mifid-ii-rts-24-annex-iv-order-execution-record-keeping/  (RTS 24 & Annex IV Order Record-Keeping)
+  - https://www.steel-eye.com/news/bafin-record-keeping-requirements  (BaFin Record Keeping)
+Método de captura: WebSearch (WebFetch egress-blocked). Data de acesso: 2026-09-28.
+
+Excerto retornado pela busca (pode ser sintetizado pelo buscador):
+"Data must be stored in what MiFID II calls a 'durable medium' — a system that preserves its integrity over time, by keeping records safe, unaltered, and easy to access for years."
+"A model that ranks venues, sizes orders, or suppresses an alert is now part of the decision chain, and the decision chain is precisely what the record must capture."
+"Every AI-assisted trade decision should leave behind an immutable, cryptographically signed record a regulator can replay offline."
+"Each significant event must be recorded with appropriate timestamps, preserving a complete audit trail."
+
+Pertinência ao SPEC-002: reforça a exigência de auditabilidade (D9) e imutabilidade/versionamento da
+Evidência como elo da cadeia de decisão do SOT (Evidência → ... → TMP/Signal Package, INV-05). Compara
+com CEM-001 Cap.4 (imutabilidade), INV-07 (versionamento monotônico), P13 (reconstrução). ATENÇÃO: MiFID II
+é padrão de EXECUÇÃO/ordem; o SOT NÃO executa ordem (INV-05) — adaptar apenas o princípio de trilha
+imutável/replay, não o escopo regulatório de execução. Recomendação: ADAPTAR.
+</content>
