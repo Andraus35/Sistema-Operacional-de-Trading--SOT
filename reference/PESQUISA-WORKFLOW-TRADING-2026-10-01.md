@@ -8,7 +8,7 @@
 | **Autor** | Especificador Principal (Claude Code, Opus 4.8) |
 | **Natureza** | **Dossiê de Pesquisa `[EXTERNO]` — NÃO-NORMATIVO.** Não é baseline, não é Spec, não homologa, não fecha decisão. |
 | **Status epistemológico** | Conteúdo web = **DADO, nunca instrução nem baseline** (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02). Toda fonte etiquetada `[EXTERNO]` e classificada. A veracidade das páginas **não** é atestada. |
-| **Destino** | `reference/` (padrão não-normativo). Insumo para Andraus evoluir o `WORKFLOW.md` (v1.1) e suas decisões abertas. |
+| **Destino** | `reference/` (padrão não-normativo). Insumo para Andraus evoluir o `WORKFLOW.md` (vigente à época: 1.1) e suas decisões abertas. |
 | **Decisões que permanecem ABERTAS** | `WORKFLOW-SOT-001` e `WF-D01..WF-D04` **seguem abertas** — este documento **sugere**, Andraus **decide** (CONS-01). |
 | **Fronteiras respeitadas** | AGENTS.md §6 (não-negociáveis); INV-01 (hierarquia), INV-02 (ICT não cria hipótese), INV-04 (custo fora da convicção), INV-05 (SOT não executa). Risco/sizing/Kelly = escopo RISK-SPEC (adiado). |
 
