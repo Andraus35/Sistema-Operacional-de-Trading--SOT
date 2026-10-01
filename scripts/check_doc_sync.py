@@ -21,6 +21,10 @@ Checagens (Detector ≠ Gate — ENF-03; nunca promove, nunca fecha decisão —
     D4  Estado de item do RMR-001 fora do enum que o próprio RMR-001 §2 declara → WARN.
     D5  Documento de intake `backlog/BL-0NN-*.md` com campo Estado divergente do estado
         do mesmo BL-0NN no painel vivo RMR-001 → WARN.
+    D6  WORKFLOW.md (setup operacional soberano de Andraus): (a) ID `WF-xx`/`WF-Dxx`/`WF-Mxx`
+        citado em documento vivo e inexistente no WORKFLOW.md → ERRO; (b) `WF-Dxx` ABERTA
+        declarada fechada/resolvida inline → ERRO (CONS-01); (c) ID marcado [REVOGADO] ainda
+        citado → WARN; (d) versão citada ("WORKFLOW.md v1.0") ≠ versão vigente → WARN.
 
 Uso:
     python scripts/check_doc_sync.py               # relatório; exit 1 se houver ERRO
@@ -376,6 +380,45 @@ def check_d5(root: Path, facts: Facts, findings):
             ))
 
 
+WF_ID = re.compile(r"\bWF-(?:[DM])?\d{2}\b")
+WF_VERSION_CITED = re.compile(r"WORKFLOW\.md`?\s*\(?\s*(?:v|versão\s+)(\d+\.\d+)\b", re.I)
+
+
+def check_d6(root: Path, docs, findings):
+    """D6: coerência das citações ao WORKFLOW.md (IDs estáveis, decisões abertas, versão)."""
+    wf_path = root / "WORKFLOW.md"
+    if not wf_path.exists():
+        return
+    wf = read(wf_path)
+    defined, revoked, open_ids = set(), set(), set()
+    for line in wf.split("\n"):
+        ids = set(WF_ID.findall(line))
+        defined |= ids
+        if re.search(r"REVOGAD", line, re.I):
+            revoked |= ids
+        if re.search(r"\bABERTA\b", line) and not re.search(r"FECHAD", line):
+            open_ids |= {i for i in ids if i.startswith("WF-D")}
+    mv = re.search(r"Versão vigente\*{0,2}\s*\|\s*\*{0,2}(\d+\.\d+)", wf)
+    current = mv.group(1) if mv else None
+    for p in docs:
+        r = rel(root, p)
+        if r == "WORKFLOW.md" or FROZEN.search(r):
+            continue  # atas/propostas/docs congelados retratam sua própria data (INV-07)
+        for i, line in enumerate(read(p).split("\n"), 1):
+            for m in WF_ID.finditer(line):
+                wid = m.group(0)
+                if wid not in defined:
+                    findings.append(("ERRO", r, i, f"cita '{wid}', inexistente no WORKFLOW.md (IDs são estáveis, nunca reutilizados)"))
+                elif wid in revoked:
+                    findings.append(("WARN", r, i, f"cita '{wid}', marcado [REVOGADO] no WORKFLOW.md"))
+                if wid in open_ids and INLINE_CLOSED.match(line[m.end():m.end() + 20]):
+                    findings.append(("ERRO", r, i, f"decisão ABERTA '{wid}' declarada fechada/resolvida inline — CONS-01 (fecha só Andraus, no WORKFLOW.md)"))
+            if current:
+                for m in WF_VERSION_CITED.finditer(line):
+                    if m.group(1) != current:
+                        findings.append(("WARN", r, i, f"cita WORKFLOW.md v{m.group(1)}, mas a versão vigente é {current} — citar por ID/'versão vigente'"))
+
+
 def analyze(root: Path):
     docs = list_docs(root)
     facts = Facts(root)
@@ -384,6 +427,7 @@ def analyze(root: Path):
     check_d3(root, facts, findings)
     check_d4(root, facts, findings)
     check_d5(root, facts, findings)
+    check_d6(root, docs, findings)
     seen, uniq = set(), []
     for f in findings:
         k = (f[0], f[1], f[2], f[3])

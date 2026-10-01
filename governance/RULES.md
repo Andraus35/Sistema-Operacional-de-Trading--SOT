@@ -15,6 +15,8 @@
 <!-- Acréscimo homologado por Andraus 2026-09-29 (DHR-ECC05-001, compatibilidade Minor): RULE-ECC-05 (Pesquisa
      Multi-Lente — Dossiê de Spec de trading pesquisa Arquitetura + Escola/risco-retorno + confronto com
      WORKFLOW.md; prospectiva desde SPEC-003). Não altera baseline anterior — INV-07. -->
+<!-- Emenda homologada por Andraus 2026-10-01 (DHR-WF-001, Minor): RULE-ECC-05 lente (3) passa de
+     'confronto' a 'confronto e conformidade' com WORKFLOW.md (raiz, soberano, IDs WF-xx). -->
 
 ---
 
@@ -480,15 +482,17 @@ RULE-ECC-05: Toda Spec que define ou toca comportamento de agente analítico (St
              Pesquisa (RULE-ECC-02), pesquisar TRÊS lentes, não
              apenas arquitetura: (1) Arquitetura do SOT; (2) Estado da arte/melhores práticas da
              escola de análise ou de risco-retorno pertinente ao componente (Elliott/SMC/ICT/
-             gestão de risco); (3) confronto explícito com `WORKFLOW.md`
-             (pipeline operacional canônico declarado por Andraus). Specs de meta-harness/
+             gestão de risco); (3) confronto explícito **e conformidade** com `WORKFLOW.md`
+             (setup operacional soberano de Andraus — DHR-WF-001: a Spec cita por ID os `WF-xx`
+             que toca, conforma-se a eles, não contradiz nenhum e não fecha `WF-Dxx` aberta;
+             divergência = achado **Maior** do Revisor, resolvida por Andraus — nunca pela Spec). Specs de meta-harness/
              governança (SPEC-002/019/020/021 e análogas) ficam fora do escopo — não tocam
              comportamento de trading. O Revisor audita presença das 3 lentes (mesmo mandato
              estrutural do Passo 4-bis) — não a veracidade do conteúdo pesquisado. Dossiê sem as
              3 lentes onde exigível = NÃO CONFORME Crítica (fail-closed, mesmo padrão de
              RULE-ECC-02). Prospectiva — incide a partir de SPEC-003; não retroage sobre
              SPEC-001/002/019/020/021.
-             [Fonte: DHR-ECC05-001; RULE-ECC-02; WORKFLOW.md]
+             [Fonte: DHR-ECC05-001; DHR-WF-001; RULE-ECC-02; WORKFLOW.md]
 
 ---
 

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-01",
-  "digest": "417b8e0fa281a9ab147c2e4d9b5d938d4f0a1525d5af11ccd5b40d48d7c520b5",
+  "digest": "4116a9710994ba8d1093f71ac63d62cc959e7b2845e2d6c466f6605bcd957f41",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,15 +10,15 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 22,
-   "out": 31
+   "in": 23,
+   "out": 32
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
-   "in": 24,
-   "out": 29
+   "in": 25,
+   "out": 30
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -143,7 +143,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 26,
+   "in": 27,
    "out": 19
   },
   {
@@ -178,15 +178,15 @@
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 7,
+   "in": 8,
    "out": 8
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 69,
-   "out": 28
+   "in": 70,
+   "out": 29
   },
   {
    "path": "backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md",
@@ -409,8 +409,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 40,
-   "out": 124
+   "in": 41,
+   "out": 125
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -833,6 +833,13 @@
    "out": 10
   },
   {
+   "path": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "area": "governance",
+   "title": "DHR-WF-001 — Ata de Homologação — WORKFLOW.md soberano na raiz + conformidade (RULE-ECC-05) + detector D6",
+   "in": 5,
+   "out": 8
+  },
+  {
    "path": "governance/ERRATUM-SPEC019-001_PROPOSTA.md",
    "area": "governance",
    "title": "ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homologada (PROPOSTA)",
@@ -983,7 +990,7 @@
    "path": "governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
    "area": "governance",
    "title": "HOD-001 — Plano de Higiene e Organização Documental (PROPOSTA)",
-   "in": 12,
+   "in": 13,
    "out": 10
   },
   {
@@ -1053,8 +1060,8 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 145,
-   "out": 31
+   "in": 146,
+   "out": 32
   },
   {
    "path": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
@@ -1305,7 +1312,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 46,
+   "in": 47,
    "out": 11
   },
   {
@@ -1842,6 +1849,11 @@
    "cited_by": 11
   },
   {
+   "id": "DHR-WF-001",
+   "defined_in": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "cited_by": 5
+  },
+  {
    "id": "EUA-E01",
    "defined_in": null,
    "cited_by": 2
@@ -2234,7 +2246,7 @@
   {
    "id": "RULE-ECC-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-EH",
@@ -2884,7 +2896,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 44
+   "cited_by": 45
   },
   {
    "id": "SPEC-004",
@@ -3240,6 +3252,11 @@
   },
   {
    "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -3396,6 +3413,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
    "type": "id"
   },
   {
@@ -4146,6 +4168,11 @@
   {
    "from": "atomic-spec.md",
    "to": "governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md",
+   "type": "id"
+  },
+  {
+   "from": "atomic-spec.md",
+   "to": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
    "type": "id"
   },
   {
@@ -6066,6 +6093,11 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
    "type": "id"
   },
   {
@@ -9289,6 +9321,51 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/ERRATUM-SPEC019-001_PROPOSTA.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -11641,6 +11718,11 @@
   {
    "from": "governance/RULES.md",
    "to": "governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/RULES.md",
+   "to": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
    "type": "id"
   },
   {

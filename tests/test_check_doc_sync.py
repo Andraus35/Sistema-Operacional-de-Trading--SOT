@@ -131,6 +131,36 @@ class DocSync(unittest.TestCase):
         })
         self.assertEqual(self.msgs(rep), [])
 
+    # --- D6: coerência das citações ao WORKFLOW.md ---
+    WF = (
+        "| **Versão vigente** | **1.1** |\n"
+        "| **WF-02** | passo |\n"
+        "| **WF-D01** | Killzone | ... | **ABERTA** |\n"
+        "| **WF-D09** | antigo | [REVOGADO em v1.1] |\n"
+    )
+
+    def test_d6_id_inexistente_e_erro(self):
+        code, rep = self.run_check({"WORKFLOW.md": self.WF, "specs/features/SPEC-9/plan.md": "ver WF-02 e WF-07\n"})
+        self.assertEqual(code, 1)
+        self.assertTrue(any("WF-07" in m and "inexistente" in m for m in self.msgs(rep)))
+        self.assertFalse(any("WF-02" in m for m in self.msgs(rep)))
+
+    def test_d6_decisao_aberta_declarada_fechada_e_erro(self):
+        code, rep = self.run_check({"WORKFLOW.md": self.WF, "specs/features/SPEC-9/plan.md": "WF-D01 — FECHADA\n"})
+        self.assertEqual(code, 1)
+        self.assertTrue(any("WF-D01" in m and "CONS-01" in m for m in self.msgs(rep)))
+
+    def test_d6_revogado_e_versao_divergente_sao_warn(self):
+        code, rep = self.run_check({"WORKFLOW.md": self.WF, "specs/features/SPEC-9/plan.md": "WF-D09; conforme WORKFLOW.md v1.0\n"})
+        self.assertEqual(code, 0)
+        ms = self.msgs(rep)
+        self.assertTrue(any("REVOGADO" in m for m in ms))
+        self.assertTrue(any("vigente é 1.1" in m for m in ms))
+
+    def test_d6_sem_workflow_md_nao_dispara(self):
+        code, rep = self.run_check({"specs/features/SPEC-9/plan.md": "WF-77\n"})
+        self.assertFalse(any("WF-77" in m for m in self.msgs(rep)))
+
 
 if __name__ == "__main__":
     unittest.main()
