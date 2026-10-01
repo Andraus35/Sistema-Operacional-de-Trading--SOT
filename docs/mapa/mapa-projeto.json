@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-01",
-  "digest": "0f12805df234fd25e5559a6cc12eee2064a72447cceb3e0817b237b670ff3261",
+  "digest": "7814c9fdd92d035ff1799dfb25fcee2878546059d4105c4bd79adcd0072b01c4",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -171,7 +171,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 94,
+   "in": 95,
    "out": 39
   },
   {
@@ -185,7 +185,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 71,
+   "in": 72,
    "out": 29
   },
   {
@@ -241,7 +241,7 @@
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 57,
+   "in": 58,
    "out": 0
   },
   {
@@ -374,7 +374,7 @@
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
    "area": "governance",
    "title": "HOMOLOGADO — ADR-CONFLUENCE-001 v3",
-   "in": 6,
+   "in": 7,
    "out": 0
   },
   {
@@ -1060,7 +1060,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 147,
+   "in": 148,
    "out": 32
   },
   {
@@ -1109,8 +1109,15 @@
    "path": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
    "area": "reference",
    "title": "PESQUISA — Estado da Arte para Evolução do WORKFLOW Operacional do SOT",
-   "in": 0,
+   "in": 1,
    "out": 8
+  },
+  {
+   "path": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "area": "reference",
+   "title": "RESPOSTAS DE ANDRAUS — evolução do WORKFLOW.md (2026-10-01)",
+   "in": 0,
+   "out": 6
   },
   {
    "path": "reference/SOT-RISK-MASTER-001_Consolidado.md",
@@ -1298,7 +1305,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 96,
+   "in": 97,
    "out": 15
   },
   {
@@ -1319,7 +1326,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 48,
+   "in": 49,
    "out": 11
   },
   {
@@ -1978,12 +1985,12 @@
   {
    "id": "INV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "INV-03",
@@ -1993,12 +2000,12 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 38
+   "cited_by": 39
   },
   {
    "id": "INV-06",
@@ -2048,7 +2055,7 @@
   {
    "id": "INV-RISK-HEAT",
    "defined_in": "atomic-spec.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "INV-RISK-LEV",
@@ -2898,12 +2905,12 @@
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 94
+   "cited_by": 95
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 46
+   "cited_by": 47
   },
   {
    "id": "SPEC-004",
@@ -2963,7 +2970,7 @@
   {
    "id": "SPEC-015",
    "defined_in": "ROADMAP.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "SPEC-016",
@@ -2978,7 +2985,7 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "SPEC-019",
@@ -11824,6 +11831,36 @@
   },
   {
    "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "to": "atomic-spec.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "to": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "type": "path"
+  },
+  {
+   "from": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
    "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
