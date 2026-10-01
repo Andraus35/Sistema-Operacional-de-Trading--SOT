@@ -133,13 +133,6 @@
    "out": 0
   },
   {
-   "path": ".pytest_cache/README.md",
-   "area": ".pytest_cache",
-   "title": "pytest cache directory #",
-   "in": 0,
-   "out": 0
-  },
-  {
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
@@ -151,13 +144,13 @@
    "area": "raiz",
    "title": "GLOSSÁRIO OFICIAL — SOT",
    "in": 19,
-   "out": 5
+   "out": 4
   },
   {
    "path": "README.md",
    "area": "raiz",
    "title": "SOT-Harness",
-   "in": 0,
+   "in": 2,
    "out": 9
   },
   {
@@ -458,7 +451,7 @@
    "path": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
    "area": "governance",
    "title": "DHR-BL010-011-012-001 — Ata de Homologação — Classificação de Colisões (MC-RAG/EXP/COG × SOT)",
-   "in": 3,
+   "in": 4,
    "out": 4
   },
   {
@@ -697,7 +690,7 @@
    "area": "governance",
    "title": "DHR-PAP-001-A — Adendo de Re-Homologação do PE-PR-PAP-001 v1.1",
    "in": 14,
-   "out": 6
+   "out": 8
   },
   {
    "path": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
@@ -935,7 +928,7 @@
    "area": "governance",
    "title": "EUA-E19a — Restauração Semântica do \"Signal Package\" (fronteira) + TMP interno (PROPOSTA)",
    "in": 0,
-   "out": 16
+   "out": 14
   },
   {
    "path": "governance/EUA-E21_Especificacao_Emergente_Pesquisa_Web_PROPOSTA.md",
@@ -1012,7 +1005,7 @@
    "area": "governance",
    "title": "PE-PR-PAP-001 — Prompts de Invocação do Especificador e do Revisor para o PAP-001",
    "in": 9,
-   "out": 12
+   "out": 13
   },
   {
    "path": "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
@@ -1375,7 +1368,7 @@
    "path": "specs/features/SPEC-046/research.md",
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-046 (companion — convenção de nome do gate determinístico)",
-   "in": 0,
+   "in": 1,
    "out": 5
   },
   {
@@ -1411,7 +1404,7 @@
   {
    "id": "BL-001",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "BL-002",
@@ -1451,12 +1444,12 @@
   {
    "id": "BL-009",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 18
+   "cited_by": 20
   },
   {
    "id": "BL-011",
@@ -1481,7 +1474,7 @@
   {
    "id": "BL-015",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "BL-016",
@@ -1551,7 +1544,7 @@
   {
    "id": "DHR-BL010-011-012-001",
    "defined_in": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-CIC-001",
@@ -1720,18 +1713,18 @@
   },
   {
    "id": "DHR-PAP-001",
-   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "cited_by": 7
+   "defined_in": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "cited_by": 8
   },
   {
    "id": "DHR-PAP-001-A",
-   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "cited_by": 4
   },
   {
    "id": "DHR-PAP-001-B",
-   "defined_in": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "cited_by": 3
+   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "cited_by": 4
   },
   {
    "id": "DHR-PAP-001-C",
@@ -1876,7 +1869,7 @@
   {
    "id": "EUA-E14",
    "defined_in": "governance/DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "EUA-E15",
@@ -1966,7 +1959,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 52
+   "cited_by": 53
   },
   {
    "id": "INV-10",
@@ -1977,6 +1970,11 @@
    "id": "INV-EPI",
    "defined_in": "governance/CONFLICT-MAP.md",
    "cited_by": 14
+  },
+  {
+   "id": "INV-EPI-01",
+   "defined_in": "governance/RULES.md",
+   "cited_by": 3
   },
   {
    "id": "INV-INQ",
@@ -2271,7 +2269,7 @@
   {
    "id": "RULE-EV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-EV-02",
@@ -2296,12 +2294,47 @@
   {
    "id": "RULE-EV-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "RULE-EV-07",
    "defined_in": "governance/RULES.md",
    "cited_by": 1
+  },
+  {
+   "id": "RULE-EVH",
+   "defined_in": "specs/features/SPEC-002/plan.md",
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-EVH-001",
+   "defined_in": "specs/features/SPEC-002/plan.md",
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-EVH-002",
+   "defined_in": "specs/features/SPEC-002/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-EVH-003",
+   "defined_in": "specs/features/SPEC-002/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-EVH-004",
+   "defined_in": "specs/features/SPEC-002/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-EVH-005",
+   "defined_in": "specs/features/SPEC-002/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-EVH-006",
+   "defined_in": "specs/features/SPEC-002/plan.md",
+   "cited_by": 0
   },
   {
    "id": "RULE-EW",
@@ -2421,7 +2454,7 @@
   {
    "id": "RULE-HG-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 3
+   "cited_by": 5
   },
   {
    "id": "RULE-HG-08",
@@ -2596,7 +2629,7 @@
   {
    "id": "RULE-MET-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 3
+   "cited_by": 5
   },
   {
    "id": "RULE-MET-03",
@@ -2616,7 +2649,7 @@
   {
    "id": "RULE-MM-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 6
+   "cited_by": 9
   },
   {
    "id": "RULE-MM-03",
@@ -2941,7 +2974,7 @@
   {
    "id": "SPEC-021",
    "defined_in": "specs/features/SPEC-021/plan.md",
-   "cited_by": 27
+   "cited_by": 30
   },
   {
    "id": "SPEC-022",
@@ -3757,6 +3790,16 @@
   },
   {
    "from": "ROADMAP.md",
+   "to": "governance/AUDITORIA-ADIANTAMENTO-SLOTS-ROADMAP-2026-09-28.md",
+   "type": "path"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
    "type": "id"
   },
@@ -3843,6 +3886,11 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md",
    "type": "id"
   },
   {
@@ -4407,7 +4455,7 @@
   },
   {
    "from": "backlog/BL-025-CACHE-ISS-001-analise.md",
-   "to": "specs/features/SPEC-046/PROPOSTA-ABERTURA.md",
+   "to": "specs/features/SPEC-002/PROPOSTA-ABERTURA.md",
    "type": "path"
   },
   {
@@ -4802,11 +4850,6 @@
   },
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
-   "to": "specs/features/SPEC-046/DOSSIE-PESQUISA.md",
-   "type": "path"
-  },
-  {
-   "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "specs/features/SPEC-046/PROPOSTA-ABERTURA.md",
    "type": "path"
   },
@@ -5052,7 +5095,7 @@
   },
   {
    "from": "docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -5882,17 +5925,12 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -6302,7 +6340,7 @@
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -6757,7 +6795,7 @@
   },
   {
    "from": "governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -8272,6 +8310,16 @@
   },
   {
    "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -8287,7 +8335,7 @@
   },
   {
    "from": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -8342,7 +8390,7 @@
   },
   {
    "from": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -8812,6 +8860,11 @@
   },
   {
    "from": "governance/DHR-SPEC046-001_Ata_Homologacao_Abertura_SPEC-046.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC046-001_Ata_Homologacao_Abertura_SPEC-046.md",
    "to": "specs/features/SPEC-046/PROPOSTA-ABERTURA.md",
    "type": "path"
   },
@@ -8897,12 +8950,17 @@
   },
   {
    "from": "governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md",
-   "to": "specs/features/SPEC-046/DOSSIE-PESQUISA.md",
+   "to": "specs/features/SPEC-002/PROPOSTA-ABERTURA.md",
    "type": "path"
   },
   {
    "from": "governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md",
-   "to": "specs/features/SPEC-046/PROPOSTA-ABERTURA.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md",
+   "to": "specs/features/SPEC-002/research.md",
    "type": "path"
   },
   {
@@ -9752,7 +9810,7 @@
   },
   {
    "from": "governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -10442,7 +10500,7 @@
   },
   {
    "from": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -11037,12 +11095,12 @@
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -11147,7 +11205,12 @@
   },
   {
    "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {

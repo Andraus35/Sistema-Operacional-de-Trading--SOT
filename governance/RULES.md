@@ -373,8 +373,7 @@ RULE-HG-02: RULE nova (ou emenda de RULE) SÓ é normativa após homologação d
 
 RULE-HG-03: Parecer CONFORME do Revisor NÃO autoriza vigência; apenas atesta integridade.
             A vigência decorre exclusivamente da homologação de Andraus (decisão ≠ execução).
-            [Fonte: RULE-DEC-01 (EUA-E13); GMC-001 Cap.5 (segregação); PAP-001]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-DEC-01 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [Fonte: RULE-DEC-01 (EUA-E13, seção "Regras Decisionais (RULE-DEC)"); GMC-001 Cap.5 (segregação); PAP-001]
 
 RULE-HG-04: Toda proposta de alteração DEVE conter Análise de Impacto explícita sobre
             schemas, RAG, Skills, testes e modelos dependentes, e classificação de compatibilidade
@@ -414,14 +413,12 @@ RULE-HV-01: Toda spec-filha (micro-harness) derivada de uma spec-pai (macro-harn
 RULE-HV-02: Requisito herdado do pai NÃO PODE ser suprimido na filha fora do campo REMOVED com
             referência de homologação de Andraus. Supressão silenciosa entre níveis =
             NÃO CONFORME Crítica. (Extensão vertical de RULE-HD-03.)
-            [Fonte: RULE-HD-03; EUA-E17 §1.1 Dep.3]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-HD-03 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [Fonte: RULE-HD-03 (seção "Regras de Herança/Delta (RULE-HD)"); EUA-E17 §1.1 Dep.3]
 
 RULE-HV-03: Requisito local da filha NÃO PODE contradizer requisito do pai (coerência vertical).
             Precedência em conflito: pai (macro) > filha (micro); PC > PB/PE > regra local.
             (Extensão vertical de RULE-HD-02.)
-            [Fonte: RULE-HD-02; INV-01]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-HD-02 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [Fonte: RULE-HD-02 (seção "Regras de Herança/Delta (RULE-HD)"); INV-01]
 
 RULE-HV-04: A conformidade inter-nível DEVE ser verificável: a cobertura do CONJUNTO de obrigações
             do pai pelo conjunto conservado da filha é auditável pelo Revisor como conjunto (não
@@ -457,8 +454,7 @@ RULE-ECC-02: Toda abertura de Spec DEVE ser precedida de Dossiê de Pesquisa pro
              inconclusiva = INDETERMINADO. Web indisponível = abertura suspensa; exceção só por
              RULE-HG-07. Profundidade proporcional à complexidade (sem dispensar o Dossiê);
              validade do Dossiê = decisão aberta ECC-VAL-001.
-             [Fonte: DHR-EUA-E21; DHR-PROV-WEB-001 §2.1; RULE-HG-07; RULE-MET-01]
-             [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-MET-01 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+             [Fonte: DHR-EUA-E21; DHR-PROV-WEB-001 §2.1; RULE-HG-07; RULE-MET-01 (seção "Regras Metacognitivas (RULE-MET)")]
 
 RULE-ECC-03: RESERVADA (sem texto). Pendente de definição por Andraus (decisão aberta ECC-03-001);
              seu conteúdo só será definido por emenda subsequente — nunca por inferência.
@@ -543,8 +539,7 @@ RULE-EV-02: A avaliação de cada lente DEVE separar DETECTOR de GATE: component
 
 RULE-EV-03: A lente hallucination é DETECTOR, não gate autônomo: um sinal de alucinação alimenta o
             Revisor/gate determinístico, nunca aprova nem reprova sozinho por juízo de LLM.
-            [Fonte: ENF-03; RULE-MET-01; SPEC-020/plan.md §D2]
-            [DECISÃO NECESSÁRIA: RULE-REG-001 — RULE-MET-01 citada aqui como fonte, mas sem seção própria registrada neste arquivo]
+            [Fonte: ENF-03; RULE-MET-01 (seção "Regras Metacognitivas (RULE-MET)"); SPEC-020/plan.md §D2]
 
 RULE-EV-04: Achado adversarial (D8 / §7-bis / Passo 5-bis) que revele falha constitutiva DEVE ser
             convertido em caso de regressão VERSIONADO e preservado (nunca deletado).

@@ -9,6 +9,7 @@
 | Escopo | Itens do RMR-001 em estado `Em espera` ou `Proposto` |
 | Autoridade | Isto é `[PROPOSTA]`. Promoção/adiantamento de qualquer item é ato de Andraus (RMR-001 §5). |
 | Fontes | `backlog/RMR-001_Painel_Backlog.md`, `ROADMAP.md`, `governance/RULES.md`, `reference/SOT-RISK-MASTER-001_Consolidado.md`, `reference/camadas/*` |
+| Vínculo ao ROADMAP | `ROADMAP.md` §25-ter (Análises de priorização e adiantamento). **Subordinada** à ordem de prioridade do §21 e ao "próximo trabalho autorizado" do §25 — não os substitui nem os condiciona (CONS-01/INV-09). Consultar §25-ter para o status de execução corrente antes de tratar qualquer linha abaixo como já encaminhada. |
 
 > **Status epistemológico (TRACE-06):** o estado atual de cada item é `[FATO NORMATIVO]` (verificado no RMR-001 baseline v1.0). A recomendação de adiantamento é `[PROPOSTA]`. A avaliação de ganho/risco é `[INFERÊNCIA]` derivada dos documentos citados. Nenhuma linha deste documento fecha decisão aberta (CONS-01) nem altera baseline (INV-09).
 

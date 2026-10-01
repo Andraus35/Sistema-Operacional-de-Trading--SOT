@@ -1,0 +1,23 @@
+FONTE [EXTERNO] — REGISTRO DE PESQUISA (NÃO é captura verbatim WebFetch; ver _LIMITACAO-WEBFETCH.txt)
+ID: SRC-07
+Tema: Linhagem de dados (data lineage) como padrão aberto; metadados de dataset/job/run; ferramenta/versão/fonte
+Tipo: Padrão (OpenLineage) + Prática
+URLs (resultados reais de WebSearch, 2026-09-28):
+  - https://openlineage.io/  (OpenLineage)
+  - https://github.com/OpenLineage/openlineage  (OpenLineage — open standard for lineage metadata collection)
+  - https://datahub.com/blog/open-source-data-lineage/  (Open Source Data Lineage: Tools and Tradeoffs)
+Método de captura: WebSearch (WebFetch egress-blocked). Data de acesso: 2026-09-28.
+
+Excerto retornado pela busca (pode ser sintetizado pelo buscador):
+"OpenLineage is an open source specification for data lineage... Since its creation in 2020, OpenLineage has become the industry standard for data lineage."
+"The OpenLineage core model is based on a JSON Schema spec that defines three basic types of lineage metadata: datasets, jobs, and runs."
+"It tracks metadata about datasets, jobs, and runs, giving users the information required to identify the root cause of complex issues and understand the impact of changes."
+"OpenLineage isn't a tool... It's the protocol, not the application. To get value from it, you need a compatible consumer."
+
+Pertinência ao SPEC-002: modelo dataset/job/run é análogo direto a Source Reference / produtor
+(ferramenta/Skill que produziu) / evento de produção da Evidência. Confirma o princípio de que a camada
+operacional deve definir o CONTRATO/protocolo de proveniência, e o armazenamento físico fica em consumidor
+separado (no SOT: Blackboard/KG — SPEC-004/006, decisões M-001/H-001/BL-003 abertas). Recomendação: ADAPTAR
+o modelo de metadados de linhagem; NÃO importar a ferramenta; distinção "protocolo ≠ aplicação" reforça
+CC-02 (não redefinir CEM-001) e a fronteira com SPEC-004/006.
+</content>

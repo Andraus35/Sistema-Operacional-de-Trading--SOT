@@ -1,0 +1,21 @@
+FONTE [EXTERNO] — REGISTRO DE PESQUISA (NÃO é captura verbatim WebFetch; ver _LIMITACAO-WEBFETCH.txt)
+ID: SRC-03
+Tema: Teoria da evidência de Dempster-Shafer; combinação de evidência conflitante; crença/plausibilidade; incerteza
+Tipo: Padrão/Teoria + Evidência (artigos)
+URLs (resultados reais de WebSearch, 2026-09-28):
+  - https://pmc.ncbi.nlm.nih.gov/articles/PMC4967071/  (Conflicting evidence combination based on uncertainty measure and distance of evidence)
+  - https://www.stat.berkeley.edu/~aldous/Real_World/dempster_shafer.pdf  (Combination of Evidence in Dempster-Shafer Theory)
+  - https://www.nature.com/articles/s41598-023-35195-4  (BPA generation and combination for conflict data fusion)
+Método de captura: WebSearch (WebFetch egress-blocked). Data de acesso: 2026-09-28.
+
+Excerto retornado pela busca (pode ser sintetizado pelo buscador):
+"Dempster-Shafer Theory is an evidence theory for managing uncertainty and making decisions when information is incomplete or conflicting, which combines evidence from multiple sources and assigns belief, plausibility and doubt to possible outcomes."
+"Belief and plausibility functions quantify lower and upper bounds on hypothesis probability, and evidence from multiple sources is reconciled via Dempster's rule of combination, which redistributes conflicting belief."
+"Counter-intuitive results may be obtained when combining with highly conflicting evidence."
+
+Pertinência ao SPEC-002: relevante ao tratamento de CONFLITO entre evidências e à FUSÃO (favorável/
+contra/inconclusiva). PORÉM: a FUSÃO e a agregação para convicção pertencem à SPEC-003 (Fusion Engine →
+Conviction Engine, topologia FECHADA Q-007) e a J-001 (fórmula/pesos definitivos, aberta). Portanto:
+recomendação ADIAR para SPEC-003 — SPEC-002 apenas MARCA o conflito e a natureza da evidência, não o resolve
+por fórmula (fronteira CC-02/CC-03/J-001; CEM-001 Cap.3: Evidence Strength ≠ Convicção).
+</content>
