@@ -48,4 +48,4 @@
 | Versão | Data | Mudança |
 |---|---|---|
 | 1.1 | 2026-10-01 | Movido para a raiz como `WORKFLOW.md` (era RUNTIME-WORKFLOW-SOT em `reference/`). Conteúdo dos passos **inalterado**; acrescentados IDs estáveis WF-01..07, WF-D01..04, WF-M01..03, regras de uso/manutenção e autoridade soberana de Andraus. Sem fechamento de decisão. |
-| 1.0 | 2026-09-29 | Captura original (DHR-ECC05-001), `reference/RUNTIME-WORKFLOW-SOT.md`. |
+| 1.0 | 2026-09-29 | Captura original (DHR-ECC05-001), RUNTIME-WORKFLOW-SOT (em `reference/`); arquivado em `docs/_legacy/`. |
