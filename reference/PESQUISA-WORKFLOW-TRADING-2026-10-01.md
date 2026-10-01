@@ -18,7 +18,7 @@
 
 ## A. Sumário executivo
 
-O `WORKFLOW.md` v1.1 declara fielmente o pipeline de 7 passos de Andraus (WF-01..07) e mantém honestamente 4 pontos sem mecanismo formal (WF-D01 Killzone, WF-D02 alarme-gatilho, WF-D03 convicção macro × global, WF-D04 papel do ICT). A pesquisa de estado da arte mostra que **os quatro pontos têm literatura e padrões maduros o suficiente para serem parametrizados** — a maior parte do que falta é **decisão de parametrização de Andraus**, não invenção de mecanismo.
+O `WORKFLOW.md` (versão vigente à época da pesquisa: 1.1) declara fielmente o pipeline de 7 passos de Andraus (WF-01..07) e mantém honestamente 4 pontos sem mecanismo formal (WF-D01 Killzone, WF-D02 alarme-gatilho, WF-D03 convicção macro × global, WF-D04 papel do ICT). A pesquisa de estado da arte mostra que **os quatro pontos têm literatura e padrões maduros o suficiente para serem parametrizados** — a maior parte do que falta é **decisão de parametrização de Andraus**, não invenção de mecanismo.
 
 Cinco achados estruturais dominam o dossiê:
 

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-01",
-  "digest": "7814c9fdd92d035ff1799dfb25fcee2878546059d4105c4bd79adcd0072b01c4",
+  "digest": "4f0bce48862aae896f8f74a5b68929b909514f58f3538b99a64c8362b01cf912",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -171,15 +171,15 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 95,
-   "out": 39
+   "in": 96,
+   "out": 40
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 9,
-   "out": 8
+   "in": 11,
+   "out": 11
   },
   {
    "path": "atomic-spec.md",
@@ -220,8 +220,8 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 95,
-   "out": 72
+   "in": 96,
+   "out": 75
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
@@ -374,7 +374,7 @@
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
    "area": "governance",
    "title": "HOMOLOGADO — ADR-CONFLUENCE-001 v3",
-   "in": 7,
+   "in": 8,
    "out": 0
   },
   {
@@ -409,8 +409,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 41,
-   "out": 125
+   "in": 42,
+   "out": 128
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -840,6 +840,13 @@
    "out": 8
   },
   {
+   "path": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "area": "governance",
+   "title": "DHR-WF-002 — Ata de Homologação — WORKFLOW.md v2.0 (decisões sobre o Dossiê de pesquisa de trading)",
+   "in": 2,
+   "out": 8
+  },
+  {
    "path": "governance/ERRATUM-SPEC019-001_PROPOSTA.md",
    "area": "governance",
    "title": "ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homologada (PROPOSTA)",
@@ -1060,7 +1067,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 148,
+   "in": 149,
    "out": 32
   },
   {
@@ -1109,14 +1116,14 @@
    "path": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
    "area": "reference",
    "title": "PESQUISA — Estado da Arte para Evolução do WORKFLOW Operacional do SOT",
-   "in": 1,
+   "in": 5,
    "out": 8
   },
   {
    "path": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
    "area": "reference",
    "title": "RESPOSTAS DE ANDRAUS — evolução do WORKFLOW.md (2026-10-01)",
-   "in": 0,
+   "in": 4,
    "out": 6
   },
   {
@@ -1305,7 +1312,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 97,
+   "in": 98,
    "out": 15
   },
   {
@@ -1326,7 +1333,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 49,
+   "in": 50,
    "out": 11
   },
   {
@@ -1581,6 +1588,11 @@
    "id": "BL-025",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
    "cited_by": 4
+  },
+  {
+   "id": "BL-026",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 3
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -1868,6 +1880,11 @@
    "cited_by": 5
   },
   {
+   "id": "DHR-WF-002",
+   "defined_in": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "cited_by": 2
+  },
+  {
    "id": "EUA-E01",
    "defined_in": null,
    "cited_by": 2
@@ -1985,12 +2002,12 @@
   {
    "id": "INV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 18
+   "cited_by": 20
   },
   {
    "id": "INV-03",
@@ -2000,12 +2017,12 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "INV-06",
@@ -2055,7 +2072,7 @@
   {
    "id": "INV-RISK-HEAT",
    "defined_in": "atomic-spec.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "INV-RISK-LEV",
@@ -2065,7 +2082,7 @@
   {
    "id": "INV-RISK-RR",
    "defined_in": "atomic-spec.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-BB",
@@ -2905,12 +2922,12 @@
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 95
+   "cited_by": 96
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 47
+   "cited_by": 48
   },
   {
    "id": "SPEC-004",
@@ -2935,7 +2952,7 @@
   {
    "id": "SPEC-008",
    "defined_in": "ROADMAP.md",
-   "cited_by": 5
+   "cited_by": 8
   },
   {
    "id": "SPEC-009",
@@ -2945,7 +2962,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "SPEC-011",
@@ -2970,7 +2987,7 @@
   {
    "id": "SPEC-015",
    "defined_in": "ROADMAP.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "SPEC-016",
@@ -2985,7 +3002,7 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 25
+   "cited_by": 27
   },
   {
    "id": "SPEC-019",
@@ -3946,6 +3963,11 @@
   },
   {
    "from": "ROADMAP.md",
+   "to": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -4047,12 +4069,22 @@
   {
    "from": "WORKFLOW.md",
    "to": "atomic-spec.md",
+   "type": "id"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "atomic-spec.md",
    "type": "path"
   },
   {
    "from": "WORKFLOW.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
    "type": "id"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
   },
   {
    "from": "WORKFLOW.md",
@@ -4073,6 +4105,21 @@
    "from": "WORKFLOW.md",
    "to": "governance/RULES.md",
    "type": "path"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "type": "path"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "type": "path"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
   },
   {
    "from": "WORKFLOW.md",
@@ -4591,6 +4638,11 @@
   },
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "atomic-spec.md",
    "type": "id"
   },
@@ -4852,6 +4904,16 @@
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "type": "path"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
    "type": "path"
   },
   {
@@ -6116,6 +6178,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/EUA-E04_Heranca_Delta_PROPOSTA.md",
    "type": "path"
   },
@@ -6247,6 +6314,16 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
    "type": "path"
   },
   {
@@ -9376,6 +9453,56 @@
   },
   {
    "from": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "to": "reference/RESPOSTAS-WORKFLOW-2026-10-01.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
    "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
