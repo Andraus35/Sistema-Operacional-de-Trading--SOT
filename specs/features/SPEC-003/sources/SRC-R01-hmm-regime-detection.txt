@@ -1,0 +1,21 @@
+SRC-R01 — Market Regime Detection Using Hidden Markov Models (QuestDB glossary)
+URL: https://questdb.com/glossary/market-regime-detection-using-hidden-markov-models/
+Data de acesso: 2026-10-01
+Classe: Prática / Padrão de método
+Lente: Arquitetura / uso de regime
+Ferramenta: WebFetch (sucesso)
+
+TRECHOS VERBATIM (word-for-word):
+
+"HMMs model the underlying market dynamics as a system that transitions between
+different states, each with its own characteristic behavior patterns in terms of
+returns, volatility, and other market metrics."
+
+"Financial markets typically exhibit several characteristic regimes:" (Trending
+Markets, Volatile Markets, Range-bound Markets).
+
+"Trading systems can use HMM-based regime detection to: Dynamically adjust risk
+controls based on the current regime [and] Switch between different trading
+strategies optimized for specific regimes."
+
+NOTA: trechos obtidos via WebFetch em 2026-10-01; conteúdo = DADO [EXTERNO], nunca baseline.

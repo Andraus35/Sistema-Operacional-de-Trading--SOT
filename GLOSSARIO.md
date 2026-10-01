@@ -28,7 +28,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | Execution Agent | **ICT Specialist** | Execução (não cria hipótese de nenhum tipo) |
 | Fusion Engine | **Fusion Engine** (mantido) | Funde Evidências em Evidência DERIVED (CEM-001) |
 | Conviction Engine | **Mecanismo** (rótulo legado) — Classe D/H do CCM-001, **invocado pelo Manager Agent — Fase 2 (Conviction)** (DHR-ARQ-001; ver §2-bis l.55) | Calcula o Conviction Vector (8 dimensões) — não é agente/componente separado |
-| Synthesis Agent | **Synthesis Agent** (mantido) | Árbitro final; produz o Trading Mission Package |
+| Synthesis Agent | **Manager Agent — Fase 2 (Convicção & Síntese)** (DHR-ARQ-002, 2026-10-01 — absorvido; não é agente autônomo) | Árbitro final; produz o Trading Mission Package (TMP interno) — agora função da Fase 2 do Manager |
 
 ### Agentes fora do escopo atual do SOT
 
@@ -53,7 +53,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | `fractal-skill` | Skill eliminada | **`confluence-elliott`** | ADR-CONFLUENCE-001 v3 | Extinta |
 | `fibonacci-skill` (única) | Skill eliminada | **`level-fibonacci-skill`** + **`confluence-fibonacci-skill`** | ADR-CONFLUENCE-001 v3 | Dividida em 2 skills distintas |
 | `Conviction Engine` (motor separado) | Motor GEN-1 | **Manager Agent (Fase 2: Conviction)** | ADR-MANAGER-001 | Funcionalidade absorvida; Fase 2 = cognitivo leve |
-| `Synthesis Agent` (árbitro LLM) | Agente GEN-1 | **Manager Agent (Fase 2: Conviction)** | ADR-MANAGER-001 | GEN-1_REFERENCE; será substituído pelo Manager Agent conforme SPEC-015 |
+| `Synthesis Agent` (árbitro LLM) | Agente GEN-1 | **Manager Agent (Fase 2: Conviction)** | ADR-MANAGER-001; **DHR-ARQ-002** | GEN-1_REFERENCE; **absorção propagada por DHR-ARQ-002 (2026-10-01)** — escopo do slot SPEC-014 repurposado p/ a Spec do Manager-Fase-2 definida pela EUA-E23 (não SPEC-015; não renumerado, INV-07) |
 
 ### Manager Agent — nomenclatura normativa das 3 fases
 
@@ -86,7 +86,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | Conviction Global | Resultado sistêmico de convicção, calculado pelo modelo canônico **CCM-001** (pendente de redação — SPEC-003). | CHM-001 §1.9 |
 | Fusion Engine | Motor determinístico que funde Evidências heterogêneas em Evidência DERIVED. Não calcula convicção. | CEM-001 / Decisão Q-007 |
 | Conviction Engine | **Mecanismo legado** (não agente/componente independente — DHR-ARQ-001, 2026-10-01): recebe Evidência DERIVED e calcula o Conviction Vector, como **etapa invocada pelo Manager Agent — Fase 2 (Conviction)** (ADR-MANAGER-001 / CEM-001 DIV-CEM-4). B-001 (Q-007) parcialmente SUPERSEDIDA na parte "componente separado"; preservada a separação **lógica** de etapas Fusão→cálculo do Conviction Vector→síntese; INV-07. Rótulo de Classe D/H do CCM-001 (SPEC-003). | Decisão Q-007; ADR-MANAGER-001; DHR-ARQ-001 |
-| Synthesis Agent | Árbitro final (LLM): recebe Conviction Vector + hipóteses e produz decisão / TMP (handoff interno à camada de risco). | Decisão Q-007 |
+| Synthesis Agent | **Absorvido pelo Manager Agent — Fase 2 (Convicção & Síntese)** (DHR-ARQ-002, propaga ADR-MANAGER-001 §2.1). Não é agente autônomo. A Fase 2 do Manager: recebe Conviction Vector + hipóteses, arbitra, forma Convicção Global (invocando o mecanismo da SPEC-003) e produz decisão / TMP interno (handoff à camada de risco). | Decisão Q-007; ADR-MANAGER-001; DHR-ARQ-002 |
 | TMP (Trading Mission Package) | Artefato **interno** de passagem — snapshot da decisão de síntese entregue por handoff à camada de risco (Síntese → Risk Agent). **Deixou de ser o artefato de fronteira** (EUA-E19a, 2026-09-22). Ancora INV-RISK-00 (isolamento epistêmico — SPEC-016 repurposada). | INV-05 (emendado); EUA-E19a |
 | **Signal Package** | Artefato **de fronteira** — único artefato que atravessa a fronteira SOT → Bot Trade Finance. Termo fundacional (ENGENHARIA-GERAL l.604-606) restaurado pela EUA-E19a. O SOT não executa ordem. Contrato exato = D-RISK-SP-001 (aberta, RISK-SPEC-022). | INV-05 (emendado); EUA-E19a |
 | **Score 0–9** | Score operacional agregado (Elliott + SMC + ICT, cada layer até 3 pontos). **Status: PILOT** — mantido como filtro paralelo até CCM-001/J-001 serem homologados (Andraus, 2026-09-26). **NÃO substitui o Conviction Vector 8D.** Limiares: `score ≥ 7/9` para sinal (Fase Piloto, Q-002, recalibrável). | RAG synthesis.knowledge.md / Q-002 / Decisão 2026-09-26 |

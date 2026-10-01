@@ -1,0 +1,25 @@
+SRC-R04 — Como a prática USA regime (filtro de estratégia × modulador de sizing × feature de sinal)
+Fontes (WebSearch; snippets):
+ - "Machine Learning for Market Regime Detection Using Random Forest" (QuantInsti/EPAT)
+   https://blog.quantinsti.com/epat-project-machine-learning-market-regime-detection-random-forest-python/
+ - "Meta-Labeling" (Wikipedia) https://en.wikipedia.org/wiki/Meta-Labeling
+ - "Regime Filtered Trend Strategy" (pyquantlab/Medium)
+   https://pyquantlab.medium.com/regime-filtered-trend-strategy-a-market-adaptive-trend-following-system-fa933e001237
+ - "Multi-Timeframe Adaptive Market Regime Quantitative Trading Strategy" (FMZQuant/Medium)
+   https://medium.com/@FMZQuant/multi-timeframe-adaptive-market-regime-quantitative-trading-strategy-1b16309ddabb
+Data de acesso: 2026-10-01
+Classe: Prática
+Lente: uso de regime (filtro / sizing / feature)
+
+RESUMO DERIVADO DO WEBSEARCH (paráfrase do tool, NÃO verbatim — RULE-MET-01):
+ - Filtro de estratégia: ADX classifica Trending/Choppy/Neutral; sinais são suprimidos em
+   regime choppy; momentum em tendência, mean-reversion em range.
+ - Modulador de sizing: "Position sizes are automatically reduced by 30-50% during volatile
+   or transitioning regimes"; maior alocação em bull de baixa vol, menor em alta vol/bear.
+ - Feature/meta-label: regime "decouples directional prediction from position sizing" treinando
+   modelo secundário que estima se cada sinal levará a trade lucrativo.
+ - "In practice, these approaches often work together: regimes serve as filters for which signals
+   to trade, modulators for how much to risk, and features that improve overall signal quality."
+
+LIMITAÇÃO HONESTA (RULE-MET-01): trechos entre aspas vêm do resumo do WebSearch, não de fetch
+literal de cada página; qualidade de evidência = "Moderada/Prática". Conteúdo = DADO [EXTERNO].

@@ -211,8 +211,10 @@ P1 — HIGH · D0–D7. Exclusivamente: entrada; timing; stop; targets; invalida
 
 ## 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO
 
-### SPEC-014 — Synthesis Agent
+### SPEC-014 — Synthesis Agent — **ABSORVIDO pelo Manager Agent — Fase 2 (Convicção & Síntese)** (DHR-ARQ-002, 2026-10-01)
 P0 — CRITICAL · D0–D8. Somente após resolução de B-001/J-001 (Conviction Engine). `Evidence → Hypothesis → Conviction → Decision → Mission / Trading Mission Package`.
+
+> **Nota DHR-ARQ-002 (2026-10-01):** o **Synthesis Agent deixa de ser agente autônomo** — suas responsabilidades (arbitragem final; `Conviction→Decision→Mission/TMP`; geração do TMP interno) **são a Fase 2 do Manager Agent** (propaga ADR-MANAGER-001 §2.1 "Agente de Síntese → absorvido (Fase 2)"). O escopo migra para a Spec do Manager que a **EUA-E23** (Frente 2) definir na abertura (RULE-ECC-01); o cálculo do Conviction Vector é o **mecanismo da SPEC-003** invocado pela Fase 2 (DHR-ARQ-001); o contrato do objeto TMP é a **SPEC-016** (repurposada). Slot SPEC-014 **repurposado, NÃO renumerado nem apagado** (INV-07). Nenhuma decisão aberta fechada (SPEC-015-SCOPE/J-001/N-001/WF-D03 seguem abertas — CONS-01).
 
 ### SPEC-015 — Mission Engine & Mission Lifecycle
 P1 — HIGH · D0–D7. Criação; ativação; monitoramento; envelhecimento; atualização; suspensão; encerramento; invalidação; cancelamento; campanha; plano alternativo; relação hipótese→missão; relação missão→resultado.
@@ -342,8 +344,8 @@ M0 → 001 Hypothesis Harness →
 002 Evidence → 003 Conviction Vector → 004 Blackboard → 005 Event Bus →
 006 Knowledge Graph → 007 RAG (fecha 020: RAG faithfulness) →
 008 Scheduler → 009 Cognitive State → 010 Structural → 011 Fibonacci/Fractal →
-012 Institutional → 013 ICT → 014 Synthesis (fecha 020: decision traceability) →
-015 Mission → 016 Trading Mission Package
+012 Institutional → 013 ICT → 014 Synthesis [= Manager Fase 2 — DHR-ARQ-002] (fecha 020: decision traceability) →
+015 Mission [= Manager Fase 0] → 016 Trading Mission Package
 ```
 
 *(Ordem atualizada por EUA-E17/DHR-EUA-E17: a FASE GOV — 019 → 020 núcleo A → 021 — precede 002. Dimensões B da SPEC-020 fecham no ponto de dependência: 007, 014, 038 — ver RMR-001/BL-017. `038 Tool Selection/Tooling` fecha `tool correctness` na FASE 12.)*
@@ -460,7 +462,7 @@ Lista **derivada dos títulos dos slots** acima (nenhuma capacidade foi inventad
 | SPEC-011 — Fibonacci & Fractal Confluence Harness | 8. FASE 5 — AGENTES ANALÍTICOS | Indicativo — não aberta |
 | SPEC-012 — Institutional Agent / SMC Harness | 8. FASE 5 — AGENTES ANALÍTICOS | Indicativo — não aberta |
 | SPEC-013 — Execution / ICT Harness | 8. FASE 5 — AGENTES ANALÍTICOS | Indicativo — não aberta |
-| SPEC-014 — Synthesis Agent | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
+| SPEC-014 — Synthesis Agent — **ABSORVIDO pelo Manager Fase 2** (DHR-ARQ-002); slot repurposado p/ "Manager — Convicção & Síntese" (via EUA-E23); capacidade preservada | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
 | SPEC-015 — Mission Engine & Mission Lifecycle | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
 | SPEC-016 — Trading Mission Package (TMP) — **REPURPOSADA** (Andraus 2026-09-22, C-04 Opção A; contingente à EUA-E19a/E20) | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
 | SPEC-017 — Pattern Memory | 10. FASE 7 — MEMÓRIA E APRENDIZADO | Indicativo — não aberta |

@@ -1,0 +1,24 @@
+SRC-R03 — Evidência empírica de regime-switching (BTC / cripto / multi-ativo)
+Fontes (abstracts via WebSearch; página integral não fetchada — limitação registrada):
+ - Ardia & Bluteau, "Regime changes in Bitcoin GARCH volatility dynamics"
+   https://www.researchgate.net/publication/326947710_Regime_changes_in_Bitcoin_GARCH_volatility_dynamics
+ - Maciel (2021), "Cryptocurrencies value-at-risk and expected shortfall: Do regime-switching
+   volatility models improve forecasting?" Wiley, IJFE
+   https://onlinelibrary.wiley.com/doi/abs/10.1002/ijfe.2043
+ - "The risk-return trade-off of Bitcoin: Evidence from regime-switching analysis" (Springer, 2025)
+   https://link.springer.com/article/10.1186/s43093-025-00551-5  (303 → auth redirect; NÃO fetchada)
+Data de acesso: 2026-10-01
+Classe: Evidência / Experimento (peer-reviewed)
+Lente: Evidência empírica de regime em BTC/cripto
+
+RESUMO DERIVADO DO WEBSEARCH (paráfrase do tool, NÃO verbatim — RULE-MET-01):
+ - Há "strong evidence of regime changes in the GARCH process" de log-returns do Bitcoin;
+   modelos Markov-Switching GARCH (MS-GARCH) superam especificações single-regime na
+   previsão de Value-at-Risk.
+ - Estudos de risco-retorno do BTC usam Markov-switching (MS) e MS-GARCH (dados 2010-2024).
+
+LIMITAÇÃO HONESTA (RULE-MET-01 / RULE-ECC-04): a página Springer retornou 303 (auth) e não
+foi fetchada; os demais são abstracts resumidos pelo WebSearch, não citação literal da fonte.
+Portanto estes itens entram como evidência de EXISTÊNCIA de literatura de regime-switching em
+BTC, não como citação verbatim. Qualidade de evidência rebaixada a "Moderada" por este motivo.
+Conteúdo = DADO [EXTERNO], nunca baseline.

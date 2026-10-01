@@ -23,7 +23,7 @@
 | **WF-03** | Fase 1 — confirmação institucional condicional (SMC) | SPEC-012 (Institutional/SMC) | SPEC-011 (Fibonacci/Fractal), SPEC-015 | Indicativa | Mecanismo | SMC cria sub-hipótese (parent_id); não veta Elliott. |
 | **WF-04** | Fase 1 — síntese de contexto (Manager): convicção macro + alarme-gatilho | SPEC-015 (Manager/Mission) | SPEC-003 (convicção macro, CF-010), SPEC-008 (alarme/scheduler) | Indicativa | Mecanismo | "Formar convicção" = o Manager invoca o Conviction Engine (SPEC-003); ver §Conflitos C-1. |
 | **WF-05** | Ativação na Killzone — Agente Operacional (ICT) produz setup operacional | SPEC-013 (Execution/ICT) | SPEC-008 (gatilho Killzone), SPEC-015 | Indicativa | Mecanismo | ICT **não cria hipótese** (INV-02); setup atrelado por parent_id. |
-| **WF-06** | Fase 2 — síntese global (Manager): convicção global + pacote risco-retorno | SPEC-014 (Synthesis Agent) | SPEC-003 (convicção global), SPEC-015 | Indicativa | Mecanismo | TMP interno Synthesis→Risk (SPEC-016 repurposada). Ver §Conflitos C-1. |
+| **WF-06** | Fase 2 — síntese global (Manager): convicção global + pacote risco-retorno | **Manager — Fase 2 (Convicção & Síntese)** = SPEC-014 repurposado (Synthesis **absorvido** — DHR-ARQ-002) | SPEC-003 (mecanismo de convicção invocado), SPEC-015 (Fase 0) | Indicativa | Mecanismo | TMP interno Síntese(=Manager Fase 2)→Risk (SPEC-016 repurposada). Ver §Conflitos C-1. |
 | **WF-07** | Gate de Risco → Risk Agent → Bot Trade Finance (externo) | Família **RISK-SPEC** (BL-018) | SPEC-014 (handoff), SPEC-016 (TMP) | Indicativa | Mecanismo | Família RISK ainda não numerada/autorizada (EUA-E20); Bot Trade Finance é externo (WF-X04). |
 
 ---

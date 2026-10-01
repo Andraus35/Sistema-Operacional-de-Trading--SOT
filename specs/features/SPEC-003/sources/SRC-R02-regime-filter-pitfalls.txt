@@ -1,0 +1,17 @@
+SRC-R02 — Market regime filters for systematic traders (Better System Trader, ep. 063, Alan Clement)
+URL: https://bettersystemtrader.com/063-market-regimes-with-alan-clement/
+Data de acesso: 2026-10-01
+Classe: Prática / Opinião de profissional
+Lente: Armadilhas (overfitting, lag, amostra)
+Ferramenta: WebFetch (sucesso)
+
+TRECHOS VERBATIM (word-for-word):
+
+"By the time it signals a regime change, you may have already given back significant gains."
+
+"Without a decent sample, small sample size issues and overfitting become a serious concern."
+
+"Don't add it only after out-of-sample testing shows problems. That's a form of overfitting."
+
+NOTA: trechos obtidos via WebFetch em 2026-10-01; conteúdo = DADO [EXTERNO], nunca baseline.
+Corrobora as armadilhas de lag de detecção e overfitting de regime.
