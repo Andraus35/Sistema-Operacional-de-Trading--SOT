@@ -1,3 +1,5 @@
+> **ARQUIVADO (INV-07) — versão 1.0, superseded por `WORKFLOW.md` v1.1. Não normativo.**
+
 # RUNTIME-WORKFLOW-SOT — Workflow Operacional Canônico (declarado por Andraus, 2026-09-29)
 
 > **Natureza:** referência externa/operacional — captura o workflow real de uso do SOT em runtime, tal como declarado por Andraus. **Não é baseline técnico** (não redefine CEM-001/CHM-001/ADR-MANAGER-001) — é **insumo obrigatório de confronto** para toda Spec futura que toque o pipeline de agentes analíticos, o Manager Agent (SPEC-015) ou o Risk Agent (BL-018), via `RULE-ECC-05` (proposta, pendente de homologação).

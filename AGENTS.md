@@ -20,7 +20,9 @@
 | `ROADMAP.md` | Sequência oficial de Specs, Spec autorizada, decisões abertas ativas |
 | `atomic-spec.md` | Método vigente (BASpec, D0–D9, Enforcement Contract, etiquetagem) |
 
-Se qualquer um faltar na raiz: o Especificador para e reporta a Andraus; o Revisor emite NÃO CONFORME Crítica.
+| `WORKFLOW.md` | **Setup operacional soberano de Andraus** (pipeline runtime, IDs `WF-xx`/`WF-Dxx`, versão vigente no cabeçalho). Spec que toque o pipeline (agentes analíticos, Manager, Risco, Conviction/Fusion) **conforma-se** a ele; citar só por ID. Edição só por Andraus (versão+changelog+`docs/_legacy/`) |
+
+Se qualquer um (ROADMAP/atomic-spec) faltar na raiz: o Especificador para e reporta a Andraus; o Revisor emite NÃO CONFORME Crítica.
 
 ---
 
@@ -32,6 +34,7 @@ Se qualquer um faltar na raiz: o Especificador para e reporta a Andraus; o Revis
 raiz/
 ├── ROADMAP.md              ← sequência de Specs (leitura obrigatória)
 ├── atomic-spec.md          ← método (leitura obrigatória)
+├── WORKFLOW.md             ← setup operacional de Andraus (referência soberana; §1)
 ├── AGENTS.md               ← este arquivo
 ├── GLOSSARIO.md            ← identidade, equivalências de nomes, termos canônicos
 ├── governance/             ← autoridade normativa F.1 do harness

@@ -150,7 +150,7 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 | SRC-06 TOPSIS/MCDA | ✔ sources/SRC-06-topsis-mcda-aggregation.txt | ✔ |
 | SRC-07 MCDA sensitivity/robustness | ✔ sources/SRC-07-mcda-sensitivity-robustness.txt | ✔ |
 
-- **RULE-ECC-05 (3 lentes):** presentes no Dossiê (research.md) e refletidas no Plan — (1) Arquitetura (§3.1 → CF-004/005/CCM-001); (2) Escola/risco-retorno (§3.2 → Kelly/sizing ADIADO ao Risk Agent, CF-008 non-goal); (3) confronto RUNTIME-WORKFLOW (§3.3 → macro/global CF-010; motor 1x/2x e acepção abertos). ✔
+- **RULE-ECC-05 (3 lentes):** presentes no Dossiê (research.md) e refletidas no Plan — (1) Arquitetura (§3.1 → CF-004/005/CCM-001); (2) Escola/risco-retorno (§3.2 → Kelly/sizing ADIADO ao Risk Agent, CF-008 non-goal); (3) confronto WORKFLOW.md (§3.3 → macro/global CF-010; motor 1x/2x e acepção abertos). ✔
 - As decisões adotar/adaptar/rejeitar/adiar do Dossiê estão materializadas: REJEITAR compensatória pura/votos simétricos (CF-005/ADV-CF-03); ADIAR Kelly/sizing (CF-008/non-goal); ADAPTAR normalização/sensibilidade (CF-004/CF-008); fusão DS/Bayes só referência de método (não baseline). ✔
 
 > A **correspondência verbatim** string-a-string é mandato do Revisor (sem web — ENF-03). Aqui só se verifica **presença** dos 7 arquivos e das citações, e **presença das 3 lentes**. **PASS (presença).**

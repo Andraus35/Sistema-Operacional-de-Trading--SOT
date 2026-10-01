@@ -14,7 +14,7 @@
      (RULE-HG-03, RULE-HV-02, RULE-HV-03, RULE-ECC-02) e em RULE-EV-03. -->
 <!-- Acréscimo homologado por Andraus 2026-09-29 (DHR-ECC05-001, compatibilidade Minor): RULE-ECC-05 (Pesquisa
      Multi-Lente — Dossiê de Spec de trading pesquisa Arquitetura + Escola/risco-retorno + confronto com
-     reference/RUNTIME-WORKFLOW-SOT.md; prospectiva desde SPEC-003). Não altera baseline anterior — INV-07. -->
+     WORKFLOW.md; prospectiva desde SPEC-003). Não altera baseline anterior — INV-07. -->
 
 ---
 
@@ -480,7 +480,7 @@ RULE-ECC-05: Toda Spec que define ou toca comportamento de agente analítico (St
              Pesquisa (RULE-ECC-02), pesquisar TRÊS lentes, não
              apenas arquitetura: (1) Arquitetura do SOT; (2) Estado da arte/melhores práticas da
              escola de análise ou de risco-retorno pertinente ao componente (Elliott/SMC/ICT/
-             gestão de risco); (3) confronto explícito com `reference/RUNTIME-WORKFLOW-SOT.md`
+             gestão de risco); (3) confronto explícito com `WORKFLOW.md`
              (pipeline operacional canônico declarado por Andraus). Specs de meta-harness/
              governança (SPEC-002/019/020/021 e análogas) ficam fora do escopo — não tocam
              comportamento de trading. O Revisor audita presença das 3 lentes (mesmo mandato
@@ -488,7 +488,7 @@ RULE-ECC-05: Toda Spec que define ou toca comportamento de agente analítico (St
              3 lentes onde exigível = NÃO CONFORME Crítica (fail-closed, mesmo padrão de
              RULE-ECC-02). Prospectiva — incide a partir de SPEC-003; não retroage sobre
              SPEC-001/002/019/020/021.
-             [Fonte: DHR-ECC05-001; RULE-ECC-02; reference/RUNTIME-WORKFLOW-SOT.md]
+             [Fonte: DHR-ECC05-001; RULE-ECC-02; WORKFLOW.md]
 
 ---
 

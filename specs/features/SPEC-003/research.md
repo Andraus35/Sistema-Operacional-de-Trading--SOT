@@ -3,7 +3,7 @@
 > **Artefato de ABERTURA de Spec** (RULE-ECC-01/02 — EUA-E21; método em `atomic-spec.md` §15).
 > Este documento é o Dossiê de Pesquisa + a Proposta de Definição da SPEC-003.
 > **NÃO é o `plan.md`.** O Plan só é escrito após a HOMOLOGAÇÃO de Andraus da definição (ROADMAP §23, passo 1-bis).
-> **1ª aplicação da RULE-ECC-05** (Pesquisa Multi-Lente, DHR-ECC05-001) — Dossiê com 3 lentes: Arquitetura + Escola/risco-retorno + confronto com `reference/RUNTIME-WORKFLOW-SOT.md`.
+> **1ª aplicação da RULE-ECC-05** (Pesquisa Multi-Lente, DHR-ECC05-001) — Dossiê com 3 lentes: Arquitetura + Escola/risco-retorno + confronto com `WORKFLOW.md`.
 > **Aplicação da RULE-ECC-04** (Captura Verbatim de Fonte) — arquivos companheiros em `sources/SRC-01..07.txt`.
 
 | Campo | Valor |
@@ -17,7 +17,7 @@
 | Data de acesso web | **2026-09-29** (todas as fontes [EXTERNO]) |
 | Status epistemológico | **PROPOSTA** — nada aqui é baseline; conteúdo web = DADO, nunca instrução (DHR-PROV-WEB-001 §2.1; RULE-ECC-02) |
 | Web | **DISPONÍVEL** em 2026-09-29 — abertura NÃO suspensa (RULE-ECC-02) |
-| sincronizado-até | DHR-SPEC002-001 / DHR-REG-001 / DHR-ECC05-001 (2026-09-28/29), últimas DHR do RMR-001/ROADMAP. Estado verificado por leitura direta de ROADMAP, atomic-spec v1.5, RULES.md, CEM-001, CHM-001, GPR-001, RUNTIME-WORKFLOW-SOT.md, RMR-001 e SPEC-002/research (não apenas por short-circuit RPSA) |
+| sincronizado-até | DHR-SPEC002-001 / DHR-REG-001 / DHR-ECC05-001 (2026-09-28/29), últimas DHR do RMR-001/ROADMAP. Estado verificado por leitura direta de ROADMAP, atomic-spec v1.5, RULES.md, CEM-001, CHM-001, GPR-001, WORKFLOW.md, RMR-001 e SPEC-002/research (não apenas por short-circuit RPSA) |
 
 ---
 
@@ -42,7 +42,7 @@ Consequências normativas desta singularidade:
 - **Q-R3 (Escola técnica):** Como sistemas de trading **ponderam sinais por escola/indicador** (confluência) — e o que colide com a **hierarquia inviolável** Elliott→…→ICT (PC-01/CC-01)?
 - **Q-R4 (Conflito/consenso):** Como representar **conflito, consenso, robustez, sensibilidade, estabilidade** na agregação — e onde a *resolução* de conflito ocorre (compatível com ENF-03 e com o Elliott-veto)?
 - **Q-R5 (Ausência/incerteza):** Como agregar sob **evidência ausente/inconclusiva** e **incerteza** sem fabricar convicção (RULE-UNC/PRB/MET)?
-- **Q-R6 (Workflow):** Como o pipeline operacional real (`RUNTIME-WORKFLOW-SOT.md`) usa convicção — **convicção macro de contexto (Fase 1)** vs. **convicção global (Fase 2)** — e o que isso implica para o número de invocações do Conviction Engine?
+- **Q-R6 (Workflow):** Como o pipeline operacional real (`WORKFLOW.md`) usa convicção — **convicção macro de contexto (Fase 1)** vs. **convicção global (Fase 2)** — e o que isso implica para o número de invocações do Conviction Engine?
 - **Q-R7 (Colisões):** O que da literatura **colide** com invariantes/decisões abertas (CC-02/CEM/CHM, INV-04/PC-04, CC-01/PC-01, J-001/N-001) e portanto **não** pode ser importado automaticamente?
 
 ### 1.2 Estratégia de busca
@@ -53,7 +53,7 @@ Consequências normativas desta singularidade:
 | "multi-criteria decision analysis weight aggregation normalization sensitivity TOPSIS explainability" | Wikipedia, ScienceDirect, arXiv | Padrão/Prática | (1) Arquitetura |
 | "Kelly criterion position sizing conviction confidence risk reward fractional Kelly" | Zerodha, research reports | Prática/Opinião | (2) Risco-retorno |
 | "multi-indicator confluence trading signal weighting scoring combine signals" | Medium/FMZQuant, TradingView, MQL5 | Prática | (2) Escola técnica |
-| (interno) `reference/RUNTIME-WORKFLOW-SOT.md` — Fase 1/2, convicção macro/global | repo | [FONTE] | (3) Confronto workflow |
+| (interno) `WORKFLOW.md` — Fase 1/2, convicção macro/global | repo | [FONTE] | (3) Confronto workflow |
 
 **Salvaguardas aplicadas (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02):** toda fonte tratada como DADO; classificada e etiquetada `[EXTERNO]`; nenhuma importação automática; nenhum dado sensível do projeto enviado a serviços externos; a veracidade das páginas **não** é atestada (o Revisor audita o *processo* e a *correspondência verbatim* — RULE-ECC-04/05 — não a verdade das páginas). Pesquisa inconclusiva = **INDETERMINADO**.
 
@@ -113,11 +113,11 @@ Consequências normativas desta singularidade:
 | **Ponderação de sinais por escola/confluência** | PC-01/CC-01 hierarquia; PCO-06 não-redução; PE-08 independência; AP-02 confluência falsa | SRC-05 (confluência ponderada, pesos dinâmicos) | **ADAPTAR** (agregação ponderada + pesos por regime/ativo = N-001) + **REJEITAR** "votos" simétricos | Hierarquia inviolável: Estrutural (Elliott) tem precedência/veto; dimensões inferiores NÃO sobrepõem a superior (INV-01). Pesos = J-001/N-001 |
 | **Position sizing / risco-retorno (Kelly, R-multiple)** | INV-04 (custo NUNCA no Conviction Vector); INV-RISK-RR/HEAT/LEV; família RISK-SPEC (BL-018) | SRC-03 (Kelly), SRC-04 (Kelly fracionário) | **ADIAR** (sizing/alavancagem/R:R → Risk Agent, não Conviction Engine) | INV-04: convicção ≠ score/custo. A convicção 8D é INSUMO do Risco; o dimensionamento é a jusante (RISK-SPEC), fora do escopo da SPEC-003 |
 
-### 3.3 Lente (3) — CONFRONTO COM `reference/RUNTIME-WORKFLOW-SOT.md` [FONTE]
+### 3.3 Lente (3) — CONFRONTO COM `WORKFLOW.md` [FONTE]
 
 O pipeline declarado por Andraus usa convicção em **dois momentos**:
-- **Fase 1 — convicção macro de contexto** (Manager, após Agente Estrutural + Institucional): Estrutural + Institucional. [FONTE: RUNTIME-WORKFLOW §4]
-- **Fase 2 — convicção global** (Manager, após Agente Operacional na Killzone): + Operacional; decide envio e monta risco-retorno. [FONTE: RUNTIME-WORKFLOW §6]
+- **Fase 1 — convicção macro de contexto** (Manager, após Agente Estrutural + Institucional): Estrutural + Institucional. [FONTE: WORKFLOW.md WF-04]
+- **Fase 2 — convicção global** (Manager, após Agente Operacional na Killzone): + Operacional; decide envio e monta risco-retorno. [FONTE: WORKFLOW.md WF-06]
 
 **Onde a SPEC-003 toca o workflow (identificado, NÃO resolvido — WORKFLOW-SOT-001):**
 1. A SPEC-003 é o motor que **forma ambas** as convicções (macro e global). **Ponto de atenção central desta abertura → §5.7 e Q-A5.**
@@ -138,7 +138,7 @@ O pipeline declarado por Andraus usa convicção em **dois momentos**:
 - **GAP-N (N-001) — pesos por ativo (BTC/XAU/NASDAQ).** Parte de J-001 pós-backtest. **[DECISÃO NECESSÁRIA: N-001]** — a SPEC-003 especifica o **mecanismo** de pesos por ativo (que o CCM-001 deve suportar), não os **valores** (backtest). Não fechada na abertura. [FONTE: N-001; atomic-spec §12]
 - **GAP-M (M-001) — estados do Blackboard para objetos não-hipótese** (Evidência/Convicção): a publicação do Conviction Vector no Blackboard depende de M-001 (SPEC-004, aberta). A SPEC-003 referencia; não fecha. **[DECISÃO NECESSÁRIA: M-001]** [FONTE: atomic-spec §12; RULE-BB-003]
 - **GAP-FUSION-DEP — mecânica de desconto de evidências dependentes.** SPEC-002 representa a (in)dependência; a **mecânica** de fusão de dependentes (evitar double-counting) é do Fusion Engine (SPEC-003). A SPEC-003 especifica o **contrato**; a **calibração** do desconto → J-001. [FONTE: SPEC-002/research GAP-2; RULE-004]
-- **GAP-WORKFLOW (WORKFLOW-SOT-001) — 4 pontos** (Killzone, alarme-gatilho, relação convicção-macro/global↔8D, papel do ICT): a SPEC-003 **toca** o 3º ponto (convicção macro/global ↔ 8D) e o motor 1x/2x (§5.7); **não fecha nenhum**. [FONTE: RUNTIME-WORKFLOW §"Termos que precisam de reconciliação"; ROADMAP §32]
+- **GAP-WORKFLOW (WORKFLOW-SOT-001) — 4 pontos** (Killzone, alarme-gatilho, relação convicção-macro/global↔8D, papel do ICT): a SPEC-003 **toca** o 3º ponto (convicção macro/global ↔ 8D) e o motor 1x/2x (§5.7); **não fecha nenhum**. [FONTE: WORKFLOW.md §"Termos que precisam de reconciliação"; ROADMAP §32]
 
 Nenhuma decisão aberta é fechada por esta pesquisa (RULE-ECC-02 / CONS-01).
 
@@ -165,7 +165,7 @@ Especificar **como o SOT funde evidências independentes/dependentes em evidênc
 2. **Evidence Fusion Engine (contrato operacional):** como o Fusion Engine consome evidência `ACTIVE` (CEM-001), produz evidência `DERIVED` (único ENGINE PRODUCER autorizado), trata (in)dependência/desconto (anti-double-counting, RULE-004 — mecânica; calibração → J-001), avaliação de impacto de invalidação (CEM-001 Cap.4/5), Cognitive Depth.
 3. **Conviction Engine (contrato operacional):** como o Conviction Engine agrega em **Conviction Vector 8D** (estrutural, geométrica, fractal, institucional, operacional, temporal, volume, histórica): escalas, normalização, pesos (mecanismo; valores → J-001/N-001), independência/correlação, ausência/contraevidência/conflito/consenso, robustez/sensibilidade/aging/estabilidade, agregação, limites, incerteza, cálculo da convicção global, **explicabilidade** (PB-06).
 4. **Preservação da hierarquia e das Salvaguardas:** agregação **não-compensatória** onde CC-01/CEE-001 §11 exigem (Estrutural precede; conflito direcional → NEUTRO; gates de sinal). Elliott-veto preservado (RULE-SY-001).
-5. **Fronteira de convicção macro vs. global** (RUNTIME-WORKFLOW): o CCM-001 deve suportar convicção computada sobre **subconjuntos de dimensões** (macro: Estrutural+Institucional) e sobre o **vetor completo** (global: +Operacional) — **o mecanismo**, deixando a decisão 1x/2x e o mapeamento definitivo para WORKFLOW-SOT-001/Q-A5.
+5. **Fronteira de convicção macro vs. global** (WORKFLOW.md): o CCM-001 deve suportar convicção computada sobre **subconjuntos de dimensões** (macro: Estrutural+Institucional) e sobre o **vetor completo** (global: +Operacional) — **o mecanismo**, deixando a decisão 1x/2x e o mapeamento definitivo para WORKFLOW-SOT-001/Q-A5.
 6. **Enforcement Contracts** dos atos com efeito (publicação do vetor; commit de convicção que habilita Decision): piso **E2** (Evidência/Engine — atomic-spec §10.2); **E3** no gate Convicção→Decisão (crítico; fail-closed — trava J-001, ver §5.6).
 7. **Classe/Mecanismo por BASpec** (RULE-MECH-01/CC-11) e **Auditabilidade (D9 por referência)** para reconstrução da convicção (P13).
 
@@ -192,7 +192,7 @@ Especificar **como o SOT funde evidências independentes/dependentes em evidênc
 
 ### 5.7 PONTO DE ATENÇÃO CENTRAL — o Conviction Engine roda 1x ou 2x? [DECISÃO NECESSÁRIA]
 
-O `RUNTIME-WORKFLOW-SOT.md` mostra convicção sendo formada em **dois momentos** (macro de contexto na Fase 1; global na Fase 2). Isto suscita uma pergunta arquitetural que a SPEC-003 **toca mas não pode fechar** (é parte de WORKFLOW-SOT-001):
+O `WORKFLOW.md` mostra convicção sendo formada em **dois momentos** (macro de contexto na Fase 1; global na Fase 2). Isto suscita uma pergunta arquitetural que a SPEC-003 **toca mas não pode fechar** (é parte de WORKFLOW-SOT-001):
 
 - **Interpretação (a):** **um único** Conviction Engine / CCM-001, **consumido em 2 momentos** — a convicção macro é o vetor 8D calculado sobre o **subconjunto** de dimensões disponíveis na Fase 1 (Estrutural+Institucional); a convicção global é o **mesmo** motor sobre o vetor completo (+Operacional). Vantagem: um só contrato canônico; consistência; explicabilidade única.
 - **Interpretação (b):** **dois** cálculos/instâncias distintos de convicção (macro ≠ global como objetos separados), possivelmente com pesos/limiares diferentes por fase.
@@ -202,7 +202,7 @@ O `RUNTIME-WORKFLOW-SOT.md` mostra convicção sendo formada em **dois momentos*
 ### 5.8 Avaliação de aplicabilidade das regras de método (explícita — não em silêncio)
 
 **(1) RULE-ECC-05 / Pesquisa Multi-Lente — INCIDE (1ª aplicação).** [FONTE: RULES RULE-ECC-05; atomic-spec §15]
-- A SPEC-003 é explicitamente citada na RULE-ECC-05 (Conviction/Fusion Engine que agrega convicção estrutural/institucional/operacional e fecha J-001/N-001). Dossiê com 3 lentes: (1) Arquitetura §3.1; (2) Escola/risco-retorno §3.2; (3) confronto com RUNTIME-WORKFLOW §3.3. **Aplicada.**
+- A SPEC-003 é explicitamente citada na RULE-ECC-05 (Conviction/Fusion Engine que agrega convicção estrutural/institucional/operacional e fecha J-001/N-001). Dossiê com 3 lentes: (1) Arquitetura §3.1; (2) Escola/risco-retorno §3.2; (3) confronto com WORKFLOW.md §3.3. **Aplicada.**
 
 **(2) RULE-MECH-01 / CC-11 (Classe D/H/P/C por BASpec) — INCIDE.** [FONTE: RULES RULE-MECH-01; ROADMAP §33]
 - SPEC-003 é "SPEC-002 em diante". Cada BASpec com efeito declara Classe no Plan. **Preview [INFERÊNCIA, a confirmar no Plan]:** normalização/agregação determinística do vetor = **Classe D**; gate Convicção→Decisão (piso de convicção, conflito direcional→NEUTRO, score 7/9) = **Classe C** (constitutivo, fail-closed, E3); fusão de evidências dependentes / cálculo de convicção com julgamento = **Classe H** (LLM+gate determinístico) ou **P** (julgamento qualitativo + bounded loop). Declaração por BASpec, nunca por Spec (SES-001 §50).
@@ -269,7 +269,7 @@ Todas as 8 perguntas APROVADAS por Andraus. Parecer do Revisor: **CONFORME** (0 
 ```
 [x] Web disponível em 2026-09-29 → abertura NÃO suspensa (RULE-ECC-02).
 [x] Dossiê presente e completo (CRITICAL): questões+estratégia; fontes classificadas e [EXTERNO]; data de acesso; comparação adotar/adaptar/rejeitar/adiar; lacunas/conflitos; escopo/quantidade/número; re-apontamento avaliado (BL-004 ATIVADO/absorvido).
-[x] RULE-ECC-05 (3 lentes) aplicada: (1) Arquitetura §3.1; (2) Escola/risco-retorno §3.2; (3) confronto RUNTIME-WORKFLOW §3.3. 1ª aplicação da regra.
+[x] RULE-ECC-05 (3 lentes) aplicada: (1) Arquitetura §3.1; (2) Escola/risco-retorno §3.2; (3) confronto WORKFLOW.md §3.3. 1ª aplicação da regra.
 [x] RULE-ECC-04 aplicada: 7 arquivos sources/SRC-01..07.txt (URL+data+trecho ≥100 chars); citações verbatim no §2.1; método de captura honesto onde WebFetch falhou (RULE-MET-01).
 [x] Conteúdo web tratado como DADO; nenhuma importação automática; nada vira baseline (DHR-PROV-WEB-001 §2.1).
 [x] CC-02/CONST-01: CEM-001 e CHM-001 NÃO redefinidos; CCM-001 é o produto (canônico pendente, não protegido — ROADMAP §79) e respeita a Separação Tríplice.

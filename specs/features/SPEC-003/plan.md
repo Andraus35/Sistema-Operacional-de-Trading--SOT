@@ -164,7 +164,7 @@ Os três componentes cobertos (topologia B-001 FECHADA): **(1) Evidence Fusion E
 | S2 | **Evidence Fusion Engine:** consumo de evidência ACTIVE (CEM-001), produção de DERIVED (único ENGINE PRODUCER), mecânica de desconto anti-double-counting (calibração→J-001), avaliação de impacto de invalidação, Cognitive Depth | CEM-001 Cap.2/4/5/6; RULE-004; research.md §5.3(2) |
 | S3 | **Conviction Engine / Conviction Vector 8D:** escalas, normalização por dimensão, pesos (mecanismo; valores→J-001/N-001), independência/correlação, ausência/contraevidência/conflito/consenso, robustez/sensibilidade/aging/estabilidade, agregação, limites, incerteza, cálculo da convicção global, explicabilidade (PB-06) | ROADMAP §143; GPR-001 PCO-06/PB-06; research.md §5.3(3) |
 | S4 | **Preservação da hierarquia e Salvaguardas:** agregação **NÃO-compensatória** (estrutural precede/veta; conflito direcional→NEUTRO; gates de sinal); Elliott-veto (RULE-SY-001) | INV-01; RULE-005/SY-001; CEE-001 §11; research.md §5.3(4) |
-| S5 | **Convicção macro vs. global (mecanismo):** o CCM-001 suporta convicção sobre **subconjunto** de dimensões (macro: estrutural+institucional) e sobre o **vetor completo** (global: +operacional) — o mecanismo, **sem** fixar número de invocações (WORKFLOW-SOT-001/Q-A5) | RUNTIME-WORKFLOW §4/§6; research.md §5.3(5)/§5.7 |
+| S5 | **Convicção macro vs. global (mecanismo):** o CCM-001 suporta convicção sobre **subconjunto** de dimensões (macro: estrutural+institucional) e sobre o **vetor completo** (global: +operacional) — o mecanismo, **sem** fixar número de invocações (WORKFLOW-SOT-001/Q-A5) | WORKFLOW.md WF-04/WF-06; research.md §5.3(5)/§5.7 |
 | S6 | **Limiares-piloto interinos** ≥70% / 7-9 como FATO NORMATIVO interino (Questionário v1); gate Convicção→Decisão | AGENTS.md §6; RULE-003/SY-003/CEE-004; research.md §6-bis Q-A4 |
 | S7 | **Enforcement Contracts** dos atos com efeito: piso **E2** (Evidência/Engine); **E3** no gate Convicção→Decisão (crítico/irreversível; fail-closed; ENF-07 falso-DENY) | ENF-01/02/04/07; atomic-spec §10.2; research.md §5.3(6) |
 | S8 | **Classe/Mecanismo por BASpec** (CC-11) e **Auditabilidade (D9 por referência)** para reconstrução da convicção (P13; RULE-010) | RULE-MECH-01; CONSTITUTION P13; RULE-010; research.md §5.3(7) |
@@ -247,7 +247,7 @@ RULE-CF-009: O gate Convicção→Decisão aplica os limiares-piloto interinos (
 RULE-CF-010: O CCM-001 DEVE suportar convicção computada sobre SUBCONJUNTO de dimensões (macro) e sobre o
              VETOR COMPLETO (global) — o mecanismo. O NÚMERO de invocações (1x/2x) NÃO é fixado por esta Spec
              (pertence ao Manager/Scheduler — WORKFLOW-SOT-001).
-             [Fonte: RUNTIME-WORKFLOW §4/§6; WORKFLOW-SOT-001; research.md §5.7]  [PROPOSTA]
+             [Fonte: WORKFLOW.md WF-04/WF-06; WORKFLOW-SOT-001; research.md §5.7]  [PROPOSTA]
 
 RULE-CF-011: Toda convicção publicada DEVE ser rastreável e reconstruível (RULE-010; P13): dimensões de
              entrada, normalização, pesos aplicados, regra de agregação, conflitos, robustez/sensibilidade e
@@ -498,7 +498,7 @@ BASpec-CF-010:
                 (WORKFLOW-SOT-001)
   PORQUE:       O workflow usa convicção macro (Fase 1) e global (Fase 2); a invocação é do Manager/Scheduler,
                 não da SPEC-003 (research.md §5.7; WORKFLOW-SOT-001)
-  REFERÊNCIA:   RUNTIME-WORKFLOW §4/§6; WORKFLOW-SOT-001; RULE-CF-010
+  REFERÊNCIA:   WORKFLOW.md WF-04/WF-06; WORKFLOW-SOT-001; RULE-CF-010
   CLASSE/MECANISMO:
     CLASSE      : D (Determinístico)
     MECANISMO   : o motor aceita o conjunto de dimensões como parâmetro; computa sobre o subconjunto informado
@@ -637,7 +637,7 @@ O **objeto Conviction Vector** (produto do CCM-001) tem um ciclo operacional mí
 10. **Publicação (CF-013):** vetor + reconstrução completa (P13/RULE-010), append-only; estados do Blackboard = **M-001 (aberta)**.
 11. **Encaminhamento:** ao **Synthesis Agent (SPEC-014)** — fora do escopo.
 
-> **Nota WORKFLOW-SOT-001 [DECISÃO NECESSÁRIA — aberta]:** o número de invocações (macro 1x na Fase 1; global 2x na Fase 2) é do **Manager/Scheduler** — a Spec só fornece o mecanismo (CF-010); não decide (Q-A5). [FONTE: RUNTIME-WORKFLOW; WORKFLOW-SOT-001]
+> **Nota WORKFLOW-SOT-001 [DECISÃO NECESSÁRIA — aberta]:** o número de invocações (macro 1x na Fase 1; global 2x na Fase 2) é do **Manager/Scheduler** — a Spec só fornece o mecanismo (CF-010); não decide (Q-A5). [FONTE: WORKFLOW.md; WORKFLOW-SOT-001]
 
 ---
 
@@ -951,7 +951,7 @@ Pipeline cognitivo de 2 motores (B-001): **Fusion Engine** (produz evidência DE
 Gates constitutivos/determinísticos (C/D) não requerem LLM. Os julgamentos (H/P — anti-double-counting, agregação não-compensatória, ausência/incerteza, robustez) usam apoio semântico: Tipo III (julgamento especialista) → **Sonnet** como detector; Tipo IV–V (conflito multi-narrativa/agregação complexa) → **Opus reservado** apenas como detector, **nunca como gate** (ENF-03). Roteamento definitivo por Engineering Card (BUILD adiado). [FONTE: CEE-001 §5/RULE-CEE-002; ENF-03]
 
 ### Dependências técnicas
-CEM-001 (BASELINE) · CHM-001 (BASELINE) · SPEC-001 v1.1 (BASELINE) · SPEC-002 (BASELINE, DHR-SPEC002-001) · SPEC-019/020/021 v1.0 (BASELINE) · atomic-spec v1.5 · RULES.md v1.5 (INV-*, ENF-*, RULE-002/003/004/005/008/010, RULE-SY-*, RULE-CEE-004, RULE-GMC-*, RULE-BB-*, RULE-EPI/CAU/MET/UNC/PRB/DEC/SEM) · GPR-001 (PC-04/PCO-06/PB-06) · CEE-001 v2.0 · EC-COG-005 (Event Bus — contrato → SPEC-005) · reference/RUNTIME-WORKFLOW-SOT.md (confronto RULE-ECC-05). Referências externas [EXTERNO], não-baseline: research.md §2 (SRC-01..07).
+CEM-001 (BASELINE) · CHM-001 (BASELINE) · SPEC-001 v1.1 (BASELINE) · SPEC-002 (BASELINE, DHR-SPEC002-001) · SPEC-019/020/021 v1.0 (BASELINE) · atomic-spec v1.5 · RULES.md v1.5 (INV-*, ENF-*, RULE-002/003/004/005/008/010, RULE-SY-*, RULE-CEE-004, RULE-GMC-*, RULE-BB-*, RULE-EPI/CAU/MET/UNC/PRB/DEC/SEM) · GPR-001 (PC-04/PCO-06/PB-06) · CEE-001 v2.0 · EC-COG-005 (Event Bus — contrato → SPEC-005) · WORKFLOW.md (confronto RULE-ECC-05). Referências externas [EXTERNO], não-baseline: research.md §2 (SRC-01..07).
 
 ### Riscos técnicos e Salvaguardas
 | Risco | Salvaguarda |
@@ -1047,7 +1047,7 @@ Nenhuma obrigação herdada suprimida (REMOVED vazio) nem contradita (o único M
 [x] Constitution Check CC-01..CC-12 preenchido (N/A justificados CC-06/07/12; CC-10/CC-11 INCIDEM e aplicados).
 [x] Disciplinas N8–N17: RULE-EPI (INDETERMINADO/ausência), RULE-CAU-01 (dependência), RULE-MET-01 (não-fabricação), RULE-UNC/PRB (qualitativo; sem falsa precisão), RULE-DEC-01 (produz≠executa), RULE-SEM-01 (acepção declarada).
 [x] Referências externas SRC-01..07 [EXTERNO] classificadas (research.md §2); rótulos externos (DS/Bayes/TOPSIS/Kelly) NÃO adotados como baseline; verbatim capturado (RULE-ECC-04, sources/).
-[x] RULE-ECC-05 (3 lentes) refletida no Plan: Arquitetura (§3.1), Escola/risco-retorno (§3.2 — Kelly ADIADO ao Risk Agent), confronto RUNTIME-WORKFLOW (§3.3 — macro/global, motor 1x/2x aberto) — decisões adotar/adaptar/rejeitar/adiar incorporadas em BASpecs/Non-goals.
+[x] RULE-ECC-05 (3 lentes) refletida no Plan: Arquitetura (§3.1), Escola/risco-retorno (§3.2 — Kelly ADIADO ao Risk Agent), confronto WORKFLOW.md (§3.3 — macro/global, motor 1x/2x aberto) — decisões adotar/adaptar/rejeitar/adiar incorporadas em BASpecs/Non-goals.
 [x] Spec sem implementação (BUILD adiado); Plan derivado; Tasks adiadas (spec-first).
 [x] Critérios em EARS (10); BASpecs completas (CF-001..013) com Classe declarada (CC-11); RULEs citadas existentes vs propostas (RULE-CF/CCM-001 [PROPOSTA]) etiquetadas.
 [x] Profundidade D0–D8 atingida (D5 ciclo convicção + CEM-001 Cap.4; D6 protocolo pipeline B-001; D7 x8; D8 adversarial x12; D9 por referência).
