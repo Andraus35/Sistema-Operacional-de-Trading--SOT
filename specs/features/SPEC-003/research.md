@@ -335,6 +335,18 @@ A versão vigente acrescentou regras operacionais nomeadas que o Dossiê origina
 
 ---
 
+## 9. Nota de delta v1.4 — Q-A9 (dimensão do regime) DECIDIDA pela SPEC-003 [FONTE]
+
+> **Natureza:** este Dossiê de abertura (§0–§8) é **histórico/imutável** (RCN-001/INV-07) e **não é reescrito**. Esta nota registra apenas que a questão **Q-A9**, que §8.3 deixou como `[DECISÃO NECESSÁRIA — a cargo da SPEC-003]`, foi **decidida pela SPEC-003** no `plan.md`/`checks.md` **v1.4**, por delegação direta de Andraus (chat, 2026-10-01: "Spec decide: temporal + corrigir F-01"), em resposta à interpelação **I-01** do Revisor (parecer **CONFORME** v1.3). Nada aqui fecha outra decisão aberta (CONS-01).
+
+- **Q-A9 — decidida:** o **regime de mercado** (tendência/range/alta volatilidade, WF-C04) é hospedado na dimensão **`temporal`** do Conviction Vector 8D (**Opção A** de §8.3 e de `research-Q-A9-regime.md` §7). É **dimensão de convicção, não gate, não veto** (WF-C04/INV-01), **não** cria 9ª dimensão (INV-03), **não** toca custo/sizing (INV-04). **Opção C (estrutural) rejeitada** (contaminaria o veto de Elliott — INV-01; double-counting tendência×estrutural). **Opção D (modulador transversal) não adotada** (extrapolaria WF-C04; só com reinterpretação de Andraus).
+- **Status:** decidida **por delegação**; **ratifica na homologação** da SPEC-003 (ata `governance/DHR-DEC-002`). Enquanto não homologada, não é escrita como "FECHADA" (CONS-01).
+- **Limitação declarada (RULE-MET-01):** a evidência [EXTERNO] de regime-por-dimensão é **Moderada/Fraca** — `research-Q-A9-regime.md` rebaixou SRC-R03 (abstracts; Springer 303 não-fetchada) e SRC-R04 (snippets de WebSearch). A decisão é **arquiteturalmente defensável**, não forte-empírica.
+- **Resíduo que permanece ABERTO (CONS-01):** o **peso/limiar** do regime na dimensão `temporal` = **J-001/N-001** (pós-backtest); **WF-D03** permanece ABERTA no resíduo **J-001/N-001** (regime sai do resíduo — a dimensão foi decidida; a invocação já saíra por Q-A5/DHR-DEC-001). **M-001** (estados do Blackboard) e **SPEC-015-SCOPE** seguem abertas.
+- **Materialização no Plan v1.4 (sem renumerar BASpecs):** RULE-CF-003 estendida (regime→temporal); CCM-001 skeleton + I/O (campo de regime dentro da `temporal`; INDETERMINADO se não classificável — nunca zero); CF-004/CF-007/CF-009 ajustadas; EARS #11; D7 CF-T09; D8 ADV-CF-13/ADV-CF-14; ADV-CF-12 reformulada; F-01 corrigido na Etiquetagem.
+
+---
+
 ## Sources (fontes [EXTERNO] — acesso 2026-09-29)
 
 - [Bayesian and Dempster-Shafer models for combining multiple sources of evidence (arXiv 2104.07440)](https://arxiv.org/abs/2104.07440)

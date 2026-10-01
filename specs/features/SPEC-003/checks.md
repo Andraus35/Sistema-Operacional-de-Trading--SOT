@@ -7,6 +7,21 @@
 
 ---
 
+## 0-quater. Nota de delta v1.4 (decisão da Spec — Q-A9 regime→`temporal` + F-01) [FONTE]
+
+> Esta verificação cobre agora o `plan.md` **v1.4**. O delta v1.4 incorpora a **decisão da SPEC-003 sobre Q-A9** (por delegação direta de Andraus, chat 2026-10-01: "Spec decide: temporal + corrigir F-01", em resposta à interpelação I-01 do Revisor, parecer CONFORME v1.3) e a **correção F-01**. Efeitos verificados:
+> - **Q-A9 DECIDIDA pela Spec:** o **regime de mercado (WF-C04)** é hospedado na dimensão **`temporal`** do Conviction Vector 8D — dimensão de convicção, **não gate, não veto** (WF-C04/INV-01), **sem 9ª dimensão** (INV-03), **sem** tocar custo/sizing (INV-04). Decisão por delegação; **ratifica na homologação** (DHR-DEC-002). Fundamento: `research-Q-A9-regime.md` ([EXTERNO]; Opção A=temporal; Opção C=estrutural rejeitada). **Limitação declarada:** evidência Moderada/Fraca (SRC-R03/R04 rebaixadas); peso do regime = J-001/N-001 (ABERTAS). ✔
+> - **RULE-CF-003 estendida** (mapeamento regime→temporal, [PROPOSTA]) — sem novo número de RULE, sem renumerar BASpecs. ✔
+> - **CCM-001 skeleton + I/O:** campo de regime dentro da dimensão `temporal`; INDETERMINADO quando não classificável — nunca zero. ✔
+> - **BASpecs afetadas SEM renumerar:** CF-004 (normalização da feature de regime), CF-007 (regime em transição → INDETERMINADO), CF-009 (peso do regime = mecanismo; valor = J-001/N-001). CF-001..013 mantidas. ✔
+> - **EARS #11** (regime→temporal, não gate, INDETERMINADO em transição); **D7 CF-T09** (cenário positivo); **D8 ADV-CF-13** (regime vira gate/veto) + **ADV-CF-14** (regime contamina estrutural / 9ª dimensão); **ADV-CF-12 reformulada** (dimensão do regime sai do out-of-scope — decidida; permanece: invocação=Manager, peso=J-001/N-001, estados=M-001). ✔
+> - **F-01 corrigido:** a linha da Etiquetagem que conflava "nº de invocações (1x/2x)" com "dimensão do regime" foi **separada em duas** — Q-A5 (2x) [FONTE]/FECHADA (DHR-DEC-001; WF-C01) e regime/Q-A9 [PROPOSTA]/decidida pela Spec (v1.4). ✔
+> - **WF-D03 permanece ABERTA — resíduo agora só J-001/N-001** (regime saiu do resíduo: decidido pela Spec; invocação já saíra por Q-A5). Nenhuma `WF-Dxx` declarada fechada. ✔
+> - **CONS-01:** J-001/N-001/M-001/SPEC-015-SCOPE intactas; Q-A9 não é escrita como "FECHADA" (é "decidida pela Spec, ratifica na homologação"). ✔
+> **PASS (delta de decisão + correção).**
+
+---
+
 ## 0-ter. Nota de delta v1.3 (propagação DHR-DEC-001 — Q-A5 fechada) [FONTE]
 
 > Esta verificação cobre agora o `plan.md` **v1.3**. O delta v1.3 propaga a decisão direta de Andraus (DHR-DEC-001, chat, 2026-10-01): **Q-A5 FECHADA** — o número de invocações do mecanismo de Conviction Vector é **2x por ciclo** (macro Fase 1 / global Fase 2), declarado em `WORKFLOW.md` WF-C01 (versão vigente, v2.1). **Sem mudança de mérito** — BASpecs (CF-001..013), EARS (10), Enforcement (EC-CF-001..006), Classe/Mecanismo e D0–D8 **inalterados e NÃO renumerados**. Efeitos verificados:
@@ -54,8 +69,8 @@
 | D4 Algoritmo | Quando há regra determinística numérica | Parcial/N/A | Normalização (CF-004), veto (CF-006), gate (CF-012) determinísticos; fórmula/pesos definitivos N/A (J-001/N-001) — justificado |
 | D5 Estado | Sim | ✔ | Ciclo do objeto convicção (COMPUTED/GATED_*/SUPERSEDED) + CEM-001 Cap.4 (evidência, não redefinido) |
 | D6 Protocolo | Sim | ✔ | Pipeline B-001 (Fusion→Conviction→[Synthesis]); 11 passos; M-001/WORKFLOW referenciados como abertos |
-| D7 Teste | Sim (CRITICAL) | ✔ | Cenários CF-T01..T08 |
-| D8 Adversarial | Sim (CRITICAL) | ✔ | ADV-CF-01..12 (12 cenários) |
+| D7 Teste | Sim (CRITICAL) | ✔ | Cenários CF-T01..T09 (T09 = regime→`temporal`, Q-A9) |
+| D8 Adversarial | Sim (CRITICAL) | ✔ | ADV-CF-01..14 (14 cenários; ADV-CF-13 regime-gate, ADV-CF-14 regime-contamina-estrutural) |
 | D9 Auditoria | Sistema completo | Parcial (por referência) | Reconstrução/Cognitive Trace → SPEC-006/H-001; P13/RULE-010 |
 
 **Resultado:** profundidade-alvo D0–D8 atingida. D4 numérico definitivo N/A justificado (J-001/N-001 abertos; a Spec fixa método/mecanismo + limiares-piloto interinos).
@@ -86,7 +101,7 @@ Todas com 1 condição · 1 comportamento · ≤2 RULES · 1 cenário; cada BASp
 
 ## 3. Critérios EARS
 
-10 critérios no formato "Quando <condição>, o <componente> DEVE/NÃO DEVE <resposta>". Sem multi-outcome não-decomposto. **PASS.**
+11 critérios no formato "Quando <condição>, o <componente> DEVE/NÃO DEVE <resposta>" (o #11 = regime→`temporal`/INDETERMINADO, Q-A9). Sem multi-outcome não-decomposto. **PASS.**
 
 ---
 
@@ -131,7 +146,7 @@ Preenchido no plan.md. CC-01 (não-compensatória/veto estrutural), CC-02 (CEM/C
 | J-001 NÃO fechada; nenhum valor/pesos/limiar definitivo de convicção fixado (RULE-CF-003/004/009; ADV-CF-09) | ✔ |
 | N-001 NÃO fechada; só o mecanismo de pesos por ativo (CF-009) | ✔ |
 | M-001 NÃO fechada; estados do Blackboard para o Conviction Vector não fixados (CF-013; ADV-CF-12) | ✔ |
-| WORKFLOW-SOT-001 NÃO fechada; invocação 1x/2x e reconciliação da acepção não fixadas (CF-010; ADV-CF-12) | ✔ |
+| WF-D03 NÃO fechada — resíduo aberto = J-001/N-001 (invocação 2x FECHADA por Q-A5; regime→`temporal` DECIDIDO pela Spec [Q-A9/v1.4, ratifica na homologação], não escrito como "FECHADA"; acepção resolvida por DHR-ARQ-001) (CF-010; ADV-CF-12/13/14) | ✔ |
 | B-001 e dimensionalidade=8 citadas como FECHADAS (ROADMAP) — não reabertas | ✔ |
 | Limiares-piloto ≥70%/7-9 etiquetados FATO NORMATIVO interino (Q-002), não definitivos | ✔ |
 | RULE-CF/CCM-001 etiquetadas [PROPOSTA]; CEM/CHM/INV-*/ENF-*/RULE-* existentes como FATO NORMATIVO | ✔ |
@@ -186,7 +201,7 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 | SRC-06 TOPSIS/MCDA | ✔ sources/SRC-06-topsis-mcda-aggregation.txt | ✔ |
 | SRC-07 MCDA sensitivity/robustness | ✔ sources/SRC-07-mcda-sensitivity-robustness.txt | ✔ |
 
-- **RULE-ECC-05 (3 lentes):** presentes no Dossiê (research.md) e refletidas no Plan — (1) Arquitetura (§3.1 → CF-004/005/CCM-001); (2) Escola/risco-retorno (§3.2 → Kelly/sizing ADIADO ao Risk Agent, CF-008 non-goal); (3) confronto WORKFLOW.md (§3.3 → macro/global CF-010; motor 1x/2x e acepção abertos). ✔
+- **RULE-ECC-05 (3 lentes):** presentes no Dossiê (research.md) e refletidas no Plan — (1) Arquitetura (§3.1 → CF-004/005/CCM-001); (2) Escola/risco-retorno (§3.2 → Kelly/sizing ADIADO ao Risk Agent, CF-008 non-goal); (3) confronto WORKFLOW.md (§3.3 → macro/global CF-010; motor 2x FECHADO [Q-A5]; acepção resolvida [DHR-ARQ-001]; regime→`temporal` decidido [Q-A9/v1.4]; resíduo WF-D03 = J-001/N-001). ✔
 - As decisões adotar/adaptar/rejeitar/adiar do Dossiê estão materializadas: REJEITAR compensatória pura/votos simétricos (CF-005/ADV-CF-03); ADIAR Kelly/sizing (CF-008/non-goal); ADAPTAR normalização/sensibilidade (CF-004/CF-008); fusão DS/Bayes só referência de método (não baseline). ✔
 
 > A **correspondência verbatim** string-a-string é mandato do Revisor (sem web — ENF-03). Aqui só se verifica **presença** dos 7 arquivos e das citações, e **presença das 3 lentes**. **PASS (presença).**
@@ -203,13 +218,13 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 | CK-04 | D4 numérico definitivo N/A (J-001/N-001); a Spec fixa só método/mecanismo + limiares-piloto | Info | Coerente com INV-03/CONS-01/RULE-MM-06/RULE-EV-05 |
 | CK-05 | BL-012 (MC-COG-001) ATIVADO independente — não absorvido pela SPEC-003 | Info | Tratado por Andraus separadamente |
 | CK-06 | Correspondência verbatim RULE-ECC-04 (string) fica para o Revisor (sem web) | Info | Mandato do Revisor |
-| CK-07 | **Q-A9 (NOVA, delta v1.1)** — dimensão das 8 em que entra o regime (WF-C04) | Menor | **[DECISÃO NECESSÁRIA]** de Andraus; 4 opções + recomendação (Opção A=temporal) em research.md §8.3; não decidida (INDETERMINADO — CONS-01) | — Andraus (2026-10-01): decisão da dimensão fica com a SPEC-003, fonte de dados = `research-Q-A9-regime.md`.
+| CK-07 | **Q-A9 — RESOLVIDO (delta v1.4)** — dimensão das 8 em que entra o regime (WF-C04) | Menor → **Resolvido** | **DECIDIDO pela SPEC-003: dimensão `temporal`** (Opção A), por delegação de Andraus (chat 2026-10-01); ratifica na homologação (DHR-DEC-002). Fonte de dados: `research-Q-A9-regime.md` (Opção C=estrutural rejeitada por INV-01). Limitação: evidência Moderada/Fraca (SRC-R03/R04); peso do regime = J-001/N-001 (aberto). Materializado: RULE-CF-003 estendida, CCM-001 I/O (regime na `temporal`), CF-004/007/009, EARS #11, CF-T09, ADV-CF-13/14. Nota: Q-A9 **não** escrita como "FECHADA" (ratificação pendente) — CONS-01. |
 | CK-08 | WF-D01/D02/D04 FECHADAS na versão vigente da `WORKFLOW.md`; SPEC-003 não as especifica (fora de escopo) | Info | Reclassificação de fronteira (delta v1.1); sem mudança de mérito |
 
 ---
 
 ## Resultado da verificação de spec
 
-**Estruturalmente CONFORME** (well-formedness). BASpecs (CF-001..013) com Classe/Mecanismo (CC-11), EARS (10), Enforcement (EC-CF-001..006; ENF-03 detector≠gate; E3 no gate Convicção→Decisão), Constitution Check CC-01..CC-12, Herança/Delta (CC-08), CONS-01 (J-001/N-001/M-001/WORKFLOW-SOT-001 abertas; dimensionalidade=8/B-001 não reabertas), gate RMR-001, RULE-ECC-04 (presença) e RULE-ECC-05 (3 lentes refletidas) satisfeitos. 6 achados não-bloqueantes (CK-01..CK-06) encaminhados.
+**Estruturalmente CONFORME** (well-formedness). BASpecs (CF-001..013) com Classe/Mecanismo (CC-11), EARS (11), Enforcement (EC-CF-001..006; ENF-03 detector≠gate; E3 no gate Convicção→Decisão), Constitution Check CC-01..CC-12, Herança/Delta (CC-08), **Q-A9 decidida pela Spec (regime→`temporal`, v1.4; ratifica na homologação; ADV-CF-13/14 + CF-T09 cobrem a decisão)**, CONS-01 (J-001/N-001/M-001 abertas; WF-D03 residual = J-001/N-001; Q-A9 não escrita como "FECHADA"; dimensionalidade=8/B-001 não reabertas), gate RMR-001, RULE-ECC-04 (presença) e RULE-ECC-05 (3 lentes refletidas) satisfeitos. Achados não-bloqueantes CK-01..CK-06 encaminhados; **CK-07 RESOLVIDO** (Q-A9).
 
 > Este resultado é **feedback interno de verificação de spec** — NÃO é o parecer do Revisor (GRE-001/HRE-001) nem homologação de Andraus. Próximo passo: gate determinístico `validate_spec_sot.py` + submissão ao Revisor SOT.

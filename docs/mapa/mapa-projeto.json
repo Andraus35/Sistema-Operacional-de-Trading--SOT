@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-01",
-  "digest": "0b22957bfcc5500d326319a6eca7761eb08bb72fdcce85f4f4bec83dc251c7f3",
+  "digest": "0bc773aeecb40eb5f77a81588b1607187f051ad1059566c4115bf728b0ee5ed0",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 23,
-   "out": 38
+   "out": 39
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
    "in": 25,
-   "out": 36
+   "out": 37
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -171,14 +171,14 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 106,
-   "out": 45
+   "in": 107,
+   "out": 46
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 22,
+   "in": 23,
    "out": 12
   },
   {
@@ -227,7 +227,7 @@
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 65,
+   "in": 66,
    "out": 4
   },
   {
@@ -283,8 +283,8 @@
    "path": "docs/MATRIZ-WORKFLOW-SPEC.md",
    "area": "docs",
    "title": "MATRIZ `WF-xx → Spec dona` — WORKFLOW.md × Specs",
-   "in": 7,
-   "out": 15
+   "in": 8,
+   "out": 16
   },
   {
    "path": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
@@ -423,8 +423,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 49,
-   "out": 135
+   "in": 50,
+   "out": 136
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -514,8 +514,15 @@
    "path": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "area": "governance",
    "title": "DHR-DEC-001 — Ata de Decisões — Q-A5, RISK-CONV-001, RISK-ARR-LOC-001, DIV code-block",
-   "in": 15,
+   "in": 16,
    "out": 13
+  },
+  {
+   "path": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "area": "governance",
+   "title": "DHR-DEC-002 — Ata de Decisão — Q-A9 (dimensão do regime de mercado) → dimensão `temporal`",
+   "in": 8,
+   "out": 9
   },
   {
    "path": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
@@ -892,7 +899,7 @@
    "path": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
    "area": "governance",
    "title": "DHR-WF-001 — Ata de Homologação — WORKFLOW.md soberano na raiz + conformidade (RULE-ECC-05) + detector D6",
-   "in": 6,
+   "in": 7,
    "out": 8
   },
   {
@@ -1137,7 +1144,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 162,
+   "in": 163,
    "out": 32
   },
   {
@@ -1397,20 +1404,20 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-003 (fase spec-first)",
    "in": 2,
-   "out": 13
+   "out": 14
   },
   {
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 60,
-   "out": 18
+   "in": 61,
+   "out": 19
   },
   {
    "path": "specs/features/SPEC-003/research-Q-A9-regime.md",
    "area": "specs",
    "title": "SPEC-003 — Q-A9: Dimensão do Regime de Mercado (WF-C04) — DOSSIÊ DE PESQUISA",
-   "in": 5,
+   "in": 6,
    "out": 4
   },
   {
@@ -1418,7 +1425,7 @@
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine — DOSSIÊ DE PESQUISA (ABERTURA)",
    "in": 2,
-   "out": 19
+   "out": 20
   },
   {
    "path": "specs/features/SPEC-019/checks.md",
@@ -1714,7 +1721,12 @@
   {
    "id": "DHR-DEC-001",
    "defined_in": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
-   "cited_by": 15
+   "cited_by": 16
+  },
+  {
+   "id": "DHR-DEC-002",
+   "defined_in": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "cited_by": 8
   },
   {
    "id": "DHR-DIV-001",
@@ -1984,7 +1996,7 @@
   {
    "id": "DHR-WF-001",
    "defined_in": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-WF-002",
@@ -2114,7 +2126,7 @@
   {
    "id": "INV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 31
   },
   {
    "id": "INV-02",
@@ -2124,12 +2136,12 @@
   {
    "id": "INV-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 34
+   "cited_by": 38
   },
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 32
+   "cited_by": 33
   },
   {
    "id": "INV-05",
@@ -2299,7 +2311,7 @@
   {
    "id": "RULE-CF-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 1
+   "cited_by": 6
   },
   {
    "id": "RULE-CF-005",
@@ -2789,7 +2801,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 44
+   "cited_by": 45
   },
   {
    "id": "RULE-MET-02",
@@ -3049,12 +3061,12 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 58
+   "cited_by": 59
   },
   {
    "id": "SPEC-004",
    "defined_in": "ROADMAP.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "SPEC-005",
@@ -3335,6 +3347,11 @@
   },
   {
    "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
    "type": "id"
   },
@@ -3531,6 +3548,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
    "type": "id"
   },
   {
@@ -4121,6 +4143,11 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
    "type": "id"
   },
   {
@@ -5470,6 +5497,11 @@
   },
   {
    "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
    "to": "governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md",
    "type": "id"
   },
@@ -6501,6 +6533,11 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
    "type": "id"
   },
   {
@@ -7920,6 +7957,56 @@
   },
   {
    "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "specs/features/SPEC-003/research-Q-A9-regime.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
    "to": "specs/features/SPEC-003/research-Q-A9-regime.md",
    "type": "path"
   },
@@ -13775,6 +13862,11 @@
   },
   {
    "from": "specs/features/SPEC-003/checks.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/checks.md",
    "to": "governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md",
    "type": "id"
   },
@@ -13841,6 +13933,11 @@
   {
    "from": "specs/features/SPEC-003/plan.md",
    "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/plan.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
    "type": "id"
   },
   {
@@ -13966,6 +14063,11 @@
   {
    "from": "specs/features/SPEC-003/research.md",
    "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/research.md",
+   "to": "governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md",
    "type": "id"
   },
   {
