@@ -7,6 +7,17 @@
 
 ---
 
+## 0-ter. Nota de delta v1.3 (propagação DHR-DEC-001 — Q-A5 fechada) [FONTE]
+
+> Esta verificação cobre agora o `plan.md` **v1.3**. O delta v1.3 propaga a decisão direta de Andraus (DHR-DEC-001, chat, 2026-10-01): **Q-A5 FECHADA** — o número de invocações do mecanismo de Conviction Vector é **2x por ciclo** (macro Fase 1 / global Fase 2), declarado em `WORKFLOW.md` WF-C01 (versão vigente, v2.1). **Sem mudança de mérito** — BASpecs (CF-001..013), EARS (10), Enforcement (EC-CF-001..006), Classe/Mecanismo e D0–D8 **inalterados e NÃO renumerados**. Efeitos verificados:
+> - **Q-A5 vira dado de entrada herdado de WF-C01:** a Spec **dá o mecanismo** (CF-010) de convicção sobre subconjunto/vetor-completo e **NÃO é dona nem implementa** a invocação — a invocação é do Manager Fase 1 (SPEC-008) / Fase 2 (SPEC-014). O Non-goal correspondente foi reformulado de "não decide 1x/2x" para "não implementa a invocação (2x já decidida)". ✔
+> - **WF-D03 permanece ABERTA (residual):** o resíduo passa a ser J-001/N-001 (fórmula/pesos/limiares) e Q-A9 (dimensão do regime). O nº de invocações **sai** do resíduo (fechado). Nenhuma `WF-Dxx` aberta declarada fechada — a palavra ABERTA é preservada na WF-D03. ✔
+> - **CONS-01:** nenhuma decisão aberta nova fechada pela Spec; J-001/N-001/M-001/Q-A9 intactas; RISK-CONV-001/RISK-ARR-LOC-001 (fechadas por Andraus) não são escopo desta Spec. ✔
+> - **ADV-CF-12 reformulada** (negação coerente: a Spec não implementa a invocação, que é do Manager); §7-bis CF-010 ajustado (`invocation_implemented_here=false`). ✔
+> **PASS (delta de propagação).**
+
+---
+
 ## 0-bis. Nota de delta v1.2 (propagação DHR-ARQ-001 — unificação Manager/Conviction) [FONTE]
 
 > Esta verificação cobre agora o `plan.md` **v1.2**. O delta v1.2 propaga a instrução direta de Andraus (DHR-ARQ-001, 2026-10-01) e o baseline ADR-MANAGER-001 / CEM-001 DIV-CEM-4: "Conviction Engine" deixa de ser **componente/agente separado** (acepção (a)) e passa a **mecanismo (Classe D/H do CCM-001) INVOCADO pelo Manager Agent — Fase 2 (Conviction)** (acepção (b)). **Sem mudança de mérito** — BASpecs (CF-001..013), EARS (10), Enforcement (EC-CF-001..006), Classe/Mecanismo e D0–D8 **inalterados e NÃO renumerados**; muda o *framing* do termo e as seções de cabeçalho/CC-10/acepção/Missão (D0). Efeitos verificados:

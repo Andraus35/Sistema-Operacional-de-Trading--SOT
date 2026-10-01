@@ -255,7 +255,7 @@ Todas as 8 perguntas APROVADAS por Andraus. Parecer do Revisor: **CONFORME** (0 
 - **Q-A2 — RESOLVIDA:** D0–D8 confirmado.
 - **Q-A3 — RESOLVIDA:** Confirmado N/A. `PD-xx` não incide (infraestrutura de agregação transversal).
 - **Q-A4 — RESOLVIDA:** Recorte aprovado. SPEC-003 fecha estrutura/método + limiares-piloto interinos; valores/pesos definitivos permanecem `[DECISÃO NECESSÁRIA]` pós-backtest.
-- **Q-A5 — RESOLVIDA:** Confirmado. Motor 1x/2x permanece aberto, parte de `WORKFLOW-SOT-001`; SPEC-003 só fornece o mecanismo.
+- **Q-A5 — RESOLVIDA (abertura) e depois FECHADA por Andraus (DHR-DEC-001, 2026-10-01):** na abertura, o nº de invocações ficou aberto (parte de `WORKFLOW-SOT-001`), com a SPEC-003 só fornecendo o mecanismo. **Atualização (delta v1.3):** por decisão direta de Andraus, **Q-A5 está FECHADA — 2x por ciclo** (macro Fase 1 / global Fase 2; WF-C01 v2.1). Para a SPEC-003 isso é **dado de entrada herdado de WF-C01**: a Spec continua só fornecendo o mecanismo (CF-010) e **não** implementa nem é dona da invocação (é do Manager — SPEC-008 Fase 1 / SPEC-014 Fase 2). `WF-D03` segue ABERTA no resíduo J-001/N-001 + Q-A9; a invocação sai do resíduo.
 - **Q-A6 — RESOLVIDA:** Confirmado. SPEC-003 declara a acepção que usa (RULE-SEM-01) sem fechar CONFLITO-1; reconciliação permanece em `WORKFLOW-SOT-001`.
 - **Q-A7 — RESOLVIDA:** Confirmado. 30 dias/início do Plan — Plan inicia hoje, dentro da validade.
 - **Q-A8 — RESOLVIDA:** Confirmado. M-001 referenciada como aberta.

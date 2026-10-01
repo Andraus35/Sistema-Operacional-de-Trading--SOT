@@ -278,8 +278,9 @@ fluxo de Autoridade de Homologação (CEE-001 §9).
 
 ### 8.4 Prompt-padrão: nova Missão operacional (referência, não documentação)
 
+<!-- DIV-PPQ-05 (2026-10-01; ajustada por DHR-DEC-001, 2026-10-01): no exemplo de prompt abaixo, "Master Orchestrator" = termo legado; absorvido pelo Manager Agent — ADR-MANAGER-001. Comentário movido para FORA do bloco de código (antes era inline no exemplo, onde não renderiza como comentário). Exemplo histórico de prompt preservado (INV-07/CONST-01). -->
 ```
-Você é o Estrategista/Master Orchestrator do ORYX AGENT. Ao formular  <!-- DIV-PPQ-05 (2026-10-01): "Master Orchestrator" = termo legado; absorvido pelo Manager Agent — ADR-MANAGER-001. Exemplo histórico de prompt preservado (INV-07/CONST-01). -->
+Você é o Estrategista/Master Orchestrator do ORYX AGENT. Ao formular
 uma nova Missão, estruture-a com 5W2H reduzido:
 
 What  → hipótese a validar/refutar

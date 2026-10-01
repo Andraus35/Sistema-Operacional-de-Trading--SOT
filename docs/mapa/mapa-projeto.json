@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-01",
-  "digest": "492488f35924c2e8aa51b4bd5967ceb1b06c62df3a021c4073c5d137a9864cf1",
+  "digest": "0b22957bfcc5500d326319a6eca7761eb08bb72fdcce85f4f4bec83dc251c7f3",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 23,
-   "out": 37
+   "out": 38
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
    "in": 25,
-   "out": 35
+   "out": 36
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -143,8 +143,8 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 30,
-   "out": 22
+   "in": 31,
+   "out": 23
   },
   {
    "path": "GLOSSARIO.md",
@@ -171,15 +171,15 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 105,
-   "out": 44
+   "in": 106,
+   "out": 45
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 21,
-   "out": 11
+   "in": 22,
+   "out": 12
   },
   {
    "path": "atomic-spec.md",
@@ -206,8 +206,8 @@
    "path": "backlog/BL-018-RISK-AGENT-backlog.md",
    "area": "backlog",
    "title": "BL-018 — Risk Agent SOT (Família RISK-SPEC)",
-   "in": 18,
-   "out": 16
+   "in": 19,
+   "out": 17
   },
   {
    "path": "backlog/BL-025-CACHE-ISS-001-analise.md",
@@ -220,15 +220,15 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 101,
-   "out": 79
+   "in": 102,
+   "out": 80
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 64,
-   "out": 3
+   "in": 65,
+   "out": 4
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
@@ -262,8 +262,8 @@
    "path": "canon/PPQ-001-project-process-quality.md",
    "area": "canon",
    "title": "PPQ-001 — Especificação de Gestão de Projetos, Processos e Qualidade",
-   "in": 24,
-   "out": 2
+   "in": 25,
+   "out": 3
   },
   {
    "path": "canon/SAS-001-structural-agent-spec.md",
@@ -283,8 +283,8 @@
    "path": "docs/MATRIZ-WORKFLOW-SPEC.md",
    "area": "docs",
    "title": "MATRIZ `WF-xx → Spec dona` — WORKFLOW.md × Specs",
-   "in": 6,
-   "out": 14
+   "in": 7,
+   "out": 15
   },
   {
    "path": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
@@ -312,7 +312,7 @@
    "area": "docs",
    "title": "PARECER — Auditoria Semântica e Normativa do Risk Agent × repo SOT",
    "in": 3,
-   "out": 11
+   "out": 10
   },
   {
    "path": "docs/arranque/ata-homologacao-F1.md",
@@ -388,7 +388,7 @@
    "path": "governance/ADR-MANAGER-001_Manager_Agent_Architecture.md",
    "area": "governance",
    "title": "ADR-MANAGER-001 — Manager Agent: Arquitetura Unificada de Orquestração",
-   "in": 28,
+   "in": 29,
    "out": 1
   },
   {
@@ -423,8 +423,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 48,
-   "out": 134
+   "in": 49,
+   "out": 135
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -511,11 +511,18 @@
    "out": 20
   },
   {
+   "path": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "area": "governance",
+   "title": "DHR-DEC-001 — Ata de Decisões — Q-A5, RISK-CONV-001, RISK-ARR-LOC-001, DIV code-block",
+   "in": 15,
+   "out": 13
+  },
+  {
    "path": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
    "area": "governance",
    "title": "DHR-DIV-001 — Ata de Varredura DIV: termos legados em documentos CANON BASELINED",
-   "in": 6,
-   "out": 11
+   "in": 7,
+   "out": 12
   },
   {
    "path": "governance/DHR-DOCSYNC-001_Ata_Homologacao_Sincronizacao_Documental.md",
@@ -654,14 +661,14 @@
    "path": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
    "area": "governance",
    "title": "DHR-EUA-E19a — Ata de Homologação — Restauração Semântica do Signal Package",
-   "in": 23,
+   "in": 24,
    "out": 10
   },
   {
    "path": "governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md",
    "area": "governance",
    "title": "DHR-EUA-E20 — Ata de Homologação: FASE RISK (6 macro-slots indicativos da família RISK-SPEC)",
-   "in": 20,
+   "in": 21,
    "out": 18
   },
   {
@@ -1019,7 +1026,7 @@
    "area": "governance",
    "title": "EUA-E19a — Restauração Semântica do \"Signal Package\" (fronteira) + TMP interno (PROPOSTA)",
    "in": 0,
-   "out": 17
+   "out": 16
   },
   {
    "path": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
@@ -1060,7 +1067,7 @@
    "path": "governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
    "area": "governance",
    "title": "HOD-001 — Plano de Higiene e Organização Documental (PROPOSTA)",
-   "in": 14,
+   "in": 15,
    "out": 10
   },
   {
@@ -1130,7 +1137,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 161,
+   "in": 162,
    "out": 32
   },
   {
@@ -1375,7 +1382,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 100,
+   "in": 98,
    "out": 15
   },
   {
@@ -1390,20 +1397,20 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-003 (fase spec-first)",
    "in": 2,
-   "out": 12
+   "out": 13
   },
   {
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 58,
-   "out": 17
+   "in": 60,
+   "out": 18
   },
   {
    "path": "specs/features/SPEC-003/research-Q-A9-regime.md",
    "area": "specs",
    "title": "SPEC-003 — Q-A9: Dimensão do Regime de Mercado (WF-C04) — DOSSIÊ DE PESQUISA",
-   "in": 4,
+   "in": 5,
    "out": 4
   },
   {
@@ -1411,7 +1418,7 @@
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine — DOSSIÊ DE PESQUISA (ABERTURA)",
    "in": 2,
-   "out": 18
+   "out": 19
   },
   {
    "path": "specs/features/SPEC-019/checks.md",
@@ -1622,7 +1629,7 @@
   {
    "id": "BL-018",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "BL-019",
@@ -1705,9 +1712,14 @@
    "cited_by": 11
   },
   {
+   "id": "DHR-DEC-001",
+   "defined_in": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "cited_by": 15
+  },
+  {
    "id": "DHR-DIV-001",
    "defined_in": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-DOCSYNC-001",
@@ -2077,12 +2089,12 @@
   {
    "id": "EUA-E19a",
    "defined_in": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "EUA-E20",
    "defined_in": "governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "EUA-E21",
@@ -2117,7 +2129,7 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 32
   },
   {
    "id": "INV-05",
@@ -2132,7 +2144,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 110
+   "cited_by": 111
   },
   {
    "id": "INV-08",
@@ -2161,8 +2173,8 @@
   },
   {
    "id": "INV-RISK",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 4
+   "defined_in": "ROADMAP.md",
+   "cited_by": 9
   },
   {
    "id": "INV-RISK-00",
@@ -3037,12 +3049,12 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 56
+   "cited_by": 58
   },
   {
    "id": "SPEC-004",
    "defined_in": "ROADMAP.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "SPEC-005",
@@ -3062,7 +3074,7 @@
   {
    "id": "SPEC-008",
    "defined_in": "ROADMAP.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "SPEC-009",
@@ -3092,7 +3104,7 @@
   {
    "id": "SPEC-014",
    "defined_in": "ROADMAP.md",
-   "cited_by": 29
+   "cited_by": 32
   },
   {
    "id": "SPEC-015",
@@ -3318,6 +3330,11 @@
   },
   {
    "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
    "type": "id"
   },
@@ -3509,6 +3526,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -3828,11 +3850,6 @@
   },
   {
    "from": "AGENTS.md",
-   "to": "backlog/BL-018-RISK-AGENT-backlog.md",
-   "type": "path"
-  },
-  {
-   "from": "AGENTS.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
    "type": "id"
   },
@@ -3849,6 +3866,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -3909,6 +3931,11 @@
   {
    "from": "AGENTS.md",
    "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
@@ -4089,6 +4116,11 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -4319,6 +4351,16 @@
   {
    "from": "WORKFLOW.md",
    "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "WORKFLOW.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "path"
   },
   {
@@ -4723,6 +4765,11 @@
   },
   {
    "from": "backlog/BL-018-RISK-AGENT-backlog.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "backlog/BL-018-RISK-AGENT-backlog.md",
    "to": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
    "type": "id"
   },
@@ -4990,6 +5037,11 @@
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
    "type": "path"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
   },
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
@@ -5318,6 +5370,11 @@
   },
   {
    "from": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -5339,6 +5396,11 @@
   {
    "from": "canon/PPQ-001-project-process-quality.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "canon/PPQ-001-project-process-quality.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -5399,6 +5461,11 @@
   {
    "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -5709,11 +5776,6 @@
   {
    "from": "docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
    "to": "governance/RULES.md",
-   "type": "id"
-  },
-  {
-   "from": "docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
-   "to": "specs/features/SPEC-002/plan.md",
    "type": "id"
   },
   {
@@ -6434,6 +6496,11 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -7782,6 +7849,81 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "backlog/BL-018-RISK-AGENT-backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "to": "specs/features/SPEC-003/research-Q-A9-regime.md",
+   "type": "path"
+  },
+  {
    "from": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
    "to": "WORKFLOW.md",
    "type": "path"
@@ -7824,6 +7966,11 @@
   {
    "from": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -11583,11 +11730,6 @@
   },
   {
    "from": "governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
-   "to": "specs/features/SPEC-002/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
    "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
@@ -13628,6 +13770,11 @@
   },
   {
    "from": "specs/features/SPEC-003/checks.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/checks.md",
    "to": "governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md",
    "type": "id"
   },
@@ -13689,6 +13836,11 @@
   {
    "from": "specs/features/SPEC-003/plan.md",
    "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/plan.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {
@@ -13809,6 +13961,11 @@
   {
    "from": "specs/features/SPEC-003/research.md",
    "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/research.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
   {

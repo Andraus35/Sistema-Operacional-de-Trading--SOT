@@ -48,6 +48,8 @@ Aplica-se uma **varredura DIV** a `CEE-001`, `SAS-001` e `PPQ-001`: inserção d
 | **DIV-PPQ-06** | `canon/PPQ-001-...md` | ~355 | Mission Engine | Manager Agent — Fase 0 |
 | **DIV-PPQ-07** | `canon/PPQ-001-...md` | ~370 | Mission Engine | Manager Agent — Fase 0 |
 
+> **Nota de ajuste (DHR-DEC-001, 2026-10-01):** por decisão de Andraus (chat, 2026-10-01), os comentários **DIV-CEE-04** (`canon/CEE-001`, diagrama `InferenceContextEnvelope` §6.1) e **DIV-PPQ-05** (`canon/PPQ-001`, exemplo de prompt §8.4) foram **movidos para FORA do respectivo bloco de código** (imediatamente acima da cerca ```` ``` ````). Motivo: comentário HTML inserido **dentro** de um bloco de código renderiza como texto literal, não como comentário — ficava visível no diagrama/prompt. O texto normativo/histórico do diagrama e do prompt permanece **intacto** (CONST-01/INV-07); apenas a posição da anotação mudou, com o conteúdo do ponteiro ao sucessor preservado. Os demais 14 DIV deste sweep (inline em prosa ou em notas, onde renderizam corretamente) não foram tocados.
+
 **Escopo deste sweep = achados H-11 (CEE/SAS/PPQ) + H-12 (FCE em SAS-001).** As menções a FCE em `SAS-001` l.178/190/355 já eram **notas de correção** ([Correção 5]) que neutralizam o termo como referência agnóstica — **não re-anotadas** (já tratadas; anotar nota de correção seria redundante). `CEM-001` já estava anotado (DIV-CEM-3/4) — **não tocado**. `CONSTITUTION.md` (Mission Engine/Master Orchestrator) já anotado por **DHR-TAX-001** Correção 3 — **não tocado**. `SDD-001` tratado por DHR-TAX-001 Correção 1 (4D→8D) — fora de escopo DIV.
 
 ## 4. Achados de auditoria resolvidos

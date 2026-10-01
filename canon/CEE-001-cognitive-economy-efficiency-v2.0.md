@@ -122,10 +122,11 @@ O Blackboard e o Market Digital Twin são, por definição, estado compartilhado
 
 Todo payload enviado a um modelo, por qualquer Agente ou Skill, deve ser estruturado como um envelope com duas partições nomeadas — não como um bloco de texto único:
 
+<!-- DIV-CEE-04 (2026-10-01; ajustada por DHR-DEC-001, 2026-10-01): no diagrama abaixo, "Mission Engine" (campo mission_id) = termo legado; absorvido pelo Manager Agent — Fase 0 (Mission Lifecycle) — ADR-MANAGER-001 / DHR-ARQ-002. Comentário movido para FORA do bloco de código (antes era inline no diagrama, onde não renderiza como comentário). Texto normativo preservado (INV-07/CONST-01). -->
 ```
 InferenceContextEnvelope
 ├── stable_prefix
-│   ├── mission_id            (referência à Missão ativa — Mission Engine)  <!-- DIV-CEE-04 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 (Mission Lifecycle) — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
+│   ├── mission_id            (referência à Missão ativa — Mission Engine)
 │   ├── blackboard_snapshot_ref  (referência versionada, não o conteúdo bruto)
 │   ├── market_digital_twin_ref  (referência versionada)
 │   ├── contract_version       (versão do CEM/CCM/CDM/CNM em uso)

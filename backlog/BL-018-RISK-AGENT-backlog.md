@@ -74,8 +74,8 @@ Ver estrutura completa em `reference/SOT-RISK-MASTER-001_Consolidado.md` §6.2.
 | ID | Questão | Trava |
 |---|---|---|
 | D-RISK-SP-001 | Contrato exato do Signal Package | RISK-SPEC-022 |
-| RISK-ARR-LOC-001 | Escopo preciso da absorção do ARR na EUA-E19 | EUA-E19 |
-| RISK-CONV-001 | "Convicção de Risco" vs. Conviction Vector 8D (J-001) | RISK-SPEC-010 |
+| ~~RISK-ARR-LOC-001~~ **FECHADA** (DHR-DEC-001, 2026-10-01) | D-ARR-001 declarado AUSENTE do repo; verdade do Risk Agent = EUA-E19a + INV-RISK-* + BL-018 + FASE RISK; se surgir, entra por RPIR | — (resolvida) |
+| ~~RISK-CONV-001~~ **FECHADA** (DHR-DEC-001, 2026-10-01) | "convicção de risco" → "avaliação de risco" = escala própria do Risk Agent; NUNCA soma/retroalimenta o Conviction Vector 8D (INV-04, WF-X05) | RISK-SPEC-010 **implementa**, não reabre |
 | CDM-001 | Idioma canônico do RDR (objeto de decisão) | RISK-SPEC-021 |
 | J-001 | Limiares definitivos do Conviction Vector | RISK-SPEC-009/010 |
 | I-001 | Skills como unidades formais | RISK-SPEC-SKL-* |

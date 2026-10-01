@@ -2,9 +2,9 @@
 
 | Campo | Valor |
 |---|---|
-| **Versão vigente** | **2.0** |
+| **Versão vigente** | **2.1** |
 | **Autor / autoridade** | **Andraus** — declaração soberana do setup operacional (decisão de 2026-10-01) |
-| **Fonte** | Declaração de Andraus, 2026-09-29 (DHR-ECC05-001, transcrição fiel — RCN-001) + decisões de Andraus de 2026-10-01 sobre o Dossiê `reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md` (registro fiel em `reference/RESPOSTAS-WORKFLOW-2026-10-01.md`). Nome anterior: RUNTIME-WORKFLOW-SOT (v1.0, em `reference/`). |
+| **Fonte** | Declaração de Andraus, 2026-09-29 (DHR-ECC05-001, transcrição fiel — RCN-001) + decisões de Andraus de 2026-10-01 sobre o Dossiê `reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md` (registro fiel em `reference/RESPOSTAS-WORKFLOW-2026-10-01.md`) + decisões de Andraus (chat, 2026-10-01) registradas em `governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md` (v2.1: Q-A5 e RISK-CONV-001). Nome anterior: RUNTIME-WORKFLOW-SOT (v1.0, em `reference/`). |
 | **Posição** | Raiz do repositório. Referenciado por `AGENTS.md`. |
 
 ## Regras de uso e de manutenção (leia antes de citar ou editar)
@@ -58,7 +58,7 @@
 
 | ID | Regra |
 |---|---|
-| **WF-C01** | **Convicção macro × global = um único Conviction Vector 8D, duas leituras:** macro = subconjunto disponível na Fase 1 (estrutural+institucional); global = vetor com +operacional na Fase 2. **Direção declarada por Andraus; fórmula, pesos, limiares e número de invocações (1x/2x) NÃO são fechados aqui** (J-001, SPEC-003 Q-A5, WF-D03). |
+| **WF-C01** | **Convicção macro × global = um único Conviction Vector 8D, duas leituras:** macro = subconjunto disponível na Fase 1 (estrutural+institucional); global = vetor com +operacional na Fase 2. **O mecanismo de cálculo do Conviction Vector é invocado 2x por ciclo** — macro na Fase 1 (estrutural+institucional → registra o alarme-gatilho, WF-04) e global na Fase 2 (+operacional → decide o envio, WF-06): um vetor 8D, duas leituras — **FECHADO por Andraus 2026-10-01 (Q-A5; DHR-DEC-001)**. A invocação 2x é do **Manager** (SPEC-008 Fase 1 / SPEC-014 Fase 2); a SPEC-003 fornece o **mecanismo**, não a invocação. **Direção declarada por Andraus; fórmula, pesos e limiares permanecem NÃO fechados** (J-001, WF-D03). |
 | **WF-C02** | **Confluência vale por independência dos sinais, não por contagem** (anti double-counting). Princípio aqui; mecânica do desconto → SPEC-002/003; calibração = J-001. |
 | **WF-C03** | **Order flow (CVD/delta/absorção)** alimenta a **dimensão de volume**; onde o dado falta ou é ruim = **INDETERMINADO** (nunca zero ou fabricado). Disponibilidade por ativo é declarada, não presumida. |
 | **WF-C04** | **Regime** (tendência/range/alta volatilidade) é **dimensão de convicção, não gate.** Em qual das 8 dimensões entra: **deixado para a SPEC-003** (dimensionalidade=8 fechada). |
@@ -87,6 +87,7 @@
 | **WF-X02** | **Sizing pela distância do stop** (risco fixo por trade); Kelly adiado. Sizing ≠ convicção (INV-04). |
 | **WF-X03** | **Fluxo unidirecional** convicção (WF-06) → risco (WF-07); o risco **nunca** retroalimenta a convicção (INV-04). |
 | **WF-X04** | **Prevenção de overtrading é do Bot Trade Finance** (externo); fora do escopo do SOT. |
+| **WF-X05** | **Avaliação de risco = escala própria do Risk Agent.** A **"avaliação de risco"** (antes "convicção de risco") é métrica interna do **Agente de Risco** (família RISK-SPEC, BL-018) e **NUNCA soma, pondera nem retroalimenta o Conviction Vector 8D** (INV-04; reforça WF-X03/WF-X02). Renomeação e isolamento **FECHADOS por Andraus 2026-10-01 (RISK-CONV-001; DHR-DEC-001)**; detalhe na abertura de RISK-SPEC-010 (FASE RISK). |
 
 ### Adiado
 
@@ -108,7 +109,7 @@
 |---|---|---|
 | **WF-D01** | Killzone como mecanismo formal | **FECHADA** (Andraus, 2026-10-01): WF-K01..K04; tabelas em WF-R02/R03 editáveis. |
 | **WF-D02** | Alarme-gatilho de preço como mecanismo formal | **FECHADA** (Andraus, 2026-10-01): WF-A01..A03. |
-| **WF-D03** | Convicção macro × global × Conviction Vector 8D / J-001 | **ABERTA (residual)** — direção declarada em WF-C01 (um vetor, duas leituras); fórmula/pesos/limiares (J-001), número de invocações 1x/2x (SPEC-003 Q-A5) e dimensão do regime (WF-C04) seguem abertos. |
+| **WF-D03** | Convicção macro × global × Conviction Vector 8D / J-001 | **ABERTA (residual)** — direção declarada em WF-C01 (um vetor, duas leituras) e o número de invocações já fixado em WF-C01 (2x — macro Fase 1, global Fase 2; Q-A5 resolvida por Andraus 2026-10-01, DHR-DEC-001). Resíduo em aberto: fórmula/pesos/limiares (J-001) e em qual das 8 dimensões entra o regime (WF-C04/Q-A9, a cargo da SPEC-003). |
 | **WF-D04** | Papel do ICT no pipeline | **FECHADA** (Andraus, 2026-10-01): ICT = Agente Operacional (WF-05); produz setup operacional, não hipótese (INV-02). |
 | **WF-M01** | Agente Estrutural ↔ `Structural Agent` (Elliott) | [INFERÊNCIA] — confirmar SPEC-010 |
 | **WF-M02** | Agente Institucional ↔ `Institutional Agent` (SMC) | [INFERÊNCIA] — confirmar SPEC-011/012 |
@@ -122,6 +123,7 @@
 
 | Versão | Data | Mudança |
 |---|---|---|
+| 2.1 | 2026-10-01 | **Menor** (DHR-DEC-001, decisões de Andraus em chat). **WF-C01** passa a declarar o mecanismo de cálculo do Conviction Vector **invocado 2x por ciclo** (macro Fase 1, global Fase 2) — FECHADO por Andraus (Q-A5). Novo **WF-X05**: "avaliação de risco" = escala própria do Risk Agent, nunca soma/retroalimenta o Conviction Vector (RISK-CONV-001 fechada). **WF-D03 permanece ABERTA** (resíduo = fórmula/pesos/limiares J-001 + dimensão do regime WF-C04/Q-A9, a cargo da SPEC-003). Nenhum ID renumerado ou reutilizado; v2.0 arquivada em `docs/_legacy/WORKFLOW-v2.0.md`. |
 | 2.0 | 2026-10-01 | **Maior.** Incorpora as decisões de Andraus sobre o Dossiê de pesquisa (24 sugestões): regras operacionais WF-K/T/A/C/F/P/V/X/J; WF-05 passa a nomear o Operacional como ICT e a produzir "setup operacional" (não "hipótese" — INV-02); fecha WF-D01, WF-D02, WF-D04; WF-D03 permanece aberta (residual J-001/SPEC-003); valores editáveis marcados `[REVISAR · BL-026]` (WF-R01..R03). Passos WF-01..07 mantêm IDs; v1.1 arquivada em `docs/_legacy/WORKFLOW-v1.1.md`. |
 | 1.1 | 2026-10-01 | Movido para a raiz como `WORKFLOW.md`; IDs estáveis WF-01..07, WF-D01..04, WF-M01..03; regras de manutenção. Conteúdo dos passos inalterado. |
 | 1.0 | 2026-09-29 | Captura original (DHR-ECC05-001), RUNTIME-WORKFLOW-SOT (em `reference/`); arquivada em `docs/_legacy/`. |
