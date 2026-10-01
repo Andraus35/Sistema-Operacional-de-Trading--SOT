@@ -1,0 +1,14 @@
+FONTE [EXTERNO]
+ID: SRC-01
+Fonte: "Bayesian and Dempster-Shafer models for combining multiple sources of evidence in a fraud detection system" (arXiv 2104.07440)
+Classe: Evidência (artigo de pesquisa) / Padrão de método de fusão
+Lente RULE-ECC-05: (2) Escola/método — fusão de evidências multi-fonte
+Questão: Q-R1 (métodos de agregação/fusão de evidências) / Q-R3 (conflito)
+URL: https://arxiv.org/abs/2104.07440
+Data de acesso: 2026-09-29
+Método de captura: WebFetch do abstract (arxiv.org/abs), 2026-09-29 — texto lido diretamente da página.
+
+Trecho literal capturado (≥100 caracteres):
+"The first requires an estimate of the priors and likelihoods while the second only needs an estimate of the posterior probabilities and enables reasoning with uncertain information due to imprecision of the sources and with the degree of conflict between them."
+
+Contexto da citação: contrasta Bayes (exige priors + verossimilhanças) vs. Dempster-Shafer (só posteriores; modela imprecisão da fonte e grau de conflito entre fontes). Sustenta a decisão ADAPTAR: método de fusão de referência para o Fusion Engine (agregação de evidências com conflito/incerteza), sem adotar nenhum framework como baseline — CCM-001 é o contrato canônico a ser redigido pela SPEC-003; J-001 permanece aberta.

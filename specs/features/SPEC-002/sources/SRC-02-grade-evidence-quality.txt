@@ -1,0 +1,15 @@
+FONTE [EXTERNO]
+ID: SRC-02
+Fonte: "Grading Quality of Evidence and Strength of Recommendations: A Perspective" (GRADE) — PMC2735783
+Classe: Padrão / Prática (metodologia consolidada de graduação de qualidade de evidência)
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC2735783/
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página; redirecionamento 301 de ncbi.nlm.nih.gov → pmc.ncbi.nlm.nih.gov seguido)
+
+Trecho literal capturado (1 — definição de qualidade de evidência):
+"GRADE defines the quality of evidence as the collective level of confidence guideline developers have about the validity of estimates of benefits and harms for any given intervention"
+
+Trecho literal capturado (2 — fatores que afetam a certeza; captado via WebSearch da mesma fonte em 2026-09-28, complementar):
+"Factors affecting certainty—study design, risk of bias, inconsistency, indirectness, imprecision, and publication bias—are considered in rating the certainty or confidence in evidence."
+
+Contexto da citação: GRADE separa QUALIDADE/CERTEZA da evidência da FORÇA da recomendação, e explicita que alta qualidade não implica recomendação forte (e vice-versa). Sustenta a decisão ADAPTAR: reforça a separação SOT entre Evidence Strength (peso local do produtor — CEM-001) e Convicção Global (CCM-001/J-001) — INV-04/CC-03. GRADE entra como método de referência para tipificar qualidade/força de evidência, jamais como escala numérica adotada (J-001 aberto).

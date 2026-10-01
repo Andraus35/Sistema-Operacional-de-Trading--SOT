@@ -1,0 +1,15 @@
+FONTE [EXTERNO]
+ID: SRC-01
+Fonte: W3C — PROV-OVERVIEW: An Overview of the PROV Family of Documents (W3C Working Group Note)
+Classe: Padrão (standard)
+URL: https://www.w3.org/TR/prov-overview/
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado (1 — definição de proveniência):
+"Provenance is information about entities, activities, and people involved in producing a piece of data or thing, which can be used to form assessments about its quality, reliability or trustworthiness."
+
+Trecho literal capturado (2 — origem do desenho):
+"The design of PROV stems from the recommendations of the Provenance Incubator Group which performed an extensive information gathering process including use case cataloging, requirements elicitation and a literature survey."
+
+Contexto da citação: PROV é o padrão W3C para proveniência, deliberadamente domain-agnostic (entidades, atividades, agentes; relações de derivação/uso). Sustenta a decisão ADAPTAR: o SOT já possui proveniência canônica própria em CEM-001 (Camada 2 Origem + Camada 4 Rastreabilidade + Cap.5 Linhagem); PROV fornece VOCABULÁRIO/MÉTODO de referência para a camada operacional de provenance, NÃO um modelo a adotar como baseline (CEM-001 é o idioma canônico — INV-10, CC-02).

@@ -1,0 +1,14 @@
+FONTE [EXTERNO]
+ID: SRC-02
+Fonte: "A Knowledge Engineer's Comparison of Three Evidence Aggregation Methods" (arXiv 1304.2744)
+Classe: Experimento/Benchmark (comparação empírica de métodos de agregação)
+Lente RULE-ECC-05: (2) Escola/método — agregação de evidências
+Questão: Q-R1 (métodos de agregação) / Q-R6 (o que não importar automaticamente)
+URL: https://arxiv.org/pdf/1304.2744
+Data de acesso: 2026-09-29
+Método de captura: WebSearch snippet retornado literalmente pela ferramenta de busca a partir desta fonte (2026-09-29). WebFetch do PDF não retorna camada de texto (binário) — registrado honestamente (RULE-MET-01).
+
+Trecho literal capturado (≥100 caracteres):
+"When subjects were performing significantly better than chance, the Dempster-Shafer and Mycin systems performed better than the Bayes systems (95%, 93%, and 85% correct respectively)."
+
+Contexto da citação: nenhum método de agregação é universalmente superior; o desempenho depende do regime/condição. Sustenta a decisão REJEITAR importação automática de qualquer framework (DS/Bayes/Mycin) como baseline e ADIAR a calibração numérica para backtest (J-001 aberta); a SPEC-003 fixa o CONTRATO e a ESTRUTURA da agregação, não um algoritmo externo pré-adotado.

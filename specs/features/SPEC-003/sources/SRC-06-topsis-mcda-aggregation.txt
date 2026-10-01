@@ -1,0 +1,17 @@
+FONTE [EXTERNO]
+ID: SRC-06
+Fonte: "TOPSIS" (Technique for Order of Preference by Similarity to Ideal Solution) — Wikipedia
+Classe: Padrão/Prática (método consolidado de análise de decisão multicritério — MCDA)
+Lente RULE-ECC-05: (1) Arquitetura de agregação multidimensional ponderada
+Questão: Q-R1 (agregação multidimensional; normalização + peso)
+URL: https://en.wikipedia.org/wiki/TOPSIS
+Data de acesso: 2026-09-29
+Método de captura: WebFetch da página, 2026-09-29 — trechos lidos diretamente.
+
+Trecho literal capturado (≥100 caracteres):
+"It is a method of compensatory aggregation that compares a set of alternatives, normalising scores for each criterion, and calculating the geometric distance between each alternative and the ideal alternative, which is the best score in each criterion."
+
+Trecho literal capturado (2):
+"TOPSIS is based on the concept that the chosen alternative should have the shortest geometric distance from the positive ideal solution (PIS) and the longest geometric distance from the negative ideal solution (NIS)."
+
+Contexto da citação: MCDA/TOPSIS descreve o padrão geral de agregação multicritério — normalizar cada critério, ponderar, agregar em um score único. Sustenta ADAPTAR (padrão de referência para normalização + agregação das 8 dimensões do Conviction Vector). ALERTA: TOPSIS é "compensatory aggregation" (um critério alto compensa outro baixo) — o SOT NÃO pode ser puramente compensatório: PC-01/CC-01 e as Salvaguardas de Sinal (CEE-001 §11) impõem gates NÃO-compensatórios (conflito direcional → NEUTRO; convicção estrutural mínima; score 7/9). A escolha entre agregação compensatória e não-compensatória e os pesos = J-001 (aberto).

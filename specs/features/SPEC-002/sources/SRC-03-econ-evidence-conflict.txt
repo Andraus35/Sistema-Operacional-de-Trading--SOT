@@ -1,0 +1,18 @@
+FONTE [EXTERNO]
+ID: SRC-03
+Fonte: "ECon: On the Detection and Resolution of Evidence Conflicts" (arXiv 2410.04068)
+Classe: Experimento / Benchmark
+URL: https://arxiv.org/html/2410.04068
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trecho literal capturado (1 — problema de conflito inter-evidência):
+"The rise of large language models (LLMs) has significantly influenced the quality of information in decision-making systems, leading to the prevalence of AI-generated content and challenges in detecting misinformation and managing conflicting information, or 'inter-evidence conflicts.'"
+
+Trecho literal capturado (2 — detectores de conflito):
+"NLI and LLM models are high precision conflict detectors. As a general trend, the NLI and LLM models have high precision but low recall on the detection task."
+
+Trecho literal capturado (3 — viés na resolução):
+"LLMs frequently bias towards one of the conflicting evidence without stating reasons, accounting for 23.7% and 38.1% of the time for Claude 3 Sonnet and Haiku, respectively."
+
+Contexto da citação: evidência empírica de que modelos LLM são DETECTORES de conflito de precisão razoável mas RESOLVEM conflito com viés não-explicado. Sustenta a decisão ADAPTAR + fronteira: no SOT a SPEC-002 REPRESENTA e DETECTA conflito de evidência (registra, nunca resolve em silêncio — PB-09), com o LLM apenas como detector (ENF-03); a RESOLUÇÃO do conflito pertence à cadeia Fusion→Conviction→Synthesis (SPEC-003/014), não à camada de evidência.

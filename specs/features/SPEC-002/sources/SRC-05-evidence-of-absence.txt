@@ -1,0 +1,13 @@
+FONTE [EXTERNO]
+ID: SRC-05
+Fonte: "Evidence of absence" — Wikipedia (síntese enciclopédica do princípio epistemológico)
+Classe: Opinião / Padrão epistemológico (princípio de raciocínio, não benchmark)
+URL: https://en.wikipedia.org/wiki/Evidence_of_absence
+Data de acesso: 2026-09-28
+Método de captura: WebFetch (fetch real da página no momento da pesquisa desta sessão)
+
+Trechos literais capturados (dois fragmentos exatos; em conjunto ≥100 caracteres):
+"Absence of evidence is not evidence of absence."
+"The expectation of evidence makes its absence significant."
+
+Contexto da citação: distinção entre "ausência de evidência" e "evidência de ausência" — a ausência só é informativa quando a evidência seria esperada. Sustenta a decisão ADAPTAR: a SPEC-002 deve representar EXPLICITAMENTE a categoria "evidência ausente/inconclusiva" (exigida pelo slot do ROADMAP §4) distinguindo-a de contraevidência, e tratá-la sob RULE-EPI/RULE-UNC/RULE-MET-01 (não fabricar conclusão a partir de ausência; declarar a limitação). Corrobora PB-10 (preservação da incerteza) e RULE-PRB-02 (não quantificar sem base).

@@ -1,0 +1,17 @@
+FONTE [EXTERNO]
+ID: SRC-04
+Fonte: "The Kelly Criterion in Financial Markets: Optimal Position Sizing, Portfolio Construction, and Risk Management" (Atlas Peak Research)
+Classe: Opinião/Prática (relatório de research; distinção conceitual convicção × confiança)
+Lente RULE-ECC-05: (2) Risco-retorno — distinção convicção × confiança/calibração
+Questão: Q-R2 (força/qualidade ≠ convicção) / confronto com INV-04, PC-04
+URL: https://www.atlaspeakresearch.com/report/07bf72
+Data de acesso: 2026-09-29
+Método de captura: WebSearch snippet retornado literalmente pela ferramenta de busca a partir desta fonte (2026-09-29); WebFetch não confirmado — registrado honestamente (RULE-MET-01).
+
+Trecho literal capturado (≥100 caracteres):
+"Confidence is calibration quality, sample size, information advantage, payoff observability, and edge stability; it is not the same as thesis conviction."
+
+Trecho literal capturado (2 — Kelly fracionário por qualidade):
+"Almost no one takes 100% Kelly—the most successful use 25-50%, balancing math and psychology. Apply a fractional multiplier based on conviction quality, calibration, regime, skew, liquidity, and survivability."
+
+Contexto da citação: a literatura distingue "confiança" (qualidade de calibração/amostra) de "convicção" (força da tese) — reforça a Separação Tríplice do SOT (Evidence Strength × Hypothesis Confidence × Global Conviction — CHM-001 §1.9/§2.14) e a distinção convicção ≠ score/custo (INV-04). Sustenta ADAPTAR (multidimensionalidade da convicção, sensível a regime) + confirma a fronteira: calibração/dimensionamento por convicção fica a jusante (Risk Agent), não no Conviction Engine.

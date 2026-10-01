@@ -1,0 +1,15 @@
+FONTE [EXTERNO]
+ID: SRC-06
+Fonte: "Research on the Fusion of Dependent Evidence Based on Rank Correlation Coefficient" (Sensors 2017; PMC5676609)
+Classe: Evidência (artigo de pesquisa revisado por pares)
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC5676609/
+Data de acesso: 2026-09-28
+Método de captura: WebSearch snippet da fonte (2026-09-28). WebFetch direto BLOQUEADO por reCAPTCHA na data de acesso — registrado honestamente (RULE-MET-01); o trecho abaixo é o retornado literalmente pela ferramenta de busca a partir desta fonte.
+
+Trecho literal capturado (≥100 caracteres):
+"Classical evidence theory assumes evidence is independent of each other, which is often unrealistic, and ignoring relationships between evidence may lead to unreasonable fusion results and wrong decisions."
+
+Trecho literal capturado (2 — double counting):
+"Some elementary items of evidence can be counted twice without considering dependent evidence in the process of information fusion."
+
+Contexto da citação: a independência entre evidências raramente é real; ignorá-la causa "double counting" (contagem dupla) de evidências correlacionadas. Sustenta a decisão ADIAR: o SOT JÁ trata isto normativamente em RULE-004 ("evidências causalmente relacionadas DEVEM ser contadas como uma única") e AP-02 (confluência falsa). A SPEC-002 REPRESENTA a independência/dependência como atributo operacional da evidência (exigido pelo slot §4); a MECÂNICA de desconto/fusão de evidências dependentes pertence ao Fusion Engine (SPEC-003), não à camada de evidência.

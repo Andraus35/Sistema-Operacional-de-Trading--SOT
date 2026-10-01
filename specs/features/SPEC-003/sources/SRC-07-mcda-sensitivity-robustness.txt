@@ -1,0 +1,14 @@
+FONTE [EXTERNO]
+ID: SRC-07
+Fonte: "Sensitivity analysis approaches in multi-criteria decision analysis: A systematic review" (ScienceDirect, S156849462300933X)
+Classe: Padrão/Prática (revisão sistemática de análise de sensibilidade em MCDA)
+Lente RULE-ECC-05: (1) Arquitetura — robustez/estabilidade da agregação ponderada
+Questão: Q-R1 (robustez/sensibilidade a pesos) / explicabilidade da convicção
+URL: https://www.sciencedirect.com/science/article/pii/S156849462300933X
+Data de acesso: 2026-09-29
+Método de captura: WebSearch snippet retornado literalmente pela ferramenta de busca a partir desta fonte (2026-09-29). WebFetch direto retornou HTTP 403 (ScienceDirect) — registrado honestamente (RULE-MET-01).
+
+Trecho literal capturado (≥100 caracteres):
+"Sensitivity analysis examines how changes in criteria weights or alternative evaluations affect the final ranking. Robustness analysis assesses the stability of the ranking under different scenarios or assumptions."
+
+Contexto da citação: em agregação multicritério, a estabilidade do resultado sob variação de pesos é um requisito de confiabilidade. Sustenta ADAPTAR: o Conviction Vector 8D deve tratar robustez/sensibilidade/estabilidade (temas listados no slot §4 da SPEC-003) como propriedades explícitas e explicáveis (PB-06 explicabilidade da ponderação, PB-08 proporcionalidade). A calibração de pesos e a métrica de robustez definitivas = J-001/N-001 (aberto — não fechadas nesta abertura).

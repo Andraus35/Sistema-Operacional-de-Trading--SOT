@@ -1,0 +1,17 @@
+FONTE [EXTERNO]
+ID: SRC-05
+Fonte: "Multi-Indicator Confluence Trading System" (FMZQuant, Medium) + "Multi-Confluence Signal System" (TradingView scripts)
+Classe: Prática (sistemas de trading de confluência multi-indicador)
+Lente RULE-ECC-05: (2) Escola de análise técnica — ponderação de sinais por confluência
+Questão: Q-R2/Q-R4 (agregação ponderada de sinais técnicos; pesos por contexto)
+URL: https://medium.com/@FMZQuant/multi-indicator-confluence-trading-system-886f15b18ae5
+Data de acesso: 2026-09-29
+Método de captura: WebSearch snippet retornado literalmente pela ferramenta de busca a partir desta fonte (2026-09-29). WebFetch direto retornou HTTP 403 (Medium) — registrado honestamente (RULE-MET-01).
+
+Trecho literal capturado (≥100 caracteres):
+"Each component votes bullish or bearish with a 0-100 score, the votes are weighted by user-defined importance, and the result is a single confidence percentage."
+
+Trecho literal capturado (2 — ponderação dinâmica por regime):
+"In different market environments, some indicators may be more effective than others, necessitating a dynamic weighting mechanism."
+
+Contexto da citação: a prática de mercado agrega múltiplos sinais técnicos ponderados por importância em um único "confidence percentage", com pesos dinâmicos por regime. Confronto com o SOT: ADAPTAR o conceito de agregação ponderada multidimensional (Conviction Vector 8D, PCO-06 não-redução) e de pesos por regime/ativo (N-001) — MAS REJEITAR "votos" simétricos entre dimensões: o SOT tem hierarquia inviolável (PC-01/CC-01, INV-01) — Estrutural (Elliott) tem precedência/veto, dimensões inferiores não sobrepõem a superior. Pesos definitivos = J-001/N-001 (aberto).

@@ -188,7 +188,6 @@ Conforme K-PAP-005 (DHR-PAP-001-B ss3), apenas as open decisions que tocam um pr
 | **J-001** | Formula/pesos/limiares definitivos do Conviction Vector | PC-04 (piso de conviccao), PCO-06 (nao-reducao) | GPR-001 ss2.1 PC-04, ss2.4 PCO-06 | atomic-spec.md ss12 |
 | **G-001** | Schema de estado persistente por agente | PE-07 (modularidade), PB-07 (auditabilidade) | GPR-001 ss2.3 PE-07, ss2.2 PB-07 | atomic-spec.md ss12 |
 | **H-001** | Knowledge Graph: grafo real ou estrutura em memoria? | PE-05 (Blackboard vs KG), PB-05 (rastreabilidade) | GPR-001 ss2.3 PE-05, ss2.2 PB-05 | atomic-spec.md ss12 |
-| **I-001** | Skills como unidades formais separadas? | PE-04 (separacao Skill/Engine/Agent), PE-07 (modularidade) | GPR-001 ss2.3 PE-04, PE-07 | atomic-spec.md ss12 |
 | **K-001** | Ciclo P12 detalhado (evolucao do conhecimento) | PO-05 (policies nao auto-aprendidas), PB-05 (rastreabilidade) | GPR-001 ss2.5 PO-05, ss2.2 PB-05 | atomic-spec.md ss12 |
 | **M-001** | Estados do Blackboard para objetos NAO-hipotese | PE-05 (Blackboard como memoria de trabalho) | GPR-001 ss2.3 PE-05 | atomic-spec.md ss12 |
 | **N-001** | Pesos por ativo do Conviction Vector | PC-04, PCO-06 (mesmo vinculo de J-001) | GPR-001 ss2.1 PC-04, ss2.4 PCO-06 | atomic-spec.md ss12 |
@@ -198,7 +197,6 @@ Conforme K-PAP-005 (DHR-PAP-001-B ss3), apenas as open decisions que tocam um pr
 | Open Decision | Questao | Justificativa |
 |---|---|---|
 | **C-001** | Granularidade EARS multi-condicao | Decisao de formato de especificacao (notacao); nao toca principio do GPR-001. `[INFERENCIA]` |
-| **RULE-REG-001** | 10 familias RULE (RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC, EUA-E04-E13, +RULE-MET/EUA-E14) ja FATO NORMATIVO, incorporacao ao RULES.md diferida ao piloto SPEC-002/v1.5 pelas proprias atas; RULES.md ja cita algumas via [Fonte:] de regra registrada (RULE-HG-02) | Lacuna de registro do harness, nao de principio do GPR-001; gatilho `spec:SPEC-002 em redacao`; achado do Revisor (parecer CONFORME, 2026-09-28) via scripts/check_doc_sync.py (D3). `[FONTE]` |
 
 ### 5.3 Open decisions FECHADAS (registro historico)
 
@@ -207,6 +205,8 @@ Conforme K-PAP-005 (DHR-PAP-001-B ss3), apenas as open decisions que tocam um pr
 | **B-001** | Conviction Engine separado do Synthesis? | FECHADA (Q-007): Conviction Engine e SEPARADO. Topologia Fusion -> Conviction -> Synthesis. | 2026-09-14 |
 | **L-001** | Governanca do proprio harness / policy versionada | FECHADA (DHR-SPEC019-001): homologacao da SPEC-019 fecha L-001 na dimensao spec-time. Governanca de runtime NAO e residuo de L-001 -- pertence a SPEC-018/K-001 (K-001 segue aberta em ss5.1). | 2026-09-22 |
 | **RMR-EST-001** | Estado `Diferido` do BL-013 fora do enum de 5 valores do RMR-001 ss2 | FECHADA (DHR-DOCSYNC-002): nao era estado formal novo, era a palavra de encaminhamento do gate (Passo 11-bis); Estado do BL-013 corrigido para `Em espera` (definicao do ss2 ja descrevia a situacao). | 2026-09-28 |
+| **I-001** | Skills como unidades formais separadas? | FECHADA (Andraus, 2026-09-28, DHR-I001-001): Skills = hibrido por Classe (Opcao C) -- Classe D formaliza como Skill separada, Classe P permanece comportamento interno do agente; CC-01 intocada; criterio de corte exato diferido ao Dossie de abertura da SPEC-025. | 2026-09-28 |
+| **RULE-REG-001** | 10+1 familias RULE (RULE-HD/EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC/MET, EUA-E04-E14) ja FATO NORMATIVO, incorporacao ao RULES.md diferida ao piloto SPEC-002 | FECHADA (Andraus, 2026-09-28, DHR-REG-001): registro fisico concluido (transcricao literal RCN-001); consolida atomic-spec v1.5. | 2026-09-28 |
 
 `[FONTE: atomic-spec.md ss12; roadmap.md "Estado atual do ciclo"]`
 

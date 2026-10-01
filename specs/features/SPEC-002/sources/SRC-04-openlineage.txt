@@ -1,0 +1,15 @@
+FONTE [EXTERNO]
+ID: SRC-04
+Fonte: OpenLineage — open standard for data lineage collection and analysis
+Classe: Padrão / Prática (padrão de indústria para linhagem de dados)
+URL: https://openlineage.io/
+Data de acesso: 2026-09-28
+Método de captura: WebFetch da home (retornou as taglines curtas abaixo) + WebSearch da mesma fonte em 2026-09-28 (trecho longo abaixo), ambos capturados nesta sessão.
+
+Trecho literal capturado (1 — WebFetch, tagline):
+"OpenLineage is an open platform for collection and analysis of data lineage."
+
+Trecho literal capturado (2 — WebSearch snippet da fonte, ≥100 caracteres):
+"OpenLineage is an open platform for collection and analysis of data lineage that tracks metadata about datasets, jobs, and runs, giving users the information required to identify the root cause of complex issues and understand the impact of changes."
+
+Contexto da citação: OpenLineage é o padrão de indústria para linhagem de dados (datasets/jobs/runs), com ênfase em rastrear metadados para análise de impacto e causa-raiz — é PROTOCOLO, não aplicação. Sustenta a decisão ADAPTAR (conceito de análise de impacto por linhagem, já presente em CEM-001 Cap.5 "Cognitive Trace Reconstruction" + "Evidence Invalidated impact assessment") + ADIAR: a reconstrução expandida da cadeia é capacidade do Knowledge Graph (SPEC-006/H-001), fora do escopo operacional da SPEC-002.

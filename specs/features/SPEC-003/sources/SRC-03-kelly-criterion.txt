@@ -1,0 +1,17 @@
+FONTE [EXTERNO]
+ID: SRC-03
+Fonte: "Kelly Criterion for Stock Trading: Optimal Position Sizing" (Zerodha Varsity)
+Classe: Prática (material educacional de trading, amplamente adotado)
+Lente RULE-ECC-05: (2) Risco-retorno — position sizing / relação convicção↔R:R
+Questão: Q-R2 (força/qualidade vs. dimensionamento) / N-001 (pesos por ativo)
+URL: https://zerodha.com/varsity/chapter/kellys-criterion/
+Data de acesso: 2026-09-29
+Método de captura: WebFetch da página, 2026-09-29 — trechos lidos diretamente.
+
+Trecho literal capturado (≥100 caracteres):
+"Kelly % = W – [(1-W)/R] Where, W = Winning probability, R = Win/Loss ratio."
+
+Trecho literal capturado (2 — Kelly fracionário):
+"For example if the Kelly's percentage is 30%, then I'd expose, 30% of 5% or in other words, I'd expose 1.5%. If the Kelly's percentage is 70%, then I'd expose 70% of 5% or say 3.5% of the capital on the trade."
+
+Contexto da citação: o Kelly liga probabilidade de acerto (W) à razão ganho/perda (R = risco-retorno) para dimensionar a exposição; o Kelly fracionário expõe apenas uma fração conforme a qualidade da estimativa. Sustenta a decisão ADIAR: no SOT, position sizing/alavancagem e R:R pertencem ao Risk Agent (INV-RISK-RR/HEAT/LEV, família RISK-SPEC), NÃO ao Conviction Engine — INV-04 proíbe custo/dimensionamento no Conviction Vector. A convicção 8D é INSUMO, nunca o sizing. Referência apenas de método.
