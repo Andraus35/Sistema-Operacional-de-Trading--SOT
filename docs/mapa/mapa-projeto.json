@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-01",
-  "digest": "4116a9710994ba8d1093f71ac63d62cc959e7b2845e2d6c466f6605bcd957f41",
+  "digest": "0f12805df234fd25e5559a6cc12eee2064a72447cceb3e0817b237b670ff3261",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -171,21 +171,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 93,
+   "in": 94,
    "out": 39
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 8,
+   "in": 9,
    "out": 8
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 70,
+   "in": 71,
    "out": 29
   },
   {
@@ -241,7 +241,7 @@
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 56,
+   "in": 57,
    "out": 0
   },
   {
@@ -619,7 +619,7 @@
    "path": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
    "area": "governance",
    "title": "DHR-EUA-E19a — Ata de Homologação — Restauração Semântica do Signal Package",
-   "in": 18,
+   "in": 19,
    "out": 9
   },
   {
@@ -738,7 +738,7 @@
    "path": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
    "area": "governance",
    "title": "DHR-PROV-WEB-001 — Ata de Homologação — Provisão de Pesquisa Web ao Especificador",
-   "in": 13,
+   "in": 14,
    "out": 2
   },
   {
@@ -983,7 +983,7 @@
    "path": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
    "area": "governance",
    "title": "GPR-001 — Guia de Princípios, Relações e Organicidade do SOT",
-   "in": 49,
+   "in": 50,
    "out": 11
   },
   {
@@ -1060,14 +1060,14 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 146,
+   "in": 147,
    "out": 32
   },
   {
    "path": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
    "area": "governance",
    "title": "EMENDA SES-001",
-   "in": 45,
+   "in": 46,
    "out": 3
   },
   {
@@ -1104,6 +1104,13 @@
    "title": "RAG — Synthesis Agent Knowledge Base",
    "in": 2,
    "out": 2
+  },
+  {
+   "path": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "area": "reference",
+   "title": "PESQUISA — Estado da Arte para Evolução do WORKFLOW Operacional do SOT",
+   "in": 0,
+   "out": 8
   },
   {
    "path": "reference/SOT-RISK-MASTER-001_Consolidado.md",
@@ -1291,7 +1298,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 95,
+   "in": 96,
    "out": 15
   },
   {
@@ -1312,7 +1319,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 47,
+   "in": 48,
    "out": 11
   },
   {
@@ -1786,7 +1793,7 @@
   {
    "id": "DHR-PROV-WEB-001",
    "defined_in": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "DHR-REG-001",
@@ -1951,7 +1958,7 @@
   {
    "id": "EUA-E19a",
    "defined_in": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "EUA-E20",
@@ -1971,37 +1978,37 @@
   {
    "id": "INV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "INV-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 32
+   "cited_by": 33
   },
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 37
+   "cited_by": 38
   },
   {
    "id": "INV-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 92
+   "cited_by": 93
   },
   {
    "id": "INV-08",
@@ -2041,17 +2048,17 @@
   {
    "id": "INV-RISK-HEAT",
    "defined_in": "atomic-spec.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "INV-RISK-LEV",
    "defined_in": "atomic-spec.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "INV-RISK-RR",
    "defined_in": "atomic-spec.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-BB",
@@ -2231,7 +2238,7 @@
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "RULE-ECC-03",
@@ -2636,7 +2643,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 42
+   "cited_by": 43
   },
   {
    "id": "RULE-MET-02",
@@ -2861,7 +2868,7 @@
   {
    "id": "RULE-UNC",
    "defined_in": "governance/RULES.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "RULE-UNC-01",
@@ -2891,12 +2898,12 @@
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 93
+   "cited_by": 94
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 45
+   "cited_by": 46
   },
   {
    "id": "SPEC-004",
@@ -2921,7 +2928,7 @@
   {
    "id": "SPEC-008",
    "defined_in": "ROADMAP.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "SPEC-009",
@@ -2946,7 +2953,7 @@
   {
    "id": "SPEC-013",
    "defined_in": "ROADMAP.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "SPEC-014",
@@ -2956,7 +2963,7 @@
   {
    "id": "SPEC-015",
    "defined_in": "ROADMAP.md",
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "SPEC-016",
@@ -2971,7 +2978,7 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "SPEC-019",
@@ -3006,7 +3013,7 @@
   {
    "id": "SPEC-025",
    "defined_in": "ROADMAP.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "SPEC-026",
@@ -11778,6 +11785,46 @@
   {
    "from": "rag/synthesis.knowledge.md",
    "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "atomic-spec.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
+   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
