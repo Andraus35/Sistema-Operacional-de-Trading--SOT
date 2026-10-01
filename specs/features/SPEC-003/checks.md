@@ -192,7 +192,7 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 | CK-04 | D4 numérico definitivo N/A (J-001/N-001); a Spec fixa só método/mecanismo + limiares-piloto | Info | Coerente com INV-03/CONS-01/RULE-MM-06/RULE-EV-05 |
 | CK-05 | BL-012 (MC-COG-001) ATIVADO independente — não absorvido pela SPEC-003 | Info | Tratado por Andraus separadamente |
 | CK-06 | Correspondência verbatim RULE-ECC-04 (string) fica para o Revisor (sem web) | Info | Mandato do Revisor |
-| CK-07 | **Q-A9 (NOVA, delta v1.1)** — dimensão das 8 em que entra o regime (WF-C04) | Menor | **[DECISÃO NECESSÁRIA]** de Andraus; 4 opções + recomendação (Opção A=temporal) em research.md §8.3; não decidida (INDETERMINADO — CONS-01) |
+| CK-07 | **Q-A9 (NOVA, delta v1.1)** — dimensão das 8 em que entra o regime (WF-C04) | Menor | **[DECISÃO NECESSÁRIA]** de Andraus; 4 opções + recomendação (Opção A=temporal) em research.md §8.3; não decidida (INDETERMINADO — CONS-01) | — Andraus (2026-10-01): decisão da dimensão fica com a SPEC-003, fonte de dados = `research-Q-A9-regime.md`.
 | CK-08 | WF-D01/D02/D04 FECHADAS na versão vigente da `WORKFLOW.md`; SPEC-003 não as especifica (fora de escopo) | Info | Reclassificação de fronteira (delta v1.1); sem mudança de mérito |
 
 ---

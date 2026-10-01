@@ -67,6 +67,8 @@ A **EUA-E19a** (fatiada — C-03) deve preceder todas as RISK-SPECs. Escopo mín
 
 Ver estrutura completa em `reference/SOT-RISK-MASTER-001_Consolidado.md` §6.2.
 
+> **Atualização DHR-EUA-E20 (2026-10-01) — FASE RISK instituída com 6 macro-slots indicativos.** A família passa a ser representada no ROADMAP (§10-bis) por **6 macro-slots INDICATIVOS** (RULE-ECC-01/02), não por 23 slots numerados: **RISK-M1** (Fundamento & Cognição = Grupos A+B, RISK-SPEC-001..009) · **RISK-M2** (Decisão & Risco-Retorno = Grupo C, RISK-SPEC-010..013; fecha RISK-CONV-001 em RISK-SPEC-010; ancora INV-RISK-RR/HEAT/LEV) · **RISK-M3** (Quantificação & Stress = Grupo D, RISK-SPEC-014..016) · **RISK-M4** (Memória/Aprendizado/Metacognição = Grupo E, RISK-SPEC-017..019) · **RISK-M5** (Operacionalização = Grupo F, RISK-SPEC-020..022; "via Risk Harness" entra em RISK-SPEC-020; ancora INV-RISK-00 + SPEC-016/TMP) · **RISK-M6** (Avaliação = Grupo H, RISK-SPEC-023, herda SPEC-020 via RULE-HV). Skills (Grupo G) diferidas a I-001 (FECHADA)/SPEC-025. **Cobertura integral dos 23 RISK-SPEC preservada** (nenhuma capacidade descartada). **Estado permanece `Em espera`:** a EUA-E20 institui a FASE (direção), **não autoriza** a família — o gatilho composto `spec:EUA-E19a homologada ∧ milestone:FASE 6 (Synthesis) concluída` ainda não está plenamente satisfeito. **Re-interpretação do milestone (DHR-ARQ-002):** "FASE 6/Synthesis concluída" = **Manager — Fase 2 (Convicção & Síntese, SPEC-014 repurposado) homologada**; o gatilho será **re-apontado** na autorização da família (não fechado aqui; CONS-01). Decisões abertas RISK-ARR-LOC-001/RISK-CONV-001/J-001/D-RISK-SP-001/CDM-001 **continuam abertas**.
+
 ### Decisões abertas a vigiar (CONS-01)
 
 | ID | Questão | Trava |

@@ -7,6 +7,7 @@
 **Painel vivo:** RMR-001  
 **Emenda vigente:** **EUA-E17** (DHR-EUA-E17, 2026-09-21) — interpõe a **FASE GOV** (SPEC-019 integral + SPEC-020 núcleo A + SPEC-021) entre SPEC-001 e SPEC-002; renumera Fases 10–17→8–15 (números de Specs inalterados). Ordem autoritativa: `governance/EUA-E17_…_PROPOSTA.md` §3.2. Renumeração editorial cabeçalho-a-cabeçalho = passo diferido.
 **Emenda vigente adicional:** **EUA-E21** (DHR-EUA-E21, 2026-09-26) — **Especificação Emergente:** este ROADMAP fixa **direção e restrições**; a lista de Specs (SPEC-002…045), seus números, a quantidade e as fronteiras são **indicativos** e só se definem **na abertura de cada Spec**, após Dossiê de Pesquisa (estado da arte e melhores práticas na web) pelo Especificador — RULE-ECC-01/02. SPEC-001 e SPEC-019 (homologadas) inalteradas.  
+**Emendas vigentes adicionais (2026-10-01):** **EUA-E23** (DHR-EUA-E23) — **Manager Agent Unificado:** SPEC-008/015/014 são as 3 Specs do Manager sob um "Manager Contract" (ator único, RULE-HV); slots renomeados, **não renumerados** (INV-07), permanecem indicativos. **EUA-E20** (DHR-EUA-E20) — **FASE RISK** (§10-bis): família RISK-SPEC = 6 macro-slots indicativos RISK-M1..M6, após a FASE 6, não-autorizada até `milestone:FASE 6 concluída`. Nenhuma decisão aberta fechada por estes atos (CONS-01).  
 
 > **Como usar.** Leia este arquivo **antes de iniciar qualquer Spec**. Ele define qual Spec está autorizada, sua posição no caminho crítico e as decisões abertas que a impactam. Nenhuma Spec inicia sem consultar este arquivo.
 
@@ -179,10 +180,12 @@ Formalizar: `Retrieval → Evidence Candidate → Knowledge Formation → Knowle
 
 ## 7. FASE 4 — COGNIÇÃO E ESCALONAMENTO
 
-### SPEC-008 — Cognitive Scheduler
+### SPEC-008 — Manager — Orquestração Mecânica (Fase 1 + serviços de tempo) <!-- renomeado de "Cognitive Scheduler" por EUA-E23/DHR-EUA-E23, 2026-10-01; slot NÃO renumerado (INV-07) -->
 **Prioridade:** P0 — CRITICAL · **Profundidade-alvo:** D0–D8
 
-Decidir: quem pensa; quando; por que; em que ordem; com qual profundidade; com qual orçamento; quais Skills despertar/não despertar; quando interromper/aguardar/escalar/encerrar. Incorpora ativação progressiva/lazy orchestration.
+> **Nota DHR-EUA-E23 (2026-10-01):** slot repurposado como a **1ª das 3 Specs do Manager Agent** (Fase 1 — Dispatch + serviços de tempo), sob um **"Manager Contract"** comum (pai de herança vertical RULE-HV; ator único — ADR-MANAGER-001 §2.2). Classe predominante **D/C** (gates não-LLM, ENF-03) é orientação não-vinculante (declaração por BASpec — RULE-MECH-01). Slot **indicativo** (RULE-ECC-01/02): fronteira/decomposição final só na abertura.
+
+Decidir: quem pensa; quando; por que; em que ordem; com qual profundidade; com qual orçamento; quais Skills despertar/não despertar; quando interromper/aguardar/escalar/encerrar. Incorpora ativação progressiva/lazy orchestration; dispatch/grafo de dependências; relógio/Killzone; alarme FSM; FSM do ciclo; orçamento.
 
 ### SPEC-009 — Cognitive State & Persistence Model
 **Prioridade:** P0 — CRITICAL · **Profundidade-alvo:** D0–D7
@@ -211,13 +214,18 @@ P1 — HIGH · D0–D7. Exclusivamente: entrada; timing; stop; targets; invalida
 
 ## 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO
 
-### SPEC-014 — Synthesis Agent — **ABSORVIDO pelo Manager Agent — Fase 2 (Convicção & Síntese)** (DHR-ARQ-002, 2026-10-01)
-P0 — CRITICAL · D0–D8. Somente após resolução de B-001/J-001 (Conviction Engine). `Evidence → Hypothesis → Conviction → Decision → Mission / Trading Mission Package`.
+### SPEC-014 — Manager — Convicção & Síntese (Fase 2; absorve o Synthesis Agent) <!-- renomeado de "Synthesis Agent" por EUA-E23/DHR-EUA-E23, consolidando DHR-ARQ-002; slot NÃO renumerado (INV-07) -->
+P0 — CRITICAL · D0–D8. Somente após resolução de J-001 (mecanismo de convicção — SPEC-003). `Evidence → Hypothesis → Conviction → Decision → Mission / Trading Mission Package`.
 
-> **Nota DHR-ARQ-002 (2026-10-01):** o **Synthesis Agent deixa de ser agente autônomo** — suas responsabilidades (arbitragem final; `Conviction→Decision→Mission/TMP`; geração do TMP interno) **são a Fase 2 do Manager Agent** (propaga ADR-MANAGER-001 §2.1 "Agente de Síntese → absorvido (Fase 2)"). O escopo migra para a Spec do Manager que a **EUA-E23** (Frente 2) definir na abertura (RULE-ECC-01); o cálculo do Conviction Vector é o **mecanismo da SPEC-003** invocado pela Fase 2 (DHR-ARQ-001); o contrato do objeto TMP é a **SPEC-016** (repurposada). Slot SPEC-014 **repurposado, NÃO renumerado nem apagado** (INV-07). Nenhuma decisão aberta fechada (SPEC-015-SCOPE/J-001/N-001/WF-D03 seguem abertas — CONS-01).
+> **Nota DHR-EUA-E23 (2026-10-01):** slot repurposado como a **3ª das 3 Specs do Manager Agent** — **Fase 2 (Convicção & Síntese)**, sob o "Manager Contract" comum. Classe predominante **H/P** (cognitivo leve + gate de saída), orientação não-vinculante (RULE-MECH-01). Fronteira anti-double-ownership com a SPEC-003 (EUA-E23 §4.1): a Fase 2 **invoca** o mecanismo (CCM-001/Conviction Vector 8D) e **decide**; **não** redefine o cálculo do vetor (DHR-ARQ-001).
+> **Nota DHR-ARQ-002 (2026-10-01):** o **Synthesis Agent deixa de ser agente autônomo** — suas responsabilidades (arbitragem final; `Conviction→Decision→Mission/TMP`; geração do TMP interno) **são a Fase 2 do Manager Agent** (propaga ADR-MANAGER-001 §2.1 "Agente de Síntese → absorvido (Fase 2)"). O cálculo do Conviction Vector é o **mecanismo da SPEC-003** invocado pela Fase 2 (DHR-ARQ-001); o contrato do objeto TMP é a **SPEC-016** (repurposada). Slot SPEC-014 **repurposado, NÃO renumerado nem apagado** (INV-07). Nenhuma decisão aberta fechada (SPEC-015-SCOPE/J-001/N-001/WF-D03 seguem abertas — CONS-01).
 
-### SPEC-015 — Mission Engine & Mission Lifecycle
-P1 — HIGH · D0–D7. Criação; ativação; monitoramento; envelhecimento; atualização; suspensão; encerramento; invalidação; cancelamento; campanha; plano alternativo; relação hipótese→missão; relação missão→resultado.
+### SPEC-015 — Manager — Missão & Ciclo de Vida (Fase 0) <!-- renomeado de "Mission Engine & Mission Lifecycle" por EUA-E23/DHR-EUA-E23, 2026-10-01; slot NÃO renumerado (INV-07) -->
+P1 — HIGH · D0–D7.
+
+> **Nota DHR-EUA-E23 (2026-10-01):** slot repurposado como a **2ª das 3 Specs do Manager Agent** — **Fase 0 (Mission Lifecycle)**, sob o "Manager Contract" comum. Classe predominante **H/P** (decisório leve + gate), orientação não-vinculante (RULE-MECH-01). O nome de slot legado "Mission Engine" é anotado como termo absorvido pelo Manager (ADR-MANAGER-001). Slot **indicativo** (RULE-ECC-01/02). **SPEC-015-SCOPE** (ADR §7) passa a endereçável, mas **não** é fechada aqui (CONS-01).
+
+Criação; ativação; monitoramento; envelhecimento; atualização; suspensão; encerramento; invalidação; cancelamento; campanha; plano alternativo; relação hipótese→missão; relação missão→resultado.
 
 ### SPEC-016 — Trading Mission Package (TMP) — **REPURPOSADA** (Andraus 2026-09-22, C-04 Opção A; contingente à EUA-E19a/E20)
 P1 — CRITICAL · D0–D7. **Novo escopo:** contrato de **handoff INTERNO** entre o Synthesis Agent e o Risk Agent — o TMP como **snapshot imutável, versionado, tipado, com timestamp** (ancora INV-RISK-00 — isolamento epistêmico). **Deixa de ser** o contrato de fronteira externa (esse papel passa a RISK-SPEC-022 — Signal Package). **Invariante: SOT não executa ordem.** *(Revisão substancial de escopo autorizada; efetiva quando a família RISK for autorizada via EUA-E20. Ver `reference/SOT-RISK-MASTER-001_Consolidado.md`.)*
@@ -231,6 +239,25 @@ P1 — MEDIUM · D0–D5. Episódio; setup; contexto; resultado; win rate; RR; a
 
 ### SPEC-018 — Learning & Knowledge Formation Governance
 P1 — HIGH · D0–D8. Ciclo `Extração → Formalização → Validação → Backtest → Stress Test → Sandbox → Aprovação → Produção`. Resolve K-001.
+
+---
+
+## 10-bis. FASE RISK — RISK AGENT (família RISK-SPEC)
+<!-- Instituída por EUA-E20/DHR-EUA-E20 (2026-10-01). -->
+
+> **Posição lógica (EUA-E20):** a FASE RISK vem **após a FASE 6** (Síntese/Missão/TMP) no caminho crítico (ver §21) — depende do **Manager** (Fase 2) e do TMP interno (SPEC-016). Posicionada fisicamente aqui por disrupção mínima. **Não-autorizada** até homologação de abertura, cuja **pré-condição dura** é o `milestone:FASE 6 concluída` (= Manager — Fase 2 / SPEC-014 repurposado homologada, após DHR-ARQ-002). Rastreada por `backlog/BL-018-RISK-AGENT-backlog.md`.
+
+**6 macro-slots INDICATIVOS (RULE-ECC-01/02) — não enumeram as 23 RISK-SPEC do `reference/SOT-RISK-MASTER-001_Consolidado.md` §6.2; cada macro-slot abre com Dossiê, que então propõe sua decomposição fina (pode dividir/fundir/renumerar — INV-07):**
+
+- **RISK-M1 — Fundamento & Cognição de Risco** (Grupos A+B; princípios RP1–RP15 + disciplinas epistêmicas/causais/incerteza de risco, herdam N8–N17 via RULE-HV). Mapeia RISK-SPEC-001..009.
+- **RISK-M2 — Decisão sob Risco & Risco-Retorno** (Grupo C; autoridade ACCEPT/WAIT/REJECT/ABSTAIN + deltas genuínos). Mapeia RISK-SPEC-010 (**fecha RISK-CONV-001**, não antes de J-001), 011 (R:R≥1:3 + Portfolio Heat≤15% + alavancagem), 012, 013. Ancora INV-RISK-RR/HEAT/LEV.
+- **RISK-M3 — Quantificação & Stress** (Grupo D; VaR/CVaR/drawdown/correlação, Monte Carlo/bootstrap, calibração Brier/log-loss). Mapeia RISK-SPEC-014, 015, 016.
+- **RISK-M4 — Memória, Aprendizado & Metacognição de Risco** (Grupo E; qualidade≠resultado; N17). Mapeia RISK-SPEC-017, 018, 019.
+- **RISK-M5 — Operacionalização: Risk Harness, RDR & Signal Package** (Grupo F). Mapeia RISK-SPEC-020 (**Risk Harness — gate E3; a cláusula "via Risk Harness" em P14/INV-05 entra AQUI**), 021 (RDR — depende CDM-001), 022 (**Signal Package — D-RISK-SP-001**). Ancora INV-RISK-00 (isolamento epistêmico) junto da SPEC-016 (TMP interno, preservada).
+- **RISK-M6 — Avaliação & Adversarial de Risco** (Grupo H; **herda SPEC-020 núcleo A via RULE-HV**). Mapeia RISK-SPEC-023.
+- **(diferido) RISK-Skills** (Grupo G) — diferidas a **I-001 (FECHADA, DHR-I001-001 — híbrido por Classe)** / SPEC-025.
+
+**Cobertura (RULE-ECC-01, item 4):** os 23 RISK-SPEC mapeiam integralmente RISK-M1..M6 (+ Skills diferidas) — nenhuma capacidade descartada em silêncio. **Decisões abertas incidentes (CONS-01 — nenhuma fechada aqui):** RISK-ARR-LOC-001, RISK-CONV-001, J-001, D-RISK-SP-001, CDM-001.
 
 ---
 
@@ -343,12 +370,14 @@ M0 → 001 Hypothesis Harness →
 [FASE GOV] 019 Harness Governance (+ Herança Vertical) → 020 Harness Evaluation (núcleo A) → 021 Harness Score →
 002 Evidence → 003 Conviction Vector → 004 Blackboard → 005 Event Bus →
 006 Knowledge Graph → 007 RAG (fecha 020: RAG faithfulness) →
-008 Scheduler → 009 Cognitive State → 010 Structural → 011 Fibonacci/Fractal →
-012 Institutional → 013 ICT → 014 Synthesis [= Manager Fase 2 — DHR-ARQ-002] (fecha 020: decision traceability) →
-015 Mission [= Manager Fase 0] → 016 Trading Mission Package
+008 Manager — Orquestração Mecânica [Fase 1] → 009 Cognitive State → 010 Structural → 011 Fibonacci/Fractal →
+012 Institutional → 013 ICT → 014 Manager — Convicção & Síntese [Fase 2; absorve Synthesis — DHR-ARQ-002/EUA-E23] (fecha 020: decision traceability) →
+015 Manager — Missão & Ciclo de Vida [Fase 0] → 016 Trading Mission Package →
+[FASE RISK — EUA-E20] RISK-M1 → RISK-M2 → RISK-M3 → RISK-M4 → RISK-M5 → RISK-M6  (após a FASE 6; macro-slots indicativos)
 ```
 
 *(Ordem atualizada por EUA-E17/DHR-EUA-E17: a FASE GOV — 019 → 020 núcleo A → 021 — precede 002. Dimensões B da SPEC-020 fecham no ponto de dependência: 007, 014, 038 — ver RMR-001/BL-017. `038 Tool Selection/Tooling` fecha `tool correctness` na FASE 12.)*
+*(EUA-E23/DHR-EUA-E23: SPEC-008/014/015 = as 3 Specs do **Manager Agent** sob um "Manager Contract" comum — ator único, RULE-HV; slots não renumerados. EUA-E20/DHR-EUA-E20: a **FASE RISK** (RISK-M1..M6, indicativos) vem após a FASE 6, não-autorizada até `milestone:FASE 6 concluída` = Manager Fase 2 homologada.)*
 
 Depois: Learning → Testing → Meta-Cognition → Skills → Tools → Observability → Runtime Harness → End-to-End. *(Governance/Evaluation/Maturity já realizadas na FASE GOV, no início.)*
 
@@ -456,17 +485,18 @@ Lista **derivada dos títulos dos slots** acima (nenhuma capacidade foi inventad
 | SPEC-005 — Cognitive Event Bus | 5. FASE 2 — MEMÓRIA DE TRABALHO E COMUNICAÇÃO | Indicativo — não aberta |
 | SPEC-006 — Cognitive Knowledge Graph | 6. FASE 3 — MEMÓRIA SEMÂNTICA E RAG | Indicativo — não aberta |
 | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness | 6. FASE 3 — MEMÓRIA SEMÂNTICA E RAG | Indicativo — não aberta |
-| SPEC-008 — Cognitive Scheduler | 7. FASE 4 — COGNIÇÃO E ESCALONAMENTO | Indicativo — não aberta |
+| SPEC-008 — **Manager — Orquestração Mecânica** (Fase 1; ex-"Cognitive Scheduler"; EUA-E23) | 7. FASE 4 — COGNIÇÃO E ESCALONAMENTO | Indicativo — não aberta |
 | SPEC-009 — Cognitive State & Persistence Model | 7. FASE 4 — COGNIÇÃO E ESCALONAMENTO | Indicativo — não aberta |
 | SPEC-010 — Structural Agent / Elliott Harness | 8. FASE 5 — AGENTES ANALÍTICOS | Indicativo — não aberta |
 | SPEC-011 — Fibonacci & Fractal Confluence Harness | 8. FASE 5 — AGENTES ANALÍTICOS | Indicativo — não aberta |
 | SPEC-012 — Institutional Agent / SMC Harness | 8. FASE 5 — AGENTES ANALÍTICOS | Indicativo — não aberta |
 | SPEC-013 — Execution / ICT Harness | 8. FASE 5 — AGENTES ANALÍTICOS | Indicativo — não aberta |
-| SPEC-014 — Synthesis Agent — **ABSORVIDO pelo Manager Fase 2** (DHR-ARQ-002); slot repurposado p/ "Manager — Convicção & Síntese" (via EUA-E23); capacidade preservada | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
-| SPEC-015 — Mission Engine & Mission Lifecycle | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
+| SPEC-014 — **Manager — Convicção & Síntese** (Fase 2; absorve o Synthesis Agent — DHR-ARQ-002; nome de slot fixado por EUA-E23/DHR-EUA-E23); capacidade preservada | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
+| SPEC-015 — **Manager — Missão & Ciclo de Vida** (Fase 0; ex-"Mission Engine & Mission Lifecycle"; EUA-E23) | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
 | SPEC-016 — Trading Mission Package (TMP) — **REPURPOSADA** (Andraus 2026-09-22, C-04 Opção A; contingente à EUA-E19a/E20) | 9. FASE 6 — SÍNTESE, MISSÃO E DECISÃO | Indicativo — não aberta |
 | SPEC-017 — Pattern Memory | 10. FASE 7 — MEMÓRIA E APRENDIZADO | Indicativo — não aberta |
 | SPEC-018 — Learning & Knowledge Formation Governance | 10. FASE 7 — MEMÓRIA E APRENDIZADO | Indicativo — não aberta |
+| **FASE RISK — Risk Agent** (RISK-M1..M6, 6 macro-slots indicativos + Skills diferidas; cobre 23 RISK-SPEC de BL-018 — EUA-E20/DHR-EUA-E20) | 10-bis. FASE RISK — RISK AGENT | Indicativo — não aberta (pré-condição: `milestone:FASE 6 concluída`) |
 | SPEC-019 — Harness Governance & Evolution — **HOMOLOGADA — BASELINE** (Andraus, 2026-09-22, DHR-SPEC019-001) | 11. FASE GOV — GOVERNANÇA DO HARNESS DE ESPECIFICAÇÃO | Aberta — HOMOLOGADA (baseline) |
 | SPEC-020 — Harness Evaluation Specification | 12. FASE GOV (cont.) — META-HARNESS: AVALIAÇÃO & MATURIDADE | **Aberta — HOMOLOGADA (baseline, núcleo A)** |
 | SPEC-021 — Harness Score / Maturity Model | 12. FASE GOV (cont.) — META-HARNESS: AVALIAÇÃO & MATURIDADE | **Aberta — HOMOLOGADA (baseline)** |

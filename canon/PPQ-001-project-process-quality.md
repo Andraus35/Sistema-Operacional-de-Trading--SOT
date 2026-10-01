@@ -32,7 +32,7 @@ Se o perfil do projeto mudar no futuro (ex: entrada de sócio, equipe técnica, 
 
 O PPQ-001 traduz três corpos de conhecimento da ciência da administração — Gestão de Projetos, Gestão de Processos e Gestão da Qualidade — em regras práticas e templates de prompt, para que **toda** documentação futura do ORYX (produzida pelo Estrategista, auditada pelo Analista, registrada pelo Controlador) nasça já estruturada segundo essas disciplinas, em vez de precisar de retrofit depois.
 
-Este documento não cria uma nova burocracia paralela à arquitetura já congelada — ele **nomeia formalmente**, com vocabulário de gestão reconhecido, processos que o ORYX já pratica intuitivamente (GES, Mission Engine, ciclo de vida de documentos), e preenche as lacunas onde a disciplina de gestão ainda não foi aplicada.
+Este documento não cria uma nova burocracia paralela à arquitetura já congelada — ele **nomeia formalmente**, com vocabulário de gestão reconhecido, processos que o ORYX já pratica intuitivamente (GES, Mission Engine, ciclo de vida de documentos), e preenche as lacunas onde a disciplina de gestão ainda não foi aplicada. <!-- DIV-PPQ-01 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 (Mission Lifecycle) — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
 
 ---
 
@@ -102,13 +102,13 @@ Cada seta é um **gate** (portão de decisão) — nada avança sem aprovação 
 
 | Área de conhecimento (PMBOK) | Onde já existe no ORYX | O que falta formalizar |
 |---|---|---|
-| Escopo | Missão (Mission Engine), Constituição de 4 níveis (GES) | Todo novo documento/Skill deve declarar explicitamente "está dentro" ou "está fora" de escopo — hoje é implícito |
+| Escopo | Missão (Mission Engine), Constituição de 4 níveis (GES) | Todo novo documento/Skill deve declarar explicitamente "está dentro" ou "está fora" de escopo — hoje é implícito | <!-- DIV-PPQ-02 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
 | Cronograma | Pipeline Sandbox→Backtest→Forward Test→Homologação | Não precisa de datas fixas (sem prazo rígido, premissa §0.2) — mas precisa de **critério de saída** por fase (quando uma fase é considerada concluída) |
 | Risco | Salvaguardas Constitucionais espalhadas nos documentos (CEE-001, GES) | Consolidar um registro de riscos por documento/Skill — ver template §8.2 |
 | Qualidade | GES (5 validações), agora 6 com CEE-001 | Já maduro — este PPQ-001 não duplica, apenas referencia |
 | Stakeholders | Andraus (decisor), Estrategista, Analista, Controlador | Nunca formalizado como RACI — ver §4.3 |
 | Comunicação | Blackboard (entre agentes), chats separados (entre papéis humanos/IA) | Já resolvido pela arquitetura — nada a fazer aqui |
-| Integração | Master Orchestrator | Já resolvido — nada a fazer aqui |
+| Integração | Master Orchestrator | Já resolvido — nada a fazer aqui | <!-- DIV-PPQ-03 (2026-10-01): "Master Orchestrator" = termo legado; absorvido pelo Manager Agent — ADR-MANAGER-001. Não é componente independente. Texto preservado (INV-07/CONST-01). -->
 
 ### 4.3 RACI mínimo (leve, 4 papéis)
 
@@ -168,7 +168,7 @@ Cada camada usa o mesmo ciclo PDCA, mas mapeado sobre estruturas que já existem
 | **C**heck | Comparação contra documentos congelados + Critérios de Aceitação explícitos (padrão já usado no CEE-001 §12) |
 | **A**ct | Andraus declara consenso → Controlador congela versão, **ou** documento retorna ao Estrategista com apontamentos (novo ciclo Plan) |
 
-### 6.3 Camada 3 — Missão Operacional (Mission Engine já existe, mapeamento novo)
+### 6.3 Camada 3 — Missão Operacional (Mission Engine já existe, mapeamento novo)  <!-- DIV-PPQ-04 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 (Mission Lifecycle) — ADR-MANAGER-001 / DHR-ARQ-002. Título e texto preservados (INV-07/CONST-01). -->
 
 | PDCA | Corresponde a (Mission Engine, ENGENHARIA GERAL Doc. 09) |
 |---|---|
@@ -279,7 +279,7 @@ fluxo de Autoridade de Homologação (CEE-001 §9).
 ### 8.4 Prompt-padrão: nova Missão operacional (referência, não documentação)
 
 ```
-Você é o Estrategista/Master Orchestrator do ORYX AGENT. Ao formular
+Você é o Estrategista/Master Orchestrator do ORYX AGENT. Ao formular  <!-- DIV-PPQ-05 (2026-10-01): "Master Orchestrator" = termo legado; absorvido pelo Manager Agent — ADR-MANAGER-001. Exemplo histórico de prompt preservado (INV-07/CONST-01). -->
 uma nova Missão, estruture-a com 5W2H reduzido:
 
 What  → hipótese a validar/refutar
@@ -352,7 +352,7 @@ O PPQ-001 será considerado implementado quando:
 
 1. Todo novo prompt de solicitação de documento/Skill ao Estrategista usar um dos templates do §8.
 2. O Analista incluir, em toda auditoria, uma verificação explícita de presença e qualidade do 5W2H, e do Teste de Adoção (§3.3) quando aplicável — não apenas conformidade técnica.
-3. Os três mapeamentos de PDCA (§6.1–6.3) estiverem referenciados nos documentos correspondentes (GES para Camada 1, processo de consenso para Camada 2, Mission Engine para Camada 3) na próxima revisão desses documentos.
+3. Os três mapeamentos de PDCA (§6.1–6.3) estiverem referenciados nos documentos correspondentes (GES para Camada 1, processo de consenso para Camada 2, Mission Engine para Camada 3) na próxima revisão desses documentos. <!-- DIV-PPQ-06 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
 4. O RACI do §4.3 não tiver sido violado — nenhum papel aprovando fora de sua função.
 5. Toda proposta nova declarar explicitamente em qual dos 4 Níveis do §10.2 ela se enquadra, antes de entrar em qualquer pipeline.
 6. Nenhuma proposta de Nível 2 tiver ultrapassado o time-box de 3 sessões sem acionar a Regra do Corte de Escopo (§10.3).
@@ -367,7 +367,7 @@ O PPQ-001 será considerado implementado quando:
 | ID do Documento | PPQ-001 |
 | Nome | Especificação de Gestão de Projetos, Processos e Qualidade |
 | Tipo | Documento de Governança (Layer 1) — transversal, meta-processual |
-| Dependências | GES (Doc. 12), CEE-001, Mission Engine (Doc. 09), MLS (Doc. 11 — 4 Níveis da Constituição do Conhecimento) |
+| Dependências | GES (Doc. 12), CEE-001, Mission Engine (Doc. 09), MLS (Doc. 11 — 4 Níveis da Constituição do Conhecimento) | <!-- DIV-PPQ-07 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
 | Status | **CONGELADO — Baseline 1.2** — consenso explícito de Andraus |
 | Prioridade | P1 — orienta a partir de agora todo prompt de solicitação de documento/Skill ao Estrategista, incluindo a próxima auditoria (SAS-001 Cap.2) |
 

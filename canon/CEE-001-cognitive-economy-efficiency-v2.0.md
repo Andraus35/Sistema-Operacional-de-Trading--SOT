@@ -87,11 +87,11 @@ Antes de propor mecanismos novos, é preciso reconhecer que o ORYX já foi desen
 
 | Mecanismo já definido | Documento de origem | Efeito econômico |
 |---|---|---|
-| Scheduler Inteligente (execução orientada a evento, não polling) | ENGENHARIA GERAL, Doc. 03 §16 / Mission Engine §9 | Elimina chamadas de API em candles sem mudança relevante |
+| Scheduler Inteligente (execução orientada a evento, não polling) | ENGENHARIA GERAL, Doc. 03 §16 / Mission Engine §9 | Elimina chamadas de API em candles sem mudança relevante | <!-- DIV-CEE-01 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 (Mission Lifecycle) / Fase 1 (Dispatch, scheduler) — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
 | Blackboard Cognitivo (comunicação indireta, nunca agente-a-agente) | ENGENHARIA GERAL §9 | Evita N×N chamadas redundantes entre agentes |
 | Persistência Cognitiva (agentes mantêm modelo mental, não recomeçam a cada candle) | ENGENHARIA GERAL, Princípio 17 | Reduz reprocessamento de contexto completo |
 | Especialização Máxima (Skill nunca cresce indefinidamente) | ENGENHARIA GERAL §26 | Mantém prompts pequenos e focados por Skill |
-| Missões com prioridade dinâmica | ENGENHARIA GERAL, Mission Engine §8 | Evita gastar recursos em hipóteses de baixa relevância |
+| Missões com prioridade dinâmica | ENGENHARIA GERAL, Mission Engine §8 | Evita gastar recursos em hipóteses de baixa relevância | <!-- DIV-CEE-02 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 (Mission Lifecycle) — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
 
 O CEE-001 não substitui esses mecanismos — ele os torna **mensuráveis e auditáveis**, e adiciona a camada que faltava: **roteamento de modelo por complexidade cognitiva**.
 
@@ -105,7 +105,7 @@ Nem toda unidade de trabalho do ORYX exige o mesmo grau de julgamento. A taxonom
 |---|---|---|---|
 | Execução de regra determinística | Aplica algoritmo conhecido sem ambiguidade | Modelo econômico (tier Haiku) | Trend Skill, Canal Skill, extração de eventos BOS/FVG, formatação de Evidência no formato EC-COG |
 | Síntese e julgamento especializado | Pondera interpretações concorrentes dentro de um domínio | Modelo intermediário (tier Sonnet) | Structural Agent, Institutional Agent, Execution Agent, Narrativa Institucional |
-| Convergência multi-narrativa e arbitragem de conflito | Resolve conflito entre narrativas independentes, decide sobre a Constituição | Modelo de fronteira (tier Opus), uso reservado | Conviction Engine em estado de conflito alto, Meta-Cognitive Supervisor, Master Orchestrator em decisão de missão crítica |
+| Convergência multi-narrativa e arbitragem de conflito | Resolve conflito entre narrativas independentes, decide sobre a Constituição | Modelo de fronteira (tier Opus), uso reservado | Conviction Engine em estado de conflito alto, Meta-Cognitive Supervisor, Master Orchestrator em decisão de missão crítica | <!-- DIV-CEE-03 (2026-10-01): "Conviction Engine" = mecanismo legado (Classe D/H do CCM-001) invocado pelo Manager Agent — Fase 2 (DHR-ARQ-001); "Master Orchestrator" = absorvido pelo Manager Agent (ADR-MANAGER-001). Não são componentes/agentes independentes. Texto preservado (INV-07/CONST-01). -->
 | Metacognição e auditoria de qualidade | Avalia a qualidade do próprio raciocínio do sistema | Modelo de fronteira, uso esporádico e batelado | Meta-Cognitive Supervisor, Governance Agent em homologação |
 
 **Regra de roteamento:** um componente só pode ser promovido a uma classe de modelo superior mediante evidência registrada de que a classe inferior produz erro de julgamento mensurável (não por precaução genérica). Essa evidência entra no Knowledge Graph como métrica de calibração do próprio componente — o sistema aprende, com o tempo, qual classe de modelo cada Skill realmente precisa.
@@ -125,7 +125,7 @@ Todo payload enviado a um modelo, por qualquer Agente ou Skill, deve ser estrutu
 ```
 InferenceContextEnvelope
 ├── stable_prefix
-│   ├── mission_id            (referência à Missão ativa — Mission Engine)
+│   ├── mission_id            (referência à Missão ativa — Mission Engine)  <!-- DIV-CEE-04 (2026-10-01): "Mission Engine" = termo legado; absorvido pelo Manager Agent — Fase 0 (Mission Lifecycle) — ADR-MANAGER-001 / DHR-ARQ-002. Texto preservado (INV-07/CONST-01). -->
 │   ├── blackboard_snapshot_ref  (referência versionada, não o conteúdo bruto)
 │   ├── market_digital_twin_ref  (referência versionada)
 │   ├── contract_version       (versão do CEM/CCM/CDM/CNM em uso)

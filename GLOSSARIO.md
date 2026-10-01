@@ -63,6 +63,8 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | Fase 1 | Manager Agent — Dispatch | Mecânico/determinístico |
 | Fase 2 | Manager Agent — Conviction | Cognitivo leve |
 
+> **Decomposição em Specs (EUA-E23/DHR-EUA-E23, 2026-10-01):** as 3 Fases do Manager Agent mapeiam 1:1 a **3 Specs** sob um **"Manager Contract"** comum (pai de herança vertical RULE-HV; ator único — ADR-MANAGER-001 §2.2), sem renumerar slots (INV-07): **Fase 1 → SPEC-008 "Manager — Orquestração Mecânica"** (D/C); **Fase 0 → SPEC-015 "Manager — Missão & Ciclo de Vida"** (H/P); **Fase 2 → SPEC-014 "Manager — Convicção & Síntese"** (H/P; absorve o Synthesis Agent — DHR-ARQ-002). Slots **indicativos** (RULE-ECC-01/02): fronteira final só na abertura. SPEC-015-SCOPE/J-001/N-001/M-001/WF-D03 seguem abertas (CONS-01).
+
 ### Skills do Structural Agent (nomenclatura vigente — ADR-CONFLUENCE-001 v3)
 
 | Skill | Função |
@@ -90,7 +92,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | TMP (Trading Mission Package) | Artefato **interno** de passagem — snapshot da decisão de síntese entregue por handoff à camada de risco (Síntese → Risk Agent). **Deixou de ser o artefato de fronteira** (EUA-E19a, 2026-09-22). Ancora INV-RISK-00 (isolamento epistêmico — SPEC-016 repurposada). | INV-05 (emendado); EUA-E19a |
 | **Signal Package** | Artefato **de fronteira** — único artefato que atravessa a fronteira SOT → Bot Trade Finance. Termo fundacional (ENGENHARIA-GERAL l.604-606) restaurado pela EUA-E19a. O SOT não executa ordem. Contrato exato = D-RISK-SP-001 (aberta, RISK-SPEC-022). | INV-05 (emendado); EUA-E19a |
 | **Score 0–9** | Score operacional agregado (Elliott + SMC + ICT, cada layer até 3 pontos). **Status: PILOT** — mantido como filtro paralelo até CCM-001/J-001 serem homologados (Andraus, 2026-09-26). **NÃO substitui o Conviction Vector 8D.** Limiares: `score ≥ 7/9` para sinal (Fase Piloto, Q-002, recalibrável). | RAG synthesis.knowledge.md / Q-002 / Decisão 2026-09-26 |
-| **Manager Agent** | Único componente de orquestração do SOT. Não é agente analítico. Operam em 3 Fases: Fase 0 (Mission Lifecycle), Fase 1 (Dispatch), Fase 2 (Conviction). Absorve 6 componentes legados (ver §2-bis). SPEC-015 = spec formal. | ADR-MANAGER-001 (2026-09-26) |
+| **Manager Agent** | Único componente de orquestração do SOT. Não é agente analítico. Opera em 3 Fases: Fase 0 (Mission Lifecycle), Fase 1 (Dispatch), Fase 2 (Conviction). Absorve 6 componentes legados (ver §2-bis). **Specs formais (EUA-E23/DHR-EUA-E23):** 3 Specs sob o "Manager Contract" — SPEC-008 (Orquestração Mecânica/Fase 1), SPEC-015 (Missão & Ciclo de Vida/Fase 0), SPEC-014 (Convicção & Síntese/Fase 2; absorve Synthesis). Slots indicativos, não renumerados (INV-07). | ADR-MANAGER-001 (2026-09-26); DHR-EUA-E23 (2026-10-01) |
 | **Missão Exploratória** | Tipo de missão sem hipótese de entrada (`Hipotese_entrada = null`). Agentes formulam hipóteses locais livremente. Ponto de partida de qualquer ciclo. | ADR-MISSION-TYPES-001 (2026-09-26) |
 | **Missão de Validação** | Tipo de missão com hipótese dominante do ciclo anterior como contexto. Agentes validam ou refutam. Se refutada → Plano B → nova Missão Exploratória. | ADR-MISSION-TYPES-001 (2026-09-26) |
 

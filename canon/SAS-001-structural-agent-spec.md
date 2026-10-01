@@ -61,7 +61,7 @@ O Structural Agent **não executa**:
 - Order Blocks;
 - Fair Value Gaps;
 - cálculo da Conviction Global;
-- medição da Confluência Fractal (FCE);
+- medição da Confluência Fractal (FCE);  <!-- DIV-SAS-01 (2026-10-01): "Fractal Confluence Engine (FCE)" = termo legado extinto → skill `confluence-elliott` do Structural Agent (ADR-CONFLUENCE-001 v3). Referência agnóstica já tratada em [Correção 5] l.178. Texto preservado (INV-07/CONST-01). -->
 - criação de Missões de Trading;
 - execução de ordens.
 
@@ -863,7 +863,7 @@ Uma hipótese somente poderá ser removida por: **Refutação** (violação estr
 O Structural Agent reconhece operacionalmente situações como: **Hipótese Emergente**; **Hipótese Dominante**; **Hipótese Enfraquecida**; **Hipótese Refutada Estruturalmente**. Esses estágios descrevem comportamento interno. Não representam um ciclo de vida canônico — que será definido pelo CHM.
 
 ## 5.15 Resultado
-O produto final deste capítulo é: conjunto de Hipóteses Estruturais compatíveis com os contratos canônicos vigentes. Consumidores autorizados: componentes autorizados responsáveis pela gestão de hipóteses; Conviction Engine; Mission Engine; componentes de Explainability autorizados.
+O produto final deste capítulo é: conjunto de Hipóteses Estruturais compatíveis com os contratos canônicos vigentes. Consumidores autorizados: componentes autorizados responsáveis pela gestão de hipóteses; Conviction Engine; Mission Engine; componentes de Explainability autorizados. <!-- DIV-SAS-02 (2026-10-01): "Conviction Engine" = mecanismo legado (Classe D/H do CCM-001) invocado pelo Manager Agent — Fase 2 (DHR-ARQ-001); "Mission Engine" = absorvido pelo Manager Agent — Fase 0 (ADR-MANAGER-001 / DHR-ARQ-002). Não são componentes independentes. Texto preservado (INV-07/CONST-01). -->
 
 ---
 
@@ -923,7 +923,7 @@ Publicação permitida: Evidências Estruturais; Hipóteses Estruturais; Narrati
 ## 6.12 Integração com Knowledge Graph
 O Structural Agent atua exclusivamente como produtor. Pode registrar: relações fractais; relações temporais; relações estruturais; relações de causalidade estrutural. Não pode: redefinir ontologias; alterar taxonomias globais.
 
-## 6.13 Integração com Conviction Engine
+## 6.13 Integração com Conviction Engine  <!-- DIV-SAS-03 (2026-10-01): "Conviction Engine" = mecanismo legado (Classe D/H do CCM-001) invocado pelo Manager Agent — Fase 2 (DHR-ARQ-001). Não é agente/componente separado. Título e texto preservados (INV-07/CONST-01). -->
 Responsabilidade: fornecer insumos estruturais. Pode contribuir com: Qualidade Estrutural; Estabilidade Estrutural; Ambiguidade Estrutural; Continuidade Fractal; Robustez Narrativa. Não possui autoridade para calcular Conviction Global.
 
 ## 6.14 Resiliência e Tolerância a Falhas
@@ -964,7 +964,7 @@ Responsável por: Estrutura; Fractalidade; Narrativas Estruturais; Hipóteses Es
 - **When:** Após a geração e avaliação de hipóteses estruturais (Cap.5).
 - **Where:** Domínio Structural Intelligence.
 - **How:** Organização de hipóteses, evidências e contexto estrutural em representações narrativas coerentes.
-- **How much:** Impacta diretamente: Forecast Engine, Conviction Engine, Explainability Framework. Impacta indiretamente: CNM-001 (futuro), que deverá acomodar os atributos especializados de Narrativa Estrutural definidos neste capítulo, de forma análoga à acomodação dos atributos estruturais de hipótese pelo futuro CHM. As Narrativas Estruturais produzidas por este capítulo constituem insumo do Structural State Engine (SSE-001).
+- **How much:** Impacta diretamente: Forecast Engine, Conviction Engine, Explainability Framework. <!-- DIV-SAS-04 (2026-10-01): "Conviction Engine" = mecanismo legado (Classe D/H do CCM-001) invocado pelo Manager Agent — Fase 2 (DHR-ARQ-001). Texto preservado (INV-07/CONST-01). --> Impacta indiretamente: CNM-001 (futuro), que deverá acomodar os atributos especializados de Narrativa Estrutural definidos neste capítulo, de forma análoga à acomodação dos atributos estruturais de hipótese pelo futuro CHM. As Narrativas Estruturais produzidas por este capítulo constituem insumo do Structural State Engine (SSE-001).
 
 **GES Level:** Nível 2 — Framework Oficial | Time-box: 1 a 3 sessões.
 
@@ -1032,7 +1032,7 @@ Conforme Cap.6. O Structural Agent poderá: publicar Narrativas Estruturais; con
 O Structural Agent é responsável por: Construção Narrativa Estrutural; Competição Narrativa; Avaliação de Coerência; Avaliação de Estabilidade. Não é responsável por: Narrativa Institucional; Narrativa Fundamentalista; Narrativa Macroeconômica; Narrativa Global Integrada.
 
 ## 7.16 Resultado
-O resultado deste capítulo é: conjunto de Narrativas Estruturais compatíveis com os contratos canônicos vigentes. As Narrativas Estruturais produzidas constituem insumo primário do Structural State Engine (SSE-001), que consolida Narrativas e Hipóteses Estruturais para consumo pelo Conviction Engine, Mission Engine, Explainability e Learning.
+O resultado deste capítulo é: conjunto de Narrativas Estruturais compatíveis com os contratos canônicos vigentes. As Narrativas Estruturais produzidas constituem insumo primário do Structural State Engine (SSE-001), que consolida Narrativas e Hipóteses Estruturais para consumo pelo Conviction Engine, Mission Engine, Explainability e Learning. <!-- DIV-SAS-05 (2026-10-01): "Conviction Engine" = mecanismo legado invocado pelo Manager Agent — Fase 2 (DHR-ARQ-001); "Mission Engine" = absorvido pelo Manager Agent — Fase 0 (ADR-MANAGER-001 / DHR-ARQ-002). Texto preservado (INV-07/CONST-01). -->
 
 ---
 
