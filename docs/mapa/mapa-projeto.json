@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-01",
-  "digest": "2833792033f07356a37b8e371b4415a425bffb5b65210618481ae2206b7b1788",
+  "digest": "f48a3fc3768d064623700befc837dc411b2a8442157857bfed75df74b42c7f7b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 23,
-   "out": 32
+   "out": 33
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
    "in": 25,
-   "out": 30
+   "out": 31
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -53,7 +53,7 @@
    "area": ".claude",
    "title": "SOT Harness — Referência Mestre de Especificação",
    "in": 2,
-   "out": 1
+   "out": 4
   },
   {
    "path": ".claude/skills/harness-eval/SKILL.md",
@@ -143,15 +143,15 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 27,
-   "out": 19
+   "in": 28,
+   "out": 20
   },
   {
    "path": "GLOSSARIO.md",
    "area": "raiz",
    "title": "GLOSSÁRIO OFICIAL — SOT",
-   "in": 19,
-   "out": 5
+   "in": 21,
+   "out": 6
   },
   {
    "path": "README.md",
@@ -171,22 +171,22 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 97,
-   "out": 40
+   "in": 101,
+   "out": 42
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 14,
+   "in": 17,
    "out": 11
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 73,
-   "out": 29
+   "in": 75,
+   "out": 30
   },
   {
    "path": "backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md",
@@ -206,7 +206,7 @@
    "path": "backlog/BL-018-RISK-AGENT-backlog.md",
    "area": "backlog",
    "title": "BL-018 — Risk Agent SOT (Família RISK-SPEC)",
-   "in": 14,
+   "in": 15,
    "out": 13
   },
   {
@@ -220,8 +220,8 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 97,
-   "out": 75
+   "in": 99,
+   "out": 76
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
@@ -234,7 +234,7 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 62,
+   "in": 64,
    "out": 2
   },
   {
@@ -283,8 +283,8 @@
    "path": "docs/MATRIZ-WORKFLOW-SPEC.md",
    "area": "docs",
    "title": "MATRIZ `WF-xx → Spec dona` — WORKFLOW.md × Specs",
-   "in": 0,
-   "out": 10
+   "in": 3,
+   "out": 13
   },
   {
    "path": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
@@ -312,7 +312,7 @@
    "area": "docs",
    "title": "PARECER — Auditoria Semântica e Normativa do Risk Agent × repo SOT",
    "in": 3,
-   "out": 10
+   "out": 11
   },
   {
    "path": "docs/arranque/ata-homologacao-F1.md",
@@ -388,7 +388,7 @@
    "path": "governance/ADR-MANAGER-001_Manager_Agent_Architecture.md",
    "area": "governance",
    "title": "ADR-MANAGER-001 — Manager Agent: Arquitetura Unificada de Orquestração",
-   "in": 14,
+   "in": 21,
    "out": 1
   },
   {
@@ -403,7 +403,7 @@
    "area": "governance",
    "title": "AUDITORIA DE ADIANTAMENTO DE ABERTURA — Slots Indicativos do ROADMAP",
    "in": 5,
-   "out": 15
+   "out": 16
   },
   {
    "path": "governance/BRIEFING-DECISAO-I-001.md",
@@ -416,8 +416,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 43,
-   "out": 128
+   "in": 44,
+   "out": 129
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -453,6 +453,13 @@
    "title": "DHR-ADR-HOC003 — Ata de Homologação — Cluster HOC-003 (Auditoria Taxonômica 2026-09-25/26)",
    "in": 2,
    "out": 6
+  },
+  {
+   "path": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "area": "governance",
+   "title": "DHR-ARQ-001 — Ata de Unificação: Manager Agent absorve o Conviction Engine (propagação do ADR-MANAGER-001 / CEM-001 DIV-CEM-4)",
+   "in": 13,
+   "out": 13
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -626,22 +633,22 @@
    "path": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
    "area": "governance",
    "title": "DHR-EUA-E19a — Ata de Homologação — Restauração Semântica do Signal Package",
-   "in": 19,
-   "out": 9
+   "in": 20,
+   "out": 10
   },
   {
    "path": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
    "area": "governance",
    "title": "DHR-EUA-E21 — Ata de Homologação: Especificação Emergente (ROADMAP como direção e restrições; Specs definidas na abertura após Dossiê de Pesquisa web)",
-   "in": 29,
+   "in": 31,
    "out": 16
   },
   {
    "path": "governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md",
    "area": "governance",
    "title": "DHR-EUA-E22 — Ata de Homologação: Manutenção obrigatória do Mapa do Projeto (BL-019) por todos os agentes",
-   "in": 12,
-   "out": 13
+   "in": 14,
+   "out": 14
   },
   {
    "path": "governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md",
@@ -654,7 +661,7 @@
    "path": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
    "area": "governance",
    "title": "DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades formais separadas?)",
-   "in": 7,
+   "in": 8,
    "out": 8
   },
   {
@@ -829,7 +836,7 @@
    "path": "governance/DHR-TAX-001_Ata_Alinhamento_Taxonomico.md",
    "area": "governance",
    "title": "DHR-TAX-001 — Ata de Alinhamento Taxonômico — 4 Correções de Bloqueadores Críticos",
-   "in": 7,
+   "in": 8,
    "out": 9
   },
   {
@@ -977,20 +984,34 @@
    "area": "governance",
    "title": "EUA-E19a — Restauração Semântica do \"Signal Package\" (fronteira) + TMP interno (PROPOSTA)",
    "in": 0,
-   "out": 16
+   "out": 17
+  },
+  {
+   "path": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "area": "governance",
+   "title": "EUA-E20 — FASE RISK: slots-macro indicativos da família RISK-SPEC (PROPOSTA)",
+   "in": 12,
+   "out": 14
   },
   {
    "path": "governance/EUA-E21_Especificacao_Emergente_Pesquisa_Web_PROPOSTA.md",
    "area": "governance",
    "title": "EUA-E21 — Especificação Emergente: o ROADMAP não pré-determina Specs nem quantidades; a definição ocorre na abertura de cada Spec, após pesquisa web de estado da arte e melhores práticas pelo Especificador (RULE-ECC) (PROPOSTA)",
    "in": 1,
-   "out": 19
+   "out": 20
   },
   {
    "path": "governance/EUA-E22_Manutencao_Mapa_Projeto_PROPOSTA.md",
    "area": "governance",
    "title": "EUA-E22 — Manutenção obrigatória do Mapa do Projeto (BL-019) por todos os agentes (PROPOSTA)",
    "in": 1,
+   "out": 12
+  },
+  {
+   "path": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "area": "governance",
+   "title": "EUA-E23 — Manager Agent Unificado: fronteira SPEC-008 × SPEC-015 (PROPOSTA)",
+   "in": 4,
    "out": 11
   },
   {
@@ -1011,7 +1032,7 @@
    "path": "governance/MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md",
    "area": "governance",
    "title": "MAN-001 — Mapa da Arquitetura Normativa (PROPOSTA)",
-   "in": 40,
+   "in": 41,
    "out": 18
   },
   {
@@ -1074,7 +1095,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 150,
+   "in": 153,
    "out": 32
   },
   {
@@ -1137,8 +1158,8 @@
    "path": "reference/SOT-RISK-MASTER-001_Consolidado.md",
    "area": "reference",
    "title": "SOT-RISK-MASTER-001 — Master Document: Risk Agent SOT",
-   "in": 6,
-   "out": 13
+   "in": 7,
+   "out": 14
   },
   {
    "path": "reference/camadas/CAMADA APRENDIZADO.MD",
@@ -1334,21 +1355,21 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-003 (fase spec-first)",
    "in": 2,
-   "out": 9
+   "out": 11
   },
   {
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 51,
-   "out": 14
+   "in": 54,
+   "out": 16
   },
   {
    "path": "specs/features/SPEC-003/research.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine — DOSSIÊ DE PESQUISA (ABERTURA)",
    "in": 1,
-   "out": 16
+   "out": 17
   },
   {
    "path": "specs/features/SPEC-019/checks.md",
@@ -1375,7 +1396,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 47,
+   "in": 48,
    "out": 17
   },
   {
@@ -1559,7 +1580,7 @@
   {
    "id": "BL-018",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "BL-019",
@@ -1599,12 +1620,17 @@
   {
    "id": "BL-026",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-ADR-HOC003",
    "defined_in": "governance/DHR-ADR-HOC003_Ata_Homologacao_HOC003.md",
    "cited_by": 2
+  },
+  {
+   "id": "DHR-ARQ-001",
+   "defined_in": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "cited_by": 13
   },
   {
    "id": "DHR-BL008-001",
@@ -1729,17 +1755,17 @@
   {
    "id": "DHR-EUA-E19a",
    "defined_in": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "DHR-EUA-E21",
    "defined_in": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "DHR-EUA-E22",
    "defined_in": "governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md",
-   "cited_by": 9
+   "cited_by": 11
   },
   {
    "id": "DHR-HOD-001",
@@ -1749,7 +1775,7 @@
   {
    "id": "DHR-I001-001",
    "defined_in": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-MAN-001",
@@ -1874,7 +1900,7 @@
   {
    "id": "DHR-TAX-001",
    "defined_in": "governance/DHR-TAX-001_Ata_Alinhamento_Taxonomico.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-VERBATIM-SRC-001",
@@ -1989,22 +2015,27 @@
   {
    "id": "EUA-E19a",
    "defined_in": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "EUA-E20",
-   "defined_in": null,
-   "cited_by": 11
+   "defined_in": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "cited_by": 12
   },
   {
    "id": "EUA-E21",
    "defined_in": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
-   "cited_by": 28
+   "cited_by": 30
   },
   {
    "id": "EUA-E22",
    "defined_in": "governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md",
-   "cited_by": 11
+   "cited_by": 12
+  },
+  {
+   "id": "EUA-E23",
+   "defined_in": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "cited_by": 4
   },
   {
    "id": "INV-01",
@@ -2029,7 +2060,7 @@
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 41
+   "cited_by": 43
   },
   {
    "id": "INV-06",
@@ -2039,7 +2070,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 94
+   "cited_by": 102
   },
   {
    "id": "INV-08",
@@ -2074,22 +2105,22 @@
   {
    "id": "INV-RISK-00",
    "defined_in": "GLOSSARIO.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "INV-RISK-HEAT",
    "defined_in": "atomic-spec.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "INV-RISK-LEV",
    "defined_in": "atomic-spec.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "INV-RISK-RR",
    "defined_in": "atomic-spec.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-BB",
@@ -2274,12 +2305,12 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 46
+   "cited_by": 48
   },
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 28
+   "cited_by": 30
   },
   {
    "id": "RULE-ECC-03",
@@ -2294,7 +2325,7 @@
   {
    "id": "RULE-ECC-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "RULE-EH",
@@ -2579,7 +2610,7 @@
   {
    "id": "RULE-HV",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 29
   },
   {
    "id": "RULE-HV-01",
@@ -2814,7 +2845,7 @@
   {
    "id": "RULE-SEM-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 15
+   "cited_by": 14
   },
   {
    "id": "RULE-SEM-02",
@@ -2944,12 +2975,12 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 49
+   "cited_by": 52
   },
   {
    "id": "SPEC-004",
    "defined_in": "ROADMAP.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "SPEC-005",
@@ -2969,12 +3000,12 @@
   {
    "id": "SPEC-008",
    "defined_in": "ROADMAP.md",
-   "cited_by": 10
+   "cited_by": 12
   },
   {
    "id": "SPEC-009",
    "defined_in": "ROADMAP.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "SPEC-010",
@@ -3004,12 +3035,12 @@
   {
    "id": "SPEC-015",
    "defined_in": "ROADMAP.md",
-   "cited_by": 12
+   "cited_by": 17
   },
   {
    "id": "SPEC-016",
    "defined_in": "ROADMAP.md",
-   "cited_by": 10
+   "cited_by": 12
   },
   {
    "id": "SPEC-017",
@@ -3029,7 +3060,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 47
+   "cited_by": 48
   },
   {
    "id": "SPEC-021",
@@ -3054,7 +3085,7 @@
   {
    "id": "SPEC-025",
    "defined_in": "ROADMAP.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "SPEC-026",
@@ -3207,6 +3238,11 @@
    "from": ".claude/agents/especificador.md",
    "to": "governance/CONFLICT-MAP.md",
    "type": "path"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
   },
   {
    "from": ".claude/agents/especificador.md",
@@ -3380,6 +3416,11 @@
   },
   {
    "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
    "type": "id"
   },
@@ -3520,7 +3561,22 @@
   },
   {
    "from": ".claude/skills/SKILL.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/skills/SKILL.md",
    "to": "atomic-spec.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/skills/SKILL.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/skills/SKILL.md",
+   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
@@ -3685,6 +3741,11 @@
   },
   {
    "from": "AGENTS.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
    "to": "governance/DHR-DOCSYNC-002_Ata_Homologacao_Encaminhamento_Residuais.md",
    "type": "id"
   },
@@ -3751,6 +3812,11 @@
   {
    "from": "GLOSSARIO.md",
    "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "GLOSSARIO.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
    "type": "id"
   },
   {
@@ -3880,6 +3946,11 @@
   },
   {
    "from": "ROADMAP.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
    "to": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
    "type": "id"
   },
@@ -3981,6 +4052,11 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
    "type": "id"
   },
   {
@@ -4182,6 +4258,11 @@
    "from": "atomic-spec.md",
    "to": "governance/BRIEFING-DECISAO-I-001.md",
    "type": "path"
+  },
+  {
+   "from": "atomic-spec.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
   },
   {
    "from": "atomic-spec.md",
@@ -4900,6 +4981,11 @@
   },
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
    "type": "path"
   },
@@ -5100,7 +5186,22 @@
   },
   {
    "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
    "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "to": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
    "type": "id"
   },
   {
@@ -5386,6 +5487,11 @@
   {
    "from": "docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
    "to": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
    "type": "id"
   },
   {
@@ -5735,6 +5841,11 @@
   },
   {
    "from": "governance/AUDITORIA-ADIANTAMENTO-SLOTS-ROADMAP-2026-09-28.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/AUDITORIA-ADIANTAMENTO-SLOTS-ROADMAP-2026-09-28.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -6001,6 +6112,11 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-ADR-HOC003_Ata_Homologacao_HOC003.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
    "type": "id"
   },
   {
@@ -6929,6 +7045,81 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "GLOSSARIO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "canon/CEM-001-canonical-evidence-model.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "governance/ADR-MANAGER-001_Manager_Agent_Architecture.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "governance/DHR-TAX-001_Ata_Alinhamento_Taxonomico.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "path"
+  },
+  {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "to": "atomic-spec.md",
    "type": "path"
@@ -8075,6 +8266,11 @@
   },
   {
    "from": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -8226,6 +8422,11 @@
   {
    "from": "governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md",
    "to": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
    "type": "id"
   },
   {
@@ -10715,6 +10916,11 @@
   },
   {
    "from": "governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -10741,6 +10947,86 @@
   {
    "from": "governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md",
    "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "GLOSSARIO.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "atomic-spec.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "backlog/BL-018-RISK-AGENT-backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "reference/SOT-RISK-MASTER-001_Consolidado.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "to": "specs/features/SPEC-020/plan.md",
    "type": "id"
   },
   {
@@ -10827,6 +11113,11 @@
    "from": "governance/EUA-E21_Especificacao_Emergente_Pesquisa_Web_PROPOSTA.md",
    "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
    "type": "path"
+  },
+  {
+   "from": "governance/EUA-E21_Especificacao_Emergente_Pesquisa_Web_PROPOSTA.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
   },
   {
    "from": "governance/EUA-E21_Especificacao_Emergente_Pesquisa_Web_PROPOSTA.md",
@@ -10925,12 +11216,82 @@
   },
   {
    "from": "governance/EUA-E22_Manutencao_Mapa_Projeto_PROPOSTA.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E22_Manutencao_Mapa_Projeto_PROPOSTA.md",
    "to": "governance/RCH-001_Registro_Ciclos_Hygiene.md",
    "type": "path"
   },
   {
    "from": "governance/EUA-E22_Manutencao_Mapa_Projeto_PROPOSTA.md",
    "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "docs/MATRIZ-WORKFLOW-SPEC.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "governance/ADR-MANAGER-001_Manager_Agent_Architecture.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
+   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
@@ -12105,6 +12466,11 @@
   },
   {
    "from": "reference/SOT-RISK-MASTER-001_Consolidado.md",
+   "to": "governance/EUA-E20_Fase_RISK_Slots_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "reference/SOT-RISK-MASTER-001_Consolidado.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -12595,7 +12961,17 @@
   },
   {
    "from": "specs/features/SPEC-003/checks.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/checks.md",
    "to": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/checks.md",
+   "to": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
    "type": "id"
   },
   {
@@ -12645,6 +13021,11 @@
   },
   {
    "from": "specs/features/SPEC-003/plan.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/plan.md",
    "to": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
    "type": "id"
   },
@@ -12666,6 +13047,11 @@
   {
    "from": "specs/features/SPEC-003/plan.md",
    "to": "governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/plan.md",
+   "to": "governance/EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md",
    "type": "id"
   },
   {
@@ -12721,6 +13107,11 @@
   {
    "from": "specs/features/SPEC-003/research.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-003/research.md",
+   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
    "type": "id"
   },
   {

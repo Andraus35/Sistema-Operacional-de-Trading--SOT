@@ -7,6 +7,17 @@
 
 ---
 
+## 0-bis. Nota de delta v1.2 (propagação DHR-ARQ-001 — unificação Manager/Conviction) [FONTE]
+
+> Esta verificação cobre agora o `plan.md` **v1.2**. O delta v1.2 propaga a instrução direta de Andraus (DHR-ARQ-001, 2026-10-01) e o baseline ADR-MANAGER-001 / CEM-001 DIV-CEM-4: "Conviction Engine" deixa de ser **componente/agente separado** (acepção (a)) e passa a **mecanismo (Classe D/H do CCM-001) INVOCADO pelo Manager Agent — Fase 2 (Conviction)** (acepção (b)). **Sem mudança de mérito** — BASpecs (CF-001..013), EARS (10), Enforcement (EC-CF-001..006), Classe/Mecanismo e D0–D8 **inalterados e NÃO renumerados**; muda o *framing* do termo e as seções de cabeçalho/CC-10/acepção/Missão (D0). Efeitos verificados:
+> - **CONFLITO-1 / CC-10 RESOLVIDO** (não é mais reconciliação pendente (a)↔(b)); a Spec adota a acepção (b) explicitamente. ✔
+> - **B-001 parcialmente SUPERSEDIDA** na parte "componente separado" (INV-07 — não apagada); separação **lógica** de etapas preservada. ✔
+> - **WF-D03 permanece ABERTA** (J-001/N-001/Q-A5/Q-A9); a taxonomia do componente **sai** de WF-D03 (passa a resolvida por DHR-ARQ-001). Nenhuma `WF-Dxx` aberta declarada fechada. ✔
+> - **CONS-01:** nenhuma decisão aberta nova fechada; J-001/N-001/M-001 intactas. Unificação do Manager (SPEC-008×SPEC-015) remetida à proposta EUA-E23, **não** fechada aqui. ✔
+> **PASS (delta de propagação).**
+
+---
+
 ## 0. Nota de delta v1.1 (reconciliação ao `WORKFLOW.md`, versão vigente) [FONTE]
 
 > Esta verificação cobre o `plan.md` **v1.1**. O delta v1.1 é de **conformidade/fronteira ao `WORKFLOW.md`** (versão vigente, DHR-WF-002), **sem mudança de mérito** de BASpecs/EARS/Enforcement/Classe — portanto as seções §1–§10 abaixo permanecem válidas (well-formedness inalterada). O que o delta v1.1 altera e esta nota confirma:

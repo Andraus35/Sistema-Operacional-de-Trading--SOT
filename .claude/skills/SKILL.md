@@ -354,7 +354,7 @@ marcar como **[DECISÃO NECESSÁRIA]** e aguardar instrução. Nunca resolver au
 | ID | Questão | Impacto se resolvida incorretamente |
 |---|---|---|
 | **J-001** | Fórmula exata do Conviction Vector | Bloqueia toda implementação de qualidade de sinal |
-| **B-001** | Conviction Engine é separado do Synthesis Agent? | Determina estrutura arquitetural de ambos |
+| ~~**B-001**~~ | **FECHADA (Q-007)** + parcialmente SUPERSEDIDA por ADR-MANAGER-001 (DHR-ARQ-001, 2026-10-01): não é mais pergunta aberta. "Conviction Engine" = mecanismo (Classe D/H do CCM-001) invocado pelo Manager Agent — Fase 2; separação lógica de etapas preservada; dim.=8 | Resolvida — não bloqueia |
 | **G-001** | Schema do estado persistente por agente | Determina InferenceContextEnvelope e cache |
 | **H-001** | Knowledge Graph: grafo real ou estrutura de dados? | Determina toda a spec EC-COG-003 |
 | **I-001** | Skills são unidades formais separadas dos Engines? | Determina granularidade de specs e testes |
@@ -371,7 +371,7 @@ marcar como **[DECISÃO NECESSÁRIA]** e aguardar instrução. Nunca resolver au
 |---|---|---|---|
 | Decidir fórmula Conviction Vector (J-001) | Conviction Engine | D4 | GAP-003 — bloqueia qualidade de todo sinal |
 | Criar schema Blackboard message | Blackboard | D4+D6 | GAP-007 — bloqueia protocolos inter-agente |
-| Resolver B-001 (CE vs. SA) | Conviction Engine / Synthesis | — | Estrutural — afeta spec de ambos |
+| ~~Resolver B-001 (CE vs. SA)~~ — **RESOLVIDA** (Q-007 + DHR-ARQ-001): Conviction Engine = mecanismo invocado pelo Manager Fase 2 | Manager Agent — Fase 2 (SPEC-015) / mecanismo CCM-001 (SPEC-003) | — | Não é mais pendência estrutural |
 
 ### Sprint 2 — P1 Agentes críticos
 

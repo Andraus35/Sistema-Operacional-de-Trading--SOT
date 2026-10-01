@@ -27,7 +27,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | Fibonacci Agent | **Fibonacci Validator** | Validação geométrica (não cria contagem) |
 | Execution Agent | **ICT Specialist** | Execução (não cria hipótese de nenhum tipo) |
 | Fusion Engine | **Fusion Engine** (mantido) | Funde Evidências em Evidência DERIVED (CEM-001) |
-| Conviction Engine | **Conviction Engine** (mantido) | Calcula o Conviction Vector (8 dimensões) |
+| Conviction Engine | **Mecanismo** (rótulo legado) — Classe D/H do CCM-001, **invocado pelo Manager Agent — Fase 2 (Conviction)** (DHR-ARQ-001; ver §2-bis l.55) | Calcula o Conviction Vector (8 dimensões) — não é agente/componente separado |
 | Synthesis Agent | **Synthesis Agent** (mantido) | Árbitro final; produz o Trading Mission Package |
 
 ### Agentes fora do escopo atual do SOT
@@ -85,7 +85,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | Conviction Vector | Vetor multidimensional de convicção — **8 dimensões** (Q-008): estrutural, geométrica, fractal, institucional, operacional, temporal, volume, histórica. Fórmula/pesos/limiares definitivos = J-001 (aberto). | CONSTITUTION P02 (corrigido) / Decisão Q-008 |
 | Conviction Global | Resultado sistêmico de convicção, calculado pelo modelo canônico **CCM-001** (pendente de redação — SPEC-003). | CHM-001 §1.9 |
 | Fusion Engine | Motor determinístico que funde Evidências heterogêneas em Evidência DERIVED. Não calcula convicção. | CEM-001 / Decisão Q-007 |
-| Conviction Engine | Motor que recebe Evidência DERIVED e calcula o Conviction Vector. **Separado** do Synthesis Agent (B-001 fechado). | Decisão Q-007 |
+| Conviction Engine | **Mecanismo legado** (não agente/componente independente — DHR-ARQ-001, 2026-10-01): recebe Evidência DERIVED e calcula o Conviction Vector, como **etapa invocada pelo Manager Agent — Fase 2 (Conviction)** (ADR-MANAGER-001 / CEM-001 DIV-CEM-4). B-001 (Q-007) parcialmente SUPERSEDIDA na parte "componente separado"; preservada a separação **lógica** de etapas Fusão→cálculo do Conviction Vector→síntese; INV-07. Rótulo de Classe D/H do CCM-001 (SPEC-003). | Decisão Q-007; ADR-MANAGER-001; DHR-ARQ-001 |
 | Synthesis Agent | Árbitro final (LLM): recebe Conviction Vector + hipóteses e produz decisão / TMP (handoff interno à camada de risco). | Decisão Q-007 |
 | TMP (Trading Mission Package) | Artefato **interno** de passagem — snapshot da decisão de síntese entregue por handoff à camada de risco (Síntese → Risk Agent). **Deixou de ser o artefato de fronteira** (EUA-E19a, 2026-09-22). Ancora INV-RISK-00 (isolamento epistêmico — SPEC-016 repurposada). | INV-05 (emendado); EUA-E19a |
 | **Signal Package** | Artefato **de fronteira** — único artefato que atravessa a fronteira SOT → Bot Trade Finance. Termo fundacional (ENGENHARIA-GERAL l.604-606) restaurado pela EUA-E19a. O SOT não executa ordem. Contrato exato = D-RISK-SP-001 (aberta, RISK-SPEC-022). | INV-05 (emendado); EUA-E19a |

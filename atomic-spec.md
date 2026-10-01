@@ -10,7 +10,7 @@
 **Emenda PRINC-BID-001 (DHR-PRINC-BID-001, 2026-09-27):** Declaração de Princípios de Domínio por Spec de especialidade (§8 sequência, §10.5 CC-12, §10.7 nova) — herança principiológica bidirecional (GPR-001 §2.7/§14); prospectiva, incide a partir de SPEC-002, ordenada após RULE-MECH-01 (Classe declarada primeiro).  
 **Emenda RULE-ECC-04 (DHR-VERBATIM-SRC-001, 2026-09-28):** Captura Verbatim de Fonte (§15 "Verificação") — substitui BL-020 (acesso web do Revisor, declinado); Revisor verifica correspondência de string entre citação e arquivo de captura, sem web; prospectiva, incide a partir de SPEC-002.  
 **Emenda RULE-ECC-05 (DHR-ECC05-001, 2026-09-29):** Pesquisa Multi-Lente (§15) — Dossiê de Spec que toca comportamento de trading (agente analítico/Manager/Risco) pesquisa Arquitetura + Escola de análise (Elliott/SMC/ICT/risco-retorno) + confronto com `WORKFLOW.md`; prospectiva, a partir de SPEC-003.  
-**Emenda RULE-ECC-05/WORKFLOW.md (DHR-WF-001, 2026-10-01):** lente (3) da Pesquisa Multi-Lente passa a *confronto e conformidade* com `WORKFLOW.md` (raiz; soberano; IDs estáveis `WF-xx`); detector D6 em `scripts/check_doc_sync.py`.  
+**Emenda RULE-ECC-05/WORKFLOW.md (DHR-WF-001, 2026-10-01):** lente (3) da Pesquisa Multi-Lente passa a *confronto e conformidade* com `WORKFLOW.md` (raiz; soberano; IDs estáveis `WF-xx`); detector D6 em `scripts/check_doc_sync.py`. **Propagação DHR-ARQ-001 (2026-10-01):** "Conviction Engine" = **mecanismo legado** (Classe D/H do CCM-001) invocado pelo **Manager Agent — Fase 2 (Conviction)**, não componente/agente separado (propaga ADR-MANAGER-001 / CEM-001 DIV-CEM-4). B-001 parcialmente SUPERSEDIDA (parte componente-separado); separação lógica de etapas preservada; dimensionalidade=8 intocada; INV-07. Ver nota B-001 em §12.  
 **Edição operacional:** Claude Code (Opus 4.8, esforço alto, skill `tlc-spec-lean`)  
 **Autoridade literal:** documentos-base v1.0 + emendas EUA-E01/EUA-E02 no repositório do projeto  
 **Arquivos raiz obrigatórios:** `roadmap.md` (sequência) · `atomic-spec.md` (este arquivo — método)
@@ -381,7 +381,7 @@ STATUS           :  [PROPOSTA] — efetiva na homologação da Spec; registrado 
 | N-001 | Pesos por ativo do Conviction Vector (BTC/XAU/NASDAQ) | parte de J-001 pós-backtest (novo — Q-008) |
 
 **FECHADAS por Andraus (Questionário v1, 2026-09-14):**
-- **B-001 → FECHADA (Q-007):** Conviction Engine é SEPARADO do Synthesis Agent. Topologia de 3 componentes: Fusion Engine (funde Evidência→DERIVED) → Conviction Engine (calcula Conviction Vector 8D) → Synthesis Agent (árbitro/TMP).
+- **B-001 → FECHADA (Q-007)** e **parcialmente SUPERSEDIDA por ADR-MANAGER-001 (DHR-ARQ-001, 2026-10-01)** na parte "Conviction Engine como componente/agente separado": "Conviction Engine" passa a ser **rótulo de MECANISMO** (Classe D/H do CCM-001) **invocado pelo Manager Agent — Fase 2 (Conviction)**, não entidade arquitetural independente (ADR-MANAGER-001 §2.1/§2.3; CEM-001 DIV-CEM-4). **Preservada a separação LÓGICA de etapas/mecanismos:** Fusion Engine (funde Evidência→DERIVED, inalterado) → cálculo do Conviction Vector 8D → decisão/síntese. INV-07: B-001 não é apagada.
 - **Dimensionalidade do Conviction Vector → FECHADA (Q-008):** 8 dimensões (estrutural, geométrica, fractal, institucional, operacional, temporal, volume, histórica).
 
 **FECHADA por Andraus (2026-09-28, DHR-I001-001):**
