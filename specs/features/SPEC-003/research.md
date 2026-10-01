@@ -285,6 +285,52 @@ Todas as 8 perguntas APROVADAS por Andraus. Parecer do Revisor: **CONFORME** (0 
 
 ---
 
+## 8. Nota de delta v1.1 — reconciliação ao `WORKFLOW.md` (versão vigente) [FONTE]
+
+> **Natureza:** este Dossiê foi homologado (§6-bis) quando o setup operacional ainda estava sob a forma anterior (quatro pontos abertos em `WORKFLOW-SOT-001`). Posteriormente, Andraus **fechou** três desses pontos e **declarou a direção** do quarto (DHR-WF-002, versão vigente da `WORKFLOW.md`). Esta nota registra o delta **sem reescrever** §0–§7 (artefato de abertura, histórico/imutável — RCN-001/INV-07) e **sem fechar** nenhuma decisão aberta (CONS-01). É o insumo de abertura do delta `plan.md`/`checks.md` v1.1. Nada aqui é baseline novo.
+
+### 8.1 O que mudou no setup operacional (fonte soberana = `WORKFLOW.md`, versão vigente)
+
+| Ponto de `WORKFLOW-SOT-001` (como o Dossiê §3.3/§4 o via) | Estado na versão vigente da `WORKFLOW.md` | Efeito na SPEC-003 |
+|---|---|---|
+| Killzone como mecanismo formal | **WF-D01 FECHADA** (WF-K01..K04; tabelas WF-R02/R03 editáveis) | **Fora do escopo** — Manager/Scheduler (SPEC-008/015). A SPEC-003 **não** especifica Killzone. Deixa de ser "ponto aberto". |
+| Alarme-gatilho de preço como mecanismo formal | **WF-D02 FECHADA** (WF-A01..A03, FSM determinística) | **Fora do escopo** — Manager (SPEC-008/015). O `parent_id`/objeto do alarme é **consumido**, não produzido (CF-013/WF-A01). |
+| Papel do ICT no pipeline | **WF-D04 FECHADA** (ICT = Agente Operacional, WF-05; produz **setup operacional**, não hipótese — INV-02) | **Fora do escopo** — agentes (SPEC-010..014). A SPEC-003 não decide onde o ICT entra. |
+| Relação convicção-macro/global ↔ Conviction Vector 8D | **WF-D03 ABERTA (residual)** — direção declarada em **WF-C01** (um vetor 8D, duas leituras) | A SPEC-003 **toca** e fornece o **mecanismo** (CF-010), **sem** fechar fórmula/pesos/limiares (J-001), nº de invocações 1x/2x (Q-A5) nem a dimensão do regime (Q-A9). |
+
+**Consequência de escopo (CONS-01):** `WF-D01/D02/D04` deixam de ser tratadas como pontos abertos de `WORKFLOW-SOT-001`; **`WF-D03` permanece a única aberta (residual)**. A reclassificação é de *fronteira*, **não** de mérito: as BASpecs/EARS/Enforcement/Classe da SPEC-003 **não mudam** (o delta v1.1 é declarativo).
+
+### 8.2 IDs `WF-xx` que a SPEC-003 passa a citar por ID (mecanismo-apenas — RULE-ECC-05 lente 3)
+
+A versão vigente acrescentou regras operacionais nomeadas que o Dossiê original (§3.3) só descrevia como "Fase 1/Fase 2". O delta v1.1 do `plan.md` incorpora-as **por ID, sem invadir** Manager/Risk/J-001: **WF-C01** (macro×global = um vetor, duas leituras → CF-010), **WF-C02** (confluência por independência → CF-002), **WF-C03** (order flow → dimensão de volume, INDETERMINADO → CF-007), **WF-C04** (regime = dimensão, não gate → Q-A9), **WF-X03**/INV-04 (fluxo unidirecional convicção→risco → CF-008/CF-011), **WF-A01** (parent_id consumido → CF-013), **WF-V02** (rótulo de evidência por escola preservado → CF-011/D9), **WF-P02**/N-001 (parâmetros por ativo = mecanismo → CF-009). Todos **existem** na versão vigente; nenhum é contraditado; nenhuma `WF-Dxx` aberta é tratada como fechada.
+
+### 8.3 Q-A9 (NOVA) — em qual das 8 dimensões entra o **regime** (WF-C04)? [DECISÃO NECESSÁRIA — mantida aberta]
+
+**Contexto [FONTE]:** `WF-C04` (versão vigente) declara que o **regime** (tendência / range / alta volatilidade) é **dimensão de convicção, não gate**, e **deixa para a SPEC-003** definir **em qual das 8 dimensões fechadas** (estrutural, geométrica, fractal, institucional, operacional, temporal, volume, histórica — Questionário v1) ele entra. A SPEC-003 **conforma-se ao princípio** (regime não é gate; não cria 9ª dimensão — INV-03/PCO-06) mas **não decide** a dimensão-alvo: é decisão de Andraus. Enquanto não decidida, o mapeamento é **INDETERMINADO** (não fabricar — RULE-MET-01/CONS-01).
+
+> **Delimitação honesta (RULE-MET-01):** "regime" **não é** a dimensão `volume`. A dimensão `volume` é especificamente order flow (CVD/delta/absorção) por **WF-C03/CF-007**; mapear regime a `volume` confundiria dois conceitos distintos. Por isso `volume` não figura entre as opções abaixo.
+
+| Opção | Dimensão-alvo | Argumento a favor | Risco / contra |
+|---|---|---|---|
+| **A** | **temporal** | Regime é o **estado/fase de mercado vigente no tempo** em que a estrutura se desenrola — contexto temporal, não hipótese estrutural. Preserva INV-01 (regime não afeta o veto de Elliott). | Pode confundir "fase temporal da onda" (Elliott) com "regime de mercado"; exige definição clara de `temporal`. |
+| **B** | **histórica** | Regime é frequentemente **inferido do comportamento histórico/estatístico** do ativo (persistência de tendência, vol. realizada). Encaixa em "dimensão histórica". | Regime é um estado **corrente**, não só histórico; pode subrepresentar o regime intradiário. |
+| **C** | **estrutural** | Regime (tendência vs. range) correlaciona-se com a leitura estrutural (impulso vs. correção). | **Rejeitada como recomendação:** arriscaria contaminar a dimensão que detém precedência/veto (INV-01/CC-01) — regime passaria indevidamente a influenciar o veto de Elliott. |
+| **D** | **esclarecimento** (nenhuma única — modulador transversal) | Regime poderia **modular pesos/normalização** de várias dimensões, não ser uma única. | **Exige decisão de Andraus**: `WF-C04` pede "em qual das 8"; um modulador transversal extrapola o enunciado e aproxima-se de J-001/N-001 (pesos) — fora do que a Spec pode fixar. |
+
+**Recomendação do Especificador [INFERÊNCIA — não decisão]:** **Opção A (temporal)** — é o mapeamento que melhor preserva a hierarquia inviolável (regime como contexto temporal, jamais como fonte de veto direcional, INV-01) e evita contaminar a dimensão estrutural. A decisão é de Andraus (WF-C04/WF-D03). Até lá, **INDETERMINADO** (CONS-01); o `plan.md` registra Q-A9 como `[DECISÃO NECESSÁRIA]` e **não** mapeia o regime a nenhuma dimensão.
+
+### 8.4 Gatilhos RMR-001 e validade do Dossiê
+
+- **Sem re-apontamento de slot:** o slot SPEC-003 permanece **mantido** (não dividido/fundido/renumerado) — RULE-ECC-01 não exige re-apontamento. O delta v1.1 é de conformidade a `WORKFLOW.md`, não de redefinição de escopo.
+- **BL-026** (`Em espera`; valores editáveis WF-R01..R03; gatilho `spec:SPEC-008 em redação ∨ spec:SPEC-010..015 em redação`): **não dispara** pela SPEC-003 (esta Spec não consome WF-R01..R03 — Killzone/TFs são do Manager/agentes). Registrado para visibilidade. [FONTE: DHR-WF-002 §1/§4]
+- **Validade do Dossiê (Q-A7):** o `plan.md` já estava dentro da validade (Plan iniciado 2026-10-01). O delta v1.1 ocorre no **mesmo dia** — dentro da validade; nenhuma re-pesquisa web é exigida (o delta é reconciliação a fonte interna soberana, não novo estado da arte). ECC-VAL-001 permanece aberta como regra geral.
+
+### 8.5 Status epistemológico desta nota
+
+[FONTE]: a reclassificação WF-D01/D02/D04 FECHADAS, WF-D03 ABERTA e os conteúdos WF-C/X/A/V/P citados — origem `WORKFLOW.md` (versão vigente) e DHR-WF-002. [PROPOSTA]: o mapeamento recomendado de Q-A9 (Opção A). [DECISÃO NECESSÁRIA]: Q-A9 (dimensão do regime), Q-A5 (invocação 1x/2x), J-001, N-001 — **nenhuma fechada aqui**. [INFERÊNCIA]: a recomendação Opção A e a coerência (a)↔WF-C01.
+
+---
+
 ## Sources (fontes [EXTERNO] — acesso 2026-09-29)
 
 - [Bayesian and Dempster-Shafer models for combining multiple sources of evidence (arXiv 2104.07440)](https://arxiv.org/abs/2104.07440)

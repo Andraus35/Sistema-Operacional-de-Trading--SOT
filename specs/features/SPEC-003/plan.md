@@ -3,9 +3,9 @@
 | Campo | Valor |
 |---|---|
 | ID | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine (redige o **CCM-001**, canônico pendente) |
-| Versão | 1.0 (candidata) |
+| Versão | 1.1 (candidata) |
 | Status | **CANDIDATA — em revisão** (não homologada; homologação é ato de Andraus) |
-| Fonte | ROADMAP §4/§21/§143; `research.md` (Dossiê de abertura HOMOLOGADO por Andraus 2026-10-01, §6-bis; RULE-ECC-01/02/04/05); atomic-spec **v1.5** |
+| Fonte | ROADMAP §4/§21/§143; `research.md` (Dossiê de abertura HOMOLOGADO por Andraus 2026-10-01, §6-bis + §8 nota de delta v1.1; RULE-ECC-01/02/04/05); atomic-spec **v1.5**; `WORKFLOW.md` (versão vigente — reconciliação v1.1, conformidade RULE-ECC-05 lente 3) |
 | Complexidade | **CRITICAL** [FONTE: ROADMAP §4/§143; research.md Q-A1/Q-A2; atomic-spec §3 "Conviction Engine = CRITICAL"] |
 | Profundidade-alvo | **D0–D8** (standard + adversarial) [FONTE: research.md Q-A2 homologado; AGENTS.md §4] |
 | Profile (Claude Code) | standard + adversarial (D8) |
@@ -26,6 +26,7 @@ Status epistemológico de cabeçalho: a SPEC-003 **redige o CCM-001** (Canonical
 | Versão | Data | Alterações |
 |---|---|---|
 | 1.0 | 2026-10-01 | Entrega candidata inicial. Redige o CCM-001 + Evidence Fusion Engine + Conviction Engine + Conviction Vector 8D. D0–D8, atomic-spec v1.5. 1ª aplicação de RULE-ECC-05 refletida num Plan (decisões adotar/adaptar/rejeitar/adiar do Dossiê incorporadas nas BASpecs/Non-goals). |
+| 1.1 | 2026-10-01 | **Delta de reconciliação ao `WORKFLOW.md` (versão vigente).** Sem mudança de mérito das BASpecs/EARS/Enforcement/Classe. (1) Reclassifica a fronteira: `WF-D01` (Killzone), `WF-D02` (alarme-gatilho) e `WF-D04` (papel do ICT) agora **FECHADAS** por Andraus na `WORKFLOW.md` (versão vigente) — a SPEC-003 continua **não** as especificando (são do Manager/Scheduler — SPEC-008/015 — e dos agentes SPEC-010..014), mas deixam de ser tratadas como pontos abertos de `WORKFLOW-SOT-001`; **`WF-D03` permanece ABERTA (residual)**: J-001, N-001, nº de invocações 1x/2x (Q-A5) e **dimensão do regime** (WF-C04, novo **Q-A9**). (2) Incorpora por ID, mecanismo-apenas: `WF-C01` (macro×global = um vetor, duas leituras → CF-010), `WF-C02` (confluência por independência → CF-002), `WF-C03` (order flow → dimensão de volume, INDETERMINADO → CF-007), `WF-C04` (regime = dimensão de convicção → RULE-CF-003/Q-A9), `WF-X03`/INV-04 (risco não retroalimenta convicção → CF-008/CF-011), `WF-A01` (parent_id/hipótese-origem = contrato de entrada consumido → CF-001/CF-013), `WF-V02` (rótulo de evidência por escola, preservado na reconstrução → CF-011/D9), `WF-P02`/N-001 (parâmetros por ativo = gancho → CF-009). (3) Atualiza CC-10/acepção semântica à direção de `WF-C01`, a conformidade RULE-ECC-05 lente (3), Herança/Delta (CC-08), Nota de gate e Etiquetagem. Registra **Q-A9** (dimensão do regime, WF-C04). BASpecs **não renumeradas**. |
 
 ---
 
@@ -38,6 +39,7 @@ Status epistemológico de cabeçalho: a SPEC-003 **redige o CCM-001** (Canonical
 - **BL-002** (Falso-DENY observável, ENF-07; gatilho `spec:SPEC-003 homologada` ∨ `decisao:J-001 resolvida` — **J-001 segue em aberto/pendente**, esta é só a sintaxe do gatilho): **não dispara na redação**; **IMINENTE** — dispara na **homologação** da SPEC-003. O método de observação de falso-DENY do gate E3 (CF-012) já é esboçado em EC-CF-006/ENF-07; limiar amostral = gap de enforcement aberto. [FONTE: RMR-001 BL-002]
 - **BL-003** (`spec:SPEC-004 em redação`), **BL-017** (`spec:SPEC-007/014/038 em redação`): **não disparam** (SPEC-003 não é gatilho). [FONTE: RMR-001]
 - Nenhum item fica `ATIVADO` pendente **sem encaminhamento** por esta redação (BL-004 absorvido/tratado; BL-012 encaminhado a Andraus; BL-002 IMINENTE). O passo 11-bis pleno ocorre na homologação da SPEC-003.
+- **Reconciliação `WORKFLOW-SOT-001` (DHR-WF-002, versão vigente da `WORKFLOW.md`) [FONTE]:** a decisão aberta `WORKFLOW-SOT-001` deixou de ser quádrupla — `WF-D01` (Killzone), `WF-D02` (alarme-gatilho) e `WF-D04` (papel do ICT) estão **FECHADAS** por Andraus; permanece **ABERTA só `WF-D03`** (residual): relação convicção-macro/global ↔ Conviction Vector 8D (direção declarada em `WF-C01`, mas fórmula/pesos/limiares = J-001, nº de invocações 1x/2x = Q-A5, dimensão do regime = WF-C04/Q-A9). A SPEC-003 continua **não** especificando Killzone/alarme/ICT (Manager/Scheduler SPEC-008/015 e agentes SPEC-010..014) e **não** fecha `WF-D03` (CONS-01). Nenhuma `WF-Dxx` aberta é tratada como fechada nesta entrega. [FONTE: ROADMAP §32; WORKFLOW.md WF-D01/D02/D03/D04 versão vigente]
 
 ---
 
@@ -52,7 +54,7 @@ Status epistemológico de cabeçalho: a SPEC-003 **redige o CCM-001** (Canonical
 - [x] **CC-07 — Cadeia de derivação SES-001 §60:** N/A nesta entrega (idem CC-06); rastreabilidade de origem provida por ROADMAP §4/§143 → Dossiê (research.md, homologado) → esta Spec.
 - [x] **CC-08 — Bloco Herança/Delta (§8.3, EUA-E04):** presente (ver "Herança / Delta"); INHERITS/ADDED preenchidos com ID+versão (RULE-HD-04); REMOVED vazio; nenhum item ADDED/MODIFIED contradiz o herdado (RULE-HD-02). Eixo VERTICAL (RULE-HV) avaliado e declarado não aplicável (herança sobre modelos canônicos vizinhos, não decomposição pai→filha de macro-spec) — ver nota na seção de Herança. [FONTE: EUA-E04 §8.3; RULE-HD-02/03/04; RULE-HV]
 - [x] **CC-09 — Status epistemológico / Epistemic Check (RULE-EPI):** aplicado — distinção FATO NORMATIVO / FATO ARQUITETURAL / PROPOSTA / INFERÊNCIA / EXTERNO; fontes web tratadas como DADO ([EXTERNO], research.md §2), nunca baseline; nenhuma hipótese tratada como fato; **INDETERMINADO** usado onde há incerteza material (ausência/contraevidência; (in)dependência não verificável; robustez insuficiente); **sem falsa precisão** — nenhuma escala/limiar numérico definitivo de convicção fixado (J-001). [FONTE: RULE-EPI-01..03; RULE-PRB-02; research.md §4]
-- [x] **CC-10 — Terminologia concorrente por escola (RULE-SEM-01):** **INCIDE e aplicado** — o termo **"Conviction Engine"** tem **acepção concorrente** (CONFLITO-1): (a) motor autônomo separado do Kernel (ROADMAP/B-001); (b) Fase 2 do Manager Agent (CEM-001 notas DIV-CEM-4/ADR-MANAGER-001). **A SPEC-003 declara que usa a acepção (a)** — Conviction Engine como componente SEPARADO na topologia Fusion→Conviction→Synthesis (B-001 FECHADA) — **sem fechar a reconciliação** com o Manager Fase 2, que pertence a WORKFLOW-SOT-001 (Q-A6). Termos canônicos (Evidence Strength, Hypothesis Confidence, Global Conviction) **não são redefinidos** (RULE-SEM-04). Ver §"Declaração de acepção semântica". [FONTE: RULE-SEM-01/04; CEM-001 DIV-CEM-4; research.md §3.3/§4 CONFLITO-1; Q-A6]
+- [x] **CC-10 — Terminologia concorrente por escola (RULE-SEM-01):** **INCIDE e aplicado** — o termo **"Conviction Engine"** tem **acepção concorrente** (CONFLITO-1): (a) motor autônomo separado do Kernel (ROADMAP/B-001); (b) Fase 2 do Manager Agent (CEM-001 notas DIV-CEM-4/ADR-MANAGER-001; e `WORKFLOW.md` WF-04/WF-06, que atribuem ao **Manager** o ato de *formar* a convicção macro/global em runtime). **A SPEC-003 declara que usa a acepção (a)** — Conviction Engine como componente SEPARADO na topologia Fusion→Conviction→Synthesis (B-001 FECHADA) —, framing **compatível** com a `WORKFLOW.md` (o Manager *invoca* o componente que *computa* a convicção), **sem fechar a reconciliação** (a)↔(b), que permanece em `WORKFLOW-SOT-001`/WF-D03 (Q-A6). A direção macro×global está agora **declarada por Andraus em `WF-C01`** (um único Conviction Vector 8D, duas leituras: macro = subconjunto Fase 1; global = +operacional) — consistente com o mecanismo já previsto em CF-010 (mesmo contrato sobre subconjunto e vetor completo); mas `WF-C01` **não** fecha fórmula/pesos/limiares (J-001) nem o nº de invocações 1x/2x (Q-A5/WF-D03). Termos canônicos (Evidence Strength, Hypothesis Confidence, Global Conviction) **não são redefinidos** (RULE-SEM-04). Ver §"Declaração de acepção semântica". [FONTE: RULE-SEM-01/04; CEM-001 DIV-CEM-4; WORKFLOW.md WF-C01/WF-04/WF-06 versão vigente; research.md §3.3/§4 CONFLITO-1; Q-A6]
 - [x] **CC-11 — Classe/Mecanismo por BASpec com efeito (RULE-MECH-01):** **INCIDE** — a SPEC-003 cita RULE-MECH-01 e é "SPEC-002 em diante". Cada BASpec com efeito declara sua Classe (D/H/P/C) com critério 4Es; Classes H/P declaram bounded loop + critério de parada; Classes H/C declaram gate de saída determinístico. Declaração por BASpec, nunca por Spec inteira (SES-001 §50). Ver §D3. [FONTE: RULE-MECH-01..04; atomic-spec §9/§10.6]
 - [x] **CC-12 — Princípios de Domínio `PD-xx` (RULE-PD-01):** **N/A — não incide** (homologado Q-A3). O Conviction/Fusion Engine é **infraestrutura de agregação transversal e domain-agnostic** — agrega convicções produzidas pelas escolas (Elliott/SMC/ICT), mas **não é** uma escola analítica. Mesmo padrão N/A de SPEC-002. Os `PD-xx` serão declarados pelas Specs analíticas SPEC-010..014. GPR-001 §2.7 permanece sem `PD-xx` de convicção. N/A **homologado por Andraus** (research.md §6-bis Q-A3) — registrado explicitamente, não supressão silenciosa. Nuance honesta (RULE-MET-01): RULE-ECC-05 incidir **não** implica RULE-PD-01 incidir — gatilhos distintos (ECC-05 = toca comportamento de trading; PD-01 = define escopo de especialidade). [FONTE: RULE-PD-01; atomic-spec §10.7; research.md §5.8(3)/§6-bis]
 
@@ -83,6 +85,13 @@ INHERITS (herdado — a spec NÃO redefine; referência por ID + VERSÃO baselin
       SPEC-002 (BASELINE, DHR-SPEC002-001) — evidência operacional ACTIVE, provenance, tipologia
       (favorável/contra/inconclusiva/AUSENTE), (in)dependência representada (anti-double-counting), conflito
       DETECTADO/REGISTRADO (nunca resolvido) — insumos que a SPEC-003 consome
+  - Setup operacional (fronteira soberana, NÃO redefinida): WORKFLOW.md (versão vigente, DHR-WF-002) —
+      a SPEC-003 conforma-se por ID (mecanismo-apenas): WF-C01 (macro×global = um vetor, duas leituras),
+      WF-C02 (confluência por independência), WF-C03 (order flow → dimensão de volume, INDETERMINADO),
+      WF-C04 (regime = dimensão, não gate; dimensão-alvo = Q-A9), WF-X03 (fluxo unidirecional convicção→risco),
+      WF-A01 (parent_id/hipótese-origem consumido, não produzido), WF-V02 (rótulo de evidência por escola
+      preservado), WF-P02 (parâmetros por ativo = mecanismo → N-001). WF-D01/D02/D04 FECHADAS (fora de escopo
+      — Manager/Scheduler SPEC-008/015 e agentes); WF-D03 ABERTA (residual) — não fechada aqui (CONS-01)
   - Método: atomic-spec.md v1.5 (BASpec, D0–D9, EARS, Enforcement E0–E3/F.1–F.4, TRACE-06, Quality Gates
       L1–L4 §7, Classe/Mecanismo §10.6, RULE-MM §maturidade)
   - Governança/Avaliação/Maturidade: SPEC-019 v1.0 (RULE-HG-01..08, RULE-HV-01..04); SPEC-020 v1.0
@@ -131,7 +140,28 @@ REMOVED (só com governança — nunca implícito):
 
 ## Declaração de acepção semântica (RULE-SEM-01 — CC-10)
 
-> **Termo:** "Conviction Engine". **Acepção adotada por esta Spec:** **(a)** componente **SEPARADO** do Kernel na topologia **Fusion Engine → Conviction Engine → Synthesis Agent** (B-001 FECHADA, Questionário v1). **Acepção concorrente registrada, NÃO adotada e NÃO reconciliada aqui:** **(b)** "Conviction Engine absorvido pela Fase 2 do Manager Agent" (CEM-001 notas DIV-CEM-4; ADR-MANAGER-001). A reconciliação (a)↔(b) é matéria de **WORKFLOW-SOT-001** (aberta; Q-A6) — a SPEC-003 **declara** qual sentido usa e **não fecha** a reconciliação global (RULE-SEM-01; PB-09 conflito registrado, não suprimido). [FONTE: research.md §3.3/§4 CONFLITO-1; RULE-SEM-01; Q-A6]
+> **Termo:** "Conviction Engine". **Acepção adotada por esta Spec:** **(a)** componente **SEPARADO** do Kernel na topologia **Fusion Engine → Conviction Engine → Synthesis Agent** (B-001 FECHADA, Questionário v1). **Acepção concorrente registrada, NÃO adotada e NÃO reconciliada aqui:** **(b)** "Conviction Engine absorvido pela Fase 2 do Manager Agent" (CEM-001 notas DIV-CEM-4; ADR-MANAGER-001; `WORKFLOW.md` WF-04/WF-06, que descrevem o **Manager** *formando* a convicção macro/global em runtime). A reconciliação (a)↔(b) é matéria de **`WORKFLOW-SOT-001`/WF-D03** (aberta; Q-A6) — a SPEC-003 **declara** qual sentido usa e **não fecha** a reconciliação global (RULE-SEM-01; PB-09 conflito registrado, não suprimido). Framing compatível: o componente (a) é o que o Manager (b) *invoca*; `WF-C01` declara a direção macro×global (um vetor, duas leituras) sem decidir 1x/2x. [FONTE: research.md §3.3/§4 CONFLITO-1; WORKFLOW.md WF-C01/WF-04/WF-06 versão vigente; RULE-SEM-01; Q-A6]
+
+---
+
+## Conformidade com o `WORKFLOW.md` (RULE-ECC-05 — lente 3; atomic-spec v1.5 = confronto E conformidade)
+
+> **Autoridade:** o `WORKFLOW.md` (versão vigente) é fonte soberana do setup operacional; a SPEC-003 **conforma-se** a ele e **não** o edita; divergência seria achado do Revisor, resolvida por Andraus. A SPEC-003 **não fecha nenhuma `WF-Dxx` aberta**.
+
+**IDs `WF-xx` tocados por esta Spec (mecanismo-apenas, sem invadir Manager/Risk/J-001):**
+
+| WF-xx | Conteúdo (resumo) | Como a SPEC-003 se conforma | Onde |
+|---|---|---|---|
+| **WF-C01** | Convicção macro × global = um Conviction Vector 8D, duas leituras (macro = subconjunto Fase 1; global = +operacional); direção declarada, 1x/2x e fórmula não fechados | O CCM-001 computa convicção sobre **subconjunto** (macro) e **vetor completo** (global) pelo **mesmo** contrato; não fixa invocação (Q-A5) nem fórmula (J-001) | CF-010; RULE-CF-010; CC-10 |
+| **WF-C02** | Confluência vale por **independência**, não por contagem (anti double-counting) | Fusão conta evidências causalmente relacionadas como **uma**; não afirma independência não verificada; calibração do desconto → J-001 | CF-002; RULE-CF-002 |
+| **WF-C03** | Order flow (CVD/delta/absorção) → **dimensão de volume**; dado faltante/ruim = **INDETERMINADO** (nunca zero/fabricado) | Dimensão sem evidência suficiente → **INDETERMINADO**, incerteza localizada, sem número fabricado | CF-007; RULE-CF-006 |
+| **WF-C04** | **Regime** (tendência/range/alta vol.) é **dimensão de convicção, não gate**; em qual das 8 dimensões entra = **deixado para a SPEC-003** | Regime tratado como **dimensão** (não gate); **em qual das 8 dimensões** é **[DECISÃO NECESSÁRIA: Q-A9]** — proposta de opções + recomendação para Andraus; **não decidido aqui** | RULE-CF-003 (nota); Q-A9 |
+| **WF-X03** / INV-04 | Fluxo unidirecional convicção→risco; risco **nunca** retroalimenta a convicção | Custo/sizing/alavancagem/R:R **nunca** entram no Conviction Vector; guard fail-closed | CF-008; CF-011; EC-CF-004 |
+| **WF-A01** | Objeto do alarme traz `parent_id` da hipótese-origem (gatilho de análise, nunca ordem — INV-05) | A convicção referencia a hipótese-origem (`hypothesis_ref`, não redefinida — Separação Tríplice); o **objeto alarme** e seu `parent_id` são **do Manager** (WF-A01), consumidos, não produzidos pela SPEC-003 | CF-013; CCM-001 (Origem); INV-05 |
+| **WF-V02** | Rótulo de **qualidade de evidência por escola** visível no raciocínio | O rótulo por escola (produzido na SPEC-002/agentes) é **preservado na reconstrução/linhagem** da fusão, não sobrescrito; evidência fraca ≠ descartada | CF-011; D9; RULE-CF-011 |
+| **WF-P02** / N-001 | Parâmetros por ativo (pesos, limiares de volume) = mecanismo parametrizável; valores → N-001/backtest | O CCM-001 **suporta** pesos por ativo como **mecanismo**; valores definitivos = **N-001 (aberto)** | CF-009; RULE-CF-003 |
+
+**Verificação da lente (3):** (i) todos os `WF-xx` citados **existem** na `WORKFLOW.md` (versão vigente); (ii) **nenhum** é contraditado — a SPEC-003 implementa o mecanismo que cada WF pressupõe, respeitando INV-01/04/05; (iii) **nenhuma `WF-Dxx` aberta é tratada como fechada**: `WF-D03` permanece aberta (J-001/N-001/Q-A5/WF-C04-Q-A9); `WF-D01/D02/D04` **já estavam fechadas** por Andraus e **não** são especificadas aqui (Manager/Scheduler e agentes). [FONTE: WORKFLOW.md versão vigente; RULE-ECC-05; ROADMAP §32; DHR-WF-001/002]
 
 ---
 
@@ -148,7 +178,9 @@ Os três componentes cobertos (topologia B-001 FECHADA): **(1) Evidence Fusion E
 - Não faz **position sizing, alavancagem, R:R, Portfolio Heat, Kelly** → **Risk Agent / RISK-SPEC** (INV-04; SRC-03/04 [EXTERNO] adiados).
 - Não **resolve** conflito de evidência de forma nova (a SPEC-002 já detecta/registra; aqui é **consumido** como insumo da fusão/agregação) — a resolução direcional vive na agregação não-compensatória e no gate, não como reinvenção da detecção.
 - Não fecha **estados do Blackboard** para objetos não-hipótese (publicação do Conviction Vector) → **M-001 / SPEC-004 (pendente)**.
-- Não decide **quantas vezes** o motor é invocado (macro 1x / global 2x) → **WORKFLOW-SOT-001 / Manager/Scheduler** (a Spec só fornece o mecanismo).
+- Não decide **quantas vezes** o motor é invocado (macro 1x / global 2x) → **`WORKFLOW-SOT-001`/WF-D03 / Manager/Scheduler** (a Spec só fornece o mecanismo; direção macro×global declarada em WF-C01).
+- Não especifica **Killzone (WF-D01), alarme-gatilho (WF-D02) nem onde o ICT entra (WF-D04)** — **FECHADOS por Andraus** na `WORKFLOW.md` (versão vigente) e de responsabilidade do **Manager/Scheduler (SPEC-008/015)** e dos **agentes (SPEC-010..014)**, não do Conviction/Fusion Engine.
+- Não decide **em qual das 8 dimensões entra o regime** (WF-C04) → **[DECISÃO NECESSÁRIA: Q-A9]** — a Spec propõe opções com recomendação; a decisão é de Andraus.
 
 **Status epistemológico:** a SPEC-003 é FATO ARQUITETURAL candidato a baseline; o CCM-001 por ela redigido é [PROPOSTA] até homologação. CEM-001, CHM-001, SPEC-001/002/019/020/021, atomic-spec v1.5, INV-*, ENF-*, RULES v1.5 são FATO NORMATIVO. Fontes externas (research.md §2, SRC-01..07) são [EXTERNO] — DADO, nunca baseline; documentado ≠ homologado (TRACE-06).
 
@@ -180,7 +212,8 @@ Os três componentes cobertos (topologia B-001 FECHADA): **(1) Evidence Fusion E
 | **Resolução** (detecção/registro) de conflito de evidência | **SPEC-002 (já faz)** | A SPEC-003 **consome** o conflito registrado; a agregação não-compensatória e o gate tratam o conflito **direcional** para a convicção, não reinventam a detecção |
 | **Estados do Blackboard** para objetos não-hipótese (publicação do Conviction Vector) | **M-001 / SPEC-004 (pendente)** | M-001 em aberto — não fechar (CONS-01) |
 | **Storage físico / Knowledge Graph / Cognitive Trace Reconstruction** | **SPEC-004 / SPEC-006 / H-001 (pendente)** | Infraestrutura |
-| **Killzone, alarme-gatilho, decisão 1x/2x, onde ICT entra** | **WORKFLOW-SOT-001 / Manager/Scheduler (SPEC-008/015)** | A Spec só dá suporte de mecanismo, não decide |
+| **Killzone (WF-D01), alarme-gatilho (WF-D02), papel do ICT (WF-D04)** | **Manager/Scheduler (SPEC-008/015) e agentes (SPEC-010..014)** | **FECHADOS** por Andraus na `WORKFLOW.md` (versão vigente); fora do escopo do Conviction/Fusion Engine — a SPEC-003 não os especifica |
+| **Decisão 1x/2x e dimensão do regime (WF-C04)** | **`WORKFLOW-SOT-001`/WF-D03 (invocação, Q-A5) / SPEC-003 (dimensão do regime, Q-A9 para Andraus)** | WF-D03 **ABERTA (residual)**; a Spec só dá suporte de mecanismo (CF-010) e propõe opções de dimensão do regime, não decide (CONS-01) |
 | Adotar framework externo (Dempster-Shafer, Bayes/BMA, TOPSIS, confluência ponderada) como **baseline** | — | Rejeitados como baseline (research.md §4 CONFLITO-2/3); só referência de método; o contrato canônico é o CCM-001 |
 
 ---
@@ -259,6 +292,8 @@ RULE-CF-012: O CCM-001 é modelo canônico e segue a governança GMC-001 (univer
              [Fonte: RULE-GMC-001..005; GMC-001]  [PROPOSTA]
 ```
 
+> **Nota WF-C04 — regime como DIMENSÃO, não gate [DECISÃO NECESSÁRIA: Q-A9]:** a `WORKFLOW.md` (versão vigente, WF-C04) declara que o **regime** (tendência/range/alta volatilidade) é **dimensão de convicção, não gate**, e **deixa para a SPEC-003** definir **em qual das 8 dimensões (fechadas)** ele entra. A SPEC-003 **conforma-se** ao princípio (regime não é gate — não cria 9ª dimensão, INV-03) mas **não decide** a dimensão-alvo: é **[DECISÃO NECESSÁRIA]** registrada em **Q-A9** (research.md §8 + lista final), com opções e recomendação para Andraus. Até a decisão, o mapeamento do regime a uma das 8 dimensões é **INDETERMINADO** (CONS-01; não fabricar). [FONTE: WORKFLOW.md WF-C04 versão vigente; INV-03; RULE-CF-003; Q-A9]
+
 ---
 
 ## Critérios de Aceitação (EARS)
@@ -311,8 +346,9 @@ BASpec-CF-002:
                 a independência não foi verificada, marca "undetermined" e declara a limitação — NÃO afirma
                 independência; a CALIBRAÇÃO numérica do desconto NÃO é fixada (J-001)
   PORQUE:       Evidências causalmente relacionadas = uma (RULE-004); não fabricar independência (RULE-MET-01);
-                dependência causal não se afirma por correlação (RULE-CAU-01); calibração → J-001
-  REFERÊNCIA:   RULE-004; RULE-MET-01; RULE-CAU-01; RULE-CF-002; J-001
+                dependência causal não se afirma por correlação (RULE-CAU-01); confluência vale por
+                independência, não por contagem (WF-C02); calibração → J-001
+  REFERÊNCIA:   RULE-004; RULE-MET-01; RULE-CAU-01; RULE-CF-002; WF-C02; J-001
   CLASSE/MECANISMO:
     CLASSE      : P (Probabilístico com Gate)
     MECANISMO   : julgamento (apoio semântico/LLM) sobre o atributo de dependência herdado da SPEC-002 →
@@ -427,8 +463,9 @@ BASpec-CF-007:
   ENTÃO:        O Conviction Engine marca aquela dimensão como INDETERMINADO e localiza a incerteza
                 (RULE-MET-02); NÃO fabrica valor numérico; NÃO converte ausência em evidência de ausência
   PORQUE:       Ausência ≠ evidência de ausência; incerteza material → INDETERMINADO (RULE-EPI/UNC/MET);
-                não quantificar sem base (RULE-PRB-02)
-  REFERÊNCIA:   RULE-EPI-01; RULE-UNC-01/03; RULE-MET-01/02; RULE-PRB-02; RULE-CF-006
+                não quantificar sem base (RULE-PRB-02); order flow (CVD/delta/absorção) alimenta a dimensão
+                de volume e, quando o dado falta/é ruim, é INDETERMINADO — nunca zero/fabricado (WF-C03)
+  REFERÊNCIA:   RULE-EPI-01; RULE-UNC-01/03; RULE-MET-01/02; RULE-PRB-02; RULE-CF-006; WF-C03
   CLASSE/MECANISMO:
     CLASSE      : P (Probabilístico com Gate)
     MECANISMO   : julgamento (apoio semântico) sobre suficiência de evidência por dimensão → INDETERMINADO;
@@ -473,9 +510,9 @@ BASpec-CF-009:
   QUANDO:       O Conviction Engine pondera dimensões por ativo (BTC/XAU/NASDAQ) e por idade da evidência
   ENTÃO:        Aplica o MECANISMO de pesos por ativo e de aging (decaimento temporal) que o CCM-001 suporta;
                 os VALORES/pesos por ativo e o peso/decay temporal definitivos NÃO são fixados (N-001/J-001)
-  PORQUE:       O CCM-001 deve suportar pesos por ativo (universalidade GMC-001) e aging; valores → N-001/J-001
-                pós-backtest (research.md GAP-N)
-  REFERÊNCIA:   RULE-GMC-001; CEM-001 Cap.3 (Timeframe Reference); RULE-CF-003; N-001; J-001
+  PORQUE:       O CCM-001 deve suportar pesos por ativo (universalidade GMC-001) e aging; parâmetros por ativo
+                são mecanismo parametrizável (WF-P02); valores → N-001/J-001 pós-backtest (research.md GAP-N)
+  REFERÊNCIA:   RULE-GMC-001; CEM-001 Cap.3 (Timeframe Reference); RULE-CF-003; WF-P02; N-001; J-001
   CLASSE/MECANISMO:
     CLASSE      : D (Determinístico)
     MECANISMO   : aplicação determinística de uma tabela de pesos (parametrizável) e função de aging; sem julgamento
@@ -496,9 +533,10 @@ BASpec-CF-010:
   ENTÃO:        O CCM-001 computa a convicção sobre o conjunto de dimensões informado, usando o MESMO motor e
                 contrato; NÃO fixa quantas vezes é invocado (1x/2x) — isso é do Manager/Scheduler
                 (WORKFLOW-SOT-001)
-  PORQUE:       O workflow usa convicção macro (Fase 1) e global (Fase 2); a invocação é do Manager/Scheduler,
-                não da SPEC-003 (research.md §5.7; WORKFLOW-SOT-001)
-  REFERÊNCIA:   WORKFLOW.md WF-04/WF-06; WORKFLOW-SOT-001; RULE-CF-010
+  PORQUE:       O workflow usa convicção macro (Fase 1) e global (Fase 2) como UM vetor 8D em duas leituras —
+                direção declarada por Andraus (WF-C01); a invocação (1x/2x) é do Manager/Scheduler, não da
+                SPEC-003 (research.md §5.7; WORKFLOW-SOT-001/WF-D03; Q-A5)
+  REFERÊNCIA:   WORKFLOW.md WF-C01/WF-04/WF-06; WORKFLOW-SOT-001; RULE-CF-010
   CLASSE/MECANISMO:
     CLASSE      : D (Determinístico)
     MECANISMO   : o motor aceita o conjunto de dimensões como parâmetro; computa sobre o subconjunto informado
@@ -518,8 +556,9 @@ BASpec-CF-011:
                 Confidence, ou de custo/sizing/alavancagem
   ENTÃO:        O Conviction Engine REJEITA a operação (fail-closed): Evidence Strength permanece peso local;
                 Hypothesis Confidence permanece do CHM; custo/sizing nunca entram na convicção (INV-04)
-  PORQUE:       Separação Tríplice inviolável (CHM-001 §1.9/§2.14); custo nunca no Conviction Vector (INV-04)
-  REFERÊNCIA:   CHM-001 §1.9/§2.14; INV-04; INV-10; RULE-CF-007/008
+  PORQUE:       Separação Tríplice inviolável (CHM-001 §1.9/§2.14); custo nunca no Conviction Vector (INV-04);
+                fluxo unidirecional convicção→risco — o risco NUNCA retroalimenta a convicção (WF-X03/INV-04)
+  REFERÊNCIA:   CHM-001 §1.9/§2.14; INV-04; INV-10; WF-X03; RULE-CF-007/008
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
     MECANISMO   : gate determinístico que barra contaminação entre os três níveis e a entrada de custo/sizing
@@ -565,9 +604,11 @@ BASpec-CF-013:
   ENTÃO:        O Conviction Engine publica o vetor no workspace de sua responsabilidade (RULE-BB-002),
                 append-only (RULE-BB-004), com reconstrução completa anexada (P13/RULE-010); os ESTADOS do
                 Blackboard para este objeto não-hipótese referenciam M-001 (aberta) — NÃO são fixados aqui
-  PORQUE:       Publicação em workspace próprio (RULE-BB-002/004); rastreabilidade (RULE-010/P13); estados de
-                objeto não-hipótese = M-001 (SPEC-004, aberta — CONS-01)
-  REFERÊNCIA:   RULE-BB-002/004; RULE-010; CONSTITUTION P13; M-001; RULE-CF-011
+  PORQUE:       Publicação em workspace próprio (RULE-BB-002/004); rastreabilidade (RULE-010/P13); a convicção
+                referencia a hipótese-origem (hypothesis_ref) cujo `parent_id` é objeto do alarme do Manager
+                (WF-A01, consumido, não produzido aqui — INV-05); estados de objeto não-hipótese = M-001
+                (SPEC-004, aberta — CONS-01)
+  REFERÊNCIA:   RULE-BB-002/004; RULE-010; CONSTITUTION P13; WF-A01; INV-05; M-001; RULE-CF-011
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
     MECANISMO   : gate determinístico de publicação (workspace próprio; append-only; reconstrução anexada);
@@ -790,12 +831,12 @@ Princípio transversal: **fail-closed** — em qualquer ambiguidade sobre autori
 **PORQUE:** não-redução quando múltiplas dimensões são relevantes (PCO-06; INV-03 dimensionalidade=8)
 **VERIFICAÇÃO:** dimensions_preserved == 8; collapsed_to_scalar == false
 
-### ADV-CF-12 — Fixar invocação 1x/2x ou estados do Blackboard (invade WORKFLOW-SOT-001/M-001)
-**DADO:** tentativa de fixar o número de invocações do motor ou os estados do Blackboard para a convicção
-**QUANDO:** o mecanismo macro/global (CF-010) ou a publicação (CF-013) é definido
-**ENTÃO:** rejeitar `OUT_OF_SCOPE_MANAGER_OR_M001`; referenciar WORKFLOW-SOT-001/M-001 como abertas
-**PORQUE:** invocação = Manager/Scheduler (Q-A5); estados do Blackboard = M-001 (Q-A8) — não fechar (CONS-01)
-**VERIFICAÇÃO:** invocation_count_fixed == false; blackboard_states_fixed == false
+### ADV-CF-12 — Fixar invocação 1x/2x, dimensão do regime ou estados do Blackboard (invade WORKFLOW-SOT-001/M-001)
+**DADO:** tentativa de fixar o número de invocações do motor, **a dimensão das 8 em que o regime entra (WF-C04)**, ou os estados do Blackboard para a convicção
+**QUANDO:** o mecanismo macro/global (CF-010), o mapeamento do regime (RULE-CF-003/Q-A9) ou a publicação (CF-013) é definido
+**ENTÃO:** rejeitar `OUT_OF_SCOPE_MANAGER_OR_M001`; referenciar WORKFLOW-SOT-001/WF-D03 (invocação 1x/2x e dimensão do regime) e M-001 (estados do Blackboard) como abertas
+**PORQUE:** invocação = Manager/Scheduler (Q-A5, WF-D03); dimensão do regime = decisão de Andraus (Q-A9, WF-C04); estados do Blackboard = M-001 (Q-A8) — não fechar (CONS-01)
+**VERIFICAÇÃO:** invocation_count_fixed == false; regime_dimension_fixed == false; blackboard_states_fixed == false
 
 > **Cobertura:** 12 cenários adversariais (mínimo CRITICAL = ≥1; cobrem casos de negação de todas as BASpecs com efeito e das fronteiras abertas J-001/N-001/M-001/WORKFLOW-SOT-001). Mapeiam para EC-CF-001..006 (fail-closed).
 
@@ -803,7 +844,7 @@ Princípio transversal: **fail-closed** — em qualquer ambiguidade sobre autori
 
 ## D9 — Auditabilidade (por referência)
 
-Cada ato DEVE ser reconstruível (P13/RULE-010): entrada (evidências ACTIVE + Hypothesis Confidence), fusão (DERIVED + Lineage + desconto de dependência), normalização por dimensão, pesos aplicados, regra de agregação (não-compensatória; veto estrutural), dimensões INDETERMINADO, conflitos consumidos, robustez/sensibilidade, resultado do gate (pass/block + limiares usados), publicação (vetor + reconstrução). A **reconstrução expandida de linhagem** (Cognitive Trace Reconstruction) e o **storage físico** pertencem ao **Knowledge Graph (SPEC-006 / H-001 pendente)** — aqui ficam **por referência** (coerente com alvo D0–D8; CEM-001 Cap.5). [FONTE: CONSTITUTION P13; RULE-010; CEM-001 Cap.5; H-001 pendente]
+Cada ato DEVE ser reconstruível (P13/RULE-010): entrada (evidências ACTIVE + Hypothesis Confidence + **rótulo de qualidade de evidência por escola** preservado, não sobrescrito — WF-V02), fusão (DERIVED + Lineage + desconto de dependência), normalização por dimensão, pesos aplicados, regra de agregação (não-compensatória; veto estrutural), dimensões INDETERMINADO, conflitos consumidos, robustez/sensibilidade, resultado do gate (pass/block + limiares usados), publicação (vetor + reconstrução). A **reconstrução expandida de linhagem** (Cognitive Trace Reconstruction) e o **storage físico** pertencem ao **Knowledge Graph (SPEC-006 / H-001 pendente)** — aqui ficam **por referência** (coerente com alvo D0–D8; CEM-001 Cap.5). [FONTE: CONSTITUTION P13; RULE-010; CEM-001 Cap.5; H-001 pendente]
 
 ---
 
@@ -1034,7 +1075,8 @@ Nenhuma obrigação herdada suprimida (REMOVED vazio) nem contradita (o único M
 | Fórmula/pesos/limiares **definitivos** do Conviction Vector | [DECISÃO NECESSÁRIA] | **J-001 — EM ABERTO/pendente — não fechar** |
 | Pesos por ativo **definitivos** (BTC/XAU/NASDAQ) | [DECISÃO NECESSÁRIA] | **N-001 — EM ABERTO/pendente — não fechar** |
 | Estados do Blackboard para o Conviction Vector | [DECISÃO NECESSÁRIA] | **M-001 — EM ABERTO/pendente (SPEC-004)** |
-| Número de invocações (macro 1x / global 2x); Killzone/alarme/ICT | [DECISÃO NECESSÁRIA] | **WORKFLOW-SOT-001 — EM ABERTO/pendente (Manager/Scheduler)** |
+| Número de invocações (macro 1x / global 2x) + dimensão do regime (WF-C04/Q-A9) | [DECISÃO NECESSÁRIA] | **WORKFLOW-SOT-001/WF-D03 — EM ABERTO/pendente (invocação = Manager/Scheduler; dimensão do regime = Andraus/Q-A9)** |
+| Killzone (WF-D01), alarme-gatilho (WF-D02), papel do ICT (WF-D04) | [FONTE] | **FECHADOS por Andraus (WORKFLOW.md versão vigente); fora do escopo da SPEC-003 (Manager/Scheduler SPEC-008/015 + agentes)** |
 
 ---
 

@@ -7,6 +7,20 @@
 
 ---
 
+## 0. Nota de delta v1.1 (reconciliação ao `WORKFLOW.md`, versão vigente) [FONTE]
+
+> Esta verificação cobre o `plan.md` **v1.1**. O delta v1.1 é de **conformidade/fronteira ao `WORKFLOW.md`** (versão vigente, DHR-WF-002), **sem mudança de mérito** de BASpecs/EARS/Enforcement/Classe — portanto as seções §1–§10 abaixo permanecem válidas (well-formedness inalterada). O que o delta v1.1 altera e esta nota confirma:
+>
+> - **Fronteira reclassificada (CONS-01):** `WF-D01` (Killzone), `WF-D02` (alarme-gatilho) e `WF-D04` (papel do ICT) estão **FECHADAS** por Andraus na versão vigente — a SPEC-003 continua **não** as especificando (Manager/Scheduler SPEC-008/015 + agentes SPEC-010..014); deixam de ser pontos abertos. **`WF-D03` permanece ABERTA (residual):** J-001, N-001, invocação 1x/2x (Q-A5) e **dimensão do regime (WF-C04 → Q-A9)**. Nenhuma `WF-Dxx` aberta é tratada como fechada. ✔
+> - **Conformidade por ID (lente 3, mecanismo-apenas):** WF-C01→CF-010, WF-C02→CF-002, WF-C03→CF-007, WF-C04→Q-A9, WF-X03/INV-04→CF-008/CF-011, WF-A01→CF-013, WF-V02→CF-011/D9, WF-P02/N-001→CF-009. Todos os `WF-xx` citados **existem** na versão vigente; nenhum contraditado (verificação da lente 3 no plan.md §"Conformidade com o WORKFLOW.md"). ✔ (correspondência string-a-string de ID = mandato do Revisor / detector D6 do `check_doc_sync.py`.)
+> - **Citação estável:** o plan.md cita a `WORKFLOW.md` por **"versão vigente"** e por ID `WF-xx`/`WF-Dxx` — nunca por número de versão nem por linha (regra de uso da `WORKFLOW.md`). ✔
+> - **Q-A9 (NOVA) — em qual das 8 dimensões entra o regime (WF-C04):** registrada como **[DECISÃO NECESSÁRIA]** (plan.md §D2 Nota WF-C04 + lista final; research.md §8.3, com 4 opções + recomendação Opção A=temporal). **Não decidida** aqui; regime não mapeado a nenhuma dimensão (INDETERMINADO — CONS-01). ✔
+> - **BASpecs NÃO renumeradas** (CF-001..013 mantidas); EARS (10), Enforcement (EC-CF-001..006), Classe/Mecanismo e D0–D8/adversariais inalterados. ✔
+>
+> Histórico v1.1 presente no plan.md (tabela "Histórico de versões", linha 1.1). **PASS (delta de conformidade).**
+
+---
+
 ## 1. Cobertura de profundidade (D0–D8 — alvo ROADMAP §4/§143; research.md Q-A2; CRITICAL)
 
 | Nível | Exigido (CRITICAL, alvo D0–D8) | Presente | Evidência |
@@ -167,6 +181,8 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 | CK-04 | D4 numérico definitivo N/A (J-001/N-001); a Spec fixa só método/mecanismo + limiares-piloto | Info | Coerente com INV-03/CONS-01/RULE-MM-06/RULE-EV-05 |
 | CK-05 | BL-012 (MC-COG-001) ATIVADO independente — não absorvido pela SPEC-003 | Info | Tratado por Andraus separadamente |
 | CK-06 | Correspondência verbatim RULE-ECC-04 (string) fica para o Revisor (sem web) | Info | Mandato do Revisor |
+| CK-07 | **Q-A9 (NOVA, delta v1.1)** — dimensão das 8 em que entra o regime (WF-C04) | Menor | **[DECISÃO NECESSÁRIA]** de Andraus; 4 opções + recomendação (Opção A=temporal) em research.md §8.3; não decidida (INDETERMINADO — CONS-01) |
+| CK-08 | WF-D01/D02/D04 FECHADAS na versão vigente da `WORKFLOW.md`; SPEC-003 não as especifica (fora de escopo) | Info | Reclassificação de fronteira (delta v1.1); sem mudança de mérito |
 
 ---
 
