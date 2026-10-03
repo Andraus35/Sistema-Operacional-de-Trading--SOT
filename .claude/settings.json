@@ -25,6 +25,16 @@
             "timeout": 120
           }
         ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/andraus-ask-reminder.js",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "Stop": [
