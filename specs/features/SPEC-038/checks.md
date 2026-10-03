@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Artefato verificado | `specs/features/SPEC-038/plan.md` (v1.0 candidato) |
+| Artefato verificado | `specs/features/SPEC-038/plan.md` (v1.1 candidato — corrige M-01..M-04 do parecer CONFORME sobre v1.0) |
 | Natureza | **Verificação de SPEC** na fase spec-first (BASpec/EARS/Enforcement bem-formados; rastreabilidade; casos adversariais). **NÃO** é teste de runtime nem BUILD/VERIFY-de-código (ROADMAP §22). |
 | Método | atomic-spec.md v1.5 §6 (CHECKS); overlay GUS-TLC-001 |
 | Status epistemológico | Feedback interno do autor. **Não** é parecer CONFORME (Revisor) nem homologação (Andraus). |
@@ -19,8 +19,8 @@
 | STRUCT-02 Constitution Check | bloco + "Elliott" + Conviction pendente/J-001 | §Constitution Check CC-01 (Elliott) + CC-03 ("Conviction Vector não tocado; J-001 permanece ABERTA") | PASS |
 | STRUCT-03 Etiquetagem | ≥1 etiqueta de fonte | [FONTE]/[INFERÊNCIA]/[PROPOSTA]/[DECISÃO NECESSÁRIA]/[EXTERNO] em todo o Plan | PASS |
 | STRUCT-04 EARS | ≥1 "Quando …, … DEVE" | §Critérios de Aceitação (10 itens EARS) | PASS |
-| STRUCT-05 BASpec | QUANDO/ENTÃO/PORQUE/REFERÊNCIA/VERIFICADO POR | BASpec-TH-001..013 | PASS |
-| STRUCT-06 Enforcement | 8 campos se há efeito | EC-TH-01..06 (CAPABILITY/EFFECT/PRECOND/POSTCOND/POLICY/LEVEL/FAILURE-MODE/EVIDENCE) | PASS |
+| STRUCT-05 BASpec | QUANDO/ENTÃO/PORQUE/REFERÊNCIA/VERIFICADO POR | BASpec-TH-001..011, TH-012a, TH-012b, TH-013 (14 BASpecs) | PASS |
+| STRUCT-06 Enforcement | 8 campos se há efeito | EC-TH-01..07 (CAPABILITY/EFFECT/PRECOND/POSTCOND/POLICY/LEVEL/FAILURE-MODE/EVIDENCE) | PASS |
 | STRUCT-07 Conviction não fechado | sem limiar 60/75% solto | nenhum limiar de convicção declarado (CC-03) | PASS |
 | STRUCT-08 Status epistemológico | ≥1 marcador | FATO NORMATIVO / FATO ARQUITETURAL / [DECISÃO NECESSÁRIA] presentes | PASS |
 | STRUCT-09 Profundidade compat | D≤teto(HIGH=7) | D0–D7 (prose) → 7≤7 | PASS |
@@ -46,10 +46,13 @@
 | TH-009 | ✔ | ✔ | ✔ | ✔ | ✔ | C | ✔ |
 | TH-010 | ✔ | ✔ | ✔ | ✔ | ✔ | C | ✔ |
 | TH-011 | ✔ | ✔ | ✔ | ✔ | ✔ | D | ✔ |
-| TH-012 | ✔ | ✔ | ✔ | ✔ | ✔ | C/D | ✔ (4 sub-ferramentas) |
+| TH-012a | ✔ | ✔ | ✔ | ✔ | ✔ | D | ✔ (Pine leitura/ação reversível) |
+| TH-012b | ✔ | ✔ | ✔ | ✔ | ✔ | C | ✔ (Pine efeito/escrita; gate TH-008) |
 | TH-013 | ✔ | ✔ | ✔ | ✔ | ✔ | D | ✔ |
 
-**CC-11 (RULE-MECH-01..04):** toda BASpec com efeito declara Classe + critério 4Es; nenhuma Classe H/P usada (sem bounded loop a declarar — mecanismos são determinísticos ou enforcement constitutivo); Classe C sempre em risco alto (E2/E3) — RULE-MECH-02 respeitada (nenhuma Classe C em risco baixo).
+**M-02 saneado:** a antiga TH-012 tinha Classe condicional (D/C) — vedado por RULE-MECH-01 (UMA Classe por BASpec). Dividida em **TH-012a (D, leitura/ação reversível)** e **TH-012b (C, efeito/escrita em estado compartilhado, gate TH-008)**. Total de BASpecs: **14** (13 → 14, sufixo a/b preserva rastreabilidade — nenhuma referência externa quebrada).
+
+**CC-11 (RULE-MECH-01..04):** toda BASpec com efeito declara UMA Classe + critério 4Es; nenhuma Classe H/P usada (sem bounded loop a declarar — mecanismos são determinísticos ou enforcement constitutivo); Classe C sempre em risco alto (E2/E3) — RULE-MECH-02 respeitada (nenhuma Classe C em risco baixo).
 
 ---
 
@@ -58,14 +61,14 @@
 | EARS # | RULE | BASpec | EC | ADV |
 |---|---|---|---|---|
 | 1 (contrato completo) | RULE-TH-001 | TH-001 | EC-TH-01 | ADV-TH-07 |
-| 2 (proveniência) | RULE-TH-002 | TH-002/TH-013 | EC-TH-02 | — |
+| 2 (proveniência) | RULE-TH-002 | TH-002/TH-012a/TH-013 | EC-TH-02 | — |
 | 3 (barra em formação) | RULE-TH-003 | TH-003 | EC-TH-02 | ADV-TH-01 |
 | 4 (fail-closed) | RULE-TH-004 | TH-004 | EC-TH-02 | ADV-TH-01/03 |
 | 5 (Observação≠Evidência) | RULE-TH-005 | TH-005 | EC-TH-05 | ADV-TH-02 |
-| 6 (gate de confirmação) | RULE-TH-007/008 | TH-007/008/012 | EC-TH-03 | ADV-TH-03 |
+| 6 (gate de confirmação) | RULE-TH-007/008 | TH-007/008/012b | EC-TH-03 | ADV-TH-03 |
 | 7 (sem ordem/replay) | RULE-TH-009 | TH-009 | EC-TH-04 | ADV-TH-04 |
 | 8 (provider abstrato) | RULE-TH-010 | TH-010 | EC-TH-05 | ADV-TH-05 |
-| 9 (timestamp → ISO) | RULE-TH-011 | TH-011 | — (Classe D, E1 implícito) | — |
+| 9 (timestamp → ISO) | RULE-TH-011 | TH-011 | EC-TH-07 | — |
 | 10 (estados da chamada) | RULE-TH-012 | TH-013 | EC-TH-06 | — |
 | — (tool poisoning) | RULE-TH-006 | TH-006 | — (marcação; política SPEC-039) | ADV-TH-06 |
 
@@ -83,8 +86,11 @@ Nenhuma BASpec órfã; nenhuma RULE citada inexistente (RULE-TH-* são locais [P
 | EC-TH-04 | ✔ | E3 | +POLICY +nota falso-DENY ✔ | ✔ (absoluto) | N/A justificado (nenhum DENY legítimo) |
 | EC-TH-05 | ✔ | E2 | ✔ | ✔ | N/A (E2) |
 | EC-TH-06 | ✔ | E1 | CAPABILITY+EFFECT+LEVEL+EVIDENCE ✔ | N/A (E1) | N/A (E1) |
+| EC-TH-07 | ✔ | E1 | CAPABILITY+EFFECT+LEVEL+EVIDENCE ✔ (8 campos presentes) | ✔ (recusa de enum/campo inválido) | N/A (E1) |
 
-**ENF-02:** nível ≥ piso do tipo — Observação/Skill → E1 mínimo (EC-TH-06 E1); efeito crítico/irreversível → E3 (EC-TH-03/04). Economicidade não rebaixou nenhum nível. **ENF-04:** fail-closed presente em todo efeito crítico irreversível (EC-TH-03/04).
+**M-03 saneado:** EARS #9 (timestamp → ISO) rastreava para TH-011 sem EC explícito ("E1 implícito"). Criado **EC-TH-07** (E1, conversão determinística unix s→ISO-8601 UTC + validação/completude do mapeamento), tornando a cadeia **EARS #9 → TH-011 → EC-TH-07** explícita (ENF-01/ENF-02 piso E1 do tipo Observação). Total de ECs: **7** (6 → 7).
+
+**ENF-02:** nível ≥ piso do tipo — Observação/Skill → E1 mínimo (EC-TH-06/EC-TH-07 E1); efeito crítico/irreversível → E3 (EC-TH-03/04). Economicidade não rebaixou nenhum nível. **ENF-04:** fail-closed presente em todo efeito crítico irreversível (EC-TH-03/04) e, por robustez, na recusa determinística do EC-TH-07.
 
 ---
 
@@ -100,7 +106,7 @@ Nenhuma BASpec órfã; nenhuma RULE citada inexistente (RULE-TH-* são locais [P
 | ADV-TH-06 | saída como instrução | TH-006 C |
 | ADV-TH-07 | contrato incompleto admitido | TH-001 C |
 
-Cobertura: TH-001, TH-005, TH-006, TH-007, TH-008, TH-009, TH-010 (todas as Classe C) têm ≥1 caso de negação. TH-004 (C) é coberta por ADV-TH-01/03. **Exigência da entrega satisfeita.**
+Cobertura: TH-001, TH-005, TH-006, TH-007, TH-008, TH-009, TH-010 (todas as Classe C) têm ≥1 caso de negação. TH-004 (C) é coberta por ADV-TH-01/03. **TH-012b (nova Classe C, efeito/escrita Pine)** é coberta por **ADV-TH-03** (efeito sem confirmação — `pine_set_source`/`pine_smart_compile`/`indicator_set_inputs`-que-publica herdam o gate TH-008), mesmo padrão de cobertura de TH-004; negação documentada também no §7-bis Bloco A do Plan. **TH-012a** é Classe D (leitura/ação reversível) — não exige caso de negação. **Exigência da entrega satisfeita.**
 
 ---
 
@@ -123,7 +129,8 @@ CC-01..CC-12 preenchidos no Plan; CC-06/CC-07 N/A justificado (não é Engineeri
 
 ## 8. Dossiê de Pesquisa (RULE-ECC-02/04/05)
 
-- `research.md` presente, com seção "Dossiê de Pesquisa", fontes [EXTERNO] classificadas, capturas em `sources/`, comparação adotar/adaptar/rejeitar/adiar, 3 lentes (RULE-ECC-05). ECC-VAL-001: validade HIGH 90 dias (limite 2026-12-31). O Revisor audita o **processo** do Dossiê, não a veracidade das páginas.
+- `research.md` presente, com seção "Dossiê de Pesquisa", fontes [EXTERNO] classificadas, capturas em `sources/`, comparação adotar/adaptar/rejeitar/adiar. ECC-VAL-001: validade HIGH 90 dias (limite 2026-12-31). O Revisor audita o **processo** do Dossiê, não a veracidade das páginas.
+- **M-01 saneado (RULE-ECC-05 — Pesquisa Multi-Lente):** a redação v1.0 do §8 do `research.md` lia a **lente 2** como "estado da arte de ferramentas/dados". Após leitura literal de RULE-ECC-05 (`governance/RULES.md` l.478–495; `atomic-spec.md` §15), o **Adendo 8-A** (datado, aditivo, INV-07) **declara a não-incidência** da regra sobre a SPEC-038: a Spec é tooling agnóstico que **não define nem toca** comportamento de agente analítico/Conviction-Fusion/Manager/Risco (é "análoga" às Specs de meta-harness excluídas pela própria regra; coerente com CC-10 N/A-escola e CC-12 N/A já declarados). Como a regra não incide, **nenhuma pesquisa web nova nem captura verbatim adicional é exigida**; o Dossiê homologado não foi reescrito (apenas adendado). A determinação é [PROPOSTA — a confirmar pelo Revisor]; se o Revisor/Andraus entender que incide, a lente 2 literal (escola/risco-retorno) será cumprida.
 
 ---
 

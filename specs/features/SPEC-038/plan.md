@@ -3,8 +3,8 @@
 | Campo | Valor |
 |---|---|
 | ID | SPEC-038 — Trading Analysis Tool Harness (Trilha B — tooling de domínio) |
-| Versão | 1.0 (Plan candidato — aguarda Revisor + homologação de Andraus) |
-| Status | **PLAN CANDIDATO — NÃO é baseline** (INV-09). Abertura HOMOLOGADA (DHR-SPEC038-001, 2026-10-03); este é o próximo gate. |
+| Versão | 1.1 (BASELINE — corrige M-01..M-04 do parecer CONFORME sobre v1.0; homologada por Andraus em 2026-10-03) |
+| Status | **HOMOLOGADA — BASELINE v1.1** (Andraus, 2026-10-03, DHR-SPEC038-002). Abertura HOMOLOGADA (DHR-SPEC038-001). Pareceres do Revisor: v1.0 CONFORME (4 Menores) → v1.1 CONFORME (0 achados). |
 | Fonte | `specs/features/SPEC-038/ABERTURA.md` + `research.md` + `sources/` (homologados, DHR-SPEC038-001); ROADMAP §17/§22/§23; atomic-spec.md **v1.5**; WORKFLOW.md v2.1; DHR-DEC-003; DHR-DEC-004 |
 | Complexidade | **HIGH** |
 | Profundidade-alvo | **D0–D7** (profile **standard**, AGENTS.md §4) — com reforço adversarial D8 (≥1 caso) para o gate de maturidade L3 (atomic-spec §7) |
@@ -18,9 +18,16 @@
 | Data | 2026-10-03 |
 
 **Restatement para o gate determinístico (prose redundante proposital):**
-Status: PLAN CANDIDATO — NÃO é baseline (aguarda Revisor + homologação de Andraus). Complexidade: HIGH. Profundidade-alvo: D0–D7 (standard). Maturidade-alvo: L3.
+Status: HOMOLOGADA — BASELINE (Andraus, 2026-10-03, DHR-SPEC038-002). Complexidade: HIGH. Profundidade-alvo: D0–D7 (standard). Maturidade-alvo: L3.
 
 > **Status epistemológico desta entrega.** O Plan é **FATO ARQUITETURAL candidato a baseline**; a abertura (número/nome/fronteira HIGH·D0–D7/quantidade=1/Classe D+C/CC-12 N/A) já é **FATO NORMATIVO** (DHR-SPEC038-001). Documentado ≠ homologado (TRACE-06). Nada neste Plan vira baseline sem homologação de Andraus (INV-09).
+
+### Histórico / Delta de versão (INV-07 — nada apagado)
+
+| Versão | Data | Mudança |
+|---|---|---|
+| 1.0 | 2026-10-03 | Plan candidato inicial. Parecer do Revisor: **CONFORME com 4 Menores** (M-01..M-04). |
+| 1.1 | 2026-10-03 | Corrige os 4 Menores, sem alterar a substância aprovada (INV-07): **M-01** — determinação fundamentada de **não-incidência de RULE-ECC-05** sobre a SPEC-038 (Adendo 8-A aditivo no `research.md`; §Conformidade; nenhuma reescrita do Dossiê homologado). **M-02** — BASpec-TH-012 (Classe condicional) **dividida** em **TH-012a** (leitura/ação reversível, Classe D) e **TH-012b** (escrita em estado compartilhado, Classe C, gate TH-008) — uma Classe por BASpec (RULE-MECH-01); BASpecs **13 → 14**. **M-03** — criado **EC-TH-07** (E1) para a conversão unix s→ISO-8601 UTC + validação/completude do mapeamento (TH-011), rastreabilidade EARS #9 → TH-011 → EC-TH-07; ECs **6 → 7**. **M-04** — removido o acento grave triplo solto no fim do arquivo. Nenhuma decisão aberta fechada; emenda à SPEC-020 segue **[PROPOSTA]** (CONS-01). |
 
 ---
 
@@ -72,6 +79,7 @@ Aplicado às BASpecs com maior carga (HIGH/Classe C):
 - **TH-009 (proibição de ordem/`replay_trade`):** negação = qualquer geração/roteamento de ordem ou `replay_trade` → viola INV-05; ADV-TH-04 (fail-closed E3).
 - **TH-003 (barra em formação = INDETERMINADO):** negação = valor de barra não fechada entra como fato/determinístico → contamina a cadeia; ADV-TH-01.
 - **TH-010 (TradingViewAdapter nunca fonte única):** negação = o contrato acopla-se ao TradingView como fonte única da verdade → viola DHR-DEC-004 §1.2; ADV-TH-05.
+- **TH-012b (escrita Pine em estado compartilhado = Classe C):** "Se estivesse errada, o que seria observável?" → `pine_set_source`/`pine_smart_compile`/`indicator_set_inputs`-que-publica escrevendo no editor/gráfico do usuário SEM confirmação registrada → efeito (semi)irreversível não supervisionado. "O ENTÃO é verificável por observador independente?" → sim: presença/ausência do registro de confirmação é binária e auditável (herda EC-TH-03). "QUANDO satisfeito mas ENTÃO não deve ocorrer?" → quando a alteração de input é reversível e apenas registrada localmente (não publica) → é Classe D (TH-012a), não dispara o gate. Negação coberta por ADV-TH-03 (efeito sem confirmação), mesmo padrão de cobertura de TH-004.
 
 Todas as três perguntas foram respondíveis com âncora de fonte; nenhuma BASpec restou como [DECISÃO NECESSÁRIA] por falta de resposta.
 
@@ -131,10 +139,13 @@ ADDED (delta local — o que este Plan acrescenta):
       gates de confirmação para ferramentas de efeito, proibição dura de ordem/replay (TH-007/08/09).
   - TradingViewAdapter como adapter de UMA fonte sobre provider abstrato (TH-010).
   - Mapeamento ao schemas/elliott-wave.input.json (unix s → ISO-8601 UTC) (TH-011).
-  - Quatro ferramentas Pine com Classe declarada C/C/D/D-C (TH-012).
+  - Ferramentas Pine com Classe declarada, UMA Classe por BASpec (RULE-MECH-01): leitura → Classe D
+      (TH-012a: data_get_strategy_results; indicator_set_inputs reversível/registrado); efeito/escrita
+      em estado compartilhado → Classe C com gate TH-008 (TH-012b: pine_set_source, pine_smart_compile,
+      indicator_set_inputs que publica).
   - Eventos/estados de observabilidade da chamada de ferramenta REQUESTED→…→UNKNOWN como
       requisito de contrato (TH-013) — política de logs em SPEC-040/BL-034.
-  - 6 Enforcement Contracts (EC-TH-01..06); D4/D5/D7/D8; I/O schemas.
+  - 7 Enforcement Contracts (EC-TH-01..07); D4/D5/D7/D8; I/O schemas.
 
 MODIFIED (especialização de regra herdada):
   - (nenhuma — o contrato por-ferramenta é camada operacional SOBRE CEM-001/SPEC-002, sem alterar
@@ -523,7 +534,7 @@ BASpec-TH-011:
                 {BTCUSDT, XAUUSD, NAS100} e tf ∈ {S1,D1,H4,H1,M5}, e preenche o array
                 market_digital_twin.timeframes conforme schemas/elliott-wave.input.json
   PORQUE:       RULE-TH-011; schema do Elliott exige timestamp date-time
-  REFERÊNCIA:   RULE-TH-011; schemas/elliott-wave.input.json; ABERTURA.md §4-bis.2
+  REFERÊNCIA:   RULE-TH-011; schemas/elliott-wave.input.json; ABERTURA.md §4-bis.2; EC-TH-07
   VERIFICADO POR:
     DADO        data_get_ohlcv.time = 1758484800 (unix s) para BTCUSDT/H4
     QUANDO      o dado é mapeado ao schema do Elliott
@@ -531,29 +542,65 @@ BASpec-TH-011:
     VERIFICAÇÃO nenhum candle entra no schema com timestamp unix bruto
 ```
 
-### BASpec-TH-012 — Quatro ferramentas Pine com Classe declarada
+### BASpec-TH-012a — Ferramentas Pine de leitura / ação reversível (Classe D)
 
 ```
-Declaração de Classe por sub-ferramenta Pine (CC-11; ABERTURA.md §4-ter.1):
-  - pine_set_source (injetar código)                 → Classe C (efeito; gate TH-008; fail-closed)
-  - pine_smart_compile / adicionar ao gráfico        → Classe C (efeito; gate TH-008)
-  - data_get_strategy_results (ler Strategy Tester)  → Classe D (leitura; proveniência TH-013)
-  - indicator_set_inputs (alterar entradas)          → Classe D se reversível e registrado; C se
-                                                        publica em estado compartilhado (gate TH-008)
-CRITÉRIO 4Es  : Eficácia — separar leitura (D) de efeito (C) impede que uma leitura de métrica
-                arraste o risco de uma escrita no gráfico do usuário
+CLASSE        : D (Determinístico)
+MECANISMO     : leitura reversível com captura de proveniência (código puro); NENHUM efeito/escrita
+                em estado compartilhado do usuário (não é julgamento do LLM)
+CRITÉRIO 4Es  : Eficácia — separar a leitura (D) do efeito (C) impede que uma leitura de métrica
+                arraste o risco de uma escrita no gráfico do usuário; Economicidade não rebaixa a Classe
 
-BASpec-TH-012:
-  QUANDO:       uma das quatro ferramentas Pine é invocada
-  ENTÃO:        aplica-se a Classe declarada acima: injetar/compilar/alterar-que-publica → gate de
-                confirmação (TH-008, C); ler Strategy Tester → leitura com proveniência (TH-013, D)
-  PORQUE:       RULE-TH-008/RULE-TH-002; ABERTURA.md §4-ter.1 (efeito vs. leitura)
-  REFERÊNCIA:   RULE-TH-008; RULE-TH-002; EC-TH-03
+Classe por sub-ferramenta Pine de LEITURA/AÇÃO REVERSÍVEL (CC-11; ABERTURA.md §4-ter.1):
+  - data_get_strategy_results (ler Strategy Tester)        → Classe D (leitura; proveniência TH-013)
+  - indicator_set_inputs quando a alteração é reversível e
+      apenas registrada localmente (NÃO publica em estado
+      compartilhado)                                       → Classe D (ação reversível registrada)
+
+BASpec-TH-012a:
+  QUANDO:       uma ferramenta Pine de leitura/ação reversível é invocada (data_get_strategy_results;
+                ou indicator_set_inputs em alteração reversível e apenas registrada, sem publicar em
+                estado compartilhado)
+  ENTÃO:        a ação é tratada como leitura/ação reversível (Classe D): captura a proveniência
+                (TH-013), produz Observation, e NÃO exige o gate de confirmação TH-008
+  PORQUE:       RULE-TH-002; ABERTURA.md §4-ter.1 (leitura vs. efeito); RULE-MECH-01 (UMA Classe por BASpec)
+  REFERÊNCIA:   RULE-TH-002; RULE-MECH-01; TH-013; EC-TH-02
   VERIFICADO POR:
-    DADO        pine_smart_compile (efeito) e data_get_strategy_results (leitura)
-    QUANDO      ambas são invocadas
-    ENTÃO       a 1ª exige confirmação (C); a 2ª só captura proveniência (D)
-    VERIFICAÇÃO Classe correta aplicada a cada sub-ferramenta Pine
+    DADO        data_get_strategy_results (leitura) é invocada
+    QUANDO      produz métricas do Strategy Tester
+    ENTÃO       captura proveniência (Classe D); nenhum gate de confirmação é exigido
+    VERIFICAÇÃO leitura/ação reversível Pine nunca escreve em estado compartilhado nem dispara TH-008
+```
+
+### BASpec-TH-012b — Ferramentas Pine de efeito / escrita em estado compartilhado (Classe C)
+
+```
+CLASSE        : C (Constitutivo)
+MECANISMO     : enforcement — efeito/escrita em estado compartilhado exige o gate de confirmação
+                TH-008; fail-closed sem confirmação registrada (não é julgamento do LLM)
+CRITÉRIO 4Es  : Eficácia/Conformidade — escrita no editor/gráfico do usuário é (semi)irreversível;
+                risco alto → C (RULE-MECH-02); Economicidade não rebaixa
+GATE DE SAÍDA : confirmação registrada verificável por código (ENF-03); herda TH-008
+
+Classe por sub-ferramenta Pine de EFEITO/ESCRITA (CC-11; ABERTURA.md §4-ter.1):
+  - pine_set_source (injetar código)                       → Classe C (efeito; gate TH-008; fail-closed)
+  - pine_smart_compile / adicionar ao gráfico              → Classe C (efeito; gate TH-008)
+  - indicator_set_inputs quando PUBLICA/escreve em estado
+      compartilhado                                        → Classe C (efeito; gate TH-008)
+
+BASpec-TH-012b:
+  QUANDO:       uma ferramenta Pine de efeito é invocada (pine_set_source, pine_smart_compile/
+                adicionar ao gráfico, ou indicator_set_inputs que publica/escreve em estado
+                compartilhado)
+  ENTÃO:        aplica-se o gate de confirmação TH-008 (Classe C): sem confirmação explícita
+                registrada → fail-closed (a operação não ocorre)
+  PORQUE:       RULE-TH-008; ABERTURA.md §4-ter.1 (efeito); RULE-MECH-01/02 (UMA Classe por BASpec; C em risco alto)
+  REFERÊNCIA:   RULE-TH-008; RULE-MECH-01; TH-008; EC-TH-03
+  VERIFICADO POR:
+    DADO        pine_smart_compile (efeito) ou indicator_set_inputs que publica em estado compartilhado
+    QUANDO      invocada sem confirmação registrada
+    ENTÃO       a operação é bloqueada (fail-closed); só procede após confirmação explícita
+    VERIFICAÇÃO nenhuma escrita Pine em estado compartilhado ocorre sem o gate TH-008
 ```
 
 ### BASpec-TH-013 — Proveniência de backtest + eventos/estados de observabilidade
@@ -766,11 +813,11 @@ FAILURE-MODE : fail-closed — sem dado válido/proveniência ⇒ não emite Obs
 EVIDENCE     : provenance_record por Observação; status registrado; auditável pelo Revisor/observabilidade
 ```
 
-### EC-TH-03 — Gate de confirmação para ferramenta de efeito (TH-007/TH-008/TH-012)
+### EC-TH-03 — Gate de confirmação para ferramenta de efeito (TH-007/TH-008/TH-012b)
 ```
 CAPABILITY   : executar uma ferramenta de EFEITO (draw_*, indicator_add, alert_create,
                pine_set_source, compilar/adicionar ao gráfico, launch/kill, indicator_set_inputs
-               que publica)
+               que publica em estado compartilhado)
 EFFECT       : altera o gráfico/layout/conta do usuário (efeito externo, (semi)irreversível)
 PRECOND      : confirmação explícita registrada do humano; modo = efeito-confirmado
 POSTCOND     : ou a operação ocorre com confirmação registrada, ou não ocorre (fail-closed)
@@ -819,6 +866,23 @@ FAILURE-MODE : N/A (E1 — mínimo CAPABILITY+EFFECT+LEVEL+EVIDENCE)
 EVIDENCE     : tool_call_event observável por chamada
 ```
 
+### EC-TH-07 — Conversão determinística de timestamp + validação/completude do mapeamento (TH-011)
+```
+CAPABILITY   : converter o timestamp unix(segundos) em ISO-8601 UTC e validar symbol/tf/completude
+               no mapeamento ao schema do Elliott
+EFFECT       : produz a Observação (candles mapeados) conforme schemas/elliott-wave.input.json
+PRECOND      : time em unix(segundos); symbol ∈ {BTCUSDT,XAUUSD,NAS100}; tf ∈ {S1,D1,H4,H1,M5};
+               campos OHLCV presentes
+POSTCOND     : timestamp em ISO-8601 UTC (date-time); symbol/tf validados; barra em formação marcada
+               INDETERMINADO; ou o mapeamento é recusado (enum/campo inválido)
+POLICY       : RULE-TH-011; schemas/elliott-wave.input.json; RULE-TH-003 (barra em formação)
+LEVEL        : E1 (Contratual) — transformação determinística que produz Observação (piso E1 do tipo
+               Observação/Skill — ENF-01/ENF-02; Economicidade não rebaixa)
+FAILURE-MODE : fail-closed — symbol/tf fora do enum ou campo ausente ⇒ mapeamento recusado; nenhum
+               candle entra com timestamp unix bruto nem barra em formação como fato
+EVIDENCE     : objeto conforme schema; par (unix, ISO-8601) auditável; registro de recusa quando inválido
+```
+
 ---
 
 ## Fronteiras (SPEC-038 × 039 × 040 × 042 × 044 × 018)
@@ -847,9 +911,9 @@ EVIDENCE     : tool_call_event observável por chamada
 ## Plano de re-apontamento / erratum e emenda à SPEC-020 (BL-017)
 
 - **Número SPEC-038 preservado** → nenhum re-apontamento de gatilho `spec:` necessário (research.md §6.3). Referências baselined (SPEC-003/plan.md:1196 ponteiro; SPEC-020 via BL-017) apontam o número preservado → **nenhum erratum aditivo** (padrão ERRATUM-SPEC019-001 não se aplica; INV-09). [FONTE: research.md §6.4]
-- **Emenda à SPEC-020 (fecha a dimensão B "tool correctness") — `[PROPOSTA]`, não aplicada aqui.** BL-017 está ATIVADO (DHR-DEC-004 §1.1), mas o fechamento ocorre **na homologação da SPEC-038**, por emenda pontual à SPEC-020, decidida por Andraus (CONS-01 — o Especificador não fecha). Texto proposto:
+- **Emenda à SPEC-020 (fecha a dimensão B "tool correctness") — APLICADA na homologação como errata aditiva `ERRATUM-SPEC020-001` (DHR-SPEC038-002, 2026-10-03).** *(Texto original da proposta preservado abaixo — INV-07.)* BL-017 está ATIVADO (DHR-DEC-004 §1.1), mas o fechamento ocorre **na homologação da SPEC-038**, por emenda pontual à SPEC-020, decidida por Andraus (CONS-01 — o Especificador não fecha). Texto proposto:
 
-  > *[PROPOSTA de emenda à SPEC-020, a aplicar SÓ na homologação da SPEC-038]* "A dimensão B `tool correctness` (classe dependente-de-upstream, ROADMAP §289/BL-017) passa a FECHÁVEL: o critério verificável de correção de ferramenta é a conformidade ao contrato por-ferramenta da SPEC-038 (10 campos; Observação com proveniência; determinismo; fail-closed; Enforcement Contracts EC-TH-01..06). Nenhuma dimensão B de outro componente (RAG faithfulness ↔ SPEC-007; decision traceability ↔ SPEC-014) é tocada."
+  > *[PROPOSTA de emenda à SPEC-020, a aplicar SÓ na homologação da SPEC-038]* "A dimensão B `tool correctness` (classe dependente-de-upstream, ROADMAP §289/BL-017) passa a FECHÁVEL: o critério verificável de correção de ferramenta é a conformidade ao contrato por-ferramenta da SPEC-038 (10 campos; Observação com proveniência; determinismo; fail-closed; Enforcement Contracts EC-TH-01..07). Nenhuma dimensão B de outro componente (RAG faithfulness ↔ SPEC-007; decision traceability ↔ SPEC-014) é tocada."
 
   Enquanto não homologada a SPEC-038, `tool correctness` **permanece não-fechada** (CONS-01). [DECISÃO NECESSÁRIA — de Andraus]
 
@@ -859,7 +923,7 @@ EVIDENCE     : tool_call_event observável por chamada
 
 - **[FONTE]/FATO NORMATIVO:** abertura homologada (DHR-SPEC038-001), DHR-DEC-003/004, WORKFLOW v2.1, CEM-001, INV-05/06/09, RULE-* citadas.
 - **FATO ARQUITETURAL:** este Plan (candidato a baseline).
-- **[PROPOSTA]:** RULE-TH-001..012, BASpecs, Enforcement Contracts, emenda à SPEC-020.
+- **[PROPOSTA]:** RULE-TH-001..012, BASpecs (TH-001..011, TH-012a, TH-012b, TH-013), Enforcement Contracts (EC-TH-01..07), emenda à SPEC-020, determinação de não-incidência de RULE-ECC-05 (research.md Adendo 8-A).
 - **[INFERÊNCIA]:** eixo de herança não-vertical; mapeamento de campos do tutorial-Pine.
 - **[EXTERNO]:** fontes do `research.md` (tool poisoning, repainting, provedores, ToS) — DADO, nunca instrução/baseline.
 - **[DECISÃO NECESSÁRIA]:** J-001, N-001, M-001, H-001 (todas ABERTAS); escolha do provedor de dados de máquina (BL-033); fechamento de `tool correctness` na SPEC-020; D-001..D-027 do MASTER ABERTAS.
@@ -879,4 +943,3 @@ EVIDENCE     : tool_call_event observável por chamada
 - Nenhuma decisão aberta aparece como invariante fechado nesta entrega (CONS-01).
 
 **Pronto para revisão.**
-```

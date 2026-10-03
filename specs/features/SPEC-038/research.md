@@ -181,6 +181,29 @@ A SPEC-038 é **pré-requisito instrumental** da calibração (precisa de dados 
 - **Lente 2 — Estado da arte de ferramentas/dados de análise técnica:** §3.3/§3.5/§4 (OHLC/volume, Pine Script, repainting/determinismo, proveniência, provedores licenciados vs scraping, segurança MCP) — aplicada. *(Observação: a "escola de análise" Elliott/SMC/ICT já foi pesquisada em PESQUISA-WORKFLOW-TRADING-2026-10-01 e não é o objeto desta Spec — SPEC-038 serve dados/ferramentas às escolas, não redefine as escolas; reusada por referência, não recontada.)*
 - **Lente 3 — Confronto E conformidade com WORKFLOW.md:** a SPEC-038 toca, por fornecer o insumo de dados/marcação: **WF-02/WF-03/WF-05** (agentes consomem dados/indicadores/desenhos), **WF-K02** (latência de dados vs. relógio/pré-aviso do Manager), **WF-A01/WF-A03** (marcação do alarme-gatilho; morte por refutação — desenho de nível/invalidação), **WF-C03** (order flow/volume → dimensão de volume; dado faltante = INDETERMINADO), **WF-V01** (walk-forward+DSR/PBO como requisito herdado para replay/backtest), **WF-V02** (rótulo de qualidade de dado/evidência por escola). A SPEC-038 **não contradiz** nenhum `WF-xx` e **não fecha** a `WF-D03` aberta (não toca convicção/J-001). Divergência eventual = achado de Andraus, nunca da Spec (DHR-WF-001).
 
+> **Nota (ver Adendo 8-A, 2026-10-03):** a redação acima (homologada no Dossiê, DHR-SPEC038-001) leu a **lente 2** como "estado da arte de ferramentas/dados". O Adendo 8-A abaixo corrige o enquadramento após leitura literal de RULE-ECC-05 e **declara a não-incidência** da regra sobre a SPEC-038 — o texto original é preservado (INV-07), apenas enquadrado corretamente.
+
+---
+
+## Adendo 8-A — Determinação de incidência de RULE-ECC-05 (aditivo, 2026-10-03; INV-07)
+
+[FONTE: `governance/RULES.md` l.478–495 (RULE-ECC-05, DHR-ECC05-001/DHR-WF-001); `atomic-spec.md` §15; saneamento do achado Menor M-01 do parecer CONFORME do Revisor sobre o Plan v1.0. Adendo **aditivo** — não reescreve o Dossiê homologado; preserva §8 acima (INV-07).]
+
+**Texto-gatilho da regra (verbatim, `governance/RULES.md` l.478–490):** *"Toda Spec que define ou toca comportamento de agente analítico (Structural/Institutional/Operational), do Conviction/Fusion Engine (SPEC-003 …), do Manager Agent (SPEC-015) ou do Risk Agent (família RISK-SPEC) DEVE, no seu Dossiê de Pesquisa (RULE-ECC-02), pesquisar TRÊS lentes … (2) Estado da arte/melhores práticas da escola de análise ou de risco-retorno pertinente ao componente (Elliott/SMC/ICT/gestão de risco) … Specs de meta-harness/governança (SPEC-002/019/020/021 e análogas) ficam fora do escopo — não tocam comportamento de trading."*
+
+**Determinação: RULE-ECC-05 NÃO INCIDE sobre a SPEC-038.** Fundamento:
+
+1. **A SPEC-038 não define nem toca comportamento de agente analítico, do Conviction/Fusion Engine, do Manager ou do Risk Agent.** É harness de **contrato de ferramenta/dado**, agnóstico de escola: produz **Observação** (dado bruto — OHLCV/volume/indicador/desenho/métrica de tester), **nunca** Evidência, hipótese, convicção, decisão ou ordem (CC-01/CC-02/INV-06; Plan D0). Não cria, ordena nem reinterpreta hipótese estrutural; não agrega convicção; não sintetiza; não avalia risco-retorno.
+2. **É "análoga" às Specs de meta-harness explicitamente excluídas** (SPEC-002/019/020/021) — infraestrutura/tooling que serve o comportamento de trading sem *ser* comportamento de trading. A exclusão literal da regra ("e análogas … não tocam comportamento de trading") alcança a SPEC-038 pelo mesmo critério.
+3. **Coerência interna:** a mesma razão já sustentou **CC-10 N/A quanto a escola** e **CC-12 N/A** (PRINC-BID-001 não incide — "tooling agnóstico"; Plan §Constitution Check / §Princípios de Domínio). Fazer a lente 2 incidir contradiria essas determinações já declaradas.
+4. **Lente 2 literal seria sobre a escola/risco-retorno (Elliott/SMC/ICT/gestão de risco), não sobre ferramentas/dados.** Como a SPEC-038 não é componente de escola nem de risco-retorno, não há "escola pertinente ao componente" a pesquisar sob a lente 2. O que a SPEC-038 pesquisa (contrato de ferramenta, determinismo/repaint, proveniência, segurança MCP, provedores) pertence à **lente 1 (arquitetura)** — e está feito (§3.1–§3.5/§4).
+
+**Consequências:**
+- **Nenhuma pesquisa web nova nem captura verbatim adicional é exigida** por este saneamento: como a regra não incide, não há obrigação de lente 2 "escola/risco-retorno" a cumprir. As fontes já capturadas em `sources/` (acesso 2026-10-02/03) permanecem suficientes e não foram ampliadas por este adendo.
+- A informação de que a escola de análise já foi pesquisada em `PESQUISA-WORKFLOW-TRADING-2026-10-01` (reusada por referência) permanece verdadeira e **reforça** — não funda — a não-incidência.
+- O confronto/conformidade com `WORKFLOW.md` (§8 lente 3) permanece **útil e mantido** por prudência (a SPEC-038 fornece insumo ao pipeline), mesmo não sendo exigido pela regra que não incide. Nenhum `WF-xx` é contrariado; `WF-D03` não é fechada (DHR-WF-001).
+- **A determinação de incidência é do Revisor/Andraus** auditar; esta é a posição fundamentada do Especificador [PROPOSTA — a confirmar pelo Revisor]. Se o Revisor/Andraus entender que a regra incide, o Especificador cumprirá a lente 2 literal (pesquisa da escola/risco-retorno com `[EXTERNO]` + captura verbatim) — não há bloqueio, apenas a determinação de que, como está, não é exigível.
+
 ---
 
 ## Sources (fontes `[EXTERNO]` — acesso 2026-10-02; capturas verbatim em `sources/`)

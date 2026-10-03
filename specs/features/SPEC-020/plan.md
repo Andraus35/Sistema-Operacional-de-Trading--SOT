@@ -722,3 +722,7 @@ BUILD/Tasks/Engineering Cards adiados (atomic-spec §14). Quando produzidas, apl
 
 Carregado do Dossiê para o Revisor:
 - **ACH-001** — achado Menor não bloqueante do parecer do Revisor sobre o research.md (registrado em research.md §6/§8); a ser reconfirmado/tratado pelo Revisor na auditoria desta entrega.
+
+---
+
+**Errata aditiva (2026-10-03, DHR-SPEC038-002):** dimensão B `tool correctness` FECHADA pela conformidade ao contrato por-ferramenta da SPEC-038 — ver `governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md`. Texto acima não alterado (INV-09); RAG faithfulness (SPEC-007) e decision traceability (SPEC-014) permanecem diferidas.
