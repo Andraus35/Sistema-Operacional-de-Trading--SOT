@@ -405,6 +405,27 @@ def check_dossie_pesquisa(content: str, filepath: Path = None):
     return True, ""
 
 
+@check(
+    name="[STRUCT-12] Pesquisa em repositórios seguros e bem avaliados (RULE-ECC-06)",
+    source="DHR-ECC06-001 / atomic-spec.md §15 / RULE-ECC-06"
+)
+def check_pesquisa_repositorios(content: str, filepath: Path = None):
+    """
+    Gate determinístico da RULE-ECC-06 (Andraus, 2026-10-03): o Dossiê de toda Spec nova
+    (a partir de SPEC-004) deve ter a seção 'Pesquisa em repositórios' com a régua EQUILIBRADA
+    aplicada sobre capturas sources/REPO-*.txt. Specs anteriores (grandfathered) não retroagem
+    (INV-07). Confere estrutura e régua; NÃO a veracidade dos números (sem web — ENF-03).
+    """
+    if filepath is None or not re.search(r"RULE-ECC-0[12]", content):
+        return True, ""  # fora do regime de Especificação Emergente — não incide
+    import check_repo_research as crr  # mesma pasta scripts/
+    folder = filepath.resolve().parent
+    if folder.name in crr.GRANDFATHERED:
+        return True, ""
+    ok, msg = crr.check_spec_folder(folder)
+    return (True, "") if ok else (False, msg if msg.startswith("RULE-ECC-06") else "RULE-ECC-06: " + msg)
+
+
 # ─────────────────────────────────────────────
 # ENGINE DE EXECUÇÃO
 # ─────────────────────────────────────────────

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-03",
-  "digest": "07f090fb7cbaa1c236ad6e1b5eeaeef2249bb2f90a9cb411a150b7be5ea0825f",
+  "digest": "f511c8e286d013f27ec14035bf4103d05f491d5c98c2223cf124b842a030a40a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 23,
-   "out": 46
+   "out": 47
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
    "in": 26,
-   "out": 43
+   "out": 45
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -143,8 +143,8 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 37,
-   "out": 26
+   "in": 38,
+   "out": 27
   },
   {
    "path": "GLOSSARIO.md",
@@ -171,7 +171,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 123,
+   "in": 124,
    "out": 56
   },
   {
@@ -185,8 +185,8 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 82,
-   "out": 31
+   "in": 83,
+   "out": 32
   },
   {
    "path": "backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md",
@@ -227,8 +227,8 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 118,
-   "out": 92
+   "in": 119,
+   "out": 93
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 55,
-   "out": 143
+   "in": 56,
+   "out": 144
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -579,6 +579,13 @@
    "title": "DHR-ECC05-001 — Ata de Homologação — Pesquisa Multi-Lente (RULE-ECC-05)",
    "in": 9,
    "out": 8
+  },
+  {
+   "path": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "area": "governance",
+   "title": "DHR-ECC06-001 — Ata de Homologação — RULE-ECC-06: Pesquisa em repositórios seguros e bem avaliados",
+   "in": 7,
+   "out": 7
   },
   {
    "path": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
@@ -1200,8 +1207,8 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 179,
-   "out": 33
+   "in": 180,
+   "out": 34
   },
   {
    "path": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
@@ -1459,7 +1466,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 85,
+   "in": 86,
    "out": 4
   },
   {
@@ -1494,7 +1501,7 @@
    "path": "specs/features/SPEC-002/research.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness — DOSSIÊ DE PESQUISA (ABERTURA)",
-   "in": 8,
+   "in": 9,
    "out": 18
   },
   {
@@ -1925,6 +1932,11 @@
    "cited_by": 9
   },
   {
+   "id": "DHR-ECC06-001",
+   "defined_in": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "cited_by": 7
+  },
+  {
    "id": "DHR-EUA-E04",
    "defined_in": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
    "cited_by": 8
@@ -2195,11 +2207,6 @@
    "cited_by": 5
   },
   {
-   "id": "EUA-E01",
-   "defined_in": null,
-   "cited_by": 2
-  },
-  {
    "id": "EUA-E02",
    "defined_in": null,
    "cited_by": 5
@@ -2347,7 +2354,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 118
+   "cited_by": 119
   },
   {
    "id": "INV-08",
@@ -2357,7 +2364,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 66
+   "cited_by": 67
   },
   {
    "id": "INV-10",
@@ -2582,12 +2589,12 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 61
+   "cited_by": 62
   },
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "RULE-ECC-03",
@@ -2597,12 +2604,17 @@
   {
    "id": "RULE-ECC-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 30
+   "cited_by": 31
   },
   {
    "id": "RULE-ECC-05",
    "defined_in": "governance/RULES.md",
    "cited_by": 16
+  },
+  {
+   "id": "RULE-ECC-06",
+   "defined_in": "governance/RULES.md",
+   "cited_by": 7
   },
   {
    "id": "RULE-EH",
@@ -2987,7 +2999,7 @@
   {
    "id": "RULE-MET",
    "defined_in": "governance/RULES.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "RULE-MET-01",
@@ -3307,7 +3319,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 78
+   "cited_by": 79
   },
   {
    "id": "SPEC-002",
@@ -3322,7 +3334,7 @@
   {
    "id": "SPEC-004",
    "defined_in": "ROADMAP.md",
-   "cited_by": 46
+   "cited_by": 48
   },
   {
    "id": "SPEC-005",
@@ -3633,6 +3645,11 @@
   },
   {
    "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
    "type": "id"
   },
@@ -3868,6 +3885,11 @@
   },
   {
    "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
    "type": "id"
   },
@@ -3985,6 +4007,11 @@
    "from": ".claude/agents/revisor.md",
    "to": "specs/features/SPEC-002/plan.md",
    "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "specs/features/SPEC-002/research.md",
+   "type": "path"
   },
   {
    "from": ".claude/agents/revisor.md",
@@ -4229,6 +4256,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-DOCSYNC-002_Ata_Homologacao_Encaminhamento_Residuais.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
    "type": "id"
   },
   {
@@ -4884,6 +4916,11 @@
   {
    "from": "atomic-spec.md",
    "to": "governance/DHR-ECC05-001_Ata_Homologacao_Pesquisa_Multi_Lente.md",
+   "type": "id"
+  },
+  {
+   "from": "atomic-spec.md",
+   "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
    "type": "id"
   },
   {
@@ -5559,6 +5596,11 @@
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/DHR-DOCSYNC-002_Ata_Homologacao_Encaminhamento_Residuais.md",
+   "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
    "type": "id"
   },
   {
@@ -7149,6 +7191,11 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-ECC05-001_Ata_Homologacao_Pesquisa_Multi_Lente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
    "type": "id"
   },
   {
@@ -9059,6 +9106,46 @@
   {
    "from": "governance/DHR-ECC05-001_Ata_Homologacao_Pesquisa_Multi_Lente.md",
    "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
+   "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
   },
   {
@@ -14154,6 +14241,11 @@
   {
    "from": "governance/RULES.md",
    "to": "governance/DHR-ECC05-001_Ata_Homologacao_Pesquisa_Multi_Lente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/RULES.md",
+   "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
    "type": "id"
   },
   {
