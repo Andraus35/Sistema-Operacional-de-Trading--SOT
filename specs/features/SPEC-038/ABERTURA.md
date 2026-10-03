@@ -236,3 +236,12 @@ As decisões de DHR-DEC-003 já tiveram registros consequentes aplicados (fora d
 Com `SPEC-038-TVMCP-001`, `BL-031` e `BL-032` já **decididos por Andraus** (DHR-DEC-003), esta Proposta + `research.md` + `sources/` seguem para **parecer do Revisor** sobre o processo do Dossiê (atomic-spec §15; RULE-ECC-04 verbatim; RULE-ECC-05 3 lentes; ECC-VAL-001 validade declarada em `research.md`) e, em seguida, **homologação de Andraus** da **definição da Spec** (número, nome, fronteira HIGH/D0–D7, quantidade=1, Classe, não-incidência de CC-12). Resta aberta a `[DECISÃO NECESSÁRIA: SPEC-038-DATASRC-001]` (fonte de dado de decisão — "aguardar TradingView") e a pendência de promover BL-017 — **antes** de qualquer `plan.md`/`checks.md`.
 
 **Pronto para revisão.**
+
+---
+
+## 13. Adendo pós-homologação (DHR-DEC-004, 2026-10-03 — aditivo, INV-07)
+
+- **`SPEC-038-DATASRC-001` DECIDIDA neste recorte por Andraus:** TradingView (perfil exploratório CDP, risco ToS assumido) entra como **uma das fontes**, via adapter, **nunca como fonte única da verdade**; o **provedor de dados de máquina** (order flow/futuros/BTC multi-exchange) **não é escolhido** e depende do Discovery/benchmark do MASTER (`reference/externo/MASTER — MARKET DATA, ORDER FLOW E INTEGRAÇÃO TRADINGVIEW.MD`, ref. externa NÃO-normativa) → **BL-033**. Dado de qualquer fonte = Observação (INV-06; Provider ≠ Evidence).
+- **BL-017 → ATIVADO:** a dimensão B 'tool correctness' só fecha por emenda à SPEC-020 na homologação da SPEC-038.
+- A SPEC-038 permanece restrita ao **contrato de ferramenta**; Market Data & Order Flow (provider abstrato, Order Flow Engine, D-001..D-027) é capacidade candidata fora desta Spec. O Plan deve prever o `TradingViewAdapter` como adapter de uma fonte, sem acoplar o contrato ao TradingView.
+- Este adendo não reescreve a abertura homologada (DHR-SPEC038-001); a definição homologada permanece inalterada.
