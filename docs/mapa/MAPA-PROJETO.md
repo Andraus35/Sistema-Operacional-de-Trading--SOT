@@ -4,18 +4,18 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-01** · digest `0bc773aeecb40eb5` · **220** documentos · **2370** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-02** · digest `eec1eddb26d2df0b` · **221** documentos · **2382** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
 | Área | Docs | Função | Mais referenciados |
 |---|---:|---|---|
-| **raiz** | 6 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (107) · [atomic-spec.md](../../atomic-spec.md) (77) · [AGENTS.md](../../AGENTS.md) (31) |
-| **governance** | 111 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (163) · [DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) (66) · [GPR-001_Guia_Principios_Relacoes_SOT.md](../../governance/GPR-001_Guia_Principios_Relacoes_SOT.md) (51) |
-| **canon** | 8 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (67) · [CEE-001-cognitive-economy-efficiency-v2.0.md](../../canon/CEE-001-cognitive-economy-efficiency-v2.0.md) (66) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (60) |
-| **specs** | 29 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (98) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (81) · [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) (61) |
-| **backlog** | 5 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (102) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (19) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (9) |
-| **reference** | 22 | referências externas não-normativas (camadas, master contracts) | [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (18) · [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (10) · [SOT-RISK-MASTER-001_Consolidado.md](../../reference/SOT-RISK-MASTER-001_Consolidado.md) (8) |
+| **raiz** | 6 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (108) · [atomic-spec.md](../../atomic-spec.md) (78) · [AGENTS.md](../../AGENTS.md) (32) |
+| **governance** | 111 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (164) · [DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) (66) · [GPR-001_Guia_Principios_Relacoes_SOT.md](../../governance/GPR-001_Guia_Principios_Relacoes_SOT.md) (51) |
+| **canon** | 8 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEE-001-cognitive-economy-efficiency-v2.0.md](../../canon/CEE-001-cognitive-economy-efficiency-v2.0.md) (67) · [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (67) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (60) |
+| **specs** | 29 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (98) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (82) · [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) (62) |
+| **backlog** | 5 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (103) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (19) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (9) |
+| **reference** | 23 | referências externas não-normativas (camadas, master contracts) | [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (18) · [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (10) · [SOT-RISK-MASTER-001_Consolidado.md](../../reference/SOT-RISK-MASTER-001_Consolidado.md) (8) |
 | **rag** | 5 | chunks de conhecimento por agente | [synthesis.knowledge.md](../../rag/synthesis.knowledge.md) (3) |
 | **.claude** | 14 | agentes e skills do Claude Code | [revisor.md](../../.claude/agents/revisor.md) (25) · [especificador.md](../../.claude/agents/especificador.md) (23) · [sot-schema-validator.md](../../.claude/agents/sot-schema-validator.md) (2) |
 | **docs** | 14 | documentação histórica e de arranque (não essencial à operação) | [MATRIZ-WORKFLOW-SPEC.md](../../docs/MATRIZ-WORKFLOW-SPEC.md) (8) · [PARECER-RISK-AGENT-auditoria-semantica.md](../../docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md) (3) · [parecer-revisor-F1.md](../../docs/arranque/parecer-revisor-F1.md) (3) |
@@ -49,14 +49,14 @@ flowchart LR
   backlog["backlog"] -->|18| raiz["raiz"]
   governance["governance"] -->|18| docs["docs"]
   governance["governance"] -->|16| canon["canon"]
+  reference["reference"] -->|16| governance["governance"]
   docs["docs"] -->|15| _claude[".claude"]
   backlog["backlog"] -->|14| reference["reference"]
   _claude[".claude"] -->|13| raiz["raiz"]
   canon["canon"] -->|13| governance["governance"]
-  reference["reference"] -->|12| governance["governance"]
+  reference["reference"] -->|12| specs["specs"]
+  reference["reference"] -->|11| raiz["raiz"]
   raiz["raiz"] -->|8| backlog["backlog"]
-  reference["reference"] -->|8| raiz["raiz"]
-  reference["reference"] -->|8| specs["specs"]
 ```
 
 ## 3. Hubs — IDs mais referenciados
@@ -67,27 +67,27 @@ flowchart LR
 | `SPEC-002` | 98 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
 | `SPEC-001` | 76 | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) |
 | `EUA-E04` | 66 | [governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) |
-| `SPEC-003` | 59 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
+| `SPEC-003` | 60 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
 | `INV-09` | 55 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-ECC-01` | 54 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-019` | 51 | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) |
+| `SPEC-019` | 52 | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) |
 | `SPEC-020` | 50 | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) |
+| `INV-05` | 48 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-EPI` | 48 | [governance/RULES.md](../../governance/RULES.md) |
-| `INV-05` | 47 | [governance/RULES.md](../../governance/RULES.md) |
-| `RULE-MET-01` | 45 | [governance/RULES.md](../../governance/RULES.md) |
+| `RULE-MET-01` | 46 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-03` | 38 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-HV` | 37 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-004` | 36 | [ROADMAP.md](../../ROADMAP.md) |
-| `RULE-MECH-01` | 34 | [governance/RULES.md](../../governance/RULES.md) |
+| `RULE-MECH-01` | 35 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-04` | 33 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-HD` | 33 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-ECC-02` | 32 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-014` | 32 | [ROADMAP.md](../../ROADMAP.md) |
 | `INV-01` | 31 | [governance/RULES.md](../../governance/RULES.md) |
+| `SPEC-018` | 30 | [ROADMAP.md](../../ROADMAP.md) |
 | `EUA-E05` | 29 | [governance/DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md](../../governance/DHR-EUA-E05_Ata_Homologacao_Epistemic_Check.md) |
 | `EUA-E21` | 29 | [governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md](../../governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md) |
 | `RULE-SEM` | 29 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-018` | 29 | [ROADMAP.md](../../ROADMAP.md) |
 
 ## 4. Cadeia de Specs
 
@@ -95,7 +95,7 @@ flowchart LR
 |---|---|---|---:|
 | `SPEC-001` | **Homologada** | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | 76 |
 | `SPEC-002` | **Homologada** | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) | 98 |
-| `SPEC-003` | Em redação | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | 59 |
+| `SPEC-003` | Em redação | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | 60 |
 | `SPEC-004` | Indicativa (não aberta) | — | 36 |
 | `SPEC-005` | Indicativa (não aberta) | — | 11 |
 | `SPEC-006` | Indicativa (não aberta) | — | 22 |
@@ -110,8 +110,8 @@ flowchart LR
 | `SPEC-015` | Indicativa (não aberta) | — | 23 |
 | `SPEC-016` | Indicativa (não aberta) | — | 17 |
 | `SPEC-017` | Indicativa (não aberta) | — | 3 |
-| `SPEC-018` | Indicativa (não aberta) | — | 29 |
-| `SPEC-019` | **Homologada** | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | 51 |
+| `SPEC-018` | Indicativa (não aberta) | — | 30 |
+| `SPEC-019` | **Homologada** | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | 52 |
 | `SPEC-020` | **Homologada** | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | 50 |
 | `SPEC-021` | **Homologada** | [specs/features/SPEC-021/plan.md](../../specs/features/SPEC-021/plan.md) | 29 |
 | `SPEC-022` | Indicativa (não aberta) | — | 5 |
@@ -137,7 +137,7 @@ flowchart LR
 | `SPEC-042` | Indicativa (não aberta) | — | 3 |
 | `SPEC-043` | Indicativa (não aberta) | — | 3 |
 | `SPEC-044` | Indicativa (não aberta) | — | 2 |
-| `SPEC-045` | Indicativa (não aberta) | — | 3 |
+| `SPEC-045` | Indicativa (não aberta) | — | 4 |
 | `SPEC-046` | **Homologada** | [specs/features/SPEC-046/plan.md](../../specs/features/SPEC-046/plan.md) | 22 |
 | `SPEC-047` | Indicativa (não aberta) | — | 6 |
 
@@ -162,6 +162,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 - [rag/fibonacci.knowledge.md](../../rag/fibonacci.knowledge.md) — RAG — Fibonacci Validator Knowledge Base
 - [rag/ict.knowledge.md](../../rag/ict.knowledge.md) — RAG — ICT Specialist Knowledge Base
 - [rag/smc.knowledge.md](../../rag/smc.knowledge.md) — RAG — SMC Specialist Knowledge Base
+- [reference/ANALISE-REVISAO-EXTERNA-SPEC003-2026-10-02.md](../../reference/ANALISE-REVISAO-EXTERNA-SPEC003-2026-10-02.md) — ANÁLISE CRÍTICA DA REVISÃO EXTERNA DA SPEC-003 (LLM externo) — 2026-10-02
 - [specs/features/SPEC-046/research.md](../../specs/features/SPEC-046/research.md) — Dossiê de Pesquisa — SPEC-046 (companion — convenção de nome do gate determinístico)
 
 ## 7. Índice de documentos
@@ -172,12 +173,12 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 
 | Documento | Título | ← | → |
 |---|---|---:|---:|
-| [AGENTS.md](../../AGENTS.md) | AGENTS.md — SOT (Sistema Operacional de Trading) | 31 | 23 |
+| [AGENTS.md](../../AGENTS.md) | AGENTS.md — SOT (Sistema Operacional de Trading) | 32 | 23 |
 | [GLOSSARIO.md](../../GLOSSARIO.md) | GLOSSÁRIO OFICIAL — SOT | 26 | 8 |
 | [README.md](../../README.md) | SOT-Harness | 0 | 9 |
-| [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 107 | 46 |
+| [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 108 | 46 |
 | [WORKFLOW.md](../../WORKFLOW.md) | WORKFLOW — Setup Operacional Canônico do SOT | 23 | 12 |
-| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 77 | 30 |
+| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 78 | 30 |
 
 ### governance
 
@@ -201,7 +202,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md](../../governance/DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md) | DHR-BL009-001 — Ata de Homologação — Mapa de Auditoria do SAS-001 (BL-009) | 3 | 6 |
 | [DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md](../../governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md) | DHR-BL010-011-012-001 — Ata de Homologação — Classificação de Colisões (MC-RA... | 4 | 4 |
 | [DHR-CIC-001_Ata_Homologacao_CIC-001.md](../../governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md) | DHR-CIC-001 — Ata de Homologação do CIC-001 v1.0 | 5 | 2 |
-| [DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md](../../governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md) | DHR-CLASSE-MECH-001 — Ata de Homologação — Taxonomia de Classe/Mecanismo de I... | 11 | 20 |
+| [DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md](../../governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md) | DHR-CLASSE-MECH-001 — Ata de Homologação — Taxonomia de Classe/Mecanismo de I... | 12 | 20 |
 | [DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md](../../governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md) | DHR-DEC-001 — Ata de Decisões — Q-A5, RISK-CONV-001, RISK-ARR-LOC-001, DIV co... | 16 | 13 |
 | [DHR-DEC-002_Ata_QA9_Regime_Temporal.md](../../governance/DHR-DEC-002_Ata_QA9_Regime_Temporal.md) | DHR-DEC-002 — Ata de Decisão — Q-A9 (dimensão do regime de mercado) → dimensã... | 8 | 9 |
 | [DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md](../../governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md) | DHR-DIV-001 — Ata de Varredura DIV: termos legados em documentos CANON BASELINED | 7 | 12 |
@@ -228,7 +229,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md](../../governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md) | DHR-EUA-E20 — Ata de Homologação: FASE RISK (6 macro-slots indicativos da fam... | 21 | 18 |
 | [DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md](../../governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md) | DHR-EUA-E21 — Ata de Homologação: Especificação Emergente (ROADMAP como direç... | 30 | 16 |
 | [DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md](../../governance/DHR-EUA-E22_Ata_Homologacao_Manutencao_Mapa_Projeto.md) | DHR-EUA-E22 — Ata de Homologação: Manutenção obrigatória do Mapa do Projeto (... | 13 | 14 |
-| [DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md](../../governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md) | DHR-EUA-E23 — Ata de Homologação: Manager Agent Unificado (3 Specs sob "Manag... | 15 | 13 |
+| [DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md](../../governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md) | DHR-EUA-E23 — Ata de Homologação: Manager Agent Unificado (3 Specs sob "Manag... | 16 | 13 |
 | [DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md](../../governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md) | DHR-HOD-001 — Ata de Homologação do Plano de Higiene e Organização Documental... | 3 | 5 |
 | [DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md](../../governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md) | DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades... | 9 | 8 |
 | [DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md](../../governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md) | DHR-MAN-001 — Ata de Homologação do MAN-001 (Mapa da Arquitetura Normativa) | 4 | 3 |
@@ -292,14 +293,14 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md](../../governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md) | PE-PR-PAP-001 — Prompts de Invocação do Especificador e do Revisor para o PAP... | 9 | 12 |
 | [PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md](../../governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md) | PP-PAP-001 — Pacote de Partida do PAP-001 | 9 | 4 |
 | [RCH-001_Registro_Ciclos_Hygiene.md](../../governance/RCH-001_Registro_Ciclos_Hygiene.md) | RCH-001 — Registro de Ciclos de Hygiene de Princípios | 19 | 22 |
-| [RULES.md](../../governance/RULES.md) | Rules — SOT (Sistema Operacional de Trading) | 163 | 32 |
+| [RULES.md](../../governance/RULES.md) | Rules — SOT (Sistema Operacional de Trading) | 164 | 32 |
 | [SES-001_Especializacao_Cognitiva_Trading.md](../../governance/SES-001_Especializacao_Cognitiva_Trading.md) | EMENDA SES-001 | 48 | 3 |
 
 ### canon
 
 | Documento | Título | ← | → |
 |---|---|---:|---:|
-| [CEE-001-cognitive-economy-efficiency-v2.0.md](../../canon/CEE-001-cognitive-economy-efficiency-v2.0.md) | CEE-001 — Cognitive Economy & Efficiency Specification | 66 | 4 |
+| [CEE-001-cognitive-economy-efficiency-v2.0.md](../../canon/CEE-001-cognitive-economy-efficiency-v2.0.md) | CEE-001 — Cognitive Economy & Efficiency Specification | 67 | 4 |
 | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) | CEM-001 — Canonical Evidence Model Specification | 67 | 2 |
 | [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) | CHM-001 — Canonical Hypothesis Model (consolidado) | 60 | 0 |
 | [CR-001-compliance-record.md](../../canon/CR-001-compliance-record.md) | CR-001 — Compliance Record Specification (consolidado, Cap.6-8) | 8 | 0 |
@@ -314,18 +315,18 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 |---|---|---:|---:|
 | [elliott-wave.spec.md](../../specs/elliott-wave.spec.md) | Spec — Elliott Wave Specialist | 3 | 1 |
 | [SPEC-001/checks.md](../../specs/features/SPEC-001/checks.md) | SPEC-001 — Hypothesis Harness — Verificação de Spec | 15 | 2 |
-| [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | SPEC-001 — Hypothesis Harness | 81 | 4 |
+| [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | SPEC-001 — Hypothesis Harness | 82 | 4 |
 | [DOSSIE-PESQUISA.md](../../specs/features/SPEC-002/DOSSIE-PESQUISA.md) | Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness) | 6 | 13 |
 | [PROPOSTA-ABERTURA.md](../../specs/features/SPEC-002/PROPOSTA-ABERTURA.md) | Proposta de Abertura — SPEC-002: Evidence & Evidence Provenance Harness | 4 | 15 |
 | [SPEC-002/checks.md](../../specs/features/SPEC-002/checks.md) | checks.md — Verificação de Spec da SPEC-002 (fase spec-first) | 3 | 8 |
 | [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) | SPEC-002 — Evidence & Evidence Provenance Harness | 98 | 15 |
 | [research.md](../../specs/features/SPEC-002/research.md) | SPEC-002 — Evidence & Evidence Provenance Harness — DOSSIÊ DE PESQUISA (ABERT... | 6 | 18 |
 | [SPEC-003/checks.md](../../specs/features/SPEC-003/checks.md) | checks.md — Verificação de Spec da SPEC-003 (fase spec-first) | 2 | 14 |
-| [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine | 61 | 19 |
+| [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine | 62 | 19 |
 | [research-Q-A9-regime.md](../../specs/features/SPEC-003/research-Q-A9-regime.md) | SPEC-003 — Q-A9: Dimensão do Regime de Mercado (WF-C04) — DOSSIÊ DE PESQUISA | 6 | 4 |
 | [research.md](../../specs/features/SPEC-003/research.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine — DO... | 2 | 20 |
 | [SPEC-019/checks.md](../../specs/features/SPEC-019/checks.md) | checks.md — Verificação de Spec da SPEC-019 (fase spec-first) | 1 | 8 |
-| [SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical) | 51 | 18 |
+| [SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical) | 52 | 18 |
 | [SPEC-020/checks.md](../../specs/features/SPEC-020/checks.md) | checks.md — Verificação de Spec da SPEC-020 (fase spec-first) | 2 | 7 |
 | [SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) | 50 | 17 |
 | [research.md](../../specs/features/SPEC-020/research.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) — DOSSIÊ DE PESQUISA (... | 1 | 15 |
@@ -350,12 +351,13 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) | BL-016 — Encaminhamento do MC-SKL-001 (Camada de Skills) após fechamento de I... | 9 | 14 |
 | [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) | BL-018 — Risk Agent SOT (Família RISK-SPEC) | 19 | 17 |
 | [BL-025-CACHE-ISS-001-analise.md](../../backlog/BL-025-CACHE-ISS-001-analise.md) | BL-025 — CACHE-ISS-001 — Análise Técnica Preparatória | 5 | 15 |
-| [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) | RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação | 102 | 80 |
+| [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) | RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação | 103 | 80 |
 
 ### reference
 
 | Documento | Título | ← | → |
 |---|---|---:|---:|
+| [ANALISE-REVISAO-EXTERNA-SPEC003-2026-10-02.md](../../reference/ANALISE-REVISAO-EXTERNA-SPEC003-2026-10-02.md) | ANÁLISE CRÍTICA DA REVISÃO EXTERNA DA SPEC-003 (LLM externo) — 2026-10-02 | 0 | 10 |
 | [PESQUISA-WORKFLOW-TRADING-2026-10-01.md](../../reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md) | PESQUISA — Estado da Arte para Evolução do WORKFLOW Operacional do SOT | 5 | 8 |
 | [RESPOSTAS-WORKFLOW-2026-10-01.md](../../reference/RESPOSTAS-WORKFLOW-2026-10-01.md) | RESPOSTAS DE ANDRAUS — evolução do WORKFLOW.md (2026-10-01) | 4 | 6 |
 | [SOT-RISK-MASTER-001_Consolidado.md](../../reference/SOT-RISK-MASTER-001_Consolidado.md) | SOT-RISK-MASTER-001 — Master Document: Risk Agent SOT | 8 | 14 |
