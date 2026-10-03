@@ -116,7 +116,7 @@ class Registry:
         # EUA também é definida por cabeçalho de ata DHR / atomic-spec (ex.: EUA-E01..E03 sem proposta própria)
         for p in (list(gov.glob("DHR-*.md")) if gov.exists() else []) + [ROOT / "atomic-spec.md"]:
             if p.exists():
-                head = "\n".join(read(p).split("\n")[:15])
+                head = "\n".join(read(p).split("\n")[:20])
                 self.eua |= set(re.findall(r"EUA-E(\d{2}[a-z]?)", head))
 
         # EUA anunciada como futura por ata/proposta de governança (ex.: EUA-E20 na DHR-EUA-E19a)
