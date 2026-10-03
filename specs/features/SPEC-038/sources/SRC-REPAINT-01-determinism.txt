@@ -1,0 +1,16 @@
+SRC-REPAINT-01 — Repainting / determinismo de indicadores (Pine Script)
+URL: https://crosstrade.io/blog/pine-script-repainting  (+ PineCoders FAQ: https://www.tradingview.com/script/cyPWY96u-How-to-avoid-repainting-when-using-security-PineCoders-FAQ/)
+Data de acesso: 2026-10-02
+Método de obtenção: WebFetch + WebSearch (conteúdo mediado por modelo — ver _LIMITACAO-WEB.txt).
+Classificação: [EXTERNO] — Prática (documentação técnica) com apoio em doc oficial TradingView.
+
+TRECHO LITERAL (verbatim capturado):
+"Script behavior causing historical vs. realtime calculations or plots to behave differently." (definição oficial de repainting, TradingView)
+
+"Over 95% of indicators (even standard ones like RSI, MACD) technically repaint because live values aren't finalized until the bar closes."
+
+"Signals are only generated after the bar finalizes - just like real trading." (uso de barstate.isconfirmed)
+
+Invalidação de backtest (verbatim): "Your strategy appears far more profitable than it would be live" quando os níveis se movem dinamicamente, minando a confiabilidade dos resultados históricos.
+
+Corroboração (WebSearch, mesma data): "If you test a strategy on historical bars using only OHLC values, and then run that same code on the realtime bar with more than OHLC information, scripts not properly written will alter the strategy's behavior, and you will not be running the same strategy you tested, invalidating your test results." Prevenção: sinais em barras fechadas (close[1]), request.security com offset + barmerge.lookahead_on referenciando a barra HTF confirmada anterior.

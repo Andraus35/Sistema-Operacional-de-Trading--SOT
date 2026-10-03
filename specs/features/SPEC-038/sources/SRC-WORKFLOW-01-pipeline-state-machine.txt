@@ -1,0 +1,27 @@
+SRC-WORKFLOW-01 — Pipeline de decisão em camadas / máquina de estados (saneamento ACH-MEN-01)
+Fonte proximal (citada por research.md §3.1): reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md §B.7 (linhas ~76-81)
+Fontes últimas declaradas por aquele doc (linha ~81), NÃO re-fetchadas por este Especificador:
+  - https://nexusfi.com/a/automation/trading-system-architecture
+  - https://mbrenndoerfer.com/writing/quant-trading-system-architecture-infrastructure
+Data de acesso do doc proximal (PESQUISA-WORKFLOW): 2026-10-01 (cabeçalho do arquivo).
+Data desta captura (do arquivo do repo, byte-exato): 2026-10-03.
+Classificação: [EXTERNO] — Prática/Engenharia (via doc de pesquisa prévio do repo, evidência "Forte" segundo o próprio B.7).
+
+NATUREZA DESTA CAPTURA (honestidade, RULE-MET-01):
+Esta é uma captura de SEGUNDA ORDEM. O que é citado em research.md §3.1 é o texto do
+doc de pesquisa INTERNO (PESQUISA-WORKFLOW-TRADING-2026-10-01.md), que por sua vez
+cita as páginas web acima. As páginas web primárias (nexusfi, mbrenndoerfer) NÃO
+foram re-fetchadas aqui; o trecho abaixo é reproduzido BYTE-A-BYTE do arquivo do
+repositório (que o Especificador lê sem mediação de modelo), e é esse texto que o
+Revisor pode conferir por correspondência de string (RULE-ECC-04).
+
+TRECHO LITERAL 1 (verbatim de PESQUISA-WORKFLOW §B.7, 1º bullet):
+"market data → signal → risk → order management → execution, fluxo unidirecional, cada componente com uma só função"
+(no doc proximal o fragmento vem após "Pipeline canônico:" e com o trecho em negrito markdown; o conteúdo textual é o acima.)
+
+TRECHO LITERAL 2 (verbatim de PESQUISA-WORKFLOW §B.7, 3º bullet — ATENÇÃO: contém aspas internas):
+"O núcleo do Order Management é uma máquina de estados determinística; sem ela, edge-cases criam "posições fantasma""
+(as aspas em torno de posições fantasma SÃO parte do texto-fonte; a correção de ACH-MEN-01
+consistiu em preservar essas aspas internas na citação de research.md, em vez de omiti-las.)
+
+Contexto completo do 3º bullet (para referência): "...edge-cases criam "posições fantasma". Pré-trade risk checks: limites de posição, P&L diário, sanity de preço, rate limiting, allowlist de instrumento. [EXTERNO]"

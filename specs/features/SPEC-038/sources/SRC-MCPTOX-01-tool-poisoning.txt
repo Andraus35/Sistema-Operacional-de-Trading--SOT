@@ -1,0 +1,18 @@
+SRC-MCPTOX-01 — MCP tool poisoning (segurança de ferramentas)
+URL: https://www.practical-devsecops.com/mcp-tool-poisoning/  (+ benchmark MCPTox: https://arxiv.org/pdf/2508.14925)
+Data de acesso: 2026-10-02
+Método de obtenção: WebFetch + WebSearch (conteúdo mediado por modelo — ver _LIMITACAO-WEB.txt).
+Classificação: [EXTERNO] — Evidência/Benchmark (MCPTox é benchmark acadêmico) + Prática (guia de defesa).
+
+TRECHO LITERAL (verbatim capturado):
+"an attack in which adversarial content is embedded in tool names, descriptions, or input schemas such that an LLM-based agent is deceived into executing attacker-controlled actions."
+
+"tool descriptions are invisible to end users. The user sees a button label or an action name. The model sees a 200-word natural language description that shapes its entire reasoning about that tool."
+
+"no cryptographic signing of tool manifests. The MCP specification has no standard mechanism for verifying that the tool description returned at runtime matches what was audited at install time."
+
+Defesas recomendadas (verbatim):
+"Before any MCP tool enters your environment, extract tool descriptions, hash them, and store that hash in a tamper-evident log." (manifest pinning/signing)
+"treat every third-party MCP server as untrusted by default. Maintain a registry of approved servers with explicit version pinning." (allowlist)
+
+Dado de taxa de sucesso (WebSearch, MCPTox / arxiv 2508.14925, mesma data): "The average attack success rate across all models was 36.5%... Claude 3.7 Sonnet, which had the strongest refusal behavior in the study, still complied with poisoned descriptions in 34% of test cases."

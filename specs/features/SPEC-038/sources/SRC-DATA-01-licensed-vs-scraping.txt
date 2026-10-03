@@ -1,0 +1,16 @@
+SRC-DATA-01 — Provedores de dados licenciados vs. scraping (qualidade/determinismo/proveniência)
+URL: https://www.edgeful.com/blog/posts/futures-data-api-polygon-databento-edgeful-comparison  (+ https://databento.com/futures)
+Data de acesso: 2026-10-02
+Método de obtenção: WebSearch (conteúdo mediado por modelo — ver _LIMITACAO-WEB.txt).
+Classificação: [EXTERNO] — Prática/Benchmark (comparação de provedores) + material de fornecedor (viés comercial declarado).
+
+TRECHO LITERAL (verbatim capturado):
+"Polygon and Databento sell raw market data including ticks, OHLCV, and depth. Databento is a licensed distributor and direct provider of market data for 50+ trading venues."
+
+"High-frequency data is not interchangeable between providers, as differences in timestamp alignment, aggregation logic, and data completeness directly impact model accuracy and execution performance."
+
+"Limitations include incomplete historical coverage, gaps in time-series data which disrupt indicator calculations and invalidate backtests, and inconsistent timestamp alignment leading to look-ahead bias or signal distortion."
+
+"web scraping requires maintaining your own infrastructure and logic to handle site changes, making licensed API providers more reliable for reproducible research and production systems."
+
+Nota de viés: databento.com é fornecedor; afirmações de confiabilidade do próprio provedor tratadas como Opinião comercial, não Evidência independente (RULE-MET-01).

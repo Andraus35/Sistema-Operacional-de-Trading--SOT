@@ -1,0 +1,23 @@
+SRC-TVMCP-01 — Auditoria da candidata tradingview-mcp-jackson
+URL: https://github.com/LewisWJackson/tradingview-mcp-jackson
+Data de acesso: 2026-10-02
+Método de obtenção: WebFetch (conteúdo mediado por modelo — ver _LIMITACAO-WEB.txt). Análise ESTÁTICA de texto; o código NÃO foi instalado nem executado (mandato BL-031 item 1).
+Classificação: [EXTERNO] — Prática (ferramenta/implementação de terceiro, não-auditada formalmente).
+
+TRECHO LITERAL (verbatim capturado):
+"This tool connects to your locally running TradingView Desktop app via Chrome DevTools Protocol."
+Porta de debug habilitada por flags Chromium padrão (ex.: --remote-debugging-port=9222) em localhost:9222.
+
+Tipos de desenho declarados: "horizontal_line, trend_line, rectangle, text." — sem Fibonacci, sem Elliott Wave, sem API de remoção documentada.
+Leitura de desenhos manuais (Pine) via: data_get_pine_lines, data_get_pine_labels, data_get_pine_boxes, data_get_pine_tables.
+Pine Script: injeção via pine_set_source diretamente no editor; compilação server-side (pine_smart_compile); console via pine_get_console.
+Ferramentas de dados/leitura: chart_get_state, data_get_study_values, quote_get, data_get_ohlcv.
+Replay: replay_start, replay_step, replay_autoplay, replay_trade, replay_status, replay_stop.
+Latência / limites de taxa: "None stated" na documentação.
+
+Avisos de risco/legais (verbatim):
+"You are solely responsible for ensuring your use complies with TradingView's Terms of Use and all applicable laws."
+"This tool accesses undocumented internal TradingView APIs that may change at any time."
+"The authors are not responsible for any account bans, suspensions, or other consequences."
+"All data processing happens locally. Nothing is sent anywhere. No TradingView data leaves your machine."
+"Requires a valid TradingView subscription. This tool does not bypass any TradingView paywall."

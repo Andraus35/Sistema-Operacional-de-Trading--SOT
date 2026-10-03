@@ -1,0 +1,46 @@
+SRC-TVMCP-OFFICIAL-01 — MCP Server OFICIAL do TradingView (operado pelo próprio TradingView)
+URLs:
+  - https://www.tradingview.com/mcp/docs  (documentação)
+  - https://www.tradingview.com/blog/en/tradingview-mcp-server-public-beta-60864/  (blog de lançamento)
+Data de acesso: 2026-10-03
+Método de obtenção: WebFetch (conteúdo MEDIADO POR MODELO — ver _LIMITACAO-WEB.txt; não há garantia byte-a-byte).
+Classificação: [EXTERNO] — Padrão/Prática (produto oficial do provedor, em beta).
+
+TRECHOS LITERAIS (verbatim capturado — docs):
+"https://mcp.tradingview.com/mcp"   (endpoint do servidor MCP)
+"Authentication is OAuth 2.1 — you sign in with your TradingView account, no API keys to manage."
+"Included in Essential and above; trial plans don't include MCP access."
+"Tool calls are rate-limited to ~100 requests per minute per user."
+OHLCV: "Number of bars, max 5000" (default informado: 300 barras por requisição).
+"TradingView MCP Server is in beta. MCP access is included in Essential and above."
+Alertas: "simple price condition (price + cross/cross_up/cross_down/greater/less)."
+Alertas complexos: "Multi-condition and indicator-based (study) alerts are NOT supported yet."
+Tipos de ativo (capturados): Stocks, ETFs, bonds, forex, indices, futures, crypto.
+Sem funcionalidade de desenho mencionada na página.
+
+CONTAGEM DE FERRAMENTAS (capturada — docs):
+O WebFetch reportou 9 categorias totalizando ~43 funções:
+  Watchlists (8), Market data (3), Symbol search (1), Screener (5), News (2),
+  Fundamentals & forecasts (3), Documents (2), Calendars (3), Alerts (8).
+NOTA: esta contagem (~43) é a do produto OFICIAL. NÃO coincide com as "84 ferramentas"
+citadas no TUTORIAL (reference/externo/..., §2 linha 38), que se referem ao projeto
+LOCAL via CDP (tradingview-mcp Jackson/local) — codebase DIFERENTE do servidor oficial.
+Nenhuma fonte do repositório declara "78" ferramentas (ver relatório do Especificador).
+A contagem é mediada por modelo (WebFetch) → tratar como aproximada / INDETERMINADA quanto ao número exato.
+
+TRECHOS LITERAIS (verbatim capturado — blog de lançamento):
+"market data is delayed"   (o artigo especifica essa limitação para a beta)
+"launching the MCP Server as a public beta"
+"available now to all users on Essential or higher-tier plans"
+"we may limit the number of requests per day"   (durante a beta)
+Capacidades: puxar quotes e histórico de preço, rodar o Screener, analisar fundamentos e
+notícias, acessar filings e calendários, gerenciar watchlists e alertas via conversa com IA.
+
+OBSERVAÇÃO DE CONFORMIDADE (ToS geral do TradingView — ver SRC-TOS-01):
+A documentação do MCP NÃO traz termos de uso próprios. Os Termos gerais do TradingView
+(SRC-TOS-01, capturados 2026-10-02) licenciam dados para "exclusive display-only use" e
+proíbem "algorithmic decision-making" e "non-display usage". Se o MCP oficial herda esses
+Termos gerais para o dado que entrega, o uso não-display (alimentar análise algorítmica do
+SOT) permanece em tensão com o ToS — ponto a ESCLARECER com o suporte do TradingView
+(não decidido aqui; é [DECISÃO NECESSÁRIA] de Andraus). INDETERMINADO: a página do MCP
+não foi observada declarando exceção ao ToS geral para uso via MCP.

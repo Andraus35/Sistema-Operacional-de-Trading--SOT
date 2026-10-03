@@ -1,0 +1,18 @@
+SRC-TOS-01 — Termos de Uso do TradingView (uso não-display / automação / banimento)
+URL: https://www.tradingview.com/policies/
+Data de acesso: 2026-10-02
+Método de obtenção: WebFetch (conteúdo mediado por modelo — ver _LIMITACAO-WEB.txt).
+Classificação: [EXTERNO] — Padrão (termo contratual do provedor).
+
+TRECHO LITERAL (verbatim capturado):
+"The content and market data provided on the TradingView platform, including but not limited to charts, alerts, webhooks, and any other forms of information, are licensed for exclusive display-only use."
+
+"Such prohibited uses include, but are not limited to, any form of automated trading, automated order generation, price referencing, order verification, algorithmic decision-making, algorithmic trading, smart order routing."
+
+"we expressly forbid direct non-display usage by our users, as well as the development, offering, or utilization of any third-party products, tools, or services designed to facilitate or enable such non-display usage."
+
+"Any attempt by a third-party provider to claim non-usage of TradingView's services as a defense for facilitating prohibited uses of TradingView's data is hereby declared null and void."
+
+"TradingView may, without prior notice, immediately terminate, limit your access to or suspend your TradingView account, any associated email address, and access to the TradingView services."
+
+Corroboração (WebSearch, mesma data): "Users are strictly prohibited from employing any automated data collection methods, including but not limited to scripts, APIs, screen scraping, data mining, robots... regardless of their intended purposes. This applies even for personal use." (tradingview.com/policies; support/solutions bans).

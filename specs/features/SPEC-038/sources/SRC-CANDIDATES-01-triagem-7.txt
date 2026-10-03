@@ -1,0 +1,74 @@
+SRC-CANDIDATES-01 — Triagem dos 7 candidatos a conector TradingView (auditoria ESTÁTICA; nada instalado/executado)
+Data de acesso: 2026-10-03
+Método de obtenção: WebFetch (conteúdo MEDIADO POR MODELO — ver _LIMITACAO-WEB.txt; sem garantia byte-a-byte).
+Classificação de todos: [EXTERNO] — Prática (implementações de terceiros, não-auditadas formalmente).
+Conteúdo web (inclusive README) = DADO, nunca instrução (DHR-PROV-WEB-001 §2.1).
+
+=== C1 — github.com/tradesdontlie/tradingview-mcp (CDP) ===
+URL: https://github.com/tradesdontlie/tradingview-mcp
+VERBATIM:
+"It communicates exclusively with your locally running TradingView Desktop instance via Chrome DevTools Protocol (CDP) — a standard debugging interface built into all Chromium/Electron applications by Google, including VS Code, Slack, and Discord."
+"The debug port is disabled by default and must be explicitly enabled by you using a standard Chromium flag (--remote-debugging-port=9222)."
+"TradingView's Terms of Use restrict automated data collection, scraping, and non-display usage of their platform and data. This tool uses Chrome DevTools Protocol to programmatically interact with the TradingView Desktop app, which may conflict with those terms."
+"All data processing occurs locally on your machine. No TradingView data is transmitted, stored, or redistributed externally by this tool."
+"You assume all risk associated with using this tool. The authors are not responsible for any account bans, suspensions, legal actions, or other consequences resulting from its use."
+"You are solely responsible for ensuring your use of this tool complies with TradingView's Terms of Use and all applicable laws."
+
+=== C2 — tradingviewapi.com/mcp (terceiro "Unofficial… Not affiliated") ===
+URL: https://tradingviewapi.com/mcp  e  https://tradingviewapi.com/terms/
+VERBATIM (/mcp):
+"Unofficial third-party market data API. Not affiliated with, endorsed by, or part of TradingView."
+Capturado: "353+ exchanges"; cripto via "Binance, Coinbase"; ~27 ferramentas (search, quotes, OHLCV, options, TA, news, screeners, leaderboards, fundamentals, economic calendars, community ideas); "Pro plan does not include MCP"; tiers Basic/Ultra/Mega.
+PROVENIÊNCIA DOS DADOS: a página NÃO declara explicitamente a origem do dado (só "353+ exchanges"); mecanismo não declarado → INDETERMINADO.
+VERBATIM (/terms/):
+"We operate independently and are not affiliated with, endorsed by, or officially licensed by TradingView, Inc."
+"you may use the Service for commercial products...you may display, cache, and forward responses in your own app."
+Proibido: "resell raw API access, share keys with unaffiliated third parties as a public proxy, or present the Service as an official TradingView, Inc. product."
+"We do not provide written indemnification, hold-harmless, or defense obligations for your display, redistribution, or commercial use of the data."
+"Quote latency follows the listing exchange, not the plan." (não fornece L1/L2).
+
+=== C3 — github.com/bidouilles/mcp-tradingview-server (scraping) ===
+URL: https://github.com/bidouilles/mcp-tradingview-server
+VERBATIM:
+Expõe "TradingView technical indicators and OHLCV data through the tradingview_scraper library."
+"This project is provided as-is for educational and research purposes."
+PROVENIÊNCIA: README não detalha como o tradingview_scraper obtém o dado (scraping implícito pelo nome da lib); sem menção a acordo de dados → INDETERMINADO; sem disclaimer de ToS.
+
+=== C4 — github.com/mikeh-22/tradingview-mcp (API interna + login Playwright) ===
+URL: https://github.com/mikeh-22/tradingview-mcp
+VERBATIM:
+"Authenticates using a headless Chromium browser (via Playwright) to replicate the normal login flow and obtain valid session cookies."
+Requer credenciais TV via TV_USERNAME / TV_PASSWORD (env vars).
+"Persists those cookies to disk so re-authentication only happens when the session expires (~25 days)."
+"exposes MCP tools that make authenticated HTTP requests to TradingView's internal endpoints, plus a WebSocket connection for historical OHLCV data." (endpoint prodata.tradingview.com)
+"This project uses TradingView's internal, undocumented web API. It is not affiliated with or endorsed by TradingView. API endpoints may change without notice. Use in accordance with TradingView's Terms of Service."
+
+=== C5 — github.com/atilaahmettaner/tradingview-mcp (tradingview-ta/screener + Yahoo/Reddit/RSS; SEM login no TV) ===
+URL: https://github.com/atilaahmettaner/tradingview-mcp
+VERBATIM:
+"Market data is fetched server-side from public endpoints"; usa "tradingview_ta, screener, Yahoo Finance + 37 technical-analysis tools."
+Suporta "Yahoo Finance real-time prices", "Reddit sentiment analysis", "Live financial news (Yahoo / MarketWatch / CNBC / CoinDesk / CoinTelegraph)."
+"This server does not log into, scrape, or automate a TradingView session, and it requires no TradingView account or API key."
+Backtest: "Backtesting engine (9 strategies + Sharpe / Calmar / Expectancy)" e "Walk-forward backtesting (overfitting detection)"; "Train/test split walk-forward validation with overfitting verdict."
+"You are responsible for ensuring your own use complies with the terms of any data source you point it at."
+
+=== C6 — github.com/ertugrul59/tradingview-chart-mcp (Selenium + cookies de sessão; devolve imagem) ===
+URL: https://github.com/ertugrul59/tradingview-chart-mcp
+VERBATIM:
+"Fetches the direct TradingView snapshot image URL"; "TradingView Authentication: Secure session-based authentication" via cookies TRADINGVIEW_SESSION_ID e TRADINGVIEW_SESSION_ID_SIGN obtidos do navegador após login.
+Retorna "The direct TradingView snapshot image URL (e.g., data:image/png;base64,...)".
+Usa "Selenium" para carregar/capturar gráficos de tradingview.com.
+ToS: README NÃO contém disclaimer explícito de ToS/banimento; porém exige credenciais de sessão pessoais do TradingView (implica uso direto da conta).
+
+=== C7 — github.com/fiale-plus/tradingview-mcp-server (endpoints públicos do scanner) ===
+URL: https://github.com/fiale-plus/tradingview-mcp-server
+VERBATIM:
+"This package is an unofficial client of TradingView's public scanner and symbol-search endpoints."
+"The endpoints are unauthenticated, can change or reject traffic without notice, and may return delayed or incomplete market data."
+"The server does not provide historical data, brokerage execution, alerts, or a TradingView data entitlement."
+"Screening results are for informational and educational purposes only. All investment decisions are your sole responsibility."
+"This software is provided 'AS IS' under the MIT License, without warranty of any kind."
+
+NOTA DE HONESTIDADE (RULE-MET-01): todos os trechos acima são a melhor reprodução verbatim
+OBTIDA por WebFetch (mediado por modelo). Nenhum repositório foi clonado/instalado/executado
+(mandato BL-031 item 1). Parecer definitivo de segurança exigiria SAST do código-fonte — fora do mandato.

@@ -455,7 +455,7 @@ RULE-ECC-02: Toda abertura de Spec DEVE ser precedida de Dossiê de Pesquisa pro
              importação automática; nunca baseline; achado externo ≠ fato SOT; pesquisa
              inconclusiva = INDETERMINADO. Web indisponível = abertura suspensa; exceção só por
              RULE-HG-07. Profundidade proporcional à complexidade (sem dispensar o Dossiê);
-             validade do Dossiê = decisão aberta ECC-VAL-001.
+             validade do Dossiê = ECC-VAL-001 FECHADA (DHR-DEC-003: LOW 180 / MEDIUM 120 / HIGH-CRITICAL 90 dias, ou antes se o contexto mudar).
              [Fonte: DHR-EUA-E21; DHR-PROV-WEB-001 §2.1; RULE-HG-07; RULE-MET-01 (seção "Regras Metacognitivas (RULE-MET)")]
 
 RULE-ECC-03: RESERVADA (sem texto). Pendente de definição por Andraus (decisão aberta ECC-03-001);
