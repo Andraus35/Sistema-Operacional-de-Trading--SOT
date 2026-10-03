@@ -1,0 +1,19 @@
+Repositório: https://github.com/mem0ai/mem0
+Plataforma: GitHub
+Data de acesso: 2026-10-03
+Estrelas: 66500
+Licença: Apache-2.0
+Último commit: 2026-10-01
+Arquivado: não
+Alertas de segurança graves abertos: 0
+Dono: mem0ai (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+Trecho literal: "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production. Mem0 introduces a production-oriented pipeline where the LLM selects among ADD, UPDATE, DELETE, and NOOP operations, treating memory as evolving state where each memory object carries creation timestamps, supersession references and provenance metadata."
+
+---
+NOTA DE LIMITAÇÃO (RULE-MET-01): descrição e estrelas obtidas por WebFetch da página em 2026-10-03
+("66.5k stars" → 66500); último commit "Oct 1, 2026" (a mensagem do commit mais recente menciona
+resolução de vulnerabilidades Dependabot MEDIUM — nenhuma crítica/grave aberta observada, mantida a
+leitura conservadora "0" para alertas GRAVES; MEDIUM não é grave pela régua). O trecho combina a
+descrição literal do repo com a caracterização do pipeline Mem0 conforme retornada pela pesquisa web
+da mesma fonte (DADO, não baseline). Nada instalado/executado (RULE-ECC-06).

@@ -1,0 +1,18 @@
+ID: SRC-ES-01
+Fonte: Event Sourcing & CQRS — material técnico de referência
+URL: https://mia-platform.eu/blog/understanding-event-sourcing-and-cqrs-pattern/
+URL: https://www.techinterview.org/post/3233465463/system-design-event-sourcing/
+Classificação: Prática (documentação técnica)
+Data de acesso: 2026-10-03
+
+Trecho literal (verbatim conforme retornado pela WebSearch das fontes acima, 2026-10-03):
+"Event Sourcing is an architectural pattern that tracks changes in a domain by recording them as
+immutable domain events in an append-only event store. The system state is reconstructed by
+replaying events from an append-only log."
+"events being append-only — never updated or deleted ... the current state can be derived by
+replaying all events in sequence ... which provides complete auditability and enables powerful
+capabilities like time travel queries."
+
+NOTA: conteúdo web = DADO. Pertinência ao SOT: sustenta o já-canônico RULE-BB-004 (Blackboard
+append-only; objetos SUPERSEDED, nunca deletados) e INV-07; reconstrução por replay sustenta a
+auditabilidade (D9) exigida no título do slot. Não é baseline.

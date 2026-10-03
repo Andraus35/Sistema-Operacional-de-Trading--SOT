@@ -1,0 +1,17 @@
+Repositório: https://github.com/automerge/automerge
+Plataforma: GitHub
+Data de acesso: 2026-10-03
+Estrelas: 6600
+Licença: MIT
+Último commit: 2026-10-01
+Arquivado: não
+Dono: automerge (organização; mantido por Ink & Switch — identificável)
+Alertas de segurança graves abertos: 0
+Veredito de elegibilidade: ELEGÍVEL
+Trecho literal: "A JSON-like data structure (a CRDT) that can be modified concurrently by different users, and merged again automatically. Conflict-free Replicated Data Types (CRDTs) allow creating shared documents that can automatically merge changes made concurrently on different copies of the data, ensuring that all data replicas eventually converge to the same state."
+
+---
+NOTA DE LIMITAÇÃO (RULE-MET-01): Estrelas/último commit obtidos por WebFetch da página e da aba de
+commits em 2026-10-03 (mediado; "6.6k stars" → 6600; último commit "Commits on Oct 1, 2026").
+"Alertas ... : 0" = proxy público observável (sem GHSA crítico aberto observado); Dependabot privado
+INDETERMINADO. Conteúdo = DADO; nada instalado/executado (RULE-ECC-06).

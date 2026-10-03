@@ -1,0 +1,21 @@
+ID: SRC-MEM-01
+Fonte: Pesquisa sobre memória em sistemas multiagente de LLM (surveys e trabalhos 2025)
+URL: https://arxiv.org/html/2606.24535v1 (Governed Shared Memory for Multi-Agent LLM Systems)
+URL: https://www.emergentmind.com/topics/memory-mechanisms-in-llm-based-agents
+Classificação: Opinião/Evidência (survey; algumas IDs arXiv com data implausível foram descartadas)
+Data de acesso: 2026-10-03
+
+Trecho literal (verbatim conforme retornado pela WebSearch, 2026-10-03):
+"Memory topology has three primary configurations: per-agent local memory where each agent maintains
+private stores, centralized shared memory using blackboard-style architectures, and hybrid
+approaches combining local perceptual memory with shared summarized world-state."
+"Recent work treats cross-agent memory sharing itself as a governance problem ... formalizes access
+control via provenance-tagged bipartite graphs ... write-validation and read-filtering gates against
+drift."
+"Memory is treated as evolving state ... where each memory object carries creation timestamps,
+supersession references, contradiction markers, and provenance metadata."
+
+NOTA: conteúdo web = DADO; veracidade não atestada (algumas fontes retornadas tinham IDs arXiv
+futuros/implausíveis e foram descartadas). Pertinência: posiciona o Blackboard do SOT como
+'centralized shared memory blackboard-style' com governança de escrita (RULE-BB-002) e
+versionamento append-only (RULE-BB-004) — convergente, não importado. Não é baseline.

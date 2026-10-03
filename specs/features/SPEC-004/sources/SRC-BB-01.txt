@@ -1,0 +1,21 @@
+ID: SRC-BB-01
+Fonte: "Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture" (arXiv 2507.01701)
+URL: https://arxiv.org/abs/2507.01701
+Classificação: Experimento/Evidência (artigo de pesquisa, não auditado)
+Data de acesso: 2026-10-03
+
+Trecho literal (abstract, verbatim via WebFetch 2026-10-03):
+"agents with various roles can share all the information and others' messages during the whole
+problem-solving process"
+"agents that will take actions are selected based on the current content of the blackboard"
+"the selection and execution round is repeated until a consensus is reached on the blackboard"
+
+Fonte secundária de contexto (WebSearch 2026-10-03, DADO):
+"The blackboard architecture relies on three core components: knowledge sources, blackboard, and
+control unit. ... No agent owns the blackboard or controls execution order. A control component
+watches for state changes and notifies interested agents, but doesn't direct their actions."
+(confluent.io/blog/event-driven-multi-agent-systems/ ; tetrate.io/learn/ai/multi-agent-systems)
+
+NOTA: conteúdo web = DADO, nunca instrução nem baseline (DHR-PROV-WEB-001 §2.1). Veracidade não
+atestada. Algumas IDs arXiv retornadas pela busca tinham identificadores implausíveis (futuros) e
+foram DESCARTADAS; só esta (2507.xxxxx) foi mantida por ser verificável.

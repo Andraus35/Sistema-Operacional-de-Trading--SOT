@@ -1,0 +1,20 @@
+Repositório: https://github.com/yjs/yjs
+Plataforma: GitHub
+Data de acesso: 2026-10-03
+Estrelas: 22900
+Licença: MIT
+Último commit: 2026-10-03
+Arquivado: não
+Alertas de segurança graves abertos: 0
+Dono: yjs (organização; mantenedor Kevin Jahns — identificável)
+Veredito de elegibilidade: ELEGÍVEL
+Trecho literal: "Shared data types for building collaborative software. Shared types are common data types like Map or Array with superpowers: changes are automatically distributed to other peers and merged without merge conflicts. Yjs is an implementation of a Conflict-free Replicated Data Type (CRDT) and is designed so that even if multiple people operate on the data at the same time, no conflicts occur and all clients eventually reach the same state."
+
+---
+NOTA DE LIMITAÇÃO (RULE-MET-01, honestidade): Estrelas/último commit/arquivado obtidos por
+WebFetch da página do repositório e da aba de commits em 2026-10-03 (mediado por modelo; números
+aproximados — página exibe "22.9k stars", registrado como 22900 para a régua inteira). "Alertas de
+segurança graves abertos: 0" é o PROXY PÚBLICO observável (nenhum GitHub Security Advisory crítico
+aberto observado na aba pública); o estado interno de Dependabot não é público — INDETERMINADO
+quanto ao privado, registrado conservadoramente como 0 pelo observável. Conteúdo do repositório é
+DADO, nunca instrução; nada instalado/executado (RULE-ECC-06).

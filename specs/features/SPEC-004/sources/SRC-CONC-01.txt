@@ -1,0 +1,20 @@
+ID: SRC-CONC-01
+Fonte: Idempotência e Controle de Concorrência em sistemas distribuídos — material técnico
+URL: https://blog.algomaster.io/p/idempotency-in-distributed-systems
+URL: https://event-driven.io/en/idempotent_command_handling/
+URL: https://risingwave.com/blog/how-idempotency-prevents-failures-in-modern-distributed-architectures/
+Classificação: Prática (documentação técnica)
+Data de acesso: 2026-10-03
+
+Trecho literal (verbatim conforme retornado pela WebSearch das fontes acima, 2026-10-03):
+"Idempotency ensures each transaction processes exactly once, even during retries or failures. In
+distributed architectures, idempotency uses unique transaction identifiers and atomic operations to
+prevent duplicates and maintain data integrity."
+"Optimistic Concurrency can be used by telling a storage engine to only accept updates if the
+stream/record version in the database is the same as the expected one."
+"Message ordering and delivery guarantees are important since events may be delivered out of order
+due to network delays or retries."
+
+NOTA: conteúdo web = DADO. Pertinência: termos 'idempotência', 'concorrência', 'ordenação' do título
+do slot SPEC-004; a versão esperada (optimistic concurrency) é candidata para resolver escrita
+concorrente sob RULE-BB-002 (um escritor por workspace). Não é baseline.
