@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-02",
-  "digest": "5ede7e4b205d18aec05eb0090014c4ff811d4497b301d0ad8e5e61bd526e4850",
+  "digest": "fff83f6fe35fe1d87ff509c14f4507a836f8f683928608ce2a126b0f2df4c7fd",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -221,7 +221,7 @@
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
    "in": 104,
-   "out": 82
+   "out": 83
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
@@ -353,7 +353,7 @@
    "path": "docs/fundamentos/ARIA-plano-mestre.md",
    "area": "docs",
    "title": "ARIA — Agente de Reconhecimento Institucional e Análise",
-   "in": 1,
+   "in": 2,
    "out": 0
   },
   {
@@ -1713,6 +1713,16 @@
    "cited_by": 2
   },
   {
+   "id": "BL-031",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 0
+  },
+  {
+   "id": "BL-032",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 0
+  },
+  {
    "id": "DHR-ADR-HOC003",
    "defined_in": "governance/DHR-ADR-HOC003_Ata_Homologacao_HOC003.md",
    "cited_by": 4
@@ -2385,7 +2395,7 @@
   {
    "id": "RULE-CTF-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-CTF-02",
@@ -3165,7 +3175,7 @@
   {
    "id": "SPEC-017",
    "defined_in": "ROADMAP.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "SPEC-018",
@@ -3275,7 +3285,7 @@
   {
    "id": "SPEC-039",
    "defined_in": "ROADMAP.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "SPEC-040",
@@ -3290,7 +3300,7 @@
   {
    "id": "SPEC-042",
    "defined_in": "ROADMAP.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "SPEC-043",
@@ -3300,7 +3310,7 @@
   {
    "id": "SPEC-044",
    "defined_in": "ROADMAP.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "SPEC-045",
@@ -5032,6 +5042,11 @@
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "docs/arranque/PARECER-RISK-AGENT-auditoria-semantica.md",
+   "type": "path"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "docs/fundamentos/ARIA-plano-mestre.md",
    "type": "path"
   },
   {
