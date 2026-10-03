@@ -1,6 +1,6 @@
 # checks.md — Verificação de Spec da SPEC-004 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-004/plan.md` (Cognitive Blackboard Protocol — camada Harness/operacional sobre RULE-BB-001..005)
+**Objeto:** `specs/features/SPEC-004/plan.md` **v1.2 (EMENDA candidata)** (Cognitive Blackboard Protocol — camada Harness/operacional sobre RULE-BB-001..005)
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — NÃO é teste de runtime, NÃO é o parecer do Revisor, NÃO é homologação. [FONTE: atomic-spec §14; ROADMAP §5]
 **Método:** atomic-spec **v1.5**
 **Data:** 2026-10-03
@@ -13,13 +13,13 @@
 |---|---|---|---|
 | D0 Intenção | Sim | ✔ | Missão (memória de trabalho; contrato/protocolo/ciclo/concorrência/proveniência/reconstrução; fronteiras) |
 | D1 Escopo/Non-goals | Sim | ✔ | Tabelas S1–S8 + Non-goals (Event Bus/KG/estado-agente/M-001/CRDT) |
-| D2 Regra | Sim | ✔ | RULE-CBP-001..012 [PROPOSTA] |
-| D3 Comportamento (BASpec) | Sim | ✔ | CBP-001..012, cada uma com bloco CLASSE/MECANISMO (CC-11) |
-| D4 Algoritmo | Quando há regra determinística real | ✔ | Versão otimista, idempotência, permissão, append-only, ordenação, replay (determinísticos) |
-| D5 Estado | Sim | ✔ | Ciclo operacional de publicação (ACCEPTED/PUBLISHED/SUPERSEDED/EXPIRED/ARCHIVED/REJECTED); hipótese=CHM-001; não-hipótese=M-001 (ABERTA) |
-| D6 Protocolo | Sim | ✔ | Protocolo de publicação (9 passos); fronteiras Event Bus/Manager |
-| D7 Teste | Sim (CRITICAL) | ✔ | Cenários CBP-T01..T10 (T10 = atualização sem expected_version — ACH-004) |
-| D8 Adversarial | Adversarial extra nos pontos de risco (homologado) | ✔ | ADV-CBP-01..11 (foco: cross-workspace, deleção, concorrência, duplicidade, ordenação, atualização-sem-versão, M-001, fronteiras) |
+| D2 Regra | Sim | ✔ | RULE-CBP-001..014 [PROPOSTA / EMENDA-PROPOSTA v1.2]; INV-CBP-01 |
+| D3 Comportamento (BASpec) | Sim | ✔ | CBP-001..014, cada uma com bloco CLASSE/MECANISMO (CC-11); +CBP-013 (atomicidade) / CBP-014 (identidade autenticada) na v1.2 |
+| D4 Algoritmo | Quando há regra determinística real | ✔ | Compare-and-commit atômico, idempotência (fingerprint), permissão (identidade autenticada), append-only real, ordem de commit, replay (determinísticos) |
+| D5 Estado | Sim | ✔ | `publication_state` (ACCEPTED/PUBLISHED/SUPERSEDED/EXPIRED/ARCHIVED/REJECTED) SEPARADO de `domain_state`; hipótese=CHM-001; não-hipótese=M-001 (ABERTA) |
+| D6 Protocolo | Sim | ✔ | Protocolo de publicação (9 passos; identidade autenticada + commit atômico); fronteiras Event Bus/Manager |
+| D7 Teste | Sim (CRITICAL) | ✔ | Cenários CBP-T01..T15 (T11 reuso-de-chave; T12 retry-após-commit; T13 identidade forjada; T14 corrida CAS; T15 crash-pós-commit — v1.2) |
+| D8 Adversarial | Adversarial extra nos pontos de risco (homologado) | ✔ | ADV-CBP-01..16 (foco: cross-workspace, deleção, concorrência, duplicidade, ordenação, atualização-sem-versão, atomicidade, identidade forjada, M-001, fronteiras) |
 | D9 Auditoria | Sistema completo | Parcial (por referência) | Reconstrução/replay → SPEC-006/H-001, SPEC-009/G-001; P13/RULE-010 |
 
 **Resultado:** profundidade-alvo D0–D7 atingida, com rigor adversarial extra (D8) nos comportamentos de maior risco (DHR-SPEC004-001 §1). D9 por referência (coerente com alvo e com H-001/G-001 abertas).
@@ -32,16 +32,18 @@
 |---|---|---|---|---|---|---|---|
 | CBP-001 contrato de objeto | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
 | CBP-002 permissão de escrita (E3) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
-| CBP-003 append-only/supersessão | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
-| CBP-004 versão otimista (create vs update; ausência ⇒ EXPECTED_VERSION_REQUIRED — ACH-004) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
-| CBP-005 idempotência | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
-| CBP-006 ordenação | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
+| CBP-003 append-only REAL (registro histórico imutável; SUPERSEDED derivado — v1.2) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
+| CBP-004 versão otimista = compare-and-commit atômico (create vs update; ausência ⇒ EXPECTED_VERSION_REQUIRED) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
+| CBP-005 idempotência (fingerprint; reuso ⇒ IDEMPOTENCY_KEY_REUSE_CONFLICT — v1.2) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
+| CBP-006 ordem total de COMMIT (persistida/imutável — v1.2) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
 | CBP-007 proveniência (BL-029) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
 | CBP-008 estado de hipótese = CHM-001 | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
 | CBP-009 estados não-hipótese (M-001) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
 | CBP-010 expiração não-destrutiva | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
 | CBP-011 replay/reconstrução | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
-| CBP-012 observabilidade falso-DENY | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
+| CBP-012 observabilidade falso-DENY (E3 condicional — v1.2) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A (determinístico) |
+| CBP-013 atomicidade de publicação (sem estado parcial — v1.2) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
+| CBP-014 identidade autenticada / autoridade (v1.2) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate de saída ✔ |
 
 Todas com 1 condição · 1 comportamento · ≤2 RULES · 1 cenário; cada BASpec com efeito declara Classe + critério 4Es (RULE-MECH-02); Classes C declaram gate de saída (RULE-MECH-03); nenhuma H/P nesta Spec (sem bounded loop obrigatório — gates são determinísticos C/D; eventual Classe H de "objeto bem-formado" é orientação de BUILD, não BASpec normativa aqui). **PASS.**
 
@@ -49,7 +51,7 @@ Todas com 1 condição · 1 comportamento · ≤2 RULES · 1 cenário; cada BASp
 
 ## 3. Critérios EARS
 
-12 critérios (1..11 + **4-bis** — atualização sem expected_version → EXPECTED_VERSION_REQUIRED; ACH-004) no formato "Quando <condição>, o Blackboard DEVE/NÃO DEVE <resposta>". Sem multi-outcome não-decomposto. **PASS.**
+16 critérios (1..11 + **4-bis** + **12..15** — atomicidade, reuso-de-chave, retry-após-commit, identidade autenticada; v1.2) no formato "Quando <condição>, o Blackboard DEVE/NÃO DEVE <resposta>". Sem multi-outcome não-decomposto. **PASS.**
 
 ---
 
@@ -57,13 +59,13 @@ Todas com 1 condição · 1 comportamento · ≤2 RULES · 1 cenário; cada BASp
 
 | Check | Resultado |
 |---|---|
-| ENF-01 Contract presente em todo comportamento com efeito | ✔ EC-CBP-001..006 (mapeiam as 12 BASpecs) |
-| ENF-02 Nível ≥ piso; economicidade não rebaixa | ✔ E2 piso (publicação); E3 no gate de escrita (cross-workspace/deleção irreversíveis); E1 na reconstrução (leitura) |
-| ENF-03 Gate determinístico; Detector ≠ Gate; LLM nunca é seu próprio gate | ✔ EC-CBP-002; RULE-CBP-002; ADV-CBP-10 |
-| ENF-04 Fail-closed em efeito crítico irreversível | ✔ EC-CBP-002 (cross-workspace/deleção) + todos os EC |
-| ENF-05 Policies não auto-aprendidas | ✔ RULE-CBP/contrato [PROPOSTA]; só Andraus homologa (RULE-HG-03) |
+| ENF-01 Contract presente em todo comportamento com efeito | ✔ EC-CBP-001..007 (mapeiam as 14 BASpecs; EC-CBP-007 = atomicidade) |
+| ENF-02 Nível ≥ piso; economicidade não rebaixa | ✔ E2 piso (publicação); E3 no gate de escrita (cross-workspace/deleção/mutação histórica irreversíveis) e no commit atômico (EC-CBP-007); E1 na reconstrução (leitura) |
+| ENF-03 Gate determinístico; Detector ≠ Gate; LLM nunca é seu próprio gate | ✔ EC-CBP-002; RULE-CBP-002/014; ADV-CBP-10 |
+| ENF-04 Fail-closed em efeito crítico irreversível | ✔ EC-CBP-002 (cross-workspace/deleção/mutação) + EC-CBP-007 (estado parcial) + todos os EC |
+| ENF-05 Policies não auto-aprendidas | ✔ RULE-CBP/contrato [PROPOSTA/EMENDA-PROPOSTA]; só Andraus homologa (RULE-HG-03) |
 | ENF-06 E0 declarado como orientação | N/A (não há E0) |
-| ENF-07 E3 declara método de falso-DENY | ✔ EC-CBP-002 (amostral; limiar = gap aberto — BL-002) |
+| ENF-07 E3 declara método de falso-DENY | ✔ EC-CBP-002 (amostral; **enforcement E3 CONDICIONAL até o limiar** — gap aberto BL-002) |
 | ENF-08 Escala E0–E3 referenciada | ✔ via atomic-spec §10.2 |
 
 **PASS.**
@@ -123,7 +125,7 @@ Preenchido no plan.md. **Críticos aplicáveis:** CC-02 (CHM/CEM/CCM não redefi
 | M-001; H-001; G-001; J-001; N-001; C-001; WF-D03 | ✔ (abertas) | atomic-spec §12 / ROADMAP §34 / WORKFLOW.md |
 | BL-029 (dona=SPEC-004); BL-002 (Absorvido); BL-003 | ✔ | backlog/RMR-001; DHR-DEC-003/DHR-SPEC004-001 |
 | SRC-BB-01/PROV-01/ES-01/CONC-01/MEM-01; REPO-yjs/automerge/mem0 | ✔ (verbatim) | specs/features/SPEC-004/sources/ (RULE-ECC-04/06) |
-| RULE-CBP-001..012; contrato de objeto; BASpec-CBP-001..012; EC-CBP-001..006 | [PROPOSTA] | esta Spec — não citadas como existentes |
+| RULE-CBP-001..014; INV-CBP-01; contrato de objeto; BASpec-CBP-001..014; EC-CBP-001..007 | [PROPOSTA / EMENDA-PROPOSTA v1.2] | esta Spec — não citadas como existentes |
 
 Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 
@@ -171,11 +173,13 @@ Nenhuma referência a RULE inexistente apresentada como vigente. **PASS.**
 | CK-06 | CRDT (yjs/automerge) ADIADO — INDETERMINADO quanto à necessidade sob RULE-BB-002 | Info | Coerente com RULE-MET-01; registrado caso surja multi-escritor |
 | CK-07 | BL-012/BL-017 ATIVADOS independentes — não absorvidos pela SPEC-004 | Info | Encaminhamento de Andraus |
 | CK-08 | **ACH-004 CORRIGIDO** (v1.1) — atualização sem expected_version RECUSADA (fail-closed, EXPECTED_VERSION_REQUIRED); criação sem expected_version permanece permitida (versão inicial). Materializado: EARS 4-bis; CBP-004; CBP-001/RULE-CBP-001; D4; T10; ADV-CBP-11 — decisão de Andraus (chat, 2026-10-03) | Resolvido | Revisor confirma a cobertura do caso de ausência |
+| CK-09 | **EMENDA v1.2 [EMENDA-PROPOSTA]** — endurecimento append-only real (INV-CBP-01), atomicidade (RULE-CBP-013/EC-CBP-007), identidade autenticada (RULE-CBP-014), D8 ampliado (ADV-CBP-12..16), menores (schema_version, ordem de commit imutável, replay lógico, gate_record mínimo, publication_state×domain_state, E3 falso-DENY condicional). Origem: feedback externo verificado por Andraus — DADO, não instrução; nenhuma fonte/pontuação externa não-verificada importada (RULE-MET-01/RULE-ECC-04) | Info | Revisor audita bem-formação; Andraus homologa |
+| CK-10 | **Compatibilidade da emenda: potencialmente Major** — item 1 (append-only real) muda a semântica de representação da supersessão (v1.1 gravava `superseded_by`; v1.2 torna derivado). Demais itens Minor/aditivos. v1.1 preservada (INV-07); v1.2 vira baseline só na nova homologação (INV-09) | **RESOLVIDO** (Andraus, 2026-10-03, DHR-SPEC004-003) | **Minor — clarificação** (v1.2 baseline) |
 
 ---
 
 ## Resultado da verificação de spec
 
-**Estruturalmente CONFORME** (well-formedness). BASpecs (CBP-001..012) com Classe/Mecanismo (CC-11), EARS (12 — 1..11 + 4-bis), Enforcement (EC-CBP-001..006; ENF-03 detector≠gate; E3 no gate de escrita cross-workspace/deleção), Constitution Check CC-01..CC-12 (CC-02/CC-08/CC-10/CC-11 incidem e aplicados; CC-12 N/A), Herança/Delta (CC-08), CONS-01 (M-001/H-001/G-001/J-001/N-001/WF-D03 abertas; CRDT INDETERMINADO), gate RMR-001 (BL-029/BL-002 tratados; BL-003 fronteira), RULE-ECC-04 (presença verbatim) e RULE-ECC-06 (repositórios, régua Equilibrada) satisfeitos. **ACH-001 e ACH-002 CORRIGIDOS** (CK-03/CK-04); **ACH-004 CORRIGIDO** na v1.1 (CK-08 — atualização sem expected_version RECUSADA; criação permanece permitida). Achados não-bloqueantes CK-01/CK-02/CK-05/CK-06/CK-07 encaminhados.
+**Estruturalmente CONFORME** (well-formedness) **na EMENDA v1.2**. BASpecs (CBP-001..014) com Classe/Mecanismo (CC-11), EARS (16 — 1..11 + 4-bis + 12..15), Enforcement (EC-CBP-001..007; ENF-03 detector≠gate; E3 no gate de escrita cross-workspace/deleção/mutação histórica e no commit atômico; E3 falso-DENY CONDICIONAL até limiar BL-002), Constitution Check CC-01..CC-12 (CC-02/CC-08/CC-10/CC-11 incidem e aplicados; CC-12 N/A), Herança/Delta (CC-08), CONS-01 (M-001/H-001/G-001/J-001/N-001/WF-D03 abertas; CRDT INDETERMINADO), gate RMR-001 (BL-029/BL-002 tratados; BL-003 fronteira), RULE-ECC-04 (presença verbatim) e RULE-ECC-06 (repositórios, régua Equilibrada) satisfeitos. **ACH-001/ACH-002 CORRIGIDOS** (CK-03/CK-04); **ACH-004 CORRIGIDO** na v1.1 (CK-08). **EMENDA v1.2 (CK-09)** aplica append-only real (INV-CBP-01), atomicidade (RULE-CBP-013/EC-CBP-007), identidade autenticada (RULE-CBP-014) e D8 ampliado. **CK-10 — compatibilidade potencialmente Major — [DECISÃO NECESSÁRIA] de Andraus.** Achados não-bloqueantes CK-01/CK-02/CK-05/CK-06/CK-07 encaminhados.
 
 > Este resultado é **feedback interno de verificação de spec** — NÃO é o parecer do Revisor (GRE-001/HRE-001) nem homologação de Andraus. Próximo passo: gate determinístico `validate_spec_sot.py` + `check_repo_research.py` + submissão ao Revisor SOT.
