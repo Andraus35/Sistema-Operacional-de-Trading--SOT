@@ -1,0 +1,16 @@
+TEMA: T1 — score/gating não-compensatório vs compensatório
+URL: https://www.marketingstudyguide.com/non-compensatory-decision-rules/
+       (contexto reforçado por resultado de busca OWASP "layered gate")
+DATA DE ACESSO: 2026-10-02
+TIPO: Prática / Opinião (material didático de marketing) + analogia de engenharia
+NATUREZA DO TRECHO: resumo de resultado de busca (WebSearch) — NÃO verbatim de página
+
+TRECHO (do resumo de busca, [EXTERNO] — tratar como paráfrase, não citação literal):
+"Non-compensatory decision rules do not allow for positive and negative attributes to
+balance out. When a consumer is engaged in non-compensatory behavior, the product needs
+to do well in only one or two criteria that dominate the decision-making."
+"A non-compensatory rule can require evidence for each task-relevant requirement, for
+example, a knowledge score would not offset granting write access during a read-only task."
+
+LIMITACAO (RULE-MET-01): os dois trechos vieram do sumário do WebSearch, que pode
+parafrasear a página; não confirmados caractere-a-caractere contra o HTML-fonte.

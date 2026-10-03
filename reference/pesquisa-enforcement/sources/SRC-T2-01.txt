@@ -1,0 +1,17 @@
+TEMA: T2 — nível de invalidação explícito / falseabilidade de hipótese (Elliott)
+URL: https://ewminteractive.com/when-does-an-elliott-wave-setup-fail
+      (+ https://elliottwave-forecast.com e sumário de busca)
+DATA DE ACESSO: 2026-10-02
+TIPO: Prática / Opinião (educadores de Elliott Wave)
+NATUREZA DO TRECHO: parte verbatim (WebFetch), parte sumário de busca
+
+TRECHO (verbatim de ewminteractive via WebFetch):
+"the Elliott Wave Principle comes with a specific invalidation level attached to each trade setup"
+
+TRECHO (sumário de busca, paráfrase — não verbatim):
+"You should write the invalidation level down before you enter... it produces a specific price
+at which you are objectively wrong." / "If a count has no invalidation, no alternate, and no
+risk plan, it is storytelling." / "a hypothesis must be disprovable" (falsifiability).
+
+LIMITACAO (RULE-MET-01): os dois ultimos trechos vieram do sumario do WebSearch
+(possivel parafrase); apenas o primeiro foi confirmado como verbatim de pagina.

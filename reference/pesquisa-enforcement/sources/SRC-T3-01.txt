@@ -1,0 +1,12 @@
+TEMA: T3 — LLM propõe / harness verifica; least privilege; validar saída
+URL: https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
+DATA DE ACESSO: 2026-10-02
+TIPO: Padrão/Prática (OWASP Cheat Sheet Series)
+NATUREZA DO TRECHO: VERBATIM de página (via WebFetch)
+
+TRECHO (verbatim):
+"Grant agents the minimum tools required for their specific task. Implement per-tool
+permission scoping (read-only vs. write, specific resources)."
+"Prevent privilege escalation through agent chains."
+"Validate agent outputs before execution or display. Implement output filtering for
+sensitive data leakage."

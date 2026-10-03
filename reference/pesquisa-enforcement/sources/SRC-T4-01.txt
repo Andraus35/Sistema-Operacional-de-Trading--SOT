@@ -1,0 +1,12 @@
+TEMA: T4 — ponto de interceptação de política (PEP/PDP)
+URL: https://csrc.nist.gov/glossary/term/policy_enforcement_point (NIST SP 800-162)
+DATA DE ACESSO: 2026-10-02
+TIPO: Padrão (NIST SP 800-162 / glossário CSRC)
+NATUREZA DO TRECHO: VERBATIM de página (via WebFetch)
+
+TRECHO (verbatim — definição NIST de Policy Enforcement Point):
+"Enforces policy decisions in response to a request from a subject requesting access to a
+protected object; the access control decisions are made by the policy decision point."
+
+NOTA: o glossário não traz definição autônoma de "policy decision point"; descreve o PDP como
+o componente que FAZ a decisão, enquanto o PEP a APLICA.

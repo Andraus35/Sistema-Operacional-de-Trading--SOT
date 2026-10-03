@@ -53,6 +53,10 @@ Nota de honestidade (RULE-MET-01): os três arXiv são **preprints** (autores in
 | **R6** | **Não adotar** a taxonomia AUTHORITY MODE; explicitar a semântica "recomputa" na Classe H (R3) | — | Zero |
 | R7 | N4/N5: registrar "70% ≠ probabilidade" no CCM-001 e vincular medição de falso-DENY ao BL-002 | SPEC-003/BL-002 | Baixo |
 
+> **ENCAMINHADO por decisão de Andraus (2026-10-02): pesquisa + backlog; nada aplicado às Specs.** Andraus decidiu tratar os 4 temas (T1 score/limiar, T2 nível de invalidação, T3 LLM-propõe/harness-recomputa, T4 ponto de interceptação de política) como **objeto de pesquisa do estado da arte**, **sem decidir isoladamente** e **sem fabricar micro-decisões** — cada tema fica com sua Spec/decisão dona. As recomendações R1–R7 acima permanecem **[PROPOSTA]**, **não aplicadas**: SPEC-003, SPEC-001, WORKFLOW, atomic-spec, RULES, ROADMAP e canon seguem intocados (CONS-01). Produtos do encaminhamento:
+> - **Pesquisa (A):** `reference/PESQUISA-ENFORCEMENT-SCORE-INVALIDACAO-2026-10-02.md` (Dossiê [EXTERNO] não-normativo; fontes verbatim em `reference/pesquisa-enforcement/sources/SRC-*.txt`).
+> - **Backlog (B):** `backlog/RMR-001_Painel_Backlog.md` — **BL-027** (T1), **BL-028** (T2, com [DECISÃO NECESSÁRIA: dona]), **BL-029** (T3), **BL-030** (T4), todos `Em espera`, ação ao ativar = a dona recoloca o tema no Dossiê de abertura usando a pesquisa como fonte.
+
 ## 6. Limites desta análise
 
 - Não executei backtest nem verifiquei desempenho de trading; N4/N5 são [INFERÊNCIA].

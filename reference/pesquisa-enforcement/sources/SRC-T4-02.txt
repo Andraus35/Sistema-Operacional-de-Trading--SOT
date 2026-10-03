@@ -1,0 +1,15 @@
+TEMA: T4 — arquitetura de referência XACML (PEP/PDP/PAP/PIP) e separação de políticas
+URL: https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=920189 (XACML & Next Gen ABAC, NIST)
+      https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-162.pdf
+DATA DE ACESSO: 2026-10-02
+TIPO: Padrão (XACML / NIST SP 800-162)
+NATUREZA DO TRECHO: sumário de busca (WebSearch) — paráfrase, não verbatim
+
+TRECHO (do sumário de busca, [EXTERNO]):
+"XACML's reference architecture includes Policy Decision Points (PDPs), Policy Enforcement
+Points (PEPs), Policy Administration Points (PAPs), and Policy Information Points (PIPs)."
+"Computational services often implement access control within their components by separating
+Policy Decision Points (PDPs) from Policy Enforcement Points (PEPs)."
+
+LIMITACAO (RULE-MET-01): trechos do sumário de busca; não confirmados verbatim contra os PDFs
+NIST. OPA (Open Policy Agent) citado no mandato NÃO retornou fonte específica nesta rodada.

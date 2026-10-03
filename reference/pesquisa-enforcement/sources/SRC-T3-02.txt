@@ -1,0 +1,17 @@
+TEMA: T3 — structured outputs / validação determinística como código
+URL: https://www.aisecurityinpractice.com/defend-and-harden/llm-output-validation-patterns/
+      https://www.truefoundry.com/blog/llm-structured-outputs-json-schema
+DATA DE ACESSO: 2026-10-02
+TIPO: Prática (guias de engenharia de LLM)
+NATUREZA DO TRECHO: sumário de busca (WebSearch) — paráfrase, não verbatim
+
+TRECHO (do sumário de busca, [EXTERNO]):
+"Structured outputs are a boundary where a probabilistic model meets deterministic software."
+"Deterministic validation includes cross-field checks, range checks, format checks, and
+reconciliation across sources run as code, not as another model call."
+"Application validation checks rules the schema either cannot express or should not be trusted
+to decide alone ... whether a timestamp is fresh enough."
+
+LIMITACAO (RULE-MET-01): o WebFetch direto a aisecurityinpractice NAO confirmou estas frases
+verbatim na pagina; os trechos vem do sumario do WebSearch (possivel parafrase). Registrado
+como limitacao, a exemplo da SPEC-002/SPEC-003-Q-A9.

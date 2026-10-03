@@ -1,0 +1,14 @@
+TEMA: T1 — calibração e seleção de limiar de confiança/score
+URL: https://futureagi.com/glossary/model-calibration/
+DATA DE ACESSO: 2026-10-02
+TIPO: Prática (guia técnico de MLOps)
+NATUREZA DO TRECHO: VERBATIM de página (via WebFetch)
+
+TRECHO (verbatim):
+"Brier score. mean squared error between confidence and one-hot correctness; lower is better."
+"ECE needs >=1,000 samples per confidence bucket to be stable; small samples produce noisy
+reliability diagrams."
+
+CONTEXTO ADICIONAL (do sumário de busca, paráfrase — não verbatim):
+"Set the threshold from cost, not from the metric." / "Calibration earns you the right to
+have a threshold." (futureagi/valeman) — tratar como paráfrase, não citação literal.

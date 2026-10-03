@@ -1,0 +1,17 @@
+TEMA: T2 — controles pré-trade regulatórios (completude antes de habilitar ordem)
+URL: https://ec.europa.eu/finance/securities/docs/isd/mifid/rts/160719-rts-6_en.pdf (RTS 6)
+      https://www.sec.gov/.../divisionsmarketregfaq-0 (SEC Rule 15c3-5)
+      https://www.quodfinancial.com/pre-trade-risk-controls-in-electronic-trading-.../
+DATA DE ACESSO: 2026-10-02
+TIPO: Padrão regulatório (RTS 6 / SEC 15c3-5) + Prática (quodfinancial)
+NATUREZA DO TRECHO: sumário de busca (WebSearch) — paráfrase, não verbatim
+
+TRECHO (do sumário de busca, [EXTERNO]):
+"MiFID II RTS 6 ... requires algo firms to maintain market and credit risk limits, maximum
+order volumes and maximum order values, maximum message limits, ... and price collars."
+"SEC Rule 15c3-5, the Market Access Rule, requires broker-dealers ... to maintain pre-trade
+financial and regulatory risk controls and prohibits unfiltered or naked access."
+
+LIMITACAO (RULE-MET-01): trechos do sumário de busca; não confirmados verbatim contra o PDF
+regulatório. As normas tratam de LIMITES pré-trade (preço/volume/crédito/kill-switch), NÃO de
+"nível de invalidação de hipótese" — a ligação ao SOT é analogia metodológica, não equivalência.
