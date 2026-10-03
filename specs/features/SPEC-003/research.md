@@ -7,6 +7,8 @@
 > **Aplicação da RULE-ECC-04** (Captura Verbatim de Fonte) — arquivos companheiros em `sources/SRC-01..07.txt`.
 >
 > **NOTA DE DELTA v1.2 (DHR-ARQ-001, 2026-10-01) — não reabre o Dossiê:** o **CONFLITO-1** aqui descrito (acepção concorrente de "Conviction Engine": (a) componente separado × (b) Fase 2 do Manager) foi **dirimido por instrução direta de Andraus** em favor da acepção **(b)**: "Conviction Engine" = **mecanismo (Classe D/H do CCM-001) invocado pelo Manager Agent — Fase 2 (Conviction)** (propaga ADR-MANAGER-001 / CEM-001 DIV-CEM-4). Onde este Dossiê discutir o CONFLITO-1 como "reconciliação pendente" ou a SPEC-003 adotando a acepção (a), leia-se: **CONFLITO-1 resolvido pela acepção (b); B-001 parcialmente SUPERSEDIDA na parte "componente separado" (INV-07)**. As recomendações de método/pesquisa (adotar/adaptar/rejeitar/adiar) e Q-A9 **permanecem inalteradas**. Ver `plan.md` v1.2 (CC-10 / Declaração de acepção semântica) e `governance/DHR-ARQ-001`.
+>
+> **NOTA DE DELTA v1.5 (homologação — DHR-SPEC003-001, 2026-10-02) — não reabre o Dossiê:** na homologação, três **notas de honestidade** (text-only) foram incorporadas ao `plan.md` (ressalvas do parecer do Revisor CONFORME COM RESSALVAS): **N1** composição do Score 0–9 não definida (dona J-001/BL-027); **N2** Salvaguarda de Sinal 1 não materializada como pré-condição do gate (dona a definir por Andraus/BL-028); **N3** proveniência da entrada do gate / recomputação não especificada (BL-029). **Nada neste Dossiê muda**; nenhuma decisão aberta foi fechada (J-001/N-001/M-001/WF-D03 seguem abertas — CONS-01). Ver `plan.md` "Notas de honestidade (v1.5)" e `governance/DHR-SPEC003-001`.
 
 | Campo | Valor |
 |---|---|

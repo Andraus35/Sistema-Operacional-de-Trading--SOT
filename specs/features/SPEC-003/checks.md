@@ -7,6 +7,18 @@
 
 ---
 
+## 0-quinquies. Nota de delta v1.5 (notas de honestidade — ressalvas do parecer; versão de homologação) [FONTE]
+
+> Esta verificação cobre agora o `plan.md` **v1.5** (versão homologada — DHR-SPEC003-001, 2026-10-02). O delta v1.5 incorpora **três notas text-only** (ressalvas do parecer do Revisor, CONFORME COM RESSALVAS 2026-10-02), **sem mudança de mérito, sem renumerar BASpecs (CF-001..013), sem alterar EARS (11)/Enforcement (EC-CF-001..006)/Classe** e **sem fechar decisão aberta** (CONS-01). Efeitos verificados:
+> - **CC-04 reescrita (ACHADO-02):** passa a afirmar que CF-012 verifica DIRETAMENTE **3** Salvaguardas de Sinal (convicção ≥70%; score ≥7/9; conflito→NEUTRO); **Salvaguarda 1 NÃO materializada** como pré-condição (→ [DECISÃO NECESSÁRIA: dona a definir por Andraus; BL-028]); Salvaguarda 5 (R:R) = fronteira a jusante. Sem sobreafirmação de "5 preservadas". ✔
+> - **Nota N1 (Score 0–9):** `7/9` = FATO NORMATIVO interino; **composição dos 9 × 8 dimensões NÃO definida** nesta Spec → [DECISÃO NECESSÁRIA: dona J-001; BL-027/H-16]. ✔
+> - **Nota N3 (proveniência da entrada do gate):** a Spec **não especifica** sobre qual valor o gate opera (persistido/recomputável vs. agregado proposto); ENF-03 aplica (LLM nunca é o gate); recomputação/proveniência → [DECISÃO NECESSÁRIA: BL-029; donas Manager Fase 2/SPEC-004/SPEC-018]. **Não** escrita como requisito normativo novo. ✔
+> - Consolidadas em **"Notas de honestidade (v1.5)"** (após D2); §7-bis Bloco D e lista final de pendências atualizados (N1/N2/N3). Status do cabeçalho → **HOMOLOGADA — BASELINE**. ✔
+> - **CONS-01:** J-001/N-001/M-001/SPEC-015-SCOPE/WF-D03 intactas; nenhuma `WF-Dxx` declarada fechada; nenhuma decisão nova fechada. ✔
+> **PASS (notas de honestidade; well-formedness §1–§10 inalterada).**
+
+---
+
 ## 0-quater. Nota de delta v1.4 (decisão da Spec — Q-A9 regime→`temporal` + F-01) [FONTE]
 
 > Esta verificação cobre agora o `plan.md` **v1.4**. O delta v1.4 incorpora a **decisão da SPEC-003 sobre Q-A9** (por delegação direta de Andraus, chat 2026-10-01: "Spec decide: temporal + corrigir F-01", em resposta à interpelação I-01 do Revisor, parecer CONFORME v1.3) e a **correção F-01**. Efeitos verificados:

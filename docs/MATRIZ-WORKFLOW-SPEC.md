@@ -62,10 +62,10 @@
 
 | ID | Resumo | Spec dona primária | Secundárias | Estado | Natureza | Nota de fronteira |
 |---|---|---|---|---|---|---|
-| **WF-C01** | Convicção macro × global = um Conviction Vector 8D, duas leituras | **SPEC-003** (candidata v1.4; dá o mecanismo) | SPEC-008 (Fase 1), SPEC-014 (Fase 2) (invocam) | Candidata | Mecanismo + Decisão | Direção declarada; **invocação 2x FECHADA** (macro Fase 1 / global Fase 2; Q-A5, DHR-DEC-001, 2026-10-01) e é do Manager; fórmula/pesos/limiares = J-001 (WF-D03, aberta). |
-| **WF-C02** | Confluência por independência, não por contagem (anti double-counting) | **SPEC-003** (CF-002) | SPEC-002 (representa (in)dependência) | Candidata | Mecanismo | Calibração do desconto = J-001. |
-| **WF-C03** | Order flow (CVD/delta/absorção) → dimensão de volume; faltante = INDETERMINADO | **SPEC-003** (CF-007) | SPEC-012 (SMC), SPEC-032 (Volume skill) | Candidata | Mecanismo | Nunca zero/fabricado; disponibilidade por ativo declarada. |
-| **WF-C04** | Regime = dimensão de convicção, não gate; **em qual das 8 = SPEC-003** | **SPEC-003** (Q-A9) | SPEC-036 (Market Regime skill) | Candidata (**Q-A9 decidida pela Spec**) | Decisão + Mecanismo | **Q-A9 DECIDIDA pela SPEC-003: dimensão `temporal`** (Opção A; delegação de Andraus, chat 2026-10-01; ratifica na homologação — DHR-DEC-002). Regime não é gate/veto, sem 9ª dimensão (INV-01/INV-03); peso = J-001/N-001 (aberto). |
+| **WF-C01** | Convicção macro × global = um Conviction Vector 8D, duas leituras | **SPEC-003** (HOMOLOGADA v1.5; dá o mecanismo) | SPEC-008 (Fase 1), SPEC-014 (Fase 2) (invocam) | Homologada | Mecanismo + Decisão | Direção declarada; **invocação 2x FECHADA** (macro Fase 1 / global Fase 2; Q-A5, DHR-DEC-001, 2026-10-01) e é do Manager; fórmula/pesos/limiares = J-001 (WF-D03, aberta). |
+| **WF-C02** | Confluência por independência, não por contagem (anti double-counting) | **SPEC-003** (HOMOLOGADA; CF-002) | SPEC-002 (representa (in)dependência) | Homologada | Mecanismo | Calibração do desconto = J-001. |
+| **WF-C03** | Order flow (CVD/delta/absorção) → dimensão de volume; faltante = INDETERMINADO | **SPEC-003** (HOMOLOGADA; CF-007) | SPEC-012 (SMC), SPEC-032 (Volume skill) | Homologada | Mecanismo | Nunca zero/fabricado; disponibilidade por ativo declarada. |
+| **WF-C04** | Regime = dimensão de convicção, não gate; **em qual das 8 = SPEC-003** | **SPEC-003** (HOMOLOGADA; Q-A9) | SPEC-036 (Market Regime skill) | Homologada (**Q-A9 ratificada**) | Decisão + Mecanismo | **Q-A9 DECIDIDA pela SPEC-003: dimensão `temporal`** (Opção A; delegação de Andraus, chat 2026-10-01; **RATIFICADA na homologação — DHR-SPEC003-001, 2026-10-02**). Regime não é gate/veto, sem 9ª dimensão (INV-01/INV-03); peso = J-001/N-001 (aberto). |
 
 ---
 
@@ -83,9 +83,9 @@
 | ID | Resumo | Spec dona primária | Secundárias | Estado | Natureza | Nota de fronteira |
 |---|---|---|---|---|---|---|
 | **WF-P01** | BTC/XAU/NASDAQ em paralelo; heat medido com correlação | Família **RISK-SPEC** (heat) | SPEC-008/SPEC-023 (orquestração) | Indicativa | Mecanismo | `INV-RISK-HEAT`; cálculo no Risk Agent. |
-| **WF-P02** | Parâmetros por ativo = mecanismo parametrizável; valores → N-001/backtest | **SPEC-003** (mecanismo, CF-009) | RISK-SPEC | Candidata/**Aberta (N-001)** | Parâmetro editável + Decisão | Valores definitivos = N-001 (aberta). |
+| **WF-P02** | Parâmetros por ativo = mecanismo parametrizável; valores → N-001/backtest | **SPEC-003** (HOMOLOGADA; mecanismo, CF-009) | RISK-SPEC | Homologada/**Aberta (N-001)** | Parâmetro editável + Decisão | Mecanismo homologado; valores definitivos = N-001 (aberta). |
 | **WF-V01** | Walk-forward + Deflated Sharpe/PBO por regra | SPEC-022 (Cognitive/Adversarial Test) | SPEC-010..013 (regras) | Indicativa | Insumo | Requisito herdado pela **implementação** (BUILD adiado). |
-| **WF-V02** | Rótulo de qualidade de evidência por escola, visível no raciocínio | Agentes SPEC-010/011/012/013 (produzem) | **SPEC-003** (preserva, CF-011/D9) | Indicativa/Candidata | Mecanismo | A SPEC-003 não sobrescreve o rótulo; evidência fraca ≠ descartada. |
+| **WF-V02** | Rótulo de qualidade de evidência por escola, visível no raciocínio | Agentes SPEC-010/011/012/013 (produzem) | **SPEC-003** (HOMOLOGADA; preserva, CF-011/D9) | Indicativa/Homologada (SPEC-003) | Mecanismo | A SPEC-003 não sobrescreve o rótulo; evidência fraca ≠ descartada. |
 
 ---
 
@@ -95,7 +95,7 @@
 |---|---|---|---|---|---|---|
 | **WF-X01** | Expectância = métrica-raiz; R:R mínimo 1:3 = piso soberano | Família **RISK-SPEC** | — | Indicativa | Mecanismo/Insumo | `INV-RISK-RR` (AGENTS §6.5). |
 | **WF-X02** | Sizing pela distância do stop; Kelly adiado; sizing ≠ convicção | Família **RISK-SPEC** | — | Indicativa | Mecanismo | INV-04. |
-| **WF-X03** | Fluxo unidirecional convicção→risco; risco nunca retroalimenta convicção | **SPEC-003** (guard CF-008/CF-011) + RISK-SPEC | — | Candidata | Mecanismo | INV-04; guard fail-closed na SPEC-003. |
+| **WF-X03** | Fluxo unidirecional convicção→risco; risco nunca retroalimenta convicção | **SPEC-003** (HOMOLOGADA; guard CF-008/CF-011) + RISK-SPEC | — | Homologada | Mecanismo | INV-04; guard fail-closed na SPEC-003. |
 | **WF-X04** | Prevenção de overtrading = Bot Trade Finance (externo) | — (externo ao SOT) | — | — | Insumo/fronteira | **Sem dona de Spec** — fora do escopo do SOT (ver §IDs sem dona clara). |
 | **WF-X05** | Avaliação de risco = escala própria do Risk Agent; nunca soma/retroalimenta o Conviction Vector 8D | Família **RISK-SPEC** (RISK-M2 — RISK-SPEC-010) | — | Indicativa (**RISK-CONV-001 FECHADA**) | Mecanismo/Decisão | Renomeação "convicção de risco"→"avaliação de risco" + isolamento **FECHADOS** (Andraus, 2026-10-01, DHR-DEC-001); INV-04/WF-X03. |
 
@@ -127,7 +127,7 @@
 |---|---|---|---|---|---|---|
 | **WF-D01** | Killzone como mecanismo formal | SPEC-008/SPEC-015 (Manager/Scheduler) | — | **FECHADA** (Andraus) | Decisão | Mecanismo → WF-K01..K04; SPEC-003 não especifica. |
 | **WF-D02** | Alarme-gatilho de preço como mecanismo formal | SPEC-008/SPEC-015 | SPEC-003 (consome) | **FECHADA** (Andraus) | Decisão | Mecanismo → WF-A01..A03. |
-| **WF-D03** | Convicção macro×global ↔ Conviction Vector 8D / J-001 | **SPEC-003** (mecanismo) + **Andraus** (J-001/N-001) | SPEC-014, SPEC-015 | **ABERTA (residual)** | Decisão | Direção em WF-C01; invocação **2x já fixada** (Q-A5, DHR-DEC-001); dimensão do regime **decidida pela SPEC-003** (`temporal`, Q-A9/v1.4; DHR-DEC-002); **resíduo aberto = fórmula/pesos/limiares (J-001/N-001)**. |
+| **WF-D03** | Convicção macro×global ↔ Conviction Vector 8D / J-001 | **SPEC-003** (mecanismo) + **Andraus** (J-001/N-001) | SPEC-014, SPEC-015 | **ABERTA (residual)** | Decisão | Direção em WF-C01; invocação **2x já fixada** (Q-A5, DHR-DEC-001); dimensão do regime **decidida pela SPEC-003 e RATIFICADA na homologação** (`temporal`, Q-A9; DHR-DEC-002 → DHR-SPEC003-001, 2026-10-02); **resíduo aberto = fórmula/pesos/limiares (J-001/N-001)**. |
 | **WF-D04** | Papel do ICT no pipeline | SPEC-013 (Execution/ICT) | SPEC-014 | **FECHADA** (Andraus) | Decisão | ICT = Operacional (WF-05); setup, não hipótese (INV-02). |
 
 ---
@@ -158,7 +158,7 @@
 |---|---|---|---|
 | **C-1** | **"Manager" é dividido entre dois slots** — SPEC-008 (Cognitive Scheduler: quando/abrir/fechar/alarme) e SPEC-015 (Mission Engine & Lifecycle: síntese de contexto/convicção macro/FSM do ciclo). WF-04/WF-06 falam de "Manager" como **ator único**. | Médio (rastreabilidade) | **ENCAMINHADO por EUA-E23/DHR-EUA-E23 (2026-10-01):** o "Manager" é **UM ator lógico** (ADR-MANAGER-001; DHR-ARQ-001) decomposto em **3 Specs sob um "Manager Contract"** comum (RULE-HV): **SPEC-008 — Orquestração Mecânica (Fase 1)**, **SPEC-015 — Missão & Ciclo de Vida (Fase 0)**, **SPEC-014 — Convicção & Síntese (Fase 2; absorve Synthesis)**. Slots não renumerados (INV-07); fronteira/decomposição final só na abertura, com Dossiê (RULE-ECC-01). SPEC-015-SCOPE **não** fechada (CONS-01). |
 | **C-2** | **Acepção concorrente de "Conviction Engine"** (CONFLITO-1 da SPEC-003): WF-04/WF-06 atribuem ao **Manager** o ato de *formar* convicção; a acepção legada (a) tratava-o como componente **separado**. | Médio (semântico) | **RESOLVIDO** por **DHR-ARQ-001** (2026-10-01, instrução direta de Andraus, propaga ADR-MANAGER-001 / CEM-001 DIV-CEM-4): "Conviction Engine" = **mecanismo (Classe D/H do CCM-001) invocado pelo Manager Agent — Fase 2**, não componente separado. B-001 parcialmente SUPERSEDIDA (parte componente-separado; INV-07). SPEC-003 v1.2 adota a acepção (b). `WF-D03` segue aberta **só** quanto a J-001/N-001/Q-A9 (invocação 2x fechada por Q-A5/DHR-DEC-001; taxonomia já resolvida). |
-| **C-3** | **WF-C04 / Q-A9** — a dimensão (das 8) em que o regime entra; o Market Regime como skill (SPEC-036) existe como slot distante, o que pode gerar dupla-dona. | Médio → **Resolvido (dimensão)** | **DECIDIDO pela SPEC-003: dimensão `temporal`** (Q-A9/v1.4; delegação de Andraus; ratifica na homologação — DHR-DEC-002). Dupla-dona com SPEC-036 (skill de detecção de regime) a reconciliar na abertura da SPEC-036: a *detecção* do regime pode ser skill; a *hospedagem na convicção* é a dimensão `temporal` (SPEC-003). Peso = J-001/N-001 (aberto). |
+| **C-3** | **WF-C04 / Q-A9** — a dimensão (das 8) em que o regime entra; o Market Regime como skill (SPEC-036) existe como slot distante, o que pode gerar dupla-dona. | Médio → **Resolvido (dimensão)** | **DECIDIDO pela SPEC-003: dimensão `temporal`** (Q-A9; delegação de Andraus; **RATIFICADO na homologação — DHR-SPEC003-001, 2026-10-02**). Dupla-dona com SPEC-036 (skill de detecção de regime) a reconciliar na abertura da SPEC-036: a *detecção* do regime pode ser skill; a *hospedagem na convicção* é a dimensão `temporal` (SPEC-003). Peso = J-001/N-001 (aberto). |
 | **C-4** | **Família RISK-SPEC não numerada** — WF-07/WF-P01/WF-X01..X03 apontam para uma família sem slot `SPEC-0NN` no ROADMAP (contingente à EUA-E20). | Baixo (temporal) | **ENCAMINHADO por EUA-E20/DHR-EUA-E20 (2026-10-01):** instituída a **FASE RISK** com **6 macro-slots indicativos RISK-M1..M6** (ROADMAP §10-bis); a "dona" de WF-07/WF-P01/WF-X01..X03 passa aos macro-slots **RISK-M2/RISK-M5** na abertura. Família ainda **não autorizada** (pré-condição `milestone:FASE 6 concluída`); rastreada por BL-018. |
 | **C-5** | **WF-R01 auto-inconsistência declarada** — entrada single-TF do WF-05 (ex. M5) × tripla da tabela WF-R01 (day = M15) precisa de reconciliação (a própria WF-R01 pede). | Baixo (editável) | Resolvido na revisão BL-026, não nesta matriz. |
 

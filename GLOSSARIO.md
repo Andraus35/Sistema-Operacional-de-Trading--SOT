@@ -85,7 +85,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 | Hipótese SUB | Sub-hipótese de domínio (SMC/Fibonacci), sempre referenciada à hipótese primária via `parent_id` (herança fractal do CHM-001). ICT **não** cria hipótese. | Decisão Q-005 |
 | Evidência | Observação objetiva produzida por um agente especializado, capaz de sustentar/enfraquecer/refutar hipóteses. | CEM-001 |
 | Conviction Vector | Vetor multidimensional de convicção — **8 dimensões** (Q-008): estrutural, geométrica, fractal, institucional, operacional, temporal, volume, histórica. Fórmula/pesos/limiares definitivos = J-001 (aberto). | CONSTITUTION P02 (corrigido) / Decisão Q-008 |
-| Conviction Global | Resultado sistêmico de convicção, calculado pelo modelo canônico **CCM-001** (pendente de redação — SPEC-003). | CHM-001 §1.9 |
+| Conviction Global | Resultado sistêmico de convicção, calculado pelo modelo canônico **CCM-001** (**BASELINED** — SPEC-003/DHR-SPEC003-001, 2026-10-02; estrutura/método/mecanismo + limiares-piloto; valores definitivos = J-001/N-001, abertos). | CHM-001 §1.9; CCM-001 |
 | Fusion Engine | Motor determinístico que funde Evidências heterogêneas em Evidência DERIVED. Não calcula convicção. | CEM-001 / Decisão Q-007 |
 | Conviction Engine | **Mecanismo legado** (não agente/componente independente — DHR-ARQ-001, 2026-10-01): recebe Evidência DERIVED e calcula o Conviction Vector, como **etapa invocada pelo Manager Agent — Fase 2 (Conviction)** (ADR-MANAGER-001 / CEM-001 DIV-CEM-4). B-001 (Q-007) parcialmente SUPERSEDIDA na parte "componente separado"; preservada a separação **lógica** de etapas Fusão→cálculo do Conviction Vector→síntese; INV-07. Rótulo de Classe D/H do CCM-001 (SPEC-003). | Decisão Q-007; ADR-MANAGER-001; DHR-ARQ-001 |
 | Synthesis Agent | **Absorvido pelo Manager Agent — Fase 2 (Convicção & Síntese)** (DHR-ARQ-002, propaga ADR-MANAGER-001 §2.1). Não é agente autônomo. A Fase 2 do Manager: recebe Conviction Vector + hipóteses, arbitra, forma Convicção Global (invocando o mecanismo da SPEC-003) e produz decisão / TMP interno (handoff à camada de risco). | Decisão Q-007; ADR-MANAGER-001; DHR-ARQ-002 |
@@ -113,7 +113,7 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 |---|---|---|
 | CEM-001 | Canonical Evidence Model | **BASELINED** |
 | CHM-001 | Canonical Hypothesis Model | **BASELINED** |
-| CCM-001 | Canonical Conviction Model | **Pendente de redação** — responsabilidade da SPEC-003 |
+| CCM-001 | Canonical Conviction Model | **BASELINED** (v1.0; SPEC-003/DHR-SPEC003-001, 2026-10-02) — `canon/CCM-001-canonical-conviction-model.md` |
 | CDM-001 | Canonical Decision Model | **Pendente de redação** |
 | CNM-001 | Canonical Narrative Model | **Pendente de redação** |
 

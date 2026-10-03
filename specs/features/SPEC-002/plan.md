@@ -4,7 +4,7 @@
 |---|---|
 | ID | SPEC-002 — Evidence & Evidence Provenance Harness (camada Harness/operacional sobre CEM-001) |
 | Versão | 1.0 (candidata) |
-| Status | **CANDIDATA — em revisão** (não homologada; homologação é ato de Andraus) |
+| Status | **HOMOLOGADA — BASELINE** (Andraus, 2026-09-28, DHR-SPEC002-001; sincronizado com a linha 'Status:' abaixo) |
 | Fonte | ROADMAP §4/§21/§29; `research.md` (Dossiê de abertura HOMOLOGADO por Andraus 2026-09-28, §6-bis; RULE-ECC-01/02/04); atomic-spec **v1.5** |
 | Complexidade | **CRITICAL** [FONTE: ROADMAP §4; research.md Q-A1] |
 | Profundidade-alvo | **D0–D8** (standard + adversarial) [FONTE: research.md Q-A2 homologado; AGENTS.md §4] |
