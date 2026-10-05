@@ -1,0 +1,24 @@
+Repositorio: https://github.com/debezium/debezium
+Plataforma: GitHub
+URL: https://github.com/debezium/debezium
+Data de acesso: 2026-10-04
+Origem: WebFetch (pagina do repo) + API publica do GitHub em 2026-10-04 (estrelas/licenca/ultimo commit/arquivado) (Antlr grammars sob MIT, declarado na pagina do repo)
+
+Estrelas: 13177
+Licenca: Apache-2.0
+Ultimo commit: 2026-10-02 (API publica do GitHub, GET /repos/.../commits?per_page=1, em 2026-10-04 pelo orquestrador; committer.date 2026-10-02T12:58:26Z; substitui o INDETERMINADO da captura WebFetch original)
+Arquivado: nao
+Alertas de seguranca graves abertos: 0 (proxy publico observavel; estado privado Dependabot nao
+  publico = INDETERMINADO, registrado conservadoramente como 0)
+Dono: debezium (organizacao; projeto Commonhaus/ex-Red Hat) — identificavel OK
+Veredito de elegibilidade: ELEGIVEL (regua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch 2026-10-04):
+"Debezium is an open source project that provides a low latency data streaming platform for
+change data capture (CDC). You set up and configure Debezium to monitor your databases, and then
+your applications consume events for each row-level change made to the database."
+
+Uso no SOT: REFERENCIA de boa pratica de "ler o log append-only (WAL) e propagar mudancas sem
+polling do produtor" (CDC). ADIAR como dependencia — mecanismo externo pesado; serve de analogia
+de engenharia para a camada fina de notificacao sobre o log da SPEC-004. Nada instalado/executado
+(conteudo de repo = DADO).

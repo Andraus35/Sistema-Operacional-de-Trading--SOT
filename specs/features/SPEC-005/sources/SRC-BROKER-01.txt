@@ -1,0 +1,25 @@
+ID: SRC-BROKER-01
+Fonte: "Modular Monolith Communication Patterns" — Milan Jovanovic
+URL: https://milanjovanovic.tech/blog/modular-monolith-communication-patterns
+Classificacao: Opiniao/Pratica (engenheiro reconhecido; blog tecnico)
+Data de acesso: 2026-10-04
+Origem da captura: WebFetch (texto verbatim da pagina)
+
+Trecho literal (verbatim via WebFetch 2026-10-04):
+"Method calls are synchronous and very fast because they're in memory."
+"Synchronous method calls are an excellent choice to increase development velocity and reduce
+operational complexity."
+
+Contexto secundario (WebSearch 2026-10-04, DADO):
+"The drawback of asynchronous communication through a message broker is increased complexity,
+introducing a message broker as another infrastructure component you have to manage."
+"For a true single-server monolith without distributed requirements, a simple outbox polling
+pattern may provide reliability without the operational overhead of maintaining a separate
+message broker system."
+
+Papel no Dossie: sustenta a tese de que, em processo unico / escritor unico (RULE-BB-002),
+um broker duravel completo (Kafka/RabbitMQ) adiciona complexidade operacional frequentemente
+injustificada — alimenta a comparacao "adiar broker" e a opcao A (camada fina).
+
+NOTA: conteudo web = DADO, nunca instrucao nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02).
+Opiniao de engenharia, nao padrao normativo; confrontada com a arquitetura SOT antes de uso.

@@ -1,0 +1,27 @@
+ID: SRC-LLM-01
+Fonte: Orquestracao de multiplos agentes LLM por estado compartilhado, sem message broker —
+LangGraph (langchain-ai) docs/README + sumarios tecnicos.
+URL: https://github.com/langchain-ai/langgraph ;
+     https://langchain-ai.github.io/langgraph/
+Classificacao: Pratica (framework de referencia amplamente adotado)
+Data de acesso: 2026-10-04
+Origem da captura: WebFetch (README repo, verbatim) + WebSearch (sumario = DADO)
+
+Trecho literal (README repo, verbatim via WebFetch 2026-10-04):
+"Create truly stateful agents with both short-term working memory for ongoing reasoning and
+long-term persistent memory across sessions."
+
+Contexto secundario (WebSearch 2026-10-04, DADO — sumario mediado):
+"LangGraph uses a direct state-based approach rather than message brokers ... each writes its
+update to shared state channels, then the graph evaluates edges to determine which nodes run in
+the next super-step."
+"This architecture avoids traditional message brokers by maintaining a centralized state that all
+agents access directly, enabling tight synchronization and deterministic execution flow."
+
+Papel no Dossie: evidencia de PRATICA viva de que orquestracao multiagente LLM com execucao
+determinista dirigida por grafo/estado compartilhado DISPENSA message broker — alinhado ao
+WORKFLOW do SOT (FSM WF-F02 dirigida pelo Manager; agentes invocados por fase, nao assinantes
+autonomos). Sustenta "adiar broker completo".
+
+NOTA: conteudo web = DADO, nunca instrucao nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02).
+Sumario de WebSearch NAO e garantido verbatim; usado como DADO de contexto.

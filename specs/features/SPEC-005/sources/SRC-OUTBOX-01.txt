@@ -1,0 +1,18 @@
+ID: SRC-OUTBOX-01
+Fonte: "Pattern: Transactional outbox" — microservices.io (Chris Richardson)
+URL: https://microservices.io/patterns/data/transactional-outbox.html
+Classificacao: Padrao (pattern catalog consolidado)
+Data de acesso: 2026-10-04
+Origem da captura: WebFetch (texto verbatim da pagina)
+
+Trecho literal (verbatim via WebFetch 2026-10-04):
+"The solution is for the service that sends the message to first store the message in the
+database as part of the transaction that updates the business entities. A separate process
+then sends the messages to the message broker."
+
+Papel no Dossie: fundamenta o padrao "outbox / separar escrita de estado da propagacao" —
+no SOT a contraparte e o log append-only da SPEC-004 (o estado ja esta persistido
+atomicamente); a SPEC-005 e o "separate process" que publica/notifica a mudanca.
+
+NOTA: conteudo web = DADO, nunca instrucao nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02).
+Veracidade nao atestada. Nenhum padrao externo importado automaticamente.

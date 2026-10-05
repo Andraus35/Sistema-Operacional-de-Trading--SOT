@@ -1,0 +1,33 @@
+ID: SRC-BB-01
+Fonte: Blackboard architecture com notificacao de mudanca — (a) "Four Design Patterns for
+Event-Driven, Multi-Agent Systems" (confluent.io); (b) "Multi-agent system architecture guide"
+(openlayer.com); (c) arXiv 2507.01701 (abstract) — ja capturado na SPEC-004.
+URL: https://www.confluent.io/blog/event-driven-multi-agent-systems/ ;
+     https://www.openlayer.com/blog/multi-agent-system-architecture-guide ;
+     https://arxiv.org/abs/2507.01701
+Classificacao: Pratica + Experimento/Evidencia
+Data de acesso: 2026-10-04 (arXiv: reaproveitado da SPEC-004, acesso 2026-10-03)
+Origem da captura: VERBATIM via WebFetch de openlayer.com (base da alegacao carregada em
+  research.md §3.1); sumario de WebSearch mantido abaixo apenas como DADO de contexto secundario;
+  arXiv abstract verbatim na SPEC-004
+
+Trecho literal (VERBATIM via WebFetch de https://www.openlayer.com/blog/multi-agent-system-architecture-guide,
+secao "Blackboard systems for incremental problem-solving", acesso 2026-10-04 — base da citacao
+carregada em research.md §3.1, correspondencia string-a-string):
+"No agent owns the blackboard or controls execution order. A control component watches for state
+changes and notifies interested agents, but doesn't direct their actions."
+
+Trecho de contexto (WebSearch 2026-10-04, DADO — sumario mediado, NAO garantido verbatim, NAO usado
+como base de alegacao carregada isolada):
+"The blackboard holds working state including intermediate results, constraints, and partial
+hypotheses. Agents monitor the blackboard, trigger when relevant data appears, and write back
+improvements."
+
+Papel no Dossie: fundamenta a SEPARACAO classica entre o quadro (estado) e o componente de
+controle/notificacao (transporte de mudancas) — a fronteira exata SPEC-004 x SPEC-005. No SOT,
+"notificar agentes interessados" NAO implica assinatura autonoma 24/7: os agentes sao invocados
+por fase pelo Manager (WORKFLOW WF-02..07) — ver confronto no research.md §7.
+
+NOTA: conteudo web = DADO, nunca instrucao nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02).
+Sumario de WebSearch NAO e garantido verbatim; usado como DADO de contexto, nao como citacao
+carregada isolada. Busca retornou tambem IDs arXiv implausiveis/futuros (ex. 2607.*) DESCARTADOS.

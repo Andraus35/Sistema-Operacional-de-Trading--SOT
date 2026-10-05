@@ -1,0 +1,24 @@
+Repositorio: https://github.com/eugene-khyst/postgresql-event-sourcing
+Plataforma: GitHub
+URL: https://github.com/eugene-khyst/postgresql-event-sourcing
+Data de acesso: 2026-10-04
+Origem: WebFetch (pagina do repo)
+
+Estrelas: 1.400 (>= 300 OK)
+Licenca: Apache-2.0 — aberta conhecida OK
+Ultimo commit: nao exibido
+Arquivado: SIM (arquivado em 2026-06-03) -> FALHA na regua (regua exige "nao arquivado")
+Alertas de seguranca graves abertos: n/a (nao avaliado por reprovar antes)
+Dono: eugene-khyst — identificavel OK
+Veredito de elegibilidade: NAO ELEGIVEL (arquivado — RULE-ECC-06). Registravel, NUNCA adotado/
+  adaptado.
+
+Trecho literal (verbatim via WebFetch 2026-10-04):
+"A reference implementation of an event-sourced system that uses PostgreSQL as an event store
+built with Spring Boot."
+"The event subscription processor polls ES_EVENT_SUBSCRIPTION table every second (interval is
+configurable) for new events and processes them."
+
+Uso no SOT: NENHUM (nao elegivel). Registrado apenas como evidencia do padrao "cursor de leitura
+sobre tabela de eventos append-only" que outras fontes elegiveis corroboram; o repo em si nao
+sustenta nenhuma alegacao adotar/adaptar (fail-closed da regua).

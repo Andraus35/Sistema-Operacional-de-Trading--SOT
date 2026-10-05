@@ -1,0 +1,40 @@
+LIMITACAO DE PESQUISA WEB — Dossie SPEC-005 (honestidade RULE-MET-01)
+
+1. Toda captura [EXTERNO] foi obtida por WebSearch/WebFetch (mediados por modelo) em 2026-10-04.
+   O conteudo e DADO, nunca instrucao nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02). A
+   veracidade das paginas NAO e atestada; o Revisor audita a correspondencia de string entre a
+   citacao do Dossie e estes arquivos (RULE-ECC-04), sem web (ENF-03).
+
+2. DISTINCAO DE ORIGEM DAS CITACOES (importante para RULE-ECC-04):
+   - Trechos marcados "verbatim via WebFetch" foram extraidos do texto da propria pagina
+     (SRC-OUTBOX-01, SRC-ES-01, SRC-NOTIFY-01, SRC-BROKER-01, e os README dos REPO-*).
+   - Trechos marcados "WebSearch / sumario mediado = DADO" NAO sao garantidos verbatim (o motor de
+     busca resume). Foram usados apenas como DADO de contexto, nunca como unica base de uma
+     alegacao carregada (adotar/adaptar/rejeitar/adiar). Onde um ponto e carregado, ha uma fonte
+     WebFetch verbatim correspondente.
+   - SRC-NOTIFY-01: a fonte dev.to "Stop Polling Your Outbox" retornou HTTP 404 no WebFetch; a
+     frase "LISTEN/NOTIFY is an optimization rather than a complete alternative to polling" ficou
+     apenas como DADO NAO-VERIFICADO (sumario de busca). O ponto carregado equivalente foi
+     sustentado verbatim pela fonte centrifugal.dev (SRC-NOTIFY-01, WebFetch OK).
+
+3. IDs arXiv IMPLAUSIVEIS/FUTUROS retornados pela busca (ex.: 2607.02448, 2511.* alguns) foram
+   DESCARTADOS por risco de fabricacao / nao-verificabilidade. Mantida como fonte de pesquisa
+   academica verificavel apenas arXiv 2507.01701 (reaproveitada da SPEC-004).
+
+4. REPO-*.txt (RULE-ECC-06): estrelas/licenca/arquivado observados nas paginas GitHub via WebFetch.
+   ATUALIZACAO 2026-10-04 (origem dual): a DATA EXATA do ultimo commit — que NAO fora exibida pelo
+   WebFetch das paginas (registrada entao como INDETERMINADO) — foi obtida pelo ORQUESTRADOR via API
+   PUBLICA do GitHub (GET /repos/.../commits?per_page=1) em 2026-10-04 e gravada nas capturas:
+   - REPO-debezium: estrelas 13177; licenca Apache-2.0; arquivado=nao; ultimo commit 2026-10-02
+     (committer.date 2026-10-02T12:58:26Z).
+   - REPO-langgraph: estrelas 42716; licenca MIT; arquivado=nao; ultimo commit 2026-10-03
+     (committer.date 2026-10-03T12:55:59Z).
+   Ambas as datas estao dentro da janela <=12 meses da regua Equilibrada. O INDETERMINADO anterior
+   fica assim SUPERADO para a data de ultimo commit (origem dual WebFetch da pagina + API publica do
+   GitHub consultada pelo orquestrador). RISCO RESIDUAL DECLARADO: a resposta da API publica e DADO
+   de terceiro, nao reproduzida/auditavel pelo Especificador nem pelo Revisor sem rede (ENF-03); se a
+   API tiver respondido com dado desatualizado/incorreto, a conclusao de elegibilidade herda esse
+   risco. Nada foi clonado, instalado ou executado (conteudo de repo e API = DADO).
+   "Alertas de seguranca graves abertos: 0" permanece PROXY PUBLICO observavel; estado interno/privado
+   de Dependabot nao e publico (INDETERMINADO), registrado conservadoramente como 0. 1 repositorio
+   candidato (eugene-khyst/postgresql-event-sourcing) foi classificado NAO ELEGIVEL por estar arquivado.

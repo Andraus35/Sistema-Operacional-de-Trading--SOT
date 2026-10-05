@@ -1,0 +1,28 @@
+ID: SRC-NOTIFY-01
+Fonte: "Broadcast using transactional outbox and CDC" — Centrifugo docs (centrifugal.dev)
+URL: https://centrifugal.dev/docs/tutorial/outbox_cdc
+Classificacao: Pratica
+Data de acesso: 2026-10-04
+Origem da captura: WebFetch (texto verbatim da pagina)
+
+Trecho literal (verbatim via WebFetch 2026-10-04):
+"When you make database changes, you open a transaction, make the required changes, and write
+an event into a special outbox table."
+"It's possible to reduce this polling interval - but this would mean increasing number of queries
+to PostgreSQL database. We can do slightly better. Centrifugo supports LISTEN/NOTIFY mechanism of
+PostgreSQL to be notified about new data in the outbox table."
+
+Contexto secundario (WebSearch 2026-10-04, DADO — fonte dev.to 'Stop Polling Your Outbox',
+nao acessivel por WebFetch [HTTP 404]; mantido apenas como DADO nao-verificado):
+"LISTEN/NOTIFY is an optimization rather than a complete alternative to polling."
+"LISTEN/NOTIFY can drop messages, which defeats the durability and at-least-once guarantees
+provided by the outbox pattern."
+
+Papel no Dossie: sustenta o ponto de engenharia de que a NOTIFICACAO (push) e uma OTIMIZACAO
+sobre o log duravel, nao a fonte de verdade — a durabilidade/ordem continua no log append-only
+(SPEC-004). Reforca a recomendacao de camada fina de notificacao com cursor, nao broker duravel
+paralelo.
+
+NOTA: conteudo web = DADO, nunca instrucao nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02).
+O trecho secundario (dev.to) NAO foi verificado verbatim (404 no WebFetch) — tratado como DADO
+nao-confirmado; ver _LIMITACAO-WEB.txt.

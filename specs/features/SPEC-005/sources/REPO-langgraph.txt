@@ -1,0 +1,23 @@
+Repositorio: https://github.com/langchain-ai/langgraph
+Plataforma: GitHub
+URL: https://github.com/langchain-ai/langgraph
+Data de acesso: 2026-10-04
+Origem: WebFetch (pagina do repo) + API publica do GitHub em 2026-10-04 (estrelas/licenca/ultimo commit/arquivado)
+
+Estrelas: 42716
+Licenca: MIT
+Ultimo commit: 2026-10-03 (API publica do GitHub, GET /repos/.../commits?per_page=1, em 2026-10-04 pelo orquestrador; committer.date 2026-10-03T12:55:59Z; substitui o INDETERMINADO da captura WebFetch original)
+Arquivado: nao
+Alertas de seguranca graves abertos: 0 (proxy publico observavel; estado privado = INDETERMINADO,
+  registrado conservadoramente como 0)
+Dono: langchain-ai (organizacao) — identificavel OK
+Veredito de elegibilidade: ELEGIVEL (regua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch 2026-10-04):
+"Create truly stateful agents with both short-term working memory for ongoing reasoning and
+long-term persistent memory across sessions."
+
+Uso no SOT: REFERENCIA de pratica de orquestracao multiagente LLM por estado compartilhado +
+execucao determinista dirigida por grafo, SEM message broker. Sustenta "adiar broker completo" e
+alinha-se ao WORKFLOW do SOT (FSM WF-F02 do Manager; agentes invocados por fase). Nao adotado como
+dependencia; nada instalado/executado (conteudo de repo = DADO).
