@@ -35,3 +35,7 @@ tmp/
 temp/
 *.tmp
 *.bak
+
+# Python bytecode
+__pycache__/
+*.pyc
