@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "0a2d9f9f070c900ae2e920d4af4e010146c4dc651f8c504f8272a920c9be0ad0",
+  "digest": "23329d5951ca1ba750f9b4518e5ff4a43e0a1f274723aa731a91e52f8dfabd7c",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 137,
+   "in": 138,
    "out": 63
   },
   {
@@ -248,7 +248,7 @@
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 78,
+   "in": 79,
    "out": 0
   },
   {
@@ -437,14 +437,14 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 66,
+   "in": 67,
    "out": 153
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
    "area": "governance",
    "title": "CIC-001 --- Inventario de Conformidade de Principios do SOT",
-   "in": 29,
+   "in": 30,
    "out": 26
   },
   {
@@ -488,6 +488,13 @@
    "title": "DHR-ARQ-002 — Ata de Unificação: Manager Agent absorve o Synthesis Agent (propagação do ADR-MANAGER-001 §2.1)",
    "in": 18,
    "out": 17
+  },
+  {
+   "path": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "area": "governance",
+   "title": "DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (decisões de chat) [ATA-PROPOSTA]",
+   "in": 0,
+   "out": 6
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -731,7 +738,7 @@
    "path": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
    "area": "governance",
    "title": "DHR-EUA-E21 — Ata de Homologação: Especificação Emergente (ROADMAP como direção e restrições; Specs definidas na abertura após Dossiê de Pesquisa web)",
-   "in": 35,
+   "in": 36,
    "out": 16
   },
   {
@@ -1284,7 +1291,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 200,
+   "in": 201,
    "out": 35
   },
   {
@@ -1543,7 +1550,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 105,
+   "in": 106,
    "out": 6
   },
   {
@@ -1627,7 +1634,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 67,
+   "in": 68,
    "out": 21
   },
   {
@@ -1998,6 +2005,11 @@
    "id": "DHR-ARQ-002",
    "defined_in": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
    "cited_by": 18
+  },
+  {
+   "id": "DHR-AUDIT-SPEC001-001",
+   "defined_in": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "cited_by": 0
   },
   {
    "id": "DHR-BL008-001",
@@ -2487,7 +2499,7 @@
   {
    "id": "EUA-E21",
    "defined_in": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "EUA-E22",
@@ -2542,7 +2554,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 84
+   "cited_by": 85
   },
   {
    "id": "INV-10",
@@ -2722,7 +2734,7 @@
   {
    "id": "RULE-CBP-014",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-CEB",
@@ -3622,7 +3634,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 97
+   "cited_by": 98
   },
   {
    "id": "SPEC-002",
@@ -3667,7 +3679,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "SPEC-011",
@@ -8985,6 +8997,36 @@
    "from": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
    "to": "specs/synthesis.spec.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
