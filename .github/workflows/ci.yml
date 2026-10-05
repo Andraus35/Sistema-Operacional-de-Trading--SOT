@@ -31,6 +31,19 @@ jobs:
         with:
           python-version: '3.11'
 
+      # BLOQUEANTE: gate determinístico de estrutura das Specs (ENF-03: Detector ≠ Gate).
+      # Roda validate_spec_sot.py em TODO specs/features/*/plan.md (Specs novas entram sozinhas).
+      # exit 1 = NÃO CONFORME Crítica de estrutura; não substitui Revisor nem homologação.
+      - name: Validate Spec structure (validate_spec_sot.py)
+        run: |
+          fail=0
+          for f in specs/features/*/plan.md; do
+            echo "::group::$f"
+            python scripts/validate_spec_sot.py "$f" || { echo "::error file=$f::validate_spec_sot.py reprovou a estrutura"; fail=1; }
+            echo "::endgroup::"
+          done
+          exit $fail
+
       # Informativo (não bloqueia): integridade de referências cruzadas.
       # Promover a bloqueante só no nível ERRO após período estável — nunca --strict/--info.
       - name: Check cross-references (informative)
