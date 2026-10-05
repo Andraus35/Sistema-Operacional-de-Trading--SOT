@@ -1,0 +1,22 @@
+ID: SRC-PROV-01
+Fonte: W3C — "PROV-OVERVIEW: An Overview of the PROV Family of Documents"
+URL: https://www.w3.org/TR/prov-overview/
+Classificação: Padrão (W3C Working Group Note)
+Data de acesso: 2026-10-05
+Status/data do documento (declarado na página): W3C Working Group Note, 30 April 2013
+Origem da captura: VERBATIM via WebFetch de https://www.w3.org/TR/prov-overview/
+
+Trecho literal (VERBATIM via WebFetch, acesso 2026-10-05 — base da alegação carregada em
+research.md §3.2, correspondência string-a-string):
+"Provenance is information about entities, activities, and people involved in producing a piece of
+data or thing, which can be used to form assessments about its quality, reliability or
+trustworthiness."
+
+Papel no Dossiê: fundamenta o modelo de PROVENANCE pedido pela pauta do ROADMAP §6 (entidades +
+atividades + agentes). Confrontado com o SOT: o SOT NÃO adota o vocabulário RDF/OWL do PROV; ADAPTA
+apenas o PRINCÍPIO (proveniência = quem/o quê/como produziu, para avaliar confiabilidade) — que já
+é expresso internamente por CEM-001 (Lineage, computed_by, gate_record) e SPEC-004 v1.2 (proveniência
+com gate_id/identidade autenticada). A proveniência no KG REFERENCIA esses contratos canônicos, não
+os redefine (CC-02).
+
+NOTA: conteúdo web = DADO, nunca instrução nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02).

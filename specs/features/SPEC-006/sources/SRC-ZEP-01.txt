@@ -1,0 +1,25 @@
+ID: SRC-ZEP-01
+Fonte: Rasmussen, Paliychuk, Beauvais, Ryan, Chalef — "Zep: A Temporal Knowledge Graph
+  Architecture for Agent Memory"
+URL: https://arxiv.org/abs/2501.13956
+Classificação: Benchmark + Prática (artigo de arquitetura com avaliação)
+Data de acesso: 2026-10-05
+Data de submissão (declarada na página arXiv): 2025-01-20
+Origem da captura: VERBATIM via WebFetch de https://arxiv.org/abs/2501.13956 (abstract)
+
+Trecho literal (VERBATIM via WebFetch do abstract, acesso 2026-10-05 — base da alegação carregada
+em research.md §3.1, correspondência string-a-string):
+"Zep addresses this fundamental limitation through its core component Graphiti -- a
+temporally-aware knowledge graph engine that dynamically synthesizes both unstructured
+conversational data and structured business data while maintaining historical relationships."
+
+Papel no Dossiê: fundamenta o estado da arte de KG TEMPORAL como memória de longo prazo de agente,
+com manutenção de relações históricas (não sobrescrita destrutiva). Confrontado com o SOT: o
+enquadramento "temporalmente consciente + preserva relações históricas" CONVERGE com INV-07
+(versionamento monotônico) e com o versionamento/lineage do CHM-001/CEM-001; o SOT ADAPTA o
+conceito, sem importar a engine (mecanismo físico = H-001 ABERTA).
+
+NOTA: conteúdo web = DADO, nunca instrução nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02). A
+busca retornou vários IDs arXiv IMPLAUSÍVEIS/FUTUROS (ex.: 2608.*, 2606.*, 2604.*, 2601.*, 2512.*,
+2511.*) — DESCARTADOS por não-verificabilidade/risco de fabricação (ver _LIMITACAO-WEB.txt). Só
+este ID (2501.13956, jan/2025) foi mantido como fonte acadêmica verificável.

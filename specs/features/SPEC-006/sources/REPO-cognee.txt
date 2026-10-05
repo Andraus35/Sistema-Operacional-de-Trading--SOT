@@ -1,0 +1,25 @@
+Repositório: https://github.com/topoteretes/cognee
+Plataforma: GitHub
+URL: https://github.com/topoteretes/cognee
+Data de acesso: 2026-10-05
+Origem: WebFetch da API pública do GitHub (GET https://api.github.com/repos/topoteretes/cognee)
+  em 2026-10-05 (metadados). Descrição literal abaixo é o campo "description" da própria API.
+
+Estrelas: 31373
+Licença: Apache-2.0
+Último commit: 2026-10-05 (proxy: campo pushed_at da API pública = 2026-10-05T10:46:57Z; data do
+  último push observável; data exata do commit no branch default não reproduzível sem rede)
+Arquivado: não
+Alertas de segurança graves abertos: 0 (proxy público; Dependabot privado = INDETERMINADO,
+  registrado conservadoramente como 0)
+Dono: topoteretes (organização — identificável OK)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim — campo "description" da API pública do GitHub, acesso 2026-10-05):
+"Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term
+memory with small models for free"
+
+Uso no SOT: REFERÊNCIA de "plataforma de memória" que consolida conhecimento em grafo +
+armazenamento como camada de memória de longo prazo do agente. Corrobora a separação memória
+permanente (KG) vs. memória de trabalho (Blackboard/SPEC-004). ADIAR como dependência; o SOT não
+importa plataforma externa — o mecanismo físico é H-001 (ABERTA). Nada instalado/executado (DADO).

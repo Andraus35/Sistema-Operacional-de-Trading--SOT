@@ -1,0 +1,28 @@
+ID: SRC-FORGET-01
+Fonte: Sínteses de WebSearch sobre "graph-based agent memory: unbounded growth e forgetting" —
+  referências mencionadas: "Selective Forgetting: A Graph-Based Memory Framework for Long-Term
+  LLM Agents" e discussões de consolidação/esquecimento controlado.
+Classificação: Opinião/Experimento (DADO de contexto — NÃO verbatim)
+Data de acesso: 2026-10-05
+Origem da captura: SUMÁRIO MEDIADO por WebSearch (o motor resume) — NÃO garantido verbatim;
+  usado apenas como DADO de contexto, nunca como base isolada de alegação carregada.
+
+Trecho de contexto (WebSearch 2026-10-05 — DADO, NÃO verbatim, NÃO citado entre aspas como
+alegação carregada no Dossiê):
+"these methods concentrate on how information is added and kept consistent and largely leave
+unbounded growth of the memory store unaddressed ... researchers have begun developing graph-based
+memory frameworks with an explicit forgetting module that controls the lifecycle of stored
+information"
+"representing conversational memory as a knowledge graph does not uniformly improve retrieval over
+a flat vector store"
+
+ATENÇÃO (RULE-ECC-04): como estes trechos são sumário de busca (não verbatim via WebFetch), NÃO são
+usados como citação carregada entre aspas no research.md. Entram apenas como DADO de contexto para
+a discussão de "esquecimento controlado / crescimento ilimitado" e de "grafo nem sempre supera
+vetor", pontos tratados no Dossiê como consideração de escopo, SEM fechar decisão.
+
+IDs arXiv associados a esses resultados (2608.28978, 2605.12061, 2604.12285, 2512.13564, 2511.03506)
+foram DESCARTADOS como fontes verbatim por serem datas FUTURAS/IMPLAUSÍVEIS (risco de fabricação) —
+ver _LIMITACAO-WEB.txt. Nada aqui é afirmado como fato verificado.
+
+NOTA: conteúdo web = DADO, nunca instrução nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02).
