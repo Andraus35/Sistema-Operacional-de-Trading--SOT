@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "68b1d90b8e89f2e1c4be03a57f93136382573dfaed7d7399ef0cab99d1ab3dbe",
+  "digest": "9ffa6912e3066f85151a339dc0dccbf2e07a25560d4daad287d6ae61c3c328f6",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 136,
+   "in": 137,
    "out": 63
   },
   {
@@ -437,7 +437,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 65,
+   "in": 66,
    "out": 153
   },
   {
@@ -731,7 +731,7 @@
    "path": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
    "area": "governance",
    "title": "DHR-EUA-E21 — Ata de Homologação: Especificação Emergente (ROADMAP como direção e restrições; Specs definidas na abertura após Dossiê de Pesquisa web)",
-   "in": 34,
+   "in": 35,
    "out": 16
   },
   {
@@ -1019,7 +1019,7 @@
    "area": "governance",
    "title": "[EMENDA-PROPOSTA] EMENDA-SPEC001-001 — Re-homologação pontual: campo `hierarchy_role` (separado de `hypothesis_type`)",
    "in": 1,
-   "out": 10
+   "out": 14
   },
   {
    "path": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
@@ -1032,7 +1032,7 @@
    "path": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
    "area": "governance",
    "title": "[ERRATUM-PROPOSTO] ERRATUM-SPEC001-002 — Erratum ADITIVO único (auditoria semântica SPEC-001: itens 2, 3, 5, 6, 7)",
-   "in": 0,
+   "in": 1,
    "out": 20
   },
   {
@@ -2487,7 +2487,7 @@
   {
    "id": "EUA-E21",
    "defined_in": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "EUA-E22",
@@ -2887,7 +2887,7 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 71
+   "cited_by": 72
   },
   {
    "id": "RULE-ECC-02",
@@ -3667,17 +3667,17 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "SPEC-011",
    "defined_in": "ROADMAP.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "SPEC-012",
    "defined_in": "ROADMAP.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "SPEC-013",
@@ -13003,13 +13003,33 @@
   },
   {
    "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
    "to": "canon/CHM-001-canonical-hypothesis-model.md",
    "type": "path"
   },
   {
    "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
    "to": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
    "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "type": "path"
   },
   {
    "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",

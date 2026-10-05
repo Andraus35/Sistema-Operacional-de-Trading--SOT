@@ -4,11 +4,23 @@
 |---|---|
 | Spec afetada | SPEC-001 v1.1 (HOMOLOGADA — BASELINE, 2026-09-15). Esta é uma **re-homologação pontual** (não erratum aditivo), porque muda o **contrato de campo** da hipótese. |
 | Natureza | **Proposta** — pendente de parecer do Revisor e homologação de Andraus. Nada aplicado; nenhum commit. |
-| Fundamento | Auditoria semântica (item 1): `hypothesis_type = PRIMARY \| SUB` na SPEC-001 **colide** com `hypothesis_type` do **CHM-001 §2.5**, que é uma *Governed Enumeration* (GMC-001) de valores {DESCRIPTIVE, EXPLANATORY, PREDICTIVE, DIAGNOSTIC}. A SPEC-001 sobrecarregou o nome de um campo canônico com outra semântica (papel hierárquico). Andraus decidiu **Opção A: campo novo `hierarchy_role`**. `[FATO: pauta item 1; CHM-001 l.289–293]` |
+| Fundamento | Auditoria semântica (item 1): `hypothesis_type = PRIMARY \| SUB` na SPEC-001 **colide** com `hypothesis_type` do **CHM-001 §2.5**, que é uma *Governed Enumeration* (GMC-001) de valores {DESCRIPTIVE, EXPLANATORY, PREDICTIVE, DIAGNOSTIC}. A SPEC-001 sobrecarregou o nome de um campo canônico com outra semântica (papel hierárquico). Andraus decidiu **Opção A: campo novo `hierarchy_role`**. `[FATO: pauta item 1; CHM-001 l.289–293]`<br/>**Decisões de Andraus na sessão de auditoria (chat, 2026-10-05)** que fundamentam esta emenda e o erratum correlato: (a) Opção A — campo `hierarchy_role`; (b) o **mapeamento produtor→`hypothesis_type` é ADIADO** às Specs dos especialistas (capability **Specialist Harness** — slots indicativos SPEC-010 Elliott, SPEC-011 Fibonacci/Fractal, SPEC-012 SMC; EUA-E21) e **NÃO bloqueia** esta re-homologação; (c) o **erratum de identidade** (ERRATUM-SPEC001-002 item 2) é homologado/aplicado **ANTES** desta emenda (co-dependência — §0); (d) declaração global de status "especificado ≠ implementado ≠ verificado" no `governance/CATALOGO-OFICIAL.md`; (e) compatibilidade **Minor**; (f) **baixa de D-ECC-1 somente APÓS** homologação do erratum. `[FATO: sessão de auditoria em chat, 2026-10-05 — sem arquivo no repositório; DHR de rastreabilidade sugerido no §9]` |
 | Decisão aplicada | **Opção A (campo novo):** separar `hypothesis_type` (semântica CHM-001, inalterada) de `hierarchy_role ∈ {PRIMARY, SUB}` (dimensão independente, coerente com `parent_hypothesis_id`/`generation` do CHM-001). |
 | Data | 2026-10-05 |
 | Compatibilidade | **Minor [PROPOSTA]** (justificativa abaixo). |
 | Regime | Correção de contrato por re-homologação pontual (Crítico → Especificador → Revisor → Andraus), **não** erratum. A SPEC-001 **não é reescrita unilateralmente**: este documento é a proposta de delta a homologar. |
+
+---
+
+## 0. Co-dependência e ordem com o ERRATUM-SPEC001-002 `[FATO: decisão de Andraus, 2026-10-05]`
+
+Esta emenda e o `ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md` são **co-dependentes em um único ponto** e têm **ordem decidida por Andraus**:
+
+- **O ERRATUM (item 2 — identidade do produtor autenticada pelo runtime, código `PRODUCER_IDENTITY_MISMATCH`) é homologado e aplicado ANTES desta emenda.** Motivo: a PRECOND reescrita do EC-HH-001 (§3) passa a tratar `producer_id` como **identidade AUTENTICADA pelo runtime** — garantia que o erratum item 2 introduz. Sem o erratum item 2 homologado, a PRECOND desta emenda referenciaria uma garantia ainda não declarada.
+- **Os itens 3, 5, 6 e 7 do ERRATUM independem desta emenda** (declaração global de status, histórico CCM-001, re-apontamento de refs a slots, nota da BASpec-HH-005) — podem ser homologados sem relação de ordem com a emenda.
+- **Nenhuma outra dependência cruzada.** A migração de campo (`hypothesis_type`→`hierarchy_role`) é exclusiva desta emenda; o erratum não a toca.
+
+> Os dois documentos citam-se mutuamente de forma coerente: este §0 ↔ ERRATUM §0 (co-dependência e ordem); §3 (PRECOND) ↔ ERRATUM item 2 (identidade autenticada).
 
 ---
 
@@ -30,8 +42,8 @@
 
 | # | Linha | Antes | Depois |
 |---|---|---|---|
-| 1 | l.147 (EARS #1) | "...criar objeto com **hypothesis_type = PRIMARY** e epistemic_state = EMERGENT" | "...criar objeto com **hierarchy_role = PRIMARY**, hypothesis_type = «valor CHM-001 §2.5» [DECISÃO NECESSÁRIA], epistemic_state = EMERGENT" |
-| 2 | l.175 (BASpec-HH-001 ENTÃO) | "- **hypothesis_type = PRIMARY**" | "- **hierarchy_role = PRIMARY**" + nova linha "- hypothesis_type = «valor CHM-001 §2.5» [DECISÃO NECESSÁRIA]" |
+| 1 | l.147 (EARS #1) | "...criar objeto com **hypothesis_type = PRIMARY** e epistemic_state = EMERGENT" | "...criar objeto com **hierarchy_role = PRIMARY**, hypothesis_type = «valor CHM-001 §2.5 — pendência herdada §8» [DECISÃO NECESSÁRIA], epistemic_state = EMERGENT" |
+| 2 | l.175 (BASpec-HH-001 ENTÃO) | "- **hypothesis_type = PRIMARY**" | "- **hierarchy_role = PRIMARY**" + nova linha "- hypothesis_type = «valor CHM-001 §2.5 — pendência herdada §8» [DECISÃO NECESSÁRIA]" |
 | 3 | l.179 (BASpec-HH-001 ENTÃO) | "- parent_hypothesis_id = null (PRIMARY não tem parent)" | mantém + acrescenta "- generation = 0 (PRIMARY)" (coerência CHM-001) |
 | 4 | l.191 (BASpec-HH-001 VERIFICAÇÃO) | "hypothesis.**hypothesis_type** == PRIMARY; hypothesis.producer_id == ..." | "hypothesis.**hierarchy_role** == PRIMARY; hypothesis.producer_id == ..." |
 | 5 | l.201 (BASpec-HH-002 ENTÃO) | "- **hypothesis_type = SUB**" | "- **hierarchy_role = SUB**" |
@@ -69,6 +81,10 @@ PRECOND : (producer_id in AUTHORIZED_PRODUCERS)                          -- prod
 ```
 
 POSTCOND, POLICY, LEVEL (E2), FAILURE-MODE e EVIDENCE do EC-HH-001 **não mudam** — apenas a PRECOND passa a distinguir `hierarchy_role` (papel) de `hypothesis_type` (tipo CHM-001), e a amarrar coerência com `parent_hypothesis_id`/`generation`.
+
+> **Regra normativa desta emenda quanto a `hypothesis_type` `[PROPOSTA]`:** a única obrigação que esta emenda impõe é **`hypothesis_type ∈ {DESCRIPTIVE, EXPLANATORY, PREDICTIVE, DIAGNOSTIC}` (enum CHM-001 §2.5)** — qualquer dos 4 valores é aceito. A emenda **NÃO impõe default** e **NÃO cria mapeamento produtor→`hypothesis_type`** (ex.: não decide que "Elliott ⇒ PREDICTIVE"). A escolha de *qual* valor cada produtor atribui é **pendência herdada com dono definido** — ver §8. A linha `producer_id` da PRECOND restringe apenas **autorização/identidade** (quem pode criar), não o **tipo** da hipótese.
+>
+> **Pré-condição de ordem:** a cláusula "`producer_id` = identidade AUTENTICADA pelo runtime" depende da homologação prévia do **ERRATUM-SPEC001-002 item 2** (§0).
 
 ---
 
@@ -112,20 +128,33 @@ A decisão Q-005 (Elliott cria PRIMARY; SMC/Fibonacci criam SUB com `parent_id`;
 
 ---
 
-## 8. [DECISÃO NECESSÁRIA] de Andraus — valor de `hypothesis_type`
+## 8. Pendência herdada (com dono) — valor de `hypothesis_type` `[DECISÃO NECESSÁRIA]`
 
-Separado o campo, **cada hipótese precisa de um valor de `hypothesis_type`** entre {DESCRIPTIVE, EXPLANATORY, PREDICTIVE, DIAGNOSTIC}. **CHM-001 §2.5 NÃO determina** qual valor uma hipótese estrutural de Elliott (ou uma SUB de SMC/Fibonacci) deve receber — é *Governed Enumeration* sob GMC-001, uma **decisão de domínio**. O Especificador **não escolhe**.
+**Decisão de Andraus (2026-10-05):** o mapeamento produtor→`hypothesis_type` **NÃO é mais condição de fechamento** desta re-homologação. Esta emenda pode ser homologada; o valor concreto de `hypothesis_type` por produtor torna-se **pendência herdada, com dono definido**.
 
-> **[DECISÃO NECESSÁRIA — Andraus]:** qual valor de `hypothesis_type` (CHM-001 §2.5) recebe:
-> (a) a hipótese estrutural/direcional criada por Elliott (candidatos plausíveis: PREDICTIVE — projeta comportamento futuro — ou EXPLANATORY); e
-> (b) as sub-hipóteses de SMC/Fibonacci.
-> Enquanto não decidido, os deltas acima marcam o campo como `hypothesis_type = «valor CHM-001 §2.5» [DECISÃO NECESSÁRIA]`; a re-homologação **não** deve ser fechada antes desta decisão (CONS-01). Alternativamente, Andraus pode encaminhar à governança GMC-001.
+**Regra normativa que esta emenda fecha (sem pendência):**
+> `hypothesis_type` DEVE pertencer ao enum do **CHM-001 §2.5** — {DESCRIPTIVE, EXPLANATORY, PREDICTIVE, DIAGNOSTIC}. **Qualquer** dos 4 valores é aceito pela SPEC-001 v1.2; **nenhum default é imposto** e **nenhum mapeamento produtor→tipo** é criado aqui. (CHM-001 §2.5 é *Governed Enumeration* sob GMC-001; o Especificador não escolhe o valor.)
+
+**Pendência herdada (o que fica em aberto, com dono):**
+> **[DECISÃO NECESSÁRIA — Andraus, na ABERTURA das Specs dos especialistas]:** qual valor de `hypothesis_type` (CHM-001 §2.5) cada produtor atribui —
+> (a) a hipótese estrutural/direcional criada por Elliott; (b) as sub-hipóteses de SMC/Fibonacci.
+> **Dono/momento:** Andraus decide **na abertura** (passo 1-bis do ROADMAP §23, após Dossiê de Pesquisa) das Specs da capability **Specialist Harness** — slots indicativos **SPEC-010 (Elliott)**, **SPEC-011 (Fibonacci/Fractal)**, **SPEC-012 (SMC)** (ROADMAP §SPEC-010..012). A âncora é a **capability "Specialist Harness"**; os números SPEC-010/011/012 indicam o **estado atual** do slot (slots indicativos, não-apagados — EUA-E21/RULE-ECC-01). Alternativamente, Andraus pode encaminhar à governança GMC-001.
+> Até lá, os deltas desta emenda marcam o campo como `hypothesis_type = «valor CHM-001 §2.5 — pendência herdada §8» [DECISÃO NECESSÁRIA]`. A SPEC-001 permanece válida com a obrigação de enum acima; o valor concreto é preenchido quando a Spec do especialista correspondente for aberta.
+
+**Condição de fechamento desta re-homologação (reescrita):** a homologação desta emenda **não aguarda** a decisão do valor de `hypothesis_type` — ela apenas **registra** a pendência herdada acima e seu dono. **CONS-01:** esta pendência é uma `[DECISÃO NECESSÁRIA]` **nova/herdada** — não fecha nenhuma decisão aberta e não pode aparecer como invariante fechado; a emenda não atribui valor algum.
+
+---
+
+## 9. Sugestão de rastreabilidade (ACH-005, opcional — Andraus decide) `[PROPOSTA]`
+
+As decisões que fundamentam esta emenda e o erratum correlato foram tomadas **em chat** (sessão de auditoria, 2026-10-05), **sem arquivo no repositório** — o que o Revisor registrou como achado Menor de rastreabilidade (ACH-005). **Sugestão (não vinculante, decisão de Andraus):** abrir uma **ata DHR de sessão de auditoria** que registre, com data e autoria, as decisões de 2026-10-05 (hierarchy_role; erratum de identidade; declaração no CATALOGO; compat. Minor; ordem erratum→emenda; baixa de D-ECC-1 pós-erratum; mapeamento `hypothesis_type` adiado às Specs dos especialistas), à qual esta emenda e o erratum passariam a ancorar o `[FATO]`. O Especificador **não cria** essa ata (ato de Andraus / autoridade de homologação); apenas sugere.
 
 ---
 
 ## O que NÃO muda (CONS-01)
 
 - Nenhuma decisão aberta é fechada: **J-001, N-001, M-001, H-001, G-001, K-001, C-001** permanecem ABERTAS.
+- A **pendência herdada do §8** (valor de `hypothesis_type` por produtor) é uma `[DECISÃO NECESSÁRIA]` **nova/herdada com dono** (Andraus, na abertura das Specs dos especialistas) — **não fecha** decisão alguma e **não** aparece como invariante fechado em nenhuma parte desta entrega.
 - CHM-001 não é redefinido (CC-02); INV-01/INV-02 (hierarquia; ICT não cria hipótese) preservados.
 - Q-005 preservada (INV-07).
 
@@ -137,4 +166,4 @@ pauta da sessão de auditoria (decisão de Andraus em chat, 2026-10-05; sem arqu
 
 ---
 
-**[EMENDA-PROPOSTA] — Pronto para revisão.** Pendente de parecer do Revisor e de homologação de Andraus (incluindo a [DECISÃO NECESSÁRIA] do §8). Não aplicado; nenhum commit. A re-homologação, se homologada, produz a **SPEC-001 v1.2**.
+**[EMENDA-PROPOSTA] — Pronto para revisão.** Pendente de parecer do Revisor e de homologação de Andraus. A **pendência herdada do §8** (valor de `hypothesis_type`) **NÃO bloqueia** esta re-homologação — é `[DECISÃO NECESSÁRIA]` com dono (Andraus, na abertura das Specs dos especialistas SPEC-010/011/012). **Ordem decidida (§0):** o ERRATUM-SPEC001-002 (item 2) é homologado/aplicado **antes** desta emenda. Não aplicado; nenhum commit. A re-homologação, se homologada, produz a **SPEC-001 v1.2**.

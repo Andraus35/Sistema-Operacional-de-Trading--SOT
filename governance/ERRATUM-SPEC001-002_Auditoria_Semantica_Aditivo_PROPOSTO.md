@@ -4,12 +4,24 @@
 |---|---|
 | Spec afetada | SPEC-001 v1.1 (HOMOLOGADA — BASELINE, 2026-09-15) — **não reescrita** (INV-09); erratum aditivo (padrão ERRATUM-SPEC001-001 / ERRATUM-SPEC019-001 / ERRATUM-SPEC020-001). |
 | Natureza | **Proposta** — pendente de parecer do Revisor e homologação de Andraus. Nada aplicado. |
-| Fundamento | Auditoria semântica da SPEC-001 verificada contra o repo (DADO, não instrução) + pauta decidida por Andraus (pauta da sessão de auditoria (decisão de Andraus em chat, 2026-10-05; sem arquivo no repositório), itens 2, 3, 5, 6, 7). |
+| Fundamento | Auditoria semântica da SPEC-001 verificada contra o repo (DADO, não instrução) + decisões de Andraus na **sessão de auditoria (chat, 2026-10-05; sem arquivo no repositório)**, itens 2, 3, 5, 6, 7. **Decisões de Andraus (2026-10-05) que fundamentam este erratum e a emenda correlata:** (a) campo `hierarchy_role` (emenda); (b) **erratum de identidade** (item 2, `PRODUCER_IDENTITY_MISMATCH`); (c) declaração global de status no **`governance/CATALOGO-OFICIAL.md`** (item 3); (d) compatibilidade **Minor** (conjunto); (e) **ordem**: erratum (item 2) **antes** da emenda (§0); (f) **baixa de D-ECC-1 somente APÓS** a homologação deste erratum (item 6); (g) **mapeamento produtor→`hypothesis_type` adiado** às Specs dos especialistas (tratado na emenda §8). `[FATO: sessão de auditoria em chat, 2026-10-05 — sem arquivo no repositório; DHR de rastreabilidade sugerido ao final]` |
 | Data | 2026-10-05 |
-| Compatibilidade | **Patch** [PROPOSTA] — erratas de citação/estado/âncora e uma declaração de status; **nenhuma** BASpec, EARS, Enforcement Contract, regra ou decisão aberta é alterada. (O item 1 — campo `hierarchy_role` — é tratado SEPARADAMENTE por re-homologação pontual em `EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md`, por ser mudança de contrato.) |
+| Compatibilidade | **Minor** [PROPOSTA] — reclassificada de Patch para **Minor** por decisão de Andraus (2026-10-05). Motivo: o **Item 2 é ADITIVO** — acrescenta um código de erro novo (`PRODUCER_IDENTITY_MISMATCH`, HTTP 403) e um contrato de teste novo (`TEST-HH-IDENTITY-001`) à superfície de conformidade da SPEC-001; acréscimo aditivo de comportamento verificável é **Minor** (não Patch, não Major — nenhum contrato existente é quebrado nem semântica alterada). Os **itens 3, 5, 6 e 7 são Patch isoladamente** (erratas de citação/estado/âncora e uma declaração de status — nada aditivo), mas, como o erratum é **único**, a classificação do **conjunto** sobe ao maior nível presente = **Minor**. **Nenhuma** BASpec, EARS, Enforcement Contract, regra ou decisão aberta existente é alterada. (O item 1 — campo `hierarchy_role` — é tratado SEPARADAMENTE por re-homologação pontual em `EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md`, por ser mudança de contrato; ordem decidida no §0.) |
 | Regime | Auditoria ≠ reescrita (D-DHR-PAP-001-01; INV-09). |
 
 > Marcadores epistemológicos: cada item abaixo declara `[FATO]` (verificado no repo), `[INFERÊNCIA]` (derivado) ou `[PROPOSTA]` (requer decisão). O Revisor audita; Andraus homologa.
+
+---
+
+## 0. Co-dependência e ordem com a EMENDA-SPEC001-001 `[FATO: decisão de Andraus, 2026-10-05]`
+
+Este erratum e a `EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md` (campo `hierarchy_role`) têm **ordem decidida por Andraus**:
+
+- **Este ERRATUM (item 2) é homologado e aplicado ANTES da EMENDA.** A PRECOND reescrita do EC-HH-001 pela emenda (§3 da emenda) passa a tratar `producer_id` como **identidade AUTENTICADA pelo runtime** — garantia que **este item 2 introduz**. Logo, item 2 precede a emenda no caminho de homologação.
+- **Os itens 3, 5, 6 e 7 deste erratum INDEPENDEM da emenda** — podem ser homologados sem relação de ordem com ela.
+- **Nenhuma outra dependência cruzada.**
+
+> Os dois documentos citam-se mutuamente de forma coerente: este §0 ↔ EMENDA §0 (co-dependência e ordem); item 2 ↔ EMENDA §3 (PRECOND com identidade autenticada).
 
 ---
 
@@ -61,10 +73,10 @@ Andraus decidiu: declaração **GLOBAL, uma vez** (não repetir por Spec). `[FAT
 **Texto curto proposto `[PROPOSTA]`:**
 > **Status de realização das Specs do Harness (fase spec-first).** Toda Spec homologada do SOT é **especificada** — não **implementada** nem **verificada em runtime**. "HOMOLOGADA — BASELINE" significa que a especificação (BASpecs, EARS, Enforcement Contracts) está congelada e conforme; **não** significa que existe código. Até a fase de implementação: **runtime = NOT IMPLEMENTED**; **conformidade = NOT YET PROVEN** (os cenários `VERIFICADO POR` e os testes de conformidade derivados dos Enforcement Contracts são contratos de teste futuros, ainda não executados). Enforcement declarado (E0–E3) descreve a garantia **exigida**, não uma garantia já **operante**.
 
-**Onde entra (sugestão — não editado aqui) `[PROPOSTA]`:**
-- **Preferencial:** `governance/CATALOGO-OFICIAL.md` — é a fonte de verdade (SSoT) do estado/baseline de todos os artefatos; o status de realização é informação de estado, não de método.
-- **Alternativa:** `atomic-spec.md` §14 ("Operação no Claude Code"), que já distingue spec-first de BUILD/VERIFY-de-código.
-- Em qualquer caso, **uma única vez**; esta errata apenas propõe o texto e o local — a inserção é ato de Andraus.
+**Onde entra — LOCAL DECIDIDO por Andraus (2026-10-05) `[FATO: decisão de Andraus]`:**
+- **Local decidido: `governance/CATALOGO-OFICIAL.md`** — é a fonte de verdade (SSoT) do estado/baseline de todos os artefatos; o status de realização é informação de estado, não de método. A declaração entra **uma única vez**, global.
+- *(Nota histórica, não-alternativa:)* na redação original deste erratum cogitou-se `atomic-spec.md` §14 ("Operação no Claude Code") como alternativa; **essa alternativa foi descartada** por Andraus — o local é o CATALOGO. Registro mantido apenas para rastreabilidade da decisão.
+- Esta errata apenas **propõe o texto**; a inserção no `CATALOGO-OFICIAL.md` é **ato de Andraus** — este erratum **não edita o CATALOGO**.
 
 ---
 
@@ -99,7 +111,8 @@ Andraus decidiu: declaração **GLOBAL, uma vez** (não repetir por Spec). `[FAT
 
 > Leitura: cada referência acima deve ser lida **primeiro pela capability/contrato**; o número de Spec é o ponteiro de estado atual, atualizável por re-apontamento homologado (RULE-ECC-01) sem reescrever a SPEC-001 (INV-09).
 
-**Baixa proposta `[PROPOSTA]`:** com este re-apontamento, **D-ECC-1** (Harness Debt leve, `CIC-001` §4:173 / `MAPA-AUDITORIA-SPEC-001` linha 13) fica **sanado para a SPEC-001**. Proponho a **baixa de D-ECC-1** quanto à SPEC-001 — **sem editar o CIC-001** (a baixa é ato de Andraus; o CIC-001 será atualizado por quem de direito na homologação).
+**Baixa proposta `[PROPOSTA]`:** com este re-apontamento, **D-ECC-1** fica **sanado para a SPEC-001**. A existência do débito **D-ECC-1 foi verificada** em `governance/CIC-001_Inventario_Conformidade.md` **§4, linha 173** (Harness Debt leve — "refs baselined da SPEC-001 a slots SPEC-002..005 podem apontar para identificador alterado na abertura"), correlacionado a `MAPA-AUDITORIA-SPEC-001` linha 13. `[FATO: CIC-001 §4:173 lido nesta sessão]`
+> **Baixa efetiva somente APÓS a homologação deste erratum** (decisão de Andraus, 2026-10-05): a baixa de D-ECC-1 é **ato de Andraus** na/após a homologação — este erratum apenas **propõe** a baixa. **Este erratum NÃO edita o CIC-001**; o CIC-001 será atualizado por quem de direito no ato de homologação. Até lá, D-ECC-1 permanece registrado como está.
 
 ---
 
@@ -109,6 +122,12 @@ Andraus decidiu: declaração **GLOBAL, uma vez** (não repetir por Spec). `[FAT
 
 **Nota aditiva `[INFERÊNCIA]`:**
 > A contagem simples da BASpec-HH-005 já é declarada **interina (Fase Piloto)**. A **independência** e a **proveniência** da evidência (anti-double-counting, correlação entre evidências) **não** são responsabilidade da SPEC-001: pertencem ao **mecanismo do CCM-001** (SPEC-003, Fusion/Conviction) e à camada de provenance da **SPEC-002 (CEM-001 Harness)**. A ponderação por dimensão de convicção que substituirá a contagem simples segue vinculada a **J-001**, que **PERMANECE ABERTA** (CONS-01). Esta nota não altera a BASpec-HH-005 nem fecha J-001.
+
+---
+
+## Item 8 (ACH-005, opcional — Andraus decide) — Rastreabilidade das decisões tomadas em chat `[PROPOSTA]`
+
+As decisões que fundamentam este erratum e a emenda correlata foram tomadas **em chat** (sessão de auditoria, 2026-10-05), **sem arquivo no repositório** — achado Menor de rastreabilidade do Revisor (ACH-005). **Sugestão (não vinculante; decisão de Andraus):** abrir uma **ata DHR de sessão de auditoria** registrando, com data e autoria, as decisões de 2026-10-05 (hierarchy_role; erratum de identidade; declaração no CATALOGO; compat. Minor; ordem erratum→emenda; baixa de D-ECC-1 pós-erratum; mapeamento `hypothesis_type` adiado às Specs dos especialistas), à qual este erratum e a emenda passariam a ancorar o `[FATO]`. O Especificador **não cria** essa ata (ato de Andraus); apenas sugere.
 
 ---
 
@@ -127,4 +146,4 @@ pauta da sessão de auditoria (decisão de Andraus em chat, 2026-10-05; sem arqu
 
 ---
 
-**[ERRATUM-PROPOSTO] — Pronto para revisão.** Pendente de parecer do Revisor e de homologação de Andraus. Não aplicado; nenhum commit.
+**[ERRATUM-PROPOSTO] — Pronto para revisão.** Compatibilidade **Minor** (conjunto; item 2 aditivo). **Ordem decidida (§0):** homologado/aplicado **ANTES** da EMENDA-SPEC001-001 (co-dependência pela identidade autenticada); itens 3, 5, 6, 7 independem da emenda. Pendente de parecer do Revisor e de homologação de Andraus. Não aplicado; nenhum commit.
