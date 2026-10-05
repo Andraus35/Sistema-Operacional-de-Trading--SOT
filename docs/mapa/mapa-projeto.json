@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "7f91e673e3490be2a7b570a0cb4cc11c97ad816258d89b9ae06d93094d6ad18f",
+  "digest": "23329d5951ca1ba750f9b4518e5ff4a43e0a1f274723aa731a91e52f8dfabd7c",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -133,13 +133,6 @@
    "out": 0
   },
   {
-   "path": ".pytest_cache/README.md",
-   "area": ".pytest_cache",
-   "title": "pytest cache directory #",
-   "in": 1,
-   "out": 0
-  },
-  {
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
@@ -157,7 +150,7 @@
    "path": "README.md",
    "area": "raiz",
    "title": "SOT-Harness",
-   "in": 0,
+   "in": 1,
    "out": 9
   },
   {
@@ -171,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 136,
+   "in": 138,
    "out": 63
   },
   {
@@ -185,7 +178,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 84,
+   "in": 85,
    "out": 33
   },
   {
@@ -234,7 +227,7 @@
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 80,
+   "in": 82,
    "out": 6
   },
   {
@@ -248,14 +241,14 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 90,
+   "in": 92,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 77,
+   "in": 79,
    "out": 0
   },
   {
@@ -269,7 +262,7 @@
    "path": "canon/GMC-001-governance-canonical-models.md",
    "area": "canon",
    "title": "GMC-001 — Canonical Models Governance Specification",
-   "in": 50,
+   "in": 51,
    "out": 0
   },
   {
@@ -283,7 +276,7 @@
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 35,
+   "in": 36,
    "out": 3
   },
   {
@@ -444,14 +437,14 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 64,
-   "out": 154
+   "in": 67,
+   "out": 153
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
    "area": "governance",
    "title": "CIC-001 --- Inventario de Conformidade de Principios do SOT",
-   "in": 28,
+   "in": 30,
    "out": 26
   },
   {
@@ -495,6 +488,13 @@
    "title": "DHR-ARQ-002 — Ata de Unificação: Manager Agent absorve o Synthesis Agent (propagação do ADR-MANAGER-001 §2.1)",
    "in": 18,
    "out": 17
+  },
+  {
+   "path": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "area": "governance",
+   "title": "DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (decisões de chat) [ATA-PROPOSTA]",
+   "in": 0,
+   "out": 6
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -605,7 +605,7 @@
    "path": "governance/DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md",
    "area": "governance",
    "title": "DHR-ERRATA-001 — Ata — Errata aditivas (SPEC-001 âncora SAS-001; SPEC-005 estado do BL-008) e encaminhamento do BL-003",
-   "in": 4,
+   "in": 5,
    "out": 11
   },
   {
@@ -738,7 +738,7 @@
    "path": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
    "area": "governance",
    "title": "DHR-EUA-E21 — Ata de Homologação: Especificação Emergente (ROADMAP como direção e restrições; Specs definidas na abertura após Dossiê de Pesquisa web)",
-   "in": 33,
+   "in": 36,
    "out": 16
   },
   {
@@ -823,7 +823,7 @@
    "area": "governance",
    "title": "DHR-PAP-001-A — Adendo de Re-Homologação do PE-PR-PAP-001 v1.1",
    "in": 14,
-   "out": 6
+   "out": 8
   },
   {
    "path": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
@@ -885,7 +885,7 @@
    "path": "governance/DHR-SPEC002-001_Ata_Homologacao_SPEC-002.md",
    "area": "governance",
    "title": "DHR-SPEC002-001 — Ata de Homologação — SPEC-002 v1.0 (Evidence & Evidence Provenance Harness)",
-   "in": 10,
+   "in": 11,
    "out": 10
   },
   {
@@ -899,7 +899,7 @@
    "path": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
    "area": "governance",
    "title": "DHR-SPEC003-001 — Ata de Homologação — SPEC-003 v1.5 (Conviction Vector, Evidence Fusion Engine & Conviction Engine — redige o CCM-001)",
-   "in": 19,
+   "in": 20,
    "out": 20
   },
   {
@@ -920,7 +920,7 @@
    "path": "governance/DHR-SPEC004-003_Ata_Homologacao_Emenda_v1.2_SPEC-004.md",
    "area": "governance",
    "title": "DHR-SPEC004-003 — Ata de Homologação — Emenda v1.2 da SPEC-004 (Cognitive Blackboard Protocol) — BASELINE v1.2",
-   "in": 10,
+   "in": 11,
    "out": 10
   },
   {
@@ -934,14 +934,14 @@
    "path": "governance/DHR-SPEC005-002_Ata_Homologacao_SPEC-005.md",
    "area": "governance",
    "title": "DHR-SPEC005-002 — Ata de Homologação — SPEC-005 (Cognitive Event Bus) v1.0 — BASELINE",
-   "in": 9,
+   "in": 10,
    "out": 11
   },
   {
    "path": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
    "area": "governance",
    "title": "DHR-SPEC019-001 — Ata de Homologação — SPEC-019 v1.0 (Harness Governance & Evolution)",
-   "in": 15,
+   "in": 16,
    "out": 6
   },
   {
@@ -1022,11 +1022,25 @@
    "out": 8
   },
   {
+   "path": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "area": "governance",
+   "title": "[EMENDA-PROPOSTA] EMENDA-SPEC001-001 — Re-homologação pontual: campo `hierarchy_role` (separado de `hypothesis_type`)",
+   "in": 1,
+   "out": 14
+  },
+  {
    "path": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
    "area": "governance",
    "title": "ERRATUM-SPEC001-001 — Âncora de fonte: SAS-001 §6.7 → §6.10 (metadados de transporte) — erratum ADITIVO",
-   "in": 2,
+   "in": 3,
    "out": 5
+  },
+  {
+   "path": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "area": "governance",
+   "title": "[ERRATUM-PROPOSTO] ERRATUM-SPEC001-002 — Erratum ADITIVO único (auditoria semântica SPEC-001: itens 2, 3, 5, 6, 7)",
+   "in": 1,
+   "out": 20
   },
   {
    "path": "governance/ERRATUM-SPEC005-001_Estado_BL-008.md",
@@ -1235,14 +1249,14 @@
    "path": "governance/MAPA-AUDITORIA-SPEC-001.md",
    "area": "governance",
    "title": "Mapa de Auditoria da SPEC-001 (BL-008) — versão canônica completa (14 linhas)",
-   "in": 7,
+   "in": 8,
    "out": 32
   },
   {
    "path": "governance/MAPA-AUDITORIA-SPEC-001_LINHAS-ADICIONAIS_RASCUNHO.md",
    "area": "governance",
    "title": "Mapa de Auditoria da SPEC-001 (BL-008) — linhas adicionais EUA-E21 e EUA-E22 (RASCUNHO)",
-   "in": 7,
+   "in": 8,
    "out": 16
   },
   {
@@ -1257,7 +1271,7 @@
    "area": "governance",
    "title": "PE-PR-PAP-001 — Prompts de Invocação do Especificador e do Revisor para o PAP-001",
    "in": 9,
-   "out": 12
+   "out": 13
   },
   {
    "path": "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
@@ -1277,7 +1291,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 198,
+   "in": 201,
    "out": 35
   },
   {
@@ -1529,14 +1543,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 23,
+   "in": 25,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 103,
+   "in": 106,
    "out": 6
   },
   {
@@ -1564,7 +1578,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 117,
+   "in": 119,
    "out": 17
   },
   {
@@ -1585,7 +1599,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 77,
+   "in": 79,
    "out": 24
   },
   {
@@ -1620,7 +1634,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 65,
+   "in": 68,
    "out": 21
   },
   {
@@ -1648,7 +1662,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 31,
+   "in": 33,
    "out": 22
   },
   {
@@ -1669,7 +1683,7 @@
    "path": "specs/features/SPEC-019/plan.md",
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
-   "in": 58,
+   "in": 59,
    "out": 18
   },
   {
@@ -1993,6 +2007,11 @@
    "cited_by": 18
   },
   {
+   "id": "DHR-AUDIT-SPEC001-001",
+   "defined_in": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "cited_by": 0
+  },
+  {
    "id": "DHR-BL008-001",
    "defined_in": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "cited_by": 9
@@ -2070,7 +2089,7 @@
   {
    "id": "DHR-ERRATA-001",
    "defined_in": "governance/DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "DHR-EUA-E04",
@@ -2224,18 +2243,18 @@
   },
   {
    "id": "DHR-PAP-001",
-   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "cited_by": 7
+   "defined_in": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "cited_by": 8
   },
   {
    "id": "DHR-PAP-001-A",
-   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "cited_by": 4
   },
   {
    "id": "DHR-PAP-001-B",
-   "defined_in": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "cited_by": 3
+   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "cited_by": 4
   },
   {
    "id": "DHR-PAP-001-C",
@@ -2270,7 +2289,7 @@
   {
    "id": "DHR-SPEC002-001",
    "defined_in": "governance/DHR-SPEC002-001_Ata_Homologacao_SPEC-002.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "DHR-SPEC002-VERBATIM-001",
@@ -2280,7 +2299,7 @@
   {
    "id": "DHR-SPEC003-001",
    "defined_in": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
-   "cited_by": 19
+   "cited_by": 20
   },
   {
    "id": "DHR-SPEC004-001",
@@ -2295,7 +2314,7 @@
   {
    "id": "DHR-SPEC004-003",
    "defined_in": "governance/DHR-SPEC004-003_Ata_Homologacao_Emenda_v1.2_SPEC-004.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "DHR-SPEC005-001",
@@ -2305,7 +2324,12 @@
   {
    "id": "DHR-SPEC005-002",
    "defined_in": "governance/DHR-SPEC005-002_Ata_Homologacao_SPEC-005.md",
-   "cited_by": 9
+   "cited_by": 10
+  },
+  {
+   "id": "DHR-SPEC019",
+   "defined_in": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+   "cited_by": 1
   },
   {
    "id": "DHR-SPEC019-001",
@@ -2475,7 +2499,7 @@
   {
    "id": "EUA-E21",
    "defined_in": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
-   "cited_by": 32
+   "cited_by": 35
   },
   {
    "id": "EUA-E22",
@@ -2490,12 +2514,12 @@
   {
    "id": "INV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 37
+   "cited_by": 38
   },
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 25
+   "cited_by": 26
   },
   {
    "id": "INV-03",
@@ -2520,7 +2544,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 132
+   "cited_by": 134
   },
   {
    "id": "INV-08",
@@ -2530,7 +2554,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 83
+   "cited_by": 85
   },
   {
    "id": "INV-10",
@@ -2710,7 +2734,7 @@
   {
    "id": "RULE-CBP-014",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 6
+   "cited_by": 8
   },
   {
    "id": "RULE-CEB",
@@ -2875,7 +2899,7 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 70
+   "cited_by": 72
   },
   {
    "id": "RULE-ECC-02",
@@ -3128,9 +3152,14 @@
    "cited_by": 8
   },
   {
-   "id": "RULE-HH-001",
+   "id": "RULE-HH",
    "defined_in": "specs/features/SPEC-001/plan.md",
    "cited_by": 1
+  },
+  {
+   "id": "RULE-HH-001",
+   "defined_in": "specs/features/SPEC-001/plan.md",
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-002",
@@ -3605,27 +3634,27 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 95
+   "cited_by": 98
   },
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 114
+   "cited_by": 116
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 74
+   "cited_by": 76
   },
   {
    "id": "SPEC-004",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 65
+   "cited_by": 67
   },
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 31
+   "cited_by": 33
   },
   {
    "id": "SPEC-006",
@@ -3650,17 +3679,17 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 27
+   "cited_by": 29
   },
   {
    "id": "SPEC-011",
    "defined_in": "ROADMAP.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "SPEC-012",
    "defined_in": "ROADMAP.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "SPEC-013",
@@ -3695,7 +3724,7 @@
   {
    "id": "SPEC-019",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 58
+   "cited_by": 59
   },
   {
    "id": "SPEC-020",
@@ -6856,7 +6885,7 @@
   },
   {
    "from": "docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -7981,17 +8010,12 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -8466,12 +8490,12 @@
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
-   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -8975,6 +8999,36 @@
    "type": "path"
   },
   {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "to": "atomic-spec.md",
    "type": "path"
@@ -9191,7 +9245,7 @@
   },
   {
    "from": "governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -11331,6 +11385,16 @@
   },
   {
    "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -11346,7 +11410,7 @@
   },
   {
    "from": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -11401,7 +11465,7 @@
   },
   {
    "from": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -12980,6 +13044,81 @@
    "type": "id"
   },
   {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "canon/CHM-001-canonical-hypothesis-model.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "specs/features/SPEC-019/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
    "to": "canon/SAS-001-structural-agent-spec.md",
    "type": "path"
@@ -13018,6 +13157,121 @@
    "from": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
    "to": "specs/features/SPEC-005/plan.md",
    "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "canon/CCM-001-canonical-conviction-model.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/CIC-001_Inventario_Conformidade.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/DHR-SPEC002-001_Ata_Homologacao_SPEC-002.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/DHR-SPEC004-003_Ata_Homologacao_Emenda_v1.2_SPEC-004.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/DHR-SPEC005-002_Ata_Homologacao_SPEC-005.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/MAPA-AUDITORIA-SPEC-001.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/ERRATUM-SPEC005-001_Estado_BL-008.md",
@@ -13831,7 +14085,7 @@
   },
   {
    "from": "governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -14721,7 +14975,7 @@
   },
   {
    "from": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -15331,12 +15585,12 @@
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -15451,7 +15705,12 @@
   },
   {
    "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
-   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
+   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
    "type": "id"
   },
   {
@@ -16301,7 +16560,7 @@
   },
   {
    "from": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
-   "to": ".pytest_cache/README.md",
+   "to": "README.md",
    "type": "path"
   },
   {
