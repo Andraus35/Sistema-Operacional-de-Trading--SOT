@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "a55f1691e2e60d6a8923dbf9e7160af041f200cbdf9eb48ddadc093b84a993f6",
+  "digest": "af57b167913ddbb5505619a329b240a1ba87d28d58aeb1fb5a63e757b028f5b3",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 45,
+   "in": 47,
    "out": 30
   },
   {
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 144,
+   "in": 147,
    "out": 63
   },
   {
@@ -495,6 +495,13 @@
    "title": "DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (decisões de chat)",
    "in": 6,
    "out": 7
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
+   "in": 1,
+   "out": 5
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -1291,7 +1298,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 210,
+   "in": 211,
    "out": 35
   },
   {
@@ -1319,8 +1326,8 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
    "area": "governance",
    "title": "DIRETIVAS AO AUDITOR EXTERNO — instruções e postura (versionadas)  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 5,
-   "out": 4
+   "in": 6,
+   "out": 7
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/DOSSIE-PESQUISA.md",
@@ -1355,7 +1362,7 @@
    "area": "governance",
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
    "in": 3,
-   "out": 5
+   "out": 6
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -1620,7 +1627,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 110,
+   "in": 111,
    "out": 9
   },
   {
@@ -2080,6 +2087,11 @@
    "id": "DHR-AUDIT-SPEC001-001",
    "defined_in": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "cited_by": 6
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-001",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "cited_by": 1
   },
   {
    "id": "DHR-BL008-001",
@@ -3709,7 +3721,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 99
+   "cited_by": 100
   },
   {
    "id": "SPEC-002",
@@ -3734,7 +3746,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 36
+   "cited_by": 42
   },
   {
    "id": "SPEC-007",
@@ -3754,7 +3766,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 30
+   "cited_by": 31
   },
   {
    "id": "SPEC-011",
@@ -9122,6 +9134,31 @@
    "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -16171,6 +16208,11 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
    "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "ROADMAP.md",
    "type": "path"
   },
   {
@@ -16212,6 +16254,21 @@
    "from": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
@@ -16272,6 +16329,11 @@
    "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
    "to": "GLOSSARIO.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
@@ -16357,6 +16419,11 @@
    "from": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "to": "AGENTS.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
@@ -16507,6 +16574,11 @@
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "to": "AGENTS.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
+   "to": "ROADMAP.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",

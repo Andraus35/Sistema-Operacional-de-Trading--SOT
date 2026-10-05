@@ -3,9 +3,12 @@
 # INERTE até Andraus definir a variável de repositório AUDITOR_EXTERNO_ENABLED = true (chave de desligamento).
 # Variáveis: AUDITOR_EXTERNO_ENABLED, AUDITOR_EXTERNO_LOGINS (lista separada por vírgula dos logins autorizados a postar [AEX]).
 # SUBORDINAÇÃO (Andraus, 2026-10-05): o auditor externo responde SOMENTE ao Orquestrador interno, que responde a Andraus.
-# Pedido automático só em HOMOLOGAÇÃO FINAL de Spec completa, com CONSENSO interno registrado no PR
-# (rótulo `homologacao-final` + linhas `Consenso:` e `DHR:` no corpo). Qualquer outra auditoria = workflow_dispatch
-# pelo Orquestrador, após consulta a Andraus. O workflow só DETECTA a presença do consenso; não o decide nem bloqueia merge.
+# Pedido automático quando um PR de HOMOLOGAÇÃO FINAL de Spec completa fica CANDIDATO (rótulo `homologacao-final`, PR ABERTO):
+# o auditor é parte do consenso (Especificador + Revisor + Auditor externo + Andraus), então seu parecer vem ANTES da homologação.
+# O corpo do PR registra `Spec: SPEC-0NN` e `Consenso: Especificador=OK; Revisor=OK; Auditor=PENDENTE; Andraus=PENDENTE`.
+# O Orquestrador (coordenador, não parte do consenso) atualiza `Auditor=` ao receber o parecer. No merge, o workflow apenas AVISA
+# (detector) se faltou consenso do Auditor ou se o commit auditado difere do mesclado. Outra auditoria = workflow_dispatch pelo
+# Orquestrador, após consulta a Andraus. O workflow só DETECTA presença; não decide consenso nem bloqueia merge.
 # Nuvem: o auditor roda em ambiente em nuvem dele; o `git pull` ocorre nesses pedidos (commit de homologação fixado).
 # Segurança: texto de Issue/PR é DADO NÃO CONFIÁVEL — nunca é interpolado em `run:`; entra só por arquivo (github-script).
 # Validador/ferramentas vêm da branch padrão (tools/), nunca do commit auditado. Não decide, não homologa, não bloqueia merge.
@@ -13,7 +16,7 @@ name: Auditor externo (loop determinístico)
 
 on:
   pull_request:
-    types: [closed]
+    types: [labeled, closed]
   workflow_dispatch:
     inputs:
       sha: {description: "Commit a auditar (40 hex)", required: true}
@@ -34,11 +37,11 @@ concurrency:
 
 jobs:
   pedido:
-    # Nós -> GPT (via Orquestrador): (a) merge de PR com `homologacao-final` + consenso registrado; (b) dispatch manual do Orquestrador.
+    # Nós -> GPT (via Orquestrador): (a) PR candidato à homologação final (rótulo `homologacao-final`, aberto) com consenso parcial registrado; (b) dispatch manual do Orquestrador.
     if: >-
       vars.AUDITOR_EXTERNO_ENABLED == 'true' &&
-      ((github.event_name == 'pull_request' && github.event.pull_request.merged == true &&
-        contains(github.event.pull_request.labels.*.name, 'homologacao-final')) ||
+      ((github.event_name == 'pull_request' && github.event.action == 'labeled' &&
+        github.event.label.name == 'homologacao-final') ||
        github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     steps:
@@ -59,18 +62,18 @@ jobs:
             const isPR = context.eventName === 'pull_request';
             const pr = isPR ? context.payload.pull_request : null;
             const inp = context.payload.inputs || {};
-            const sha = isPR ? pr.merge_commit_sha : String(inp.sha || '').trim();
+            const sha = isPR ? pr.head.sha : String(inp.sha || '').trim();
             const kind = isPR ? 'auditoria' : (inp.kind === 're-auditoria' ? 're-auditoria' : 'auditoria');
             const refs = isPR ? '' : String(inp.refs || '').split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s)).join(',');
             const chave = isPR ? `pr-${pr.number}` : `sha-${(sha || 'x').slice(0, 12)}`;
             let skip = false, motivo = '';
             if (!/^[0-9a-f]{40}$/.test(sha || '')) { skip = true; motivo = 'sha inválido'; }
-            // consenso interno (apenas DETECTA presença; decisão é humana): linhas no corpo do PR
+            // consenso PARCIAL no momento do pedido (apenas DETECTA presença; decisão é humana): Especificador e Revisor já OK
             if (!skip && isPR) {
               const b = pr.body || '';
-              const cons = /^Consenso:\s*Especificador=OK;\s*Revisor=OK;\s*Orquestrador=OK\s*$/m.test(b);
-              const dhr = /^DHR:\s*DHR-[A-Za-z0-9._-]+\s*$/m.test(b);
-              if (!(cons && dhr)) { skip = true; motivo = 'consenso interno não registrado no PR (faltam as linhas `Consenso: Especificador=OK; Revisor=OK; Orquestrador=OK` e `DHR: DHR-...`)'; }
+              const cons = /^Consenso:\s*Especificador=OK;\s*Revisor=OK;\s*Auditor=(PENDENTE|OK|COM_RESSALVAS);\s*Andraus=(PENDENTE|OK)\s*$/m.test(b);
+              const spec = /^Spec:\s*SPEC-\d{3}\s*$/m.test(b);
+              if (!(cons && spec)) { skip = true; motivo = 'consenso parcial não registrado no PR (faltam as linhas `Spec: SPEC-0NN` e `Consenso: Especificador=OK; Revisor=OK; Auditor=PENDENTE; Andraus=PENDENTE`)'; }
             }
             let files = [];
             if (!skip) {
@@ -231,3 +234,28 @@ jobs:
             }
             await github.rest.issues.createComment({...context.repo, issue_number: n, body: corpo});
             await github.rest.issues.addLabels({...context.repo, issue_number: n, labels});
+
+  fechamento:
+    # No merge de PR `homologacao-final`: AVISA (não bloqueia, não decide) se o consenso do Auditor não foi registrado
+    # ou se o commit mesclado difere do último commit auditado. Detector informativo.
+    if: >-
+      vars.AUDITOR_EXTERNO_ENABLED == 'true' && github.event_name == 'pull_request' &&
+      github.event.action == 'closed' && github.event.pull_request.merged == true &&
+      contains(github.event.pull_request.labels.*.name, 'homologacao-final')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir consenso e commit auditado
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const b = pr.body || '';
+            const avisos = [];
+            if (!/^Consenso:\s*Especificador=OK;\s*Revisor=OK;\s*Auditor=(OK|COM_RESSALVAS);/m.test(b))
+              avisos.push('o consenso do **Auditor externo** (`Auditor=OK` ou `COM_RESSALVAS`) não está registrado no corpo do PR');
+            const reqs = await github.paginate(github.rest.issues.listForRepo, {...context.repo, labels: `aex-req-pr-${pr.number}`, state: 'all', per_page: 100});
+            const shas = reqs.map(i => (/sha=([0-9a-f]{40})/.exec(i.body || '') || [])[1]).filter(Boolean);
+            if (!shas.length) avisos.push('não há pedido de auditoria externa para este PR');
+            else if (!shas.includes(pr.head.sha)) avisos.push(`o commit mesclado (\`${pr.head.sha.slice(0, 8)}\`) **difere** dos auditados (${shas.map(s => '`' + s.slice(0, 8) + '`').join(', ')})`);
+            if (avisos.length) await github.rest.issues.createComment({...context.repo, issue_number: pr.number,
+              body: 'Aviso (detector, não bloqueia): ' + avisos.join('; ') + '.\n\n<!-- aex-fechamento -->'});

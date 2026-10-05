@@ -5,7 +5,7 @@ Leia também `../BRIEFING-GPT_PROMPT.md` e `../PROTOCOLO-AUDITOR-EXTERNO_PROPOST
 
 ## Procedimento (execute na ordem; falha = PARE e reporte, nunca contorne)
 0. **Ambiente em nuvem (efêmero):** `git`, `python3 ≥ 3.10`, `node` + `npm`. Token em `SOT_AUDITOR_TOKEN`, vindo do gerenciador de segredos do ambiente (*Contents: Read* + *Issues: Read/Write*, só este repositório). Nunca em argumento, arquivo ou log. Nada local persiste: cada auditoria recomeça do pedido.
-0-bis. **Só atue com pedido.** Rode `python3 kit/poll_requests.py`: sem `[AEX-REQ]` pendente, **não audite nem sincronize**. O pedido nasce na **homologação final de Spec completa com consenso interno** (ou por solicitação do Orquestrador após consulta a Andraus). Leia a diretiva **vigente** e registre `directive_version` em todo achado.
+0-bis. **Só atue com pedido.** Rode `python3 kit/poll_requests.py`: sem `[AEX-REQ]` pendente, **não audite nem sincronize**. O pedido nasce quando um PR de **homologação final de Spec completa** (consenso: **Especificador + Revisor + Auditor externo + Andraus**; o Orquestrador coordena e não é parte do consenso) fica **candidato** (ou por solicitação do Orquestrador após consulta a Andraus). Você integra o consenso de forma consultiva (veredito só ao Orquestrador). Leia a diretiva **vigente** e registre `directive_version` em todo achado.
 1. **Instalar / `git pull`:** `SOT_AUDITOR_TOKEN=… bash kit/setup_auditor.sh <SHA do pedido>` (é aqui, e só aqui, que ocorre o clone/pull; fixe o SHA do pedido). O script: verifica que a credencial **não** tem push/admin (`verify_access.py`, fail-closed), clona em `~/sot-audit/repo`, desabilita push local, desativa hooks, fixa o commit (detached), instala dependências com `--ignore-scripts` e roda `selftest.py`.
 2. **Calibração:** `selftest.py` deve imprimir `CALIBRAÇÃO APROVADA`. Se reprovar, **não audite**.
 3. **Fixar o baseline:** `git -C ~/sot-audit/repo rev-parse HEAD` — todo achado carrega esse SHA.
@@ -14,7 +14,7 @@ Leia também `../BRIEFING-GPT_PROMPT.md` e `../PROTOCOLO-AUDITOR-EXTERNO_PROPOST
 6. **Auditar** o alvo pedido. Cada achado = **um JSON** (`kit/finding.schema.json`, exemplo em `kit/finding.example.json`) com citação **literal** (`quote` ≥ 20 caracteres) em `arquivo:linha`.
 7. **Validar:** `python3 kit/validate_finding.py --repo ~/sot-audit/repo --finding finding.json` → deve dar `PASS`. PASS = forma e ancoragem; **não** é parecer de mérito.
 8. **Postar (dry-run primeiro):** `python3 kit/submit_finding.py --repo-dir ~/sot-audit/repo --finding finding.json --evidence ~/sot-audit/evidence.json` (mostra o texto). Para enviar: acrescente `--post`. Cria uma Issue `[AEX] …`. **Não existe outro canal de saída.**
-9. **Encerrar:** liste achados postados e descartados (e por quê). Não edite Issues antigas; complemente com novo achado.
+9. **Encerrar:** `python3 kit/poll_requests.py --ack <nº do pedido> --verdict <OK|COM_RESSALVAS|NAO_OK> --findings N --discarded M` e liste achados postados e descartados (e por quê). Não edite Issues antigas; complemente com novo achado.
 
 ## O que o kit garante por construção (determinístico)
 | Garantia | Mecanismo |

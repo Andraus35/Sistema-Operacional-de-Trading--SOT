@@ -5,7 +5,8 @@
 ao canal). Token em SOT_AUDITOR_TOKEN (nunca argv). Base da API sobrescrevível por SOT_API_BASE (testes).
   python poll_requests.py                      lista pedidos abertos sem ACK
   python poll_requests.py --prepare [N]        grava task.json (commit, escopo) do pedido N (ou do mais antigo)
-  python poll_requests.py --ack N [--findings X --discarded Y]   comenta ACK (marcador <!-- aex-ack -->)
+  python poll_requests.py --ack N --verdict OK|COM_RESSALVAS|NAO_OK [--findings X --discarded Y]
+                                               comenta ACK com veredito CONSULTIVO (marcador <!-- aex-ack -->); só ao Orquestrador
 """
 import argparse, json, os, re, sys, urllib.request, urllib.error
 
@@ -40,11 +41,12 @@ def pending():
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--prepare", nargs="?", const="oldest"); ap.add_argument("--ack", type=int)
-    ap.add_argument("--findings", type=int, default=0); ap.add_argument("--discarded", type=int, default=0)
+    ap.add_argument("--verdict", choices=["OK", "COM_RESSALVAS", "NAO_OK"]); ap.add_argument("--findings", type=int, default=0); ap.add_argument("--discarded", type=int, default=0)
     ap.add_argument("--out", default="task.json"); a = ap.parse_args()
     if a.ack:
+        if not a.verdict: print("FAIL: --verdict (OK|COM_RESSALVAS|NAO_OK) é obrigatório no ACK"); return 2
         call(f"/repos/{SLUG}/issues/{a.ack}/comments", "POST",
-             {"body": f"<!-- aex-ack -->\nAuditor externo: pedido atendido. Achados postados: {a.findings} · descartados na autoverificação: {a.discarded}."})
+             {"body": f"<!-- aex-ack -->\nAuditor externo: pedido atendido. **Veredito consultivo: {a.verdict}** (dado ao Orquestrador; não é homologação). Achados postados: {a.findings} · descartados na autoverificação: {a.discarded}."})
         print(f"ACK em #{a.ack}"); return 0
     p = pending()
     if a.prepare:

@@ -5,7 +5,7 @@
 válido e REPROVA cada defeito plantado com o código esperado. Rode após instalar: se falhar, NÃO audite.
 Uso: python selftest.py --repo <clone>
 """
-import argparse, copy, json, os, subprocess, sys, tempfile
+import argparse, copy, json, os, re, subprocess, sys, tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -16,9 +16,12 @@ def main():
     # âncora real e estável: primeira linha longa de AGENTS.md
     lines = subprocess.run(["git", "-C", a.repo, "show", f"{head}:AGENTS.md"], capture_output=True, text=True).stdout.split("\n")
     n = next(i for i, l in enumerate(lines, 1) if len(l.strip()) >= 40)
+    dtxt = subprocess.run(["git", "-C", a.repo, "show", f"{head}:governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md"],
+                          capture_output=True, text=True).stdout
+    vig = re.findall(r"^## (DIR-\d{3})\s*\n+Status:\s*VIGENTE", dtxt, re.M)[-1]
     base = {"schema_version": "1.0", "id": "AEX-20260101-001", "severity": "P2", "type": "drift", "rule_source": "INV-09", "impact": "sintético", "what_does_not_change": "tudo",
             "title": "achado sintético de calibração", "claim": "Teste de calibração do validador.",
-            "baseline_commit": head, "directive_version": "DIR-001",
+            "baseline_commit": head, "directive_version": vig,
             "evidence": [{"path": "AGENTS.md", "line_start": n, "line_end": n, "quote": lines[n - 1].strip()[:60]}],
             "proposal": {"type": "NOTA", "text": "Sem mudança.", "modifies_baselined_text": False, "touches": []},
             "open_decisions_referenced": [], "treats_open_decision_as_closed": False,

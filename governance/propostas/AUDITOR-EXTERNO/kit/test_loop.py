@@ -91,8 +91,11 @@ class TestPoll(unittest.TestCase):
         d = tempfile.mkdtemp(); out = os.path.join(d, "task.json")
         self.assertEqual(self.P("--prepare", "--out", out).returncode, 0)
         t = json.load(open(out)); self.assertEqual((t["issue"], t["sha"], t["files"]), (1, SHA, ["specs/features/SPEC-001/plan.md", "AGENTS.md"]))
-        H.posted.clear(); self.assertEqual(self.P("--ack", "1", "--findings", "2", "--discarded", "1").returncode, 0)
+        H.posted.clear(); self.assertEqual(self.P("--ack", "1", "--verdict", "COM_RESSALVAS", "--findings", "2", "--discarded", "1").returncode, 0)
         self.assertIn("/issues/1/comments", H.posted[0][0]); self.assertIn("<!-- aex-ack -->", H.posted[0][1]["body"])
+        self.assertIn("COM_RESSALVAS", H.posted[0][1]["body"])
+        self.assertEqual(self.P("--ack", "1").returncode, 2)  # sem --verdict: recusa
+        self.assertEqual(self.P("--ack", "1", "--verdict", "TALVEZ").returncode, 2)  # veredito inválido
     def test_sem_token_falha(self):
         e = dict(self.env); e.pop("SOT_AUDITOR_TOKEN")
         self.assertEqual(run([sys.executable, os.path.join(HERE, "poll_requests.py")], env=e).returncode, 2)
