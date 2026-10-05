@@ -74,6 +74,8 @@ O Harness **não redefine** a estrutura do objeto hipótese (que é responsabili
 | Estados do Blackboard para objetos não-hipótese | SPEC-004 | M-001 em aberto — pendente |
 | Orçamento de latência e entrega do Event Bus | SPEC-005 | SPEC-001 apenas **emite** eventos; produtor não tem autoridade para definir metadados de transporte (Latency/Freshness/Reliability/Expiration) — [FONTE: SAS-001 §6.7]. Contrato do Event Bus (TTL, delivery, latência) pertence à SPEC-005 (ROADMAP §SPEC-005) |
 
+**Errata aditiva (2026-10-05):** a âncora `[FONTE: SAS-001 §6.7]` acima deve ser lida como **SAS-001 §6.10** (Metadados Operacionais de Infraestrutura; §6.9 = integração com o Event Bus) — ver `governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md`. Texto acima não alterado (INV-09).
+
 ---
 
 ## D2 — Regras

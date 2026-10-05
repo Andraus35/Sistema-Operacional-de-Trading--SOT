@@ -36,7 +36,7 @@ Complexidade: HIGH. Profundidade-alvo: D0–D7 (standard).
 [FONTE: ROADMAP §23 passo 11-bis; DHR-SPEC005-001 §6; RMR-001]
 
 - **Nenhum item do RMR-001 tem gatilho `spec:SPEC-005`** (verificado na abertura; `backlog_triggers.py` a rodar). O início da redação deste Plan **não dispara item novo**. [FONTE: DHR-SPEC005-001; ABERTURA §9]
-- **BL-008** (auditoria retroativa SPEC-001) e **BL-003** (persistência física) permanecem `ATIVADO`/pré-existentes, **independentes desta Spec** — não absorvidos nem promovidos aqui (gate passo 11-bis + Andraus). [FONTE: RMR-001; ABERTURA §9]
+- **[ERRATA 2026-10-05, ERRATUM-SPEC005-001: BL-008 = `Absorvido` (DHR-BL008-001), não ATIVADO]** · **BL-008** (auditoria retroativa SPEC-001) e **BL-003** (persistência física) permanecem `ATIVADO`/pré-existentes, **independentes desta Spec** — não absorvidos nem promovidos aqui (gate passo 11-bis + Andraus). [FONTE: RMR-001; ABERTURA §9]
 - **BL-017** (dimensões B da SPEC-020) está `Em espera` (gatilho `spec:SPEC-007`/`spec:SPEC-014`), **independente desta abertura** — não promovido por esta Spec (CONS-01). [FONTE: RMR-001; DHR-BL012-001]
 - A **promoção/encaminhamento** é do gate e de Andraus; o Especificador apenas reflete o tratamento. O passo 11-bis pleno ocorre na homologação do Plan.
 
