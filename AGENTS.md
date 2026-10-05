@@ -140,6 +140,7 @@ npm run lint        # lint EARS das specs (tests/lint-specs.js)
 python scripts/validate_spec_sot.py <plan.md>   # gate determinístico de estrutura
 python scripts/check_refs.py                    # integridade de referências cruzadas (ERRO = quebra em doc vivo)
 python scripts/backlog_triggers.py              # gatilhos do RMR-001 (BL-006): ATIVADOS / disparados sem registro
+python scripts/check_rpsa.py                    # carimbo sincronizado-até dos agentes vs livro-razão (RPSA/EUA-E16; DHR-RPSA-001); --register classifica uma DHR nova e alinha os carimbos
 python scripts/check_doc_sync.py                # drift de sincronização documental (CONS-01, RULE não registrada, Estado fora do enum, backlog dessincronizado)
 python scripts/build_map.py                     # (re)gera o mapa do projeto — obrigatório após alterar .md (BL-019)
 python scripts/build_map.py --check             # exit 1 se o mapa está desatualizado (CI/pre-commit)

@@ -63,6 +63,16 @@ jobs:
         run: python scripts/check_doc_sync.py
         continue-on-error: true
 
+      # Testes da ferramenta de carimbos (bloqueante: se falhar, a ferramenta está quebrada).
+      - name: RPSA tool tests
+        run: python -m unittest tests/test_rpsa.py
+
+      # Informativo (não bloqueia): carimbo `sincronizado-até` dos agentes vs livro-razão (RPSA, EUA-E16; DHR-RPSA-001).
+      # Divergência = DHR nova sem classificação, Agent-Sync pendente ou carimbo defasado. Promover a bloqueante só por decisão de Andraus.
+      - name: RPSA agent stamps (informative)
+        run: python scripts/check_rpsa.py
+        continue-on-error: true
+
       # BLOQUEANTE: RULE-ECC-06 (DHR-ECC06-001) — pesquisa em repositórios seguros e bem avaliados.
       # Specs novas (a partir de SPEC-004) sem a seção/capturas/régua cumpridas reprovam aqui.
       - name: Repo research rule (RULE-ECC-06)

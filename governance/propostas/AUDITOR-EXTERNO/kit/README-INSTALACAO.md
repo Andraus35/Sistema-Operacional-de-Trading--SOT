@@ -1,6 +1,6 @@
 # Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`
 
-Decisões de Andraus (chat, 2026-10-05): **canal** = Issue com formulário · **credencial** = conta dedicada com papel **Read** + token mínimo · **hierarquia** = o auditor é **subordinado ao Orquestrador interno e se reporta só a ele** (o Orquestrador, a Andraus; **nunca** o auditor a Andraus/Especificador/Revisor) · **postura** = só por diretiva versionada do Orquestrador, após consulta a Andraus (`../DIRETIVAS-AO-AUDITOR.md`) · **nuvem** = tudo roda em ambiente em nuvem · **`git pull`** só em pedido gerado quando um PR de **homologação final de Spec completa** (consenso: **Especificador + Revisor + Auditor externo + Andraus**; o Orquestrador coordena e não é parte do consenso) fica candidato · **piloto controlado** (alvo SPEC-006). O GPT é **auditor externo** (não é agente interno nem gate). Nada neste kit altera `AGENTS.md`, o Revisor, o ROADMAP, specs ou canon; instalar o formulário em `.github/` é ato de Andraus.
+Decisões de Andraus (chat, 2026-10-05): **canal** = Issue com formulário · **credencial** = **token fine-grained do próprio Andraus** com escopo mínimo (Contents:Read + Issues:Read/Write, só este repositório) — emenda 2026-10-05: o papel *Read* é inviável em repositório pessoal (colaboradores têm só escrita) · **hierarquia** = o auditor é **subordinado ao Orquestrador interno e se reporta só a ele** (o Orquestrador, a Andraus; **nunca** o auditor a Andraus/Especificador/Revisor) · **postura** = só por diretiva versionada do Orquestrador, após consulta a Andraus (`../DIRETIVAS-AO-AUDITOR.md`) · **nuvem** = tudo roda em ambiente em nuvem · **`git pull`** só em pedido gerado quando um PR de **homologação final de Spec completa** (consenso: **Especificador + Revisor + Auditor externo + Andraus**; o Orquestrador coordena e não é parte do consenso) fica candidato · **piloto controlado** (alvo SPEC-006). O GPT é **auditor externo** (não é agente interno nem gate). Nada neste kit altera `AGENTS.md`, o Revisor, o ROADMAP, specs ou canon; instalar o formulário em `.github/` é ato de Andraus.
 
 ## O que o kit contém (todos testados localmente: ver "Verificação")
 | Arquivo | Função |
@@ -58,3 +58,8 @@ Atualizar para novo commit: apague `~/sot-audit/repo` e repita `setup_auditor.sh
 - **PASS do validador = forma + ancoragem**, não mérito: achado pode estar errado; o Revisor/Andraus avaliam.
 - O SOT **não controla** temperatura/seed/versão do modelo externo: reprodutibilidade = commit + evidência + data, não bit-a-bit.
 - Declarado ≠ verificável ≠ executável ≠ bloqueante: o auditor é **consultivo**; o que bloqueia é o CI e a decisão de Andraus.
+
+
+## Emenda de acesso (2026-10-05) — token do dono
+- Num repositório pessoal não existe colaborador somente-leitura; Andraus escolheu **token fine-grained próprio**. Limite do desenho: o teto de poder é o **escopo do token**, não um papel; as ações do auditor aparecem com o login de Andraus, e `AUDITOR_EXTERNO_LOGINS` = login de Andraus (o filtro do workflow já não distingue auditor de dono — a separação é por prefixo `[AEX]` + validação do kit).
+- `verify_access.py` passa a **sondar** a escrita (POST vazio em `git/blobs`: 403 = ok; 422 = FAIL) em vez de confiar em `permissions`. **Não verificado contra a API real** até a primeira execução.
