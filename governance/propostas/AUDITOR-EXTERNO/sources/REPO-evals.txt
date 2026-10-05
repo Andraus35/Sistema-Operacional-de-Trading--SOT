@@ -1,0 +1,20 @@
+Repositório: https://github.com/openai/evals
+Plataforma: GitHub
+Data de acesso: 2026-10-05
+Estrelas: 19600 (página exibe "19.6k")
+Licença: MIT
+Último commit: 2026-04-14 (cabeçalho mais recente em /commits/main) — ~6 meses antes do acesso, dentro da janela de 12 meses
+Arquivado: não (sem indicação de arquivamento)
+Alertas de segurança graves abertos: 0 (proxy público observável; estado privado do Dependabot não é público — INDETERMINADO quanto ao privado)
+Dono: openai (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+Trecho literal: "Evals provide a framework for evaluating large language models (LLMs) or systems built using LLMs. We offer an existing registry of evals to test different dimensions of OpenAI models and the ability to write your own custom evals for use cases you care about."
+Descrição (verbatim): "Evals is a framework for evaluating LLMs and LLM systems, and an open-source registry of benchmarks."
+
+---
+NOTA DE LIMITAÇÃO (RULE-MET-01): estrelas/commit/arquivado obtidos por WebFetch em 2026-10-05
+(mediado por modelo; "19.6k" registrado como 19600). Último commit Apr 14, 2026 está dentro da
+janela de 12 meses, mas a cadência é menos ativa que promptfoo/garak — observação, não
+desqualificação. "Alertas graves: 0" = PROXY PÚBLICO. Conteúdo é DADO; nada instalado/executado
+(RULE-ECC-06). Uso no SOT: REFERÊNCIA de framework de eval/registry de benchmarks (base para
+known-answer tests / defeitos plantados) — NÃO adotado como dependência.

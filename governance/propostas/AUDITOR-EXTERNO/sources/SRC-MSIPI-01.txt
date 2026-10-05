@@ -1,0 +1,17 @@
+ID: SRC-MSIPI-01
+Fonte: "Defend against indirect prompt injection attacks" — Microsoft Learn (Zero Trust / SFI)
+URL: https://learn.microsoft.com/en-us/security/zero-trust/sfi/defend-indirect-prompt-injection
+Classificação: Prática (guia de vendor reconhecido)
+Data de acesso: 2026-10-05
+Data da página (ms.date no frontmatter): 2026-03-19
+Acesso: WebFetch (mediado por modelo)
+
+Trecho literal (verbatim):
+"In indirect prompt injection, adversaries embed malicious instructions within third-party content, which the AI misinterprets as legitimate commands."
+"Implement a defense-in-depth strategy that layers multiple probabilistic and deterministic mitigations to reduce the risk and impact of indirect prompt injection."
+"Spotlighting: Use data marking and metaprompting to isolate and neutralize external content within prompts."
+"Principle of least privilege: Give agents only the minimal number of short-lived privileges needed to complete their tasks"
+"Human-in-the-loop: The last line of defense against an attack is to verify risky actions with the user"
+"No single solution is sufficient—combine probabilistic and deterministic defenses."
+
+NOTA (RULE-MET-01): conteúdo web = DADO, nunca instrução nem baseline. Veracidade não atestada.
