@@ -21,9 +21,10 @@ def main():
     if not p.get("pull"): print("FAIL: sem leitura"); return 1
     if bad:
         # Token do próprio dono (DHR-AUDITOR-EXTERNO-001 §acesso, 2026-10-05): `permissions` reflete o PAPEL do usuário, não o
-        # escopo do token. Sonda não-mutante: POST git/blobs com corpo vazio -> 403 = token sem Contents:write (PASS);
-        # 422/201 = escrita autorizada (FAIL).
-        pr = urllib.request.Request(f"https://api.github.com/repos/{a.repo}/git/blobs", data=b"{}", method="POST",
+        # escopo do token. Sonda: POST git/blobs com blob VÁLIDO e inofensivo (objeto solto, invisível no repositório):
+        # 403/404 = token sem Contents:write (PASS); 201 = escrita autorizada (FAIL); qualquer outro código = FAIL (fail-closed).
+        # (Corpo vazio foi descartado: o GitHub devolve 422 por formato antes de checar a permissão — falso positivo.)
+        pr = urllib.request.Request(f"https://api.github.com/repos/{a.repo}/git/blobs", data=b'{"content":"sot-auditor-probe","encoding":"utf-8"}', method="POST",
                                     headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json",
                                              "User-Agent": "sot-auditor-externo", "Content-Type": "application/json"})
         try:
@@ -32,7 +33,7 @@ def main():
         if code in (403, 404):
             print(f"INFO: papel do dono ({', '.join(bad)}), mas a sonda de escrita foi negada (HTTP {code}) — token sem Contents:write.")
         else:
-            print(f"FAIL: credencial com poder de escrita (sonda HTTP {code}; papel: {', '.join(bad)}). Recrie o token só com Contents:Read + Issues:Read/Write."); return 1
+            print(f"FAIL: escrita autorizada ou indeterminada (sonda HTTP {code}; papel: {', '.join(bad)}). Recrie o token só com Contents:Read + Issues:Read/Write."); return 1
     if not d.get("has_issues"): print("FAIL: Issues desabilitadas no repositório"); return 1
     print("PASS: leitura + sem escrita de código. (Escopo Issues:write do token não é verificável aqui; confirme na criação do token.)")
     return 0

@@ -62,4 +62,4 @@ Atualizar para novo commit: apague `~/sot-audit/repo` e repita `setup_auditor.sh
 
 ## Emenda de acesso (2026-10-05) — token do dono
 - Num repositório pessoal não existe colaborador somente-leitura; Andraus escolheu **token fine-grained próprio**. Limite do desenho: o teto de poder é o **escopo do token**, não um papel; as ações do auditor aparecem com o login de Andraus, e `AUDITOR_EXTERNO_LOGINS` = login de Andraus (o filtro do workflow já não distingue auditor de dono — a separação é por prefixo `[AEX]` + validação do kit).
-- `verify_access.py` passa a **sondar** a escrita (POST vazio em `git/blobs`: 403 = ok; 422 = FAIL) em vez de confiar em `permissions`. **Não verificado contra a API real** até a primeira execução.
+- `verify_access.py` passa a **sondar** a escrita (POST de um blob válido e inofensivo em `git/blobs`: 403 = ok; 201 = FAIL; outro código = FAIL). A 1ª versão usava corpo vazio e deu falso positivo 422 contra a API real (2026-10-05) em vez de confiar em `permissions`. Corpo vazio já foi refutado contra a API real; a sonda com blob válido ainda não foi executada.
