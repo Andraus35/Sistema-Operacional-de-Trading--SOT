@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-05** · digest `9ffa6912e3066f85` · **258** documentos · **3110** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-05** · digest `0a2d9f9f070c900a` · **258** documentos · **3110** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
