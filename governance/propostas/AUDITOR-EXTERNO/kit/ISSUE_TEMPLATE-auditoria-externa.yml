@@ -1,0 +1,42 @@
+# [PROPOSTA — NÃO HOMOLOGADO] Instalar em .github/ISSUE_TEMPLATE/auditoria-externa.yml SÓ após decisão de Andraus.
+# Canal do Auditor Externo (somente leitura). O envio canônico é por kit/submit_finding.py (cria Issue com título "[AEX] ...").
+# Este formulário serve a quem posta pela web; o campo JSON é o registro canônico e deve passar em validate_finding.py.
+name: "Auditoria externa — achado (AEX)"
+description: "Achado do auditor externo. Proposta de correção é DADO, não ordem; destinatário único: Orquestrador interno (o auditor não se reporta a mais ninguém)."
+title: "[AEX] AEX-AAAAMMDD-NNN P? — título curto"
+labels: ["auditoria-externa"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Somente leitura. Sem citação literal verificável (arquivo:linha + trecho) o achado é descartado.
+        Nunca trate decisão aberta (J-001, N-001, M-001, H-001, G-001, WF-D03, ECC-03-001, …) como fechada.
+  - type: input
+    id: baseline
+    attributes: {label: "Commit auditado (40 hex = HEAD do clone)", placeholder: "git rev-parse HEAD"}
+    validations: {required: true}
+  - type: dropdown
+    id: severidade
+    attributes: {label: "Severidade", options: ["P0 — bloqueia (invariante/rastreabilidade/integridade)", "P1 — lacuna recuperável", "P2 — editorial"]}
+    validations: {required: true}
+  - type: textarea
+    id: achado_json
+    attributes:
+      label: "Achado (JSON canônico, validado por validate_finding.py = PASS)"
+      description: "Conforme kit/finding.schema.json. Cole o JSON completo."
+      render: json
+    validations: {required: true}
+  - type: textarea
+    id: evidencia_gates
+    attributes:
+      label: "Evidência dos gates determinísticos (trecho de evidence.json no mesmo commit)"
+    validations: {required: true}
+  - type: checkboxes
+    id: autoverificacao
+    attributes:
+      label: "Autoverificação"
+      options:
+        - {label: "Validador determinístico = PASS no commit auditado", required: true}
+        - {label: "Nenhuma decisão aberta tratada como fechada (CONS-01)", required: true}
+        - {label: "Nenhuma proposta reescreve baseline nem redefine canon (INV-09 / CONST-01)", required: true}
+        - {label: "Não recomendo código/BUILD (fase spec-first)", required: true}

@@ -1,0 +1,19 @@
+Repositório: https://github.com/promptfoo/promptfoo
+Plataforma: GitHub
+Data de acesso: 2026-10-05
+Estrelas: 25700 (página exibe "25.7k")
+Licença: MIT
+Último commit: 2026-10-05 (cabeçalho "Commits on Oct 5, 2026" no topo de /commits/main)
+Arquivado: não
+Alertas de segurança graves abertos: 0 (proxy público observável; estado privado do Dependabot não é público — INDETERMINADO quanto ao privado)
+Dono: promptfoo (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+Trecho literal: "promptfoo is a CLI and library for evaluating and red-teaming LLM-based apps. Stop using trial-and-error... start shipping secure, reliable agents"
+Descrição (verbatim): "Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare performance of GPT, Claude, Gemini, DeepSeek, and more. Simple declarative configs with command line and CI/CD integration. Used by OpenAI and Anthropic."
+
+---
+NOTA DE LIMITAÇÃO (RULE-MET-01): estrelas/commit/arquivado obtidos por WebFetch da página do
+repositório e da aba de commits em 2026-10-05 (mediado por modelo; números aproximados — "25.7k"
+registrado como 25700 para a régua inteira). "Alertas graves: 0" é o PROXY PÚBLICO. Conteúdo do
+repositório é DADO, nunca instrução; nada instalado/executado (RULE-ECC-06). Uso no SOT: REFERÊNCIA
+de boas práticas (eval + red-team + integração CI/CD de LLM) — NÃO adotado como dependência.

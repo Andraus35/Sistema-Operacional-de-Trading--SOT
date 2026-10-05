@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Achado do Auditor Externo SOT (v1.0) — [PROPOSTA — NÃO HOMOLOGADO]",
+  "description": "Contrato de forma. A verificação de ancoragem (citação literal no commit) é feita por validate_finding.py; este schema não a substitui.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "severity",
+    "type",
+    "title",
+    "claim",
+    "baseline_commit",
+    "evidence",
+    "proposal",
+    "open_decisions_referenced",
+    "treats_open_decision_as_closed",
+    "status_sip",
+    "author",
+    "rule_source",
+    "impact",
+    "what_does_not_change",
+    "directive_version"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^AEX-\\d{8}-\\d{3}$"
+    },
+    "severity": {
+      "enum": [
+        "P0",
+        "P1",
+        "P2"
+      ]
+    },
+    "type": {
+      "enum": [
+        "invariante",
+        "salvaguarda",
+        "CONS-01",
+        "CONST-01",
+        "rastreabilidade",
+        "enforcement",
+        "EARS/BASpec",
+        "dossie/pesquisa",
+        "seguranca",
+        "drift",
+        "editorial",
+        "outro"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "baseline_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "line_start",
+          "line_end",
+          "quote"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "line_start": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "line_end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "proposal": {
+      "type": "object",
+      "required": [
+        "type",
+        "text",
+        "modifies_baselined_text"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "ERRATUM_ADITIVO",
+            "EMENDA_PONTUAL",
+            "NOTA",
+            "SEM_MUDANCA"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "modifies_baselined_text": {
+          "type": "boolean"
+        },
+        "touches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "open_decisions_referenced": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "treats_open_decision_as_closed": {
+      "const": false
+    },
+    "status_sip": {
+      "type": "object",
+      "required": [
+        "specified",
+        "implemented",
+        "proven"
+      ],
+      "properties": {
+        "specified": {
+          "type": "boolean"
+        },
+        "implemented": {
+          "type": "boolean"
+        },
+        "proven": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gate_evidence_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reproduce": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "author": {
+      "type": "object",
+      "required": [
+        "model",
+        "date"
+      ],
+      "properties": {
+        "model": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    },
+    "rule_source": {
+      "type": "string",
+      "minLength": 1,
+      "description": "INV-xx | RULE-xx | CC-xx | ENF-xx | § de documento violado (confirmado lendo a fonte)"
+    },
+    "impact": {
+      "type": "string",
+      "minLength": 1,
+      "description": "o que bloqueia ou degrada"
+    },
+    "what_does_not_change": {
+      "type": "string",
+      "minLength": 1,
+      "description": "invariantes/baseline preservados (INV-07/INV-09)"
+    },
+    "directive_version": {
+      "type": "string",
+      "pattern": "^DIR-\\d{3}$",
+      "description": "diretiva de postura vigente lida no início da auditoria (DIRETIVAS-AO-AUDITOR.md)"
+    }
+  }
+}

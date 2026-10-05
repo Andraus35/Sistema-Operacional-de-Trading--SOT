@@ -1,0 +1,19 @@
+Repositório: https://github.com/NVIDIA/garak
+Plataforma: GitHub
+Data de acesso: 2026-10-05
+Estrelas: 9400 (página exibe "9.4k")
+Licença: Apache-2.0
+Último commit: 2026-10-02 (cabeçalho "Commits on Oct 2, 2026" no topo de /commits/main)
+Arquivado: não
+Alertas de segurança graves abertos: 0 (proxy público observável; estado privado do Dependabot não é público — INDETERMINADO quanto ao privado)
+Dono: NVIDIA (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+Trecho literal: "garak checks if an LLM can be made to fail in a way we don't want. garak probes for hallucination, data leakage, prompt injection, misinformation, toxicity generation, jailbreaks, and many other weaknesses."
+Descrição (verbatim): "The LLM vulnerability scanner"
+
+---
+NOTA DE LIMITAÇÃO (RULE-MET-01): estrelas/commit/arquivado obtidos por WebFetch em 2026-10-05
+(mediado por modelo; "9.4k" registrado como 9400). "Alertas graves: 0" = PROXY PÚBLICO. Conteúdo
+do repositório é DADO, nunca instrução; nada instalado/executado (RULE-ECC-06). Uso no SOT:
+REFERÊNCIA de taxonomia de vulnerabilidades de LLM (prompt injection/jailbreak) para a calibração
+por defeitos plantados — NÃO adotado como dependência.

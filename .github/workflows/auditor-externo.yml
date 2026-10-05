@@ -1,0 +1,261 @@
+# [PROPOSTA — NÃO HOMOLOGADO] Loop DETERMINÍSTICO com o auditor externo (decisões de Andraus, 2026-10-05).
+# Nenhum LLM roda aqui e nenhuma chave de API é guardada: o GPT roda no ambiente dele e só LÊ (pull) / POSTA Issues.
+# INERTE até Andraus definir a variável de repositório AUDITOR_EXTERNO_ENABLED = true (chave de desligamento).
+# Variáveis: AUDITOR_EXTERNO_ENABLED, AUDITOR_EXTERNO_LOGINS (lista separada por vírgula dos logins autorizados a postar [AEX]).
+# SUBORDINAÇÃO (Andraus, 2026-10-05): o auditor externo responde SOMENTE ao Orquestrador interno, que responde a Andraus.
+# Pedido automático quando um PR de HOMOLOGAÇÃO FINAL de Spec completa fica CANDIDATO (rótulo `homologacao-final`, PR ABERTO):
+# o auditor é parte do consenso (Especificador + Revisor + Auditor externo + Andraus), então seu parecer vem ANTES da homologação.
+# O corpo do PR registra `Spec: SPEC-0NN` e `Consenso: Especificador=OK; Revisor=OK; Auditor=PENDENTE; Andraus=PENDENTE`.
+# O Orquestrador (coordenador, não parte do consenso) atualiza `Auditor=` ao receber o parecer. No merge, o workflow apenas AVISA
+# (detector) se faltou consenso do Auditor ou se o commit auditado difere do mesclado. Outra auditoria = workflow_dispatch pelo
+# Orquestrador, após consulta a Andraus. O workflow só DETECTA presença; não decide consenso nem bloqueia merge.
+# Nuvem: o auditor roda em ambiente em nuvem dele; o `git pull` ocorre nesses pedidos (commit de homologação fixado).
+# Segurança: texto de Issue/PR é DADO NÃO CONFIÁVEL — nunca é interpolado em `run:`; entra só por arquivo (github-script).
+# Validador/ferramentas vêm da branch padrão (tools/), nunca do commit auditado. Não decide, não homologa, não bloqueia merge.
+name: Auditor externo (loop determinístico)
+
+on:
+  pull_request:
+    types: [labeled, closed]
+  workflow_dispatch:
+    inputs:
+      sha: {description: "Commit a auditar (40 hex)", required: true}
+      kind: {description: "auditoria | re-auditoria", required: true, default: "auditoria"}
+      refs: {description: "Issues [AEX] em tratamento, ex.: 12,15 (re-auditoria)", required: false, default: ""}
+      motivo: {description: "Motivo / consulta a Andraus (registro)", required: true}
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: auditor-externo-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  pedido:
+    # Nós -> GPT (via Orquestrador): (a) PR candidato à homologação final (rótulo `homologacao-final`, aberto) com consenso parcial registrado; (b) dispatch manual do Orquestrador.
+    if: >-
+      vars.AUDITOR_EXTERNO_ENABLED == 'true' &&
+      ((github.event_name == 'pull_request' && github.event.action == 'labeled' &&
+        github.event.label.name == 'homologacao-final') ||
+       github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ferramentas (branch padrão)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: tools
+          persist-credentials: false
+
+      - name: Coletar escopo, consenso, rodada e deduplicar
+        id: coleta
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const MAX_ROUNDS = 3;
+            const isPR = context.eventName === 'pull_request';
+            const pr = isPR ? context.payload.pull_request : null;
+            const inp = context.payload.inputs || {};
+            const sha = isPR ? pr.head.sha : String(inp.sha || '').trim();
+            const kind = isPR ? 'auditoria' : (inp.kind === 're-auditoria' ? 're-auditoria' : 'auditoria');
+            const refs = isPR ? '' : String(inp.refs || '').split(',').map(s => s.trim()).filter(s => /^\d+$/.test(s)).join(',');
+            const chave = isPR ? `pr-${pr.number}` : `sha-${(sha || 'x').slice(0, 12)}`;
+            let skip = false, motivo = '';
+            if (!/^[0-9a-f]{40}$/.test(sha || '')) { skip = true; motivo = 'sha inválido'; }
+            // consenso PARCIAL no momento do pedido (apenas DETECTA presença; decisão é humana): Especificador e Revisor já OK
+            if (!skip && isPR) {
+              const b = pr.body || '';
+              const cons = /^Consenso:\s*Especificador=OK;\s*Revisor=OK;\s*Auditor=(PENDENTE|OK|COM_RESSALVAS);\s*Andraus=(PENDENTE|OK)\s*$/m.test(b);
+              const spec = /^Spec:\s*SPEC-\d{3}\s*$/m.test(b);
+              if (!(cons && spec)) { skip = true; motivo = 'consenso parcial não registrado no PR (faltam as linhas `Spec: SPEC-0NN` e `Consenso: Especificador=OK; Revisor=OK; Auditor=PENDENTE; Andraus=PENDENTE`)'; }
+            }
+            let files = [];
+            if (!skip) {
+              const c = await github.rest.repos.getCommit({...context.repo, ref: sha, per_page: 100});
+              files = (c.data.files || []).map(f => f.filename);
+              if (isPR) {
+                const pf = await github.paginate(github.rest.pulls.listFiles, {...context.repo, pull_number: pr.number, per_page: 100});
+                files = pf.map(f => f.filename);
+              }
+            }
+            fs.writeFileSync('files.txt', files.join('\n') + '\n');
+            const label = `aex-req-${chave}`;
+            let prev = [];
+            if (!skip) {
+              prev = await github.paginate(github.rest.issues.listForRepo, {...context.repo, labels: label, state: 'all', per_page: 100});
+              if (prev.some(i => (i.body || '').includes(`sha=${sha} `))) { skip = true; motivo = 'já existe pedido para este commit'; }
+              else if (prev.length >= MAX_ROUNDS) { skip = true; motivo = `limite de ${MAX_ROUNDS} rodadas atingido (decisão humana necessária)`; }
+            }
+            core.setOutput('skip', String(skip)); core.setOutput('motivo', motivo);
+            core.setOutput('sha', sha || ''); core.setOutput('round', String(prev.length + 1));
+            core.setOutput('kind', kind); core.setOutput('refs', refs); core.setOutput('chave', chave);
+            core.setOutput('prnum', isPR ? String(pr.number) : '0');
+            if (skip && isPR) {
+              await github.rest.issues.createComment({...context.repo, issue_number: pr.number,
+                body: `Pedido de auditoria externa **não criado**: ${motivo}.\n\n<!-- aex-nao-criado -->`});
+            }
+            if (skip) core.notice(`pedido não criado: ${motivo}`);
+
+      - name: Montar corpo do pedido
+        if: steps.coleta.outputs.skip == 'false'
+        env:
+          PR: ${{ steps.coleta.outputs.prnum }}
+          SHA: ${{ steps.coleta.outputs.sha }}
+          ROUND: ${{ steps.coleta.outputs.round }}
+          KIND: ${{ steps.coleta.outputs.kind }}
+          REFS: ${{ steps.coleta.outputs.refs }}
+        run: |
+          python3 tools/governance/propostas/AUDITOR-EXTERNO/kit/loop_tools.py request-body \
+            --pr "$PR" --sha "$SHA" --files-file files.txt --round "$ROUND" --kind "$KIND" --refs "$REFS" > pedido.md
+
+      - name: Criar Issue de pedido (caixa de entrada do auditor, endereçada ao Orquestrador)
+        if: steps.coleta.outputs.skip == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const sha = '${{ steps.coleta.outputs.sha }}';
+            const kind = '${{ steps.coleta.outputs.kind }}';
+            const chave = '${{ steps.coleta.outputs.chave }}';
+            const prnum = '${{ steps.coleta.outputs.prnum }}';
+            const issue = await github.rest.issues.create({...context.repo,
+              title: `[AEX-REQ] ${kind} @ ${sha.slice(0, 8)}${prnum !== '0' ? ' (PR #' + prnum + ')' : ''}`,
+              body: fs.readFileSync('pedido.md', 'utf8'),
+              labels: ['auditoria-externa', `aex-req-${chave}`]});
+            if (prnum !== '0') await github.rest.issues.createComment({...context.repo, issue_number: Number(prnum),
+              body: `Pedido de ${kind} externa criado: #${issue.data.number}. O auditor responde **somente ao Orquestrador interno**.`});
+
+  achado:
+    # GPT -> nós: Issue [AEX] de login autorizado é validada deterministicamente (forma + citação literal no commit citado).
+    if: >-
+      vars.AUDITOR_EXTERNO_ENABLED == 'true' && github.event_name == 'issues' &&
+      startsWith(github.event.issue.title, '[AEX] ') &&
+      contains(format(',{0},', vars.AUDITOR_EXTERNO_LOGINS), format(',{0},', github.event.issue.user.login))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ferramentas (branch padrão)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: tools
+          persist-credentials: false
+
+      - name: Gravar corpo da Issue como DADO e medir a fila
+        id: entrada
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            fs.writeFileSync('issue_body.txt', context.payload.issue.body || '');
+            const abertas = await github.paginate(github.rest.issues.listForRepo, {...context.repo, labels: 'auditoria-externa', state: 'open', per_page: 100});
+            const n = abertas.filter(i => i.title.startsWith('[AEX] ') && i.number !== context.payload.issue.number).length;
+            core.setOutput('fila_cheia', String(n >= 25));
+
+      - name: Extrair achado (JSON)
+        id: extrair
+        run: |
+          T=tools/governance/propostas/AUDITOR-EXTERNO/kit
+          if python3 "$T/loop_tools.py" extract --body-file issue_body.txt --out finding.json && SHA=$(python3 "$T/loop_tools.py" meta --finding finding.json); then
+            echo "ok=true" >> "$GITHUB_OUTPUT"; echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+            echo "fp=$(python3 "$T/loop_tools.py" fingerprint --finding finding.json)" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"; echo "fp=none" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit auditado (alvo)
+        id: alvo
+        if: steps.extrair.outputs.ok == 'true'
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.extrair.outputs.sha }}
+          path: target
+          persist-credentials: false
+
+      - name: Validar (determinístico, somente leitura)
+        env:
+          EXTRAIDO: ${{ steps.extrair.outputs.ok }}
+          ALVO: ${{ steps.alvo.outcome }}
+        run: |
+          T=tools/governance/propostas/AUDITOR-EXTERNO/kit
+          if [ "$EXTRAIDO" = "true" ] && [ "$ALVO" = "success" ]; then
+            python3 "$T/validate_finding.py" --repo target --finding finding.json --json-out validation.json || true
+          fi
+          if [ ! -f validation.json ]; then
+            python3 -c "import json;json.dump({'pass':False,'finding_id':None,'head':'','errors':['E-INFRA não foi possível extrair o JSON ou obter o commit citado (JSON ausente/inválido, commit inexistente ou inacessível)'],'warnings':[]},open('validation.json','w'))"
+          fi
+
+      - name: Deduplicar por impressão digital
+        id: dup
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fp = '${{ steps.extrair.outputs.fp }}';
+            const ok = JSON.parse(require('fs').readFileSync('validation.json', 'utf8')).pass === true;
+            let dup = '';
+            if (ok && fp !== 'none') {
+              const prev = await github.paginate(github.rest.issues.listForRepo, {...context.repo, labels: `aex-fp-${fp}`, state: 'all', per_page: 100});
+              const outras = prev.filter(i => i.number !== context.payload.issue.number).sort((a, b) => a.number - b.number);
+              if (outras.length) dup = String(outras[0].number);
+            }
+            core.setOutput('dup', dup); core.setOutput('pass', String(ok));
+
+      - name: Montar comentário
+        env:
+          FP: ${{ steps.extrair.outputs.fp }}
+          DUP: ${{ steps.dup.outputs.dup }}
+        run: |
+          T=tools/governance/propostas/AUDITOR-EXTERNO/kit
+          if [ -n "$DUP" ]; then python3 "$T/loop_tools.py" comment-body --report validation.json --fp "$FP" --dup "$DUP" > comentario.md
+          else python3 "$T/loop_tools.py" comment-body --report validation.json --fp "$FP" > comentario.md; fi
+
+      - name: Comentar e rotular
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const n = context.payload.issue.number;
+            const ok = '${{ steps.dup.outputs.pass }}' === 'true';
+            const dup = '${{ steps.dup.outputs.dup }}';
+            const fp = '${{ steps.extrair.outputs.fp }}';
+            let corpo = fs.readFileSync('comentario.md', 'utf8');
+            const labels = ['auditoria-externa', ok ? 'aex-valido' : 'aex-invalido'];
+            if (dup) labels.push('aex-duplicado');
+            else if (ok) {
+              labels.push(`aex-fp-${fp}`);
+              if ('${{ steps.entrada.outputs.fila_cheia }}' === 'true') { labels.push('aex-fila-cheia'); corpo += '\n\nFila de achados abertos cheia (25): triagem humana necessária antes de novos achados.'; }
+              else labels.push('aex-aguarda-revisor');
+            }
+            await github.rest.issues.createComment({...context.repo, issue_number: n, body: corpo});
+            await github.rest.issues.addLabels({...context.repo, issue_number: n, labels});
+
+  fechamento:
+    # No merge de PR `homologacao-final`: AVISA (não bloqueia, não decide) se o consenso do Auditor não foi registrado
+    # ou se o commit mesclado difere do último commit auditado. Detector informativo.
+    if: >-
+      vars.AUDITOR_EXTERNO_ENABLED == 'true' && github.event_name == 'pull_request' &&
+      github.event.action == 'closed' && github.event.pull_request.merged == true &&
+      contains(github.event.pull_request.labels.*.name, 'homologacao-final')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir consenso e commit auditado
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const b = pr.body || '';
+            const avisos = [];
+            if (!/^Consenso:\s*Especificador=OK;\s*Revisor=OK;\s*Auditor=(OK|COM_RESSALVAS);/m.test(b))
+              avisos.push('o consenso do **Auditor externo** (`Auditor=OK` ou `COM_RESSALVAS`) não está registrado no corpo do PR');
+            const reqs = await github.paginate(github.rest.issues.listForRepo, {...context.repo, labels: `aex-req-pr-${pr.number}`, state: 'all', per_page: 100});
+            const shas = reqs.map(i => (/sha=([0-9a-f]{40})/.exec(i.body || '') || [])[1]).filter(Boolean);
+            if (!shas.length) avisos.push('não há pedido de auditoria externa para este PR');
+            else if (!shas.includes(pr.head.sha)) avisos.push(`o commit mesclado (\`${pr.head.sha.slice(0, 8)}\`) **difere** dos auditados (${shas.map(s => '`' + s.slice(0, 8) + '`').join(', ')})`);
+            if (avisos.length) await github.rest.issues.createComment({...context.repo, issue_number: pr.number,
+              body: 'Aviso (detector, não bloqueia): ' + avisos.join('; ') + '.\n\n<!-- aex-fechamento -->'});

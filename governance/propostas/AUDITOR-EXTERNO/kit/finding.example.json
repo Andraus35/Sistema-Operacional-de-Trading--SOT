@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "id": "AEX-20261005-001",
+  "severity": "P2",
+  "type": "editorial",
+  "title": "Dossiê da SPEC-002 cita caminho fora do repositório (/root/.ccr/README.md)",
+  "claim": "check_refs.py emite WARN para specs/features/SPEC-002/DOSSIE-PESQUISA.md:13: o texto referencia `/root/.ccr/README.md`, caminho de ambiente de execução que não existe no repositório. É referência cruzada não resolvível por quem audita só o repositório.",
+  "baseline_commit": "<SUBSTITUA_PELO_HEAD_DO_CLONE: git -C ~/sot-audit/repo rev-parse HEAD>",
+  "evidence": [
+    {
+      "path": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
+      "line_start": 13,
+      "line_end": 13,
+      "quote": "`/root/.ccr/README.md`"
+    }
+  ],
+  "proposal": {
+    "type": "ERRATUM_ADITIVO",
+    "text": "Nota aditiva no Dossiê indicando que a citação refere o README do ambiente de execução (fora do repositório) e não é referência verificável por este repositório. Texto original preservado (INV-09).",
+    "modifies_baselined_text": true,
+    "touches": [
+      "specs/features/SPEC-002/DOSSIE-PESQUISA.md"
+    ]
+  },
+  "open_decisions_referenced": [],
+  "treats_open_decision_as_closed": false,
+  "status_sip": {
+    "specified": true,
+    "implemented": false,
+    "proven": false
+  },
+  "gate_evidence_ref": null,
+  "reproduce": [
+    "python scripts/check_refs.py",
+    "git grep -n \"root/.ccr/README.md\" -- specs/features/SPEC-002/DOSSIE-PESQUISA.md"
+  ],
+  "author": {
+    "model": "NOME-E-VERSAO-DO-MODELO",
+    "date": "AAAA-MM-DD"
+  },
+  "rule_source": "INV-09 (histórico preservado; referência cruzada deve ser verificável no repositório); check_refs.py [WARN]",
+  "impact": "Referência não resolvível por quem audita só o repositório; não bloqueia (WARN informativo).",
+  "what_does_not_change": "Texto original do Dossiê preservado; nenhuma decisão aberta tocada; SPEC-002 v1.0 permanece baseline.",
+  "directive_version": "<DIR_VIGENTE: última diretiva com Status: VIGENTE>"
+}
