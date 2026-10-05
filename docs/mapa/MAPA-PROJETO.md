@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-05** · digest `23329d5951ca1ba7` · **259** documentos · **3116** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-05** · digest `beda5a9a4718b8e4` · **259** documentos · **3125** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -28,9 +28,9 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 
 ```mermaid
 flowchart LR
-  governance["governance"] -->|405| specs["specs"]
+  governance["governance"] -->|406| specs["specs"]
+  specs["specs"] -->|225| governance["governance"]
   governance["governance"] -->|224| raiz["raiz"]
-  specs["specs"] -->|222| governance["governance"]
   governance["governance"] -->|123| backlog["backlog"]
   backlog["backlog"] -->|99| governance["governance"]
   raiz["raiz"] -->|96| governance["governance"]
@@ -102,7 +102,7 @@ flowchart LR
 | `SPEC-007` | Indicativa (não aberta) | — | 34 |
 | `SPEC-008` | Indicativa (não aberta) | — | 28 |
 | `SPEC-009` | Indicativa (não aberta) | — | 24 |
-| `SPEC-010` | Indicativa (não aberta) | — | 29 |
+| `SPEC-010` | Indicativa (não aberta) | — | 30 |
 | `SPEC-011` | Indicativa (não aberta) | — | 6 |
 | `SPEC-012` | Indicativa (não aberta) | — | 6 |
 | `SPEC-013` | Indicativa (não aberta) | — | 8 |
@@ -155,7 +155,6 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 - [.claude/skills/sot-especificador-pap001/SKILL.md](../../.claude/skills/sot-especificador-pap001/SKILL.md) — MISSÃO: PRODUZIR O PAP-001
 - [.claude/skills/update-harness.md](../../.claude/skills/update-harness.md) — Update SOT Harness from Source Document
 - [.claude/skills/validate-sot-spec.md](../../.claude/skills/validate-sot-spec.md) — Validate SOT Agent Spec
-- [governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md](../../governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md) — DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (decisões de chat) [ATA-PROPOSTA]
 - [governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md](../../governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md) — DHR-SPEC002-001 — Ata de Homologação — Abertura da SPEC-002 (Evidence & Evidence Provenance Harness)
 - [governance/ERRATUM-SPEC019-001_PROPOSTA.md](../../governance/ERRATUM-SPEC019-001_PROPOSTA.md) — ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homologada (PROPOSTA)
 - [governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md](../../governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md) — EUA-E19a — Restauração Semântica do "Signal Package" (fronteira) + TMP interno (PROPOSTA)
@@ -192,15 +191,15 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [AUDITORIA-HIGIENE-SPECS-2026-10-01.md](../../governance/AUDITORIA-HIGIENE-SPECS-2026-10-01.md) | AUDITORIA DE HIGIENE DAS SPECS — 2026-10-01 | 3 | 15 |
 | [BL-012-DELTA_PROPOSTA.md](../../governance/BL-012-DELTA_PROPOSTA.md) | BL-012 (MC-COG-001) — Reavaliação do DELTA — [PROPOSTA] | 31 | 13 |
 | [BRIEFING-DECISAO-I-001.md](../../governance/BRIEFING-DECISAO-I-001.md) | BRIEFING DE DECISÃO — I-001 ("Skills como unidades formais separadas?") | 4 | 16 |
-| [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) | CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT) | 67 | 153 |
-| [CIC-001_Inventario_Conformidade.md](../../governance/CIC-001_Inventario_Conformidade.md) | CIC-001 --- Inventario de Conformidade de Principios do SOT | 30 | 26 |
+| [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) | CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT) | 67 | 154 |
+| [CIC-001_Inventario_Conformidade.md](../../governance/CIC-001_Inventario_Conformidade.md) | CIC-001 --- Inventario de Conformidade de Principios do SOT | 30 | 27 |
 | [CLASSIFICACAO-COLISOES-BL010-011-012.md](../../governance/CLASSIFICACAO-COLISOES-BL010-011-012.md) | CLASSIFICAÇÃO DE COLISÕES — BL-010 / BL-011 / BL-012 (Master Contracts diferi... | 3 | 10 |
 | [CONFLICT-MAP.md](../../governance/CONFLICT-MAP.md) | Conflict Map — SOT (Sistema Operacional de Trading) | 43 | 36 |
 | [CONSTITUTION.md](../../governance/CONSTITUTION.md) | SOT Constitution — Sistema Operacional de Trading | 21 | 1 |
 | [DHR-ADR-HOC003_Ata_Homologacao_HOC003.md](../../governance/DHR-ADR-HOC003_Ata_Homologacao_HOC003.md) | DHR-ADR-HOC003 — Ata de Homologação — Cluster HOC-003 (Auditoria Taxonômica 2... | 7 | 6 |
 | [DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md](../../governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md) | DHR-ARQ-001 — Ata de Unificação: Manager Agent absorve o Conviction Engine (p... | 20 | 13 |
 | [DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md](../../governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md) | DHR-ARQ-002 — Ata de Unificação: Manager Agent absorve o Synthesis Agent (pro... | 18 | 17 |
-| [DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md](../../governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md) | DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (deci... | 0 | 6 |
+| [DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md](../../governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md) | DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (deci... | 5 | 7 |
 | [DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md](../../governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md) | DHR-BL008-001 — Ata de Homologação — Mapa de Auditoria da SPEC-001 (BL-008) | 9 | 11 |
 | [DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md](../../governance/DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md) | DHR-BL009-001 — Ata de Homologação — Mapa de Auditoria do SAS-001 (BL-009) | 3 | 6 |
 | [DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md](../../governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md) | DHR-BL010-011-012-001 — Ata de Homologação — Classificação de Colisões (MC-RA... | 6 | 4 |
@@ -258,7 +257,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md](../../governance/DHR-SPEC002-001_Ata_Homologacao_Abertura_SPEC-002.md) | DHR-SPEC002-001 — Ata de Homologação — Abertura da SPEC-002 (Evidence & Evide... | 0 | 13 |
 | [DHR-SPEC002-001_Ata_Homologacao_SPEC-002.md](../../governance/DHR-SPEC002-001_Ata_Homologacao_SPEC-002.md) | DHR-SPEC002-001 — Ata de Homologação — SPEC-002 v1.0 (Evidence & Evidence Pro... | 11 | 10 |
 | [DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md](../../governance/DHR-SPEC002-VERBATIM-001_Ata_Decisao_Captura_Verbatim_Diferida.md) | DHR-SPEC002-VERBATIM-001 — Ata de Decisão — Captura Verbatim Diferida (RULE-E... | 1 | 7 |
-| [DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md](../../governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md) | DHR-SPEC003-001 — Ata de Homologação — SPEC-003 v1.5 (Conviction Vector, Evid... | 20 | 20 |
+| [DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md](../../governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md) | DHR-SPEC003-001 — Ata de Homologação — SPEC-003 v1.5 (Conviction Vector, Evid... | 21 | 20 |
 | [DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md](../../governance/DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md) | DHR-SPEC004-001 — Ata de Homologação — Abertura da SPEC-004 (Cognitive Blackb... | 8 | 11 |
 | [DHR-SPEC004-002_Ata_Homologacao_SPEC-004.md](../../governance/DHR-SPEC004-002_Ata_Homologacao_SPEC-004.md) | DHR-SPEC004-002 — Ata de Homologação — SPEC-004 (Cognitive Blackboard Protoco... | 7 | 10 |
 | [DHR-SPEC004-003_Ata_Homologacao_Emenda_v1.2_SPEC-004.md](../../governance/DHR-SPEC004-003_Ata_Homologacao_Emenda_v1.2_SPEC-004.md) | DHR-SPEC004-003 — Ata de Homologação — Emenda v1.2 da SPEC-004 (Cognitive Bla... | 11 | 10 |
@@ -276,9 +275,9 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md](../../governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md) | DHR-VERBATIM-SRC-001 — Ata de Homologação — Captura Verbatim de Fonte (RULE-E... | 12 | 10 |
 | [DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md](../../governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md) | DHR-WF-001 — Ata de Homologação — WORKFLOW.md soberano na raiz + conformidade... | 9 | 8 |
 | [DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md](../../governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md) | DHR-WF-002 — Ata de Homologação — WORKFLOW.md v2.0 (decisões sobre o Dossiê d... | 5 | 8 |
-| [EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md](../../governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md) | [EMENDA-PROPOSTA] EMENDA-SPEC001-001 — Re-homologação pontual: campo `hierarc... | 1 | 14 |
+| [EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md](../../governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md) | [HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] EMENDA-SPEC001-0... | 1 | 15 |
 | [ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md](../../governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md) | ERRATUM-SPEC001-001 — Âncora de fonte: SAS-001 §6.7 → §6.10 (metadados de tra... | 3 | 5 |
-| [ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md](../../governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md) | [ERRATUM-PROPOSTO] ERRATUM-SPEC001-002 — Erratum ADITIVO único (auditoria sem... | 1 | 20 |
+| [ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md](../../governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md) | [HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] ERRATUM-SPEC001-... | 2 | 21 |
 | [ERRATUM-SPEC005-001_Estado_BL-008.md](../../governance/ERRATUM-SPEC005-001_Estado_BL-008.md) | ERRATUM-SPEC005-001 — Estado do BL-008: `Absorvido`, não `ATIVADO` — erratum ... | 1 | 13 |
 | [ERRATUM-SPEC019-001_PROPOSTA.md](../../governance/ERRATUM-SPEC019-001_PROPOSTA.md) | ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homolog... | 0 | 9 |
 | [ERRATUM-SPEC020-001_Fechamento_tool_correctness.md](../../governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md) | ERRATUM-SPEC020-001 — Fechamento da dimensão B "tool correctness" (BL-017) — ... | 2 | 8 |
@@ -336,8 +335,8 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | Documento | Título | ← | → |
 |---|---|---:|---:|
 | [elliott-wave.spec.md](../../specs/elliott-wave.spec.md) | Spec — Elliott Wave Specialist | 3 | 1 |
-| [SPEC-001/checks.md](../../specs/features/SPEC-001/checks.md) | SPEC-001 — Hypothesis Harness — Verificação de Spec | 25 | 2 |
-| [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | SPEC-001 — Hypothesis Harness | 106 | 6 |
+| [SPEC-001/checks.md](../../specs/features/SPEC-001/checks.md) | SPEC-001 — Hypothesis Harness — Verificação de Spec | 26 | 2 |
+| [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | SPEC-001 — Hypothesis Harness | 106 | 9 |
 | [DOSSIE-PESQUISA.md](../../specs/features/SPEC-002/DOSSIE-PESQUISA.md) | Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness) | 6 | 14 |
 | [PROPOSTA-ABERTURA.md](../../specs/features/SPEC-002/PROPOSTA-ABERTURA.md) | Proposta de Abertura — SPEC-002: Evidence & Evidence Provenance Harness | 4 | 16 |
 | [SPEC-002/checks.md](../../specs/features/SPEC-002/checks.md) | checks.md — Verificação de Spec da SPEC-002 (fase spec-first) | 3 | 9 |
@@ -349,7 +348,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-003/research.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine — DO... | 3 | 22 |
 | [ABERTURA.md](../../specs/features/SPEC-004/ABERTURA.md) | Proposta de Abertura — SPEC-004: Cognitive Blackboard Protocol | 8 | 15 |
 | [SPEC-004/checks.md](../../specs/features/SPEC-004/checks.md) | checks.md — Verificação de Spec da SPEC-004 (fase spec-first) | 2 | 12 |
-| [SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) | SPEC-004 — Cognitive Blackboard Protocol | 68 | 21 |
+| [SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) | SPEC-004 — Cognitive Blackboard Protocol | 67 | 21 |
 | [research.md](../../specs/features/SPEC-004/research.md) | Dossiê de Pesquisa — SPEC-004: Cognitive Blackboard Protocol | 2 | 14 |
 | [ABERTURA.md](../../specs/features/SPEC-005/ABERTURA.md) | Proposta de Abertura — SPEC-005: Cognitive Event Bus (slot ROADMAP §5, FASE 2) | 3 | 17 |
 | [SPEC-005/checks.md](../../specs/features/SPEC-005/checks.md) | checks.md — Verificação de Spec da SPEC-005 (fase spec-first) | 2 | 11 |

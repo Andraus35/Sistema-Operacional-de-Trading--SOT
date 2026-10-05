@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "23329d5951ca1ba750f9b4518e5ff4a43e0a1f274723aa731a91e52f8dfabd7c",
+  "digest": "beda5a9a4718b8e4fa6b1483418d3c998e24a97bd002afa3b085b159cb1fe0ae",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -438,14 +438,14 @@
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
    "in": 67,
-   "out": 153
+   "out": 154
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
    "area": "governance",
    "title": "CIC-001 --- Inventario de Conformidade de Principios do SOT",
    "in": 30,
-   "out": 26
+   "out": 27
   },
   {
    "path": "governance/CLASSIFICACAO-COLISOES-BL010-011-012.md",
@@ -492,9 +492,9 @@
   {
    "path": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "area": "governance",
-   "title": "DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (decisões de chat) [ATA-PROPOSTA]",
-   "in": 0,
-   "out": 6
+   "title": "DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (decisões de chat)",
+   "in": 5,
+   "out": 7
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -899,7 +899,7 @@
    "path": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
    "area": "governance",
    "title": "DHR-SPEC003-001 — Ata de Homologação — SPEC-003 v1.5 (Conviction Vector, Evidence Fusion Engine & Conviction Engine — redige o CCM-001)",
-   "in": 20,
+   "in": 21,
    "out": 20
   },
   {
@@ -1024,9 +1024,9 @@
   {
    "path": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
    "area": "governance",
-   "title": "[EMENDA-PROPOSTA] EMENDA-SPEC001-001 — Re-homologação pontual: campo `hierarchy_role` (separado de `hypothesis_type`)",
+   "title": "[HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] EMENDA-SPEC001-001 — Re-homologação pontual: campo `hierarchy_role` (separado de `hypothesis_type`)",
    "in": 1,
-   "out": 14
+   "out": 15
   },
   {
    "path": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
@@ -1038,9 +1038,9 @@
   {
    "path": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
    "area": "governance",
-   "title": "[ERRATUM-PROPOSTO] ERRATUM-SPEC001-002 — Erratum ADITIVO único (auditoria semântica SPEC-001: itens 2, 3, 5, 6, 7)",
-   "in": 1,
-   "out": 20
+   "title": "[HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] ERRATUM-SPEC001-002 — Erratum ADITIVO único (auditoria semântica SPEC-001: itens 2, 3, 5, 6, 7)",
+   "in": 2,
+   "out": 21
   },
   {
    "path": "governance/ERRATUM-SPEC005-001_Estado_BL-008.md",
@@ -1543,7 +1543,7 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 25,
+   "in": 26,
    "out": 2
   },
   {
@@ -1551,7 +1551,7 @@
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
    "in": 106,
-   "out": 6
+   "out": 9
   },
   {
    "path": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
@@ -1634,7 +1634,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 68,
+   "in": 67,
    "out": 21
   },
   {
@@ -2009,7 +2009,7 @@
   {
    "id": "DHR-AUDIT-SPEC001-001",
    "defined_in": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
-   "cited_by": 0
+   "cited_by": 5
   },
   {
    "id": "DHR-BL008-001",
@@ -2299,7 +2299,7 @@
   {
    "id": "DHR-SPEC003-001",
    "defined_in": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "DHR-SPEC004-001",
@@ -2733,8 +2733,8 @@
   },
   {
    "id": "RULE-CBP-014",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 8
+   "defined_in": "specs/features/SPEC-001/plan.md",
+   "cited_by": 9
   },
   {
    "id": "RULE-CEB",
@@ -3679,7 +3679,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 29
+   "cited_by": 30
   },
   {
    "id": "SPEC-011",
@@ -7795,6 +7795,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -8455,6 +8460,11 @@
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
+   "to": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CIC-001_Inventario_Conformidade.md",
    "to": "governance/DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md",
    "type": "id"
   },
@@ -9010,6 +9020,11 @@
   },
   {
    "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "governance/CIC-001_Inventario_Conformidade.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
    "type": "id"
   },
@@ -9020,13 +9035,18 @@
   },
   {
    "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
   },
   {
    "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
-   "to": "specs/features/SPEC-004/plan.md",
-   "type": "id"
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -13060,6 +13080,11 @@
   },
   {
    "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
+   "to": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
    "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
    "type": "id"
   },
@@ -13177,6 +13202,11 @@
    "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
    "to": "governance/CIC-001_Inventario_Conformidade.md",
    "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
+   "to": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "type": "id"
   },
   {
    "from": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
@@ -16530,7 +16560,22 @@
   },
   {
    "from": "specs/features/SPEC-001/plan.md",
+   "to": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-001/plan.md",
+   "to": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-001/plan.md",
    "to": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-001/plan.md",
+   "to": "governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md",
    "type": "path"
   },
   {
