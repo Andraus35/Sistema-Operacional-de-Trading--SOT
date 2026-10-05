@@ -1,7 +1,7 @@
 # SPEC-001 — Hypothesis Harness
 
-Versão: 1.1
-Status: HOMOLOGADA — BASELINE (Andraus, 2026-09-15)
+Versão: 1.2
+Status: HOMOLOGADA — BASELINE v1.2 (Andraus, 2026-10-05, DHR-AUDIT-SPEC001-001; v1.1 homologada em 2026-09-15 — cópia histórica em docs/_legacy/SPEC-001-plan-v1.1.md)
 Complexidade: CRITICAL
 Profundidade-alvo: D0–D8
 Posição no caminho crítico: 1a Spec autorizada (ROADMAP §4)
@@ -16,6 +16,7 @@ Data: 2026-09-15
 |---|---|---|
 | 1.0 | 2026-09-15 | Entrega candidata inicial (D0–D7). |
 | 1.1 | 2026-09-15 | Correções homologadas por Andraus: (F-01) profundidade elevada a D0–D8 + seção D8 adversarial formal; (M-01) `QUANDO` da BASpec-HH-005 reescrito para condição observável; (M-03) EC-COG-004/005 etiquetados em TRACE-06; (M-04) Non-goal explícito de latência do Event Bus. Parecer do Revisor: **CONFORME** (1 achado Menor, MEN-01, não-bloqueante). MEN-01 registrado nas Decisões Abertas e encaminhado à SPEC-003. **HOMOLOGADA como baseline** por Andraus. |
+| 1.2 | 2026-10-05 | **Re-homologação pontual (compat. Minor), ordem direta de Andraus (DHR-AUDIT-SPEC001-001):** (EMENDA-SPEC001-001) `hierarchy_role ∈ {PRIMARY, SUB}` separado de `hypothesis_type` (enum CHM-001 §2.5; valor por especialista = pendência herdada, decidida por Andraus na abertura das Specs dos especialistas); PRECOND do EC-HH-001 reescrita. (ERRATUM-SPEC001-002, aditivo) identidade autenticada do produtor (`PRODUCER_IDENTITY_MISMATCH`), CCM-001 histórico+atual, âncoras por capability, nota piloto. Nenhuma decisão aberta fechada (CONS-01). |
 
 ---
 
@@ -75,6 +76,15 @@ O Harness **não redefine** a estrutura do objeto hipótese (que é responsabili
 | Orçamento de latência e entrega do Event Bus | SPEC-005 | SPEC-001 apenas **emite** eventos; produtor não tem autoridade para definir metadados de transporte (Latency/Freshness/Reliability/Expiration) — [FONTE: SAS-001 §6.7]. Contrato do Event Bus (TTL, delivery, latência) pertence à SPEC-005 (ROADMAP §SPEC-005) |
 
 **Errata aditiva (2026-10-05):** a âncora `[FONTE: SAS-001 §6.7]` acima deve ser lida como **SAS-001 §6.10** (Metadados Operacionais de Infraestrutura; §6.9 = integração com o Event Bus) — ver `governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md`. Texto acima não alterado (INV-09).
+
+**Errata aditivas v1.2 (2026-10-05, ERRATUM-SPEC001-002 — `governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md`; o texto original deste plano NÃO foi alterado por elas, INV-09):**
+- **Identidade do produtor (item 2).** Onde esta SPEC usa `producer_id` como base de autorização (EC-HH-001 PRECOND) ou proveniência (EVIDENCE, Apêndice A), ele DEVE ser derivado da **identidade AUTENTICADA pelo runtime**, nunca do campo do payload (declarada ≠ autenticada). `payload.producer_id` divergente da identidade autenticada → criação rejeitada, fail-closed: `PRODUCER_IDENTITY_MISMATCH` (HTTP 403), nenhuma hipótese publicada. Âncora por capability: **RULE-CBP-014** (identidade/autoridade do Blackboard; hoje na SPEC-004 BASELINE v1.2). Teste de conformidade futuro `TEST-HH-IDENTITY-001`: especificado = SIM · implementado = NÃO · provado = NÃO (NOT YET PROVEN).
+- **CCM-001 (item 5).** Onde este plano diz "CCM-001 pendente de redação" (originalmente correto em 2026-09-15), **ler**: CCM-001 **BASELINED** via SPEC-003 (DHR-SPEC003-001, 2026-10-02); o slot de convicção referencia o CCM-001 baselined. **J-001 e N-001 permanecem ABERTAS** (CONS-01).
+- **Âncoras por capability (item 6).** As referências da tabela de Non-goals e do Apêndice de rastreabilidade a SPEC-002..005 devem ser lidas **primeiro pela capability/contrato** (Conviction Vector/CCM-001; protocolo Blackboard e Knowledge Graph — H-001 aberta; camada operacional sobre CEM-001; enum de estados não-hipótese — M-001 aberta; contrato de transporte do Event Bus + SAS-001 §6.10); o número de Spec é o **estado atual** (SPEC-002, 003, 004 v1.2, 005 v1.0 — BASELINE), atualizável por re-apontamento homologado (ver ERRATUM-SPEC001-002, item 6). Sana D-ECC-1 quanto à SPEC-001.
+- **Contagem da BASpec-HH-005 (item 7).** A regra de contagem é interina (Fase Piloto). Independência/proveniência da evidência pertence ao mecanismo do CCM-001 e à camada de provenance da SPEC-002; a ponderação definitiva segue vinculada a **J-001 (ABERTA)**.
+- **Status de realização (item 3, declaração global no CATALOGO-OFICIAL):** esta Spec é **especificada**; runtime = NOT IMPLEMENTED; conformidade = NOT YET PROVEN.
+
+**Re-homologação v1.2 (EMENDA-SPEC001-001):** campo `hierarchy_role` separado de `hypothesis_type` (as ocorrências do *campo* foram atualizadas em linha; a narrativa conceitual PRIMARY/SUB não mudou). **Pendência herdada [DECISÃO NECESSÁRIA — Andraus, na abertura das Specs dos especialistas]:** qual valor de `hypothesis_type` (CHM-001 §2.5) cada produtor atribui. Até lá `hypothesis_type` ∈ enum CHM-001 §2.5, sem default e sem mapeamento produtor→tipo.
 
 ---
 
@@ -144,7 +154,7 @@ RULE-HH-031: Publicação no Blackboard é append-only durante análise.
 
 Os critérios de aceitação seguem notação EARS ("Quando <condição>, o componente DEVE <resposta>"):
 
-1. Quando Elliott Specialist solicita criação de hipótese PRIMARY, o sistema DEVE criar objeto com hypothesis_type = PRIMARY e epistemic_state = EMERGENT.
+1. Quando Elliott Specialist solicita criação de hipótese PRIMARY, o sistema DEVE criar objeto com hierarchy_role = PRIMARY, hypothesis_type = «valor CHM-001 §2.5 — pendência herdada, EMENDA-SPEC001-001 §8» [DECISÃO NECESSÁRIA] e epistemic_state = EMERGENT.
 
 2. Quando agente não-autorizado (ex.: ICT) tenta criar hipótese, o sistema DEVE rejeitar a operação com erro específico.
 
@@ -172,11 +182,13 @@ BASpec-HH-001:
                 e nenhuma hipótese PRIMARY ACTIVE/DOMINANT conflitante existe para o mesmo
                 ativo/grau/timeframe
   ENTÃO:        Sistema cria objeto Hypothesis com:
-                - hypothesis_type = PRIMARY
+                - hierarchy_role = PRIMARY
+                - hypothesis_type = «valor CHM-001 §2.5 — pendência herdada, EMENDA-SPEC001-001 §8» [DECISÃO NECESSÁRIA]
                 - producer_id = Elliott Specialist
                 - epistemic_state = EMERGENT
                 - confidence = [valor atribuído pelo produtor]
                 - parent_hypothesis_id = null (PRIMARY não tem parent)
+                - generation = 0 (PRIMARY)
                 - supporting_evidence_ids = [lista inicial]
                 - version = 1
                 - hypothesis_id = gerado pelo Hypothesis Registry
@@ -188,7 +200,7 @@ BASpec-HH-001:
     QUANDO      Elliott invoca createHypothesis(type=PRIMARY, confidence=0.72, evidence=[EV-101])
     ENTÃO       Sistema retorna Hypothesis com hypothesis_id != null, version = 1,
                 epistemic_state = EMERGENT, parent_hypothesis_id = null
-    VERIFICAÇÃO hypothesis.hypothesis_type == PRIMARY; hypothesis.producer_id == "elliott_specialist"
+    VERIFICAÇÃO hypothesis.hierarchy_role == PRIMARY; hypothesis.producer_id == "elliott_specialist"
 ```
 
 ### BASpec-HH-002 — Criação de Hipótese SUB
@@ -198,7 +210,7 @@ BASpec-HH-002:
   QUANDO:       SMC Specialist ou Fibonacci Validator identifica sub-hipótese de domínio
                 E existe hipótese PRIMARY em estado ACTIVE ou DOMINANT com parent_id válido
   ENTÃO:        Sistema cria objeto Hypothesis com:
-                - hypothesis_type = SUB
+                - hierarchy_role = SUB
                 - producer_id = [agente que criou]
                 - epistemic_state = EMERGENT
                 - parent_hypothesis_id = [ID da PRIMARY pai]
@@ -209,7 +221,7 @@ BASpec-HH-002:
   VERIFICADO POR:
     DADO        Hipótese PRIMARY HYP-A1 em estado ACTIVE; SMC identifica BOS relevante
     QUANDO      SMC invoca createHypothesis(type=SUB, parent_id=HYP-A1, confidence=0.68)
-    ENTÃO       Sistema retorna Hypothesis com parent_hypothesis_id = HYP-A1, hypothesis_type = SUB
+    ENTÃO       Sistema retorna Hypothesis com parent_hypothesis_id = HYP-A1, hierarchy_role = SUB
     VERIFICAÇÃO hypothesis.parent_hypothesis_id == "HYP-A1"
 ```
 
@@ -398,7 +410,7 @@ DADO        Elliott Specialist identificou contagem Onda 3 iniciando em BTC/D1
 QUANDO      Elliott invoca Hypothesis Registry para criar hipótese PRIMARY
 ENTÃO       Sistema retorna:
               hypothesis_id = "HYP-2026-09-15-001"
-              hypothesis_type = PRIMARY
+              hierarchy_role = PRIMARY
               epistemic_state = EMERGENT
               version = 1
               parent_hypothesis_id = null
@@ -406,7 +418,7 @@ ENTÃO       Sistema retorna:
             Evento "Hypothesis.Created" publicado no Event Bus
 VERIFICAÇÃO hypothesis_id != null
             epistemic_state == EMERGENT
-            hypothesis_type == PRIMARY
+            hierarchy_role == PRIMARY
             parent_hypothesis_id == null
 ```
 
@@ -418,11 +430,11 @@ DADO        Hipótese PRIMARY HYP-A1 em estado ACTIVE
             confidence = 0.65
 QUANDO      SMC invoca criação de hipótese SUB com parent_id = HYP-A1
 ENTÃO       Sistema retorna:
-              hypothesis_type = SUB
+              hierarchy_role = SUB
               parent_hypothesis_id = "HYP-A1"
               epistemic_state = EMERGENT
 VERIFICAÇÃO parent_hypothesis_id == "HYP-A1"
-            hypothesis_type == SUB
+            hierarchy_role == SUB
 ```
 
 ### Cenário-HH-T03 — Bloqueio de ICT como produtor
@@ -708,9 +720,16 @@ transition_record: {
 ```
 CAPABILITY   : Criar objeto Hypothesis no sistema
 EFFECT       : Publicação no Blackboard (workspace Hypotheses)
-PRECOND      : (producer_id in AUTHORIZED_PRODUCERS) AND
-               (hypothesis_type == PRIMARY implies producer_id == "elliott_specialist") AND
-               (hypothesis_type == SUB implies parent_id != null)
+PRECOND      : (producer_id in AUTHORIZED_PRODUCERS)   -- producer_id = identidade AUTENTICADA pelo
+                                                          runtime (ERRATUM-SPEC001-002, item 2) AND
+               (hierarchy_role == PRIMARY implies
+                    producer_id == "elliott_specialist"
+                    AND parent_hypothesis_id == null
+                    AND generation == 0) AND
+               (hierarchy_role == SUB implies
+                    parent_hypothesis_id != null
+                    AND generation >= 1) AND
+               (hypothesis_type in {DESCRIPTIVE, EXPLANATORY, PREDICTIVE, DIAGNOSTIC})  -- CHM-001 §2.5
 POSTCOND     : Hypothesis existe no Blackboard com epistemic_state = EMERGENT,
                hypothesis_id alocado, version = 1
 POLICY       : RULE-HH-001, RULE-HH-002, RULE-HH-003, RULE-HH-004
@@ -822,7 +841,8 @@ EVIDENCE     : refutation_record com motivo, timestamp, evidence_ids que causara
   "hypothesis_id": "HYP-2026-09-15-001",
   "version": 1,
   "previous_version_id": null,
-  "hypothesis_type": "PRIMARY | SUB",
+  "hierarchy_role": "PRIMARY | SUB",
+  "hypothesis_type": "DESCRIPTIVE | EXPLANATORY | PREDICTIVE | DIAGNOSTIC",
   "generation_mechanism": "OBSERVATIONAL | INFERENTIAL | SIMULATED | COMPOSITE",
   "epistemic_state": "EMERGENT | CANDIDATE | ACTIVE | DOMINANT | SUPERSEDED | REFUTED | ARCHIVED",
   "confidence": 0.78,

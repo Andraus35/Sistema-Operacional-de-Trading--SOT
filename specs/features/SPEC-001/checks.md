@@ -1,6 +1,6 @@
 # SPEC-001 — Hypothesis Harness — Verificação de Spec
 
-**Versão:** 1.1
+**Versão:** 1.2
 **Status:** Verificação de spec (fase spec-first)
 **Objetivo:** Provar que BASpecs, EARS, Enforcement Contracts e estrutura da SPEC-001 estão bem-formados.
 **Tipo:** Verificação de Spec (não teste de runtime)
@@ -102,7 +102,7 @@
 | Critério | Verificação |
 |---|---|
 | Condição observável | "Elliott Specialist identifica estrutura de onda válida com confiança >= 60%" |
-| Comportamento específico | "Sistema cria objeto Hypothesis com hypothesis_type = PRIMARY" |
+| Comportamento específico | "Sistema cria objeto Hypothesis com hierarchy_role = PRIMARY" |
 | Justificativa rastreável | "Somente Elliott cria hipótese estrutural/direcional" |
 | REFERÊNCIA presente (acentuado) | "CHM-001 §3.1; decisão homologada; RULE-HH-001; RULE-HH-002" |
 | Verificação com DADO/QUANDO/ENTÃO | Presente com input e expected output |
@@ -113,7 +113,7 @@
 | Critério | Verificação |
 |---|---|
 | Condição observável | "SMC ou Fibonacci identifica sub-hipótese E existe PRIMARY ACTIVE/DOMINANT" |
-| Comportamento específico | "Sistema cria Hypothesis com hypothesis_type = SUB, parent_hypothesis_id = [ID]" |
+| Comportamento específico | "Sistema cria Hypothesis com hierarchy_role = SUB, parent_hypothesis_id = [ID]" |
 | Justificativa rastreável | "SUB deve sempre referenciar PRIMARY via parent_id" |
 | REFERÊNCIA presente (acentuado) | "CHM-001 §1.8; decisão homologada; RULE-HH-003" |
 | Verificação com DADO/QUANDO/ENTÃO | Presente |
