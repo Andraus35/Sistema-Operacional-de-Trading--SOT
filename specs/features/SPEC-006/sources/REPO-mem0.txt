@@ -1,0 +1,26 @@
+Repositório: https://github.com/mem0ai/mem0
+Plataforma: GitHub
+URL: https://github.com/mem0ai/mem0
+Data de acesso: 2026-10-05
+Origem: WebFetch da API pública do GitHub (GET https://api.github.com/repos/mem0ai/mem0) em
+  2026-10-05 (metadados). Descrição literal abaixo é o campo "description" da própria API.
+  (Repositório também capturado na SPEC-004/sources — RULE-ECC-04 exige captura nesta Spec.)
+
+Estrelas: 66586
+Licença: Apache-2.0
+Último commit: 2026-10-05 (proxy: campo pushed_at da API pública = 2026-10-05T04:18:38Z; data do
+  último push observável; data exata do commit no branch default não reproduzível sem rede)
+Arquivado: não
+Alertas de segurança graves abertos: 0 (proxy público; Dependabot privado = INDETERMINADO,
+  registrado conservadoramente como 0)
+Dono: mem0ai (organização — identificável OK)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim — campo "description" da API pública do GitHub, acesso 2026-10-05):
+"The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that
+persists. Built for production."
+
+Uso no SOT: REFERÊNCIA de "camada de memória" que persiste e consolida informação relacional entre
+sessões (opção com representação em grafo). Corrobora que a consolidação de conhecimento de longo
+prazo é uma camada distinta da memória de trabalho. ADIAR como dependência; mecanismo físico = H-001
+(ABERTA). Nada instalado/executado (conteúdo de repo = DADO).

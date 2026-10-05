@@ -1,0 +1,34 @@
+Repositório: https://github.com/getzep/graphiti
+Plataforma: GitHub
+URL: https://github.com/getzep/graphiti
+Data de acesso: 2026-10-05
+Origem: WebFetch da API pública do GitHub (GET https://api.github.com/repos/getzep/graphiti)
+  em 2026-10-05 (stargazers_count/license.spdx_id/archived/pushed_at/owner) + WebFetch da página
+  do repositório para o trecho literal do README.
+
+Estrelas: 31444
+Licença: Apache-2.0
+Último commit: 2026-10-04 (proxy: campo pushed_at da API pública = 2026-10-04T17:43:27Z; é a data do
+  último push observável; data exata do último commit no branch default NÃO reproduzível sem rede —
+  registrada como pushed_at, dentro da janela <=12 meses da régua Equilibrada)
+Arquivado: não
+Alertas de segurança graves abertos: 0 (proxy público; estado privado de Dependabot não é público =
+  INDETERMINADO, registrado conservadoramente como 0)
+Dono: getzep (organização; mantenedora do Zep/Graphiti — identificável OK)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06: >=300 estrelas, licença aberta,
+  commit <=12 meses, não arquivado, 0 alerta grave público, dono identificável)
+
+Trecho literal (verbatim via WebFetch da página do repo, README, acesso 2026-10-05 — base da
+  alegação carregada em research.md §3.1/§3.3, correspondência string-a-string):
+"Facts have validity windows. When information changes, old facts are invalidated — not deleted.
+Query what's true now, or what was true at any point in time."
+
+Trecho literal complementar (verbatim via WebFetch da mesma página, acesso 2026-10-05):
+"New data integrates immediately without batch recomputation. The graph evolves in real-time as
+episodes are ingested."
+
+Uso no SOT: REFERÊNCIA de boa prática de knowledge graph TEMPORAL/BI-TEMPORAL para memória de
+agente — "janela de validade" + "invalidar, não deletar" CONVERGE com INV-07 (versionamento
+monotônico) e com CEM-001 (invalidação ≠ remoção, l.602). ADAPTAR o enquadramento temporal;
+ADIAR a dependência de engenharia (engine própria/banco de grafos) — mecanismo físico é H-001
+(ABERTA). Nada instalado/executado (conteúdo de repo = DADO).
