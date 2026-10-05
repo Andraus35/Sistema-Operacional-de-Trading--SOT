@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "beda5a9a4718b8e4fa6b1483418d3c998e24a97bd002afa3b085b159cb1fe0ae",
+  "digest": "df7917a5bc75e5088beb3714716871e26ec08a8a288ad29c0cada6d4e95f810f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 138,
+   "in": 139,
    "out": 63
   },
   {
@@ -220,14 +220,14 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 136,
+   "in": 137,
    "out": 103
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 82,
+   "in": 83,
    "out": 6
   },
   {
@@ -241,14 +241,14 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 92,
+   "in": 93,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 79,
+   "in": 80,
    "out": 0
   },
   {
@@ -423,7 +423,7 @@
    "path": "governance/BL-012-DELTA_PROPOSTA.md",
    "area": "governance",
    "title": "BL-012 (MC-COG-001) — Reavaliação do DELTA — [PROPOSTA]",
-   "in": 31,
+   "in": 32,
    "out": 13
   },
   {
@@ -1291,7 +1291,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 201,
+   "in": 202,
    "out": 35
   },
   {
@@ -1300,6 +1300,13 @@
    "title": "EMENDA SES-001",
    "in": 55,
    "out": 3
+  },
+  {
+   "path": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "area": "governance",
+   "title": "REAUDITORIA-SPEC002-001 — Proposta de Correções — SPEC-002",
+   "in": 0,
+   "out": 6
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -1550,7 +1557,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 106,
+   "in": 107,
    "out": 9
   },
   {
@@ -1578,7 +1585,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 119,
+   "in": 120,
    "out": 17
   },
   {
@@ -1599,7 +1606,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 79,
+   "in": 80,
    "out": 24
   },
   {
@@ -1879,7 +1886,7 @@
   {
    "id": "BL-012",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 31
+   "cited_by": 32
   },
   {
    "id": "BL-013",
@@ -2529,7 +2536,7 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 47
+   "cited_by": 48
   },
   {
    "id": "INV-05",
@@ -2929,12 +2936,12 @@
   {
    "id": "RULE-EH",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-EH-001",
    "defined_in": "ROADMAP.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-EH-002",
@@ -3634,17 +3641,17 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 98
+   "cited_by": 99
   },
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 116
+   "cited_by": 117
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 76
+   "cited_by": 77
   },
   {
    "id": "SPEC-004",
@@ -16086,6 +16093,41 @@
   {
    "from": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
    "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md",
+   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
