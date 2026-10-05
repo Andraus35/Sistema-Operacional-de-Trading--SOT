@@ -80,3 +80,5 @@ Arquivos novos: `.github/workflows/auditor-externo.yml` (inerte até `AUDITOR_EX
 **NÃO verificado:** execução real no GitHub Actions (só no merge/uso); `verify_access.py` e `--post` contra a API; comportamento dos rótulos `aex-req-…`/`aex-fp-…` (criados sob demanda); permissão de Read para abrir Issues.
 **Limite honesto:** "reportar-se só ao Orquestrador" é regra de **endereçamento e conduta**, não controle de acesso: o dono do repositório enxerga todas as Issues. O Orquestrador usa a mesma conta GitHub do dono; a separação é por protocolo (sem menções/atribuições, e Andraus recebe a consolidação).
 
+## 8. Pacote de instalação do auditor (2026-10-05)
+`AGENTE-AUDITOR-EXTERNO.md` — documento único e autocontido (instruções + instalação em nuvem + procedimento + esquema + proibições), derivado do briefing, das diretivas (DIR-001) e do kit; em conflito vale a diretiva vigente. O pacote `.tar.gz` entregue contém esta pasta (`git archive` do commit registrado) + `MANIFEST.sha256` para verificação de integridade antes de qualquer execução. **Não verificado:** instalação em ambiente em nuvem real do auditor.

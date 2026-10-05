@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "8eb61d31d1dbd1d466f559434a6f3eeaeeeba3d7a4ce6278a87b80db451b24e2",
+  "digest": "a55f1691e2e60d6a8923dbf9e7160af041f200cbdf9eb48ddadc093b84a993f6",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 44,
+   "in": 45,
    "out": 30
   },
   {
@@ -164,21 +164,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 143,
+   "in": 144,
    "out": 63
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 30,
+   "in": 31,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 89,
+   "in": 90,
    "out": 33
   },
   {
@@ -220,35 +220,35 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 142,
+   "in": 143,
    "out": 103
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 86,
+   "in": 87,
    "out": 6
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 75,
+   "in": 76,
    "out": 4
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 96,
+   "in": 97,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 83,
+   "in": 84,
    "out": 0
   },
   {
@@ -437,7 +437,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 71,
+   "in": 72,
    "out": 154
   },
   {
@@ -1291,7 +1291,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 209,
+   "in": 210,
    "out": 35
   },
   {
@@ -1300,6 +1300,13 @@
    "title": "EMENDA SES-001",
    "in": 55,
    "out": 3
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "area": "governance",
+   "title": "AGENTE AUDITOR EXTERNO — SOT (documento de instalação e instruções)",
+   "in": 1,
+   "out": 8
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
@@ -1312,7 +1319,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
    "area": "governance",
    "title": "DIRETIVAS AO AUDITOR EXTERNO — instruções e postura (versionadas)  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 4,
+   "in": 5,
    "out": 4
   },
   {
@@ -1327,7 +1334,7 @@
    "area": "governance",
    "title": "MANIFESTO DE ESCOPO — Auditor Externo LLM (\"GPT\")",
    "in": 1,
-   "out": 16
+   "out": 17
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
@@ -2607,7 +2614,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 139
+   "cited_by": 140
   },
   {
    "id": "INV-08",
@@ -2617,7 +2624,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 89
+   "cited_by": 90
   },
   {
    "id": "INV-10",
@@ -16157,6 +16164,51 @@
    "type": "id"
   },
   {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
    "from": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "type": "path"
@@ -16259,6 +16311,11 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
    "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
    "type": "path"
   },
   {
