@@ -175,7 +175,7 @@ Escala adaptativa: o rigor deve ser proporcional ao impacto [PPQ-001].
 | Event Bus (EC-COG-005) | **HIGH** | D0-D6 |
 | ICT Specialist | **MEDIUM** | D0-D5 |
 | Fibonacci Validator | **MEDIUM** | D0-D5 |
-| Knowledge Graph (EC-COG-003) | **MEDIUM** | D0-D5 |
+| Knowledge Graph (EC-COG-003) | **CRITICAL** | D0-D7 |
 | Pattern Memory | **MEDIUM** | D0-D4 |
 | Learning Governance (P12) | **LOW** | D0-D3 |
 

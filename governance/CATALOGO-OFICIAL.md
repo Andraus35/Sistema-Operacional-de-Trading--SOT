@@ -173,6 +173,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-05, DHR-SPEC006-PEND-001):** decisões diretas de Andraus no fluxo da abertura da SPEC-006: **BL-029 → `Em espera`** (gatilho SPEC-014/018/045; `spec:SPEC-004` já consumido; proveniência segue na SPEC-004 v1.1/v1.2) e **emenda Minor ao `atomic-spec.md` §3** (Knowledge Graph **MEDIUM · D0–D5 → CRITICAL · D0–D7**, alinhado ao ROADMAP §6; linha anterior preservada). **A abertura da SPEC-006 NÃO foi homologada por este ato** (proposta em `specs/features/SPEC-006/`, PR #7). Nenhuma decisão aberta fechada: seguem ABERTAS H-001, G-001, M-001, J-001, N-001, WF-D03 e ECC-03-001.
 
+**Registro (2026-10-05, DHR-RPSA-001):** ordem direta de Andraus — **automação determinística dos carimbos RPSA** (`sincronizado-até`, EUA-E16): livro-razão append-only `governance/rpsa-ledger.json` + `scripts/check_rpsa.py` (confere R1–R5, `--register`, `--write`) + testes + passo informativo no CI. Agent-Sync pendente **resolvido**: carimbos de `especificador.md`/`revisor.md` → `DHR-RPSA-001` (antes `DHR-ERRATA-001`) e `last_sync_catalog_date` → 2026-10-05; `.claude/skills/SKILL.md` alinhada à matriz emendada (Knowledge Graph CRITICAL · D0–D7). Classificação das DHRs posteriores registrada no livro-razão, **sujeita a ratificação de Andraus**. Nenhuma decisão aberta fechada; a abertura da SPEC-006 segue **não homologada**.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---

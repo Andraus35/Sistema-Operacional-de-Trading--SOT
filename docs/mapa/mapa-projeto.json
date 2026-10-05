@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "6c64bb07b66ab4cbec1e00efdbffc026383725df489cee3a787b895b74e8f8b4",
+  "digest": "479297f3c56d01bf3b5401822ad2bb705f713b2eaedbc1f0e7cadd40c3b9cc01",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,15 +10,15 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 23,
-   "out": 55
+   "in": 24,
+   "out": 56
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
-   "in": 28,
-   "out": 53
+   "in": 29,
+   "out": 54
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 150,
+   "in": 151,
    "out": 63
   },
   {
@@ -220,7 +220,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 146,
+   "in": 147,
    "out": 104
   },
   {
@@ -438,7 +438,7 @@
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
    "in": 73,
-   "out": 155
+   "out": 156
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -493,14 +493,14 @@
    "path": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "area": "governance",
    "title": "DHR-AUDIT-SPEC001-001 — Ata — Sessão de auditoria semântica da SPEC-001 (decisões de chat)",
-   "in": 7,
+   "in": 8,
    "out": 7
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 2,
+   "in": 3,
    "out": 5
   },
   {
@@ -612,7 +612,7 @@
    "path": "governance/DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md",
    "area": "governance",
    "title": "DHR-ERRATA-001 — Ata — Errata aditivas (SPEC-001 âncora SAS-001; SPEC-005 estado do BL-008) e encaminhamento do BL-003",
-   "in": 8,
+   "in": 9,
    "out": 11
   },
   {
@@ -703,7 +703,7 @@
    "path": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
    "area": "governance",
    "title": "DHR-EUA-E16 — Ata de Homologação da Sincronização dos Agentes + RPSA",
-   "in": 21,
+   "in": 22,
    "out": 6
   },
   {
@@ -875,6 +875,13 @@
    "out": 16
   },
   {
+   "path": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "area": "governance",
+   "title": "DHR-RPSA-001 — Ata — Automação determinística dos carimbos RPSA e sincronização dos agentes",
+   "in": 4,
+   "out": 10
+  },
+  {
    "path": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
    "area": "governance",
    "title": "DHR-SES-001 — Ata de Homologação: SES-001, EUA-E03 e Emenda de Inversões Contextuais",
@@ -948,7 +955,7 @@
    "path": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
    "area": "governance",
    "title": "DHR-SPEC006-PEND-001 — Ata — BL-029 `Em espera` e emenda Minor ao `atomic-spec` §3 (Knowledge Graph)",
-   "in": 3,
+   "in": 4,
    "out": 11
   },
   {
@@ -1305,7 +1312,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 214,
+   "in": 215,
    "out": 35
   },
   {
@@ -2062,7 +2069,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "BL-030",
@@ -2107,12 +2114,12 @@
   {
    "id": "DHR-AUDIT-SPEC001-001",
    "defined_in": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-BL008-001",
@@ -2192,7 +2199,7 @@
   {
    "id": "DHR-ERRATA-001",
    "defined_in": "governance/DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md",
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "DHR-EUA-E04",
@@ -2257,7 +2264,7 @@
   {
    "id": "DHR-EUA-E16",
    "defined_in": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "DHR-EUA-E17",
@@ -2385,6 +2392,11 @@
    "cited_by": 11
   },
   {
+   "id": "DHR-RPSA-001",
+   "defined_in": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "cited_by": 3
+  },
+  {
    "id": "DHR-SES-001",
    "defined_in": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
    "cited_by": 6
@@ -2432,7 +2444,7 @@
   {
    "id": "DHR-SPEC006-PEND-001",
    "defined_in": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-SPEC019",
@@ -2577,7 +2589,7 @@
   {
    "id": "EUA-E16",
    "defined_in": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "EUA-E17",
@@ -2652,7 +2664,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 143
+   "cited_by": 144
   },
   {
    "id": "INV-08",
@@ -3772,7 +3784,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 45
+   "cited_by": 46
   },
   {
    "id": "SPEC-007",
@@ -4158,6 +4170,11 @@
   },
   {
    "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-SPEC002-001_Ata_Homologacao_SPEC-002.md",
    "type": "id"
   },
@@ -4429,6 +4446,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
    "type": "id"
   },
   {
@@ -8163,6 +8185,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
    "type": "id"
   },
@@ -11819,6 +11846,56 @@
   {
    "from": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
    "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "governance/DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
+   "to": "governance/RULES.md",
    "type": "id"
   },
   {
