@@ -18,7 +18,7 @@ def main():
     n = next(i for i, l in enumerate(lines, 1) if len(l.strip()) >= 40)
     base = {"schema_version": "1.0", "id": "AEX-20260101-001", "severity": "P2", "type": "drift", "rule_source": "INV-09", "impact": "sintético", "what_does_not_change": "tudo",
             "title": "achado sintético de calibração", "claim": "Teste de calibração do validador.",
-            "baseline_commit": head,
+            "baseline_commit": head, "directive_version": "DIR-001",
             "evidence": [{"path": "AGENTS.md", "line_start": n, "line_end": n, "quote": lines[n - 1].strip()[:60]}],
             "proposal": {"type": "NOTA", "text": "Sem mudança.", "modifies_baselined_text": False, "touches": []},
             "open_decisions_referenced": [], "treats_open_decision_as_closed": False,
@@ -33,6 +33,7 @@ def main():
              ("toca canon/", ed(lambda d: d["proposal"].update(touches=["canon/CHM-001-canonical-hypothesis-model.md"])), 1, "E-CONST01"),
              ("decisão aberta tratada como fechada", ed(lambda d: d.update(treats_open_decision_as_closed=True)), 1, "E-CONS01"),
              ("comando de reprodução com escrita", ed(lambda d: d.update(reproduce=["rm -rf x"])), 1, "E-REPRO"),
+             ("diretiva de postura não vigente", ed(lambda d: d.update(directive_version="DIR-999")), 1, "E-DIRETIVA"),
              ("implementado sem evidência de gate", ed(lambda d: d["status_sip"].update(implemented=True)), 1, "E-SIP")]
     ok = True
     for nome, d, esperado, cod in casos:

@@ -40,5 +40,6 @@
   },
   "rule_source": "INV-09 (histórico preservado; referência cruzada deve ser verificável no repositório); check_refs.py [WARN]",
   "impact": "Referência não resolvível por quem audita só o repositório; não bloqueia (WARN informativo).",
-  "what_does_not_change": "Texto original do Dossiê preservado; nenhuma decisão aberta tocada; SPEC-002 v1.0 permanece baseline."
+  "what_does_not_change": "Texto original do Dossiê preservado; nenhuma decisão aberta tocada; SPEC-002 v1.0 permanece baseline.",
+  "directive_version": "DIR-001"
 }

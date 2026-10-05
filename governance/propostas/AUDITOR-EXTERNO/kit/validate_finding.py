@@ -115,6 +115,16 @@ def main():
         if CLOSED_CLAIM.search((pr.get("text") or "") + " " + (claim or "")):
             warn.append("W-CONS01 texto parece tratar decisão aberta como resolvida — conferir (CONS-01)")
 
+    # postura: a diretiva citada deve ser a VIGENTE no commit auditado (Orquestrador é a única autoridade de postura)
+    dv = need(f, "directive_version", str, "finding")
+    rc2, dtxt = git(a.repo, "show", f"{sha}:governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md")
+    if rc2 != 0:
+        err.append("E-DIRETIVA arquivo de diretivas ausente no commit auditado")
+    else:
+        vig = [m.group(1) for m in re.finditer(r"^## (DIR-\d{3})\s*\n+Status:\s*VIGENTE", dtxt, re.M)]
+        if not vig: err.append("E-DIRETIVA nenhuma diretiva VIGENTE no commit auditado")
+        elif dv and dv != vig[-1]: err.append(f"E-DIRETIVA directive_version {dv} ≠ vigente {vig[-1]}")
+
     # decisões abertas e estado S/I/P
     if f.get("treats_open_decision_as_closed") is not False:
         err.append("E-CONS01 treats_open_decision_as_closed deve ser false (decisão aberta nunca vira invariante)")

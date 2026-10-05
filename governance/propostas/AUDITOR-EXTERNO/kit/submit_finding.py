@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""submit_finding.py — posta UM achado validado como Issue [AEX] (canal decidido por Andraus, 2026-10-05).
+"""submit_finding.py — posta UM achado validado como Issue [AEX] (caixa de entrada do Orquestrador; canal decidido por Andraus, 2026-10-05).
 
 [PROPOSTA — NÃO HOMOLOGADO] Padrão = DRY-RUN (só imprime). Para postar: --post. Recusa se: validação FALHAR,
 evidence.json ausente/de outro commit, ou credencial tiver push/admin. Token em SOT_AUDITOR_TOKEN (nunca argv).
@@ -31,7 +31,7 @@ def main():
             f"\n\n### Gates determinísticos no commit auditado\nVermelhos (não informativos): {red or 'nenhum'}\n\n"
             f"### Achado (JSON canônico)\n```json\n{json.dumps(f, ensure_ascii=False, indent=2)}\n```\n\n"
             f"---\n_Auditor externo (somente leitura). Validador determinístico: PASS = forma/ancoragem, não mérito. "
-            f"Disposição é do Revisor/Especificador/Andraus._")
+            f"Destinatário único: Orquestrador interno._")
     title = f"[AEX] {f['id']} {f['severity']} — {f['title']}"
     if not a.post:
         print("DRY-RUN\nTÍTULO:", title, "\n\n" + body); return 0

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-05",
-  "digest": "bb588da59caf4f72af3ec30140f2b2ccbee13ba2aab3a51bee07fd532b416837",
+  "digest": "8eb61d31d1dbd1d466f559434a6f3eeaeeeba3d7a4ce6278a87b80db451b24e2",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1291,7 +1291,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 208,
+   "in": 209,
    "out": 35
   },
   {
@@ -1305,8 +1305,15 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
    "area": "governance",
    "title": "BRIEFING-GPT — Instruções prontas para colar no Auditor Externo (\"GPT\")",
-   "in": 3,
+   "in": 4,
    "out": 1
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "area": "governance",
+   "title": "DIRETIVAS AO AUDITOR EXTERNO — instruções e postura (versionadas)  `[PROPOSTA — NÃO HOMOLOGADO]`",
+   "in": 4,
+   "out": 4
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/DOSSIE-PESQUISA.md",
@@ -1320,28 +1327,28 @@
    "area": "governance",
    "title": "MANIFESTO DE ESCOPO — Auditor Externo LLM (\"GPT\")",
    "in": 1,
-   "out": 15
+   "out": 16
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "area": "governance",
    "title": "PROTOCOLO DO AUDITOR EXTERNO LLM (\"GPT\") — PROPOSTA",
-   "in": 3,
-   "out": 17
+   "in": 4,
+   "out": 18
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md",
    "area": "governance",
    "title": "INSTRUÇÕES OPERACIONAIS DETERMINÍSTICAS — Auditor Externo (GPT)  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 2,
-   "out": 9
+   "in": 3,
+   "out": 10
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "area": "governance",
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
    "in": 3,
-   "out": 4
+   "out": 5
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -2600,7 +2607,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 137
+   "cited_by": 139
   },
   {
    "id": "INV-08",
@@ -16155,6 +16162,26 @@
    "type": "path"
   },
   {
+   "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md",
+   "type": "path"
+  },
+  {
    "from": "governance/propostas/AUDITOR-EXTERNO/DOSSIE-PESQUISA.md",
    "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
    "type": "id"
@@ -16237,6 +16264,11 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
    "type": "path"
   },
   {
@@ -16346,6 +16378,11 @@
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/DOSSIE-PESQUISA.md",
    "type": "path"
   },
@@ -16401,6 +16438,11 @@
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "type": "path"
   },
@@ -16413,6 +16455,11 @@
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",

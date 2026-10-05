@@ -19,7 +19,8 @@
     "author",
     "rule_source",
     "impact",
-    "what_does_not_change"
+    "what_does_not_change",
+    "directive_version"
   ],
   "properties": {
     "schema_version": {
@@ -196,6 +197,11 @@
       "type": "string",
       "minLength": 1,
       "description": "invariantes/baseline preservados (INV-07/INV-09)"
+    },
+    "directive_version": {
+      "type": "string",
+      "pattern": "^DIR-\\d{3}$",
+      "description": "diretiva de postura vigente lida no início da auditoria (DIRETIVAS-AO-AUDITOR.md)"
     }
   }
 }

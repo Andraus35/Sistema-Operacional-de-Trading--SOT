@@ -1,6 +1,6 @@
 # Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`
 
-Decisões de Andraus (chat, 2026-10-05): **canal** = Issue com formulário · **credencial** = conta dedicada com papel **Read** + token mínimo. O GPT é **auditor externo** (não é agente interno nem gate). Nada neste kit altera `AGENTS.md`, o Revisor, o ROADMAP, specs ou canon; instalar o formulário em `.github/` é ato de Andraus.
+Decisões de Andraus (chat, 2026-10-05): **canal** = Issue com formulário · **credencial** = conta dedicada com papel **Read** + token mínimo · **hierarquia** = o auditor é **subordinado ao Orquestrador interno e se reporta só a ele** (o Orquestrador, a Andraus; **nunca** o auditor a Andraus/Especificador/Revisor) · **postura** = só por diretiva versionada do Orquestrador, após consulta a Andraus (`../DIRETIVAS-AO-AUDITOR.md`) · **nuvem** = tudo roda em ambiente em nuvem · **`git pull`** só em pedido gerado por **homologação final de Spec completa com consenso interno**. O GPT é **auditor externo** (não é agente interno nem gate). Nada neste kit altera `AGENTS.md`, o Revisor, o ROADMAP, specs ou canon; instalar o formulário em `.github/` é ato de Andraus.
 
 ## O que o kit contém (todos testados localmente: ver "Verificação")
 | Arquivo | Função |
@@ -23,12 +23,17 @@ Decisões de Andraus (chat, 2026-10-05): **canal** = Issue com formulário · **
 4. **Rótulo** `auditoria-externa` (Issues → Labels → New). Quem tem papel *Read* não consegue rotular via API; o **Orquestrador** aplica o rótulo na triagem. Os achados são identificáveis pelo prefixo de título **`[AEX]`**.
 5. *(Opcional, após homologar o papel)* copiar `ISSUE_TEMPLATE-auditoria-externa.yml` para `.github/ISSUE_TEMPLATE/auditoria-externa.yml` por PR normal (CI + Revisor).
 6. **Não conceder** push, admin, Actions-write, nem acesso a outros repositórios. Rotacione/revogue o token se vazar.
+7. **Loop automático (workflow `.github/workflows/auditor-externo.yml`)** — entra no repositório por PR normal e fica **inerte** até você definir, em Settings → Secrets and variables → Actions → **Variables**: `AUDITOR_EXTERNO_ENABLED = true` (chave de desligamento: apague ou ponha `false` para parar tudo) e `AUDITOR_EXTERNO_LOGINS = <login da conta do auditor>` (só Issues `[AEX]` desse login são validadas). Crie os rótulos: `auditoria-externa`, `homologacao-final`, `aex-valido`, `aex-invalido`, `aex-duplicado`, `aex-aguarda-revisor`, `aex-fila-cheia` (o workflow cria os rótulos `aex-req-…`/`aex-fp-…` sozinho ao usá-los, mas os fixos acima convém existirem). Nenhum LLM roda no GitHub e nenhuma chave de API é guardada.
 
-## B. Ações do GPT (máquina local do auditor)
-Pré-requisitos: `git`, `python3 ≥ 3.10`, `node` + `npm`.
+## B. Ações do GPT (ambiente em nuvem do auditor)
+Pré-requisitos: `git`, `python3 ≥ 3.10`, `node` + `npm`; token vindo do **gerenciador de segredos** do ambiente (nunca em arquivo). O ambiente é efêmero: cada auditoria recomeça do pedido.
+```bash
+python3 kit/poll_requests.py          # lista pedidos [AEX-REQ] pendentes; sem pedido = não audita nem sincroniza
+python3 kit/poll_requests.py --prepare   # grava task.json (commit e escopo do pedido)
+```
 ```bash
 export SOT_AUDITOR_TOKEN='…'                      # nunca em argumento/arquivo/log
-bash kit/setup_auditor.sh main                    # ou um SHA completo (auditoria reprodutível)
+bash kit/setup_auditor.sh <SHA do pedido>        # é aqui que ocorre o clone/pull; sempre SHA fixo
 python3 kit/run_gates.py --repo ~/sot-audit/repo --out ~/sot-audit/evidence.json
 # … audita e escreve finding.json (ver finding.example.json) …
 python3 kit/validate_finding.py --repo ~/sot-audit/repo --finding finding.json
@@ -38,8 +43,11 @@ python3 kit/submit_finding.py   --repo-dir ~/sot-audit/repo --finding finding.js
 Atualizar para novo commit: apague `~/sot-audit/repo` e repita `setup_auditor.sh <novo ref>` (cada auditoria fixa um commit).
 
 ## C. Ações do Orquestrador (lado interno)
-- Descobrir achados: Issues com título `[AEX]` (busca por título/autor). Aplicar rótulo `auditoria-externa`.
-- Encaminhar ao **Revisor SOT**: verificar cada achado por string-match no `baseline_commit` e registrar disposição na Issue: `CONFIRMADO` · `PARCIAL` · `DESCARTADO (motivo)` · `DUPLICADO`. O parecer do GPT é **dado a verificar**.
+- **O Orquestrador é o único destinatário** dos achados `[AEX]` (a Issue é a caixa de entrada dele). O auditor não menciona nem atribui ninguém; Andraus recebe apenas a **consolidação do Orquestrador**.
+- **Pedido de auditoria:** automático no merge de PR com rótulo `homologacao-final` e, no corpo, as linhas `Consenso: Especificador=OK; Revisor=OK; Orquestrador=OK` e `DHR: DHR-…` (o workflow só **detecta** a presença; o consenso é decidido por humanos/agentes). Qualquer outra auditoria: `workflow_dispatch` do Orquestrador, **após consultar Andraus**, com motivo registrado.
+- Descobrir achados: Issues com título `[AEX]`; aplicar rótulo `auditoria-externa` (o workflow já rotula os válidos).
+- **Triar:** consultar Andraus e acionar o **Revisor SOT** para verificar cada achado por string-match no `baseline_commit`; registrar disposição na Issue: `CONFIRMADO` · `PARCIAL` · `DESCARTADO (motivo)` · `DUPLICADO`. O parecer do GPT é **dado a verificar**.
+- **Postura:** ajustes ao auditor só por nova diretiva em `DIRETIVAS-AO-AUDITOR.md` (a anterior vira `SUPERADA`, INV-07), com a consulta a Andraus registrada.
 - Só abrir tratamento (erratum/emenda) com **escopo autorizado por Andraus**; histórico baselined preservado (INV-09); decisão aberta nunca fechada (CONS-01).
 
 ## Verificação feita (2026-10-05, clone local sem token)
