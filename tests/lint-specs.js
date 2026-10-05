@@ -51,7 +51,10 @@ function lintFeaturePlan(filePath, label) {
   const content = fs.readFileSync(filePath, 'utf-8');
   let fileFailed = false;
   for (const field of PLAN_REQUIRED_FIELDS) {
-    if (!content.includes(field)) {
+    // Aceita "Campo:" (linha) ou o cabeçalho em tabela "| Campo | valor |" usado nos planos atuais.
+    const name = field.replace(/:$/, '');
+    const asTableRow = new RegExp('^\\s*\\|\\s*' + name + '\\s*\\|', 'm');
+    if (!content.includes(field) && !asTableRow.test(content)) {
       console.error(`  FAIL [${label}]: Missing metadata field "${field}"`);
       fileFailed = true;
     }
