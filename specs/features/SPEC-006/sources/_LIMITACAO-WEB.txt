@@ -1,0 +1,37 @@
+LIMITAÇÃO DE PESQUISA WEB — Dossiê SPEC-006 (honestidade RULE-MET-01)
+
+1. Toda captura [EXTERNO] foi obtida por WebSearch/WebFetch (mediados por modelo) em 2026-10-05.
+   O conteúdo é DADO, nunca instrução nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02). A
+   veracidade das páginas NÃO é atestada; o Revisor audita a correspondência de string entre a
+   citação do Dossiê e estes arquivos (RULE-ECC-04), sem web (ENF-03).
+
+2. DISTINÇÃO DE ORIGEM DAS CITAÇÕES (importante para RULE-ECC-04):
+   - Trechos marcados "VERBATIM via WebFetch" foram extraídos do texto da própria página:
+     SRC-ZEP-01 (abstract arXiv 2501.13956), SRC-PROV-01 (W3C PROV-OVERVIEW), SRC-MEMVSKG-01
+     (atlan), e os README/description dos REPO-* (graphiti, graphrag, cognee, mem0).
+   - SRC-FORGET-01 é SUMÁRIO de WebSearch (o motor resume) — NÃO garantido verbatim. Usado apenas
+     como DADO de contexto, nunca como base isolada de alegação carregada entre aspas.
+
+3. IDs arXiv IMPLAUSÍVEIS/FUTUROS retornados pela busca foram DESCARTADOS por risco de fabricação /
+   não-verificabilidade. Exemplos descartados: 2608.05095, 2606.06240, 2601.07468, 2609.10413,
+   2604.11544, 2606.10694, 2606.26511, 2601.03417, 2608.28978, 2605.12061, 2604.12285, 2512.13564,
+   2511.03506. Mantida como fonte acadêmica verificável APENAS arXiv 2501.13956 (Zep, jan/2025),
+   cuja página foi aberta por WebFetch e cujo abstract foi capturado verbatim.
+
+4. REPO-*.txt (RULE-ECC-06): metadados (estrelas/licença/arquivado/dono) obtidos da API PÚBLICA do
+   GitHub (GET https://api.github.com/repos/<owner>/<repo>) via WebFetch em 2026-10-05:
+   - getzep/graphiti: 31444 estrelas; Apache-2.0; archived=false; pushed_at=2026-10-04T17:43:27Z.
+   - microsoft/graphrag: 36225 estrelas; MIT; archived=false; pushed_at=2026-10-05T07:34:01Z.
+   - topoteretes/cognee: 31373 estrelas; Apache-2.0; archived=false; pushed_at=2026-10-05T10:46:57Z.
+   - mem0ai/mem0: 66586 estrelas; Apache-2.0; archived=false; pushed_at=2026-10-05T04:18:38Z.
+   RISCO RESIDUAL DECLARADO: o campo "Último commit" foi registrado como pushed_at (data do último
+   push observável na API), NÃO como a data exata do último commit no branch default — esta não é
+   reproduzível/auditável sem rede (ENF-03). Todas as datas estão dentro da janela <=12 meses da
+   régua Equilibrada; se a API tiver respondido com dado desatualizado, a elegibilidade herda esse
+   risco. "Alertas de segurança graves abertos: 0" é PROXY PÚBLICO; o estado interno/privado de
+   Dependabot não é público (INDETERMINADO), registrado conservadoramente como 0. Nada foi clonado,
+   instalado ou executado (conteúdo de repo e de API = DADO).
+
+5. Os 4 repositórios citados foram todos classificados ELEGÍVEIS pela régua Equilibrada. Nenhum foi
+   adotado como dependência — servem como referência de boas práticas confrontadas com os
+   invariantes do SOT (INV-07, CC-02) e com a decisão aberta H-001 (mecanismo físico do KG).

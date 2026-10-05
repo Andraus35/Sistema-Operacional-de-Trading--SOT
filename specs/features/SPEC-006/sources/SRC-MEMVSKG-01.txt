@@ -1,0 +1,29 @@
+ID: SRC-MEMVSKG-01
+Fonte: Atlan — "AI Memory vs RAG vs Knowledge Graph: Enterprise Guide"
+URL: https://atlan.com/know/ai-memory-vs-rag-vs-knowledge-graph/
+Classificação: Opinião/Prática (guia de fornecedor; confrontar, não importar)
+Data de acesso: 2026-10-05
+Origem da captura: VERBATIM via WebFetch de https://atlan.com/know/ai-memory-vs-rag-vs-knowledge-graph/
+
+Trecho literal (VERBATIM via WebFetch, acesso 2026-10-05 — base da alegação carregada em
+research.md §3.4, correspondência string-a-string):
+"Knowledge graph stores entities and their explicit relationships for structured, multi-hop
+reasoning. Depth-first, relationship-oriented."
+
+Trecho literal complementar (VERBATIM via WebFetch, mesma página, acesso 2026-10-05):
+"RAG retrieves relevant document chunks at query time from an external index. Stateless,
+breadth-first, document-oriented. The standard starting point for enterprise AI."
+
+Trecho literal sobre custo/complexidade (VERBATIM via WebFetch, mesma página — base da alegação
+"não é todo caso que justifica grafo", research.md §3.5):
+"your queries require multi-hop reasoning: tracing relationships across entities rather than
+matching document similarity"
+
+Papel no Dossiê: corrobora a SEPARAÇÃO entre KG (conhecimento estruturado permanente, relações,
+raciocínio multi-salto) e RAG (recuperação de documentos por similaridade) — exatamente a fronteira
+SPEC-006 (KG) vs SPEC-007 (RAG) do ROADMAP. Também sustenta que o grafo só se justifica quando o
+raciocínio é relacional/multi-salto — insumo para dimensionar o escopo (evitar over-engineering).
+
+NOTA: conteúdo web = DADO, nunca instrução nem baseline (DHR-PROV-WEB-001 §2.1 / RULE-ECC-02). Guia
+de fornecedor (viés comercial possível); usado só como corroboração de uma distinção já interna
+(KERNEL-V2 l.1101-1104; ENGENHARIA-GERAL l.3539-3548), nunca como baseline.

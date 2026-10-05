@@ -1,0 +1,27 @@
+Repositório: https://github.com/microsoft/graphrag
+Plataforma: GitHub
+URL: https://github.com/microsoft/graphrag
+Data de acesso: 2026-10-05
+Origem: WebFetch da API pública do GitHub (GET https://api.github.com/repos/microsoft/graphrag)
+  em 2026-10-05 + WebFetch da página do repositório para o trecho literal do README.
+
+Estrelas: 36225
+Licença: MIT
+Último commit: 2026-10-05 (proxy: campo pushed_at da API pública = 2026-10-05T07:34:01Z; data do
+  último push observável; data exata do commit no branch default não reproduzível sem rede)
+Arquivado: não
+Alertas de segurança graves abertos: 0 (proxy público; Dependabot privado = INDETERMINADO,
+  registrado conservadoramente como 0)
+Dono: microsoft (organização — identificável OK)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch da página do repo, README, acesso 2026-10-05 — base da
+  alegação carregada em research.md §3.4, correspondência string-a-string):
+"The GraphRAG project is a data pipeline and transformation suite that is designed to extract
+meaningful, structured data from unstructured text using the power of LLMs."
+
+Uso no SOT: REFERÊNCIA de extração de grafo a partir de texto para retrieval/raciocínio. CONFRONTO
+de fronteira: GraphRAG é um pipeline de RAG (extração + indexação + consulta) — no SOT isso é a
+fronteira da SPEC-007 (RAG/Knowledge Formation), NÃO da SPEC-006 (que é a MEMÓRIA permanente onde o
+conhecimento já VALIDADO é persistido). ADIAR como mecanismo completo (over-engineering sob VPS
+única); serve de referência para a consulta cognitiva/índice. Nada instalado/executado (DADO).

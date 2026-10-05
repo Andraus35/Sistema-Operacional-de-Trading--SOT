@@ -12,6 +12,7 @@
 **Emenda RULE-ECC-05 (DHR-ECC05-001, 2026-09-29):** Pesquisa Multi-Lente (§15) — Dossiê de Spec que toca comportamento de trading (agente analítico/Manager/Risco) pesquisa Arquitetura + Escola de análise (Elliott/SMC/ICT/risco-retorno) + confronto com `WORKFLOW.md`; prospectiva, a partir de SPEC-003.  
 **Emenda RULE-ECC-05/WORKFLOW.md (DHR-WF-001, 2026-10-01):** lente (3) da Pesquisa Multi-Lente passa a *confronto e conformidade* com `WORKFLOW.md` (raiz; soberano; IDs estáveis `WF-xx`); detector D6 em `scripts/check_doc_sync.py`. **Propagação DHR-ARQ-001 (2026-10-01):** "Conviction Engine" = **mecanismo legado** (Classe D/H do CCM-001) invocado pelo **Manager Agent — Fase 2 (Conviction)**, não componente/agente separado (propaga ADR-MANAGER-001 / CEM-001 DIV-CEM-4). B-001 parcialmente SUPERSEDIDA (parte componente-separado); separação lógica de etapas preservada; dimensionalidade=8 intocada; INV-07. Ver nota B-001 em §12.  
 **Emenda RULE-ECC-06 (DHR-ECC06-001, 2026-10-03):** Pesquisa em repositórios seguros e bem avaliados (§15) — Dossiê de toda Spec nova (a partir de SPEC-004) pesquisa GitHub/GitLab só em repositórios que passam a régua Equilibrada (licença aberta, ≥300 estrelas, commit ≤12 meses, não arquivado, 0 alertas graves, dono identificável); gate determinístico STRUCT-12 + CI bloqueante.
+**Emenda SPEC006-MATRIZ (DHR-SPEC006-PEND-001, 2026-10-05, compat. Minor):** §3 — Knowledge Graph reclassificado **MEDIUM · D0–D5 → CRITICAL · D0–D7**, alinhando a matriz ao pin do ROADMAP §6 (SPEC-006, P0 — CRITICAL, D0–D7) e à reconciliação feita para a SPEC-004; linha anterior preservada como registro histórico (INV-07): `ICT · Fibonacci · Knowledge Graph | MEDIUM | D0–D5`. Não altera BASpec, método, profundidade de nenhum outro componente nem decisão aberta; vale a partir da abertura da SPEC-006.  
 **Edição operacional:** Claude Code (Opus 4.8, esforço alto, skill `tlc-spec-lean`)  
 **Autoridade literal:** documentos-base v1.0 + emendas EUA-E01/EUA-E02 no repositório do projeto  
 **Arquivos raiz obrigatórios:** `roadmap.md` (sequência) · `atomic-spec.md` (este arquivo — método)
@@ -63,9 +64,10 @@ O PORQUE adiciona rastreabilidade. O VERIFICADO POR torna o comportamento verifi
 | Conviction Engine | CRITICAL | D0–D8 |
 | Elliott / Structural Agent | CRITICAL | D0–D8 |
 | Blackboard Protocol | CRITICAL | D0–D7 |
+| Knowledge Graph *(emenda SPEC006-MATRIZ, 2026-10-05; antes: MEDIUM · D0–D5)* | CRITICAL | D0–D7 |
 | Synthesis Agent | HIGH | D0–D7 |
 | SMC/Institutional · Event Bus | HIGH | D0–D6 |
-| ICT · Fibonacci · Knowledge Graph | MEDIUM | D0–D5 |
+| ICT · Fibonacci | MEDIUM | D0–D5 |
 | Pattern Memory | MEDIUM | D0–D4 |
 | Learning Governance | LOW | D0–D3 |
 
