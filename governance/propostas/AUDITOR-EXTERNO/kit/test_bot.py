@@ -121,6 +121,13 @@ class TestBot(unittest.TestCase):
         self.assertEqual(self.run_bot("--dry-run", "--request", "1").returncode, 2)    # 3 vezes: nunca cai em "tentativas esgotadas"
         self.saida([self.bom()]); self.assertEqual(self.run_bot().returncode, 0); self.assertEqual(len(self.acks()), 1)
 
+    def test_auditoria_declarada_indeterminada_nao_gera_ack(self):
+        self.req_issue()
+        open(self.out, "w", encoding="utf-8").write("```json\n" + json.dumps({"veredito": "COM_RESSALVAS", "achados": [], "limitacao": "INDETERMINADO — auditoria não realizada (bwrap falhou)"}) + "\n```\n")
+        r = self.run_bot(); self.assertEqual(r.returncode, 2)
+        self.assertEqual(self.acks(), []); self.assertEqual(Api.created, [])
+        self.assertEqual(len([b for _, b in Api.comments if "não conseguiu realizar a auditoria" in b]), 1)
+
     def test_campos_de_maquina_sao_do_bot(self):
         self.req_issue(); f = self.bom(); f.update({"baseline_commit": "0" * 40, "directive_version": "DIR-999", "id": "AEX-19990101-001"})
         self.saida([f]); self.assertEqual(self.run_bot().returncode, 0)

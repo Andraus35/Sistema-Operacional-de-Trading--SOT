@@ -204,6 +204,11 @@ def main():
         log("saída fora do formato esperado")
         note(n, "BLOQUEADO: a saída do modelo não seguiu o formato (bloco JSON com veredito e achados)", "formato", secrets, dry); return 2
 
+    lim = data.get("limitacao")   # o modelo declarou que NÃO conseguiu auditar (ex.: sandbox sem leitura) -> sem ACK nem achados
+    if isinstance(lim, str) and re.search(r"INDETERMINADO|auditoria n[ãa]o realizada", lim, re.I):
+        log("o modelo declarou a auditoria como não realizada: " + redact(lim[:300], secrets))
+        note(n, "BLOQUEADO: o modelo declarou que não conseguiu realizar a auditoria (limitação de leitura/ambiente); sem ACK. Ver o log do bot", "indeterminado", secrets, dry); return 2
+
     posted = discarded = 0
     for raw_f in data["achados"][:MAX_FINDINGS]:
         if not isinstance(raw_f, dict): discarded += 1; continue
