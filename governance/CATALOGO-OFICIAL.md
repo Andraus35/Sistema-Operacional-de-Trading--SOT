@@ -177,6 +177,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-06, DHR-AUDITOR-EXTERNO-002 — ata-proposta, assinatura de Andraus pendente):** **ativação do canal do Auditor Externo (piloto)** — token fine-grained próprio (papel Read inviável em repositório pessoal), 7 rótulos, variáveis `AUDITOR_EXTERNO_ENABLED`/`AUDITOR_EXTERNO_LOGINS`; teste do canal por PRs descartáveis #10/#13 (Issues #11/#14, fechadas; defeito `pull-requests: read` corrigido em #12); `verify_access.py` fail-closed (#9). **Limites:** escopo do token declarado, não provado; ações com o login de Andraus; o auditor (GPT) ainda não atendeu pedido real. Nenhuma decisão aberta fechada; abertura da SPEC-006 segue não homologada.
 
+**Registro (2026-10-06, DHR-AUDITOR-EXTERNO-003 — ata-proposta, assinatura de Andraus pendente):** **bot agendado do Auditor Externo** (Codex `exec` somente-leitura, sem token e sem rede no ambiente do modelo; validação, postagem e ACK por código determinístico) em **VM Oracle Always Free**, com avisos no PR (achado validado e ACK) e rotina agendada do Orquestrador a configurar depois. Implantação em etapas (`--dry-run` → `--go-live`). **Limites:** nunca executado ponta a ponta (GitHub, Codex real, systemd, VM); modelo lê arquivos do mesmo usuário (mitigado, não eliminado); Oracle pode recuperar instância ociosa. Nenhuma decisão aberta fechada; abertura da SPEC-006 segue não homologada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---

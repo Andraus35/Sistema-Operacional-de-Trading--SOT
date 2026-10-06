@@ -6,7 +6,7 @@ Subcomandos:
   extract      --body-file F --out finding.json      extrai o 1º bloco ```json da Issue (limite 100 KB)
   meta         --finding finding.json                imprime baseline_commit (40 hex) ou erro
   fingerprint  --finding finding.json                impressão digital p/ deduplicar (caminho+linha+citação+tipo)
-  request-body --pr N --sha SHA --files-file F --round R [--kind auditoria|re-auditoria] [--refs "1,2"]
+  request-body --pr N --sha SHA --files-file F --round R [--kind auditoria|re-auditoria] [--refs "1,2"] [--manifest-sha H]
   comment-body --report validation.json --fp FP [--dup N]
 Exit 0 ok · 1 erro de dado · 2 uso.
 """
@@ -17,6 +17,7 @@ MAX_ROUNDS = 3        # rodadas de pedido por PR
 MAX_OPEN_AEX = 25     # fila máxima de Issues [AEX] abertas (freio contra ping-pong)
 FENCE = re.compile(r"```json\s*\n(.*?)\n```", re.S)
 SHA = re.compile(r"^[0-9a-f]{40}$")
+SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
 def cmd_extract(a):
@@ -53,14 +54,17 @@ def cmd_fingerprint(a):
 
 def cmd_request_body(a):
     if not SHA.match(a.sha): print("ERRO: sha inválido"); return 1
+    if a.manifest_sha and not SHA256.match(a.manifest_sha): print("ERRO: manifest-sha inválido"); return 1
     files = [l.strip() for l in open(a.files_file, encoding="utf-8") if l.strip()]
     files = [x for x in files if not x.startswith("docs/mapa/")]  # saída gerada, fora do escopo de auditoria
     refs = [r.strip() for r in (a.refs or "").split(",") if r.strip().isdigit()]
     lista = "\n".join(f"- `{x}`" for x in files[:200]) or "- (nenhum arquivo auditável)"
     extra = f"\n\n**Achados em tratamento (Issues):** {', '.join('#'+r for r in refs)}" if refs else ""
-    print(f"""<!-- aex-req pr={a.pr} sha={a.sha} round={a.round} kind={a.kind} -->
+    mf = f" manifest={a.manifest_sha}" if a.manifest_sha else ""
+    mv = f"\nManifesto do kit (sha256, calculado pelo workflow na branch padrão): `{a.manifest_sha}`\n" if a.manifest_sha else ""
+    print(f"""<!-- aex-req pr={a.pr} sha={a.sha} round={a.round} kind={a.kind}{mf} -->
 **Pedido de {a.kind} externa** — PR #{a.pr} · rodada {a.round}/{MAX_ROUNDS}
-
+{mv}
 - Commit a auditar (fixe-o): `{a.sha}`
 - Escopo (arquivos alterados, sem `docs/mapa/`):
 {lista}{extra}
@@ -101,7 +105,7 @@ def main():
     for n in ("meta", "fingerprint"): sp.add_parser(n).add_argument("--finding", required=True)
     r = sp.add_parser("request-body")
     for k in ("pr", "sha", "files-file", "round"): r.add_argument(f"--{k}", required=True)
-    r.add_argument("--kind", default="auditoria", choices=["auditoria", "re-auditoria"]); r.add_argument("--refs", default="")
+    r.add_argument("--kind", default="auditoria", choices=["auditoria", "re-auditoria"]); r.add_argument("--refs", default=""); r.add_argument("--manifest-sha", default="")
     c = sp.add_parser("comment-body"); c.add_argument("--report", required=True); c.add_argument("--fp", required=True); c.add_argument("--dup")
     a = ap.parse_args()
     return {"extract": cmd_extract, "meta": cmd_meta, "fingerprint": cmd_fingerprint,

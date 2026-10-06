@@ -115,6 +115,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registro operacional de ativacao de fluxo ja decidido em DHR-AUDITOR-EXTERNO-001 (em escopo); nao altera checklist, metodo nem regra; classificacao a ratificar por Andraus."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-003",
+      "data": "2026-10-06",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda a operacao do piloto (bot agendado) sem alterar checklist, metodo nem regra; classificacao a ratificar por Andraus."
     }
   ]
 }

@@ -6,13 +6,15 @@ Uso: python verify_access.py [--repo Andraus35/Sistema-Operacional-de-Trading--S
 """
 import argparse, json, os, sys, urllib.request, urllib.error
 
+API = os.environ.get("SOT_API_BASE", "https://api.github.com")
+
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--repo", default="Andraus35/Sistema-Operacional-de-Trading--SOT")
     ap.add_argument("--confirmo-escopo", action="store_true", help="declaro ter conferido o escopo do token no GitHub (token do dono)")
     a = ap.parse_args(); tok = os.environ.get("SOT_AUDITOR_TOKEN")
     if not tok: print("FAIL: defina SOT_AUDITOR_TOKEN"); return 2
-    rq = urllib.request.Request(f"https://api.github.com/repos/{a.repo}",
+    rq = urllib.request.Request(f"{API}/repos/{a.repo}",
                                 headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json",
                                          "User-Agent": "sot-auditor-externo"})
     try: d = json.load(urllib.request.urlopen(rq, timeout=30))
@@ -25,10 +27,10 @@ def main():
         # não o escopo do token, e NÃO existe sonda confiável do escopo (duas tentativas contra a API real deram falso positivo:
         # POST vazio -> 422; POST de blob válido -> 201 mesmo com Contents Read-only na tela do GitHub). O escopo é declarado
         # e conferido no GitHub (Settings > Developer settings > Fine-grained tokens). Fail-closed: sem --confirmo-escopo, FAIL.
-        if not a.confirmo_escopo:
+        if not (a.confirmo_escopo or os.environ.get("SOT_CONFIRMO_ESCOPO") == "1"):
             print(f"INDETERMINADO: papel do dono ({', '.join(bad)}); o escopo do token não é verificável pela API. "
                   "Confira no GitHub (Contents=Read-only, Issues=Read and write, Metadata=Read-only, só este repositório) "
-                  "e rode de novo com --confirmo-escopo."); return 1
+                  "e rode de novo com --confirmo-escopo (ou SOT_CONFIRMO_ESCOPO=1 no ambiente do bot)."); return 1
         print("INFO: escopo do token CONFIRMADO MANUALMENTE (não verificado pela API).")
     if not d.get("has_issues"): print("FAIL: Issues desabilitadas no repositório"); return 1
     print("PASS: leitura; escopo conforme declarado. (Escopo Issues:write do token não é verificável aqui; confirme na criação do token.)")

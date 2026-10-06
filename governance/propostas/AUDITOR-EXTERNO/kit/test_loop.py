@@ -51,6 +51,12 @@ class TestLoopTools(unittest.TestCase):
         r = run(LT + ["request-body", "--pr", "7", "--sha", SHA, "--files-file", fl, "--round", "2", "--kind", "re-auditoria", "--refs", "12,x,15"]).stdout
         self.assertIn("#12, #15", r); self.assertNotIn("#x", r)
 
+    def test_request_body_manifesto(self):
+        fl = os.path.join(tempfile.mkdtemp(), "f.txt"); open(fl, "w").write("AGENTS.md\n"); mf = "d" * 64
+        b = run(LT + ["request-body", "--pr", "7", "--sha", SHA, "--files-file", fl, "--round", "1", "--manifest-sha", mf]).stdout
+        self.assertIn(f"kind=auditoria manifest={mf} -->", b); self.assertIn(f"`{mf}`", b)
+        self.assertEqual(run(LT + ["request-body", "--pr", "7", "--sha", SHA, "--files-file", fl, "--round", "1", "--manifest-sha", "xyz"]).returncode, 1)
+        self.assertNotIn("manifest=", run(LT + ["request-body", "--pr", "7", "--sha", SHA, "--files-file", fl, "--round", "1"]).stdout)
     def test_comment_body(self):
         rep = tmp(json.dumps({"pass": False, "finding_id": "AEX-1", "head": SHA, "errors": ["E-QUOTE x"], "warnings": []}))
         c = run(LT + ["comment-body", "--report", rep, "--fp", "abc"]).stdout
@@ -66,9 +72,11 @@ class H(BaseHTTPRequestHandler):
         if "/comments" in self.path:
             n = self.path.split("/issues/")[1].split("/")[0]
             return self._send([{"body": "<!-- aex-ack -->"}] if n == "2" else [])
-        body = lambda sha, pr: f"<!-- aex-req pr={pr} sha={sha} round=1 kind=auditoria -->\n- Commit: `{sha}`\n- `specs/features/SPEC-001/plan.md`\n- `AGENTS.md`\n"
-        self._send([{"number": 1, "title": "[AEX-REQ] PR#7", "body": body(SHA, 7)},
-                    {"number": 2, "title": "[AEX-REQ] PR#8 (já atendido)", "body": body("b" * 40, 8)},
+        body = lambda sha, pr, mf="": f"<!-- aex-req pr={pr} sha={sha} round=1 kind=auditoria{mf} -->\n- Commit: `{sha}`\n- `specs/features/SPEC-001/plan.md`\n- `AGENTS.md`\n"
+        bot = {"login": "github-actions[bot]"}
+        self._send([{"number": 1, "title": "[AEX-REQ] PR#7", "user": bot, "body": body(SHA, 7, " manifest=" + "a" * 64)},
+                    {"number": 2, "title": "[AEX-REQ] PR#8 (já atendido)", "user": bot, "body": body("b" * 40, 8)},
+                    {"number": 6, "title": "[AEX-REQ] forjado por outra conta", "user": {"login": "intruso"}, "body": body("c" * 40, 9)},
                     {"number": 3, "title": "outra issue qualquer", "body": "x"},
                     {"number": 4, "title": "[AEX-REQ] sem marcador", "body": "sem marcador"},
                     {"number": 5, "title": "PR", "pull_request": {}, "body": "x"}])
@@ -87,10 +95,13 @@ class TestPoll(unittest.TestCase):
     def test_lista_so_pendentes_com_marcador(self):
         o = self.P().stdout
         self.assertIn("#1 PR#7", o); self.assertNotIn("#2", o); self.assertNotIn("#3", o); self.assertNotIn("#4", o); self.assertNotIn("#5", o)
+        self.assertNotIn("#6", o)  # autor não é o bot: ignorado
+        self.assertIn("manifesto=aaaaaaaa", o)
     def test_prepare_e_ack(self):
         d = tempfile.mkdtemp(); out = os.path.join(d, "task.json")
         self.assertEqual(self.P("--prepare", "--out", out).returncode, 0)
         t = json.load(open(out)); self.assertEqual((t["issue"], t["sha"], t["files"]), (1, SHA, ["specs/features/SPEC-001/plan.md", "AGENTS.md"]))
+        self.assertEqual(t["manifest"], "a" * 64)
         H.posted.clear(); self.assertEqual(self.P("--ack", "1", "--verdict", "COM_RESSALVAS", "--findings", "2", "--discarded", "1").returncode, 0)
         self.assertIn("/issues/1/comments", H.posted[0][0]); self.assertIn("<!-- aex-ack -->", H.posted[0][1]["body"])
         self.assertIn("COM_RESSALVAS", H.posted[0][1]["body"])

@@ -25,6 +25,8 @@ on:
       motivo: {description: "Motivo / consulta a Andraus (registro)", required: true}
   issues:
     types: [opened]
+  issue_comment:
+    types: [created]   # ACK do bot (veredito) -> aviso no PR do pedido
 
 permissions:
   contents: read
@@ -111,8 +113,10 @@ jobs:
           KIND: ${{ steps.coleta.outputs.kind }}
           REFS: ${{ steps.coleta.outputs.refs }}
         run: |
+          MANIFEST_SHA=$(sha256sum tools/governance/propostas/AUDITOR-EXTERNO/MANIFEST.sha256 | cut -d' ' -f1)
           python3 tools/governance/propostas/AUDITOR-EXTERNO/kit/loop_tools.py request-body \
-            --pr "$PR" --sha "$SHA" --files-file files.txt --round "$ROUND" --kind "$KIND" --refs "$REFS" > pedido.md
+            --pr "$PR" --sha "$SHA" --files-file files.txt --round "$ROUND" --kind "$KIND" --refs "$REFS" \
+            --manifest-sha "$MANIFEST_SHA" > pedido.md
 
       - name: Criar Issue de pedido (caixa de entrada do auditor, endereçada ao Orquestrador)
         if: steps.coleta.outputs.skip == 'false'
@@ -235,6 +239,27 @@ jobs:
             await github.rest.issues.createComment({...context.repo, issue_number: n, body: corpo});
             await github.rest.issues.addLabels({...context.repo, issue_number: n, labels});
 
+      - name: Avisar o PR do pedido (dado ao Orquestrador)
+        if: always() && steps.extrair.outputs.ok == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Só valores calculados pelo workflow entram aqui (sha validado como 40 hex); texto da Issue nunca é interpolado.
+            const sha = '${{ steps.extrair.outputs.sha }}';
+            const ok = '${{ steps.dup.outputs.pass }}' === 'true';
+            const dup = '${{ steps.dup.outputs.dup }}';
+            const reqs = await github.paginate(github.rest.issues.listForRepo, {...context.repo, labels: 'auditoria-externa', state: 'all', per_page: 100});
+            let pr = 0;
+            for (const i of reqs) {
+              if (!i.title.startsWith('[AEX-REQ]')) continue;
+              const m = /<!-- aex-req pr=(\d+) sha=([0-9a-f]{40}) /.exec(i.body || '');
+              if (m && m[2] === sha && m[1] !== '0') { pr = Number(m[1]); break; }
+            }
+            if (!pr) { core.notice('PR do pedido não localizado para o commit auditado'); return; }
+            const estado = dup ? `duplicado de #${dup}` : (ok ? 'válido (forma e citação literal conferidas)' : 'inválido na validação determinística');
+            await github.rest.issues.createComment({...context.repo, issue_number: pr,
+              body: `Achado externo #${context.payload.issue.number}: ${estado}. Destinatário: Orquestrador interno (dado a verificar; não é homologação).\n\n<!-- aex-achado-aviso -->`});
+
   fechamento:
     # No merge de PR `homologacao-final`: AVISA (não bloqueia, não decide) se o consenso do Auditor não foi registrado
     # ou se o commit mesclado difere do último commit auditado. Detector informativo.
@@ -259,3 +284,23 @@ jobs:
             else if (!shas.includes(pr.head.sha)) avisos.push(`o commit mesclado (\`${pr.head.sha.slice(0, 8)}\`) **difere** dos auditados (${shas.map(s => '`' + s.slice(0, 8) + '`').join(', ')})`);
             if (avisos.length) await github.rest.issues.createComment({...context.repo, issue_number: pr.number,
               body: 'Aviso (detector, não bloqueia): ' + avisos.join('; ') + '.\n\n<!-- aex-fechamento -->'});
+
+  ack_aviso:
+    # ACK do bot/auditor (veredito consultivo) -> aviso no PR do pedido. Só detecta e repassa; não decide.
+    if: >-
+      vars.AUDITOR_EXTERNO_ENABLED == 'true' && github.event_name == 'issue_comment' &&
+      startsWith(github.event.issue.title, '[AEX-REQ]') &&
+      contains(github.event.comment.body, '<!-- aex-ack -->') &&
+      contains(format(',{0},', vars.AUDITOR_EXTERNO_LOGINS), format(',{0},', github.event.comment.user.login))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Avisar o PR do pedido
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const m = /<!-- aex-req pr=(\d+) /.exec(context.payload.issue.body || '');
+            const pr = m ? Number(m[1]) : 0;
+            if (!pr) return;
+            const v = /Veredito consultivo: (OK|COM_RESSALVAS|NAO_OK)/.exec(context.payload.comment.body || '');
+            await github.rest.issues.createComment({...context.repo, issue_number: pr,
+              body: `Auditor externo atendeu o pedido #${context.payload.issue.number}. Veredito consultivo: ${v ? v[1] : 'n/d'} (dado ao Orquestrador; não é homologação; o consenso da homologação segue sendo de Andraus).\n\n<!-- aex-ack-aviso -->`});
