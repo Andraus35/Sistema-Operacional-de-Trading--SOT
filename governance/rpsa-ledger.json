@@ -122,6 +122,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Muda a operacao do piloto (bot agendado) sem alterar checklist, metodo nem regra; classificacao a ratificar por Andraus."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-004",
+      "data": "2026-10-06",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Loop sequencial Especificador-Revisor-Auditor-Andraus e papel do Orquestrador; agentes consultam AGENTS.md por referencia (Passo 0), texto embutido inalterado; reavaliar na normatizacao do papel"
     }
   ]
 }

@@ -1,0 +1,9 @@
+SRC-CSMAD-01
+Fonte: "CSMAD: Hallucination detection via multi-agent debate with NLI-verified contradictory statements"
+Autores/venue: Swapnil Gupta, Akshay Verma, Khushi Gupta, Prateek Sircar, Deepak Gupta — SIGIR 2026 (declarado pela página)
+Natureza / nível de evidência: publicação com revisão (venue SIGIR), página de publicação institucional (amazon.science)
+URL: https://www.amazon.science/publications/csmad-hallucination-detection-via-multi-agent-debate-with-nli-verified-contradictory-statements
+Data de acesso: 2026-10-06
+
+Trecho literal (verbatim, >100 caracteres):
+"To make contradictory statement generation reliable, we add a Natural Language Inference (NLI) based verifier that checks whether the generated statement actually contradicts the original claim. CSMAD asks independent agents to evaluate the claim and the contradictory claim, which encourages different lines of reasoning without assigning preset stances."

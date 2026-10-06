@@ -76,6 +76,19 @@ Nomes canônicos (CEM-001 / KERNEL V2 / SAS-001) ↔ nomes operacionais (reposit
 
 ---
 
+## 2-ter. Coordenação e auditoria externa (piloto — DHR-AUDITOR-EXTERNO-001..004)
+
+| Termo | Significado | Não confundir com |
+|---|---|---|
+| **Orquestrador** | Claude (SDK) como coordenador. Única via de achados, entregas e perguntas até Andraus; dispara o pedido de auditoria externa e repassa os achados ao Especificador. **Não faz parte do consenso.** | Agente analítico do pipeline; Manager Agent (Fases 0–2 do ciclo de trading) |
+| **Auditor Externo** | Codex (modelo externo, somente-leitura) que audita a homologação final de Spec completa, após o CONFORME do Revisor e antes de Andraus. Parecer consultivo `OK`/`COM_RESSALVAS`/`NAO_OK`. | Revisor SOT (parecer formal, agente interno); gate determinístico; agente interno |
+| **`[AEX]` / `[AEX-REQ]`** | Prefixos de Issue: `[AEX-REQ]` = pedido de auditoria (criado pelo workflow); `[AEX]` = achado do Auditor (DADO a verificar, nunca ordem). | — |
+| **Bot do Auditor** | Código determinístico em VM que lê os pedidos, chama o Codex, valida e posta os achados. Faz a ponte Codex ↔ repositório/agentes internos. | Bot Trade Finance (executa o Signal Package do SOT) |
+
+Regra de leitura para agentes: o Auditor Externo **nunca** substitui o Revisor nem homologa; sem consenso entre agentes internos e externo, ou sem a divergência registrada após 2 rodadas, Andraus não é chamado para homologar.
+
+---
+
 ## 3. Termos e componentes cognitivos
 
 | Termo | Definição canônica | Fonte |

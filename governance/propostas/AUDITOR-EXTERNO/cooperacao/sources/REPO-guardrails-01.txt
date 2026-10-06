@@ -1,0 +1,15 @@
+REPO-guardrails-01
+Repositório: guardrails-ai/guardrails
+Plataforma: GitHub
+URL: https://github.com/guardrails-ai/guardrails
+Data de acesso: 2026-10-06
+Estrelas: 7.5k (observado na página; >300)
+Licença: Apache-2.0 (licença aberta conhecida)
+Último commit: INDETERMINADO (data não visível no conteúdo obtido; não verificável sem acesso vivo)
+Arquivado: Não
+Alertas de segurança graves abertos: INDETERMINADO (nenhum exibido no conteúdo obtido; aba Security não verificada)
+Dono: guardrails-ai (organização identificável)
+Veredito de elegibilidade (régua Equilibrada RULE-ECC-06): NÃO CONFIRMADO — 2 dos 6 critérios (último commit <=12 meses; 0 alertas graves) não foram verificaveis a partir do conteúdo obtido. Por fail-closed, NÃO é tratado como elegível: não adotado nem adaptado; citado apenas como evidência externa de que "validação programática de saída de LLM com guards/validators" é prática reconhecida e empacotada em software aberto.
+
+Trecho literal (verbatim, >100 caracteres):
+"Guardrails runs Input/Output Guards in your application that detect, quantify and mitigate the presence of specific types of risks. Adding guardrails to large language models."

@@ -1,0 +1,9 @@
+SRC-SYCO-01
+Fonte: "Towards Understanding Sycophancy in Language Models"
+Autores: Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud, Amanda Askell, Samuel R. Bowman, Newton Cheng, Esin Durmus, Zac Hatfield-Dodds, Scott R. Johnston, Shauna Kravec, Timothy Maxwell, Sam McCandlish, Kamal Ndousse, Oliver Rausch, Nicholas Schiefer, Da Yan, Miranda Zhang, Ethan Perez
+Natureza / nível de evidência: preprint acadêmico (arXiv 2310.13548), submetido 2023-10-20 (v4 revisado 2025-05-10)
+URL: https://arxiv.org/abs/2310.13548
+Data de acesso: 2026-10-06
+
+Trecho literal (verbatim, >100 caracteres):
+"Human feedback may also encourage model responses that match user beliefs over truthful ones, a behaviour known as sycophancy. We first demonstrate that five state-of-the-art AI assistants consistently exhibit sycophancy across four varied free-form text-generation tasks."

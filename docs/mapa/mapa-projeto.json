@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "79210f4faa1febe7a8268a4774d22eaaf93b7901e3edbd69ab7a1349aedb32d4",
+  "digest": "c249e34696be81b8d7934a2e498ef8ba2c3e741eb82821c84086dca6aaccf2c7",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 24,
-   "out": 56
+   "out": 57
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
    "in": 29,
-   "out": 54
+   "out": 55
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -133,24 +133,31 @@
    "out": 0
   },
   {
+   "path": ".pytest_cache/README.md",
+   "area": ".pytest_cache",
+   "title": "pytest cache directory #",
+   "in": 1,
+   "out": 0
+  },
+  {
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 50,
-   "out": 30
+   "in": 55,
+   "out": 34
   },
   {
    "path": "GLOSSARIO.md",
    "area": "raiz",
    "title": "GLOSSÁRIO OFICIAL — SOT",
-   "in": 29,
-   "out": 10
+   "in": 31,
+   "out": 11
   },
   {
    "path": "README.md",
    "area": "raiz",
    "title": "SOT-Harness",
-   "in": 1,
+   "in": 0,
    "out": 9
   },
   {
@@ -164,21 +171,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 154,
+   "in": 157,
    "out": 63
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 32,
+   "in": 34,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 93,
+   "in": 96,
    "out": 34
   },
   {
@@ -220,7 +227,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 148,
+   "in": 152,
    "out": 104
   },
   {
@@ -437,8 +444,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 76,
-   "out": 158
+   "in": 79,
+   "out": 161
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -500,14 +507,14 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 6,
+   "in": 13,
    "out": 5
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-002 — Ata — Ativação do canal do Auditor Externo (piloto) e limites conhecidos",
-   "in": 2,
+   "in": 4,
    "out": 6
   },
   {
@@ -516,6 +523,13 @@
    "title": "DHR-AUDITOR-EXTERNO-003 — Ata — Bot agendado do Auditor Externo (Codex somente-leitura) em VM Oracle Always Free",
    "in": 4,
    "out": 6
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-004 — Ata — Auditor Externo no loop de homologação: ordem sequencial, papel do Orquestrador e regra de divergência",
+   "in": 7,
+   "out": 14
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -584,7 +598,7 @@
    "path": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
    "area": "governance",
    "title": "DHR-DEC-004 — Ata de Decisões — BL-017, SPEC-038-DATASRC-001, MASTER Market Data (BL-033), sincronização RPSA",
-   "in": 10,
+   "in": 12,
    "out": 12
   },
   {
@@ -787,7 +801,7 @@
    "path": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
    "area": "governance",
    "title": "DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades formais separadas?)",
-   "in": 9,
+   "in": 12,
    "out": 8
   },
   {
@@ -844,7 +858,7 @@
    "area": "governance",
    "title": "DHR-PAP-001-A — Adendo de Re-Homologação do PE-PR-PAP-001 v1.1",
    "in": 14,
-   "out": 8
+   "out": 6
   },
   {
    "path": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
@@ -878,7 +892,7 @@
    "path": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
    "area": "governance",
    "title": "DHR-PROV-WEB-001 — Ata de Homologação — Provisão de Pesquisa Web ao Especificador",
-   "in": 24,
+   "in": 25,
    "out": 2
   },
   {
@@ -1306,7 +1320,7 @@
    "area": "governance",
    "title": "PE-PR-PAP-001 — Prompts de Invocação do Especificador e do Revisor para o PAP-001",
    "in": 9,
-   "out": 13
+   "out": 12
   },
   {
    "path": "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
@@ -1326,7 +1340,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 218,
+   "in": 222,
    "out": 35
   },
   {
@@ -1354,7 +1368,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
    "area": "governance",
    "title": "DIRETIVAS AO AUDITOR EXTERNO — instruções e postura (versionadas)  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 7,
+   "in": 10,
    "out": 7
   },
   {
@@ -1372,6 +1386,13 @@
    "out": 17
   },
   {
+   "path": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "area": "governance",
+   "title": "OPERAÇÃO DO AUDITOR EXTERNO (piloto) — guia do Orquestrador",
+   "in": 4,
+   "out": 6
+  },
+  {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
    "area": "governance",
    "title": "PROPOSTA — Automação do Auditor Externo por GitHub Action (caminho B)",
@@ -1382,8 +1403,29 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "area": "governance",
    "title": "PROTOCOLO DO AUDITOR EXTERNO LLM (\"GPT\") — PROPOSTA",
-   "in": 4,
+   "in": 5,
    "out": 18
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "area": "governance",
+   "title": "AUDITORIA DE ENTRADA — cooperação interna × externa (Especificador · Revisor · Auditor Externo · Orquestrador · Andraus)",
+   "in": 3,
+   "out": 10
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "area": "governance",
+   "title": "DOSSIÊ DE PESQUISA — Cooperação entre agentes internos (Especificador, Revisor) e Auditor Externo (Codex), mediada pelo Orquestrador",
+   "in": 1,
+   "out": 12
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "area": "governance",
+   "title": "PROPOSTA — Cooperação entre agentes internos e Auditor Externo (mediada pelo Orquestrador)",
+   "in": 1,
+   "out": 17
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md",
@@ -1396,14 +1438,14 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
    "area": "governance",
    "title": "PROMPT DO AUDITOR EXTERNO — modo bot (somente leitura)",
-   "in": 3,
+   "in": 6,
    "out": 8
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "area": "governance",
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 4,
+   "in": 5,
    "out": 7
   },
   {
@@ -1669,7 +1711,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 114,
+   "in": 117,
    "out": 9
   },
   {
@@ -1795,7 +1837,7 @@
    "path": "specs/features/SPEC-006/ABERTURA.md",
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, FASE 3)",
-   "in": 1,
+   "in": 2,
    "out": 16
   },
   {
@@ -1816,7 +1858,7 @@
    "path": "specs/features/SPEC-019/plan.md",
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
-   "in": 60,
+   "in": 61,
    "out": 18
   },
   {
@@ -2047,7 +2089,7 @@
   {
    "id": "BL-019",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "BL-020",
@@ -2117,7 +2159,7 @@
   {
    "id": "BL-033",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 10
+   "cited_by": 12
   },
   {
    "id": "BL-034",
@@ -2145,19 +2187,29 @@
    "cited_by": 8
   },
   {
+   "id": "DHR-AUDITOR-EXTERNO",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "cited_by": 1
+  },
+  {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 6
+   "cited_by": 13
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-002",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
-   "cited_by": 2
+   "cited_by": 4
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-003",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
    "cited_by": 4
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-004",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "cited_by": 7
   },
   {
    "id": "DHR-BL008-001",
@@ -2207,7 +2259,7 @@
   {
    "id": "DHR-DEC-004",
    "defined_in": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
-   "cited_by": 10
+   "cited_by": 12
   },
   {
    "id": "DHR-DIV-001",
@@ -2352,7 +2404,7 @@
   {
    "id": "DHR-I001-001",
    "defined_in": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
-   "cited_by": 9
+   "cited_by": 12
   },
   {
    "id": "DHR-MAN-001",
@@ -2391,18 +2443,18 @@
   },
   {
    "id": "DHR-PAP-001",
-   "defined_in": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
-   "cited_by": 8
+   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "cited_by": 7
   },
   {
    "id": "DHR-PAP-001-A",
-   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "cited_by": 4
   },
   {
    "id": "DHR-PAP-001-B",
-   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "cited_by": 4
+   "defined_in": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+   "cited_by": 3
   },
   {
    "id": "DHR-PAP-001-C",
@@ -2422,7 +2474,7 @@
   {
    "id": "DHR-PROV-WEB-001",
    "defined_in": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "DHR-REG-001",
@@ -2702,7 +2754,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 147
+   "cited_by": 149
   },
   {
    "id": "INV-08",
@@ -3062,12 +3114,12 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 76
+   "cited_by": 78
   },
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 41
+   "cited_by": 42
   },
   {
    "id": "RULE-ECC-03",
@@ -3077,17 +3129,17 @@
   {
    "id": "RULE-ECC-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 46
+   "cited_by": 49
   },
   {
    "id": "RULE-ECC-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "RULE-EH",
@@ -3482,7 +3534,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 64
+   "cited_by": 66
   },
   {
    "id": "RULE-MET-02",
@@ -3797,7 +3849,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 102
+   "cited_by": 103
   },
   {
    "id": "SPEC-002",
@@ -3822,7 +3874,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 48
+   "cited_by": 50
   },
   {
    "id": "SPEC-007",
@@ -3842,7 +3894,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "SPEC-011",
@@ -3887,7 +3939,7 @@
   {
    "id": "SPEC-019",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 60
+   "cited_by": 61
   },
   {
    "id": "SPEC-020",
@@ -3917,7 +3969,7 @@
   {
    "id": "SPEC-025",
    "defined_in": "ROADMAP.md",
-   "cited_by": 25
+   "cited_by": 26
   },
   {
    "id": "SPEC-026",
@@ -4017,7 +4069,7 @@
   {
    "id": "SPEC-045",
    "defined_in": "ROADMAP.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "SPEC-046",
@@ -4084,6 +4136,11 @@
   {
    "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
    "type": "id"
   },
   {
@@ -4369,6 +4426,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
    "type": "id"
   },
   {
@@ -4813,6 +4875,21 @@
   },
   {
    "from": "AGENTS.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "path"
+  },
+  {
+   "from": "AGENTS.md",
    "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
@@ -4868,6 +4945,11 @@
   },
   {
    "from": "AGENTS.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
    "to": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
    "type": "id"
   },
@@ -4889,6 +4971,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "type": "path"
   },
   {
@@ -4944,6 +5031,11 @@
   {
    "from": "GLOSSARIO.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "GLOSSARIO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "type": "id"
   },
   {
@@ -7068,7 +7160,7 @@
   },
   {
    "from": "docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -7993,6 +8085,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -8208,12 +8305,17 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -8473,6 +8575,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "reference/PESQUISA-WORKFLOW-TRADING-2026-10-01.md",
    "type": "path"
   },
@@ -8703,12 +8810,12 @@
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
    "type": "id"
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -9337,6 +9444,81 @@
    "type": "path"
   },
   {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "GLOSSARIO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "type": "path"
+  },
+  {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "to": "atomic-spec.md",
    "type": "path"
@@ -9553,7 +9735,7 @@
   },
   {
    "from": "governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -11693,16 +11875,6 @@
   },
   {
    "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -11718,7 +11890,7 @@
   },
   {
    "from": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -11773,7 +11945,7 @@
   },
   {
    "from": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -14518,7 +14690,7 @@
   },
   {
    "from": "governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -15408,7 +15580,7 @@
   },
   {
    "from": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -16018,12 +16190,12 @@
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
    "type": "id"
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -16138,12 +16310,7 @@
   },
   {
    "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -16722,6 +16889,36 @@
    "type": "path"
   },
   {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "GLOSSARIO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
+   "type": "path"
+  },
+  {
    "from": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "type": "id"
@@ -16844,6 +17041,221 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "to": "specs/features/SPEC-019/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "to": "specs/features/SPEC-006/ABERTURA.md",
    "type": "path"
   },
   {
@@ -17653,7 +18065,7 @@
   },
   {
    "from": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
-   "to": "README.md",
+   "to": ".pytest_cache/README.md",
    "type": "path"
   },
   {

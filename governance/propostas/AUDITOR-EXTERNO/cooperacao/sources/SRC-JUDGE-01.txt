@@ -1,0 +1,18 @@
+SRC-JUDGE-01
+Fonte: "Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge"
+Autores: Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, Nitesh V. Chawla, Xiangliang Zhang
+Natureza / nível de evidência: preprint acadêmico (arXiv 2410.02736), data arXiv 2024-10-03
+URL: https://arxiv.org/html/2410.02736v1
+Data de acesso: 2026-10-06
+
+Trecho literal (verbatim, >100 caracteres):
+"Most models rated their outputs more favorably, even when answer sources were anonymized. All judge models are significantly impacted by position bias. This bias becomes more pronounced as the number of answers increases."
+
+Trecho literal adicional (viés bandwagon-effect):
+"The tendency to give stronger preference to the majority's beliefs regardless of whether they are correct or not."
+
+Trecho literal adicional (viés de autoridade):
+"The tendency to assign more credibility to statements made by authority figures, regardless of actual evidence. when we added automatically generated fake references to Assistant B's answer, the judge model considered Assistant B's quality to be superior."
+
+Trecho literal adicional (viés de verbosidade):
+"LLM judges favor longer responses, even if they are not as clear, high-quality, or accurate as shorter alternatives."
