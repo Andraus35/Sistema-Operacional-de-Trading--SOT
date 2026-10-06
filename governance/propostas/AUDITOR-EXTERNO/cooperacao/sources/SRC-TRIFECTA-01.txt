@@ -1,0 +1,12 @@
+SRC-TRIFECTA-01
+Fonte: "The lethal trifecta for AI agents: private data, untrusted content, and external communication" — Simon Willison
+Natureza / nível de evidência: blog técnico de prática reconhecido (prática/opinião fundamentada de especialista; não revisado por pares)
+Data de publicação: 2025-06-16
+URL: https://simonwillison.net/2025/jun/16/the-lethal-trifecta/
+Data de acesso: 2026-10-06
+
+Trecho literal (verbatim, >100 caracteres):
+"If your agent combines these three features, an attacker can easily trick it into accessing your private data and sending it to that attacker."
+
+As três capacidades que compõem o trifecta (verbatim, conforme a página):
+"Access to your private data" ; "Exposure to untrusted content" ; "The ability to externally communicate"

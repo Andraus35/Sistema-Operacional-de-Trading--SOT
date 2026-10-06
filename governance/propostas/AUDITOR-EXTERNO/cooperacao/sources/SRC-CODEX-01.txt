@@ -1,0 +1,19 @@
+SRC-CODEX-01
+Fonte: OpenAI Codex — documentação oficial, página "Sandbox"/"Sandboxing"
+Natureza / nível de evidência: documentação oficial do fornecedor
+URL (canônica): https://developers.openai.com/codex/concepts/sandboxing  (308 Permanent Redirect →)
+URL (destino): https://learn.chatgpt.com/docs/sandboxing
+Data de acesso: 2026-10-06
+
+O QUE FOI CONFIRMADO NA PÁGINA (verbatim parcial):
+- Título da página: "Sandbox".
+- A página menciona os modos de sandbox, entre eles "read-only" e "workspace-write".
+
+Trecho literal (verbatim, >100 caracteres — obtido por WebFetch em 2026-10-06):
+"The sandbox applies to spawned commands, not just to built-in file operations. If the agent runs tools like `git`, package managers, or test runners, those commands inherit the same sandbox boundaries."
+(Relevante a H7c: comandos gerados — inclusive subagentes via `codex exec` aninhado — herdam os mesmos limites do sandbox.)
+
+O QUE NÃO FOI CAPTURADO VERBATIM (declarado INDETERMINADO — não citar como alegação carregada):
+- A frase exata de que, no modo read-only, "a rede é bloqueada e o sistema de arquivos é somente leitura".
+- A frase exata de que "o acesso à rede é desabilitado por padrão e precisa ser habilitado explicitamente".
+Essas duas afirmações apareceram em SUMÁRIO de busca (não capturado verbatim desta página nesta sessão) e são consistentes com o uso atual do kit (`codex exec --sandbox read-only`, ata DHR-AUDITOR-EXTERNO-003 §2), mas NÃO devem ser tratadas como citação literal até captura verbatim da página oficial.

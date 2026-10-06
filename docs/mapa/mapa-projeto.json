@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "c249e34696be81b8d7934a2e498ef8ba2c3e741eb82821c84086dca6aaccf2c7",
+  "digest": "3ec00124df4a69021aec8263dd50c1e6c8b73688f07218255a900b2f0da9e38b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -185,7 +185,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 96,
+   "in": 97,
    "out": 34
   },
   {
@@ -227,7 +227,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 152,
+   "in": 153,
    "out": 104
   },
   {
@@ -528,8 +528,8 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-004 — Ata — Auditor Externo no loop de homologação: ordem sequencial, papel do Orquestrador e regra de divergência",
-   "in": 7,
-   "out": 14
+   "in": 9,
+   "out": 15
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -892,7 +892,7 @@
    "path": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
    "area": "governance",
    "title": "DHR-PROV-WEB-001 — Ata de Homologação — Provisão de Pesquisa Web ao Especificador",
-   "in": 25,
+   "in": 27,
    "out": 2
   },
   {
@@ -1340,7 +1340,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 222,
+   "in": 224,
    "out": 35
   },
   {
@@ -1368,7 +1368,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
    "area": "governance",
    "title": "DIRETIVAS AO AUDITOR EXTERNO — instruções e postura (versionadas)  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 10,
+   "in": 11,
    "out": 7
   },
   {
@@ -1389,7 +1389,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "area": "governance",
    "title": "OPERAÇÃO DO AUDITOR EXTERNO (piloto) — guia do Orquestrador",
-   "in": 4,
+   "in": 5,
    "out": 6
   },
   {
@@ -1414,11 +1414,25 @@
    "out": 10
   },
   {
+   "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "area": "governance",
+   "title": "DOSSIÊ DE PESQUISA — Auditor Externo como \"revisor de cognição\" (pesquisador-revisor híbrido com web)",
+   "in": 1,
+   "out": 7
+  },
+  {
    "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
    "area": "governance",
    "title": "DOSSIÊ DE PESQUISA — Cooperação entre agentes internos (Especificador, Revisor) e Auditor Externo (Codex), mediada pelo Orquestrador",
    "in": 1,
    "out": 12
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "area": "governance",
+   "title": "PROPOSTA — Auditor Externo como \"revisor de cognição\" (pesquisador-revisor híbrido): parecer e opções",
+   "in": 1,
+   "out": 6
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
@@ -1438,7 +1452,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
    "area": "governance",
    "title": "PROMPT DO AUDITOR EXTERNO — modo bot (somente leitura)",
-   "in": 6,
+   "in": 8,
    "out": 8
   },
   {
@@ -2159,7 +2173,7 @@
   {
    "id": "BL-033",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "BL-034",
@@ -2209,7 +2223,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-004",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
-   "cited_by": 7
+   "cited_by": 9
   },
   {
    "id": "DHR-BL008-001",
@@ -2474,7 +2488,7 @@
   {
    "id": "DHR-PROV-WEB-001",
    "defined_in": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
-   "cited_by": 25
+   "cited_by": 27
   },
   {
    "id": "DHR-REG-001",
@@ -3114,12 +3128,12 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 78
+   "cited_by": 79
   },
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 42
+   "cited_by": 44
   },
   {
    "id": "RULE-ECC-03",
@@ -3129,7 +3143,7 @@
   {
    "id": "RULE-ECC-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 49
+   "cited_by": 50
   },
   {
    "id": "RULE-ECC-05",
@@ -3139,7 +3153,7 @@
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "RULE-EH",
@@ -3534,7 +3548,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 66
+   "cited_by": 67
   },
   {
    "id": "RULE-MET-02",
@@ -9516,6 +9530,11 @@
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/AUDITORIA-ENTRADA-2026-10-06.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
    "type": "path"
   },
   {
@@ -17099,6 +17118,41 @@
    "type": "path"
   },
   {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "type": "path"
+  },
+  {
    "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -17162,6 +17216,36 @@
    "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
    "to": "specs/features/SPEC-019/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
