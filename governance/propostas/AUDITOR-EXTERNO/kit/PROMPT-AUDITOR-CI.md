@@ -46,5 +46,5 @@ Responda **apenas** com um bloco ```json … ``` contendo:
 ```
 - `veredito` é **consultivo**: `OK` (nada relevante), `COM_RESSALVAS` (achados corrigíveis), `NAO_OK` (achado P0 / violação de invariante).
 - No máximo **10** achados. Os campos `id`, `baseline_commit`, `author`, `directive_version`, `schema_version` e `gate_evidence_ref` **não** são seus: o bot os preenche.
-- `reproduce` só pode ter comandos de leitura (`git show|grep|cat-file|log|diff`, `grep`).
+- `reproduce` só pode ter comandos de leitura (`git show|grep|cat-file|log|diff`, `grep`) e **nenhum** dos caracteres `; & | ` $ < >` nem quebra de linha, **mesmo entre aspas** (o validador recusa o achado inteiro). Para procurar um trecho com barra vertical (ex.: uma linha de tabela), use só uma parte sem `|` (ex.: `git grep -n -F "INV-05" -- atomic-spec.md`). Prefira `git grep -n -F "trecho simples" -- caminho`.
 - Sem achados: `"achados": []` e `"veredito": "OK"`.
