@@ -25,6 +25,19 @@ ensure_swap() {
   grep -q '^/swapfile ' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab >/dev/null
 }
 
+# pré-requisitos sem cloud-init: se faltar git/python3/node/npm/curl, instala via apt com sudo sem senha (VM nova); SOT_PREREQ_PRINT_ONLY=1 só mostra o plano
+ensure_prereqs() {
+  local falta=()
+  for c in git python3 node npm curl; do command -v "$c" >/dev/null 2>&1 || falta+=("$c"); done
+  if [ ${#falta[@]} -eq 0 ]; then echo "pré-requisitos ok (git, python3, node, npm, curl)"; return 0; fi
+  echo "Faltam: ${falta[*]}. Plano: sudo apt-get install -y git python3 nodejs npm curl ca-certificates; sudo loginctl enable-linger $USER"
+  [ "${SOT_PREREQ_PRINT_ONLY:-}" = "1" ] && return 0
+  command -v apt-get >/dev/null 2>&1 || die "sem apt-get: instale ${falta[*]} manualmente"
+  sudo -n true 2>/dev/null || die "sem sudo sem senha: rode 'sudo apt-get install -y git python3 nodejs npm curl ca-certificates' e tente de novo"
+  sudo -n apt-get update -qq && sudo -n DEBIAN_FRONTEND=noninteractive apt-get install -y -qq git python3 nodejs npm curl ca-certificates
+  sudo -n loginctl enable-linger "$USER" 2>/dev/null || true
+}
+
 service_unit() { cat <<EOF
 [Unit]
 Description=SOT Auditor Externo (bot determinístico, piloto)
@@ -66,6 +79,7 @@ case "${1:-}" in
 esac
 
 [ "$(id -u)" -ne 0 ] || die "não rode como root"
+ensure_prereqs
 command -v git >/dev/null && command -v python3 >/dev/null && command -v node >/dev/null && command -v npm >/dev/null || die "faltam git/python3/node/npm"
 python3 -c 'import sys; sys.exit(0 if sys.version_info>=(3,10) else 1)' || die "python >= 3.10 requerido"
 node -e 'process.exit(parseInt(process.versions.node)>=18?0:1)' || die "node >= 18 requerido"
