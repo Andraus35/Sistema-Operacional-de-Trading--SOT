@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "06f07ed5f70b7a37ca5fda951f942a112fd9e6095eec9691b053644e6db941eb",
+  "digest": "6b364469abc11da3010da1363c14ae8993c484ec92d937513315a9426b864fe8",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2692,7 +2692,7 @@
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 68
+   "cited_by": 69
   },
   {
    "id": "INV-06",
