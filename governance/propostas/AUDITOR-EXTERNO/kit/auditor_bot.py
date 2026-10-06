@@ -147,6 +147,9 @@ def main():
     if req["manifest"] and approved and req["manifest"] != approved:
         log("Pedido com manifesto diferente do aprovado (pedido desatualizado); ignorado.");
         note(n, "BLOQUEADO: pedido gerado com outro manifesto do kit que o aprovado neste bot (pedido desatualizado)", "manifesto", secrets, dry); return 2
+    seen_f = os.path.join(STATE, "dryrun-seen.json"); seen = _read_json(seen_f, {}); seen_k = f"{n}:{req['sha']}"
+    if dry and not a.request and seen.get(seen_k):
+        log(f"Dry-run de #{n} @ {req['sha'][:8]} já foi feito; sem nova chamada ao modelo (use --request {n} para repetir)."); return 0
     if attempts(n) >= MAX_ATTEMPTS:
         log(f"Tentativas esgotadas para #{n}."); note(n, f"BLOQUEADO: {MAX_ATTEMPTS} tentativas esgotadas (decisão humana necessária)", "tentativas", secrets, dry); return 2
     if counter("runs") >= MAX_RUNS:
@@ -173,7 +176,8 @@ def main():
     cenv["CODEX_HOME"] = os.path.join(STATE, "codex-home"); cenv["HOME"] = os.environ.get("HOME", STATE)
     out_file = os.path.join(WORK, "codex-last-message.txt")
     if os.path.exists(out_file): os.remove(out_file)
-    counter("runs", 1); attempts(n, 1)
+    counter("runs", 1)
+    if not dry: attempts(n, 1)   # dry-run não gasta tentativas do pedido
     cmd = CODEX + ["exec", "--sandbox", "read-only", "--ephemeral", "--skip-git-repo-check", "--ignore-user-config",
                    "--ignore-rules", "--cd", repo, "-o", out_file, "-"]
     log("Chamando o modelo (read-only, sem token no ambiente)...")
@@ -189,7 +193,7 @@ def main():
 
     # --- vazamento: nenhuma saída que contenha segredo é usada ou publicada
     if any(s and s in raw for s in secrets) or TOKEN_RE.search(raw):
-        attempts(n, MAX_ATTEMPTS)  # trava novas tentativas
+        if not dry: attempts(n, MAX_ATTEMPTS)  # trava novas tentativas (só fora do dry-run)
         log("SEGURANÇA: a saída do modelo contém algo parecido com segredo; descartada.")
         note(n, "BLOQUEADO (segurança): a saída do modelo continha material parecido com segredo e foi descartada; revisar e rotacionar credenciais", "vazamento", secrets, dry); return 2
 
@@ -219,7 +223,8 @@ def main():
         else: discarded += 1; log(f"achado {f['id']}: DESCARTADO — {tail}")
     verdict = data["veredito"]
     log(f"Resumo: postados={posted} descartados={discarded} veredito={verdict}")
-    if dry: log("[dry-run] sem ACK."); return 0
+    if dry:
+        seen[seen_k] = True; _write_json(seen_f, seen); log("[dry-run] sem ACK."); return 0
     pr.call(f"/repos/{pr.SLUG}/issues/{n}/comments", "POST",
             {"body": f"<!-- aex-ack -->\nAuditor externo (bot): pedido atendido. **Veredito consultivo: {verdict}** (dado ao Orquestrador; não é homologação). "
                      f"Achados postados: {posted} · descartados na autoverificação: {discarded}."})
