@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "13e425ac5403bbc89cbfebd22a5306e7f8f440abf9eb3fc6fd8d8962d673940d",
+  "digest": "79210f4faa1febe7a8268a4774d22eaaf93b7901e3edbd69ab7a1349aedb32d4",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -508,13 +508,13 @@
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-002 — Ata — Ativação do canal do Auditor Externo (piloto) e limites conhecidos",
    "in": 2,
-   "out": 5
+   "out": 6
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-003 — Ata — Bot agendado do Auditor Externo (Codex somente-leitura) em VM Oracle Always Free",
-   "in": 3,
+   "in": 4,
    "out": 6
   },
   {
@@ -2157,7 +2157,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-003",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-BL008-001",
@@ -9294,6 +9294,11 @@
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
    "type": "id"
   },
   {
