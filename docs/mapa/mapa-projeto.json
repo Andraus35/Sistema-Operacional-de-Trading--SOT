@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "8d720305e5d2032d2f241ee850cbf4023a249d20147dcb8fc1d09489114f336e",
+  "digest": "896ade6b64bc11bdbe79b6c38305144d1e243910724981197d28565247d00c89",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -500,14 +500,14 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 4,
+   "in": 5,
    "out": 5
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-002 — Ata — Ativação do canal do Auditor Externo (piloto) e limites conhecidos",
-   "in": 1,
+   "in": 2,
    "out": 5
   },
   {
@@ -1333,7 +1333,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
    "area": "governance",
    "title": "AGENTE AUDITOR EXTERNO — SOT (documento de instalação e instruções)",
-   "in": 1,
+   "in": 2,
    "out": 9
   },
   {
@@ -1363,6 +1363,13 @@
    "title": "MANIFESTO DE ESCOPO — Auditor Externo LLM (\"GPT\")",
    "in": 1,
    "out": 17
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
+   "area": "governance",
+   "title": "PROPOSTA — Automação do Auditor Externo por GitHub Action (caminho B)",
+   "in": 0,
+   "out": 3
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
@@ -2126,12 +2133,12 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-002",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "DHR-BL008-001",
@@ -16643,6 +16650,21 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
    "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
    "type": "path"
   },
   {
