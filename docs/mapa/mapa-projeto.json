@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "20c6533eb8c8d708942777c116e35e4cf125b4511f3cc5938e95ac3e4186a462",
+  "digest": "f084d90bbf22ff8328057586ed7dcb4ac36a375d770656befd50a7ba1aa9933f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -227,7 +227,7 @@
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 89,
+   "in": 90,
    "out": 6
   },
   {
@@ -1377,6 +1377,13 @@
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
    "in": 3,
    "out": 6
+  },
+  {
+   "path": "governance/propostas/AUDITOR-EXTERNO/teste/TESTE-PILOTO-001.md",
+   "area": "governance",
+   "title": "TESTE-PILOTO-001 — documento descartável para calibrar o Auditor Externo",
+   "in": 0,
+   "out": 0
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
