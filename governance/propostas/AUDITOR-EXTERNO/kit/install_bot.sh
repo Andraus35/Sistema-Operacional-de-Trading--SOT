@@ -54,10 +54,10 @@ EOF
 }
 timer_unit() { cat <<EOF
 [Unit]
-Description=Agenda do SOT Auditor Externo (a cada 20 min)
+Description=Agenda do SOT Auditor Externo (a cada 2 min; sem pedido pendente não há chamada ao modelo)
 [Timer]
-OnBootSec=5min
-OnUnitActiveSec=20min
+OnBootSec=1min
+OnUnitActiveSec=2min
 RandomizedDelaySec=60
 [Install]
 WantedBy=timers.target
@@ -116,7 +116,7 @@ CODEX_HOME="$HOME_STATE/codex-home" codex login --device-auth
 echo "== 4/6 Âncora de confiança fora do repositório"
 install -m 700 "$KIT/sync_auditor.sh" "$HOME_STATE/sync_auditor.sh"
 echo "sha256 da cópia instalada: $(sha256sum "$HOME_STATE/sync_auditor.sh" | cut -d' ' -f1)  (compare com o informado pelo Orquestrador)"
-echo "== 5/6 systemd (usuário) + timer de 20 min, INICIANDO em --dry-run"
+echo "== 5/6 systemd (usuário) + timer de 2 min, INICIANDO em --dry-run"
 mkdir -p "$UNITS"; service_unit > "$UNITS/sot-auditor.service"; timer_unit > "$UNITS/sot-auditor.timer"
 systemctl --user daemon-reload; systemctl --user enable --now sot-auditor.timer
 loginctl enable-linger "$USER" 2>/dev/null || echo "AVISO: rode 'sudo loginctl enable-linger $USER' para o timer continuar sem sessão aberta."
