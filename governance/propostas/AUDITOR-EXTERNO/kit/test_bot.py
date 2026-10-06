@@ -103,6 +103,31 @@ class TestBot(unittest.TestCase):
         r = self.run_bot("--dry-run"); self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertEqual(Api.created, []); self.assertEqual(self.acks(), [])
 
+    def test_dry_run_nao_gasta_tentativas_e_nao_repete(self):
+        self.req_issue(); self.saida([self.bom()])
+        self.assertEqual(self.run_bot("--dry-run").returncode, 0); self.assertTrue(os.path.exists(self.clog))
+        self.assertFalse(os.path.exists(os.path.join(self.state, "attempts.json")))     # não gastou tentativa
+        os.remove(self.clog)
+        r = self.run_bot("--dry-run"); self.assertEqual(r.returncode, 0); self.assertIn("já foi feito", r.stdout)
+        self.assertFalse(os.path.exists(self.clog))                                      # não repetiu o modelo
+        r = self.run_bot("--dry-run", "--request", "1"); self.assertEqual(r.returncode, 0); self.assertTrue(os.path.exists(self.clog))  # explícito repete
+        os.remove(self.clog)
+        r = self.run_bot(); self.assertEqual(r.returncode, 0, r.stdout + r.stderr)       # ao vivo ainda tem as 2 tentativas
+        self.assertEqual(len(Api.created), 1); self.assertEqual(len(self.acks()), 1)
+
+    def test_dry_run_com_formato_invalido_nao_trava_tentativas(self):
+        self.req_issue(); open(self.out, "w").write("sem bloco json")
+        self.assertEqual(self.run_bot("--dry-run", "--request", "1").returncode, 2); self.assertEqual(self.run_bot("--dry-run", "--request", "1").returncode, 2)
+        self.assertEqual(self.run_bot("--dry-run", "--request", "1").returncode, 2)    # 3 vezes: nunca cai em "tentativas esgotadas"
+        self.saida([self.bom()]); self.assertEqual(self.run_bot().returncode, 0); self.assertEqual(len(self.acks()), 1)
+
+    def test_auditoria_declarada_indeterminada_nao_gera_ack(self):
+        self.req_issue()
+        open(self.out, "w", encoding="utf-8").write("```json\n" + json.dumps({"veredito": "COM_RESSALVAS", "achados": [], "limitacao": "INDETERMINADO — auditoria não realizada (bwrap falhou)"}) + "\n```\n")
+        r = self.run_bot(); self.assertEqual(r.returncode, 2)
+        self.assertEqual(self.acks(), []); self.assertEqual(Api.created, [])
+        self.assertEqual(len([b for _, b in Api.comments if "não conseguiu realizar a auditoria" in b]), 1)
+
     def test_campos_de_maquina_sao_do_bot(self):
         self.req_issue(); f = self.bom(); f.update({"baseline_commit": "0" * 40, "directive_version": "DIR-999", "id": "AEX-19990101-001"})
         self.saida([f]); self.assertEqual(self.run_bot().returncode, 0)
