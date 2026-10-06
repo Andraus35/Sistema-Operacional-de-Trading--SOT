@@ -5,7 +5,7 @@
 | De | Orquestrador interno (registro) — decisões de Andraus — Decisor Final / Consensus Authority |
 | Para | Orquestrador interno / Especificador SOT / Revisor SOT |
 | Data | 2026-10-06 |
-| Status | **ATA-PROPOSTA — aguarda assinatura de Andraus.** Registra a decisão de chat e o desenho; **nada está em produção**: o bot só vale depois de merge, instalação e teste em `--dry-run`. Não altera `AGENTS.md`, o Revisor, o ROADMAP nem decisão aberta. |
+| Status | **ASSINADA por Andraus (chat, 2026-10-06) — ver Adendo.** Registra a decisão de chat e o desenho; o bot foi instalado e testado na VM (ver Adendo), em piloto. Não altera `AGENTS.md`, o Revisor, o ROADMAP nem decisão aberta. |
 | Compatibilidade | n/a (operação do piloto de DHR-AUDITOR-EXTERNO-001; nenhuma BASpec, regra ou decisão aberta alterada) |
 | Regime | Piloto controlado; aditivo (INV-07). Supera, **apenas para o modo bot**, o item 3 de DIR-002 ("ambiente em nuvem efêmero"): a VM é persistente. DIR-002 segue VIGENTE; eventual DIR-003 é do Orquestrador, após assinatura. |
 
@@ -38,8 +38,17 @@ M-001 · J-001 · N-001 · H-001 · G-001 · K-001 · C-001 · WF-D03 (residual)
 Fora de escopo dos agentes (§4.1): muda a operação do piloto, não checklist, método nem regra. Registrada em `rpsa-ledger.json` como `em_escopo=false`.
 
 ## 7. Registro
-- [x] Esta ata · [x] `kit/auditor_bot.py`, `kit/PROMPT-AUDITOR-CI.md`, `kit/install_bot.sh`, `kit/sync_auditor.sh`, testes · [x] workflow (`manifest=`, avisos no PR) · [x] `MANIFEST.sha256` · [x] `CATALOGO-OFICIAL.md`, `rpsa-ledger.json`, mapa · [ ] **assinatura de Andraus — pendente** · [ ] instalação na VM e teste em `--dry-run` — atos de Andraus.
+- [x] Esta ata · [x] `kit/auditor_bot.py`, `kit/PROMPT-AUDITOR-CI.md`, `kit/install_bot.sh`, `kit/sync_auditor.sh`, testes · [x] workflow (`manifest=`, avisos no PR) · [x] `MANIFEST.sha256` · [x] `CATALOGO-OFICIAL.md`, `rpsa-ledger.json`, mapa · [x] **assinatura de Andraus (chat, 2026-10-06; ver Adendo)** · [x] instalação na VM e testes (dry-run e real) — ver Adendo.
+
+## Adendo (2026-10-06, antes da assinatura) — fatos posteriores que SUPERAM itens de §2 e §4 `[FATO]`
+- **Execução real (supera "nunca executado de ponta a ponta"):** instalado numa VM Oracle Always Free `VM.Standard.E2.1.Micro` (x86_64, ~1 GB de RAM, swap de 2 GB criado pelo instalador), Ubuntu 24.04, Codex CLI 0.160.1 com login por conta ChatGPT (`--device-auth`). Passaram: unidades systemd e timer, `sync_auditor.sh` com aprovação explícita do manifesto, `codex exec` sem interface, ciclo completo no GitHub (Issues `[AEX]`, validação do workflow, ACK, avisos no PR, campo `manifest=` do pedido).
+- **Resultados:** dry-run: 5 achados válidos; 1º ciclo real: 3 postados, 2 descartados (formato do comando de reprodução); 2º ciclo real (após PR #23): **5 postados, 0 descartados**, 5/5 defeitos plantados, sem falso alarme no item limpo. A repetição do login (`token_invalidated`) **não ocorreu** nas execuções feitas — isto não prova que não ocorrerá.
+- **Achados do teste que mudaram o desenho:** (1) o sandbox do Codex falhou na VM (`bwrap: loopback: Failed RTM_NEWADDR`) e o modelo respondeu "auditoria não realizada" com zero achados; o bot tratava isso como normal e daria ACK enganoso → corrigido: resposta `INDETERMINADO`/"auditoria não realizada" vira **BLOQUEIO sem ACK** (PR #19). (2) O dry-run gastava tentativas e repetia a chamada → corrigido (PR #19). (3) O validador recusou, corretamente, um achado cujo comando de reprodução tinha `|` entre aspas → o prompt passou a proibir metacaracteres de shell (PR #23); o validador não foi afrouxado.
+- **Mudança de ambiente na VM (decisão operacional):** instalado o pacote `bubblewrap` e definido `kernel.apparmor_restrict_unprivileged_userns=0` (persistente em `/etc/sysctl.d/60-sot-userns.conf`), necessário para o sandbox no Ubuntu 24.04. É um afrouxamento de segurança do kernel numa VM dedicada ao bot; registrado como risco residual.
+- **§2, "systemd timer (~20 min)" — SUPERADO:** o intervalo padrão passou a **2 min** (PR #30); sem pedido pendente não há chamada ao modelo (só consulta à API).
+- **Continuam válidos:** segurança residual (o modelo roda como o mesmo usuário do bot); recuperação de instância ociosa pela Oracle (o timer de 2 min reduz, não elimina, o risco); custo/limite de uso do plano ChatGPT **não medido**; ações com o login de Andraus; escopo do token declarado, não provado; a aprovação do manifesto da VM precisa ser refeita a cada mudança no kit (renovação automática só quando um pedido do workflow carrega o hash novo — tentativa de renovação por `workflow_dispatch` hoje não gerou pedido).
+- Nenhuma decisão aberta foi fechada; a classificação RPSA de §6 **não foi ratificada por esta assinatura** (permanece a ratificar).
 
 ---
 
-**Andraus** *(assinatura pendente)*
+**Andraus** — *assinada por decisão direta em chat, 2026-10-06 ("assinar atas"); registro feito pelo Orquestrador interno a pedido de Andraus.*
