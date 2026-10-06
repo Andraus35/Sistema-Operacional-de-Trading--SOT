@@ -175,6 +175,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-05, DHR-RPSA-001):** ordem direta de Andraus — **automação determinística dos carimbos RPSA** (`sincronizado-até`, EUA-E16): livro-razão append-only `governance/rpsa-ledger.json` + `scripts/check_rpsa.py` (confere R1–R5, `--register`, `--write`) + testes + passo informativo no CI. Agent-Sync pendente **resolvido**: carimbos de `especificador.md`/`revisor.md` → `DHR-RPSA-001` (antes `DHR-ERRATA-001`) e `last_sync_catalog_date` → 2026-10-05; `.claude/skills/SKILL.md` alinhada à matriz emendada (Knowledge Graph CRITICAL · D0–D7). Classificação das DHRs posteriores registrada no livro-razão, **sujeita a ratificação de Andraus**. Nenhuma decisão aberta fechada; a abertura da SPEC-006 segue **não homologada**.
 
+**Registro (2026-10-06, DHR-AUDITOR-EXTERNO-002 — ata-proposta, assinatura de Andraus pendente):** **ativação do canal do Auditor Externo (piloto)** — token fine-grained próprio (papel Read inviável em repositório pessoal), 7 rótulos, variáveis `AUDITOR_EXTERNO_ENABLED`/`AUDITOR_EXTERNO_LOGINS`; teste do canal por PRs descartáveis #10/#13 (Issues #11/#14, fechadas; defeito `pull-requests: read` corrigido em #12); `verify_access.py` fail-closed (#9). **Limites:** escopo do token declarado, não provado; ações com o login de Andraus; o auditor (GPT) ainda não atendeu pedido real. Nenhuma decisão aberta fechada; abertura da SPEC-006 segue não homologada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---
