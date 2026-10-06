@@ -8,6 +8,7 @@ O auditor NÃO escreve em arquivo do repositório; a Issue é o único canal de 
 import argparse, json, os, subprocess, sys, urllib.request, urllib.error
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+API = os.environ.get("SOT_API_BASE", "https://api.github.com")
 
 
 def main():
@@ -39,7 +40,7 @@ def main():
     if not tok: print("ABORTADO: defina SOT_AUDITOR_TOKEN"); return 2
     if subprocess.run([sys.executable, os.path.join(HERE, "verify_access.py"), "--repo", a.slug]).returncode != 0:
         print("ABORTADO: credencial não é somente-leitura."); return 1
-    rq = urllib.request.Request(f"https://api.github.com/repos/{a.slug}/issues", method="POST",
+    rq = urllib.request.Request(f"{API}/repos/{a.slug}/issues", method="POST",
                                 data=json.dumps({"title": title, "body": body}).encode(),
                                 headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json",
                                          "User-Agent": "sot-auditor-externo", "Content-Type": "application/json"})

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "f1f4cb0dea281159569fa4715145d8419e2f91b57f619ff11020636a24e3e84e",
+  "digest": "40286b08fe1e0b68e8d9ffe26f7ef3db9817b82c4e1c9ad18a73a3f5505faf98",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 48,
+   "in": 50,
    "out": 30
   },
   {
@@ -164,21 +164,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 152,
+   "in": 154,
    "out": 63
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 31,
+   "in": 32,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 92,
+   "in": 93,
    "out": 34
   },
   {
@@ -220,7 +220,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 147,
+   "in": 148,
    "out": 104
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 74,
-   "out": 157
+   "in": 76,
+   "out": 158
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -500,7 +500,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 5,
+   "in": 6,
    "out": 5
   },
   {
@@ -509,6 +509,13 @@
    "title": "DHR-AUDITOR-EXTERNO-002 — Ata — Ativação do canal do Auditor Externo (piloto) e limites conhecidos",
    "in": 2,
    "out": 5
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-003 — Ata — Bot agendado do Auditor Externo (Codex somente-leitura) em VM Oracle Always Free",
+   "in": 3,
+   "out": 6
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -1319,7 +1326,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 216,
+   "in": 218,
    "out": 35
   },
   {
@@ -1334,7 +1341,7 @@
    "area": "governance",
    "title": "AGENTE AUDITOR EXTERNO — SOT (documento de instalação e instruções)",
    "in": 2,
-   "out": 9
+   "out": 11
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
@@ -1347,7 +1354,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
    "area": "governance",
    "title": "DIRETIVAS AO AUDITOR EXTERNO — instruções e postura (versionadas)  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 6,
+   "in": 7,
    "out": 7
   },
   {
@@ -1369,7 +1376,7 @@
    "area": "governance",
    "title": "PROPOSTA — Automação do Auditor Externo por GitHub Action (caminho B)",
    "in": 0,
-   "out": 3
+   "out": 4
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
@@ -1386,11 +1393,18 @@
    "out": 10
   },
   {
+   "path": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "area": "governance",
+   "title": "PROMPT DO AUDITOR EXTERNO — modo bot (somente leitura)",
+   "in": 3,
+   "out": 8
+  },
+  {
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "area": "governance",
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
    "in": 4,
-   "out": 6
+   "out": 7
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -2133,12 +2147,17 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-002",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "cited_by": 2
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-003",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "cited_by": 3
   },
   {
    "id": "DHR-BL008-001",
@@ -2683,7 +2702,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 145
+   "cited_by": 147
   },
   {
    "id": "INV-08",
@@ -2693,7 +2712,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 93
+   "cited_by": 94
   },
   {
    "id": "INV-10",
@@ -3803,7 +3822,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 47
+   "cited_by": 48
   },
   {
    "id": "SPEC-007",
@@ -3823,7 +3842,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "SPEC-011",
@@ -7969,6 +7988,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -9276,6 +9300,36 @@
    "from": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -16469,6 +16523,11 @@
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -16480,6 +16539,11 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
    "type": "path"
   },
   {
@@ -16668,6 +16732,11 @@
    "type": "path"
   },
   {
+   "from": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "type": "path"
+  },
+  {
    "from": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -16823,6 +16892,51 @@
    "type": "path"
   },
   {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -16830,6 +16944,11 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
    "type": "id"
   },
   {
