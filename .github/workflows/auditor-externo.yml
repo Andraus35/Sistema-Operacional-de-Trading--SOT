@@ -111,8 +111,10 @@ jobs:
           KIND: ${{ steps.coleta.outputs.kind }}
           REFS: ${{ steps.coleta.outputs.refs }}
         run: |
+          MANIFEST_SHA=$(sha256sum tools/governance/propostas/AUDITOR-EXTERNO/MANIFEST.sha256 | cut -d' ' -f1)
           python3 tools/governance/propostas/AUDITOR-EXTERNO/kit/loop_tools.py request-body \
-            --pr "$PR" --sha "$SHA" --files-file files.txt --round "$ROUND" --kind "$KIND" --refs "$REFS" > pedido.md
+            --pr "$PR" --sha "$SHA" --files-file files.txt --round "$ROUND" --kind "$KIND" --refs "$REFS" \
+            --manifest-sha "$MANIFEST_SHA" > pedido.md
 
       - name: Criar Issue de pedido (caixa de entrada do auditor, endereçada ao Orquestrador)
         if: steps.coleta.outputs.skip == 'false'

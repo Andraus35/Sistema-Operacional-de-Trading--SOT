@@ -28,16 +28,18 @@ Atue **somente** com pedido `[AEX-REQ]` pendente, criado (a) quando um PR de **h
 Pré-requisitos: `git`, `python3 ≥ 3.10`, `node` + `npm`. Token em `SOT_AUDITOR_TOKEN`, **do gerenciador de segredos do ambiente** (token fine-grained do dono, escopo mínimo: *Contents: Read-only* + *Issues: Read and write*, só este repositório; ver emenda de acesso em `kit/README-INSTALACAO.md`). Nunca em argumento, arquivo ou log.
 
 ```bash
-# 0) Integridade do pacote (antes de qualquer execução). No clone, após `git pull origin main`:
-cd governance/propostas/AUDITOR-EXTERNO           # todos os comandos abaixo partem daqui
-sha256sum -c MANIFEST.sha256                      # deve listar tudo OK (confere kit, diretivas e este documento)
-sha256sum MANIFEST.sha256                         # compare com o valor informado pelo Orquestrador por canal confiável (chat de Andraus); divergiu = PARE
+# 0) Atualização + integridade, DETERMINÍSTICAS. Uma cópia de kit/sync_auditor.sh fica instalada FORA do repositório (~/.sot-audit/sync_auditor.sh; ver kit/README-INSTALACAO.md).
+~/.sot-audit/sync_auditor.sh        # fast-forward da main + confere MANIFEST.sha256 + confere o hash aprovado
+#   exit 0 = em dia e aprovado · exit 3 = manifesto novo SEM confirmação do pedido -> PARE e peça o hash ao Orquestrador (--approve) · exit 2 = bloqueio -> PARE
+#   Renovação automática: se o kit mudou, o pedido [AEX-REQ] mais recente, criado pelo workflow (github-actions), carrega o hash do manifesto; batendo, o script renova e lista os arquivos alterados.
+#   Alternativa manual (se o script não estiver instalado): git pull --ff-only origin main; cd governance/propostas/AUDITOR-EXTERNO; sha256sum -c MANIFEST.sha256; sha256sum MANIFEST.sha256 (comparar com o hash informado pelo Orquestrador).
+cd governance/propostas/AUDITOR-EXTERNO           # os comandos abaixo partem daqui
 # 1) Credencial: fail-closed. Token do dono: a API não prova o escopo; com papel de dono o script devolve INDETERMINADO.
 #    Só rode com --confirmo-escopo se Andraus confirmou na tela do GitHub: Contents=Read-only, Issues=Read and write, Metadata=Read-only, só este repositório.
 python3 kit/verify_access.py --confirmo-escopo
 # 2) Pedidos pendentes (sem pedido = encerrar)
 python3 kit/poll_requests.py
-python3 kit/poll_requests.py --prepare            # grava task.json (SHA e escopo)
+python3 kit/poll_requests.py --prepare            # grava task.json (Issue, SHA, escopo, hash do manifesto) do pedido pendente MAIS ANTIGO; não precisa informar número
 # 3) Instalar/sincronizar SOMENTE o SHA do pedido (clone somente-leitura, push e hooks desativados, selftest)
 bash kit/setup_auditor.sh <SHA_DO_PEDIDO>         # deve terminar com "CALIBRAÇÃO APROVADA"; se reprovar, NÃO audite
 # 4) Integridade do kit contra o repositório auditado (deve ser vazio)
@@ -91,4 +93,4 @@ Commit auditado · última DHR do CATALOGO · modelo e versão · data · `sincr
 Só o **Orquestrador**, após consultar Andraus, altera instruções/postura (nova `DIR-NNN`; a anterior vira `SUPERADA`, nunca apagada). Você não edita este documento nem as diretivas.
 
 ## 14. Limite do manifesto
-`MANIFEST.sha256` vive no mesmo repositório que ele protege: detecta corrupção e divergência acidental do kit, **não** um repositório comprometido. A âncora de confiança é o hash do próprio manifesto, informado ao auditor fora do repositório. O manifesto deve ser regenerado a cada mudança em arquivos cobertos (`cd governance/propostas/AUDITOR-EXTERNO && find kit -type f ! -path '*/__pycache__/*' ! -name '*.pyc' | sort | cat - <(printf 'AGENTE-AUDITOR-EXTERNO.md\nDIRETIVAS-AO-AUDITOR.md\nBRIEFING-GPT_PROMPT.md\n') | LC_ALL=C sort | xargs sha256sum > MANIFEST.sha256`).
+`MANIFEST.sha256` vive no mesmo repositório que ele protege: detecta corrupção e divergência acidental do kit, **não** um repositório comprometido. A âncora de confiança é o hash do manifesto aprovado, guardado fora do repositório pelo `sync_auditor.sh`; a 1ª aprovação é sempre explícita (hash informado pelo Orquestrador) e as renovações seguintes são confirmadas pelo pedido `[AEX-REQ]` criado pelo workflow, o que equivale a confiar em quem consegue mesclar na `main` (hoje, só Andraus). O manifesto deve ser regenerado a cada mudança em arquivos cobertos (`cd governance/propostas/AUDITOR-EXTERNO && find kit -type f ! -path '*/__pycache__/*' ! -name '*.pyc' | sort | cat - <(printf 'AGENTE-AUDITOR-EXTERNO.md\nDIRETIVAS-AO-AUDITOR.md\nBRIEFING-GPT_PROMPT.md\n') | LC_ALL=C sort | xargs sha256sum > MANIFEST.sha256`).

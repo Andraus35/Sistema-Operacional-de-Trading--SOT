@@ -63,3 +63,10 @@ Atualizar para novo commit: apague `~/sot-audit/repo` e repita `setup_auditor.sh
 ## Emenda de acesso (2026-10-05) — token do dono
 - Num repositório pessoal não existe colaborador somente-leitura; Andraus escolheu **token fine-grained próprio**. Limite do desenho: o teto de poder é o **escopo do token**, não um papel; as ações do auditor aparecem com o login de Andraus, e `AUDITOR_EXTERNO_LOGINS` = login de Andraus (o filtro do workflow já não distingue auditor de dono — a separação é por prefixo `[AEX]` + validação do kit).
 - `verify_access.py` **não consegue verificar o escopo** de um token do dono pela API: duas sondas de escrita deram falso positivo contra a API real (POST vazio → 422; blob válido → 201 com Contents Read-only na tela do GitHub). O script agora é **fail-closed**: com papel de dono, devolve `INDETERMINADO` (exit 1) e só passa com `--confirmo-escopo`, declaração humana de que o escopo foi conferido em Settings → Developer settings → Fine-grained tokens. **Limite honesto:** o escopo é declarado, não provado.
+
+## Sincronização determinística do clone (`sync_auditor.sh`)
+1. Instale **uma cópia fora do repositório**: `~/.sot-audit/sync_auditor.sh` (`chmod +x`); confira o `sha256sum` da cópia com o informado pelo Orquestrador. Não use a cópia de dentro do clone como âncora.
+2. **1ª execução:** sai com exit 3; confira o hash e rode `sync_auditor.sh --approve <hash do manifesto informado pelo Orquestrador>`. A 1ª aprovação é sempre explícita.
+3. **Rotina:** `sync_auditor.sh` (sem argumentos) faz fast-forward da `main`, confere o manifesto e, se o kit mudou, renova a aprovação **só** se o pedido `[AEX-REQ]` mais recente criado por `github-actions` trouxer o mesmo hash (campo `manifest=` do marcador, calculado pelo workflow). Mostra os arquivos alterados desde a última aprovação.
+4. Se o próprio `sync_auditor.sh` mudar no repositório, a cópia instalada **não** se atualiza sozinha: reinstale (de propósito: é a âncora).
+5. `poll_requests.py` só considera pedidos cujo **autor** é `github-actions`; Issue com marcador de outra conta é ignorada.
