@@ -20,11 +20,14 @@
 3. **Teste do canal (PRs descartáveis #10 e #13, fechados sem merge):** a chave está ligada; o job `pedido` criou as Issues `[AEX-REQ]` #11 e #14 com os rótulos corretos. Na 1ª rodada o comentário no PR falhou com 403 (`pull-requests: read`); corrigido por `pull-requests: write` (PR #12); na 2ª rodada o comentário foi postado e o job concluiu sem erro. Issues #11 e #14 fechadas como não planejadas.
 4. **Verificador:** `kit/verify_access.py` — duas sondas de escrita deram **falso positivo** contra a API real (POST vazio → 422; blob válido → 201 com Contents Read-only na tela); o script passou a ser **fail-closed** e só passa com `--confirmo-escopo` (PR #9). Com a flag, o Codex relatou `PASS`.
 
+5. **Primeiro atendimento real (Codex), 2026-10-06:** parou **corretamente** sem auditar — o passo 0 do procedimento exigia `MANIFEST.sha256`, que não existia no repositório (defeito do procedimento, não do auditor); o passo 1 também omitia `--confirmo-escopo`. Corrigidos: `governance/propostas/AUDITOR-EXTERNO/MANIFEST.sha256` gerado (kit + diretivas + AGENTE + BRIEFING) e procedimento ajustado.
+
 ## 3. Limites conhecidos `[FATO]` (declarar ≠ verificar)
 - **Escopo do token declarado, não provado:** a API não permite verificá-lo para token do dono; vale a conferência manual na tela do GitHub.
 - **Identidade:** as ações do auditor aparecem com o login de Andraus; `AUDITOR_EXTERNO_LOGINS=Andraus35` não distingue o auditor do dono (a separação é por prefixo `[AEX]` e validação do kit).
 - **O auditor (GPT/Codex) ainda não atendeu nenhum pedido real:** o teste cobriu o lado do repositório (workflow, rótulos, Issue, comentário), não `poll_requests`/`setup_auditor.sh`/`submit_finding`/`--ack`.
 - **Fechamento por merge** (aviso de consenso do Auditor) não foi exercitado.
+- **Manifesto no mesmo repositório:** `MANIFEST.sha256` detecta corrupção/divergência acidental, não um repositório comprometido; âncora = hash do manifesto informado ao auditor por canal fora do repositório (chat de Andraus). Deve ser regenerado a cada mudança nos arquivos cobertos.
 - **Validade do token** não registrada: renovar antes de expirar; revogar se houver suspeita de vazamento.
 
 ## 4. Permanecem ABERTAS (CONS-01)

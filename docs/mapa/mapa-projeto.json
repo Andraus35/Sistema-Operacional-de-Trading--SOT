@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "1c8eace7768aba0b639d0679d065fa6896e3b74318f068537780760253b681e8",
+  "digest": "8d720305e5d2032d2f241ee850cbf4023a249d20147dcb8fc1d09489114f336e",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1334,7 +1334,7 @@
    "area": "governance",
    "title": "AGENTE AUDITOR EXTERNO — SOT (documento de instalação e instruções)",
    "in": 1,
-   "out": 8
+   "out": 9
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md",
@@ -1382,7 +1382,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "area": "governance",
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 3,
+   "in": 4,
    "out": 6
   },
   {
@@ -16473,6 +16473,11 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "type": "path"
   },
   {
