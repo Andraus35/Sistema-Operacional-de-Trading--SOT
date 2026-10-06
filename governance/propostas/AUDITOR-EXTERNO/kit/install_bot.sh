@@ -12,6 +12,19 @@ REMOTE_URL="${SOT_REMOTE_URL:-https://github.com/Andraus35/Sistema-Operacional-d
 KIT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; UNITS="$HOME/.config/systemd/user"
 die() { echo "ERRO: $*" >&2; exit 1; }
 
+# memória: com menos de ~2,5 GB (RAM + swap) cria um swap de 2 GB (VM AMD de 1 GB); SOT_SWAP_PRINT_ONLY=1 só mostra o plano (testes)
+ensure_swap() {
+  local mem swap
+  mem=$(awk '/^MemTotal:/{print $2}' "${SOT_MEMINFO:-/proc/meminfo}"); swap=$(awk '/^SwapTotal:/{print $2}' "${SOT_MEMINFO:-/proc/meminfo}")
+  if [ $((mem + swap)) -ge 2621440 ]; then echo "memória ok: $((mem/1024)) MB RAM + $((swap/1024)) MB swap"; return 0; fi
+  echo "AVISO: pouca memória ($((mem/1024)) MB RAM + $((swap/1024)) MB swap). Plano: swap de 2 GB em /swapfile."
+  if [ "${SOT_SWAP_PRINT_ONLY:-}" = "1" ]; then echo "(print-only) fallocate -l 2G /swapfile; chmod 600; mkswap; swapon; linha no /etc/fstab"; return 0; fi
+  if ! sudo -n true 2>/dev/null; then echo "AVISO: sem sudo sem senha. Crie o swap à mão (README-INSTALACAO.md) e rode de novo."; return 0; fi
+  if [ ! -f /swapfile ]; then sudo sh -c 'fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile >/dev/null'; fi
+  sudo swapon /swapfile 2>/dev/null || true
+  grep -q '^/swapfile ' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab >/dev/null
+}
+
 service_unit() { cat <<EOF
 [Unit]
 Description=SOT Auditor Externo (bot determinístico, piloto)
@@ -57,6 +70,7 @@ command -v git >/dev/null && command -v python3 >/dev/null && command -v node >/
 python3 -c 'import sys; sys.exit(0 if sys.version_info>=(3,10) else 1)' || die "python >= 3.10 requerido"
 node -e 'process.exit(parseInt(process.versions.node)>=18?0:1)' || die "node >= 18 requerido"
 command -v systemctl >/dev/null || die "systemd ausente"
+ensure_swap
 
 # token: lido UMA vez (ou herdado da re-execução via SOT_BOOT_TOKEN); nunca em argumento nem na URL do clone
 T="${SOT_BOOT_TOKEN:-}"; unset SOT_BOOT_TOKEN
