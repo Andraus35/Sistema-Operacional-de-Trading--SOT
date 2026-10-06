@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # install_bot.sh — instala o bot do Auditor Externo numa VM Linux (ex.: Oracle Cloud Always Free). [PROPOSTA — NÃO HOMOLOGADO]
-# Rode como o USUÁRIO que vai rodar o bot (não root), de dentro do clone ~/sot-repo (ver README-INSTALACAO.md).
-#   bash install_bot.sh              instala (interativo): token, declaração de escopo, Codex, sync, systemd, 1ª aprovação
+# Rode como o USUÁRIO que vai rodar o bot (não root). UM COMANDO (ver README-INSTALACAO.md): baixa este script, clona o repositório
+# sozinho e instala tudo; você só digita o token, CONFIRMO e o código do login do Codex.
+#   bash install_bot.sh [--approve-hash H]  instala (interativo): token, escopo, clone, Codex, sync, systemd, 1ª aprovação
 #   bash install_bot.sh --print-only mostra os arquivos systemd que seriam criados (não altera nada)
 #   bash install_bot.sh --go-live    tira o --dry-run e coloca o bot no ar (só depois de conferir o dry-run)
 #   bash install_bot.sh --status     estado do timer e últimas linhas do log
 set -euo pipefail
 HOME_STATE="$HOME/.sot-audit"; ENVF="$HOME_STATE/env"; REPO_DIR="${SOT_REPO_DIR:-$HOME/sot-repo}"
+REMOTE_URL="${SOT_REMOTE_URL:-https://github.com/Andraus35/Sistema-Operacional-de-Trading--SOT.git}"
 KIT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; UNITS="$HOME/.config/systemd/user"
 die() { echo "ERRO: $*" >&2; exit 1; }
 
@@ -36,6 +38,8 @@ WantedBy=timers.target
 EOF
 }
 
+APPROVE_HASH=""
+while [ $# -gt 0 ]; do case "$1" in --approve-hash) APPROVE_HASH="${2:-}"; [ -n "$APPROVE_HASH" ] || die "--approve-hash exige o hash"; shift 2 ;; *) break ;; esac; done
 case "${1:-}" in
   --print-only) echo "### $UNITS/sot-auditor.service"; service_unit; echo; echo "### $UNITS/sot-auditor.timer"; timer_unit; exit 0 ;;
   --status) systemctl --user list-timers sot-auditor.timer --no-pager || true
@@ -53,15 +57,27 @@ command -v git >/dev/null && command -v python3 >/dev/null && command -v node >/
 python3 -c 'import sys; sys.exit(0 if sys.version_info>=(3,10) else 1)' || die "python >= 3.10 requerido"
 node -e 'process.exit(parseInt(process.versions.node)>=18?0:1)' || die "node >= 18 requerido"
 command -v systemctl >/dev/null || die "systemd ausente"
-[ -d "$REPO_DIR/.git" ] || die "clone esperado em $REPO_DIR (ver README-INSTALACAO.md)"
-[ "$KIT" = "$REPO_DIR/governance/propostas/AUDITOR-EXTERNO/kit" ] || die "rode este script de dentro de $REPO_DIR"
+
+# token: lido UMA vez (ou herdado da re-execução via SOT_BOOT_TOKEN); nunca em argumento nem na URL do clone
+T="${SOT_BOOT_TOKEN:-}"; unset SOT_BOOT_TOKEN
+if [ -z "$T" ]; then read -rs -p "Cole o token (não aparece na tela): " T; echo; fi
+[ -n "$T" ] || die "token vazio"
+if [ ! -d "$REPO_DIR/.git" ]; then
+  echo "== clonando o repositório em $REPO_DIR (token só em memória)"
+  git -c "http.extraHeader=Authorization: Basic $(printf 'x-access-token:%s' "$T" | base64 | tr -d '\n')" clone -q "$REMOTE_URL" "$REPO_DIR" || die "clone falhou (token/escopo/rede?)"
+fi
+KIT_REPO="$REPO_DIR/governance/propostas/AUDITOR-EXTERNO/kit"
+if ! cmp -s "$0" "$KIT_REPO/install_bot.sh"; then   # a cópia baixada difere da do clone: segue com a do clone
+  echo "== usando o instalador do clone"; ARGS=(); [ -n "$APPROVE_HASH" ] && ARGS=(--approve-hash "$APPROVE_HASH")
+  SOT_BOOT_TOKEN="$T" exec bash "$KIT_REPO/install_bot.sh" "${ARGS[@]}" "$@"
+fi
+KIT="$KIT_REPO"
 
 mkdir -p "$HOME_STATE/codex-home"; chmod 700 "$HOME_STATE" "$HOME_STATE/codex-home"
 echo "== 1/6 Declaração de escopo do token"
 echo "O token deve ser fine-grained, só este repositório: Contents=Read-only, Issues=Read and write, Metadata=Read-only."
 echo "A API NÃO prova isso: é uma declaração sua (limite registrado na ata DHR-AUDITOR-EXTERNO-002)."
 read -r -p "Digite CONFIRMO se você conferiu esse escopo na tela do GitHub: " C; [ "$C" = "CONFIRMO" ] || die "sem confirmação"
-read -rs -p "Cole o token (não aparece na tela): " T; echo; [ -n "$T" ] || die "token vazio"
 umask 077; printf 'SOT_AUDITOR_TOKEN=%s\nSOT_CONFIRMO_ESCOPO=1\nSOT_BOT_ARGS=--dry-run\n' "$T" > "$ENVF"; unset T; chmod 600 "$ENVF"
 
 echo "== 2/6 Codex CLI (npm, sem root)"
@@ -79,7 +95,7 @@ loginctl enable-linger "$USER" 2>/dev/null || echo "AVISO: rode 'sudo loginctl e
 echo "== 6/6 Primeira aprovação (explícita)"
 set +e; set -a; . "$ENVF"; set +a; SOT_AUDIT_STATE="$HOME_STATE" SOT_REPO_DIR="$REPO_DIR" "$HOME_STATE/sync_auditor.sh"; RC=$?; set -e
 if [ "$RC" -eq 3 ]; then
-  read -r -p "Cole o hash do manifesto informado pelo Orquestrador: " H
+  H="$APPROVE_HASH"; [ -n "$H" ] || read -r -p "Cole o hash do manifesto informado pelo Orquestrador: " H
   SOT_AUDIT_STATE="$HOME_STATE" SOT_REPO_DIR="$REPO_DIR" "$HOME_STATE/sync_auditor.sh" --approve "$H"
 elif [ "$RC" -ne 0 ]; then die "sync_auditor.sh saiu com $RC"; fi
 echo
