@@ -136,6 +136,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Pacote 1 do kit do auditor (veredito derivado, rule_source, gate backlog_triggers): muda a operacao do piloto, nao checklist, metodo nem regra; classificacao a ratificar por Andraus"
+    },
+    {
+      "id": "DHR-PESQUISA-ESP-001",
+      "data": "2026-10-06",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Detectores auxiliares e proposta de emendas; nenhum texto embutido nos agentes muda; reclassificar quando as emendas forem homologadas"
     }
   ]
 }
