@@ -28,6 +28,21 @@ if (!alvo.test(agente)) process.exit(0);
 
 const papel = /revisor/i.test(agente) ? 'Revisor SOT (parecer)' : 'Especificador SOT (entrega)';
 
+// Em segundo plano (padrão do Agent; só run_in_background:false é síncrono) a chamada VOLTA NA HORA, no lançamento — ainda não
+// existe entrega. Dizer "acabou de chegar" aí era falso; a cobrança da entrega real é do hook de fim de turno
+// (scripts/andraus-ask-guard.js), que enxerga o retorno do agente.
+const emSegundoPlano = input.run_in_background !== false;
+if (emSegundoPlano) {
+  const aviso = [
+    `LEMBRETE AO ORQUESTRADOR — ${papel.replace(/ \(.*\)/, '')} ACIONADO em segundo plano; AINDA NÃO HÁ ENTREGA nem parecer. Não pergunte a Andraus agora.`,
+    'Quando a entrega/parecer chegar (relatório de retorno ou notificação de tarefa), resuma em 3 a 5 linhas simples e FALE COM ANDRAUS com AskUserQuestion:',
+    'linguagem de trader, recomendação em PRIMEIRO lugar marcada "(Recomendado)", nunca decidir/homologar/fechar decisão aberta (CONS-01).',
+    'O hook de fim de turno (scripts/andraus-ask-guard.js) bloqueia o encerramento da resposta se houver entrega sem pergunta.'
+  ].join('\n');
+  process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: 'PostToolUse', additionalContext: aviso } }));
+  process.exit(0);
+}
+
 const texto = [
   `LEMBRETE AO ORQUESTRADOR — acabou de chegar uma entrega do ${papel}.`,
   'Antes de seguir adiante, FALE COM ANDRAUS usando AskUserQuestion (perguntas automatizadas):',
