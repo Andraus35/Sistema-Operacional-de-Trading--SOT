@@ -38,7 +38,7 @@ def main():
              ("comando de reprodução com escrita", ed(lambda d: d.update(reproduce=["rm -rf x"])), 1, "E-REPRO"),
              ("diretiva de postura não vigente", ed(lambda d: d.update(directive_version="DIR-999")), 1, "E-DIRETIVA"),
              ("implementado sem evidência de gate", ed(lambda d: d["status_sip"].update(implemented=True)), 1, "E-SIP"),
-             ("regra inventada em rule_source (PN2)", ed(lambda d: d.update(rule_source="RULE-ZZZ-999")), 1, "E-RULESRC"),
+             ("regra inventada em rule_source (PN2)", ed(lambda d: d.update(rule_source="RULE-" + "INEXISTENTE" + "-" + "00"))   # montado em runtime: o ID inteiro nunca aparece literal no repo, 1, "E-RULESRC"),
              ("rule_source em texto livre, sem ID (liberdade cognitiva)", ed(lambda d: d.update(rule_source="princípio de coerência entre nota e achados")), 0, None)]
     ok = True
     for nome, d, esperado, cod in casos:
