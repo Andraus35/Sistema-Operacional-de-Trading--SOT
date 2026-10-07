@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "192c56d9e00028309e9884dc1c373921cccb818dea8bd8c30396314822dd27c3",
+  "digest": "e5d6724314e56d22104afea46c76ac61111489557e6b615601449eced12620ae",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -129,13 +129,6 @@
    "path": ".clinerules/sot-specs.md",
    "area": ".clinerules",
    "title": "SOT Spec Editing Rules",
-   "in": 1,
-   "out": 0
-  },
-  {
-   "path": ".pytest_cache/README.md",
-   "area": ".pytest_cache",
-   "title": "pytest cache directory #",
    "in": 1,
    "out": 0
   },
@@ -1768,7 +1761,7 @@
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness)",
    "in": 2,
-   "out": 14
+   "out": 13
   },
   {
    "path": "specs/features/SPEC-002/PROPOSTA-ABERTURA.md",
@@ -18476,11 +18469,6 @@
    "from": "specs/features/SPEC-001/plan.md",
    "to": "specs/features/SPEC-005/plan.md",
    "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
-   "to": ".pytest_cache/README.md",
-   "type": "path"
   },
   {
    "from": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",

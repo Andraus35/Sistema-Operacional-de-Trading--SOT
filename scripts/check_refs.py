@@ -38,7 +38,7 @@ for _s in (sys.stdout, sys.stderr):
 
 ROOT = Path(__file__).resolve().parent.parent
 EXCLUDE = re.compile(
-    r"(^|/)(node_modules|\.git|UPGRADES|_legacy)(/|$)|harness-eval/runs/|^docs/mapa/"  # docs/mapa = saída gerada
+    r"(^|/)(node_modules|\.git|\.pytest_cache|__pycache__|UPGRADES|_legacy)(/|$)|harness-eval/runs/|^docs/mapa/"  # docs/mapa = saída gerada; caches locais não são documentos do projeto (o mapa divergia entre máquinas)
 )
 # Congelados: atas e propostas (INV-07) — nunca reescritos.
 FROZEN = re.compile(r"(^|/)governance/(DHR-|EUA-|HOD-|MAN-|PP-|PE-)|^docs/")
