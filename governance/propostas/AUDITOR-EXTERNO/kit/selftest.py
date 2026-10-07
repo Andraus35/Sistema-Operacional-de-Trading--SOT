@@ -28,6 +28,7 @@ def main():
             "status_sip": {"specified": True, "implemented": False, "proven": False},
             "reproduce": [f"git show {head[:8]}:AGENTS.md"], "author": {"model": "selftest", "date": "2026-01-01"}}
     def ed(f): d = copy.deepcopy(base); f(d); return d
+    # (o ID inventado do caso PN2 é montado em runtime: o texto inteiro nunca aparece literal no repositório)
     casos = [("VÁLIDO", base, 0, None),
              ("citação inventada", ed(lambda d: d["evidence"][0].update(quote="texto que não existe no arquivo em lugar nenhum")), 1, "E-QUOTE"),
              ("sem evidência", ed(lambda d: d.update(evidence=[])), 1, "E-EVID"),
@@ -38,7 +39,7 @@ def main():
              ("comando de reprodução com escrita", ed(lambda d: d.update(reproduce=["rm -rf x"])), 1, "E-REPRO"),
              ("diretiva de postura não vigente", ed(lambda d: d.update(directive_version="DIR-999")), 1, "E-DIRETIVA"),
              ("implementado sem evidência de gate", ed(lambda d: d["status_sip"].update(implemented=True)), 1, "E-SIP"),
-             ("regra inventada em rule_source (PN2)", ed(lambda d: d.update(rule_source="RULE-" + "INEXISTENTE" + "-" + "00"))   # montado em runtime: o ID inteiro nunca aparece literal no repo, 1, "E-RULESRC"),
+             ("regra inventada em rule_source (PN2)", ed(lambda d: d.update(rule_source="RULE-" + "INEXISTENTE" + "-" + "00")), 1, "E-RULESRC"),
              ("rule_source em texto livre, sem ID (liberdade cognitiva)", ed(lambda d: d.update(rule_source="princípio de coerência entre nota e achados")), 0, None)]
     ok = True
     for nome, d, esperado, cod in casos:
