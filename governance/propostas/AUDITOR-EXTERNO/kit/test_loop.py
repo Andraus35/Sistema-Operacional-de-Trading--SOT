@@ -112,5 +112,24 @@ class TestPoll(unittest.TestCase):
         self.assertEqual(run([sys.executable, os.path.join(HERE, "poll_requests.py")], env=e).returncode, 2)
 
 
+class TestDeriveVerdict(unittest.TestCase):
+    """PN1: o veredito consultivo é função determinística das gravidades dos achados VÁLIDOS (DHR-AUDITOR-EXTERNO-004 §3-quater)."""
+    def setUp(self):
+        sys.path.insert(0, HERE)
+        import loop_tools
+        self.dv = loop_tools.derive_verdict
+
+    def test_regras_decididas_por_andraus(self):
+        self.assertEqual(self.dv([]), "OK")                          # nenhum achado válido
+        self.assertEqual(self.dv(["P2"]), "COM_RESSALVAS")           # só editorial
+        self.assertEqual(self.dv(["P1"]), "COM_RESSALVAS")           # P1 vira COM_RESSALVAS (escolha de Andraus)
+        self.assertEqual(self.dv(["P0"]), "NAO_OK")                  # P0 bloqueia
+        self.assertEqual(self.dv(["P2", "P1", "P0"]), "NAO_OK")      # o pior prevalece
+
+    def test_gravidade_desconhecida_e_fail_closed(self):
+        self.assertEqual(self.dv(["P9"]), "NAO_OK")
+        self.assertEqual(self.dv([None]), "NAO_OK")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)

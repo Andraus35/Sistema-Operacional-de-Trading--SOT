@@ -18,6 +18,17 @@ MAX_OPEN_AEX = 25     # fila máxima de Issues [AEX] abertas (freio contra ping-
 FENCE = re.compile(r"```json\s*\n(.*?)\n```", re.S)
 SHA = re.compile(r"^[0-9a-f]{40}$")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
+VERDICTS = ("OK", "COM_RESSALVAS", "NAO_OK")
+
+
+def derive_verdict(severities):
+    """Veredito CONSULTIVO derivado, por código, das gravidades dos achados VÁLIDOS (DHR-AUDITOR-EXTERNO-004 §3-quater, item 5).
+
+    P0 => NAO_OK · P1 ou P2 => COM_RESSALVAS · nenhum achado válido => OK. A gravidade de cada achado é a que o modelo escolheu
+    (liberdade cognitiva); o código só garante a coerência nota x achados. Gravidade desconhecida conta como P0 (fail-closed)."""
+    sev = [str(s) for s in severities]
+    if any(s not in ("P1", "P2") for s in sev): return "NAO_OK"
+    return "COM_RESSALVAS" if sev else "OK"
 
 
 def cmd_extract(a):

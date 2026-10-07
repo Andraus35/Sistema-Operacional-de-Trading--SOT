@@ -17,6 +17,9 @@ PROP = {"ERRATUM_ADITIVO", "EMENDA_PONTUAL", "NOTA", "SEM_MUDANCA"}
 ID_RE = re.compile(r"^AEX-\d{8}-\d{3}$")
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 MIN_QUOTE = 20
+# IDs normativos do SOT (prefixo-NÚMERO/SIGLA): RULE-ECC-04, INV-09, CC-08, ENF-03, DHR-…, EUA-E21, SPEC-006, WF-D03 etc.
+ID_TOKEN = re.compile(r"\b(?:RULE|INV|CC|ENF|DHR|EUA|ADR|BL|SPEC|WF|RISK|GRE|HRE|PN|CONS|CONST)-[A-Z0-9]+(?:-[A-Z0-9]+)*\b")
+MAX_RULE_TOKENS = 10
 # comandos de reprodução permitidos: só leitura (1º token ou par de tokens)
 ALLOWED = [("git", "show"), ("git", "grep"), ("git", "cat-file"), ("git", "log"), ("git", "diff"),
            ("grep",), ("python", "scripts/validate_spec_sot.py"), ("python", "scripts/check_refs.py"),
@@ -72,6 +75,18 @@ def main():
     if git(a.repo, "status", "--porcelain")[1].strip():
         err.append("E-ARVORE árvore de trabalho não está limpa (auditoria é somente leitura)")
     sha = head  # âncoras verificadas no commit real
+
+    # PN2 (anti-alucinação de regra): todo ID normativo citado em rule_source deve EXISTIR no commit auditado. Texto livre sem ID é
+    # permitido (liberdade cognitiva); só regra INVENTADA é barrada. Detector de forma/ancoragem — não julga se a regra se aplica.
+    rs = f.get("rule_source")
+    if isinstance(rs, str):
+        toks = list(dict.fromkeys(ID_TOKEN.findall(rs)))
+        if len(toks) > MAX_RULE_TOKENS:
+            err.append(f"E-RULESRC rule_source cita {len(toks)} IDs normativos (máx. {MAX_RULE_TOKENS}); cite só os que fundamentam o achado")
+            toks = toks[:MAX_RULE_TOKENS]
+        for t in toks:
+            if git(a.repo, "grep", "-q", "-F", "-e", t, sha)[0] != 0:
+                err.append(f"E-RULESRC rule_source cita '{t}', que NÃO existe no commit auditado (regra inventada?)")
 
     # evidência literal
     ev = f.get("evidence")

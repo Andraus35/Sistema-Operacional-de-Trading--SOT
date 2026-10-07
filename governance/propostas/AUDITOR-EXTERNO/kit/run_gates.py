@@ -29,6 +29,7 @@ def main():
     py = sys.executable
     gates = [("npm_test", ["npm", "test"]), ("npm_lint", ["npm", "run", "lint"]),
              ("check_refs", [py, "scripts/check_refs.py"]), ("check_doc_sync", [py, "scripts/check_doc_sync.py"]),
+             ("backlog_triggers", [py, "scripts/backlog_triggers.py"]),   # PN10: gate ATIVADO do RMR-001 (nunca dispensado; informativo como no CI)
              ("build_map_check", [py, "scripts/build_map.py", "--check"]),
              ("check_repo_research", [py, "scripts/check_repo_research.py", "--all"])]
     for plan in sorted(glob.glob(os.path.join(repo, "specs/features/*/plan.md"))):

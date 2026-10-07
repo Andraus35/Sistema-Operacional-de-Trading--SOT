@@ -21,7 +21,7 @@
 4. Limite do workflow: 3 pedidos por chave (1 auditoria + 2 re-auditorias); além disso "decisão humana necessária".
 
 ## 4. O que acontece depois (automático)
-O bot na VM (timer de 2 min) pega o pedido, roda o Codex somente-leitura, valida e posta os achados como Issues `[AEX] …`, e dá o ACK com o veredito consultivo (`OK` · `COM_RESSALVAS` · `NAO_OK`). O workflow valida cada achado (forma + citação literal no commit citado), rotula e avisa no PR.
+O bot na VM (timer de 2 min) pega o pedido, roda o Codex somente-leitura, valida e posta os achados como Issues `[AEX] …`, e dá o ACK com o veredito consultivo (`OK` · `COM_RESSALVAS` · `NAO_OK`). **Desde o Pacote 1 (DHR-AUDITOR-EXTERNO-005, após reaprovação do manifesto):** o veredito é **calculado por código** dos achados válidos (P0 ⇒ `NAO_OK`; P1/P2 ⇒ `COM_RESSALVAS`; nenhum ⇒ `OK`) e o ACK registra se o veredito do modelo coincide ou diverge; se o modelo apontar problemas e **todos** forem descartados na validação, o bot **bloqueia sem nota e sem ACK** (nota de bloqueio no pedido). O workflow valida cada achado (forma + citação literal no commit citado), rotula e avisa no PR.
 
 ## 5. Ler os achados
 Issues com título `[AEX]`. Rótulos: `auditoria-externa` (todos) · `aex-valido` / `aex-invalido` · `aex-duplicado` · `aex-aguarda-revisor` (válido, à espera do Revisor) · `aex-fila-cheia` (25 abertos: triagem humana antes de novos). `homologacao-final` marca o PR candidato.

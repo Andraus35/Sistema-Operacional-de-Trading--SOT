@@ -210,6 +210,7 @@ def main():
         note(n, "BLOQUEADO: o modelo declarou que não conseguiu realizar a auditoria (limitação de leitura/ambiente); sem ACK. Ver o log do bot", "indeterminado", secrets, dry); return 2
 
     posted = discarded = 0
+    valid_sev = []   # gravidades dos achados que PASSARAM na validação (base do veredito derivado)
     for raw_f in data["achados"][:MAX_FINDINGS]:
         if not isinstance(raw_f, dict): discarded += 1; continue
         seq = counter("ids", 1)
@@ -224,15 +225,22 @@ def main():
         if not dry: sub.append("--post")
         r = sh(sub, env, timeout=300)
         tail = redact((r.stdout + r.stderr).strip().splitlines()[-1] if (r.stdout + r.stderr).strip() else "", secrets)
-        if r.returncode == 0: posted += 1; log(f"achado {f['id']}: {'DRY-RUN ok' if dry else 'POSTADO'} — {tail}")
+        if r.returncode == 0: posted += 1; valid_sev.append(f.get("severity")); log(f"achado {f['id']}: {'DRY-RUN ok' if dry else 'POSTADO'} — {tail}")
         else: discarded += 1; log(f"achado {f['id']}: DESCARTADO — {tail}")
-    verdict = data["veredito"]
-    log(f"Resumo: postados={posted} descartados={discarded} veredito={verdict}")
+    # Veredito = função DETERMINÍSTICA dos achados válidos (ENF-03: o LLM não é o próprio gate); o do modelo é só dado comparado.
+    if posted == 0 and discarded > 0:   # decisão de Andraus: tudo descartado => bloquear, sem nota nem ACK (evita OK por derivação vazia)
+        log(f"BLOQUEIO: o modelo apontou {discarded} problema(s) e todos foram descartados na validação; sem nota.")
+        note(n, f"BLOQUEADO: o modelo apontou {discarded} problema(s), mas nenhum passou na validação determinística (forma/citação); sem nota nem ACK. Nova tentativa dentro do limite", "tudo-descartado", secrets, dry); return 2
+    model_verdict = data["veredito"]
+    verdict = lt.derive_verdict(valid_sev)
+    log(f"Resumo: postados={posted} descartados={discarded} veredito={verdict} (modelo: {model_verdict})")
     if dry:
         seen[seen_k] = True; _write_json(seen_f, seen); log("[dry-run] sem ACK."); return 0
+    diverg = (f" Veredito do modelo: {model_verdict} — **diverge** do calculado pelo código a partir dos achados válidos (registrado como dado)."
+              if model_verdict != verdict else f" Veredito do modelo: {model_verdict} (coincide com o calculado).")
     pr.call(f"/repos/{pr.SLUG}/issues/{n}/comments", "POST",
-            {"body": f"<!-- aex-ack -->\nAuditor externo (bot): pedido atendido. **Veredito consultivo: {verdict}** (dado ao Orquestrador; não é homologação). "
-                     f"Achados postados: {posted} · descartados na autoverificação: {discarded}."})
+            {"body": f"<!-- aex-ack -->\nAuditor externo (bot): pedido atendido. **Veredito consultivo: {verdict}** (calculado por código a partir dos achados válidos; "
+                     f"dado ao Orquestrador; não é homologação). Achados postados: {posted} · descartados na autoverificação: {discarded}.{diverg}"})
     log(f"ACK em #{n}")
     return 0
 

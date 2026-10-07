@@ -98,6 +98,31 @@ class TestBot(unittest.TestCase):
         self.assertEqual(c["args"][c["args"].index("--sandbox") + 1], "read-only")
         self.assertNotIn(TOKEN, json.dumps(Api.created) + json.dumps(Api.comments))
 
+    def test_veredito_e_derivado_dos_achados_nao_do_modelo(self):
+        # PN1: o modelo diz OK, mas há um achado P0 VÁLIDO postado => o código calcula NAO_OK e registra a divergência
+        self.req_issue(); self.saida([dict(self.bom(), severity="P0", type="invariante")], veredito="OK")
+        r = self.run_bot(); self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        ack = self.acks(); self.assertEqual(len(ack), 1)
+        self.assertIn("Veredito consultivo: NAO_OK", ack[0]); self.assertIn("diverge", ack[0]); self.assertIn("Veredito do modelo: OK", ack[0])
+
+    def test_modelo_diz_nao_ok_sem_achados_validos_vira_ok_calculado_com_divergencia(self):
+        self.req_issue(); self.saida([], veredito="NAO_OK")
+        r = self.run_bot(); self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        ack = self.acks(); self.assertEqual(len(ack), 1)
+        self.assertIn("Veredito consultivo: OK", ack[0]); self.assertIn("diverge", ack[0])
+
+    def test_veredito_coincidente_e_registrado_como_tal(self):
+        self.req_issue(); self.saida([dict(self.bom(), severity="P1")], veredito="COM_RESSALVAS")
+        r = self.run_bot(); self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        ack = self.acks(); self.assertIn("Veredito consultivo: COM_RESSALVAS", ack[0]); self.assertIn("coincide", ack[0])
+
+    def test_tudo_descartado_bloqueia_sem_nota_nem_ack(self):
+        # decisão de Andraus: o modelo apontou problema, mas nenhum passou na validação => sem OK por derivação vazia, sem ACK
+        self.req_issue(); self.saida([self.bom(quote="citação inventada que não existe no arquivo")], veredito="NAO_OK")
+        r = self.run_bot(); self.assertEqual(r.returncode, 2, r.stdout + r.stderr)
+        self.assertEqual(self.acks(), []); self.assertEqual(len(Api.created), 0)
+        notas = [b for _, b in Api.comments]; self.assertEqual(len(notas), 1); self.assertIn("nenhum passou na validação", notas[0])
+
     def test_dry_run_nao_posta_nem_da_ack(self):
         self.req_issue(); self.saida([self.bom()])
         r = self.run_bot("--dry-run"); self.assertEqual(r.returncode, 0, r.stdout + r.stderr)

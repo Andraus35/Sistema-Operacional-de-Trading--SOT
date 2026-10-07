@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-06",
-  "digest": "3ec00124df4a69021aec8263dd50c1e6c8b73688f07218255a900b2f0da9e38b",
+  "digest": "d2b918ac8d699d1c53677e0db7a089a9923ec9b429f37a25e1ec32a39df76b07",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,7 +10,7 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 24,
+   "in": 26,
    "out": 57
   },
   {
@@ -143,7 +143,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 55,
+   "in": 56,
    "out": 34
   },
   {
@@ -171,7 +171,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 157,
+   "in": 160,
    "out": 63
   },
   {
@@ -185,7 +185,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 97,
+   "in": 99,
    "out": 34
   },
   {
@@ -227,7 +227,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 153,
+   "in": 154,
    "out": 104
   },
   {
@@ -444,8 +444,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 79,
-   "out": 161
+   "in": 80,
+   "out": 162
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -532,6 +532,13 @@
    "out": 15
   },
   {
+   "path": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-005 — Ata — Pacote 1 do Auditor Externo: coerência do parecer (veredito derivado, regra citada existe, gate de gatilhos)",
+   "in": 2,
+   "out": 10
+  },
+  {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "area": "governance",
    "title": "DHR-BL008-001 — Ata de Homologação — Mapa de Auditoria da SPEC-001 (BL-008)",
@@ -591,14 +598,14 @@
    "path": "governance/DHR-DEC-003_Ata_Decisoes_SPEC038_BL.md",
    "area": "governance",
    "title": "DHR-DEC-003 — Ata de Decisões — SPEC-038 (TVMCP-001), BL-002/012/027/028/029/030/031/032, ECC-VAL-001, ECC-03-001",
-   "in": 23,
+   "in": 25,
    "out": 9
   },
   {
    "path": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
    "area": "governance",
    "title": "DHR-DEC-004 — Ata de Decisões — BL-017, SPEC-038-DATASRC-001, MASTER Market Data (BL-033), sincronização RPSA",
-   "in": 12,
+   "in": 13,
    "out": 12
   },
   {
@@ -892,7 +899,7 @@
    "path": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
    "area": "governance",
    "title": "DHR-PROV-WEB-001 — Ata de Homologação — Provisão de Pesquisa Web ao Especificador",
-   "in": 27,
+   "in": 29,
    "out": 2
   },
   {
@@ -1340,7 +1347,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 224,
+   "in": 227,
    "out": 35
   },
   {
@@ -1368,7 +1375,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
    "area": "governance",
    "title": "DIRETIVAS AO AUDITOR EXTERNO — instruções e postura (versionadas)  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 11,
+   "in": 12,
    "out": 7
   },
   {
@@ -1389,8 +1396,8 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "area": "governance",
    "title": "OPERAÇÃO DO AUDITOR EXTERNO (piloto) — guia do Orquestrador",
-   "in": 5,
-   "out": 6
+   "in": 6,
+   "out": 7
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
@@ -1417,28 +1424,28 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
    "area": "governance",
    "title": "DOSSIÊ DE PESQUISA — Auditor Externo como \"revisor de cognição\" (pesquisador-revisor híbrido com web)",
-   "in": 1,
+   "in": 3,
    "out": 7
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
    "area": "governance",
    "title": "DOSSIÊ DE PESQUISA — Cooperação entre agentes internos (Especificador, Revisor) e Auditor Externo (Codex), mediada pelo Orquestrador",
-   "in": 1,
+   "in": 3,
    "out": 12
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
    "area": "governance",
    "title": "PROPOSTA — Auditor Externo como \"revisor de cognição\" (pesquisador-revisor híbrido): parecer e opções",
-   "in": 1,
+   "in": 3,
    "out": 6
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
    "area": "governance",
    "title": "PROPOSTA — Cooperação entre agentes internos e Auditor Externo (mediada pelo Orquestrador)",
-   "in": 1,
+   "in": 2,
    "out": 17
   },
   {
@@ -1452,7 +1459,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
    "area": "governance",
    "title": "PROMPT DO AUDITOR EXTERNO — modo bot (somente leitura)",
-   "in": 8,
+   "in": 9,
    "out": 8
   },
   {
@@ -1461,6 +1468,20 @@
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
    "in": 5,
    "out": 7
+  },
+  {
+   "path": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "area": "governance",
+   "title": "DOSSIÊ — Melhoria da Pesquisa Web do próprio Especificador (Dossiê de Pesquisa de estado da arte)",
+   "in": 1,
+   "out": 11
+  },
+  {
+   "path": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "area": "governance",
+   "title": "PROPOSTA — Melhoria da Pesquisa Web do Especificador: itens M1..M8, priorização e parecer",
+   "in": 1,
+   "out": 11
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -1760,7 +1781,7 @@
    "path": "specs/features/SPEC-002/research.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness — DOSSIÊ DE PESQUISA (ABERTURA)",
-   "in": 13,
+   "in": 14,
    "out": 19
   },
   {
@@ -1872,7 +1893,7 @@
    "path": "specs/features/SPEC-019/plan.md",
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
-   "in": 61,
+   "in": 62,
    "out": 18
   },
   {
@@ -2173,7 +2194,7 @@
   {
    "id": "BL-033",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "BL-034",
@@ -2226,6 +2247,11 @@
    "cited_by": 9
   },
   {
+   "id": "DHR-AUDITOR-EXTERNO-005",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "cited_by": 2
+  },
+  {
    "id": "DHR-BL008-001",
    "defined_in": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "cited_by": 9
@@ -2268,12 +2294,12 @@
   {
    "id": "DHR-DEC-003",
    "defined_in": "governance/DHR-DEC-003_Ata_Decisoes_SPEC038_BL.md",
-   "cited_by": 23
+   "cited_by": 25
   },
   {
    "id": "DHR-DEC-004",
    "defined_in": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "DHR-DIV-001",
@@ -2488,7 +2514,7 @@
   {
    "id": "DHR-PROV-WEB-001",
    "defined_in": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
-   "cited_by": 27
+   "cited_by": 29
   },
   {
    "id": "DHR-REG-001",
@@ -2768,7 +2794,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 149
+   "cited_by": 150
   },
   {
    "id": "INV-08",
@@ -3133,7 +3159,7 @@
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 44
+   "cited_by": 45
   },
   {
    "id": "RULE-ECC-03",
@@ -3143,17 +3169,17 @@
   {
    "id": "RULE-ECC-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 50
+   "cited_by": 51
   },
   {
    "id": "RULE-ECC-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 29
+   "cited_by": 30
   },
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "RULE-EH",
@@ -3348,7 +3374,7 @@
   {
    "id": "RULE-HG-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 24
+   "cited_by": 26
   },
   {
    "id": "RULE-HG-03",
@@ -3498,7 +3524,7 @@
   {
    "id": "RULE-INQ",
    "defined_in": "governance/RULES.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "RULE-INQ-01",
@@ -3548,7 +3574,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 67
+   "cited_by": 69
   },
   {
    "id": "RULE-MET-02",
@@ -3888,7 +3914,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 50
+   "cited_by": 53
   },
   {
    "id": "SPEC-007",
@@ -3908,7 +3934,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "SPEC-011",
@@ -3953,7 +3979,7 @@
   {
    "id": "SPEC-019",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 61
+   "cited_by": 62
   },
   {
    "id": "SPEC-020",
@@ -8104,6 +8130,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -9534,6 +9565,56 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Loop_Sequencial_e_Orquestrador.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-COOPERACAO-INTERNO-EXTERNO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
    "type": "path"
   },
@@ -16934,6 +17015,11 @@
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Pacote1_Coerencia_do_Parecer.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "type": "path"
   },
@@ -17470,6 +17556,126 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/DHR-DEC-003_Ata_Decisoes_SPEC038_BL.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "to": "specs/features/SPEC-019/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/DHR-DEC-003_Ata_Decisoes_SPEC038_BL.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-AUDITOR-HIBRIDO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/DOSSIE-PESQUISA-COOPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/cooperacao/PROPOSTA-AUDITOR-HIBRIDO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "governance/propostas/PESQUISA-ESPECIFICADOR/DOSSIE-MELHORIA-PESQUISA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PESQUISA-ESPECIFICADOR/PROPOSTA-MELHORIA-PESQUISA.md",
+   "to": "specs/features/SPEC-002/research.md",
    "type": "path"
   },
   {
