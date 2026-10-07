@@ -1,0 +1,10 @@
+SRC-REPRO-01
+Fonte: "Setting the temperature to zero will make an LLM deterministic?" — Sara Z. (zansara)
+Natureza / nível de evidência: blog técnico de prática (opinião técnica fundamentada; não revisado por pares)
+Data de publicação declarada: 2026-03-26
+URL: https://zansara.substack.com/p/setting-the-temperature-to-zero-will
+Data de acesso: 2026-10-06
+[Cópia verbatim de governance/propostas/AUDITOR-EXTERNO/cooperacao/sources/SRC-REPRO-01.txt para reuso nesta pasta — RULE-ECC-04]
+
+Trecho literal (verbatim, >100 caracteres):
+"Floating-point arithmetic is only an approximation of real-number arithmetic. In particular, it is not associative. sampling determinism is not the same thing as system determinism. temperature=0 makes only the token selection rule deterministic. It does not guarantee that the entire inference system will produce exactly the same logits every time."

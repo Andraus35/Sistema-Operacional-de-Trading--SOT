@@ -1,0 +1,15 @@
+SRC-HITL-01
+Fonte: AWS Well-Architected — Agentic AI Lens — "AGENTSEC04-BP02 Human-in-the-loop for critical decisions"
+Natureza / nível de evidência: documentação oficial de fornecedor (prática de arquitetura/segurança da AWS)
+URL: https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsec04-bp02.html
+Data de acesso: 2026-10-06
+[Cópia verbatim de governance/propostas/AUDITOR-EXTERNO/cooperacao/sources/SRC-HITL-01.txt para reuso nesta pasta — RULE-ECC-04]
+
+Trecho literal (verbatim, >100 caracteres):
+"Risk-tiered approval pauses agents only for the decisions where human judgment actually changes the outcome, with enough context to make those decisions meaningful. Risk classification itself can't rely on an LLM exposed to the same untrusted content as the request being evaluated, because adversarial content could influence the classifier into marking the request as low-risk. Use deterministic logic (policy engines, rule-based classifiers) as the authoritative signal, with LLM-assisted classification as an optional input that a deterministic layer re-checks."
+
+Trecho literal adicional (anti-padrão de parada/escalonamento):
+"Implementing approval workflows without timeout policies or escalation paths, so agent execution stalls indefinitely when reviewers are unavailable."
+
+Trecho literal adicional (registro auditável da decisão de aprovação):
+"You log human approval decisions with timestamps and reviewer identities, creating an auditable record of human oversight for compliance purposes."

@@ -1,0 +1,9 @@
+SRC-OWASP-01
+Fonte: OWASP Gen AI Security Project — "LLM01:2025 Prompt Injection"
+Natureza / nível de evidência: documentação oficial de referência de segurança (standards body OWASP)
+URL: https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+Data de acesso: 2026-10-06
+[Cópia verbatim de governance/propostas/AUDITOR-EXTERNO/cooperacao/sources/SRC-OWASP-01.txt para reuso nesta pasta — RULE-ECC-04]
+
+Trecho literal (verbatim, >100 caracteres):
+"A Prompt Injection Vulnerability occurs when user prompts alter the LLM's behavior or output in unintended ways. Indirect prompt injections occur when an LLM accepts input from external sources, such as websites or files. Restrict the model's access privileges to the minimum necessary for its intended operations. Implement human-in-the-loop controls for privileged operations to prevent unauthorized actions. Separate and clearly denote untrusted content to limit its influence on user prompts."

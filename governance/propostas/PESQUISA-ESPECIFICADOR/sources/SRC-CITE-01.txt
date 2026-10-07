@@ -1,0 +1,17 @@
+SRC-CITE-01
+Fonte: "Citation theatre: the more a research agent cites, the more links it fabricates"
+Autor/editor: Luke Topfer (editor)
+Natureza / nível de evidência: blog de prática que resume estudo(s) de terceiros (secundário; não revisado por pares) — dado, não atestado
+Data: 2026-06-23
+URL: https://watts.it.com/modules/deep-research-fabricates-links
+Data de acesso: 2026-10-06
+[Cópia verbatim de governance/propostas/AUDITOR-EXTERNO/cooperacao/sources/SRC-CITE-01.txt para reuso nesta pasta — RULE-ECC-04]
+
+Trecho literal (verbatim, >100 caracteres):
+"they found 3–13% were hallucinated (no record in the Internet Archive; in their words, they 'likely never existed') and 5–18% did not resolve at all."
+
+Trecho literal adicional (verbatim):
+"the deep research agents, the tools built to be exhaustive, generated more citations per query than ordinary search-augmented chat — and hallucinated them at higher rates."
+
+Trecho literal adicional (verbatim):
+"the density of citations performs a rigour the links don't always have."
