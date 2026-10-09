@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-06",
-  "digest": "79210f4faa1febe7a8268a4774d22eaaf93b7901e3edbd69ab7a1349aedb32d4",
+  "generated": "2026-10-09",
+  "digest": "9576f968570c3f749dc6ca1825d576af24ac23b1b296e0921318629a3bfb193e",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -500,7 +500,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 6,
+   "in": 7,
    "out": 5
   },
   {
@@ -1372,6 +1372,13 @@
    "out": 17
   },
   {
+   "path": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "area": "governance",
+   "title": "Operação do Auditor Externo (piloto) — `[PROPOSTA — NÃO NORMATIVO]`",
+   "in": 0,
+   "out": 2
+  },
+  {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
    "area": "governance",
    "title": "PROPOSTA — Automação do Auditor Externo por GitHub Action (caminho B)",
@@ -1403,7 +1410,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "area": "governance",
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
-   "in": 4,
+   "in": 5,
    "out": 7
   },
   {
@@ -2147,7 +2154,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-002",
@@ -16719,6 +16726,16 @@
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md",
    "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
    "type": "path"
   },
   {
