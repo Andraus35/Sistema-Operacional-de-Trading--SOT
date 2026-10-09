@@ -5,7 +5,7 @@
 | De | Orquestrador interno (registro) — decisões e atos de Andraus — Decisor Final / Consensus Authority |
 | Para | Orquestrador interno / Especificador SOT / Revisor SOT |
 | Data | 2026-10-06 |
-| Status | **ATA-PROPOSTA — aguarda assinatura de Andraus.** Registra fatos de ativação executados por Andraus (chat, 2026-10-05/06) e os limites que ficaram. Não altera `AGENTS.md`, o Revisor, o ROADMAP nem decisão aberta. |
+| Status | **ASSINADA por Andraus (chat, 2026-10-06) — ver Adendo.** Registra fatos de ativação executados por Andraus (chat, 2026-10-05/06) e os limites que ficaram. Não altera `AGENTS.md`, o Revisor, o ROADMAP nem decisão aberta. |
 | Compatibilidade | n/a (registro operacional do piloto de DHR-AUDITOR-EXTERNO-001; nenhuma BASpec, regra ou decisão aberta alterada) |
 | Regime | Piloto controlado (DHR-AUDITOR-EXTERNO-001 §1). Aditivo (INV-07): nenhuma ata anterior editada. |
 
@@ -39,6 +39,13 @@ Fora de escopo dos agentes (§4.1): é registro operacional de ativação de flu
 ## 6. Registro
 - [x] Esta ata · [x] `governance/rpsa-ledger.json` · [x] `governance/CATALOGO-OFICIAL.md` · [x] `build_map.py` + `--check` · [ ] **assinatura de Andraus — pendente**.
 
+## Adendo (2026-10-06, antes da assinatura) — fatos posteriores que SUPERAM itens de §2/§3 `[FATO]`
+- **§3, "o auditor ainda não atendeu nenhum pedido real" — SUPERADO.** O bot agendado (DHR-AUDITOR-EXTERNO-003) atendeu pedidos reais na VM Oracle: ciclo 1 (Issue #17): 3 achados postados e 2 descartados pela validação determinística (comando de reprodução com `|` entre aspas); ciclo 2 (Issue #24, após correção do prompt, PR #23): **5 postados, 0 descartados**, veredito `NAO_OK`. Contra o documento de teste `TESTE-PILOTO-001.md` (5 defeitos plantados + 1 item limpo): **5/5 achados, nenhum falso alarme no item limpo**. O workflow validou e rotulou os achados, deduplicou os repetidos e avisou o PR de teste (#16).
+- **§2.2, escopo do token:** Andraus declarou em chat (2026-10-06) que a tela do GitHub mostra **Issues = Read and write**; segue **declarado, não provado** pela API. Os achados e o ACK foram de fato postados com o token, o que é coerente com a declaração.
+- **§3, "fechamento por merge não exercitado":** continua válido.
+- **Encerramento do teste:** PR #16 fechado sem merge; Issues #17, #20–22, #24–29 fechadas como não planejadas; a branch remota `auditor-teste-piloto-001` fica para Andraus apagar (a sessão não tem permissão de delete remoto).
+- Nenhuma decisão aberta foi fechada; a classificação RPSA de §5 **não foi ratificada por esta assinatura** (permanece a ratificar).
+
 ---
 
-**Andraus** *(assinatura pendente)*
+**Andraus** — *assinada por decisão direta em chat, 2026-10-06 ("assinar atas"); registro feito pelo Orquestrador interno a pedido de Andraus.*
