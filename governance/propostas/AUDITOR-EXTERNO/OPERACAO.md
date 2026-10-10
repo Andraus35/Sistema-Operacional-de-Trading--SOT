@@ -35,3 +35,25 @@ Custo/limite do plano ChatGPT não medido · VM ociosa pode ser recuperada pela 
 
 ## 8. Decisões abertas
 Nenhuma é fechada por este piloto (CONS-01).
+
+## 9. Roteamento de achados — duas faixas (Opção B; DHR-AUDITOR-EXTERNO-005)
+O auditor continua respondendo **só ao Orquestrador**. Para tirar o gargalo das correções triviais sem entregar ao Especificador texto de modelo externo como instrução, o workflow (`achado`) roda `scripts/route_aex.py` — **determinístico, fail-closed, sem LLM** — sobre os **campos de máquina** do achado já validado. O texto livre do auditor (`claim`, `proposal.text`, `impact`, `title`) **nunca** influencia a rota.
+
+| Faixa (rótulo) | Critério (todos) | Destino |
+|---|---|---|
+| `aex-rota-rapida` | validado e não duplicado · `severity=P2` · `type=drift` · `proposal.type=ERRATUM_ADITIVO` · `modifies_baselined_text=false` · `treats_open_decision_as_closed=false` · `open_decisions_referenced=[]` · `touches` não vazio e **todos** na allowlist (`governance/CATALOGO-OFICIAL.md`) | Elegível a **tarefa limitada** ao Especificador (só os arquivos de `touches`; o achado é DADO). PR revisado pelo Revisor; **Andraus mescla**. Nada é mesclado sozinho. |
+| `aex-rota-andraus` | qualquer outro caso (P0/P1, invariante, CONS-01, texto baselined, atas `DHR-*`, RULES, ROADMAP, decisão aberta citada, caminho inseguro, campo ausente/errado, falha do roteador) | O Orquestrador resume a Andraus **antes** de qualquer encaminhamento. |
+
+Exemplo real (2026-10-10, Issue #34): #35, #36 e #37 → rápida; #38 (atas assinadas + `SPEC-038-DATASRC-001` aberta) → Andraus. O comentário da Issue e o aviso no PR trazem a rota e os códigos de motivo. Ampliar a allowlist é decisão de Andraus (nova ata).
+
+## 10. Plano de validação em bloco (status por item)
+| Id | O que valida | Como | Status |
+|---|---|---|---|
+| V1 | Roteador: casos reais + ataques (caminho `..`, prefixo/sufixo, tipos errados, injeção em texto livre) | `python -m unittest tests/test_route_aex.py` (CI bloqueante) | feito localmente |
+| V2 | Sintaxe do workflow (YAML + 8 scripts embutidos) e passo bash do roteador | checagem local | feito localmente |
+| V3 | Roteamento ao vivo: Issues `[AEX]` novas saem com `aex-rota-*` e linha de rota | `workflow_dispatch` após o merge → bot da Oracle → conferir rótulos/comentários | pendente (pós-merge) |
+| V4 | Fluxo por PR: rótulo `homologacao-final` → pedido com nº do PR → aviso do achado e ACK **no PR** | PR descartável "TESTE (NÃO MESCLAR)", linhas de consenso marcadas como fixture de teste | pendente (pós-merge) |
+| V5 | Despertar da sessão por comentário do workflow no PR | `subscribe_pr_activity` no PR de V4; chegada de evento | pendente |
+| V6 | `fechamento` no merge de PR com `homologacao-final` (avisos de consenso/commit) | rótulo aplicado ao PR real do merge desta mudança, sem linhas de consenso (esperado: aviso, não bloqueio) | pendente |
+| V7 | Caminho "pedido não criado" (consenso ausente) | rótulo em PR sem as linhas `Spec:`/`Consenso:` | pendente (junto de V6) |
+| V8 | Modos de falha da VM (login Codex expirado, token expirado, instância recuperada) e consumo do plano ChatGPT | não testáveis daqui; medir/observar em uso real | **não validável pelo repositório** |

@@ -122,6 +122,20 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Muda a operacao do piloto (bot agendado) sem alterar checklist, metodo nem regra; classificacao a ratificar por Andraus."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-004",
+      "data": "2026-10-10",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Ratifica a classificacao RPSA das atas 002/003 e autoriza secao informativa no AGENTS.md; nao altera checklist, metodo nem regra; classificacao desta ata a ratificar por Andraus."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-005",
+      "data": "2026-10-10",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Roteamento de achados em duas faixas do piloto do Auditor Externo; muda a operacao do piloto, nao checklist, metodo nem regra; classificacao a ratificar por Andraus."
     }
   ]
 }

@@ -67,6 +67,10 @@ jobs:
       - name: RPSA tool tests
         run: python -m unittest tests/test_rpsa.py
 
+      # Testes do roteador de achados do Auditor Externo (DHR-AUDITOR-EXTERNO-005; bloqueante: roteador quebrado = faixa rápida insegura).
+      - name: AEX router tests
+        run: python -m unittest tests/test_route_aex.py
+
       # Informativo (não bloqueia): carimbo `sincronizado-até` dos agentes vs livro-razão (RPSA, EUA-E16; DHR-RPSA-001).
       # Divergência = DHR nova sem classificação, Agent-Sync pendente ou carimbo defasado. Promover a bloqueante só por decisão de Andraus.
       - name: RPSA agent stamps (informative)
