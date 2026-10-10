@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-10",
-  "digest": "1d97570324e4c187fdcef5f3f134ab1a5a53b43a058f49596dfade12824f8e3f",
+  "digest": "e508b87c892c3da6ea0c982befe8fbd7d8294dc5ecfbede832b0a67ad964547f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,8 +136,8 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 51,
-   "out": 33
+   "in": 52,
+   "out": 34
   },
   {
    "path": "GLOSSARIO.md",
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 157,
+   "in": 158,
    "out": 63
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 80,
-   "out": 162
+   "in": 81,
+   "out": 163
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -530,6 +530,13 @@
    "title": "DHR-AUDITOR-EXTERNO-005 — Ata — Roteamento determinístico de achados do Auditor Externo em duas faixas (Opção B)",
    "in": 2,
    "out": 5
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-006 — Ata — Erratum do `AGENTS.md` §7 (I-001 já FECHADA) e confirmação da classificação da DHR-RPSA-002",
+   "in": 1,
+   "out": 6
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -801,7 +808,7 @@
    "path": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
    "area": "governance",
    "title": "DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades formais separadas?)",
-   "in": 9,
+   "in": 11,
    "out": 8
   },
   {
@@ -913,7 +920,7 @@
    "path": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
    "area": "governance",
    "title": "DHR-RPSA-002 — Ata — Classificação RPSA automática após a aprovação de Andraus",
-   "in": 1,
+   "in": 2,
    "out": 6
   },
   {
@@ -1347,7 +1354,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 221,
+   "in": 222,
    "out": 35
   },
   {
@@ -2198,6 +2205,11 @@
    "cited_by": 2
   },
   {
+   "id": "DHR-AUDITOR-EXTERNO-006",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "cited_by": 1
+  },
+  {
    "id": "DHR-BL008-001",
    "defined_in": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "cited_by": 9
@@ -2390,7 +2402,7 @@
   {
    "id": "DHR-I001-001",
    "defined_in": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
-   "cited_by": 9
+   "cited_by": 11
   },
   {
    "id": "DHR-MAN-001",
@@ -2475,7 +2487,7 @@
   {
    "id": "DHR-RPSA-002",
    "defined_in": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "DHR-SES-001",
@@ -2745,7 +2757,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 150
+   "cited_by": 151
   },
   {
    "id": "INV-08",
@@ -3865,7 +3877,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 51
+   "cited_by": 52
   },
   {
    "id": "SPEC-007",
@@ -3885,7 +3897,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 37
+   "cited_by": 38
   },
   {
    "id": "SPEC-011",
@@ -3960,7 +3972,7 @@
   {
    "id": "SPEC-025",
    "defined_in": "ROADMAP.md",
-   "cited_by": 25
+   "cited_by": 27
   },
   {
    "id": "SPEC-026",
@@ -4917,6 +4929,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-EUA-E21_Ata_Homologacao_Especificacao_Emergente.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
    "type": "id"
   },
   {
@@ -8061,6 +8078,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -9528,6 +9550,41 @@
    "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "to": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "to": "governance/RULES.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",

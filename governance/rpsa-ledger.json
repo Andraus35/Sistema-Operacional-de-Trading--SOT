@@ -143,6 +143,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Muda o procedimento de manutencao do livro-razao RPSA (classificacao declarada na ata e registrada por codigo apos o merge); nao altera checklist embutido, metodo nem regra dos agentes."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-006",
+      "data": "2026-10-10",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Corrige no AGENTS.md a lista de decisoes ativas para refletir o fechamento da I-001 ja registrado (DHR-I001-001); nao altera decisao, checklist, metodo nem regra; agentes leem o ROADMAP."
     }
   ]
 }
