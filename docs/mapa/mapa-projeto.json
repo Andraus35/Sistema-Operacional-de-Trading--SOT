@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-10",
-  "digest": "a817555ab8a0ee3d052074e32728d489cd85acc09460e574cdac00ed415e31b2",
+  "digest": "9fea9ba1ac83cd82b104b914f86917e3fa8fb46e72aa240c13c8f5820951e010",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 155,
+   "in": 156,
    "out": 63
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 77,
-   "out": 160
+   "in": 79,
+   "out": 161
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -523,6 +523,13 @@
    "title": "DHR-AUDITOR-EXTERNO-004 — Ata — Ratificação da classificação RPSA das atas 002/003 e autorização de seção informativa no `AGENTS.md`",
    "in": 4,
    "out": 12
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-005 — Ata — Roteamento determinístico de achados do Auditor Externo em duas faixas (Opção B)",
+   "in": 2,
+   "out": 5
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -724,7 +731,7 @@
    "path": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
    "area": "governance",
    "title": "DHR-EUA-E16 — Ata de Homologação da Sincronização dos Agentes + RPSA",
-   "in": 23,
+   "in": 24,
    "out": 6
   },
   {
@@ -1333,7 +1340,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 219,
+   "in": 220,
    "out": 35
   },
   {
@@ -1382,8 +1389,8 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "area": "governance",
    "title": "Operação do Auditor Externo (piloto) — `[PROPOSTA — NÃO NORMATIVO]`",
-   "in": 3,
-   "out": 2
+   "in": 4,
+   "out": 4
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md",
@@ -2179,6 +2186,11 @@
    "cited_by": 4
   },
   {
+   "id": "DHR-AUDITOR-EXTERNO-005",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "cited_by": 2
+  },
+  {
    "id": "DHR-BL008-001",
    "defined_in": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "cited_by": 9
@@ -2646,7 +2658,7 @@
   {
    "id": "EUA-E16",
    "defined_in": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "EUA-E17",
@@ -2721,7 +2733,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 148
+   "cited_by": 149
   },
   {
    "id": "INV-08",
@@ -3841,7 +3853,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 49
+   "cited_by": 50
   },
   {
    "id": "SPEC-007",
@@ -3861,7 +3873,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "SPEC-011",
@@ -8032,6 +8044,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -9467,6 +9484,31 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-004_Ata_Ratificacao_RPSA_e_AGENTS.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "to": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "type": "path"
   },
@@ -16857,7 +16899,17 @@
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
    "type": "id"
   },
   {

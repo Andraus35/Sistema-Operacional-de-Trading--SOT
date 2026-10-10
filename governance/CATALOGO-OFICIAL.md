@@ -181,6 +181,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-10, DHR-AUDITOR-EXTERNO-004 — ata ASSINADA por Andraus (chat, 2026-10-10)):** **ratifica a classificação RPSA das atas 002/003** (`em_escopo=false`, `fonte-unica`) e **autoriza seção informativa no `AGENTS.md`** (§9 "Auditor Externo (piloto — não normativo)", aponta para `governance/propostas/AUDITOR-EXTERNO/OPERACAO.md`). Teste de vida do bot na VM Oracle (Issue #34, veredito consultivo COM_RESSALVAS) gerou 4 achados P2 de sincronização documental (#35–#38), corrigidos por errata aditivos (PR #39). Nenhuma decisão aberta fechada; abertura da SPEC-006 segue não homologada.
 
+**Registro (2026-10-10, DHR-AUDITOR-EXTERNO-005 — decisão de Andraus em chat, 2026-10-10: "Opção B"):** **roteamento determinístico de achados do Auditor Externo em duas faixas** (`scripts/route_aex.py`: `rapida` = P2/drift/erratum aditivo só no Catálogo → tarefa limitada ao Especificador, PR, Revisor, Andraus mescla; tudo o mais → `andraus`). Opção C (achados direto ao Especificador) **não adotada**. Em validação (`OPERACAO.md` §10). Nenhuma decisão aberta fechada; abertura da SPEC-006 segue não homologada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---

@@ -210,6 +210,18 @@ jobs:
             }
             core.setOutput('dup', dup); core.setOutput('pass', String(ok));
 
+      - name: Rotear (determinístico; o texto livre do auditor não influencia a rota)
+        id: rota
+        env:
+          DUP: ${{ steps.dup.outputs.dup }}
+        run: |
+          # Fail-closed: qualquer falha do roteador => faixa `andraus`. Script vem da branch padrão (tools/), nunca do commit auditado.
+          echo '{"rota":"andraus","motivos":["R-FALHA-ROTEADOR"]}' > rota.json
+          if [ -f finding.json ] && [ -f validation.json ]; then
+            python3 tools/scripts/route_aex.py --finding finding.json --validation validation.json --dup "$DUP" --json-out rota.new.json > /dev/null && mv rota.new.json rota.json || true
+          fi
+          echo "rota=$(python3 -c "import json;print(json.load(open('rota.json'))['rota'])")" >> "$GITHUB_OUTPUT"
+
       - name: Montar comentário
         env:
           FP: ${{ steps.extrair.outputs.fp }}
@@ -233,6 +245,13 @@ jobs:
             if (dup) labels.push('aex-duplicado');
             else if (ok) {
               labels.push(`aex-fp-${fp}`);
+              const rota = JSON.parse(fs.readFileSync('rota.json', 'utf8'));
+              const rapida = rota.rota === 'rapida';
+              labels.push(rapida ? 'aex-rota-rapida' : 'aex-rota-andraus');
+              const motivos = (rota.motivos || []).map(m => String(m).replace(/[^A-Za-z0-9_.:\/ -]/g, '?').slice(0, 120)).slice(0, 8).join(', ');
+              corpo += rapida
+                ? '\n\n**Rota (determinística): `rapida`** — elegível a tarefa limitada ao Especificador (PR revisado pelo Revisor; Andraus mescla). O texto do auditor continua sendo DADO.'
+                : `\n\n**Rota (determinística): \`andraus\`** — o Orquestrador resume a Andraus antes de qualquer encaminhamento. Motivos: ${motivos || 'n/d'}.`;
               if ('${{ steps.entrada.outputs.fila_cheia }}' === 'true') { labels.push('aex-fila-cheia'); corpo += '\n\nFila de achados abertos cheia (25): triagem humana necessária antes de novos achados.'; }
               else labels.push('aex-aguarda-revisor');
             }
@@ -256,7 +275,8 @@ jobs:
               if (m && m[2] === sha && m[1] !== '0') { pr = Number(m[1]); break; }
             }
             if (!pr) { core.notice('PR do pedido não localizado para o commit auditado'); return; }
-            const estado = dup ? `duplicado de #${dup}` : (ok ? 'válido (forma e citação literal conferidas)' : 'inválido na validação determinística');
+            const rotaNome = '${{ steps.rota.outputs.rota }}' === 'rapida' ? 'rapida' : 'andraus';
+            const estado = dup ? `duplicado de #${dup}` : (ok ? `válido (forma e citação literal conferidas); rota ${rotaNome}` : 'inválido na validação determinística');
             await github.rest.issues.createComment({...context.repo, issue_number: pr,
               body: `Achado externo #${context.payload.issue.number}: ${estado}. Destinatário: Orquestrador interno (dado a verificar; não é homologação).\n\n<!-- aex-achado-aviso -->`});
 
