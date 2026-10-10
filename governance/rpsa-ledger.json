@@ -136,6 +136,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Roteamento de achados em duas faixas do piloto do Auditor Externo; muda a operacao do piloto, nao checklist, metodo nem regra; classificacao a ratificar por Andraus."
+    },
+    {
+      "id": "DHR-RPSA-002",
+      "data": "2026-10-10",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda o procedimento de manutencao do livro-razao RPSA (classificacao declarada na ata e registrada por codigo apos o merge); nao altera checklist embutido, metodo nem regra dos agentes."
     }
   ]
 }

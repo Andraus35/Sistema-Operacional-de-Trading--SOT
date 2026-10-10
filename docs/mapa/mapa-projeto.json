@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-10",
-  "digest": "9fea9ba1ac83cd82b104b914f86917e3fa8fb46e72aa240c13c8f5820951e010",
+  "digest": "1d97570324e4c187fdcef5f3f134ab1a5a53b43a058f49596dfade12824f8e3f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 156,
+   "in": 157,
    "out": 63
   },
   {
@@ -178,7 +178,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 93,
+   "in": 94,
    "out": 34
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 79,
-   "out": 161
+   "in": 80,
+   "out": 162
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -465,7 +465,7 @@
    "path": "governance/CONSTITUTION.md",
    "area": "governance",
    "title": "SOT Constitution — Sistema Operacional de Trading",
-   "in": 22,
+   "in": 23,
    "out": 1
   },
   {
@@ -731,7 +731,7 @@
    "path": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
    "area": "governance",
    "title": "DHR-EUA-E16 — Ata de Homologação da Sincronização dos Agentes + RPSA",
-   "in": 24,
+   "in": 25,
    "out": 6
   },
   {
@@ -908,6 +908,13 @@
    "title": "DHR-RPSA-001 — Ata — Automação determinística dos carimbos RPSA e sincronização dos agentes",
    "in": 4,
    "out": 10
+  },
+  {
+   "path": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "area": "governance",
+   "title": "DHR-RPSA-002 — Ata — Classificação RPSA automática após a aprovação de Andraus",
+   "in": 1,
+   "out": 6
   },
   {
    "path": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
@@ -1340,7 +1347,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 220,
+   "in": 221,
    "out": 35
   },
   {
@@ -2466,6 +2473,11 @@
    "cited_by": 3
   },
   {
+   "id": "DHR-RPSA-002",
+   "defined_in": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "cited_by": 1
+  },
+  {
    "id": "DHR-SES-001",
    "defined_in": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
    "cited_by": 6
@@ -2658,7 +2670,7 @@
   {
    "id": "EUA-E16",
    "defined_in": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "EUA-E17",
@@ -2733,7 +2745,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 149
+   "cited_by": 150
   },
   {
    "id": "INV-08",
@@ -3853,7 +3865,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 50
+   "cited_by": 51
   },
   {
    "id": "SPEC-007",
@@ -3873,7 +3885,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "SPEC-011",
@@ -8294,6 +8306,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
    "type": "id"
   },
@@ -12181,6 +12198,41 @@
    "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "to": "governance/CONSTITUTION.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "to": "governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md",
+   "to": "governance/RULES.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",

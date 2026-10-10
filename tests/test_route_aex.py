@@ -94,6 +94,15 @@ class Rota(unittest.TestCase):
             r = self.rota(achado(proposal__touches=[p]))
             self.assertEqual(r["rota"], "andraus", repr(p))
 
+    def test_ponto_ponto_que_retorna_ao_arquivo_permitido_e_inseguro(self):
+        """AEX-20261010-006: `..` no caminho original nunca é faixa rápida, mesmo se a normalização voltar ao alvo permitido."""
+        for p in ("governance/../governance/CATALOGO-OFICIAL.md", "x/../governance/CATALOGO-OFICIAL.md",
+                  "governance/CATALOGO-OFICIAL.md/..", "governance/./../governance/CATALOGO-OFICIAL.md",
+                  "../governance/CATALOGO-OFICIAL.md"):
+            r = self.rota(achado(proposal__touches=[p]))
+            self.assertEqual(r["rota"], "andraus", p)
+            self.assertIn("R-CAMINHO-INSEGURO", r["motivos"], p)
+
     def test_prefixo_ou_sufixo_nao_engana_a_allowlist(self):
         for p in ("governance/CATALOGO-OFICIAL.md.bak", "x/governance/CATALOGO-OFICIAL.md",
                   "governance/CATALOGO-OFICIAL.md/../RULES.md", "governance/CATALOGO-OFICIAL.mdx"):
