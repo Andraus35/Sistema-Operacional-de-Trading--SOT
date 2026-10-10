@@ -1,0 +1,98 @@
+# [PROPOSTA — DHR-RPSA-002] Registro AUTOMÁTICO da classificação RPSA depois da aprovação (merge) de Andraus.
+# A ata declara `RPSA-escopo` / `RPSA-sync` / `RPSA-motivo`; o merge da ata por Andraus é a ratificação. Este job só LÊ a
+# declaração e a registra em governance/rpsa-ledger.json (append-only), alinhando os carimbos dos agentes. Não julga mérito,
+# não homologa, não fecha decisão aberta. Contradição com os arquivos do merge, ata sem declaração ou declaração inválida =>
+# NÃO registra e abre/atualiza uma Issue para humano.
+# INERTE até Andraus definir a variável de repositório RPSA_AUTO_ENABLED = true (chave de desligamento: apague ou ponha false).
+# Segurança: texto de ata é DADO — nunca é interpolado em `run:`; o script lê arquivos e escreve JSON. Só o livro-razão e os
+# carimbos dos agentes podem mudar (conferido antes do commit). O commit do GITHUB_TOKEN não dispara outros workflows (sem laço).
+name: RPSA automático
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write   # commit do livro-razão/carimbos na main
+  issues: write     # pendência humana
+
+concurrency:
+  group: rpsa-auto
+  cancel-in-progress: false
+
+jobs:
+  classificar:
+    if: vars.RPSA_AUTO_ENABLED == 'true' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Arquivos alterados pelo push
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if echo "$BEFORE" | grep -Eq '^[0-9a-f]{40}$' && [ "$BEFORE" != "0000000000000000000000000000000000000000" ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            git diff --name-only "$BEFORE" HEAD > changed.txt
+          else
+            git diff --name-only HEAD^1 HEAD > changed.txt
+          fi
+          echo "arquivos alterados: $(wc -l < changed.txt)"
+
+      - name: Planejar e registrar (declaração da ata)
+        id: rpsa
+        run: |
+          set +e
+          python scripts/rpsa_auto.py --changed-file changed.txt --apply > plano.json
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+          cat plano.json
+
+      - name: Conferir que só o livro-razão e os carimbos mudaram
+        id: guarda
+        run: |
+          ESTRANHO=0
+          for f in $(git status --porcelain | awk '{print $2}'); do
+            case "$f" in
+              governance/rpsa-ledger.json|.claude/agents/especificador.md|.claude/agents/revisor.md) ;;
+              changed.txt|plano.json) ;;
+              *) echo "::error::arquivo inesperado alterado pela automação: $f"; ESTRANHO=1 ;;
+            esac
+          done
+          [ "$ESTRANHO" = "0" ] || exit 1
+          if git diff --quiet -- governance/rpsa-ledger.json .claude/agents; then echo "mudou=false" >> "$GITHUB_OUTPUT"; else echo "mudou=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Conferir o RPSA (informativo)
+        run: python scripts/check_rpsa.py || true
+
+      - name: Commit na main
+        if: steps.guarda.outputs.mudou == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add governance/rpsa-ledger.json .claude/agents/especificador.md .claude/agents/revisor.md
+          git commit -m "RPSA: registra a classificação declarada na ata após a aprovação de Andraus (automático, DHR-RPSA-002)"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Pendência humana (Issue)
+        if: steps.rpsa.outputs.rc != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const plano = JSON.parse(fs.readFileSync('plano.json', 'utf8'));
+            const pend = plano.plano.filter(x => x.estado !== 'registrar');
+            if (!pend.length) return;
+            const limpa = s => String(s).replace(/[^\p{L}\p{N}_.:\/ ,;()+\-]/gu, '?').slice(0, 200);
+            const linhas = pend.map(x => `- \`${limpa(x.dhr)}\` — **${limpa(x.estado)}**: ${x.motivos.map(limpa).join(' | ')}`).join('\n');
+            const titulo = 'RPSA: classificação pendente de decisão humana';
+            const abertas = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state: 'open', per_page: 100});
+            const corpo = `A automação do RPSA (DHR-RPSA-002) **não registrou** as DHRs abaixo. Corrija a declaração \`RPSA-*\` na ata (nova ata/erratum) ou classifique com \`python scripts/check_rpsa.py --register\`.\n\n${linhas}\n\nCommit: ${context.sha}\n\n<!-- rpsa-auto -->`;
+            const existente = abertas.find(i => i.title === titulo);
+            if (existente) await github.rest.issues.createComment({...context.repo, issue_number: existente.number, body: corpo});
+            else await github.rest.issues.create({...context.repo, title: titulo, body: corpo});
