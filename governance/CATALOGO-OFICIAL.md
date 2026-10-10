@@ -187,6 +187,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-10, DHR-AUDITOR-EXTERNO-006 — decisões de Andraus em chat, 2026-10-10; assinatura = merge):** **erratum do `AGENTS.md` §7** — `I-001` marcada como FECHADA (já fechada em 2026-09-28, DHR-I001-001; achado do auditor AEX-20261010-005 / Issue #42) — e **classificação RPSA da DHR-RPSA-002 confirmada** (`nao`/`fonte-unica`). Primeira ata com declaração `RPSA-*` registrada por `scripts/rpsa_auto.py`. Nenhuma decisão nova fechada; critério de corte da SPEC-025 segue diferido; abertura da SPEC-006 segue não homologada.
 
+**Registro (2026-10-10, DHR-AUDITOR-EXTERNO-007 — PROPOSTA; vigente só com o merge de Andraus):** **ciclo automático de consenso** entre Especificador, Revisor e Auditor Externo (Caminho A: Claude Code como ação do GitHub), com Andraus recebendo só a Spec final; travas CONS-01, 3 rodadas e teto de gasto; validação em PR descartável antes de valer; DHR-005 segue regendo até lá. Nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---
