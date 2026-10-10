@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-09",
-  "digest": "9576f968570c3f749dc6ca1825d576af24ac23b1b296e0921318629a3bfb193e",
+  "generated": "2026-10-10",
+  "digest": "05fc30cf63207f89eaa962489a3b1b670fe37f3451236f0e44985963ba528b2b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -220,7 +220,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 148,
+   "in": 150,
    "out": 104
   },
   {
@@ -508,14 +508,14 @@
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-002 — Ata — Ativação do canal do Auditor Externo (piloto) e limites conhecidos",
    "in": 2,
-   "out": 6
+   "out": 8
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-003 — Ata — Bot agendado do Auditor Externo (Codex somente-leitura) em VM Oracle Always Free",
    "in": 4,
-   "out": 6
+   "out": 8
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -584,7 +584,7 @@
    "path": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
    "area": "governance",
    "title": "DHR-DEC-004 — Ata de Decisões — BL-017, SPEC-038-DATASRC-001, MASTER Market Data (BL-033), sincronização RPSA",
-   "in": 10,
+   "in": 12,
    "out": 12
   },
   {
@@ -2124,7 +2124,7 @@
   {
    "id": "BL-033",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 10
+   "cited_by": 12
   },
   {
    "id": "BL-034",
@@ -2214,7 +2214,7 @@
   {
    "id": "DHR-DEC-004",
    "defined_in": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
-   "cited_by": 10
+   "cited_by": 12
   },
   {
    "id": "DHR-DIV-001",
@@ -9295,6 +9295,11 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "to": "governance/CATALOGO-OFICIAL.md",
    "type": "path"
   },
@@ -9306,6 +9311,11 @@
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
+   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
    "type": "id"
   },
   {
@@ -9325,12 +9335,22 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
    "to": "governance/CATALOGO-OFICIAL.md",
    "type": "path"
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-003_Ata_Bot_Agendado_Oracle.md",
+   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
    "type": "id"
   },
   {
