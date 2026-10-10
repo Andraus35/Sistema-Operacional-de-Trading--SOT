@@ -49,9 +49,9 @@ Exemplo real (2026-10-10, Issue #34): #35, #36 e #37 → rápida; #38 (atas assi
 ## 10. Plano de validação em bloco (status por item)
 | Id | O que valida | Como | Status |
 |---|---|---|---|
-| V1 | Roteador: casos reais + ataques (caminho `..`, prefixo/sufixo, tipos errados, injeção em texto livre) | `python -m unittest tests/test_route_aex.py` (CI bloqueante) | feito localmente |
+| V1 | Roteador: casos reais + ataques (caminho `..` inclusive o que volta ao alvo permitido, prefixo/sufixo, tipos errados, injeção em texto livre) | `python -m unittest tests/test_route_aex.py` (20 testes; CI bloqueante) | feito |
 | V2 | Sintaxe do workflow (YAML + 8 scripts embutidos) e passo bash do roteador | checagem local | feito localmente |
-| V3 | Roteamento ao vivo: Issues `[AEX]` novas saem com `aex-rota-*` e linha de rota | `workflow_dispatch` após o merge → bot da Oracle → conferir rótulos/comentários | pendente (pós-merge) |
+| V3 | Roteamento ao vivo: Issues `[AEX]` novas saem com `aex-rota-*` e linha de rota | `workflow_dispatch` após o merge → bot da Oracle → conferir rótulos/comentários | **PASSOU ao vivo (2026-10-10, pedido #41):** ACK COM_RESSALVAS, 2 achados (#42, #43), ambos `aex-rota-andraus` com linha de rota e motivos corretos. **Faixa `rapida` só provada por teste unitário** (nenhum achado elegível nesta rodada). O auditor achou um defeito real no roteador (#43: `..` normalizado antes da checagem) — corrigido e coberto por teste (20 testes). |
 | V4 | Fluxo por PR: rótulo `homologacao-final` → pedido com nº do PR → aviso do achado e ACK **no PR** | PR descartável "TESTE (NÃO MESCLAR)", linhas de consenso marcadas como fixture de teste | pendente (pós-merge) |
 | V5 | Despertar da sessão por comentário do workflow no PR | `subscribe_pr_activity` no PR de V4; chegada de evento | pendente |
 | V6 | `fechamento` no merge de PR com `homologacao-final` (avisos de consenso/commit) | rótulo aplicado ao PR real do merge desta mudança, sem linhas de consenso (esperado: aviso, não bloqueio) | pendente |

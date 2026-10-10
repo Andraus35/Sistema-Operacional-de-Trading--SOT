@@ -34,8 +34,11 @@ def _norm(path) -> str | None:
     p = path.strip()
     if p.startswith("/") or p.startswith("~"):
         return None
+    # `..` é checado no caminho ORIGINAL: normalizar antes deixaria `a/../b` colapsar para um destino permitido (AEX-20261010-006).
+    if ".." in p.split("/"):
+        return None
     n = posixpath.normpath(p)
-    if n.startswith("..") or n == "." or n.startswith("/") or ".." in n.split("/"):
+    if n == "." or n.startswith("/") or n.startswith(".."):
         return None
     return n.lower()
 
