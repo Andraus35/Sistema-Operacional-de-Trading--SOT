@@ -37,6 +37,7 @@ M-001 · J-001 · N-001 · H-001 · G-001 · K-001 · C-001 · WF-D03 (residual)
 **Erratum aditivo (2026-10-10, achado AEX-20261010-004 — proposto pelo orquestrador; **RATIFICADO por Andraus no chat, 2026-10-10**):** em `SPEC-038-DATASRC-001`, o **recorte "TradingView como uma das fontes, via adapter"** foi **DECIDIDO** por Andraus em `DHR-DEC-004` §1.2 (2026-10-03); permanece **ABERTA** a **escolha do provedor de dados de máquina**, diferida ao Discovery/benchmark do MASTER (BL-033). A lista acima é o registro à data da assinatura; esta nota não fecha a decisão inteira (CONS-01).
 
 ## 6. Classificação RPSA `[INFERÊNCIA do orquestrador — a ratificar por Andraus]`
+**Ratificada por Andraus (chat, 2026-10-10) — ver `DHR-AUDITOR-EXTERNO-004`; o texto abaixo é o registro à data da assinatura.**
 Fora de escopo dos agentes (§4.1): muda a operação do piloto, não checklist, método nem regra. Registrada em `rpsa-ledger.json` como `em_escopo=false`.
 
 ## 7. Registro
