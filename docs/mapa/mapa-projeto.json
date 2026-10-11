@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-10",
-  "digest": "09851d396354d28a2d2519df461bfe842255aa6e57d72a816d9a0839afad4489",
+  "digest": "aa0f8ba02a59ca87427f02e6a0690fd55ca12c6e5ed9acfe8193f24ad5da0be9",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -539,9 +539,9 @@
    "out": 6
   },
   {
-   "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "area": "governance",
-   "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Ciclo automático de consenso entre agentes internos e Auditor Externo (Caminho A)",
+   "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Auditoria única por Spec, correção em sessão normal e ciclo automático adiado",
    "in": 1,
    "out": 5
   },
@@ -2218,7 +2218,7 @@
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-007",
-   "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "cited_by": 1
   },
   {
@@ -8095,7 +8095,7 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "type": "id"
   },
   {
@@ -9609,27 +9609,27 @@
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "to": "ROADMAP.md",
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "to": "governance/CATALOGO-OFICIAL.md",
    "type": "path"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Ciclo_Automatico_de_Consenso.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "type": "path"
   },
