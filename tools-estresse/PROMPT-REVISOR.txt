@@ -1,0 +1,1 @@
+Audite os documentos SPEC-EX-A.md, SPEC-EX-B.md e SPEC-EX-C.md da pasta estresse/ no fluxo normal do Revisor SOT (Passo 0, gate determinístico quando aplicável, protocolo semântico GRE-001/HRE-001). Para cada problema encontrado, cite arquivo:linha e transcreva o trecho. Não corrija os arquivos. Emita o parecer.
