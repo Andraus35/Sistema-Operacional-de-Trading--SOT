@@ -82,6 +82,10 @@ jobs:
       - name: Fused Revisor gate tests
         run: python -m unittest tests/test_revisor_gate.py
 
+      # Ferramenta estreita do Revisor (DHR-009 F2): testes de RECUSA são bloqueantes (a segurança está no servidor).
+      - name: Revisor gate MCP tool tests
+        run: python -m unittest tests/test_revisor_gate_mcp.py
+
       # Testes da ferramenta de carimbos (bloqueante: se falhar, a ferramenta está quebrada).
       - name: RPSA tool tests
         run: python -m unittest tests/test_rpsa.py
