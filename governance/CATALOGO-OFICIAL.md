@@ -197,6 +197,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-11, DHR-AUDITOR-EXTERNO-011 — aplicação autorizada por Andraus em chat; assinatura = merge):** **emenda do `.claude/agents/revisor.md` APLICADA** — texto idêntico ao aprovado na DHR-010 (verificado por código): ferramenta `revisor_gate` (MCP local, somente leitura) como gate oficial, **sem Write, Edit ou Bash**, falha fechada (ferramenta ausente ⇒ GATE NÃO VERIFICADO, parecer no máximo condicional). RPSA: escopo sim / sync propagado. Verificação pós-merge obrigatória em sessão nova; reversão por `git revert`. Nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
 
+**Registro (2026-10-11, DHR-AUDITOR-EXTERNO-012 — correção autorizada por Andraus em chat; assinatura = merge):** **Passo 8 do `.claude/agents/revisor.md` corrigido** — I-001 e L-001 (já FECHADAS) saem da lista de bloqueadores abertos; uma linha alterada. RPSA: escopo sim / sync propagado. Reversão por `git revert`. Nenhuma decisão fechada ou aberta por este ato.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---
