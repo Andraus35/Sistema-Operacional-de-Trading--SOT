@@ -189,6 +189,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-11, DHR-AUDITOR-EXTERNO-007 — PROPOSTA; vigente só com o merge de Andraus):** **pausa do Auditor Externo e reforço do Revisor interno**, após o teste de estresse cego (Revisor 29/30 × Auditor 26/30 na união das 3 rodadas; valor marginal do auditor 1/30; ponto cego do auditor em referências inexistentes). Consenso de homologação durante a pausa = Especificador + Revisor + Andraus; auditor opcional sob pedido. Falsos alarmes não adjudicados; defeitos de Andraus não incluídos. Nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
 
+**Registro (2026-10-11, DHR-AUDITOR-EXTERNO-008 — PROPOSTA; depende da 007):** **reforço do Revisor interno** — R1 pacote de evidências de gates (reaproveita `run_gates.py`), R2 linter de invariantes (detector informativo), R3 banco de regressão com semente nova e defeitos de Andraus (local a decidir); R4 (alterar `revisor.md`) diferido a ata própria. Nenhum arquivo de agente alterado; nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---
