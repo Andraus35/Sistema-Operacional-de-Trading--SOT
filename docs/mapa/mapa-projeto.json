@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-11",
-  "digest": "7abbf94faadd430d39cfa99af47eae5a67680518ea9a9a00c452480df4796410",
+  "digest": "b804257b00f7bbc86c631ada9f478c1acd415898ed415af8329f59bd52f25578",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,15 +10,15 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 25,
+   "in": 26,
    "out": 56
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
-   "title": "Write e Edit são INTENCIONALMENTE AUSENTES.",
-   "in": 32,
-   "out": 54
+   "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
+   "in": 33,
+   "out": 55
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 162,
+   "in": 163,
    "out": 63
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 85,
-   "out": 168
+   "in": 86,
+   "out": 169
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -556,15 +556,22 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-009 — Ata — Gate fundido (Classe D) como ferramenta oficial do Revisor, sem Bash",
-   "in": 2,
+   "in": 3,
    "out": 7
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-010_Ata_Proposta_Emenda_do_Revisor_Gate_Fundido.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-010 — Ata — Proposta de emenda do `.claude/agents/revisor.md` (gate fundido como ferramenta oficial, sem Bash)",
-   "in": 1,
+   "in": 2,
    "out": 6
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-011 — Ata — Aplicação ao `.claude/agents/revisor.md` da emenda aprovada na DHR-AUDITOR-EXTERNO-010",
+   "in": 1,
+   "out": 7
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -1368,7 +1375,7 @@
    "path": "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
    "area": "governance",
    "title": "PP-PAP-001 — Pacote de Partida do PAP-001",
-   "in": 11,
+   "in": 12,
    "out": 5
   },
   {
@@ -1382,7 +1389,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 226,
+   "in": 227,
    "out": 35
   },
   {
@@ -1732,7 +1739,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 116,
+   "in": 117,
    "out": 9
   },
   {
@@ -2250,11 +2257,16 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-009",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-010",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-010_Ata_Proposta_Emenda_do_Revisor_Gate_Fundido.md",
+   "cited_by": 2
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-011",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
    "cited_by": 1
   },
   {
@@ -2805,7 +2817,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 155
+   "cited_by": 156
   },
   {
    "id": "INV-08",
@@ -3305,7 +3317,7 @@
   {
    "id": "RULE-EW-002",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-EW-008",
@@ -3905,7 +3917,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 104
+   "cited_by": 105
   },
   {
    "id": "SPEC-002",
@@ -3930,7 +3942,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 56
+   "cited_by": 57
   },
   {
    "id": "SPEC-007",
@@ -3950,7 +3962,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 42
+   "cited_by": 43
   },
   {
    "id": "SPEC-011",
@@ -4477,6 +4489,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
    "type": "id"
   },
   {
@@ -8156,6 +8173,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -9786,6 +9808,41 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-010_Ata_Proposta_Emenda_do_Revisor_Gate_Fundido.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-010_Ata_Proposta_Emenda_do_Revisor_Gate_Fundido.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
   },
