@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-11",
-  "digest": "77e32806af80550094be143bda57613cbff9f7c8deaa493aacc2504bed6fcba3",
+  "digest": "a9ca0d09ac046d1ab45e8d1bb281023d6587153b2f4f7a0ccdd475b18bbe16f8",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,7 +10,7 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 26,
+   "in": 25,
    "out": 56
   },
   {
@@ -133,17 +133,10 @@
    "out": 0
   },
   {
-   "path": ".pytest_cache/README.md",
-   "area": ".pytest_cache",
-   "title": "pytest cache directory #",
-   "in": 1,
-   "out": 0
-  },
-  {
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 56,
+   "in": 54,
    "out": 34
   },
   {
@@ -154,25 +147,11 @@
    "out": 10
   },
   {
-   "path": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "area": "raiz",
-   "title": "HANDOFF — pendências do Auditor Externo, cooperação interna×externa e pesquisa do Especificador",
-   "in": 0,
-   "out": 12
-  },
-  {
    "path": "README.md",
    "area": "raiz",
    "title": "SOT-Harness",
-   "in": 0,
+   "in": 1,
    "out": 9
-  },
-  {
-   "path": "RELATORIO-AUDITOR-EXTERNO-2026-10-10.md",
-   "area": "raiz",
-   "title": "Relatório — Auditor Externo: estado, opções de automação e teste de estresse (2026-10-10)",
-   "in": 0,
-   "out": 4
   },
   {
    "path": "RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
@@ -185,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 166,
+   "in": 161,
    "out": 63
   },
   {
@@ -199,7 +178,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 95,
+   "in": 94,
    "out": 34
   },
   {
@@ -241,35 +220,35 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 152,
+   "in": 151,
    "out": 104
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 95,
+   "in": 89,
    "out": 6
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 81,
+   "in": 78,
    "out": 4
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 101,
+   "in": 99,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 94,
+   "in": 87,
    "out": 0
   },
   {
@@ -406,76 +385,6 @@
    "out": 0
   },
   {
-   "path": "estresse-local/LEIA-ME.md",
-   "area": "estresse-local",
-   "title": "Teste de estresse — Auditor Externo × Revisor interno",
-   "in": 0,
-   "out": 1
-  },
-  {
-   "path": "estresse-local/base/SPEC-EX-A.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-A — Porta de Risco do Signal Package (documento de teste)",
-   "in": 0,
-   "out": 0
-  },
-  {
-   "path": "estresse-local/base/SPEC-EX-B.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-B — Ciclo de vida da hipótese (documento de teste)",
-   "in": 0,
-   "out": 2
-  },
-  {
-   "path": "estresse-local/base/SPEC-EX-C.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-C — Manager Agent, Conviction e Síntese (documento de teste)",
-   "in": 0,
-   "out": 4
-  },
-  {
-   "path": "estresse-local/limpo/SPEC-EX-A.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-A — Porta de Risco do Signal Package (documento de teste)",
-   "in": 1,
-   "out": 0
-  },
-  {
-   "path": "estresse-local/limpo/SPEC-EX-B.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-B — Ciclo de vida da hipótese (documento de teste)",
-   "in": 0,
-   "out": 1
-  },
-  {
-   "path": "estresse-local/limpo/SPEC-EX-C.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-C — Manager Agent, Conviction e Síntese (documento de teste)",
-   "in": 0,
-   "out": 4
-  },
-  {
-   "path": "estresse-local/saida/SPEC-EX-A.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-A — Porta de Risco do Signal Package (documento de teste)",
-   "in": 0,
-   "out": 0
-  },
-  {
-   "path": "estresse-local/saida/SPEC-EX-B.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-B — Ciclo de vida da hipótese (documento de teste)",
-   "in": 0,
-   "out": 2
-  },
-  {
-   "path": "estresse-local/saida/SPEC-EX-C.md",
-   "area": "estresse-local",
-   "title": "SPEC-EX-C — Manager Agent, Conviction e Síntese (documento de teste)",
-   "in": 0,
-   "out": 3
-  },
-  {
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
    "area": "governance",
    "title": "HOMOLOGADO — ADR-CONFLUENCE-001 v3",
@@ -528,7 +437,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 86,
+   "in": 84,
    "out": 167
   },
   {
@@ -577,7 +486,7 @@
    "path": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
    "area": "governance",
    "title": "DHR-ARQ-002 — Ata de Unificação: Manager Agent absorve o Synthesis Agent (propagação do ADR-MANAGER-001 §2.1)",
-   "in": 20,
+   "in": 18,
    "out": 17
   },
   {
@@ -591,14 +500,14 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 11,
+   "in": 10,
    "out": 5
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-002 — Ata — Ativação do canal do Auditor Externo (piloto) e limites conhecidos",
-   "in": 4,
+   "in": 3,
    "out": 9
   },
   {
@@ -633,7 +542,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Pausa do Auditor Externo e reforço do Revisor interno",
-   "in": 3,
+   "in": 2,
    "out": 6
   },
   {
@@ -717,7 +626,7 @@
    "path": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
    "area": "governance",
    "title": "DHR-DEC-004 — Ata de Decisões — BL-017, SPEC-038-DATASRC-001, MASTER Market Data (BL-033), sincronização RPSA",
-   "in": 14,
+   "in": 13,
    "out": 12
   },
   {
@@ -1067,7 +976,7 @@
    "path": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
    "area": "governance",
    "title": "DHR-SPEC003-001 — Ata de Homologação — SPEC-003 v1.5 (Conviction Vector, Evidence Fusion Engine & Conviction Engine — redige o CCM-001)",
-   "in": 25,
+   "in": 22,
    "out": 20
   },
   {
@@ -1515,7 +1424,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "area": "governance",
    "title": "Operação do Auditor Externo (piloto) — `[PROPOSTA — NÃO NORMATIVO]`",
-   "in": 6,
+   "in": 5,
    "out": 4
   },
   {
@@ -1529,7 +1438,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
    "area": "governance",
    "title": "PROTOCOLO DO AUDITOR EXTERNO LLM (\"GPT\") — PROPOSTA",
-   "in": 5,
+   "in": 4,
    "out": 18
   },
   {
@@ -1543,7 +1452,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
    "area": "governance",
    "title": "PROMPT DO AUDITOR EXTERNO — modo bot (somente leitura)",
-   "in": 4,
+   "in": 3,
    "out": 8
   },
   {
@@ -1865,7 +1774,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 85,
+   "in": 82,
    "out": 24
   },
   {
@@ -1900,7 +1809,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 74,
+   "in": 72,
    "out": 21
   },
   {
@@ -1928,7 +1837,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 38,
+   "in": 35,
    "out": 22
   },
   {
@@ -2264,7 +2173,7 @@
   {
    "id": "BL-033",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 13
+   "cited_by": 12
   },
   {
    "id": "BL-034",
@@ -2284,7 +2193,7 @@
   {
    "id": "DHR-ARQ-002",
    "defined_in": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
-   "cited_by": 20
+   "cited_by": 18
   },
   {
    "id": "DHR-AUDIT-SPEC001-001",
@@ -2294,12 +2203,12 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 11
+   "cited_by": 10
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-002",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
-   "cited_by": 4
+   "cited_by": 3
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-003",
@@ -2324,7 +2233,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-007",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
-   "cited_by": 3
+   "cited_by": 2
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-008",
@@ -2384,7 +2293,7 @@
   {
    "id": "DHR-DEC-004",
    "defined_in": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
-   "cited_by": 14
+   "cited_by": 13
   },
   {
    "id": "DHR-DIV-001",
@@ -2634,7 +2543,7 @@
   {
    "id": "DHR-SPEC003-001",
    "defined_in": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
-   "cited_by": 25
+   "cited_by": 22
   },
   {
    "id": "DHR-SPEC004-001",
@@ -3994,22 +3903,22 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 82
+   "cited_by": 79
   },
   {
    "id": "SPEC-004",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 74
+   "cited_by": 72
   },
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 38
+   "cited_by": 35
   },
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 57
+   "cited_by": 55
   },
   {
    "id": "SPEC-007",
@@ -4029,7 +3938,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 46
+   "cited_by": 41
   },
   {
    "id": "SPEC-011",
@@ -5184,66 +5093,6 @@
    "type": "id"
   },
   {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": ".claude/agents/especificador.md",
-   "type": "path"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "AGENTS.md",
-   "type": "path"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "atomic-spec.md",
-   "type": "path"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "backlog/RMR-001_Painel_Backlog.md",
-   "type": "id"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "governance/CATALOGO-OFICIAL.md",
-   "type": "path"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "type": "id"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-002_Ata_Ativacao_e_Limites.md",
-   "type": "id"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
-   "type": "id"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
-   "type": "path"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md",
-   "type": "path"
-  },
-  {
-   "from": "HANDOFF-PENDENCIAS-AUDITOR-EXTERNO.md",
-   "to": "governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md",
-   "type": "path"
-  },
-  {
    "from": "README.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -5296,26 +5145,6 @@
   {
    "from": "README.md",
    "to": "specs/features/SPEC-001/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "RELATORIO-AUDITOR-EXTERNO-2026-10-10.md",
-   "to": "AGENTS.md",
-   "type": "path"
-  },
-  {
-   "from": "RELATORIO-AUDITOR-EXTERNO-2026-10-10.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "RELATORIO-AUDITOR-EXTERNO-2026-10-10.md",
-   "to": "governance/CATALOGO-OFICIAL.md",
-   "type": "path"
-  },
-  {
-   "from": "RELATORIO-AUDITOR-EXTERNO-2026-10-10.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "type": "id"
   },
   {
@@ -7722,91 +7551,6 @@
    "from": "docs/arranque/respostas-questionario-v1.md",
    "to": "specs/synthesis.spec.md",
    "type": "path"
-  },
-  {
-   "from": "estresse-local/LEIA-ME.md",
-   "to": "estresse-local/limpo/SPEC-EX-A.md",
-   "type": "path"
-  },
-  {
-   "from": "estresse-local/base/SPEC-EX-B.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/base/SPEC-EX-B.md",
-   "to": "specs/features/SPEC-004/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/base/SPEC-EX-C.md",
-   "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/base/SPEC-EX-C.md",
-   "to": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/base/SPEC-EX-C.md",
-   "to": "specs/features/SPEC-003/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/base/SPEC-EX-C.md",
-   "to": "specs/features/SPEC-005/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/limpo/SPEC-EX-B.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/limpo/SPEC-EX-C.md",
-   "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/limpo/SPEC-EX-C.md",
-   "to": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/limpo/SPEC-EX-C.md",
-   "to": "specs/features/SPEC-003/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/limpo/SPEC-EX-C.md",
-   "to": "specs/features/SPEC-005/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/saida/SPEC-EX-B.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/saida/SPEC-EX-B.md",
-   "to": "specs/features/SPEC-004/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/saida/SPEC-EX-C.md",
-   "to": "governance/DHR-SPEC003-001_Ata_Homologacao_SPEC-003.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/saida/SPEC-EX-C.md",
-   "to": "specs/features/SPEC-003/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "estresse-local/saida/SPEC-EX-C.md",
-   "to": "specs/features/SPEC-005/plan.md",
-   "type": "id"
   },
   {
    "from": "governance/ADR-MANAGER-001_Manager_Agent_Architecture.md",
@@ -18350,7 +18094,7 @@
   },
   {
    "from": "specs/features/SPEC-002/DOSSIE-PESQUISA.md",
-   "to": ".pytest_cache/README.md",
+   "to": "README.md",
    "type": "path"
   },
   {
