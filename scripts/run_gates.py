@@ -10,12 +10,15 @@ Uso: python scripts/run_gates.py [--repo .] [--out evidence.json] [--files doc.m
   --files  documentos FORA de specs/features/<SPEC>/plan.md (que não têm gate de estrutura) recebem ao menos o
            check_invariants.py; fica registrado que validate_spec_sot.py NÃO se aplica a eles.
 """
-import argparse, glob, hashlib, json, os, platform, subprocess, sys, datetime
+import argparse, glob, hashlib, json, os, platform, shutil, subprocess, sys, datetime
 
 INFORMATIVOS = {"check_refs", "check_doc_sync", "backlog_triggers", "check_invariants"}  # espelham 'informative' do ci.yml
 
 
 def run(repo, name, cmd, env):
+    exe = shutil.which(cmd[0])          # Windows: 'npm' é 'npm.cmd'
+    if exe:
+        cmd = [exe, *cmd[1:]]
     try:
         p = subprocess.run(cmd, cwd=repo, capture_output=True, text=True, env=env, encoding="utf-8", errors="replace")
     except FileNotFoundError:
