@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-11",
-  "digest": "20c8f0027e65168e08d77c484ea5ab232ee0d0de01f889f1ab0cec93f631fd62",
+  "digest": "b952e03020e21750bdcc5bccf263e6be495f48b00951453a9992706bdb75c2d7",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -556,7 +556,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-009 — Ata — Gate fundido (Classe D) como ferramenta oficial do Revisor, sem Bash",
-   "in": 3,
+   "in": 4,
    "out": 7
   },
   {
