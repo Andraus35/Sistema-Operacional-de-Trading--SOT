@@ -94,6 +94,20 @@ class TestRecusas(unittest.TestCase):
             self.assertIn("RECUSADO", texto(r))
 
 
+class TestCodificacao(unittest.TestCase):
+    """Regressão (achada na F3 com agente de arquivo real): no Windows a saída padrão é cp1252 e o relatório tem '≠', '→', '—';
+    o servidor quebrava com 'Connection closed' no caminho feliz. Simula a codificação do sistema e exige sucesso."""
+
+    def test_caminho_feliz_com_saida_padrao_em_cp1252(self):
+        r = call({"spec": "SPEC-001", "rapido": True}, env_extra={"PYTHONIOENCODING": "cp1252", "PYTHONUTF8": "0"})
+        self.assertFalse(r["result"].get("isError"), r)
+        self.assertIn("≠", texto(r))                                            # o caractere que quebrava chega íntegro
+
+    def test_recusa_com_acento_chega_integra_em_cp1252(self):
+        r = call({"spec": "SPEC-001 && echo x"}, env_extra={"PYTHONIOENCODING": "cp1252", "PYTHONUTF8": "0"})
+        self.assertIn("fora do padrão SPEC-NNN", texto(r))                      # 'ã' sem virar '�'
+
+
 class TestExecucao(unittest.TestCase):
     def test_spec_real_roda_o_gate_somente_leitura(self):
         antes = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8").stdout
