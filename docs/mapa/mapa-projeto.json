@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-10",
-  "digest": "d80635673f2800c8491bb4017f74e00804f1a85ee8e5b35e8dc130a92aedb422",
+  "generated": "2026-10-11",
+  "digest": "cf09a4501b903ef45e0b7c5001a78f01c673844bffcec39cdee2d8d02e4320e0",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 52,
+   "in": 54,
    "out": 34
   },
   {
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 158,
+   "in": 160,
    "out": 63
   },
   {
@@ -248,7 +248,7 @@
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 86,
+   "in": 87,
    "out": 0
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 81,
-   "out": 163
+   "in": 83,
+   "out": 166
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -500,7 +500,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 9,
+   "in": 10,
    "out": 5
   },
   {
@@ -537,6 +537,20 @@
    "title": "DHR-AUDITOR-EXTERNO-006 — Ata — Erratum do `AGENTS.md` §7 (I-001 já FECHADA) e confirmação da classificação da DHR-RPSA-002",
    "in": 1,
    "out": 6
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Pausa do Auditor Externo e reforço do Revisor interno",
+   "in": 2,
+   "out": 6
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-008 — Ata — Reforço do Revisor interno (pacote de evidências, linter de invariantes e banco de regressão)",
+   "in": 1,
+   "out": 5
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -865,7 +879,7 @@
    "area": "governance",
    "title": "DHR-PAP-001-A — Adendo de Re-Homologação do PE-PR-PAP-001 v1.1",
    "in": 14,
-   "out": 8
+   "out": 6
   },
   {
    "path": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
@@ -1334,7 +1348,7 @@
    "area": "governance",
    "title": "PE-PR-PAP-001 — Prompts de Invocação do Especificador e do Revisor para o PAP-001",
    "in": 9,
-   "out": 13
+   "out": 12
   },
   {
    "path": "governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md",
@@ -1354,7 +1368,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 222,
+   "in": 224,
    "out": 35
   },
   {
@@ -1403,7 +1417,7 @@
    "path": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "area": "governance",
    "title": "Operação do Auditor Externo (piloto) — `[PROPOSTA — NÃO NORMATIVO]`",
-   "in": 4,
+   "in": 5,
    "out": 4
   },
   {
@@ -2182,7 +2196,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-002",
@@ -2207,6 +2221,16 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-006",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-006_Ata_Erratum_AGENTS_I-001.md",
+   "cited_by": 1
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-007",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "cited_by": 2
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-008",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
    "cited_by": 1
   },
   {
@@ -2441,18 +2465,18 @@
   },
   {
    "id": "DHR-PAP-001",
-   "defined_in": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
-   "cited_by": 8
+   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
+   "cited_by": 7
   },
   {
    "id": "DHR-PAP-001-A",
-   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "defined_in": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "cited_by": 4
   },
   {
    "id": "DHR-PAP-001-B",
-   "defined_in": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "cited_by": 4
+   "defined_in": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+   "cited_by": 3
   },
   {
    "id": "DHR-PAP-001-C",
@@ -2757,7 +2781,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 151
+   "cited_by": 153
   },
   {
    "id": "INV-08",
@@ -3877,7 +3901,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 52
+   "cited_by": 54
   },
   {
    "id": "SPEC-007",
@@ -3897,7 +3921,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 38
+   "cited_by": 40
   },
   {
    "id": "SPEC-011",
@@ -7143,7 +7167,7 @@
   },
   {
    "from": "docs/arranque/PARECER-CAMADA-PRINCIPIOLOGICA-hierarquica.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -8083,6 +8107,16 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -8298,12 +8332,17 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -8803,12 +8842,12 @@
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
    "type": "id"
   },
   {
    "from": "governance/CIC-001_Inventario_Conformidade.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -9587,6 +9626,61 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "to": "atomic-spec.md",
    "type": "path"
@@ -9803,7 +9897,7 @@
   },
   {
    "from": "governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -11943,16 +12037,6 @@
   },
   {
    "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -11968,7 +12052,7 @@
   },
   {
    "from": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -12023,7 +12107,7 @@
   },
   {
    "from": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -14803,7 +14887,7 @@
   },
   {
    "from": "governance/EUA-E15_Redesignacao_Piloto_SPEC-001_PROPOSTA.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -15693,7 +15777,7 @@
   },
   {
    "from": "governance/GPR-001_Guia_Principios_Relacoes_SOT.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
@@ -16303,12 +16387,12 @@
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
+   "to": "governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md",
    "type": "id"
   },
   {
    "from": "governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
    "type": "id"
   },
   {
@@ -16423,12 +16507,7 @@
   },
   {
    "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
-   "to": "governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md",
-   "to": "governance/DHR-PAP-001_Ata_Homologacao_Camada_Principios.md",
+   "to": "governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md",
    "type": "id"
   },
   {
