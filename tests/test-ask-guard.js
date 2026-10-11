@@ -99,6 +99,42 @@ r = spawnSync('node', [path.join(root, 'scripts', 'andraus-ask-guard.js')], { in
 // 12. id de agente não lançado nesta sessão (sessão compactada) -> libera (limite documentado)
 c = caso([handback(T0 + 20, 'zzz000yyy111')]); r = stop(c); check('id desconhecido libera (fail-open)', r.stdout === '');
 
+
+// 14. 2ª regra — pergunta em TEXTO sem AskUserQuestion no turno -> bloqueia (1 vez por fala)
+const humano = (ms, txt = 'pode seguir') => ({ type: 'user', timestamp: iso(ms), message: { content: txt } });
+const fala = (ms, txt) => ({ type: 'assistant', timestamp: iso(ms), message: { content: [{ type: 'text', text: txt }] } });
+c = caso([humano(T0), fala(T0 + 5, 'Fiz a ata.\n\nQuer que eu abra o PR agora?')]); r = stop(c);
+check('pergunta em texto sem AskUserQuestion bloqueia', blocked(r) && /AskUserQuestion/.test(r.stdout) && /TEXTO/.test(r.stdout), r.stdout);
+r = stop(c); check('não repete a cobrança pela mesma fala', r.stdout === '', r.stdout);
+
+// 15. já houve AskUserQuestion depois da mensagem humana -> libera
+c = caso([humano(T0), fala(T0 + 5, 'Quer que eu abra o PR?'), ask(T0 + 10)]); r = stop(c);
+check('AskUserQuestion no turno libera', r.stdout === '', r.stdout);
+
+// 16. afirmação sem pergunta -> libera
+c = caso([humano(T0), fala(T0 + 5, 'PR aberto e conferido. Nada mais a decidir.')]); r = stop(c);
+check('texto sem pergunta libera', r.stdout === '', r.stdout);
+
+// 17. AskUserQuestion de turno ANTERIOR não vale para o turno novo
+c = caso([humano(T0), ask(T0 + 2), humano(T0 + 10, 'ok, e agora?'), fala(T0 + 20, 'Posso montar o teste?')]); r = stop(c);
+check('pergunta de turno anterior não conta', blocked(r), r.stdout);
+
+// 18. mensagem sintética (notificação do sistema) NÃO é Andraus: ask anterior a ela ainda vale
+c = caso([humano(T0), ask(T0 + 2), { type: 'user', timestamp: iso(T0 + 10), message: { content: '[SYSTEM NOTIFICATION - NOT USER INPUT] tarefa concluída' } }, fala(T0 + 20, 'Quer que eu siga?')]); r = stop(c);
+check('notificação do sistema não reinicia o turno', r.stdout === '', r.stdout);
+
+// 19. last_assistant_message do payload tem precedência sobre o histórico (que é assíncrono)
+c = caso([humano(T0), fala(T0 + 5, 'Tudo certo.')]); r = stop(c, { last_assistant_message: 'Você decide: A ou B?' });
+check('last_assistant_message do payload é usado', blocked(r), r.stdout);
+
+// 20. stop_hook_active nunca bloqueia (também na 2ª regra)
+c = caso([humano(T0), fala(T0 + 5, 'Quer que eu siga?')]); r = stop(c, { stop_hook_active: true });
+check('2ª regra respeita stop_hook_active', r.stdout === '', r.stdout);
+
+// 21. relatório com "?" no meio, mas fecha em afirmação -> libera
+c = caso([humano(T0), fala(T0 + 5, 'O auditor achou algo? Sim, 9 achados.\n\nRelatório salvo em estresse-local/.')]); r = stop(c);
+check('"?" no meio e fecho em afirmação libera', r.stdout === '', r.stdout);
+
 // 13. lembrete de lançamento (B): em segundo plano NÃO diz que chegou entrega
 const rem = (input) => spawnSync('node', [path.join(root, 'scripts', 'andraus-ask-reminder.js')], { input: JSON.stringify({ tool_name: 'Agent', tool_input: input }), encoding: 'utf8' });
 let o = rem({ subagent_type: 'Especificador SOT', run_in_background: true });
