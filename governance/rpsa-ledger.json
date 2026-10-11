@@ -164,6 +164,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Autoriza scripts, testes e um banco de regressao de apoio ao Revisor; nao altera .claude/agents/revisor.md, checklist, metodo nem regra. Mudanca no arquivo do Revisor fica para ata propria com RPSA (item R4)."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-009",
+      "data": "2026-10-11",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Proposta de desenho e de plano de fases; nenhum arquivo de agente e alterado por esta ata. A emenda do revisor.md (fase F3) sera ata propria com RPSA em escopo e sincronizacao dos agentes."
     }
   ]
 }
