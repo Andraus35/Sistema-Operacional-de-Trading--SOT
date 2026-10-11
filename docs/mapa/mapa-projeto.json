@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-11",
-  "digest": "a9ca0d09ac046d1ab45e8d1bb281023d6587153b2f4f7a0ccdd475b18bbe16f8",
+  "digest": "74a1988fbcea6d9493524f549ec267727006e1630ff4949977ddcc509ddfdc87",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -3043,7 +3043,7 @@
   {
    "id": "RULE-CEE-003",
    "defined_in": "governance/RULES.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-CEE-004",
@@ -3893,7 +3893,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 102
+   "cited_by": 103
   },
   {
    "id": "SPEC-002",
@@ -9725,6 +9725,11 @@
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
    "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
+   "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
   },
   {
