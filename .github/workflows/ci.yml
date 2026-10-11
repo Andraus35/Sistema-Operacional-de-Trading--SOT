@@ -78,6 +78,10 @@ jobs:
       - name: Gate evidence runner tests
         run: python -m unittest tests/test_run_gates.py
 
+      # Gate fundido do Revisor (DHR-AUDITOR-EXTERNO-009 F1): testes bloqueantes + calibração (Specs vigentes sem falso alarme).
+      - name: Fused Revisor gate tests
+        run: python -m unittest tests/test_revisor_gate.py
+
       # Testes da ferramenta de carimbos (bloqueante: se falhar, a ferramenta está quebrada).
       - name: RPSA tool tests
         run: python -m unittest tests/test_rpsa.py
