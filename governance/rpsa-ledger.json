@@ -150,6 +150,20 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Corrige no AGENTS.md a lista de decisoes ativas para refletir o fechamento da I-001 ja registrado (DHR-I001-001); nao altera decisao, checklist, metodo nem regra; agentes leem o ROADMAP."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-007",
+      "data": "2026-10-11",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda a composicao do consenso de homologacao durante a pausa (auditor opcional) e define melhorias operacionais do Revisor ainda nao aplicadas; nao altera checklist, metodo nem regra dos agentes. Reclassificar se o reforco alterar arquivos dos agentes."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-008",
+      "data": "2026-10-11",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Autoriza scripts, testes e um banco de regressao de apoio ao Revisor; nao altera .claude/agents/revisor.md, checklist, metodo nem regra. Mudanca no arquivo do Revisor fica para ata propria com RPSA (item R4)."
     }
   ]
 }
