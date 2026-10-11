@@ -193,6 +193,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-11, DHR-AUDITOR-EXTERNO-009 — PROPOSTA; continua a 008):** **gate fundido (Classe D) como ferramenta oficial do Revisor, sem Bash** — fusão de `validate_spec_sot.py` e `check_invariants.py` (+ detectores D), tabela D/H/P dos passos do Revisor, ferramenta estreita só-leitura (falha fechada), plano F0–F4; contradição de `revisor.md` §3 (manda rodar o gate, mas sem Bash) registrada. Nenhum arquivo de agente alterado (emenda F3 = ata própria); nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
 
+**Registro (2026-10-11, DHR-AUDITOR-EXTERNO-010 — PROPOSTA DE TEXTO; continua a 009, fase F3):** **texto exato da emenda do `.claude/agents/revisor.md`** (ferramenta `revisor_gate` como gate oficial, sem Bash; falha fechada se a ferramenta faltar) em quatro trechos antes/depois, riscos (pasta confiável, Windows), reversão e verificação pós-aplicação. **Nada é aplicado ao arquivo do Revisor por esta ata**: a aplicação exige autorização expressa de Andraus e ata de aplicação própria (RPSA sim/propagado). Nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---
