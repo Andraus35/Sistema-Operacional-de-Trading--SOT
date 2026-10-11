@@ -192,6 +192,13 @@
       "em_escopo": true,
       "sync": "propagado",
       "motivo": "Remove I-001 e L-001 da lista de bloqueadores abertos do Passo 8 do revisor.md, pois ambas ja estao FECHADAS; muda o criterio embutido no Revisor para limitar parecer a CONFORME condicional; o Especificador nao e afetado."
+    },
+    {
+      "id": "DHR-SPEC006-001",
+      "data": "2026-10-11",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologa a abertura de uma Spec e registra decisoes; nao altera texto de nenhum arquivo de agente."
     }
   ]
 }
