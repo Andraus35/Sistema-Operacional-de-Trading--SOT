@@ -171,6 +171,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Proposta de desenho e de plano de fases; nenhum arquivo de agente e alterado por esta ata. A emenda do revisor.md (fase F3) sera ata propria com RPSA em escopo e sincronizacao dos agentes."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-010",
+      "data": "2026-10-11",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Esta ata propoe o texto da emenda mas nao altera nenhum arquivo de agente; a aplicacao ao revisor.md sera feita em PR proprio, com ata de aplicacao declarando escopo sim e sincronizacao propagado."
     }
   ]
 }
