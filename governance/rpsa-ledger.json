@@ -178,6 +178,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Esta ata propoe o texto da emenda mas nao altera nenhum arquivo de agente; a aplicacao ao revisor.md sera feita em PR proprio, com ata de aplicacao declarando escopo sim e sincronizacao propagado."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-011",
+      "data": "2026-10-11",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Aplica ao revisor.md a emenda ja aprovada na DHR-AUDITOR-EXTERNO-010: o Revisor passa a usar a ferramenta revisor_gate (sem Bash, falha fechada) e muda o protocolo da secao 3 e o formato do relatorio; o Especificador nao e afetado."
     }
   ]
 }
