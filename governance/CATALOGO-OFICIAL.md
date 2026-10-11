@@ -195,6 +195,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-11, DHR-AUDITOR-EXTERNO-010 — PROPOSTA DE TEXTO; continua a 009, fase F3):** **texto exato da emenda do `.claude/agents/revisor.md`** (ferramenta `revisor_gate` como gate oficial, sem Bash; falha fechada se a ferramenta faltar) em quatro trechos antes/depois, riscos (pasta confiável, Windows), reversão e verificação pós-aplicação. **Nada é aplicado ao arquivo do Revisor por esta ata**: a aplicação exige autorização expressa de Andraus e ata de aplicação própria (RPSA sim/propagado). Nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
 
+**Registro (2026-10-11, DHR-AUDITOR-EXTERNO-011 — aplicação autorizada por Andraus em chat; assinatura = merge):** **emenda do `.claude/agents/revisor.md` APLICADA** — texto idêntico ao aprovado na DHR-010 (verificado por código): ferramenta `revisor_gate` (MCP local, somente leitura) como gate oficial, **sem Write, Edit ou Bash**, falha fechada (ferramenta ausente ⇒ GATE NÃO VERIFICADO, parecer no máximo condicional). RPSA: escopo sim / sync propagado. Verificação pós-merge obrigatória em sessão nova; reversão por `git revert`. Nenhuma decisão fechada; abertura da SPEC-006 segue não homologada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---
