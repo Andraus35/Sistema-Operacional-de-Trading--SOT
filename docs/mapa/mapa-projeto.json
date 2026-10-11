@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-11",
-  "digest": "cf09a4501b903ef45e0b7c5001a78f01c673844bffcec39cdee2d8d02e4320e0",
+  "digest": "a5bbe44957f0f86d725c0a35b4cd3c8eb96f6589cd987218a728d66143f4ea8a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -549,7 +549,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-008 — Ata — Reforço do Revisor interno (pacote de evidências, linter de invariantes e banco de regressão)",
-   "in": 1,
+   "in": 2,
    "out": 5
   },
   {
