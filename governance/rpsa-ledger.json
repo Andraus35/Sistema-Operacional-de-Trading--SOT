@@ -185,6 +185,13 @@
       "em_escopo": true,
       "sync": "propagado",
       "motivo": "Aplica ao revisor.md a emenda ja aprovada na DHR-AUDITOR-EXTERNO-010: o Revisor passa a usar a ferramenta revisor_gate (sem Bash, falha fechada) e muda o protocolo da secao 3 e o formato do relatorio; o Especificador nao e afetado."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-012",
+      "data": "2026-10-11",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Remove I-001 e L-001 da lista de bloqueadores abertos do Passo 8 do revisor.md, pois ambas ja estao FECHADAS; muda o criterio embutido no Revisor para limitar parecer a CONFORME condicional; o Especificador nao e afetado."
     }
   ]
 }
