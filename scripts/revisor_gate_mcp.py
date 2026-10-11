@@ -117,6 +117,13 @@ def responder(msg):
 
 
 def main():
+    # Windows: a saída padrão usa a codificação antiga do sistema (cp1252) e o relatório tem "≠", "→", "—": sem isto o servidor
+    # quebrava ("Connection closed") no caminho feliz. Força UTF-8 e, por segurança extra, emite JSON só em ASCII (\uXXXX).
+    for fluxo in (sys.stdin, sys.stdout):
+        try:
+            fluxo.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
     for linha in sys.stdin:
         linha = linha.strip()
         if not linha:
@@ -129,7 +136,7 @@ def main():
             continue
         resp = responder(msg)
         if resp is not None:
-            sys.stdout.write(json.dumps(resp, ensure_ascii=False) + "\n")
+            sys.stdout.write(json.dumps(resp, ensure_ascii=True) + "\n")
             sys.stdout.flush()
 
 
