@@ -74,6 +74,10 @@ jobs:
       - name: Invariant checker tests
         run: python -m unittest tests/test_check_invariants.py
 
+      # Testes do runner de evidências de gates (R1/DHR-008): o Revisor recebe o evidence.json, não executa nada.
+      - name: Gate evidence runner tests
+        run: python -m unittest tests/test_run_gates.py
+
       # Testes da ferramenta de carimbos (bloqueante: se falhar, a ferramenta está quebrada).
       - name: RPSA tool tests
         run: python -m unittest tests/test_rpsa.py
