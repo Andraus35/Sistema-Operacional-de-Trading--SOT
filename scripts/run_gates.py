@@ -42,7 +42,7 @@ def main():
              ("check_repo_research", [py, "scripts/check_repo_research.py", "--all"])]
     gates.append(("check_invariants", [py, "scripts/check_invariants.py", *a.files]))
     for plan in sorted(glob.glob(os.path.join(repo, "specs/features/*/plan.md"))):
-        rel = os.path.relpath(plan, repo)
+        rel = os.path.relpath(plan, repo).replace(os.sep, "/")
         gates.append((f"validate_spec_sot:{rel.split('/')[2]}", [py, "scripts/validate_spec_sot.py", rel]))
     res = [run(repo, n, c, env) for n, c in gates]
     if g("status", "--porcelain"): print("FAIL: os gates alteraram a árvore (auditoria deve ser somente leitura)"); return 2
