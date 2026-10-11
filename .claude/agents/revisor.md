@@ -289,7 +289,7 @@ Para toda ação com efeito/publicação, verifique o Enforcement Contract:
 
 ### Passo 8 — Dependências + Decisões Abertas
 - Dependências a montante já homologadas.
-- Se downstream de bloqueador aberto (J-001, G-001, H-001, I-001, K-001, L-001, C-001, M-001, N-001): no máximo CONFORME condicional. *(B-001 FECHADA — Q-007; não é mais bloqueador. Parcialmente SUPERSEDIDA por ADR-MANAGER-001 — DHR-ARQ-001, 2026-10-01: "Conviction Engine" = mecanismo invocado pelo Manager Fase 2, não agente separado.)*
+- Se downstream de bloqueador aberto (J-001, G-001, H-001, K-001, C-001, M-001, N-001): no máximo CONFORME condicional. *(B-001 FECHADA — Q-007; não é mais bloqueador. Parcialmente SUPERSEDIDA por ADR-MANAGER-001 — DHR-ARQ-001, 2026-10-01: "Conviction Engine" = mecanismo invocado pelo Manager Fase 2, não agente separado.)*
 - J-001 trava o E3 do gate Convicção→Decisão e a SPEC-003.
 
 ## 6. Veredicto e contrato de saída

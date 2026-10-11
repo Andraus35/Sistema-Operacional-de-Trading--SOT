@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-11",
-  "digest": "16de354edbe2d04d1ea1e951d6960194e7b20875b1deb809adba4cddcf0278ef",
+  "digest": "b952e03020e21750bdcc5bccf263e6be495f48b00951453a9992706bdb75c2d7",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,14 +10,14 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 26,
+   "in": 27,
    "out": 57
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 33,
+   "in": 34,
    "out": 56
   },
   {
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 54,
+   "in": 55,
    "out": 34
   },
   {
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 163,
+   "in": 164,
    "out": 63
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 86,
-   "out": 168
+   "in": 87,
+   "out": 169
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -572,6 +572,13 @@
    "title": "DHR-AUDITOR-EXTERNO-011 — Ata — Aplicação ao `.claude/agents/revisor.md` da emenda aprovada na DHR-AUDITOR-EXTERNO-010",
    "in": 3,
    "out": 7
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-012 — Ata — Correção do Passo 8 do `.claude/agents/revisor.md` (I-001 e L-001 já fechadas)",
+   "in": 1,
+   "out": 9
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -843,7 +850,7 @@
    "path": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
    "area": "governance",
    "title": "DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades formais separadas?)",
-   "in": 11,
+   "in": 12,
    "out": 8
   },
   {
@@ -1039,7 +1046,7 @@
    "path": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
    "area": "governance",
    "title": "DHR-SPEC019-001 — Ata de Homologação — SPEC-019 v1.0 (Harness Governance & Evolution)",
-   "in": 16,
+   "in": 17,
    "out": 6
   },
   {
@@ -1389,7 +1396,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 227,
+   "in": 228,
    "out": 35
   },
   {
@@ -1886,7 +1893,7 @@
    "path": "specs/features/SPEC-019/plan.md",
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
-   "in": 60,
+   "in": 61,
    "out": 18
   },
   {
@@ -2270,6 +2277,11 @@
    "cited_by": 3
   },
   {
+   "id": "DHR-AUDITOR-EXTERNO-012",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "cited_by": 1
+  },
+  {
    "id": "DHR-BL008-001",
    "defined_in": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "cited_by": 9
@@ -2462,7 +2474,7 @@
   {
    "id": "DHR-I001-001",
    "defined_in": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "DHR-MAN-001",
@@ -2607,7 +2619,7 @@
   {
    "id": "DHR-SPEC019-001",
    "defined_in": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "DHR-SPEC020-001",
@@ -2817,7 +2829,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 156
+   "cited_by": 157
   },
   {
    "id": "INV-08",
@@ -3962,7 +3974,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 43
+   "cited_by": 44
   },
   {
    "id": "SPEC-011",
@@ -4002,12 +4014,12 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 50
+   "cited_by": 51
   },
   {
    "id": "SPEC-019",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 60
+   "cited_by": 61
   },
   {
    "id": "SPEC-020",
@@ -8188,6 +8200,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -9849,6 +9866,56 @@
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-011_Ata_Aplicacao_da_Emenda_do_Revisor.md",
    "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "specs/features/SPEC-019/plan.md",
    "type": "id"
   },
   {
