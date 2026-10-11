@@ -3,7 +3,7 @@
 **Método:** ROADMAP.md §23 passo 1-bis + atomic-spec.md §15 (RULE-ECC-01/02/04/05/06)
 **Autor:** Especificador Principal SOT (Claude Code, Opus 4.8)
 **Data:** 2026-10-05
-**Status:** **PROPOSTA DE ABERTURA — aguarda parecer do Revisor e HOMOLOGAÇÃO de Andraus** da definição da Spec. NÃO é baseline; o Plan (`plan.md`/`checks.md`) **não** foi escrito e é o próximo gate, só após homologação desta abertura.
+**Status:** **ABERTURA HOMOLOGADA por Andraus em 2026-10-11 (DHR-SPEC006-001)** — as 5 perguntas do §12 foram respondidas conforme as recomendações (nome mantido; CRITICAL; regras fechadas e tecnologia H-001 em aberto; gramática dentro da Spec; uma Spec só). *(Texto original da proposta abaixo preservado — INV-07.)* Antes: PROPOSTA DE ABERTURA — aguardava parecer do Revisor e HOMOLOGAÇÃO de Andraus da definição da Spec. NÃO é baseline; o Plan (`plan.md`/`checks.md`) **não** foi escrito e é o próximo gate, só após homologação desta abertura.
 **Depende de:** `research.md` (mesmo diretório — leia primeiro, incl. §0 auditoria do conceito legado, §4 cobertura por canônicos/Specs, §5 repositórios e `sources/`).
 **Autorização:** Andraus (chat, 2026-10-05). Caminho crítico — FASE 3; próxima na sequência após SPEC-005 homologada (ROADMAP §21/§34; DHR-SPEC005-002).
 
