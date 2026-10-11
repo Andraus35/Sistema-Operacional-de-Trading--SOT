@@ -143,6 +143,8 @@ python scripts/backlog_triggers.py              # gatilhos do RMR-001 (BL-006): 
 python scripts/check_rpsa.py                    # carimbo sincronizado-até dos agentes vs livro-razão (RPSA/EUA-E16; DHR-RPSA-001); --register classifica uma DHR nova e alinha os carimbos
 python scripts/check_doc_sync.py                # drift de sincronização documental (CONS-01, RULE não registrada, Estado fora do enum, backlog dessincronizado)
 python scripts/check_invariants.py [arq.md]    # valores e ordem das regras fixas (R:R, score/convicção, 8 dimensões, hierarquia, 7 estados, 4Es, validade do Dossiê); informativo — Detector ≠ Gate (DHR-AUDITOR-EXTERNO-008 R2)
+python scripts/revisor_gate.py <doc> [--rapido] [--json]  # gate fundido do Revisor: Classe D (reprova) + sinais H (só candidatos); PASSOU_D / REPROVADO_D (DHR-AUDITOR-EXTERNO-009)
+python scripts/revisor_gate_mcp.py              # servidor MCP somente-leitura que expõe revisor_gate ao Revisor (sem Bash); uso pelo harness, não manual (DHR-AUDITOR-EXTERNO-009/011)
 python scripts/build_map.py                     # (re)gera o mapa do projeto — obrigatório após alterar .md (BL-019)
 python scripts/build_map.py --check             # exit 1 se o mapa está desatualizado (CI/pre-commit)
 npx harness-score   # maturidade do harness (opcional)
