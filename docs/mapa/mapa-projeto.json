@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-10",
-  "digest": "aa0f8ba02a59ca87427f02e6a0690fd55ca12c6e5ed9acfe8193f24ad5da0be9",
+  "generated": "2026-10-11",
+  "digest": "b3b5106bbe922003411294586ebb21ab17bc6ff214b0b91ed66731773ccb93c7",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 52,
+   "in": 53,
    "out": 34
   },
   {
@@ -500,7 +500,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-001 — Ata — Auditor externo (GPT): piloto controlado, hierarquia e composição do consenso",
-   "in": 9,
+   "in": 10,
    "out": 5
   },
   {
@@ -528,7 +528,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-005 — Ata — Roteamento determinístico de achados do Auditor Externo em duas faixas (Opção B)",
-   "in": 3,
+   "in": 2,
    "out": 5
   },
   {
@@ -539,11 +539,11 @@
    "out": 6
   },
   {
-   "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
+   "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "area": "governance",
-   "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Auditoria única por Spec, correção em sessão normal e ciclo automático adiado",
+   "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Pausa do Auditor Externo e reforço do Revisor interno",
    "in": 1,
-   "out": 5
+   "out": 6
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -2189,7 +2189,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-001",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-002",
@@ -2209,7 +2209,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-005",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
-   "cited_by": 3
+   "cited_by": 2
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-006",
@@ -2218,7 +2218,7 @@
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-007",
-   "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "cited_by": 1
   },
   {
@@ -8095,7 +8095,7 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "type": "id"
   },
   {
@@ -9609,27 +9609,32 @@
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "to": "ROADMAP.md",
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "to": "governance/CATALOGO-OFICIAL.md",
    "type": "path"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-005_Ata_Roteamento_de_Achados_Faixa_Dupla.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-001_Ata_Piloto_Controlado.md",
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
   {
-   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Auditoria_Unica_por_Spec.md",
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md",
    "type": "path"
   },
