@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-12** · digest `0e1ca2d993f63969` · **295** documentos · **3560** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-12** · digest `e6c174e13b3eb963` · **295** documentos · **3561** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -42,7 +42,7 @@ flowchart LR
   docs["docs"] -->|42| governance["governance"]
   specs["specs"] -->|40| backlog["backlog"]
   docs["docs"] -->|38| specs["specs"]
-  backlog["backlog"] -->|36| specs["specs"]
+  backlog["backlog"] -->|37| specs["specs"]
   reference["reference"] -->|32| specs["specs"]
   _claude[".claude"] -->|29| specs["specs"]
   docs["docs"] -->|26| raiz["raiz"]
@@ -143,7 +143,7 @@ flowchart LR
 
 ## 5. Backlog e integridade
 
-- **Backlog (RMR-001):** ATIVADOS = nenhum · disparados sem registro = 2 · verificação manual = 5 itens (`python scripts/backlog_triggers.py`).
+- **Backlog (RMR-001):** ATIVADOS = nenhum · disparados sem registro = 2 · verificação manual = 6 itens (`python scripts/backlog_triggers.py`).
 - **Referências (check_refs):** ERRO=1 · WARN=2 · INFO=157 (históricos congelados) — `python scripts/check_refs.py`.
 
 ## 6. Documentos sem referência de entrada

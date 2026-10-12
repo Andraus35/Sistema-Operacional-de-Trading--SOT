@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-12",
-  "digest": "0e1ca2d993f639698e0b271c606f62672185070d55b755e6d831491578b04d8f",
+  "digest": "e6c174e13b3eb963cea310a17a80d302f1d22a3429bc3db9965739123cb43a74",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2244,6 +2244,11 @@
    "cited_by": 3
   },
   {
+   "id": "BL-035",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 2
+  },
+  {
    "id": "DHR-ADR-HOC003",
    "defined_in": "governance/DHR-ADR-HOC003_Ata_Homologacao_HOC003.md",
    "cited_by": 7
@@ -2866,7 +2871,7 @@
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "INV-03",
@@ -3281,12 +3286,12 @@
   {
    "id": "RULE-CKG-012",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-013",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "cited_by": 1
   },
   {
    "id": "RULE-CTF",
@@ -3601,7 +3606,7 @@
   {
    "id": "RULE-HH-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 2
+   "cited_by": 4
   },
   {
    "id": "RULE-HH-002",
@@ -3611,7 +3616,7 @@
   {
    "id": "RULE-HH-003",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 3
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-004",
@@ -6974,6 +6979,11 @@
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
   },
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
