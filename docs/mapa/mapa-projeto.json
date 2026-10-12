@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-11",
-  "digest": "dddfbf34a22f01aa17e41d4db2c0c67b4383b58eb86d9c26775a6556c7b849ef",
+  "generated": "2026-10-12",
+  "digest": "9256e723fcdb47a49bfe2d3b22ccd3f395b887eb39aa745d8bf622e3b6b50c54",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,15 +10,15 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 27,
+   "in": 28,
    "out": 57
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 34,
-   "out": 56
+   "in": 35,
+   "out": 58
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -136,8 +136,8 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 55,
-   "out": 34
+   "in": 57,
+   "out": 35
   },
   {
    "path": "GLOSSARIO.md",
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 165,
+   "in": 168,
    "out": 64
   },
   {
@@ -178,7 +178,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 95,
+   "in": 96,
    "out": 34
   },
   {
@@ -220,7 +220,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 152,
+   "in": 153,
    "out": 104
   },
   {
@@ -241,7 +241,7 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 99,
+   "in": 101,
    "out": 2
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 88,
-   "out": 170
+   "in": 91,
+   "out": 173
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -488,6 +488,13 @@
    "title": "DHR-ARQ-002 — Ata de Unificação: Manager Agent absorve o Synthesis Agent (propagação do ADR-MANAGER-001 §2.1)",
    "in": 18,
    "out": 17
+  },
+  {
+   "path": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "area": "governance",
+   "title": "DHR-ASSINATURA-001 — Ata — A assinatura de Andraus passa a ser a decisão registrada no chat, não o merge",
+   "in": 2,
+   "out": 6
   },
   {
    "path": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
@@ -542,7 +549,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Pausa do Auditor Externo e reforço do Revisor interno",
-   "in": 2,
+   "in": 3,
    "out": 6
   },
   {
@@ -579,6 +586,20 @@
    "title": "DHR-AUDITOR-EXTERNO-012 — Ata — Correção do Passo 8 do `.claude/agents/revisor.md` (I-001 e L-001 já fechadas)",
    "in": 3,
    "out": 9
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-013 — Ata — Novas verificações determinísticas (Classe D) no gate do Revisor e correção de negação no STRUCT-10",
+   "in": 1,
+   "out": 7
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-014 — Ata — Revisor SOT: modelo elevado e Passo 4-ter (inventário e conferência de afirmações)",
+   "in": 2,
+   "out": 7
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -801,7 +822,7 @@
    "path": "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
    "area": "governance",
    "title": "DHR-EUA-E19 — Ata de Homologação: Economia de Tokens na Camada Meta (Roteamento de Modelo e Proporcionalidade de Leitura)",
-   "in": 17,
+   "in": 18,
    "out": 11
   },
   {
@@ -1403,7 +1424,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 229,
+   "in": 232,
    "out": 35
   },
   {
@@ -1746,14 +1767,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 29,
+   "in": 32,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 118,
+   "in": 119,
    "out": 9
   },
   {
@@ -2181,7 +2202,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "BL-030",
@@ -2224,6 +2245,11 @@
    "cited_by": 18
   },
   {
+   "id": "DHR-ASSINATURA-001",
+   "defined_in": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "cited_by": 2
+  },
+  {
    "id": "DHR-AUDIT-SPEC001-001",
    "defined_in": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "cited_by": 8
@@ -2261,7 +2287,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-007",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-008",
@@ -2287,6 +2313,16 @@
    "id": "DHR-AUDITOR-EXTERNO-012",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
    "cited_by": 3
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-013",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "cited_by": 1
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-014",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "cited_by": 2
   },
   {
    "id": "DHR-BL008-001",
@@ -2781,7 +2817,7 @@
   {
    "id": "EUA-E19",
    "defined_in": "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "EUA-E19a",
@@ -2841,7 +2877,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 158
+   "cited_by": 161
   },
   {
    "id": "INV-08",
@@ -3966,7 +4002,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 58
+   "cited_by": 60
   },
   {
    "id": "SPEC-007",
@@ -4532,6 +4568,11 @@
   },
   {
    "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "type": "id"
   },
@@ -4714,6 +4755,11 @@
    "from": ".claude/agents/revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
   },
   {
    "from": ".claude/agents/revisor.md",
@@ -4968,6 +5014,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
    "type": "id"
   },
   {
@@ -8162,6 +8213,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "type": "id"
   },
@@ -8218,6 +8274,16 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "type": "id"
   },
   {
@@ -9456,6 +9522,36 @@
    "type": "path"
   },
   {
+   "from": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
    "from": "governance/DHR-AUDIT-SPEC001-001_Ata_Sessao_Auditoria_PROPOSTA.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -9939,6 +10035,76 @@
    "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
    "to": "specs/features/SPEC-019/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
