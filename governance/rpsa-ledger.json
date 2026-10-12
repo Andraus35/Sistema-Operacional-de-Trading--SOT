@@ -199,6 +199,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologa a abertura de uma Spec e registra decisoes; nao altera texto de nenhum arquivo de agente."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-014",
+      "data": "2026-10-12",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Altera o arquivo do Revisor: eleva o modelo do frontmatter (revertendo o roteamento economico da EUA-E19) e acrescenta o Passo 4-ter ao protocolo de revisao; o Especificador nao e afetado."
     }
   ]
 }
