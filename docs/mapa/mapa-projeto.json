@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-12",
-  "digest": "ca7a0c66941decc11a2dbd9fcb1b93141ce035b711d76673e39b4c3b4d27edd7",
+  "digest": "0e1ca2d993f639698e0b271c606f62672185070d55b755e6d831491578b04d8f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -227,7 +227,7 @@
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 90,
+   "in": 91,
    "out": 6
   },
   {
@@ -1025,7 +1025,7 @@
    "path": "governance/DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md",
    "area": "governance",
    "title": "DHR-SPEC004-001 — Ata de Homologação — Abertura da SPEC-004 (Cognitive Blackboard Protocol)",
-   "in": 11,
+   "in": 10,
    "out": 12
   },
   {
@@ -1915,7 +1915,7 @@
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 62,
-   "out": 21
+   "out": 20
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -2641,7 +2641,7 @@
   {
    "id": "DHR-SPEC004-001",
    "defined_in": "governance/DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md",
-   "cited_by": 11
+   "cited_by": 10
   },
   {
    "id": "DHR-SPEC004-002",
@@ -2866,7 +2866,7 @@
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 28
+   "cited_by": 27
   },
   {
    "id": "INV-03",
@@ -3026,12 +3026,12 @@
   {
    "id": "RULE-CAU-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 4
+   "cited_by": 3
   },
   {
    "id": "RULE-CAU-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 11
+   "cited_by": 9
   },
   {
    "id": "RULE-CBP",
@@ -3056,7 +3056,7 @@
   {
    "id": "RULE-CBP-004",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 0
+   "cited_by": 2
   },
   {
    "id": "RULE-CBP-005",
@@ -3229,12 +3229,52 @@
    "cited_by": 1
   },
   {
+   "id": "RULE-CKG-002",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-CKG-003",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CKG-004",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-CKG-005",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
    "id": "RULE-CKG-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 0
   },
   {
+   "id": "RULE-CKG-007",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-CKG-008",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CKG-009",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
    "id": "RULE-CKG-010",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 0
+  },
+  {
+   "id": "RULE-CKG-011",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 1
   },
@@ -3321,7 +3361,7 @@
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 22
   },
   {
    "id": "RULE-EH",
@@ -3496,7 +3536,7 @@
   {
    "id": "RULE-HD-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 30
+   "cited_by": 31
   },
   {
    "id": "RULE-HD-03",
@@ -3511,7 +3551,7 @@
   {
    "id": "RULE-HG",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-HG-01",
@@ -3691,7 +3731,7 @@
   {
    "id": "RULE-MECH",
    "defined_in": "governance/RULES.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-MECH-01",
@@ -3776,7 +3816,7 @@
   {
    "id": "RULE-ONT",
    "defined_in": "governance/RULES.md",
-   "cited_by": 19
+   "cited_by": 20
   },
   {
    "id": "RULE-ONT-01",
@@ -20493,11 +20533,6 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-006/plan.md",
-   "to": "governance/DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md",
    "type": "id"
   },
   {
