@@ -201,6 +201,8 @@ Ato de Homologação — Baseline F.1 do Harness
 
 **Registro (2026-10-11, DHR-SPEC006-001 — decisões de Andraus em chat, 2026-10-11; assinatura = merge):** **ABERTURA da SPEC-006 (Cognitive Knowledge Graph) HOMOLOGADA** — nome mantido; **CRITICAL · D0–D7 + D8 adversarial**; 1 Spec; gramática/ontologia enxuta dentro da Spec (sem componente separado); **contrato cognitivo (o que guarda, consulta, quem escreve, nunca apagar) fechado para especificação com o mecanismo físico INDETERMINADO — H-001 permanece ABERTA**. Dossiê válido até 2027-01-03 (CRITICAL, 90 dias). Plan pendente, só por ordem de Andraus. **Não é baseline.** Nenhuma decisão aberta fechada.
 
+**Registro (2026-10-12, DHR-ASSINATURA-001 — proposta a pedido de Andraus; vigência = ordem expressa dele):** **a assinatura de Andraus passa a ser a decisão registrada no chat e citada na ata; o merge deixa de ser assinatura.** O Orquestrador pode mesclar conteúdo operacional já aprovado por Andraus, após CI verde; homologação, `AGENTS.md`, arquivos de agentes, governança normativa e decisões abertas seguem só por decisão expressa dele. RPSA: escopo não / sync fonte-única. Nenhuma decisão aberta fechada.
+
 Conforme GMC-001 Cap.5 (Regra de Congelamento): parecer conforme + consenso do Usuário + registro pelo Controlador — os três critérios satisfeitos.
 
 ---
