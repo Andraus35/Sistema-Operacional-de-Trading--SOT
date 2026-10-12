@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-12** · digest `cc738bbc1678ef2a` · **295** documentos · **3561** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-12** · digest `ca7a0c66941decc1` · **295** documentos · **3561** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -73,13 +73,13 @@ flowchart LR
 | `EUA-E04` | 71 | [governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) |
 | `INV-05` | 70 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-020` | 67 | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) |
-| `RULE-MET-01` | 66 | [governance/RULES.md](../../governance/RULES.md) |
+| `RULE-MET-01` | 65 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-006` | 62 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
 | `SPEC-019` | 62 | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) |
 | `RULE-EPI` | 55 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-04` | 54 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-018` | 53 | [ROADMAP.md](../../ROADMAP.md) |
 | `SPEC-014` | 52 | [ROADMAP.md](../../ROADMAP.md) |
+| `SPEC-018` | 52 | [ROADMAP.md](../../ROADMAP.md) |
 | `BL-017` | 48 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `RULE-ECC-04` | 48 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-03` | 47 | [governance/RULES.md](../../governance/RULES.md) |
@@ -110,7 +110,7 @@ flowchart LR
 | `SPEC-015` | Indicativa (não aberta) | — | 24 |
 | `SPEC-016` | Indicativa (não aberta) | — | 17 |
 | `SPEC-017` | Indicativa (não aberta) | — | 4 |
-| `SPEC-018` | Indicativa (não aberta) | — | 53 |
+| `SPEC-018` | Indicativa (não aberta) | — | 52 |
 | `SPEC-019` | **Homologada** | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | 62 |
 | `SPEC-020` | **Homologada** | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | 67 |
 | `SPEC-021` | **Homologada** | [specs/features/SPEC-021/plan.md](../../specs/features/SPEC-021/plan.md) | 38 |
@@ -361,7 +361,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [CR-001-compliance-record.md](../../canon/CR-001-compliance-record.md) | CR-001 — Compliance Record Specification (consolidado, Cap.6-8) | 8 | 0 |
 | [GMC-001-governance-canonical-models.md](../../canon/GMC-001-governance-canonical-models.md) | GMC-001 — Canonical Models Governance Specification | 51 | 0 |
 | [PPQ-001-project-process-quality.md](../../canon/PPQ-001-project-process-quality.md) | PPQ-001 — Especificação de Gestão de Projetos, Processos e Qualidade | 25 | 3 |
-| [SAS-001-structural-agent-spec.md](../../canon/SAS-001-structural-agent-spec.md) | SAS-001 — Structural Agent Specification (consolidado) | 39 | 3 |
+| [SAS-001-structural-agent-spec.md](../../canon/SAS-001-structural-agent-spec.md) | SAS-001 — Structural Agent Specification (consolidado) | 40 | 3 |
 | [SDD-001-spec-driven-development.md](../../canon/SDD-001-spec-driven-development.md) | SDD-001 — Protocolo de Spec-Driven Development do ORYX AGENT | 12 | 0 |
 
 ### specs

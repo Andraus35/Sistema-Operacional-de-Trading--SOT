@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-12",
-  "digest": "cc738bbc1678ef2a232aba7f7e079a56377bb1356dc6d9b253ebbd01ba5c2fec",
+  "digest": "ca7a0c66941decc11a2dbd9fcb1b93141ce035b711d76673e39b4c3b4d27edd7",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -276,7 +276,7 @@
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 39,
+   "in": 40,
    "out": 3
   },
   {
@@ -3031,7 +3031,7 @@
   {
    "id": "RULE-CAU-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "RULE-CBP",
@@ -3229,14 +3229,14 @@
    "cited_by": 1
   },
   {
-   "id": "RULE-CKG-005",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
-  },
-  {
    "id": "RULE-CKG-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 0
+  },
+  {
+   "id": "RULE-CKG-010",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-012",
@@ -3246,7 +3246,7 @@
   {
    "id": "RULE-CKG-013",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "cited_by": 0
   },
   {
    "id": "RULE-CTF",
@@ -3721,7 +3721,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 66
+   "cited_by": 65
   },
   {
    "id": "RULE-MET-02",
@@ -4121,7 +4121,7 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 53
+   "cited_by": 52
   },
   {
    "id": "SPEC-019",
