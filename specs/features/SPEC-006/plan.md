@@ -391,11 +391,14 @@ RULE-CKG-013: Quando duas relações entre os mesmos nós se contradizem (ex.: C
 
 ### D2.1 — Matriz de integridade da ontologia (RULE-CKG-001) [PROPOSTA]
 
-> **Atributo de escola/origem (ADDED):** nós `hypothesis`/`structure` carregam `school`/`origin_agent` (Elliott / SMC /
-> Fibonacci / ICT), **por referência** ao canônico que os produziu (SPEC-001 `hierarchy_role`+produtor; CHM-001) — o KG
-> **espelha**, NÃO decide, a autoridade de criação de hipótese (CC-01; Elliott cria PRIMARY; ICT não cria — INV-02).
-> "**Família estrutural**" = sub-hipóteses de uma **mesma escola** e instância (ex.: ondas de uma contagem Elliott,
-> mesmo ativo+timeframe) — usada **só** para restringir herança fractal INTRA-escola; a herança sub→pai ENTRE escolas
+> **Atributo de escola (ADDED — UM campo único: `school`):** nós `hypothesis`/`structure` carregam `school` ∈ {Elliott,
+> SMC, Fibonacci, ICT} e, para `hypothesis`, `hierarchy_role` ∈ {PRIMARY, SUB} (ref. SPEC-001 `hierarchy_role`) — **por
+> referência** ao canônico que os produziu (CHM-001). *(O termo "origin_agent" da v1.2 foi eliminado — usa-se só `school`.)*
+> O KG **espelha**, NÃO decide, a autoridade de criação (CC-01; Elliott cria PRIMARY; ICT não cria — INV-02/RULE-HH-004).
+> **Regra de nó (integridade, CKG-001):** `hypothesis.school ∈ {Elliott, SMC, Fibonacci}` — `hypothesis` com `school=ICT`
+> é PROIBIDA (INV-02/RULE-HH-004), fail-closed. (ICT pode aparecer em `structure` de execução, nunca criando hipótese.)
+> "**Família estrutural**" é COMPUTADA (não é campo): nós de **mesma `school`** que `PERTENCE_A` o **mesmo par (asset,
+> timeframe)** — usada **só** para restringir herança fractal INTRA-escola; a herança sub→pai ENTRE escolas
 > (SMC/Fibonacci SUB → Elliott PRIMARY) é NORMAL e NÃO é bloqueada (SPEC-001 RULE-HH-003 l.104, campo `parent_id`;
 > CHM-001 `parent_hypothesis_id` l.165/415; CONSTITUTION l.193).
 
@@ -404,10 +407,10 @@ RULE-CKG-013: Quando duas relações entre os mesmos nós se contradizem (ex.: C
 | CONFIRMA | **evidence** (NÃO observation — CONSTITUTION l.191; INV-06) | hypothesis | sim | não |
 | REFUTA | **evidence** (NÃO observation) | hypothesis | sim | não |
 | DEPENDE_DE | hypothesis, mission | hypothesis, evidence | sim | não |
-| HERDA | hypothesis (SUB) | hypothesis (PAI) — via `parent_id`/`parent_hypothesis_id`; **entre escolas é permitido**; "família estrutural" só restringe SUB intra-escola | sim | não |
+| HERDA | hypothesis (`hierarchy_role=SUB`) | hypothesis (**PAI = `hierarchy_role=PRIMARY`** — RULE-HH-003) — via `parent_id`/`parent_hypothesis_id`; **entre escolas é permitido**; "família estrutural" só restringe SUB intra-escola | sim | não |
 | PERTENCE_A | hypothesis, evidence, structure, observation | asset, timeframe, regime, mission | sim | não |
 | INVALIDA | evidence, learning | evidence, relation (via `target_relation_id`) | sim | não |
-| ORIGINA | structure/hypothesis com `origin_agent` ∈ {Elliott, SMC, Fibonacci} — **nunca ICT** (INV-02) | hypothesis | sim | não |
+| ORIGINA | structure/hypothesis com `school` ∈ {Elliott, SMC, Fibonacci} — **nunca ICT** (INV-02/RULE-HH-004) | hypothesis | sim | não |
 | DERIVA_DE | evidence (DERIVED) | evidence (ancestral) | sim | não — **aresta de Lineage** (CEM-001 Cap.5); base do trace (CKG-011); obrigatória por ancestral do Lineage (INV-CKG-02) |
 | SIMILAR_A | qualquer | mesmo node_type | sim (armazenada) | **sim** (consulta trata A~B ⇔ B~A) |
 | CAUSA | qualquer **exceto** origem com propriedade de custo/confiança quando destino=`conviction` | qualquer — **destino `conviction` PROIBIDO a partir de `calibration_metric`/custo/confiança (INV-04)** | sim | não — exige mechanism+direction+conditions+regime (+posthoc_flag) (CKG-008) |
@@ -460,22 +463,23 @@ RULE-CKG-013: Quando duas relações entre os mesmos nós se contradizem (ex.: C
 BASpec-CKG-001:
   QUANDO:       Um nó ou relação é submetido para escrita no KG
   ENTÃO:        O KG escreve somente se o tipo ∈ ontologia E a matriz de integridade (§D2.1) é satisfeita (origem/destino
-                admitidos, direcionalidade/simetria corretas); violação é rejeitada (fail-closed), não escrita. O KG apenas
-                ESPELHA os vínculos já criados pelos agentes (ex.: HERDA sub→pai por `parent_id`, inclusive entre escolas);
-                NÃO decide a autoridade de criação de hipótese (CC-01)
+                admitidos, direcionalidade/simetria; **regra de nó: `hypothesis.school ≠ ICT`** — INV-02/RULE-HH-004;
+                **HERDA só liga SUB a PAI `hierarchy_role=PRIMARY`**); violação é rejeitada (fail-closed), não escrita. O KG
+                apenas ESPELHA os vínculos já criados pelos agentes (ex.: HERDA sub→pai por `parent_id`, inclusive entre
+                escolas); NÃO decide a autoridade de criação de hipótese (CC-01)
   PORQUE:       Sem gramática enxuta + integridade, a memória permanente acumula conhecimento incoerente (research.md §8 R-8)
-  REFERÊNCIA:   RULE-CKG-001; KERNEL-V2 l.1488-1507; CONSTITUTION l.193; INV-02
+  REFERÊNCIA:   RULE-CKG-001; KERNEL-V2 l.1488-1507; CONSTITUTION l.193; INV-02; RULE-HH-003/004 (SPEC-001)
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
-    MECANISMO   : gate determinístico (tipo ∈ catálogo ∧ par origem/destino ∈ matriz ∧ direção/simetria válidas)
-    GATE DE SAÍDA: verificação da matriz §D2.1
+    MECANISMO   : gate determinístico (tipo ∈ catálogo ∧ par origem/destino ∈ matriz ∧ direção/simetria ∧ hypothesis.school≠ICT ∧ HERDA.pai.hierarchy_role=PRIMARY)
+    GATE DE SAÍDA: verificação da matriz §D2.1 + regras de nó (school/hierarchy_role)
     CRITÉRIO 4Es: Conformidade > Eficácia — coerência da ontologia é inviolável
   VERIFICADO POR:
-    DADO        uma relação ORIGINA com `origin_agent == ICT` (ICT não origina hipótese — INV-02) — viola a matriz §D2.1
+    DADO        um nó `hypothesis` com `school == ICT` (ICT não cria hipótese — INV-02/RULE-HH-004)
     QUANDO      o gate de integridade roda
-    ENTÃO       escrita rejeitada; nada persistido. (Contraste: HERDA de uma SUB SMC para a PRIMARY Elliott, via
-                `parent_id`, é VÁLIDA entre escolas — não é violação)
-    VERIFICAÇÃO written == false; rejected_reason == "ONTOLOGY_INTEGRITY_VIOLATION"
+    ENTÃO       escrita rejeitada; nada persistido. (Contraste POSITIVO: HERDA de uma SUB SMC para a PAI Elliott
+                (`hierarchy_role=PRIMARY`), via `parent_id`, é VÁLIDA entre escolas — não é violação; ver T15)
+    VERIFICAÇÃO written == false; rejected_reason == "HYPOTHESIS_SCHOOL_ICT_FORBIDDEN"
 ```
 
 ### BASpec-CKG-002 — Entidade por referência ao canônico (não redefine; observation≠evidence)
@@ -822,12 +826,20 @@ Nenhuma fórmula computa convicção. Nenhum limiar de convicção nem escala nu
 
 ## D7 — Cenários de Teste
 
-### Cenário-CKG-T01 — Violação de integridade da ontologia → rejeição
+### Cenário-CKG-T01 — Violação de integridade da ontologia → rejeição (caso que a matriz DE FATO rejeita)
 ```
-DADO        uma relação HERDA entre nós de famílias estruturais diferentes
+DADO        uma relação ORIGINA cuja origem tem school=ICT (ICT nunca origina — INV-02/RULE-HH-004) — viola a matriz §D2.1
 QUANDO      o gate de integridade (§D2.1) roda
 ENTÃO       escrita rejeitada; nada persistido
 VERIFICAÇÃO written == false; rejected_reason == "ONTOLOGY_INTEGRITY_VIOLATION"
+```
+
+### Cenário-CKG-T15 — HERDA SMC-SUB → Elliott-PRIMARY (positivo; entre escolas é VÁLIDO)
+```
+DADO        hipótese SUB de school=SMC com parent_id apontando para hipótese PAI de school=Elliott (hierarchy_role=PRIMARY)
+QUANDO      a relação HERDA é escrita
+ENTÃO       aceita (entre escolas é permitido — RULE-HH-003; "família" só restringe SUB intra-escola); nada rejeitado
+VERIFICAÇÃO relation_written == true; cross_school_herda_allowed == true; parent_hierarchy_role == "PRIMARY"
 ```
 
 ### Cenário-CKG-T02 — observation rotulada evidence → rejeição (INV-06)
@@ -989,8 +1001,14 @@ VERIFICAÇÃO written == false; rejected_reason == "PROVENANCE_MISSING"
 ### ADV-CKG-16 — evidence DERIVED admitida sem aresta DERIVA_DE por ancestral (CKG-003/INV-CKG-02)
 **DADO:** um nó `evidence` DERIVED com Lineage=[C] é admitido, mas sem materializar a aresta `DERIVA_DE`→C (ancestral não referenciado). **QUANDO:** o gate de admissão roda. **ENTÃO:** rejeitar (fail-closed); exigir a aresta por ancestral; manter o grafo acíclico. **PORQUE:** sem a aresta o trace completo (CKG-011/CEM-001 l.612-614) não é garantido (INV-CKG-02). **VERIFICAÇÃO:** deriva_de_edge_per_ancestor == true; written == false (quando ancestral ausente).
 
-> **Cobertura:** 16 casos — toda BASpec tem ≥1 negação: CKG-001→ADV-12; 002→ADV-11; 003→ADV-12/**16**; 004→ADV-13; 005→ADV-06;
-> 006→ADV-01; 007→ADV-03/05; 008→ADV-04; 009→ADV-07; 010→ADV-08; 011→ADV-14/16; 012→ADV-15; 013→ADV-02. Fronteiras/decisões
+### ADV-CKG-17 — hypothesis com school=ICT (viola regra de nó — INV-02/RULE-HH-004)
+**DADO:** um nó `hypothesis` com `school == ICT` submetido. **QUANDO:** o gate de integridade de nó roda. **ENTÃO:** rejeitar (fail-closed) `HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`; ICT nunca cria hipótese. **PORQUE:** INV-02; RULE-HH-004 (SPEC-001). **VERIFICAÇÃO:** hypothesis_school_ict_written == false.
+
+### ADV-CKG-18 — colisão falsamente detectada / falsamente ignorada (CKG-013; escopo)
+**DADO:** (a) A1 CONFIRMA B e A2 REFUTA B (origens A1≠A2) — NÃO é colisão; (b) CONFIRMA(A→B) e REFUTA(A→B) com janelas de validade DISJUNTAS — NÃO é colisão; (c) CONFIRMA(A→B) e REFUTA(A→B) vigentes com sobreposição — É colisão. **QUANDO:** o detector de colisão roda. **ENTÃO:** (a)/(b) não geram `collision_record`; (c) gera. **PORQUE:** colisão = par contraditório (§D2.2) nos MESMOS (from,to) com sobreposição temporal (CKG-013). **VERIFICAÇÃO:** collision_logged(a)==false; collision_logged(b)==false; collision_logged(c)==true.
+
+> **Cobertura:** 18 casos — toda BASpec tem ≥1 negação: CKG-001→ADV-12/**17**; 002→ADV-11; 003→ADV-12/16; 004→ADV-13; 005→ADV-06;
+> 006→ADV-01; 007→ADV-03/05; 008→ADV-04; 009→ADV-07; 010→ADV-08; 011→ADV-14/16; 012→ADV-15; 013→ADV-02/**18**. Fronteiras/decisões
 > abertas: ADV-09/10. Mapeiam para EC-CKG-001..006 (fail-closed).
 
 ---
