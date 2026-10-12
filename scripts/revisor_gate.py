@@ -6,6 +6,8 @@ Funde e amplia os detectores determinísticos existentes numa bateria fixa, para
   D bloqueante   validate_spec_sot.py (estrutura) · baselines presentes na raiz · IDs de modelos canônicos que não existem
   D informativo  check_invariants.py (valores e ordem) · check_refs.py · check_doc_sync.py · backlog_triggers.py (ATIVADO)
                  check_rpsa.py · build_map.py --check
+                 campos_atribuidos_baseline (campo `x` atribuído a baseline que não o contém) · estado_backlog (estado de BL-nnn
+                 citado ≠ RMR-001) · refs_variantes (T04-neg / ADV-X-NN-sufixo sem definição) — achados da medição da SPEC-006
   H sinais       candidatos por palavra-chave a violação de invariante de SENTIDO (AGENTS.md §6/§7): o código levanta,
                  o Revisor CONFIRMA. Nunca bloqueiam. Têm falso alarme e falso negativo por construção.
 Classe P (julgamento de sentido, adversarial, epistêmico) NÃO está aqui: é do Revisor (atomic-spec §10.6).
@@ -69,6 +71,93 @@ def checar_ids_canonicos(texto, root=ROOT):
     return achados
 
 
+# --- detectores D informativos (achados da medição do Revisor na SPEC-006, 2026-10-12) -------------------------------
+_BASE_ID = r"(?:CEM|CHM|CCM|CEE|GMC|SDD|PPQ|SAS|CR)-\d{3}|SPEC-0\d{2}"
+_ATRIB = re.compile(r"`([a-z][a-z0-9]*_[a-z0-9_]+)`[^`\n]{0,40}?\b(?:é|são|do|da|de|vem\s+d[oa]|atribu[ií]d[oa]\s+(?:ao|à)|pertence\s+ao)\s+(?:o\s+|a\s+)?(" + _BASE_ID + r")\b")
+_ATRIB_ISENTA = re.compile(r"\[PROPOSTA\]|proposta|\blocal\b|\bnovo\b|renome|n[ãa]o existe|inexistente|0 ocorr", re.I)
+
+
+def _arquivo_baseline(bid, root):
+    root = Path(root)
+    if bid.startswith("SPEC-"):
+        p = root / "specs" / "features" / bid / "plan.md"
+        return p if p.is_file() else None
+    c = sorted((root / "canon").glob(bid + "*.md"))
+    return c[0] if c else None
+
+
+def campos_atribuidos_baseline(texto, root=ROOT):
+    """Campo `snake_case` atribuído (na mesma linha) a um baseline (modelo canônico ou SPEC) cujo arquivo NÃO contém o campo.
+    Candidato a [FONTE] inventada (RULE-HD-04/RULE-MET-01). Linhas marcadas [PROPOSTA]/local/novo são isentas."""
+    cache, achados = {}, []
+    for i, linha in enumerate(texto.splitlines(), 1):
+        if _ATRIB_ISENTA.search(linha):
+            continue
+        for m in _ATRIB.finditer(linha):
+            campo, bid = m.group(1), m.group(2)
+            if bid not in cache:
+                f = _arquivo_baseline(bid, root)
+                cache[bid] = f.read_text(encoding="utf-8", errors="replace") if f else None
+            if cache[bid] is not None and campo not in cache[bid]:
+                achados.append((i, campo, bid))
+    return achados
+
+
+_ESTADO_RE = re.compile(r"(BL-\d{3})\b[^.\n]{0,80}?\b(ATIVADO|Em espera|Absorvido|Descartado|Diferido)\b")
+_ESTADO_ISENTA = re.compile(r"~~|riscad|\bn[ãa]o\b|\bNÃO\b|\bsem\b|promov|antes|anterior|gatilho|devolvid", re.I)
+
+
+def estados_backlog(root=ROOT):
+    """{BL-nnn: estado vigente} do painel backlog/RMR-001 (1º termo em negrito da coluna Estado)."""
+    f = Path(root) / "backlog" / "RMR-001_Painel_Backlog.md"
+    if not f.is_file():
+        return {}
+    out = {}
+    for linha in f.read_text(encoding="utf-8", errors="replace").splitlines():
+        m = re.match(r"\|\s*\*\*(BL-\d{3})\*\*\s*\|", linha)
+        if not m:
+            continue
+        cel = linha.split("|")
+        if len(cel) > 7:
+            e = re.search(r"\*\*([^*]+)\*\*", cel[7]) or re.match(r"\s*(\S+(?: \S+)?)", cel[7])
+            if e:
+                out[m.group(1)] = e.group(1).strip()
+    return out
+
+
+_CANDIDATO = re.compile(r"^\|\s*Status\s*\|[^\n]*CANDIDAT", re.M | re.I)
+
+
+def estado_backlog(texto, root=ROOT):
+    """Estado de BL-nnn citado no documento que difere do painel RMR-001 (negações/histórico isentos).
+    Só incide em documento CANDIDATO (linha Status): em Spec homologada o estado escrito é o do momento da homologação e
+    não pode ser reescrito (INV-07) — divergência histórica ali não é defeito."""
+    if not _CANDIDATO.search(texto):
+        return []
+    reais, achados = estados_backlog(root), []
+    for i, linha in enumerate(texto.splitlines(), 1):
+        for m in _ESTADO_RE.finditer(linha):
+            bl, citado = m.group(1), m.group(2)
+            trecho = linha[m.start():m.end()]
+            if bl in reais and citado.lower() != reais[bl].lower() and not _ESTADO_ISENTA.search(trecho):
+                achados.append((i, bl, citado, reais[bl]))
+    return achados
+
+
+_VARIANTE = re.compile(r"\b((?:T\d{2}|ADV-[A-Z]+-\d{2}|EC-[A-Z]+-\d{3})-[a-z]+)\b")
+
+
+def refs_variantes(texto):
+    """Referência a variante com sufixo (T04-neg, ADV-X-06-neg) que nunca é definida como item (início de linha/cabeçalho)."""
+    definidos = {m.group(1) for ln in texto.splitlines() for m in [re.match(r"^[\s#>*|-]*\**((?:T\d{2}|ADV-[A-Z]+-\d{2}|EC-[A-Z]+-\d{3})-[a-z]+)\b", ln)] if m}
+    achados = []
+    for i, linha in enumerate(texto.splitlines(), 1):
+        for m in _VARIANTE.finditer(linha):
+            if m.group(1) not in definidos:
+                achados.append((i, m.group(1)))
+    return achados
+
+
 def sinais_h(texto):
     out = []
     for i, linha in enumerate(texto.splitlines(), 1):
@@ -111,6 +200,17 @@ def rodar(doc, rapido=False, root=ROOT):
     inv = [f"{rel}:{ln} [{c}] {m}" for ln, c, m, _f in check_invariants.checar_texto(texto)]
     itens.append({"nome": "check_invariants", "classe": "D", "bloqueante": False, "exit_code": 1 if inv else 0,
                   "output_sha256": "", "tail": inv[:8] or ["nenhum desvio de valor/ordem"]})
+    for nome, achados, fmt in (
+        ("campos_atribuidos_baseline", campos_atribuidos_baseline(texto, root),
+         lambda a: f"{rel}:{a[0]} campo `{a[1]}` atribuído a {a[2]}, que não o contém"),
+        ("estado_backlog", estado_backlog(texto, root),
+         lambda a: f"{rel}:{a[0]} {a[1]} citado como {a[2]}; painel RMR-001 = {a[3]}"),
+        ("refs_variantes", refs_variantes(texto),
+         lambda a: f"{rel}:{a[0]} variante '{a[1]}' nunca definida como item"),
+    ):
+        det = [fmt(a) for a in achados]
+        itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if det else 0,
+                      "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
     if not rapido:
         itens.append(_run("check_refs", [py, "scripts/check_refs.py"], "D", False, root))
         itens.append(_run("check_doc_sync", [py, "scripts/check_doc_sync.py"], "D", False, root))
