@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-11",
-  "digest": "dddfbf34a22f01aa17e41d4db2c0c67b4383b58eb86d9c26775a6556c7b849ef",
+  "generated": "2026-10-12",
+  "digest": "c168c50c56f3c2c4c4efdac57e0ceec31e7d9e62b8db3c03835a4338d081722a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,15 +10,15 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 27,
+   "in": 28,
    "out": 57
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 34,
-   "out": 56
+   "in": 35,
+   "out": 58
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 165,
+   "in": 166,
    "out": 64
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 88,
-   "out": 170
+   "in": 89,
+   "out": 171
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -579,6 +579,13 @@
    "title": "DHR-AUDITOR-EXTERNO-012 — Ata — Correção do Passo 8 do `.claude/agents/revisor.md` (I-001 e L-001 já fechadas)",
    "in": 3,
    "out": 9
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-014 — Ata — Revisor SOT: modelo elevado e Passo 4-ter (inventário e conferência de afirmações)",
+   "in": 2,
+   "out": 7
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -801,7 +808,7 @@
    "path": "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
    "area": "governance",
    "title": "DHR-EUA-E19 — Ata de Homologação: Economia de Tokens na Camada Meta (Roteamento de Modelo e Proporcionalidade de Leitura)",
-   "in": 17,
+   "in": 18,
    "out": 11
   },
   {
@@ -1403,7 +1410,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 229,
+   "in": 230,
    "out": 35
   },
   {
@@ -1746,7 +1753,7 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 29,
+   "in": 31,
    "out": 2
   },
   {
@@ -2289,6 +2296,11 @@
    "cited_by": 3
   },
   {
+   "id": "DHR-AUDITOR-EXTERNO-014",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "cited_by": 2
+  },
+  {
    "id": "DHR-BL008-001",
    "defined_in": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "cited_by": 9
@@ -2781,7 +2793,7 @@
   {
    "id": "EUA-E19",
    "defined_in": "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "EUA-E19a",
@@ -2841,7 +2853,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 158
+   "cited_by": 159
   },
   {
    "id": "INV-08",
@@ -3966,7 +3978,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 58
+   "cited_by": 59
   },
   {
    "id": "SPEC-007",
@@ -4532,6 +4544,11 @@
   },
   {
    "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "type": "id"
   },
@@ -4714,6 +4731,11 @@
    "from": ".claude/agents/revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
   },
   {
    "from": ".claude/agents/revisor.md",
@@ -8222,6 +8244,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md",
    "type": "id"
   },
@@ -9939,6 +9966,41 @@
    "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
    "to": "specs/features/SPEC-019/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
