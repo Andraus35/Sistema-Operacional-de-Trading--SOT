@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | ID | SPEC-006 — Cognitive Knowledge Graph (contrato cognitivo da **memória semântica permanente** do SOT — ontologia enxuta + entidades/relações tipadas + temporalidade + proveniência por referência + lifecycle + confiança de relação + consulta cognitiva + governança de escrita; **mecanismo físico de armazenamento INDETERMINADO — H-001 ABERTA**) |
-| Versão | 1.1 (candidato a BASELINE) |
+| Versão | 1.2 (candidato a BASELINE) |
 | Status | **CANDIDATO — aguarda verificação de spec (checks.md), gate determinístico, parecer do Revisor e homologação de Andraus.** NÃO é baseline (INV-09). Abertura HOMOLOGADA: DHR-SPEC006-001 (2026-10-11). As RULE-CKG-* e o contrato de nó/relação deste Plan são **[PROPOSTA]** até homologação. **H-001 (mecanismo físico do KG) permanece ABERTA — este Plan NÃO a fecha** (CONS-01; só Andraus). M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 seguem ABERTAS. |
 | Fonte | ROADMAP §6 (FASE 3); `specs/features/SPEC-006/ABERTURA.md` + `research.md` + `sources/` (Dossiê — RULE-ECC-01/02/04/06; validade CRITICAL 90 dias, limite 2027-01-03); DHR-SPEC006-001; atomic-spec **v1.5** (§3 emenda SPEC006-MATRIZ → CRITICAL · D0–D7); `governance/RULES.md` (RULE-BB-004, RULE-CAU-01/02/03, RULE-MECH-01, RULE-HD-02/03/04); `canon/CEM-001` (Responsabilidades do KG l.608-615), `canon/CHM-001`, `canon/CCM-001`, `canon/CEE-001` l.111, `canon/SAS-001` §6.12; `WORKFLOW.md` (conformidade, não editada) |
 | Complexidade | **CRITICAL** [FONTE: ROADMAP §6 "P0 — CRITICAL"; atomic-spec §3 (emenda SPEC006-MATRIZ, 2026-10-05) "Knowledge Graph \| CRITICAL \| D0–D7"; DHR-SPEC006-001 Q-ABERTURA-2] |
@@ -28,6 +28,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
 | Versão | Data | Alterações |
 |---|---|---|
 | 1.0 | 2026-10-11 | Entrega candidata inicial (Opção A; mecanismo físico INDETERMINADO = H-001). 13 BASpecs (CKG-001..013); 6 EC; 13 EARS; 11 cenários; 10 adversariais. |
+| 1.2 | 2026-10-12 | **Rodada 3 (defeitos confirmados por revisão independente, verificados no repositório).** (1) Matriz §D2.1: HERDA = sub→pai pelo `parent_id` (SPEC-001)/`parent_hypothesis_id` (CHM-001), inclusive **entre escolas** (SMC/Fibonacci SUB → Elliott PRIMARY — SPEC-001 RULE-HH-003 l.104; CONSTITUTION l.193); "família estrutural" só restringe sub-hipóteses intra-escola; ORIGINA: origem ∈ {Elliott, SMC, Fibonacci}, nunca ICT (INV-02); atributo `school`/`origin_agent` (por referência ao canônico); o KG só **espelha**, não decide, a autoridade de criação (CC-01). (2) `lineage_ref` (campo inexistente) → `provenance_ref.lineage` [PROPOSTA] = referência ao campo `Lineage` (CEM-001 l.351/359/539-554) / `derived_from[]` (SPEC-004). (3) Preservação de estado canônico: `canonical_status` (snapshot) + registro `canonical_state_transition` (estado/timestamp/origem/justificativa — CEM-001 l.428); estados do KG ≠ estados canônicos (CC-10). (4) Critério de admissão Blackboard→KG do caminho (a) = [DECISÃO NECESSÁRIA] (promoção trabalho→permanente — SPEC-018/K-001). (5) Completude do trace garantida: admitir evidence DERIVED ⇒ exigir aresta DERIVA_DE por ancestral do Lineage (fail-closed); trace ignora validade e é acíclico (INV-CKG-02); teste negativo. (6) INV-04 = só custo; proibição de *confiança* entrar na convicção = regra LOCAL [PROPOSTA] (CKG-007); matriz restringe CAUSA (destino `conviction` proibido a partir de custo/confiança); restrição à SPEC-003 = requisito a ela endereçado/[DECISÃO NECESSÁRIA]. (7) Invalidação de relação = ato AUTORIZADO (CKG-009), **não** automática (CEM-001 l.602 "não implica cascata"; impacto é de CHM/CCM — l.503/606; CHM-001 l.672-676); consumo de evento = [INFERÊNCIA]/[DECISÃO NECESSÁRIA] (SPEC-005 não define "Evidence Invalidated"). (8) Schema: `record_kind`, `relevance`, `target_relation_id`, identidade para nós não-canônicos, `collision_record` como registro. (9) "conhecimento permanente/temporário" tratado/diferido (SPEC-018/K-001 [DECISÃO NECESSÁRIA]). (10) CONFIRMA/REFUTA restritas a `evidence` (INV-06; CONSTITUTION l.191). (11) Bitemporal: consulta valid-time + transaction-time (as-of-registro). (12) Citação RMR-001 → l.128/l.192. (13-18) correções menores (checks §11 autocontido; T negativo de CKG-005 + ADV de CKG-003; falso-DENY em EC-CKG-005; P13 em vez de RULE-010; SPEC-019/ontologia [INFERÊNCIA]; `ontological_status` RULE-ONT). Contagem: 13 BASpecs; 6 EC; 13 EARS; **14 cenários** (T01..T14); **16 adversariais** (ADV-CKG-01..16); 2 invariantes locais (INV-CKG-01/02). |
 | 1.1 | 2026-10-12 | **Rodada 2 (achados do gate, do Revisor e verificados no repositório).** (A) STRUCT-10: removida toda forma `fechad*/resolvid*/homologad*` colada a ID de decisão aberta. (B1) §7-bis Bloco C ampliado a todas as N8–N17. (B2) SRC-FORGET-01 declarada sem sustentar alegação carregada sozinha. (B3) EC-CKG-002 registra tentativas de DELETE bloqueadas. (B4) falha de auth da SPEC-004 ⇒ não-autorizado (fail-closed). (C1) escrita permanente elevada a **E3** (atomic-spec §10.2); "piso E2" eliminado. (C2/C9) **duas fontes de entrada** reconciliadas sob uma trilha de governança única; preservação de REFUTED/SUPERSEDED/ARCHIVED declarada; selo de publicação = dependência de SPEC-007 [DECISÃO NECESSÁRIA]. (C3) Cognitive Trace Reconstruction = obrigação **completa** (independe de H-001); T10 ampliado a 3 saltos. (C4) tipo de relação **DERIVA_DE** (aresta de Lineage) acrescentado, separado de `provenance_ref`. (C5) matriz de integridade tipo×origem/destino×direcionalidade/simetria + "família estrutural" + teste de violação. (C6) invalidação/supersessão como **novos registros**; estado = projeção derivada (espelha SPEC-004 INV-CBP-01). (C7) schema com `version`/`supersedes`/selo/escritor/colisão; REJECTED/CANDIDATE_WRITE = estados transitórios (não persistidos). (C8) BL-029 corrigido para **`Em espera`**. (C13) critérios de SUPERSEDED×INVALIDATED_IN_TIME×ARCHIVED, correção/reativação, rebaixamento, autoridade de arquivamento. (C14) `recorded_at` acrescentado à relação (bitemporal real). (C17) RULE-CAU-02 (regime) e RULE-CAU-03 (marcador pós-hoc) incorporadas; atribuição pós-hoc corrigida; gate causal só verifica presença. (C18) node_type **observation** (INV-06). (C21) emissão de evento pelo KG **removida** (só consome); emissão = [DECISÃO NECESSÁRIA] dependente da SPEC-005. (C22) governança/versionamento da ontologia definida (spec-time SPEC-019; runtime K-001 [DECISÃO NECESSÁRIA]). Extra: `gate_record` reatribuído à SPEC-004 (não CEM-001). Cobertura: 13 BASpecs; 6 EC; 13 EARS; 13 cenários (T01..T13); **15 adversariais** (ADV-CKG-01..15). |
 
 ---
@@ -75,8 +76,10 @@ INHERITS (herdado — a spec NÃO redefine; referência por ID + VERSÃO baselin
     partir das relações de Lineage; permitir navegação completa da cadeia cognitiva. Também: l.494 ("Knowledge
     Graph | Todos os estados — preservação permanente"); l.562-565 (Cognitive Trace Reconstruction = capacidade
     do KG); l.699 (KG = mecanismo oficial de Cognitive Trace Reconstruction do ecossistema). O KG CUMPRE essas
-    responsabilidades integralmente; NÃO redefine o CEM (CC-02/INV-10). Proveniência: `lineage_ref` é do CEM-001
-    (Cap.5 Lineage); `gate_record`/`gate_id`/identidade autenticada são da SPEC-004 v1.2 (NÃO do CEM-001)
+    responsabilidades integralmente; NÃO redefine o CEM (CC-02/INV-10). Proveniência: o campo LOCAL
+    `provenance_ref.lineage` [PROPOSTA] REFERENCIA o campo `Lineage` do CEM-001 (Cap.5; l.351/539-554) e/ou
+    `derived_from[]` da SPEC-004 — NÃO existe campo `lineage_ref` no CEM-001 (nome local desta Spec);
+    `gate_record`/identidade autenticada são da SPEC-004 v1.2 (NÃO do CEM-001)
   - canon/CHM-001 (BASELINE) — máquina de estados da hipótese (EMERGENT→CANDIDATE→ACTIVE→DOMINANT→SUPERSEDED→
     REFUTED→ARCHIVED) e versionamento append-only; o KG ARMAZENA/relaciona hipóteses como nós por referência,
     preservando TODOS os seus estados (inclusive REFUTED/SUPERSEDED/ARCHIVED — CEM-001 l.494); NÃO cria nem
@@ -126,7 +129,7 @@ ADDED (delta local — o que esta spec acrescenta; NÃO coberto pelos canônicos
     HIERARQUIA_DE, ESTATISTICA_DE
   - TEMPORALIDADE BITEMPORAL das relações: `valid_from`/`valid_to` (tempo de validade) + `recorded_at` (tempo de
     registro) — invalidação/mudança por NOVO registro, nunca mutação (espelha SPEC-004 INV-CBP-01)
-  - PROVENIÊNCIA obrigatória por entidade/relação (`lineage_ref` CEM-001; `gate_record` SPEC-004); rejeita sem proveniência
+  - PROVENIÊNCIA obrigatória por entidade/relação (`provenance_ref.lineage` [PROPOSTA] → `Lineage` CEM-001 / `derived_from[]` SPEC-004; `gate_record` SPEC-004); rejeita sem proveniência
   - IMUTABILIDADE / append-only permanente: estado = PROJEÇÃO DERIVADA; "esquecimento" = arquivamento versionado, NUNCA deleção (INV-07)
   - CONFIANÇA de relação — escala PRÓPRIA, ≠ Convicção (INV-04); nunca retroalimenta o Conviction Vector
   - Relações de SIMILARIDADE/CAUSALIDADE com juízo + gate de saída (mecanismo+regime+pós-hoc — RULE-CAU-01/02/03)
@@ -163,7 +166,7 @@ REMOVED (só com governança — nunca implícito):
 | Append-only REAL (supersessão = projeção derivada; registro nunca mutado) | **SIM** — SPEC-004 v1.2 (INV-CBP-01; plan l.230-234/l.371) | **HERDADA a mecânica** e aplicada ao KG permanente (CKG-004/006/012) |
 | Memória de TRABALHO / objetos ACTIVE | **SIM** — SPEC-004 v1.2 | **FRONTEIRA** — não reabrir (CC-02/INV-09) |
 | Notificação/transporte de mudança | **SIM** — SPEC-005 v1.0 | **FRONTEIRA** — o KG CONSOME eventos; emissão pelo KG = [DECISÃO NECESSÁRIA] |
-| Proveniência (`lineage_ref` CEM; `gate_record` SPEC-004) | **SIM** — CEM-001 Cap.5; SPEC-004 v1.2 | **REFERÊNCIA obrigatória** (CKG-005); não redefine |
+| Proveniência (`provenance_ref.lineage` → `Lineage` CEM; `gate_record`/`derived_from[]` SPEC-004) | **SIM** — CEM-001 Cap.5 (campo `Lineage`); SPEC-004 v1.2 | **REFERÊNCIA obrigatória** (CKG-005); campo local [PROPOSTA], não redefine |
 | **Ontologia (tipos/relações permitidas) + matriz de integridade** | **NÃO** | **LACUNA CENTRAL — ADDED** (CKG-001) |
 | **Catálogo de entidades e relações tipadas (+ DERIVA_DE, observation)** | **NÃO** | **LACUNA CENTRAL — ADDED** (CKG-002/003) |
 | **Temporalidade bitemporal das relações** | **Parcial** (CHM/CEM têm estados; não validade de relação) | **LACUNA — ADDED** (CKG-004) |
@@ -214,7 +217,7 @@ A SPEC-006 especifica **como o SOT preserva, relaciona e consulta o conhecimento
 **contrato cognitivo da memória semântica permanente**: ontologia enxuta (tipos + matriz de integridade), catálogo de
 entidades (nós, incl. `observation` — INV-06) e relações tipadas (incl. `DERIVA_DE` de Lineage, `SIMILAR_A` simétrica,
 `CAUSA` sob RULE-CAU-01/02/03), temporalidade **bitemporal** (`valid_from`/`valid_to`/`recorded_at`), proveniência
-obrigatória (`lineage_ref` CEM-001; `gate_record` SPEC-004), imutabilidade append-only (estado = projeção derivada;
+obrigatória (`provenance_ref.lineage` [PROPOSTA] → `Lineage` CEM-001 / `derived_from[]` SPEC-004; `gate_record` SPEC-004), imutabilidade append-only (estado = projeção derivada;
 "esquecimento" = arquivamento versionado — INV-07), confiança de relação (escala própria, ≠ Convicção — INV-04),
 governança de escrita (E3; quem escreve; identidade autenticada), fronteira de entrada (objetos canônicos via ciclo de
 vida + conhecimento formado via selo SPEC-007 [DECISÃO NECESSÁRIA]), consulta cognitiva e **Cognitive Trace
@@ -249,7 +252,7 @@ atomic-spec v1.5, INV-*, ENF-* são FATO NORMATIVO. Fontes externas (research.md
 | S2 | **Entidades (nós) por referência aos canônicos:** hypothesis (CHM-001), evidence (CEM-001), **observation** (Skill — INV-06), conviction (CCM-001), narrative, mission, learning, asset, timeframe, regime, structure, calibration_metric (CEE-001 l.111) | CEM-001; CHM-001; CCM-001; CEE-001 l.111; INV-06 |
 | S3 | **Relações tipadas:** CONFIRMA/REFUTA/DEPENDE_DE/HERDA/PERTENCE_A/INVALIDA/ORIGINA/**DERIVA_DE**/SIMILAR_A/CAUSA/HIERARQUIA_DE/ESTATISTICA_DE | ROADMAP §6; research.md §4; CEM-001 Cap.5 (Lineage→DERIVA_DE) |
 | S4 | **Temporalidade bitemporal das relações:** `valid_from`/`valid_to` (validade) + `recorded_at` (registro); invalidar por novo registro ≠ deletar | research.md §3.1; INV-07; SPEC-004 INV-CBP-01 |
-| S5 | **Proveniência obrigatória** (`lineage_ref` CEM-001; `gate_record` SPEC-004); rejeita escrita sem proveniência | CEM-001 Cap.5; SPEC-004 v1.2; research.md §3.2 |
+| S5 | **Proveniência obrigatória** (campo local `provenance_ref.lineage` [PROPOSTA] → `Lineage` CEM-001 / `derived_from[]` SPEC-004; `gate_record` SPEC-004); rejeita escrita sem proveniência | CEM-001 Cap.5 (campo `Lineage`); SPEC-004 v1.2; research.md §3.2 |
 | S6 | **Imutabilidade / append-only permanente:** estado = projeção derivada; "esquecimento" = arquivamento versionado | INV-07; RULE-BB-004; SPEC-004 INV-CBP-01; research.md §3.6 |
 | S7 | **Confiança de relação** — escala própria, ≠ Convicção; nunca retroalimenta o Conviction Vector | INV-04; research.md §4 |
 | S8 | **Relações de similaridade/causalidade** com juízo + gate de saída (mecanismo+regime+pós-hoc — RULE-CAU-01/02/03) | RULE-CAU-01/02/03; research.md §8 |
@@ -309,7 +312,9 @@ RULE-CKG-004: A mudança de validade de uma relação NÃO MUTA o registro exist
               [Fonte: research.md §3.1; INV-07; SPEC-004 INV-CBP-01; CEM-001 l.602]  [PROPOSTA]
 
 RULE-CKG-005: Nenhuma entidade/relação pode existir sem PROVENIÊNCIA — quem/quando/por quê/de onde — por REFERÊNCIA a
-              `lineage_ref` (CEM-001 Cap.5) e `gate_record`/identidade autenticada (SPEC-004 v1.2; NÃO do CEM-001).
+              o campo local `provenance_ref.lineage` [PROPOSTA] (REFERENCIA `Lineage` do CEM-001 Cap.5 e/ou
+              `derived_from[]` da SPEC-004 — não há campo `lineage_ref` no CEM-001) e `gate_record`/identidade
+              autenticada (SPEC-004 v1.2; NÃO do CEM-001).
               Escrita sem proveniência é REJEITADA (fail-closed). Referencia os contratos canônicos; NÃO os redefine (CC-02).
               [Fonte: CEM-001 Cap.5; SPEC-004 v1.2 (gate_record); research.md §3.2]  [PROPOSTA]
 
