@@ -382,11 +382,13 @@ RULE-CKG-012: O estado de um nó/relação (ACTIVE_KNOWLEDGE / SUPERSEDED / INVA
               `valid_from`), nunca mutação/reuso do registro antigo. Nenhuma transição remove registro (INV-07).
               [Fonte: CHM-001; INV-07; SPEC-004 INV-CBP-01; research.md §3.6]  [PROPOSTA]
 
-RULE-CKG-013: Quando duas relações entre os mesmos nós se contradizem (ex.: CONFIRMA × REFUTA vigentes), o KG DETECTA e
-              REGISTRA a colisão (um `collision_record` referenciando ambas; ambas preservadas, versionadas, com
-              proveniência e validade), NUNCA sobrescreve/apaga uma em silêncio. A RESOLUÇÃO (qual prevalece) é de
-              SPEC-007/SPEC-018 ou governança — o KG preserva a contradição auditável, não a decide.
-              [Fonte: INV-07; research.md §8; fronteira SPEC-007/SPEC-018]  [PROPOSTA]
+RULE-CKG-013: Colisão ocorre sse duas relações (i) formam um PAR CONTRADITÓRIO da tabela §D2.2, (ii) têm o MESMO escopo
+              (mesmos `from_node` e `to_node`) e (iii) suas janelas de validade se SOBREPÕEM. Nesse caso o KG DETECTA e
+              REGISTRA a colisão (um `collision_record` referenciando ambas; ambas preservadas, versionadas, com proveniência
+              e validade), NUNCA sobrescreve/apaga uma em silêncio. Fora dessas condições NÃO há colisão (ex.: origens
+              distintas; validades disjuntas — ADV-18). A RESOLUÇÃO (qual prevalece) é de SPEC-007/SPEC-018 ou governança —
+              o KG só detecta e registra; não decide.
+              [Fonte: INV-07; §D2.2; research.md §8; fronteira SPEC-007/SPEC-018]  [PROPOSTA]
 ```
 
 ### D2.1 — Matriz de integridade da ontologia (RULE-CKG-001) [PROPOSTA]
@@ -431,6 +433,24 @@ RULE-CKG-013: Quando duas relações entre os mesmos nós se contradizem (ex.: C
 > algum ancestral não estiver referenciado/presente (CKG-003/011); o grafo de `DERIVA_DE` é ACÍCLICO; a Cognitive Trace
 > Reconstruction ignora o filtro de validade temporal (um ancestral invalidado no tempo permanece na linhagem — CEM-001
 > l.602 "invalidação não implica remoção"). Garante a COMPLETUDE exigida por CEM-001 l.612-614, independente de H-001. [PROPOSTA]
+
+### D2.2 — Tabela de contradição e escopo de colisão (RULE-CKG-013) [PROPOSTA]
+
+> **Colisão** = duas relações formam um PAR CONTRADITÓRIO E têm o **MESMO escopo** E suas **janelas de validade se
+> sobrepõem**. Fora disso NÃO há colisão (evita falso-positivo — ADV-18).
+
+**Escopo (todas as condições):** (1) mesmos `from_node` e `to_node` (mesma direção); (2) ambas vigentes com **sobreposição
+temporal** (interseção de `[valid_from, valid_to)` não vazia); (3) o par de `relation_type` consta da tabela abaixo.
+
+| Tipo A | Tipo B (contradiz A) | Simétrico? | Observação |
+|---|---|---|---|
+| CONFIRMA | REFUTA | **sim** (A↔B) | mesma hipótese-alvo afirmada e negada ao mesmo tempo |
+| INVALIDA | (a relação-alvo `target_relation_id` que ela invalida, se essa continua vigente) | não | INVALIDA vigente sobre relação que segue ACTIVE_KNOWLEDGE |
+
+> Pares NÃO listados **não** são contradição estrutural (ex.: DEPENDE_DE × SIMILAR_A, HERDA × PERTENCE_A). **Casos que NÃO
+> colidem:** (a) `from_node` diferentes (A1 CONFIRMA B, A2 REFUTA B — origens distintas); (b) janelas de validade disjuntas
+> (uma já invalidada no tempo antes da outra valer). A **resolução** de uma colisão registrada é de SPEC-007/SPEC-018 ou
+> governança — o KG só detecta e registra (CKG-013). A tabela é ENXUTA e extensível por governança (RULE-ONT-02).
 
 ---
 
@@ -950,7 +970,7 @@ VERIFICAÇÃO written == false; rejected_reason == "PROVENANCE_MISSING"
 
 ## D8 — Rigor adversarial focado (casos de negação nos pontos de risco)
 
-> Alvo **D0–D7 + D8 adversarial focado** (CRITICAL, pin D0–D7). **16 casos** cobrindo **todas as 13 BASpecs** e as
+> Alvo **D0–D7 + D8 adversarial focado** (CRITICAL, pin D0–D7). **18 casos** cobrindo **todas as 13 BASpecs** e as
 > fronteiras/decisões abertas. Princípio transversal: **fail-closed**, **nunca deletar/mutar**, **mecanismo físico INDETERMINADO (H-001)**.
 
 ### ADV-CKG-01 — Deleção disfarçada de "esquecimento" (CKG-006/INV-07)
