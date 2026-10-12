@@ -333,7 +333,7 @@ RULE-CKG-005: Nenhuma entidade/relação existe sem PROVENIÊNCIA, espelhando a 
               EXIGÍVEL é REJEITADA (`PROVENANCE_MISSING`; subcódigo `COMPUTED_BY_MISSING`). `provenance_ref.lineage`
               [PROPOSTA] referencia `Lineage` (CEM-001 Cap.5)/`derived_from[]` (SPEC-004) — não há `lineage_ref` no CEM-001.
               **Identidade [M-05]:** `computed_by` (produtor autenticado) é DISTINTO de `writer_id` (identidade autenticada
-              do COMMITTER — runtime ou serviço do KG); ambos autenticados, não oriundos do payload (ver D6/contrato).
+              do COMMITTER — runtime ou serviço do KG); ambos autenticados, não oriundos do payload (ver D6/contrato). A distinção vale para nós/relações propostos por produtor; em registros gerados pelo serviço do KG (collision, transição, arquivamento) `computed_by = writer_id = serviço` por desenho.
               [Fonte: CEM-001 Cap.5; SPEC-004 RULE-CBP-007 l.543-558/CBP-014 l.311-319; research.md §3.2]  [PROPOSTA]
 
 RULE-CKG-006: O KG é APPEND-ONLY PERMANENTE (INV-07; reforça RULE-BB-004; espelha SPEC-004 INV-CBP-01): nenhum registro é
@@ -616,9 +616,9 @@ BASpec-CKG-003:
     GATE DE SAÍDA: verificação (tipo ∧ direção ∧ proveniência ∧ ¬cria_ciclo ∧ ¬self-loop)
     CRITÉRIO 4Es: Eficácia — relações auditáveis e navegáveis; linhagem acíclica (trace termina)
   VERIFICADO POR:
-    DADO        (a) relação sem tipo do catálogo; (b) aresta DERIVA_DE cuja origem já é alcançável a partir do destino (fecharia ciclo)
+    DADO        (a) relação sem tipo do catálogo; (b) aresta DERIVA_DE cuja origem já é alcançável a partir do destino (fecharia ciclo); (c) aresta DERIVA_DE com origem == destino (self-loop)
     QUANDO      a validação roda
-    ENTÃO       (a) rejeitada `RELATION_TYPE_INVALID`; (b) rejeitada `LINEAGE_CYCLE`
+    ENTÃO       (a) rejeitada `RELATION_TYPE_INVALID`; (b) rejeitada `LINEAGE_CYCLE`; (c) rejeitada `LINEAGE_CYCLE`
     VERIFICAÇÃO relation_written == false; lineage_acyclic == true
 ```
 
@@ -882,7 +882,8 @@ Nenhuma fórmula computa convicção; nenhum limiar de convicção nem escala nu
 > **Capacidade × papel [PROPOSTA], moldada na SPEC-004 l.329-348.** **QUEM pode o quê** proposto aqui; a **allowlist
 > concreta** de escritores = **[DECISÃO NECESSÁRIA]** (runtime; K-001/SPEC-018). **Identidade [M-05]:** `computed_by` = o
 > PRODUTOR autenticado (quem propõe); `writer_id` = o COMMITTER autenticado (runtime; ou serviço do KG p/
-> collision/transição) — valores DISTINTOS; nenhum depende do payload (CBP-014).
+> collision/transição) — valores DISTINTOS para nós/relações PROPOSTOS por produtor; em registros GERADOS pelo serviço do KG
+> (collision, transição, arquivamento) `computed_by = writer_id = serviço` por desenho; nenhum depende do payload (CBP-014).
 >
 > | Capacidade | Agente (produtor) | Runtime | Serviço do KG | Governança (Andraus) |
 > |---|---|---|---|---|
@@ -1115,7 +1116,7 @@ VERIFICAÇÃO write_allowed == false; producer_as_committer_denied == true; comp
 **DADO:** duas sucessoras apontando `supersedes` para a MESMA versão (fork), ou `expected_version` ausente, ou `expected_version` ≠ corrente, ou `version` ≠ anterior+1. **QUANDO:** o gate roda. **ENTÃO:** negar — fork ⇒ `VERSION_FORK_FORBIDDEN`; ausência ⇒ `EXPECTED_VERSION_REQUIRED`; divergência ⇒ `VERSION_CONFLICT` (compare-and-commit, CBP-004 l.239-246/l.243-244 — N-04). **PORQUE:** sem ordem total não há estado inequívoco (INV-07). **VERIFICAÇÃO:** second_successor_written == false; version_fork == false.
 
 ### ADV-CKG-20 — ciclo na linhagem DERIVA_DE (CKG-003/INV-CKG-02; M-02)
-**DADO:** arestas A DERIVA_DE B e B DERIVA_DE C já gravadas (C ancestral de B ancestral de A); tentativa C DERIVA_DE A — a origem C já é alcançável a partir do destino A (A→B→C), fecharia ciclo. **QUANDO:** o gate de relação roda. **ENTÃO:** rejeitar `LINEAGE_CYCLE`; o grafo permanece ACÍCLICO (o trace sempre termina). **PORQUE:** linhagem cíclica quebra a Trace Reconstruction (INV-CKG-02). **VERIFICAÇÃO:** lineage_cycle_written == false; lineage_acyclic == true.
+**DADO:** arestas A DERIVA_DE B e B DERIVA_DE C já gravadas (C ancestral de B ancestral de A); tentativa C DERIVA_DE A — a origem C já é alcançável a partir do destino A (A→B→C), fecharia ciclo. **QUANDO:** o gate de relação roda. **ENTÃO:** rejeitar `LINEAGE_CYCLE`; o grafo permanece ACÍCLICO (o trace sempre termina). **PORQUE:** linhagem cíclica quebra a Trace Reconstruction (INV-CKG-02). **Caso (c) — self-loop:** DERIVA_DE com origem == destino ⇒ rejeitar `LINEAGE_CYCLE`. **VERIFICAÇÃO:** lineage_cycle_written == false; lineage_acyclic == true.
 
 ### ADV-CKG-21 — admissão de canônico em estado NÃO-admissível / sem selo (CKG-010)
 **DADO:** o gate de admissão POR TIPO (não só hypothesis): (a) `hypothesis` com `canonical_status=EMERGENT`; (b) formado SEM selo SPEC-007; (c) `evidence` com `canonical_status` FORA do seu conjunto {ACTIVE,SUPERSEDED,INVALIDATED,ARCHIVED} — ex.: `DOMINANT` (estado só de hipótese, CEM-001 l.258-262 não tem REFUTED/DOMINANT); (d) `conviction` com `canonical_status` FORA de {COMPUTED,GATED_PASS,GATED_BLOCK,SUPERSEDED} — ex.: `EMERGENT`. **QUANDO:** o gate de fronteira roda. **ENTÃO:** (a)/(c)/(d) rejeitar `CANONICAL_STATUS_NOT_ADMISSIBLE`; (b) `FORMED_WITHOUT_SEAL`; o conjunto admissível é POR TIPO (não só hypothesis). **PORQUE:** não contaminar memória permanente com trabalho/estado fora da máquina canônica do tipo (CEM-001 l.258-262/l.494; CCM-001 l.58/78; SPEC-004). **VERIFICAÇÃO:** emergent_hypothesis_admitted == false; formed_without_seal_accepted == false; evidence_nonadmissible_status_admitted == false; conviction_nonadmissible_status_admitted == false.

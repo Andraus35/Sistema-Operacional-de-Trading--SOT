@@ -169,7 +169,7 @@ Conferidos por grep cruzado (plan.md v1.6 **e** este checks.md; resíduo contrad
 | m-09 INVALIDA→relação / valid_to nulo | **Corrigido** (reforçado N-08: cond.(v); N-04: `collision` fora do record_kind de relação) | schema; §D2.2; D4 |
 | m-10 record_kind / versão | **Corrigido** (N-04: `collision` removido de `relation_record.record_kind`) | schema |
 | m-11 histórico fora de ordem | **Corrigido** — changelog 1.0→1.6 | Histórico de versões |
-| m-12 novas regras sem EARS/T/ADV | **Corrigido** — Rodada 7: N-02 (EARS-8/T16/ADV-04), N-03 (EARS-9/T17/ADV-22/ADV-21), N-04 (ADV-19/ADV-11), N-07 (BASpec-003/INV-CKG-02), N-08 (ADV-18) | EARS; D7; D8 |
+| m-12 novas regras sem EARS/T/ADV | **Corrigido** — Rodada 7: N-02 (EARS-8/T16/ADV-04), N-03 (EARS-9/T17/ADV-22/ADV-21), N-04 (ADV-19/ADV-11), N-07 (BASpec-003/INV-CKG-02; self-loop = ADV-20 caso (c); o timeout da espera é [DECISÃO NECESSÁRIA], não testável), N-08 (ADV-18) | EARS; D7; D8 |
 
 ---
 
