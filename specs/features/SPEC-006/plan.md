@@ -93,10 +93,11 @@ INHERITS (herdado — a spec NÃO redefine; referência por ID + VERSÃO baselin
     mecânica append-only-por-novos-registros e a identidade autenticada por referência; NÃO redefine o contrato (CC-02/INV-09)
   - specs/features/SPEC-005 v1.0 (BASELINE — DHR-SPEC005-002) — notificação de mudança (Event Bus); **[INFERÊNCIA]** o KG
     pode CONSUMIR eventos de ciclo de vida apenas como GATILHO de avaliação autorizada (CKG-009), nunca como invalidação
-    automática (CEM-001 l.602) — mas a SPEC-005 **NÃO define** o tipo "Evidence Invalidated" (SPEC-005 plan l.115/242), logo
-    esse consumo é **[DECISÃO NECESSÁRIA]**; a SPEC-005 fonta eventos do LOG do Blackboard (source_ref = object_id@version+seq+workspace)
+    automática (CEM-001 l.602). O tipo `Evidence.Invalidated` É canônico (CEM-001 l.600/l.722) e a SPEC-005 o **TRANSPORTA**
+    (SPEC-005 plan l.88 e l.859 `event_type`); o que a SPEC-005 **NÃO define** é o **consumidor** nem o **contrato de consumo
+    pelo KG** — isso é **[DECISÃO NECESSÁRIA]**; a SPEC-005 fonta eventos do LOG do Blackboard (source_ref = object_id@version+seq+workspace)
     e NÃO escreve no KG (SPEC-005 plan l.242/l.971). A EMISSÃO de eventos "conhecimento mudou" ORIGINADOS no KG NÃO é
-    afirmada aqui (a SPEC-005 não define fonte de evento fora do log do Blackboard) — [DECISÃO NECESSÁRIA] (erratum
+    afirmada aqui (a SPEC-005 fonta do log do Blackboard) — [DECISÃO NECESSÁRIA] (erratum
     aditivo futuro à SPEC-005, se desejado; não proposto nesta Spec)
   - canon/CEE-001 (BASELINE) l.111 — a métrica de calibração do roteamento de modelo "entra no Knowledge Graph";
     o KG ARMAZENA essa métrica como nó (por referência), ISOLADA do Conviction Vector (INV-04); não a computa
@@ -834,7 +835,7 @@ Nenhuma fórmula computa convicção. Nenhum limiar de convicção nem escala nu
 ### Produtores, consumidores e fronteira [FONTE: SAS-001 §6.12; CEM-001 l.608-615; SPEC-004/005; ROADMAP §6/§7]
 - O conhecimento entra por **duas fontes sob a mesma governança (CKG-009)**: (a) objetos canônicos e transições via seu **ciclo de vida** (preservando todos os estados); (b) conhecimento **formado** com **selo de publicação da SPEC-007** (contrato do selo = [DECISÃO NECESSÁRIA], dependência da SPEC-007).
 - O **produtor** (agente, SAS-001 §6.12) registra relações mas **não redefine** ontologia/taxonomia; a escrita é E3 sob identidade autenticada (SPEC-004); falha de auth ⇒ não-autorizado.
-- **[INFERÊNCIA]/[DECISÃO NECESSÁRIA]** — eventual **consumo** de eventos de ciclo de vida pelo KG serve só de **gatilho** para uma avaliação AUTORIZADA (CKG-009), **nunca** invalidação automática/cascata (CEM-001 l.602); a **SPEC-005 NÃO define** o tipo "Evidence Invalidated" (SPEC-005 plan l.115/242), então esse contrato de consumo é **[DECISÃO NECESSÁRIA]**. **Emissão de eventos pelo KG NÃO é afirmada** (SPEC-005 fonta do log do Blackboard; emissão originada no KG = [DECISÃO NECESSÁRIA]).
+- **[INFERÊNCIA]/[DECISÃO NECESSÁRIA]** — eventual **consumo** de eventos de ciclo de vida pelo KG serve só de **gatilho** para uma avaliação AUTORIZADA (CKG-009), **nunca** invalidação automática/cascata (CEM-001 l.602). O tipo `Evidence.Invalidated` é canônico (CEM-001 l.600/l.722) e a SPEC-005 o **transporta** (SPEC-005 plan l.88/l.859); o que falta é o **consumidor/contrato de consumo pelo KG** = **[DECISÃO NECESSÁRIA]**. **Emissão de eventos pelo KG NÃO é afirmada** (SPEC-005 fonta do log do Blackboard; emissão originada no KG = [DECISÃO NECESSÁRIA]).
 - A **consulta** é read-only e **opcional/não-bloqueante** (SAS-001 §6.12/EC-COG-003).
 
 ### Sequência de escrita (um nó/relação)
@@ -847,7 +848,7 @@ Nenhuma fórmula computa convicção. Nenhum limiar de convicção nem escala nu
 7. **Colisão (CKG-013):** se contradiz relação vigente, grava `collision_record` (ambas preservadas), não sobrescreve.
 8. **Escrita append-only (CKG-006):** novo registro `ACTIVE_KNOWLEDGE`; substituição ⇒ sucessora com `supersedes`; DELETE/UPDATE de registro proibido.
 9. **Temporalidade (CKG-004):** relações carregam `valid_from`/`valid_to`/`recorded_at`; a invalidação de uma relação é **ato AUTORIZADO** (novo registro sob CKG-009), **NÃO automática/em cascata** (CEM-001 l.602 "invalidação não implica cascata"; impacto é de CHM/CCM/CDM — CEM-001 l.503/606; CHM-001 l.672-676).
-10. **Consumo de evento (SPEC-005) — [INFERÊNCIA]/[DECISÃO NECESSÁRIA]:** se o KG consome eventos de ciclo de vida (ex.: um "Evidence Invalidated"), isso **não** dispara invalidação automática de relações — serve só de GATILHO para uma avaliação autorizada. **A SPEC-005 não define o tipo de evento "Evidence Invalidated"** (SPEC-005 plan l.115/242); o contrato desse consumo fica **[DECISÃO NECESSÁRIA]**. Emissão de evento PELO KG = [DECISÃO NECESSÁRIA] (SPEC-005 fonta do log do Blackboard).
+10. **Consumo de evento (SPEC-005) — [INFERÊNCIA]/[DECISÃO NECESSÁRIA]:** o tipo `Evidence.Invalidated` é canônico (CEM-001 l.600/l.722) e a SPEC-005 o **transporta** (plan l.88/l.859); se o KG o consome, isso **não** dispara invalidação automática de relações — serve só de GATILHO para avaliação autorizada (CKG-009). O que a SPEC-005 **não define** é o **consumidor/contrato de consumo pelo KG** = **[DECISÃO NECESSÁRIA]**. Emissão de evento PELO KG = [DECISÃO NECESSÁRIA] (SPEC-005 fonta do log do Blackboard).
 
 > **Nota de fronteira:** memória de **trabalho** e sua ordem/versão = **SPEC-004**; **notificação** = **SPEC-005**;
 > **formação** = **SPEC-007**. A SPEC-006 só **preserva, relaciona e consulta** o conhecimento permanente. [FONTE: ROADMAP §5/§6/§7]
