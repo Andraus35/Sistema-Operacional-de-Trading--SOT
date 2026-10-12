@@ -317,11 +317,15 @@ RULE-CKG-004: A mudança de validade de uma relação é ATO AUTORIZADO (CKG-009
               pode marcar `valid_to` em valid-time (inclusive retroativo). Invalidar ≠ deletar (INV-07; espelha SPEC-004 INV-CBP-01).
               [Fonte: research.md §3.1; INV-07; SPEC-004 INV-CBP-01; CEM-001 l.602/l.503; CHM-001 l.672-676]  [PROPOSTA]
 
-RULE-CKG-005: Nenhuma entidade/relação pode existir sem PROVENIÊNCIA — quem/quando/por quê/de onde — por REFERÊNCIA a
-              o campo local `provenance_ref.lineage` [PROPOSTA] (REFERENCIA `Lineage` do CEM-001 Cap.5 e/ou
-              `derived_from[]` da SPEC-004 — não há campo `lineage_ref` no CEM-001) e `gate_record`/identidade
-              autenticada (SPEC-004 v1.2; NÃO do CEM-001).
-              Escrita sem proveniência é REJEITADA (fail-closed). Referencia os contratos canônicos; NÃO os redefine (CC-02).
+RULE-CKG-005: Nenhuma entidade/relação pode existir sem PROVENIÊNCIA, **espelhando a condicionalidade de SPEC-004
+              RULE-CBP-007** (não criando regra mais forte): (a) **`computed_by`/`writer_id` da identidade AUTENTICADA pelo
+              runtime é SEMPRE obrigatório** (RULE-CBP-014); (b) **`gate_record` SÓ quando o objeto resulta de um gate**
+              (contém gate_id/version/resultado/entrada/avaliador); (c) **`provenance_ref.lineage`/`derived_from` SÓ quando
+              DERIVADO** (`Lineage`/`derived_from[]` não-vazio). Para nós `asset`/`timeframe`/`regime`/`observation` e
+              hipóteses PRIMARY (Lineage vazio, sem gate) a proveniência "presente" = `computed_by` presente + `lineage=[]`
+              legítimo (lista vazia é válida, NÃO force gate_record fabricado — RULE-MET-01). Escrita sem a proveniência
+              EXIGÍVEL é REJEITADA (fail-closed). Referencia os contratos canônicos; NÃO os redefine (CC-02). `provenance_ref.lineage`
+              [PROPOSTA] referencia `Lineage` (CEM-001 Cap.5)/`derived_from[]` (SPEC-004) — não há `lineage_ref` no CEM-001.
               [Fonte: CEM-001 Cap.5; SPEC-004 v1.2 (gate_record); research.md §3.2]  [PROPOSTA]
 
 RULE-CKG-006: O KG é APPEND-ONLY PERMANENTE (INV-07; reforça RULE-BB-004; espelha SPEC-004 INV-CBP-01): nenhum registro
@@ -573,21 +577,24 @@ BASpec-CKG-004:
 ```
 BASpec-CKG-005:
   QUANDO:       Qualquer nó/relação é escrito no KG
-  ENTÃO:        O KG exige proveniência — `provenance_ref.lineage` (campo local [PROPOSTA] que referencia o campo
-                `Lineage` do CEM-001 Cap.5 / `derived_from[]` da SPEC-004) e `gate_record`/identidade (SPEC-004 v1.2);
-                escrita sem proveniência é rejeitada (fail-closed)
-  PORQUE:       Conhecimento sem origem não é reconstruível (CEM-001 Cap.5; P13)
-  REFERÊNCIA:   RULE-CKG-005; CEM-001 Cap.5 (campo `Lineage`); SPEC-004 v1.2 (gate_record/derived_from)
+  ENTÃO:        O KG exige proveniência CONDICIONAL (espelha SPEC-004 RULE-CBP-007): `computed_by`/`writer_id` (identidade
+                AUTENTICADA) SEMPRE; `gate_record` SÓ quando resulta de gate; `provenance_ref.lineage`/`derived_from` SÓ
+                quando DERIVADO (lista vazia é legítima para PRIMARY/asset/timeframe/regime/observation — não force
+                gate_record fabricado); escrita SEM `computed_by` (ou sem gate_record quando HÁ gate, ou sem lineage quando
+                DERIVADO) é rejeitada (fail-closed)
+  PORQUE:       Conhecimento sem ORIGEM AUTENTICADA não é reconstruível (CEM-001 Cap.5; P13); mas exigir gate_record/lineage
+                de quem não tem gate/ancestral fabricaria dado (RULE-MET-01) e contrariaria a condicionalidade da CBP-007
+  REFERÊNCIA:   RULE-CKG-005; SPEC-004 RULE-CBP-007/014; CEM-001 Cap.5 (campo `Lineage`)
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
-    MECANISMO   : gate determinístico que verifica provenance_ref (lineage + gate_record) antes de persistir
-    GATE DE SAÍDA: verificação (provenance_ref presente ∧ aponta a CEM-001/SPEC-004)
-    CRITÉRIO 4Es: Conformidade > Eficácia — proveniência é inviolável
+    MECANISMO   : gate determinístico — computed_by presente; gate_record sse resulta de gate; lineage sse derivado
+    GATE DE SAÍDA: verificação (computed_by presente ∧ [gate ⇒ gate_record] ∧ [derivado ⇒ lineage não-vazio])
+    CRITÉRIO 4Es: Conformidade > Eficácia — identidade autenticada é inviolável; sem fabricar proveniência (RULE-MET-01)
   VERIFICADO POR:
-    DADO        um nó submetido sem provenance_ref
+    DADO        (a) um nó PRIMARY sem gate e sem ancestral, com computed_by presente; (b) um nó sem computed_by
     QUANDO      o gate de escrita roda
-    ENTÃO       escrita rejeitada; nada persistido
-    VERIFICAÇÃO written == false; rejected_reason == "PROVENANCE_MISSING"
+    ENTÃO       (a) aceito (lineage=[] legítimo, sem gate_record); (b) rejeitado
+    VERIFICAÇÃO case_a_written == true; case_a_lineage_empty_ok == true; case_b_written == false; case_b_reason == "COMPUTED_BY_MISSING"
 ```
 
 ### BASpec-CKG-006 — Imutabilidade / append-only permanente (nunca deletar nem mutar) [INV-CKG-01]
@@ -757,18 +764,19 @@ BASpec-CKG-012:
 ### BASpec-CKG-013 — Colisão de relações (detecta e registra; não resolve em silêncio)
 ```
 BASpec-CKG-013:
-  QUANDO:       Duas relações vigentes entre os mesmos nós se contradizem (ex.: CONFIRMA × REFUTA)
+  QUANDO:       Duas relações satisfazem as 3 condições de colisão (§D2.2): par contraditório ∧ mesmos (from_node,to_node) ∧ validade sobreposta
   ENTÃO:        O KG DETECTA e grava um collision_record referenciando ambas (preservadas, versionadas, com proveniência e
-                validade); NÃO sobrescreve/apaga uma em silêncio; a resolução é de SPEC-007/SPEC-018 ou governança
-  PORQUE:       Preservar a contradição auditável respeita INV-07; resolver em silêncio perderia conhecimento e viés de confirmação
-  REFERÊNCIA:   RULE-CKG-013; INV-07; fronteira SPEC-007/SPEC-018
+                validade); NÃO sobrescreve/apaga uma em silêncio; relações que NÃO satisfazem as 3 condições (origens
+                distintas, validades disjuntas, par não listado) NÃO geram colisão; a resolução é de SPEC-007/SPEC-018 ou governança
+  PORQUE:       Preservar a contradição auditável respeita INV-07; resolver em silêncio perderia conhecimento e viés de confirmação; escopo evita falso-positivo
+  REFERÊNCIA:   RULE-CKG-013; §D2.2; INV-07; fronteira SPEC-007/SPEC-018
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
-    MECANISMO   : detecção determinística de par contraditório vigente + gravação de collision_record; proíbe sobrescrita silenciosa
-    GATE DE SAÍDA: verificação (ambas preservadas ∧ collision_record gravado ∧ nenhuma apagada)
+    MECANISMO   : detecção determinística — par ∈ tabela §D2.2 ∧ mesmos (from,to) ∧ overlap(valid) ⇒ grava collision_record; proíbe sobrescrita silenciosa
+    GATE DE SAÍDA: verificação (as 3 condições §D2.2 ⇒ collision_record gravado ∧ ambas preservadas; senão sem colisão)
     CRITÉRIO 4Es: Conformidade > Eficácia — não-perda de conhecimento e auditabilidade da contradição
   VERIFICADO POR:
-    DADO        CONFIRMA(A→B) vigente e uma REFUTA(A→B) nova submetida
+    DADO        CONFIRMA(A→B) vigente e uma REFUTA(A→B) nova com validade sobreposta (mesmos A,B)
     QUANDO      a escrita roda
     ENTÃO       ambas preservadas; collision_record gravado; nenhuma apagada; resolução não decidida pelo KG
     VERIFICAÇÃO both_relations_present == true; collision_logged == true; silent_overwrite == false
@@ -788,6 +796,8 @@ tabelas+índice) é **INDETERMINADO = H-001 (ABERTA)**; abaixo está a lógica, 
 - **Dedupe (CKG-001/003):** `chave de nó = (node_type, canonical_ref)` quando canônico; `= (node_type, natural_key)` quando `canonical_ref=null` (asset/timeframe/regime/narrative/observation/learning — evita colapso); `chave de relação = (relation_type, from_node, to_node, valid_from)`. Reescrita idêntica = no-op; divergente = novo registro (nunca sobrescreve).
 - **Gate causal (CKG-008):** `CAUSA ⇒ exige {mechanism, direction, conditions, regime} ≠ ∅ (+ posthoc_flag quando aplicável); senão rejeita`. Juízo bounded (nº máx. de tentativas por par). O gate verifica PRESENÇA, não veracidade (ENF-03).
 - **Confiança de relação (CKG-007):** `confidence ∈ escala própria (PARÂMETRO a calibrar — INDETERMINADO)`; **proibido** `confidence → insumo do Conviction Vector` (namespaces separados; INV-04).
+- **Detecção de colisão (CKG-013/§D2.2):** `colide(r1, r2) sse (r1.type, r2.type) ∈ tabela_contradição §D2.2 ∧ r1.from=r2.from ∧ r1.to=r2.to ∧ overlap([r1.valid_from,r1.valid_to), [r2.valid_from,r2.valid_to))`. Se `colide` ⇒ grava `collision_record`; senão NÃO. (Falso-positivo evitado: origens distintas ou validades disjuntas ⇒ `colide=false`.)
+- **Nó hypothesis (CKG-001/§D2.1):** `aceitar sse ¬(node_type=hypothesis ∧ school=ICT)` (INV-02/RULE-HH-004); `HERDA ⇒ pai.hierarchy_role=PRIMARY` (RULE-HH-003); "família" = `{n : n.school = m.school ∧ n PERTENCE_A mesmo (asset,timeframe) de m}`.
 
 Nenhuma fórmula computa convicção. Nenhum limiar de convicção nem escala numérica de confiança é fixado (RULE-MET-01).
 [FONTE: atomic-spec §2; CEM-001 Cap.5; SPEC-004 INV-CBP-01; research.md §3.1/§4]
@@ -942,12 +952,12 @@ ENTÃO       ambas preservadas; collision_record gravado; nenhuma apagada; resol
 VERIFICAÇÃO both_relations_present == true; collision_logged == true; silent_overwrite == false
 ```
 
-### Cenário-CKG-T12 — Relação com proveniência válida é escrita (caminho feliz; contraste a T03)
+### Cenário-CKG-T12 — Nó PRIMARY sem gate/ancestral é escrito com proveniência condicional válida (caminho feliz)
 ```
-DADO        uma relação CONFIRMA(evidence→hypothesis) tipada, direcionada, com provenance_ref (lineage + gate_record)
+DADO        um nó hypothesis PRIMARY (sem gate, Lineage vazio) com computed_by presente (identidade autenticada), sem gate_record e com lineage=[]
 QUANDO      a escrita roda
-ENTÃO       relação escrita como ACTIVE_KNOWLEDGE; proveniência e validade registradas
-VERIFICAÇÃO relation_written == true; provenance_present == true; knowledge_state == "ACTIVE_KNOWLEDGE"
+ENTÃO       nó escrito como ACTIVE_KNOWLEDGE (lineage=[] legítimo; gate_record ausente é OK pois não há gate — espelha CBP-007)
+VERIFICAÇÃO node_written == true; computed_by_present == true; lineage_empty_ok == true; knowledge_state == "ACTIVE_KNOWLEDGE"
 ```
 
 ### Cenário-CKG-T13 — Correção de conteúdo = nova versão (supersessão por novo registro)
@@ -958,12 +968,12 @@ ENTÃO       nova versão com supersedes→anterior; a anterior permanece ínteg
 VERIFICAÇÃO old_version_preserved == true; old_version_mutated == false; supersedes_link_present == true
 ```
 
-### Cenário-CKG-T14 — Escrita sem proveniência → rejeição (negativo de CKG-005)
+### Cenário-CKG-T14 — Escrita sem identidade autenticada → rejeição (negativo de CKG-005)
 ```
-DADO        um nó submetido sem provenance_ref (sem lineage e sem gate_record)
+DADO        um nó submetido SEM computed_by (identidade autenticada ausente) — independentemente de gate_record/lineage
 QUANDO      o gate de proveniência (CKG-005) roda
-ENTÃO       escrita rejeitada; nada persistido
-VERIFICAÇÃO written == false; rejected_reason == "PROVENANCE_MISSING"
+ENTÃO       escrita rejeitada; nada persistido (computed_by é sempre obrigatório — CBP-014)
+VERIFICAÇÃO written == false; rejected_reason == "COMPUTED_BY_MISSING"
 ```
 
 ---
@@ -1059,7 +1069,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
 | Escola/origem | `school`/`origin_agent` (Elliott/SMC/Fibonacci/ICT — por referência ao canônico; só hypothesis/structure) | — | espelha, não decide (CC-01; INV-02) |
 | Referência canônica | `canonical_ref` = `canonical_id@version`; `canonical_status` (snapshot do Status canônico — CEM-001 l.264/428; CHM-001) | — | referencia, não redefine (CC-02/CKG-002); estados do KG ≠ estados canônicos (CC-10) |
 | Transição canônica | registro `canonical_state_transition` = { estado, timestamp, origem, justificativa } (CEM-001 l.428) | — | preserva TODOS os estados canônicos (CEM-001 l.494) |
-| Proveniência | `provenance_ref` = { `lineage` (→ `Lineage` CEM-001 Cap.5 / `derived_from[]` SPEC-004), `gate_record` (SPEC-004 v1.2), who, when, why, from } | idem | obrigatória (CKG-005); nome local [PROPOSTA]; `gate_record` é da SPEC-004 (não CEM-001) |
+| Proveniência (condicional — espelha CBP-007) | `provenance_ref` = { **`computed_by` OBRIGATÓRIO** (identidade autenticada — CBP-014); `gate_record` SÓ se resulta de gate; `lineage` SÓ se derivado (→ `Lineage` CEM-001 / `derived_from[]` SPEC-004; `[]` legítimo), who, when } | idem | `computed_by` sempre; demais condicionais (CKG-005/CBP-007); nome local [PROPOSTA] |
 | Publicação/escrita | `publication` = { origem: `canonical_lifecycle` \| `spec007_seal` (selo = [DECISÃO NECESSÁRIA]) }, `writer_id` (identidade autenticada — SPEC-004) | idem | governança E3 (CKG-009/010) |
 | Temporalidade | `created_at`, `recorded_at` | `valid_from`, `valid_to` (null=vigente), `recorded_at` | bitemporal (CKG-004) |
 | Relevância/arquivamento | `relevance` (em registro `archival`; rebaixamento sob gate E3 — CKG-012) | idem | lifecycle (CKG-012) |
@@ -1089,7 +1099,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
     "natural_key": "(identidade de nó NÃO-canônico, p.ex. asset='BTC' | timeframe='H4' — evita colapso quando canonical_ref=null)",
     "school": "Elliott | SMC | Fibonacci | ICT (por referência ao canônico; só hypothesis/structure)",
     "ontological_status": "observational | theoretical (RULE-ONT-01; só structure/regime/narrative — distingue entidade medida de construção teórica, ex.: order block/liquidez)",
-    "provenance_ref": { "lineage": "(ref. ao campo Lineage do CEM-001 Cap.5 / derived_from[] da SPEC-004 — nome local [PROPOSTA]; NÃO existe lineage_ref no CEM-001)", "gate_record": "(SPEC-004 v1.2 — NÃO do CEM-001)", "who": "", "when": "", "why": "", "from": "" },
+    "provenance_ref": { "computed_by": "OBRIGATÓRIO — identidade AUTENTICADA pelo runtime (SPEC-004 RULE-CBP-014)", "gate_record": "CONDICIONAL — só quando resulta de gate (SPEC-004 CBP-007)", "lineage": "CONDICIONAL — só quando DERIVADO (ref. ao campo Lineage do CEM-001 Cap.5 / derived_from[] da SPEC-004; [] legítimo p/ PRIMARY/asset/timeframe/regime/observation; NÃO existe lineage_ref no CEM-001)", "who": "", "when": "", "why": "", "from": "" },
     "publication": { "origin": "canonical_lifecycle | spec007_seal", "seal_ref": "[DECISÃO NECESSÁRIA — contrato do selo = SPEC-007]" },
     "writer_id": "(identidade autenticada pelo runtime — SPEC-004; falha de auth ⇒ não-autorizado)",
     "relevance": "(só em record_kind=archival; rebaixamento sob gate E3 — CKG-012)",
@@ -1110,7 +1120,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
     "from_node": "KG-N-...-A",
     "to_node": "KG-N-...-B (nó) ",
     "target_relation_id": "null | KG-R-...-X (quando o alvo é uma RELAÇÃO — ex.: INVALIDA→relation; matriz §D2.1)",
-    "provenance_ref": { "lineage": "(→ Lineage CEM-001 / derived_from[] SPEC-004)", "gate_record": "", "who": "", "when": "" },
+    "provenance_ref": { "computed_by": "OBRIGATÓRIO (identidade autenticada — SPEC-004 CBP-014)", "gate_record": "CONDICIONAL (só se resulta de gate)", "lineage": "CONDICIONAL (só se derivado; → Lineage CEM-001 / derived_from[] SPEC-004)", "who": "", "when": "" },
     "writer_id": "(identidade autenticada — SPEC-004)",
     "valid_from": "2026-10-12T12:00:00Z",
     "valid_to": "null (vigente) | timestamp (invalidada por NOVO registro — preservada)",
