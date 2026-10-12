@@ -22,7 +22,7 @@ Medição do Revisor na SPEC-006 (Plan v1.0/v1.1/v1.2, 2026-10-11/12): o Revisor
 | C | claude-sonnet-5-5 | V2 (este Passo 4-ter) | 16 | NÃO CONFORME |
 | D | claude-sonnet-5-5 | V2, sem checks.md nem autoavaliação do Especificador | 14,5 | NÃO CONFORME |
 Leitura: o salto veio do modelo; o método V2 soma ~2 defeitos (dentro do ruído de uma execução); retirar o `checks.md` não melhorou o resultado.
-**Replicação nas versões v1.1 e v1.2:** `[PENDENTE — resultado será anexado ao PR antes do merge]`.
+**Replicação nas versões v1.1 e v1.2 do Plan (mesmo método V2 + modelo novo; gabarito de 13 e 11 defeitos confirmados):** v1.1 → 8 de 13; v1.2 → 9 de 11. O Revisor original (modelo antigo, método atual) tinha achado 0 de 13 e 1 de 11 (um Menor "ambíguo"). **Placar consolidado sobre as 3 versões (42 defeitos):** original 1 (≈2%) × modelo novo + V2 33 (≈79%). Custo: ≈275–280 mil tokens e ~50 chamadas por revisão (original ≈120–138 mil e ~20). Perdas recorrentes: campo/linha/ID citado que não existe (cobertos em parte pelos detectores do PR #94) e omissões de obrigação do CEM-001.
 **Limites:** uma Spec; uma execução por braço; gabarito derivado do controle (mesma família de modelo → possível circularidade); a versão exata do modelo do braço B não foi confirmada; o gabarito não é exaustivo.
 
 ## 3. O que muda `[FATO]`
@@ -41,7 +41,7 @@ Declarada no cabeçalho (`sim` / `propagado`): altera o protocolo embutido no Re
 M-001 · J-001 · N-001 · H-001 · G-001 · K-001 · C-001 · WF-D03 (residual) · ECC-03-001 · SPEC-038-DATASRC-001 · SPEC-045-RUNTIME-001. **Nenhuma fechada por este ato.**
 
 ## 7. Registro
-- [x] Esta ata · [x] `.claude/agents/revisor.md` · [x] `CATALOGO-OFICIAL.md` · [x] mapa · [ ] replicação v1.1/v1.2 anexada · [ ] merge (assinatura) · [ ] RPSA automático · [ ] verificação em sessão nova (o modelo novo só vale numa sessão aberta depois do merge)
+- [x] Esta ata · [x] `.claude/agents/revisor.md` · [x] `CATALOGO-OFICIAL.md` · [x] mapa · [x] replicação v1.1/v1.2 anexada · [ ] merge (assinatura) · [ ] RPSA automático · [ ] verificação em sessão nova (o modelo novo só vale numa sessão aberta depois do merge)
 
 ---
 

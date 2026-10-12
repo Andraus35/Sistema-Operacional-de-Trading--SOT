@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-12",
-  "digest": "c168c50c56f3c2c4c4efdac57e0ceec31e7d9e62b8db3c03835a4338d081722a",
+  "digest": "f34d6b9acf4373c2e117099593d5b3bce83ad5e43559f96db2bf6fe4e96cc37c",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -241,7 +241,7 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 99,
+   "in": 100,
    "out": 2
   },
   {
