@@ -105,5 +105,47 @@ class TestRodar(unittest.TestCase):
             self.assertEqual(ev["sinais_H"], [], f"{plan}: {ev['sinais_H']}")
 
 
+class TestDetectoresMedicaoSpec006(unittest.TestCase):
+    """Detectores D informativos nascidos da medição do Revisor na SPEC-006 (2026-10-12)."""
+
+    def _root(self, d, cem="Campos: Lineage, Status, gate_id", rmr=None):
+        r = Path(d)
+        (r / "canon").mkdir()
+        (r / "canon" / "CEM-001_x.md").write_text(cem, encoding="utf-8")
+        (r / "backlog").mkdir()
+        (r / "backlog" / "RMR-001_Painel_Backlog.md").write_text(
+            rmr or "| **BL-029** | t | Adaptação | a | g | acao | **Em espera** (x) ~~ATIVADO~~ | o |\n"
+                   "| **BL-003** | t | Adaptação | a | g | acao | **ATIVADO** (y) | o |\n", encoding="utf-8")
+        return r
+
+    def test_campo_inexistente_no_baseline_acusa(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = self._root(d)
+            self.assertEqual(rg.campos_atribuidos_baseline("O `lineage_ref` é do CEM-001 (Cap.5).", r), [(1, "lineage_ref", "CEM-001")])
+            self.assertEqual(rg.campos_atribuidos_baseline("O campo `gate_record` atribuído ao CEM-001.", r), [(1, "gate_record", "CEM-001")])
+
+    def test_campo_existente_ou_proposta_nao_acusa(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = self._root(d, cem="Campos: lineage_ref, Status")
+            self.assertEqual(rg.campos_atribuidos_baseline("O `lineage_ref` é do CEM-001.", r), [])
+            r2 = self._root(tempfile.mkdtemp())
+            self.assertEqual(rg.campos_atribuidos_baseline("[PROPOSTA] `lineage_ref` do CEM-001 é campo local novo.", r2), [])
+
+    def test_estado_backlog_so_em_candidato(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = self._root(d)
+            cand = "| Status | **CANDIDATO — aguarda** |\n- BL-029 permanece `ATIVADO`, independente.\n"
+            self.assertEqual(rg.estado_backlog(cand, r), [(2, "BL-029", "ATIVADO", "Em espera")])
+            homolog = "| Status | **BASELINE v1.0** |\n- BL-029 permanece `ATIVADO`, independente.\n"
+            self.assertEqual(rg.estado_backlog(homolog, r), [])
+            ok = "| Status | **CANDIDATO** |\n- BL-029 `Em espera`, independente.\n- BL-003 não promovido a ATIVADO.\n"
+            self.assertEqual(rg.estado_backlog(ok, r), [])
+
+    def test_refs_variantes(self):
+        self.assertEqual(rg.refs_variantes("Negação: ADV-CKG-06, T04-neg.\n"), [(1, "T04-neg")])
+        self.assertEqual(rg.refs_variantes("### T04-neg — definido\nver T04-neg\n"), [])
+        self.assertEqual(rg.refs_variantes("T04 e ADV-CKG-06 e EC-CKG-001 normais\n"), [])
+
+
 if __name__ == "__main__":
     unittest.main()

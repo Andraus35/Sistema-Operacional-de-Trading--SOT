@@ -302,8 +302,16 @@ def _ids_fechados_roadmap(roadmap: Path) -> set:
     return set()
 
 
+_NEGA_FECHAMENTO = re.compile(
+    r"(n[ãa]o|nunca|jamais|sem|ainda\s+n[ãa]o|antes\s+d[eao]s?|at[ée]|enquanto|se|caso|quando|ou)\s*$", re.I
+)
+
+
 def _afirma_fechamento(content: str, pos: int, did: str) -> bool:
-    """Ocorrência que ATRIBUI fechamento ao ID (janela curta, mesma sentença/célula)."""
+    """Ocorrência que ATRIBUI fechamento ao ID (janela curta, mesma sentença/célula).
+    Negação ou condicional adjacente ('H-001 não fechada', 'antes de H-001 fechada', 'enquanto H-001 resolvida')
+    descreve a decisão como pendente e NÃO conta como afirmação de fechamento (CONS-01 preservado: a afirmação
+    positiva 'H-001 fechada' continua reprovando)."""
     palavra = r"(fechad[oa]s?|resolvid[oa]s?|homologad[oa]s?|closed|resolved)"
     fim = pos + len(did)
     antes = content[max(0, pos - 40):pos]
@@ -311,7 +319,18 @@ def _afirma_fechamento(content: str, pos: int, did: str) -> bool:
     # corta na fronteira de sentença/célula para não atravessar contextos
     antes = re.split(r"[.\n|;]", antes)[-1]
     depois = re.split(r"[.\n|;]", depois)[0]
-    return bool(re.search(palavra, antes, re.I) or re.search(palavra, depois, re.I))
+    m_antes = re.search(palavra, antes, re.I)
+    m_depois = re.search(palavra, depois, re.I)
+    if m_antes:
+        # palavra de fechamento ANTES do ID ("fechada a decisão H-001"): negação logo antes da palavra
+        if not _NEGA_FECHAMENTO.search(antes[:m_antes.start()]):
+            return True
+    if m_depois:
+        # negação/condicional entre o ID e a palavra, ou imediatamente antes do ID
+        entre = depois[:m_depois.start()]
+        if not re.search(r"\b(n[ãa]o|nunca|jamais|sem|ainda)\b", entre, re.I) and not _NEGA_FECHAMENTO.search(antes[-15:]):
+            return True
+    return False
 
 
 @check(

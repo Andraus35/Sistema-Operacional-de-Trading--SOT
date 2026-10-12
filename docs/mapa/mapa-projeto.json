@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-12",
-  "digest": "f34d6b9acf4373c2e117099593d5b3bce83ad5e43559f96db2bf6fe4e96cc37c",
+  "digest": "425197edf16202d10cfa05c65a7c920142c0dd1146f4b7481ba3bce8dd399e06",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 55,
+   "in": 56,
    "out": 34
   },
   {
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 166,
+   "in": 167,
    "out": 64
   },
   {
@@ -220,7 +220,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 152,
+   "in": 153,
    "out": 104
   },
   {
@@ -241,7 +241,7 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 100,
+   "in": 101,
    "out": 2
   },
   {
@@ -437,8 +437,8 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 89,
-   "out": 171
+   "in": 90,
+   "out": 172
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -579,6 +579,13 @@
    "title": "DHR-AUDITOR-EXTERNO-012 — Ata — Correção do Passo 8 do `.claude/agents/revisor.md` (I-001 e L-001 já fechadas)",
    "in": 3,
    "out": 9
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-013 — Ata — Novas verificações determinísticas (Classe D) no gate do Revisor e correção de negação no STRUCT-10",
+   "in": 1,
+   "out": 7
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
@@ -1410,7 +1417,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 230,
+   "in": 231,
    "out": 35
   },
   {
@@ -1753,14 +1760,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 31,
+   "in": 32,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 118,
+   "in": 119,
    "out": 9
   },
   {
@@ -2188,7 +2195,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "BL-030",
@@ -2294,6 +2301,11 @@
    "id": "DHR-AUDITOR-EXTERNO-012",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
    "cited_by": 3
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-013",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "cited_by": 1
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-014",
@@ -2853,7 +2865,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 159
+   "cited_by": 160
   },
   {
    "id": "INV-08",
@@ -3978,7 +3990,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 59
+   "cited_by": 60
   },
   {
    "id": "SPEC-007",
@@ -8244,6 +8256,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "type": "id"
   },
@@ -9966,6 +9983,41 @@
    "from": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
    "to": "specs/features/SPEC-019/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-013_Ata_Novas_Verificacoes_D_no_Gate_do_Revisor.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
