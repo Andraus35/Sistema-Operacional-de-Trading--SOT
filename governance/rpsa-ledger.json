@@ -206,6 +206,20 @@
       "em_escopo": true,
       "sync": "propagado",
       "motivo": "Altera o arquivo do Revisor: eleva o modelo do frontmatter (revertendo o roteamento economico da EUA-E19) e acrescenta o Passo 4-ter ao protocolo de revisao; o Especificador nao e afetado."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-013",
+      "data": "2026-10-12",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera scripts de gate (revisor_gate.py, validate_spec_sot.py) e testes; nenhum texto de arquivo de agente e alterado."
+    },
+    {
+      "id": "DHR-ASSINATURA-001",
+      "data": "2026-10-12",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera convencao de governanca (quem assina e como) e o AGENTS.md; nenhum texto de arquivo de agente e alterado."
     }
   ]
 }

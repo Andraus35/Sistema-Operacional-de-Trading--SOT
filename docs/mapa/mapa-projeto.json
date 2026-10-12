@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-12",
-  "digest": "9256e723fcdb47a49bfe2d3b22ccd3f395b887eb39aa745d8bf622e3b6b50c54",
+  "digest": "27077c5f47f71934ea09112a7f6418daa7a32892c8f0f9dc832bb1e14d705955",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -18,7 +18,7 @@
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
    "in": 35,
-   "out": 58
+   "out": 57
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -584,7 +584,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-012 — Ata — Correção do Passo 8 do `.claude/agents/revisor.md` (I-001 e L-001 já fechadas)",
-   "in": 3,
+   "in": 1,
    "out": 9
   },
   {
@@ -598,7 +598,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-014 — Ata — Revisor SOT: modelo elevado e Passo 4-ter (inventário e conferência de afirmações)",
-   "in": 2,
+   "in": 3,
    "out": 7
   },
   {
@@ -2312,7 +2312,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-012",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
-   "cited_by": 3
+   "cited_by": 1
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-013",
@@ -2322,7 +2322,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-014",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-BL008-001",
@@ -4268,7 +4268,7 @@
   },
   {
    "from": ".claude/agents/especificador.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "type": "id"
   },
   {
@@ -4559,11 +4559,6 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/agents/revisor.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-012_Ata_Correcao_Passo8_Revisor_I001_L001.md",
    "type": "id"
   },
   {
