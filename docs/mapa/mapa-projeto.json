@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-12",
-  "digest": "23db7255552a220f2a3f4c4ca77c97ea6d933a5e7ee1d7f3334455bc93909fca",
+  "digest": "f264c06e9dbb1241384ac5cd810a6110cf568ce61322af5053a60a31d312506b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1039,7 +1039,7 @@
    "path": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 5,
+   "in": 4,
    "out": 12
   },
   {
@@ -1802,7 +1802,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 83,
+   "in": 84,
    "out": 25
   },
   {
@@ -2630,7 +2630,7 @@
   {
    "id": "DHR-SPEC006-001",
    "defined_in": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
-   "cited_by": 5
+   "cited_by": 4
   },
   {
    "id": "DHR-SPEC006-PEND-001",
@@ -2865,7 +2865,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 96
+   "cited_by": 95
   },
   {
    "id": "INV-10",
@@ -2884,6 +2884,11 @@
   },
   {
    "id": "INV-CKG-01",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
+   "id": "INV-CKG-02",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 1
   },
@@ -2975,7 +2980,7 @@
   {
    "id": "RULE-CAU",
    "defined_in": "governance/RULES.md",
-   "cited_by": 26
+   "cited_by": 25
   },
   {
    "id": "RULE-CAU-01",
@@ -3050,7 +3055,7 @@
   {
    "id": "RULE-CBP-014",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 11
+   "cited_by": 10
   },
   {
    "id": "RULE-CEB",
@@ -3183,12 +3188,12 @@
    "cited_by": 1
   },
   {
-   "id": "RULE-CKG-002",
+   "id": "RULE-CKG-004",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 1
   },
   {
-   "id": "RULE-CKG-004",
+   "id": "RULE-CKG-005",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 1
   },
@@ -3216,6 +3221,11 @@
    "id": "RULE-CKG-011",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 1
+  },
+  {
+   "id": "RULE-CKG-012",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 0
   },
   {
    "id": "RULE-CKG-013",
@@ -3270,7 +3280,7 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 78
+   "cited_by": 77
   },
   {
    "id": "RULE-ECC-02",
@@ -3340,7 +3350,7 @@
   {
    "id": "RULE-EPI",
    "defined_in": "governance/RULES.md",
-   "cited_by": 56
+   "cited_by": 55
   },
   {
    "id": "RULE-EPI-01",
@@ -3545,7 +3555,7 @@
   {
    "id": "RULE-HH-003",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 1
+   "cited_by": 3
   },
   {
    "id": "RULE-HH-004",
@@ -3670,7 +3680,7 @@
   {
    "id": "RULE-MECH-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 47
+   "cited_by": 46
   },
   {
    "id": "RULE-MECH-02",
@@ -3750,17 +3760,17 @@
   {
    "id": "RULE-ONT",
    "defined_in": "governance/RULES.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "RULE-ONT-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 6
+   "cited_by": 8
   },
   {
    "id": "RULE-ONT-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 1
+   "cited_by": 3
   },
   {
    "id": "RULE-PD",
@@ -3770,7 +3780,7 @@
   {
    "id": "RULE-PD-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 34
+   "cited_by": 33
   },
   {
    "id": "RULE-PD-02",
@@ -4020,7 +4030,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 80
+   "cited_by": 81
   },
   {
    "id": "SPEC-004",
@@ -4045,7 +4055,7 @@
   {
    "id": "SPEC-008",
    "defined_in": "ROADMAP.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "SPEC-009",
@@ -20286,11 +20296,6 @@
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
-   "to": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-006/checks.md",
    "to": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
    "type": "id"
   },
@@ -20302,6 +20307,11 @@
   {
    "from": "specs/features/SPEC-006/checks.md",
    "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {

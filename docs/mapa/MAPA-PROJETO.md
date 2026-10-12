@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-12** · digest `23db7255552a220f` · **292** documentos · **3539** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-12** · digest `f264c06e9dbb1241` · **292** documentos · **3539** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -13,7 +13,7 @@ Gerado em **2026-10-12** · digest `23db7255552a220f` · **292** documentos · *
 | **raiz** | 6 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (162) · [atomic-spec.md](../../atomic-spec.md) (95) · [AGENTS.md](../../AGENTS.md) (55) |
 | **governance** | 160 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (231) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (88) · [DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) (71) |
 | **canon** | 9 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (101) · [CCM-001-canonical-conviction-model.md](../../canon/CCM-001-canonical-conviction-model.md) (91) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (89) |
-| **specs** | 45 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (125) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (120) · [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) (83) |
+| **specs** | 45 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (125) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (120) · [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) (84) |
 | **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (154) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (21) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
 | **reference** | 28 | referências externas não-normativas (camadas, master contracts) | [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (25) · [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (16) · [SOT-RISK-MASTER-001_Consolidado.md](../../reference/SOT-RISK-MASTER-001_Consolidado.md) (8) |
 | **rag** | 5 | chunks de conhecimento por agente | [synthesis.knowledge.md](../../rag/synthesis.knowledge.md) (3) |
@@ -30,7 +30,7 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 flowchart LR
   governance["governance"] -->|469| specs["specs"]
   governance["governance"] -->|279| raiz["raiz"]
-  specs["specs"] -->|254| governance["governance"]
+  specs["specs"] -->|253| governance["governance"]
   governance["governance"] -->|137| backlog["backlog"]
   raiz["raiz"] -->|102| governance["governance"]
   backlog["backlog"] -->|101| governance["governance"]
@@ -66,9 +66,9 @@ flowchart LR
 | `INV-07` | 160 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-002` | 122 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
 | `SPEC-001` | 107 | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) |
-| `INV-09` | 96 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-003` | 80 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
-| `RULE-ECC-01` | 78 | [governance/RULES.md](../../governance/RULES.md) |
+| `INV-09` | 95 | [governance/RULES.md](../../governance/RULES.md) |
+| `SPEC-003` | 81 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
+| `RULE-ECC-01` | 77 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-004` | 74 | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) |
 | `EUA-E04` | 71 | [governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) |
 | `INV-05` | 70 | [governance/RULES.md](../../governance/RULES.md) |
@@ -76,7 +76,7 @@ flowchart LR
 | `RULE-MET-01` | 66 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-019` | 63 | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) |
 | `SPEC-006` | 60 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
-| `RULE-EPI` | 56 | [governance/RULES.md](../../governance/RULES.md) |
+| `RULE-EPI` | 55 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-04` | 54 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-014` | 53 | [ROADMAP.md](../../ROADMAP.md) |
 | `SPEC-018` | 53 | [ROADMAP.md](../../ROADMAP.md) |
@@ -84,7 +84,7 @@ flowchart LR
 | `RULE-ECC-04` | 48 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-03` | 47 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-HV` | 47 | [governance/RULES.md](../../governance/RULES.md) |
-| `RULE-MECH-01` | 47 | [governance/RULES.md](../../governance/RULES.md) |
+| `RULE-MECH-01` | 46 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-010` | 44 | [ROADMAP.md](../../ROADMAP.md) |
 | `RULE-ECC-02` | 41 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-01` | 39 | [governance/RULES.md](../../governance/RULES.md) |
@@ -95,12 +95,12 @@ flowchart LR
 |---|---|---|---:|
 | `SPEC-001` | **Homologada** | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | 107 |
 | `SPEC-002` | **Homologada** | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) | 122 |
-| `SPEC-003` | **Homologada** | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | 80 |
+| `SPEC-003` | **Homologada** | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | 81 |
 | `SPEC-004` | **Homologada** | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) | 74 |
 | `SPEC-005` | **Homologada** | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) | 37 |
 | `SPEC-006` | **Homologada** | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | 60 |
 | `SPEC-007` | Indicativa (não aberta) | — | 38 |
-| `SPEC-008` | Indicativa (não aberta) | — | 28 |
+| `SPEC-008` | Indicativa (não aberta) | — | 29 |
 | `SPEC-009` | Indicativa (não aberta) | — | 27 |
 | `SPEC-010` | Indicativa (não aberta) | — | 44 |
 | `SPEC-011` | Indicativa (não aberta) | — | 6 |
@@ -279,7 +279,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC004-003_Ata_Homologacao_Emenda_v1.2_SPEC-004.md](../../governance/DHR-SPEC004-003_Ata_Homologacao_Emenda_v1.2_SPEC-004.md) | DHR-SPEC004-003 — Ata de Homologação — Emenda v1.2 da SPEC-004 (Cognitive Bla... | 12 | 10 |
 | [DHR-SPEC005-001_Ata_Homologacao_Abertura_SPEC-005.md](../../governance/DHR-SPEC005-001_Ata_Homologacao_Abertura_SPEC-005.md) | DHR-SPEC005-001 — Ata de Homologação — Abertura da SPEC-005 (Cognitive Event ... | 11 | 12 |
 | [DHR-SPEC005-002_Ata_Homologacao_SPEC-005.md](../../governance/DHR-SPEC005-002_Ata_Homologacao_SPEC-005.md) | DHR-SPEC005-002 — Ata de Homologação — SPEC-005 (Cognitive Event Bus) v1.0 — ... | 13 | 12 |
-| [DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md](../../governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md) | DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowle... | 5 | 12 |
+| [DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md](../../governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md) | DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowle... | 4 | 12 |
 | [DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md](../../governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md) | DHR-SPEC006-PEND-001 — Ata — BL-029 `Em espera` e emenda Minor ao `atomic-spe... | 7 | 12 |
 | [DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md](../../governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md) | DHR-SPEC019-001 — Ata de Homologação — SPEC-019 v1.0 (Harness Governance & Ev... | 17 | 6 |
 | [DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md](../../governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md) | DHR-SPEC020-001 — Ata de Homologação — SPEC-020 v1.0 (Harness Evaluation Spec... | 11 | 9 |
@@ -374,7 +374,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) | SPEC-002 — Evidence & Evidence Provenance Harness | 125 | 18 |
 | [research.md](../../specs/features/SPEC-002/research.md) | SPEC-002 — Evidence & Evidence Provenance Harness — DOSSIÊ DE PESQUISA (ABERT... | 14 | 20 |
 | [SPEC-003/checks.md](../../specs/features/SPEC-003/checks.md) | checks.md — Verificação de Spec da SPEC-003 (fase spec-first) | 3 | 18 |
-| [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine | 83 | 25 |
+| [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine | 84 | 25 |
 | [research-Q-A9-regime.md](../../specs/features/SPEC-003/research-Q-A9-regime.md) | SPEC-003 — Q-A9: Dimensão do Regime de Mercado (WF-C04) — DOSSIÊ DE PESQUISA | 6 | 4 |
 | [research.md](../../specs/features/SPEC-003/research.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine — DO... | 3 | 22 |
 | [ABERTURA.md](../../specs/features/SPEC-004/ABERTURA.md) | Proposta de Abertura — SPEC-004: Cognitive Blackboard Protocol | 9 | 16 |
