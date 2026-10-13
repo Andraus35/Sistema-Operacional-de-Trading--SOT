@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-13",
-  "digest": "3fa038afe84fda029bdce145e14f8359b5c3f734ef093442c9c7ad56f8599ba2",
+  "digest": "bed76b7ac64ebcf7e352d7e74995bf75fab1736c81d92b3c70b25d9d67dd6fea",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -17,7 +17,7 @@
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 36,
+   "in": 37,
    "out": 59
   },
   {
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 165,
+   "in": 166,
    "out": 67
   },
   {
@@ -220,35 +220,35 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 157,
+   "in": 158,
    "out": 107
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 92,
+   "in": 93,
    "out": 6
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 79,
+   "in": 80,
    "out": 4
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 104,
+   "in": 105,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 90,
+   "in": 91,
    "out": 0
   },
   {
@@ -276,7 +276,7 @@
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 40,
+   "in": 41,
    "out": 3
   },
   {
@@ -549,7 +549,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Pausa do Auditor Externo e reforço do Revisor interno",
-   "in": 3,
+   "in": 4,
    "out": 7
   },
   {
@@ -605,7 +605,7 @@
    "path": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "area": "governance",
    "title": "DHR-BACKLOG-ABERTURA-001 — Ata — Backlog vinculado por regra à abertura de cada Spec (determinístico)",
-   "in": 8,
+   "in": 9,
    "out": 6
   },
   {
@@ -654,7 +654,7 @@
    "path": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "area": "governance",
    "title": "DHR-DEC-001 — Ata de Decisões — Q-A5, RISK-CONV-001, RISK-ARR-LOC-001, DIV code-block",
-   "in": 17,
+   "in": 18,
    "out": 14
   },
   {
@@ -1067,21 +1067,21 @@
    "path": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 5,
+   "in": 6,
    "out": 12
   },
   {
    "path": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-002 — Ata de Homologação — SPEC-006 (Cognitive Knowledge Graph) v1.7 — BASELINE",
-   "in": 5,
+   "in": 6,
    "out": 13
   },
   {
    "path": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
    "area": "governance",
    "title": "DHR-SPEC006-PEND-001 — Ata — BL-029 `Em espera` e emenda Minor ao `atomic-spec` §3 (Knowledge Graph)",
-   "in": 6,
+   "in": 7,
    "out": 12
   },
   {
@@ -1438,7 +1438,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 236,
+   "in": 237,
    "out": 35
   },
   {
@@ -1524,6 +1524,13 @@
    "title": "Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]`",
    "in": 5,
    "out": 7
+  },
+  {
+   "path": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "area": "governance",
+   "title": "Auditoria Independente e Adversarial: SPEC-006 v1.7 (Cognitive Knowledge Graph) e desempenho do Revisor",
+   "in": 0,
+   "out": 14
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -1788,7 +1795,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 122,
+   "in": 123,
    "out": 9
   },
   {
@@ -1872,7 +1879,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 75,
+   "in": 76,
    "out": 22
   },
   {
@@ -1900,7 +1907,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 38,
+   "in": 39,
    "out": 23
   },
   {
@@ -1928,7 +1935,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 65,
+   "in": 66,
    "out": 25
   },
   {
@@ -2140,7 +2147,7 @@
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "BL-012",
@@ -2190,7 +2197,7 @@
   {
    "id": "BL-021",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "BL-022",
@@ -2230,7 +2237,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 30
+   "cited_by": 31
   },
   {
    "id": "BL-030",
@@ -2260,7 +2267,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -2320,7 +2327,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-007",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-008",
@@ -2360,7 +2367,7 @@
   {
    "id": "DHR-BACKLOG-ABERTURA-001",
    "defined_in": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-BL008-001",
@@ -2395,7 +2402,7 @@
   {
    "id": "DHR-DEC-001",
    "defined_in": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "DHR-DEC-002",
@@ -2690,17 +2697,17 @@
   {
    "id": "DHR-SPEC006-001",
    "defined_in": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-SPEC006-002",
    "defined_in": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-SPEC006-PEND-001",
    "defined_in": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-SPEC019",
@@ -2895,7 +2902,7 @@
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "INV-03",
@@ -2905,12 +2912,12 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 54
+   "cited_by": 55
   },
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 70
+   "cited_by": 71
   },
   {
    "id": "INV-06",
@@ -2920,7 +2927,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 163
+   "cited_by": 164
   },
   {
    "id": "INV-08",
@@ -3060,7 +3067,7 @@
   {
    "id": "RULE-CAU-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "RULE-CBP",
@@ -3100,7 +3107,7 @@
   {
    "id": "RULE-CBP-007",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "RULE-CBP-008",
@@ -3250,12 +3257,12 @@
   {
    "id": "RULE-CKG",
    "defined_in": "ROADMAP.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-CKG-001",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-CKG-002",
@@ -3290,7 +3297,7 @@
   {
    "id": "RULE-CKG-008",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-009",
@@ -3300,7 +3307,7 @@
   {
    "id": "RULE-CKG-010",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-011",
@@ -3315,7 +3322,7 @@
   {
    "id": "RULE-CKG-013",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "RULE-CTF",
@@ -3635,7 +3642,7 @@
   {
    "id": "RULE-HH-002",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-003",
@@ -3845,7 +3852,7 @@
   {
    "id": "RULE-ONT",
    "defined_in": "governance/RULES.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "RULE-ONT-01",
@@ -4105,7 +4112,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 108
+   "cited_by": 109
   },
   {
    "id": "SPEC-002",
@@ -4120,22 +4127,22 @@
   {
    "id": "SPEC-004",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 75
+   "cited_by": 76
   },
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 38
+   "cited_by": 39
   },
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 65
+   "cited_by": 66
   },
   {
    "id": "SPEC-007",
    "defined_in": "ROADMAP.md",
-   "cited_by": 40
+   "cited_by": 41
   },
   {
    "id": "SPEC-008",
@@ -4310,7 +4317,7 @@
   {
    "id": "SPEC-042",
    "defined_in": "ROADMAP.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "SPEC-043",
@@ -18326,6 +18333,81 @@
   },
   {
    "from": "governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
   },
