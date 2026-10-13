@@ -128,6 +128,8 @@ Fechadas — Questionário v1 (2026-09-14): **B-001** (Conviction Engine SEPARAD
 
 Fechada por decisão direta de Andraus na homologação da SPEC-005 (chat, 2026-10-05, DHR-SPEC005-002): **EVENT-BUS-001** (o Event Bus existe como camada fina de notificação de mudança, distinta do Blackboard — o Blackboard guarda o estado/verdade; o Event Bus só notifica; transporte ≠ fonte de verdade; broker completo adiado e registrado; Doc 13 histórico não-normativo). **SPEC-005 HOMOLOGADA — BASELINE v1.0 (DHR-SPEC005-002)**; demais decisões abertas permanecem abertas.
 
+**SPEC-006 (Cognitive Knowledge Graph) HOMOLOGADA — BASELINE v1.7 (Andraus, chat 2026-10-13, DHR-SPEC006-002):** contrato cognitivo da memória semântica permanente; **H-001 (mecanismo físico) PERMANECE ABERTA**; pendência de `structure` registrada como CKG-STRUCT-ORIGIN-001 / BL-035 (`Em espera`); demais decisões abertas permanecem abertas.
+
 Nenhuma decisão aberta pode aparecer como invariante fechado em qualquer entrega (CONS-01).
 
 ---

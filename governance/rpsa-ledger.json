@@ -227,6 +227,13 @@
       "em_escopo": true,
       "sync": "propagado",
       "motivo": "Passo de abertura em especificador.md e item de auditoria em revisor.md; carimbos alinhados."
+    },
+    {
+      "id": "DHR-SPEC006-002",
+      "data": "2026-10-13",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de Spec: não altera texto de agente; mudanças de agente da SPEC-006 estão na DHR-BACKLOG-ABERTURA-001."
     }
   ]
 }
