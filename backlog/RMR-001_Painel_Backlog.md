@@ -82,6 +82,14 @@ O repositório está em fase spec-only (ROADMAP §22) — não há runtime que d
 
 ---
 
+## 4-bis. Vinculação automática por abertura de Spec (DHR-BACKLOG-ABERTURA-001, Andraus, chat 2026-10-12)
+
+Todo item **não encerrado** cujo gatilho tem uma alternativa `spec:SPEC-nnn em redação` fica **VINCULADO à SPEC-nnn desde a abertura, por regra, sem depender de promoção de Andraus** — para ser objeto de especificação **em todo ou em parte, no que couber**.
+- **Vincular ≠ promover ≠ absorver.** O Estado no painel **não muda** (`Em espera` permanece); `ATIVADO` e `Absorvido`/`Descartado` seguem homologados por Andraus (§5). O que muda: o item **não pode mais ficar sem tratamento** na Spec.
+- O **Plan** da Spec DEVE declarar, na linha que cita cada BL vinculado, `Disposição: INCORPORADO` (todo) · `PARCIAL` (parte; dizer qual entra e qual não) · `REFERÊNCIA` (fonte de requisitos, sem absorver) · `FORA` — sempre com motivo. O Revisor audita o motivo; a **presença** é garantida por máquina.
+- **Determinístico:** `python scripts/backlog_triggers.py --abertura SPEC-nnn` lista os itens (alcance `TOTAL` se a alternativa do gatilho é só a abertura; `PARCIAL` se há condição `∧` ainda não satisfeita); o gate `[STRUCT-13]` do `validate_spec_sot.py` reprova (fail-closed) o Plan sem disposição para algum deles; os hooks Stop/SubagentStop/SessionStart avisam (informativo) via `--abertura-pendentes`. Não retroage: Spec já homologada não é alcançada (INV-07).
+- Gatilhos `milestone:`/`evento:`/`hygiene:`/`decisao:` **não** vinculam por abertura (dependem de julgamento — seguem §3/§4).
+
 ## 5. Protocolo de intake — "como enviar um item"
 
 Para registrar uma adaptação/acoplagem/ideia futura:

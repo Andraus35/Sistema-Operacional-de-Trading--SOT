@@ -220,6 +220,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Altera convencao de governanca (quem assina e como) e o AGENTS.md; nenhum texto de arquivo de agente e alterado."
+    },
+    {
+      "id": "DHR-BACKLOG-ABERTURA-001",
+      "data": "2026-10-13",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Passo de abertura em especificador.md e item de auditoria em revisor.md; carimbos alinhados."
     }
   ]
 }

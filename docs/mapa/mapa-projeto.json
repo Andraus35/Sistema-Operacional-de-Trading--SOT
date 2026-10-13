@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-12",
-  "digest": "98d4722a638e3886aebb0098c205a4d9434cc4e769c6e3c62038e57393e93367",
+  "generated": "2026-10-13",
+  "digest": "d247af494702d86c5e8ff8495db66f249ee25956e2c738414b21b3aa3da054f0",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,15 +10,15 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 28,
+   "in": 29,
    "out": 58
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 35,
-   "out": 58
+   "in": 36,
+   "out": 59
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 163,
+   "in": 164,
    "out": 65
   },
   {
@@ -220,8 +220,8 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 155,
-   "out": 105
+   "in": 156,
+   "out": 106
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
@@ -598,8 +598,15 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-014 — Ata — Revisor SOT: modelo elevado e Passo 4-ter (inventário e conferência de afirmações)",
-   "in": 3,
+   "in": 2,
    "out": 7
+  },
+  {
+   "path": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "area": "governance",
+   "title": "DHR-BACKLOG-ABERTURA-001 — Ata — Backlog vinculado por regra à abertura de cada Spec (determinístico)",
+   "in": 6,
+   "out": 6
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -1424,7 +1431,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 234,
+   "in": 235,
    "out": 35
   },
   {
@@ -1914,8 +1921,8 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 62,
-   "out": 20
+   "in": 63,
+   "out": 21
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -2086,7 +2093,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "BL-004",
@@ -2121,12 +2128,12 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 32
+   "cited_by": 33
   },
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "BL-012",
@@ -2216,7 +2223,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 29
+   "cited_by": 30
   },
   {
    "id": "BL-030",
@@ -2246,7 +2253,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -2341,7 +2348,12 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-014",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
-   "cited_by": 3
+   "cited_by": 2
+  },
+  {
+   "id": "DHR-BACKLOG-ABERTURA-001",
+   "defined_in": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "cited_by": 4
   },
   {
    "id": "DHR-BL008-001",
@@ -2896,7 +2908,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 162
+   "cited_by": 163
   },
   {
    "id": "INV-08",
@@ -4106,12 +4118,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 62
+   "cited_by": 63
   },
   {
    "id": "SPEC-007",
    "defined_in": "ROADMAP.md",
-   "cited_by": 38
+   "cited_by": 39
   },
   {
    "id": "SPEC-008",
@@ -4146,7 +4158,7 @@
   {
    "id": "SPEC-014",
    "defined_in": "ROADMAP.md",
-   "cited_by": 52
+   "cited_by": 53
   },
   {
    "id": "SPEC-015",
@@ -4372,7 +4384,7 @@
   },
   {
    "from": ".claude/agents/especificador.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "type": "id"
   },
   {
@@ -4673,6 +4685,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "type": "id"
   },
   {
@@ -6543,6 +6560,11 @@
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "type": "id"
   },
   {
@@ -10322,6 +10344,36 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
   },
@@ -20528,6 +20580,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "type": "id"
   },
   {

@@ -140,6 +140,7 @@ npm run lint        # lint EARS das specs (tests/lint-specs.js)
 python scripts/validate_spec_sot.py <plan.md>   # gate determinístico de estrutura
 python scripts/check_refs.py                    # integridade de referências cruzadas (ERRO = quebra em doc vivo)
 python scripts/backlog_triggers.py              # gatilhos do RMR-001 (BL-006): ATIVADOS / disparados sem registro
+python scripts/backlog_triggers.py --abertura SPEC-nnn   # itens do RMR-001 vinculados por regra à abertura da Spec (DHR-BACKLOG-ABERTURA-001; [STRUCT-13] cobra a Disposição no Plan)
 python scripts/check_rpsa.py                    # carimbo sincronizado-até dos agentes vs livro-razão (RPSA/EUA-E16; DHR-RPSA-001); --register classifica uma DHR nova e alinha os carimbos
 python scripts/check_doc_sync.py                # drift de sincronização documental (CONS-01, RULE não registrada, Estado fora do enum, backlog dessincronizado)
 python scripts/check_invariants.py [arq.md]    # valores e ordem das regras fixas (R:R, score/convicção, 8 dimensões, hierarquia, 7 estados, 4Es, validade do Dossiê); informativo — Detector ≠ Gate (DHR-AUDITOR-EXTERNO-008 R2)

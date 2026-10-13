@@ -422,7 +422,7 @@ Nenhuma Spec seguinte inicia enquanto a anterior não passar por:
 
 ```
 1. Leitura de roadmap.md + atomic-spec.md
-1-bis. ABERTURA DA SPEC (RULE-ECC-01/02 — EUA-E21): Dossiê de Pesquisa (estado da arte e melhores práticas na web, pelo próprio Especificador) + proposta de escopo/quantidade/fronteira/número + proposta de re-apontamento de gatilhos do RMR-001 (se dividir/fundir/renumerar/descartar slot) → parecer do Revisor sobre o Dossiê → HOMOLOGAÇÃO de Andraus da definição, ANTES de escrever o Plan. Sem Dossiê: fail-closed (NÃO CONFORME Crítica). Web indisponível: abertura suspensa (exceção só por RULE-HG-07)
+1-bis. ABERTURA DA SPEC (RULE-ECC-01/02 — EUA-E21): Dossiê de Pesquisa (estado da arte e melhores práticas na web, pelo próprio Especificador) + proposta de escopo/quantidade/fronteira/número + proposta de re-apontamento de gatilhos do RMR-001 (se dividir/fundir/renumerar/descartar slot) + **vinculação automática de backlog (DHR-BACKLOG-ABERTURA-001): todo item do RMR-001 com gatilho `spec:SPEC-nnn em redação` fica vinculado à Spec desde a abertura, sem depender de promoção; o Plan declara `Disposição: INCORPORADO|PARCIAL|REFERÊNCIA|FORA` + motivo em cada item; garantido por `[STRUCT-13]` (`python scripts/backlog_triggers.py --abertura SPEC-nnn`)** → parecer do Revisor sobre o Dossiê → HOMOLOGAÇÃO de Andraus da definição, ANTES de escrever o Plan. Sem Dossiê: fail-closed (NÃO CONFORME Crítica). Web indisponível: abertura suspensa (exceção só por RULE-HG-07)
 2. Pesquisa especializada (incluindo modelos canônicos baselined)
 3. RAG do projeto
 4. Análise de cobertura (o que já existe; o que falta)
