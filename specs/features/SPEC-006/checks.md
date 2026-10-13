@@ -1,9 +1,9 @@
 # checks.md — Verificação de Spec da SPEC-006 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-006/plan.md` **v1.6 (candidato)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico INDETERMINADO = H-001 ABERTA)
+**Objeto:** `specs/features/SPEC-006/plan.md` **v1.7 (candidato)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico INDETERMINADO = H-001 ABERTA)
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — NÃO é teste de runtime, NÃO é o parecer do Revisor, NÃO é homologação. [FONTE: atomic-spec §14; ROADMAP §6]
 **Método:** atomic-spec.md **v1.5**
-**Data:** 2026-10-12 (Rodada 7 — 1 Maior N-01 + Menores N-02..N-09)
+**Data:** 2026-10-13 (v1.7 — Reconciliação BL-011 / MC-EXP-001; v1.6 = Rodada 7 N-01..N-09)
 
 > **Nota de método (Rodada 7):** cada achado marcado "Corrigido" em §11/§12/§14 foi conferido por busca cruzada (grep dos termos/IDs) no plan.md v1.6 **e** neste checks.md, confirmando ZERO resíduo contraditório antes de marcar. Afirmações de grep abaixo são REAIS (rodadas com a ferramenta de busca). O que foi só parcialmente endereçado ou segue em aberto está marcado "Parcial"/"Aberto" (não "Corrigido").
 > **Itens em aberto (não ✔):** mecanismo físico (H-001); selo de publicação (SPEC-007); produtor/gatilho de promoção trabalho→permanente; consumidor/contrato de consumo de evento pelo KG; emissão pelo KG; allowlist de escritores; host do juízo CKG-008; migração de ontologia; escala de confiança; **limite/timeout da espera `PENDING_ANCESTOR` (N-07)**; trace de HIPÓTESE (best-effort [PROPOSTA], sem alegação de completude — M-03); **origem/escola de `structure` e elo structure→hypothesis + `school=Fractal` sem produtor — CKG-STRUCT-ORIGIN-001 (N-01/N-09), BL-035**.
@@ -19,7 +19,8 @@
 | BASpecs referenciam RULE por "Aplica RULE-CKG-0NN" + REFERÊNCIA | ✔ |
 | D4/D6/EC/D7/D8/Herança referenciam por ID, sem recopiar o texto da regra | ✔ |
 | Narrativa histórica fora do corpo (só changelog, 1 linha/versão, ordenado 1.0→1.6) | ✔ |
-| Tamanho: 1421 (v1.5) → **1480 linhas** (v1.6) — crescimento pela Rodada 7 (T17/ADV-22/cond.(v)/códigos N-04/reconciliação N-07); alvo <1100 não atingido (ver §13) | ✔ |
+| Tamanho: 1480 (v1.6) → **~1525 linhas** (v1.7) — crescimento só pela nova seção "Reconciliação BL-011 / MC-EXP-001" (~45 linhas); nenhuma regra nova; total exato reconfirmado por grep/build no ambiente pai; alvo <1100 não atingido (ver §13) | ✔ |
+| Reconciliação BL-011 / MC-EXP-001 presente (seção curta A/B/C); EXP-SPEC-001..053 e X-/R- mapeados a RULE-CKG existentes (REFERÊNCIA) ou FORA (SPEC-007/018/K-001); nenhuma RULE-CKG nova; nenhuma decisão aberta fechada | ✔ |
 
 ---
 
@@ -128,7 +129,7 @@ Nenhuma citação de baseline sem conferência. **PASS.**
 
 ## 9. Gate RMR-001 (passo 11-bis)
 
-Nenhum gatilho `spec:SPEC-006` isolado; satisfaz ramos de BL-003/BL-011; BL-010 tangente (SPEC-007); **BL-029 = `Em espera`**; **BL-035 (novo, `Em espera`) — CKG-STRUCT-ORIGIN-001** registrado pelo Especificador (RMR-001 §5), gatilho `decisao:CKG-STRUCT-ORIGIN-001 resolvida` ∨ `spec:SPEC-007 em redação` (não disparado); o Especificador NÃO promove. Passo 11-bis pleno na homologação. **PASS.**
+Nenhum gatilho `spec:SPEC-006` isolado; satisfaz ramos de BL-003/BL-011; **BL-011 (MC-EXP-001) RECONCILIADO na v1.7** (seção "Reconciliação BL-011 / MC-EXP-001"): fila EXP-SPEC-001..053 + X-01/X-04/R-01..R-07 cruzados → memória semântica por REFERÊNCIA a RULE-CKG existentes (sem duplicar), memória episódica FORA (SPEC-007/018/K-001), COL-EXP-01..05 REFLETIDOS/ADIADOS; Disposição PARCIAL preservada; estado no painel inalterado (`Absorvido` é de Andraus); nenhuma regra nova. BL-010 tangente (SPEC-007); **BL-029 = `Em espera`**; **BL-035 (novo, `Em espera`) — CKG-STRUCT-ORIGIN-001** registrado pelo Especificador (RMR-001 §5), gatilho `decisao:CKG-STRUCT-ORIGIN-001 resolvida` ∨ `spec:SPEC-007 em redação` (não disparado); o Especificador NÃO promove. Passo 11-bis pleno na homologação. **PASS.**
 
 ---
 
@@ -175,7 +176,7 @@ Conferidos por grep cruzado (plan.md v1.6 **e** este checks.md; resíduo contrad
 
 ## 13. Observação de volume (consolidação)
 
-1421 → **1480 linhas** (Rodada 7 adicionou T17/ADV-22, cond.(v) de colisão, reconciliação N-07, códigos de versão/causal e as notas de N-01). A regra segue definida uma única vez (D2) e referenciada. O alvo `<1100` NÃO foi atingido sem risco à cobertura (CRITICAL). **Dividir a Spec é decisão exclusiva de Andraus (Q-ABERTURA-5; F-17)** — não feito.
+1480 → **~1525 linhas** (v1.7 adicionou só a seção "Reconciliação BL-011 / MC-EXP-001", ~45 linhas; total exato reconfirmado por grep/build no ambiente pai). A regra segue definida uma única vez (D2) e referenciada; a reconciliação mapeia por REFERÊNCIA, não cria regra. O alvo `<1100` NÃO foi atingido sem risco à cobertura (CRITICAL). **Dividir a Spec é decisão exclusiva de Andraus (Q-ABERTURA-5; F-17)** — não feito.
 
 ---
 
@@ -197,6 +198,6 @@ Conferidos por grep cruzado (plan.md v1.6 **e** este checks.md; resíduo contrad
 
 ## Resultado da verificação de spec
 
-**Estruturalmente CONFORME** (well-formedness) na v1.6. 13 BASpecs (D/C/H), 13 EARS (referenciando regra-fonte), 6 EC (escrita e guard = E3), §D2.1/§D2.2 (cond. (v) — N-08)/§D3.1, INV-CKG-01/02, proveniência condicional, CKG-010 por tipo [PROPOSTA], **17 cenários (T01..T17)**, **22 adversariais (ADV-01..22)**, CONS-01 preservado (H-001 e demais abertas; nova CKG-STRUCT-ORIGIN-001 ABERTA), gate RMR-001 (BL-029 `Em espera`; BL-035 novo `Em espera`). N-01..N-09 em §14 com grep cruzado = 0 resíduo contraditório onde "Corrigido".
+**Estruturalmente CONFORME** (well-formedness) na v1.7. 13 BASpecs (D/C/H), 13 EARS (referenciando regra-fonte), 6 EC (escrita e guard = E3), §D2.1/§D2.2 (cond. (v) — N-08)/§D3.1, INV-CKG-01/02, proveniência condicional, CKG-010 por tipo [PROPOSTA], **17 cenários (T01..T17)**, **22 adversariais (ADV-01..22)** — contagens inalteradas da v1.6 (grep de cabeçalhos: 13 BASpec/13 EARS). v1.7 acrescenta só a **Reconciliação BL-011 / MC-EXP-001** (seção curta, sem regra nova): EXP-SPEC-001..053 + X-/R- mapeados por REFERÊNCIA a RULE-CKG existentes ou FORA (SPEC-007/018/K-001); COL-EXP-01..05 REFLETIDOS/ADIADOS. CONS-01 preservado (H-001, J-001, K-001, M-001, N-001, G-001, CKG-STRUCT-ORIGIN-001 e demais ABERTAS; nenhuma fechada), gate RMR-001 (BL-011 reconciliado, Disposição PARCIAL, estado inalterado; BL-029/BL-035 `Em espera`). N-01..N-09 em §14 com grep cruzado = 0 resíduo contraditório onde "Corrigido".
 
 > Feedback interno de verificação de spec — **NÃO** é o parecer do Revisor nem homologação. Próximo passo: gates no ambiente pai (Especificador sem Bash) — `validate_spec_sot.py`, `revisor_gate.py`, `check_repo_research.py --all`, `check_doc_sync.py`, `backlog_triggers.py`, `check_invariants.py`, `build_map.py --check` — e submissão ao Revisor SOT.

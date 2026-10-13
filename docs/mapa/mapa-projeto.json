@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-13",
-  "digest": "d247af494702d86c5e8ff8495db66f249ee25956e2c738414b21b3aa3da054f0",
+  "digest": "b6d8a592d7383eb7048b4dcf74cbda104232ff89a8195844d183f2cb587e4d55",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -451,14 +451,14 @@
    "path": "governance/CLASSIFICACAO-COLISOES-BL010-011-012.md",
    "area": "governance",
    "title": "CLASSIFICAÇÃO DE COLISÕES — BL-010 / BL-011 / BL-012 (Master Contracts diferidos)",
-   "in": 3,
+   "in": 4,
    "out": 11
   },
   {
    "path": "governance/CONFLICT-MAP.md",
    "area": "governance",
    "title": "Conflict Map — SOT (Sistema Operacional de Trading)",
-   "in": 45,
+   "in": 46,
    "out": 37
   },
   {
@@ -1669,7 +1669,7 @@
    "path": "reference/camadas/CAMADA MEMÓRIA.MD",
    "area": "reference",
    "title": "MC-EXP-001 — MASTER CONTRACT DA CAMADA DE EXPERIÊNCIA E MEMÓRIA",
-   "in": 4,
+   "in": 5,
    "out": 0
   },
   {
@@ -1922,7 +1922,7 @@
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 63,
-   "out": 21
+   "out": 24
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -3048,7 +3048,7 @@
   {
    "id": "RULE-CAU-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-CBP",
@@ -20584,6 +20584,16 @@
   },
   {
    "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/CLASSIFICACAO-COLISOES-BL010-011-012.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/CONFLICT-MAP.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "type": "id"
   },
@@ -20625,6 +20635,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "reference/camadas/CAMADA MEMÓRIA.MD",
    "type": "path"
   },
   {
