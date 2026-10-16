@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 _FECHA = re.compile(r"\b(fechad[ao]s?|resolvid[ao]s?|decidid[ao]s?|homologad[ao]s?|encerrad[ao]s?)\b", re.I)
 _NEG_LOCAL = re.compile(
     r"\b(n[ãa]o|nunca|jamais|nem|sem|ainda|permanece\w*|segue\w*|continu\w*|aberta|abertas|pendente|pendentes|"
-    r"exceto|at[ée]|quando|se\b|para|antes|depois|ap[óo]s|só|somente|apenas|rejeit\w*|proíbe|proibid\w*|vedad\w*)\b|"
+    r"exceto|at[ée] que|quando|rejeit\w*|proíbe|proibid\w*|vedad\w*)\b|"
     r"\[DECIS[ÃA]O NECESS[ÁA]RIA\]|DADO|ADV-|cen[áa]rio|≠",
     re.I)
 _ID_DECISAO = re.compile(r"\b(?:[A-Z]{1,6}-\d{2}-\d{3}|[A-Z]{1,6}(?:-[A-Z][A-Z0-9]*)*-(?:D\d{2}|\d{3}))\b")
@@ -144,7 +144,7 @@ def citacoes_arquivo_linha(texto, root=ROOT):
 _CONTA = [
     ("BASpec", re.compile(r"^#{2,4}\s*BASpec-[A-Z]+-\d+", re.M), re.compile(r"\b(\d+)\s+BASpecs?\b")),
     ("EC", re.compile(r"^#{2,4}\s*EC-[A-Z]+-\d+", re.M), re.compile(r"(?<![\w-])(\d+)\s+(?:EC|Enforcement Contracts?|ECs)(?![\w-])")),
-    ("cenário", re.compile(r"^#{2,4}\s*Cen[áa]rio-[A-Z]+-T\d+", re.M), re.compile(r"\b(\d+)\s+cen[áa]rios\b", re.I)),
+    ("cenário", re.compile(r"^#{2,4}\s*Cen[áa]rio-[A-Z]+-T\d+", re.M), re.compile(r"\b(\d+)\s+cen[áa]rios\s*\(T01", re.I)),  # só a forma "N cenários (T01..Tnn)" (outras Specs numeram diferente)
     ("ADV", re.compile(r"^#{2,4}\s*ADV-[A-Z]+-\d+", re.M), re.compile(r"\b(\d+)\s+(?:adversariais|ADV)\b", re.I)),
 ]
 
@@ -186,14 +186,32 @@ def piso_enforcement(texto):
     return achados
 
 
+# ------------------------------------------------------------------------------------- campos por BASpec / por EC (P1-6)
+_CAMPOS_BASPEC = ["QUANDO", "ENTÃO", "PORQUE", "REFER[ÊE]NCIA", "VERIFICADO POR"]
+_CAMPOS_EC = ["CAPABILITY", "EFFECT", "PRECOND", "POSTCOND", "LEVEL"]
+
+
+def campos_por_bloco(texto):
+    """STRUCT-05/06 eram globais (o campo em QUALQUER lugar bastava). Aqui: cada `### BASpec-*` precisa dos 5 campos e cada
+    `### EC-*` dos campos de contrato, DENTRO do próprio bloco (até o próximo `### `)."""
+    achados = []
+    for rx, campos, nome in ((r"^###\s*(BASpec-[A-Z]+-\d+)", _CAMPOS_BASPEC, "BASpec"), (r"^###\s*(EC-[A-Z]+-\d+)", _CAMPOS_EC, "EC")):
+        for m in re.finditer(rx + r"[^\n]*\n(.*?)(?=^###\s|^##\s|\Z)", texto, re.M | re.S):
+            corpo = m.group(2)
+            falta = [c for c in campos if not re.search(r"^[ \t]*" + c + r"\b|\b" + c + r"\s*:", corpo, re.M | re.I)]
+            if falta:
+                ln = texto[:m.start()].count("\n") + 1
+                achados.append((ln, f"{m.group(1)} sem {', '.join(c.replace('[ÊE]', 'Ê') for c in falta)} no próprio bloco"))
+    return achados
+
+
 # ---------------------------------------------------------------------------------------------- decisões abertas fechadas
 def ids_abertos_do_status(texto):
     m = re.search(r"^\|\s*Status\s*\|([^\n]*)", texto, re.M)
     if not m:
         return set()
     s = m.group(1)
-    trecho = s[s.lower().find("permanece"):] if "permanece" in s.lower() else s
-    return {x for x in _ID_DECISAO.findall(trecho) if re.search(r"\d", x) and not x.startswith(("DHR-", "SPEC-", "BL-", "RULE-", "INV-", "EUA-"))}
+    return {x for x in _ID_DECISAO.findall(s) if re.search(r"\d", x) and not x.startswith(("DHR-", "SPEC-", "BL-", "RULE-", "INV-", "EUA-"))}
 
 
 def decisoes_abertas_fechadas(texto, extras=()):
@@ -238,6 +256,8 @@ def assertivas_checks(checks_texto, plan_texto):
     for i, linha in enumerate(checks_texto.splitlines(), 1):
         for m in _ASSERT.finditer(linha):
             tipo, alvo, onde = m.group(1), _norm(m.group(2)), m.group(3) or "plan"
+            if not re.search(r"\w", alvo):  # `assert-absent:"..."` literal = descrição do formato, não assertiva
+                continue
             base = checks_n if onde == "checks" else plan_n
             n = len(re.findall(re.escape(alvo), base))
             if onde == "checks":  # a própria assertiva contém o texto: não conta

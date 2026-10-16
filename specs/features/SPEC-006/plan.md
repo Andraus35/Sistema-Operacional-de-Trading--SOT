@@ -3,8 +3,8 @@
 | Campo | Valor |
 |---|---|
 | ID | SPEC-006 — Cognitive Knowledge Graph (contrato cognitivo da **memória semântica permanente** do SOT — ontologia enxuta + entidades/relações tipadas + temporalidade + proveniência por referência + lifecycle + confiança de relação + consulta cognitiva + governança de escrita; **mecanismo físico de armazenamento INDETERMINADO — H-001 ABERTA**) |
-| Versão | 1.7 (BASELINE) |
-| Status | **HOMOLOGADA — BASELINE v1.7** (Andraus, 2026-10-13, DHR-SPEC006-002; abertura DHR-SPEC006-001; parecer do Revisor CONFORME COM RESSALVAS). RULE-CKG-001..013 e INV-CKG-01/02 vigentes por homologação (registro físico em `RULES.md` diferido — RULE-HG-02). **H-001 (mecanismo físico do KG) permanece ABERTA — este Plan NÃO a fecha** (CONS-01; só Andraus). M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 seguem ABERTAS; **CKG-STRUCT-ORIGIN-001 (N-01/N-09) ABERTA** (BL-035). |
+| Versão | 1.8 (ERRATA PROPOSTA — Minor/aditiva sobre a baseline v1.7; INV-07: nada apagado, v1.7 preservada no changelog) |
+| Status | **BASELINE v1.7 (DHR-SPEC006-002) — ERRATA v1.8 PROPOSTA (aguarda Revisor e Andraus); a v1.7 segue vigente até a homologação da errata.** A v1.7 foi **HOMOLOGADA — BASELINE v1.7** (Andraus, 2026-10-13, DHR-SPEC006-002; abertura DHR-SPEC006-001; parecer do Revisor CONFORME COM RESSALVAS); a errata v1.8 incorpora as correções A-01..A-14 da auditoria independente (`governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md` §3) — **aditiva, Minor, nenhuma regra apagada**. RULE-CKG-001..013 e INV-CKG-01/02 vigentes por homologação da v1.7 (registro físico em `RULES.md` diferido — RULE-HG-02). **H-001 (mecanismo físico do KG) permanece ABERTA — nem a v1.7 nem esta errata a fecham** (CONS-01; só Andraus). M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 seguem ABERTAS; **CKG-STRUCT-ORIGIN-001 (N-01/N-09) ABERTA** (BL-035). **A-05 (governança): H-001 ficou sem dono após a homologação da v1.7; o re-apontamento (ROADMAP §6 / atomic-spec §12 / revisor.md §8) é decisão de Andraus — esta errata NÃO escolhe a dona** (ver nota A-05 no bloco de decisões abertas). |
 | Fonte | ROADMAP §6 (FASE 3); `specs/features/SPEC-006/ABERTURA.md` + `research.md` + `sources/` (Dossiê — RULE-ECC-01/02/04/06; validade CRITICAL 90 dias, limite 2027-01-03); DHR-SPEC006-001; atomic-spec **v1.5** (§3 emenda SPEC006-MATRIZ → CRITICAL · D0–D7); `governance/RULES.md` (RULE-BB-004, RULE-CAU-01/02/03, RULE-MECH-01, RULE-HD-02/03/04, RULE-ONT-01/02); `canon/CEM-001` (Responsabilidades do KG l.608-615), `canon/CHM-001`, `canon/CCM-001`, `canon/CEE-001` l.111, `canon/SAS-001` §6.12; `WORKFLOW.md` (conformidade, não editada) |
 | Complexidade | **CRITICAL** [FONTE: ROADMAP §6; atomic-spec §3 (emenda SPEC006-MATRIZ) "Knowledge Graph \| CRITICAL \| D0–D7"; DHR-SPEC006-001 Q-ABERTURA-2] |
 | Profundidade-alvo | **D0–D7 + D8 adversarial focado** nos pontos sensíveis (imutabilidade INV-07, confiança ≠ Convicção INV-04, causalidade pós-hoc RULE-CAU, colisão, governança de escrita), sem elevar o profile em silêncio [FONTE: ROADMAP §6; AGENTS.md §4; DHR-SPEC006-001 Q-ABERTURA-2] |
@@ -21,7 +21,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
 
 **Princípio fundador (transversal):** **MEMÓRIA PERMANENTE ≠ MEMÓRIA DE TRABALHO.** *"Blackboard ↓ memória de trabalho. Knowledge Graph ↓ memória permanente. Nunca misturar."* (KERNEL-V2; ROADMAP §5/§6). O KG é a **representação semântica permanente do conhecimento já validado e suas relações auditáveis** — não é "banco de grafos" (research.md §0) e não é memória de trabalho (SPEC-004). Este Plan define **o QUE** (contrato cognitivo), com o **mecanismo físico INDETERMINADO = H-001 (ABERTA)** — decisão de engenharia de Andraus, não fechada aqui. [FONTE: ROADMAP §6; DHR-SPEC006-001 Q-ABERTURA-3; research.md §0/§8]
 
-**Status epistemológico de cabeçalho:** a SPEC-006 é a **camada Harness/operacional da memória permanente** sobre responsabilidades que os canônicos BASELINED já atribuem ao KG (CEM-001 l.608-615; l.494; l.562-565 Cognitive Trace Reconstruction; CONSTITUTION l.233 EC-COG-003; SAS-001 §6.12; CEE-001 l.111). **NÃO redefine** CHM-001/CEM-001/CCM-001, nem reabre SPEC-004/SPEC-005 (**CC-02/CONST-01/INV-09**). **H-001** permanece **ABERTA**. [FONTE: ROADMAP §6/§7; atomic-spec §12; DHR-SPEC006-001 §3]
+**Status epistemológico de cabeçalho:** a SPEC-006 é a **camada Harness/operacional da memória permanente** sobre responsabilidades que os canônicos BASELINED já atribuem ao KG (CEM-001 l.608-615 Responsabilidades do KG; l.489-497 tabela "Consumo pelos Componentes" — estados da EVIDÊNCIA, A-03; l.562-565 Cognitive Trace Reconstruction; CONSTITUTION l.233 EC-COG-003; SAS-001 §6.12; CEE-001 l.111). **NÃO redefine** CHM-001/CEM-001/CCM-001, nem reabre SPEC-004/SPEC-005 (**CC-02/CONST-01/INV-09**). **H-001** permanece **ABERTA**. [FONTE: ROADMAP §6/§7; atomic-spec §12; DHR-SPEC006-001 §3]
 
 ### Histórico de versões
 
@@ -34,19 +34,20 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
 | 1.4 | 2026-10-12 | Rodada 5 (9 Maiores + 8 Menores): proveniência condicional; admissão por estado-por-tipo [PROPOSTA]; `to_node==conviction` proibido; `posthoc_flag` determinístico; versionamento sem fork; §D3.1. 16 cenários, 21 ADV. |
 | 1.5 | 2026-10-12 | **Rodada 6 — CONSOLIDAÇÃO + 6 Maiores + Menores.** Regra definida UMA vez (RULE-CKG/BASpec, fonte única); EARS/D4/D6/EC/T/ADV/Herança/checks só referenciam por ID. M-01 preservação "a partir da admissão" (MODIFIED) + conviction {COMPUTED,GATED_PASS,GATED_BLOCK,SUPERSEDED}; M-02 aciclicidade invertida; M-03 trace completo só p/ Evidência (hipótese [PROPOSTA]); M-04 outcome_ref/outcome_timestamp obrigatórios (ou no_outcome); M-05 `computed_by`(produtor autenticado)≠`writer_id`(committer); M-06 `school` de structure + natural_key completo; Menores m-02..m-12. Contagem preservada: 13 BASpecs, 6 EC, 13 EARS, 16 cenários, 21 ADV, INV-CKG-01/02. |
 | 1.6 | 2026-10-12 | **Rodada 7 — 1 Maior (N-01) + Menores N-02..N-09.** N-01 (opção (a) de Andraus): `school`/`hierarchy_role` SÓ para `hypothesis`; `structure` não deriva school nem origina ORIGINA; SAS-001 §6.12 não é fonte de school → [DECISÃO NECESSÁRIA] CKG-STRUCT-ORIGIN-001 + BL-035. N-02 `outcome_timestamp` derivado do `recorded_at` do `outcome_ref` (OUTCOME_TIMESTAMP_INVALID) + no_outcome×outcome_ref (NO_OUTCOME_CONFLICT). N-03 T17/ADV-22 computed_by≠writer_id (commit direto DENY) + admissão por tipo evidence/conviction (ADV-21). N-04 EXPECTED_VERSION_REQUIRED/VERSION_CONFLICT (códigos SPEC-004), record_kind de relação sem `collision`, CANONICAL_CONTRACT_REDEFINITION_FORBIDDEN. N-06 REFUTED só CHM (SUPERSEDED/ARCHIVED também na Evidência). N-07 reconciliação INV-CKG-02×CKG-003 + timeout bounded [DECISÃO NECESSÁRIA] + self-loop proibido. N-08 colisão INVALIDA×alvo = marcação (não rejeição) + cond.(v) alvo ainda vigente. N-09 `school=Fractal` sem produtor (CKG-STRUCT-ORIGIN-001). Contagem: 13 BASpecs, 6 EC, 13 EARS, **17 cenários (T01..T17)**, **22 ADV**, INV-CKG-01/02. |
-| 1.7 | 2026-10-13 | **Reconciliação BL-011 / MC-EXP-001 (DHR-BACKLOG-ABERTURA-001).** Nova seção curta cruzando EXP-SPEC-001..053 + tratamentos X-01/X-04/R-01..R-07 contra os RULE-CKG: memória semântica → REFERÊNCIA (CKG existentes, sem duplicar); memória episódica → FORA (SPEC-007/018/K-001); COL-EXP-01..05 REFLETIDOS/ADIADOS. BL-011 na Nota de gate atualizado de "Pendente" para resultado real (Disposição PARCIAL preservada). Nenhuma regra nova; nenhuma decisão aberta fechada. Contagens inalteradas: 13 BASpecs, 6 EC, 13 EARS, 17 cenários, 22 ADV, INV-CKG-01/02. |
+| 1.7 | 2026-10-13 | **Reconciliação BL-011 / MC-EXP-001 (DHR-BACKLOG-ABERTURA-001).** Nova seção curta cruzando EXP-SPEC-001..053 + tratamentos X-01/X-04/R-01..R-07 contra os RULE-CKG: memória semântica → REFERÊNCIA (CKG existentes, sem duplicar); memória episódica → FORA (SPEC-007/018/K-001); COL-EXP-01..05 REFLETIDOS/ADIADOS. BL-011 na Nota de gate atualizado de "Pendente" para resultado real (Disposição PARCIAL preservada). Nenhuma regra nova; nenhuma decisão aberta fechada. Contagens inalteradas: 13 BASpecs, 6 EC, 13 EARS, 17 cenários, 22 ADV, INV-CKG-01/02. **(HOMOLOGADA — BASELINE v1.7, DHR-SPEC006-002; permanece vigente até a homologação da errata v1.8.)** |
+| 1.8 | 2026-10-16 | **ERRATA PROPOSTA (Minor/aditiva — INV-07: nada apagado; v1.7 preservada acima).** Incorpora A-01..A-14 da auditoria independente (`governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md` §3): A-01 pós-hoc por `formulated_at` (instante de FORMULAÇÃO, não `recorded_at` corrente; RULE-CKG-008/EARS-8/BASpec-008/D4/schema/T16(+caso positivo)/ADV-04/EC-005); A-02 admissão por TRAJETÓRIA (só objeto que esteve em ACTIVE; `TRAJECTORY_NEVER_ACTIVE`; opção conservadora [PROPOSTA], conhecimento negativo = [DECISÃO NECESSÁRIA]; RULE-CKG-010/T09/ADV-21); A-03 RETIRADO o MODIFIED sobre CEM-001 l.494 (premissa falsa — l.494 é estados da EVIDÊNCIA; regra de preservação vira LOCAL em CKG-010; Herança/Delta); A-04 RULE-CKG-001 fail-closed de hypothesis (`canonical_ref≠null`∧`producer∈AUTHORIZED_PRODUCERS`∧`school` derivável∧`PRIMARY⇒Elliott`∧proíbe via selo (b); T18/T19/ADV-23); A-05 nota de governança (H-001 sem dono — re-apontamento é de Andraus; NÃO escolhe dona); A-06..A-09 âncoras corrigidas (CBP-007 l.264-270; RMR por ID/âncora; R-8 em ABERTURA §10; RULES ONT-01 l.671/ONT-02 l.672; CONSTITUTION l.191/192; SPEC-005 l.971; CEM-001 l.606); A-10 `target_relation_id` na chave natural da relação; A-11 INVALIDA+fechamento de `valid_to` = ato ATÔMICO (cond.(v) independe de ordem); A-12 arestas de SAÍDA mínimas p/ conviction/narrative (nenhuma PARA conviction — INV-04) + calibration_metric isolamento intencional [PROPOSTA]; A-13 ADV-08/09/10 e falso-DENY de BASpec-009 reclassificados como checagem de REVISÃO/spec-time; A-14 guard de ESCRITA (EC-004 E3) separado do guard de LEITURA (EC-006 E1). Contagens: 13 BASpecs, 6 EC, 13 EARS, **19 cenários (T01..T19)**, **23 ADV (ADV-01..23)**, INV-CKG-01/02. Nenhuma decisão aberta foi tocada; H-001 permanece ABERTA. |
 
 ---
 
 ## Nota de gate (passo 11-bis / RMR-001)
 
-[FONTE: ROADMAP §23 passo 11-bis; DHR-SPEC006-001 §3/§4; DHR-SPEC006-PEND-001; ABERTURA §8/§9; RMR-001 l.128 (BL-029) / l.192 (DHR-SPEC006-PEND-001)]
+[FONTE: ROADMAP §23 passo 11-bis; DHR-SPEC006-001 §3/§4; DHR-SPEC006-PEND-001; ABERTURA §8/§9; RMR-001 BL-029 + nota DHR-SPEC006-PEND-001 (citados por ID/âncora, não por linha — A-07)]
 
 - **Nenhum item do RMR-001 tem gatilho `spec:SPEC-006` homologado isoladamente.** O início da redação **satisfaz ramos de gatilho** de itens pré-existentes — **tratado como reflexo; promoção/encaminhamento é do gate e de Andraus** (o Especificador NÃO promove — CONS-01).
 - **BL-003** (persistência física de hipótese/estado) — `Em espera`, gatilho `spec:SPEC-006 em redação` ∨ `spec:SPEC-009 em redação`. **Disposição: PARCIAL** — vinculado à SPEC-006 por regra desde a abertura (DHR-BACKLOG-ABERTURA-001), sem depender de promoção. **Incorporado:** o contrato LÓGICO da memória permanente do KG (o que se grava, versionamento, proveniência, governança de escrita — RULE-CKG-*). **Fora:** a parte **física** (mecanismo de armazenamento) **É** H-001 (ABERTA) / G-001 (ABERTA) → permanece INDETERMINADA, decisão de Andraus (CONS-01); o estado do item no painel não muda (`Absorvido` é de Andraus).
 - **BL-011** (MC-EXP-001) — `Em espera`, gatilho inclui `spec:SPEC-006 em redação`. **Disposição: PARCIAL** — vinculado por regra desde a abertura; **fonte de requisitos** sob COL-EXP-01..05 (CONFLICT-MAP; prevalece SOT canônico). **Incorporado (já refletido neste Plan):** confiança de relação ≠ Convicção (RULE-CKG-007; INV-04), imutabilidade/append-only (INV-07), fronteira KG × Blackboard (Working Memory = SPEC-004). **Reconciliado (v1.7 — ver seção "Reconciliação BL-011 / MC-EXP-001" abaixo):** a fila EXP-SPEC-001..053 (aberta e lida em `reference/camadas/CAMADA MEMÓRIA.MD` l.818-1038) e os tratamentos X-01/X-04/R-01..R-07 foram cruzados contra os RULE-CKG. Resultado honesto: **(i)** os concernentes à memória **SEMÂNTICA permanente** (imutabilidade, versionamento, proveniência, temporalidade, integridade, conflito, duplicidade, referência ao canônico) já são cobertos por RULE-CKG-001/002/004/005/006/010/012/013 — tratados por **REFERÊNCIA**, não duplicados (CC-02/INV-09); **(ii)** os de memória **EPISÓDICA/experiência** (retrieval, outcome/performance, decisão/execução, lição/feedback, estratégia, harness) são **FORA** → SPEC-007 (retrieval), SPEC-018/K-001 (aprendizado/evolução), Experiência (*"nunca misturar"*); **(iii)** os tratamentos COL-EXP-01..05 estão todos **REFLETIDOS** ou **ADIADOS** conforme `CONFLICT-MAP.md` (prevalece SOT canônico). **Nenhuma lacuna exigiu nova RULE-CKG.** Os resíduos são **[DECISÃO NECESSÁRIA] pré-existentes** (critério de decaimento/valor/retenção → K-001/SPEC-018, já em S14; produtor/gatilho de promoção trabalho→permanente, já em CKG-010; dup. EXP-SPEC-021↔RAG-SPEC-018 ADIADA a SPEC-007/009 — COL-EXP-05). Classificação ≠ aplicação; o estado no painel **NÃO muda** (`Absorvido` é de Andraus).
 - **BL-010** (MC-RAG-001) — `Em espera`, gatilho `spec:SPEC-007 em redação` ∨ `milestone:FASE 3 iniciada`. BL-010 é fonte da **SPEC-007** → **tangente**; a SPEC-006 respeita a fronteira. **Não promovo**.
-- **BL-029** (proveniência) — **`Em espera`** (DHR-SPEC006-PEND-001; gatilho `spec:SPEC-014`/`SPEC-018`/`SPEC-045`; o gatilho `spec:SPEC-004` foi CONSUMIDO). **Independente desta Spec** — não absorvido nem promovido. [FONTE: RMR-001 l.128 / l.192]
+- **BL-029** (proveniência) — **`Em espera`** (DHR-SPEC006-PEND-001; gatilho `spec:SPEC-014`/`SPEC-018`/`SPEC-045`; o gatilho `spec:SPEC-004` foi CONSUMIDO). **Independente desta Spec** — não absorvido nem promovido. [FONTE: RMR-001 BL-029 / nota DHR-SPEC006-PEND-001 — por ID/âncora, A-07]
 - O passo 11-bis pleno ocorre na homologação do Plan.
 
 ---
@@ -85,7 +86,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
 | Tratamento · COL | Decisão de colisão (CONFLICT-MAP) | Situação na SPEC-006 |
 |---|---|---|
 | X-01 · COL-EXP-01 — status "BASELINE"/"BASELINE PROPOSTA" | REJEITAR efeito → PROPOSTA/ref. externa | **REFLETIDO** — MC-EXP-001 é [EXTERNO]/DADO (research.md; `sources/`); nenhum efeito de baseline (INV-09). |
-| X-04 · COL-EXP-04 — Working Memory §7.6 | ADIAR/RELOCAR → SPEC-004 | **REFLETIDO** — Non-goal "memória de trabalho"; EMERGENT/CANDIDATE excluídos da admissão (CKG-010/M-01); *"nunca misturar"*. |
+| X-04 · COL-EXP-04 — Working Memory §7.6 | ADIAR/RELOCAR → SPEC-004 | **REFLETIDO** — Non-goal "memória de trabalho"; EMERGENT/CANDIDATE excluídos da admissão (CKG-010 — regra LOCAL, A-03); *"nunca misturar"*. |
 | R-01 · COL-EXP-02 — Quality Gates G0–G8 | REJEITAR namespace global; ADAPTAR local | **REFLETIDO** — SPEC-006 usa maturidade L0–L4 / nível-alvo L3 (RULE-MM, SPEC-021); não adota o namespace G. |
 | R-02/R-03 · COL-EXP-03 — I-EXP-01..12 / EXP-P01..P14 | ADAPTAR como LOCAIS ancorados nos canônicos | **REFLETIDO por referência** — I-EXP-01/07 (imutabilidade)=INV-07/RULE-CKG-006; I-EXP-08=RULE-MET-01 (CKG-005/008); I-EXP-09 (sem autoridade decisional)=INV-05/RULE-DEC-01; EXP-P03=RULE-EPI (CC-09); EXP-P04=RULE-CAU-03 (CKG-008). Nenhum invariante global novo criado. |
 | R-04/R-05/R-06 — `confidence`≠Conviction/J-001; Experience Packet projeta CEM | CONFORME (fronteiras) | **Fronteira CONFORME refletida** (aplicação formal conforme CLASSIFICACAO-COLISOES §2, linha de R-04..R-06: adiada à ativação) — confiança ≠ Convicção = RULE-CKG-007/INV-04; **J-001 permanece ABERTA**; Experience Packet projeta CEM = CC-02 (CKG-002). |
@@ -108,7 +109,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
 - [x] **CC-05 — Complexidade declarada:** CRITICAL, D0–D7 + D8 adversarial focado.
 - [x] **CC-06 — Campos SES-001 §59 (Engineering Card):** **N/A** — o artefato é Spec/Plan; §59/§60 tornam-se obrigatórios nas Tasks/Cards (BUILD adiado — atomic-spec §14). Omissão justificada.
 - [x] **CC-07 — Cadeia de derivação SES-001 §60:** N/A (idem CC-06); rastreabilidade: ROADMAP §6 → Dossiê (research.md, HOMOLOGADO DHR-SPEC006-001) → este Plan.
-- [x] **CC-08 — Bloco Herança/Delta (§8.3, EUA-E04):** presente; INHERITS/ADDED/MODIFIED com ID+versão (RULE-HD-04); REMOVED vazio; MODIFIED (preservação de estados especializada a "a partir da admissão") não contradiz o herdado (RULE-HD-02). Eixo VERTICAL (RULE-HV) avaliado e não aplicável. [FONTE: EUA-E04; RULE-HD-02/03/04]
+- [x] **CC-08 — Bloco Herança/Delta (§8.3, EUA-E04):** presente; INHERITS/ADDED/MODIFIED com ID+versão (RULE-HD-04); REMOVED vazio; MODIFIED = só RULE-BB-004 REFORÇADA (não altera texto/significado) — o antigo M-01 sobre CEM-001 l.494 foi RETIRADO por premissa falsa (A-03: l.494 trata estados da EVIDÊNCIA; a preservação "a partir da admissão" é regra LOCAL CKG-010, não MODIFIED), sem contradizer o herdado (RULE-HD-02/03). Eixo VERTICAL (RULE-HV) avaliado e não aplicável. [FONTE: EUA-E04; RULE-HD-02/03/04]
 - [x] **CC-09 — Epistemic Check (RULE-EPI):** mecanismo físico = **INDETERMINADO (H-001 ABERTA)**, não fato; relações causais exigem mecanismo + regime + marcador pós-hoc (RULE-CAU-01/02/03); sem falsa precisão em "confiança de relação" (sem número até calibração); fontes web = DADO [EXTERNO]. [FONTE: RULE-EPI-01..03; RULE-CAU; research.md §8]
 - [x] **CC-10 — Terminologia concorrente (RULE-SEM-01):** tratada (ver "Declaração de acepção semântica"): "conhecimento permanente" vs "memória de trabalho" vs "documento recuperado" vs "Observação" (INV-06); "confiança de relação" vs "Convicção"; "esquecimento" = arquivamento versionado; estados do KG vs estados canônicos homônimos. Nenhum termo canônico redefinido (RULE-SEM-04). [FONTE: RULE-SEM-01/04; INV-06; GLOSSARIO]
 - [x] **CC-11 — Classe/Mecanismo por BASpec (RULE-MECH-01):** cada BASpec com efeito declara Classe (D/C/H) com critério 4Es; C/H declaram gate de saída determinístico; H declara bounded loop + parada (CKG-008). Por BASpec, nunca por Spec inteira (SES-001 §50). Ver §D3. [FONTE: RULE-MECH-01..04; atomic-spec §9/§10.6]
@@ -125,8 +126,9 @@ HERANÇA / DELTA — SPEC-006
 
 INHERITS (herdado — a spec NÃO redefine; referência por ID + VERSÃO baseline — RULE-HD-04):
   - canon/CEM-001 (BASELINE) — Responsabilidades do KG (l.608-615): preservar linhagem; preservar TODAS as versões;
-    preservar os estados (ver MODIFIED: especializado a "a partir da admissão"); Cognitive Trace Reconstruction
-    COMPLETA da Evidência a partir das relações de Lineage (l.562-565); navegação da cadeia cognitiva (l.494; l.699).
+    preservar os estados **da EVIDÊNCIA** (l.613 — bullet "preservar todos os estados" dentro de l.608-615; a preservação
+    "a partir da admissão" é regra LOCAL do KG em CKG-010, **NÃO MODIFIED de obrigação canônica** — A-03); Cognitive Trace
+    Reconstruction COMPLETA da Evidência a partir das relações de Lineage (l.562-565); navegação da cadeia cognitiva (l.615; l.699).
     Proveniência: o campo LOCAL `provenance_ref.lineage` [PROPOSTA] REFERENCIA o campo `Lineage` (CEM-001 Cap.5;
     l.351/539-554) / `derived_from[]` (SPEC-004) — NÃO existe `lineage_ref` no CEM-001. Estados da Evidência =
     ACTIVE/SUPERSEDED/INVALIDATED/ARCHIVED (l.258-262 — a Evidência NÃO tem REFUTED). Transições proibidas l.473-475
@@ -141,13 +143,13 @@ INHERITS (herdado — a spec NÃO redefine; referência por ID + VERSÃO baselin
     supersessão = PROJEÇÃO DERIVADA (registro histórico NUNCA mutado; sucessora carrega `supersedes`; INV-CBP-01,
     RULE-CBP-003); versionamento OTIMISTA compare-and-commit (RULE-CBP-004 l.239-246: expected_version obrigatório na
     ATUALIZAÇÃO, EXPECTED_VERSION_REQUIRED l.243-245; criação não exige); proveniência `computed_by`/`gate_record`/
-    identidade autenticada (RULE-CBP-007 l.543-558; RULE-CBP-014 l.311-319). O KG é memória PERMANENTE, distinta
+    identidade autenticada (RULE-CBP-007 l.264-270; RULE-CBP-014 l.311-319). O KG é memória PERMANENTE, distinta
     ("Nunca misturar"); HERDA a mecânica append-only e a identidade autenticada por referência; NÃO redefine (CC-02/INV-09)
   - specs/features/SPEC-005 v1.0 (BASELINE — DHR-SPEC005-002) — notificação de mudança (Event Bus); **[INFERÊNCIA]** o
     KG pode CONSUMIR eventos de ciclo de vida só como GATILHO de avaliação autorizada (CKG-009), nunca invalidação
     automática (CEM-001 l.602). O tipo `Evidence.Invalidated` É canônico (CEM-001 l.600/722) e a SPEC-005 o TRANSPORTA
     (plan l.88/l.859); a SPEC-005 **não define** o consumidor nem o contrato de consumo pelo KG = **[DECISÃO NECESSÁRIA]**;
-    a SPEC-005 fonta do LOG do Blackboard e NÃO escreve no KG (l.242/l.971). EMISSÃO de eventos pelo KG = [DECISÃO NECESSÁRIA]
+    a SPEC-005 fonta do LOG do Blackboard e NÃO escreve no KG (l.971 — A-09; l.242 é o envelope do evento S1). EMISSÃO de eventos pelo KG = [DECISÃO NECESSÁRIA]
   - canon/CEE-001 (BASELINE) l.111 — a métrica de calibração do roteamento "entra no KG"; o KG ARMAZENA como nó (por
     referência), ISOLADA do Conviction Vector (INV-04); não a computa
   - canon/SAS-001 §6.12 (l.923-924) — o Structural Agent atua EXCLUSIVAMENTE como PRODUTOR; registra relações; NÃO
@@ -159,7 +161,7 @@ INHERITS (herdado — a spec NÃO redefine; referência por ID + VERSÃO baselin
   - governance/CONSTITUTION.md l.233 (EC-COG-003) — âncora constitucional; conformar-se, não reescrever (INV-09)
   - governance/RULES.md: RULE-BB-004 (append-only; SUPERSEDED, nunca deletados — l.323) REFORÇADO como imutabilidade
     permanente (INV-07); RULE-CAU-01 (mecanismo — l.680), RULE-CAU-02 (regime — l.681), RULE-CAU-03 (pós-hoc — l.682)
-    incidem sobre CAUSA (CKG-008); RULE-ONT-01/02 (status ontológico; ontologia extensível por governança — l.671)
+    incidem sobre CAUSA (CKG-008); RULE-ONT-01 (status ontológico — l.671) / RULE-ONT-02 (ontologia extensível por governança — l.672; A-09)
   - Método: atomic-spec.md v1.5 (BASpec, D0–D9, EARS, Enforcement E0–E3 — §10.2 "KG publicado → E3 mínimo", TRACE-06,
     Quality Gates, Classe/Mecanismo §10.6, RULE-MM; §3 emenda SPEC006-MATRIZ → CRITICAL · D0–D7)
   - Governança/Avaliação/Maturidade: SPEC-019 v1.0 (RULE-HG/HV — governança spec-time). **[INFERÊNCIA]** alterar a
@@ -195,11 +197,16 @@ ADDED (delta local — ver "Cobertura × lacuna"):
 MODIFIED (especialização de regra herdada — RULE-HD-02):
   - RULE-BB-004 (append-only do Blackboard) é REFORÇADA, não alterada, como imutabilidade PERMANENTE do KG (INV-07);
     texto/significado inalterados
-  - **[M-01] A responsabilidade CEM-001 l.494 "preservar os estados" é ESPECIALIZADA no KG para "preservar TODOS os
-    estados A PARTIR DA ADMISSÃO (ACTIVE em diante)".** EMERGENT/CANDIDATE são memória de TRABALHO (SPEC-004 — "nunca
-    misturar"), NUNCA admitidos no KG permanente (RULE-CKG-010); sua preservação cabe à SPEC-004, não ao KG. É
-    especialização de ALCANCE, não contradição (RULE-HD-02): nenhum estado de objeto ADMITIDO é perdido. O histórico de
-    transições do KG começa na admissão; EMERGENT/CANDIDATE não aparecem em `canonical_state_transition_record` do KG.
+  - **[M-01 RETIRADO na errata v1.8 — A-03]** O antigo MODIFIED que "especializava a responsabilidade CEM-001 l.494
+    'preservar os estados'" foi **RETIRADO por premissa falsa**: a CEM-001 l.494 é a linha "Knowledge Graph | Todos os
+    estados (preservação permanente)" da tabela **"Consumo pelos Componentes" (l.489-497)**, que trata dos **estados da
+    EVIDÊNCIA** (ACTIVE/SUPERSEDED/INVALIDATED/ARCHIVED — l.258-262), e NÃO impõe obrigação sobre estados de TRABALHO da
+    hipótese. EMERGENT/CANDIDATE são estados da **HIPÓTESE** (CHM-001 §4.2) e **nenhuma obrigação canônica (CEM-001/CHM-001)
+    exige guardá-los no KG** (grep "Knowledge Graph" no CHM-001 = 0). Logo NÃO há regra canônica a "modificar". A exclusão
+    de EMERGENT/CANDIDATE e a preservação "a partir da admissão" permanecem como **regra LOCAL do KG (RULE-CKG-010)**, não
+    como MODIFIED de canônico (preserva CC-02/CONST-01 sem premissa falsa — RULE-HD-02/03). O histórico de transições do KG
+    começa na admissão; EMERGENT/CANDIDATE não aparecem em `canonical_state_transition_record` do KG (regra local).
+    *(INV-07: o texto do antigo M-01 fica registrado neste changelog/auditoria; nada é apagado.)*
 
 REMOVED (só com governança — nunca implícito):
   - (vazio)
@@ -214,7 +221,7 @@ REMOVED (só com governança — nunca implícito):
 
 | Capacidade | Coberta por canônico/Spec? (arquivo:linha) | Tratamento na SPEC-006 |
 |---|---|---|
-| Preservar linhagem/versões/estados **dos objetos admitidos**; Trace completo da Evidência | SIM — CEM-001 l.494/608-615; l.562-565 | ESPECIFICAR verificável (CKG-010/011); referencia CEM (ver MODIFIED M-01) |
+| Preservar linhagem/versões/estados **dos objetos admitidos**; Trace completo da Evidência | SIM — CEM-001 l.608-615 (Responsabilidades do KG); l.562-565 (l.489-497 = tabela Consumo, estados da Evidência) | ESPECIFICAR verificável (CKG-010/011); referencia CEM; preservação "a partir da admissão" é regra LOCAL CKG-010 (não MODIFIED — A-03) |
 | Máquina de estados da hipótese | SIM — CHM-001 | HERDADA — armazena por referência; não transiciona |
 | Append-only REAL (supersessão = projeção derivada) | SIM — SPEC-004 v1.2 (INV-CBP-01) | HERDADA a mecânica (CKG-004/006/012) |
 | Versionamento compare-and-commit (expected_version) | SIM — SPEC-004 RULE-CBP-004 l.239-246 | HERDADA e aplicada ao KG (CKG-012) |
@@ -339,11 +346,19 @@ atomic-spec v1.5, INV-*, ENF-* são FATO NORMATIVO. Fontes externas (research.md
 
 ```
 RULE-CKG-001: Todo nó/relação escrito DEVE pertencer à ONTOLOGIA permitida (tipo ∈ catálogo) e satisfazer a MATRIZ DE
-              INTEGRIDADE §D2.1 (origem/destino, direcionalidade, simetria por tipo). REGRA DE NÓ: `hypothesis.school ≠ ICT`
-              (ICT não cria hipótese — INV-02/RULE-HH-004); HERDA só liga SUB a PAI `hierarchy_role=PRIMARY` (RULE-HH-003).
-              Violação é REJEITADA (fail-closed). A ontologia é ENXUTA e vive DENTRO da SPEC-006. O KG ESPELHA os vínculos
-              já criados pelos agentes; NÃO decide a autoridade de criação (CC-01).
-              [Fonte: KERNEL-V2 l.1488-1507; DHR-SPEC006-001 Q-ABERTURA-4; INV-02; SPEC-001 RULE-HH-003 l.104/RULE-HH-004 l.108]  [PROPOSTA]
+              INTEGRIDADE §D2.1 (origem/destino, direcionalidade, simetria por tipo). **REGRA DE NÓ `hypothesis` — fail-closed
+              [A-04]:** (i) `canonical_ref ≠ null` — senão DENY `HYPOTHESIS_CANONICAL_REF_MISSING`; (ii) `producer ∈
+              AUTHORIZED_PRODUCERS` (SPEC-001 l.97/524 = Elliott/SMC/Fibonacci) — senão DENY `HYPOTHESIS_PRODUCER_UNAUTHORIZED`
+              (cobre o Structural Agent, que publica "Hipóteses Estruturais" — SAS-001 §6.11 l.920-921 — e não está na
+              allowlist de produtor de hipótese); (iii) `school` NÃO derivável do produtor ⇒ DENY `SCHOOL_NOT_DERIVABLE`
+              (NUNCA falha-aberto); (iv) `school ≠ ICT` (ICT não cria hipótese — INV-02/RULE-HH-004) ⇒ `HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`;
+              (v) `hierarchy_role=PRIMARY ⇒ school=Elliott` (só Elliott cria a primária — SPEC-001 RULE-HH-002 l.100; AGENTS §6
+              item 2) — senão DENY `PRIMARY_NOT_ELLIOTT`; (vi) `hypothesis` NÃO pode entrar pelo caminho (b) selo SPEC-007
+              (`publication.origin=spec007_seal`) — só pelo ciclo de vida canônico (a) — senão DENY `HYPOTHESIS_VIA_SEAL_FORBIDDEN`.
+              HERDA só liga SUB a PAI `hierarchy_role=PRIMARY` (RULE-HH-003), e o PAI PRIMARY é necessariamente Elliott (v).
+              Violação é REJEITADA (fail-closed — NUNCA falha-aberto por `school` indeterminável). A ontologia é ENXUTA e vive
+              DENTRO da SPEC-006. O KG ESPELHA os vínculos já criados pelos agentes; NÃO decide a autoridade de criação (CC-01).
+              [Fonte: KERNEL-V2 l.1488-1507; DHR-SPEC006-001 Q-ABERTURA-4; INV-02; SPEC-001 RULE-HH-002 l.100/RULE-HH-003 l.104/RULE-HH-004 l.108/l.97/l.524; SAS-001 §6.11 l.920-921; AGENTS §6 item 2]  [PROPOSTA]
 
 RULE-CKG-002: Toda ENTIDADE que corresponde a objeto canônico (hypothesis/CHM-001, evidence/CEM-001, conviction/CCM-001)
               DEVE referenciá-lo por ID+versão — NUNCA redefinir contrato/campos/estados (CC-02/INV-10). Um nó `observation`
@@ -366,16 +381,16 @@ RULE-CKG-003: Toda RELAÇÃO DEVE ser tipada, armazenada DIRECIONADA (origem→d
               [Fonte: ROADMAP §6; research.md §4/§8; INV-07; CEM-001 l.565]  [PROPOSTA]
 
 RULE-CKG-004: A mudança de validade de uma relação é ATO AUTORIZADO (CKG-009), NUNCA automática/cascata (CEM-001 l.602; o
-              impacto sobre hipóteses/convicções é de CHM/CCM — l.503/606; CHM-001 l.672-676). NÃO muta o registro
+              impacto sobre hipóteses/convicções é de CHM/CCM — l.606; CHM-001 l.672-676; A-09). NÃO muta o registro
               existente: grava NOVO registro (invalidação/sucessão) com `recorded_at` e, quando aplicável, `valid_to`
               (`targets_record_id`=R0 referenciado, DISTINTO de `supersedes`). A validade corrente é PROJEÇÃO DERIVADA.
               **Bitemporal:** valid-time (`valid_from`/`valid_to`) + transaction-time (`recorded_at`). Rejeita janela
               inválida `valid_to < valid_from` (`INVALID_TIME_WINDOW`). Convenção: `valid_to = null` ≡ +∞ (vigente).
               Invalidar ≠ deletar (INV-07; espelha SPEC-004 INV-CBP-01).
-              [Fonte: research.md §3.1; INV-07; SPEC-004 INV-CBP-01; CEM-001 l.602/l.503; CHM-001 l.672-676]  [PROPOSTA]
+              [Fonte: research.md §3.1; INV-07; SPEC-004 INV-CBP-01; CEM-001 l.602/l.606; CHM-001 l.672-676]  [PROPOSTA]
 
 RULE-CKG-005: Nenhuma entidade/relação existe sem PROVENIÊNCIA, espelhando a condicionalidade de SPEC-004 RULE-CBP-007
-              (l.543-558): (a) `computed_by` — identidade AUTENTICADA do PRODUTOR/PROPONENTE (RULE-CBP-014 l.311-319) —
+              (l.264-270; a BASpec-CBP-007 fica em l.543-559 — A-06): (a) `computed_by` — identidade AUTENTICADA do PRODUTOR/PROPONENTE (RULE-CBP-014 l.311-319) —
               SEMPRE obrigatório; (b) `gate_record` SÓ quando o objeto resulta de gate; (c) `provenance_ref.lineage`/
               `derived_from` SÓ quando DERIVADO. Para `asset`/`timeframe`/`regime`/`observation` e hipóteses PRIMARY,
               `lineage=[]` é legítimo (NÃO force gate_record/lineage fabricado — RULE-MET-01). Escrita sem a proveniência
@@ -383,7 +398,7 @@ RULE-CKG-005: Nenhuma entidade/relação existe sem PROVENIÊNCIA, espelhando a 
               [PROPOSTA] referencia `Lineage` (CEM-001 Cap.5)/`derived_from[]` (SPEC-004) — não há `lineage_ref` no CEM-001.
               **Identidade [M-05]:** `computed_by` (produtor autenticado) é DISTINTO de `writer_id` (identidade autenticada
               do COMMITTER — runtime ou serviço do KG); ambos autenticados, não oriundos do payload (ver D6/contrato). A distinção vale para nós/relações propostos por produtor; em registros gerados pelo serviço do KG (collision, transição, arquivamento) `computed_by = writer_id = serviço` por desenho.
-              [Fonte: CEM-001 Cap.5; SPEC-004 RULE-CBP-007 l.543-558/CBP-014 l.311-319; research.md §3.2]  [PROPOSTA]
+              [Fonte: CEM-001 Cap.5; SPEC-004 RULE-CBP-007 l.264-270/CBP-014 l.311-319; research.md §3.2]  [PROPOSTA]
 
 RULE-CKG-006: O KG é APPEND-ONLY PERMANENTE (INV-07; reforça RULE-BB-004; espelha SPEC-004 INV-CBP-01): nenhum registro é
               DELETADO nem MUTADO (`IMMUTABILITY_VIOLATION`). "Esquecimento"/consolidação = ARQUIVAMENTO versionado (novo
@@ -403,15 +418,24 @@ RULE-CKG-008: Toda relação CAUSA DEVE declarar MECANISMO+DIREÇÃO+CONDIÇÕES
               `posthoc_flag` BOOLEANO obrigatório (RULE-CAU-03); correlação/precedência não bastam. **Desfecho [M-04/N-02]:**
               DEVE referenciar o desfecho — `outcome_ref` obrigatório; **`outcome_timestamp` NÃO vem do payload: é DERIVADO
               do `recorded_at` do registro apontado por `outcome_ref` (N-02)** — se vier informado no payload, DEVE coincidir
-              e um `outcome_timestamp` > `recorded_at` do registro apontado é rejeitado (`OUTCOME_TIMESTAMP_INVALID`). Quando
-              não há desfecho, exige declaração explícita `no_outcome=true` + justificativa (sem desfecho ⇒ `posthoc_flag=false`
-              e nenhuma regra temporal incide); **`no_outcome=true` COM `outcome_ref` presente é CONTRADIÇÃO e é rejeitado**
-              (`NO_OUTCOME_CONFLICT`). **Regra determinística:** se `recorded_at` > `outcome_timestamp` (derivado), então
-              `posthoc_flag` DEVE ser `true` (`POSTHOC_FLAG_REQUIRED`). Faltando qualquer campo (incl. `outcome_ref` sem
-              `no_outcome`): rejeita (`CAUSAL_FIELDS_MISSING`; subcódigos `POSTHOC_FLAG_REQUIRED`/`OUTCOME_REF_MISSING`/
-              `OUTCOME_TIMESTAMP_INVALID`/`NO_OUTCOME_CONFLICT`). SIMILAR_A proposta por juízo exige `similarity_basis`.
-              Classe H: bounded loop (parada) + gate de saída determinístico que verifica a PRESENÇA dos campos e a regra de
-              carimbo (não a veracidade — ENF-03).
+              e um `outcome_timestamp` do payload posterior ao `recorded_at` do registro apontado é rejeitado
+              (`OUTCOME_TIMESTAMP_INVALID`). Quando não há desfecho, exige declaração explícita `no_outcome=true` +
+              justificativa (sem desfecho ⇒ `posthoc_flag=false` e nenhuma regra temporal incide); **`no_outcome=true` COM
+              `outcome_ref` presente é CONTRADIÇÃO e é rejeitado** (`NO_OUTCOME_CONFLICT`).
+              **Instante de FORMULAÇÃO [A-01] — baseline do marcador pós-hoc:** o marcador compara o desfecho com o instante
+              em que a AFIRMAÇÃO CAUSAL foi FORMULADA, NÃO com o `recorded_at` do registro CORRENTE. `formulated_at` :=
+              `recorded_at` da PRIMEIRA versão da cadeia `supersedes` desta relação causal (ou, quando a causa referencia uma
+              hipótese como proponente do juízo, o `recorded_at` da 1ª versão da hipótese referenciada). Usar o `recorded_at`
+              do registro corrente seria DEGENERADO: como o registro apontado por `outcome_ref` precisa EXISTIR antes de ser
+              referenciado, `recorded_at(CAUSA) > recorded_at(outcome)` SEMPRE — toda causa com desfecho sairia pós-hoc e a
+              RULE-CAU-03 ("poderia ter sido formulada ANTES do resultado?") deixaria de ser representável.
+              **Regra determinística:** se `formulated_at` > `outcome_timestamp`, então `posthoc_flag` DEVE ser `true`
+              (`POSTHOC_FLAG_REQUIRED`); se `formulated_at` ≤ `outcome_timestamp` — a causa PODERIA ter sido formulada antes
+              do desfecho (RULE-CAU-03 = SIM) — NÃO é pós-hoc e `posthoc_flag=false` é legítimo (aceito). Faltando qualquer
+              campo (incl. `outcome_ref` sem `no_outcome`): rejeita (`CAUSAL_FIELDS_MISSING`; subcódigos
+              `POSTHOC_FLAG_REQUIRED`/`OUTCOME_REF_MISSING`/`OUTCOME_TIMESTAMP_INVALID`/`NO_OUTCOME_CONFLICT`). SIMILAR_A
+              proposta por juízo exige `similarity_basis`. Classe H: bounded loop (parada) + gate de saída determinístico que
+              verifica a PRESENÇA dos campos e a regra de carimbo (não a veracidade — ENF-03).
               [Fonte: RULE-CAU-01/02/03 (RULES.md l.680-682); research.md §8]  [PROPOSTA]
 
 RULE-CKG-009: A escrita permanente é GOVERNADA e E3 (atomic-spec §10.2 "KG publicado → E3 mínimo"), fail-closed: só
@@ -433,11 +457,23 @@ RULE-CKG-010: O KG recebe conhecimento por DUAS fontes sob a MESMA governança (
               admissível do TIPO — **hypothesis (CHM-001)** ∈ {ACTIVE, DOMINANT, SUPERSEDED, REFUTED, ARCHIVED}; **evidence
               (CEM-001 l.258-262)** ∈ {ACTIVE, SUPERSEDED, INVALIDATED, ARCHIVED}; **conviction (CCM-001 l.58/78)** ∈
               {COMPUTED, GATED_PASS, GATED_BLOCK, SUPERSEDED} — **EXCLUINDO EMERGENT/CANDIDATE** (ainda TRABALHO — SPEC-004).
-              Fora do conjunto: `CANONICAL_STATUS_NOT_ADMISSIBLE`. **[M-01]** Os estados A PARTIR DA ADMISSÃO são preservados
-              (CEM-001 l.494, especializado em MODIFIED); EMERGENT/CANDIDATE nunca são admitidos nem registrados no histórico
-              do KG. O PRODUTOR e o GATILHO/EVENTO de promoção trabalho→permanente permanecem **[DECISÃO NECESSÁRIA]** (a
-              SPEC-005 não escreve no KG — plan l.971; atribuir à SPEC-018/K-001 é proposta a Andraus, não homologada).
-              [Fonte: ROADMAP §6/§7; CEM-001 l.258-262/l.494; CHM-001; CCM-001 l.58/78; research.md §3.4]  [PROPOSTA]
+              Fora do conjunto: `CANONICAL_STATUS_NOT_ADMISSIBLE`.
+              **Admissão por TRAJETÓRIA [A-02] [PROPOSTA — opção conservadora/fail-closed]:** o `canonical_status` CORRENTE
+              NÃO basta, porque CHM-001 §4.3 (l.744-748) permite EMERGENT→ARCHIVED, CANDIDATE→ARCHIVED e CANDIDATE→REFUTED — uma
+              hipótese órfã NUNCA validada (CHM-001 l.379) chegaria como ARCHIVED/REFUTED por puro trabalho, contrariando o
+              fundamento da regra ("o KG guarda conhecimento já validado"). Admite-se objeto canônico SÓ se sua TRAJETÓRIA de
+              estados (histórico `canonical_state_transition`) demonstra que ESTEVE em ACTIVE (ou DOMINANT, p/ hipótese) em
+              algum ponto. Quem chega em ARCHIVED/REFUTED SEM nunca ter passado por ACTIVE é REJEITADO fail-closed
+              (`TRAJECTORY_NEVER_ACTIVE`); trajetória não demonstrável ⇒ DENY (fail-closed). **Alternativa [DECISÃO NECESSÁRIA]:**
+              se REFUTED/ARCHIVED vindos SÓ de trabalho DEVEM entrar como CONHECIMENTO NEGATIVO (lição do que foi descartado) é
+              decisão de Andraus — NÃO fechada aqui; por ora prevalece a opção conservadora.
+              **Preservação de estados — regra LOCAL [A-03] (NÃO é MODIFIED de canônico):** os estados A PARTIR DA ADMISSÃO são
+              preservados no KG; EMERGENT/CANDIDATE nunca são admitidos nem registrados no histórico do KG. Isto é regra LOCAL
+              de admissão do KG — **NENHUMA obrigação canônica (CEM-001/CHM-001) exige guardar estados de TRABALHO da hipótese
+              no KG**; o MODIFIED sobre CEM-001 l.494 foi RETIRADO (A-03; ver Herança/Delta). O PRODUTOR e o GATILHO/EVENTO de
+              promoção trabalho→permanente permanecem **[DECISÃO NECESSÁRIA]** (a SPEC-005 não escreve no KG — plan l.971;
+              atribuir à SPEC-018/K-001 é proposta a Andraus, não homologada).
+              [Fonte: ROADMAP §6/§7; CEM-001 l.258-262; CHM-001 §4.3 l.744-748/l.379; CCM-001 l.58/78; research.md §3.4]  [PROPOSTA]
 
 RULE-CKG-011: O KG DEVE oferecer CONSULTA cognitiva read-only (padrão/similaridade/causalidade/histórico/multi-salto) sem
               alterar estado. **Cognitive Trace Reconstruction COMPLETA é obrigação GARANTIDA apenas para a EVIDÊNCIA
@@ -466,6 +502,11 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
               (CONFIRMA×REFUTA: mesmos `from_node`/`to_node`; INVALIDA×alvo: `INVALIDA.target_relation_id == r2.relation_id`),
               (iii) janelas de validade se SOBREPÕEM e (iv) AMBAS NÃO-SUPERSEDED; **(v) só para INVALIDA×alvo: o alvo `r2`
               PERMANECE VIGENTE apesar da INVALIDA — invalidação autorizada que FECHA a validade de `r2` NÃO colide (N-08)**.
+              **Atomicidade da invalidação autorizada [A-11]:** a INVALIDA e o registro que FECHA o `valid_to` de `r2` são o
+              MESMO ATO, aplicados ATOMICAMENTE (um único commit); a condição (v) é avaliada SOBRE O ESTADO RESULTANTE dos dois
+              registros, NUNCA no instante intermediário em que a INVALIDA já existe mas `r2` ainda não foi fechado. Assim o
+              resultado NÃO depende de ordem de escrita: a invalidação autorizada normal fecha `r2` no mesmo ato e por isso NÃO
+              colide; a colisão (v) só surge quando `r2` permanece vigente APÓS o ato atômico (invalidação contestada/pendente).
               O `collision_record` é MARCAÇÃO NÃO-DESTRUTIVA para governança — ambas PRESERVADAS, nunca rejeição/apagamento
               (N-08). Então o KG DETECTA e grava um `collision_record` COM IDENTIDADE/PROVENIÊNCIA PRÓPRIAS
               (`collision_id`/`version`/`computed_by`=`writer_id`=SERVIÇO do KG sob capability de detecção/`recorded_at`; E3)
@@ -491,12 +532,18 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 > autoridade (CC-01). Regra de nó: `hypothesis.school ≠ ICT` (INV-02/RULE-HH-004 — SPEC-001 l.108/l.515-520). HERDA sub→pai
 > ENTRE escolas é NORMAL (SPEC-001 RULE-HH-003 l.104; CHM-001 `parent_hypothesis_id` l.165/415; CONSTITUTION l.193); HERDA
 > valida só `pai.hierarchy_role=PRIMARY`.
+> **Fail-closed de `hypothesis` [A-04]:** o gate NÃO se limita a rejeitar `school==ICT`. Para `node_type=hypothesis` exige
+> `canonical_ref≠null` ∧ `producer ∈ AUTHORIZED_PRODUCERS` (senão DENY — RULE-CKG-001 (i)/(ii)); `school` NÃO derivável do
+> produtor ⇒ **DENY `SCHOOL_NOT_DERIVABLE`** (jamais falha-aberto); `hierarchy_role=PRIMARY ⇒ school=Elliott` (só Elliott
+> cria a primária — SPEC-001 RULE-HH-002 l.100) ⇒ senão DENY `PRIMARY_NOT_ELLIOTT`; `hypothesis` pelo caminho (b) selo
+> SPEC-007 é PROIBIDA (`HYPOTHESIS_VIA_SEAL_FORBIDDEN`) — só entra pelo ciclo de vida canônico (a). Assim a proteção de
+> INV-02/RULE-HH-002 é EFETIVA, não apenas aparente (o gate não cai aberto quando a `school` não é derivável).
 
 | Relação | Origem (node_type) | Destino (node_type) | Direcional | Simétrica (consulta) |
 |---|---|---|---|---|
-| CONFIRMA | **evidence** (NÃO observation — CONSTITUTION l.191; INV-06) | hypothesis | sim | não |
+| CONFIRMA | **evidence** (NÃO observation — CONSTITUTION l.191 Observations vs l.192 Evidence; INV-06; A-09) | hypothesis | sim | não |
 | REFUTA | **evidence** (NÃO observation) | hypothesis | sim | não |
-| DEPENDE_DE | hypothesis, mission | hypothesis, evidence | sim | não |
+| DEPENDE_DE | hypothesis, mission, **conviction** (A-12 — aresta de SAÍDA de conviction → evidence/hypothesis; torna as fontes da convicção navegáveis CCM-001 `source_evidence_ids`/`hypothesis_ref`; **NENHUMA aresta PARA conviction**, INV-04), **narrative** (A-12 — narrative → hypothesis; KERNEL-V2 l.1500 "Narrativa agrega Hipóteses") | hypothesis, evidence | sim | não |
 | HERDA | hypothesis (`hierarchy_role=SUB`) | hypothesis (**PAI = PRIMARY** — RULE-HH-003); entre escolas permitido | sim | não |
 | PERTENCE_A | hypothesis, evidence, structure, observation | asset, timeframe, regime, mission | sim | não |
 | INVALIDA | evidence, learning | evidence, relation (via `target_relation_id`) | sim | não |
@@ -507,6 +554,14 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 | HIERARQUIA_DE | structure, timeframe | structure, timeframe | sim | não |
 | ESTATISTICA_DE | learning | hypothesis, structure, asset | sim | não |
 
+> **Navegabilidade de tipos antes isolados [A-12]:** `conviction` e `narrative` ganharam arestas de SAÍDA mínimas
+> (DEPENDE_DE) para que as fontes da convicção (CCM-001 `source_evidence_ids`/`hypothesis_ref`) e a agregação de hipóteses
+> pela narrativa (KERNEL-V2 l.1500) sejam navegáveis na cadeia cognitiva (CEM-001 l.614-615) — **sempre de SAÍDA; NENHUMA
+> aresta tem `to_node.node_type==conviction`** (INV-04 intocado; RULE-CKG-007). **`calibration_metric`:** o isolamento é
+> **INTENCIONAL [PROPOSTA]** — a métrica de calibração "entra no KG" como NÓ isolado (CEE-001 l.111), sem relação de
+> saída obrigatória nesta versão (não há cadeia cognitiva a navegar a partir dela); qualquer elo futuro é **[DECISÃO
+> NECESSÁRIA]**. Nunca é destino de aresta (INV-04).
+>
 > **DERIVA_DE × proveniência:** `DERIVA_DE` é RELAÇÃO navegável (aresta de Lineage entre nós), consumida pela Trace
 > Reconstruction (ordem = ancestralidade — CEM-001 l.567-577). `provenance_ref.lineage` é CAMPO de proveniência do
 > registro (referencia `Lineage`/`derived_from[]`) — não é aresta navegável. Coexistem.
@@ -544,7 +599,9 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 > **INVALIDATED_IN_TIME / NÃO-vigente** — e aí **NÃO há colisão** (a INVALIDA cumpriu seu papel; não há duas afirmações
 > vigentes em conflito). A colisão só é marcada quando `r2` **PERMANECE VIGENTE** (`valid_to=null` ou período sobreposto)
 > APESAR da INVALIDA vigente — i.e., uma invalidação pendente/contestada sobre uma relação ainda afirmada como válida.
-> Essa restrição (condição (v) abaixo) impede que todo uso normal de INVALIDA gere colisão.
+> Essa restrição (condição (v) abaixo) impede que todo uso normal de INVALIDA gere colisão. **[A-11]** A INVALIDA e o
+> fechamento do `valid_to` do alvo são um ÚNICO ATO ATÔMICO; (v) é avaliada sobre o estado resultante dos dois registros
+> (nunca no instante intermediário) — a decisão de colisão NÃO depende da ordem de escrita.
 
 | Tipo A | Tipo B (contradiz A) | Escopo do par | Simétrico? | Observação |
 |---|---|---|---|---|
@@ -568,7 +625,7 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 5. (CKG-005) Quando qualquer escrita é tentada, o KG DEVE exigir `computed_by` (produtor autenticado) sempre, `gate_record` se há gate e `lineage` se derivado, e DEVE rejeitá-la sem a proveniência exigível.
 6. (CKG-006) Quando um "esquecimento"/consolidação é solicitado, o KG DEVE arquivar/rebaixar por novo registro versionado, e NÃO DEVE remover nem mutar registro histórico.
 7. (CKG-007) Quando uma confiança de relação é registrada ou lida, o KG DEVE mantê-la em namespace próprio e NÃO DEVE escrevê-la/devolvê-la em campos do objeto de convicção, nem escrever QUALQUER aresta `to_node.node_type == conviction` (direta ou por 2 saltos).
-8. (CKG-008) Quando uma relação causal é proposta, o KG DEVE exigir mechanism+direction+conditions+regime, `posthoc_flag` booleano, `outcome_ref` (ou `no_outcome=true`+justificativa), DEVE DERIVAR `outcome_timestamp` do `recorded_at` do registro apontado por `outcome_ref` (rejeitando carimbo de payload posterior) e rejeitar `no_outcome=true` com `outcome_ref` presente, DEVE forçar `posthoc_flag=true` quando `recorded_at` > `outcome_timestamp`, e DEVE rejeitar causal sem esses campos; SIMILAR_A por juízo DEVE carregar `similarity_basis`.
+8. (CKG-008) Quando uma relação causal é proposta, o KG DEVE exigir mechanism+direction+conditions+regime, `posthoc_flag` booleano, `outcome_ref` (ou `no_outcome=true`+justificativa), DEVE DERIVAR `outcome_timestamp` do `recorded_at` do registro apontado por `outcome_ref` (rejeitando carimbo de payload posterior) e rejeitar `no_outcome=true` com `outcome_ref` presente, DEVE forçar `posthoc_flag=true` quando `formulated_at` > `outcome_timestamp` (instante de FORMULAÇÃO, não do registro corrente — A-01) e aceitar `posthoc_flag=false` quando `formulated_at` ≤ `outcome_timestamp`, e DEVE rejeitar causal sem esses campos; SIMILAR_A por juízo DEVE carregar `similarity_basis`.
 9. (CKG-009/005) Quando uma escrita permanente é tentada, o KG DEVE aceitá-la (E3) apenas de escritor autorizado/autenticado (falha de auth ⇒ não-autorizado), NÃO DEVE permitir que o produtor redefina ontologia/taxonomia, e NÃO DEVE aceitar commit direto do PRODUTOR (`computed_by` como `writer_id`) — só o COMMITTER autorizado (runtime/serviço do KG) escreve (capacidade×papel, D6).
 10. (CKG-010) Quando conhecimento formado sem selo é submetido, o KG DEVE rejeitá-lo; objetos canônicos entram só quando `canonical_status` ∈ conjunto admissível do tipo (exclui EMERGENT/CANDIDATE), preservando os estados a partir da admissão.
 11. (CKG-011) Quando um consumidor consulta o KG, o KG DEVE responder read-only; para a EVIDÊNCIA DEVE reconstruir a cadeia COMPLETA; para hipótese oferece trace best-effort [PROPOSTA]; NÃO DEVE alterar estado na consulta.
@@ -592,7 +649,7 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 
 | Código-pai | Subcódigos | BASpec/uso |
 |---|---|---|
-| `ONTOLOGY_INTEGRITY_VIOLATION` | `HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`, `ORIGINA_ICT_FORBIDDEN`, `RELATION_TYPE_INVALID`, `SIMILAR_A_TYPE_MISMATCH` | CKG-001/003; T01/T03; ADV-12/17 |
+| `ONTOLOGY_INTEGRITY_VIOLATION` | `HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`, `ORIGINA_ICT_FORBIDDEN`, `RELATION_TYPE_INVALID`, `SIMILAR_A_TYPE_MISMATCH`, `PRIMARY_NOT_ELLIOTT` (A-04), `SCHOOL_NOT_DERIVABLE` (A-04), `HYPOTHESIS_PRODUCER_UNAUTHORIZED` (A-04), `HYPOTHESIS_CANONICAL_REF_MISSING` (A-04) | CKG-001/003; T01/T03/T18/T19; ADV-12/17 |
 | `OBSERVATION_IS_NOT_EVIDENCE` | — | CKG-002; T02; ADV-11 |
 | `FORBIDDEN_CANONICAL_TRANSITION` | — | CKG-002; T09; ADV-11 |
 | `CANONICAL_CONTRACT_REDEFINITION_FORBIDDEN` | — | CKG-002 (redefinir campos/estado do canônico — CC-02/INV-10); ADV-11 (N-04) |
@@ -602,9 +659,9 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 | `WRITE_UNAUTHORIZED` | `AUTH_UNAVAILABLE`, `ONTOLOGY_REDEFINITION_FORBIDDEN` | CKG-009; T08; ADV-07 |
 | `IMMUTABILITY_VIOLATION` | `PHYSICAL_DELETE_FORBIDDEN`, `RECORD_UPDATE_FORBIDDEN`, `VERSION_FORK_FORBIDDEN`, `EXPECTED_VERSION_REQUIRED` (ausência), `VERSION_CONFLICT` (divergência) — códigos de origem SPEC-004 CBP-004 l.243-244 (N-04) | CKG-006/012; T05/T13; ADV-01/13/15/19 |
 | `INVALID_TIME_WINDOW` | — | CKG-004; T04; ADV-13 |
-| `ADMISSION_REJECTED` | `FORMED_WITHOUT_SEAL`, `CANONICAL_STATUS_NOT_ADMISSIBLE` | CKG-010; T09; ADV-21 |
+| `ADMISSION_REJECTED` | `FORMED_WITHOUT_SEAL`, `CANONICAL_STATUS_NOT_ADMISSIBLE`, `TRAJECTORY_NEVER_ACTIVE` (A-02), `HYPOTHESIS_VIA_SEAL_FORBIDDEN` (A-04) | CKG-010; T09; ADV-21/23 |
 | `LINEAGE_INCOMPLETE` | `DERIVA_DE_EDGE_MISSING`, `LINEAGE_CYCLE` | CKG-003/011; ADV-16/20 |
-| `SCOPE_OR_OPEN_DECISION_VIOLATION` | `OUT_OF_SCOPE_FORMATION`, `OPEN_DECISION_H001`, `OUT_OF_SCOPE_OR_OPEN_DECISION` | fronteiras; ADV-08/09/10 |
+| `SCOPE_OR_OPEN_DECISION_VIOLATION` **(marcador de REVISÃO/spec-time — A-13; NÃO é código de rejeição de runtime)** | `OUT_OF_SCOPE_FORMATION`, `OPEN_DECISION_H001`, `OUT_OF_SCOPE_OR_OPEN_DECISION` | checagem de revisão de escopo/decisão aberta (ADV-08/09/10 — spec-time, não gate de runtime) |
 
 ### BASpec-CKG-001 — Ontologia enxuta + matriz de integridade (ver RULE-CKG-001)
 ```
@@ -613,7 +670,7 @@ BASpec-CKG-001:
   ENTÃO:        Aplica RULE-CKG-001 — escreve só se tipo ∈ ontologia ∧ matriz §D2.1 satisfeita (incl. regra de nó
                 `hypothesis.school ≠ ICT` e HERDA.pai=PRIMARY); violação rejeitada (fail-closed). Espelha vínculos criados
                 pelos agentes; não decide autoridade (CC-01)
-  PORQUE:       Sem gramática enxuta + integridade, a memória permanente acumula conhecimento incoerente (research.md §8 R-8)
+  PORQUE:       Sem gramática enxuta + integridade, a memória permanente acumula conhecimento incoerente (ABERTURA.md §10 R-8 — A-08)
   REFERÊNCIA:   RULE-CKG-001; §D2.1; INV-02; RULE-HH-003/004 (SPEC-001 l.104/108)
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
@@ -636,7 +693,7 @@ BASpec-CKG-002:
                 (CEM-001 l.473-475) ou reativação de estado terminal é REJEITADA; `observation` não é rotulado `evidence`
   PORQUE:       Redefinir canônico viola CC-02/CONST-01; Status é o único campo mutável (CEM-001 l.264); reativar terminal
                 viola a integridade histórica (l.468-475); Observação≠Evidência (INV-06); idioma canônico do objeto (INV-10)
-  REFERÊNCIA:   RULE-CKG-002; CC-02; CC-10; CEM-001 l.264/428/468-475/494; INV-06; INV-10
+  REFERÊNCIA:   RULE-CKG-002; CC-02; CC-10; CEM-001 l.264/428/468-475; INV-06; INV-10
   CLASSE/MECANISMO:
     CLASSE      : D (Determinístico)
     MECANISMO   : referência (canonical_id@version) + snapshot + transição validada contra a tabela do tipo; rótulo validado (INV-06)
@@ -679,7 +736,7 @@ BASpec-CKG-004:
                 R0 intacto; rejeita `valid_to < valid_from` (`INVALID_TIME_WINDOW`); validade corrente = projeção derivada;
                 consulta responde por valid-time e transaction-time
   PORQUE:       Invalidar por novo registro preserva a reconstrução (INV-07); só ato autorizado respeita "não-cascata" (CEM-001 l.602); janela com fim antes do início é incoerente
-  REFERÊNCIA:   RULE-CKG-004/009; INV-07; SPEC-004 INV-CBP-01; CEM-001 l.602/l.503
+  REFERÊNCIA:   RULE-CKG-004/009; INV-07; SPEC-004 INV-CBP-01; CEM-001 l.602/l.606
   CLASSE/MECANISMO:
     CLASSE      : D (Determinístico)
     MECANISMO   : novo registro de invalidação (valid_to/recorded_at/targets_record_id); rejeita valid_to<valid_from; estado por projeção; sem mutação
@@ -699,7 +756,7 @@ BASpec-CKG-005:
                 só se derivado (`[]` legítimo para PRIMARY/asset/timeframe/regime/observation); escrita sem a proveniência
                 exigível é rejeitada; **`computed_by` (produtor) ≠ `writer_id` (committer) [M-05]**
   PORQUE:       Conhecimento sem origem autenticada não é reconstruível (P13); exigir gate_record/lineage de quem não tem gate/ancestral fabricaria dado (RULE-MET-01) e contrariaria CBP-007
-  REFERÊNCIA:   RULE-CKG-005; SPEC-004 RULE-CBP-007 l.543-558/CBP-014 l.311-319; CEM-001 Cap.5
+  REFERÊNCIA:   RULE-CKG-005; SPEC-004 RULE-CBP-007 l.264-270/CBP-014 l.311-319; CEM-001 Cap.5
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
     MECANISMO   : gate determinístico — computed_by presente ∧ [gate ⇒ gate_record] ∧ [derivado ⇒ lineage não-vazio]
@@ -759,22 +816,24 @@ BASpec-CKG-008:
   ENTÃO:        Aplica RULE-CKG-008 — CAUSA exige mechanism+direction+conditions+regime, `posthoc_flag` booleano,
                 `outcome_ref` (ou `no_outcome=true`+justificativa) [M-04]; **`outcome_timestamp` DERIVADO do `recorded_at`
                 do registro apontado por `outcome_ref` [N-02]** (payload divergente/posterior ⇒ `OUTCOME_TIMESTAMP_INVALID`;
-                `no_outcome=true` com `outcome_ref` ⇒ `NO_OUTCOME_CONFLICT`); força `posthoc_flag=true` quando `recorded_at`
-                > `outcome_timestamp`; faltando qualquer campo rejeita. SIMILAR_A por juízo exige `similarity_basis`. Gate
-                verifica PRESENÇA e a regra de carimbo, não veracidade (ENF-03)
-  PORQUE:       Correlação não é causalidade (CAU-01); regime muda a relação (CAU-02); explicação pós-resultado é viés se não marcada (CAU-03); desfecho/carimbo vindo do payload seria contornável — por isso `outcome_timestamp` deriva do registro apontado (N-02)
+                `no_outcome=true` com `outcome_ref` ⇒ `NO_OUTCOME_CONFLICT`); força `posthoc_flag=true` quando `formulated_at`
+                > `outcome_timestamp` e aceita `posthoc_flag=false` quando `formulated_at` ≤ `outcome_timestamp` (instante de
+                FORMULAÇÃO = `recorded_at` da 1ª versão da cadeia `supersedes`/hipótese referenciada, não o registro corrente — A-01);
+                faltando qualquer campo rejeita. SIMILAR_A por juízo exige `similarity_basis`. Gate verifica PRESENÇA e a regra
+                de carimbo, não veracidade (ENF-03)
+  PORQUE:       Correlação não é causalidade (CAU-01); regime muda a relação (CAU-02); explicação pós-resultado é viés se não marcada (CAU-03); comparar com o `recorded_at` do registro corrente tornaria TODA causa pós-hoc (degenerado) — por isso o baseline é o instante de FORMULAÇÃO (A-01) e o carimbo do desfecho deriva do registro apontado (N-02)
   REFERÊNCIA:   RULE-CKG-008; RULE-CAU-01/02/03
   CLASSE/MECANISMO:
     CLASSE      : H (Híbrido)
     MECANISMO   : juízo (apoio semântico) PROPÕE; gate determinístico verifica presença dos campos e a regra temporal
     BOUNDED LOOP: nº máx. de tentativas por par de nós; sem retry infinito (CAUSA e SIMILAR_A)
-    GATE DE SAÍDA: verificação (CAUSA ⇒ mechanism ∧ direction ∧ conditions ∧ regime ∧ posthoc_flag ∧ (outcome_ref ∨ no_outcome) ∧ ¬(outcome_ref ∧ no_outcome) ∧ [outcome_ref ⇒ outcome_timestamp := recorded_at(outcome_ref) ∧ payload_ts ≤ recorded_at(outcome_ref)] ∧ [recorded_at>outcome_timestamp ⇒ posthoc_flag==true]; SIMILAR_A ⇒ similarity_basis)
+    GATE DE SAÍDA: verificação (CAUSA ⇒ mechanism ∧ direction ∧ conditions ∧ regime ∧ posthoc_flag ∧ (outcome_ref ∨ no_outcome) ∧ ¬(outcome_ref ∧ no_outcome) ∧ [outcome_ref ⇒ outcome_timestamp := recorded_at(outcome_ref) ∧ payload_ts ≤ recorded_at(outcome_ref)] ∧ [formulated_at>outcome_timestamp ⇒ posthoc_flag==true] ∧ [formulated_at≤outcome_timestamp ⇒ posthoc_flag=false aceito, não pós-hoc — A-01], formulated_at := recorded_at da 1ª versão da cadeia supersedes/hipótese referenciada; SIMILAR_A ⇒ similarity_basis)
     CRITÉRIO 4Es: Eficácia (causalidade válida) > Eficiência; LLM é detector, nunca gate (ENF-03)
   VERIFICADO POR:
-    DADO        (a) CAUSA sem mechanism/regime; (b) CAUSA com recorded_at > outcome_timestamp e posthoc_flag=false; (c) CAUSA sem outcome_ref e sem no_outcome; (d) CAUSA com outcome_timestamp (payload) POSTERIOR ao recorded_at do registro apontado por outcome_ref; (e) CAUSA com no_outcome=true E outcome_ref presente
+    DADO        (a) CAUSA sem mechanism/regime; (b) CAUSA com formulated_at > outcome_timestamp e posthoc_flag=false; (c) CAUSA sem outcome_ref e sem no_outcome; (d) CAUSA com outcome_timestamp (payload) POSTERIOR ao recorded_at do registro apontado por outcome_ref; (e) CAUSA com no_outcome=true E outcome_ref presente; (f) CAUSA cujo formulated_at é ANTERIOR ao outcome_timestamp (a afirmação foi formulada ANTES do desfecho) e posthoc_flag=false
     QUANDO      o gate de saída roda
-    ENTÃO       (a) `CAUSAL_FIELDS_MISSING`; (b) `POSTHOC_FLAG_REQUIRED`; (c) `OUTCOME_REF_MISSING`; (d) `OUTCOME_TIMESTAMP_INVALID`; (e) `NO_OUTCOME_CONFLICT`
-    VERIFICAÇÃO causal_written == false; posthoc_rule_enforced == true; outcome_ref_required == true; outcome_timestamp_derived_from_ref == true; no_outcome_conflict_rejected == true
+    ENTÃO       (a) `CAUSAL_FIELDS_MISSING`; (b) `POSTHOC_FLAG_REQUIRED`; (c) `OUTCOME_REF_MISSING`; (d) `OUTCOME_TIMESTAMP_INVALID`; (e) `NO_OUTCOME_CONFLICT`; (f) ACEITA (não pós-hoc — posthoc_flag=false é legítimo; A-01)
+    VERIFICAÇÃO causal_written_in_f == true; posthoc_rule_enforced == true; outcome_ref_required == true; outcome_timestamp_derived_from_ref == true; posthoc_baseline_is_formulated_at == true; no_outcome_conflict_rejected == true
 ```
 
 ### BASpec-CKG-009 — Governança de escrita E3 (ver RULE-CKG-009) [E3]
@@ -793,7 +852,7 @@ BASpec-CKG-009:
   VERIFICADO POR:
     DADO        uma escrita cuja verificação de identidade da SPEC-004 está indisponível/falha
     QUANDO      o gate E3 roda
-    ENTÃO       negada (fail-closed; tratada como não-autorizada); falso-DENY amostrado (ENF-07)
+    ENTÃO       negada (fail-closed; tratada como não-autorizada). [A-13: a amostragem de falso-DENY E3 é propriedade de enforcement (ENF-07, EC-CKG-003), não desfecho verificável deste cenário]
     VERIFICAÇÃO write_allowed == false; fail_closed == true; treated_as_unauthorized == true
 ```
 
@@ -802,10 +861,10 @@ BASpec-CKG-009:
 BASpec-CKG-010:
   QUANDO:       Conhecimento é submetido ao KG
   ENTÃO:        Aplica RULE-CKG-010 — admite (a) canônicos cujo `canonical_status` ∈ conjunto admissível do tipo (exclui
-                EMERGENT/CANDIDATE), gravando `canonical_status`+transições (preserva estados A PARTIR DA ADMISSÃO — M-01),
+                EMERGENT/CANDIDATE), gravando `canonical_status`+transições (preserva estados a partir da admissão — regra LOCAL CKG-010, A-03),
                 e (b) formado com selo SPEC-007; formado sem selo rejeitado; o KG não forma/retrieval
   PORQUE:       "Documento recuperado ≠ validado ≠ publicado"; formação é SPEC-007; o canonical_ref@version sozinho não carrega Status (CEM-001 l.264) — exige canonical_status+transições
-  REFERÊNCIA:   RULE-CKG-010; ROADMAP §6/§7; CEM-001 l.258-262/l.264/l.494; CCM-001 l.58/78
+  REFERÊNCIA:   RULE-CKG-010; ROADMAP §6/§7; CEM-001 l.258-262/l.264; CHM-001 §4.3 l.744-748 (trajetória — A-02); CCM-001 l.58/78
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
     MECANISMO   : (b) gate (selo SPEC-007 presente); (a) gate POR TIPO (`canonical_status` ∈ conjunto admissível) — ambos verificáveis, fail-closed
@@ -887,12 +946,12 @@ BASpec-CKG-013:
 
 Mecânicas determinísticas (a lógica, não a tecnologia; mecanismo físico = **H-001 ABERTA**). Referenciam as regras D2.
 
-- **Integridade (CKG-001):** aceitar sse tipo ∈ catálogo ∧ (origem.node_type, destino.node_type) ∈ matriz[tipo] ∧ direção/simetria conformes (§D2.1). Nó hypothesis: `school`/`hierarchy_role` (SÓ para hypothesis — N-01) DERIVADOS do `producer_id`/`producer_type` do canônico (`school` ∈ {Elliott,SMC,Fibonacci}; `structure` NÃO deriva school e Fractal não tem produtor em SPEC-001 — CKG-STRUCT-ORIGIN-001 [DECISÃO NECESSÁRIA]); ORIGINA só de hypothesis; `aceitar sse ¬(hypothesis ∧ school=ICT)`; `HERDA ⇒ pai.hierarchy_role=PRIMARY`.
+- **Integridade (CKG-001):** aceitar sse tipo ∈ catálogo ∧ (origem.node_type, destino.node_type) ∈ matriz[tipo] ∧ direção/simetria conformes (§D2.1). Nó hypothesis: `school`/`hierarchy_role` (SÓ para hypothesis — N-01) DERIVADOS do `producer_id`/`producer_type` do canônico (`school` ∈ {Elliott,SMC,Fibonacci}; `structure` NÃO deriva school e Fractal não tem produtor em SPEC-001 — CKG-STRUCT-ORIGIN-001 [DECISÃO NECESSÁRIA]); ORIGINA só de hypothesis. **Fail-closed de hypothesis [A-04]:** `aceitar sse hypothesis ⇒ (canonical_ref≠null ∧ producer∈AUTHORIZED_PRODUCERS ∧ school derivável ∧ school≠ICT ∧ (hierarchy_role=PRIMARY ⇒ school=Elliott) ∧ publication.origin≠spec007_seal)` — qualquer predicado falso ⇒ DENY (`HYPOTHESIS_CANONICAL_REF_MISSING`/`HYPOTHESIS_PRODUCER_UNAUTHORIZED`/`SCHOOL_NOT_DERIVABLE`/`HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`/`PRIMARY_NOT_ELLIOTT`/`HYPOTHESIS_VIA_SEAL_FORBIDDEN`), NUNCA falha-aberto; `HERDA ⇒ pai.hierarchy_role=PRIMARY` (e pai PRIMARY é Elliott).
 - **Validade bitemporal (CKG-004):** criação grava `R0{creation, valid_from, recorded_at}`; mudança grava `R1{invalidation, targets_record_id=R0, valid_to, recorded_at}`; R0 nunca mutado. Rejeita `valid_to < valid_from`. `valid_to=null`≡+∞. valid-time: `válida_em(T) = ∃ creation com valid_from≤T ∧ ¬∃ invalidation aplicável com valid_to≤T`; transaction-time: conjunto com `recorded_at≤R`.
 - **Imutabilidade / estado derivado + PRECEDÊNCIA (CKG-006/012):** `DELETE/UPDATE de registro ⇒ negado`. Estado(x) por precedência: (1) SUPERSEDED sse ∃ sucessora `supersedes=x`; senão (2) INVALIDATED_IN_TIME sse ∃ invalidation `targets_record_id=x` sem sucessora; senão (3) ARCHIVED sse ∃ archival vigente; senão (4) ACTIVE_KNOWLEDGE.
 - **Trace Reconstruction (CKG-011):** `trace(x)` = fecho transitivo de `DERIVA_DE` a partir de x para **evidence** — COMPLETO (garantido por INV-CKG-02; ignora validade, inclui SUPERSEDED/ARCHIVED — CEM-001 l.602); ordem = ancestralidade (CEM-001 l.567-577). **Para hipótese** (ORIGINA/HERDA/DEPENDE_DE) = best-effort [PROPOSTA], sem garantia de completude [M-03]. Completude (Evidência) é obrigação; eficiência de travessia ampla = H-001.
-- **Versionamento/dedupe (CKG-012):** atualização aceita sse `supersedes`=última ∧ `version`=anterior+1 ∧ `expected_version`=corrente (compare-and-commit — SPEC-004 CBP-004 l.239-246); ausência de expected_version na atualização ⇒ `EXPECTED_VERSION_REQUIRED`, divergência ⇒ `VERSION_CONFLICT` (códigos de origem SPEC-004 l.243-244 — N-04); 2ª sucessora da mesma versão ⇒ `VERSION_FORK_FORBIDDEN`. **Chave natural (não-canônico):** `(node_type, natural_key)` para asset/timeframe/regime/narrative/observation/learning/**structure/mission/calibration_metric** (M-06 — lista completa); canônico: `(node_type, canonical_ref)`; relação: `(relation_type, from_node, to_node, valid_from)`. Reescrita idêntica = no-op; divergente sem supersedes ⇒ DENY.
-- **Gate causal (CKG-008):** `CAUSA ⇒ {mechanism, direction, conditions, regime} ≠ ∅ ∧ posthoc_flag booleano ∧ (outcome_ref XOR no_outcome=true+justificativa)`. Quando `outcome_ref`: `outcome_timestamp := recorded_at(registro apontado por outcome_ref)` [N-02] — payload posterior ⇒ `OUTCOME_TIMESTAMP_INVALID`; `no_outcome=true ∧ outcome_ref` ⇒ `NO_OUTCOME_CONFLICT`; `[recorded_at>outcome_timestamp ⇒ posthoc_flag=true]`. `SIMILAR_A ⇒ similarity_basis`. Juízo bounded. Verifica PRESENÇA e carimbo DERIVADO, não veracidade (ENF-03).
+- **Versionamento/dedupe (CKG-012):** atualização aceita sse `supersedes`=última ∧ `version`=anterior+1 ∧ `expected_version`=corrente (compare-and-commit — SPEC-004 CBP-004 l.239-246); ausência de expected_version na atualização ⇒ `EXPECTED_VERSION_REQUIRED`, divergência ⇒ `VERSION_CONFLICT` (códigos de origem SPEC-004 l.243-244 — N-04); 2ª sucessora da mesma versão ⇒ `VERSION_FORK_FORBIDDEN`. **Chave natural (não-canônico):** `(node_type, natural_key)` para asset/timeframe/regime/narrative/observation/learning/**structure/mission/calibration_metric** (M-06 — lista completa); canônico: `(node_type, canonical_ref)`; relação: `(relation_type, from_node, to_node, target_relation_id, valid_from)` — **`target_relation_id` incluído [A-10]** para que INVALIDA (cujo `to_node=null` e alvo é uma RELAÇÃO) não colapse: duas INVALIDA da mesma origem, no mesmo `valid_from`, contra relações-alvo DIFERENTES, têm chaves distintas (não há falso dedupe/DENY). Reescrita idêntica = no-op; divergente sem supersedes ⇒ DENY.
+- **Gate causal (CKG-008):** `CAUSA ⇒ {mechanism, direction, conditions, regime} ≠ ∅ ∧ posthoc_flag booleano ∧ (outcome_ref XOR no_outcome=true+justificativa)`. Quando `outcome_ref`: `outcome_timestamp := recorded_at(registro apontado por outcome_ref)` [N-02] — payload posterior ⇒ `OUTCOME_TIMESTAMP_INVALID`; `no_outcome=true ∧ outcome_ref` ⇒ `NO_OUTCOME_CONFLICT`; `formulated_at := recorded_at(1ª versão da cadeia supersedes da CAUSA, ou da hipótese referenciada)` [A-01] e `[formulated_at>outcome_timestamp ⇒ posthoc_flag=true]`, `[formulated_at≤outcome_timestamp ⇒ posthoc_flag=false legítimo, não pós-hoc]` (o `recorded_at` do registro corrente NÃO é o baseline — seria sempre > outcome, degenerando). `SIMILAR_A ⇒ similarity_basis`. Juízo bounded. Verifica PRESENÇA e carimbo DERIVADO, não veracidade (ENF-03).
 - **Confiança (CKG-007):** `confidence ∈ escala própria (PARÂMETRO a calibrar — INDETERMINADO)`; proibido em campo de convicção e `¬∃ aresta e : e.to_node.node_type==conviction` (direta ou multi-salto; INV-04).
 - **Colisão (CKG-013/§D2.2):** `colide(r1,r2) sse (r1.type,r2.type)∈§D2.2 ∧ escopo_do_par ∧ overlap([r1.valid_from,r1.valid_to),[r2.valid_from,r2.valid_to)) ∧ ¬superseded(ambas) ∧ cond_v`, com `escopo_do_par` = (CONFIRMA×REFUTA: from/to iguais) ∨ (INVALIDA×alvo: `r1.target_relation_id==r2.relation_id`), e `cond_v` = (CONFIRMA×REFUTA: true) ∨ (INVALIDA×alvo: `r2 ainda VIGENTE` — i.e. a INVALIDA NÃO fechou valid_to de r2; invalidação autorizada normal ⇒ ¬colide, N-08). Se colide ⇒ grava collision_record (MARCAÇÃO não-destrutiva, E3; ambas preservadas); senão não.
 
@@ -954,7 +1013,7 @@ Nenhuma fórmula computa convicção; nenhum limiar de convicção nem escala nu
 4. **Ontologia/integridade (CKG-001):** tipo ∈ catálogo ∧ matriz §D2.1 ⇒ senão `REJECTED`.
 5. **Proveniência (CKG-005):** `computed_by` (produtor) presente ∧ [gate ⇒ gate_record] ∧ [derivado ⇒ lineage] ⇒ senão `REJECTED`.
 6. **Causalidade (CKG-008, se CAUSA):** mechanism+direction+conditions+regime+posthoc_flag+outcome(ou no_outcome) ⇒ senão `REJECTED`.
-7. **Colisão (CKG-013):** se forma par contraditório no escopo §D2.2 com validade sobreposta, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda VIGENTE (cond. (v) — N-08), grava `collision_record` (MARCAÇÃO não-destrutiva; não sobrescreve).
+7. **Colisão (CKG-013):** se forma par contraditório no escopo §D2.2 com validade sobreposta, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda VIGENTE (cond. (v) — N-08), grava `collision_record` (MARCAÇÃO não-destrutiva; não sobrescreve). **[A-11]** A INVALIDA autorizada e o fechamento do `valid_to` do alvo são o MESMO ATO ATÔMICO (um commit); a cond. (v) é avaliada sobre o estado resultante dos dois registros — NUNCA no instante intermediário — logo o resultado independe da ordem de escrita.
 8. **Escrita append-only (CKG-006/012):** novo registro; substituição ⇒ sucessora com `supersedes`+`expected_version` (sem fork); DELETE/UPDATE proibido.
 9. **Temporalidade (CKG-004):** relações carregam `valid_from`/`valid_to`/`recorded_at`; invalidação é ato AUTORIZADO (novo registro), não cascata (CEM-001 l.602).
 
@@ -963,7 +1022,7 @@ Nenhuma fórmula computa convicção; nenhum limiar de convicção nem escala nu
 
 ---
 
-## D7 — Cenários de Teste (17 — T01..T17)
+## D7 — Cenários de Teste (19 — T01..T19)
 
 ### Cenário-CKG-T01 — ORIGINA com origem ICT → rejeição (matriz §D2.1 / CKG-001)
 ```
@@ -977,8 +1036,8 @@ VERIFICAÇÃO written == false; rejected_reason == "ORIGINA_ICT_FORBIDDEN" (∈ 
 ```
 DADO        hipótese SUB (produtor SMC, SUB) com parent_id → hipótese PAI (produtor Elliott, PRIMARY)
 QUANDO      a relação HERDA é escrita
-ENTÃO       aceita (entre escolas permitido — RULE-HH-003; HERDA valida só pai=PRIMARY); nada rejeitado
-VERIFICAÇÃO relation_written == true; cross_school_herda_allowed == true; parent_hierarchy_role == "PRIMARY"
+ENTÃO       aceita (entre escolas permitido — RULE-HH-003; HERDA valida só pai=PRIMARY, e pai PRIMARY é Elliott — A-04); nada rejeitado (contraste NEGATIVO: pai SMC-PRIMARY = T18)
+VERIFICAÇÃO relation_written == true; cross_school_herda_allowed == true; parent_hierarchy_role == "PRIMARY"; parent_school == "Elliott"
 ```
 
 ### Cenário-CKG-T02 — observation rotulada evidence → rejeição (CKG-002/INV-06)
@@ -1039,10 +1098,10 @@ VERIFICAÇÃO write_allowed == false; fail_closed == true; treated_as_unauthoriz
 
 ### Cenário-CKG-T09 — Formado sem selo rejeitado; canônico preserva estados por transição (CKG-010/002)
 ```
-DADO        padrão formado SEM selo SPEC-007; e, à parte, uma hypothesis que transita para REFUTED (∈ conjunto admissível)
+DADO        padrão formado SEM selo SPEC-007; e, à parte, uma hypothesis ACTIVE→REFUTED (trajetória PASSOU por ACTIVE — validada antes de ser refutada)
 QUANDO      o gate de fronteira roda
-ENTÃO       formado sem selo rejeitado; hypothesis REFUTED admitida com registro canonical_state_transition (estado preservado)
-VERIFICAÇÃO formed_without_seal_accepted == false; canonical_status_in_admissible_set == true; canonical_state_transition_recorded == true
+ENTÃO       formado sem selo rejeitado; hypothesis REFUTED admitida (trajetória esteve em ACTIVE — A-02) com registro canonical_state_transition (estado preservado)
+VERIFICAÇÃO formed_without_seal_accepted == false; canonical_status_in_admissible_set == true; trajectory_had_active == true; canonical_state_transition_recorded == true
 ```
 
 ### Cenário-CKG-T10 — Trace Reconstruction completa da Evidência (3 saltos) (CKG-011)
@@ -1085,12 +1144,12 @@ ENTÃO       escrita rejeitada; nada persistido (computed_by sempre obrigatório
 VERIFICAÇÃO written == false; rejected_reason == "COMPUTED_BY_MISSING"
 ```
 
-### Cenário-CKG-T16 — Marcador pós-hoc determinístico + desfecho obrigatório + carimbo derivado (CKG-008/M-04/N-02)
+### Cenário-CKG-T16 — Marcador pós-hoc por instante de FORMULAÇÃO + desfecho obrigatório + carimbo derivado (CKG-008/M-04/N-02/A-01)
 ```
-DADO        (a) CAUSA(A→B) com todos os campos e `recorded_at` POSTERIOR ao `outcome_timestamp`, submetida com posthoc_flag=false; (b) CAUSA sem outcome_ref e sem no_outcome; (c) CAUSA com `outcome_timestamp` de payload POSTERIOR ao `recorded_at` do registro apontado por `outcome_ref`; (d) CAUSA com `no_outcome=true` E `outcome_ref` presente
+DADO        (a) CAUSA(A→B) com todos os campos e `formulated_at` (1ª versão da cadeia supersedes) POSTERIOR ao `outcome_timestamp`, submetida com posthoc_flag=false; (b) CAUSA sem outcome_ref e sem no_outcome; (c) CAUSA com `outcome_timestamp` de payload POSTERIOR ao `recorded_at` do registro apontado por `outcome_ref`; (d) CAUSA com `no_outcome=true` E `outcome_ref` presente; (e) CAUSA cujo `formulated_at` é ANTERIOR ao `outcome_timestamp` (afirmação formulada ANTES do desfecho) e posthoc_flag=false
 QUANDO      o gate de saída (CKG-008) roda
-ENTÃO       (a) rejeitada `POSTHOC_FLAG_REQUIRED` (carimbo posterior exige posthoc_flag=true); (b) rejeitada `OUTCOME_REF_MISSING`; (c) rejeitada `OUTCOME_TIMESTAMP_INVALID` (carimbo deriva do recorded_at do apontado — N-02); (d) rejeitada `NO_OUTCOME_CONFLICT`
-VERIFICAÇÃO causal_written == false; posthoc_rule_enforced == true; outcome_ref_required == true; outcome_timestamp_derived_from_ref == true; no_outcome_conflict_rejected == true
+ENTÃO       (a) rejeitada `POSTHOC_FLAG_REQUIRED` (formulada APÓS o desfecho exige posthoc_flag=true); (b) rejeitada `OUTCOME_REF_MISSING`; (c) rejeitada `OUTCOME_TIMESTAMP_INVALID` (carimbo deriva do recorded_at do apontado — N-02); (d) rejeitada `NO_OUTCOME_CONFLICT`; (e) ACEITA (não pós-hoc — formulada antes do desfecho; posthoc_flag=false legítimo — A-01)
+VERIFICAÇÃO posthoc_rule_enforced == true; outcome_ref_required == true; outcome_timestamp_derived_from_ref == true; posthoc_baseline_is_formulated_at == true; case_e_accepted_not_posthoc == true; no_outcome_conflict_rejected == true
 ```
 
 ### Cenário-CKG-T17 — Commit direto do produtor (computed_by como writer_id) → DENY (CKG-009/005/D6 capacidade×papel) [E3]
@@ -1101,11 +1160,27 @@ ENTÃO       negado; só o COMMITTER autorizado (runtime/serviço do KG) escreve
 VERIFICAÇÃO write_allowed == false; producer_as_committer_denied == true; computed_by_distinct_from_writer_id == true; rejected_reason == "WRITE_UNAUTHORIZED"
 ```
 
+### Cenário-CKG-T18 — HERDA sub → pai SMC-PRIMARY → rejeição (PRIMARY só Elliott) (CKG-001/A-04)
+```
+DADO        uma hipótese SUB com parent_id → hipótese PAI cujo `hierarchy_role=PRIMARY` e `school=SMC` (PRIMARY não-Elliott)
+QUANDO      o gate de nó/integridade (§D2.1) roda
+ENTÃO       rejeitada; só Elliott cria a primária (SPEC-001 RULE-HH-002 l.100); contraste com T15 (pai Elliott-PRIMARY é VÁLIDO)
+VERIFICAÇÃO written == false; rejected_reason == "PRIMARY_NOT_ELLIOTT" (∈ ONTOLOGY_INTEGRITY_VIOLATION)
+```
+
+### Cenário-CKG-T19 — hypothesis com school não derivável → DENY fail-closed (CKG-001/A-04)
+```
+DADO        (a) um `hypothesis` cujo `producer` está FORA de AUTHORIZED_PRODUCERS (ex.: Structural Agent — SAS-001 §6.11); (b) um `hypothesis` com `canonical_ref=null`; (c) um `hypothesis` admitido pelo caminho (b) selo SPEC-007 (`publication.origin=spec007_seal`)
+QUANDO      o gate de integridade roda
+ENTÃO       (a) DENY `HYPOTHESIS_PRODUCER_UNAUTHORIZED` (school não derivável ⇒ também `SCHOOL_NOT_DERIVABLE`); (b) DENY `HYPOTHESIS_CANONICAL_REF_MISSING`; (c) DENY `HYPOTHESIS_VIA_SEAL_FORBIDDEN`; nunca falha-aberto
+VERIFICAÇÃO written == false; fail_open == false; school_not_derivable_denied == true
+```
+
 ---
 
 ## D8 — Rigor adversarial focado (casos de negação nos pontos de risco)
 
-> **22 casos** cobrindo as 13 BASpecs + fronteiras/decisões abertas. Transversal: **fail-closed**, **nunca deletar/mutar**, **mecanismo físico INDETERMINADO (H-001)**. Todo `rejected_reason` consta de §D3.1.
+> **23 casos** cobrindo as 13 BASpecs + fronteiras/decisões abertas. Transversal: **fail-closed**, **nunca deletar/mutar**, **mecanismo físico INDETERMINADO (H-001)**. Todo `rejected_reason` de RUNTIME consta de §D3.1; ADV-08/09/10 são checagens de REVISÃO/spec-time (A-13), não gates de runtime.
 
 ### ADV-CKG-01 — Deleção disfarçada de "esquecimento" (CKG-006)
 **DADO:** "esquecer" traduzido em DELETE físico. **QUANDO:** o gate roda. **ENTÃO:** negar; só arquivamento versionado. **PORQUE:** INV-07. **VERIFICAÇÃO:** physical_delete == false.
@@ -1117,7 +1192,7 @@ VERIFICAÇÃO write_allowed == false; producer_as_committer_denied == true; comp
 **DADO:** expor a confiança no objeto de convicção, somá-la como 9ª dimensão, ou criar aresta `to_node==conviction`. **QUANDO:** a escrita/escopo roda. **ENTÃO:** rejeitar `EDGE_TO_CONVICTION_FORBIDDEN`; namespace próprio. **PORQUE:** INV-04; dimensionalidade=8 (fechada). **VERIFICAÇÃO:** confidence_exposed_in_conviction_object == false; any_edge_to_conviction_written == false.
 
 ### ADV-CKG-04 — Causal pós-hoc por correlação, sem desfecho/marcador (CKG-008/RULE-CAU)
-**DADO:** CAUSA(A→B) só por co-ocorrência, (a) sem mechanism/regime; (b) com `recorded_at` > `outcome_timestamp` e posthoc_flag=false; (c) sem outcome_ref e sem no_outcome; (d) com `outcome_timestamp` de payload posterior ao `recorded_at` do registro apontado por `outcome_ref`; (e) com `no_outcome=true` E `outcome_ref` presente. **QUANDO:** o gate roda. **ENTÃO:** rejeitar `CAUSAL_FIELDS_MISSING`/`POSTHOC_FLAG_REQUIRED`/`OUTCOME_REF_MISSING`/`OUTCOME_TIMESTAMP_INVALID`/`NO_OUTCOME_CONFLICT`. **PORQUE:** correlação não é causalidade; marcador/desfecho/carimbo vindo do payload seria contornável — `outcome_timestamp` deriva do registro apontado (M-04/N-02). **VERIFICAÇÃO:** causal_written == false; posthoc_rule_enforced == true; outcome_ref_required == true; outcome_timestamp_derived_from_ref == true.
+**DADO:** CAUSA(A→B) só por co-ocorrência, (a) sem mechanism/regime; (b) com `formulated_at` > `outcome_timestamp` (formulada APÓS o desfecho) e posthoc_flag=false; (c) sem outcome_ref e sem no_outcome; (d) com `outcome_timestamp` de payload posterior ao `recorded_at` do registro apontado por `outcome_ref`; (e) com `no_outcome=true` E `outcome_ref` presente; **(f) CONTRASTE POSITIVO:** CAUSA bem-formada cujo `formulated_at` é ANTERIOR ao `outcome_timestamp` (formulada ANTES do desfecho) com posthoc_flag=false. **QUANDO:** o gate roda. **ENTÃO:** (a)–(e) rejeitar `CAUSAL_FIELDS_MISSING`/`POSTHOC_FLAG_REQUIRED`/`OUTCOME_REF_MISSING`/`OUTCOME_TIMESTAMP_INVALID`/`NO_OUTCOME_CONFLICT`; (f) ACEITAR (não pós-hoc — A-01). **PORQUE:** correlação não é causalidade; o baseline pós-hoc é o instante de FORMULAÇÃO, não o `recorded_at` do registro corrente (que seria sempre posterior ao desfecho, degenerando RULE-CAU-03 — A-01); carimbo do desfecho deriva do registro apontado (M-04/N-02). **VERIFICAÇÃO:** cases_a_to_e_written == false; case_f_accepted_not_posthoc == true; posthoc_rule_enforced == true; posthoc_baseline_is_formulated_at == true; outcome_ref_required == true; outcome_timestamp_derived_from_ref == true.
 
 ### ADV-CKG-05 — Métrica de custo ligada à convicção via nó do KG (INV-04)
 **DADO:** `calibration_metric`/custo ligado à convicção via aresta. **QUANDO:** a escrita roda. **ENTÃO:** armazenar a métrica (CEE-001 l.111) ISOLADA; rejeitar `EDGE_TO_CONVICTION_FORBIDDEN`. **PORQUE:** INV-04 — o CUSTO nunca entra no Conviction Vector. **VERIFICAÇÃO:** any_edge_to_conviction_written == false.
@@ -1128,14 +1203,17 @@ VERIFICAÇÃO write_allowed == false; producer_as_committer_denied == true; comp
 ### ADV-CKG-07 — Produtor redefine ontologia/taxonomia (CKG-009/SAS-001 §6.12)
 **DADO:** produtor autenticado tenta alterar a ontologia global. **QUANDO:** o gate E3 roda. **ENTÃO:** negar `ONTOLOGY_REDEFINITION_FORBIDDEN`; produtor registra, não redefine. **PORQUE:** SAS-001 §6.12 (extensão a outros produtores = [INFERÊNCIA]). **VERIFICAÇÃO:** ontology_redefined_by_producer == false.
 
-### ADV-CKG-08 — KG forma conhecimento / absorve SPEC-007 (CKG-010/fronteira)
-**DADO:** tentativa de extração/retrieval/validação no KG. **QUANDO:** o escopo roda. **ENTÃO:** rejeitar `OUT_OF_SCOPE_FORMATION`. **PORQUE:** formação é SPEC-007. **VERIFICAÇÃO:** formation_in_kg == false.
+### ADV-CKG-08 — KG forma conhecimento / absorve SPEC-007 (CKG-010/fronteira) [CHECAGEM DE REVISÃO/SPEC-TIME — A-13]
+> **Reclassificado (A-13):** é checagem de ESCOPO de SPEC-TIME (o Revisor verifica que a Spec não especifica formação/retrieval) — NÃO um gate de runtime. `OUT_OF_SCOPE_FORMATION` é marcador de revisão, não `rejected_reason` executável em runtime.
+**DADO:** a Spec tentaria especificar extração/retrieval/validação no KG. **QUANDO:** a revisão de escopo roda (spec-time). **ENTÃO:** achado de revisão — fora de escopo; formação é SPEC-007. **PORQUE:** formação é SPEC-007. **VERIFICAÇÃO (revisão):** a Spec não contém comportamento de formação/retrieval (conferível por leitura).
 
-### ADV-CKG-09 — Mecanismo físico fixado por inércia (CONS-01/mandato)
-**DADO:** pressão para fixar "grafo real"/escolher engine. **QUANDO:** as decisões rodam. **ENTÃO:** rejeitar `OPEN_DECISION_H001`; mecanismo físico permanece INDETERMINADO; Opção B ADIADA. **PORQUE:** H-001 é de Andraus (CONS-01). **VERIFICAÇÃO:** h001_decided_by_spec == false.
+### ADV-CKG-09 — Mecanismo físico fixado por inércia (CONS-01/mandato) [CHECAGEM DE REVISÃO/SPEC-TIME — A-13]
+> **Reclassificado (A-13):** governança de spec-time (o Revisor/Andraus verificam que a Spec não fecha H-001), NÃO gate de runtime. `OPEN_DECISION_H001` é marcador de revisão, não `rejected_reason` de runtime.
+**DADO:** pressão para fixar "grafo real"/escolher engine na Spec. **QUANDO:** a revisão de decisões abertas roda (spec-time). **ENTÃO:** achado de revisão — mecanismo físico permanece INDETERMINADO; Opção B ADIADA. **PORQUE:** H-001 é de Andraus (CONS-01). **VERIFICAÇÃO (revisão):** a Spec não fecha H-001 (conferível por leitura — grep de fechamento = 0).
 
-### ADV-CKG-10 — Absorver vizinhos / tocar decisão aberta (fronteiras/CONS-01)
-**DADO:** a SPEC-006 virar memória de trabalho (SPEC-004), transporte (SPEC-005), estado por agente (SPEC-009), ciclo P12 (SPEC-018), ou tocar M-001/J-001/N-001/G-001/K-001/C-001/WF-D03. **QUANDO:** o escopo roda. **ENTÃO:** rejeitar `OUT_OF_SCOPE_OR_OPEN_DECISION`; decisões abertas permanecem ABERTAS (Andraus). **PORQUE:** CONS-01; INV-09. **VERIFICAÇÃO:** neighbors_absorbed == false; open_decisions_touched == false.
+### ADV-CKG-10 — Absorver vizinhos / tocar decisão aberta (fronteiras/CONS-01) [CHECAGEM DE REVISÃO/SPEC-TIME — A-13]
+> **Reclassificado (A-13):** checagem de ESCOPO de spec-time, NÃO gate de runtime. `OUT_OF_SCOPE_OR_OPEN_DECISION` é marcador de revisão, não `rejected_reason` de runtime.
+**DADO:** a SPEC-006 tentaria virar memória de trabalho (SPEC-004), transporte (SPEC-005), estado por agente (SPEC-009), ciclo P12 (SPEC-018), ou tocar M-001/J-001/N-001/G-001/K-001/C-001/WF-D03. **QUANDO:** a revisão de escopo roda (spec-time). **ENTÃO:** achado de revisão — decisões abertas permanecem ABERTAS (Andraus). **PORQUE:** CONS-01; INV-09. **VERIFICAÇÃO (revisão):** vizinhos não absorvidos; decisões abertas não tocadas (conferível por leitura).
 
 ### ADV-CKG-11 — Nó redefine contrato canônico / transição proibida (CKG-002/CC-02)
 **DADO:** nó-hipótese sobrescreve campos/estado do CHM-001, ou transição INVALIDATED→ACTIVE. **QUANDO:** a escrita roda. **ENTÃO:** rejeitar (`CANONICAL_CONTRACT_REDEFINITION_FORBIDDEN` para redefinição de campos/estado; `FORBIDDEN_CANONICAL_TRANSITION` para a transição proibida — ambos em §D3.1, N-04); referencia por id@version, não redefine. **PORQUE:** CC-02/CONST-01; INV-10; CEM-001 l.473-475. **VERIFICAÇÃO:** canonical_contract_redefined == false; forbidden_canonical_transition_rejected == true.
@@ -1159,7 +1237,7 @@ VERIFICAÇÃO write_allowed == false; producer_as_committer_denied == true; comp
 **DADO:** um `hypothesis` cujo `school` derivado do produtor == ICT. **QUANDO:** o gate de nó roda. **ENTÃO:** rejeitar `HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`; ICT nunca cria hipótese. **PORQUE:** INV-02; RULE-HH-004 (SPEC-001 l.108). **VERIFICAÇÃO:** hypothesis_school_ict_written == false.
 
 ### ADV-CKG-18 — colisão falsamente detectada/ignorada; escopo INVALIDA e SUPERSEDED (CKG-013)
-**DADO:** (a) A1 CONFIRMA B, A2 REFUTA B (A1≠A2) — não colide; (b) CONFIRMA(A→B)/REFUTA(A→B) com janelas DISJUNTAS — não colide; (c) ambas vigentes com sobreposição — colide; (d) INVALIDA vigente com `target_relation_id==R.relation_id` sobre R que **PERMANECE VIGENTE** (a INVALIDA NÃO fechou `valid_to` de R; condição (v) §D2.2) — colide (MARCAÇÃO, não rejeição); (e) CONFIRMA(A→B) SUPERSEDED vs REFUTA(A→B) vigente — não colide; (f) **INVALIDA que FECHOU a validade de R** (R agora INVALIDATED_IN_TIME / não-vigente — invalidação autorizada NORMAL) — **NÃO colide (N-08)**. **QUANDO:** o detector roda. **ENTÃO:** (a)/(b)/(e)/(f) não geram colisão; (c)/(d) geram. **PORQUE:** colisão = par §D2.2 no escopo do par, sobreposição, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda vigente (v); invalidação autorizada normal não colide por construção. **VERIFICAÇÃO:** collision_logged == [false,false,true,true,false,false] para (a..f).
+**DADO:** (a) A1 CONFIRMA B, A2 REFUTA B (A1≠A2) — não colide; (b) CONFIRMA(A→B)/REFUTA(A→B) com janelas DISJUNTAS — não colide; (c) ambas vigentes com sobreposição — colide; (d) INVALIDA vigente com `target_relation_id==R.relation_id` sobre R que **PERMANECE VIGENTE** (a INVALIDA NÃO fechou `valid_to` de R; condição (v) §D2.2) — colide (MARCAÇÃO, não rejeição); (e) CONFIRMA(A→B) SUPERSEDED vs REFUTA(A→B) vigente — não colide; (f) **INVALIDA que FECHOU a validade de R** (R agora INVALIDATED_IN_TIME / não-vigente — invalidação autorizada NORMAL) — **NÃO colide (N-08)**. **QUANDO:** o detector roda. **ENTÃO:** (a)/(b)/(e)/(f) não geram colisão; (c)/(d) geram. **PORQUE:** colisão = par §D2.2 no escopo do par, sobreposição, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda vigente (v); invalidação autorizada normal não colide por construção. **[A-11]** Como a INVALIDA e o fechamento do `valid_to` do alvo são um ÚNICO ATO ATÔMICO e a cond. (v) é avaliada sobre o estado resultante dos dois registros (nunca no instante intermediário), o resultado de (d)/(f) INDEPENDE da ordem de escrita — não há janela em que a INVALIDA já exista e R ainda apareça vigente por mero atraso de registro. **VERIFICAÇÃO:** collision_logged == [false,false,true,true,false,false] para (a..f); collision_decision_order_independent == true.
 
 ### ADV-CKG-19 — FORK de versão / ordem violada (CKG-006/012)
 **DADO:** duas sucessoras apontando `supersedes` para a MESMA versão (fork), ou `expected_version` ausente, ou `expected_version` ≠ corrente, ou `version` ≠ anterior+1. **QUANDO:** o gate roda. **ENTÃO:** negar — fork ⇒ `VERSION_FORK_FORBIDDEN`; ausência ⇒ `EXPECTED_VERSION_REQUIRED`; divergência ⇒ `VERSION_CONFLICT` (compare-and-commit, CBP-004 l.239-246/l.243-244 — N-04). **PORQUE:** sem ordem total não há estado inequívoco (INV-07). **VERIFICAÇÃO:** second_successor_written == false; version_fork == false.
@@ -1168,12 +1246,15 @@ VERIFICAÇÃO write_allowed == false; producer_as_committer_denied == true; comp
 **DADO:** arestas A DERIVA_DE B e B DERIVA_DE C já gravadas (C ancestral de B ancestral de A); tentativa C DERIVA_DE A — a origem C já é alcançável a partir do destino A (A→B→C), fecharia ciclo. **QUANDO:** o gate de relação roda. **ENTÃO:** rejeitar `LINEAGE_CYCLE`; o grafo permanece ACÍCLICO (o trace sempre termina). **PORQUE:** linhagem cíclica quebra a Trace Reconstruction (INV-CKG-02). **Caso (c) — self-loop:** DERIVA_DE com origem == destino ⇒ rejeitar `LINEAGE_CYCLE`. **VERIFICAÇÃO:** lineage_cycle_written == false; lineage_acyclic == true.
 
 ### ADV-CKG-21 — admissão de canônico em estado NÃO-admissível / sem selo (CKG-010)
-**DADO:** o gate de admissão POR TIPO (não só hypothesis): (a) `hypothesis` com `canonical_status=EMERGENT`; (b) formado SEM selo SPEC-007; (c) `evidence` com `canonical_status` FORA do seu conjunto {ACTIVE,SUPERSEDED,INVALIDATED,ARCHIVED} — ex.: `DOMINANT` (estado só de hipótese, CEM-001 l.258-262 não tem REFUTED/DOMINANT); (d) `conviction` com `canonical_status` FORA de {COMPUTED,GATED_PASS,GATED_BLOCK,SUPERSEDED} — ex.: `EMERGENT`. **QUANDO:** o gate de fronteira roda. **ENTÃO:** (a)/(c)/(d) rejeitar `CANONICAL_STATUS_NOT_ADMISSIBLE`; (b) `FORMED_WITHOUT_SEAL`; o conjunto admissível é POR TIPO (não só hypothesis). **PORQUE:** não contaminar memória permanente com trabalho/estado fora da máquina canônica do tipo (CEM-001 l.258-262/l.494; CCM-001 l.58/78; SPEC-004). **VERIFICAÇÃO:** emergent_hypothesis_admitted == false; formed_without_seal_accepted == false; evidence_nonadmissible_status_admitted == false; conviction_nonadmissible_status_admitted == false.
+**DADO:** o gate de admissão POR TIPO (não só hypothesis): (a) `hypothesis` com `canonical_status=EMERGENT`; (b) formado SEM selo SPEC-007; (c) `evidence` com `canonical_status` FORA do seu conjunto {ACTIVE,SUPERSEDED,INVALIDATED,ARCHIVED} — ex.: `DOMINANT` (estado só de hipótese, CEM-001 l.258-262 não tem REFUTED/DOMINANT); (d) `conviction` com `canonical_status` FORA de {COMPUTED,GATED_PASS,GATED_BLOCK,SUPERSEDED} — ex.: `EMERGENT`; **(e) [A-02 — TRAJETÓRIA]** `hypothesis` com `canonical_status=ARCHIVED` cuja TRAJETÓRIA é EMERGENT→ARCHIVED (hipótese órfã NUNCA validada — CHM-001 l.745 — jamais passou por ACTIVE), embora ARCHIVED esteja no conjunto admissível. **QUANDO:** o gate de fronteira roda. **ENTÃO:** (a)/(c)/(d) rejeitar `CANONICAL_STATUS_NOT_ADMISSIBLE`; (b) `FORMED_WITHOUT_SEAL`; **(e) rejeitar `TRAJECTORY_NEVER_ACTIVE`** (status corrente admissível NÃO basta — exige ter estado em ACTIVE; opção conservadora, A-02); o conjunto admissível é POR TIPO (não só hypothesis). **PORQUE:** não contaminar memória permanente com trabalho/estado fora da máquina canônica do tipo nem com conhecimento NUNCA validado (CEM-001 l.258-262; CHM-001 §4.3 l.744-748; CCM-001 l.58/78; SPEC-004). **VERIFICAÇÃO:** emergent_hypothesis_admitted == false; formed_without_seal_accepted == false; evidence_nonadmissible_status_admitted == false; conviction_nonadmissible_status_admitted == false; never_active_archived_admitted == false.
 
 ### ADV-CKG-22 — Produtor comita direto (computed_by == writer_id == agente) (CKG-009/005/D6) [E3]
 **DADO:** um agente produtor tenta ser o COMMITTER (apresenta `writer_id` = sua própria identidade de produtor), contornando o runtime/serviço do KG. **QUANDO:** o gate E3 (capacidade×papel, D6) roda. **ENTÃO:** negar `WRITE_UNAUTHORIZED`; `computed_by` (produtor) e `writer_id` (committer) permanecem DISTINTOS; commit direto por agente = DENY. **PORQUE:** identidade não depende do payload (CBP-014); capacidade "Commit permanente E3" do agente = DENY (D6; M-05). **VERIFICAÇÃO:** write_allowed == false; producer_as_committer_denied == true; computed_by_distinct_from_writer_id == true.
 
-> **Cobertura:** 22 casos — toda BASpec tem ≥1 negação: CKG-001→ADV-12/17, T01; 002→ADV-11, T02; 003→ADV-12/16/20, T03;
+### ADV-CKG-23 — hypothesis com proteção INV-02/RULE-HH-002 só aparente (gate falha-aberto) (CKG-001/A-04)
+**DADO:** tentativas de burlar o gate de nó por caminhos NÃO cobertos por "rejeitar só school==ICT": (a) `hypothesis` cujo `producer` está FORA de AUTHORIZED_PRODUCERS (Structural Agent — SAS-001 §6.11) de modo que a `school` não é derivável; (b) `hypothesis` com `hierarchy_role=PRIMARY` e `school=SMC` (PRIMARY não-Elliott); (c) `hypothesis` injetada pelo caminho (b) selo SPEC-007 (`publication.origin=spec007_seal`). **QUANDO:** o gate de integridade roda. **ENTÃO:** (a) DENY `SCHOOL_NOT_DERIVABLE`/`HYPOTHESIS_PRODUCER_UNAUTHORIZED` (NUNCA falha-aberto); (b) DENY `PRIMARY_NOT_ELLIOTT`; (c) DENY `HYPOTHESIS_VIA_SEAL_FORBIDDEN`. **PORQUE:** a proteção de INV-02/RULE-HH-002 precisa ser EFETIVA, não aparente — o gate não pode cair aberto quando a `school` não é derivável (A-04). **VERIFICAÇÃO:** fail_open == false; primary_not_elliott_denied == true; hypothesis_via_seal_denied == true; school_not_derivable_denied == true.
+
+> **Cobertura:** 23 casos — toda BASpec tem ≥1 negação: CKG-001→ADV-12/17/23, T01/T18/T19; 002→ADV-11, T02; 003→ADV-12/16/20, T03;
 > 004→ADV-13, T04; 005→ADV-06/22, T14/T17; 006→ADV-01/19, T05; 007→ADV-03/05, T06; 008→ADV-04, T07/T16; 009→ADV-07/22, T08/T17;
 > 010→ADV-08/21, T09; 011→ADV-14, T10; 012→ADV-15/19, T13; 013→ADV-02/18, T11. ADV-21 cobre admissão POR TIPO
 > (hypothesis/evidence/conviction). Fronteiras/decisões abertas: ADV-09/10. Mapeiam para EC-CKG-001..006 (fail-closed).
@@ -1220,11 +1301,11 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
     "canonical_ref": "CHM-xxxx@v2 | CEM-xxxx@v1 | CCM-xxxx@v1 | null (referência; NÃO redefine)",
     "canonical_status": "snapshot do Status canônico (CEM-001 l.264/428; CHM-001; só se canonical_ref != null); admissível ∈ conjunto do tipo (CKG-010)",
     "natural_key": "identidade de nó NÃO-canônico — asset/timeframe/regime/narrative/observation/learning/structure/mission/calibration_metric (lista completa — M-06); evita colapso quando canonical_ref=null",
-    "school": "Elliott | SMC | Fibonacci — DERIVADO do producer_id/producer_type do canônico (hypothesis: CHM-001 l.361/SPEC-001 l.97/524); NÃO do payload; SÓ para hypothesis (N-01); REGRA: hypothesis.school ≠ ICT (ICT não é produtor — INV-02/RULE-HH-004). structure NÃO deriva school; Fractal não tem produtor em SPEC-001 — CKG-STRUCT-ORIGIN-001 [DECISÃO NECESSÁRIA]",
-    "hierarchy_role": "PRIMARY | SUB — DERIVADO do papel registrado no canônico (SPEC-001); só hypothesis; HERDA liga SUB a pai PRIMARY",
+    "school": "Elliott | SMC | Fibonacci — DERIVADO do producer_id/producer_type do canônico (hypothesis: CHM-001 l.361/SPEC-001 l.97/524); NÃO do payload; SÓ para hypothesis (N-01); REGRA: hypothesis.school ≠ ICT (ICT não é produtor — INV-02/RULE-HH-004); **NÃO derivável ⇒ DENY SCHOOL_NOT_DERIVABLE (fail-closed, nunca falha-aberto — A-04)**. structure NÃO deriva school; Fractal não tem produtor em SPEC-001 — CKG-STRUCT-ORIGIN-001 [DECISÃO NECESSÁRIA]",
+    "hierarchy_role": "PRIMARY | SUB — DERIVADO do papel registrado no canônico (SPEC-001); só hypothesis; **PRIMARY ⇒ school=Elliott (só Elliott cria a primária — SPEC-001 RULE-HH-002 l.100; senão DENY PRIMARY_NOT_ELLIOTT — A-04)**; HERDA liga SUB a pai PRIMARY",
     "ontological_status": "observational | theoretical (RULE-ONT-01; só structure/regime/narrative — distingue entidade medida de construção teórica, ex.: order block/liquidez)",
     "provenance_ref": { "computed_by": "OBRIGATÓRIO — identidade AUTENTICADA do PRODUTOR (CBP-014; M-05)", "gate_record": "CONDICIONAL — só se resulta de gate (CBP-007)", "lineage": "CONDICIONAL — só se DERIVADO (ref. Lineage CEM-001 Cap.5 / derived_from[] SPEC-004; [] legítimo p/ PRIMARY/asset/timeframe/regime/observation)", "who": "humano-legível (auditoria; pode diferir de computed_by)", "when": "", "why": "", "from": "" },
-    "publication": { "origin": "canonical_lifecycle | spec007_seal — DERIVADO do CANAL/identidade AUTENTICADA (não do payload)", "seal_ref": "[DECISÃO NECESSÁRIA — contrato do selo = SPEC-007]" },
+    "publication": { "origin": "canonical_lifecycle | spec007_seal — DERIVADO do CANAL/identidade AUTENTICADA (não do payload); **hypothesis com origin=spec007_seal ⇒ DENY HYPOTHESIS_VIA_SEAL_FORBIDDEN — hipótese só entra pelo ciclo de vida canônico (A-04)**", "seal_ref": "[DECISÃO NECESSÁRIA — contrato do selo = SPEC-007]" },
     "writer_id": "identidade AUTENTICADA do COMMITTER (runtime; ou serviço do KG) — DISTINTO de computed_by (M-05); falha de auth ⇒ não-autorizado",
     "relevance": "só em record_kind=archival; rebaixamento sob gate E3 (CKG-012)",
     "created_at": "2026-10-12T12:00:00Z",
@@ -1235,7 +1316,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
   "canonical_state_transition_record": {
     "node_id": "KG-N-...-001", "record_kind": "canonical_state_transition",
     "version": "sequência PRÓPRIA (não entra na cadeia supersedes de conteúdo — m-10)",
-    "canonical_status": "ACTIVE|DOMINANT|SUPERSEDED|REFUTED|ARCHIVED (hypothesis/CHM-001) | ACTIVE|SUPERSEDED|INVALIDATED|ARCHIVED (evidence/CEM-001 l.258-262 — sem REFUTED) | COMPUTED|GATED_PASS|GATED_BLOCK|SUPERSEDED (conviction/CCM-001 l.58/78). EMERGENT/CANDIDATE NÃO constam — o histórico do KG começa na ADMISSÃO (M-01)",
+    "canonical_status": "ACTIVE|DOMINANT|SUPERSEDED|REFUTED|ARCHIVED (hypothesis/CHM-001) | ACTIVE|SUPERSEDED|INVALIDATED|ARCHIVED (evidence/CEM-001 l.258-262 — sem REFUTED) | COMPUTED|GATED_PASS|GATED_BLOCK|SUPERSEDED (conviction/CCM-001 l.58/78). EMERGENT/CANDIDATE NÃO constam — o histórico do KG começa na ADMISSÃO (regra LOCAL CKG-010 — A-03); admissão exige TRAJETÓRIA que passou por ACTIVE (A-02)",
     "timestamp": "", "origem": "", "justificativa": "(CEM-001 l.428)",
     "computed_by": "SERVIÇO do KG (identidade autenticada — M-05)",
     "writer_id": "SERVIÇO do KG (committer; escrita E3 — M-05)",
@@ -1259,7 +1340,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
     "valid_to": "null (≡ +∞, vigente — m-09) | timestamp (invalidada por NOVO registro — preservada)",
     "recorded_at": "2026-10-12T12:00:00Z",
     "relation_confidence": "escala PRÓPRIA em namespace do KG — PARÂMETRO a calibrar (INDETERMINADO; NÃO é Convicção; nunca exposta ao objeto de convicção; não toca J-001/N-001)",
-    "causal": "{ mechanism, direction, conditions, regime, posthoc_flag:boolean, outcome_ref, outcome_timestamp (DERIVADO — ver nota), no_outcome?:boolean+justificativa } — obrigatório sse relation_type==CAUSA (RULE-CAU-01/02/03); `outcome_ref` OBRIGATÓRIO salvo `no_outcome=true` (XOR — no_outcome+outcome_ref ⇒ NO_OUTCOME_CONFLICT, M-04); `outcome_timestamp` NÃO vem do payload: DERIVADO do `recorded_at` do registro apontado por `outcome_ref` (payload posterior ⇒ OUTCOME_TIMESTAMP_INVALID — N-02); posthoc_flag DEVE ser true quando recorded_at > outcome_timestamp",
+    "causal": "{ mechanism, direction, conditions, regime, posthoc_flag:boolean, outcome_ref, outcome_timestamp (DERIVADO — ver nota), formulated_at (DERIVADO — ver nota), no_outcome?:boolean+justificativa } — obrigatório sse relation_type==CAUSA (RULE-CAU-01/02/03); `outcome_ref` OBRIGATÓRIO salvo `no_outcome=true` (XOR — no_outcome+outcome_ref ⇒ NO_OUTCOME_CONFLICT, M-04); `outcome_timestamp` NÃO vem do payload: DERIVADO do `recorded_at` do registro apontado por `outcome_ref` (payload posterior ⇒ OUTCOME_TIMESTAMP_INVALID — N-02); `formulated_at` NÃO vem do payload: DERIVADO do `recorded_at` da 1ª versão da cadeia `supersedes` desta CAUSA (ou da hipótese referenciada) — A-01; posthoc_flag DEVE ser true quando formulated_at > outcome_timestamp e é legitimamente false quando formulated_at ≤ outcome_timestamp (o recorded_at do registro corrente NÃO é o baseline — seria sempre posterior ao desfecho)",
     "similarity_basis": "justificativa da base — OBRIGATÓRIO sse relation_type==SIMILAR_A proposta por juízo (CKG-008)"
   },
   "collision_record": {
@@ -1315,23 +1396,23 @@ FAILURE-MODE : Fail-closed — não autorizado / falha de auth / redefinir ontol
 EVIDENCE     : gate_record de autorização por identidade autenticada + amostragem de falso-DENY (ENF-07)
 ```
 
-### EC-CKG-004 — Confiança de relação em namespace próprio (guard; INV-04) [E3]
+### EC-CKG-004 — Confiança de relação em namespace próprio (guard de ESCRITA; INV-04) [E3]
 ```
-CAPABILITY   : Manter a confiança em namespace próprio e não escrever NENHUMA aresta to_node==conviction
-EFFECT       : Guard (na escrita permanente e na consulta) de que confiança não vira campo/aresta de convicção
-PRECOND      : (confiança em namespace separado) AND (matriz §D2.1 proíbe QUALQUER aresta to_node.node_type==conviction, direta ou 2 saltos)
-POSTCOND     : nenhum campo de convicção recebe a confiança; nenhuma aresta to_node==conviction é escrita
+CAPABILITY   : Na ESCRITA permanente, manter a confiança em namespace próprio e não escrever NENHUMA aresta to_node==conviction
+EFFECT       : Guard **na ESCRITA permanente** (E3) de que a confiança não vira campo/aresta de convicção. **[A-14]** O guard de LEITURA (consulta não expõe a confiança em resultado de convicção) é E1 e está em EC-CKG-006 — este EC cobre SÓ a escrita.
+PRECOND      : (confiança em namespace separado) AND (matriz §D2.1 proíbe QUALQUER aresta to_node.node_type==conviction, direta ou 2 saltos) — verificado no COMMIT de escrita
+POSTCOND     : nenhum campo de convicção recebe a confiança na escrita; nenhuma aresta to_node==conviction é escrita
 POLICY       : RULE-CKG-007; INV-04 (custo); CCM-001; SPEC-003
-LEVEL        : E3 (Crítico — guard sobre a escrita permanente; atomic-spec §10.2)
-FAILURE-MODE : Fail-closed — expor confiança / aresta to_node==conviction ⇒ negado; log. Falso-DENY E3 CONDICIONAL (ENF-07)
-EVIDENCE     : verificação de namespace separado e ausência de aresta to_node==conviction + ENF-07. Que o CÁLCULO de convicção (SPEC-003) não a consuma = requisito à SPEC-003 / [DECISÃO NECESSÁRIA] — fora do controle do KG
+LEVEL        : E3 (Crítico — guard sobre a ESCRITA permanente; atomic-spec §10.2)
+FAILURE-MODE : Fail-closed — escrever confiança em campo de convicção / aresta to_node==conviction ⇒ negado; log. Falso-DENY E3 CONDICIONAL (ENF-07)
+EVIDENCE     : verificação de namespace separado e ausência de aresta to_node==conviction na escrita + ENF-07. Que o CÁLCULO de convicção (SPEC-003) não a consuma = requisito à SPEC-003 / [DECISÃO NECESSÁRIA] — fora do controle do KG
 ```
 
 ### EC-CKG-005 — Registro de relação causal com mecanismo/regime/desfecho (RULE-CAU) [E3]
 ```
 CAPABILITY   : Admitir CAUSA só com mechanism+direction+conditions+regime+posthoc_flag+outcome (ou no_outcome)
 EFFECT       : Escrita (ou recusa) de relação CAUSA — persistência permanente (E3)
-PRECOND      : (CAUSA) ⇒ (mechanism ∧ direction ∧ conditions ∧ regime ∧ posthoc_flag booleano ∧ (outcome_ref XOR no_outcome+justificativa) ∧ [outcome_ref ⇒ outcome_timestamp DERIVADO do recorded_at do registro apontado — payload posterior ⇒ OUTCOME_TIMESTAMP_INVALID; no_outcome com outcome_ref ⇒ NO_OUTCOME_CONFLICT] ∧ [recorded_at>outcome_timestamp ⇒ posthoc_flag==true]); (SIMILAR_A por juízo) ⇒ similarity_basis; gate determinístico (Classe H); bounded loop
+PRECOND      : (CAUSA) ⇒ (mechanism ∧ direction ∧ conditions ∧ regime ∧ posthoc_flag booleano ∧ (outcome_ref XOR no_outcome+justificativa) ∧ [outcome_ref ⇒ outcome_timestamp DERIVADO do recorded_at do registro apontado — payload posterior ⇒ OUTCOME_TIMESTAMP_INVALID; no_outcome com outcome_ref ⇒ NO_OUTCOME_CONFLICT] ∧ [formulated_at>outcome_timestamp ⇒ posthoc_flag==true; formulated_at≤outcome_timestamp ⇒ posthoc_flag=false legítimo — A-01]); (SIMILAR_A por juízo) ⇒ similarity_basis; gate determinístico (Classe H); bounded loop
 POSTCOND     : relações causais têm campos auditáveis; nenhuma pós-hoc por correlação sem marcador/desfecho
 POLICY       : RULE-CKG-008; RULE-CAU-01/02/03; ENF-03
 LEVEL        : E3 (Crítico — write permanente; herda EC-CKG-001)
@@ -1341,14 +1422,14 @@ EVIDENCE     : registro dos campos causais; contagem de tentativas ≤ limite; g
 
 ### EC-CKG-006 — Consulta cognitiva / Trace Reconstruction (read-only)
 ```
-CAPABILITY   : Responder consultas e reconstruir a cadeia cognitiva da EVIDÊNCIA (completa) sem alterar estado
+CAPABILITY   : Responder consultas e reconstruir a cadeia cognitiva da EVIDÊNCIA (completa) sem alterar estado; **[A-14]** garantir, na LEITURA, que a confiança de relação NÃO é devolvida em campo do objeto de convicção
 EFFECT       : Leitura/navegação (sem escrita)
-PRECOND      : (consulta read-only) AND (consumidor autorizado a ler)
-POSTCOND     : resposta/trace da Evidência COMPLETO; trace de hipótese best-effort; nenhum estado alterado
-POLICY       : RULE-CKG-011; CEM-001 l.608-615/l.612-614; SAS-001 §6.12
-LEVEL        : E1 (Contratual — leitura observável; não muta estado)
-FAILURE-MODE : Fail-closed — consulta que tente mutar ⇒ negada; completude do trace de Evidência é obrigatória; eficiência ampla = INDETERMINADO até H-001
-EVIDENCE     : log de consulta read-only; trace = fecho transitivo de DERIVA_DE
+PRECOND      : (consulta read-only) AND (consumidor autorizado a ler) AND **[A-14]** (resultado NÃO expõe `relation_confidence` em campo de convicção — guard de LEITURA, INV-04)
+POSTCOND     : resposta/trace da Evidência COMPLETO; trace de hipótese best-effort; nenhum estado alterado; confiança não exposta em objeto de convicção
+POLICY       : RULE-CKG-011; RULE-CKG-007 (guard de leitura — A-14); CEM-001 l.608-615/l.612-614; SAS-001 §6.12; INV-04
+LEVEL        : E1 (Contratual — leitura observável; não muta estado) — **o guard de leitura da confiança é E1, distinto do guard de ESCRITA E3 (EC-CKG-004) — A-14**
+FAILURE-MODE : Fail-closed — consulta que tente mutar ⇒ negada; consulta que exponha confiança em campo de convicção ⇒ filtrada/negada (E1); completude do trace de Evidência é obrigatória; eficiência ampla = INDETERMINADO até H-001
+EVIDENCE     : log de consulta read-only; trace = fecho transitivo de DERIVA_DE; verificação de que o resultado não traz `relation_confidence` em campo de convicção
 ```
 
 ---
@@ -1415,14 +1496,14 @@ exige (contrato fechável com mecanismo físico aberto — Opção A).
 ## Autopré-check de Redução de Viés (§7-bis — EUA-E18, obrigatório CRITICAL)
 
 **Bloco A — pergunta adversarial por BASpec (13 BASpecs):** cada BASpec tem ENTÃO verificável por observador independente
-e ≥1 caso de negação em D8 (CKG-001→ADV-12/17,T01; 002→ADV-11,T02/T09; 003→ADV-12/16/20,T03; 004→ADV-13,T04; 005→ADV-06/22,
-T14/T17; 006→ADV-01/19,T05; 007→ADV-03/05,T06; 008→ADV-04,T07/T16; 009→ADV-07/22,T08/T17; 010→ADV-08/21,T09; 011→ADV-14,T10; 012→
+e ≥1 caso de negação em D8 (CKG-001→ADV-12/17/23,T01/T18/T19; 002→ADV-11,T02/T09; 003→ADV-12/16/20,T03; 004→ADV-13,T04; 005→ADV-06/22,
+T14/T17; 006→ADV-01/19,T05; 007→ADV-03/05,T06; 008→ADV-04,T07/T16 (incl. caso POSITIVO formulated_at<outcome — A-01); 009→ADV-07/22,T08/T17; 010→ADV-08/21,T09 (incl. TRAJECTORY_NEVER_ACTIVE — A-02); 011→ADV-14,T10; 012→
 ADV-15/19,T13; 013→ADV-02/18,T11). "Se a BASpec estivesse errada" é observável em cada caso. Nenhuma restou [DECISÃO
 NECESSÁRIA] por falta de verificabilidade (H-001/selo SPEC-007/M-001/J-001/N-001/G-001/K-001/C-001/WF-D03 são fronteiras/
 decisões abertas explícitas, não falhas de verificabilidade).
 
 **Bloco B — herança obrigação-a-obrigação (CC-08):** evidência por obrigação herdada:
-- CEM-001 "preservar os estados / trace COMPLETO" → CKG-010 preserva os estados **A PARTIR DA ADMISSÃO** (M-01; EMERGENT/CANDIDATE = SPEC-004, registrado em MODIFIED) + CKG-011 trace completo da EVIDÊNCIA (não rebaixado por H-001; hipótese = [PROPOSTA]); não redefine.
+- CEM-001 "preservar os estados (da Evidência) / trace COMPLETO" → CKG-010 preserva os estados **a partir da admissão** como regra LOCAL (A-03 — o MODIFIED de CEM-001 l.494 foi RETIRADO por premissa falsa; EMERGENT/CANDIDATE são estados da HIPÓTESE e cabem à SPEC-004, não há obrigação canônica de guardá-los no KG) + CKG-011 trace completo da EVIDÊNCIA (não rebaixado por H-001; hipótese = [PROPOSTA]); admissão exige trajetória que passou por ACTIVE (A-02); não redefine.
 - CEM-001 Cap.5 `Lineage` → tipo DERIVA_DE (aresta) + `provenance_ref.lineage` (campo local [PROPOSTA]), distinguidos.
 - CHM-001 (estados/versionamento) → CKG-002/012 por referência; não transiciona.
 - CCM-001 → CKG-007/EC-CKG-004 isolam confiança (INV-04); estados conviction (l.58/78) no conjunto admissível (CKG-010).
@@ -1430,7 +1511,7 @@ decisões abertas explícitas, não falhas de verificabilidade).
 - SPEC-005 (eventos) → **[INFERÊNCIA]/[DECISÃO NECESSÁRIA]** eventual consumo (D6); emissão pelo KG NÃO afirmada (m-08).
 - SAS-001 §6.12 → CKG-009/EC-CKG-003 (escopo Structural Agent; extensão a outros produtores = [INFERÊNCIA]).
 - RULE-BB-004/INV-07 → CKG-006/012. RULE-CAU-01/02/03 → CKG-008. CEE-001 l.111 → ADV-05. atomic-spec §10.2 → EC-CKG-001/002/003/005 em E3.
-Nenhuma obrigação herdada suprimida (REMOVED vazio) nem contradita (MODIFIED = RULE-BB-004 reforçada + especialização M-01 de alcance, RULE-HD-02). **Eixo VERTICAL (RULE-HV) não aplicável.**
+Nenhuma obrigação herdada suprimida (REMOVED vazio) nem contradita (MODIFIED = RULE-BB-004 reforçada; o antigo M-01 sobre CEM-001 l.494 foi RETIRADO por premissa falsa — A-03 — e a preservação "a partir da admissão" passou a regra LOCAL CKG-010, RULE-HD-02/03). **Eixo VERTICAL (RULE-HV) não aplicável.**
 
 **Bloco C — epistêmico / disciplinas N8–N17 (verificado — sem achado residual):**
 - **RULE-EPI-01..03:** H-001/mecanismo físico = INDETERMINADO (não fato); nenhuma hipótese tratada como fato.
@@ -1491,13 +1572,13 @@ RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migraçã
 [x] RULE-ECC-05 (Multi-Lente): NÃO-incidência confirmada (DHR-SPEC006-001 §2); conformidade WORKFLOW por prudência; não fecha WF-D03.
 [x] Spec sem implementação (BUILD adiado); Plan derivado da abertura homologada; Tasks adiadas.
 [x] EARS (13) referenciam a regra-fonte por ID; BASpecs (CKG-001..013) com Classe (CC-11); RULEs citadas existentes vs propostas etiquetadas.
-[x] Profundidade D0–D7 (+ D8 focado); §D2.1 (matriz) + §D2.2 (colisão); §D3.1 (vocabulário); D4; D5 (estado derivado); D6; D7 x17; D8 x22; D9 por referência.
+[x] Profundidade D0–D7 (+ D8 focado); §D2.1 (matriz) + §D2.2 (colisão); §D3.1 (vocabulário); D4; D5 (estado derivado); D6; D7 x19; D8 x23; D9 por referência.
 [x] Enforcement Contract em todo ato com efeito (EC-CKG-001..006); escrita = E3; E1 consulta; guard confiança×convicção = E3; ENF-07 amostral nos E3 (CONDICIONAL até limiar).
 [x] Status epistemológico aplicado (FATO NORMATIVO / PROPOSTA / INFERÊNCIA / EXTERNO / DECISÃO NECESSÁRIA).
 [x] CONS-01: H-001, M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 e a nova CKG-STRUCT-ORIGIN-001 (N-01/N-09; BL-035) + o timeout `PENDING_ANCESTOR` (N-07) permanecem ABERTAS; nenhuma usada como invariante fechado; STRUCT-10 respeitado.
 [x] Etiquetagem [FONTE]/[INFERÊNCIA]/[PROPOSTA]/[DECISÃO NECESSÁRIA]/[EXTERNO] aplicada.
 [x] CONSOLIDAÇÃO (Rodada 6, preservada na 7): cada regra definida UMA vez (RULE-CKG/BASpec); EARS/D4/D6/EC/T/ADV/Herança referenciam por ID; narrativa histórica só no changelog (1 linha/versão, ordenado 1.0→1.6).
-[x] Integridade: nenhuma fonte inventada; linhas canônicas verificadas (CEM-001 l.258-262/l.473-475/l.494/l.602/l.608-615; CCM-001 l.58/78; SPEC-001 l.104/108/515-520/524; SPEC-004 CBP-004 l.239-246/CBP-007 l.543-558/CBP-014 l.311-319; RMR-001 l.128/l.192 BL-029 `Em espera`).
+[x] Integridade: nenhuma fonte inventada; âncoras canônicas RE-VERIFICADAS na errata v1.8 (A-06..A-09): CEM-001 l.258-262/l.473-475/l.602/l.606/l.608-615 e l.489-497 (tabela Consumo — l.494 é estados da EVIDÊNCIA, não obrigação sobre hipótese — A-03); CHM-001 §4.3 l.744-748/l.379 (A-02); CCM-001 l.58/78; CONSTITUTION l.191/192 (A-09); SPEC-001 l.97/100/104/108/515-520/524; SPEC-004 CBP-004 l.239-246/CBP-007 l.264-270 (DEFINIÇÃO; BASpec em l.543-559 — A-06)/CBP-014 l.311-319; SPEC-005 l.971 (A-09); RULES ONT-01 l.671/ONT-02 l.672 (A-09); ABERTURA §10 R-8 (A-08); RMR-001 por ID/âncora BL-029 (nota DHR-SPEC006-PEND-001) `Em espera` — A-07.
 [x] 4Es na ordem; Conformidade > Eficácia. Latência não material (consulta opcional/não-bloqueante — SAS-001 §6.12).
 [x] Dependências a montante homologadas; selo SPEC-007 marcado [DECISÃO NECESSÁRIA].
 [x] "VERIFY" da skill não apresentado como CONFORME nem homologação.
@@ -1514,6 +1595,7 @@ RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migraçã
 
 [DECISÃO NECESSÁRIA] / abertas nesta Spec (não fechadas — CONS-01):
 - **H-001** — a SPEC-006 **propõe o recorte** (contrato independe do mecanismo físico), mas **não decide** — é de Andraus. Permanece ABERTA.
+  - **Nota A-05 (governança — achado da auditoria independente):** a SPEC-006 foi homologada (v1.7) com **H-001 ABERTA** (Opção A, correto), mas **H-001 ficou SEM DONO** após a homologação — ROADMAP §6, atomic-spec §12 e revisor.md §8 ainda atribuem H-001 à SPEC-006 (já homologada). O **re-apontamento da dona de H-001** (ex.: BL com gatilho de BUILD/Spec futura, e atualização de ROADMAP §6 / atomic-spec §12 / revisor.md §8) é **decisão exclusiva de Andraus** — esta errata **NÃO escolhe a dona** nem edita aqueles documentos (CONS-01; AGENTS §10). Apenas REGISTRA o achado.
 - **Opção B (banco de grafos)** — ADIADA (registrada, não apagada — INV-07).
 - **Escala de confiança de relação** — PARÂMETRO a calibrar (INDETERMINADO; não toca J-001/N-001).
 - **Limite/timeout da espera em `PENDING_ANCESTOR`** (buffer de admissão, INV-CKG-02/N-07) — BOUNDED, mas o valor é [DECISÃO NECESSÁRIA] (runtime/K-001; sem número arbitrário — RULE-MET-01); esgotado ⇒ fail-closed `DERIVA_DE_EDGE_MISSING`.
@@ -1525,6 +1607,6 @@ RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migraçã
 - **Componente "Cognitive Ontology" separado** — não criado; ontologia DENTRO da SPEC-006; é de Andraus.
 - **M-001 / J-001 / N-001 / G-001 / K-001 / C-001 / WF-D03 / ECC-03-001** — permanecem ABERTAS; não tocadas.
 
-**Volume (F-17 — registrado, NÃO dividido):** CRITICAL, 13 BASpecs/17 cenários/22 ADV + §D2.1/§D2.2 + §D3.1 + schema. A
+**Volume (F-17 — registrado, NÃO dividido):** CRITICAL, 13 BASpecs/19 cenários/23 ADV + §D2.1/§D2.2 + §D3.1 + schema. A
 decisão de DIVIDIR a Spec é **exclusivamente de Andraus (Q-ABERTURA-5)** — o Especificador não divide; slot preservado (INV-07).
 

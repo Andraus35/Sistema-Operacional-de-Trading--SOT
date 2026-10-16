@@ -230,12 +230,23 @@ def rodar(doc, rapido=False, root=ROOT):
         ("piso_enforcement_kg", gate_extra.piso_enforcement(texto)),
         ("decisoes_abertas_fechadas", gate_extra.decisoes_abertas_fechadas(texto)),
         ("invariantes_estritos", gate_extra.invariantes_estritos(texto)),
+        ("campos_por_bloco", gate_extra.campos_por_bloco(texto)),
     ]
+    # M10 da auditoria: RULE/INV/DHR/BL/SPEC inventados no PRÓPRIO documento (inclui blocos cercados): ERRO/WARN do check_refs nele
+    try:
+        import check_refs
+        achados_refs = [f"{rel}:{ln} {msg}" for sev, f, ln, msg in check_refs.analyze()[2]
+                        if f == rel and sev in ("ERRO", "WARN")] if rel.startswith("specs/features/") and Path(root).resolve() == ROOT else []
+    except Exception as e:  # detector indisponível não derruba o gate
+        achados_refs = [f"check_refs indisponível: {type(e).__name__}"] if cand else []
+    itens.append({"nome": "refs_do_documento", "classe": "D", "bloqueante": bool(cand), "exit_code": 1 if achados_refs else 0,
+                  "output_sha256": "", "tail": achados_refs[:6] or ["nenhum achado"], "detalhes": achados_refs})
     if checks_path.is_file() and rel.endswith("/plan.md"):
         ctxt = checks_path.read_text(encoding="utf-8", errors="replace")
         extras.append(("assertivas_checks", gate_extra.assertivas_checks(ctxt, texto)))
     for nome, achados in extras:
-        det = [f"{rel}:{ln} {msg}" for ln, msg in achados]
+        alvo_arq = "checks.md" if nome == "assertivas_checks" else rel
+        det = [f"{alvo_arq}:{ln} {msg}" for ln, msg in achados]
         itens.append({"nome": nome, "classe": "D", "bloqueante": bool(cand), "exit_code": 1 if det else 0,
                       "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
     if checks_path.is_file() and rel.endswith("/plan.md"):

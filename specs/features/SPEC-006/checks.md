@@ -1,9 +1,10 @@
 # checks.md — Verificação de Spec da SPEC-006 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-006/plan.md` **v1.7 (candidato)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico INDETERMINADO = H-001 ABERTA)
+**Objeto:** `specs/features/SPEC-006/plan.md` **v1.8 (ERRATA PROPOSTA — aditiva/Minor sobre a BASELINE v1.7; INV-07: nada apagado)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico INDETERMINADO = H-001 ABERTA)
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — NÃO é teste de runtime, NÃO é o parecer do Revisor, NÃO é homologação. [FONTE: atomic-spec §14; ROADMAP §6]
 **Método:** atomic-spec.md **v1.5**
-**Data:** 2026-10-13 (v1.7 — Reconciliação BL-011 / MC-EXP-001; v1.6 = Rodada 7 N-01..N-09)
+**Data:** 2026-10-16 (v1.8 — ERRATA A-01..A-14 da auditoria independente; v1.7 = Reconciliação BL-011; v1.6 = Rodada 7 N-01..N-09)
+**Contagens v1.8 (por cabeçalho — recontadas):** 13 BASpec (`### BASpec-CKG-`), 13 EARS (`^N. (CKG-`), 6 EC (`### EC-CKG-`), **19 cenários (`### Cenário-CKG-T` — T01..T19)**, **23 ADV (`### ADV-CKG-` — ADV-01..23)**, INV-CKG-01/02. Alinhadas plan ↔ checks ↔ changelog.
 
 > **Nota de método (Rodada 7):** cada achado marcado "Corrigido" em §11/§12/§14 foi conferido por busca cruzada (grep dos termos/IDs) no plan.md v1.6 **e** neste checks.md, confirmando ZERO resíduo contraditório antes de marcar. Afirmações de grep abaixo são REAIS (rodadas com a ferramenta de busca). O que foi só parcialmente endereçado ou segue em aberto está marcado "Parcial"/"Aberto" (não "Corrigido").
 > **Itens em aberto (não ✔):** mecanismo físico (H-001); selo de publicação (SPEC-007); produtor/gatilho de promoção trabalho→permanente; consumidor/contrato de consumo de evento pelo KG; emissão pelo KG; allowlist de escritores; host do juízo CKG-008; migração de ontologia; escala de confiança; **limite/timeout da espera `PENDING_ANCESTOR` (N-07)**; trace de HIPÓTESE (best-effort [PROPOSTA], sem alegação de completude — M-03); **origem/escola de `structure` e elo structure→hypothesis + `school=Fractal` sem produtor — CKG-STRUCT-ORIGIN-001 (N-01/N-09), BL-035**.
@@ -35,8 +36,8 @@
 | D4 Algoritmo | Quando há regra determinística | ✔ | integridade; bitemporal; estado derivado+precedência; trace completo da Evidência; versionamento/dedupe (códigos EXPECTED_VERSION_REQUIRED/VERSION_CONFLICT — N-04); gate causal (outcome derivado+posthoc — N-02); confiança; colisão (cond. (v) — N-08); aciclicidade invertida + self-loop (M-02/N-07) |
 | D5 Estado | Sim | ✔ | `knowledge_state` = projeção derivada; ≠ estado canônico (REFUTED só CHM; SUPERSEDED/ARCHIVED também na Evidência — N-06); transitórios não persistidos |
 | D6 Protocolo | Sim | ✔ | sequência; admissão por estado-por-tipo; capacidade×papel (computed_by≠writer_id; commit direto do produtor = DENY — M-05/N-03); consumo/emissão = [INFERÊNCIA]/[DECISÃO NECESSÁRIA] |
-| D7 Teste | Sim (≥3) | ✔ | **T01..T17 (17)** — T17 novo (commit direto do produtor → DENY, N-03) |
-| D8 Adversarial | Sim (focado) | ✔ | **ADV-CKG-01..22 (22)** — ADV-22 novo (produtor como committer → DENY, N-03); ADV-21 estendido (admissão por tipo evidence/conviction, N-03); ADV-18 com caso (f) INVALIDA que fecha o alvo não colide (N-08) |
+| D7 Teste | Sim (≥3) | ✔ | **T01..T19 (19)** — T18 (pai SMC-PRIMARY → DENY, A-04), T19 (school não derivável → DENY, A-04); T16 com caso positivo formulated_at<outcome (A-01); T09 com trajetória ACTIVE (A-02) |
+| D8 Adversarial | Sim (focado) | ✔ | **ADV-CKG-01..23 (23)** — ADV-23 novo (proteção INV-02/RULE-HH-002 efetiva, não aparente — A-04); ADV-04 com contraste positivo (A-01); ADV-21 com TRAJECTORY_NEVER_ACTIVE (A-02); ADV-18 independe de ordem (A-11); ADV-08/09/10 reclassificados REVISÃO/spec-time (A-13) |
 | D9 Auditoria | Por referência | Parcial | registro reconstruível; trace completo da Evidência; observabilidade agregada = SPEC-040 |
 
 **PASS.**
@@ -120,7 +121,7 @@ INHERITS com ID+versão/linha verificados: **SPEC-004 RULE-CBP-004 (l.239-246 �
 | SPEC-004 RULE-CBP-004 (compare-and-commit; VERSION_CONFLICT l.243; EXPECTED_VERSION_REQUIRED l.243-244) | ✔ l.239-246 | specs/features/SPEC-004/plan.md |
 | SPEC-004 **RULE-CBP-007 (DEFINIÇÃO)** | ✔ **l.264-270** (BASpec-CBP-007 = l.543-559 — correção N-05) | specs/features/SPEC-004/plan.md |
 | SPEC-001 RULE-HH-001 (produtores Elliott/SMC/Fibonacci; ICT/Fractal NÃO produzem hipótese) | ✔ l.97; RULE-HH-004 l.108; AUTHORIZED_PRODUCERS l.524 | specs/features/SPEC-001/plan.md |
-| Contagem: 13 BASpecs / 6 EC / 13 EARS / 17 cenários / 22 ADV | ✔ por grep de cabeçalhos | plan.md |
+| Contagem: 13 BASpecs / 6 EC / 13 EARS / **19 cenários (T01..T19)** / **23 ADV (ADV-01..23)** | ✔ por grep de cabeçalhos (v1.8) | plan.md |
 | RULE-CKG-*; INV-CKG-01/02; §D2.1/§D2.2; campos locais; CKG-STRUCT-ORIGIN-001 | [PROPOSTA]/[DECISÃO NECESSÁRIA] | esta Spec |
 
 Nenhuma citação de baseline sem conferência. **PASS.**
@@ -189,15 +190,43 @@ Conferidos por grep cruzado (plan.md v1.6 **e** este checks.md; resíduo contrad
 | **N-03 (Menor)** falta EARS/T/ADV p/ computed_by≠writer_id; caso negativo conviction/evidence na admissão | **Corrigido** — EARS-9 `(CKG-009/005)`; **T17** + **ADV-22** (commit direto do produtor → DENY, capacidade×papel D6); ADV-21 estendido (admissão por tipo evidence DOMINANT / conviction EMERGENT) | EARS-9; T17; ADV-22; ADV-21; D6 tabela |
 | **N-04 (Menor)** EXPECTED_VERSION_MISMATCH p/ ausência+divergência; `collision` em record_kind de relação; ADV-11 sem código p/ redefinição | **Corrigido** — EXPECTED_VERSION_REQUIRED (ausência) + VERSION_CONFLICT (divergência) dos códigos SPEC-004 l.243-244; `collision` removido de `relation_record.record_kind`; CANONICAL_CONTRACT_REDEFINITION_FORBIDDEN em §D3.1 e ADV-11 | RULE-CKG-012; §D3.1; D4; schema; ADV-19; ADV-11 |
 | **N-05 (Menor)** checks: grep falso; "10 tipos"; CBP-007 l.543-558; falta m-01 | **Corrigido** — grep "EMERGENT|CANDIDATE|ACTIVE=0" removido (falso: ~15 ocorrências legítimas de EMERGENT em prosa de exclusão; o correto é "schema `canonical_state_transition` diz 'EMERGENT/CANDIDATE NÃO constam'"); natural_key = **9 tipos**; CBP-007 = **l.264-270** (BASpec l.543-559); **m-01 adicionado** ao §11; afirmações de grep reais | este checks §0/§1/§6/§7/§8/§11 |
-| **N-06 (Menor)** SUPERSEDED/ARCHIVED atribuídos ao CHM como exclusivos | **Corrigido** — REFUTED EXCLUSIVO do CHM; SUPERSEDED/ARCHIVED também na Evidência (CEM-001 l.258-262); grep "REFUTED/SUPERSEDED/ARCHIVED são do CHM"=0 | INHERITS CHM-001 (l.86); D5 (fronteira) |
+| **N-06 (Menor)** SUPERSEDED/ARCHIVED atribuídos ao CHM como exclusivos | **Corrigido** — REFUTED EXCLUSIVO do CHM; SUPERSEDED/ARCHIVED também na Evidência (CEM-001 l.258-262); grep "REFUTED/SUPERSEDED/ARCHIVED são do CHM"=0 | INHERITS CHM-001 §4.2 (estados da hipótese); CEM-001 l.258-262; D5 (fronteira) — A-09: âncora "CHM-001 l.86" (irrelevante) corrigida |
 | **N-07 (Menor)** INV-CKG-02 (buffer aguarda) × CKG-003 (fail-closed); self-loop | **Corrigido** — reconciliados (espera BOUNDED em buffer; esgotado ⇒ fail-closed `DERIVA_DE_EDGE_MISSING`); timeout = **[DECISÃO NECESSÁRIA]** (sem número); self-loop proibido (`LINEAGE_CYCLE`) | RULE-CKG-003; INV-CKG-02; BASpec-003; D4; decisões + Etiquetagem |
 | **N-08 (Menor)** INVALIDA×alvo colide por construção | **Corrigido** — colisão = MARCAÇÃO não-destrutiva (preserva ambas, não rejeita); cond. (v): só colide se o alvo PERMANECE VIGENTE; invalidação autorizada que fecha o alvo NÃO colide; ADV-18 caso (f) | §D2.2; RULE-CKG-013; BASpec-013; D4; D6 passo 7; ADV-18 |
 | **N-09 (Menor)** enum `school` sem Fractal | **Corrigido** — sem produtor de hipótese Fractal em SPEC-001 (`AUTHORIZED_PRODUCERS`=Elliott/SMC/Fibonacci); `school=Fractal` sem fonte registrado [INFERÊNCIA]/[DECISÃO NECESSÁRIA] (CKG-STRUCT-ORIGIN-001), não inventado | §D2.1 nota; schema `school`; decisões/BL-035 |
 
 ---
 
+## 15. Errata v1.8 — A-01..A-14 (auditoria independente §3) — status REAL + assertivas executáveis
+
+> **Honestidade (seja honesto):** status = Corrigido / Parcial / Não corrigido. Cada linha traz ≥1 assertiva executável
+> (`assert-present:"..."` / `assert-absent:"..."` em plan.md; o gate `scripts/gate_extra.py` as executa com espaços
+> colapsados). As assertivas foram conferidas por grep no plan.md v1.8. As decisões conservadoras e os [DECISÃO NECESSÁRIA]
+> remanescentes estão anotados.
+
+| Achado | Sev. | Status | Assertiva executável (plan.md) | Nota |
+|---|---|---|---|---|
+| **A-01** pós-hoc por instante de FORMULAÇÃO | Maior | **Corrigido** | assert-present:"baseline do marcador pós-hoc" · assert-present:"CONTRASTE POSITIVO" · assert-absent:"[recorded_at>outcome_timestamp ⇒ posthoc_flag==true]" | `formulated_at` (1ª versão supersedes/hipótese) substitui `recorded_at` corrente em RULE-CKG-008/EARS-8/BASpec-008/D4/schema/T16/ADV-04/EC-005; T16(e)/ADV-04(f) = causa formulada ANTES do desfecho ACEITA (não pós-hoc) |
+| **A-02** admissão por TRAJETÓRIA | Maior | **Corrigido (opção conservadora)** | assert-present:"Admissão por TRAJETÓRIA [A-02]" · assert-present:"TRAJECTORY_NEVER_ACTIVE" | Admite só objeto que ESTEVE em ACTIVE; EMERGENT→ARCHIVED (nunca validada) REJEITADA (T09/ADV-21(e)). **[DECISÃO NECESSÁRIA]:** conhecimento negativo (REFUTED/ARCHIVED de trabalho) = de Andraus |
+| **A-03** retirar MODIFIED falso sobre CEM-001 l.494 | Maior | **Corrigido** | assert-present:"RETIRADO por premissa falsa" · assert-absent:"ESPECIALIZADA no KG para" | l.494 = tabela Consumo (estados da EVIDÊNCIA); preservação "a partir da admissão" vira regra LOCAL CKG-010; MODIFIED = só RULE-BB-004 reforçada |
+| **A-04** RULE-CKG-001 fail-closed de hypothesis | Maior | **Corrigido** | assert-present:"PRIMARY_NOT_ELLIOTT" · assert-present:"HYPOTHESIS_VIA_SEAL_FORBIDDEN" · assert-present:"SCHOOL_NOT_DERIVABLE" | canonical_ref≠null ∧ producer∈AUTHORIZED_PRODUCERS ∧ school derivável ∧ PRIMARY⇒Elliott ∧ ¬via selo (b); T18/T19/ADV-23 |
+| **A-05** H-001 sem dono (governança) | Maior | **Registrado (nota) — não resolvido aqui** | assert-present:"Nota A-05 (governança" | Re-apontamento da dona de H-001 (ROADMAP §6/atomic-spec §12/revisor.md §8) = decisão de Andraus; errata NÃO escolhe dona nem edita esses docs |
+| **A-06** CBP-007 l.543-558 → l.264-270 | Menor | **Corrigido** | assert-present:"RULE-CBP-007 l.264-270" · assert-absent:"RULE-CBP-007 l.543-558" | 5 ocorrências trocadas; BASpec-CBP-007 fica em l.543-559 |
+| **A-07** RMR-001 por LINHA → por ID/âncora | Menor | **Corrigido** | assert-absent:"RMR-001 l.128" · assert-present:"por ID/âncora" | BL-029 + nota DHR-SPEC006-PEND-001 citados por ID |
+| **A-08** "research.md §8 R-8" → ABERTURA §10 | Menor | **Corrigido** | assert-present:"ABERTURA.md §10 R-8" · assert-absent:"research.md §8 R-8" | R-8 confirmado em ABERTURA.md §10 (Riscos) l.149 |
+| **A-09** âncoras trocadas | Menor | **Corrigido** | assert-present:"CEM-001 l.602/l.606" · assert-present:"ONT-02 (ontologia extensível por governança — l.672" | RULES ONT-01 l.671/ONT-02 l.672; CONSTITUTION l.191/192; SPEC-005 l.971; CEM-001 l.606; checks N-06 "CHM-001 l.86" corrigido |
+| **A-10** chave natural da relação | Menor | **Corrigido** | assert-present:"target_relation_id, valid_from" | INVALIDA (to_node=null) não colapsa |
+| **A-11** ordem INVALIDA × valid_to | Menor | **Corrigido** | assert-present:"MESMO ATO ATÔMICO" | par atômico; cond.(v) sobre estado resultante; independe de ordem (RULE-CKG-013/D6/ADV-18) |
+| **A-12** tipos de nó sem relação | Menor | **Corrigido (conservador)** | assert-present:"aresta de SAÍDA de conviction" | conviction/narrative ganham DEPENDE_DE de SAÍDA (NENHUMA aresta PARA conviction — INV-04); calibration_metric = isolamento intencional [PROPOSTA] |
+| **A-13** VERIFICADO POR não executável (ADV-08/09/10, BASpec-009) | Menor | **Corrigido** | assert-present:"CHECAGEM DE REVISÃO/SPEC-TIME — A-13" | ADV-08/09/10 reclassificados spec-time; falso-DENY removido do desfecho de BASpec-009 |
+| **A-14** EC-004 (E3) × EC-006 (E1) | Menor | **Corrigido** | assert-present:"distinto do guard de ESCRITA E3" | guard de ESCRITA = E3 (EC-004); guard de LEITURA = E1 (EC-006) |
+
+**[DECISÃO NECESSÁRIA] remanescentes (não fechadas — CONS-01):** H-001 (mecanismo físico + A-05 dona); conhecimento negativo na admissão (A-02 alternativa); CKG-STRUCT-ORIGIN-001 (N-01/N-09, BL-035); timeout `PENDING_ANCESTOR` (N-07); selo SPEC-007; allowlist/host do juízo; migração de ontologia; escala de confiança; M-001/J-001/N-001/G-001/K-001/C-001/WF-D03/ECC-03-001.
+
+---
+
 ## Resultado da verificação de spec
 
-**Estruturalmente CONFORME** (well-formedness) na v1.7. 13 BASpecs (D/C/H), 13 EARS (referenciando regra-fonte), 6 EC (escrita e guard = E3), §D2.1/§D2.2 (cond. (v) — N-08)/§D3.1, INV-CKG-01/02, proveniência condicional, CKG-010 por tipo [PROPOSTA], **17 cenários (T01..T17)**, **22 adversariais (ADV-01..22)** — contagens inalteradas da v1.6 (grep de cabeçalhos: 13 BASpec/13 EARS). v1.7 acrescenta só a **Reconciliação BL-011 / MC-EXP-001** (seção curta, sem regra nova): EXP-SPEC-001..053 + X-/R- mapeados por REFERÊNCIA a RULE-CKG existentes ou FORA (SPEC-007/018/K-001); COL-EXP-01..05 REFLETIDOS/ADIADOS. CONS-01 preservado (H-001, J-001, K-001, M-001, N-001, G-001, CKG-STRUCT-ORIGIN-001 e demais ABERTAS; nenhuma fechada), gate RMR-001 (BL-011 reconciliado, Disposição PARCIAL, estado inalterado; BL-029/BL-035 `Em espera`). N-01..N-09 em §14 com grep cruzado = 0 resíduo contraditório onde "Corrigido".
+**Estruturalmente CONFORME** (well-formedness) na v1.8 (ERRATA A-01..A-14). 13 BASpecs (D/C/H), 13 EARS (referenciando regra-fonte), 6 EC (escrita = E3 / leitura = E1 separados — A-14), §D2.1/§D2.2 (cond. (v) — N-08; ato atômico — A-11)/§D3.1, INV-CKG-01/02, proveniência condicional, CKG-010 por tipo + TRAJETÓRIA (A-02) [PROPOSTA], **19 cenários (T01..T19)**, **23 adversariais (ADV-01..23)** (grep de cabeçalhos v1.8: 13 BASpec/13 EARS/6 EC/19 T/23 ADV). v1.7 acrescenta só a **Reconciliação BL-011 / MC-EXP-001** (seção curta, sem regra nova): EXP-SPEC-001..053 + X-/R- mapeados por REFERÊNCIA a RULE-CKG existentes ou FORA (SPEC-007/018/K-001); COL-EXP-01..05 REFLETIDOS/ADIADOS. CONS-01 preservado (H-001, J-001, K-001, M-001, N-001, G-001, CKG-STRUCT-ORIGIN-001 e demais ABERTAS; nenhuma fechada), gate RMR-001 (BL-011 reconciliado, Disposição PARCIAL, estado inalterado; BL-029/BL-035 `Em espera`). N-01..N-09 em §14 com grep cruzado = 0 resíduo contraditório onde "Corrigido".
 
 > Feedback interno de verificação de spec — **NÃO** é o parecer do Revisor nem homologação. Próximo passo: gates no ambiente pai (Especificador sem Bash) — `validate_spec_sot.py`, `revisor_gate.py`, `check_repo_research.py --all`, `check_doc_sync.py`, `backlog_triggers.py`, `check_invariants.py`, `build_map.py --check` — e submissão ao Revisor SOT.

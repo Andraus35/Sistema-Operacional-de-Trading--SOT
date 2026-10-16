@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-16",
-  "digest": "98a43bc7795878fbc92c2a777ad28ec271533b22980c9b2d56d9a96b56d6e522",
+  "digest": "c96ec76c8443772e2778e657f44a16c831546d3eb8810046a0febb564165ae36",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1081,7 +1081,7 @@
    "path": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
    "area": "governance",
    "title": "DHR-SPEC006-PEND-001 — Ata — BL-029 `Em espera` e emenda Minor ao `atomic-spec` §3 (Knowledge Graph)",
-   "in": 7,
+   "in": 8,
    "out": 12
   },
   {
@@ -1929,7 +1929,7 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
    "in": 2,
-   "out": 7
+   "out": 8
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
@@ -2707,7 +2707,7 @@
   {
    "id": "DHR-SPEC006-PEND-001",
    "defined_in": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-SPEC019",
@@ -2902,7 +2902,7 @@
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 29
+   "cited_by": 30
   },
   {
    "id": "INV-03",
@@ -2927,7 +2927,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 164
+   "cited_by": 165
   },
   {
    "id": "INV-08",
@@ -3692,7 +3692,7 @@
   {
    "id": "RULE-HH-002",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 5
   },
   {
    "id": "RULE-HH-003",
@@ -20774,6 +20774,11 @@
   {
    "from": "specs/features/SPEC-006/checks.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
    "type": "id"
   },
   {
