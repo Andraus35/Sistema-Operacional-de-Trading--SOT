@@ -4,16 +4,16 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-13** · digest `bed76b7ac64ebcf7` · **298** documentos · **3614** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-16** · digest `98a43bc7795878fb` · **298** documentos · **3609** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
 | Área | Docs | Função | Mais referenciados |
 |---|---:|---|---|
-| **raiz** | 6 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (166) · [atomic-spec.md](../../atomic-spec.md) (96) · [AGENTS.md](../../AGENTS.md) (58) |
+| **raiz** | 6 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (166) · [atomic-spec.md](../../atomic-spec.md) (97) · [AGENTS.md](../../AGENTS.md) (58) |
 | **governance** | 166 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (237) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (92) · [DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) (71) |
 | **canon** | 9 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (105) · [CCM-001-canonical-conviction-model.md](../../canon/CCM-001-canonical-conviction-model.md) (93) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (91) |
-| **specs** | 45 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (126) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (123) · [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) (83) |
+| **specs** | 45 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (123) · [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (123) · [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) (80) |
 | **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (158) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (21) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
 | **reference** | 28 | referências externas não-normativas (camadas, master contracts) | [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (25) · [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (15) · [SOT-RISK-MASTER-001_Consolidado.md](../../reference/SOT-RISK-MASTER-001_Consolidado.md) (8) |
 | **rag** | 5 | chunks de conhecimento por agente | [synthesis.knowledge.md](../../rag/synthesis.knowledge.md) (3) |
@@ -28,14 +28,14 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 
 ```mermaid
 flowchart LR
-  governance["governance"] -->|488| specs["specs"]
+  governance["governance"] -->|485| specs["specs"]
   governance["governance"] -->|288| raiz["raiz"]
-  specs["specs"] -->|255| governance["governance"]
+  specs["specs"] -->|256| governance["governance"]
   governance["governance"] -->|142| backlog["backlog"]
   raiz["raiz"] -->|106| governance["governance"]
   backlog["backlog"] -->|103| governance["governance"]
   _claude[".claude"] -->|99| governance["governance"]
-  specs["specs"] -->|66| raiz["raiz"]
+  specs["specs"] -->|67| raiz["raiz"]
   governance["governance"] -->|62| reference["reference"]
   governance["governance"] -->|52| _claude[".claude"]
   raiz["raiz"] -->|43| specs["specs"]
@@ -44,7 +44,7 @@ flowchart LR
   docs["docs"] -->|38| specs["specs"]
   backlog["backlog"] -->|37| specs["specs"]
   reference["reference"] -->|32| specs["specs"]
-  _claude[".claude"] -->|29| specs["specs"]
+  _claude[".claude"] -->|27| specs["specs"]
   docs["docs"] -->|26| raiz["raiz"]
   reference["reference"] -->|25| governance["governance"]
   governance["governance"] -->|22| canon["canon"]
@@ -66,7 +66,7 @@ flowchart LR
 | `INV-07` | 164 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-002` | 123 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
 | `SPEC-001` | 109 | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) |
-| `INV-09` | 95 | [governance/RULES.md](../../governance/RULES.md) |
+| `INV-09` | 97 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-003` | 80 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
 | `RULE-ECC-01` | 77 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-004` | 76 | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) |
@@ -86,8 +86,8 @@ flowchart LR
 | `RULE-HV` | 46 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-MECH-01` | 46 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-010` | 44 | [ROADMAP.md](../../ROADMAP.md) |
+| `INV-01` | 41 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-ECC-02` | 41 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-007` | 41 | [ROADMAP.md](../../ROADMAP.md) |
 
 ## 4. Cadeia de Specs
 
@@ -144,7 +144,7 @@ flowchart LR
 ## 5. Backlog e integridade
 
 - **Backlog (RMR-001):** ATIVADOS = nenhum · disparados sem registro = 2 · verificação manual = 6 itens (`python scripts/backlog_triggers.py`).
-- **Referências (check_refs):** ERRO=8 · WARN=4 · INFO=160 (históricos congelados) — `python scripts/check_refs.py`.
+- **Referências (check_refs):** ERRO=2 · WARN=2 · INFO=167 (históricos congelados) — `python scripts/check_refs.py`.
 
 ## 6. Documentos sem referência de entrada
 
@@ -159,7 +159,6 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 - [governance/ERRATUM-SPEC019-001_PROPOSTA.md](../../governance/ERRATUM-SPEC019-001_PROPOSTA.md) — ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homologada (PROPOSTA)
 - [governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md](../../governance/EUA-E19a_Restauracao_Signal_Package_PROPOSTA.md) — EUA-E19a — Restauração Semântica do "Signal Package" (fronteira) + TMP interno (PROPOSTA)
 - [governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md](../../governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md) — PROPOSTA — Automação do Auditor Externo por GitHub Action (caminho B)
-- [governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md](../../governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md) — Auditoria Independente e Adversarial: SPEC-006 v1.7 (Cognitive Knowledge Graph) e desempenho do Revisor
 - [governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md](../../governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md) — [ERRATUM-PROPOSTO — NÃO APLICADO] ERRATUM-SPEC002-001 — Erratum ADITIVO único (auditoria semântica SPEC-002: itens 1, 2, 3)
 - [rag/elliott-wave.knowledge.md](../../rag/elliott-wave.knowledge.md) — RAG — Elliott Wave Specialist Knowledge Base
 - [rag/fibonacci.knowledge.md](../../rag/fibonacci.knowledge.md) — RAG — Fibonacci Validator Knowledge Base
@@ -181,7 +180,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [README.md](../../README.md) | SOT-Harness | 1 | 9 |
 | [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 166 | 67 |
 | [WORKFLOW.md](../../WORKFLOW.md) | WORKFLOW — Setup Operacional Canônico do SOT | 33 | 12 |
-| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 96 | 35 |
+| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 97 | 35 |
 
 ### governance
 
@@ -291,7 +290,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md](../../governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md) | DHR-SPEC020-001 — Ata de Homologação — SPEC-020 v1.0 (Harness Evaluation Spec... | 11 | 9 |
 | [DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md](../../governance/DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md) | DHR-SPEC021-001 — Ata de Homologação — SPEC-021 v1.0 (Harness Score / Maturit... | 8 | 7 |
 | [DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md](../../governance/DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md) | DHR-SPEC038-001 — Ata de Homologação — Abertura da SPEC-038 (Trading Analysis... | 9 | 14 |
-| [DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md](../../governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md) | DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harnes... | 10 | 13 |
+| [DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md](../../governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md) | DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harnes... | 10 | 11 |
 | [DHR-SPEC046-001_Ata_Homologacao_Abertura_SPEC-046.md](../../governance/DHR-SPEC046-001_Ata_Homologacao_Abertura_SPEC-046.md) | DHR-SPEC046-001 — Ata de Homologação — Abertura da SPEC-046 (Spec-Time Contex... | 7 | 12 |
 | [DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md](../../governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md) | DHR-SPEC046-002 — Ata de Homologação — SPEC-046 v1.0 (Spec-Time Context Cachi... | 6 | 15 |
 | [DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md](../../governance/DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md) | DHR-SPEC046-003 — Ata de Homologação — SPEC-046 v1.1 (Emenda: Caching Inter-S... | 4 | 8 |
@@ -350,7 +349,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [INSTRUCOES-OPERACIONAIS-GPT.md](../../governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md) | INSTRUÇÕES OPERACIONAIS DETERMINÍSTICAS — Auditor Externo (GPT)  `[PROPOSTA —... | 3 | 10 |
 | [PROMPT-AUDITOR-CI.md](../../governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md) | PROMPT DO AUDITOR EXTERNO — modo bot (somente leitura) | 3 | 8 |
 | [README-INSTALACAO.md](../../governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md) | Kit do Auditor Externo — instalação e acesso  `[PROPOSTA — NÃO HOMOLOGADO]` | 5 | 7 |
-| [RELATORIO.md](../../governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md) | Auditoria Independente e Adversarial: SPEC-006 v1.7 (Cognitive Knowledge Grap... | 0 | 14 |
+| [RELATORIO.md](../../governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md) | Auditoria Independente e Adversarial: SPEC-006 v1.7 (Cognitive Knowledge Grap... | 1 | 14 |
 | [ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md](../../governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md) | [ERRATUM-PROPOSTO — NÃO APLICADO] ERRATUM-SPEC002-001 — Erratum ADITIVO único... | 0 | 19 |
 | [REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md](../../governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md) | REAUDITORIA-SPEC002-001 — Proposta de Correções — SPEC-002 | 1 | 6 |
 
@@ -378,26 +377,26 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DOSSIE-PESQUISA.md](../../specs/features/SPEC-002/DOSSIE-PESQUISA.md) | Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness) | 2 | 15 |
 | [PROPOSTA-ABERTURA.md](../../specs/features/SPEC-002/PROPOSTA-ABERTURA.md) | Proposta de Abertura — SPEC-002: Evidence & Evidence Provenance Harness | 4 | 16 |
 | [SPEC-002/checks.md](../../specs/features/SPEC-002/checks.md) | checks.md — Verificação de Spec da SPEC-002 (fase spec-first) | 3 | 10 |
-| [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) | SPEC-002 — Evidence & Evidence Provenance Harness | 126 | 18 |
+| [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) | SPEC-002 — Evidence & Evidence Provenance Harness | 123 | 18 |
 | [research.md](../../specs/features/SPEC-002/research.md) | SPEC-002 — Evidence & Evidence Provenance Harness — DOSSIÊ DE PESQUISA (ABERT... | 14 | 20 |
 | [SPEC-003/checks.md](../../specs/features/SPEC-003/checks.md) | checks.md — Verificação de Spec da SPEC-003 (fase spec-first) | 3 | 18 |
-| [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine | 83 | 25 |
+| [SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine | 80 | 25 |
 | [research-Q-A9-regime.md](../../specs/features/SPEC-003/research-Q-A9-regime.md) | SPEC-003 — Q-A9: Dimensão do Regime de Mercado (WF-C04) — DOSSIÊ DE PESQUISA | 6 | 4 |
 | [research.md](../../specs/features/SPEC-003/research.md) | SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine — DO... | 3 | 22 |
 | [ABERTURA.md](../../specs/features/SPEC-004/ABERTURA.md) | Proposta de Abertura — SPEC-004: Cognitive Blackboard Protocol | 9 | 16 |
-| [SPEC-004/checks.md](../../specs/features/SPEC-004/checks.md) | checks.md — Verificação de Spec da SPEC-004 (fase spec-first) | 2 | 13 |
+| [SPEC-004/checks.md](../../specs/features/SPEC-004/checks.md) | checks.md — Verificação de Spec da SPEC-004 (fase spec-first) | 2 | 12 |
 | [SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) | SPEC-004 — Cognitive Blackboard Protocol | 76 | 22 |
 | [research.md](../../specs/features/SPEC-004/research.md) | Dossiê de Pesquisa — SPEC-004: Cognitive Blackboard Protocol | 2 | 15 |
 | [ABERTURA.md](../../specs/features/SPEC-005/ABERTURA.md) | Proposta de Abertura — SPEC-005: Cognitive Event Bus (slot ROADMAP §5, FASE 2) | 3 | 18 |
-| [SPEC-005/checks.md](../../specs/features/SPEC-005/checks.md) | checks.md — Verificação de Spec da SPEC-005 (fase spec-first) | 2 | 11 |
+| [SPEC-005/checks.md](../../specs/features/SPEC-005/checks.md) | checks.md — Verificação de Spec da SPEC-005 (fase spec-first) | 2 | 10 |
 | [SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) | SPEC-005 — Cognitive Event Bus | 39 | 23 |
 | [research.md](../../specs/features/SPEC-005/research.md) | Dossiê de Pesquisa — SPEC-005: Cognitive Event Bus (slot ROADMAP §5, FASE 2) | 2 | 22 |
 | [ABERTURA.md](../../specs/features/SPEC-006/ABERTURA.md) | Proposta de Abertura — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, ... | 3 | 18 |
 | [SPEC-006/checks.md](../../specs/features/SPEC-006/checks.md) | checks.md — Verificação de Spec da SPEC-006 (fase spec-first) | 2 | 7 |
-| [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 66 | 25 |
+| [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 66 | 26 |
 | [research.md](../../specs/features/SPEC-006/research.md) | Dossiê de Pesquisa — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, FA... | 2 | 23 |
 | [SPEC-019/checks.md](../../specs/features/SPEC-019/checks.md) | checks.md — Verificação de Spec da SPEC-019 (fase spec-first) | 1 | 8 |
-| [SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical) | 62 | 18 |
+| [SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical) | 62 | 19 |
 | [SPEC-020/checks.md](../../specs/features/SPEC-020/checks.md) | checks.md — Verificação de Spec da SPEC-020 (fase spec-first) | 2 | 7 |
 | [SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) | 67 | 20 |
 | [research.md](../../specs/features/SPEC-020/research.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) — DOSSIÊ DE PESQUISA (... | 1 | 15 |
@@ -481,14 +480,14 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [sot-schema-validator.md](../../.claude/agents/sot-schema-validator.md) | SOT Schema Validator | 2 | 0 |
 | [sot-spec-reviewer.md](../../.claude/agents/sot-spec-reviewer.md) | SOT Spec Reviewer | 2 | 0 |
 | [update-spec.md](../../.claude/commands/update-spec.md) | Update SOT Agent Spec | 0 | 0 |
-| [validate-harness.md](../../.claude/commands/validate-harness.md) | Validate SOT Harness | 0 | 3 |
+| [validate-harness.md](../../.claude/commands/validate-harness.md) | Validate SOT Harness | 0 | 2 |
 | [SKILL.md](../../.claude/skills/SKILL.md) | SOT Harness — Referência Mestre de Especificação | 2 | 4 |
 | [SKILL.md](../../.claude/skills/harness-eval/SKILL.md) | Harness Eval | 1 | 3 |
 | [GLOSSARY.md](../../.claude/skills/harness-eval/references/GLOSSARY.md) | Harness Eval — plain-language glossary | 2 | 0 |
 | [PROTOCOL.md](../../.claude/skills/harness-eval/references/PROTOCOL.md) | Harness Evaluation Protocol | 1 | 3 |
 | [judge-prompts.md](../../.claude/skills/harness-eval/references/judge-prompts.md) | Judge spawn prompts | 1 | 0 |
 | [SKILL.md](../../.claude/skills/sot-especificador-pap001/SKILL.md) | MISSÃO: PRODUZIR O PAP-001 | 0 | 10 |
-| [update-harness.md](../../.claude/skills/update-harness.md) | Update SOT Harness from Source Document | 0 | 3 |
+| [update-harness.md](../../.claude/skills/update-harness.md) | Update SOT Harness from Source Document | 0 | 2 |
 | [validate-sot-spec.md](../../.claude/skills/validate-sot-spec.md) | Validate SOT Agent Spec | 0 | 0 |
 
 ### docs

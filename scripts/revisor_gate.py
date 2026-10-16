@@ -8,6 +8,11 @@ Funde e amplia os detectores determinísticos existentes numa bateria fixa, para
                  check_rpsa.py · build_map.py --check
                  campos_atribuidos_baseline (campo `x` atribuído a baseline que não o contém) · estado_backlog (estado de BL-nnn
                  citado ≠ RMR-001) · refs_variantes (T04-neg / ADV-X-NN-sufixo sem definição) — achados da medição da SPEC-006
+  D candidato    (bloqueantes só em documento CANDIDATO / ERRATA PROPOSTA; informativos em baseline — INV-07) gate_extra.py:
+                 citações arquivo:linha · contagens declaradas × cabeçalhos · piso de enforcement do KG · decisão aberta com
+                 palavra de fechamento · invariantes estritos · assertivas executáveis do checks.md · check_invariants
+  teto           `teto_de_veredito` (revisor.md §3/§8): gate fora da sessão do Revisor ou decisão aberta que bloqueia a Spec
+                 ⇒ no máximo "CONFORME condicional"
   H sinais       candidatos por palavra-chave a violação de invariante de SENTIDO (AGENTS.md §6/§7): o código levanta,
                  o Revisor CONFIRMA. Nunca bloqueiam. Têm falso alarme e falso negativo por construção.
 Classe P (julgamento de sentido, adversarial, epistêmico) NÃO está aqui: é do Revisor (atomic-spec §10.6).
@@ -30,6 +35,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import check_invariants  # noqa: E402
+import gate_extra  # noqa: E402  (detectores D da auditoria independente da SPEC-006)
 
 BASELINES = ["ROADMAP.md", "atomic-spec.md", "governance/RULES.md"]            # Passo 0 (núcleo sempre obrigatório)
 ID_CANONICO = re.compile(r"(?<![A-Za-z]-)(?<!/)\b(CHM|CEM|CCM|CEE|GMC|SDD|PPQ|SAS|CR)-(\d{3})\b")  # modelos canônicos (AGENTS.md §6 item 12); (?<!X-) ignora RULE-CEE-003
@@ -211,6 +217,32 @@ def rodar(doc, rapido=False, root=ROOT):
         det = [fmt(a) for a in achados]
         itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if det else 0,
                       "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
+    cand = gate_extra._eh_candidato(texto)
+    # check_invariants passa a bloquear documento CANDIDATO (valores/ordem das regras fixas: R:R, 8 dimensões, hierarquia, 4Es)
+    for g in itens:
+        if g["nome"] == "check_invariants" and cand:
+            g["bloqueante"] = True
+    spec_dir = docp.resolve().parent
+    checks_path = spec_dir / "checks.md"
+    extras = [
+        ("citacoes_arquivo_linha", gate_extra.citacoes_arquivo_linha(texto, root)),
+        ("contagens_declaradas", gate_extra.contagens_declaradas(texto)),
+        ("piso_enforcement_kg", gate_extra.piso_enforcement(texto)),
+        ("decisoes_abertas_fechadas", gate_extra.decisoes_abertas_fechadas(texto)),
+        ("invariantes_estritos", gate_extra.invariantes_estritos(texto)),
+    ]
+    if checks_path.is_file() and rel.endswith("/plan.md"):
+        ctxt = checks_path.read_text(encoding="utf-8", errors="replace")
+        extras.append(("assertivas_checks", gate_extra.assertivas_checks(ctxt, texto)))
+    for nome, achados in extras:
+        det = [f"{rel}:{ln} {msg}" for ln, msg in achados]
+        itens.append({"nome": nome, "classe": "D", "bloqueante": bool(cand), "exit_code": 1 if det else 0,
+                      "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
+    if checks_path.is_file() and rel.endswith("/plan.md"):
+        sem = gate_extra.corrigidos_sem_assertiva(checks_path.read_text(encoding="utf-8", errors="replace"))
+        itens.append({"nome": "corrigidos_sem_assertiva", "classe": "D", "bloqueante": False, "exit_code": 1 if sem else 0,
+                      "output_sha256": "", "tail": [f"{len(sem)} linha(s) Corrigido/Resolvido sem assertiva executável"] if sem else ["nenhum achado"],
+                      "detalhes": [f"checks.md:{ln} {msg}" for ln, msg in sem]})
     if not rapido:
         itens.append(_run("check_refs", [py, "scripts/check_refs.py"], "D", False, root))
         itens.append(_run("check_doc_sync", [py, "scripts/check_doc_sync.py"], "D", False, root))
@@ -226,7 +258,10 @@ def rodar(doc, rapido=False, root=ROOT):
         if g["nome"] == "ids_canonicos_existem":
             g["detalhes"] = [f"{rel}:{ln} {i} não existe em canon/" for ln, i in ids]
     reprovado = any(i["bloqueante"] and i["exit_code"] != 0 for i in itens)
-    return {"schema_version": "2.0", "documento": rel, "gates": itens, "sinais_H": sinais,
+    msp = re.search(r"specs/features/(SPEC-\d{3})/", rel)
+    teto, motivos = gate_extra.teto_de_veredito(msp.group(1) if msp else None, texto, root)
+    return {"schema_version": "2.1", "documento": rel, "gates": itens, "sinais_H": sinais,
+            "teto_de_veredito": teto, "motivos_teto": motivos,
             "veredito_D": "REPROVADO_D (NÃO CONFORME Crítica automática)" if reprovado else "PASSOU_D (≠ CONFORME ≠ homologação)",
             "nota": "Classe P (sentido, adversarial, epistêmico) não é coberta: é julgamento do Revisor."}, reprovado
 
@@ -252,6 +287,9 @@ def main(argv=None):
         for s in ev["sinais_H"][:10]:
             print(f"    linha {s['linha']} [{s['codigo']}] {s['trecho']}")
         print(f"VEREDITO D: {ev['veredito_D']}")
+        print(f"TETO DE VEREDITO (revisor.md §3/§8): {ev['teto_de_veredito']}")
+        for mt in ev["motivos_teto"]:
+            print(f"    - {mt}")
         print("(*) = bloqueante. Classe P fica com o Revisor.")
     return 1 if reprovado else 0
 

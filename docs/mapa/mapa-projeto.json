@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-13",
-  "digest": "bed76b7ac64ebcf7e352d7e74995bf75fab1736c81d92b3c70b25d9d67dd6fea",
+  "generated": "2026-10-16",
+  "digest": "98a43bc7795878fbc92c2a777ad28ec271533b22980c9b2d56d9a96b56d6e522",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -46,7 +46,7 @@
    "area": ".claude",
    "title": "Validate SOT Harness",
    "in": 0,
-   "out": 3
+   "out": 2
   },
   {
    "path": ".claude/skills/SKILL.md",
@@ -95,7 +95,7 @@
    "area": ".claude",
    "title": "Update SOT Harness from Source Document",
    "in": 0,
-   "out": 3
+   "out": 2
   },
   {
    "path": ".claude/skills/validate-sot-spec.md",
@@ -178,7 +178,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 96,
+   "in": 97,
    "out": 35
   },
   {
@@ -1117,7 +1117,7 @@
    "area": "governance",
    "title": "DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harness) — BASELINE v1.1",
    "in": 10,
-   "out": 13
+   "out": 11
   },
   {
    "path": "governance/DHR-SPEC046-001_Ata_Homologacao_Abertura_SPEC-046.md",
@@ -1529,7 +1529,7 @@
    "path": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
    "area": "governance",
    "title": "Auditoria Independente e Adversarial: SPEC-006 v1.7 (Cognitive Knowledge Graph) e desempenho do Revisor",
-   "in": 0,
+   "in": 1,
    "out": 14
   },
   {
@@ -1823,7 +1823,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 126,
+   "in": 123,
    "out": 18
   },
   {
@@ -1844,7 +1844,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 83,
+   "in": 80,
    "out": 25
   },
   {
@@ -1873,7 +1873,7 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-004 (fase spec-first)",
    "in": 2,
-   "out": 13
+   "out": 12
   },
   {
    "path": "specs/features/SPEC-004/plan.md",
@@ -1901,7 +1901,7 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-005 (fase spec-first)",
    "in": 2,
-   "out": 11
+   "out": 10
   },
   {
    "path": "specs/features/SPEC-005/plan.md",
@@ -1936,7 +1936,7 @@
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 66,
-   "out": 25
+   "out": 26
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -1957,7 +1957,7 @@
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
    "in": 62,
-   "out": 18
+   "out": 19
   },
   {
    "path": "specs/features/SPEC-020/checks.md",
@@ -2897,7 +2897,7 @@
   {
    "id": "INV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 39
+   "cited_by": 41
   },
   {
    "id": "INV-02",
@@ -2932,17 +2932,17 @@
   {
    "id": "INV-08",
    "defined_in": "atomic-spec.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 95
+   "cited_by": 97
   },
   {
    "id": "INV-10",
    "defined_in": "governance/RULES.md",
-   "cited_by": 15
+   "cited_by": 17
   },
   {
    "id": "INV-CBP-01",
@@ -2956,13 +2956,13 @@
   },
   {
    "id": "INV-CKG-01",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 3
+   "defined_in": null,
+   "cited_by": 4
   },
   {
    "id": "INV-CKG-02",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "INV-EPI",
@@ -2977,7 +2977,7 @@
   {
    "id": "INV-RISK",
    "defined_in": "ROADMAP.md",
-   "cited_by": 9
+   "cited_by": 11
   },
   {
    "id": "INV-RISK-00",
@@ -3001,8 +3001,8 @@
   },
   {
    "id": "RULE-BB",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 7
+   "defined_in": "governance/RULES.md",
+   "cited_by": 8
   },
   {
    "id": "RULE-BB-001",
@@ -3022,7 +3022,7 @@
   {
    "id": "RULE-BB-004",
    "defined_in": "governance/RULES.md",
-   "cited_by": 18
+   "cited_by": 20
   },
   {
    "id": "RULE-BB-005",
@@ -3031,23 +3031,28 @@
   },
   {
    "id": "RULE-C46-001",
-   "defined_in": "specs/features/SPEC-046/plan.md",
-   "cited_by": 4
+   "defined_in": null,
+   "cited_by": 5
   },
   {
    "id": "RULE-C46-002",
-   "defined_in": "specs/features/SPEC-046/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-C46-003",
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-C46-004",
-   "defined_in": "specs/features/SPEC-046/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-C46-005",
-   "defined_in": "specs/features/SPEC-046/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CAU",
@@ -3062,7 +3067,7 @@
   {
    "id": "RULE-CAU-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-CAU-03",
@@ -3071,8 +3076,8 @@
   },
   {
    "id": "RULE-CBP",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 2
+   "defined_in": "ROADMAP.md",
+   "cited_by": 3
   },
   {
    "id": "RULE-CBP-001",
@@ -3081,63 +3086,73 @@
   },
   {
    "id": "RULE-CBP-002",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CBP-003",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 3
   },
   {
    "id": "RULE-CBP-004",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 2
+   "defined_in": null,
+   "cited_by": 3
   },
   {
    "id": "RULE-CBP-005",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 1
-  },
-  {
-   "id": "RULE-CBP-006",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 1
-  },
-  {
-   "id": "RULE-CBP-007",
-   "defined_in": "specs/features/SPEC-004/plan.md",
+   "defined_in": null,
    "cited_by": 2
   },
   {
+   "id": "RULE-CBP-006",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-CBP-007",
+   "defined_in": null,
+   "cited_by": 4
+  },
+  {
    "id": "RULE-CBP-008",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CBP-009",
-   "defined_in": "specs/features/SPEC-004/plan.md",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-CBP-010",
+   "defined_in": null,
    "cited_by": 1
   },
   {
    "id": "RULE-CBP-011",
-   "defined_in": "specs/features/SPEC-004/plan.md",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-CBP-012",
+   "defined_in": null,
    "cited_by": 1
   },
   {
    "id": "RULE-CBP-013",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 5
+   "defined_in": null,
+   "cited_by": 7
   },
   {
    "id": "RULE-CBP-014",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 11
+   "defined_in": null,
+   "cited_by": 13
   },
   {
    "id": "RULE-CEB",
-   "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 1
+   "defined_in": "ROADMAP.md",
+   "cited_by": 2
   },
   {
    "id": "RULE-CEB-001",
@@ -3145,39 +3160,59 @@
    "cited_by": 6
   },
   {
-   "id": "RULE-CEB-004",
-   "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-CEB-006",
-   "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-CEB-007",
-   "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-CEB-008",
-   "defined_in": "specs/features/SPEC-005/plan.md",
+   "id": "RULE-CEB-002",
+   "defined_in": null,
    "cited_by": 1
   },
   {
+   "id": "RULE-CEB-003",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CEB-004",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CEB-005",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CEB-006",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CEB-007",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CEB-008",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
    "id": "RULE-CEB-009",
-   "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CEB-010",
-   "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CEB-011",
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CEB-012",
-   "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CEE-001",
@@ -3192,7 +3227,7 @@
   {
    "id": "RULE-CEE-003",
    "defined_in": "governance/RULES.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-CEE-004",
@@ -3201,8 +3236,8 @@
   },
   {
    "id": "RULE-CF",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 3
+   "defined_in": "ROADMAP.md",
+   "cited_by": 4
   },
   {
    "id": "RULE-CF-001",
@@ -3211,48 +3246,58 @@
   },
   {
    "id": "RULE-CF-002",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-CF-003",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 6
-  },
-  {
-   "id": "RULE-CF-005",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-CF-006",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-CF-007",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-CF-008",
-   "defined_in": "specs/features/SPEC-003/plan.md",
+   "defined_in": null,
    "cited_by": 1
   },
   {
-   "id": "RULE-CF-009",
-   "defined_in": "specs/features/SPEC-003/plan.md",
+   "id": "RULE-CF-003",
+   "defined_in": null,
+   "cited_by": 7
+  },
+  {
+   "id": "RULE-CF-004",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CF-005",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CF-006",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CF-007",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CF-008",
+   "defined_in": null,
    "cited_by": 2
   },
   {
+   "id": "RULE-CF-009",
+   "defined_in": null,
+   "cited_by": 3
+  },
+  {
    "id": "RULE-CF-010",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CF-011",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CF-012",
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG",
@@ -3261,68 +3306,68 @@
   },
   {
    "id": "RULE-CKG-001",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 4
+   "defined_in": null,
+   "cited_by": 5
   },
   {
    "id": "RULE-CKG-002",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-003",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-004",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-005",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-006",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-007",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-008",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 2
+   "defined_in": null,
+   "cited_by": 3
   },
   {
    "id": "RULE-CKG-009",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-010",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-011",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-012",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-013",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 2
+   "defined_in": null,
+   "cited_by": 3
   },
   {
    "id": "RULE-CTF",
@@ -3352,7 +3397,7 @@
   {
    "id": "RULE-DEC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "RULE-DEC-02",
@@ -3397,12 +3442,12 @@
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "RULE-EH",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 6
+   "defined_in": "ROADMAP.md",
+   "cited_by": 7
   },
   {
    "id": "RULE-EH-001",
@@ -3411,33 +3456,38 @@
   },
   {
    "id": "RULE-EH-002",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-EH-003",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 2
-  },
-  {
-   "id": "RULE-EH-004",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-EH-005",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 0
-  },
-  {
-   "id": "RULE-EH-006",
-   "defined_in": "specs/features/SPEC-002/plan.md",
+   "defined_in": null,
    "cited_by": 1
   },
   {
+   "id": "RULE-EH-003",
+   "defined_in": null,
+   "cited_by": 3
+  },
+  {
+   "id": "RULE-EH-004",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-EH-005",
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-EH-006",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
    "id": "RULE-EH-007",
-   "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-EH-008",
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-EPI",
@@ -3467,7 +3517,7 @@
   {
    "id": "RULE-EV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 9
+   "cited_by": 13
   },
   {
    "id": "RULE-EV-02",
@@ -3477,7 +3527,7 @@
   {
    "id": "RULE-EV-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-EV-04",
@@ -3546,13 +3596,13 @@
   },
   {
    "id": "RULE-GMC",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 1
+   "defined_in": "governance/RULES.md",
+   "cited_by": 2
   },
   {
    "id": "RULE-GMC-001",
    "defined_in": "governance/RULES.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-GMC-005",
@@ -3582,7 +3632,7 @@
   {
    "id": "RULE-HD-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "RULE-HG",
@@ -3592,7 +3642,7 @@
   {
    "id": "RULE-HG-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 11
+   "cited_by": 15
   },
   {
    "id": "RULE-HG-02",
@@ -3602,7 +3652,7 @@
   {
    "id": "RULE-HG-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "RULE-HG-04",
@@ -3627,66 +3677,71 @@
   {
    "id": "RULE-HG-08",
    "defined_in": "governance/RULES.md",
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "RULE-HH",
-   "defined_in": "specs/features/SPEC-001/plan.md",
+   "defined_in": null,
    "cited_by": 1
   },
   {
    "id": "RULE-HH-001",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 4
+   "defined_in": null,
+   "cited_by": 5
   },
   {
    "id": "RULE-HH-002",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 2
-  },
-  {
-   "id": "RULE-HH-003",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 2
-  },
-  {
-   "id": "RULE-HH-004",
-   "defined_in": "specs/features/SPEC-001/plan.md",
+   "defined_in": null,
    "cited_by": 3
   },
   {
-   "id": "RULE-HH-010",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 1
+   "id": "RULE-HH-003",
+   "defined_in": null,
+   "cited_by": 3
   },
   {
-   "id": "RULE-HH-011",
-   "defined_in": "specs/features/SPEC-001/plan.md",
+   "id": "RULE-HH-004",
+   "defined_in": null,
+   "cited_by": 4
+  },
+  {
+   "id": "RULE-HH-010",
+   "defined_in": null,
    "cited_by": 2
   },
   {
+   "id": "RULE-HH-011",
+   "defined_in": null,
+   "cited_by": 3
+  },
+  {
    "id": "RULE-HH-012",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-013",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-HH-020",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-021",
-   "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-030",
-   "defined_in": "specs/features/SPEC-001/plan.md",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-HH-031",
+   "defined_in": null,
    "cited_by": 1
   },
   {
@@ -3762,7 +3817,7 @@
   {
    "id": "RULE-INQ-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 4
+   "cited_by": 6
   },
   {
    "id": "RULE-MECH",
@@ -3782,7 +3837,7 @@
   {
    "id": "RULE-MECH-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-MECH-04",
@@ -3802,7 +3857,7 @@
   {
    "id": "RULE-MET-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-MET-03",
@@ -3817,7 +3872,7 @@
   {
    "id": "RULE-MM-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 9
+   "cited_by": 13
   },
   {
    "id": "RULE-MM-02",
@@ -3911,13 +3966,13 @@
   },
   {
    "id": "RULE-SDD",
-   "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 0
+   "defined_in": "governance/RULES.md",
+   "cited_by": 1
   },
   {
    "id": "RULE-SDD-001",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-SEM",
@@ -3937,7 +3992,7 @@
   {
    "id": "RULE-SEM-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-SEM-04",
@@ -3981,8 +4036,8 @@
   },
   {
    "id": "RULE-SY",
-   "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 2
+   "defined_in": "governance/RULES.md",
+   "cited_by": 3
   },
   {
    "id": "RULE-SY-001",
@@ -3997,7 +4052,7 @@
   {
    "id": "RULE-SY-003",
    "defined_in": "governance/RULES.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-SY-005",
@@ -4021,73 +4076,73 @@
   },
   {
    "id": "RULE-TH",
-   "defined_in": "specs/features/SPEC-038/plan.md",
+   "defined_in": null,
    "cited_by": 1
   },
   {
    "id": "RULE-TH-001",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 5
+   "defined_in": null,
+   "cited_by": 6
   },
   {
    "id": "RULE-TH-002",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-003",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-004",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-005",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-006",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-007",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-008",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 0
+   "defined_in": null,
+   "cited_by": 1
   },
   {
    "id": "RULE-TH-009",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-010",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-011",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-TH-012",
-   "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 1
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-UNC",
    "defined_in": "governance/RULES.md",
-   "cited_by": 29
+   "cited_by": 33
   },
   {
    "id": "RULE-UNC-01",
@@ -4967,11 +5022,6 @@
    "type": "id"
   },
   {
-   "from": ".claude/commands/validate-harness.md",
-   "to": "specs/features/SPEC-003/plan.md",
-   "type": "id"
-  },
-  {
    "from": ".claude/skills/SKILL.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -5094,11 +5144,6 @@
   {
    "from": ".claude/skills/update-harness.md",
    "to": "governance/RULES.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/skills/update-harness.md",
-   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
@@ -14328,18 +14373,8 @@
   },
   {
    "from": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
-   "to": "specs/features/SPEC-002/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
    "to": "specs/features/SPEC-002/research.md",
    "type": "path"
-  },
-  {
-   "from": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
-   "to": "specs/features/SPEC-003/plan.md",
-   "type": "id"
   },
   {
    "from": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
@@ -18494,11 +18529,6 @@
   {
    "from": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
    "to": "specs/features/SPEC-001/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
-   "to": "specs/features/SPEC-001/plan.md",
    "type": "path"
   },
   {
@@ -20023,11 +20053,6 @@
   },
   {
    "from": "specs/features/SPEC-004/checks.md",
-   "to": "specs/features/SPEC-002/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-004/checks.md",
    "to": "specs/features/SPEC-004/plan.md",
    "type": "id"
   },
@@ -20364,11 +20389,6 @@
   {
    "from": "specs/features/SPEC-005/checks.md",
    "to": "specs/features/SPEC-001/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-005/checks.md",
-   "to": "specs/features/SPEC-002/plan.md",
    "type": "id"
   },
   {
@@ -20863,6 +20883,11 @@
   },
   {
    "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
    "to": "reference/camadas/CAMADA MEMÓRIA.MD",
    "type": "path"
   },
@@ -21079,6 +21104,11 @@
   {
    "from": "specs/features/SPEC-019/plan.md",
    "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-019/plan.md",
+   "to": "atomic-spec.md",
    "type": "id"
   },
   {
