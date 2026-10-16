@@ -222,7 +222,7 @@ def decisoes_abertas_fechadas(texto, extras=()):
             continue
         for oracao in re.split(r"(?<=[.;!?])\s+|\s[—–]\s", linha):
             for did in abertos:
-                if did in oracao and _FECHA.search(oracao) and not _NEG_LOCAL.search(oracao):
+                if re.search(r"(?<![A-Za-z0-9-])" + re.escape(did) + r"(?![A-Za-z0-9-])", oracao) and _FECHA.search(oracao) and not _NEG_LOCAL.search(oracao):
                     achados.append((i, f"{did} aparece com palavra de fechamento sem negação/pendência na mesma oração"))
     return achados
 

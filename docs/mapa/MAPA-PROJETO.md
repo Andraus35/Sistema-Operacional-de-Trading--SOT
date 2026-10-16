@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-16** · digest `5a9dd408a18bfb68` · **298** documentos · **3610** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-16** · digest `8d61d149f926a479` · **298** documentos · **3611** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -66,7 +66,7 @@ flowchart LR
 | `INV-07` | 165 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-002` | 123 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
 | `SPEC-001` | 109 | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) |
-| `INV-09` | 97 | [governance/RULES.md](../../governance/RULES.md) |
+| `INV-09` | 98 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-003` | 80 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
 | `RULE-ECC-01` | 77 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-004` | 76 | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) |
@@ -144,7 +144,7 @@ flowchart LR
 ## 5. Backlog e integridade
 
 - **Backlog (RMR-001):** ATIVADOS = nenhum · disparados sem registro = 2 · verificação manual = 6 itens (`python scripts/backlog_triggers.py`).
-- **Referências (check_refs):** ERRO=2 · WARN=2 · INFO=167 (históricos congelados) — `python scripts/check_refs.py`.
+- **Referências (check_refs):** ERRO=2 · WARN=3 · INFO=167 (históricos congelados) — `python scripts/check_refs.py`.
 
 ## 6. Documentos sem referência de entrada
 

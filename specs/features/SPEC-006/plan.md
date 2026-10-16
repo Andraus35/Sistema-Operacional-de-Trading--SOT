@@ -391,7 +391,7 @@ RULE-CKG-004: A mudança de validade de uma relação é ATO AUTORIZADO (CKG-009
               [Fonte: research.md §3.1; INV-07; SPEC-004 INV-CBP-01; CEM-001 l.602/l.606; CHM-001 l.672-676]  [PROPOSTA]
 
 RULE-CKG-005: Nenhuma entidade/relação existe sem PROVENIÊNCIA, espelhando a condicionalidade de SPEC-004 RULE-CBP-007
-              (l.264-270; a BASpec-CBP-007 fica em l.543-559 — A-06): (a) `computed_by` — identidade AUTENTICADA do PRODUTOR/PROPONENTE (RULE-CBP-014 l.311-319) —
+              (l.264-270; a BASpec-CBP-007 fica em l.543-565 — A-06/N-06): (a) `computed_by` — identidade AUTENTICADA do PRODUTOR/PROPONENTE (RULE-CBP-014 l.311-319) —
               SEMPRE obrigatório; (b) `gate_record` SÓ quando o objeto resulta de gate; (c) `provenance_ref.lineage`/
               `derived_from` SÓ quando DERIVADO. Para `asset`/`timeframe`/`regime`/`observation` e hipóteses PRIMARY,
               `lineage=[]` é legítimo (NÃO force gate_record/lineage fabricado — RULE-MET-01). Escrita sem a proveniência
@@ -524,11 +524,17 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
               (CONFIRMA×REFUTA: mesmos `from_node`/`to_node`; INVALIDA×alvo: `INVALIDA.target_relation_id == r2.relation_id`),
               (iii) janelas de validade se SOBREPÕEM e (iv) AMBAS NÃO-SUPERSEDED; **(v) só para INVALIDA×alvo: o alvo `r2`
               PERMANECE VIGENTE apesar da INVALIDA — invalidação autorizada que FECHA a validade de `r2` NÃO colide (N-08)**.
-              **Atomicidade da invalidação autorizada [A-11]:** a INVALIDA e o registro que FECHA o `valid_to` de `r2` são o
-              MESMO ATO, aplicados ATOMICAMENTE (um único commit); a condição (v) é avaliada SOBRE O ESTADO RESULTANTE dos dois
-              registros, NUNCA no instante intermediário em que a INVALIDA já existe mas `r2` ainda não foi fechado. Assim o
-              resultado NÃO depende de ordem de escrita: a invalidação autorizada normal fecha `r2` no mesmo ato e por isso NÃO
-              colide; a colisão (v) só surge quando `r2` permanece vigente APÓS o ato atômico (invalidação contestada/pendente).
+              **Dois modos de INVALIDA [N-05] (desambiguação de A-11 — escolha conservadora: ADMITIR+MARCAR, não rejeitar):**
+              (1) **INVALIDA AUTORIZADA** — acompanhada do registro de invalidação bitemporal que FECHA o `valid_to` de `r2`
+              (CKG-004). A INVALIDA e o fechamento são o MESMO ATO ATÔMICO (um único commit); a condição (v) é avaliada SOBRE O
+              ESTADO RESULTANTE dos dois registros, NUNCA no instante intermediário em que a INVALIDA já existe mas `r2` ainda
+              não foi fechado — logo o resultado NÃO depende da ordem de escrita e `r2` torna-se INVALIDATED_IN_TIME/não-vigente
+              ⇒ **NÃO colide** (operação normal). (2) **INVALIDA CONTESTADA/PENDENTE** — a relação INVALIDA é afirmada
+              (semanticamente, por `evidence`/`learning`) SEM o registro de fechamento do `valid_to` de `r2` (o proponente não
+              detém o ato bitemporal autorizado de fechamento). Essa INVALIDA é **ADMITIDA** — o KG PRESERVA, NUNCA rejeita
+              (N-08; a INVALIDA sem fechamento NÃO é rejeitada) —, `r2` PERMANECE VIGENTE e então a condição (v) é ALCANÇÁVEL
+              ⇒ `collision_record` (MARCAÇÃO não-destrutiva). Assim a colisão (v) surge SÓ no modo contestado/pendente, e a
+              atomicidade de A-11 vale SÓ para o modo autorizado — sem contradição.
               O `collision_record` é MARCAÇÃO NÃO-DESTRUTIVA para governança — ambas PRESERVADAS, nunca rejeição/apagamento
               (N-08). Então o KG DETECTA e grava um `collision_record` COM IDENTIDADE/PROVENIÊNCIA PRÓPRIAS
               (`collision_id`/`version`/`computed_by`=`writer_id`=SERVIÇO do KG sob capability de detecção/`recorded_at`; E3)
@@ -565,7 +571,7 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 |---|---|---|---|---|
 | CONFIRMA | **evidence** (NÃO observation — CONSTITUTION l.191 Observations vs l.192 Evidence; INV-06; A-09) | hypothesis | sim | não |
 | REFUTA | **evidence** (NÃO observation) | hypothesis | sim | não |
-| DEPENDE_DE | hypothesis, mission, **conviction** (A-12 — aresta de SAÍDA de conviction → evidence/hypothesis; torna as fontes da convicção navegáveis CCM-001 `source_evidence_ids`/`hypothesis_ref`; **NENHUMA aresta PARA conviction**, INV-04), **narrative** (A-12 — narrative → hypothesis; KERNEL-V2 l.1500 "Narrativa agrega Hipóteses") | hypothesis, evidence | sim | não |
+| DEPENDE_DE | hypothesis, mission, **conviction** (A-12 — aresta de SAÍDA; **NENHUMA aresta PARA conviction**, INV-04), **narrative** (A-12 — narrative → hypothesis modela "agrega" [INFERÊNCIA]; KERNEL-V2 l.1500 "Narrativa agrega Hipóteses", [EXTERNO]/DADO) | hypothesis, evidence | sim | não — **pares admitidos restritos, N-06: ver nota abaixo** |
 | HERDA | hypothesis (`hierarchy_role=SUB`) | hypothesis (**PAI = PRIMARY** — RULE-HH-003); entre escolas permitido | sim | não |
 | PERTENCE_A | hypothesis, evidence, structure, observation | asset, timeframe, regime, mission | sim | não |
 | INVALIDA | evidence, learning | evidence, relation (via `target_relation_id`) | sim | não |
@@ -576,6 +582,13 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
 | HIERARQUIA_DE | structure, timeframe | structure, timeframe | sim | não |
 | ESTATISTICA_DE | learning | hypothesis, structure, asset | sim | não |
 
+> **Pares admitidos de DEPENDE_DE [N-06]:** a matriz restringe os pares origem→destino desta relação (fora deles ⇒
+> `RELATION_TYPE_INVALID`, ∈ `ONTOLOGY_INTEGRITY_VIOLATION`): **(hypothesis | mission) → (hypothesis | evidence)**;
+> **conviction → (evidence | hypothesis)** (SÓ aresta de SAÍDA — torna navegáveis as fontes da convicção CCM-001
+> `source_evidence_ids`/`hypothesis_ref`; **NENHUMA aresta PARA conviction** — INV-04); **narrative → (evidence | hypothesis)**
+> (narrative → hypothesis modela "Narrativa agrega Hipóteses" — KERNEL-V2 l.1500, **[INFERÊNCIA]** sobre fonte [EXTERNO],
+> não baseline). Pares não listados não são DEPENDE_DE válidos.
+>
 > **Navegabilidade de tipos antes isolados [A-12]:** `conviction` e `narrative` ganharam arestas de SAÍDA mínimas
 > (DEPENDE_DE) para que as fontes da convicção (CCM-001 `source_evidence_ids`/`hypothesis_ref`) e a agregação de hipóteses
 > pela narrativa (KERNEL-V2 l.1500) sejam navegáveis na cadeia cognitiva (CEM-001 l.614-615) — **sempre de SAÍDA; NENHUMA
@@ -843,7 +856,7 @@ BASpec-CKG-008:
                 `no_outcome=true` com `outcome_ref` ⇒ `NO_OUTCOME_CONFLICT`); força `posthoc_flag=true` quando `formulated_at`
                 > `outcome_timestamp` e aceita `posthoc_flag=false` quando `formulated_at` ≤ `outcome_timestamp` (instante de
                 FORMULAÇÃO = `recorded_at` da 1ª versão da cadeia `supersedes`, não o registro corrente — A-01; alternativa
-                "hipótese referenciada" REMOVIDA e núcleo causal IMUTÁVEL na cadeia `supersedes` — ver RULE-CKG-008 [N-02]);
+                alternativa "hipótese referenciada" descartada da regra e núcleo causal IMUTÁVEL na cadeia `supersedes` — ver RULE-CKG-008 [N-02]);
                 faltando qualquer campo rejeita. SIMILAR_A por juízo exige `similarity_basis`. Gate verifica PRESENÇA e a regra
                 de carimbo, não veracidade (ENF-03)
   PORQUE:       Correlação não é causalidade (CAU-01); regime muda a relação (CAU-02); explicação pós-resultado é viés se não marcada (CAU-03); comparar com o `recorded_at` do registro corrente tornaria TODA causa pós-hoc (degenerado) — por isso o baseline é o instante de FORMULAÇÃO (A-01) e o carimbo do desfecho deriva do registro apontado (N-02)
@@ -1043,7 +1056,7 @@ Nenhuma fórmula computa convicção; nenhum limiar de convicção nem escala nu
 4. **Ontologia/integridade (CKG-001):** tipo ∈ catálogo ∧ matriz §D2.1 ⇒ senão `REJECTED`.
 5. **Proveniência (CKG-005):** `computed_by` (produtor) presente ∧ [gate ⇒ gate_record] ∧ [derivado ⇒ lineage] ⇒ senão `REJECTED`.
 6. **Causalidade (CKG-008, se CAUSA):** mechanism+direction+conditions+regime+posthoc_flag+outcome(ou no_outcome) ⇒ senão `REJECTED`.
-7. **Colisão (CKG-013):** se forma par contraditório no escopo §D2.2 com validade sobreposta, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda VIGENTE (cond. (v) — N-08), grava `collision_record` (MARCAÇÃO não-destrutiva; não sobrescreve). **[A-11]** A INVALIDA autorizada e o fechamento do `valid_to` do alvo são o MESMO ATO ATÔMICO (um commit); a cond. (v) é avaliada sobre o estado resultante dos dois registros — NUNCA no instante intermediário — logo o resultado independe da ordem de escrita.
+7. **Colisão (CKG-013):** se forma par contraditório no escopo §D2.2 com validade sobreposta, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda VIGENTE (cond. (v) — N-08), grava `collision_record` (MARCAÇÃO não-destrutiva; não sobrescreve). **[A-11/N-05]** dois modos de INVALIDA (ver RULE-CKG-013): a INVALIDA **AUTORIZADA** fecha o `valid_to` do alvo no MESMO ATO ATÔMICO (um commit) ⇒ alvo não-vigente ⇒ NÃO colide (cond. (v) avaliada sobre o estado resultante dos dois registros, nunca no instante intermediário — independe da ordem de escrita); a INVALIDA **CONTESTADA/PENDENTE** (sem fechamento) é ADMITIDA (preservada, N-08), o alvo permanece vigente e a cond. (v) é alcançável ⇒ `collision_record`.
 8. **Escrita append-only (CKG-006/012):** novo registro; substituição ⇒ sucessora com `supersedes`+`expected_version` (sem fork); DELETE/UPDATE proibido.
 9. **Temporalidade (CKG-004):** relações carregam `valid_from`/`valid_to`/`recorded_at`; invalidação é ato AUTORIZADO (novo registro), não cascata (CEM-001 l.602).
 
@@ -1126,12 +1139,12 @@ ENTÃO       negada (fail-closed; tratada como não-autorizada)
 VERIFICAÇÃO write_allowed == false; fail_closed == true; treated_as_unauthorized == true
 ```
 
-### Cenário-CKG-T09 — Formado sem selo rejeitado; canônico preserva estados por transição (CKG-010/002)
+### Cenário-CKG-T09 — Formado sem selo rejeitado; admissão positiva POR TIPO com trajetória de validação (CKG-010/002/N-01)
 ```
-DADO        padrão formado SEM selo SPEC-007; e, à parte, uma hypothesis ACTIVE→REFUTED (trajetória PASSOU por ACTIVE — validada antes de ser refutada)
+DADO        padrão formado SEM selo SPEC-007; e, à parte, três admissões positivas por tipo, cada uma com `canonical_history_ref` RESOLVÍVEL no canônico (nunca do payload): (a) hypothesis ACTIVE→REFUTED (trajetória PASSOU por ACTIVE — validada antes de refutada; CHM-001); (b) evidence ACTIVE→SUPERSEDED (trajetória PASSOU por ACTIVE — CEM-001 l.258-262); (c) conviction COMPUTED→SUPERSEDED (trajetória PASSOU por COMPUTED — CCM-001 l.58/78)
 QUANDO      o gate de fronteira roda
-ENTÃO       formado sem selo rejeitado; hypothesis REFUTED admitida (trajetória esteve em ACTIVE — A-02) com registro canonical_state_transition (estado preservado)
-VERIFICAÇÃO formed_without_seal_accepted == false; canonical_status_in_admissible_set == true; trajectory_had_active == true; canonical_state_transition_recorded == true
+ENTÃO       formado sem selo rejeitado; (a)/(b)/(c) ADMITIDAS (cada trajetória passou pelo estado de validação do SEU tipo — A-02/N-01) com registro canonical_state_transition (estado preservado a partir da admissão)
+VERIFICAÇÃO formed_without_seal_accepted == false; hypothesis_admitted_trajectory_active_or_dominant == true; evidence_admitted_trajectory_active == true; conviction_admitted_trajectory_computed_or_gated_pass == true; canonical_history_ref_resolved_from_canonical == true; canonical_state_transition_recorded == true
 ```
 
 ### Cenário-CKG-T10 — Trace Reconstruction completa da Evidência (3 saltos) (CKG-011)
@@ -1267,7 +1280,7 @@ VERIFICAÇÃO written == false; fail_open == false; school_not_derivable_denied 
 **DADO:** um `hypothesis` cujo `school` derivado do produtor == ICT. **QUANDO:** o gate de nó roda. **ENTÃO:** rejeitar `HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`; ICT nunca cria hipótese. **PORQUE:** INV-02; RULE-HH-004 (SPEC-001 l.108). **VERIFICAÇÃO:** hypothesis_school_ict_written == false.
 
 ### ADV-CKG-18 — colisão falsamente detectada/ignorada; escopo INVALIDA e SUPERSEDED (CKG-013)
-**DADO:** (a) A1 CONFIRMA B, A2 REFUTA B (A1≠A2) — não colide; (b) CONFIRMA(A→B)/REFUTA(A→B) com janelas DISJUNTAS — não colide; (c) ambas vigentes com sobreposição — colide; (d) INVALIDA vigente com `target_relation_id==R.relation_id` sobre R que **PERMANECE VIGENTE** (a INVALIDA NÃO fechou `valid_to` de R; condição (v) §D2.2) — colide (MARCAÇÃO, não rejeição); (e) CONFIRMA(A→B) SUPERSEDED vs REFUTA(A→B) vigente — não colide; (f) **INVALIDA que FECHOU a validade de R** (R agora INVALIDATED_IN_TIME / não-vigente — invalidação autorizada NORMAL) — **NÃO colide (N-08)**. **QUANDO:** o detector roda. **ENTÃO:** (a)/(b)/(e)/(f) não geram colisão; (c)/(d) geram. **PORQUE:** colisão = par §D2.2 no escopo do par, sobreposição, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda vigente (v); invalidação autorizada normal não colide por construção. **[A-11]** Como a INVALIDA e o fechamento do `valid_to` do alvo são um ÚNICO ATO ATÔMICO e a cond. (v) é avaliada sobre o estado resultante dos dois registros (nunca no instante intermediário), o resultado de (d)/(f) INDEPENDE da ordem de escrita — não há janela em que a INVALIDA já exista e R ainda apareça vigente por mero atraso de registro. **VERIFICAÇÃO:** collision_logged == [false,false,true,true,false,false] para (a..f); collision_decision_order_independent == true.
+**DADO:** (a) A1 CONFIRMA B, A2 REFUTA B (A1≠A2) — não colide; (b) CONFIRMA(A→B)/REFUTA(A→B) com janelas DISJUNTAS — não colide; (c) ambas vigentes com sobreposição — colide; (d) **INVALIDA CONTESTADA/PENDENTE [N-05]** vigente com `target_relation_id==R.relation_id` sobre R que **PERMANECE VIGENTE** (afirmada SEM o registro de fechamento do `valid_to` de R; é ADMITIDA — preservada, N-08 — e satisfaz a condição (v) §D2.2) — colide (MARCAÇÃO, não rejeição); (e) CONFIRMA(A→B) SUPERSEDED vs REFUTA(A→B) vigente — não colide; (f) **INVALIDA AUTORIZADA [N-05] que FECHOU a validade de R** (R agora INVALIDATED_IN_TIME / não-vigente — invalidação autorizada NORMAL, ato atômico A-11) — **NÃO colide (N-08)**. **QUANDO:** o detector roda. **ENTÃO:** (a)/(b)/(e)/(f) não geram colisão; (c)/(d) geram. **PORQUE:** colisão = par §D2.2 no escopo do par, sobreposição, ambas não-SUPERSEDED e (INVALIDA×alvo) alvo ainda vigente (v); invalidação autorizada normal não colide por construção. **[A-11]** Como a INVALIDA e o fechamento do `valid_to` do alvo são um ÚNICO ATO ATÔMICO e a cond. (v) é avaliada sobre o estado resultante dos dois registros (nunca no instante intermediário), o resultado de (d)/(f) INDEPENDE da ordem de escrita — não há janela em que a INVALIDA já exista e R ainda apareça vigente por mero atraso de registro. **VERIFICAÇÃO:** collision_logged == [false,false,true,true,false,false] para (a..f); collision_decision_order_independent == true.
 
 ### ADV-CKG-19 — FORK de versão / ordem violada (CKG-006/012)
 **DADO:** duas sucessoras apontando `supersedes` para a MESMA versão (fork), ou `expected_version` ausente, ou `expected_version` ≠ corrente, ou `version` ≠ anterior+1. **QUANDO:** o gate roda. **ENTÃO:** negar — fork ⇒ `VERSION_FORK_FORBIDDEN`; ausência ⇒ `EXPECTED_VERSION_REQUIRED`; divergência ⇒ `VERSION_CONFLICT` (compare-and-commit, CBP-004 l.239-246/l.243-244 — N-04). **PORQUE:** sem ordem total não há estado inequívoco (INV-07). **VERIFICAÇÃO:** second_successor_written == false; version_fork == false.
@@ -1276,7 +1289,7 @@ VERIFICAÇÃO written == false; fail_open == false; school_not_derivable_denied 
 **DADO:** arestas A DERIVA_DE B e B DERIVA_DE C já gravadas (C ancestral de B ancestral de A); tentativa C DERIVA_DE A — a origem C já é alcançável a partir do destino A (A→B→C), fecharia ciclo. **QUANDO:** o gate de relação roda. **ENTÃO:** rejeitar `LINEAGE_CYCLE`; o grafo permanece ACÍCLICO (o trace sempre termina). **PORQUE:** linhagem cíclica quebra a Trace Reconstruction (INV-CKG-02). **Caso (c) — self-loop:** DERIVA_DE com origem == destino ⇒ rejeitar `LINEAGE_CYCLE`. **VERIFICAÇÃO:** lineage_cycle_written == false; lineage_acyclic == true.
 
 ### ADV-CKG-21 — admissão de canônico em estado NÃO-admissível / sem selo (CKG-010)
-**DADO:** o gate de admissão POR TIPO (não só hypothesis): (a) `hypothesis` com `canonical_status=EMERGENT`; (b) formado SEM selo SPEC-007; (c) `evidence` com `canonical_status` FORA do seu conjunto {ACTIVE,SUPERSEDED,INVALIDATED,ARCHIVED} — ex.: `DOMINANT` (estado só de hipótese, CEM-001 l.258-262 não tem REFUTED/DOMINANT); (d) `conviction` com `canonical_status` FORA de {COMPUTED,GATED_PASS,GATED_BLOCK,SUPERSEDED} — ex.: `EMERGENT`; **(e) [A-02 — TRAJETÓRIA]** `hypothesis` com `canonical_status=ARCHIVED` cuja TRAJETÓRIA é EMERGENT→ARCHIVED (hipótese órfã NUNCA validada — CHM-001 l.745 — jamais passou por ACTIVE), embora ARCHIVED esteja no conjunto admissível. **QUANDO:** o gate de fronteira roda. **ENTÃO:** (a)/(c)/(d) rejeitar `CANONICAL_STATUS_NOT_ADMISSIBLE`; (b) `FORMED_WITHOUT_SEAL`; **(e) rejeitar `TRAJECTORY_NEVER_ACTIVE`** (status corrente admissível NÃO basta — exige ter estado em ACTIVE; opção conservadora, A-02); o conjunto admissível é POR TIPO (não só hypothesis). **PORQUE:** não contaminar memória permanente com trabalho/estado fora da máquina canônica do tipo nem com conhecimento NUNCA validado (CEM-001 l.258-262; CHM-001 §4.3 l.744-748; CCM-001 l.58/78; SPEC-004). **VERIFICAÇÃO:** emergent_hypothesis_admitted == false; formed_without_seal_accepted == false; evidence_nonadmissible_status_admitted == false; conviction_nonadmissible_status_admitted == false; never_active_archived_admitted == false.
+**DADO:** o gate de admissão POR TIPO (não só hypothesis): (a) `hypothesis` com `canonical_status=EMERGENT`; (b) formado SEM selo SPEC-007; (c) `evidence` com `canonical_status` FORA do seu conjunto {ACTIVE,SUPERSEDED,INVALIDATED,ARCHIVED} — ex.: `DOMINANT` (estado só de hipótese, CEM-001 l.258-262 não tem REFUTED/DOMINANT); (d) `conviction` com `canonical_status` FORA de {COMPUTED,GATED_PASS,GATED_BLOCK,SUPERSEDED} — ex.: `EMERGENT`; **(e) [A-02 — TRAJETÓRIA]** `hypothesis` com `canonical_status=ARCHIVED` cuja TRAJETÓRIA é EMERGENT→ARCHIVED (hipótese órfã NUNCA validada — CHM-001 l.745 — jamais passou por ACTIVE), embora ARCHIVED esteja no conjunto admissível; **(f) [N-01 — TRAJETÓRIA POR TIPO]** `evidence` com `canonical_status=ARCHIVED` cuja TRAJETÓRIA nunca passou por ACTIVE (único estado de validação da Evidência — CEM-001 l.258-262); **(g) [N-01 — TRAJETÓRIA POR TIPO]** `conviction` com `canonical_status=SUPERSEDED` cuja TRAJETÓRIA nunca passou por COMPUTED nem GATED_PASS (objeto de convicção superseded sem jamais ter sido efetivamente computado/aprovado — CCM-001 l.58/78; conviction NÃO tem ACTIVE); **(h) [N-01 — PROVA DA TRAJETÓRIA]** objeto canônico submetido SEM `canonical_history_ref` resolvível no canônico (ou com trajetória declarada só no payload). **QUANDO:** o gate de fronteira roda. **ENTÃO:** (a)/(c)/(d) rejeitar `CANONICAL_STATUS_NOT_ADMISSIBLE`; (b) `FORMED_WITHOUT_SEAL`; **(e)/(f)/(g) rejeitar `TRAJECTORY_NEVER_ACTIVE`** (status corrente admissível NÃO basta — exige ter passado pelo estado de validação do SEU tipo; predicado POR TIPO, opção conservadora — A-02/N-01); **(h) rejeitar `CANONICAL_HISTORY_UNRESOLVABLE`** (a prova da trajetória vem do canônico, nunca do payload — N-01); o conjunto admissível e a trajetória são POR TIPO (hypothesis: ACTIVE∨DOMINANT; evidence: ACTIVE; conviction: COMPUTED∨GATED_PASS). **PORQUE:** não contaminar memória permanente com trabalho/estado fora da máquina canônica do tipo nem com conhecimento NUNCA validado, nem admitir trajetória auto-declarada no payload (CEM-001 l.258-262; CHM-001 §4.3 l.744-748; CCM-001 l.58/78; CBP-014; SPEC-004). **VERIFICAÇÃO:** emergent_hypothesis_admitted == false; formed_without_seal_accepted == false; evidence_nonadmissible_status_admitted == false; conviction_nonadmissible_status_admitted == false; never_validated_admitted_any_type == false; canonical_history_from_payload_admitted == false.
 
 ### ADV-CKG-22 — Produtor comita direto (computed_by == writer_id == agente) (CKG-009/005/D6) [E3]
 **DADO:** um agente produtor tenta ser o COMMITTER (apresenta `writer_id` = sua própria identidade de produtor), contornando o runtime/serviço do KG. **QUANDO:** o gate E3 (capacidade×papel, D6) roda. **ENTÃO:** negar `WRITE_UNAUTHORIZED`; `computed_by` (produtor) e `writer_id` (committer) permanecem DISTINTOS; commit direto por agente = DENY. **PORQUE:** identidade não depende do payload (CBP-014); capacidade "Commit permanente E3" do agente = DENY (D6; M-05). **VERIFICAÇÃO:** write_allowed == false; producer_as_committer_denied == true; computed_by_distinct_from_writer_id == true.
@@ -1330,6 +1343,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
     "schema_version": "1 (migração de ontologia/schema = [DECISÃO NECESSÁRIA] — CKG-009)",
     "canonical_ref": "CHM-xxxx@v2 | CEM-xxxx@v1 | CCM-xxxx@v1 | null (referência; NÃO redefine)",
     "canonical_status": "snapshot do Status canônico (CEM-001 l.264/428; CHM-001; só se canonical_ref != null); admissível ∈ conjunto do tipo (CKG-010)",
+    "canonical_history_ref": "OBRIGATÓRIO na admissão de nó canônico (N-01) — REFERENCIA o histórico de estados MANTIDO NO PRÓPRIO CANÔNICO (CHM-001 p/ hypothesis; CEM-001 p/ evidence; CCM-001 p/ conviction); RESOLVIDO contra o canônico, NUNCA do payload (CBP-014); sustenta o predicado de TRAJETÓRIA POR TIPO (CKG-010): hypothesis esteve em ACTIVE∨DOMINANT; evidence em ACTIVE; conviction em COMPUTED∨GATED_PASS; irresolúvel ⇒ DENY CANONICAL_HISTORY_UNRESOLVABLE; jamais-validado ⇒ DENY TRAJECTORY_NEVER_ACTIVE",
     "natural_key": "identidade de nó NÃO-canônico — asset/timeframe/regime/narrative/observation/learning/structure/mission/calibration_metric (lista completa — M-06); evita colapso quando canonical_ref=null",
     "school": "Elliott | SMC | Fibonacci — DERIVADO do producer_id/producer_type do canônico (hypothesis: CHM-001 l.361/SPEC-001 l.97/524); NÃO do payload; SÓ para hypothesis (N-01); REGRA: hypothesis.school ≠ ICT (ICT não é produtor — INV-02/RULE-HH-004); **NÃO derivável ⇒ DENY SCHOOL_NOT_DERIVABLE (fail-closed, nunca falha-aberto — A-04)**. structure NÃO deriva school; Fractal não tem produtor em SPEC-001 — CKG-STRUCT-ORIGIN-001 [DECISÃO NECESSÁRIA]",
     "hierarchy_role": "PRIMARY | SUB — DERIVADO do papel registrado no canônico (SPEC-001); só hypothesis; **PRIMARY ⇒ school=Elliott (só Elliott cria a primária — SPEC-001 RULE-HH-002 l.100; senão DENY PRIMARY_NOT_ELLIOTT — A-04)**; HERDA liga SUB a pai PRIMARY",
@@ -1346,7 +1360,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
   "canonical_state_transition_record": {
     "node_id": "KG-N-...-001", "record_kind": "canonical_state_transition",
     "version": "sequência PRÓPRIA (não entra na cadeia supersedes de conteúdo — m-10)",
-    "canonical_status": "ACTIVE|DOMINANT|SUPERSEDED|REFUTED|ARCHIVED (hypothesis/CHM-001) | ACTIVE|SUPERSEDED|INVALIDATED|ARCHIVED (evidence/CEM-001 l.258-262 — sem REFUTED) | COMPUTED|GATED_PASS|GATED_BLOCK|SUPERSEDED (conviction/CCM-001 l.58/78). EMERGENT/CANDIDATE NÃO constam — o histórico do KG começa na ADMISSÃO (regra LOCAL CKG-010 — A-03); admissão exige TRAJETÓRIA que passou por ACTIVE (A-02)",
+    "canonical_status": "ACTIVE|DOMINANT|SUPERSEDED|REFUTED|ARCHIVED (hypothesis/CHM-001) | ACTIVE|SUPERSEDED|INVALIDATED|ARCHIVED (evidence/CEM-001 l.258-262 — sem REFUTED) | COMPUTED|GATED_PASS|GATED_BLOCK|SUPERSEDED (conviction/CCM-001 l.58/78). EMERGENT/CANDIDATE NÃO constam — o histórico do KG começa na ADMISSÃO (regra LOCAL CKG-010 — A-03); admissão exige TRAJETÓRIA que passou pelo ESTADO DE VALIDAÇÃO DO TIPO (hypothesis ACTIVE∨DOMINANT; evidence ACTIVE; conviction COMPUTED∨GATED_PASS — A-02/N-01), provada via canonical_history_ref resolvido no canônico (nunca do payload)",
     "timestamp": "", "origem": "", "justificativa": "(CEM-001 l.428)",
     "computed_by": "SERVIÇO do KG (identidade autenticada — M-05)",
     "writer_id": "SERVIÇO do KG (committer; escrita E3 — M-05)",
@@ -1527,13 +1541,13 @@ exige (contrato fechável com mecanismo físico aberto — Opção A).
 
 **Bloco A — pergunta adversarial por BASpec (13 BASpecs):** cada BASpec tem ENTÃO verificável por observador independente
 e ≥1 caso de negação em D8 (CKG-001→ADV-12/17/23,T01/T18/T19; 002→ADV-11,T02/T09; 003→ADV-12/16/20,T03; 004→ADV-13,T04; 005→ADV-06/22,
-T14/T17; 006→ADV-01/19,T05; 007→ADV-03/05,T06; 008→ADV-04,T07/T16 (incl. caso POSITIVO formulated_at<outcome — A-01); 009→ADV-07/22,T08/T17; 010→ADV-08/21,T09 (incl. TRAJECTORY_NEVER_ACTIVE — A-02); 011→ADV-14,T10; 012→
+T14/T17; 006→ADV-01/19,T05; 007→ADV-03/05,T06; 008→ADV-04,T07/T16 (incl. caso POSITIVO formulated_at<outcome — A-01); 009→ADV-07/22,T08/T17; 010→ADV-08/21,T09 (admissão POSITIVA por tipo — N-01; TRAJECTORY_NEVER_ACTIVE/CANONICAL_HISTORY_UNRESOLVABLE por tipo ficam em ADV-21, não em T09 — N-03); 011→ADV-14,T10; 012→
 ADV-15/19,T13; 013→ADV-02/18,T11). "Se a BASpec estivesse errada" é observável em cada caso. Nenhuma restou [DECISÃO
 NECESSÁRIA] por falta de verificabilidade (H-001/selo SPEC-007/M-001/J-001/N-001/G-001/K-001/C-001/WF-D03 são fronteiras/
 decisões abertas explícitas, não falhas de verificabilidade).
 
 **Bloco B — herança obrigação-a-obrigação (CC-08):** evidência por obrigação herdada:
-- CEM-001 "preservar os estados (da Evidência) / trace COMPLETO" → CKG-010 preserva os estados **a partir da admissão** como regra LOCAL (A-03 — o MODIFIED de CEM-001 l.494 foi RETIRADO por premissa falsa; EMERGENT/CANDIDATE são estados da HIPÓTESE e cabem à SPEC-004, não há obrigação canônica de guardá-los no KG) + CKG-011 trace completo da EVIDÊNCIA (não rebaixado por H-001; hipótese = [PROPOSTA]); admissão exige trajetória que passou por ACTIVE (A-02); não redefine.
+- CEM-001 "preservar os estados (da Evidência) / trace COMPLETO" → CKG-010 preserva os estados **a partir da admissão** como regra LOCAL (A-03 — o MODIFIED de CEM-001 l.494 foi RETIRADO por premissa falsa; EMERGENT/CANDIDATE são estados da HIPÓTESE e cabem à SPEC-004, não há obrigação canônica de guardá-los no KG) + CKG-011 trace completo da EVIDÊNCIA (não rebaixado por H-001; hipótese = [PROPOSTA]); admissão exige trajetória que passou pelo ESTADO DE VALIDAÇÃO DO TIPO (predicado POR TIPO — A-02/N-01; hypothesis ACTIVE∨DOMINANT, evidence ACTIVE, conviction COMPUTED∨GATED_PASS), provada via `canonical_history_ref` no canônico; não redefine.
 - CEM-001 Cap.5 `Lineage` → tipo DERIVA_DE (aresta) + `provenance_ref.lineage` (campo local [PROPOSTA]), distinguidos.
 - CHM-001 (estados/versionamento) → CKG-002/012 por referência; não transiciona.
 - CCM-001 → CKG-007/EC-CKG-004 isolam confiança (INV-04); estados conviction (l.58/78) no conjunto admissível (CKG-010).
@@ -1607,8 +1621,8 @@ RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migraçã
 [x] Status epistemológico aplicado (FATO NORMATIVO / PROPOSTA / INFERÊNCIA / EXTERNO / DECISÃO NECESSÁRIA).
 [x] CONS-01: H-001, M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 e a nova CKG-STRUCT-ORIGIN-001 (N-01/N-09; BL-035) + o timeout `PENDING_ANCESTOR` (N-07) permanecem ABERTAS; nenhuma usada como invariante fechado; STRUCT-10 respeitado.
 [x] Etiquetagem [FONTE]/[INFERÊNCIA]/[PROPOSTA]/[DECISÃO NECESSÁRIA]/[EXTERNO] aplicada.
-[x] CONSOLIDAÇÃO (Rodada 6, preservada na 7): cada regra definida UMA vez (RULE-CKG/BASpec); EARS/D4/D6/EC/T/ADV/Herança referenciam por ID; narrativa histórica só no changelog (1 linha/versão, ordenado 1.0→1.6).
-[x] Integridade: nenhuma fonte inventada; âncoras canônicas RE-VERIFICADAS na errata v1.8 (A-06..A-09): CEM-001 l.258-262/l.473-475/l.602/l.606/l.608-615 e l.489-497 (tabela Consumo — l.494 é estados da EVIDÊNCIA, não obrigação sobre hipótese — A-03); CHM-001 §4.3 l.744-748/l.379 (A-02); CCM-001 l.58/78; CONSTITUTION l.191/192 (A-09); SPEC-001 l.97/100/104/108/515-520/524; SPEC-004 CBP-004 l.239-246/CBP-007 l.264-270 (DEFINIÇÃO; BASpec em l.543-559 — A-06)/CBP-014 l.311-319; SPEC-005 l.971 (A-09); RULES ONT-01 l.671/ONT-02 l.672 (A-09); ABERTURA §10 R-8 (A-08); RMR-001 por ID/âncora BL-029 (nota DHR-SPEC006-PEND-001) `Em espera` — A-07.
+[x] CONSOLIDAÇÃO (Rodada 6, preservada): cada regra definida UMA vez (RULE-CKG/BASpec); EARS/D4/D6/EC/T/ADV/Herança referenciam por ID; narrativa histórica só no changelog (1 linha/versão, ordenado 1.0→1.9).
+[x] Integridade: nenhuma fonte inventada; âncoras canônicas RE-VERIFICADAS na errata v1.8 (A-06..A-09) e v1.9 (N-01: CEM-001 l.258-262 estado de validação da Evidência = ACTIVE; CCM-001 l.58/78 = COMPUTED/GATED_PASS; N-06: BASpec-CBP-007 l.543-565): CEM-001 l.258-262/l.473-475/l.602/l.606/l.608-615 e l.489-497 (tabela Consumo — l.494 é estados da EVIDÊNCIA, não obrigação sobre hipótese — A-03); CHM-001 §4.3 l.744-748/l.379 (A-02); CCM-001 l.58/78; CONSTITUTION l.191/192 (A-09); SPEC-001 l.97/100/104/108/515-520/524; SPEC-004 CBP-004 l.239-246/CBP-007 l.264-270 (DEFINIÇÃO; BASpec em l.543-565 — A-06/N-06)/CBP-014 l.311-319; SPEC-005 l.971 (A-09); RULES ONT-01 l.671/ONT-02 l.672 (A-09); ABERTURA §10 R-8 (A-08); RMR-001 por ID/âncora BL-029 (nota DHR-SPEC006-PEND-001) `Em espera` — A-07.
 [x] 4Es na ordem; Conformidade > Eficácia. Latência não material (consulta opcional/não-bloqueante — SAS-001 §6.12).
 [x] Dependências a montante homologadas; selo SPEC-007 marcado [DECISÃO NECESSÁRIA].
 [x] "VERIFY" da skill não apresentado como CONFORME nem homologação.

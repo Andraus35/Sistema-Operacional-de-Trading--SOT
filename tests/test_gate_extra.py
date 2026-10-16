@@ -61,6 +61,10 @@ class DecisoesAbertas(unittest.TestCase):
         t = STATUS + "WF-D03 FECHADA; CKG-STRUCT-ORIGIN-001 resolvida; ECC-03-001 resolvida.\n"
         self.assertEqual(len(g.decisoes_abertas_fechadas(t)), 3)
 
+    def test_id_dentro_de_outro_id_nao_conta(self):  # M-001 dentro de CHM-001 (falso alarme da errata v1.9)
+        t = "| Status | **CANDIDATO** — M-001 segue ABERTA. |\nResolvido contra o CHM-001 e o CKG-N-001.\n"
+        self.assertFalse(g.decisoes_abertas_fechadas(t))
+
     def test_negacao_na_mesma_oracao_passa(self):
         t = STATUS + "Este Plan NÃO fecha H-001; segue aberta.\nH-001 permanece ABERTA, nada foi resolvido.\n"
         self.assertFalse(g.decisoes_abertas_fechadas(t))

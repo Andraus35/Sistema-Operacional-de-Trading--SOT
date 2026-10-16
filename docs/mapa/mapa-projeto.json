@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-16",
-  "digest": "5a9dd408a18bfb68d85aa946f269fa59953c3d9ab65753158d05a8d497f336b3",
+  "digest": "8d61d149f926a4793216addc0e8eed8deb3174000bfe4ecd22354f53f7209665",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2937,7 +2937,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 97
+   "cited_by": 98
   },
   {
    "id": "INV-10",
@@ -3352,7 +3352,7 @@
   {
    "id": "RULE-CKG-010",
    "defined_in": null,
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-CKG-011",
@@ -20790,6 +20790,11 @@
    "from": "specs/features/SPEC-006/checks.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
