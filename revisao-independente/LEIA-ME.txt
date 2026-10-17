@@ -1,0 +1,7 @@
+COMO USAR (4 passos)
+1. Abra PEDIDO-PRONTO-SPEC-006.txt, selecione TUDO (Ctrl+A) e copie (Ctrl+C).
+2. Abra OUTRO assistente de IA (de outra empresa, ex.: ChatGPT ou Gemini), numa conversa NOVA, cole (Ctrl+V) e envie.
+   Use um modelo de contexto longo (o arquivo tem cerca de 40 mil palavras-token). Se reclamar de tamanho, mande em 2 partes.
+3. Copie a resposta inteira (deve ser um JSON).
+4. Cole a resposta aqui no chat comigo. Eu comparo com o Revisor interno e te digo quem achou o que.
+Importante: nao cole nenhum relatorio do Revisor interno junto. A ideia e ele nao ter visto nada.

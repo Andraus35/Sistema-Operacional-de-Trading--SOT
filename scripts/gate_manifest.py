@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MANIFESTO = "governance/GATE-MANIFEST.sha256"
 ARQUIVOS = [
-    "scripts/revisor_gate.py", "scripts/revisor_gate_mcp.py", "scripts/revisor_detectores.py", "scripts/revisor_guard.py", "scripts/revisor-guard.js", "scripts/gate_manifest.py", "scripts/check_invariants.py",
+    "scripts/revisor_gate.py", "scripts/revisor_gate_mcp.py", "scripts/revisor_detectores.py", "scripts/revisor_guard.py", "scripts/revisor-guard.js", "scripts/revisor_posguarda.py", "scripts/revisor-posguarda.js", "scripts/roteador_modelos.py", "scripts/roteador-modelos.js", "scripts/gate_manifest.py", "scripts/check_invariants.py",
     "scripts/validate_spec_sot.py", "scripts/check_refs.py", "scripts/check_doc_sync.py", "scripts/backlog_triggers.py",
     "scripts/check_rpsa.py", "scripts/build_map.py",
 ]

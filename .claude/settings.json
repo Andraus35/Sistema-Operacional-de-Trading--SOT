@@ -9,6 +9,16 @@
             "command": "node scripts/gate-check.js"
           }
         ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/roteador-modelos.js",
+            "timeout": 15
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -73,6 +83,11 @@
             "type": "command",
             "command": "node scripts/andraus-ask-guard.js",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node scripts/revisor-posguarda.js",
+            "timeout": 120
           }
         ]
       }
