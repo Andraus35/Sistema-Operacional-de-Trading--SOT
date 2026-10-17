@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-34
-previous: HO-2026-10-17-33
+handoff_id: HO-2026-10-17-35
+previous: HO-2026-10-17-34
 data: 2026-10-17
-branch: ccr-7917ac44-2l55cz
-base_commit: 96392a8
+branch: claude/blissful-pasteur-gkiz2m
+base_commit: dff55d5
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-35 — divisão da SPEC-006 (só proposta):** reverificação ao vivo ok (CI `main` verde, detectores sem ERRO). Especificador entregou `governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md` ([PROPOSTA], não normativa): causa dos achados = cópias da mesma regra, não amplitude; 4 Médias abertas (R7-1..R7-4) estão no núcleo/fronteira, nenhuma em causalidade. **Andraus escolheu no chat a Opção 2** (mesmo número, em etapas: v1.0 núcleo que nega toda escrita sem contrato de admissão + caminhos (a)/(b)/(c) como emendas aditivas + enxugamento). **Ainda NÃO registrado em ata/ROADMAP/RMR-001** e nada homologado; H-001 e demais decisões abertas intactas.
 - **Revisão independente de outro modelo (critério L3) na SPEC-006 v1.3 (Plan candidato no ramo `spec006-plan`, fora da main):** 2 modelos externos **sem repositório** → 10 achados: 2 falsos, 4 lacunas já declaradas pelo autor, 4 reais (todos já no Revisor interno); **0 defeito real exclusivo de externo**; Revisor interno achou ≥9 que nenhum externo viu. Registro em `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md` §7 e §7.1. Conclusão: independência sem leitura do repositório rende pouco.
 - **Próxima rodada (Andraus faz no VS Code com Copilot COM acesso ao repo em nuvem):** prompt pronto em `revisao-independente/PEDIDO-COPILOT-COM-REPO.txt` (autoriza leitura, indica o ramo/caminho do Plan, proíbe abrir pastas do Revisor para preservar independência). Andraus cola o JSON de volta aqui; conferir cada achado contra o texto real e comparar com o Revisor interno (2 rodadas já feitas; achados A-01..A-10 / F-01..F-14, 1 crítico: herança "preservar todos os estados" × admissão INDETERMINADA × CEM-001:494).
 - **DECIDIDO por Andraus (AskUserQuestion, 2026-10-17): manter o ruleset "MAIN PROTECTION" e prevenir por processo** (merge só com CI verde, AGENTS §10; sem pagar GitHub Team agora; o ruleset passa a valer sozinho se um dia contratar). Lembrete de proteção removido.
@@ -48,8 +49,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Nova sessão: PLANEJAR A DIVISÃO DA SPEC-006 (ordem de Andraus, 2026-10-17). Só planejar/propor — não homologar, não fechar decisão aberta, não escrever o Plan das Specs resultantes.**
-Como começar: (1) `git fetch origin spec006-plan` e ler, nesse ramo, `specs/features/SPEC-006/plan.md` (v1.6), `checks.md`, `parecer-revisor-rodada5.md`, `-rodada6.md`, `-rodada7.md`, `ABERTURA.md`, `research.md`; (2) ler `governance/DHR-SPEC006-001_*` (Q-ABERTURA-5: se o Plan ficar grande demais para revisar de uma vez, o Especificador volta a Andraus para PROPOR divisão) e `AGENTS.md` §5 "Abertura de Spec" (número/quantidade/fronteira das Specs são definidos na abertura, por proposta do Especificador após Dossiê, e homologados por Andraus); (3) re-apontamento: gatilhos do RMR-001 que citam SPEC-006 (BL-003, BL-011 ATIVADOS, DHR-BACKLOG-001) e o ROADMAP (slots indicativos; qualquer divisão exige re-apontamento homologado — RMR-001 "Re-apontamento de gatilhos"); (4) acionar o Especificador SOT para uma PROPOSTA de divisão (fronteiras, decisões abertas por Spec, dependências, o que cada Spec herda, ordem), com opções e prós/contras para Andraus decidir via AskUserQuestion. Indícios dos pareceres para o corte: o núcleo do grafo (ontologia, envelope, estado, proveniência, versões) vs. causalidade/colisão (CKG-008/013) vs. fronteira de entrada/selo (CKG-010, SPEC-007). A causa dos achados é a mesma regra copiada em várias seções — a divisão deve reduzir cópias, não só linhas.
+**Registrar a escolha da Opção 2 e preparar a v1.0 núcleo da SPEC-006 — somente por ordem de Andraus.** (1) Ata/DHR da decisão (Q-ABERTURA-5) com a pergunta pendente: a entrega em etapas conta como "divisão" para o RMR-001 (re-apontamento formal de BL-003/BL-011/DHR-BACKLOG-001) ou basta nota aditiva? (2) Só depois, Especificador: Plan v1.7 enxugado (fonte única; remover critério (a) proposto e `SEAL_MISSING`; ver proposta §Opção 2). (3) Divergência ROADMAP:177 × DHR-SPEC006-001:20 (H-001) segue limitando o parecer a CONFORME condicional — decisão de Andraus. Nada disso foi feito.
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
