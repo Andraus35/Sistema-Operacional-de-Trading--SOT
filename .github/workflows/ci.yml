@@ -104,7 +104,7 @@ jobs:
 
       # Detectores D adicionais do gate (DHR-AUDITOR-EXTERNO-017): calibração nos Plans homologados + mutação; guarda do fim do Revisor.
       - name: Revisor detectors and guard tests
-        run: python -m unittest tests/test_revisor_detectores.py tests/test_revisor_guard.py tests/test_revisor_posguarda.py
+        run: python -m unittest tests/test_revisor_detectores.py tests/test_revisor_guard.py tests/test_revisor_posguarda.py tests/test_roteador_modelos.py
 
       # Testes da ferramenta de carimbos (bloqueante: se falhar, a ferramenta está quebrada).
       - name: RPSA tool tests
