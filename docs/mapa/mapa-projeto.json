@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "a473ef9c8156871ebe9b924939b641e6b12496e4f28c483ef2b30a5acff72814",
+  "digest": "f3d90578c38c5cc027b839b47595dcca791c8a49ff099abfa29b6571c95e85a3",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -248,7 +248,7 @@
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 60,
+   "in": 59,
    "out": 3
   },
   {
@@ -668,7 +668,7 @@
    "path": "governance/CONFLICT-MAP.md",
    "area": "governance",
    "title": "Conflict Map — SOT (Sistema Operacional de Trading)",
-   "in": 44,
+   "in": 45,
    "out": 37
   },
   {
@@ -878,7 +878,7 @@
    "path": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
    "area": "governance",
    "title": "DHR-BL010-011-012-001 — Ata de Homologação — Classificação de Colisões (MC-RAG/EXP/COG × SOT)",
-   "in": 6,
+   "in": 7,
    "out": 4
   },
   {
@@ -2124,7 +2124,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 127,
+   "in": 126,
    "out": 9
   },
   {
@@ -2152,7 +2152,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 128,
+   "in": 127,
    "out": 18
   },
   {
@@ -2173,7 +2173,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 114,
+   "in": 113,
    "out": 25
   },
   {
@@ -2258,20 +2258,20 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
    "in": 4,
-   "out": 10
+   "out": 7
   },
   {
    "path": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
    "area": "specs",
    "title": "Parecer do Revisor SOT — SPEC-006 Plan v1.4 (rodada 5) — 2026-10-17",
-   "in": 2,
+   "in": 1,
    "out": 6
   },
   {
    "path": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
    "area": "specs",
    "title": "Parecer do Revisor SOT — SPEC-006 Plan v1.5 (rodada 6) — 2026-10-17",
-   "in": 0,
+   "in": 2,
    "out": 6
   },
   {
@@ -2279,7 +2279,7 @@
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 99,
-   "out": 23
+   "out": 26
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -2750,7 +2750,7 @@
   {
    "id": "DHR-BL010-011-012-001",
    "defined_in": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-BL012-001",
@@ -3310,7 +3310,7 @@
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "INV-03",
@@ -3330,7 +3330,7 @@
   {
    "id": "INV-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 32
+   "cited_by": 31
   },
   {
    "id": "INV-07",
@@ -3513,6 +3513,11 @@
    "cited_by": 1
   },
   {
+   "id": "RULE-CBP-007",
+   "defined_in": "specs/features/SPEC-004/plan.md",
+   "cited_by": 1
+  },
+  {
    "id": "RULE-CBP-008",
    "defined_in": "specs/features/SPEC-004/plan.md",
    "cited_by": 0
@@ -3688,24 +3693,14 @@
    "cited_by": 1
   },
   {
-   "id": "RULE-CKG-009",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
-  },
-  {
    "id": "RULE-CKG-010",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 2
   },
   {
-   "id": "RULE-CKG-012",
-   "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
-  },
-  {
    "id": "RULE-CKG-013",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "cited_by": 1
   },
   {
    "id": "RULE-COESAO",
@@ -3845,7 +3840,7 @@
   {
    "id": "RULE-EPI",
    "defined_in": "governance/RULES.md",
-   "cited_by": 55
+   "cited_by": 56
   },
   {
    "id": "RULE-EPI-01",
@@ -4515,17 +4510,17 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 113
+   "cited_by": 112
   },
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 125
+   "cited_by": 124
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 112
+   "cited_by": 111
   },
   {
    "id": "SPEC-004",
@@ -4710,7 +4705,7 @@
   {
    "id": "SPEC-040",
    "defined_in": "ROADMAP.md",
-   "cited_by": 13
+   "cited_by": 12
   },
   {
    "id": "SPEC-041",
@@ -25426,27 +25421,22 @@
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
    "to": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
    "type": "id"
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
    "to": "governance/RULES.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-006/checks.md",
-   "to": "specs/features/SPEC-001/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-006/checks.md",
-   "to": "specs/features/SPEC-002/plan.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-006/checks.md",
-   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
@@ -25456,7 +25446,7 @@
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
-   "to": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
    "type": "path"
   },
   {
@@ -25556,12 +25546,32 @@
   },
   {
    "from": "specs/features/SPEC-006/plan.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/CLASSIFICACAO-COLISOES-BL010-011-012.md",
    "type": "path"
   },
   {
    "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/CONFLICT-MAP.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md",
    "type": "id"
   },
   {
@@ -25642,6 +25652,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
    "type": "path"
   },
   {

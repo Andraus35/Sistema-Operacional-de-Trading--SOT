@@ -1,13 +1,14 @@
 # checks.md — Verificação de Spec da SPEC-006 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-006/plan.md` **v1.5 (candidato — rodada 6)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico de armazenamento INDETERMINADO = H-001 ABERTA)
+**Objeto:** `specs/features/SPEC-006/plan.md` **v1.6 (candidato — rodada 7)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico de armazenamento INDETERMINADO = H-001 ABERTA)
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — NÃO é teste de runtime, NÃO é o parecer do Revisor, NÃO é homologação. [FONTE: atomic-spec §14; ROADMAP §6]
 **Método:** atomic-spec.md **v1.5**
-**Data:** 2026-10-17 (Rodada 6 — Plan devolvido ao Especificador por ordem de Andraus, chat 2026-10-17, após o parecer NÃO CONFORME da rodada 5, `parecer-revisor-rodada5.md`)
+**Data:** 2026-10-17 (Rodada 7 — ordem de Andraus, chat 2026-10-17, "Rodada 7 enxugando o texto", após o parecer NÃO CONFORME da rodada 6, `parecer-revisor-rodada6.md`)
 
-> **Nota de método:** cada item abaixo foi conferido abrindo o plan.md v1.5 e a fonte citada (arquivo:linha). Nenhum validador foi executado pelo Especificador (sem Bash) — ver §12 (comandos que o Orquestrador deve rodar).
-> **Limitação funcional declarada (v1.5):** com (a), selo (b), (c), nós de referência e allowlist pendentes, o KG hoje **não admite nenhuma escrita** (plan §D2.3, l.524-538). O que é verificável são **predicados de gate e fixtures**; a admissão positiva fim a fim é **INDETERMINADO**.
-> **Itens em aberto (não marcados ✔):** H-001; contrato do selo (SPEC-007); critério/produtor/gatilho do caminho (a); contrato do caminho (c); caminho dos nós asset/timeframe/regime/observation/calibration_metric/structure/narrative/mission; mantenedor da allowlist; host do juízo CKG-008; `producer_id` de SMC/Fibonacci/ICT e mapeamento →Fractal; consumidor de eventos; emissão pelo KG; migração de ontologia; escala de confiança; limiar/amostra de falso-DENY (ENF-07); reconciliação COL-EXP-05.
+> **Nota de método:** cada item foi conferido abrindo o plan.md v1.6 e a fonte citada (arquivo:linha). Nenhum validador foi executado pelo Especificador (sem Bash) — ver §12. Linhas do plan.md citadas abaixo são da v1.6 (1498 linhas).
+> **Convenção de fonte única (v1.6):** predicados e códigos de rejeição em **D4.1–D4.18** (plan l.798-815); campos no I/O Schema (l.1145-1217); caminhos na §D2.3 (l.439-456). RULE/BASpec/EARS/EC/cenários/ADV citam essas seções.
+> **Limitação funcional declarada:** o KG hoje **não admite nenhuma escrita de conhecimento** (§D2.3). Verificáveis: **predicados de gate e fixtures**; admissão positiva fim a fim = **INDETERMINADO**.
+> **Itens em aberto (não marcados ✔):** ver a tabela única de etiquetagem do plan (l.1426-1457).
 
 ---
 
@@ -15,16 +16,16 @@
 
 | Nível | Exigido | Presente | Evidência |
 |---|---|---|---|
-| D0 Intenção | Sim | ✔ | Missão (preservar/relacionar/consultar; memória permanente ≠ trabalho; mecanismo físico INDETERMINADO) |
-| D1 Escopo/Non-goals | Sim | ✔ | S1–S14 + Non-goals; S10 aponta a tabela única §D2.3 |
-| D2 Regra | Sim | ✔ | RULE-CKG-001..013 [PROPOSTA]; §D2.1 matriz; §D2.2 colisão (só CONFIRMA×REFUTA); **§D2.3 caminhos de entrada (novo)**; INV-CKG-01/02 |
-| D3 Comportamento (BASpec) | Sim | ✔ | CKG-001..013 com CLASSE/MECANISMO (CC-11) |
-| D4 Algoritmo | Quando há regra determinística real | ✔ | `envelope_completo` (definição única); `version`/`supersedes` por record_kind; log `kg_gate_decision`; bitemporal com `valid_to_efetivo`; **`estado(v,T)` com precedência**; trace; dedupe; gate causal/similaridade (toda CAUSA/SIMILAR_A); bounded loop (≤1 invocação); guard CKG-007 por node_type; colisão; fronteira por caminho; elos de versão + legalidade; ancestrais sem espera |
-| D5 Estado | Sim | ✔ | `knowledge_state` = projeção (D4 `estado(v,T)`); transitórios CANDIDATE_WRITE / REJECTED (`PENDING_ANCESTOR` eliminado) |
-| D6 Protocolo | Sim | ✔ | Passos 1–10 (+5-bis, 5-ter); passo 2 por caminho §D2.3; passo 3 com allowlist |
-| D7 Teste | Sim (CRITICAL; ≥3) | ✔ | **T01..T20 (20)** + convenção (i)–(iv) |
+| D0 Intenção | Sim | ✔ | Missão (preservar/relacionar/consultar; permanente ≠ trabalho; mecanismo físico INDETERMINADO) |
+| D1 Escopo/Non-goals | Sim | ✔ | S1–S14 + Non-goals |
+| D2 Regra | Sim | ✔ | RULE-CKG-001..013 [PROPOSTA] (citam D4); §D2.1 matriz; §D2.2 colisão (janela efetiva); §D2.3 caminhos (+ escritor dos registros internos); INV-CKG-01/02 |
+| D3 Comportamento (BASpec) | Sim | ✔ | CKG-001..013 com CLASSE/MECANISMO (CC-11); ENTÃO cita D4 |
+| D4 Algoritmo | Quando há regra determinística real | ✔ | **D4.1–D4.18 numerados** — fonte única (inclui D4.2 proveniência com discriminantes, D4.5 log imutável, D4.12 guard único, D4.16 elos tipados, D4.18 admissão atômica) |
+| D5 Estado | Sim | ✔ | projeção D4.7; transitórios CANDIDATE_WRITE/REJECTED |
+| D6 Protocolo | Sim | ✔ | Passos 1–11 (+5-bis, 5-ter); colisão detectada no 8 e gravada no 9 (atômico) |
+| D7 Teste | Sim (CRITICAL; ≥3) | ✔ | **T01..T21 (21)** + convenção (i)–(v); cenários idênticos a VERIFICADO POR referenciam a BASpec |
 | D8 Adversarial | Sim (CRITICAL, focado) | ✔ | **ADV-CKG-01..22 (22)** |
-| D9 Auditoria | Por referência | Parcial | `envelope_completo` + `kg_gate_decision`; replay (T17); observabilidade agregada = SPEC-040; sem digest (limite m3) |
+| D9 Auditoria | Por referência | Parcial | D4.3/D4.4 + log `kg_gate_decision` (D4.5, imutável); replay (T17); sem digest (limite m3) |
 
 **Resultado:** profundidade-alvo D0–D7 atingida; D8 focado. **PASS (estrutural).**
 
@@ -34,19 +35,19 @@
 
 | BASpec | QUANDO | ENTÃO | PORQUE | REF | VERIF. | CLASSE | Gate/bounded |
 |---|---|---|---|---|---|---|---|
-| CKG-001 ontologia + matriz + regras de nó | ✔ | ✔ | ✔ | ✔ | ✔ (= T01, predicado) | C | gate ✔ |
-| CKG-002 ref canônica + estados + **versões** + legalidade | ✔ | ✔ | ✔ | ✔ | ✔ predicado/fixture; ponta-a-ponta INDETERMINADO | D | N/A |
-| CKG-003 relação tipada/proveniência/DERIVA_DE | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A |
-| CKG-004 temporalidade | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A |
-| CKG-005 proveniência CONDICIONAL | ✔ | ✔ | ✔ | ✔ | ✔ (predicado) | C | gate ✔ |
-| CKG-006 imutabilidade/envelope (E3) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate ✔ |
-| CKG-007 guard confiança≠convicção (por node_type/campo) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate ✔ (limite: texto livre) |
-| CKG-008 toda CAUSA/SIMILAR_A | ✔ | ✔ | ✔ | ✔ | ✔ | H | ≤1 invocação/submissão; KG sem retry ✔ + gate ✔ |
-| CKG-009 governança (E3; allowlist) | ✔ | ✔ | ✔ | ✔ | ✔ (predicado) | C | gate ✔ |
-| CKG-010 fronteira (§D2.3) | ✔ | ✔ | ✔ | ✔ | ✔ só os DENY; admissão positiva **INDETERMINADO** | C | gate = DENY por pendência |
-| CKG-011 consulta/trace | ✔ | ✔ | ✔ | ✔ | ✔ (fixture) | D | N/A |
-| CKG-012 lifecycle (`estado(v,T)`) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A |
-| CKG-013 colisão | ✔ | ✔ | ✔ | ✔ | ✔ (fixture, convenção (iv)) | C | gate ✔ |
+| CKG-001 ontologia + regras de nó (D4.1/D4.14) | ✔ | ✔ | ✔ | ✔ | ✔ (= T01) | C | gate ✔ |
+| CKG-002 ref canônica + elos tipados (D4.16) | ✔ | ✔ | ✔ | ✔ | ✔ predicado/fixture; ponta-a-ponta INDETERMINADO | D | N/A |
+| CKG-003 relação tipada/DERIVA_DE (D4.17) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A |
+| CKG-004 temporalidade (D4.6) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A |
+| CKG-005 proveniência (D4.2) | ✔ | ✔ | ✔ | ✔ | ✔ (casos a/b = T12/T14) | C | gate ✔ |
+| CKG-006 imutabilidade conhecimento + log (E3) | ✔ | ✔ | ✔ | ✔ | ✔ (caso b = log) | C | gate ✔ |
+| CKG-007 guard custo E confiança (D4.12) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate ✔ (limite: texto livre) |
+| CKG-008 toda CAUSA/SIMILAR_A (D4.10/D4.11) | ✔ | ✔ | ✔ | ✔ | ✔ | H | ≤1 invocação/submissão; host pendente ⇒ 0 ✔ + gate ✔ |
+| CKG-009 governança (E3; allowlist) | ✔ | ✔ | ✔ | ✔ | ✔ | C | gate ✔ |
+| CKG-010 fronteira (D4.15/§D2.3) | ✔ | ✔ | ✔ | ✔ | ✔ só os DENY; admissão positiva **INDETERMINADO** | C | DENY por pendência |
+| CKG-011 consulta/trace (D4.8) | ✔ | ✔ | ✔ | ✔ | ✔ (`records_created_by_query == 0`) | D | N/A |
+| CKG-012 lifecycle (D4.7) | ✔ | ✔ | ✔ | ✔ | ✔ | D | N/A |
+| CKG-013 colisão (D4.13/D4.18) | ✔ | ✔ | ✔ | ✔ | ✔ (fixture; negativo T21) | C | gate ✔ |
 
 **PASS (nenhuma admissão positiva marcada como verificável).**
 
@@ -54,7 +55,7 @@
 
 ## 3. Critérios EARS
 
-**15 critérios** (13 → 15). Alterados na v1.5: **EARS 7** (guard por node_type/campo), **EARS 8** (escopo = toda CAUSA/SIMILAR_A; ≤1 invocação; KG sem retry), **EARS 9** (allowlist indefinida ⇒ rejeitar), **EARS 10** (selo sem contrato ⇒ rejeitar; "estados e versões"); **novos EARS 14** (`ENTRY_PATH_UNDEFINED`) e **EARS 15** (`SCHOOL_UNDERIVABLE`), cobertos negativamente por **T20**. **PASS.**
+**20 critérios** (15 → 20; plan l.462-481). Alterados na v1.6: **EARS 5** (cita D4.2 e os discriminantes), **EARS 6** (inclui o log), **EARS 7** (guard único D4.12 — custo E confiança), **EARS 8** (`posthoc_flag` explícito), **EARS 10** (preservação total só para Evidência — N10), **EARS 13** (colisão na unidade atômica; nenhum `collision` se a admissão falhar). **Novos (N9):** EARS 16 `ANCESTOR_NOT_ADMITTED` (negativo T19/ADV-16), EARS 17 `VERSION_LINK_MISSING` (ADV-19 d), EARS 18 `CANONICAL_TRANSITION_ILLEGAL` (ADV-19 e), EARS 19 `VALIDITY_WINDOW_INVALID` (ADV-19 f), EARS 20 `RECORD_VERSION_INVALID` (ADV-19 g). **PASS.**
 
 ---
 
@@ -63,12 +64,12 @@
 | Check | Resultado |
 |---|---|
 | ENF-01 Contract em todo comportamento com efeito | ✔ EC-CKG-001..006 |
-| ENF-02 Nível ≥ piso | ✔ E3 em 001..005 (atomic-spec l.238); E1 em 006 |
-| ENF-03 Detector ≠ Gate | ✔ juízo CKG-008 detector; guard CKG-007 por campo/node_type (sem juízo); gates de presença declaram o limite (m5) |
-| ENF-04 Fail-closed | ✔ pendência = precondição não satisfeita ⇒ DENY em **(a), (b), (c), nós sem caminho e allowlist** (EC-001/003) |
-| ENF-05 Policies não auto-aprendidas | ✔ limite do bounded loop versionado com a RULE |
+| ENF-02 Nível ≥ piso | ✔ E3 em 001..005 (atomic-spec l.238); EC-002 cobre também o log `kg_gate_decision` com justificativa de nível (plan l.1250); E1 em 006 |
+| ENF-03 Detector ≠ Gate | ✔ juízo CKG-008 detector; guards por campo/node_type; limites de presença/forma declarados (D4.2, D4.10, D4.14) |
+| ENF-04 Fail-closed | ✔ pendência = DENY em (a), (b), (c), host do juízo, nós sem caminho e allowlist |
+| ENF-05 Policies não auto-aprendidas | ✔ bound do loop versionado com a RULE |
 | ENF-06 E0 | N/A |
-| ENF-07 E3 falso-DENY | ✔ método amostral sobre `kg_gate_decision`; limiar = gap aberto (atomic-spec l.273/l.393) — CONDICIONAL; DENY por pendência ≠ falso-DENY |
+| ENF-07 E3 falso-DENY | ✔ método amostral sobre `kg_gate_decision` (agora imutável — D4.5); limiar = gap aberto — CONDICIONAL |
 | ENF-08 Escala E0–E3 | ✔ |
 
 **PASS (ENF-07 com gap aberto declarado).**
@@ -77,13 +78,13 @@
 
 ## 5. Constitution Check (CC-01..CC-12)
 
-CC-01 (5 camadas; `hypothesis.school ≠ ICT`; PRIMARY ⇒ Elliott; hoje só Elliott tem `producer_id` conhecido ⇒ demais `SCHOOL_UNDERIVABLE`), CC-02 (não redefine; elos de versão ESPELHAM `previous_version_id`; legalidade lida dos grafos canônicos, não redefinida; CCM sem tabela ⇒ espelho sem validação), CC-08 (três obrigações herdadas com evidência PARCIAL/[DECISÃO NECESSÁRIA] explícita: "todos os estados", "todas as versões", CEE-001 l.111), CC-09 (nenhum INDETERMINADO convertido em PASS — inclusive selo e allowlist), CC-10, CC-11 = PASS. CC-03/04 (INV-04; guard CKG-007 por campo). CC-05/06/07/12 OK/N-A. **PASS.**
+CC-01 (5 camadas; regras espelho em D4.14; espelho de FORMA declarado — N3), CC-02 (campos espelhados são cópias de referência; legalidade lida dos grafos canônicos; CCM sem tabela ⇒ espelho), CC-08 (extensão de preservação a hipótese/convicção reetiquetada [PROPOSTA] local — N10; três obrigações herdadas com evidência PARCIAL/[DECISÃO NECESSÁRIA]), CC-09 (nenhum INDETERMINADO convertido em PASS; afirmação falsa sobre a ata corrigida — N1), CC-10 (Termo 5: duas acepções de "PRIMARY"), CC-11 = PASS. CC-03/04 (guard D4.12). CC-05/06/07/12 OK/N-A. **PASS.**
 
 ---
 
 ## 6. Herança/Delta (§8.3 — CC-08)
 
-INHERITS reconferido na v1.5 (abri cada linha): CEM-001 l.428 (Status único mutável; registrar timestamp/origem/justificativa), l.450 (SUPERSEDED "Referencia a Evidência sucessora"), l.460-475 (transições permitidas/proibidas), l.494, l.530/544/560 (Lineage: antecedentes diretos; imutável), l.562-578, l.594-595 (relação entre versões explícita), l.602, l.608-615; CHM-001 l.283/588 (`previous_version_id`), l.744-757 (grafo de transições), l.767-769 (terminais); CCM-001 l.58 (`previous_version_id`; sem tabela de transições — grep "transi" só em l.125, governança); CEE-001 l.111; SAS-001 l.924; SPEC-001 l.203; CONSTITUTION l.191-192. REMOVED vazio; MODIFIED = só RULE-BB-004 reforçada. **PASS com evidência PARCIAL declarada (C1/C2).**
+INHERITS reconferido na v1.6 (abri cada linha): CEM-001 l.258-264 (Status; único campo mutável), l.271-278 (`Producer Type`/`Producer ID`), l.280-283 (`Evidence Origin Type` PRIMARY/DERIVED), l.351-355 (`Lineage`: PRIMARY ⇒ []; DERIVED ⇒ obrigatória), l.450 (SUPERSEDED "Referencia a Evidência sucessora"), l.494 (tabela de estados **da Evidência**), l.608-615 (Responsabilidades do KG — no capítulo da **Evidência**); CHM-001 l.283 e l.588 (`previous_version_id`; "toda nova versão deverá referenciar exatamente uma versão anterior"), l.361 (`producer_type`, `producer_id`, `created_at`), l.744-757; CCM-001 l.58 e l.75-78 (`version`, `previous_version_id`, `status` — enum sem tabela/grafo de transições de status; a única outra ocorrência de mudança do modelo, l.125, é governança de alteração do próprio CCM, não transição de status — **n1**); SPEC-004 plan l.264-267 (RULE-CBP-007: `gate_record` "quando o objeto resulta de um gate"), l.381 e l.689 (publicação atômica tudo-ou-nada). REMOVED vazio; MODIFIED = só RULE-BB-004 reforçada. **PASS com evidência PARCIAL declarada.**
 
 ---
 
@@ -92,17 +93,17 @@ INHERITS reconferido na v1.5 (abri cada linha): CEM-001 l.428 (Status único mut
 | Check | Resultado |
 |---|---|
 | H-001 NÃO decidida; Opção B ADIADA | ✔ |
-| Proveniência condicional: a REGRA está só em RULE-CKG-005 (l.337-346); BASpec-CKG-005, D6 passo 5, contrato/schema e T12/T14/T16 a **referenciam** (não repetem); `gate_record` = só objeto que RESULTA de gate (a montante ou detector CKG-013); gates de admissão do KG → `kg_gate_decision` | ✔ (M8) — a frase da v1.4 "idêntica em todas as representações" era falsa (EC-002/003 exigiam `gate_record` do próprio KG); corrigido |
-| Formatos de registro: **dois, com papéis distintos e declarados** — `kg_record` (conhecimento; `envelope_completo`, D4 l.893) e `kg_gate_decision` (decisões PASS/DENY/INDETERMINADO, D4 l.895; schema l.1350). Um só formato de COLISÃO (dentro do `kg_record`) | ✔ (M8) — a frase da v1.4 "um só formato" estava errada para DENY/bounded loop; corrigida |
-| `envelope_completo` definido UMA vez (D4 l.893) e referenciado por RULE-CKG-006, BASpec-CKG-013, D6 passo 8, D9, contrato, schema, EC-001/002, T17 | ✔ (M8) — inclui `publication.origin`, `valid_from` (creation), `valid_to` (invalidation), `gate_record`/`lineage` condicionais |
-| Caminhos de entrada: fonte única §D2.3 (l.524-538) referenciada por RULE-CKG-010, BASpec-CKG-010, D4 l.905, D6 passo 2, EC-001, EARS 10/14, T09/T20, ADV-21, Blocos A/B, etiquetagem | ✔ (M1/M2) |
-| Escopo de CKG-008 = TODA CAUSA/SIMILAR_A em RULE (l.375), BASpec (QUANDO), EARS 8, D4, D6 passo 6, EC-005 EFFECT | ✔ (M5) |
-| Bounded loop sem memoização em RULE/BASpec/D4 l.901/EC-005/ADV-20 | ✔ (M6) |
-| `PENDING_ANCESTOR`/"lote" eliminados de INV-CKG-02, D4, D5, D6, contrato, T19 | ✔ (M7) — grep "lote" só no texto que declara a eliminação |
-| Guard CKG-007 por campo/node_type em RULE, matriz, BASpec, EARS 7, D4 l.902, schema (`_sem_confianca`), EC-004, T06, ADV-05 | ✔ (M9) |
-| Projeção `estado(v,T)` (D4 l.897) referenciada por RULE-CKG-012, D5, EC-002, T17 | ✔ (M10) |
+| **Fonte única:** cada predicado/código de rejeição está em UMA linha de D4 (l.798-815); RULE-CKG-001..013, BASpecs (ENTÃO/MECANISMO), EARS 1/5/7/8/12/13/17/20, D6 passos 2–9, EC PRECONDs, T06/T17/T21 e ADV-04/05/06/18/19 citam o item de D4 | ✔ (resposta ao "Volume" da rodada 6) |
+| Proveniência: a regra está em D4.2 (l.799). RULE-CKG-005 (l.301) enuncia a obrigação e cita D4.2; BASpec-CKG-005 (l.578) **resume** o predicado no ENTÃO e cita D4.2 — **n5:** a v1.5 dizia aqui que a BASpec "não repete a regra", o que era falso; agora o resumo é declarado e a fonte é D4.2 | ✔ |
+| Formatos de registro: `kg_record` (conhecimento; D4.3/D4.4) e `kg_gate_decision` (decisões; D4.5) — papéis distintos, AMBOS imutáveis (RULE-CKG-006 l.309; EC-CKG-002 l.1241); um só formato de COLISÃO | ✔ (N4) |
+| Guard de INV-04: texto único em D4.12 (l.809); RULE-CKG-007 (l.317), BASpec-CKG-007, EARS 7 (l.468), EC-CKG-004 PRECOND (l.1274), ADV-03/05, T06 e schema (`payload.node.creation[node_type=conviction]`, l.1179) citam "custo E confiança" e D4.12 | ✔ (N8) |
+| Colisão com janela efetiva: D4.13 (l.810); §D2.2 (l.426); ADV-18(b) (l.1085) | ✔ (N11) |
+| Caminhos de entrada: §D2.3 (l.439-456) referenciada por RULE-CKG-010, D4.15, D6 passo 2, EC-001, EARS 10/14, T09/T20, ADV-21 | ✔ |
+| Escopo de CKG-008 = TODA CAUSA/SIMILAR_A; bounded loop sem memoização; host pendente ⇒ 0 invocações (D4.11 l.808; §D2.3 l.447) | ✔ (M5/M6/n9) |
+| `PENDING_ANCESTOR`/"lote" eliminados | ✔ — grep "lote"/`PENDING_ANCESTOR` só nas linhas de histórico (l.35-37) |
+| Projeção `estado(v,T)` definida só para T ≥ valid_from (D4.7 l.804) | ✔ (n2) |
 | M-001/J-001/N-001/G-001/K-001/C-001/WF-D03/ECC-03-001 ABERTAS; SPEC-004/005 não reabertas; SPEC-007 não absorvida | ✔ |
-| STRUCT-10 (nenhuma forma `fechad*/resolvid*/homologad*` colada a ID de decisão aberta) | conferência manual ✔ — busca devolve só falsos-positivos de substring (CHM-001/CEM-001 contêm "M-001"; EC-CKG-001 contém "G-001"), já presentes na v1.4 que passou no gate; o qualificador do critério mínimo de (a) foi reescrito como "(sem decisão de Andraus)" — **confirmar com o gate (§12)** |
+| STRUCT-10 | conferência manual ✔ — busca por `fechad*/resolvid*/homologad*` a ≤40 caracteres de um ID `[A-Z]-\d{3}` com fronteira de palavra: **0 ocorrências** na v1.6 — **confirmar com o gate (§12)** |
 
 **PASS (com itens explicitamente em aberto, não marcados ✔).**
 
@@ -112,29 +113,30 @@ INHERITS reconferido na v1.5 (abri cada linha): CEM-001 l.428 (Status único mut
 
 | Citado | Diz o afirmado? | Fonte verificada |
 |---|---|---|
-| "preservar todas as versões" / relação entre versões explícita / sucessora referenciada | ✔ | canon/CEM-001 l.612; l.594-595; l.450 |
-| Transições permitidas/proibidas da Evidência | ✔ | canon/CEM-001 l.460-475 |
-| `previous_version_id` (hipótese; toda nova versão referencia a anterior) | ✔ | canon/CHM-001 l.283; l.588 |
-| Grafo de transições e terminalidade da hipótese | ✔ | canon/CHM-001 l.744-757; l.767-769 |
-| CCM-001 `previous_version_id`; sem tabela de transições | ✔ | canon/CCM-001 l.58 (grep "transi" sem tabela) |
-| Métrica de calibração "entra no Knowledge Graph" | ✔ | canon/CEE-001 l.111 |
-| Produtor registra relações; não redefine ontologia | ✔ | canon/SAS-001 l.924 |
-| `producer_id == "elliott_specialist"` | ✔ | specs/features/SPEC-001/plan.md l.203 |
-| Workspaces Observations × Evidence | ✔ (sustenta só a distinção; a restrição CONFIRMA/REFUTA ⇒ evidence é [PROPOSTA] derivada de INV-06 — m1) | governance/CONSTITUTION.md l.191-192 |
-| Bounded loop "uma passada … undetermined" | ✔ | SPEC-002 plan l.370-371; SPEC-003 plan l.387-388 |
-| atomic-spec bounded loop obrigatório em H/P | ✔ | atomic-spec.md l.315 |
-| Lineage = antecedentes diretos; imutável após publicação | ✔ | canon/CEM-001 l.530; l.560 |
-| DHR-BACKLOG-001 | **NÃO localizada** neste checkout (grep sem ocorrências) — citada como comunicada pelo Orquestrador | — |
-| Contagens (ver §11) | ✔ por busca de cabeçalhos | plan.md |
+| Ata DHR-BACKLOG-001: BL-003 e BL-011 → `ATIVADO`, encaminhados ao gate da SPEC-006; COL-EXP-05 e R-04..R-06 decididos no gate da SPEC-006 | ✔ | `governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md` §1 (l.15), §2 (l.18) |
+| RMR-001: BL-003 `ATIVADO` (l.102); BL-011 `ATIVADO` com "tratar R-01..R-07 e X-04 e a reconciliação COL-EXP-05 no gate da SPEC-006" (l.110); nota datada (l.191) | ✔ | `backlog/RMR-001_Painel_Backlog.md` l.102/l.110/l.191 |
+| Rótulos R-xx/X-xx não são catálogo fechado; correspondência por conteúdo; R-04..R-06 = residuais de aplicação | ✔ | CLASSIFICACAO l.23; l.53-62 |
+| COL-EXP-01..05 | ✔ | CONFLICT-MAP l.143-147 |
+| `Evidence Origin Type` PRIMARY (só AGENT) / DERIVED (só ENGINE) | ✔ | CEM-001 l.280-283 |
+| `Lineage`: PRIMARY ⇒ []; DERIVED ⇒ obrigatória | ✔ | CEM-001 l.351-355 |
+| `producer_type`, `producer_id` (hipótese) | ✔ | CHM-001 l.361 |
+| `previous_version_id` obrigatório em nova versão (hipótese) | ✔ | CHM-001 l.588 |
+| CCM-001 tem `previous_version_id` mas não enuncia obrigatoriedade | ✔ (por isso [INFERÊNCIA] em D4.16) | CCM-001 l.58; l.75-78 |
+| Sucessora referenciada só na Evidência | ✔ (por isso `successor_ref` obrigatório só p/ CEM — N6) | CEM-001 l.450 |
+| "Preservar todas as versões / todos os estados" está no capítulo da Evidência | ✔ (por isso extensão a hipótese/convicção = [PROPOSTA] — N10) | CEM-001 l.494; l.608-615 |
+| Publicação atômica tudo-ou-nada | ✔ | SPEC-004 plan l.381; l.689 |
+| `gate_record` "quando o objeto resulta de um gate" (sem campo discriminante na SPEC-004) | ✔ (por isso `produced_by_gate` local [PROPOSTA] — N2) | SPEC-004 plan l.264-267 |
+| "KG publicado → E3 mínimo" | ✔ | atomic-spec.md l.238 |
+| Contagens (§11) | ✔ por busca de cabeçalhos | plan.md v1.6 |
 
-**PASS** (com DHR-BACKLOG-001 a confirmar pelo Orquestrador).
+**PASS.** *(A linha da v1.5 "DHR-BACKLOG-001 NÃO localizada neste checkout" era falsa — N1; removida.)*
 
 ---
 
 ## 9. Gate RMR-001 (passo 11-bis)
 
-- BL-003/BL-011: gatilho `spec:SPEC-006 em redação` disparado; promoção a `ATIVADO` **decidida por Andraus** (ata DHR-BACKLOG-001, comunicada pelo Orquestrador; não presente neste checkout). O Plan registra o tratamento (plan l.42-44) e **não** reabre/edita o RMR-001. Neste checkout o RMR-001 ainda mostra `Em espera` (l.102/l.110) — a sincronização é do Orquestrador (`backlog_triggers.py`).
-- BL-010 tangente (SPEC-007); BL-029 `Em espera`, independente. COL-EXP-05 adiada ([DECISÃO NECESSÁRIA]).
+- **BL-003 e BL-011 estão `ATIVADO`** (Andraus, chat 2026-10-17; ata DHR-BACKLOG-001 §1; RMR-001 l.102/l.110/l.191), encaminhados ao gate da SPEC-006. O plan registra o encaminhamento item a item (Nota de gate, plan l.44-63): BL-003 = camada lógica neste contrato, parte física H-001/G-001 (ABERTAS); BL-011 = X-01, R-01, R-02/R-03, R-04..R-06 [INFERÊNCIA de conteúdo], X-04 **TRATADOS**; R-07/COL-EXP-05 e a fila EXP-SPEC-001..053 **NÃO executados** = [DECISÃO NECESSÁRIA]. O Especificador **não** edita o RMR-001. *(N1: a v1.5 dizia que o RMR-001 mostrava BL-011 em estado anterior e que a ata não estava no checkout — ambos falsos; corrigido.)*
+- BL-010 tangente (SPEC-007); BL-029 independente (RMR-001 l.128).
 
 ---
 
@@ -144,66 +146,67 @@ Sem pesquisa web nova nesta rodada (correções internas, ancoradas em baselines
 
 ---
 
-## 11. Rastreabilidade da Rodada 6 (parecer da rodada 5) — linhas do plan.md v1.5
+## 11. Rastreabilidade da Rodada 7 (parecer da rodada 6) — linhas do plan.md v1.6
 
-| Item | Procede? | Correção |
+| Item | Procede? | Correção (plan v1.6) |
 |---|---|---|
-| **C1** "todas as versões" sem mecanismo | Sim | `canonical_predecessor_ref` + `successor_ref` (gate `VERSION_LINK_MISSING`): BASpec-CKG-002 l.601-607; D4 l.906; D6 5-ter l.960; schema l.1317/l.1340; contrato (linha "Transição canônica / versões"); T17 l.1123-1135 (`version_chain`); ADV-19(d) l.1228-1229; Bloco B l.1532 = **PARCIAL/[DECISÃO NECESSÁRIA]** |
-| **C2** CEE-001 l.111 mapeada a ADV-05 | Sim | INHERITS l.113-115 (não "ARMAZENA"); ADV-05 l.1186-1187 (ENTÃO só isolamento; armazenamento não demonstrado); Bloco B l.1541 = **PARCIAL/[DECISÃO NECESSÁRIA]** |
-| **M1** (b) e allowlist vacuosos | Sim | `SEAL_CONTRACT_UNDEFINED` (RULE-CKG-010 l.402-412; §D2.3; BASpec-CKG-010; T09); `WRITER_ALLOWLIST_UNDEFINED` (RULE-CKG-009 l.398-399; BASpec-CKG-009 GATE; EC-003 PRECOND l.1392; T20 d); "Consequência declarada" l.536-538; Bloco A cobertura l.1522-1525 |
-| **M2** caminho de relações e node_types | Sim | §D2.3 l.524-538 (relações espelhadas por (a); relações de produtor e demais = (c); structure/narrative/mission sem caminho); convenção (iv) l.978-980; T11/ADV-02/ADV-18 por fixture |
-| **M3** sem EARS/cenário para `ENTRY_PATH_UNDEFINED`/`SCHOOL_UNDERIVABLE` | Sim | EARS 14/15 l.557-558; T20 l.1156-1165; "Efeito hoje" l.449-451 (só Elliott conhecido) |
-| **M4** INVALIDA × relação-alvo | Sim | linha removida da §D2.2 (l.518-522); INVALIDA na matriz l.477 ("afirmação"; ≠ registro `invalidation`); schema `contradiction_pair`; ADV-18(d) |
-| **M5** escopo de CKG-008 | Sim | "toda CAUSA/SIMILAR_A, qualquer produtor": RULE l.375-377; BASpec QUANDO; EARS 8; D4; D6 passo 6 l.961; EC-005 EFFECT |
-| **M6** memoização sem lastro | Sim (precedentes não têm cache) | memoização removida (RULE l.381-386; BASpec BOUNDED LOOP; D4 l.901; EC-005); ADV-20 l.1231-1232 reescrito (≤1 invocação, `kg_generated_retries == 0`, frequência de produtor fora do KG) |
-| **M7** "lote" indefinido | Sim | conceito eliminado: INV-CKG-02 l.500-505 (rejeição imediata; sem espera; hoje inalcançável); D4 l.907; D5; D6 5-bis l.959; T19 l.1147-1154 por fixture |
-| **M8** envelope/`gate_record` divergentes | Sim | `envelope_completo` único (D4 l.893); `gate_record` só p/ objeto que resulta de gate (RULE-CKG-005 l.339-343); `kg_gate_decision` (D4 l.895; schema l.1350); EC-002/003 EVIDENCE → `kg_gate_decision`; §7 acima corrigido |
-| **M9** guard custo/confiança não determinístico | Sim | por node_type/campo: RULE-CKG-007 l.361-366 (+ limite); matriz CAUSA; D4 l.902; schema `_sem_confianca`; EC-004 PRECOND l.1404; T06; ADV-05 |
-| **M10** projeção subespecificada | Sim | `estado(v,T)` com precedência ARCHIVED > SUPERSEDED > INVALIDATED_IN_TIME > ACTIVE_KNOWLEDGE (D4 l.897); `version`/`supersedes` por kind (D4 l.894; schema); `valid_to_efetivo` (D4 l.896); RULE-CKG-012 l.428-429 |
-| m1 CONSTITUTION l.191 | Sim | matriz CONFIRMA (l.472): INV-06 + l.191-192 + [PROPOSTA] derivada |
-| m2 T01 × VERIFICAÇÃO CKG-001 | Sim | BASpec-CKG-001 VERIFICADO POR = T01 (`ONTOLOGY_INTEGRITY_VIOLATION`); ADV-17 com `written`/`rejected_reason` |
-| m3 sem digest | Sim | limite declarado (RULE-CKG-006 l.354-356; schema `_comentario`; risco novo) — não adicionado digest (função de hash = H-001/BUILD) |
-| m4 `valid_to < valid_from` | Sim | `VALIDITY_WINDOW_INVALID` (D4 l.893; schema `valid_to`; ADV-19 f) |
-| m5 gates de presença | Sim | limite declarado (RULE-CKG-008 l.379-380; BASpec-CKG-008; EC-005 POSTCOND) |
-| m6 legalidade de `canonical_state_transition` | Sim | CHM l.744-757 / CEM l.460-466 ⇒ `CANONICAL_TRANSITION_ILLEGAL`; CCM espelhado sem validar (D4 l.906; schema `status_to`; ADV-19 e) |
-| m7 cobertura CKG-010 → ADV-08 | Sim | cobertura l.1240-1241: CKG-010 → T09/ADV-21/T20 (ADV-08 rotulado fronteira de escopo) |
-| m8 volume | Sim | consolidação (listas finais fundidas na etiquetagem; caminhos numa tabela; BASpec-CKG-010 enxugada; RULE/BASpec/EC referenciam D4). **plan.md: 1652 → 1641 linhas (NÃO ultrapassou 1652).** Volume continua alto para uma sessão; a divisão é decisão de Andraus (Q-ABERTURA-5) |
-| G BL-003/BL-011 | Não é do autor | tratado por DHR-BACKLOG-001 (comunicada; ausente neste checkout) — plan l.42-44; RMR-001 não editado |
+| **N1** ata "ausente" / BL-011 em estado superado | **Sim** (conferido: a ata existe e o RMR-001 l.102/110/191 mostra `ATIVADO`) | Nota de gate l.44-63 (fonte com ata e linhas; tabela X-01..R-07/X-04 com encaminhamento item a item; R-04..R-06 definidos — [INFERÊNCIA], CLASSIFICACAO l.23/l.58-62; R-07 e fila EXP-SPEC = [DECISÃO NECESSÁRIA]; pergunta "este Plan é a ativação?" removida); etiquetagem (linha DHR-BACKLOG-001, l.1432; R-07 l.1447; estado do BL-003); Autopré-check (passo 11-bis); §7-bis Bloco C (RULE-EPI); checks §8/§9 |
+| **N2** sem discriminante PRIMARY/DERIVED / "resulta de gate" | Sim | campos fixos `provenance_ref.produced_by_gate` (booleano explícito, local [PROPOSTA]) e `evidence_origin_type` (espelho CEM-001 l.280-283): D4.2 (l.799, + `PROVENANCE_INCONSISTENT`), D4.3 (l.800), schema l.1158/l.1173; RULE-CKG-005 l.301; ADV-06 (a–e) l.1049; limite: consistência, não veracidade |
+| **N3** `producer_id` fora do schema | Sim | `producer_type`/`producer_id` no payload (schema l.1171-1172; CHM-001 l.361; CEM-001 l.271-278); limite "espelho de FORMA, sem lookup" em §D2.1 l.379 e D4.14 (l.811); coincidência com o canônico = [DECISÃO NECESSÁRIA] (§D2.3; etiquetagem) |
+| **N4** log sem imutabilidade / `decision_id` / T17 | Sim | RULE-CKG-006 l.309 (inclui o log); D4.5 l.802 (`decision_id` único, imutável; resolução do `gate_record` do collision; redução a `record_kind` avaliada e rejeitada, com motivo); EC-CKG-002 l.1241 (cobre o log; LEVEL E3 justificado l.1250); BASpec-CKG-006 caso (b); T05; T17 l.971 (`collision_gate_record_resolves`); §D2.3 l.451 (escritor do log) |
+| **N5** colisão antes da validação | Sim | D6 passo 8 detecta sem gravar (l.869), passo 9 commit atômico (l.870); D4.13 l.810; D4.18 l.815 (tudo-ou-nada, espelha SPEC-004 plan l.381/l.689); RULE-CKG-013; BASpec-CKG-013 l.768; EARS 13; **T21** l.1017 (negativo) |
+| **N6** versões: `successor_ref` sem fonte p/ CHM/CCM; elos não resolvem | Sim | D4.16 l.813 (tipado por modelo; `canonical_model` fixo pelo node_type; CHM l.588 [FONTE], CCM [INFERÊNCIA], CEM l.450 [FONTE]; `successor_ref` CHM/CCM = [PROPOSTA] local opcional; todo elo presente DEVE resolver ⇒ senão `VERSION_LINK_MISSING`); schema l.1200; T17; ADV-19(d) |
+| **N7** `posthoc_flag` opcional | Sim | obrigatório com valor explícito (ausência ≠ false): D4.10 l.807; RULE-CKG-008 l.325; schema l.1190; ADV-04 l.1043 reescrito com caso (b) e limite de veracidade |
+| **N8** guard de INV-04 divergente | Sim | texto único D4.12 l.809 (payload `conviction` FECHADO `additionalProperties:false`; relação de QUALQUER tipo `calibration_metric`→`conviction` proibida); todas as cópias citam D4.12 (ver §7) |
+| **N9** quatro códigos sem EARS; versão sem código | Sim | EARS 16–20 (l.477-481); `RECORD_VERSION_INVALID` em D4.4 (l.801); negativos T19, ADV-19 (d)(e)(f)(g) l.1088 |
+| **N10** "todos os estados/versões" de hipótese/convicção como herdado | Sim | INHERITS CHM (extensão [PROPOSTA] local); RULE-CKG-010 l.341; EARS 10 (só evidência); conflito com o critério mínimo de (a) registrado na nota de BASpec-CKG-010 (l.723) e na etiquetagem = [DECISÃO NECESSÁRIA]; Bloco B |
+| **N11** `colide` com `valid_to` bruto | Sim | D4.13 l.810 (`valid_to_efetivo`, D4.6 com `+∞`); §D2.2 l.426; ADV-18(b) l.1085 |
+| n1 checks:86 "grep transi" | Sim | §6 acima reescrito (descrição do conteúdo de CCM-001 l.58/75-78/125) |
+| n2 `estado(v,T)` p/ T<valid_from; `recorded_at` | Sim | D4.7 l.804 (definida só para T ≥ valid_from); D4.4 l.801 (`recorded_at` monotônico ⇒ `RECORD_VERSION_INVALID`); ADV-19(g) |
+| n3 destino "relation" fora do enum | Sim | matriz INVALIDA l.398 (`target_relation_id` com `to_node = null`; "relação" não é node_type); schema `to_node` l.1187; D4.9 chave |
+| n4 escritor dos registros internos | Sim | §D2.3 l.449-451 (invalidation/archival = escritor autorizado do ato; collision = identidade de serviço na unidade atômica; log = runtime dos gates) |
+| n5 checks:95 | Sim | §7 acima corrigido |
+| n6 allowlist de fixture | Sim | convenção (v) de D7 (presunção declarada, só para o predicado); T15/T16 a citam |
+| n7 EC-006 autorização de leitura / log de consulta | Sim | EC-CKG-006 l.1298-1309: PRECOND sem autorização inexistente (política de leitura = [DECISÃO NECESSÁRIA]); EVIDENCE = contagem de registros antes/depois; "log de consulta" não afirmado |
+| n8 transição perdida | Sim | D4.16 l.813: limite declarado (fail-closed trava o sujeito); reconciliação = [DECISÃO NECESSÁRIA]; risco na tabela |
+| n9 limite por submissão; host | Sim | D4.11 l.808 (bound é por submissão por desenho — frequência de produtor fora do KG; `judgment_invocations` no log); host pendente ⇒ 0 invocações e `ENTRY_PATH_UNDEFINED` (§D2.3 l.447) |
 
-**Contagens (antes → depois), conferidas por busca de cabeçalhos:** BASpecs 13 → 13 (`### BASpec-CKG-`); EC 6 → 6 (`### EC-CKG-`); EARS 13 → **15** (`^N. Quando`); cenários 19 → **20** (`### Cenário-CKG-T`); adversariais 22 → 22 (`### ADV-CKG-`); invariantes locais 2 → 2; EC em E3: 5 → 5. Soma de cabeçalhos = 76 (13+6+15+20+22).
+**Preservado da rodada 5 (sem regressão):** C2 (CEE-001 l.111 PARCIAL — Bloco B; ADV-05), M1 (pendência = DENY em todo caminho — §D2.3/D4.15), M3 (EARS 14/15 + T20), M4 (INVALIDA fora da §D2.2), M5 (escopo CKG-008), M7 (sem estado de espera — D4.17/T19), M10 (precedência D4.7; versão por kind D4.4).
 
-## 11-bis. Respostas às 8 interpelações do parecer (âncoras plan.md v1.5)
+**Contagens (antes → depois), conferidas por busca de cabeçalhos:** BASpecs 13 → 13 (`### BASpec-CKG-`); EC 6 → 6 (`### EC-CKG-`); EARS 15 → **20** (`^N. Quando` em "Critérios de Aceitação"); cenários 20 → **21** (`### Cenário-CKG-T`); adversariais 22 → 22 (`### ADV-CKG-`); invariantes locais 2 → 2; EC em E3: 5 → 5. Cabeçalhos BASpec+EC+cenário+ADV = 62 (13+6+21+22); com EARS = 82. **plan.md: 1641 → 1498 linhas (meta ≤ 1500 cumprida; −143).**
 
-1. **"Preservar TODAS as versões":** cada versão canônica é nó próprio (`canonical_ref`=id@version) ligado por `canonical_predecessor_ref` (espelha `previous_version_id`, CHM-001 l.283/588, CCM-001 l.58) e `successor_ref` na transição a SUPERSEDED (CEM-001 l.450/594-595) — plan l.601-607, l.906, l.1317, l.1340; teste T17 (`version_chain(H) == ["H@1","H@2"]`, l.1123-1135) e negação ADV-19(d). Ponta-a-ponta = PARCIAL/[DECISÃO NECESSÁRIA] (Bloco B l.1532), porque a admissão por (a) é fail-closed.
-2. **Verificador de (b) sem o selo:** não existe — e por isso (b) deixou de ser chamado verificável: sem contrato do selo, o gate de (b) é DENY `SEAL_CONTRACT_UNDEFINED` (RULE-CKG-010 l.402-412; §D2.3 l.524-538; T09(ii)). Só os DENY são verificáveis (Bloco A l.1522-1525).
-3. **Caminho de relações de agente, de REFUTA em T11 e dos node_types sem caminho:** §D2.3 l.524-538 — relações de produtor (SAS-001 l.924) e CONFIRMA/REFUTA/… = caminho (c), contrato [DECISÃO NECESSÁRIA] ⇒ `ENTRY_PATH_UNDEFINED`; DERIVA_DE/HERDA espelhadas por (a); learning por (b); structure/narrative/mission/asset/… sem caminho. T11/ADV-02/ADV-18 usam fixture explícita até o passo 7 (convenção (iv), l.978-980).
-4. **"Lote":** conceito eliminado (não definido como [PROPOSTA]); ancestral ausente ⇒ `ANCESTOR_NOT_ADMITTED` imediato, sem espera; sem deadlock porque o Lineage aponta para antecedentes e é imutável (CEM-001 l.530/560) [INFERÊNCIA] — plan l.500-505, l.907, l.959, T19 l.1147-1154.
-5. **Onde persiste/invalida o resultado do bounded loop; por que ADV-20 é do KG:** não há resultado memorizado (memoização removida); cada decisão vai ao log append-only `kg_gate_decision` (D4 l.895), sem invalidação porque não é consultado como cache. ADV-20 (l.1231-1232) passou a testar só o que o KG controla: ≤1 invocação por submissão, zero retries/submissões geradas pelo KG; a frequência de novas submissões de produtor está fora do KG.
-6. **INVALIDA × `invalidation`:** a relação INVALIDA é afirmação de conhecimento sobre o alvo (matriz l.477) e não altera sua validade; só o registro `invalidation` por ato autorizado (CKG-004) altera. A linha 2 da §D2.2 foi removida (l.518-522) por não satisfazer o escopo (mesmo from,to); ADV-18(d) cobre a não-colisão.
-7. **Campos que tornam "custo/confiança" determinístico:** `node_type` (`calibration_metric` → `conviction` proibido) e ausência de campo de confiança no payload de `conviction` (`relation_confidence` só no payload de relação) — RULE-CKG-007 l.361-366, D4 l.902, EC-004 l.1404; limite declarado: semântica em texto livre não é detectada.
-8. **`gate_record` do KG em toda escrita?** **Não.** `gate_record` só quando o OBJETO resulta de gate (gate a montante, ou o detector CKG-013 para o registro collision); os gates de admissão do KG registram suas decisões no `kg_gate_decision` — RULE-CKG-005 l.339-343; D4 l.893/895; EC-002/003 EVIDENCE. Coerente com T12 (PRIMARY sem `gate_record`).
+## 11-bis. Respostas às 8 interpelações do parecer da rodada 6 (âncoras plan.md v1.6)
+
+1. **Encaminhamento de R-01..R-07/X-04 e o que são R-04..R-06:** Nota de gate, plan l.48-59. Os rótulos não são catálogo fechado (CLASSIFICACAO l.23); por conteúdo: X-01=COL-EXP-01, R-01=COL-EXP-02, R-02/R-03=COL-EXP-03, X-04=COL-EXP-04, R-07=COL-EXP-05 ([FONTE], CLASSIFICACAO l.53-57); **R-04..R-06** = os residuais "de aplicação" (CLASSIFICACAO l.62) que o RMR-001 l.110 enuncia como "confidence≠Conviction/J-001; Experience Packet projeta CEM", lidos com as fronteiras de CLASSIFICACAO l.58-60 — R-04 confiança≠Conviction (l.55), R-05 Packet projeta CEM/CHM (l.56), R-06 memória sem autoridade decisional/imutabilidade (l.57) — **[INFERÊNCIA]** declarada. X-01..R-06 e X-04 TRATADOS; R-07 e a fila EXP-SPEC = [DECISÃO NECESSÁRIA] (l.59; etiquetagem l.1447).
+2. **Campo que distingue DERIVED/PRIMARY e "resulta de gate":** `evidence_origin_type` (espelho CEM-001 l.280-283; schema l.1173) e `provenance_ref.produced_by_gate` (booleano explícito; schema l.1158); predicado D4.2 (l.799) com `PROVENANCE_INCONSISTENT`; obrigatórios no envelope D4.3 (l.800). ADV-06 (l.1049) e INV-CKG-02 (agora sobre `evidence_origin_type=DERIVED`) tornam-se determinísticos. Limite: verifica consistência, não veracidade frente ao objeto a montante.
+3. **Onde o gate lê `producer_id`:** no próprio payload (`producer_type`/`producer_id`, schema l.1171-1172; espelho CHM-001 l.361 / CEM-001 l.271-278); D4.14 (l.811) deriva `school` dele. Não há lookup ao canônico: o espelho de INV-02 é declarado **de forma** (§D2.1 l.379); a coincidência com o objeto canônico é precondição do contrato de (a) = [DECISÃO NECESSÁRIA].
+4. **Imutabilidade do `kg_gate_decision`; T17 e `gate_record`:** RULE-CKG-006 (l.309) e INV-CKG-01 cobrem o log; D4.5 (l.802) — append-only, imutável, `decision_id` único; EC-CKG-002 (l.1241, E3 justificado l.1250) e BASpec-CKG-006 caso (b) com `gate_decision_mutated == false`. T17 (l.971): o `gate_record` de C1 = `DEC-1`, que resolve para `kg_gate_decision{gate_id=CKG-013, result=PASS}` (`collision_gate_record_resolves == true`); `gate_record` de objeto a montante é referência à SPEC-004 (resolução fora do KG — limite declarado em D4.5). A redução a `record_kind` foi avaliada e rejeitada com motivo (D4.5).
+5. **O que impede `collision` persistido se a escrita reprova; atomicidade:** o detector só avalia no passo 8 (l.869, D4.13 "SEM gravar"); a gravação ocorre na unidade atômica tudo-ou-nada do passo 9 (l.870; D4.18 l.815, espelho de SPEC-004 plan l.381/l.689): se qualquer registro da unidade falha D4.3/D4.4, nenhum é gravado. Negativo: **T21** (l.1017; `collision_written == false`, `dangling_collision_refs == 0`).
+6. **Fonte de `successor_ref` para CHM/CCM; os elos precisam resolver?** Não há fonte: para CHM/CCM `successor_ref` é opcional, **[PROPOSTA] local** (D4.16 l.813; schema l.1200); obrigatório só para CEM (l.450). Predecessor: CHM obrigatório ([FONTE] l.588), CCM obrigatório por [INFERÊNCIA] (l.58). **Sim, todo elo presente deve resolver para nó já no KG**, senão `VERSION_LINK_MISSING` (EARS 17, l.478) — consequência e conflito com o critério de (a) registrados (nota l.723).
+7. **O que torna ADV-04 e o guard de custo verificáveis sem enumerar campos:** ADV-04 (l.1043): `posthoc_flag` passou a ser obrigatório com valor explícito (D4.10 l.807) — sua AUSÊNCIA é detectável por presença (o valor falso declarado continua não detectável: limite declarado). Guard de custo: em vez de lista de vedados, o payload de `conviction` é **fechado** por allowlist de campos (`additionalProperties:false`, D4.12 l.809; schema l.1179) — qualquer campo fora dela, inclusive custo ou confiança, é rejeitado; mais a proibição de toda relação `calibration_metric`→`conviction`. Verificado em T06 e ADV-05.
+8. **Volume:** **1641 → 1498 linhas** (≤1500), com mais conteúdo normativo (5 EARS, T21, D4.18). O método foi o remédio indicado pelo Revisor — fonte única em D4.1–D4.18 e citação nas demais representações; 11 cenários idênticos a VERIFICADO POR (T01–T05, T07, T08, T10, T12–T14) viraram referência, e T09 em parte. **Proposta de divisão:** o Especificador não a propõe nesta rodada porque o componente é coeso (os 13 comportamentos compartilham envelope, caminhos e log) e a causa dos achados era duplicação, não amplitude; se Andraus quiser reduzir o tamanho por sessão de revisão, um corte possível — [DECISÃO NECESSÁRIA], Q-ABERTURA-5 — seria (i) contrato de registro e integridade (D2, D4.1–D4.9, D4.12–D4.18, schema) e (ii) fronteira de entrada, causalidade e consulta (§D2.3, D4.10/D4.11, CKG-008/010/011). Não executado.
 
 ---
 
 ## 12. Comandos que o Orquestrador deve rodar (Especificador sem Bash — NÃO executados)
 
 ```
-python scripts/validate_spec_sot.py specs/features/SPEC-006/plan.md      # gate determinístico (STRUCT-10 etc.)
-python scripts/revisor_gate.py specs/features/SPEC-006/plan.md           # gate fundido do Revisor (Classe D + sinais H)
+python scripts/validate_spec_sot.py specs/features/SPEC-006/plan.md      # gate determinístico (STRUCT-01..12; STRUCT-10)
+python scripts/revisor_gate.py specs/features/SPEC-006/plan.md           # gate fundido (estado_backlog, contagem_declarada, campos_atribuidos_baseline, dhr_backlog)
 python scripts/check_repo_research.py specs/features/SPEC-006            # RULE-ECC-06
 python scripts/check_invariants.py specs/features/SPEC-006/plan.md       # valores/ordem das regras fixas (informativo)
-python scripts/check_refs.py                                             # referências cruzadas (DHR-BACKLOG-001 citada)
+python scripts/check_refs.py                                             # referências cruzadas (ata DHR-BACKLOG-001, CLASSIFICACAO)
 python scripts/check_doc_sync.py                                         # drift documental (informativo)
-python scripts/backlog_triggers.py                                       # BL-003/BL-011 x DHR-BACKLOG-001
+python scripts/backlog_triggers.py                                       # BL-003/BL-011 ATIVADO x DHR-BACKLOG-001
 python scripts/build_map.py && python scripts/build_map.py --check       # BL-019 — mapa em dia
-npm run lint                                                             # lint EARS (15 critérios)
-wc -l specs/features/SPEC-006/plan.md                                    # confirmar 1641 linhas
+npm run lint                                                             # lint EARS
+wc -l specs/features/SPEC-006/plan.md                                    # confirmar 1498 linhas
 ```
 
 ---
 
 ## Resultado da verificação de spec
 
-**Estruturalmente CONFORME** (well-formedness), com os pontos INDETERMINADOS declarados: 13 BASpecs (D/C/H), 15 EARS, 6 EC (E3 em 001..005), §D2.1/§D2.2/§D2.3, INV-CKG-01/02, `envelope_completo` único + `kg_gate_decision`, projeção `estado(v,T)`, todo caminho pendente fail-closed, 20 cenários, 22 adversariais, CONS-01 preservado. Três obrigações herdadas com evidência PARCIAL/[DECISÃO NECESSÁRIA] explícita.
+**Estruturalmente CONFORME** (well-formedness), com os pontos INDETERMINADOS declarados: 13 BASpecs (D/C/H), 20 EARS, 6 EC (E3 em 001..005; EC-002 cobre o log), §D2.1/§D2.2/§D2.3, INV-CKG-01/02, D4.1–D4.18 como fonte única, admissão atômica, todo caminho pendente fail-closed, 21 cenários, 22 adversariais, CONS-01 preservado. Três obrigações herdadas com evidência PARCIAL/[DECISÃO NECESSÁRIA] explícita; extensão de preservação a hipótese/convicção = [PROPOSTA] em conflito declarado.
 
 > Feedback interno de verificação de spec — **NÃO** é o parecer do Revisor nem homologação. Próximo passo: comandos do §12 + submissão ao Revisor SOT; decisões [DECISÃO NECESSÁRIA] encaminhadas a Andraus.
