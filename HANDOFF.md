@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-14
-previous: HO-2026-10-17-13
+handoff_id: HO-2026-10-17-15
+previous: HO-2026-10-17-14
 data: 2026-10-17
 branch: ccr-3a0d581c-6cj4ig
 base_commit: 89262bd
@@ -26,11 +26,13 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 
 - **Sondas temporárias (autorizadas por Andraus, revertidas; `settings.json` limpo):** o `SubagentStop` **dispara** em nuvem, inclusive para "Revisor SOT" (`agent_type` exato) e em encerramento por `SubagentHandback`; `last_assistant_message` chega **vazio** nesse caso. Reproduzindo o evento real na guarda: `exit 2` (G1+G2) — mas o Revisor encerrou sem retorno forçado. Conclusão: o `exit 2` **não é honrado** pelo harness em nuvem para subagente que entrega por `SubagentHandback` (ou o script não roda no ambiente do hook — não separado; a 3ª sonda foi bloqueada pelo classificador). Hipótese de matcher refutada.
 
+- **Conserto (ordem de Andraus: "ir direto à ata"):** `governance/DHR-AUDITOR-EXTERNO-018_*` + `scripts/revisor_posguarda.py`/`revisor-posguarda.js` (hook **Stop** do Orquestrador reaplica G1/G2/G3 ao parecer do Revisor, 1 vez por agente) + `tests/test_revisor_posguarda.py` (3 OK; no CI). Testado no transcript real. **NÃO registrado:** o classificador bloqueou editar `.claude/settings.json` e regravar o selo — pendentes de Andraus (autorizar/rodar). Código existe mas não roda até lá.
+
 ## 4. Verificado
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-Andraus decide (diagnóstico restante: sonda que rode a guarda dentro do hook e grave o exit; classificador exige autorização por sonda): (a) registrar a ferramenta do gate / ajustar a guarda no nível do projeto (exige ata nova + mexe no selo) ou (b) rodar o piloto da onda 1 mesmo assim. Plan da SPEC-006 só por ordem de Andraus.
+Andraus autoriza (ou executa) os 2 passos da ata 018 §3: registrar o hook Stop em `.claude/settings.json` e `gate_manifest.py --write` (incluindo os 2 scripts novos em `ARQUIVOS`); depois, sessão nova, revisão curta para confirmar ao vivo; só então piloto da onda 1. Plan da SPEC-006 só por ordem de Andraus.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - DHR-AUDITOR-EXTERNO-015 (na `main`) e -016 (fusão/aposentadoria dos subagentes antigos) — decisões de Andraus em chat, 2026-10-17.
