@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "c79f079eab63781120d655d0b112f00bbf5d7d343b9edf5c2bad40761f2f5e0c",
+  "digest": "a33972ca469c7106a8f0cb65119ef35ac4c44fe3f7a571d30fa840136c71e255",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -591,7 +591,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-008 — Ata — Reforço do Revisor interno (pacote de evidências, linter de invariantes e banco de regressão)",
-   "in": 3,
+   "in": 4,
    "out": 5
   },
   {
@@ -641,7 +641,7 @@
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revisão, selo do gate e medição do Revisor no banco de estresse",
    "in": 4,
-   "out": 6
+   "out": 7
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -2355,7 +2355,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-008",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-009",
@@ -10683,6 +10683,11 @@
    "from": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
    "to": "atomic-spec.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
