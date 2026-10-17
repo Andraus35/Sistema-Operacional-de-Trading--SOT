@@ -269,6 +269,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registra decisões de procedimento do Orquestrador e autoriza testes; não altera `especificador.md`, `revisor.md`, checklist, método nem regra."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-018",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta uma guarda de codigo no Orquestrador para conferir o parecer do Revisor; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
     }
   ]
 }
