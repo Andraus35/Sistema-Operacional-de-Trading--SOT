@@ -248,6 +248,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Aposenta dois subagentes auxiliares fora do fluxo e acrescenta dois detectores ao gate do Revisor (script); nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-017",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta detectores de codigo ao gate e um hook de fim de turno para o Revisor; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
     }
   ]
 }
