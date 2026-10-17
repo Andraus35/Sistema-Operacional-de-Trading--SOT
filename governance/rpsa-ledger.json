@@ -311,6 +311,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Nenhum arquivo de .claude/agents e alterado; o AGENTS.md ganha so a declaracao de estado PAUSADO do Auditor Externo, ja decidido na DHR-AUDITOR-EXTERNO-007, sem tocar checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-COESAO-003",
+      "data": "2026-10-17",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta a familia RULE-COESAO em RULES.md (escopo dos agentes por definicao); os arquivos dos agentes nao mudam e leem a regra da fonte unica."
     }
   ]
 }
