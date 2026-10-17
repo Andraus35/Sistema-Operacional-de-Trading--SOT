@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "75798f5994dee4079197adcc2d1b09287a51842d75d2705c2f9ad57dc9c586de",
+  "digest": "81800c49f408f20a452625b59c380e7df560799d765ebf5ca8ebd57446458a5a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,7 +10,7 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 51,
+   "in": 52,
    "out": 57
   },
   {
@@ -122,7 +122,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 89,
+   "in": 90,
    "out": 41
   },
   {
@@ -137,7 +137,7 @@
    "area": "raiz",
    "title": "HANDOFF — SOT",
    "in": 8,
-   "out": 18
+   "out": 19
   },
   {
    "path": "README.md",
@@ -157,21 +157,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 196,
+   "in": 198,
    "out": 64
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 55,
+   "in": 56,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 120,
+   "in": 121,
    "out": 34
   },
   {
@@ -213,7 +213,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 179,
+   "in": 180,
    "out": 104
   },
   {
@@ -269,7 +269,7 @@
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 46,
+   "in": 47,
    "out": 3
   },
   {
@@ -290,7 +290,7 @@
    "path": "docs/agentes/INDICE-AGENTES.md",
    "area": "docs",
    "title": "Índice de agentes — Construção × Trading",
-   "in": 14,
+   "in": 15,
    "out": 6
   },
   {
@@ -518,6 +518,13 @@
    "out": 18
   },
   {
+   "path": "docs/handoffs/HO-2026-10-17-20.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 18
+  },
+  {
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
    "area": "governance",
    "title": "HOMOLOGADO — ADR-CONFLUENCE-001 v3",
@@ -626,7 +633,7 @@
    "path": "governance/DHR-AGENTES-001_Ata_Separacao_Agentes_Construcao_e_Trading.md",
    "area": "governance",
    "title": "DHR-AGENTES-001 — Ata — Separação nominal dos agentes de Construção e dos agentes de Trading",
-   "in": 15,
+   "in": 16,
    "out": 9
   },
   {
@@ -717,7 +724,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-009 — Ata — Gate fundido (Classe D) como ferramenta oficial do Revisor, sem Bash",
-   "in": 21,
+   "in": 22,
    "out": 7
   },
   {
@@ -759,14 +766,14 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revisão, selo do gate e medição do Revisor no banco de estresse",
-   "in": 19,
+   "in": 20,
    "out": 6
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-016 — Ata — Fusão do que era útil dos subagentes de 1ª geração no Revisor SOT e aposentadoria deles",
-   "in": 20,
+   "in": 21,
    "out": 9
   },
   {
@@ -780,7 +787,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 6,
+   "in": 7,
    "out": 5
   },
   {
@@ -1172,21 +1179,21 @@
    "path": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-001 — Ata — Decisões D1–D6 sobre roteamento de modelos dos agentes de construção (onda 0 autorizada)",
-   "in": 15,
+   "in": 17,
    "out": 8
   },
   {
    "path": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-002 — Ata — Troca do modelo do Especificador SOT de claude-opus-4-8 para claude-opus-5-5 (ordem expressa, teste posterior)",
-   "in": 5,
+   "in": 7,
    "out": 6
   },
   {
    "path": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-003 — Ata — Roteador determinístico de modelo por tarefa (hook PreToolUse/Agent)",
-   "in": 2,
+   "in": 4,
    "out": 5
   },
   {
@@ -1277,7 +1284,7 @@
    "path": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 23,
+   "in": 24,
    "out": 11
   },
   {
@@ -1620,7 +1627,7 @@
    "path": "governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md",
    "area": "governance",
    "title": "PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orquestrador (etapa BUILD) (PROPOSTA)",
-   "in": 24,
+   "in": 25,
    "out": 13
   },
   {
@@ -1648,7 +1655,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 248,
+   "in": 249,
    "out": 35
   },
   {
@@ -1739,15 +1746,22 @@
    "path": "governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md",
    "area": "governance",
    "title": "Auditoria de tarefas por criticidade e Dossiê de roteamento de modelos (camada meta) — PROPOSTA",
-   "in": 4,
+   "in": 5,
    "out": 21
   },
   {
    "path": "governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md",
    "area": "governance",
    "title": "Telemetria manual — onda 0 de roteamento (rascunho, não normativo)",
-   "in": 3,
+   "in": 4,
    "out": 3
+  },
+  {
+   "path": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "area": "governance",
+   "title": "Teste A (Especificador: Opus 4.8 → 5.5) — protocolo pré-registrado pelas lentes dos 4Es — PROPOSTA",
+   "in": 1,
+   "out": 9
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -2061,7 +2075,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 103,
+   "in": 104,
    "out": 24
   },
   {
@@ -2082,7 +2096,7 @@
    "path": "specs/features/SPEC-004/ABERTURA.md",
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-004: Cognitive Blackboard Protocol",
-   "in": 9,
+   "in": 10,
    "out": 15
   },
   {
@@ -2124,7 +2138,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 57,
+   "in": 59,
    "out": 22
   },
   {
@@ -2475,7 +2489,7 @@
   {
    "id": "DHR-AGENTES-001",
    "defined_in": "governance/DHR-AGENTES-001_Ata_Separacao_Agentes_Construcao_e_Trading.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "DHR-ARQ-001",
@@ -2540,7 +2554,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-009",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-010",
@@ -2570,12 +2584,12 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-015",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
-   "cited_by": 19
+   "cited_by": 20
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-016",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-017",
@@ -2585,7 +2599,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-BL008-001",
@@ -2870,17 +2884,17 @@
   {
    "id": "DHR-ROTEAMENTO-001",
    "defined_in": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
-   "cited_by": 15
+   "cited_by": 17
   },
   {
    "id": "DHR-ROTEAMENTO-002",
    "defined_in": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
-   "cited_by": 5
+   "cited_by": 7
   },
   {
    "id": "DHR-ROTEAMENTO-003",
    "defined_in": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
-   "cited_by": 2
+   "cited_by": 4
   },
   {
    "id": "DHR-RPSA-001",
@@ -2940,7 +2954,7 @@
   {
    "id": "DHR-SPEC006-001",
    "defined_in": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "DHR-SPEC006-PEND-001",
@@ -3165,7 +3179,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 176
+   "cited_by": 177
   },
   {
    "id": "INV-08",
@@ -4275,7 +4289,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 100
+   "cited_by": 101
   },
   {
    "id": "SPEC-004",
@@ -4285,12 +4299,12 @@
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 57
+   "cited_by": 59
   },
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 82
+   "cited_by": 84
   },
   {
    "id": "SPEC-007",
@@ -5633,6 +5647,11 @@
    "from": "HANDOFF.md",
    "to": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
    "type": "id"
+  },
+  {
+   "from": "HANDOFF.md",
+   "to": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "type": "path"
   },
   {
    "from": "HANDOFF.md",
@@ -9886,6 +9905,111 @@
   },
   {
    "from": "docs/handoffs/HO-2026-10-17-19.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "docs/agentes/INDICE-AGENTES.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-AGENTES-001_Ata_Separacao_Agentes_Construcao_e_Trading.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-20.md",
    "to": "specs/features/SPEC-005/plan.md",
    "type": "id"
   },
@@ -20801,6 +20925,51 @@
   },
   {
    "from": "governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "specs/features/SPEC-004/ABERTURA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
    "to": "specs/features/SPEC-005/plan.md",
    "type": "id"
   },

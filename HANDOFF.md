@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-20
-previous: HO-2026-10-17-19
+handoff_id: HO-2026-10-17-21
+previous: HO-2026-10-17-20
 data: 2026-10-17
 branch: ccr-3a0d581c-6cj4ig
 base_commit: 89262bd
@@ -34,11 +34,13 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 
 - **Roteador determinístico de modelos (Andraus: "vamos a isso"; ata `DHR-ROTEAMENTO-003`):** `scripts/roteador_modelos.py` + `roteador-modelos.js` (hook PreToolUse/Agent) + 6 testes (CI). Nega `model`/`effort` por invocação em Especificador/Revisor, Haiku em gate/soberano, modelo fora da tabela. **Registrado** em `.claude/settings.json` e selo regravado (17 arquivos) após autorização de Andraus; **confirmado ao vivo** (Revisor + `model=haiku` negado pelo hook). Limite: classificação por palavra-chave (forma, não mérito).
 
+- **Teste A pelas lentes dos 4Es (Andraus: "vamos realizar o teste"):** protocolo pré-registrado em `governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md` (comportas lexicográficas Conformidade→Eficácia→Efetividade→Eficiência→Economicidade; reprovar numa comporta encerra). **NÃO executado:** faltam (1) limite de cota de Andraus; (2) como servir o braço de controle Opus 4.8 (o `Agent` só aceita aliases e o roteador nega `model` no Especificador); (3) lote congelado (o gabarito de 18 defeitos da SPEC-006 v1.0 não está no repo; Plan SPEC-006 não existe).
+
 ## 4. Verificado
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-Andraus mescla a ata 003 (roteador). Depois: Teste A como verificação posterior só com ordem + limite de cota. Plan da SPEC-006 só por ordem de Andraus.
+Andraus preenche §7 do protocolo do Teste A (limite de cota, braço de controle, lote). Só então executar. Plan da SPEC-006 só por ordem de Andraus.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - DHR-AUDITOR-EXTERNO-015 (na `main`) e -016 (fusão/aposentadoria dos subagentes antigos) — decisões de Andraus em chat, 2026-10-17.
