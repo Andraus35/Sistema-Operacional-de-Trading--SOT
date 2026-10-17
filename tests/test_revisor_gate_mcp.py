@@ -130,3 +130,35 @@ class TestExecucao(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestIntegridadeDoGate(unittest.TestCase):
+    """DHR-AUDITOR-EXTERNO-015: script do gate alterado sem regravar o manifesto => o servidor RECUSA (falha fechada)."""
+
+    def _repo(self, tmp, adulterar):
+        r = Path(tmp)
+        (r / "governance").mkdir()
+        (r / "scripts").mkdir()
+        (r / "governance" / "GATE-MANIFEST.sha256").write_text((ROOT / "governance" / "GATE-MANIFEST.sha256").read_text(encoding="utf-8"), encoding="utf-8")
+        for a in (ROOT / "scripts").glob("*.py"):
+            (r / "scripts" / a.name).write_text(a.read_text(encoding="utf-8"), encoding="utf-8")
+        (r / "specs" / "features" / "SPEC-001").mkdir(parents=True)
+        (r / "specs" / "features" / "SPEC-001" / "plan.md").write_text("# x\n", encoding="utf-8")
+        if adulterar:
+            (r / "scripts" / "check_invariants.py").write_text("# adulterado\n", encoding="utf-8")
+        return str(r)
+
+    def test_script_adulterado_e_recusado(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            r = call({"spec": "SPEC-001", "rapido": True}, env_extra={"SOT_REPO": self._repo(tmp, True)})
+            self.assertTrue(r["result"].get("isError"))
+            self.assertIn("GATE ADULTERADO", texto(r))
+            self.assertIn("check_invariants.py", texto(r))
+
+    def test_manifesto_ausente_e_recusado(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self._repo(tmp, False)
+            (Path(repo) / "governance" / "GATE-MANIFEST.sha256").unlink()
+            r = call({"spec": "SPEC-001", "rapido": True}, env_extra={"SOT_REPO": repo})
+            self.assertTrue(r["result"].get("isError"))
+            self.assertIn("manifesto ausente", texto(r))

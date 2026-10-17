@@ -26,6 +26,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import revisor_gate  # noqa: E402
+import gate_manifest  # noqa: E402
 
 REPO = Path(os.environ.get("SOT_REPO") or HERE.parent).resolve()
 SPEC = re.compile(r"^SPEC-[0-9]{3}$")
@@ -82,6 +83,10 @@ def chamar(args):
     rapido = args.get("rapido", False)
     if not isinstance(rapido, bool):
         return _erro("RECUSADO: 'rapido' deve ser booleano")
+    # Integridade do próprio gate (DHR-AUDITOR-EXTERNO-015): script alterado sem regravar o manifesto = recusa (falha fechada).
+    div = gate_manifest.conferir(REPO)
+    if div:
+        return _erro("RECUSADO: GATE ADULTERADO OU DESATUALIZADO (governance/GATE-MANIFEST.sha256): " + "; ".join(div[:4]))
     base = (REPO / "specs" / "features").resolve()
     plan = (base / spec / "plan.md").resolve()
     if base not in plan.parents or not plan.is_file():
