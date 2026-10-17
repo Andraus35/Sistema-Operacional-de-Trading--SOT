@@ -18,12 +18,13 @@
   {
    "id": "hook.gate-check.precommit",
    "arquivo": "scripts/gate-check.js",
-   "canal": ".pre-commit-config.yaml",
+   "canal": ".pre-commit-config.yaml (retirado)",
    "tipo": "hook",
-   "estado": "inerte-no-op",
+   "estado": "legado",
    "enforca": "(pretendia) o mesmo gate no commit",
-   "nota": "Lê payload de hook (stdin); o pre-commit não o fornece ⇒ exit 0 sempre. Verificado 2026-10-17 (COE-03).",
-   "verificado_em": "2026-10-17: teste manual stdin vazio ⇒ exit 0"
+   "nota": "Retirado do pre-commit em DHR-COESAO-002: lia payload de hook (stdin) e rodava como no-op. Continua como hook de sessão (hook.gate-check.pretooluse).",
+   "verificado_em": "2026-10-17: teste manual stdin vazio ⇒ exit 0",
+   "ata": "DHR-COESAO-002"
   },
   {
    "id": "hook.roteador-modelos",
@@ -318,7 +319,7 @@
    "tipo": "utilitario",
    "estado": "pausado",
    "enforca": "Roteia achados [AEX] do Auditor Externo",
-   "ata": "DHR-AUDITOR-EXTERNO-005",
+   "ata": "DHR-AUDITOR-EXTERNO-007",
    "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007).",
    "verificado_em": "inferido-do-codigo"
   },
@@ -361,7 +362,7 @@
    "estado": "pausado",
    "enforca": "Loop determinístico com o Auditor Externo",
    "ata": "DHR-AUDITOR-EXTERNO-007",
-   "nota": "Declara-se INERTE/NÃO HOMOLOGADO; runs terminam skipped; AGENTS.md §9 ainda descreve o piloto.",
+   "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped.",
    "verificado_em": "inferido-do-codigo"
   },
   {
@@ -382,7 +383,8 @@
    "estado": "ativo",
    "enforca": "Audita e emite parecer (somente leitura)",
    "ata": "DHR-AGENTES-001",
-   "verificado_em": "inferido-do-codigo"
+   "verificado_em": "inferido-do-codigo",
+   "nota": "Passo 0 ainda instrui a chamar a MCP revisor_gate (inerte em nuvem); mantido e documentado em DHR-COESAO-002 (sem alterar este arquivo)."
   },
   {
    "id": "cfg.pre-commit",
@@ -391,8 +393,9 @@
    "tipo": "config",
    "estado": "proposta",
    "enforca": "Valida schemas/specs/mapa/gate no commit",
-   "nota": "Só vale após 'pre-commit install' em cada clone; nenhum hook instalado neste ambiente; o gate-check dali é no-op.",
-   "verificado_em": "inferido-do-codigo"
+   "nota": "Só vale após pre-commit install em cada clone; nenhum hook instalado neste ambiente. gate-check retirado em DHR-COESAO-002.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
   },
   {
    "id": "cfg.eslintrc",
@@ -401,8 +404,9 @@
    "tipo": "config",
    "estado": "legado",
    "enforca": "(nenhum chamador)",
-   "nota": "eslint não é chamado por package.json, CI nem pre-commit (COE-09).",
-   "verificado_em": "inferido-do-codigo"
+   "nota": "MANTIDO de propósito: marcador de sensor (SNS-02/SNS-04) do harness-score (docs/_legacy/HARNESS-REPORT.md); nenhuma ferramenta de lint/format roda. Arquivar baixaria o score de maturidade.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
   },
   {
    "id": "cfg.prettierrc",
@@ -411,38 +415,42 @@
    "tipo": "config",
    "estado": "legado",
    "enforca": "(nenhum chamador)",
-   "nota": "prettier não é chamado por package.json, CI nem pre-commit (COE-09).",
-   "verificado_em": "inferido-do-codigo"
+   "nota": "MANTIDO de propósito: marcador de sensor (SNS-02/SNS-04) do harness-score (docs/_legacy/HARNESS-REPORT.md); nenhuma ferramenta de lint/format roda. Arquivar baixaria o score de maturidade.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
   },
   {
    "id": "skill.sot-harness-spec",
-   "arquivo": ".claude/skills/SKILL.md",
-   "canal": "skill solta",
+   "arquivo": "docs/_legacy/skills/sot-harness-spec_SKILL.md",
+   "canal": "arquivada em docs/_legacy/skills/",
    "tipo": "skill",
    "estado": "legado",
    "enforca": "Referência mestre da geração 1",
-   "nota": "Solta (sem pasta): não é carregada (COE-08); trata o Synthesis Agent como vivo (DHR-ARQ-002).",
-   "verificado_em": "inferido-do-codigo"
+   "nota": "Arquivada (movida, não apagada) em DHR-COESAO-002: estava solta em .claude/skills/ e não era carregada.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
   },
   {
    "id": "skill.update-harness",
-   "arquivo": ".claude/skills/update-harness.md",
-   "canal": "skill solta",
+   "arquivo": "docs/_legacy/skills/update-harness.md",
+   "canal": "arquivada em docs/_legacy/skills/",
    "tipo": "skill",
    "estado": "legado",
    "enforca": "Propaga mudança de fonte ao harness GEN-1",
-   "nota": "Solta (sem pasta): não é carregada (COE-08).",
-   "verificado_em": "inferido-do-codigo"
+   "nota": "Arquivada (movida, não apagada) em DHR-COESAO-002: estava solta em .claude/skills/ e não era carregada.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
   },
   {
    "id": "skill.validate-sot-spec",
-   "arquivo": ".claude/skills/validate-sot-spec.md",
-   "canal": "skill solta",
+   "arquivo": "docs/_legacy/skills/validate-sot-spec.md",
+   "canal": "arquivada em docs/_legacy/skills/",
    "tipo": "skill",
    "estado": "legado",
    "enforca": "Valida spec GEN-1",
-   "nota": "Solta (sem pasta): não é carregada (COE-08).",
-   "verificado_em": "inferido-do-codigo"
+   "nota": "Arquivada (movida, não apagada) em DHR-COESAO-002: estava solta em .claude/skills/ e não era carregada.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
   }
  ]
 }

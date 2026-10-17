@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "7d70a1c94de51fdcc5be59c6119a4698891f37395f627fe377cc04e1213af6a6",
+  "digest": "400641262a3decd7b7a7639c1d7e6889a11a3d629056ce7fa6214503a9e7f5d5",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,14 +10,14 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 57,
-   "out": 57
+   "in": 58,
+   "out": 58
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 46,
+   "in": 47,
    "out": 58
   },
   {
@@ -35,17 +35,10 @@
    "out": 3
   },
   {
-   "path": ".claude/skills/SKILL.md",
-   "area": ".claude",
-   "title": "SOT Harness — Referência Mestre de Especificação",
-   "in": 3,
-   "out": 4
-  },
-  {
    "path": ".claude/skills/harness-eval/SKILL.md",
    "area": ".claude",
    "title": "Harness Eval",
-   "in": 1,
+   "in": 3,
    "out": 3
   },
   {
@@ -75,20 +68,6 @@
    "title": "MISSÃO: PRODUZIR O PAP-001",
    "in": 0,
    "out": 10
-  },
-  {
-   "path": ".claude/skills/update-harness.md",
-   "area": ".claude",
-   "title": "Update SOT Harness from Source Document",
-   "in": 0,
-   "out": 3
-  },
-  {
-   "path": ".claude/skills/validate-sot-spec.md",
-   "area": ".claude",
-   "title": "Validate SOT Agent Spec",
-   "in": 0,
-   "out": 0
   },
   {
    "path": ".clinerules/sot-map.md",
@@ -122,8 +101,8 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 98,
-   "out": 41
+   "in": 100,
+   "out": 43
   },
   {
    "path": "GLOSSARIO.md",
@@ -137,7 +116,7 @@
    "area": "raiz",
    "title": "HANDOFF — SOT",
    "in": 10,
-   "out": 23
+   "out": 24
   },
   {
    "path": "README.md",
@@ -150,28 +129,28 @@
    "path": "RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md",
    "area": "RETOMADA",
    "title": "GEH-001 — Guia do Agente Especialista em Especificações e Harness",
-   "in": 40,
+   "in": 39,
    "out": 1
   },
   {
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 205,
+   "in": 206,
    "out": 64
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 60,
+   "in": 61,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 127,
+   "in": 128,
    "out": 34
   },
   {
@@ -213,28 +192,28 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 185,
+   "in": 186,
    "out": 104
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 91,
+   "in": 90,
    "out": 6
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 82,
+   "in": 81,
    "out": 4
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 108,
+   "in": 109,
    "out": 2
   },
   {
@@ -262,14 +241,14 @@
    "path": "canon/PPQ-001-project-process-quality.md",
    "area": "canon",
    "title": "PPQ-001 — Especificação de Gestão de Projetos, Processos e Qualidade",
-   "in": 25,
+   "in": 24,
    "out": 3
   },
   {
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 51,
+   "in": 52,
    "out": 3
   },
   {
@@ -290,7 +269,7 @@
    "path": "docs/agentes/INDICE-AGENTES.md",
    "area": "docs",
    "title": "Índice de agentes — Construção × Trading",
-   "in": 19,
+   "in": 20,
    "out": 6
   },
   {
@@ -298,7 +277,7 @@
    "area": "docs",
    "title": "AUDITORIA DO ESTADO ATUAL DOS AGENTES E HARNESS",
    "in": 2,
-   "out": 20
+   "out": 19
   },
   {
    "path": "docs/arranque/MANIFESTO-reorganizacao.md",
@@ -553,6 +532,13 @@
    "out": 22
   },
   {
+   "path": "docs/handoffs/HO-2026-10-17-25.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 23
+  },
+  {
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
    "area": "governance",
    "title": "HOMOLOGADO — ADR-CONFLUENCE-001 v3",
@@ -563,7 +549,7 @@
    "path": "governance/ADR-MANAGER-001_Manager_Agent_Architecture.md",
    "area": "governance",
    "title": "ADR-MANAGER-001 — Manager Agent: Arquitetura Unificada de Orquestração",
-   "in": 33,
+   "in": 32,
    "out": 1
   },
   {
@@ -584,7 +570,7 @@
    "path": "governance/AUDITORIA-COESAO-MECANISMOS-2026-10-17.md",
    "area": "governance",
    "title": "Auditoria de coesão dos mecanismos do repositório (2026-10-17)",
-   "in": 5,
+   "in": 6,
    "out": 17
   },
   {
@@ -605,7 +591,7 @@
    "path": "governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md",
    "area": "governance",
    "title": "Avaliação dos mecanismos (regras, guardrails, hooks, policy, determinísticos) para elevar a maturidade do Revisor SOT",
-   "in": 10,
+   "in": 11,
    "out": 10
   },
   {
@@ -626,7 +612,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 102,
+   "in": 103,
    "out": 183
   },
   {
@@ -647,7 +633,7 @@
    "path": "governance/CONFLICT-MAP.md",
    "area": "governance",
    "title": "Conflict Map — SOT (Sistema Operacional de Trading)",
-   "in": 45,
+   "in": 44,
    "out": 36
   },
   {
@@ -668,14 +654,14 @@
    "path": "governance/DHR-AGENTES-001_Ata_Separacao_Agentes_Construcao_e_Trading.md",
    "area": "governance",
    "title": "DHR-AGENTES-001 — Ata — Separação nominal dos agentes de Construção e dos agentes de Trading",
-   "in": 21,
+   "in": 22,
    "out": 9
   },
   {
    "path": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
    "area": "governance",
    "title": "DHR-ARQ-001 — Ata de Unificação: Manager Agent absorve o Conviction Engine (propagação do ADR-MANAGER-001 / CEM-001 DIV-CEM-4)",
-   "in": 20,
+   "in": 19,
    "out": 13
   },
   {
@@ -689,7 +675,7 @@
    "path": "governance/DHR-ASK-002_Ata_Regra_Fim_de_Turno_PROPOSTA.md",
    "area": "governance",
    "title": "DHR-ASK-002 — Ata — Regra de fim de turno do Orquestrador (decisão de Andraus por AskUserQuestion)",
-   "in": 6,
+   "in": 7,
    "out": 4
   },
   {
@@ -752,8 +738,8 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Pausa do Auditor Externo e reforço do Revisor interno",
-   "in": 5,
-   "out": 6
+   "in": 7,
+   "out": 7
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-008_Ata_Reforco_do_Revisor.md",
@@ -766,7 +752,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-009 — Ata — Gate fundido (Classe D) como ferramenta oficial do Revisor, sem Bash",
-   "in": 26,
+   "in": 27,
    "out": 7
   },
   {
@@ -808,14 +794,14 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revisão, selo do gate e medição do Revisor no banco de estresse",
-   "in": 24,
+   "in": 25,
    "out": 6
   },
   {
    "path": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-016 — Ata — Fusão do que era útil dos subagentes de 1ª geração no Revisor SOT e aposentadoria deles",
-   "in": 26,
+   "in": 27,
    "out": 9
   },
   {
@@ -829,7 +815,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 11,
+   "in": 13,
    "out": 5
   },
   {
@@ -878,6 +864,13 @@
    "path": "governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md",
    "area": "governance",
    "title": "DHR-COESAO-001 — Ata — Decisões de Andraus sobre a auditoria de coesão dos mecanismos",
+   "in": 6,
+   "out": 8
+  },
+  {
+   "path": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "area": "governance",
+   "title": "DHR-COESAO-002 — Ata — Decisões de Andraus sobre Auditor Externo, pre-commit, camadas do Revisor em nuvem e legado",
    "in": 3,
    "out": 8
   },
@@ -1228,7 +1221,7 @@
    "path": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-001 — Ata — Decisões D1–D6 sobre roteamento de modelos dos agentes de construção (onda 0 autorizada)",
-   "in": 20,
+   "in": 21,
    "out": 8
   },
   {
@@ -1242,7 +1235,7 @@
    "path": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-003 — Ata — Roteador determinístico de modelo por tarefa (hook PreToolUse/Agent)",
-   "in": 7,
+   "in": 8,
    "out": 5
   },
   {
@@ -1333,7 +1326,7 @@
    "path": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 28,
+   "in": 29,
    "out": 11
   },
   {
@@ -1473,7 +1466,7 @@
    "path": "governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md",
    "area": "governance",
    "title": "Estudo — garantias determinísticas para prevenir os erros de coesão (hooks, rules, schema, policy)",
-   "in": 4,
+   "in": 5,
    "out": 8
   },
   {
@@ -1683,7 +1676,7 @@
    "path": "governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md",
    "area": "governance",
    "title": "PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orquestrador (etapa BUILD) (PROPOSTA)",
-   "in": 30,
+   "in": 31,
    "out": 13
   },
   {
@@ -2124,7 +2117,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 108,
+   "in": 107,
    "out": 24
   },
   {
@@ -2187,7 +2180,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 62,
+   "in": 63,
    "out": 22
   },
   {
@@ -2538,12 +2531,12 @@
   {
    "id": "DHR-AGENTES-001",
    "defined_in": "governance/DHR-AGENTES-001_Ata_Separacao_Agentes_Construcao_e_Trading.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "DHR-ARQ-001",
    "defined_in": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
-   "cited_by": 20
+   "cited_by": 19
   },
   {
    "id": "DHR-ARQ-002",
@@ -2553,7 +2546,7 @@
   {
    "id": "DHR-ASK-002",
    "defined_in": "governance/DHR-ASK-002_Ata_Regra_Fim_de_Turno_PROPOSTA.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-ASSINATURA-001",
@@ -2598,7 +2591,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-007",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
-   "cited_by": 5
+   "cited_by": 7
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-008",
@@ -2608,7 +2601,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-009",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
-   "cited_by": 25
+   "cited_by": 26
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-010",
@@ -2638,12 +2631,12 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-015",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-016",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-017",
@@ -2653,7 +2646,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 11
+   "cited_by": 13
   },
   {
    "id": "DHR-BL008-001",
@@ -2688,6 +2681,11 @@
   {
    "id": "DHR-COESAO-001",
    "defined_in": "governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md",
+   "cited_by": 6
+  },
+  {
+   "id": "DHR-COESAO-002",
+   "defined_in": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
    "cited_by": 3
   },
   {
@@ -2943,7 +2941,7 @@
   {
    "id": "DHR-ROTEAMENTO-001",
    "defined_in": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "DHR-ROTEAMENTO-002",
@@ -2953,7 +2951,7 @@
   {
    "id": "DHR-ROTEAMENTO-003",
    "defined_in": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-RPSA-001",
@@ -3013,7 +3011,7 @@
   {
    "id": "DHR-SPEC006-001",
    "defined_in": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "DHR-SPEC006-PEND-001",
@@ -3238,7 +3236,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 178
+   "cited_by": 179
   },
   {
    "id": "INV-08",
@@ -3728,7 +3726,7 @@
   {
    "id": "RULE-EW",
    "defined_in": "governance/CONFLICT-MAP.md",
-   "cited_by": 4
+   "cited_by": 3
   },
   {
    "id": "RULE-EW-001",
@@ -3758,7 +3756,7 @@
   {
    "id": "RULE-FB",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 1
   },
   {
    "id": "RULE-FB-001",
@@ -3943,7 +3941,7 @@
   {
    "id": "RULE-ICT",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 1
   },
   {
    "id": "RULE-ICT-001",
@@ -4178,7 +4176,7 @@
   {
    "id": "RULE-SM",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 1
   },
   {
    "id": "RULE-SM-001",
@@ -4208,7 +4206,7 @@
   {
    "id": "RULE-SY",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 2
+   "cited_by": 1
   },
   {
    "id": "RULE-SY-001",
@@ -4333,7 +4331,7 @@
   {
    "id": "RULE-XX",
    "defined_in": "atomic-spec.md",
-   "cited_by": 1
+   "cited_by": 0
   },
   {
    "id": "SPEC-001",
@@ -4358,12 +4356,12 @@
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 62
+   "cited_by": 63
   },
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 88
+   "cited_by": 89
   },
   {
    "id": "SPEC-007",
@@ -4408,7 +4406,7 @@
   {
    "id": "SPEC-015",
    "defined_in": "ROADMAP.md",
-   "cited_by": 24
+   "cited_by": 23
   },
   {
    "id": "SPEC-016",
@@ -4635,6 +4633,11 @@
   {
    "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md",
    "type": "id"
   },
   {
@@ -4939,6 +4942,11 @@
   },
   {
    "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-DEC-001_Ata_Decisoes_QA5_RISKCONV_RISKARR.md",
    "type": "id"
   },
@@ -5040,11 +5048,6 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/agents/revisor.md",
-   "to": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
    "type": "id"
   },
   {
@@ -5188,26 +5191,6 @@
    "type": "id"
   },
   {
-   "from": ".claude/skills/SKILL.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/skills/SKILL.md",
-   "to": "atomic-spec.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/skills/SKILL.md",
-   "to": "governance/DHR-ARQ-001_Ata_Unificacao_Manager_Conviction.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/skills/SKILL.md",
-   "to": "specs/features/SPEC-003/plan.md",
-   "type": "id"
-  },
-  {
    "from": ".claude/skills/harness-eval/SKILL.md",
    "to": ".claude/skills/harness-eval/references/GLOSSARY.md",
    "type": "path"
@@ -5224,7 +5207,7 @@
   },
   {
    "from": ".claude/skills/harness-eval/references/PROTOCOL.md",
-   "to": ".claude/skills/SKILL.md",
+   "to": ".claude/skills/harness-eval/SKILL.md",
    "type": "path"
   },
   {
@@ -5300,21 +5283,6 @@
   {
    "from": ".claude/skills/sot-especificador-pap001/SKILL.md",
    "to": "specs/features/SPEC-004/plan.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/skills/update-harness.md",
-   "to": "governance/CONFLICT-MAP.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/skills/update-harness.md",
-   "to": "governance/RULES.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/skills/update-harness.md",
-   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {
@@ -5409,7 +5377,17 @@
   },
   {
    "from": "AGENTS.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
    "type": "id"
   },
   {
@@ -5705,6 +5683,11 @@
   {
    "from": "HANDOFF.md",
    "to": "governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md",
+   "type": "id"
+  },
+  {
+   "from": "HANDOFF.md",
+   "to": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
    "type": "id"
   },
   {
@@ -7665,11 +7648,6 @@
   {
    "from": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
    "to": ".claude/agents/revisor.md",
-   "type": "path"
-  },
-  {
-   "from": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
-   "to": ".claude/skills/SKILL.md",
    "type": "path"
   },
   {
@@ -10558,6 +10536,136 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "docs/agentes/INDICE-AGENTES.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/AUDITORIA-COESAO-MECANISMOS-2026-10-17.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-AGENTES-001_Ata_Separacao_Agentes_Construcao_e_Trading.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-ASK-002_Ata_Regra_Fim_de_Turno_PROPOSTA.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-25.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/ADR-MANAGER-001_Manager_Agent_Architecture.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -13039,6 +13147,11 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "to": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -13824,6 +13937,46 @@
   },
   {
    "from": "governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -18329,7 +18482,7 @@
   },
   {
    "from": "governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md",
-   "to": ".claude/skills/SKILL.md",
+   "to": ".claude/skills/harness-eval/SKILL.md",
    "type": "path"
   },
   {

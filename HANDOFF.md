@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-25
-previous: HO-2026-10-17-24
+handoff_id: HO-2026-10-17-26
+previous: HO-2026-10-17-25
 data: 2026-10-17
 branch: ccr-7917ac44-2l55cz
-base_commit: db32790
+base_commit: 42563fe
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -21,6 +21,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 ## 3. Feito nesta sessão
 - **Revisão independente de outro modelo (critério L3) na SPEC-006 v1.3 (Plan candidato no ramo `spec006-plan`, fora da main):** 2 modelos externos **sem repositório** → 10 achados: 2 falsos, 4 lacunas já declaradas pelo autor, 4 reais (todos já no Revisor interno); **0 defeito real exclusivo de externo**; Revisor interno achou ≥9 que nenhum externo viu. Registro em `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md` §7 e §7.1. Conclusão: independência sem leitura do repositório rende pouco.
 - **Próxima rodada (Andraus faz no VS Code com Copilot COM acesso ao repo em nuvem):** prompt pronto em `revisao-independente/PEDIDO-COPILOT-COM-REPO.txt` (autoriza leitura, indica o ramo/caminho do Plan, proíbe abrir pastas do Revisor para preservar independência). Andraus cola o JSON de volta aqui; conferir cada achado contra o texto real e comparar com o Revisor interno (2 rodadas já feitas; achados A-01..A-10 / F-01..F-14, 1 crítico: herança "preservar todos os estados" × admissão INDETERMINADA × CEM-001:494).
+- **PR #111 mesclado** (CI verde). **Segunda rodada de decisões (ata `DHR-COESAO-002`):** Auditor Externo = PAUSADO (AGENTS §9 + status da ata -007); `gate-check` retirado do pre-commit; camadas do Revisor inertes em nuvem mantidas e documentadas (revisor.md intacto); 3 skills soltas arquivadas em `docs/_legacy/skills/` — **`.eslintrc.json`/`.prettierrc` mantidos** (sensores do harness-score; desvio explicado na ata §1.4). Registro de mecanismos atualizado. Detector `check_coesao`: ERRO=0.
 - **Decisões de Andraus (4 AskUserQuestion, ata `DHR-COESAO-001`):** (1) mesclar #111 após CI verde; (2) COE-01/02/04/05 viram bloqueantes no CI — feito, com `roadmap.md`→`ROADMAP.md` nos dois agentes (autorizado); (3) registro de mecanismos `governance/MECANISMOS.json`+schema como **PROPOSTA** com detector COE-14 (AGENTS não alterado); (4) proteger a `main` exigindo CI + dono — **configuração só de Andraus** (risco: autor=dono bloqueia o próprio merge sem bypass, ata §3); CODEOWNERS +7 linhas feito; selo **não** regravado.
 - **Auditoria de coesão (a pedido de Andraus):** suíte verde (226 py + 4 hook-js + schemas + lint). 6 achados de duas verdades, 6 de ociosidade; corrigido o operacional (HANDOFF, README, CI com os testes que faltavam, ata DHR-ASK-002 PROPOSTA) + **detector `scripts/check_coesao.py` (COE-01..13, 17 testes, CI informativo)** e estudo `governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md` (hooks×CI×pre-commit×selo×schema×policy; 8 propostas que dependem de Andraus, ex.: registro de mecanismos como dado e promover COE-01/02/04/05 a bloqueantes); nada em AGENTS/agentes/CODEOWNERS/canon/ROADMAP. Copilot: **mantido pendente** por Andraus.
 - **Copilot COM repo (§7.2 da avaliação) recebido e conferido:** NAO_CONFORME, 4 achados, 0 falsos, citações todas corretas. A-01 (D6.5 incondicional × CKG-005/T12) e A-02 (CKG-010(a) INDETERMINADO × cobertura "13 BASpecs verificáveis", plan.md:1310-1311 + EC-CKG-001) procedem e já estavam no Revisor (A-02 com ângulo novo na 1310-1311); A-03 (`collision_record`/`canonical_state_transition_record` sem version/supersedes/proveniência) procede, A-04 (bounded loop sem valor) procede em parte — ambos **não classificáveis** sem o texto integral dos achados do Revisor (não versionado). Severidade inflada; recall baixo; 0 exclusivo de externo. Andraus: **avançar com o que há** (sem rodada 2). Prompt da rodada 2 foi entregue no chat (não versionado).
@@ -43,7 +44,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-Andraus: (a) configurar a proteção da `main` (Settings → Branches; ata DHR-COESAO-001 §3), (b) assinar o registro de mecanismos como VIGENTE quando quiser que o AGENTS.md aponte para ele. Andraus decide sobre o PR da auditoria de coesão (`governance/AUDITORIA-COESAO-MECANISMOS-2026-10-17.md`): ratificar a ata `DHR-ASK-002` e decidir D1/D5/D6/O1/O3/O4/O5 (só dele). Depois: Teste A como verificação posterior só com ordem + limite de cota. Plan da SPEC-006 só por ordem de Andraus.
+Andraus: (0) mesclar o PR da DHR-COESAO-002; (a) configurar a proteção da `main` (Settings → Branches; ata DHR-COESAO-001 §3), (b) assinar o registro de mecanismos como VIGENTE quando quiser que o AGENTS.md aponte para ele. Andraus decide sobre o PR da auditoria de coesão (`governance/AUDITORIA-COESAO-MECANISMOS-2026-10-17.md`): ratificar a ata `DHR-ASK-002` e decidir D1/D5/D6/O1/O3/O4/O5 (só dele). Depois: Teste A como verificação posterior só com ordem + limite de cota. Plan da SPEC-006 só por ordem de Andraus.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - DHR-AUDITOR-EXTERNO-015 (na `main`) e -016 (fusão/aposentadoria dos subagentes antigos) — decisões de Andraus em chat, 2026-10-17.
