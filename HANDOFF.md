@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-11
-previous: HO-2026-10-17-10
+handoff_id: HO-2026-10-17-12
+previous: HO-2026-10-17-11
 data: 2026-10-17
 branch: ccr-d43bf9b0-h336k5
 base_commit: 7ff02a3
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **Diagnóstico do gate MCP em nuvem (teste direto):** o Revisor invocado aqui **não tem a ferramenta `mcp__sot-revisor-gate__revisor_gate` na lista** (só Read/Grep/Glob) — não é erro de chamada, o servidor inline do frontmatter não é carregado no subagente. O servidor responde normal quando chamado direto (`initialize`/`tools/list` OK; selo íntegro). A guarda da DHR-AUDITOR-EXTERNO-017 (gate rodado pelo harness) cobre; só vale em sessão nova. **Decisão de Andraus (chat):** confirmar a guarda em sessão nova antes de mexer; correção por registro da ferramenta no nível do projeto só com ordem expressa + nova ata (mexe no perímetro do selo). **Piloto da onda 1 só depois da guarda confirmada.**
 - **Frente roteamento de modelos (4Es):** proposta `governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md`; ata `governance/DHR-ROTEAMENTO-001_*` (D1–D6: onda 0 autorizada; testes ≥3 repetições, zero perda em Crítico/Alto, métrica = tokens por defeito confirmado — cobrança por cota; emenda sucessora da EUA-E19 só após evidência; `effort` no frontmatter só após varredura). Telemetria manual: `governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md`. Piloto da onda 1 = Teste A em 1 Spec, 3 repetições (limite de cota pequeno), **só por ordem expressa**.
 - **Separação Agentes de Construção (AC) × Agentes de Trading (AT):** ata `governance/DHR-AGENTES-001_*`, `GLOSSARIO.md` §1-bis, `AGENTS.md` §2/§3, `docs/agentes/INDICE-AGENTES.md`. Nada movido. "Trilha A/B" do CATALOGO é outro eixo.
 - **Fusão com a main** (PRs #104/#105: DHR-AUDITOR-EXTERNO-016/017 já mesclados): conflitos de HANDOFF/mapa/catálogo resolvidos; meus HO-07..09 anteriores foram descartados em favor dos da main (cadeia única); referências a `sot-*` atualizadas (aposentados).
@@ -37,6 +38,8 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 - Não conferido nesta sessão: CI da `main`, PRs abertos, `check_refs`.
 
 ## 5. Próximo passo único
+Em sessão **nova**: rodar uma revisão curta com o Revisor e confirmar que a guarda força o gate/núcleo (G1/G2/G3) — só então ordenar o piloto da onda 1. (Passos anteriores mantidos abaixo.)
+
 Sem ordem em contrário: (1) em sessão **nova**, confirmar ao vivo o hook do Revisor (§9) — a guarda da DHR-AUDITOR-EXTERNO-017 já contorna o MCP que não carrega; (2) aplicar a onda 0 na próxima rodada Especificador→Revisor (pré-gate + linha na telemetria). Plan da SPEC-006 só por ordem de Andraus. (Texto anterior preservado abaixo.)
 
 Ler este handoff, executar §9 e, sem outra ordem de Andraus, **não** iniciar o Plan da SPEC-006; perguntar a prioridade (§10).
