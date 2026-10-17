@@ -297,6 +297,20 @@
       "em_escopo": true,
       "sync": "fonte-unica",
       "motivo": "Corrige apenas a caixa do nome ROADMAP.md nos textos dos dois agentes; nao altera instrucao, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-ASK-002",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Apenas registra por ata uma regra já aplicada por hook; nenhum arquivo de agente nem checklist é alterado."
+    },
+    {
+      "id": "DHR-COESAO-002",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Nenhum arquivo de .claude/agents e alterado; o AGENTS.md ganha so a declaracao de estado PAUSADO do Auditor Externo, ja decidido na DHR-AUDITOR-EXTERNO-007, sem tocar checklist, metodo nem regra."
     }
   ]
 }
