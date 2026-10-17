@@ -255,6 +255,20 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Acrescenta detectores de codigo ao gate e um hook de fim de turno para o Revisor; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-AGENTES-001",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta classificação e vocabulário (famílias AC/AT) em AGENTS.md/GLOSSARIO.md; não altera `especificador.md`, `revisor.md`, checklist, método nem regra."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-001",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra decisões de procedimento do Orquestrador e autoriza testes; não altera `especificador.md`, `revisor.md`, checklist, método nem regra."
     }
   ]
 }
