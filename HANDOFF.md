@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-33
-previous: HO-2026-10-17-30
+handoff_id: HO-2026-10-17-34
+previous: HO-2026-10-17-33
 data: 2026-10-17
 branch: ccr-7917ac44-2l55cz
-base_commit: d23ef3a
+base_commit: 96392a8
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -48,7 +48,9 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-Andraus decide o rumo do Plan da SPEC-006: rodada 7 com consolidação (reduzir cópias a referências a D4), dividir a Spec (Q-ABERTURA-5) ou parar. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
+**Nova sessão: PLANEJAR A DIVISÃO DA SPEC-006 (ordem de Andraus, 2026-10-17). Só planejar/propor — não homologar, não fechar decisão aberta, não escrever o Plan das Specs resultantes.**
+Como começar: (1) `git fetch origin spec006-plan` e ler, nesse ramo, `specs/features/SPEC-006/plan.md` (v1.6), `checks.md`, `parecer-revisor-rodada5.md`, `-rodada6.md`, `-rodada7.md`, `ABERTURA.md`, `research.md`; (2) ler `governance/DHR-SPEC006-001_*` (Q-ABERTURA-5: se o Plan ficar grande demais para revisar de uma vez, o Especificador volta a Andraus para PROPOR divisão) e `AGENTS.md` §5 "Abertura de Spec" (número/quantidade/fronteira das Specs são definidos na abertura, por proposta do Especificador após Dossiê, e homologados por Andraus); (3) re-apontamento: gatilhos do RMR-001 que citam SPEC-006 (BL-003, BL-011 ATIVADOS, DHR-BACKLOG-001) e o ROADMAP (slots indicativos; qualquer divisão exige re-apontamento homologado — RMR-001 "Re-apontamento de gatilhos"); (4) acionar o Especificador SOT para uma PROPOSTA de divisão (fronteiras, decisões abertas por Spec, dependências, o que cada Spec herda, ordem), com opções e prós/contras para Andraus decidir via AskUserQuestion. Indícios dos pareceres para o corte: o núcleo do grafo (ontologia, envelope, estado, proveniência, versões) vs. causalidade/colisão (CKG-008/013) vs. fronteira de entrada/selo (CKG-010, SPEC-007). A causa dos achados é a mesma regra copiada em várias seções — a divisão deve reduzir cópias, não só linhas.
+Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - DHR-AUDITOR-EXTERNO-015 (na `main`) e -016 (fusão/aposentadoria dos subagentes antigos) — decisões de Andraus em chat, 2026-10-17.
