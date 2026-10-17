@@ -50,3 +50,21 @@
 3. Ata de política: `RULE-REV-01..03` (parecer com VEREDITO D do harness; núcleo do Passo 0 aberto; citação verificada) + emenda do `revisor.md` — **decisão de Andraus**.
 4. Reativar o Auditor Externo numa Spec CRITICAL e/ou Andraus escrever 3–5 defeitos (L3.2).
 5. Erratum da SPEC-003 (10 × 11 critérios EARS) — baseline, só Andraus (INV-07).
+
+## 7. Teste de revisão independente de outro modelo (critério L3) — SPEC-006 Plan v1.3, 2026-10-17
+**Desenho.** O mesmo Plan candidato (SPEC-006 v1.3, ramo `spec006-plan`, fora da `main`; 1428 linhas) foi auditado por (a) outro modelo LLM de outra empresa, **sem acesso ao repositório**, com prompt de rigor adversarial e saída em JSON (Andraus executou), e (b) o Revisor interno (`claude-sonnet-5-5`), 2 rodadas, **com** acesso ao repositório. Os achados foram conferidos por mim contra o texto real.
+
+| | Outro modelo (sem repositório) | Revisor interno (2 rodadas, com repositório) |
+|---|---|---|
+| Achados | 6 (2 críticos, 4 médios) | 1 crítico + 9 médios (1ª rodada); 1 crítico + 10 médios + 10 menores (2ª) — grande sobreposição entre as duas |
+| Procedem ao conferir no texto | **0 críticos procedem.** Os 2 críticos (K-01/F-01) são **leitura errada**: o T01 é o cenário **negativo** que usa `school=ICT` para provar que o gate rejeita (plan.md:872 "Violação de integridade → rejeição"); 3 médios apontam lacunas **declaradas** como INDETERMINADO/gap aberto; 1 média coincide com o defeito real da herança | **Todos os que conferi procedem** (≥10 verificados no texto: D6 exige `gate_record` incondicional contra CKG-005; campo `ref` ausente do schema; `PENDING_ANCESTOR` fora do D5 apesar de "resolvido"; `COL-EXP` só em 1 linha; `REFUTED` inexistente no CEM-001; `school` sem origem canônica e Fractal ausente da enumeração; etc.) |
+| Defeito real principal (herança "preservar todos os estados" × admissão INDETERMINADA × CEM-001:494) | achou como **média** (M-01) | achou como **crítico** nas 2 rodadas |
+| Defeitos reais que só um achou | 0 | ≥9 |
+
+**Leitura.**
+1. **Não há evidência de ponto cego do Revisor interno nesta Spec:** o outro modelo não achou nenhum defeito real que o Revisor interno tenha perdido (o único real que achou, o Revisor achou com severidade maior).
+2. **A independência sem acesso ao repositório tem baixo valor e custo de ruído:** sem poder abrir CEM-001, SPEC-001, RULES ou o RMR-001, o modelo externo não confere atribuições nem estados e **erra por leitura** (2 críticos falsos). Para a "revisão independente" do L3 ser útil, o auditor de outra família precisa de **acesso somente leitura ao repositório** (como o desenho do Auditor Externo / Codex em `governance/propostas/AUDITOR-EXTERNO/`), não só do texto.
+3. Reforça a regra de uso do JSON externo: **achado de outro modelo é dado a verificar** (DIR-002), nunca veredito. Aqui 2 de 6 eram falsos e 3 de 6 eram lacunas já declaradas.
+4. **Limites:** uma Spec, um modelo externo, uma execução; severidades não comparáveis; o Revisor interno também rodou sem o gate (hook não ativo na sessão) e sem diff de versão anterior.
+
+**Consequência para o L3 formal:** o teste cumpre "revisão por outra família" **no formato texto-só**, e o resultado é *consistente* com o Revisor interno (sem divergência real), mas **não** valida o Revisor contra um auditor com repositório. Para fechar a lacuna: Auditor Externo reativado em Spec CRITICAL, ou defeitos escritos por Andraus.

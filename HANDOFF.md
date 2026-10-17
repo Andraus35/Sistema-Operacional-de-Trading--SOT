@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-12
-previous: HO-2026-10-17-11
+handoff_id: HO-2026-10-17-13
+previous: HO-2026-10-17-12
 data: 2026-10-17
-branch: ccr-d43bf9b0-h336k5
-base_commit: 7ff02a3
+branch: ccr-7917ac44-2l55cz
+base_commit: 89262bd
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **Revisão independente (outro modelo) na SPEC-006 v1.3:** Andraus rodou o prompt (`revisao-independente/`, não versionado) em outro LLM sem repositório → 6 achados, **2 críticos falsos** (leitura errada do T01 negativo). Revisor interno (2 rodadas): 1 crítico + 9–10 médias, todos os conferidos procedem. Sem ponto cego do Revisor achado; independência sem acesso ao repositório tem pouco valor (precisa de leitura do repositório). Registro: `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md` §7.
 - **Diagnóstico do gate MCP em nuvem (teste direto):** o Revisor invocado aqui **não tem a ferramenta `mcp__sot-revisor-gate__revisor_gate` na lista** (só Read/Grep/Glob) — não é erro de chamada, o servidor inline do frontmatter não é carregado no subagente. O servidor responde normal quando chamado direto (`initialize`/`tools/list` OK; selo íntegro). A guarda da DHR-AUDITOR-EXTERNO-017 (gate rodado pelo harness) cobre; só vale em sessão nova. **Decisão de Andraus (chat):** confirmar a guarda em sessão nova antes de mexer; correção por registro da ferramenta no nível do projeto só com ordem expressa + nova ata (mexe no perímetro do selo). **Piloto da onda 1 só depois da guarda confirmada.**
 - **Frente roteamento de modelos (4Es):** proposta `governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md`; ata `governance/DHR-ROTEAMENTO-001_*` (D1–D6: onda 0 autorizada; testes ≥3 repetições, zero perda em Crítico/Alto, métrica = tokens por defeito confirmado — cobrança por cota; emenda sucessora da EUA-E19 só após evidência; `effort` no frontmatter só após varredura). Telemetria manual: `governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md`. Piloto da onda 1 = Teste A em 1 Spec, 3 repetições (limite de cota pequeno), **só por ordem expressa**.
 - **Separação Agentes de Construção (AC) × Agentes de Trading (AT):** ata `governance/DHR-AGENTES-001_*`, `GLOSSARIO.md` §1-bis, `AGENTS.md` §2/§3, `docs/agentes/INDICE-AGENTES.md`. Nada movido. "Trilha A/B" do CATALOGO é outro eixo.
