@@ -140,6 +140,14 @@ jobs:
             exit 1
           }
 
+      # Testes que existiam e não rodavam no CI (auditoria de coesão 2026-10-17, achado O2): detectores de mapa/sync/handoff/refs/backlog
+      # e as 4 suítes de hook em Node que sustentam as regras de Andraus. Sem 'continue-on-error': regressão aqui é falha real.
+      - name: Detector tests and hook tests (previously not in CI)
+        run: |
+          git fetch --unshallow --quiet || true
+          python -m unittest tests/test_build_map.py tests/test_check_doc_sync.py tests/test_check_handoff.py tests/test_check_refs.py tests/test_backlog_triggers.py tests/test_struct10.py
+          npm run test:hooks
+
       - name: Check required files present
         run: |
           required_files=(
