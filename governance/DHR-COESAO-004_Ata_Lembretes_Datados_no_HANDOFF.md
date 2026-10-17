@@ -14,8 +14,8 @@
 ## 1. Problema e decisão `[FATO]`
 Melhorias combinadas em chat (proteger a `main`, assinar o registro de mecanismos) dependem de alguém lembrar numa sessão nova. Decisão: **tornar o lembrete um dado verificável**, não memória. Linha do `HANDOFF.md` com `[PRAZO: AAAA-MM-DD]` passa a gerar **HO-10 (WARN)** quando a data chega; como o hook `SessionStart` já exibe os WARN/ERRO do `check_handoff.py` a cada abertura de sessão, o lembrete reaparece sozinho até a linha ser resolvida (apagada) ou remarcada. É **Detector, não Gate** (ENF-03): nunca bloqueia, nunca decide.
 
-## 2. Lembretes criados nesta ata (HANDOFF HO-28 §10)
-Proteger a `main` exigindo só o CI — 2026-10-18 · assinar o registro de mecanismos como VIGENTE se não houver falso alarme — 2026-10-24 · proteção com revisão de dono (com bypass de administrador) — 2026-10-31. As ações em *Settings* e a assinatura do registro seguem **só de Andraus**.
+## 2. Lembretes criados nesta ata (HANDOFF §10)
+Assinar o registro de mecanismos como VIGENTE se não houver falso alarme — 2026-10-24 · decidir sobre a proteção da `main` — 2026-10-24. **Correção após fato novo:** Andraus criou o ruleset "MAIN PROTECTION" e o GitHub avisou que, em repositório **privado** sem **GitHub Team**, ele **não é aplicado**; os lembretes originais (CI em 2026-10-18; revisão de dono em 2026-10-31) foram substituídos por esta decisão. As ações em *Settings* e a assinatura do registro seguem **só de Andraus**.
 
 ## 3. Efeitos e limites
 `scripts/check_handoff.py` (HO-10, `--hoje` para testes) e `tests/test_check_handoff.py` (+1); HANDOFF. Limite: só funciona se o Orquestrador mantiver os `[PRAZO]` no HANDOFF a cada reescrita (o `check_handoff` já exige reescrita quando há defasagem, HO-03). Sessão sem hooks (outra ferramenta) não vê o aviso automático, mas o HANDOFF continua sendo lido por regra (`AGENTS.md` §11).
