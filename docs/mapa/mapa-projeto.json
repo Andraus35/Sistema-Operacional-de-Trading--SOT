@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "6d202b66d883b4090132ea0bd2a9d487e674b38a124bf8ce00a70537ddb0e88e",
+  "digest": "75798f5994dee4079197adcc2d1b09287a51842d75d2705c2f9ad57dc9c586de",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 51,
-   "out": 58
+   "out": 57
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
    "in": 45,
-   "out": 57
+   "out": 58
   },
   {
    "path": ".claude/commands/update-spec.md",
@@ -752,7 +752,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-014 — Ata — Revisor SOT: modelo elevado e Passo 4-ter (inventário e conferência de afirmações)",
-   "in": 16,
+   "in": 15,
    "out": 7
   },
   {
@@ -1179,7 +1179,7 @@
    "path": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-002 — Ata — Troca do modelo do Especificador SOT de claude-opus-4-8 para claude-opus-5-5 (ordem expressa, teste posterior)",
-   "in": 4,
+   "in": 5,
    "out": 6
   },
   {
@@ -2565,7 +2565,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-014",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
-   "cited_by": 16
+   "cited_by": 15
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-015",
@@ -2875,7 +2875,7 @@
   {
    "id": "DHR-ROTEAMENTO-002",
    "defined_in": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "DHR-ROTEAMENTO-003",
@@ -4556,11 +4556,6 @@
   },
   {
    "from": ".claude/agents/especificador.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "type": "id"
   },
@@ -4972,6 +4967,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md",
    "type": "id"
   },
   {
