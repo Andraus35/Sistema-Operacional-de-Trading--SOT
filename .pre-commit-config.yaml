@@ -22,8 +22,5 @@ repos:
         pass_filenames: false
         types: [markdown]
 
-      - id: gate-check
-        name: Constitutional gate check
-        language: node
-        entry: node scripts/gate-check.js
-        pass_filenames: false
+# gate-check.js retirado do pre-commit (DHR-COESAO-002): lê o payload de hook do Claude Code (stdin) e rodava como no-op.
+# Continua como hook de sessão (.claude/settings.json); schemas, specs e mapa seguem validados aqui e no CI.
