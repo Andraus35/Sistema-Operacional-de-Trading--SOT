@@ -12,3 +12,11 @@
 /scripts/build_map.py               @Andraus35
 /governance/GATE-MANIFEST.sha256    @Andraus35
 /.claude/agents/                    @Andraus35
+# DHR-COESAO-001 (COE-07): arquivos selados que estavam sem dono.
+/scripts/revisor_detectores.py       @Andraus35
+/scripts/revisor_guard.py            @Andraus35
+/scripts/revisor-guard.js            @Andraus35
+/scripts/revisor_posguarda.py        @Andraus35
+/scripts/revisor-posguarda.js        @Andraus35
+/scripts/roteador_modelos.py         @Andraus35
+/scripts/roteador-modelos.js         @Andraus35
