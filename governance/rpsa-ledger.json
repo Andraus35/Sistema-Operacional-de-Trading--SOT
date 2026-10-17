@@ -220,6 +220,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Altera convencao de governanca (quem assina e como) e o AGENTS.md; nenhum texto de arquivo de agente e alterado."
+    },
+    {
+      "id": "DHR-PCC-001",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera `AGENTS.md` (nova §11) e o whitelist da raiz; nenhum texto de arquivo de agente (`.claude/agents/*.md`) é alterado."
     }
   ]
 }
