@@ -5,7 +5,7 @@ description: >
   Produz Specs, Plans, Tasks e BASpecs seguindo o PEP-001 v1.2 e o overlay GUS-TLC-001.
   Consulta roadmap.md e atomic-spec.md na raiz do repositório antes de qualquer entrega.
   Acionado para: "especificar", "plan feature", "escrever a SPEC-00x", "produzir o plan.md".
-model: claude-opus-4-8
+model: claude-opus-5-5   # DHR-ROTEAMENTO-002 (2026-10-17): troca por ordem expressa de Andraus, sem teste prévio; Teste A passa a ser verificação posterior, com reversão ao claude-opus-4-8 se perder defeito Crítico/Alto.
 tools:
   - Read
   - Write
