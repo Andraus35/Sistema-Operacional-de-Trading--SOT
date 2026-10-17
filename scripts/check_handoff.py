@@ -22,6 +22,8 @@ Checagens (ID = PCC-001 §5.1):
            autorizado" do ROADMAP (ROADMAP prevalece)                          → WARN
     HO-08  padrão de segredo/credencial                                        → ERRO
     HO-09  linguagem de homologação/baseline sem ID DHR na mesma linha         → WARN
+    HO-10  pendência com `[PRAZO: AAAA-MM-DD]` vencida (hoje ≥ data): reaparece em TODA
+           abertura de sessão (hook SessionStart) até a linha ser resolvida ou reagendada → WARN
 
 Uso:
     python scripts/check_handoff.py               # relatório; exit 1 se houver ERRO
@@ -33,6 +35,7 @@ exit 0 ≠ CONFORME ≠ homologação.
 """
 
 import argparse
+import datetime
 import json
 import re
 import subprocess
@@ -56,6 +59,7 @@ SECRET = re.compile(
 CLOSED_WORDS = re.compile(r"FECHAD|DECIDID|RESOLVID", re.I)
 HOMOLOG_WORDS = re.compile(r"\b(foi|ficou|fica|está|estão|é|são|agora)\s+(homologad[oa]s?|baseline[d]?)\b", re.I)
 DHR = re.compile(r"\bDHR-[A-Z0-9]+(?:-[A-Z0-9]+)*\b")
+PRAZO = re.compile(r"\[PRAZO:\s*(\d{4}-\d{2}-\d{2})\]")
 IGNORED_PREFIXES = ("HANDOFF.md", "docs/handoffs/", "docs/mapa/")
 
 
@@ -81,7 +85,7 @@ def parse(text):
     return fm, body
 
 
-def analyze(root: Path):
+def analyze(root: Path, today=None):
     f = []  # (sev, id, msg)
     hp = root / "HANDOFF.md"
     if not hp.exists():
@@ -192,6 +196,19 @@ def analyze(root: Path):
     for i, ln in enumerate(lines, 1):
         if HOMOLOG_WORDS.search(ln) and not DHR.search(ln) and not re.search(r"pendente|aguard|não|nao|sem |nunca", ln, re.I):
             f.append(("WARN", "HO-09", f"L{i}: linguagem de homologação/baseline sem ID DHR na linha"))
+
+    # HO-10 — lembretes datados: não depende de memória de sessão; o hook SessionStart mostra o WARN
+    hoje = today or datetime.date.today()
+    for i, ln in enumerate(lines, 1):
+        for m in PRAZO.finditer(ln):
+            try:
+                d = datetime.date.fromisoformat(m.group(1))
+            except ValueError:
+                f.append(("WARN", "HO-10", f"L{i}: [PRAZO: {m.group(1)}] com data inválida"))
+                continue
+            if hoje >= d:
+                txt = PRAZO.sub("", ln).strip(" -*")[:110]
+                f.append(("WARN", "HO-10", f"L{i}: pendência vencida em {d.isoformat()} — {txt}"))
     return f, fm
 
 
@@ -200,8 +217,9 @@ def main():
     ap.add_argument("--strict", action="store_true")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--root", default=str(Path(__file__).resolve().parent.parent))
+    ap.add_argument("--hoje", default=None, help="AAAA-MM-DD (testes); padrão: data do sistema")
     a = ap.parse_args()
-    findings, fm = analyze(Path(a.root))
+    findings, fm = analyze(Path(a.root), datetime.date.fromisoformat(a.hoje) if a.hoje else None)
     order = {"ERRO": 0, "WARN": 1, "INFO": 2}
     findings.sort(key=lambda x: (order[x[0]], x[1]))
     counts = {k: sum(1 for x in findings if x[0] == k) for k in order}
