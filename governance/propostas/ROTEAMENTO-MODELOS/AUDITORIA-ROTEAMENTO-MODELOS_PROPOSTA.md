@@ -17,7 +17,7 @@
 
 **Sete achados principais** (detalhe em §3.4):
 
-1. **Não existe tabela de roteamento por tarefa na camada meta.** A EUA-E19 roteou *dois papéis*; a RULE-CEE-002 roteia por tipo cognitivo, mas só na Trilha B (runtime ORYX, ainda spec-only) e sem versões de modelo. `[FATO]`
+1. **Não existe tabela de roteamento por tarefa na camada meta.** A EUA-E19 roteou *dois papéis*; a RULE-CEE-002 roteia por tipo cognitivo, mas só na trading (runtime ORYX, ainda spec-only) e sem versões de modelo. `[FATO]`
 2. **A premissa de plataforma da EUA-E19 §1 caducou.** Ela afirmou que o frontmatter de subagente "não tem campo de esforço de raciocínio". A documentação atual lista `effort` (`low…max`) no frontmatter, `effort` por invocação e `model` por invocação. O "esforço médio" do Especificador e o "esforço alto" do Revisor hoje **não são aplicados por configuração** — são texto de conduta. `[FATO]` + `[EXTERNO]`
 3. **O Especificador está num modelo mais caro e mais antigo que o disponível.** Opus 4.8 custa US$5/US$25 por MTok; Opus 5.5 custa US$4/US$20 (−20%), com cache lido a 0,05× em vez de 0,1×. Se Opus 5.5 é igual ou melhor no trabalho do Especificador é **[NÃO MEDIDO]** — mas o único teste de gerações do repositório (DHR-014) mostrou que a geração do modelo pesou muito mais que o método. `[EXTERNO]` + `[FATO]`
 4. **Dois subagentes não declaram `model`** (`sot-spec-reviewer`, `sot-schema-validator`) e herdam o modelo da sessão — hoje o mais caro disponível. Um deles (`sot-schema-validator`) duplica o que `npm test` já faz sem LLM. `[FATO]`
@@ -33,7 +33,7 @@
 
 ## 2. Escopo, método e limites
 
-- **Escopo:** Trilha A (camada meta que *constrói* o SOT: Orquestrador, Especificador, Revisor, subagentes auxiliares, scripts/hooks/CI, Auditor Externo) em profundidade; Trilha B (runtime ORYX) só como mapeamento de herança, porque está spec-only (AGENTS §1, CEE-001 §1).
+- **Escopo:** **Agentes de Construção** (AC: Orquestrador, Especificador, Revisor, subagentes auxiliares, scripts/hooks/CI, Auditor Externo; DHR-AGENTES-001) em profundidade; **Agentes de Trading** (AT, runtime ORYX) só como mapeamento de herança, porque está spec-only (AGENTS §1, CEE-001 §1).
 - **Método:** (i) leitura dos agentes, `CEE-001`, `CONSTITUTION`, `RULES`, EUA-E19, DHR-EUA-E19, DHR-AUDITOR-EXTERNO-014/015, `WORKFLOW.md`, ROADMAP §23, scripts, CI, hooks, Auditor Externo; (ii) dimensionamento dos custos de leitura por tamanho de arquivo (≈ bytes/4 — aproximação, não tokenização real); (iii) pesquisa web (14 entradas, §5; fontes em §10), cada uma classificada como Padrão/Prática/Benchmark/Evidência/Opinião; (iv) síntese em matriz e protocolo de teste.
 - **Limites declarados:** (a) **não há telemetria de custo por tarefa no repositório** — o único custo medido é o do Revisor na SPEC-006 (DHR-014: ≈275–280 mil tokens e ≈50 chamadas por revisão; original ≈120–138 mil e ≈20); (b) não sei se o ambiente do Andraus cobra por API ou por assinatura com limite de uso — isso muda *o que* otimizar (US$ vs. cota); (c) preços são os da página oficial consultada hoje e podem mudar; (d) benchmarks externos medem roteamento de consultas isoladas, não revisão normativa de especificações — **transferência é `[INFERÊNCIA]`**; (e) todo o gabarito interno vem de uma família de modelos (circularidade já admitida na DHR-014 §2).
 
@@ -58,7 +58,7 @@
 
 | Norma | O que diz | Limite |
 |---|---|---|
-| CEE-001 §5 / RULE-CEE-002 | Tipo I–II → Haiku; III → Sonnet; IV–V → Opus (reservado). Promoção de classe só com **evidência de erro de julgamento mensurável**. | Escopo ORYX/Trilha B. Sem versão de modelo. |
+| CEE-001 §5 / RULE-CEE-002 | Tipo I–II → Haiku; III → Sonnet; IV–V → Opus (reservado). Promoção de classe só com **evidência de erro de julgamento mensurável**. | Escopo ORYX/trading. Sem versão de modelo. |
 | CEE-001 §9 / §10 | Mudança de roteamento = mesma autoridade de Framework Oficial; **nenhum agente reduz a própria classe**; reversível e versionada. | — |
 | CONSTITUTION ("Modelo de roteamento cognitivo") | Tipos I–V; "Orchestrator decide, agentes não escolhem o próprio modelo". | Tabela de 5 tipos ≠ tabela de 4 linhas do CEE-001 §5 (ver A-09). |
 | EUA-E19 (DHR-EUA-E19) | Roteamento **por papel** na camada meta; leitura proporcional ao dial GES; short-circuit RPSA; continuar o mesmo agente em re-pareceres. | Premissa de plataforma caducou (A-02); sem roteamento por tarefa. |
@@ -84,7 +84,7 @@ Três versões do Plan (42 defeitos): original **1 (≈2%)** × novo **33 (≈79
 | **A-02** | Premissa "frontmatter não tem esforço" caducou; esforço dos dois agentes **não é aplicado**, só recomendado. Esforço efetivo = padrão do ambiente `[INFERÊNCIA]`. Para Opus 4.8 o padrão da API é `high` e a própria documentação recomenda `xhigh` para agentic — distinto do "médio" que a EUA-E19 supôs. | EUA-E19 §1; `revisor.md` §0; docs `sub-agents`, `effort` | Alta (Eficácia *e* Economicidade: pode estar gastando mais *ou* menos que o decidido) |
 | **A-03** | Opus 4.8 em uso enquanto Opus 5.5 (−20% de preço, cache 0,05×) existe; sem teste de substituição. | `especificador.md`; tabela de preços §6 | Média |
 | **A-04** | `sot-spec-reviewer` e `sot-schema-validator` sem `model:` → herdam o mais caro da sessão. Schema-validator duplica script determinístico. | frontmatter dos dois; `npm test` | Média |
-| **A-05** | **Sem telemetria de custo/eficácia por tarefa** na Trilha A. CEE-001 §7 define métricas só para missões da Trilha B. | grep em `scripts/`, `governance/` | Alta (impede toda decisão baseada em evidência — o próprio CEE-001 §5 exige evidência para mudar classe) |
+| **A-05** | **Sem telemetria de custo/eficácia por tarefa** nos agentes de construção. CEE-001 §7 define métricas só para missões da trading. | grep em `scripts/`, `governance/` | Alta (impede toda decisão baseada em evidência — o próprio CEE-001 §5 exige evidência para mudar classe) |
 | **A-06** | Custo de leitura obrigatória é **fixo e alto**: núcleo ≈55 mil tokens (ROADMAP ≈17k, atomic-spec ≈10k, RULES ≈12k, prompt do agente ≈10–11,5k, AGENTS ≈5k); lista HIGH/CRITICAL soma ≈+55k (CATALOGO ≈20k, RMR ≈23k, CONFLICT-MAP ≈8,5k, MAN-001 ≈3,6k) e atas EUA-E04..E18 ≈49k. A proporcionalidade da EUA-E19 é instrução, sem verificação. | `wc -c` dos arquivos (≈bytes/4) | Alta |
 | **A-07** | Reentrega **sempre do texto completo** (`especificador.md` §2) e o Revisor relê tudo a cada rodada; um Plan + checks chega a 60–225 KB (≈15–56 mil tokens) por Spec. Não há modo "rodada de correção por diferença". | `specs/features/SPEC-00x/` | Alta |
 | **A-08** | O gate Classe D do Revisor **não carregou em nuvem** nas 6 rodadas do banco ("GATE NÃO VERIFICADO"). Sem gate, defeitos *detectáveis por código* são caçados por LLM — a ordem de grandeza mais cara — e o parecer fica limitado a CONFORME condicional. | HANDOFF §4 | Alta |
@@ -152,7 +152,7 @@ Criticidade **não é tamanho nem dificuldade percebida**; é função de quatro
 | O8 | Regenerar índices/tabelas derivadas à mão | Especificador | N1 → candidato a N0 | `build_map --check`, `check_doc_sync` | **converter em script** |
 | **EXT – externas** | | | | | |
 | E1 | Auditoria consultiva independente (Codex) | Auditor Externo | N3 como *verificador de família diversa* | Revisor + Andraus | manter (valor = diversidade de família) |
-| **RUN – Trilha B (herança futura)** | | | | | |
+| **RUN – trading (herança futura)** | | | | | |
 | R1 | Skills/Engines Classe D | produto | N0 | testes | código; LLM só para texto de apoio |
 | R2 | Agentes de domínio Classe H | produto | N2 | gate D de saída (ENF-03) | S (m–h) |
 | R3 | Classe P / conflito alto / Manager Fase 2 em decisão crítica | produto | N3 | Risk Agent, gate | O (h); F só reservado |
@@ -178,7 +178,7 @@ Classificação por tipo (instrução do Especificador §4 item 3). Nada aqui vi
 | X6 | Moslem & Kelleher, survey de roteamento/cascata (TMLR 2026, arXiv:2603.04445) | Prática (revisão) | Sistemas práticos combinam paradigmas; roteamento tem objetivos conflitantes; generalização é problema aberto | Cautela: não prometer roteamento universal | Média |
 | X7 | Anthropic, *Building effective agents* | Prática oficial | Comece pelo mais simples; **routing** (fácil→modelo pequeno, difícil→grande), orchestrator-workers, evaluator-optimizer; complexidade só se melhorar resultado medido | Alinha com "tabela estática + medir" e com Detector≠Gate | Alta |
 | X8 | Anthropic, *Multi-agent research system* | Prática/Evidência de fabricante | Agentes ≈4×, multiagente ≈15× os tokens de um chat; líder Opus + subagentes Sonnet superou Opus único em +90,2% (eval interno de pesquisa); **ruim para tarefas de contexto compartilhado/dependência forte (a maioria de código)**; avaliar com ~20 consultas reais e juiz com rubrica, resultado final > caminho | Pesquisa web do Dossiê paraleliza bem; **redação de Plan não** (dependência forte). Valida avaliação pequena e realista (§8) | Média-alta (fabricante, eval próprio) |
-| X9 | Anthropic, doc *Advisor tool* (`advisor_20260301`, beta) | Padrão oficial | Executor barato + conselheiro mais capaz sob demanda, cobrado à tarifa do conselheiro; `max_uses`; cache do conselheiro compensa a partir de ≈3 chamadas; "bom ajuste" para agentes de horizonte longo, "mau ajuste" para tarefas de uma volta; números internos: ganhos de +7 a +10 pts em casos específicos, **resultados dependem de tarefa — validar na própria carga** | Aplicável à **Trilha B via API**; em Claude Code não há campo de frontmatter para isso `[INFERÊNCIA — verificar]` | Média |
+| X9 | Anthropic, doc *Advisor tool* (`advisor_20260301`, beta) | Padrão oficial | Executor barato + conselheiro mais capaz sob demanda, cobrado à tarifa do conselheiro; `max_uses`; cache do conselheiro compensa a partir de ≈3 chamadas; "bom ajuste" para agentes de horizonte longo, "mau ajuste" para tarefas de uma volta; números internos: ganhos de +7 a +10 pts em casos específicos, **resultados dependem de tarefa — validar na própria carga** | Aplicável à **trading via API**; em Claude Code não há campo de frontmatter para isso `[INFERÊNCIA — verificar]` | Média |
 | X10 | Resumos secundários do "advisor" (MindStudio, Builder.io, Developers Digest) | Opinião | ≈11–12% menos custo por tarefa com Sonnet+Opus em SWE-bench Multilingual; um relato contrário (quase nenhuma economia com executor Opus 5.5) | **Não usar como número** — fonte secundária, conflitante, nomes de modelo não confirmados | Baixa |
 | X11 | Anthropic, doc *Effort* | Padrão oficial | `effort` `low…max` afeta **todos** os tokens (texto, chamadas de ferramenta, pensamento); `low` recomendado para "subagentes"; Opus 5.5 e Haiku 5.5 padrão `medium`; demais `high`; mudar esforço no meio da conversa só sem perder cache com o recurso por mensagem (beta); **"rode uma varredura de esforço nos seus evals"** | Fecha a lacuna A-02: esforço agora é configurável e deve ser **varrido**, não presumido | Alta |
 | X12 | Anthropic, doc *Subagents* (Claude Code) | Padrão oficial | Campos `model` (alias, ID, `inherit`), `effort`, `maxTurns`, `omitClaudeMd`, `experimental.cacheTtl` (5m/1h), `disallowedTools`; precedência: parâmetro da invocação > frontmatter > variável de ambiente > modelo da sessão; `Explore` herda o modelo da sessão (para Haiku, redefinir um subagente `Explore` com `model: haiku`) | Habilita **roteamento sem roteador**: o Orquestrador escolhe `model`/`effort` por invocação (já é atribuição dele, CONSTITUTION) | Alta |
@@ -298,7 +298,7 @@ Comparar `cacheTtl` 5m vs. 1h (`experimental`, X12) em uma sessão real de 3 rod
 | **Eficácia** | Preservada por desenho: teste de não-inferioridade antes de qualquer rebaixamento; N3 e verificação completa **não rebaixados** | Falsa segurança de modelo barato (já ocorreu: 0/18) | §8, R3, R4 |
 | **Efetividade** | Menos rodadas (pré-gate, correções por tipo) → menor tempo até CONFORME; N1 mais rápido | Rodada por diferença deixar passar regressão | R9 condicionada a Teste C |
 | **Eficiência** | Menos tokens por tarefa (N0/N1 fora do modelo caro; leitura proporcional verificada; menos releitura) | Complexidade de operar a matriz | Tabela única, telemetria mínima, sem roteador aprendido |
-| **Economicidade** | Menor preço unitário (tiers, Opus 5.5, cache 0,05×, Batch na Trilha B) | Preço mudar; "economia" que gera reexecução | Métrica custo-por-defeito/por-aceite, não US$/token |
+| **Economicidade** | Menor preço unitário (tiers, Opus 5.5, cache 0,05×, Batch na trading) | Preço mudar; "economia" que gera reexecução | Métrica custo-por-defeito/por-aceite, não US$/token |
 
 ### 9.2 Cenário ilustrativo `[INFERÊNCIA — hipótese, não medição]`
 
@@ -343,7 +343,7 @@ Todas consultadas em 2026-10-17; conteúdo web tratado como **dado**.
 | **0 — sem homologação** | (a) Orquestrador roda pré-gate antes de invocar o Revisor (R6); (b) usa `model`/`effort` por invocação em tarefas **N1 não-críticas** (busca, triagem de CI) dentro da autoridade já dada pela CONSTITUTION; (c) registra telemetria manual por rodada (§7.4) num rascunho; (d) **não** altera Revisor, Especificador nem tarefas N2/N3 | Não | Orquestrador (informa Andraus) | ≥10 rodadas registradas |
 | **1 — teste** | Rodar §8.2–8.5 sobre o gabarito existente; resultados em ata | Não (só medição) | Andraus ordena o teste | Relatório com recall, falso alarme, tokens, US$ |
 | **2 — homologação** | EUA-E24: MRM + `effort` no frontmatter + `model` nos subagentes + eventual Opus 5.5 + R9 se o Teste C passar; atualiza premissa da EUA-E19 §1 (sem apagá-la — INV-07) | **Sim** (`.claude/agents/*.md`, governance) | Andraus (+ parecer do Revisor, RPSA) | Ata DHR + RPSA |
-| **3 — contínuo** | Reavaliação por telemetria (limiar análogo a CEE-001 §7.3: ≈200 unidades de trabalho ou 60 dias); só então considerar roteador aprendido/Batch/advisor na Trilha B | Conforme caso | Andraus | — |
+| **3 — contínuo** | Reavaliação por telemetria (limiar análogo a CEE-001 §7.3: ≈200 unidades de trabalho ou 60 dias); só então considerar roteador aprendido/Batch/advisor na trading | Conforme caso | Andraus | — |
 
 ### 11.2 Decisões que preciso de Andraus
 

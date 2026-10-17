@@ -51,21 +51,30 @@ raiz/
 │   ├── arranque/            · registros de auditoria (questionário + respostas de Andraus + manifesto)
 │   ├── _legacy/             · artefatos superseded (não normativos)
 │   └── mapa/                · mapa do projeto GERADO (BL-019; não-normativo — não editar à mão; scripts/build_map.py)
-├── specs/                  ← harness de 1ª geração (5 agentes .spec.md, ref. até SPEC-010…014)
+├── specs/                  ← harness de 1ª geração (5 specs de agentes de TRADING .spec.md, ref. até SPEC-010…014)
 │   └── features/<SPEC-00x>/  ← feature-specs por Spec: plan.md + checks.md (criados sob demanda)
 ├── rag/  schemas/          ← RAG chunks · schemas I/O
-├── .claude/agents/         ← especificador.md (RW) · revisor.md (RO)
+├── .claude/agents/         ← agentes de CONSTRUÇÃO: especificador.md (RW) · revisor.md (RO) · sot-* (RO)
+├── docs/agentes/           ← índice AC × AT (não-normativo)
 └── .claude/skills/ commands/ · scripts/ · tests/ · .github/ · .clinerules/
 ```
 
 ---
 
-## 3. Agentes
+## 3. Agentes — duas famílias que não se misturam (DHR-AGENTES-001)
+
+**3.1 Agentes de Construção (AC)** — constroem e auditam o SOT (este repositório). Índice: `docs/agentes/INDICE-AGENTES.md`.
 
 | Arquivo | Papel | Tools |
 |---|---|---|
 | `.claude/agents/especificador.md` | Produz Specs/Plans/Tasks/BASpecs | Read · Write · Edit · Grep · Glob |
 | `.claude/agents/revisor.md` | Audita; força prova; emite parecer | **Somente leitura**: Read · Grep · Glob |
+| `.claude/agents/sot-spec-reviewer.md`, `sot-schema-validator.md` | Subagentes auxiliares de revisão | **Somente leitura**: Read · Grep · Glob |
+| Orquestrador (sessão) · Auditor Externo (§9) | Coordena a construção · auditoria consultiva externa | — |
+
+**3.2 Agentes de Trading (AT)** — o produto em operação: Elliott Specialist (Structural), SMC Specialist (Institutional), Fibonacci Validator, ICT Specialist (Operational), Manager Agent (Fases 0/1/2), Risk Agent (FASE RISK). **Não são arquivos de `.claude/agents/`**: existem como Specs (`specs/*.spec.md` GEN-1, `specs/features/`), `rag/` e `schemas/`; nenhum está implementado (fase spec-first). Equivalência de nomes: `GLOSSARIO.md` §2.
+
+**3.3 Fronteira:** AC nunca analisa mercado; AT nunca edita Spec ou repositório. "Agente" sem qualificador é ambíguo em documento novo (`GLOSSARIO.md` §1-bis). Famílias AC/AT ≠ Trilhas A/B do CATALOGO.
 
 > **ENF-03:** o Revisor NÃO tem Write/Edit — impossibilidade estrutural de reescrever a Spec.
 

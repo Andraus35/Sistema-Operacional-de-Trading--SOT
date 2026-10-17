@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-07
-previous: HO-2026-10-17-06
+handoff_id: HO-2026-10-17-08
+previous: HO-2026-10-17-07
 data: 2026-10-17
 branch: ccr-d43bf9b0-h336k5
 base_commit: 1c6754b
@@ -13,22 +13,23 @@ autor: Orquestrador
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência com a realidade, a realidade prevalece.
 
 ## 1. Objetivo da frente atual
-Eficiência do 4Es na camada meta: roteamento de modelo **por tarefa** (hoje só por papel). Pedido de Andraus (chat, 2026-10-17): auditar tarefas por criticidade, pesquisar estado da arte/benchmarks e propor aplicação do 4Es. A frente anterior (reforço do Revisor, DHR-AUDITOR-EXTERNO-015) segue como estava no HO-06 (`docs/handoffs/HO-2026-10-17-06.md`).
+Duas frentes nesta sessão: (a) roteamento de modelo por tarefa (4Es) e (b) **separar agentes de Construção (AC) dos agentes de Trading (AT)** (DHR-AGENTES-001, opção "Nomenclatura + índices" escolhida por Andraus). Eficiência do 4Es na camada meta: roteamento de modelo **por tarefa** (hoje só por papel). Pedido de Andraus (chat, 2026-10-17): auditar tarefas por criticidade, pesquisar estado da arte/benchmarks e propor aplicação do 4Es. A frente anterior (reforço do Revisor, DHR-AUDITOR-EXTERNO-015) segue como estava no HO-06 (`docs/handoffs/HO-2026-10-17-06.md`).
 
 ## 2. Estado
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
-- **Entregue (PROPOSTA, não normativa):** `governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md` — auditoria interna (12 achados A-01..A-12), matriz de ~30 tarefas por criticidade N0–N4, 14 fontes externas classificadas, preços, Matriz de Roteamento Meta (R1–R12), protocolo de teste Eficácia-first, cenário ilustrativo e decisões D1–D6. Nenhum arquivo normativo alterado.
+- **Separação AC × AT (aditiva):** `GLOSSARIO.md` §1-bis, `AGENTS.md` §2/§3 (3.1 AC, 3.2 AT, 3.3 fronteira), `docs/agentes/INDICE-AGENTES.md`, ata `governance/DHR-AGENTES-001_*`, registro no CATALOGO. Nada movido/renomeado; separação física em pastas **não adotada**. Achado: "Trilha A/B" do CATALOGO é outro eixo (sequenciamento) — o documento de roteamento foi corrigido para não usar esses nomes.
+- **Entregue (PROPOSTA, não normativa):** `docs/agentes/INDICE-AGENTES.md` · `governance/DHR-AGENTES-001_*` · `governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md` — auditoria interna (12 achados A-01..A-12), matriz de ~30 tarefas por criticidade N0–N4, 14 fontes externas classificadas, preços, Matriz de Roteamento Meta (R1–R12), protocolo de teste Eficácia-first, cenário ilustrativo e decisões D1–D6. Nenhum arquivo normativo alterado.
 - Achados-chave: (1) premissa de plataforma da EUA-E19 §1 caducou — `effort`, `model` por invocação existem hoje; o "esforço médio/alto" dos agentes não é aplicado; (2) Opus 5.5 custa 20% menos que o Opus 4.8 do Especificador (não testado); (3) `sot-spec-reviewer` e `sot-schema-validator` sem `model:` herdam o mais caro; (4) sem telemetria de custo por tarefa; (5) Orquestrador pode rodar o gate D antes de gastar uma revisão LLM.
 
 ## 4. Verificado
 - `build_map --check` em dia; `check_doc_sync` ERRO=0; `check_invariants` no arquivo novo: 0 achados.
-- `check_refs`: 1 ERRO **preexistente** (`governance/CATALOGO-OFICIAL.md:198` — DHR-010 sem definição); não é desta entrega.
+- `check_refs`: 1 ERRO **preexistente** (`governance/CATALOGO-OFICIAL.md:198` cita uma DHR sem definição); não é desta entrega.
 - Não conferido: CI da `main`, PRs abertos, telemetria real (não existe), disponibilidade do advisor tool em Claude Code, billing (API × cota).
 
 ## 5. Próximo passo único
-Perguntar a Andraus D1–D6 (§11.2 do documento): em especial autorizar a **onda 0** (pré-gate + `model`/`effort` por invocação só em N1 não-crítico + telemetria manual) e informar se o custo é por API ou por cota. Sem outra ordem, **não** iniciar o Plan da SPEC-006 nem editar `.claude/agents/*.md`.
+Ratificar (merge) a DHR-AGENTES-001 e perguntar a Andraus D1–D6 (§11.2 do documento): em especial autorizar a **onda 0** (pré-gate + `model`/`effort` por invocação só em N1 não-crítico + telemetria manual) e informar se o custo é por API ou por cota. Sem outra ordem, **não** iniciar o Plan da SPEC-006 nem editar `.claude/agents/*.md`.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - Nenhuma nova. EUA-E24 é só **código candidato**. Decisões abertas/fechadas: ler `ROADMAP.md`. Nenhuma alterada.
@@ -51,6 +52,8 @@ Perguntar a Andraus D1–D6 (§11.2 do documento): em especial autorizar a **ond
 - [ ] `git log -1` == `base_commit` ou posterior; se posterior, ler o diff
 
 ## 10. Aguardando Andraus
+- Merge da DHR-AGENTES-001 (assinatura); RPSA registra a classificação pós-merge (esperado: `check_rpsa` mostra "não classificada" até lá).
+- Opcional: etiqueta de domínio AC/AT no `build_map.py` (altera código) e/ou migração física de pastas (decisão futura).
 - D1–D6 do documento de roteamento (acima).
 - Herdado do HO-06: merge da DHR-AUDITOR-EXTERNO-015; diagnosticar por que o MCP do Revisor não carrega em nuvem (afeta a economia: sem gate D o LLM caça defeitos detectáveis por código); D-PCC-3/4/5; prioridade da SPEC-006; 2 itens de backlog disparados sem registro.
 
