@@ -72,9 +72,15 @@ class TestGuarda(unittest.TestCase):
         self.assertTrue(any("tem só" in x for x in r), r)
         self.assertTrue(any("arquivo não encontrado" in x for x in r), r)
 
-    def test_g3_trecho_na_linha_errada_e_apontado(self):
-        r = g.conferir_citacoes("`atomic-spec.md:5` diz `D5 (estado) + ≥ 3 cenários D7`", [])
-        self.assertTrue(any("em outra linha" in x for x in r), r)
+    def test_g3_trecho_existente_em_outra_linha_nao_e_fabricacao(self):
+        self.assertEqual(g.conferir_citacoes("`atomic-spec.md:5` diz `D5 (estado) + ≥ 3 cenários D7`", []), [])
+
+    def test_g3_aspa_que_nao_vem_logo_apos_a_citacao_nao_conta(self):
+        self.assertEqual(g.conferir_citacoes("Plan diz `ECC-VAL-001 regra geral fechada pelo texto` e ver atomic-spec.md:447 para o prazo.", []), [])
+
+    def test_g3_aspa_da_linha_seguinte_nao_e_atribuida_a_citacao_anterior(self):
+        tabela = "| Quality Gates reusadas | atomic-spec.md:112-117 | CONFERE |\n| ECC fechada | `PLAN:764` | diz `regra geral foi fechada por Andraus` |"
+        self.assertEqual(g.conferir_citacoes(tabela, []), [])
 
     def test_g3_sem_trecho_so_confere_a_linha(self):
         self.assertEqual(g.conferir_citacoes("veja atomic-spec.md:116", []), [])

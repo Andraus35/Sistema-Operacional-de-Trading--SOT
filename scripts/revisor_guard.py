@@ -24,6 +24,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 NUCLEO = [("ROADMAP.md", "ROADMAP.md"), ("atomic-spec.md", "atomic-spec.md"), ("RULES.md", "governance/RULES.md"), ("RMR-001", "backlog/RMR-001")]
 _CIT = re.compile(r"([\w./\\-]+\.(?:md|json|py|js|yml|txt))\s*[:#]\s*(\d{1,5})(?:\s*[-–]\s*(\d{1,5}))?")
+_APOS = re.compile(r"[\s)`\]*,:—–=-]{0,12}(?:diz|dizendo|com o trecho|trecho|literal)?[\s:`\"“(]*[`\"“]([^`\"”\n]{20,200})[`\"”]")
 _TRECHO = re.compile(r"[`\"“]([^`\"”\n]{20,200})[`\"”]")
 
 
@@ -125,10 +126,15 @@ def conferir_citacoes(texto, dirs):
         if lo > len(linhas):
             falhas.append(f"{nome}:{lo} — o arquivo tem só {len(linhas)} linhas")
             continue
-        t = _TRECHO.search(texto, m.end(), m.end() + 260)
+        # o trecho tem de vir LOGO DEPOIS da citação (`arq:linha` diz `trecho`), na mesma linha e fora de tabela: em tabela de
+        # conferência a aspa é o rótulo da afirmação, não o texto da linha citada.
+        ini_linha = texto.rfind("\n", 0, m.start()) + 1
+        if texto[ini_linha:m.start()].lstrip().startswith("|"):
+            continue
+        t = _APOS.match(texto, m.end())
         if not t:
             continue
-        trecho = _norm(t.group(1).rstrip(". …"))[:60]
+        trecho = _norm(t.group(1).split("…")[0].rstrip(". "))[:60]
         if len(trecho) < 15:
             continue
         janela = _norm(" ".join(linhas[max(0, lo - 4):hi + 3]))
@@ -136,7 +142,7 @@ def conferir_citacoes(texto, dirs):
             continue
         todo = _norm(" ".join(linhas))
         if trecho in todo:
-            falhas.append(f"{nome}:{lo} — o trecho citado existe, mas em outra linha")
+            continue                                  # existe no arquivo, só não perto da linha: informativo, não é fabricação
         else:
             falhas.append(f"{nome}:{lo} — o trecho citado não está no arquivo: «{t.group(1)[:60]}»")
     return falhas[:12]
