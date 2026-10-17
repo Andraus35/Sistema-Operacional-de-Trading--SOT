@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-16
-previous: HO-2026-10-17-15
+handoff_id: HO-2026-10-17-17
+previous: HO-2026-10-17-16
 data: 2026-10-17
 branch: ccr-3a0d581c-6cj4ig
 base_commit: 89262bd
@@ -28,11 +28,13 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 
 - **Conserto (ordem de Andraus: "ir direto à ata"):** `governance/DHR-AUDITOR-EXTERNO-018_*` + `scripts/revisor_posguarda.py`/`revisor-posguarda.js` (hook **Stop** do Orquestrador reaplica G1/G2/G3 ao parecer do Revisor, 1 vez por agente) + `tests/test_revisor_posguarda.py` (3 OK; no CI). Testado no transcript real. **Registrado** em `.claude/settings.json` (Stop) e selo regravado (15 arquivos) após autorização de Andraus no chat; vale em sessão NOVA.
 
+- **Guarda pós-Revisor CONFIRMADA AO VIVO (2026-10-17, mesma sessão):** logo após registrar o hook Stop, o primeiro fim de turno foi bloqueado pela `revisor-posguarda.js` listando os 2 Revisores anteriores (G2 no parecer da SPEC-005; G1+G2 na sonda mínima). O `settings.json` recarrega sem reiniciar a sessão. Bloqueio é 1 vez por agente (estado em pasta temporária). Limite: cobre só Revisor→Orquestrador; a ferramenta MCP do gate continua ausente no Revisor em nuvem.
+
 ## 4. Verificado
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-Sessão **nova**: revisão curta com o Revisor e ver o bloqueio do hook Stop (guarda pós-Revisor, ata 018) ao chegar o parecer sem gate; só então piloto da onda 1 (por ordem de Andraus). Plan da SPEC-006 só por ordem de Andraus.
+Andraus ordena (ou não) o piloto pequeno da onda 1 (Teste A: Opus 4.8 -> 5.5, 1 Spec, 3 repetições, limite de cota pequeno; métrica = tokens por defeito confirmado; aceite = zero perda em Crítico/Alto). Merge da ata 018 pendente. Plan da SPEC-006 só por ordem de Andraus.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - DHR-AUDITOR-EXTERNO-015 (na `main`) e -016 (fusão/aposentadoria dos subagentes antigos) — decisões de Andraus em chat, 2026-10-17.

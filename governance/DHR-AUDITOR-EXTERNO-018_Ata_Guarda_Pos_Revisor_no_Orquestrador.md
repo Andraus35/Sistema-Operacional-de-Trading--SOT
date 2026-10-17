@@ -30,7 +30,7 @@
 M-001 · J-001 · N-001 · H-001 · G-001 · K-001 · C-001 · WF-D03 (residual) · ECC-03-001 · SPEC-045-RUNTIME-001. **Nenhuma fechada por este ato.** Piloto da onda 1 só depois da guarda confirmada ao vivo.
 
 ## 5. Registro
-- [x] Esta ata · [x] script + wrapper + testes · [ ] hook registrado no settings · [ ] selo regravado · [ ] confirmado ao vivo · [ ] merge (assinatura) · [ ] RPSA automático
+- [x] Esta ata · [x] script + wrapper + testes · [ ] hook registrado no settings · [ ] selo regravado · [x] confirmado ao vivo (2026-10-17, hook Stop bloqueou na mesma sessão) · [ ] merge (assinatura) · [ ] RPSA automático
 
 ---
 
