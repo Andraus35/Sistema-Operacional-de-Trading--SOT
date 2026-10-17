@@ -110,7 +110,7 @@ Extensão permanente do HOD-001 (paralela à RPSA da EUA-E16). Torna a raiz uma 
 
 ### 6b.1 Raiz = zona de intake, não de repouso
 A raiz só **repousa** o **whitelist de caminho-quente** (explícito — A-01):
-- **Docs:** `AGENTS.md · atomic-spec.md · ROADMAP.md · GLOSSARIO.md · README.md · LICENSE · WORKFLOW.md` *(WORKFLOW.md acrescido por decisão de Andraus, 2026-10-01 — emenda de whitelist; registrar em DHR)*
+- **Docs:** `AGENTS.md · atomic-spec.md · ROADMAP.md · GLOSSARIO.md · README.md · LICENSE · WORKFLOW.md · HANDOFF.md` *(WORKFLOW.md acrescido por decisão de Andraus, 2026-10-01 — emenda de whitelist; registrar em DHR. HANDOFF.md acrescido por decisão de Andraus, 2026-10-17 — DHR-PCC-001)*
 - **Config (por extensão/nome):** `package.json · package-lock.json · tsconfig.json · .eslintrc.json · .prettierrc · .gitignore · .pre-commit-config.yaml` e dotfiles/dotdirs de tooling (`.claude/`, `.github/`, `.agents/`, `.clinerules/`, `.harness-eval/`)
 
 Qualquer outro `.md/.MD` na raiz é um **intake não-tratado** (transitório). A regra de whitelist incide sobre documentos (`.md/.MD`); arquivos de config e dotfiles ficam fora do escopo de intake.

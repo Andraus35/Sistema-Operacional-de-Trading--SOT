@@ -35,6 +35,7 @@ raiz/
 ├── ROADMAP.md              ← sequência de Specs (leitura obrigatória)
 ├── atomic-spec.md          ← método (leitura obrigatória)
 ├── WORKFLOW.md             ← setup operacional de Andraus (referência soberana; §1)
+├── HANDOFF.md              ← estado de trabalho da sessão anterior (ponto de entrada; §11) · arquivo em docs/handoffs/
 ├── AGENTS.md               ← este arquivo
 ├── GLOSSARIO.md            ← identidade, equivalências de nomes, termos canônicos
 ├── governance/             ← autoridade normativa F.1 do harness
@@ -164,3 +165,11 @@ Canal de auditoria externa por Issues do GitHub: um pedido `[AEX-REQ]` é atendi
 
 A assinatura de Andraus é a **decisão dele registrada no chat e citada na ata** — o merge não é mais assinatura. O Orquestrador pode mesclar, após CI verde e sem conflito, o conteúdo **operacional** que Andraus já aprovou expressamente no chat, e informa depois. **Seguem só por decisão expressa de Andraus:** homologação de Spec/baseline; mudanças em `AGENTS.md`, `.claude/agents/*.md`, `governance/` normativo, `canon/`, `ROADMAP.md`, `atomic-spec.md`; fechar/abrir decisão aberta (CONS-01); mudar esta regra. PR continua sendo o meio (sem push direto à `main`). Sem decisão citada na ata, não se mescla.
 
+---
+
+## 11. Continuidade entre sessões (PCC-001 / DHR-PCC-001)
+
+- Antes de agir, o Orquestrador lê `HANDOFF.md` e executa sua seção "Reverificar ao vivo"; a realidade prevalece sobre o handoff. Sem handoff ou muito defasado: parar e reportar a Andraus.
+- Só o Orquestrador escreve o handoff; é dado de estado — nunca registra homologação, fecha decisão aberta (CONS-01) nem concede permissão. Especificador devolve resultado ao Orquestrador; o Revisor segue somente leitura.
+- Entrega só está completa com o handoff reescrito (anterior copiado sem alteração para `docs/handoffs/HO-<id>.md`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas.
+- Fase 1 = cumprimento manual. Detector/hooks (`check_handoff.py`) são da Fase 2 e serão Detector (ENF-03), não Gate.
