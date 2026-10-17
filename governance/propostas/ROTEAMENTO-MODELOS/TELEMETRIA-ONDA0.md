@@ -5,3 +5,4 @@
 | Data | Tarefa (ID da proposta) | Executor | Modelo / esforço | Tokens (total) | Chamadas | Pré-gate (PASSOU_D / REPROVADO_D / n.a.) | Revisor evitado? | Resultado | Nota |
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-10-17 | G/T/O (sessão de auditoria: roteamento + separação AC×AT) | Orquestrador | sessão (n/m) | n/m | n/m | n.a. (sem Spec em revisão) | n.a. | entregue | linha de abertura; ainda não houve rodada Especificador→Revisor |
+| 2026-10-17 | Confirmação da guarda do Revisor (revisão curta SPEC-005) | Revisor SOT (agente de construção, Sonnet 5.5) | sessão (n/m) | 72430 (subagent_tokens) | 18 tool_uses | PASSOU_D (--rapido) | n.a. (observação) | CONFORME condicional; 3 Menores + 1 Info | G1 ok (núcleo aberto); G2 NÃO — ferramenta MCP ausente e hook SubagentStop não forçou retorno ao vivo (reprodução manual do hook: exit 2, funciona); G3 amostra ok |
