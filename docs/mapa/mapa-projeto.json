@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "f0c8d74baea0db550083a8eb9477fd726cc407d56af96b639d1c55fa782e9681",
+  "digest": "434fceaf6faec88b62eaa5262fcb53cc9f71f55e58717cbde88ea69e19f43f1f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 207,
+   "in": 208,
    "out": 65
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 192,
+   "in": 193,
    "out": 105
   },
   {
@@ -206,14 +206,14 @@
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 82,
+   "in": 83,
    "out": 4
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 115,
+   "in": 116,
    "out": 2
   },
   {
@@ -248,7 +248,7 @@
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 57,
+   "in": 58,
    "out": 3
   },
   {
@@ -2110,7 +2110,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 126,
+   "in": 127,
    "out": 9
   },
   {
@@ -2243,14 +2243,21 @@
    "path": "specs/features/SPEC-006/checks.md",
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
-   "in": 2,
+   "in": 3,
    "out": 8
+  },
+  {
+   "path": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "area": "specs",
+   "title": "Parecer do Revisor SOT — SPEC-006 Plan v1.4 (rodada 5) — 2026-10-17",
+   "in": 0,
+   "out": 5
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 95,
+   "in": 96,
    "out": 22
   },
   {
@@ -2422,7 +2429,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "BL-004",
@@ -2462,7 +2469,7 @@
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "BL-012",
@@ -3657,7 +3664,7 @@
   {
    "id": "RULE-CKG-010",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "RULE-CKG-012",
@@ -4477,7 +4484,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 112
+   "cited_by": 113
   },
   {
    "id": "SPEC-002",
@@ -4502,12 +4509,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 95
+   "cited_by": 96
   },
   {
    "id": "SPEC-007",
    "defined_in": "ROADMAP.md",
-   "cited_by": 38
+   "cited_by": 39
   },
   {
    "id": "SPEC-008",
@@ -25233,6 +25240,36 @@
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "specs/features/SPEC-006/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "path"
   },
