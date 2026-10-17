@@ -83,7 +83,7 @@ jobs:
       - name: Invariant checker tests
         run: python -m unittest tests/test_check_invariants.py
 
-      # Testes do runner de evidências de gates (R1/DHR-008): o Revisor recebe o evidence.json, não executa nada.
+      # Testes do runner de evidências de gates (R1/DHR-AUDITOR-EXTERNO-008): o Revisor recebe o evidence.json, não executa nada.
       - name: Gate evidence runner tests
         run: python -m unittest tests/test_run_gates.py
 
@@ -91,7 +91,7 @@ jobs:
       - name: Fused Revisor gate tests
         run: python -m unittest tests/test_revisor_gate.py
 
-      # Ferramenta estreita do Revisor (DHR-009 F2): testes de RECUSA são bloqueantes (a segurança está no servidor).
+      # Ferramenta estreita do Revisor (DHR-AUDITOR-EXTERNO-009 F2): testes de RECUSA são bloqueantes (a segurança está no servidor).
       - name: Revisor gate MCP tool tests
         run: python -m unittest tests/test_revisor_gate_mcp.py
 
@@ -145,8 +145,17 @@ jobs:
       - name: Detector tests and hook tests (previously not in CI)
         run: |
           git fetch --unshallow --quiet || true
-          python -m unittest tests/test_build_map.py tests/test_check_doc_sync.py tests/test_check_handoff.py tests/test_check_refs.py tests/test_backlog_triggers.py tests/test_struct10.py
+          python -m unittest tests/test_build_map.py tests/test_check_doc_sync.py tests/test_check_handoff.py tests/test_check_refs.py tests/test_backlog_triggers.py tests/test_struct10.py tests/test_check_coesao.py
           npm run test:hooks
+
+      # Informativo (não bloqueia): coesão do harness (auditoria 2026-10-17) — hook sem script, teste fora do CI, no-op, citação
+      # de ata inexistente, caixa de nome de arquivo, tabela do AGENTS × agente, selo sem dono, skill solta, status contraditório.
+      # Detector ≠ Gate (ENF-03). Promoção a bloqueante só por decisão de Andraus.
+      - name: Harness cohesion (informative)
+        run: |
+          git fetch --depth=1 origin main:refs/remotes/origin/main --quiet || true
+          python scripts/check_coesao.py
+        continue-on-error: true
 
       - name: Check required files present
         run: |

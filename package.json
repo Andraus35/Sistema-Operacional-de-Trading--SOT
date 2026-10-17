@@ -13,6 +13,7 @@
     "sync": "python scripts/check_doc_sync.py",
     "sync:strict": "python scripts/check_doc_sync.py --strict",
     "handoff": "python scripts/check_handoff.py",
+    "coesao": "python scripts/check_coesao.py",
     "eval": "npx harness-score",
     "score": "npx harness-score --json",
     "score:diff": "npx harness-score --diff"
