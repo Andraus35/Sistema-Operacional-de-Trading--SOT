@@ -7,6 +7,8 @@ Funde e amplia os detectores determinísticos existentes numa bateria fixa, para
   D informativo  check_invariants.py (valores e ordem) · check_refs.py · check_doc_sync.py · backlog_triggers.py (ATIVADO)
                  check_rpsa.py · build_map.py --check · contrato_schemas (schemas/*.json, ex-`sot-schema-validator`)
                  lint_specs (tests/lint-specs.js: seções e notação EARS, ex-`sot-spec-reviewer`)
+                 mapeamento_conflitante · id_norma_inexistente · contagem_declarada · spec_nome_incoerente · valor_fonte · dhr_backlog
+                 mudancas_vs_versao_anterior (revisor_detectores.py, DHR-AUDITOR-EXTERNO-017)
                  pipeline_schemas (saída de um agente × entrada do próximo) · specs_1a_geracao (antiescopo ≥5, schemas citados existem,
                  ICT inativo) — ex-subagentes de 1ª geração (DHR-AUDITOR-EXTERNO-016)
                  campos_atribuidos_baseline (campo `x` atribuído a baseline que não o contém) · estado_backlog (estado de BL-nnn
@@ -33,6 +35,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import check_invariants  # noqa: E402
+import revisor_detectores  # noqa: E402
 
 BASELINES = ["ROADMAP.md", "atomic-spec.md", "governance/RULES.md"]            # Passo 0 (núcleo sempre obrigatório)
 ID_CANONICO = re.compile(r"(?<![A-Za-z]-)(?<!/)\b(CHM|CEM|CCM|CEE|GMC|SDD|PPQ|SAS|CR)-(\d{3})\b")  # modelos canônicos (AGENTS.md §6 item 12); (?<!X-) ignora RULE-CEE-003
@@ -301,7 +304,16 @@ def _run(nome, cmd, classe, bloqueante, cwd=ROOT):
                 "output_sha256": hashlib.sha256(b"").hexdigest(), "tail": [f"indisponível: {type(e).__name__}"]}
 
 
-def rodar(doc, rapido=False, root=ROOT):
+def _versao_anterior(rel, root):
+    """Texto da última versão commitada do documento (git show HEAD:rel), ou None. Somente leitura, sem shell."""
+    try:
+        p = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=root, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30)
+        return p.stdout if p.returncode == 0 else None
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+
+
+def rodar(doc, rapido=False, root=ROOT, anterior=None):
     root = Path(root)
     docp = Path(doc)
     rel = str(docp.resolve().relative_to(root.resolve())).replace("\\", "/") if docp.resolve().is_relative_to(root.resolve()) else str(docp)
@@ -334,6 +346,21 @@ def rodar(doc, rapido=False, root=ROOT):
         det = [fmt(a) for a in achados]
         itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if det else 0,
                       "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
+    for nome, fn in (("mapeamento_conflitante", lambda: revisor_detectores.mapeamento_conflitante(texto)),
+                     ("id_norma_inexistente", lambda: revisor_detectores.id_norma_inexistente(texto, root)),
+                     ("contagem_declarada", lambda: revisor_detectores.contagem_declarada(texto)),
+                     ("spec_nome_incoerente", lambda: revisor_detectores.spec_nome_incoerente(texto, root)),
+                     ("valor_fonte", lambda: revisor_detectores.valor_fonte(texto, root)),
+                     ("dhr_backlog", lambda: revisor_detectores.dhr_backlog(texto, root))):
+        det = [f"{rel}:{ln} {msg}" for ln, msg in fn()]
+        itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if det else 0,
+                      "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
+    if anterior is None and rel.startswith("specs/"):
+        anterior = _versao_anterior(rel, root)
+    if anterior is not None and anterior != texto:
+        mud = revisor_detectores.comparar_versoes(anterior, texto)
+        itens.append({"nome": "mudancas_vs_versao_anterior", "classe": "D", "bloqueante": False, "exit_code": 1 if mud else 0,
+                      "output_sha256": "", "tail": mud[:6] or ["sem mudança normativa"], "detalhes": mud})
     if not rapido:
         itens.append(_run("check_refs", [py, "scripts/check_refs.py"], "D", False, root))
         itens.append(_run("check_doc_sync", [py, "scripts/check_doc_sync.py"], "D", False, root))

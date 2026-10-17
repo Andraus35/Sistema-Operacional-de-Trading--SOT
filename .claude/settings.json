@@ -96,6 +96,16 @@
             "timeout": 30
           }
         ]
+      },
+      {
+        "matcher": "Revisor",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/revisor-guard.js",
+            "timeout": 120
+          }
+        ]
       }
     ],
     "SessionStart": [
