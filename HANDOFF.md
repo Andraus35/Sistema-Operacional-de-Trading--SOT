@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-08
-previous: HO-2026-10-17-07
+handoff_id: HO-2026-10-17-09
+previous: HO-2026-10-17-08
 data: 2026-10-17
 branch: ccr-d43bf9b0-h336k5
 base_commit: 1c6754b
@@ -19,6 +19,7 @@ Duas frentes nesta sessão: (a) roteamento de modelo por tarefa (4Es) e (b) **se
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **Resíduos da DHR-AGENTES-001:** corrigida a referência truncada de uma ata (faltava o prefixo AUDITOR-EXTERNO) em `CATALOGO-OFICIAL.md:198` (único ERRO do `check_refs`; erro de digitação, sem mudança de sentido). **Deliberadamente não feitos:** (i) etiqueta de domínio no `build_map.py` — o script está no selo `GATE-MANIFEST.sha256` e regravá-lo exige decisão de Andraus (§8); (ii) separação física em pastas — risco alto, benefício marginal já coberto por nomes+índice; (iii) classificação RPSA — o registro automático pós-merge faz.
 - **Separação AC × AT (aditiva):** `GLOSSARIO.md` §1-bis, `AGENTS.md` §2/§3 (3.1 AC, 3.2 AT, 3.3 fronteira), `docs/agentes/INDICE-AGENTES.md`, ata `governance/DHR-AGENTES-001_*`, registro no CATALOGO. Nada movido/renomeado; separação física em pastas **não adotada**. Achado: "Trilha A/B" do CATALOGO é outro eixo (sequenciamento) — o documento de roteamento foi corrigido para não usar esses nomes.
 - **Entregue (PROPOSTA, não normativa):** `docs/agentes/INDICE-AGENTES.md` · `governance/DHR-AGENTES-001_*` · `governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md` — auditoria interna (12 achados A-01..A-12), matriz de ~30 tarefas por criticidade N0–N4, 14 fontes externas classificadas, preços, Matriz de Roteamento Meta (R1–R12), protocolo de teste Eficácia-first, cenário ilustrativo e decisões D1–D6. Nenhum arquivo normativo alterado.
 - Achados-chave: (1) premissa de plataforma da EUA-E19 §1 caducou — `effort`, `model` por invocação existem hoje; o "esforço médio/alto" dos agentes não é aplicado; (2) Opus 5.5 custa 20% menos que o Opus 4.8 do Especificador (não testado); (3) `sot-spec-reviewer` e `sot-schema-validator` sem `model:` herdam o mais caro; (4) sem telemetria de custo por tarefa; (5) Orquestrador pode rodar o gate D antes de gastar uma revisão LLM.
