@@ -325,6 +325,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Acrescenta apenas a checagem HO-10 ao detector check_handoff.py e lembretes no HANDOFF; nenhum arquivo de agente, checklist, metodo nem regra e alterado."
+    },
+    {
+      "id": "DHR-BACKLOG-001",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Atualiza apenas o estado de dois itens do painel de backlog RMR-001; nenhum arquivo de agente, checklist, metodo nem regra e alterado."
     }
   ]
 }
