@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-30
-previous: HO-2026-10-17-29
+handoff_id: HO-2026-10-17-33
+previous: HO-2026-10-17-30
 data: 2026-10-17
 branch: ccr-7917ac44-2l55cz
-base_commit: 59ccd6e
+base_commit: d23ef3a
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -48,7 +48,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-Andraus: sem pendência de proteção da `main` (decidido: processo). Próximo lembrete: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24]. Plan da SPEC-006 só por ordem de Andraus.
+Andraus decide o rumo do Plan da SPEC-006: rodada 7 com consolidação (reduzir cópias a referências a D4), dividir a Spec (Q-ABERTURA-5) ou parar. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - DHR-AUDITOR-EXTERNO-015 (na `main`) e -016 (fusão/aposentadoria dos subagentes antigos) — decisões de Andraus em chat, 2026-10-17.
