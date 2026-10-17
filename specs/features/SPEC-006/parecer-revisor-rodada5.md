@@ -1,5 +1,7 @@
 # Parecer do Revisor SOT — SPEC-006 Plan v1.4 (rodada 5) — 2026-10-17
 
+> **Guarda pós-Revisor (DHR-AUDITOR-EXTERNO-018):** o hook do subagente não é honrado em nuvem; o Orquestrador rodou `python scripts/revisor_gate.py specs/features/SPEC-006/plan.md` sobre o commit `88eb5c6` **antes** do parecer e o entregou ao Revisor (que o citou na seção 3): `VEREDITO D: PASSOU_D`, sinais H: 0, `validate_spec_sot` PASS 12/12; 3 verificações informativas apontam para OUTROS arquivos (GEN-1/BL-011), fora do escopo. Reconferido na reaplicação da guarda (mesmo resultado). Nenhum achado do parecer vem do gate (todos são de Classe P/semânticos): nada a confirmar ou descartar.
+
 > **Não-normativo; não é baseline.** Registro do parecer do Revisor SOT (somente leitura) sobre `plan.md` v1.4 (1652 linhas) e `checks.md` (194 linhas), commit `88eb5c6`. Resumo fiel para continuidade entre sessões; o texto integral foi entregue ao Orquestrador. Gate de código informado pelo Orquestrador: `VEREDITO D: PASSOU_D` (≠ CONFORME ≠ homologação); o Revisor não teve a ferramenta `revisor_gate` nesta sessão (registrado como "gate não verificado por mim").
 
 ## Veredito: NÃO CONFORME — 2 Críticas · 10 Médias (M1–M10) · 8 Menores (m1–m8) · 1 pendência de gate (G)

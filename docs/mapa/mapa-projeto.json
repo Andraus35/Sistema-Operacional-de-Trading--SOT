@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "434fceaf6faec88b62eaa5262fcb53cc9f71f55e58717cbde88ea69e19f43f1f",
+  "digest": "31d523ccf07e429ed02efa558791edac819a52e275c39574f7a8c3d9aa4fec36",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -206,7 +206,7 @@
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 83,
+   "in": 84,
    "out": 4
   },
   {
@@ -248,7 +248,7 @@
    "path": "canon/SAS-001-structural-agent-spec.md",
    "area": "canon",
    "title": "SAS-001 — Structural Agent Specification (consolidado)",
-   "in": 58,
+   "in": 59,
    "out": 3
   },
   {
@@ -843,7 +843,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 17,
+   "in": 18,
    "out": 5
   },
   {
@@ -1333,7 +1333,7 @@
    "path": "governance/DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md",
    "area": "governance",
    "title": "DHR-SPEC004-001 — Ata de Homologação — Abertura da SPEC-004 (Cognitive Blackboard Protocol)",
-   "in": 11,
+   "in": 10,
    "out": 12
   },
   {
@@ -2244,14 +2244,14 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
    "in": 3,
-   "out": 8
+   "out": 9
   },
   {
    "path": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
    "area": "specs",
    "title": "Parecer do Revisor SOT — SPEC-006 Plan v1.4 (rodada 5) — 2026-10-17",
-   "in": 0,
-   "out": 5
+   "in": 2,
+   "out": 6
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
@@ -2709,7 +2709,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "DHR-BL008-001",
@@ -3059,7 +3059,7 @@
   {
    "id": "DHR-SPEC004-001",
    "defined_in": "governance/DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md",
-   "cited_by": 11
+   "cited_by": 10
   },
   {
    "id": "DHR-SPEC004-002",
@@ -3304,7 +3304,7 @@
   {
    "id": "INV-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 31
+   "cited_by": 32
   },
   {
    "id": "INV-07",
@@ -3439,7 +3439,7 @@
   {
    "id": "RULE-CAU-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 20
+   "cited_by": 19
   },
   {
    "id": "RULE-CAU-02",
@@ -3487,11 +3487,6 @@
    "cited_by": 1
   },
   {
-   "id": "RULE-CBP-007",
-   "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 2
-  },
-  {
    "id": "RULE-CBP-008",
    "defined_in": "specs/features/SPEC-004/plan.md",
    "cited_by": 0
@@ -3514,7 +3509,7 @@
   {
    "id": "RULE-CBP-014",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 11
+   "cited_by": 10
   },
   {
    "id": "RULE-CEB",
@@ -3639,7 +3634,7 @@
   {
    "id": "RULE-CKG",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "cited_by": 0
   },
   {
    "id": "RULE-CKG-001",
@@ -3657,7 +3652,17 @@
    "cited_by": 1
   },
   {
+   "id": "RULE-CKG-007",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
    "id": "RULE-CKG-008",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CKG-009",
    "defined_in": "specs/features/SPEC-006/plan.md",
    "cited_by": 1
   },
@@ -3669,7 +3674,7 @@
   {
    "id": "RULE-CKG-012",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-013",
@@ -4014,17 +4019,17 @@
   {
    "id": "RULE-HH-002",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 3
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-003",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 3
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-004",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 3
+   "cited_by": 2
   },
   {
    "id": "RULE-HH-010",
@@ -4134,7 +4139,7 @@
   {
    "id": "RULE-INQ-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 6
+   "cited_by": 5
   },
   {
    "id": "RULE-MECH",
@@ -4229,7 +4234,7 @@
   {
    "id": "RULE-ONT-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 8
+   "cited_by": 7
   },
   {
    "id": "RULE-ONT-02",
@@ -25235,6 +25240,11 @@
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
+   "to": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
   },
@@ -25251,6 +25261,11 @@
   {
    "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "type": "id"
   },
   {
@@ -25306,11 +25321,6 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
-   "type": "id"
-  },
-  {
-   "from": "specs/features/SPEC-006/plan.md",
-   "to": "governance/DHR-SPEC004-001_Ata_Homologacao_Abertura_SPEC-004.md",
    "type": "id"
   },
   {
@@ -25371,6 +25381,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "specs/features/SPEC-006/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
    "type": "path"
   },
   {
