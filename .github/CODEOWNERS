@@ -1,0 +1,14 @@
+# DHR-AUDITOR-EXTERNO-015 — o que julga o trabalho do Especificador não pode ser alterado sem a revisão de Andraus.
+# (Efeito de bloqueio exige "Require review from Code Owners" na proteção da branch main — configuração do repositório, não deste arquivo.)
+/scripts/revisor_gate.py            @Andraus35
+/scripts/revisor_gate_mcp.py        @Andraus35
+/scripts/gate_manifest.py           @Andraus35
+/scripts/check_invariants.py        @Andraus35
+/scripts/validate_spec_sot.py       @Andraus35
+/scripts/check_refs.py              @Andraus35
+/scripts/check_doc_sync.py          @Andraus35
+/scripts/backlog_triggers.py        @Andraus35
+/scripts/check_rpsa.py              @Andraus35
+/scripts/build_map.py               @Andraus35
+/governance/GATE-MANIFEST.sha256    @Andraus35
+/.claude/agents/                    @Andraus35

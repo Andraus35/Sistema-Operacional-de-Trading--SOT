@@ -1,6 +1,11 @@
 ---
 name: sot-schema-validator
 description: Subagent that validates SOT JSON schemas for Draft-07 compliance, required field presence, and I/O contract consistency across agent pipeline. Use when schemas have been modified or a new schema is added.
+tools:
+  - Read
+  - Grep
+  - Glob
+# Somente leitura (DHR-AUDITOR-EXTERNO-015): sem `tools` o subagente herdava Bash/Write/Edit e furava o ENF-03.
 ---
 
 # SOT Schema Validator
