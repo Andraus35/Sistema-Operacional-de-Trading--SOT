@@ -234,6 +234,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologação de Spec: não altera texto de agente; mudanças de agente da SPEC-006 estão na DHR-BACKLOG-ABERTURA-001."
+    },
+    {
+      "id": "DHR-REVISOR-DELTA-001",
+      "data": "2026-10-17",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Seção 3-bis (revisão por delta com hash) em revisor.md; carimbos alinhados."
     }
   ]
 }

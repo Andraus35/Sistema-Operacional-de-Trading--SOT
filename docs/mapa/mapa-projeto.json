@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "27e14c2ae84375c6c447396f30b14070bcd4848ae3a52d017f311215e97693e9",
+  "digest": "0e9f74f12735ed93495336dc68967757a3657c5768d874e62465335c3849708b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -11,14 +11,14 @@
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
    "in": 29,
-   "out": 58
+   "out": 59
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 37,
-   "out": 59
+   "in": 38,
+   "out": 60
   },
   {
    "path": ".claude/agents/sot-schema-validator.md",
@@ -980,6 +980,13 @@
    "out": 16
   },
   {
+   "path": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "area": "governance",
+   "title": "DHR-REVISOR-DELTA-001 — Ata — Revisor SOT passa a revisar por delta (hash por bloco) nas rodadas seguintes",
+   "in": 2,
+   "out": 5
+  },
+  {
    "path": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
    "area": "governance",
    "title": "DHR-RPSA-001 — Ata — Automação determinística dos carimbos RPSA e sincronização dos agentes",
@@ -1438,7 +1445,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 237,
+   "in": 238,
    "out": 35
   },
   {
@@ -1795,14 +1802,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 33,
+   "in": 34,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 124,
+   "in": 125,
    "out": 9
   },
   {
@@ -1942,7 +1949,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 67,
+   "in": 68,
    "out": 26
   },
   {
@@ -2647,6 +2654,11 @@
    "cited_by": 11
   },
   {
+   "id": "DHR-REVISOR-DELTA-001",
+   "defined_in": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "cited_by": 2
+  },
+  {
    "id": "DHR-RPSA-001",
    "defined_in": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
    "cited_by": 3
@@ -2934,7 +2946,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 165
+   "cited_by": 166
   },
   {
    "id": "INV-08",
@@ -4199,7 +4211,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 67
+   "cited_by": 68
   },
   {
    "id": "SPEC-007",
@@ -4590,6 +4602,11 @@
   },
   {
    "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
    "type": "id"
   },
@@ -4886,6 +4903,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
    "type": "id"
   },
   {
@@ -13116,6 +13138,31 @@
   {
    "from": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
    "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
   },
   {
