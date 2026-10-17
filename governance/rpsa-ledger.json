@@ -318,6 +318,13 @@
       "em_escopo": true,
       "sync": "fonte-unica",
       "motivo": "Acrescenta a familia RULE-COESAO em RULES.md (escopo dos agentes por definicao); os arquivos dos agentes nao mudam e leem a regra da fonte unica."
+    },
+    {
+      "id": "DHR-COESAO-004",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta apenas a checagem HO-10 ao detector check_handoff.py e lembretes no HANDOFF; nenhum arquivo de agente, checklist, metodo nem regra e alterado."
     }
   ]
 }
