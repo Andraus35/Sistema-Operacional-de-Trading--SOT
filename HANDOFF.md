@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-07
-previous: HO-2026-10-17-06
+handoff_id: HO-2026-10-17-08
+previous: HO-2026-10-17-07
 data: 2026-10-17
 branch: ccr-7917ac44-2l55cz
 base_commit: 1c6754b
