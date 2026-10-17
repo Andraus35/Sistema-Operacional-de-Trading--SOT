@@ -93,6 +93,11 @@ class Coesao(unittest.TestCase):
         msgs = [f["msg"] for f in self.run_it()[0]["achados"] if f["id"] == "COE-06"]
         self.assertTrue(msgs and "WebFetch" in msgs[0] and "mcp__x__y" in msgs[0])
 
+    def test_mcp_citada_na_tabela_nao_acusa(self):
+        self.w("AGENTS.md", "| `.claude/agents/r.md` | Audita | Read · `mcp__x__y` (gate) |\n")
+        self.w(".claude/agents/r.md", "---\ntools:\n  - Read\n  - mcp__x__y\n---\n")
+        self.assertEqual([x for x in self.ids() if x[0] == "COE-06"], [])
+
     def test_tabela_igual_ao_frontmatter(self):
         self.w("AGENTS.md", "| `.claude/agents/r.md` | Audita | Read · Grep |\n")
         self.w(".claude/agents/r.md", "---\ntools:\n  - Read\n  - Grep\n---\n")

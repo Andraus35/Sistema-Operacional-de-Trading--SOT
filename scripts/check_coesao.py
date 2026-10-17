@@ -240,17 +240,17 @@ def agents_table_tools(ctx):
     for ln in txt.splitlines():
         m = re.match(r"\|\s*`(\.claude/agents/[\w.-]+\.md)`\s*\|[^|]*\|([^|]*)\|", ln)
         if m:
-            rows[m.group(1)] = set(t for t in BASE_TOOLS if re.search(rf"\b{t}\b", m.group(2)))
+            rows[m.group(1)] = (set(t for t in BASE_TOOLS if re.search(rf"\b{t}\b", m.group(2))), m.group(2))
     return rows
 
 
 def check_agents_vs_table(ctx):
-    for rel, listed in agents_table_tools(ctx).items():
+    for rel, (listed, cell) in agents_table_tools(ctx).items():
         tools = frontmatter_tools(ctx.read(rel))
         if tools is None:
             continue
         real = {t for t in tools if t in BASE_TOOLS}
-        mcp = [t for t in tools if t.startswith("mcp__")]
+        mcp = [t for t in tools if t.startswith("mcp__") and t.split("__")[-1] not in cell]
         extra = sorted(real - listed)
         if extra or mcp:
             ctx.add("COE-06", "WARN",

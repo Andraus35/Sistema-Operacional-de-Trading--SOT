@@ -242,7 +242,8 @@
    "estado": "ativo",
    "enforca": "Coesão do harness (COE-01..14)",
    "ata": "DHR-COESAO-001",
-   "verificado_em": "inferido-do-codigo"
+   "verificado_em": "inferido-do-codigo",
+   "nota": "COE-01/02/04/05 bloqueiam no CI (ERRO); COE-14 só avisa enquanto o registro é PROPOSTA. Verificador de RULE-COESAO-01/02/03 (DHR-COESAO-003)."
   },
   {
    "id": "det.revisor-detectores",
