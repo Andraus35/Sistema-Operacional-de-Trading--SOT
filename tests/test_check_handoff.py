@@ -166,5 +166,15 @@ class Handoff(unittest.TestCase):
         self.assertEqual(len(warns), 1)
 
 
+    def test_ho10_prazo_vencido_aparece_e_futuro_nao(self):
+        self.first(extra="- Assinar o registro [PRAZO: 2026-10-24]\n- Outra coisa [PRAZO: 2026-12-31]\n- Data ruim [PRAZO: 2026-13-45]")
+        _, rep, _ = self.run_check("--hoje", "2026-10-25")
+        msgs = [a["mensagem"] for a in rep["achados"] if a["id"] == "HO-10"]
+        self.assertTrue(any("2026-10-24" in m and "Assinar o registro" in m for m in msgs))
+        self.assertFalse(any("2026-12-31" in m for m in msgs))
+        self.assertTrue(any("data inválida" in m for m in msgs))
+        _, rep, _ = self.run_check("--hoje", "2026-10-23")
+        self.assertFalse(any("2026-10-24" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-10"))
+
 if __name__ == "__main__":
     unittest.main()

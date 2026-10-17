@@ -203,7 +203,8 @@
    "estado": "ativo",
    "enforca": "Integridade e defasagem do HANDOFF",
    "ata": "DHR-PCC-002",
-   "verificado_em": "inferido-do-codigo"
+   "verificado_em": "inferido-do-codigo",
+   "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart."
   },
   {
    "id": "det.check-invariants",
