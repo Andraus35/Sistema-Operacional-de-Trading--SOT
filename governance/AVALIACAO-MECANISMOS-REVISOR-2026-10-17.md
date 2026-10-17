@@ -68,3 +68,14 @@
 4. **Limites:** uma Spec, um modelo externo, uma execução; severidades não comparáveis; o Revisor interno também rodou sem o gate (hook não ativo na sessão) e sem diff de versão anterior.
 
 **Consequência para o L3 formal:** o teste cumpre "revisão por outra família" **no formato texto-só**, e o resultado é *consistente* com o Revisor interno (sem divergência real), mas **não** valida o Revisor contra um auditor com repositório. Para fechar a lacuna: Auditor Externo reativado em Spec CRITICAL, ou defeitos escritos por Andraus.
+
+### 7.1 Segundo modelo externo (mesmo pedido, outra execução, também sem repositório)
+4 achados (3 críticos, 1 médio); **todas as citações literais conferem** com o texto e **nenhum é falso**, ao contrário do primeiro modelo externo.
+| Achado do 2º modelo | Situação ao conferir | Equivalente no Revisor interno |
+|---|---|---|
+| H-01 (crítico) EC-CKG-004 em E2 sobre a escrita permanente do KG | **Procede** (plan.md:1201; o guard de INV-04 fica abaixo do piso E3 da escrita). A linha que ele cita como contraste (1165) é de **outro** EC (EC-CKG-001), mas a tese é a mesma | F-07 / A-10 (**média**) — o externo inflou a severidade |
+| H-02 (crítico) EC-CKG-001 admite o caminho canônico enquanto CKG-010(a) é INDETERMINADO | **Procede** (plan.md:1162 × 711) | F-02 / A-01 |
+| H-03 (crítico) evidência depende de amostragem ENF-07 sem limiar | Lacuna **já declarada** pelo autor (plan.md:1166); procede só como "não declare E3 pleno" | m-03 (menor) |
+| H-04 (médio) validadores não executados | **Declarado** pelo autor (plan.md:1401); não é defeito do Plan | Passo 3 (gate não verificado) |
+**Resultado agregado dos dois externos:** 10 achados; 2 falsos (ambos do 1º modelo), 4 que apenas repetem lacunas já declaradas, 4 reais — **todos os 4 reais já estavam no Revisor interno**, com severidade igual ou maior (exceto a inflação do H-01/H-02 do 2º). **Defeitos reais achados só por um externo: 0.** Defeitos reais achados só pelo Revisor interno: ≥ 9 (D6 `gate_record`, schema sem `ref`/`valid_to` de nó, `PENDING_ANCESTOR`, `REFUTED` inexistente no CEM-001, `school` sem origem canônica, COL-EXP, SIMILAR_A sem gate, etc.).
+**Conclusão sobre o L3:** em duas tentativas com modelos de outra família e **sem** repositório, a revisão independente **não encontrou ponto cego** do Revisor interno nesta Spec, e rendeu menos que ele (recall ≈ 1/3 dos reais, precisão 4/10 a 4/6 conforme o modelo). Isso **não** prova que o Revisor interno seja suficiente (a lacuna é a ausência de auditor independente **com acesso ao repositório**), mas **reduz** a probabilidade de um defeito material sistemático passando despercebido por correlação de família.
