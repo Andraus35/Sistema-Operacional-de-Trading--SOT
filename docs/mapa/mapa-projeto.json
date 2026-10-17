@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "0fa4e28bcfb09ae0efbafab17b3f0b217a88e40cf4bf703cba1d4ef1524c1bf9",
+  "digest": "296193447473734b4482e8e695064c621c68b968bf1d1f4552e1c45e07058db8",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -227,7 +227,7 @@
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 94,
+   "in": 95,
    "out": 6
   },
   {
@@ -241,7 +241,7 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 105,
+   "in": 106,
    "out": 2
   },
   {
@@ -1445,7 +1445,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 238,
+   "in": 239,
    "out": 35
   },
   {
@@ -1544,7 +1544,14 @@
    "area": "governance",
    "title": "Passagem de sessão — SPEC-006 (errata) e endurecimento do gate — 2026-10-17",
    "in": 0,
-   "out": 12
+   "out": 13
+  },
+  {
+   "path": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
+   "area": "governance",
+   "title": "Parecer do Revisor SOT — SPEC-006 errata v1.10 (rodada por delta) — 2026-10-17",
+   "in": 1,
+   "out": 2
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -1949,7 +1956,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 68,
+   "in": 69,
    "out": 26
   },
   {
@@ -2936,7 +2943,7 @@
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 71
+   "cited_by": 72
   },
   {
    "id": "INV-06",
@@ -2946,7 +2953,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 166
+   "cited_by": 167
   },
   {
    "id": "INV-08",
@@ -3361,7 +3368,7 @@
   {
    "id": "RULE-CKG-008",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-CKG-009",
@@ -3371,7 +3378,7 @@
   {
    "id": "RULE-CKG-010",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-CKG-011",
@@ -4211,7 +4218,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 68
+   "cited_by": 69
   },
   {
    "id": "SPEC-007",
@@ -18542,6 +18549,11 @@
   },
   {
    "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
    "to": "specs/features/SPEC-001/checks.md",
    "type": "path"
   },
@@ -18564,6 +18576,16 @@
    "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
