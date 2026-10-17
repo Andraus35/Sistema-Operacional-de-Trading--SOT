@@ -283,6 +283,13 @@
       "em_escopo": true,
       "sync": "fonte-unica",
       "motivo": "Muda o modelo declarado no frontmatter do Especificador; nao altera o texto de instrucoes, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-003",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta um hook de codigo que confere model/effort por invocacao do Agent; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
     }
   ]
 }
