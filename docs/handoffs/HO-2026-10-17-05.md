@@ -21,11 +21,11 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 ## 3. Feito nesta sessão
 - **Auditoria do Revisor:** sem Bash/Write/Edit por decisão de Andraus (DHR-AUDITOR-EXTERNO-009 §1, 2026-10-11; reafirmada na DHR-AUDITOR-EXTERNO-014). Executa só `revisor_gate` (MCP, leitura, 12 verificações D + 10 sinais H). Parte adversarial/probabilística = só prompt (Passos 4-ter/5-bis), 1 passada, sem calibração contínua.
 - **Brechas fechadas (DHR-AUDITOR-EXTERNO-015, só no ramo):** `tools: Read, Grep, Glob` em `sot-spec-reviewer`/`sot-schema-validator`; selo `scripts/gate_manifest.py` + `governance/GATE-MANIFEST.sha256` (servidor do Revisor recusa rodar se divergir; passo de CI bloqueante); `.github/CODEOWNERS`. Testes novos: `tests/test_gate_manifest.py` + 2 em `test_revisor_gate_mcp.py` (32 OK).
-- **Banco de estresse rodado** (`origin/ferramentas-estresse`, nunca mesclar): 30 defeitos plantados, 3 rodadas do Revisor. `score.py` deu 30/30 mas é inflado (documentos de 99 linhas); medida estrita ≈ 20/17/18 de 30. Gabarito/semente/respostas ficaram no scratchpad (não no repo).
+- **Banco de estresse rodado 2×** (`origin/ferramentas-estresse`, nunca mesclar): 2 sorteios × 30 defeitos plantados × 3 rodadas. `score.py` dá ~30/30 mas é inflado (documentos de 99 linhas); medida adotada (arquivo:linha + texto defeituoso junto) = recall por rodada ≈ 83–100%, 0 falsos alarmes. Gabarito/semente/respostas ficaram no scratchpad (não no repo).
 
 ## 4. Verificado
 - 32 testes (gate, MCP, manifesto) OK; `gate_manifest.py --check` íntegro; `check_rpsa`: DHR-AUDITOR-EXTERNO-015 sem classificação até o registro automático pós-merge (esperado).
-- **Achado:** nas 3 rodadas o `revisor_gate` **não carregou** no Revisor invocado em nuvem ("GATE NÃO VERIFICADO"); servidor funciona fora do agente. Causa não diagnosticada.
+- **Achado:** nas 6 rodadas o `revisor_gate` **não carregou** no Revisor invocado em nuvem ("GATE NÃO VERIFICADO"); servidor funciona fora do agente. Causa não diagnosticada.
 - Não conferido nesta sessão: CI da `main`, PRs abertos, `check_refs`.
 
 ## 5. Próximo passo único
@@ -37,7 +37,7 @@ Ler este handoff, executar §9 e, sem outra ordem de Andraus, **não** iniciar o
 
 ## 7. Becos sem saída
 - Dar Bash ao Revisor: rejeitado (DHR-AUDITOR-EXTERNO-009 §2). Não reabrir sem Andraus.
-- Pontuar o banco só com `score.py` em documentos curtos: infla; usar texto defeituoso transcrito + linha.
+- Pontuar o banco só com `score.py` em documentos curtos: infla; usar arquivo:linha + texto defeituoso junto da citação (transcrição literal pura subestima).
 
 ## 8. Não tocar
 - `canon/` BASELINED, specs homologadas, `ROADMAP.md`, `atomic-spec.md`, `.claude/agents/revisor.md`/`especificador.md`, `AGENTS.md` (só por Andraus). Não regravar `GATE-MANIFEST.sha256` sem decisão de Andraus.
@@ -51,8 +51,8 @@ Ler este handoff, executar §9 e, sem outra ordem de Andraus, **não** iniciar o
 - [ ] `git log -1` == `base_commit` ou posterior; se posterior, ler o diff
 
 ## 10. Aguardando Andraus
-- Merge da DHR-AUDITOR-EXTERNO-015 (PR só se pedido) e ativar "Require review from Code Owners" na `main`.
-- Escrever 3–5 defeitos próprios e repetir o banco (parte livre do viés).
+- Merge da DHR-AUDITOR-EXTERNO-015 (PR só se pedido). Andraus decidiu **manter só o selo** (sem exigir revisão de dono de código).
+- Opcional: escrever 3–5 defeitos próprios (parte livre do viés; o novo sorteio automático já foi feito).
 - Diagnosticar por que o MCP do Revisor não carrega em nuvem (testar em sessão local).
 - Próximos reforços propostos: verificadores D novos (contagens, cobertura, citação §/linha), ferramenta `verifica_citacao`, k=3 passes adversariais em modo cego.
 - D-PCC-3/4/5; prioridade: Plan da SPEC-006 · 2 itens de backlog disparados sem registro.
