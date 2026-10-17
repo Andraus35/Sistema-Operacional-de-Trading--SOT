@@ -24,11 +24,13 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 - Parecer do Revisor (observação): CONFORME condicional, 3 Menores (plan.md:39 errata contraditória; checks.md:3 "candidato" defasado; etiquetas [PROPOSTA] no corpo) + 1 Info. Nada corrigido (Spec homologada).
 - Telemetria onda 0: linha adicionada (72430 tokens, 18 chamadas).
 
+- **Sondas temporárias (autorizadas por Andraus, revertidas; `settings.json` limpo):** o `SubagentStop` **dispara** em nuvem, inclusive para "Revisor SOT" (`agent_type` exato) e em encerramento por `SubagentHandback`; `last_assistant_message` chega **vazio** nesse caso. Reproduzindo o evento real na guarda: `exit 2` (G1+G2) — mas o Revisor encerrou sem retorno forçado. Conclusão: o `exit 2` **não é honrado** pelo harness em nuvem para subagente que entrega por `SubagentHandback` (ou o script não roda no ambiente do hook — não separado; a 3ª sonda foi bloqueada pelo classificador). Hipótese de matcher refutada.
+
 ## 4. Verificado
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-Andraus decide: (a) registrar a ferramenta do gate / ajustar a guarda no nível do projeto (exige ata nova + mexe no selo) ou (b) rodar o piloto da onda 1 mesmo assim. Plan da SPEC-006 só por ordem de Andraus.
+Andraus decide (diagnóstico restante: sonda que rode a guarda dentro do hook e grave o exit; classificador exige autorização por sonda): (a) registrar a ferramenta do gate / ajustar a guarda no nível do projeto (exige ata nova + mexe no selo) ou (b) rodar o piloto da onda 1 mesmo assim. Plan da SPEC-006 só por ordem de Andraus.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - DHR-AUDITOR-EXTERNO-015 (na `main`) e -016 (fusão/aposentadoria dos subagentes antigos) — decisões de Andraus em chat, 2026-10-17.
