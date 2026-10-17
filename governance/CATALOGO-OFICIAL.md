@@ -303,3 +303,5 @@ Localização das atas: `governance/DHR-*.md`. ADRs do cluster HOC-003: `governa
 *Catálogo Oficial do SOT. Homologação F.1 registrada em 2026-09-15 (Andraus). Camada Principiológica registrada em 2026-09-16. Registros anteriores preservados; nada é removido, apenas superseded.*
 
 **Registro (2026-10-17, DHR-PCC-001 — decisão de Andraus em chat):** **Fase 1 do PCC-001 autorizada** — continuidade de contexto entre sessões do Orquestrador: `HANDOFF.md` na raiz (whitelist HOD-001 §6b.1 emendado), arquivo `docs/handoffs/`, `AGENTS.md` §11. Cumprimento manual; Fases 2–3 e D-PCC-3/4/5 não autorizadas. RPSA: escopo não / sync fonte-única. Nenhuma decisão aberta fechada.
+
+**Registro (2026-10-17, DHR-PCC-002 — decisão de Andraus em chat):** **Fase 2 do PCC-001 autorizada (antecipada)** — `check_handoff.py` (HO-01..09), hooks `handoff-hook.js` (SessionStart/Stop/SubagentStop) e passo de CI **informativos** (Detector ≠ Gate). **D-PCC-4** (bloqueante) e **D-PCC-5** (Passo 0 do Revisor, `.claude/agents/revisor.md`) **não decididas**; Fase 3 (BUILD-LEDGER, D-PCC-3) não autorizada. RPSA: escopo não / sync fonte-única. Nenhuma decisão aberta fechada.
