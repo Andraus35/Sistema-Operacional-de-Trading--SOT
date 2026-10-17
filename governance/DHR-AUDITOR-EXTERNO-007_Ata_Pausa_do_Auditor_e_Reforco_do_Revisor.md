@@ -5,7 +5,7 @@
 | De | Orquestrador interno (registro) — decisão de Andraus — Decisor Final / Consensus Authority |
 | Para | Orquestrador interno / Especificador SOT / Revisor SOT |
 | Data | 2026-10-11 |
-| Status | **PROPOSTA — vira vigente só com o merge de Andraus.** Decisão de direção registrada (chat, 2026-10-11, após o teste de estresse). Não fecha nem abre decisão; não altera checklist, método, regra nem o Revisor. |
+| Status | **VIGENTE — mesclada na `main`; ratificada por Andraus em 2026-10-17 (DHR-COESAO-002).** *(Marca original: "PROPOSTA — vira vigente só com o merge de Andraus.")* Decisão de direção registrada (chat, 2026-10-11, após o teste de estresse). Não fecha nem abre decisão; não altera checklist, método, regra nem o Revisor. |
 | Compatibilidade | Suspende, enquanto durar a pausa, o uso rotineiro previsto nas DHR-AUDITOR-EXTERNO-001..005; não as revoga (INV-07). Reversível. |
 | RPSA-escopo | nao |
 | RPSA-sync | fonte-unica |

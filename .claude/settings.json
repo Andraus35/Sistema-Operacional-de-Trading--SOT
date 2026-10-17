@@ -9,6 +9,16 @@
             "command": "node scripts/gate-check.js"
           }
         ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/roteador-modelos.js",
+            "timeout": 15
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -59,6 +69,11 @@
             "type": "command",
             "command": "node scripts/doc-sync-check.js stop",
             "timeout": 60
+          },
+          {
+            "type": "command",
+            "command": "node scripts/handoff-hook.js stop",
+            "timeout": 30
           }
         ]
       },
@@ -68,6 +83,11 @@
             "type": "command",
             "command": "node scripts/andraus-ask-guard.js",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node scripts/revisor-posguarda.js",
+            "timeout": 120
           }
         ]
       }
@@ -84,6 +104,21 @@
             "type": "command",
             "command": "node scripts/doc-sync-check.js stop",
             "timeout": 60
+          },
+          {
+            "type": "command",
+            "command": "node scripts/handoff-hook.js stop",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "Revisor",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/revisor-guard.js",
+            "timeout": 120
           }
         ]
       }
@@ -100,6 +135,11 @@
             "type": "command",
             "command": "node scripts/doc-sync-check.js session-start",
             "timeout": 60
+          },
+          {
+            "type": "command",
+            "command": "node scripts/handoff-hook.js session-start",
+            "timeout": 30
           }
         ]
       }

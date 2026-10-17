@@ -1,6 +1,11 @@
 ---
 name: sot-spec-reviewer
 description: Subagent that performs independent review of SOT spec files for constitutional compliance, EARS notation correctness, and cross-agent consistency. Use when a spec has been modified and needs a fresh review pass.
+tools:
+  - Read
+  - Grep
+  - Glob
+# Somente leitura (DHR-AUDITOR-EXTERNO-015): sem `tools` o subagente herdava Bash/Write/Edit e furava o ENF-03.
 ---
 
 # SOT Spec Reviewer

@@ -5,7 +5,14 @@ revisor_gate.py — GATE FUNDIDO (Classe D) do Revisor SOT (DHR-AUDITOR-EXTERNO-
 Funde e amplia os detectores determinísticos existentes numa bateria fixa, para uma Spec (ou documento):
   D bloqueante   validate_spec_sot.py (estrutura) · baselines presentes na raiz · IDs de modelos canônicos que não existem
   D informativo  check_invariants.py (valores e ordem) · check_refs.py · check_doc_sync.py · backlog_triggers.py (ATIVADO)
-                 check_rpsa.py · build_map.py --check
+                 check_rpsa.py · build_map.py --check · contrato_schemas (schemas/*.json, ex-`sot-schema-validator`)
+                 lint_specs (tests/lint-specs.js: seções e notação EARS, ex-`sot-spec-reviewer`)
+                 mapeamento_conflitante · id_norma_inexistente · contagem_declarada · spec_nome_incoerente · valor_fonte · dhr_backlog
+                 mudancas_vs_versao_anterior (revisor_detectores.py, DHR-AUDITOR-EXTERNO-017)
+                 pipeline_schemas (saída de um agente × entrada do próximo) · specs_1a_geracao (antiescopo ≥5, schemas citados existem,
+                 ICT inativo) — ex-subagentes de 1ª geração (DHR-AUDITOR-EXTERNO-016)
+                 campos_atribuidos_baseline (campo `x` atribuído a baseline que não o contém) · estado_backlog (estado de BL-nnn
+                 citado ≠ RMR-001) · refs_variantes (T04-neg / ADV-X-NN-sufixo sem definição) — achados da medição da SPEC-006
   H sinais       candidatos por palavra-chave a violação de invariante de SENTIDO (AGENTS.md §6/§7): o código levanta,
                  o Revisor CONFIRMA. Nunca bloqueiam. Têm falso alarme e falso negativo por construção.
 Classe P (julgamento de sentido, adversarial, epistêmico) NÃO está aqui: é do Revisor (atomic-spec §10.6).
@@ -28,6 +35,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import check_invariants  # noqa: E402
+import revisor_detectores  # noqa: E402
 
 BASELINES = ["ROADMAP.md", "atomic-spec.md", "governance/RULES.md"]            # Passo 0 (núcleo sempre obrigatório)
 ID_CANONICO = re.compile(r"(?<![A-Za-z]-)(?<!/)\b(CHM|CEM|CCM|CEE|GMC|SDD|PPQ|SAS|CR)-(\d{3})\b")  # modelos canônicos (AGENTS.md §6 item 12); (?<!X-) ignora RULE-CEE-003
@@ -69,6 +77,213 @@ def checar_ids_canonicos(texto, root=ROOT):
     return achados
 
 
+# --- detectores D informativos (achados da medição do Revisor na SPEC-006, 2026-10-12) -------------------------------
+_BASE_ID = r"(?:CEM|CHM|CCM|CEE|GMC|SDD|PPQ|SAS|CR)-\d{3}|SPEC-0\d{2}"
+_ATRIB = re.compile(r"`([a-z][a-z0-9]*_[a-z0-9_]+)`[^`\n]{0,40}?\b(?:é|são|do|da|de|vem\s+d[oa]|atribu[ií]d[oa]\s+(?:ao|à)|pertence\s+ao)\s+(?:o\s+|a\s+)?(" + _BASE_ID + r")\b")
+_ATRIB_ISENTA = re.compile(r"\[PROPOSTA\]|proposta|\blocal\b|\bnovo\b|renome|n[ãa]o existe|inexistente|0 ocorr", re.I)
+
+
+def _arquivo_baseline(bid, root):
+    root = Path(root)
+    if bid.startswith("SPEC-"):
+        p = root / "specs" / "features" / bid / "plan.md"
+        return p if p.is_file() else None
+    c = sorted((root / "canon").glob(bid + "*.md"))
+    return c[0] if c else None
+
+
+def campos_atribuidos_baseline(texto, root=ROOT):
+    """Campo `snake_case` atribuído (na mesma linha) a um baseline (modelo canônico ou SPEC) cujo arquivo NÃO contém o campo.
+    Candidato a [FONTE] inventada (RULE-HD-04/RULE-MET-01). Linhas marcadas [PROPOSTA]/local/novo são isentas."""
+    cache, achados = {}, []
+    for i, linha in enumerate(texto.splitlines(), 1):
+        if _ATRIB_ISENTA.search(linha):
+            continue
+        for m in _ATRIB.finditer(linha):
+            campo, bid = m.group(1), m.group(2)
+            if bid not in cache:
+                f = _arquivo_baseline(bid, root)
+                cache[bid] = f.read_text(encoding="utf-8", errors="replace") if f else None
+            if cache[bid] is not None and campo not in cache[bid]:
+                achados.append((i, campo, bid))
+    return achados
+
+
+_ESTADO_RE = re.compile(r"(BL-\d{3})\b[^.\n]{0,80}?\b(ATIVADO|Em espera|Absorvido|Descartado|Diferido)\b")
+_ESTADO_ISENTA = re.compile(r"~~|riscad|\bn[ãa]o\b|\bNÃO\b|\bsem\b|promov|antes|anterior|gatilho|devolvid", re.I)
+
+
+def estados_backlog(root=ROOT):
+    """{BL-nnn: estado vigente} do painel backlog/RMR-001 (1º termo em negrito da coluna Estado)."""
+    f = Path(root) / "backlog" / "RMR-001_Painel_Backlog.md"
+    if not f.is_file():
+        return {}
+    out = {}
+    for linha in f.read_text(encoding="utf-8", errors="replace").splitlines():
+        m = re.match(r"\|\s*\*\*(BL-\d{3})\*\*\s*\|", linha)
+        if not m:
+            continue
+        cel = linha.split("|")
+        if len(cel) > 7:
+            e = re.search(r"\*\*([^*]+)\*\*", cel[7]) or re.match(r"\s*(\S+(?: \S+)?)", cel[7])
+            if e:
+                out[m.group(1)] = e.group(1).strip()
+    return out
+
+
+_CANDIDATO = re.compile(r"^\|\s*Status\s*\|[^\n]*CANDIDAT", re.M | re.I)
+
+
+def estado_backlog(texto, root=ROOT):
+    """Estado de BL-nnn citado no documento que difere do painel RMR-001 (negações/histórico isentos).
+    Só incide em documento CANDIDATO (linha Status): em Spec homologada o estado escrito é o do momento da homologação e
+    não pode ser reescrito (INV-07) — divergência histórica ali não é defeito."""
+    if not _CANDIDATO.search(texto):
+        return []
+    reais, achados = estados_backlog(root), []
+    for i, linha in enumerate(texto.splitlines(), 1):
+        for m in _ESTADO_RE.finditer(linha):
+            bl, citado = m.group(1), m.group(2)
+            trecho = linha[m.start():m.end()]
+            if bl in reais and citado.lower() != reais[bl].lower() and not _ESTADO_ISENTA.search(trecho):
+                achados.append((i, bl, citado, reais[bl]))
+    return achados
+
+
+_VARIANTE = re.compile(r"\b((?:T\d{2}|ADV-[A-Z]+-\d{2}|EC-[A-Z]+-\d{3})-[a-z]+)\b")
+
+
+def refs_variantes(texto):
+    """Referência a variante com sufixo (T04-neg, ADV-X-06-neg) que nunca é definida como item (início de linha/cabeçalho)."""
+    definidos = {m.group(1) for ln in texto.splitlines() for m in [re.match(r"^[\s#>*|-]*\**((?:T\d{2}|ADV-[A-Z]+-\d{2}|EC-[A-Z]+-\d{3})-[a-z]+)\b", ln)] if m}
+    achados = []
+    for i, linha in enumerate(texto.splitlines(), 1):
+        for m in _VARIANTE.finditer(linha):
+            if m.group(1) not in definidos:
+                achados.append((i, m.group(1)))
+    return achados
+
+
+# --- contrato dos schemas I/O (absorve o ex-subagente `sot-schema-validator`, DHR-AUDITOR-EXTERNO-016) -------------------
+def checar_schemas(root=ROOT):
+    """Violações do contrato dos schemas de agente: Draft-07, $id único, title/type/required, faixa de score (agentes 0-3,
+    score_total 0-9), enum de 4 estados do sinal da síntese, hipótese aprovada anulável no ICT. Somente leitura.
+    Regras do subagente antigo que os schemas vigentes NÃO cumprem (additionalProperties:false no topo; score em todo output)
+    ficam de fora de propósito: virariam falso alarme permanente; a divergência vai para a ata, não para este detector."""
+    d = Path(root) / "schemas"
+    out, ids = [], {}
+    for f in sorted(d.glob("*.json")):
+        try:
+            s = json.loads(f.read_text(encoding="utf-8"))
+        except ValueError as e:
+            out.append(f"{f.name}: JSON inválido ({e})")
+            continue
+        if not str(s.get("$schema", "")).endswith("draft-07/schema#"):
+            out.append(f"{f.name}: $schema não é Draft-07")
+        if not s.get("$id"):
+            out.append(f"{f.name}: sem $id")
+        elif s["$id"] in ids:
+            out.append(f"{f.name}: $id repetido de {ids[s['$id']]}")
+        else:
+            ids[s["$id"]] = f.name
+        for campo in ("title", "required"):
+            if not s.get(campo):
+                out.append(f"{f.name}: sem {campo}")
+        if s.get("type") != "object":
+            out.append(f"{f.name}: raiz não é type=object")
+        props = s.get("properties", {})
+        for k, v in props.items():
+            if k.endswith("_score") or k == "score_total":
+                teto = 9 if k == "score_total" else 3
+                if v.get("type") != "integer" or v.get("minimum") != 0 or v.get("maximum") != teto:
+                    out.append(f"{f.name}: {k} deve ser integer 0..{teto}")
+    sy = d / "synthesis.output.json"
+    if sy.is_file():
+        sig = json.loads(sy.read_text(encoding="utf-8")).get("properties", {}).get("sinal", {})
+        falta = {"COMPRA", "VENDA", "NEUTRO", "AGUARDAR_SETUP"} - set(sig.get("enum", []))
+        if falta:
+            out.append(f"synthesis.output.json: enum de sinal sem {sorted(falta)}")
+    ic = d / "ict.input.json"
+    if ic.is_file():
+        ah = json.loads(ic.read_text(encoding="utf-8")).get("properties", {}).get("approved_hypothesis", {})
+        if "null" not in (ah.get("type") if isinstance(ah.get("type"), list) else [ah.get("type")]):
+            out.append("ict.input.json: approved_hypothesis deve admitir null (ICT INATIVO)")
+    return out
+
+
+# Entradas do pipeline: (schema consumidor, campo da entrada) -> schema produtor. A hipótese do Elliott é entregue por projeção do
+# primary_hypothesis (objeto aninhado na saída); os demais campos replicam objetos de saída de mesmo nome.
+PIPELINE = [
+    ("fibonacci.input", "elliott_hypothesis", "elliott-wave.output", "primary_hypothesis"),
+    ("smc.input", "elliott_hypothesis", "elliott-wave.output", "primary_hypothesis"),
+    ("ict.input", "approved_hypothesis", "elliott-wave.output", "primary_hypothesis"),
+    ("ict.input", "smc_context", "smc.output", None),
+    ("synthesis.input", "elliott_output", "elliott-wave.output", None),
+    ("synthesis.input", "fibonacci_output", "fibonacci.output", None),
+    ("synthesis.input", "smc_output", "smc.output", None),
+    ("synthesis.input", "ict_output", "ict.output", None),
+]
+
+
+def checar_pipeline_schemas(root=ROOT):
+    """Saída de um agente × entrada do próximo (ex-`sot-schema-validator`). Dois defeitos: (a) subcampo da entrada sem correspondente
+    na saída do produtor; (b) subcampo OBRIGATÓRIO na entrada que o produtor não obriga (pode omitir o que o consumidor exige).
+    Detector de contrato, não de sentido: nome diferente com o mesmo significado também aparece e o Revisor adjudica."""
+    d, out = Path(root) / "schemas", []
+    def _carrega(n):
+        f = d / f"{n}.json"
+        return json.loads(f.read_text(encoding="utf-8")) if f.is_file() else None
+    for cons, campo, prod, aninhado in PIPELINE:
+        c, p = _carrega(cons), _carrega(prod)
+        if c is None or p is None:
+            out.append(f"{cons}/{prod}: schema ausente")
+            continue
+        wrapper = c.get("properties", {}).get(campo, {})
+        sub, exigidos = wrapper.get("properties", {}), set(wrapper.get("required", []))
+        pprops, preq = dict(p.get("properties", {})), set(p.get("required", []))
+        if aninhado and aninhado in pprops:
+            filho = p["properties"][aninhado]
+            pprops.update(filho.get("properties", {}))
+            preq |= set(filho.get("required", []))
+        for k in sub:
+            if k not in pprops:
+                out.append(f"{cons}.{campo}.{k}: sem correspondente na saída de {prod}")
+            elif k in exigidos and k not in preq:
+                out.append(f"{cons}.{campo}.{k}: obrigatório na entrada, opcional na saída de {prod}")
+    return out
+
+
+_ANTIESCOPO = re.compile(r"^(?:#+\s*)?(?:fora do escopo|antiescopo|non-goals)", re.I)
+
+
+def checar_specs_primeira_geracao(root=ROOT):
+    """Specs de 1ª geração (specs/*.spec.md; ex-`sot-spec-reviewer`): antiescopo com ≥5 itens, `Referência: schemas/x.json` existente,
+    regra do ICT inativo em ict.spec.md. Não confere 'cada item atribuído ao agente responsável' nem 'todos os campos citados':
+    as seções Inputs/Outputs são prosa, sem nome de campo, e a conferência seria opinião de código."""
+    root, out = Path(root), []
+    for f in sorted((root / "specs").glob("*.spec.md")):
+        linhas = f.read_text(encoding="utf-8", errors="replace").splitlines()
+        itens, dentro = 0, False
+        for ln in linhas:
+            if _ANTIESCOPO.match(ln.strip().lstrip("*").strip()):
+                dentro = True
+                continue
+            if dentro:
+                if ln.strip().startswith("- "):
+                    itens += 1
+                elif ln.strip() == "---" or ln.startswith("## "):
+                    dentro = False
+        if itens < 5:
+            out.append(f"{f.name}: antiescopo com {itens} item(ns) (mínimo 5)")
+        for ln in linhas:
+            m = re.search(r"`(schemas/[^`]+\.json)`", ln)
+            if m and not (root / m.group(1)).is_file():
+                out.append(f"{f.name}: schema citado não existe: {m.group(1)}")
+        if f.name == "ict.spec.md" and not any(re.search(r"INATIV", ln) for ln in linhas):
+            out.append("ict.spec.md: sem a regra de ICT INATIVO")
+    return out
+
+
 def sinais_h(texto):
     out = []
     for i, linha in enumerate(texto.splitlines(), 1):
@@ -89,7 +304,16 @@ def _run(nome, cmd, classe, bloqueante, cwd=ROOT):
                 "output_sha256": hashlib.sha256(b"").hexdigest(), "tail": [f"indisponível: {type(e).__name__}"]}
 
 
-def rodar(doc, rapido=False, root=ROOT):
+def _versao_anterior(rel, root):
+    """Texto da última versão commitada do documento (git show HEAD:rel), ou None. Somente leitura, sem shell."""
+    try:
+        p = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=root, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30)
+        return p.stdout if p.returncode == 0 else None
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+
+
+def rodar(doc, rapido=False, root=ROOT, anterior=None):
     root = Path(root)
     docp = Path(doc)
     rel = str(docp.resolve().relative_to(root.resolve())).replace("\\", "/") if docp.resolve().is_relative_to(root.resolve()) else str(docp)
@@ -111,12 +335,46 @@ def rodar(doc, rapido=False, root=ROOT):
     inv = [f"{rel}:{ln} [{c}] {m}" for ln, c, m, _f in check_invariants.checar_texto(texto)]
     itens.append({"nome": "check_invariants", "classe": "D", "bloqueante": False, "exit_code": 1 if inv else 0,
                   "output_sha256": "", "tail": inv[:8] or ["nenhum desvio de valor/ordem"]})
+    for nome, achados, fmt in (
+        ("campos_atribuidos_baseline", campos_atribuidos_baseline(texto, root),
+         lambda a: f"{rel}:{a[0]} campo `{a[1]}` atribuído a {a[2]}, que não o contém"),
+        ("estado_backlog", estado_backlog(texto, root),
+         lambda a: f"{rel}:{a[0]} {a[1]} citado como {a[2]}; painel RMR-001 = {a[3]}"),
+        ("refs_variantes", refs_variantes(texto),
+         lambda a: f"{rel}:{a[0]} variante '{a[1]}' nunca definida como item"),
+    ):
+        det = [fmt(a) for a in achados]
+        itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if det else 0,
+                      "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
+    for nome, fn in (("mapeamento_conflitante", lambda: revisor_detectores.mapeamento_conflitante(texto)),
+                     ("id_norma_inexistente", lambda: revisor_detectores.id_norma_inexistente(texto, root)),
+                     ("contagem_declarada", lambda: revisor_detectores.contagem_declarada(texto)),
+                     ("spec_nome_incoerente", lambda: revisor_detectores.spec_nome_incoerente(texto, root)),
+                     ("valor_fonte", lambda: revisor_detectores.valor_fonte(texto, root)),
+                     ("dhr_backlog", lambda: revisor_detectores.dhr_backlog(texto, root))):
+        det = [f"{rel}:{ln} {msg}" for ln, msg in fn()]
+        itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if det else 0,
+                      "output_sha256": "", "tail": det[:6] or ["nenhum achado"], "detalhes": det})
+    if anterior is None and rel.startswith("specs/"):
+        anterior = _versao_anterior(rel, root)
+    if anterior is not None and anterior != texto:
+        mud = revisor_detectores.comparar_versoes(anterior, texto)
+        itens.append({"nome": "mudancas_vs_versao_anterior", "classe": "D", "bloqueante": False, "exit_code": 1 if mud else 0,
+                      "output_sha256": "", "tail": mud[:6] or ["sem mudança normativa"], "detalhes": mud})
     if not rapido:
         itens.append(_run("check_refs", [py, "scripts/check_refs.py"], "D", False, root))
         itens.append(_run("check_doc_sync", [py, "scripts/check_doc_sync.py"], "D", False, root))
         itens.append(_run("backlog_triggers", [py, "scripts/backlog_triggers.py"], "D", False, root))
         itens.append(_run("check_rpsa", [py, "scripts/check_rpsa.py"], "D", False, root))
         itens.append(_run("build_map_check", [py, "scripts/build_map.py", "--check"], "D", False, root))
+        sch = checar_schemas(root)
+        itens.append({"nome": "contrato_schemas", "classe": "D", "bloqueante": False, "exit_code": 1 if sch else 0,
+                      "output_sha256": "", "tail": sch[:6] or ["schemas/*.json cumprem o contrato"], "detalhes": sch})
+        itens.append(_run("lint_specs", ["node", "tests/lint-specs.js"], "D", False, root))
+        for nome, fn in (("pipeline_schemas", checar_pipeline_schemas), ("specs_1a_geracao", checar_specs_primeira_geracao)):
+            ach = fn(root)
+            itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if ach else 0,
+                          "output_sha256": "", "tail": ach[:6] or ["nenhum achado"], "detalhes": ach})
     sinais = sinais_h(texto)
     for s in sinais:
         s["ref"] = f"{rel}:{s['linha']}"                      # arquivo:linha completo (o Revisor cita assim)

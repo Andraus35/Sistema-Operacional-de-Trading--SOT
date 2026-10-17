@@ -6,12 +6,14 @@
   "scripts": {
     "test": "node tests/validate-schemas.js",
     "lint": "node tests/lint-specs.js",
-    "test:hooks": "node tests/test-hooks.js && node tests/test-map-sync.js && node tests/test-ask-guard.js",
+    "test:hooks": "node tests/test-hooks.js && node tests/test-map-sync.js && node tests/test-ask-guard.js && node tests/test-handoff-hook.js",
     "test:py": "python -m unittest discover -s tests -p test_*.py",
     "map": "python scripts/build_map.py",
     "map:check": "python scripts/build_map.py --check",
     "sync": "python scripts/check_doc_sync.py",
     "sync:strict": "python scripts/check_doc_sync.py --strict",
+    "handoff": "python scripts/check_handoff.py",
+    "coesao": "python scripts/check_coesao.py",
     "eval": "npx harness-score",
     "score": "npx harness-score --json",
     "score:diff": "npx harness-score --diff"

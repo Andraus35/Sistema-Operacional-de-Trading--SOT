@@ -1,0 +1,36 @@
+# Auditoria de coesão dos mecanismos do repositório (2026-10-17)
+
+> **Não-normativa.** Relatório do Orquestrador, a pedido de Andraus ("mecanismos incoerentes, ociosos, ambíguos, de duas verdades e sem coesão"). Somente leitura sobre o estado da `main` em `db32790`. Não homologa, não fecha decisão aberta (CONS-01), não altera `AGENTS.md`, agentes, `CODEOWNERS`, `canon/`, `ROADMAP.md` nem `atomic-spec.md`. Achado = fato com evidência; encaminhamento é de Andraus.
+
+## 0. Base verificada
+Suíte completa verde: 226 testes Python (`unittest discover`), 4 suítes de hook em Node, `npm test` (11/11 schemas), `npm run lint` (20 ok, 5 GEN-1 ignorados). `gate_manifest --check`, `check_doc_sync`, `check_handoff`, `check_rpsa`: sem ERRO. O problema encontrado é **coesão**, não execução.
+
+## 1. Duas verdades
+| # | Achado | Evidência | Quem resolve |
+|---|---|---|---|
+| D1 | **Auditor Externo: pausado, piloto ou inerte?** A ata -007 (2026-10-11) pausa o auditor, mas seu Status ainda diz "PROPOSTA — vira vigente só com o merge" e ela já está na `main`. `AGENTS.md` §9 descreve o piloto sem citar a pausa. `auditor-externo.yml` se declara "PROPOSTA — NÃO HOMOLOGADO / INERTE" e seus runs recentes terminam `skipped`. | `governance/DHR-AUDITOR-EXTERNO-007…md` linha 10; `AGENTS.md` §9; `.github/workflows/auditor-externo.yml` linhas 1-3 | Andraus (AGENTS §9; status da -007) |
+| D2 | **HANDOFF contradiz a si mesmo.** §10 listava como pendentes merges já feitos (DHR-AGENTES-001/ROTEAMENTO-001 no PR #106; DHR-AUDITOR-EXTERNO-016 no #104; ata 003 no #109); `base_commit` defasado. | `HANDOFF.md` §3 × §5 × §10 (HO-22) | Orquestrador — **corrigido neste PR (HO-23)** |
+| D3 | **Regra de fim de turno sem norma.** O guarda `andraus-ask-guard.js` cita `DHR-ASK-002`; essa ata **não existe** em `governance/`. A regra vive só no cabeçalho do script. | `scripts/andraus-ask-guard.js` linhas 1-25; `grep DHR-ASK-00` só acha o script | Andraus — **proposta de ata neste PR** |
+| D4 | **README desatualizado.** "Próximo trabalho autorizado: SPEC-001"; cita `ATOMIC-SPEC.md` (o arquivo é `atomic-spec.md`; quebra no Linux); lista de `canon/` sem CCM-001. | `README.md` linhas 7, 15, 20 | Orquestrador — **corrigido neste PR** |
+| D5 | **`roadmap.md` em minúscula** nas descrições do Especificador e do Revisor; o arquivo é `ROADMAP.md`. | `.claude/agents/*.md` (campo `description`) | Andraus (arquivos de agente + RPSA) — **não tocado** |
+| D6 | **AGENTS.md × agentes.** §3 lista o Revisor como "Read · Grep · Glob" (o `revisor.md` tem também a MCP `revisor_gate` + `mcpServers`) e o Especificador sem WebSearch/WebFetch (o `especificador.md` tem). §8 omite 8 scripts: `gate_manifest`, `revisor_detectores`, `revisor_guard`, `revisor_posguarda`, `roteador_modelos`, `route_aex`, `rpsa_auto`, `run_gates`. | `AGENTS.md` §3/§8 × `.claude/agents/*.md` | Andraus — **não tocado** |
+
+## 2. Mecanismos ociosos ou que não protegem como parecem
+| # | Achado | Evidência | Quem resolve |
+|---|---|---|---|
+| O1 | **Três camadas para o mesmo trabalho, duas inertes em nuvem.** MCP `revisor_gate` não carrega em nuvem; `SubagentStop` (`revisor-guard`) dispara mas o `exit 2` não é honrado; só o `revisor-posguarda` (Stop do Orquestrador) funciona, confirmado ao vivo. Todas seguem registradas e seladas, e o `revisor.md` ainda manda usar a MCP no Passo 0. | HANDOFF HO-21 §3; `.claude/settings.json`; `revisor.md` linha 78 | Andraus (decidir manter, desligar ou redocumentar) |
+| O2 | **Testes sem CI.** Não rodavam no CI: `test_build_map`, `test_check_doc_sync`, `test_check_handoff`, `test_check_refs`, `test_backlog_triggers`, `test_struct10` e as 4 suítes de hook em Node. Os hooks que impõem regras de Andraus ficavam sem proteção de regressão. | `.github/workflows/ci.yml` × `tests/` | Orquestrador — **passo de CI adicionado neste PR** |
+| O3 | **CODEOWNERS cobre 10 dos 17 arquivos selados.** Ficam de fora os mais novos: `revisor_guard`, `revisor_posguarda`, `roteador_modelos` (e os `.js`) e `revisor_detectores`. Só bloqueia se a proteção da `main` exigir revisão do dono (configuração do repositório, não verificável daqui). O selo detecta, não impede. | `.github/CODEOWNERS` × `governance/GATE-MANIFEST.sha256` | Andraus — **não tocado** |
+| O4 | **Skills/comandos legados.** `.claude/skills/{SKILL,update-harness,validate-sot-spec}.md` estão soltos (sem pasta própria) e não aparecem na lista de skills da sessão: ociosos. Conteúdo trata o "Synthesis Agent" como vivo (contra DHR-ARQ-002) e `update-spec` aceita `synthesis`. A skill `sot-especificador-pap001` aparece duplicada (projeto + `anthropic-skills:`). | `.claude/skills/`, `.claude/commands/update-spec.md` | Andraus (decidir arquivar em `docs/_legacy/`) — **não tocado** |
+| O5 | **Três portas de entrada para o gate de estrutura:** `validate_spec_sot.py` (CI), `revisor_gate.py` (fundido) e `run_gates.py` (só em testes, sem menção no AGENTS). `npm run lint` e `validate-schemas.js` duplicam o que o `revisor_gate` absorveu (DHR-AUDITOR-EXTERNO-016). Duplicidade declarada, não resolvida. | `scripts/`, `package.json` | Andraus |
+| O7 | **`gate-check` no pre-commit é no-op.** `.pre-commit-config.yaml` chama `node scripts/gate-check.js` sem payload; o script lê o JSON de hook do Claude Code no stdin e, vazio, sai `0`. Verificado: stdin vazio ⇒ exit 0; com payload ⇒ exit 2. Também: `.eslintrc.json` e `.prettierrc` sem eslint/prettier em lugar nenhum; `.pre-commit` sem hook instalado neste clone. | `.pre-commit-config.yaml`; `scripts/gate-check.js` | Andraus (retirar ou criar adaptador) |
+| O6 | **`gate-check.js`** bloqueia só 2 frases por regex (ICT×criar e R:R<…), em specs/RULES/CONSTITUTION; os demais invariantes do `AGENTS.md` §6 não são conferidos ali. Declara-se "rede de segurança". | `scripts/gate-check.js` | Informativo |
+
+## 3. Pontas soltas menores
+`check_refs` WARN: `RULE-REV-01` sem definição; caminho antigo do HANDOFF (pasta no singular) no PCC-001; uma falsa referência a um arquivo do ambiente de nuvem, no dossiê da SPEC-002. `backlog_triggers`: possível re-apontamento não registrado em BL-030, BL-032, BL-034. `RETOMADA/` (com o GEH-001) na raiz fora do mapa do `AGENTS.md` §2. `.clinerules/sot-{specs,rag,schemas}.md` miram a geração 1, que o README diz que será substituída pelas SPEC-010…014.
+
+## 4. O que este PR faz e não faz
+**Atualização (decisões de Andraus, `DHR-COESAO-001`):** D5 corrigido (caixa nos agentes, autorizado), COE-01/02/04/05 bloqueantes, O3 parcial (7 linhas no CODEOWNERS), registro de mecanismos criado como PROPOSTA (resolve na raiz D1/D6/O1/O5 quando assinado). Seguem abertos: D1, D6, O1, O4, O5, O7 e a configuração da proteção da `main`.
+
+**Faz (operacional):** `scripts/check_coesao.py` + 17 testes + passo informativo no CI + `npm run coesao` (os achados acima viram detector contínuo; ver `ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md`) · este relatório · HANDOFF HO-23 (D2) · README (D4) · passo de CI com os testes que faltavam (O2) · ata **PROPOSTA** `DHR-ASK-002` para Andraus assinar (D3).
+**Não faz:** nada em `AGENTS.md`, `.claude/agents/`, `.github/CODEOWNERS`, `canon/`, `ROADMAP.md`, `atomic-spec.md`, skills/comandos nem no estado do Auditor Externo. Nenhuma decisão aberta fechada.

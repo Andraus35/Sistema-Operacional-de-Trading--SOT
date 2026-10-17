@@ -199,6 +199,132 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologa a abertura de uma Spec e registra decisoes; nao altera texto de nenhum arquivo de agente."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-014",
+      "data": "2026-10-12",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Altera o arquivo do Revisor: eleva o modelo do frontmatter (revertendo o roteamento economico da EUA-E19) e acrescenta o Passo 4-ter ao protocolo de revisao; o Especificador nao e afetado."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-013",
+      "data": "2026-10-12",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera scripts de gate (revisor_gate.py, validate_spec_sot.py) e testes; nenhum texto de arquivo de agente e alterado."
+    },
+    {
+      "id": "DHR-ASSINATURA-001",
+      "data": "2026-10-12",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera convencao de governanca (quem assina e como) e o AGENTS.md; nenhum texto de arquivo de agente e alterado."
+    },
+    {
+      "id": "DHR-PCC-001",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera `AGENTS.md` (nova §11) e o whitelist da raiz; nenhum texto de arquivo de agente (`.claude/agents/*.md`) é alterado."
+    },
+    {
+      "id": "DHR-PCC-002",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera `AGENTS.md` (§8 e §11), `.claude/settings.json` e CI; nenhum texto de arquivo de agente (`.claude/agents/*.md`) é alterado."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-015",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Restringe ferramentas de dois subagentes auxiliares e adiciona selo de integridade aos scripts do gate; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-016",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Aposenta dois subagentes auxiliares fora do fluxo e acrescenta dois detectores ao gate do Revisor (script); nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-017",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta detectores de codigo ao gate e um hook de fim de turno para o Revisor; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-AGENTES-001",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta classificação e vocabulário (famílias AC/AT) em AGENTS.md/GLOSSARIO.md; não altera `especificador.md`, `revisor.md`, checklist, método nem regra."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-001",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra decisões de procedimento do Orquestrador e autoriza testes; não altera `especificador.md`, `revisor.md`, checklist, método nem regra."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-018",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta uma guarda de codigo no Orquestrador para conferir o parecer do Revisor; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-002",
+      "data": "2026-10-17",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Muda o modelo declarado no frontmatter do Especificador; nao altera o texto de instrucoes, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-003",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta um hook de codigo que confere model/effort por invocacao do Agent; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-COESAO-001",
+      "data": "2026-10-17",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Corrige apenas a caixa do nome ROADMAP.md nos textos dos dois agentes; nao altera instrucao, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-ASK-002",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Apenas registra por ata uma regra já aplicada por hook; nenhum arquivo de agente nem checklist é alterado."
+    },
+    {
+      "id": "DHR-COESAO-002",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Nenhum arquivo de .claude/agents e alterado; o AGENTS.md ganha so a declaracao de estado PAUSADO do Auditor Externo, ja decidido na DHR-AUDITOR-EXTERNO-007, sem tocar checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-COESAO-003",
+      "data": "2026-10-17",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta a familia RULE-COESAO em RULES.md (escopo dos agentes por definicao); os arquivos dos agentes nao mudam e leem a regra da fonte unica."
+    },
+    {
+      "id": "DHR-COESAO-004",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta apenas a checagem HO-10 ao detector check_handoff.py e lembretes no HANDOFF; nenhum arquivo de agente, checklist, metodo nem regra e alterado."
     }
   ]
 }

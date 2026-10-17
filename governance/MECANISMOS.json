@@ -1,0 +1,458 @@
+{
+ "registro": "MECANISMOS",
+ "versao": "0.1",
+ "status_do_registro": "PROPOSTA",
+ "gerado_em": "2026-10-17",
+ "aviso": "PROPOSTA — vira vigente só com o merge de Andraus (DHR-COESAO-001). Dado de estado, não autoridade: não homologa nem fecha decisão aberta (CONS-01). Em divergência com a realidade, a realidade prevalece; o detector COE-14 acusa a divergência.",
+ "mecanismos": [
+  {
+   "id": "hook.gate-check.pretooluse",
+   "arquivo": "scripts/gate-check.js",
+   "canal": "settings.json PreToolUse Write|Edit|MultiEdit",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "ICT não cria hipótese; R:R<1:3 em specs/RULES/CONSTITUTION (rede de segurança, 2 regex)",
+   "nota": "Só vê 2 frases; os demais invariantes do AGENTS §6 não são conferidos aqui.",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "hook.gate-check.precommit",
+   "arquivo": "scripts/gate-check.js",
+   "canal": ".pre-commit-config.yaml (retirado)",
+   "tipo": "hook",
+   "estado": "legado",
+   "enforca": "(pretendia) o mesmo gate no commit",
+   "nota": "Retirado do pre-commit em DHR-COESAO-002: lia payload de hook (stdin) e rodava como no-op. Continua como hook de sessão (hook.gate-check.pretooluse).",
+   "verificado_em": "2026-10-17: teste manual stdin vazio ⇒ exit 0",
+   "ata": "DHR-COESAO-002"
+  },
+  {
+   "id": "hook.roteador-modelos",
+   "arquivo": "scripts/roteador-modelos.js",
+   "canal": "settings.json PreToolUse Agent",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Nega model/effort por invocação nos agentes de construção; Haiku em gate/soberano",
+   "ata": "DHR-ROTEAMENTO-003",
+   "verificado_em": "2026-10-17: confirmado ao vivo em sessão"
+  },
+  {
+   "id": "hook.post-edit-check",
+   "arquivo": "scripts/post-edit-check.js",
+   "canal": "settings.json PostToolUse Write|Edit|MultiEdit",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "JSON editado continua válido",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "hook.map-sync",
+   "arquivo": "scripts/map-sync.js",
+   "canal": "settings.json PostToolUse/Stop/SubagentStop/SessionStart",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Mapa do projeto em dia (BL-019)",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "hook.andraus-ask-reminder",
+   "arquivo": "scripts/andraus-ask-reminder.js",
+   "canal": "settings.json PostToolUse Agent",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Lembrete de perguntar a Andraus ao lançar agente",
+   "ata": "DHR-ASK-002",
+   "nota": "Ata DHR-ASK-002 em PROPOSTA (regra já opera por hook).",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "hook.andraus-ask-mark",
+   "arquivo": "scripts/andraus-ask-mark.js",
+   "canal": "settings.json PostToolUse AskUserQuestion",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Marca que a pergunta foi feita",
+   "ata": "DHR-ASK-002",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "hook.andraus-ask-guard",
+   "arquivo": "scripts/andraus-ask-guard.js",
+   "canal": "settings.json Stop",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Bloqueia fim de turno sem AskUserQuestion após entrega do Especificador/Revisor ou pergunta em texto",
+   "ata": "DHR-ASK-002",
+   "verificado_em": "2026-10-17: confirmado ao vivo em sessão"
+  },
+  {
+   "id": "hook.doc-sync-check",
+   "arquivo": "scripts/doc-sync-check.js",
+   "canal": "settings.json Stop/SubagentStop/SessionStart",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Avisa drift de sincronização documental (não bloqueia)",
+   "ata": "DHR-DOCSYNC-001",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "hook.handoff-hook",
+   "arquivo": "scripts/handoff-hook.js",
+   "canal": "settings.json Stop/SubagentStop/SessionStart",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Injeta o HANDOFF e avisa defasagem (não bloqueia)",
+   "ata": "DHR-PCC-002",
+   "verificado_em": "2026-10-17: confirmado ao vivo em sessão"
+  },
+  {
+   "id": "hook.revisor-posguarda",
+   "arquivo": "scripts/revisor-posguarda.js",
+   "canal": "settings.json Stop",
+   "tipo": "guarda",
+   "estado": "ativo",
+   "enforca": "Reaplica G1/G2/G3 ao parecer do Revisor no Orquestrador",
+   "ata": "DHR-AUDITOR-EXTERNO-018",
+   "verificado_em": "2026-10-17: confirmado ao vivo em sessão"
+  },
+  {
+   "id": "hook.revisor-guard",
+   "arquivo": "scripts/revisor-guard.js",
+   "canal": "settings.json SubagentStop (Revisor)",
+   "tipo": "guarda",
+   "estado": "inerte-em-nuvem",
+   "enforca": "Reaplicar G1/G2/G3 no fim do Revisor",
+   "ata": "DHR-AUDITOR-EXTERNO-017",
+   "nota": "Dispara em nuvem, mas o exit 2 não é honrado para subagente que entrega por SubagentHandback (HANDOFF HO-21 §3); coberto pela posguarda.",
+   "verificado_em": "2026-10-17: sondas em nuvem"
+  },
+  {
+   "id": "mcp.revisor-gate",
+   "arquivo": "scripts/revisor_gate_mcp.py",
+   "canal": "mcpServers em .claude/agents/revisor.md",
+   "tipo": "gate",
+   "estado": "inerte-em-nuvem",
+   "enforca": "Expõe o gate fundido (Classe D) ao Revisor sem Bash",
+   "ata": "DHR-AUDITOR-EXTERNO-009",
+   "nota": "Servidor inline em .claude/agents/ não carrega em pasta não confiável (causa provável); o Revisor ainda é instruído a chamá-lo no Passo 0.",
+   "verificado_em": "2026-10-17: ausente da lista de ferramentas do Revisor em nuvem"
+  },
+  {
+   "id": "gate.revisor-gate",
+   "arquivo": "scripts/revisor_gate.py",
+   "canal": "CLI / harness",
+   "tipo": "gate",
+   "estado": "ativo",
+   "enforca": "Gate fundido do Revisor: Classe D reprova, sinais H só candidatos",
+   "ata": "DHR-AUDITOR-EXTERNO-009",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "gate.validate-spec-sot",
+   "arquivo": "scripts/validate_spec_sot.py",
+   "canal": "CI + CLI",
+   "tipo": "gate",
+   "estado": "ativo",
+   "enforca": "Estrutura do plan.md (gate determinístico)",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "gate.gate-manifest",
+   "arquivo": "scripts/gate_manifest.py",
+   "canal": "CI",
+   "tipo": "gate",
+   "estado": "ativo",
+   "enforca": "Selo de integridade dos scripts do gate",
+   "ata": "DHR-AUDITOR-EXTERNO-015",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "gate.check-repo-research",
+   "arquivo": "scripts/check_repo_research.py",
+   "canal": "CI (bloqueante)",
+   "tipo": "gate",
+   "estado": "ativo",
+   "enforca": "RULE-ECC-06: pesquisa só em repositórios seguros",
+   "ata": "DHR-ECC06-001",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "det.check-refs",
+   "arquivo": "scripts/check_refs.py",
+   "canal": "CI (informativo)",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Integridade de referências cruzadas",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "det.check-doc-sync",
+   "arquivo": "scripts/check_doc_sync.py",
+   "canal": "CI (informativo) + hook",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "CONS-01 e sincronização documental",
+   "ata": "DHR-DOCSYNC-001",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "det.check-handoff",
+   "arquivo": "scripts/check_handoff.py",
+   "canal": "CI (informativo) + hook",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Integridade e defasagem do HANDOFF",
+   "ata": "DHR-PCC-002",
+   "verificado_em": "inferido-do-codigo",
+   "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart."
+  },
+  {
+   "id": "det.check-invariants",
+   "arquivo": "scripts/check_invariants.py",
+   "canal": "CI (informativo)",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Valores e ordem das regras fixas",
+   "ata": "DHR-AUDITOR-EXTERNO-008",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "det.check-rpsa",
+   "arquivo": "scripts/check_rpsa.py",
+   "canal": "CI (informativo)",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Carimbos RPSA dos agentes × livro-razão",
+   "ata": "DHR-RPSA-001",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "det.backlog-triggers",
+   "arquivo": "scripts/backlog_triggers.py",
+   "canal": "CI (informativo)",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Gatilhos do RMR-001",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "det.check-coesao",
+   "arquivo": "scripts/check_coesao.py",
+   "canal": "CI (bloqueia só ERRO) + CLI",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Coesão do harness (COE-01..14)",
+   "ata": "DHR-COESAO-001",
+   "verificado_em": "inferido-do-codigo",
+   "nota": "COE-01/02/04/05 bloqueiam no CI (ERRO); COE-14 só avisa enquanto o registro é PROPOSTA. Verificador de RULE-COESAO-01/02/03 (DHR-COESAO-003)."
+  },
+  {
+   "id": "det.revisor-detectores",
+   "arquivo": "scripts/revisor_detectores.py",
+   "canal": "biblioteca do revisor_gate",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Detectores D novos do gate do Revisor",
+   "ata": "DHR-AUDITOR-EXTERNO-017",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "lib.revisor-guard",
+   "arquivo": "scripts/revisor_guard.py",
+   "canal": "biblioteca de revisor-guard.js",
+   "tipo": "guarda",
+   "estado": "ativo",
+   "enforca": "Lógica da guarda SubagentStop",
+   "ata": "DHR-AUDITOR-EXTERNO-017",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "lib.revisor-posguarda",
+   "arquivo": "scripts/revisor_posguarda.py",
+   "canal": "biblioteca de revisor-posguarda.js",
+   "tipo": "guarda",
+   "estado": "ativo",
+   "enforca": "Lógica da guarda pós-Revisor",
+   "ata": "DHR-AUDITOR-EXTERNO-018",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "lib.roteador-modelos",
+   "arquivo": "scripts/roteador_modelos.py",
+   "canal": "biblioteca de roteador-modelos.js",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Tabela e regras do roteador de modelos",
+   "ata": "DHR-ROTEAMENTO-003",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "lib.hook-io",
+   "arquivo": "scripts/hook-io.js",
+   "canal": "biblioteca dos hooks em Node",
+   "tipo": "utilitario",
+   "estado": "ativo",
+   "enforca": "Leitura do payload de hook e normalização de caminho",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "util.build-map",
+   "arquivo": "scripts/build_map.py",
+   "canal": "CI + hook + pre-commit",
+   "tipo": "utilitario",
+   "estado": "ativo",
+   "enforca": "Gera o mapa do projeto (BL-019)",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "util.rpsa-auto",
+   "arquivo": "scripts/rpsa_auto.py",
+   "canal": "workflow rpsa-auto",
+   "tipo": "utilitario",
+   "estado": "ativo",
+   "enforca": "Registro automático da classificação RPSA após merge",
+   "ata": "DHR-RPSA-002",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "util.route-aex",
+   "arquivo": "scripts/route_aex.py",
+   "canal": "workflow auditor-externo",
+   "tipo": "utilitario",
+   "estado": "pausado",
+   "enforca": "Roteia achados [AEX] do Auditor Externo",
+   "ata": "DHR-AUDITOR-EXTERNO-007",
+   "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007).",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "util.run-gates",
+   "arquivo": "scripts/run_gates.py",
+   "canal": "CLI do Orquestrador",
+   "tipo": "utilitario",
+   "estado": "ativo",
+   "enforca": "Roda os gates determinísticos e grava evidence.json",
+   "ata": "DHR-AUDITOR-EXTERNO-008",
+   "nota": "Não citado no AGENTS.md §8.",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "wf.ci",
+   "arquivo": ".github/workflows/ci.yml",
+   "canal": "GitHub Actions",
+   "tipo": "workflow",
+   "estado": "ativo",
+   "enforca": "CI do harness",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "wf.rpsa-auto",
+   "arquivo": ".github/workflows/rpsa-auto.yml",
+   "canal": "GitHub Actions (push na main)",
+   "tipo": "workflow",
+   "estado": "ativo",
+   "enforca": "Registra classificação RPSA após o merge",
+   "ata": "DHR-RPSA-002",
+   "verificado_em": "2026-10-17: commit b7cbf8f \"RPSA: registra a classificação… (automático)\" prova a chave RPSA_AUTO_ENABLED ligada",
+   "nota": "Cabeçalho diz INERTE até RPSA_AUTO_ENABLED=true; a chave está ligada (runs success + commit automático)."
+  },
+  {
+   "id": "wf.auditor-externo",
+   "arquivo": ".github/workflows/auditor-externo.yml",
+   "canal": "GitHub Actions",
+   "tipo": "workflow",
+   "estado": "pausado",
+   "enforca": "Loop determinístico com o Auditor Externo",
+   "ata": "DHR-AUDITOR-EXTERNO-007",
+   "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped.",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "agent.especificador",
+   "arquivo": ".claude/agents/especificador.md",
+   "canal": "subagente",
+   "tipo": "agente",
+   "estado": "ativo",
+   "enforca": "Produz Specs/Plans/BASpecs",
+   "ata": "DHR-AGENTES-001",
+   "verificado_em": "inferido-do-codigo"
+  },
+  {
+   "id": "agent.revisor",
+   "arquivo": ".claude/agents/revisor.md",
+   "canal": "subagente",
+   "tipo": "agente",
+   "estado": "ativo",
+   "enforca": "Audita e emite parecer (somente leitura)",
+   "ata": "DHR-AGENTES-001",
+   "verificado_em": "inferido-do-codigo",
+   "nota": "Passo 0 ainda instrui a chamar a MCP revisor_gate (inerte em nuvem); mantido e documentado em DHR-COESAO-002 (sem alterar este arquivo)."
+  },
+  {
+   "id": "cfg.pre-commit",
+   "arquivo": ".pre-commit-config.yaml",
+   "canal": "git hook local",
+   "tipo": "config",
+   "estado": "proposta",
+   "enforca": "Valida schemas/specs/mapa/gate no commit",
+   "nota": "Só vale após pre-commit install em cada clone; nenhum hook instalado neste ambiente. gate-check retirado em DHR-COESAO-002.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
+  },
+  {
+   "id": "cfg.eslintrc",
+   "arquivo": ".eslintrc.json",
+   "canal": "—",
+   "tipo": "config",
+   "estado": "legado",
+   "enforca": "(nenhum chamador)",
+   "nota": "MANTIDO de propósito: marcador de sensor (SNS-02/SNS-04) do harness-score (docs/_legacy/HARNESS-REPORT.md); nenhuma ferramenta de lint/format roda. Arquivar baixaria o score de maturidade.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
+  },
+  {
+   "id": "cfg.prettierrc",
+   "arquivo": ".prettierrc",
+   "canal": "—",
+   "tipo": "config",
+   "estado": "legado",
+   "enforca": "(nenhum chamador)",
+   "nota": "MANTIDO de propósito: marcador de sensor (SNS-02/SNS-04) do harness-score (docs/_legacy/HARNESS-REPORT.md); nenhuma ferramenta de lint/format roda. Arquivar baixaria o score de maturidade.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
+  },
+  {
+   "id": "skill.sot-harness-spec",
+   "arquivo": "docs/_legacy/skills/sot-harness-spec_SKILL.md",
+   "canal": "arquivada em docs/_legacy/skills/",
+   "tipo": "skill",
+   "estado": "legado",
+   "enforca": "Referência mestre da geração 1",
+   "nota": "Arquivada (movida, não apagada) em DHR-COESAO-002: estava solta em .claude/skills/ e não era carregada.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
+  },
+  {
+   "id": "skill.update-harness",
+   "arquivo": "docs/_legacy/skills/update-harness.md",
+   "canal": "arquivada em docs/_legacy/skills/",
+   "tipo": "skill",
+   "estado": "legado",
+   "enforca": "Propaga mudança de fonte ao harness GEN-1",
+   "nota": "Arquivada (movida, não apagada) em DHR-COESAO-002: estava solta em .claude/skills/ e não era carregada.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
+  },
+  {
+   "id": "skill.validate-sot-spec",
+   "arquivo": "docs/_legacy/skills/validate-sot-spec.md",
+   "canal": "arquivada em docs/_legacy/skills/",
+   "tipo": "skill",
+   "estado": "legado",
+   "enforca": "Valida spec GEN-1",
+   "nota": "Arquivada (movida, não apagada) em DHR-COESAO-002: estava solta em .claude/skills/ e não era carregada.",
+   "verificado_em": "inferido-do-codigo",
+   "ata": "DHR-COESAO-002"
+  }
+ ]
+}
