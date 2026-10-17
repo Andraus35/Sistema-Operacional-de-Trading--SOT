@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "7717c3155e70d9186912ab5195a4ce258407748e61771a52a4a624229719d223",
+  "digest": "42e4b45595a4f2d245d99500745a29c0ab4f3f2d103398d2ea15d29c42f5f187",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -164,7 +164,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 166,
+   "in": 167,
    "out": 67
   },
   {
@@ -220,14 +220,14 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 158,
+   "in": 159,
    "out": 107
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 93,
+   "in": 94,
    "out": 6
   },
   {
@@ -437,7 +437,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 92,
+   "in": 93,
    "out": 176
   },
   {
@@ -605,7 +605,7 @@
    "path": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "area": "governance",
    "title": "DHR-BACKLOG-ABERTURA-001 — Ata — Backlog vinculado por regra à abertura de cada Spec (determinístico)",
-   "in": 9,
+   "in": 10,
    "out": 6
   },
   {
@@ -1074,7 +1074,7 @@
    "path": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-002 — Ata de Homologação — SPEC-006 (Cognitive Knowledge Graph) v1.7 — BASELINE",
-   "in": 6,
+   "in": 7,
    "out": 13
   },
   {
@@ -1529,8 +1529,15 @@
    "path": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
    "area": "governance",
    "title": "Auditoria Independente e Adversarial: SPEC-006 v1.7 (Cognitive Knowledge Graph) e desempenho do Revisor",
-   "in": 1,
+   "in": 2,
    "out": 14
+  },
+  {
+   "path": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "area": "governance",
+   "title": "Passagem de sessão — SPEC-006 (errata) e endurecimento do gate — 2026-10-17",
+   "in": 0,
+   "out": 10
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -1788,14 +1795,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 32,
+   "in": 33,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 123,
+   "in": 124,
    "out": 9
   },
   {
@@ -1844,7 +1851,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 80,
+   "in": 82,
    "out": 25
   },
   {
@@ -1929,13 +1936,13 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
    "in": 2,
-   "out": 8
+   "out": 9
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 66,
+   "in": 67,
    "out": 26
   },
   {
@@ -2107,7 +2114,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "BL-004",
@@ -2147,7 +2154,7 @@
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "BL-012",
@@ -2267,7 +2274,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -2367,7 +2374,7 @@
   {
    "id": "DHR-BACKLOG-ABERTURA-001",
    "defined_in": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "DHR-BL008-001",
@@ -2702,7 +2709,7 @@
   {
    "id": "DHR-SPEC006-002",
    "defined_in": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-SPEC006-PEND-001",
@@ -4177,7 +4184,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 80
+   "cited_by": 82
   },
   {
    "id": "SPEC-004",
@@ -4192,12 +4199,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 66
+   "cited_by": 67
   },
   {
    "id": "SPEC-007",
    "defined_in": "ROADMAP.md",
-   "cited_by": 41
+   "cited_by": 42
   },
   {
    "id": "SPEC-008",
@@ -18447,6 +18454,61 @@
    "type": "id"
   },
   {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
+  },
+  {
    "from": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -20795,6 +20857,11 @@
    "from": "specs/features/SPEC-006/checks.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
