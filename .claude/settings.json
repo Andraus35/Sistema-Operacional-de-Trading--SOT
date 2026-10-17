@@ -73,6 +73,11 @@
             "type": "command",
             "command": "node scripts/andraus-ask-guard.js",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node scripts/revisor-posguarda.js",
+            "timeout": 120
           }
         ]
       }
