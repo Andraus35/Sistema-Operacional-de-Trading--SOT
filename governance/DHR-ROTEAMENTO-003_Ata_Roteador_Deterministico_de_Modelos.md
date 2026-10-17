@@ -30,7 +30,7 @@ Não existia roteamento por código: a regra "Revisor e Especificador nunca por 
 - Fail-open: erro no script libera.
 
 ## 4. Pendências que exigem Andraus `[FATO]`
-- **Registrar o hook** `PreToolUse`/`Agent` → `node scripts/roteador-modelos.js` em `.claude/settings.json` e **regravar o selo** (`gate_manifest.py --write` com os 2 arquivos novos em `ARQUIVOS`). O classificador de permissões da sessão bloqueou ambos; sem isso o roteador existe mas **não roda**.
+- **Hook registrado e selo regravado (17 arquivos)** após autorização de Andraus no chat; confirmado ao vivo: `Agent` com `Revisor SOT` + `model=haiku` foi negado pelo hook.
 - Emenda EUA-E24 (D5) segue só após evidência da onda 1.
 
 ## 5. Permanecem ABERTAS (CONS-01)
