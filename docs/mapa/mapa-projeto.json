@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "65ceeec0758c194f1d1d0afe8be10cc495f3bea4d7929de61d704ad0b03579d6",
+  "digest": "a473ef9c8156871ebe9b924939b641e6b12496e4f28c483ef2b30a5acff72814",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -192,14 +192,14 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 195,
+   "in": 196,
    "out": 106
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 92,
+   "in": 93,
    "out": 6
   },
   {
@@ -857,7 +857,7 @@
    "path": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
    "area": "governance",
    "title": "DHR-BACKLOG-001 — Ata — Promoção de BL-003 e BL-011 a ATIVADO (gatilho `spec:SPEC-006 em redação`)",
-   "in": 3,
+   "in": 4,
    "out": 4
   },
   {
@@ -1760,7 +1760,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 261,
+   "in": 262,
    "out": 39
   },
   {
@@ -2208,7 +2208,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 74,
+   "in": 75,
    "out": 22
   },
   {
@@ -2257,7 +2257,7 @@
    "path": "specs/features/SPEC-006/checks.md",
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
-   "in": 3,
+   "in": 4,
    "out": 10
   },
   {
@@ -2268,10 +2268,17 @@
    "out": 6
   },
   {
+   "path": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
+   "area": "specs",
+   "title": "Parecer do Revisor SOT — SPEC-006 Plan v1.5 (rodada 6) — 2026-10-17",
+   "in": 0,
+   "out": 6
+  },
+  {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 98,
+   "in": 99,
    "out": 23
   },
   {
@@ -2483,7 +2490,7 @@
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "BL-012",
@@ -2728,7 +2735,7 @@
   {
    "id": "DHR-BACKLOG-001",
    "defined_in": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-BL008-001",
@@ -3303,7 +3310,7 @@
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "INV-03",
@@ -3313,7 +3320,7 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 57
+   "cited_by": 58
   },
   {
    "id": "INV-05",
@@ -3363,7 +3370,7 @@
   {
    "id": "INV-CKG-02",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "INV-EPI",
@@ -3468,7 +3475,7 @@
   {
    "id": "RULE-CAU-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "RULE-CBP",
@@ -4523,7 +4530,7 @@
   {
    "id": "SPEC-004",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 74
+   "cited_by": 75
   },
   {
    "id": "SPEC-005",
@@ -4533,7 +4540,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 98
+   "cited_by": 99
   },
   {
    "id": "SPEC-007",
@@ -25494,6 +25501,41 @@
   },
   {
    "from": "specs/features/SPEC-006/parecer-revisor-rodada5.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
+   "to": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
+   "to": "specs/features/SPEC-006/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada6.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "path"
   },
