@@ -54,7 +54,7 @@ raiz/
 ├── specs/                  ← harness de 1ª geração (5 specs de agentes de TRADING .spec.md, ref. até SPEC-010…014)
 │   └── features/<SPEC-00x>/  ← feature-specs por Spec: plan.md + checks.md (criados sob demanda)
 ├── rag/  schemas/          ← RAG chunks · schemas I/O
-├── .claude/agents/         ← agentes de CONSTRUÇÃO: especificador.md (RW) · revisor.md (RO) · sot-* (RO)
+├── .claude/agents/         ← agentes de CONSTRUÇÃO: especificador.md (RW) · revisor.md (RO)
 ├── docs/agentes/           ← índice AC × AT (não-normativo)
 └── .claude/skills/ commands/ · scripts/ · tests/ · .github/ · .clinerules/
 ```
@@ -69,8 +69,9 @@ raiz/
 |---|---|---|
 | `.claude/agents/especificador.md` | Produz Specs/Plans/Tasks/BASpecs | Read · Write · Edit · Grep · Glob |
 | `.claude/agents/revisor.md` | Audita; força prova; emite parecer | **Somente leitura**: Read · Grep · Glob |
-| `.claude/agents/sot-spec-reviewer.md`, `sot-schema-validator.md` | Subagentes auxiliares de revisão | **Somente leitura**: Read · Grep · Glob |
 | Orquestrador (sessão) · Auditor Externo (§9) | Coordena a construção · auditoria consultiva externa | — |
+
+> Os subagentes `sot-spec-reviewer` e `sot-schema-validator` foram aposentados (DHR-AUDITOR-EXTERNO-016; arquivo em `docs/_legacy/agents/`) — o que era útil foi fundido no gate do Revisor.
 
 **3.2 Agentes de Trading (AT)** — o produto em operação: Elliott Specialist (Structural), SMC Specialist (Institutional), Fibonacci Validator, ICT Specialist (Operational), Manager Agent (Fases 0/1/2), Risk Agent (FASE RISK). **Não são arquivos de `.claude/agents/`**: existem como Specs (`specs/*.spec.md` GEN-1, `specs/features/`), `rag/` e `schemas/`; nenhum está implementado (fase spec-first). Equivalência de nomes: `GLOSSARIO.md` §2.
 

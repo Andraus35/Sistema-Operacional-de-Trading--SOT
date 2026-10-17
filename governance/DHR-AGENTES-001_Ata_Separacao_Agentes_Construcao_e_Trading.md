@@ -12,7 +12,7 @@
 | RPSA-motivo | Acrescenta classificação e vocabulário (famílias AC/AT) em AGENTS.md/GLOSSARIO.md; não altera `especificador.md`, `revisor.md`, checklist, método nem regra. |
 
 ## 1. Origem `[FATO]`
-O repositório usa "agente" para dois grupos: quem **constrói** o SOT (Orquestrador, Especificador, Revisor, `sot-*`, Auditor Externo) e quem **opera mercado** (Elliott, SMC, Fibonacci, ICT, Manager, Risk). Havia colisões de vocabulário: "Orchestrator" (legado de runtime, hoje Manager Agent) × Orquestrador (sessão de construção); `specs/*.spec.md` (spec de agente de trading) × `specs/features/` (Specs numeradas de construção); "Trilha A/B" (sequenciamento) lido como se fosse a divisão construção/trading; `AGENTS.md` §3 listava só os agentes de construção sob o título genérico "Agentes".
+O repositório usa "agente" para dois grupos: quem **constrói** o SOT (Orquestrador, Especificador, Revisor, Auditor Externo; os `sot-*` já aposentados pela DHR-AUDITOR-EXTERNO-016 constam só como nota) e quem **opera mercado** (Elliott, SMC, Fibonacci, ICT, Manager, Risk). Havia colisões de vocabulário: "Orchestrator" (legado de runtime, hoje Manager Agent) × Orquestrador (sessão de construção); `specs/*.spec.md` (spec de agente de trading) × `specs/features/` (Specs numeradas de construção); "Trilha A/B" (sequenciamento) lido como se fosse a divisão construção/trading; `AGENTS.md` §3 listava só os agentes de construção sob o título genérico "Agentes".
 
 ## 2. O que muda `[FATO]`
 1. **Nomes canônicos:** *Agentes de Construção (AC)* e *Agentes de Trading (AT)*.

@@ -20,7 +20,7 @@
 
 O repositório usa a palavra "agente" para dois grupos que **não se misturam**:
 
-- **Agentes de Construção (AC)** — constroem e auditam o SOT enquanto ele é só especificação: **Orquestrador** (da sessão), **Especificador SOT**, **Revisor SOT**, `sot-spec-reviewer`, `sot-schema-validator`, **Auditor Externo**. Vivem em `.claude/agents/`, `scripts/`, `.github/`.
+- **Agentes de Construção (AC)** — constroem e auditam o SOT enquanto ele é só especificação: **Orquestrador** (da sessão), **Especificador SOT**, **Revisor SOT**, **Auditor Externo** (os subagentes `sot-*` foram aposentados — DHR-AUDITOR-EXTERNO-016). Vivem em `.claude/agents/`, `scripts/`, `.github/`.
 - **Agentes de Trading (AT)** — o produto, que analisará mercado em operação: **Elliott Specialist** (Structural), **SMC Specialist** (Institutional), **Fibonacci Validator**, **ICT Specialist** (Operational), **Manager Agent** (Fases 0/1/2) e o **Risk Agent** (FASE RISK). Vivem como Specs (`specs/*.spec.md` GEN-1, `specs/features/`), `rag/`, `schemas/`; nenhum está implementado.
 
 **Regras de leitura:** (1) em documento **novo**, "agente" sem qualificador é ambíguo — escreva "agente de construção" ou "agente de trading" (não retroativo, INV-07); (2) **Orquestrador** = sessão que coordena a construção (AC); o termo legado **Orchestrator** de runtime foi absorvido pelo **Manager Agent** (AT); (3) `specs/*.spec.md` = spec de **um agente de trading**; `specs/features/SPEC-00x/` = Spec numerada produzida por AC; (4) **Famílias AC/AT ≠ Trilhas A/B** (eixos de sequenciamento do CATALOGO/ROADMAP); (5) Estrategista/Analista/Controlador são **papéis de governança**, não agentes executores. Índice completo e fronteiras: `docs/agentes/INDICE-AGENTES.md` (não-normativo).

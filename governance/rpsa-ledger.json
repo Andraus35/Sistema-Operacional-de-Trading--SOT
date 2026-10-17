@@ -234,6 +234,27 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Altera `AGENTS.md` (§8 e §11), `.claude/settings.json` e CI; nenhum texto de arquivo de agente (`.claude/agents/*.md`) é alterado."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-015",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Restringe ferramentas de dois subagentes auxiliares e adiciona selo de integridade aos scripts do gate; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-016",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Aposenta dois subagentes auxiliares fora do fluxo e acrescenta dois detectores ao gate do Revisor (script); nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-017",
+      "data": "2026-10-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta detectores de codigo ao gate e um hook de fim de turno para o Revisor; nao altera o texto do Revisor nem do Especificador, checklist, metodo nem regra."
     }
   ]
 }

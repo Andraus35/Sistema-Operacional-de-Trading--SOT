@@ -48,8 +48,7 @@
 | **Orquestrador** (sessão principal) | O da sessão do Claude Code (não declarado no repositório) | — (CONSTITUTION: "roteamento é responsabilidade do Orchestrator") | Faz handoff, mapa, merge, PRs, delegações. Sem política de modelo própria. |
 | **Especificador SOT** | `claude-opus-4-8`; esforço "médio" **só como conduta** | `especificador.md` frontmatter + §4 | Escreve Specs, Plans, atas, pesquisa web, autopré-check, correções. Sem Bash. |
 | **Revisor SOT** | `claude-sonnet-5-5`; esforço "alto" **só como conduta** | `revisor.md` frontmatter + §0 | Gate MCP `revisor_gate` + 8 passos + 4-ter + 5-bis. Sem Bash/Write/Edit (DHR-AUDITOR-EXTERNO-009/015). |
-| `sot-spec-reviewer` | **herda a sessão** (sem `model:`) | `.claude/agents/sot-spec-reviewer.md` | Revisão independente de specs; read-only. |
-| `sot-schema-validator` | **herda a sessão** (sem `model:`) | `.claude/agents/sot-schema-validator.md` | Valida Draft-07 — já coberto por `npm test` (`tests/validate-schemas.js`). |
+| `sot-spec-reviewer`, `sot-schema-validator` | — | aposentados (DHR-AUDITOR-EXTERNO-016, mesclada após esta proposta) | A-04 **resolvido pela main**: o que era útil foi para o gate do Revisor. |
 | **Scripts/hooks/CI** | Sem LLM (Classe D) | `scripts/`, `.claude/settings.json`, `.github/workflows/` | 15+ verificadores, mapa, RPSA, roteador AEX, manifesto do gate. |
 | **Auditor Externo** | Codex CLI (outra família), 6 chamadas/dia | `governance/propostas/AUDITOR-EXTERNO/OPERACAO.md` | Consultivo; só ao Orquestrador. |
 | **Andraus** | Humano | — | Homologa; decisões CONS-01. Não roteável. |
@@ -83,7 +82,7 @@ Três versões do Plan (42 defeitos): original **1 (≈2%)** × novo **33 (≈79
 | **A-01** | Roteamento por **papel**, não por **tarefa**. Uma emenda constitucional e uma cópia de arquivo de handoff usam o mesmo agente/prompt/leitura. | `especificador.md` §4; EUA-E19 §2 | Alta (Eficiência/Economicidade) |
 | **A-02** | Premissa "frontmatter não tem esforço" caducou; esforço dos dois agentes **não é aplicado**, só recomendado. Esforço efetivo = padrão do ambiente `[INFERÊNCIA]`. Para Opus 4.8 o padrão da API é `high` e a própria documentação recomenda `xhigh` para agentic — distinto do "médio" que a EUA-E19 supôs. | EUA-E19 §1; `revisor.md` §0; docs `sub-agents`, `effort` | Alta (Eficácia *e* Economicidade: pode estar gastando mais *ou* menos que o decidido) |
 | **A-03** | Opus 4.8 em uso enquanto Opus 5.5 (−20% de preço, cache 0,05×) existe; sem teste de substituição. | `especificador.md`; tabela de preços §6 | Média |
-| **A-04** | `sot-spec-reviewer` e `sot-schema-validator` sem `model:` → herdam o mais caro da sessão. Schema-validator duplica script determinístico. | frontmatter dos dois; `npm test` | Média |
+| **A-04** | ~~`sot-spec-reviewer`/`sot-schema-validator` sem `model:` herdavam o mais caro da sessão.~~ **RESOLVIDO na main** (DHR-AUDITOR-EXTERNO-016 aposentou os dois e fundiu o útil no gate do Revisor). | `docs/_legacy/agents/` | — |
 | **A-05** | **Sem telemetria de custo/eficácia por tarefa** nos agentes de construção. CEE-001 §7 define métricas só para missões da trading. | grep em `scripts/`, `governance/` | Alta (impede toda decisão baseada em evidência — o próprio CEE-001 §5 exige evidência para mudar classe) |
 | **A-06** | Custo de leitura obrigatória é **fixo e alto**: núcleo ≈55 mil tokens (ROADMAP ≈17k, atomic-spec ≈10k, RULES ≈12k, prompt do agente ≈10–11,5k, AGENTS ≈5k); lista HIGH/CRITICAL soma ≈+55k (CATALOGO ≈20k, RMR ≈23k, CONFLICT-MAP ≈8,5k, MAN-001 ≈3,6k) e atas EUA-E04..E18 ≈49k. A proporcionalidade da EUA-E19 é instrução, sem verificação. | `wc -c` dos arquivos (≈bytes/4) | Alta |
 | **A-07** | Reentrega **sempre do texto completo** (`especificador.md` §2) e o Revisor relê tudo a cada rodada; um Plan + checks chega a 60–225 KB (≈15–56 mil tokens) por Spec. Não há modo "rodada de correção por diferença". | `specs/features/SPEC-00x/` | Alta |
@@ -281,7 +280,7 @@ Reaproveita o ativo existente: **SPEC-006 v1.0/v1.1/v1.2 (gabarito de 18+13+11 d
 
 ### 8.5 Teste D — Pré-gate e subagentes auxiliares
 - Medir quantas rodadas teriam sido evitadas com R6 (histórico de `REPROVADO_D`).
-- `sot-spec-reviewer`: definir `model` explícito e comparar com herança; `sot-schema-validator`: comparar com `npm test` e, se redundante, propor desativação (A-04).
+- ~~Subagentes auxiliares~~: aposentados pela DHR-AUDITOR-EXTERNO-016; nada a testar. Medir apenas o pré-gate (acima).
 
 ### 8.6 Sondagem de custo do cache
 Comparar `cacheTtl` 5m vs. 1h (`experimental`, X12) em uma sessão real de 3 rodadas, medindo escrita/leitura de cache (X13). Hipótese: rodadas espaçadas >5 min pagam nova escrita (1,25×); a 1 h pagam 2× na escrita e 0,05–0,1× nas leituras.

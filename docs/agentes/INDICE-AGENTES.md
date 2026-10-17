@@ -18,12 +18,13 @@
 | **Orquestrador** (da sessão) | sessão do Claude Code (sem arquivo) | Coordena, roda gates, handoff, PR/merge, delega | Bash + todas as ferramentas |
 | **Especificador SOT** | `.claude/agents/especificador.md` | Produz Specs, Plans, Tasks, atas | Read/Write/Edit/Grep/Glob/Web |
 | **Revisor SOT** | `.claude/agents/revisor.md` | Audita e emite parecer (ENF-03) | Somente leitura + `revisor_gate` |
-| `sot-spec-reviewer` | `.claude/agents/sot-spec-reviewer.md` | Revisão independente de specs | Somente leitura |
-| `sot-schema-validator` | `.claude/agents/sot-schema-validator.md` | Valida schemas JSON | Somente leitura |
 | **Auditor Externo** | `governance/propostas/AUDITOR-EXTERNO/` (Codex, fora do repo) | Auditoria consultiva de outra família de modelo | Somente leitura; responde só ao Orquestrador |
+| Guarda do Revisor + gate | `scripts/revisor_gate*.py`, `revisor_guard.py`, hook `SubagentStop` | Código que confere o Revisor (não é agente cognitivo) | Sem LLM |
 | Gates determinísticos | `scripts/`, hooks, CI | Detectores/gates de código (Classe D) — não são "agentes" cognitivos | Sem LLM |
 
 Decisor final de ambas as famílias: **Andraus** (humano; não é agente).
+
+> Aposentados: `sot-spec-reviewer` e `sot-schema-validator` (DHR-AUDITOR-EXTERNO-016; `docs/_legacy/agents/`).
 
 ## 2. Agentes de Trading (AT) — o produto
 
