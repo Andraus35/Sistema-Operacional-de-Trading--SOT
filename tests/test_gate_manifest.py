@@ -41,19 +41,25 @@ class TestManifesto(unittest.TestCase):
             self.assertEqual(gate_manifest.conferir(r), [])
 
 
-class TestSubagentesSomenteLeitura(unittest.TestCase):
-    """Subagentes de revisão não podem herdar Bash/Write/Edit (ENF-03): `tools` tem de estar declarado e ser só leitura."""
+class TestAgentesDeRevisaoSomenteLeitura(unittest.TestCase):
+    """Todo agente de revisão/validação em .claude/agents declara `tools` e nunca inclui Bash/Write/Edit (ENF-03).
+    Sem `tools`, o subagente herda todas as ferramentas. (Os dois subagentes de 1ª geração foram aposentados na
+    DHR-AUDITOR-EXTERNO-016; um novo revisor com nome parecido cai aqui.)"""
     PROIBIDAS = {"Bash", "Write", "Edit", "MultiEdit", "NotebookEdit", "*"}
 
-    def _tools(self, nome):
-        txt = (ROOT / ".claude" / "agents" / nome).read_text(encoding="utf-8")
-        fm = txt.split("---")[1]
-        self.assertRegex(fm, r"(?m)^tools:", f"{nome}: sem `tools` herda todas as ferramentas")
-        return set(re.findall(r"(?m)^\s+-\s+(\S+)", fm.split("tools:")[1]))
-
     def test_revisores_sem_ferramenta_de_escrita_ou_execucao(self):
-        for nome in ("revisor.md", "sot-spec-reviewer.md", "sot-schema-validator.md"):
-            self.assertFalse(self._tools(nome) & self.PROIBIDAS, nome)
+        achados = [p for p in (ROOT / ".claude" / "agents").glob("*.md") if re.search(r"revis|review|valid", p.name, re.I)]
+        self.assertIn("revisor.md", [p.name for p in achados])
+        for p in achados:
+            fm = p.read_text(encoding="utf-8").split("---")[1]
+            self.assertRegex(fm, r"(?m)^tools:", f"{p.name}: sem `tools` herda todas as ferramentas")
+            tools = set(re.findall(r"(?m)^\s+-\s+(\S+)", fm.split("tools:")[1]))
+            self.assertFalse(tools & self.PROIBIDAS, p.name)
+
+    def test_subagentes_antigos_aposentados_nao_estao_ativos(self):
+        for n in ("sot-spec-reviewer.md", "sot-schema-validator.md"):
+            self.assertFalse((ROOT / ".claude" / "agents" / n).exists(), n)
+            self.assertTrue((ROOT / "docs" / "_legacy" / "agents" / n).is_file(), n)
 
 
 if __name__ == "__main__":
