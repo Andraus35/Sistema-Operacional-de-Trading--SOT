@@ -271,19 +271,42 @@ def rodar(doc, rapido=False, root=ROOT):
     reprovado = any(i["bloqueante"] and i["exit_code"] != 0 for i in itens)
     msp = re.search(r"specs/features/(SPEC-\d{3})/", rel)
     teto, motivos = gate_extra.teto_de_veredito(msp.group(1) if msp else None, texto, root)
-    return {"schema_version": "2.1", "documento": rel, "gates": itens, "sinais_H": sinais,
+    return {"schema_version": "2.2", "documento": rel,
+            "documento_sha256": hashlib.sha256(texto.encode("utf-8")).hexdigest(),  # amarra a evidência a ESTA versão do documento
+            "gates": itens, "sinais_H": sinais,
             "teto_de_veredito": teto, "motivos_teto": motivos,
             "veredito_D": "REPROVADO_D (NÃO CONFORME Crítica automática)" if reprovado else "PASSOU_D (≠ CONFORME ≠ homologação)",
             "nota": "Classe P (sentido, adversarial, epistêmico) não é coberta: é julgamento do Revisor."}, reprovado
 
 
+def verificar_evidencia(ev_path, root=ROOT):
+    """Confere se a evidência (evidence.json) ainda vale para o documento: sha256 gravado == sha256 atual. (0 = vale; 1 = VELHA/adulterada.)"""
+    ev = json.loads(Path(ev_path).read_text(encoding="utf-8"))
+    doc = Path(root) / ev["documento"]
+    if "documento_sha256" not in ev:
+        return 2, "evidência sem documento_sha256 (schema < 2.2): não verificável"
+    if not doc.is_file():
+        return 1, f"documento {ev['documento']} não encontrado"
+    atual = hashlib.sha256(doc.read_text(encoding="utf-8", errors="replace").encode("utf-8")).hexdigest()
+    if atual != ev["documento_sha256"]:
+        return 1, f"EVIDÊNCIA VELHA: {ev['documento']} mudou desde o gate (hash gravado {ev['documento_sha256'][:12]} ≠ atual {atual[:12]})"
+    return 0, f"evidência vale para {ev['documento']} (sha256 {atual[:12]})"
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
-    ap.add_argument("doc")
+    ap.add_argument("doc", nargs="?")
+    ap.add_argument("--verificar", metavar="evidence.json", help="confere o hash gravado na evidência contra o documento atual")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--out")
     ap.add_argument("--rapido", action="store_true")
     a = ap.parse_args(argv)
+    if a.verificar:
+        cod, msg = verificar_evidencia(a.verificar)
+        print(msg)
+        return cod
+    if not a.doc:
+        ap.error("informe o documento (ou --verificar evidence.json)")
     ev, reprovado = rodar(a.doc, a.rapido)
     if a.out:
         Path(a.out).write_text(json.dumps(ev, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -90,6 +90,10 @@ jobs:
       - name: Gate extra tests
         run: python -m unittest tests/test_gate_extra.py
 
+      # Delta por hash e evidência amarrada à versão (cache de revisão; bloqueante: se falhar, o Revisor perde o corte do que mudou).
+      - name: Spec delta tests
+        run: python -m unittest tests/test_spec_delta.py
+
       # Vinculação de backlog por abertura (DHR-BACKLOG-ABERTURA-001; bloqueante: se falhar, a regra deixou de ser determinística).
       - name: Backlog abertura tests
         run: python -m unittest tests/test_backlog_abertura.py

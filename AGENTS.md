@@ -148,6 +148,8 @@ python scripts/check_doc_sync.py                # drift de sincronização docum
 python scripts/check_invariants.py [arq.md]    # valores e ordem das regras fixas (R:R, score/convicção, 8 dimensões, hierarquia, 7 estados, 4Es, validade do Dossiê); informativo — Detector ≠ Gate (DHR-AUDITOR-EXTERNO-008 R2)
 python scripts/revisor_gate.py <doc> [--rapido] [--json]  # gate fundido do Revisor: Classe D (reprova) + sinais H (só candidatos); PASSOU_D / REPROVADO_D (DHR-AUDITOR-EXTERNO-009)
 python scripts/revisor_gate_mcp.py              # servidor MCP somente-leitura que expõe revisor_gate ao Revisor (sem Bash); uso pelo harness, não manual (DHR-AUDITOR-EXTERNO-009/011)
+python scripts/spec_delta.py <plan.md> --base <ref>  # cache por hash: só os blocos (BASpec/EC/cenário/ADV/RULE) que mudaram desde a versão já revisada + sha256 das fontes citadas
+python scripts/revisor_gate.py --verificar <evidence.json>  # a evidência do gate ainda vale para o documento? (hash gravado × atual)
 python scripts/build_map.py                     # (re)gera o mapa do projeto — obrigatório após alterar .md (BL-019)
 python scripts/build_map.py --check             # exit 1 se o mapa está desatualizado (CI/pre-commit)
 npx harness-score   # maturidade do harness (opcional)
