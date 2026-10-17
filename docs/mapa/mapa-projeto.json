@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "fb76d23223e1ccbb0cfd801c464c4f1917c0ef13106885bcd5f9f9727395e6d5",
+  "digest": "4d8cb23747dc879e577e79466bf1961a94bc5afe9bcbbea757f24bce17c93d3a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 61,
+   "in": 62,
    "out": 37
   },
   {
@@ -150,8 +150,8 @@
    "path": "HANDOFF.md",
    "area": "raiz",
    "title": "HANDOFF — SOT",
-   "in": 5,
-   "out": 15
+   "in": 6,
+   "out": 16
   },
   {
    "path": "README.md",
@@ -171,21 +171,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 171,
+   "in": 173,
    "out": 64
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 36,
+   "in": 37,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 99,
+   "in": 100,
    "out": 34
   },
   {
@@ -227,7 +227,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 156,
+   "in": 158,
    "out": 104
   },
   {
@@ -395,8 +395,15 @@
    "path": "docs/handoffs/HO-2026-10-17-01.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
-   "in": 1,
+   "in": 2,
    "out": 13
+  },
+  {
+   "path": "docs/handoffs/HO-2026-10-17-02.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 16
   },
   {
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
@@ -451,7 +458,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 95,
+   "in": 96,
    "out": 175
   },
   {
@@ -507,7 +514,7 @@
    "path": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
    "area": "governance",
    "title": "DHR-ASSINATURA-001 — Ata — A assinatura de Andraus passa a ser a decisão registrada no chat, não o merge",
-   "in": 2,
+   "in": 4,
    "out": 6
   },
   {
@@ -682,7 +689,7 @@
    "path": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
    "area": "governance",
    "title": "DHR-DEC-004 — Ata de Decisões — BL-017, SPEC-038-DATASRC-001, MASTER Market Data (BL-033), sincronização RPSA",
-   "in": 14,
+   "in": 16,
    "out": 12
   },
   {
@@ -969,8 +976,8 @@
    "path": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
    "area": "governance",
    "title": "DHR-PCC-001 — Ata — Fase 1 do PCC-001: continuidade de contexto entre sessões do Orquestrador",
-   "in": 6,
-   "out": 6
+   "in": 7,
+   "out": 10
   },
   {
    "path": "governance/DHR-PRINC-BID-001_Ata_Homologacao_Heranca_Bidirecional.md",
@@ -1081,7 +1088,7 @@
    "path": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 5,
+   "in": 6,
    "out": 11
   },
   {
@@ -1375,7 +1382,7 @@
    "path": "governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
    "area": "governance",
    "title": "HOD-001 — Plano de Higiene e Organização Documental (PROPOSTA)",
-   "in": 19,
+   "in": 20,
    "out": 11
   },
   {
@@ -1424,7 +1431,7 @@
    "path": "governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md",
    "area": "governance",
    "title": "PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orquestrador (etapa BUILD) (PROPOSTA)",
-   "in": 5,
+   "in": 6,
    "out": 12
   },
   {
@@ -1802,7 +1809,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 121,
+   "in": 122,
    "out": 9
   },
   {
@@ -1851,7 +1858,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 83,
+   "in": 84,
    "out": 24
   },
   {
@@ -1914,7 +1921,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 37,
+   "in": 38,
    "out": 22
   },
   {
@@ -2250,7 +2257,7 @@
   {
    "id": "BL-033",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "BL-034",
@@ -2275,7 +2282,7 @@
   {
    "id": "DHR-ASSINATURA-001",
    "defined_in": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
-   "cited_by": 2
+   "cited_by": 4
   },
   {
    "id": "DHR-AUDIT-SPEC001-001",
@@ -2400,7 +2407,7 @@
   {
    "id": "DHR-DEC-004",
    "defined_in": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
-   "cited_by": 14
+   "cited_by": 16
   },
   {
    "id": "DHR-DIV-001",
@@ -2610,7 +2617,7 @@
   {
    "id": "DHR-PCC-001",
    "defined_in": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-PRINC-BID-001",
@@ -2685,7 +2692,7 @@
   {
    "id": "DHR-SPEC006-001",
    "defined_in": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-SPEC006-PEND-001",
@@ -4010,7 +4017,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 107
+   "cited_by": 108
   },
   {
    "id": "SPEC-002",
@@ -4020,7 +4027,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 80
+   "cited_by": 81
   },
   {
    "id": "SPEC-004",
@@ -4030,12 +4037,12 @@
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 37
+   "cited_by": 38
   },
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 62
+   "cited_by": 63
   },
   {
    "id": "SPEC-007",
@@ -5283,6 +5290,11 @@
    "from": "HANDOFF.md",
    "to": "governance/CATALOGO-OFICIAL.md",
    "type": "path"
+  },
+  {
+   "from": "HANDOFF.md",
+   "to": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "type": "id"
   },
   {
    "from": "HANDOFF.md",
@@ -7866,6 +7878,96 @@
   },
   {
    "from": "docs/handoffs/HO-2026-10-17-01.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "HANDOFF.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "docs/handoffs/HO-2026-10-17-01.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "governance/HOD-001_Plano_Higiene_Organizacao_Documental_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-02.md",
    "to": "specs/features/SPEC-005/plan.md",
    "type": "id"
   },
@@ -12791,13 +12893,33 @@
   },
   {
    "from": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
    "to": "WORKFLOW.md",
    "type": "path"
   },
   {
    "from": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
    "to": "governance/CATALOGO-OFICIAL.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
+   "to": "governance/DHR-ASSINATURA-001_Ata_Assinatura_por_Decisao_Registrada.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",
+   "to": "governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-PCC-001_Ata_Homologacao_Fase1_Continuidade_Contexto.md",

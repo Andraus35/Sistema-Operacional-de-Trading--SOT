@@ -36,6 +36,13 @@ M-001 · J-001 · N-001 · H-001 · G-001 · K-001 · C-001 · WF-D03 (residual)
 ## 6. Registro
 - [x] Esta ata · [x] `AGENTS.md` §11 · [x] HOD-001 §6b.1 · [x] `HANDOFF.md` · [x] `CATALOGO-OFICIAL.md` · [x] mapa · [ ] RPSA automático (sem escopo de agente)
 
+## 7. Errata (2026-10-17, ordem de Andraus no chat: "corrige a errata na ata DHR-PCC-001")
+Aditiva (INV-07): o texto acima fica como está; esta seção o corrige.
+- **§5 está incorreto em um item:** lista **SPEC-038-DATASRC-001** entre as decisões ABERTAS. Ela está **DECIDIDA neste recorte** (Andraus, 2026-10-03, DHR-DEC-004: TradingView como uma das fontes via adapter, risco ToS assumido; provedor de dados de máquina só após Discovery do MASTER, BL-033). Fonte: `ROADMAP.md`, linha "Decisões FECHADAS", e `AGENTS.md` §7.
+- **Causa:** a lista do §5 foi copiada da ata `DHR-ASSINATURA-001` §5 em vez de apontar para o ROADMAP. A lista não deve ser tomada como fonte de verdade.
+- **Regra:** o estado das decisões abertas/fechadas é o do `ROADMAP.md` (prevalece em divergência); este ato **não** fecha nem abre nenhuma decisão. As demais decisões do §5 não foram reavaliadas aqui — consulte o ROADMAP.
+- **Nota:** a `DHR-ASSINATURA-001` §5 contém a mesma lista; não foi alterada por esta errata (fora do escopo pedido).
+
 ---
 
 **Andraus** — *decisão em chat, 2026-10-17; registro pelo Orquestrador interno.*
