@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-09
-previous: HO-2026-10-17-08
+handoff_id: HO-2026-10-17-10
+previous: HO-2026-10-17-09
 data: 2026-10-17
 branch: ccr-d43bf9b0-h336k5
 base_commit: 1c6754b
@@ -19,6 +19,7 @@ Duas frentes nesta sessão: (a) roteamento de modelo por tarefa (4Es) e (b) **se
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **Decisões D1–D6 respondidas** e registradas em ata (`governance/DHR-ROTEAMENTO-001_*`): onda 0 autorizada ao Orquestrador (pré-gate antes do Revisor; model/effort por invocação só em N1 não crítico; telemetria em `governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md`); testes autorizados para preparação (≥3 repetições, zero perda em Crítico/Alto, métrica = tokens por defeito confirmado — cobrança por cota); EUA-E24 aditiva só após evidência; effort no frontmatter só após varredura.
 - **Resíduos da DHR-AGENTES-001:** corrigida a referência truncada de uma ata (faltava o prefixo AUDITOR-EXTERNO) em `CATALOGO-OFICIAL.md:198` (único ERRO do `check_refs`; erro de digitação, sem mudança de sentido). **Deliberadamente não feitos:** (i) etiqueta de domínio no `build_map.py` — o script está no selo `GATE-MANIFEST.sha256` e regravá-lo exige decisão de Andraus (§8); (ii) separação física em pastas — risco alto, benefício marginal já coberto por nomes+índice; (iii) classificação RPSA — o registro automático pós-merge faz.
 - **Separação AC × AT (aditiva):** `GLOSSARIO.md` §1-bis, `AGENTS.md` §2/§3 (3.1 AC, 3.2 AT, 3.3 fronteira), `docs/agentes/INDICE-AGENTES.md`, ata `governance/DHR-AGENTES-001_*`, registro no CATALOGO. Nada movido/renomeado; separação física em pastas **não adotada**. Achado: "Trilha A/B" do CATALOGO é outro eixo (sequenciamento) — o documento de roteamento foi corrigido para não usar esses nomes.
 - **Entregue (PROPOSTA, não normativa):** `docs/agentes/INDICE-AGENTES.md` · `governance/DHR-AGENTES-001_*` · `governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md` — auditoria interna (12 achados A-01..A-12), matriz de ~30 tarefas por criticidade N0–N4, 14 fontes externas classificadas, preços, Matriz de Roteamento Meta (R1–R12), protocolo de teste Eficácia-first, cenário ilustrativo e decisões D1–D6. Nenhum arquivo normativo alterado.
@@ -30,7 +31,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 - Não conferido: CI da `main`, PRs abertos, telemetria real (não existe), disponibilidade do advisor tool em Claude Code, billing (API × cota).
 
 ## 5. Próximo passo único
-Ratificar (merge) a DHR-AGENTES-001 e perguntar a Andraus D1–D6 (§11.2 do documento): em especial autorizar a **onda 0** (pré-gate + `model`/`effort` por invocação só em N1 não-crítico + telemetria manual) e informar se o custo é por API ou por cota. Sem outra ordem, **não** iniciar o Plan da SPEC-006 nem editar `.claude/agents/*.md`.
+**Aplicar a onda 0 de verdade:** na próxima rodada Especificador→Revisor, rodar `revisor_gate.py` antes de invocar o Revisor e anotar a linha na telemetria. Execução dos testes (onda 1) **só por ordem expressa de Andraus**, com limite de cota fixado. Antes disso, ratificar (merge) as atas DHR-AGENTES-001 e DHR-ROTEAMENTO-001. Sem outra ordem, **não** iniciar o Plan da SPEC-006 nem editar `.claude/agents/*.md`.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - Nenhuma nova. EUA-E24 é só **código candidato**. Decisões abertas/fechadas: ler `ROADMAP.md`. Nenhuma alterada.
@@ -53,10 +54,11 @@ Ratificar (merge) a DHR-AGENTES-001 e perguntar a Andraus D1–D6 (§11.2 do doc
 - [ ] `git log -1` == `base_commit` ou posterior; se posterior, ler o diff
 
 ## 10. Aguardando Andraus
+- Merge da DHR-ROTEAMENTO-001; ordem expressa + limite de cota para executar a onda 1.
 - Merge da DHR-AGENTES-001 (assinatura); RPSA registra a classificação pós-merge (esperado: `check_rpsa` mostra "não classificada" até lá).
 - Opcional: etiqueta de domínio AC/AT no `build_map.py` (altera código) e/ou migração física de pastas (decisão futura).
 - D1–D6 do documento de roteamento (acima).
 - Herdado do HO-06: merge da DHR-AUDITOR-EXTERNO-015; diagnosticar por que o MCP do Revisor não carrega em nuvem (afeta a economia: sem gate D o LLM caça defeitos detectáveis por código); D-PCC-3/4/5; prioridade da SPEC-006; 2 itens de backlog disparados sem registro.
 
 ## 11. Ponteiros
-`governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md` · `canon/CEE-001-…v2.0.md` §5/§9/§10 · `governance/EUA-E19_*` · `governance/DHR-AUDITOR-EXTERNO-014_*` · `AGENTS.md` §11 · `docs/mapa/MAPA-PROJETO.md`
+`governance/DHR-ROTEAMENTO-001_*` · `governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md` · `governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md` · `canon/CEE-001-…v2.0.md` §5/§9/§10 · `governance/EUA-E19_*` · `governance/DHR-AUDITOR-EXTERNO-014_*` · `AGENTS.md` §11 · `docs/mapa/MAPA-PROJETO.md`

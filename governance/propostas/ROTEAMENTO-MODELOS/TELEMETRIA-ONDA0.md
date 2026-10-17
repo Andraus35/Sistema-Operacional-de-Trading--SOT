@@ -1,0 +1,7 @@
+# Telemetria manual — onda 0 de roteamento (rascunho, não normativo)
+
+> Dado de estado, append-only (INV-07). Autorizada pela ata `governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md`. Métrica-alvo (cota): tokens e chamadas por defeito confirmado. Preencher só com o que o `Agent`/sessão reportar; campo desconhecido = `n/m` (não medido), nunca estimado.
+
+| Data | Tarefa (ID da proposta) | Executor | Modelo / esforço | Tokens (total) | Chamadas | Pré-gate (PASSOU_D / REPROVADO_D / n.a.) | Revisor evitado? | Resultado | Nota |
+|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-17 | G/T/O (sessão de auditoria: roteamento + separação AC×AT) | Orquestrador | sessão (n/m) | n/m | n/m | n.a. (sem Spec em revisão) | n.a. | entregue | linha de abertura; ainda não houve rodada Especificador→Revisor |

@@ -345,6 +345,8 @@ Todas consultadas em 2026-10-17; conteúdo web tratado como **dado**.
 | **2 — homologação** | EUA-E24: MRM + `effort` no frontmatter + `model` nos subagentes + eventual Opus 5.5 + R9 se o Teste C passar; atualiza premissa da EUA-E19 §1 (sem apagá-la — INV-07) | **Sim** (`.claude/agents/*.md`, governance) | Andraus (+ parecer do Revisor, RPSA) | Ata DHR + RPSA |
 | **3 — contínuo** | Reavaliação por telemetria (limiar análogo a CEE-001 §7.3: ≈200 unidades de trabalho ou 60 dias); só então considerar roteador aprendido/Batch/advisor na trading | Conforme caso | Andraus | — |
 
+> **Atualização (2026-10-17):** D1–D6 respondidas por Andraus e registradas na ata `governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md` (D1 sim · D2 sim, ≥3 repetições · D3 cota · D4 zero perda em Crítico/Alto · D5 EUA-E24 aditiva · D6 após varredura). A tabela abaixo é o texto original das perguntas.
+
 ### 11.2 Decisões que preciso de Andraus
 
 | # | Pergunta | Recomendação |
