@@ -25,6 +25,9 @@ Checagens:
     COE-11  ata ainda "PROPOSTA — vira vigente só com o merge" que já está em origin/main     → INFO
     COE-12  HANDOFF espera merge de ata que já está em origin/main                            → WARN
     COE-13  README declara "Spec autorizada" (duplica o ROADMAP)                              → WARN
+    COE-14  governance/MECANISMOS.json (registro de mecanismos) × realidade, nos dois sentidos:
+            forma pelo schema, item sem arquivo, arquivo sem item, estado ≠ ativo sem nota,
+            ata inexistente, workflow INERTE registrado como ativo   → WARN (registro PROPOSTA) / ERRO (VIGENTE)
 
 Uso:
     python scripts/check_coesao.py               # relatório; exit 1 se houver ERRO
@@ -331,6 +334,71 @@ def check_readme_spec(ctx):
                     f"README.md:{i}")
 
 
+def check_registry(ctx):
+    """COE-14 — o registro é a fonte única de ESTADO dos mecanismos; aqui ele é confrontado com o repositório."""
+    raw = ctx.read("governance/MECANISMOS.json")
+    if not raw:
+        return
+    try:
+        reg = json.loads(raw)
+        schema = json.loads(ctx.read("governance/MECANISMOS.schema.json") or "{}")
+    except ValueError as e:
+        ctx.add("COE-14", "ERRO", f"JSON inválido: {e}", "governance/MECANISMOS.json")
+        return
+    lvl = "ERRO" if reg.get("status_do_registro") == "VIGENTE" else "WARN"
+    where = "governance/MECANISMOS.json"
+    item_schema = schema.get("properties", {}).get("mecanismos", {}).get("items", {})
+    props = item_schema.get("properties", {})
+    ids, files = set(), set()
+    for i, m in enumerate(reg.get("mecanismos", [])):
+        tag = m.get("id", f"#{i}") if isinstance(m, dict) else f"#{i}"
+        if not isinstance(m, dict):
+            ctx.add("COE-14", lvl, f"item {tag} não é objeto", where)
+            continue
+        for k in item_schema.get("required", []):
+            if k not in m:
+                ctx.add("COE-14", lvl, f"{tag}: campo obrigatório ausente: {k}", where)
+        for k, v in m.items():
+            spec = props.get(k)
+            if spec is None:
+                ctx.add("COE-14", lvl, f"{tag}: campo fora do schema: {k}", where)
+                continue
+            if "enum" in spec and v not in spec["enum"]:
+                ctx.add("COE-14", lvl, f"{tag}: {k}={v!r} fora do enum {spec['enum']}", where)
+            if "pattern" in spec and not re.search(spec["pattern"], str(v)):
+                ctx.add("COE-14", lvl, f"{tag}: {k}={v!r} não casa o padrão do schema", where)
+        if tag in ids:
+            ctx.add("COE-14", lvl, f"id repetido: {tag}", where)
+        ids.add(tag)
+        arq = m.get("arquivo", "")
+        files.add(arq)
+        if arq and not (ctx.root / arq).exists():
+            ctx.add("COE-14", lvl, f"{tag}: arquivo registrado não existe: {arq}", where)
+        if m.get("estado", "ativo") != "ativo" and not str(m.get("nota", "")).strip():
+            ctx.add("COE-14", lvl, f"{tag}: estado {m.get('estado')} exige 'nota' dizendo por quê", where)
+        ata = m.get("ata")
+        if ata and not list((ctx.root / "governance").glob(f"{ata}_*.md")):
+            ctx.add("COE-14", lvl, f"{tag}: ata {ata} não existe em governance/", where)
+        if arq.endswith(".yml") and m.get("estado") == "ativo":
+            head = "\n".join(ctx.read(arq).splitlines()[:25])
+            if re.search(r"INERTE|NÃO HOMOLOGADO", head) and str(m.get("verificado_em", "")).startswith("inferido"):
+                ctx.add("COE-14", lvl, f"{tag}: workflow se declara INERTE/NÃO HOMOLOGADO (chave de desligamento) e o registro diz 'ativo' sem comprovar que a chave está ligada", where)
+    existing = []
+    for sub, pats in (("scripts", ("*.py", "*.js")), (".github/workflows", ("*.yml",)), (".claude/agents", ("*.md",))):
+        for pat in pats:
+            existing += [p for p in sorted((ctx.root / sub).glob(pat)) if p.is_file()]
+    skills = ctx.root / ".claude" / "skills"
+    if skills.is_dir():
+        existing += [p for p in sorted(skills.glob("*.md"))]
+    for cfg in (".pre-commit-config.yaml", ".eslintrc.json", ".prettierrc"):
+        if (ctx.root / cfg).exists():
+            existing.append(ctx.root / cfg)
+    for p in existing:
+        rel = str(p.relative_to(ctx.root)).replace("\\", "/")
+        if rel not in files:
+            ctx.add("COE-14", lvl, f"{rel} existe no repositório e não está no registro de mecanismos", where)
+
+
 def matriz(ctx):
     settings = ctx.read(".claude/settings.json")
     pc = ctx.read(".pre-commit-config.yaml")
@@ -353,7 +421,7 @@ def matriz(ctx):
 
 CHECKS = (check_hooks_and_scripts, check_tests_in_ci, check_precommit_noop, check_dhr_citations, check_case_drift,
           check_agents_vs_table, check_codeowners, check_skills, check_idle_configs, check_workflow_status,
-          check_proposta_residual, check_handoff_pending, check_readme_spec)
+          check_proposta_residual, check_handoff_pending, check_readme_spec, check_registry)
 
 
 def main(argv=None):

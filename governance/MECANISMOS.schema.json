@@ -1,0 +1,98 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Registro de mecanismos do harness SOT (PROPOSTA)",
+ "type": "object",
+ "required": [
+  "registro",
+  "versao",
+  "status_do_registro",
+  "mecanismos"
+ ],
+ "properties": {
+  "registro": {
+   "const": "MECANISMOS"
+  },
+  "versao": {
+   "type": "string"
+  },
+  "status_do_registro": {
+   "enum": [
+    "PROPOSTA",
+    "VIGENTE"
+   ]
+  },
+  "gerado_em": {
+   "type": "string"
+  },
+  "aviso": {
+   "type": "string"
+  },
+  "mecanismos": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "arquivo",
+     "canal",
+     "tipo",
+     "estado",
+     "enforca",
+     "verificado_em"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[a-z]+\\.[a-z0-9.-]+$"
+     },
+     "arquivo": {
+      "type": "string"
+     },
+     "canal": {
+      "type": "string"
+     },
+     "tipo": {
+      "enum": [
+       "hook",
+       "guarda",
+       "gate",
+       "detector",
+       "utilitario",
+       "workflow",
+       "agente",
+       "config",
+       "skill"
+      ]
+     },
+     "estado": {
+      "enum": [
+       "ativo",
+       "inerte-em-nuvem",
+       "inerte-no-op",
+       "pausado",
+       "legado",
+       "proposta"
+      ],
+      "description": "ativo = comprovadamente opera no canal declarado; inerte-* = existe e está registrado, mas não produz o efeito pretendido; pausado = desligado por decisão registrada; legado = sem chamador; proposta = ainda não adotado"
+     },
+     "enforca": {
+      "type": "string"
+     },
+     "ata": {
+      "type": "string",
+      "pattern": "^DHR-[A-Z0-9-]+-\\d+$"
+     },
+     "nota": {
+      "type": "string"
+     },
+     "verificado_em": {
+      "type": "string",
+      "description": "data + como foi comprovado, ou 'inferido-do-codigo' (não comprovado)"
+     }
+    }
+   }
+  }
+ },
+ "$comment": "Regra do detector COE-14: estado diferente de 'ativo' exige 'nota'. Todo script, workflow, agente e skill solta do repositório precisa de um item."
+}

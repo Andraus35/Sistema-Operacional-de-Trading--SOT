@@ -30,5 +30,7 @@ Suíte completa verde: 226 testes Python (`unittest discover`), 4 suítes de hoo
 `check_refs` WARN: `RULE-REV-01` sem definição; caminho antigo do HANDOFF (pasta no singular) no PCC-001; uma falsa referência a um arquivo do ambiente de nuvem, no dossiê da SPEC-002. `backlog_triggers`: possível re-apontamento não registrado em BL-030, BL-032, BL-034. `RETOMADA/` (com o GEH-001) na raiz fora do mapa do `AGENTS.md` §2. `.clinerules/sot-{specs,rag,schemas}.md` miram a geração 1, que o README diz que será substituída pelas SPEC-010…014.
 
 ## 4. O que este PR faz e não faz
+**Atualização (decisões de Andraus, `DHR-COESAO-001`):** D5 corrigido (caixa nos agentes, autorizado), COE-01/02/04/05 bloqueantes, O3 parcial (7 linhas no CODEOWNERS), registro de mecanismos criado como PROPOSTA (resolve na raiz D1/D6/O1/O5 quando assinado). Seguem abertos: D1, D6, O1, O4, O5, O7 e a configuração da proteção da `main`.
+
 **Faz (operacional):** `scripts/check_coesao.py` + 17 testes + passo informativo no CI + `npm run coesao` (os achados acima viram detector contínuo; ver `ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md`) · este relatório · HANDOFF HO-23 (D2) · README (D4) · passo de CI com os testes que faltavam (O2) · ata **PROPOSTA** `DHR-ASK-002` para Andraus assinar (D3).
 **Não faz:** nada em `AGENTS.md`, `.claude/agents/`, `.github/CODEOWNERS`, `canon/`, `ROADMAP.md`, `atomic-spec.md`, skills/comandos nem no estado do Auditor Externo. Nenhuma decisão aberta fechada.

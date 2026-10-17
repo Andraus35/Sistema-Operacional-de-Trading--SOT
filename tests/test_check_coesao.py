@@ -139,6 +139,55 @@ class Coesao(unittest.TestCase):
         self.w("README.md", "Spec autorizada: ver ROADMAP.md\n")
         self.assertFalse(any(i == "COE-13" for i, _ in self.ids("WARN")))
 
+    # COE-14 -------------------------------------------------------------
+    SCHEMA = json.dumps({"properties": {"mecanismos": {"items": {
+        "required": ["id", "arquivo", "estado"],
+        "properties": {"id": {"pattern": "^[a-z]+\\.[a-z0-9.-]+$"}, "arquivo": {}, "nota": {}, "ata": {"pattern": "^DHR-[A-Z0-9-]+-\\d+$"},
+                       "estado": {"enum": ["ativo", "pausado", "legado"]}}}}}})
+
+    def reg(self, itens, status="PROPOSTA"):
+        self.w("governance/MECANISMOS.schema.json", self.SCHEMA)
+        self.w("governance/MECANISMOS.json", json.dumps({"status_do_registro": status, "mecanismos": itens}))
+
+    def msgs14(self):
+        return [f["msg"] for f in self.run_it()[0]["achados"] if f["id"] == "COE-14"]
+
+    def test_registro_ausente_nao_acusa(self):
+        self.assertEqual(self.msgs14(), [])
+
+    def test_registro_confronta_realidade_nos_dois_sentidos(self):
+        self.w("scripts/a.py", "x")
+        self.w("scripts/b.py", "x")
+        self.reg([{"id": "det.a", "arquivo": "scripts/a.py", "estado": "ativo"},
+                  {"id": "det.fantasma", "arquivo": "scripts/nao_existe.py", "estado": "ativo"}])
+        m = " | ".join(self.msgs14())
+        self.assertIn("scripts/b.py existe no repositório e não está no registro", m)
+        self.assertIn("arquivo registrado não existe: scripts/nao_existe.py", m)
+        self.assertNotIn("scripts/a.py existe", m)
+
+    def test_estado_nao_ativo_exige_nota_e_enum_e_ata(self):
+        self.w("scripts/a.py", "x")
+        self.reg([{"id": "det.a", "arquivo": "scripts/a.py", "estado": "pausado", "ata": "DHR-NADA-001"},
+                  {"id": "det.b", "arquivo": "scripts/a.py", "estado": "quebrado", "nota": "x"}])
+        m = " | ".join(self.msgs14())
+        self.assertIn("exige 'nota'", m)
+        self.assertIn("ata DHR-NADA-001 não existe", m)
+        self.assertIn("fora do enum", m)
+
+    def test_nivel_depende_do_status_do_registro(self):
+        self.w("scripts/b.py", "x")
+        self.reg([], "PROPOSTA")
+        self.assertEqual({f["nivel"] for f in self.run_it()[0]["achados"] if f["id"] == "COE-14"}, {"WARN"})
+        self.reg([], "VIGENTE")
+        self.assertEqual({f["nivel"] for f in self.run_it()[0]["achados"] if f["id"] == "COE-14"}, {"ERRO"})
+
+    def test_workflow_inerte_registrado_ativo_sem_comprovacao(self):
+        self.w(".github/workflows/w.yml", "# INERTE até ligar a chave\nname: W\n")
+        self.reg([{"id": "wf.w", "arquivo": ".github/workflows/w.yml", "estado": "ativo", "verificado_em": "inferido-do-codigo"}])
+        self.assertTrue(any("sem comprovar" in x for x in self.msgs14()))
+        self.reg([{"id": "wf.w", "arquivo": ".github/workflows/w.yml", "estado": "ativo", "verificado_em": "2026-10-17: run success"}])
+        self.assertFalse(any("sem comprovar" in x for x in self.msgs14()))
+
     # Contrato -------------------------------------------------------------
     def test_exit_code_e_strict(self):
         self.w("README.md", "x\n")

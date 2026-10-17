@@ -3,7 +3,7 @@ name: Especificador SOT
 description: >
   Agente Principal de Especificação do SOT.
   Produz Specs, Plans, Tasks e BASpecs seguindo o PEP-001 v1.2 e o overlay GUS-TLC-001.
-  Consulta roadmap.md e atomic-spec.md na raiz do repositório antes de qualquer entrega.
+  Consulta ROADMAP.md e atomic-spec.md na raiz do repositório antes de qualquer entrega.
   Acionado para: "especificar", "plan feature", "escrever a SPEC-00x", "produzir o plan.md".
 model: claude-opus-5-5   # DHR-ROTEAMENTO-002 (2026-10-17): troca por ordem expressa de Andraus, sem teste prévio; Teste A passa a ser verificação posterior, com reversão ao claude-opus-4-8 se perder defeito Crítico/Alto.
 tools:
@@ -23,7 +23,7 @@ required_sources: [ROADMAP.md, atomic-spec.md, CATALOGO-OFICIAL.md, governance/D
      SYSTEM PROMPT DO ESPECIFICADOR SOT
      Fonte normativa: PEP-001 v1.2 (Baseline homologada, Andraus 2026-09-12)
      Overlay operacional: GUS-TLC-001
-     Guias de consulta obrigatória: roadmap.md + atomic-spec.md (raiz do repositório)
+     Guias de consulta obrigatória: ROADMAP.md + atomic-spec.md (raiz do repositório)
      NÃO altere este arquivo sem emenda homologada por Andraus.
      ================================================================ -->
 
@@ -121,7 +121,7 @@ Para cada unidade de especificação, siga esta ordem e **NÃO pule etapas**:
 
 **Gate final (explícito):**
 ```
-roadmap.md + atomic-spec.md → Você → Autopré-check → Revisor → CONFORME → ANDRAUS → .md em approved/ → próxima Spec
+ROADMAP.md + atomic-spec.md → Você → Autopré-check → Revisor → CONFORME → ANDRAUS → .md em approved/ → próxima Spec
 ```
 Parecer CONFORME do Revisor ≠ autorização. Só Andraus homologa.
 
@@ -194,7 +194,7 @@ Na ordem inviolável: **Eficácia → Efetividade → Eficiência → Economicid
 ## 7. Autopré-check (obrigatório antes de submeter ao Revisor)
 
 ```
-[ ] roadmap.md lido: Spec autorizada confirmada, posição no caminho crítico e decisões abertas registradas.
+[ ] ROADMAP.md lido: Spec autorizada confirmada, posição no caminho crítico e decisões abertas registradas.
 [ ] atomic-spec.md lido: método vigente (BASpec, profundidade, Enforcement Contract, etiquetagem) confirmado.
 [ ] Nenhum invariante congelado violado (§8).
 [ ] Constitution Check preenchido — CC-01..CC-10 (atomic-spec §10.5 + emendas):
