@@ -143,6 +143,7 @@ python scripts/check_refs.py                    # integridade de referências cr
 python scripts/backlog_triggers.py              # gatilhos do RMR-001 (BL-006): ATIVADOS / disparados sem registro
 python scripts/check_rpsa.py                    # carimbo sincronizado-até dos agentes vs livro-razão (RPSA/EUA-E16; DHR-RPSA-001); --register classifica uma DHR nova e alinha os carimbos
 python scripts/check_doc_sync.py                # drift de sincronização documental (CONS-01, RULE não registrada, Estado fora do enum, backlog dessincronizado)
+python scripts/check_handoff.py                 # integridade/defasagem do HANDOFF.md (PCC-001 Fase 2, DHR-PCC-002); informativo — Detector ≠ Gate
 python scripts/check_invariants.py [arq.md]    # valores e ordem das regras fixas (R:R, score/convicção, 8 dimensões, hierarquia, 7 estados, 4Es, validade do Dossiê); informativo — Detector ≠ Gate (DHR-AUDITOR-EXTERNO-008 R2)
 python scripts/revisor_gate.py <doc> [--rapido] [--json]  # gate fundido do Revisor: Classe D (reprova) + sinais H (só candidatos); PASSOU_D / REPROVADO_D (DHR-AUDITOR-EXTERNO-009)
 python scripts/revisor_gate_mcp.py              # servidor MCP somente-leitura que expõe revisor_gate ao Revisor (sem Bash); uso pelo harness, não manual (DHR-AUDITOR-EXTERNO-009/011)
@@ -172,4 +173,4 @@ A assinatura de Andraus é a **decisão dele registrada no chat e citada na ata*
 - Antes de agir, o Orquestrador lê `HANDOFF.md` e executa sua seção "Reverificar ao vivo"; a realidade prevalece sobre o handoff. Sem handoff ou muito defasado: parar e reportar a Andraus.
 - Só o Orquestrador escreve o handoff; é dado de estado — nunca registra homologação, fecha decisão aberta (CONS-01) nem concede permissão. Especificador devolve resultado ao Orquestrador; o Revisor segue somente leitura.
 - Entrega só está completa com o handoff reescrito (anterior copiado sem alteração para `docs/handoffs/HO-<id>.md`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas.
-- Fase 1 = cumprimento manual. Detector/hooks (`check_handoff.py`) são da Fase 2 e serão Detector (ENF-03), não Gate.
+- Fase 2 (DHR-PCC-002): `python scripts/check_handoff.py` + hooks `SessionStart`/`Stop`/`SubagentStop` (`scripts/handoff-hook.js`) injetam o handoff e avisam de defasagem de forma **não-bloqueante**; CI informativo. É Detector (ENF-03), não Gate; promoção a bloqueante só por decisão de Andraus (D-PCC-4, em aberto).

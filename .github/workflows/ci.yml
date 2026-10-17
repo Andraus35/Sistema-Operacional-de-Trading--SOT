@@ -63,6 +63,15 @@ jobs:
         run: python scripts/check_doc_sync.py
         continue-on-error: true
 
+      # Informativo (não bloqueia): PCC-001 Fase 2 — integridade/defasagem do HANDOFF.md
+      # (frontmatter, cadeia, base_commit, staleness, segredo, decisão aberta como fechada).
+      # Detector ≠ Gate (ENF-03). Promoção a bloqueante só por decisão de Andraus (D-PCC-4).
+      - name: Check handoff (informative)
+        run: |
+          git fetch --unshallow --quiet || true
+          python scripts/check_handoff.py
+        continue-on-error: true
+
       # Informativo (não bloqueia): DHR-AUDITOR-EXTERNO-008 R2 — VALORES e ORDEM das regras fixas em plan.md
       # (R:R, score/convicção de Fase Piloto, 8 dimensões, hierarquia, 7 estados, 4Es, validade do Dossiê).
       # Detector ≠ Gate (ENF-03): quem julga é o Revisor; quem decide é Andraus.

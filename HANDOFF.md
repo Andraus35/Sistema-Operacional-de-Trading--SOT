@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-03
-previous: HO-2026-10-17-02
+handoff_id: HO-2026-10-17-04
+previous: HO-2026-10-17-03
 data: 2026-10-17
 branch: ccr-a5f30778-9nezl9
-base_commit: 4b53789
+base_commit: 698f14f
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -16,9 +16,10 @@ autor: Orquestrador
 Instalar o protocolo de continuidade de contexto entre sessões do Orquestrador (PCC-001) — Fase 1, manual. Este é o **2º** handoff (o 1º está em `docs/handoffs/HO-2026-10-17-01.md`).
 
 ## 2. Estado
-O projeto está em fase spec-first; BUILD/VERIFY-de-código seguem adiados. O PCC-001 foi aprovado por Andraus no chat (2026-10-17) para a Fase 1: este `HANDOFF.md` na raiz, o arquivo `docs/handoffs/`, a §11 do `AGENTS.md`, a emenda do whitelist da raiz (HOD-001 §6b.1) e a ata `DHR-PCC-001`. A Fase 2 (detector `check_handoff.py`, hooks, CI informativo, item do Revisor) **não** foi iniciada. Nenhuma Spec foi alterada. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado.
+O projeto está em fase spec-first; BUILD/VERIFY-de-código seguem adiados. O PCC-001 foi aprovado por Andraus no chat (2026-10-17) para a Fase 1: este `HANDOFF.md` na raiz, o arquivo `docs/handoffs/`, a §11 do `AGENTS.md`, a emenda do whitelist da raiz (HOD-001 §6b.1) e a ata `DHR-PCC-001`. A Fase 1 está na `main`. A Fase 2 (detector `check_handoff.py`, hooks, CI informativo) foi autorizada por Andraus em 2026-10-17 (DHR-PCC-002) e implementada no ramo; o item do Revisor (D-PCC-5) e o bloqueio no CI (D-PCC-4) **não** foram decididos. Nenhuma Spec foi alterada. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado.
 
 ## 3. Feito nesta sessão
+- **Fase 2 do PCC-001 (DHR-PCC-002)**: `scripts/check_handoff.py` (HO-01..09), `scripts/handoff-hook.js` + hooks em `.claude/settings.json`, passo de CI informativo, testes (`tests/test_check_handoff.py`, `tests/test-handoff-hook.js`), `AGENTS.md` §8/§11. Só no ramo até o merge. **Não feito:** item do Revisor (D-PCC-5) e bloqueio no CI (D-PCC-4).
 - Errata §7 na ata `DHR-PCC-001` (SPEC-038-DATASRC-001 estava listada como aberta; está DECIDIDA, DHR-DEC-004). Só no ramo `ccr-a5f30778-9nezl9`; **sem PR** (Andraus pediu a correção, não o merge). A mesma lista errada existe em `DHR-ASSINATURA-001` §5 (não alterada).
 - **PR #99 mesclado** (Fase 1 em vigor na `main`; RPSA registrou a DHR-PCC-001 sozinho). Teste cego de aceitação rodado (§4); este handoff corrige o defeito que ele achou (§6).
 - `governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md` — plano (já no ramo).
@@ -44,7 +45,7 @@ Na próxima sessão fria: ler este handoff, executar §9 e, se Andraus não der 
 - Nenhum até aqui. (Evitado: criar `state.md`/`decisions.md`/`tasks.json` paralelos — duplicariam DHR/CATALOGO/RMR-001.)
 
 ## 8. Não tocar
-- `canon/` BASELINED, specs homologadas (SPEC-001..005, 019..021, 038), `ROADMAP.md`, `atomic-spec.md`, `.claude/agents/*.md` (só por Andraus; Fase 2 pedirá D-PCC-5).
+- `canon/` BASELINED, specs homologadas (SPEC-001..005, 019..021, 038), `ROADMAP.md`, `atomic-spec.md`, `.claude/agents/*.md` (só por Andraus; D-PCC-5 pendente).
 
 ## 9. Reverificar ao vivo
 - [ ] CI da `main` (check runs do último commit) e do ramo
@@ -55,7 +56,9 @@ Na próxima sessão fria: ler este handoff, executar §9 e, se Andraus não der 
 - [ ] `git log -1` == `base_commit` ou posterior; se posterior, ler o diff
 
 ## 10. Aguardando Andraus
-- Prioridade: Plan da SPEC-006 · Fase 2 do PCC-001 · os 2 itens de backlog disparados sem registro. (Merge da Fase 1: feito.)
+- Merge do PR da Fase 2 (DHR-PCC-002) — PR só se pedido.
+- D-PCC-4 (bloquear no CI após N PRs limpos) e D-PCC-5 (item no Passo 0 do Revisor).
+- Prioridade seguinte: Plan da SPEC-006 · os 2 itens de backlog disparados sem registro.
 - D-PCC-3 (formato BUILD-LEDGER), D-PCC-4 (N para bloquear CI), D-PCC-5 (Passo 0 do Revisor).
 - Plan da SPEC-006.
 
