@@ -146,6 +146,30 @@ class TestDetectoresMedicaoSpec006(unittest.TestCase):
         self.assertEqual(rg.refs_variantes("### T04-neg — definido\nver T04-neg\n"), [])
         self.assertEqual(rg.refs_variantes("T04 e ADV-CKG-06 e EC-CKG-001 normais\n"), [])
 
+class TestContratoSchemas(unittest.TestCase):
+    """Absorção do ex-subagente `sot-schema-validator` (DHR-AUDITOR-EXTERNO-016)."""
+
+    def test_schemas_vigentes_cumprem_o_contrato(self):
+        self.assertEqual(rg.checar_schemas(), [])
+
+    def test_adulteracao_e_detectada(self):
+        import json, shutil, tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as t:
+            shutil.copytree(rg.ROOT / "schemas", Path(t) / "schemas")
+            f = Path(t) / "schemas" / "synthesis.output.json"
+            s = json.loads(f.read_text(encoding="utf-8"))
+            s["properties"]["sinal"]["enum"].remove("NEUTRO")
+            s["properties"]["score_total"]["maximum"] = 12
+            f.write_text(json.dumps(s), encoding="utf-8")
+            i = Path(t) / "schemas" / "ict.input.json"
+            d = json.loads(i.read_text(encoding="utf-8"))
+            d["properties"]["approved_hypothesis"]["type"] = "object"
+            i.write_text(json.dumps(d), encoding="utf-8")
+            txt = " | ".join(rg.checar_schemas(t))
+        self.assertIn("score_total", txt)
+        self.assertIn("NEUTRO", txt)
+        self.assertIn("approved_hypothesis", txt)
 
 if __name__ == "__main__":
     unittest.main()

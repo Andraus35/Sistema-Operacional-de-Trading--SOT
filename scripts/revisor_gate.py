@@ -5,7 +5,8 @@ revisor_gate.py — GATE FUNDIDO (Classe D) do Revisor SOT (DHR-AUDITOR-EXTERNO-
 Funde e amplia os detectores determinísticos existentes numa bateria fixa, para uma Spec (ou documento):
   D bloqueante   validate_spec_sot.py (estrutura) · baselines presentes na raiz · IDs de modelos canônicos que não existem
   D informativo  check_invariants.py (valores e ordem) · check_refs.py · check_doc_sync.py · backlog_triggers.py (ATIVADO)
-                 check_rpsa.py · build_map.py --check
+                 check_rpsa.py · build_map.py --check · contrato_schemas (schemas/*.json, ex-`sot-schema-validator`)
+                 lint_specs (tests/lint-specs.js: seções e notação EARS, ex-`sot-spec-reviewer`)
                  campos_atribuidos_baseline (campo `x` atribuído a baseline que não o contém) · estado_backlog (estado de BL-nnn
                  citado ≠ RMR-001) · refs_variantes (T04-neg / ADV-X-NN-sufixo sem definição) — achados da medição da SPEC-006
   H sinais       candidatos por palavra-chave a violação de invariante de SENTIDO (AGENTS.md §6/§7): o código levanta,
@@ -158,6 +159,53 @@ def refs_variantes(texto):
     return achados
 
 
+# --- contrato dos schemas I/O (absorve o ex-subagente `sot-schema-validator`, DHR-AUDITOR-EXTERNO-016) -------------------
+def checar_schemas(root=ROOT):
+    """Violações do contrato dos schemas de agente: Draft-07, $id único, title/type/required, faixa de score (agentes 0-3,
+    score_total 0-9), enum de 4 estados do sinal da síntese, hipótese aprovada anulável no ICT. Somente leitura.
+    Regras do subagente antigo que os schemas vigentes NÃO cumprem (additionalProperties:false no topo; score em todo output)
+    ficam de fora de propósito: virariam falso alarme permanente; a divergência vai para a ata, não para este detector."""
+    d = Path(root) / "schemas"
+    out, ids = [], {}
+    for f in sorted(d.glob("*.json")):
+        try:
+            s = json.loads(f.read_text(encoding="utf-8"))
+        except ValueError as e:
+            out.append(f"{f.name}: JSON inválido ({e})")
+            continue
+        if not str(s.get("$schema", "")).endswith("draft-07/schema#"):
+            out.append(f"{f.name}: $schema não é Draft-07")
+        if not s.get("$id"):
+            out.append(f"{f.name}: sem $id")
+        elif s["$id"] in ids:
+            out.append(f"{f.name}: $id repetido de {ids[s['$id']]}")
+        else:
+            ids[s["$id"]] = f.name
+        for campo in ("title", "required"):
+            if not s.get(campo):
+                out.append(f"{f.name}: sem {campo}")
+        if s.get("type") != "object":
+            out.append(f"{f.name}: raiz não é type=object")
+        props = s.get("properties", {})
+        for k, v in props.items():
+            if k.endswith("_score") or k == "score_total":
+                teto = 9 if k == "score_total" else 3
+                if v.get("type") != "integer" or v.get("minimum") != 0 or v.get("maximum") != teto:
+                    out.append(f"{f.name}: {k} deve ser integer 0..{teto}")
+    sy = d / "synthesis.output.json"
+    if sy.is_file():
+        sig = json.loads(sy.read_text(encoding="utf-8")).get("properties", {}).get("sinal", {})
+        falta = {"COMPRA", "VENDA", "NEUTRO", "AGUARDAR_SETUP"} - set(sig.get("enum", []))
+        if falta:
+            out.append(f"synthesis.output.json: enum de sinal sem {sorted(falta)}")
+    ic = d / "ict.input.json"
+    if ic.is_file():
+        ah = json.loads(ic.read_text(encoding="utf-8")).get("properties", {}).get("approved_hypothesis", {})
+        if "null" not in (ah.get("type") if isinstance(ah.get("type"), list) else [ah.get("type")]):
+            out.append("ict.input.json: approved_hypothesis deve admitir null (ICT INATIVO)")
+    return out
+
+
 def sinais_h(texto):
     out = []
     for i, linha in enumerate(texto.splitlines(), 1):
@@ -217,6 +265,10 @@ def rodar(doc, rapido=False, root=ROOT):
         itens.append(_run("backlog_triggers", [py, "scripts/backlog_triggers.py"], "D", False, root))
         itens.append(_run("check_rpsa", [py, "scripts/check_rpsa.py"], "D", False, root))
         itens.append(_run("build_map_check", [py, "scripts/build_map.py", "--check"], "D", False, root))
+        sch = checar_schemas(root)
+        itens.append({"nome": "contrato_schemas", "classe": "D", "bloqueante": False, "exit_code": 1 if sch else 0,
+                      "output_sha256": "", "tail": sch[:6] or ["schemas/*.json cumprem o contrato"], "detalhes": sch})
+        itens.append(_run("lint_specs", ["node", "tests/lint-specs.js"], "D", False, root))
     sinais = sinais_h(texto)
     for s in sinais:
         s["ref"] = f"{rel}:{s['linha']}"                      # arquivo:linha completo (o Revisor cita assim)

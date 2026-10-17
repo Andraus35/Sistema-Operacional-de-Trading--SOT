@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "b9d57ca669eb2063a753e394f39aa0aa511e56d81288221e190e5885fa3fec5c",
+  "digest": "ef4e8b85264ba2f19a0188062b07c6b72724bc443f5029e0873221920875cbdf",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,29 +10,15 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 31,
+   "in": 32,
    "out": 57
   },
   {
    "path": ".claude/agents/revisor.md",
    "area": ".claude",
    "title": "Write, Edit e Bash são INTENCIONALMENTE AUSENTES.",
-   "in": 36,
+   "in": 37,
    "out": 57
-  },
-  {
-   "path": ".claude/agents/sot-schema-validator.md",
-   "area": ".claude",
-   "title": "Somente leitura (DHR-AUDITOR-EXTERNO-015): sem `tools` o subagente herdava Bash/Write/Edit e furava o ENF-03.",
-   "in": 3,
-   "out": 1
-  },
-  {
-   "path": ".claude/agents/sot-spec-reviewer.md",
-   "area": ".claude",
-   "title": "Somente leitura (DHR-AUDITOR-EXTERNO-015): sem `tools` o subagente herdava Bash/Write/Edit e furava o ENF-03.",
-   "in": 2,
-   "out": 1
   },
   {
    "path": ".claude/commands/update-spec.md",
@@ -136,7 +122,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 67,
+   "in": 69,
    "out": 38
   },
   {
@@ -151,7 +137,7 @@
    "area": "raiz",
    "title": "HANDOFF — SOT",
    "in": 8,
-   "out": 12
+   "out": 13
   },
   {
    "path": "README.md",
@@ -171,21 +157,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 177,
+   "in": 178,
    "out": 64
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 40,
+   "in": 41,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 104,
+   "in": 105,
    "out": 34
   },
   {
@@ -227,7 +213,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 161,
+   "in": 162,
    "out": 104
   },
   {
@@ -241,7 +227,7 @@
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 78,
+   "in": 79,
    "out": 4
   },
   {
@@ -305,7 +291,7 @@
    "area": "docs",
    "title": "AUDITORIA DO ESTADO ATUAL DOS AGENTES E HARNESS",
    "in": 2,
-   "out": 22
+   "out": 20
   },
   {
    "path": "docs/arranque/MANIFESTO-reorganizacao.md",
@@ -354,7 +340,7 @@
    "area": "docs",
    "title": "QUESTIONÁRIO DE RESOLUÇÃO — SOT Arranque",
    "in": 3,
-   "out": 16
+   "out": 14
   },
   {
    "path": "docs/arranque/respostas-questionario-v1.md",
@@ -427,6 +413,13 @@
    "out": 12
   },
   {
+   "path": "docs/handoffs/HO-2026-10-17-06.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 12
+  },
+  {
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
    "area": "governance",
    "title": "HOMOLOGADO — ADR-CONFLUENCE-001 v3",
@@ -480,7 +473,7 @@
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
    "in": 98,
-   "out": 177
+   "out": 178
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -507,7 +500,7 @@
    "path": "governance/CONSTITUTION.md",
    "area": "governance",
    "title": "SOT Constitution — Sistema Operacional de Trading",
-   "in": 24,
+   "in": 25,
    "out": 1
   },
   {
@@ -591,7 +584,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-007 — Ata — Pausa do Auditor Externo e reforço do Revisor interno",
-   "in": 3,
+   "in": 4,
    "out": 6
   },
   {
@@ -605,7 +598,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-009 — Ata — Gate fundido (Classe D) como ferramenta oficial do Revisor, sem Bash",
-   "in": 6,
+   "in": 7,
    "out": 7
   },
   {
@@ -640,7 +633,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-014 — Ata — Revisor SOT: modelo elevado e Passo 4-ter (inventário e conferência de afirmações)",
-   "in": 5,
+   "in": 7,
    "out": 7
   },
   {
@@ -648,6 +641,13 @@
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revisão, selo do gate e medição do Revisor no banco de estresse",
    "in": 5,
+   "out": 6
+  },
+  {
+   "path": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "area": "governance",
+   "title": "DHR-AUDITOR-EXTERNO-016 — Ata — Fusão do que era útil dos subagentes de 1ª geração no Revisor SOT e aposentadoria deles",
+   "in": 2,
    "out": 7
   },
   {
@@ -1123,7 +1123,7 @@
    "path": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-001 — Ata de Homologação — Abertura da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 9,
+   "in": 10,
    "out": 11
   },
   {
@@ -1466,7 +1466,7 @@
    "path": "governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md",
    "area": "governance",
    "title": "PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orquestrador (etapa BUILD) (PROPOSTA)",
-   "in": 10,
+   "in": 11,
    "out": 13
   },
   {
@@ -1494,7 +1494,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 236,
+   "in": 237,
    "out": 35
   },
   {
@@ -1893,7 +1893,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 87,
+   "in": 88,
    "out": 24
   },
   {
@@ -1956,7 +1956,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 41,
+   "in": 42,
    "out": 22
   },
   {
@@ -2357,7 +2357,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-007",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-008",
@@ -2367,7 +2367,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-009",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-010",
@@ -2392,12 +2392,17 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-014",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
-   "cited_by": 5
+   "cited_by": 7
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-015",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
    "cited_by": 5
+  },
+  {
+   "id": "DHR-AUDITOR-EXTERNO-016",
+   "defined_in": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "cited_by": 2
   },
   {
    "id": "DHR-BL008-001",
@@ -2737,7 +2742,7 @@
   {
    "id": "DHR-SPEC006-001",
    "defined_in": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "DHR-SPEC006-PEND-001",
@@ -2962,7 +2967,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 165
+   "cited_by": 166
   },
   {
    "id": "INV-08",
@@ -4072,7 +4077,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 84
+   "cited_by": 85
   },
   {
    "id": "SPEC-004",
@@ -4082,12 +4087,12 @@
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 41
+   "cited_by": 42
   },
   {
    "id": "SPEC-006",
    "defined_in": "ROADMAP.md",
-   "cited_by": 67
+   "cited_by": 68
   },
   {
    "id": "SPEC-007",
@@ -4892,16 +4897,6 @@
    "type": "id"
   },
   {
-   "from": ".claude/agents/sot-schema-validator.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/agents/sot-spec-reviewer.md",
-   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
-   "type": "id"
-  },
-  {
    "from": ".claude/commands/validate-harness.md",
    "to": "governance/CONFLICT-MAP.md",
    "type": "id"
@@ -5364,6 +5359,16 @@
   {
    "from": "HANDOFF.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "HANDOFF.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "HANDOFF.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
    "type": "path"
   },
   {
@@ -7278,16 +7283,6 @@
   },
   {
    "from": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
-   "to": ".claude/agents/sot-schema-validator.md",
-   "type": "path"
-  },
-  {
-   "from": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
-   "to": ".claude/agents/sot-spec-reviewer.md",
-   "type": "path"
-  },
-  {
-   "from": "docs/arranque/AUDITORIA-ESTADO-ATUAL-AGENTES-HARNESS.md",
    "to": ".claude/skills/SKILL.md",
    "type": "path"
   },
@@ -7699,16 +7694,6 @@
   {
    "from": "docs/arranque/questionario-resolucao-v1.md",
    "to": ".claude/agents/revisor.md",
-   "type": "path"
-  },
-  {
-   "from": "docs/arranque/questionario-resolucao-v1.md",
-   "to": ".claude/agents/sot-schema-validator.md",
-   "type": "path"
-  },
-  {
-   "from": "docs/arranque/questionario-resolucao-v1.md",
-   "to": ".claude/agents/sot-spec-reviewer.md",
    "type": "path"
   },
   {
@@ -8273,6 +8258,76 @@
   },
   {
    "from": "docs/handoffs/HO-2026-10-17-05.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-17-06.md",
    "to": "specs/features/SPEC-005/plan.md",
    "type": "id"
   },
@@ -8904,6 +8959,16 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
    "type": "path"
   },
   {
@@ -10748,11 +10813,6 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
-   "to": ".claude/agents/sot-schema-validator.md",
-   "type": "path"
-  },
-  {
-   "from": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
    "to": "AGENTS.md",
    "type": "path"
   },
@@ -10768,6 +10828,41 @@
   },
   {
    "from": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": ".claude/agents/revisor.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": "governance/CONSTITUTION.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-007_Ata_Pausa_do_Auditor_e_Reforco_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
