@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "291fd24a30920b02020d26ed958f2330930bf18bcb8c55291ccbaf0e7eca582b",
+  "digest": "f0c8d74baea0db550083a8eb9477fd726cc407d56af96b639d1c55fa782e9681",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -199,7 +199,7 @@
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 91,
+   "in": 92,
    "out": 6
   },
   {
@@ -234,7 +234,7 @@
    "path": "canon/GMC-001-governance-canonical-models.md",
    "area": "canon",
    "title": "GMC-001 — Canonical Models Governance Specification",
-   "in": 52,
+   "in": 53,
    "out": 0
   },
   {
@@ -654,7 +654,7 @@
    "path": "governance/CLASSIFICACAO-COLISOES-BL010-011-012.md",
    "area": "governance",
    "title": "CLASSIFICAÇÃO DE COLISÕES — BL-010 / BL-011 / BL-012 (Master Contracts diferidos)",
-   "in": 3,
+   "in": 4,
    "out": 11
   },
   {
@@ -2138,7 +2138,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 127,
+   "in": 128,
    "out": 18
   },
   {
@@ -2159,7 +2159,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 112,
+   "in": 113,
    "out": 25
   },
   {
@@ -2222,7 +2222,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 69,
+   "in": 68,
    "out": 23
   },
   {
@@ -2244,14 +2244,14 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
    "in": 2,
-   "out": 7
+   "out": 8
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 95,
-   "out": 21
+   "out": 22
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -3277,7 +3277,7 @@
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 28
+   "cited_by": 27
   },
   {
    "id": "INV-03",
@@ -3482,7 +3482,7 @@
   {
    "id": "RULE-CBP-007",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "RULE-CBP-008",
@@ -3647,7 +3647,17 @@
   {
    "id": "RULE-CKG-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 0
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CKG-008",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
+  },
+  {
+   "id": "RULE-CKG-010",
+   "defined_in": "specs/features/SPEC-006/plan.md",
+   "cited_by": 1
   },
   {
    "id": "RULE-CKG-012",
@@ -3657,7 +3667,7 @@
   {
    "id": "RULE-CKG-013",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 1
+   "cited_by": 0
   },
   {
    "id": "RULE-COESAO",
@@ -3932,7 +3942,7 @@
   {
    "id": "RULE-HD-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "RULE-HD-04",
@@ -3997,7 +4007,7 @@
   {
    "id": "RULE-HH-002",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 1
+   "cited_by": 3
   },
   {
    "id": "RULE-HH-003",
@@ -4117,7 +4127,7 @@
   {
    "id": "RULE-INQ-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 4
+   "cited_by": 6
   },
   {
    "id": "RULE-MECH",
@@ -4152,7 +4162,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 67
+   "cited_by": 66
   },
   {
    "id": "RULE-MET-02",
@@ -4472,12 +4482,12 @@
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 124
+   "cited_by": 125
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 110
+   "cited_by": 111
   },
   {
    "id": "SPEC-004",
@@ -4487,7 +4497,7 @@
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 69
+   "cited_by": 68
   },
   {
    "id": "SPEC-006",
@@ -4552,7 +4562,7 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 53
+   "cited_by": 52
   },
   {
    "id": "SPEC-019",
@@ -25203,12 +25213,17 @@
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
-   "to": "specs/features/SPEC-004/plan.md",
+   "to": "specs/features/SPEC-002/plan.md",
    "type": "id"
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
-   "to": "specs/features/SPEC-005/plan.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "specs/features/SPEC-004/plan.md",
    "type": "id"
   },
   {
@@ -25235,6 +25250,11 @@
    "from": "specs/features/SPEC-006/plan.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/CLASSIFICACAO-COLISOES-BL010-011-012.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-006/plan.md",
