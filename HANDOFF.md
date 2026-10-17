@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-17-08
-previous: HO-2026-10-17-07
+handoff_id: HO-2026-10-17-09
+previous: HO-2026-10-17-08
 data: 2026-10-17
 branch: ccr-7917ac44-2l55cz
 base_commit: 1c6754b
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **Auditoria por testes do Revisor (Sonnet 5.5)** — `governance/AUDITORIA-REVISOR-MATURIDADE-2026-10-17.md` (não-normativa): nível indicativo **L2 sólido, L3 parcial**. Spec real com 14 defeitos sutis: 5/6/9 de 14 por rodada (união 9); interpelação com provas falsas 6/6; gate de código 0/14; gate não carrega no Revisor em nuvem (10/10). Melhorias propostas no §6 do relatório (nada aplicado).
 - **DHR-AUDITOR-EXTERNO-016 (ramo; PR a abrir):** `sot-spec-reviewer`/`sot-schema-validator` → `docs/_legacy/agents/`; gate ganha `contrato_schemas`, `lint_specs`, `pipeline_schemas` (8 achados reais) e `specs_1a_geracao` (2); selo regravado; Auditor Externo mantido pausado/opcional (decisão de Andraus). Não portados: `additionalProperties:false`, score em todo output (schemas vigentes não cumprem) e "60% para viés" (sem fonte) — viraram achados na ata.
 - PR #103 (DHR-AUDITOR-EXTERNO-015) mesclado na `main` com CI verde.
 - **Auditoria do Revisor:** sem Bash/Write/Edit por decisão de Andraus (DHR-AUDITOR-EXTERNO-009 §1, 2026-10-11; reafirmada na DHR-AUDITOR-EXTERNO-014). Executa só `revisor_gate` (MCP, leitura, 12 verificações D + 10 sinais H). Parte adversarial/probabilística = só prompt (Passos 4-ter/5-bis), 1 passada, sem calibração contínua.
