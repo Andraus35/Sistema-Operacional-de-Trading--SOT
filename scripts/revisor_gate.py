@@ -7,6 +7,8 @@ Funde e amplia os detectores determinísticos existentes numa bateria fixa, para
   D informativo  check_invariants.py (valores e ordem) · check_refs.py · check_doc_sync.py · backlog_triggers.py (ATIVADO)
                  check_rpsa.py · build_map.py --check · contrato_schemas (schemas/*.json, ex-`sot-schema-validator`)
                  lint_specs (tests/lint-specs.js: seções e notação EARS, ex-`sot-spec-reviewer`)
+                 pipeline_schemas (saída de um agente × entrada do próximo) · specs_1a_geracao (antiescopo ≥5, schemas citados existem,
+                 ICT inativo) — ex-subagentes de 1ª geração (DHR-AUDITOR-EXTERNO-016)
                  campos_atribuidos_baseline (campo `x` atribuído a baseline que não o contém) · estado_backlog (estado de BL-nnn
                  citado ≠ RMR-001) · refs_variantes (T04-neg / ADV-X-NN-sufixo sem definição) — achados da medição da SPEC-006
   H sinais       candidatos por palavra-chave a violação de invariante de SENTIDO (AGENTS.md §6/§7): o código levanta,
@@ -206,6 +208,79 @@ def checar_schemas(root=ROOT):
     return out
 
 
+# Entradas do pipeline: (schema consumidor, campo da entrada) -> schema produtor. A hipótese do Elliott é entregue por projeção do
+# primary_hypothesis (objeto aninhado na saída); os demais campos replicam objetos de saída de mesmo nome.
+PIPELINE = [
+    ("fibonacci.input", "elliott_hypothesis", "elliott-wave.output", "primary_hypothesis"),
+    ("smc.input", "elliott_hypothesis", "elliott-wave.output", "primary_hypothesis"),
+    ("ict.input", "approved_hypothesis", "elliott-wave.output", "primary_hypothesis"),
+    ("ict.input", "smc_context", "smc.output", None),
+    ("synthesis.input", "elliott_output", "elliott-wave.output", None),
+    ("synthesis.input", "fibonacci_output", "fibonacci.output", None),
+    ("synthesis.input", "smc_output", "smc.output", None),
+    ("synthesis.input", "ict_output", "ict.output", None),
+]
+
+
+def checar_pipeline_schemas(root=ROOT):
+    """Saída de um agente × entrada do próximo (ex-`sot-schema-validator`). Dois defeitos: (a) subcampo da entrada sem correspondente
+    na saída do produtor; (b) subcampo OBRIGATÓRIO na entrada que o produtor não obriga (pode omitir o que o consumidor exige).
+    Detector de contrato, não de sentido: nome diferente com o mesmo significado também aparece e o Revisor adjudica."""
+    d, out = Path(root) / "schemas", []
+    def _carrega(n):
+        f = d / f"{n}.json"
+        return json.loads(f.read_text(encoding="utf-8")) if f.is_file() else None
+    for cons, campo, prod, aninhado in PIPELINE:
+        c, p = _carrega(cons), _carrega(prod)
+        if c is None or p is None:
+            out.append(f"{cons}/{prod}: schema ausente")
+            continue
+        wrapper = c.get("properties", {}).get(campo, {})
+        sub, exigidos = wrapper.get("properties", {}), set(wrapper.get("required", []))
+        pprops, preq = dict(p.get("properties", {})), set(p.get("required", []))
+        if aninhado and aninhado in pprops:
+            filho = p["properties"][aninhado]
+            pprops.update(filho.get("properties", {}))
+            preq |= set(filho.get("required", []))
+        for k in sub:
+            if k not in pprops:
+                out.append(f"{cons}.{campo}.{k}: sem correspondente na saída de {prod}")
+            elif k in exigidos and k not in preq:
+                out.append(f"{cons}.{campo}.{k}: obrigatório na entrada, opcional na saída de {prod}")
+    return out
+
+
+_ANTIESCOPO = re.compile(r"^(?:#+\s*)?(?:fora do escopo|antiescopo|non-goals)", re.I)
+
+
+def checar_specs_primeira_geracao(root=ROOT):
+    """Specs de 1ª geração (specs/*.spec.md; ex-`sot-spec-reviewer`): antiescopo com ≥5 itens, `Referência: schemas/x.json` existente,
+    regra do ICT inativo em ict.spec.md. Não confere 'cada item atribuído ao agente responsável' nem 'todos os campos citados':
+    as seções Inputs/Outputs são prosa, sem nome de campo, e a conferência seria opinião de código."""
+    root, out = Path(root), []
+    for f in sorted((root / "specs").glob("*.spec.md")):
+        linhas = f.read_text(encoding="utf-8", errors="replace").splitlines()
+        itens, dentro = 0, False
+        for ln in linhas:
+            if _ANTIESCOPO.match(ln.strip().lstrip("*").strip()):
+                dentro = True
+                continue
+            if dentro:
+                if ln.strip().startswith("- "):
+                    itens += 1
+                elif ln.strip() == "---" or ln.startswith("## "):
+                    dentro = False
+        if itens < 5:
+            out.append(f"{f.name}: antiescopo com {itens} item(ns) (mínimo 5)")
+        for ln in linhas:
+            m = re.search(r"`(schemas/[^`]+\.json)`", ln)
+            if m and not (root / m.group(1)).is_file():
+                out.append(f"{f.name}: schema citado não existe: {m.group(1)}")
+        if f.name == "ict.spec.md" and not any(re.search(r"INATIV", ln) for ln in linhas):
+            out.append("ict.spec.md: sem a regra de ICT INATIVO")
+    return out
+
+
 def sinais_h(texto):
     out = []
     for i, linha in enumerate(texto.splitlines(), 1):
@@ -269,6 +344,10 @@ def rodar(doc, rapido=False, root=ROOT):
         itens.append({"nome": "contrato_schemas", "classe": "D", "bloqueante": False, "exit_code": 1 if sch else 0,
                       "output_sha256": "", "tail": sch[:6] or ["schemas/*.json cumprem o contrato"], "detalhes": sch})
         itens.append(_run("lint_specs", ["node", "tests/lint-specs.js"], "D", False, root))
+        for nome, fn in (("pipeline_schemas", checar_pipeline_schemas), ("specs_1a_geracao", checar_specs_primeira_geracao)):
+            ach = fn(root)
+            itens.append({"nome": nome, "classe": "D", "bloqueante": False, "exit_code": 1 if ach else 0,
+                          "output_sha256": "", "tail": ach[:6] or ["nenhum achado"], "detalhes": ach})
     sinais = sinais_h(texto)
     for s in sinais:
         s["ref"] = f"{rel}:{s['linha']}"                      # arquivo:linha completo (o Revisor cita assim)

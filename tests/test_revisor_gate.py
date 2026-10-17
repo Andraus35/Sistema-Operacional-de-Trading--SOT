@@ -171,5 +171,51 @@ class TestContratoSchemas(unittest.TestCase):
         self.assertIn("NEUTRO", txt)
         self.assertIn("approved_hypothesis", txt)
 
+class TestPipelineEEspecs1aGeracao(unittest.TestCase):
+    """Absorção do que faltava dos ex-subagentes de 1ª geração (DHR-AUDITOR-EXTERNO-016)."""
+
+    def _copia(self, t):
+        import shutil
+        shutil.copytree(rg.ROOT / "schemas", Path(t) / "schemas")
+        shutil.copytree(rg.ROOT / "specs", Path(t) / "specs", ignore=shutil.ignore_patterns("features"))
+
+    def test_achados_conhecidos_do_repositorio_vigente(self):
+        txt = " | ".join(rg.checar_pipeline_schemas())
+        self.assertIn("smc.input.elliott_hypothesis.pivots", txt)               # obrigatório na entrada, opcional na saída
+        self.assertIn("ict.input.approved_hypothesis.projected_target_1", txt)   # sem correspondente
+        self.assertIn("synthesis.input.smc_output.directional_conflict", txt)
+        self.assertEqual(len(rg.checar_specs_primeira_geracao()), 2)             # fibonacci e synthesis: antiescopo com 4
+
+    def test_pipeline_detecta_campo_removido_da_saida(self):
+        import json, tempfile
+        with tempfile.TemporaryDirectory() as t:
+            self._copia(t)
+            f = Path(t) / "schemas" / "ict.output.json"
+            s = json.loads(f.read_text(encoding="utf-8"))
+            del s["properties"]["killzone"]
+            f.write_text(json.dumps(s), encoding="utf-8")
+            self.assertIn("synthesis.input.ict_output.killzone", " | ".join(rg.checar_pipeline_schemas(t)))
+
+    def test_pipeline_detecta_obrigatoriedade_perdida(self):
+        import json, tempfile
+        with tempfile.TemporaryDirectory() as t:
+            self._copia(t)
+            f = Path(t) / "schemas" / "fibonacci.output.json"
+            s = json.loads(f.read_text(encoding="utf-8"))
+            s["required"].remove("geometric_conviction_pct")
+            f.write_text(json.dumps(s), encoding="utf-8")
+            self.assertIn("fibonacci_output.geometric_conviction_pct: obrigatório na entrada", " | ".join(rg.checar_pipeline_schemas(t)))
+
+    def test_specs_detecta_antiescopo_curto_schema_inexistente_e_ict_sem_inativo(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as t:
+            self._copia(t)
+            ict = Path(t) / "specs" / "ict.spec.md"
+            txt = ict.read_text(encoding="utf-8").replace("INATIVO", "OFF").replace("INATIV", "OFF").replace("schemas/ict.input.json", "schemas/nada.json")
+            ict.write_text(txt, encoding="utf-8")
+            r = " | ".join(rg.checar_specs_primeira_geracao(t))
+        self.assertIn("schema citado não existe: schemas/nada.json", r)
+        self.assertIn("ict.spec.md: sem a regra de ICT INATIVO", r)
+
 if __name__ == "__main__":
     unittest.main()

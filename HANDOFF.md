@@ -19,7 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
-- **DHR-AUDITOR-EXTERNO-016 (ramo; PR a abrir):** `sot-spec-reviewer`/`sot-schema-validator` → `docs/_legacy/agents/`; gate ganha `contrato_schemas` e `lint_specs`; selo regravado; Auditor Externo mantido pausado/opcional (decisão de Andraus). Não portados: `additionalProperties:false`, score em todo output (schemas vigentes não cumprem) e "60% para viés" (sem fonte) — viraram achados na ata.
+- **DHR-AUDITOR-EXTERNO-016 (ramo; PR a abrir):** `sot-spec-reviewer`/`sot-schema-validator` → `docs/_legacy/agents/`; gate ganha `contrato_schemas`, `lint_specs`, `pipeline_schemas` (8 achados reais) e `specs_1a_geracao` (2); selo regravado; Auditor Externo mantido pausado/opcional (decisão de Andraus). Não portados: `additionalProperties:false`, score em todo output (schemas vigentes não cumprem) e "60% para viés" (sem fonte) — viraram achados na ata.
 - PR #103 (DHR-AUDITOR-EXTERNO-015) mesclado na `main` com CI verde.
 - **Auditoria do Revisor:** sem Bash/Write/Edit por decisão de Andraus (DHR-AUDITOR-EXTERNO-009 §1, 2026-10-11; reafirmada na DHR-AUDITOR-EXTERNO-014). Executa só `revisor_gate` (MCP, leitura, 12 verificações D + 10 sinais H). Parte adversarial/probabilística = só prompt (Passos 4-ter/5-bis), 1 passada, sem calibração contínua.
 - **Brechas fechadas (DHR-AUDITOR-EXTERNO-015, só no ramo):** `tools: Read, Grep, Glob` em `sot-spec-reviewer`/`sot-schema-validator`; selo `scripts/gate_manifest.py` + `governance/GATE-MANIFEST.sha256` (servidor do Revisor recusa rodar se divergir; passo de CI bloqueante); `.github/CODEOWNERS`. Testes novos: `tests/test_gate_manifest.py` + 2 em `test_revisor_gate_mcp.py` (32 OK).
@@ -54,7 +54,7 @@ Ler este handoff, executar §9 e, sem outra ordem de Andraus, **não** iniciar o
 
 ## 10. Aguardando Andraus
 - Merge da DHR-AUDITOR-EXTERNO-016 (PR aberto; só mesclar com ordem de Andraus). Decidiu antes: **manter só o selo**.
-- Decidir: schemas sem `additionalProperties:false` e `fibonacci.output.json` sem score (ata 016 §4).
+- Decidir: schemas sem `additionalProperties:false`, `fibonacci.output.json` sem score e os 8 desalinhamentos produtor×consumidor dos schemas (ata 016 §4).
 - Opcional: escrever 3–5 defeitos próprios (parte livre do viés; o novo sorteio automático já foi feito).
 - Diagnosticar por que o MCP do Revisor não carrega em nuvem (testar em sessão local).
 - Próximos reforços propostos: verificadores D novos (contagens, cobertura, citação §/linha), ferramenta `verifica_citacao`, k=3 passes adversariais em modo cego.

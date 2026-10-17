@@ -22,16 +22,19 @@ Andraus (chat, 2026-10-17): a ideia era fundir o auditor independente e adversar
 | Draft-07, `$id` único, `title`/`type`/`required`; `*_score` inteiro 0–3 e `score_total` 0–9; `sinal` com os 4 estados; `approved_hypothesis` anulável no ICT | `validate-schemas.js` cobria só parte | **novo detector `contrato_schemas`** no gate (informativo; 35 testes passam, com caso negativo) |
 | `additionalProperties:false` no topo de todo schema | **10 dos 11 schemas vigentes não cumprem** | **não portado** (falso alarme permanente); fica como achado abaixo |
 | "Todo output tem campo de score" | `fibonacci.output.json` não tem | **não portado**; achado abaixo |
-| Consistência entre saída de um agente e entrada do próximo (pipeline) | exige mapeamento campo a campo, hoje inexistente em código | **não portado**; fica como proposta |
+| Consistência entre a saída de um agente e a entrada do próximo (pipeline) | não existia em código | **novo detector `pipeline_schemas`** (8 pares; acha campo sem correspondente e campo obrigatório na entrada que a saída não obriga); informativo; 4 testes |
+| Checklist das specs de 1ª geração: antiescopo ≥5 itens, `schemas/x.json` citado existe, regra do ICT inativo | só `lint-specs.js` (existência da seção) | **novo detector `specs_1a_geracao`** (informativo; teste com caso negativo). **Não portado:** "cada item atribuído ao agente responsável" e "todos os campos citados" — as seções Inputs/Outputs são prosa sem nome de campo; conferir seria opinião de código |
 | "Convicção de 60% para emissão de viés (Fase Piloto)" | **sem âncora** em `AGENTS.md`, `CONSTITUTION.md` nem `CEE-001` (busca por "60%") | **não portado**: valor sem fonte, risco de contaminar baseline |
 
 ## 3. O que muda `[FATO]`
 1. `.claude/agents/sot-spec-reviewer.md` e `sot-schema-validator.md` → `docs/_legacy/agents/` (git mv; histórico preservado).
-2. `scripts/revisor_gate.py`: detectores `contrato_schemas` e `lint_specs` (modo completo, informativos, não bloqueantes); selo `GATE-MANIFEST.sha256` regravado (decisão de Andraus no chat).
+2. `scripts/revisor_gate.py`: detectores `contrato_schemas`, `lint_specs`, `pipeline_schemas` e `specs_1a_geracao` (modo completo, informativos, não bloqueantes); selo `GATE-MANIFEST.sha256` regravado (decisão de Andraus no chat).
 3. `tests/test_gate_manifest.py` passa a exigir que todo agente de revisão/validação em `.claude/agents` declare `tools` sem Bash/Write/Edit e que os dois antigos não estejam ativos.
 **Não muda:** `revisor.md` (texto/frontmatter), o Auditor Externo (continua pausado e opcional; `AUDITOR_EXTERNO_ENABLED` é ato de Andraus), o Passo 4-ter/5-bis.
 
 ## 4. Achados para Andraus (não corrigidos aqui) `[FATO]`
+- **Pipeline dos schemas (8 achados reais, `pipeline_schemas`):** `pivots` é obrigatório na entrada do Fibonacci e do SMC mas opcional na saída do Elliott; `current_wave` idem (SMC e ICT); `directional_conflict` é obrigatório na entrada da Síntese mas opcional na saída do SMC; `ict.input.approved_hypothesis.projected_target_1/2` e `fibonacci.input.elliott_hypothesis.alternative_hypothesis` não têm correspondente na saída do Elliott (nomes divergentes: a saída tem `projection` e `alternative_hypotheses`). Produtor pode omitir o que o consumidor exige.
+- **Specs de 1ª geração:** `fibonacci.spec.md` e `synthesis.spec.md` têm antiescopo com 4 itens (mínimo 5 da regra antiga).
 - 10 de 11 schemas de agente não declaram `additionalProperties:false`; `fibonacci.output.json` não declara campo de score. Ou a regra antiga estava errada para o desenho vigente ou os schemas estão frouxos; decidir antes de qualquer correção.
 - O valor "60% para viés" estava escrito no subagente antigo sem fonte; ninguém o reconheceu no repositório.
 - Continua em aberto o diagnóstico do gate que não carrega no Revisor em nuvem (DHR-AUDITOR-EXTERNO-015).

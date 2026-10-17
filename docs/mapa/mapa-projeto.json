@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "ef4e8b85264ba2f19a0188062b07c6b72724bc443f5029e0873221920875cbdf",
+  "digest": "c7ecabadfc4d1b2759f52980c0a15ea12de428cfdc522c9c73157f67cac1bb99",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -648,7 +648,7 @@
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-016 — Ata — Fusão do que era útil dos subagentes de 1ª geração no Revisor SOT e aposentadoria deles",
    "in": 2,
-   "out": 7
+   "out": 9
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -2103,7 +2103,7 @@
    "path": "specs/fibonacci.spec.md",
    "area": "specs",
    "title": "Spec — Fibonacci Validator",
-   "in": 2,
+   "in": 3,
    "out": 1
   },
   {
@@ -2124,7 +2124,7 @@
    "path": "specs/synthesis.spec.md",
    "area": "specs",
    "title": "Spec — Synthesis Agent (Árbitro Final)",
-   "in": 6,
+   "in": 7,
    "out": 2
   }
  ],
@@ -10865,6 +10865,16 @@
    "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": "specs/fibonacci.spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md",
+   "to": "specs/synthesis.spec.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
