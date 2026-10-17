@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-17",
-  "digest": "81800c49f408f20a452625b59c380e7df560799d765ebf5ca8ebd57446458a5a",
+  "digest": "1305ad7cd11277050a01ca47e923cd8693c7db0b3ad155c40c4e16e4707ea4c2",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -759,7 +759,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-014 — Ata — Revisor SOT: modelo elevado e Passo 4-ter (inventário e conferência de afirmações)",
-   "in": 15,
+   "in": 16,
    "out": 7
   },
   {
@@ -1761,7 +1761,7 @@
    "area": "governance",
    "title": "Teste A (Especificador: Opus 4.8 → 5.5) — protocolo pré-registrado pelas lentes dos 4Es — PROPOSTA",
    "in": 1,
-   "out": 9
+   "out": 10
   },
   {
    "path": "governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md",
@@ -2579,7 +2579,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-014",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-015",
@@ -20931,6 +20931,11 @@
   {
    "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
    "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TESTE-A-PROTOCOLO-4ES.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-014_Ata_Revisor_Modelo_e_Metodo_V2.md",
    "type": "id"
   },
   {

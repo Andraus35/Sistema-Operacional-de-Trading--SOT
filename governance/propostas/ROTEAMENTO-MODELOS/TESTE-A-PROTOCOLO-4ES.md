@@ -18,16 +18,16 @@ Uma comporta reprovada **encerra** o teste: reverter (ou investigar), sem "compe
 
 ## 3. Desenho `[PROPOSTA]`
 - **Braços:** C = `claude-opus-4-8` (controle congelado: prompt/versão do agente do commit `89262bd`) · T = `claude-opus-5-5` (efeito padrão). Varredura de `effort` (5.5/medium|high|xhigh) **só depois**, se T passar (D6).
-- **Tarefa congelada:** lote de correções de achados sobre texto-base **idêntico** nos dois braços (entrada = Spec-alvo + lista de achados confirmados; saída = texto corrigido). Gabarito = achados confirmados no repositório (juiz ≠ LLM, DHR-014). **Pendência de dado:** o gabarito de 18 defeitos da SPEC-006 v1.0 **não está no repositório** (só o resumo na DHR-014; o Plan SPEC-006 não existe — só `ABERTURA.md`); sugerido montar lote novo e congelado (ex.: defeitos plantados em cópia da SPEC-005 homologada, no molde do banco de estresse da DHR-015, sorteio fora do braço).
+- **Tarefa congelada:** lote de correções de achados sobre texto-base **idêntico** nos dois braços (entrada = Spec-alvo + lista de achados confirmados; saída = texto corrigido). Gabarito = achados confirmados no repositório (juiz ≠ LLM, DHR-AUDITOR-EXTERNO-014). **Pendência de dado:** o gabarito de 18 defeitos da SPEC-006 v1.0 **não está no repositório** (só o resumo na DHR-AUDITOR-EXTERNO-014; o Plan SPEC-006 não existe — só `ABERTURA.md`); sugerido montar lote novo e congelado (ex.: defeitos plantados em cópia da SPEC-005 homologada, no molde do banco de estresse da DHR-015, sorteio fora do braço).
 - **Repetições:** ≥3 por braço (variação medida em reexecução ≈5%); ordem dos braços sorteada; Revisor titular **cego** ao braço (arquivos anonimizados).
 - **Juiz:** gate D (`revisor_gate`, pelo harness/Orquestrador) + conferência `arquivo:linha` no repositório + Revisor titular. Resultado final, não caminho.
 - **Isolamento:** todas as saídas em scratchpad/cópia; **nenhuma** escrita em Spec homologada, `canon/`, `governance/` normativo.
 
 ## 4. Riscos e limites declarados `[FATO/INFERÊNCIA]`
 1. **Seleção do modelo:** o parâmetro `model` do `Agent` aceita apenas aliases (`opus|sonnet|haiku|fable`), sem fixar 4.8 × 5.5; e o **roteador (DHR-ROTEAMENTO-003) nega `model`/`effort` por invocação no Especificador** por desenho. Como o braço C será servido é decisão aberta ao dono (§7, opção 1/2/3).
-2. Circularidade de família (Revisor Sonnet 5.5 × executor Opus) é menor que na DHR-014, mas existe; Auditor Externo (outra família) permanece opcional.
+2. Circularidade de família (Revisor Sonnet 5.5 × executor Opus) é menor que na DHR-AUDITOR-EXTERNO-014, mas existe; Auditor Externo (outra família) permanece opcional.
 3. Poder estatístico baixo (3 repetições × 1 lote): o teste detecta regressão grosseira, não equivalência fina — por isso a comporta 2 exige **0 perda** em Crítico/Alto e a decisão final fica com Andraus.
-4. Custo do juiz: um passe do Revisor ≈275 mil tokens (DHR-014) — o limite de cota precisa cobrir 6 revisões + 6 execuções.
+4. Custo do juiz: um passe do Revisor ≈275 mil tokens (DHR-AUDITOR-EXTERNO-014) — o limite de cota precisa cobrir 6 revisões + 6 execuções.
 
 ## 5. Regra de decisão `[PROPOSTA]`
 Comportas 1→2→3 aprovadas ⇒ **manter 5.5** (próximo: varredura de esforço, depois EUA-E24 aditiva). Qualquer reprovação em 1–3 ⇒ **reverter** a `claude-opus-4-8` por nova ata (ou investigar o lote). 4–5 só informam. Andraus decide; este protocolo não homologa nada.
