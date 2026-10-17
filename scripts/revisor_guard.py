@@ -81,13 +81,24 @@ def alvo_da_revisao(prompt):
 
 
 def rodar_gate(alvo):
+    """Roda o gate no artefato. Só entram na mensagem os achados que apontam PARA o artefato (caminho nos detalhes) ou que são
+    estruturais (bloqueantes); os do repositório inteiro viram uma linha de contagem (eram ruído nos relatórios do Revisor)."""
     import revisor_gate
     ev, _ = revisor_gate.rodar(alvo, rapido=False, root=ROOT)
     linhas = [f"VEREDITO D: {ev['veredito_D']}"]
+    alheios = 0
     for g in ev["gates"]:
-        if g["exit_code"] != 0:
-            for d in (g.get("detalhes") or g.get("tail") or [])[:4]:
+        if g["exit_code"] == 0:
+            continue
+        dets = g.get("detalhes") or g.get("tail") or []
+        proprios = [d for d in dets if str(alvo) in d or Path(alvo).name in d]
+        if g["bloqueante"] or proprios:
+            for d in (proprios or dets)[:4]:
                 linhas.append(f"  [{g['nome']}] {d}")
+        else:
+            alheios += 1
+    if alheios:
+        linhas.append(f"  ({alheios} verificação(ões) informativa(s) do repositório inteiro apontam para OUTROS arquivos — fora do escopo desta Spec; ver python scripts/revisor_gate.py)")
     linhas.append(f"  sinais H: {len(ev['sinais_H'])}")
     return ev, linhas
 

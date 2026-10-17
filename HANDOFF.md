@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-09
-previous: HO-2026-10-17-08
+handoff_id: HO-2026-10-17-10
+previous: HO-2026-10-17-09
 data: 2026-10-17
 branch: ccr-7917ac44-2l55cz
-base_commit: 1c6754b
+base_commit: 8ebedff
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **DHR-AUDITOR-EXTERNO-017 (ramo; PR a abrir):** 7 detectores D novos + diff entre versões no gate (`revisor_detectores.py`), guarda SubagentStop do Revisor (`revisor_guard.py` + `revisor-guard.js`, registrada em `.claude/settings.json`; **só vale após reiniciar a sessão**), testes (62+). Gate de código na Spec adulterada: 0/14 → 6/14 (9/14 com versão anterior). Revisor com guarda: 69% por rodada, união 11/14 (antes 48–55%, união 9). Avaliação: `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md`. PR #104 mesclado.
 - **Auditoria por testes do Revisor (Sonnet 5.5)** — `governance/AUDITORIA-REVISOR-MATURIDADE-2026-10-17.md` (não-normativa): nível indicativo **L2 sólido, L3 parcial**. Spec real com 14 defeitos sutis: 5/6/9 de 14 por rodada (união 9); interpelação com provas falsas 6/6; gate de código 0/14; gate não carrega no Revisor em nuvem (10/10). Melhorias propostas no §6 do relatório (nada aplicado).
 - **DHR-AUDITOR-EXTERNO-016 (ramo; PR a abrir):** `sot-spec-reviewer`/`sot-schema-validator` → `docs/_legacy/agents/`; gate ganha `contrato_schemas`, `lint_specs`, `pipeline_schemas` (8 achados reais) e `specs_1a_geracao` (2); selo regravado; Auditor Externo mantido pausado/opcional (decisão de Andraus). Não portados: `additionalProperties:false`, score em todo output (schemas vigentes não cumprem) e "60% para viés" (sem fonte) — viraram achados na ata.
 - PR #103 (DHR-AUDITOR-EXTERNO-015) mesclado na `main` com CI verde.
@@ -46,6 +47,7 @@ Ler este handoff, executar §9 e, sem outra ordem de Andraus, **não** iniciar o
 - `canon/` BASELINED, specs homologadas, `ROADMAP.md`, `atomic-spec.md`, `.claude/agents/revisor.md`/`especificador.md`, `AGENTS.md` (só por Andraus). Não regravar `GATE-MANIFEST.sha256` sem decisão de Andraus.
 
 ## 9. Reverificar ao vivo
+- [ ] **Hook do Revisor ao vivo:** em sessão nova, rodar um Revisor e ver o retorno forçado (G1/G2/G3) no transcript do subagente
 - [ ] CI da `main` e do ramo
 - [ ] `python scripts/gate_manifest.py --check` e `check_refs.py`/`check_doc_sync.py`
 - [ ] PRs abertos (#31 Auditor externo, #2 capturas SPEC-003 na última checagem)
