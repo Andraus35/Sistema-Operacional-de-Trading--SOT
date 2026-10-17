@@ -1,0 +1,13 @@
+REVISAO INDEPENDENTE DE OUTRO MODELO (criterio de independencia do nivel 3) — nao-normativo
+
+ARQUIVO PARA USAR AGORA (modelo COM acesso ao repositorio, ex.: Copilot Chat em modo Agente no VS Code):
+  PEDIDO-COPILOT-COM-REPO.txt  -> copie tudo, cole no chat, devolva o JSON final ao Orquestrador.
+  Ele autoriza LEITURA do repositorio, aponta o Plan (ramo spec006-plan, specs/features/SPEC-006/plan.md)
+  e proibe abrir as pastas do Revisor (preserva a independencia).
+
+VARIANTE SEM ACESSO AO REPOSITORIO (ja usada 2x): gere com
+  git show origin/spec006-plan:specs/features/SPEC-006/plan.md | nl -ba -w1 -s': ' | sed 's/^/L/'
+  e cole depois do cabecalho do prompt (PEDIDO-COPILOT-COM-REPO.txt serve de base; remova as secoes de acesso).
+
+REGRAS: nao cole nenhum relatorio do Revisor interno junto; achado de outro modelo e DADO a verificar (DIR-002), nunca veredito.
+Resultados anteriores: governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md §7 e §7.1.

@@ -50,3 +50,42 @@
 3. Ata de política: `RULE-REV-01..03` (parecer com VEREDITO D do harness; núcleo do Passo 0 aberto; citação verificada) + emenda do `revisor.md` — **decisão de Andraus**.
 4. Reativar o Auditor Externo numa Spec CRITICAL e/ou Andraus escrever 3–5 defeitos (L3.2).
 5. Erratum da SPEC-003 (10 × 11 critérios EARS) — baseline, só Andraus (INV-07).
+
+## 7. Teste de revisão independente de outro modelo (critério L3) — SPEC-006 Plan v1.3, 2026-10-17
+**Desenho.** O mesmo Plan candidato (SPEC-006 v1.3, ramo `spec006-plan`, fora da `main`; 1428 linhas) foi auditado por (a) outro modelo LLM de outra empresa, **sem acesso ao repositório**, com prompt de rigor adversarial e saída em JSON (Andraus executou), e (b) o Revisor interno (`claude-sonnet-5-5`), 2 rodadas, **com** acesso ao repositório. Os achados foram conferidos por mim contra o texto real.
+
+| | Outro modelo (sem repositório) | Revisor interno (2 rodadas, com repositório) |
+|---|---|---|
+| Achados | 6 (2 críticos, 4 médios) | 1 crítico + 9 médios (1ª rodada); 1 crítico + 10 médios + 10 menores (2ª) — grande sobreposição entre as duas |
+| Procedem ao conferir no texto | **0 críticos procedem.** Os 2 críticos (K-01/F-01) são **leitura errada**: o T01 é o cenário **negativo** que usa `school=ICT` para provar que o gate rejeita (plan.md:872 "Violação de integridade → rejeição"); 3 médios apontam lacunas **declaradas** como INDETERMINADO/gap aberto; 1 média coincide com o defeito real da herança | **Todos os que conferi procedem** (≥10 verificados no texto: D6 exige `gate_record` incondicional contra CKG-005; campo `ref` ausente do schema; `PENDING_ANCESTOR` fora do D5 apesar de "resolvido"; `COL-EXP` só em 1 linha; `REFUTED` inexistente no CEM-001; `school` sem origem canônica e Fractal ausente da enumeração; etc.) |
+| Defeito real principal (herança "preservar todos os estados" × admissão INDETERMINADA × CEM-001:494) | achou como **média** (M-01) | achou como **crítico** nas 2 rodadas |
+| Defeitos reais que só um achou | 0 | ≥9 |
+
+**Leitura.**
+1. **Não há evidência de ponto cego do Revisor interno nesta Spec:** o outro modelo não achou nenhum defeito real que o Revisor interno tenha perdido (o único real que achou, o Revisor achou com severidade maior).
+2. **A independência sem acesso ao repositório tem baixo valor e custo de ruído:** sem poder abrir CEM-001, SPEC-001, RULES ou o RMR-001, o modelo externo não confere atribuições nem estados e **erra por leitura** (2 críticos falsos). Para a "revisão independente" do L3 ser útil, o auditor de outra família precisa de **acesso somente leitura ao repositório** (como o desenho do Auditor Externo / Codex em `governance/propostas/AUDITOR-EXTERNO/`), não só do texto.
+3. Reforça a regra de uso do JSON externo: **achado de outro modelo é dado a verificar** (DIR-002), nunca veredito. Aqui 2 de 6 eram falsos e 3 de 6 eram lacunas já declaradas.
+4. **Limites:** uma Spec, um modelo externo, uma execução; severidades não comparáveis; o Revisor interno também rodou sem o gate (hook não ativo na sessão) e sem diff de versão anterior.
+
+**Consequência para o L3 formal:** o teste cumpre "revisão por outra família" **no formato texto-só**, e o resultado é *consistente* com o Revisor interno (sem divergência real), mas **não** valida o Revisor contra um auditor com repositório. Para fechar a lacuna: Auditor Externo reativado em Spec CRITICAL, ou defeitos escritos por Andraus.
+
+### 7.1 Segundo modelo externo (mesmo pedido, outra execução, também sem repositório)
+4 achados (3 críticos, 1 médio); **todas as citações literais conferem** com o texto e **nenhum é falso**, ao contrário do primeiro modelo externo.
+| Achado do 2º modelo | Situação ao conferir | Equivalente no Revisor interno |
+|---|---|---|
+| H-01 (crítico) EC-CKG-004 em E2 sobre a escrita permanente do KG | **Procede** (plan.md:1201; o guard de INV-04 fica abaixo do piso E3 da escrita). A linha que ele cita como contraste (1165) é de **outro** EC (EC-CKG-001), mas a tese é a mesma | F-07 / A-10 (**média**) — o externo inflou a severidade |
+| H-02 (crítico) EC-CKG-001 admite o caminho canônico enquanto CKG-010(a) é INDETERMINADO | **Procede** (plan.md:1162 × 711) | F-02 / A-01 |
+| H-03 (crítico) evidência depende de amostragem ENF-07 sem limiar | Lacuna **já declarada** pelo autor (plan.md:1166); procede só como "não declare E3 pleno" | m-03 (menor) |
+| H-04 (médio) validadores não executados | **Declarado** pelo autor (plan.md:1401); não é defeito do Plan | Passo 3 (gate não verificado) |
+**Resultado agregado dos dois externos:** 10 achados; 2 falsos (ambos do 1º modelo), 4 que apenas repetem lacunas já declaradas, 4 reais — **todos os 4 reais já estavam no Revisor interno**, com severidade igual ou maior (exceto a inflação do H-01/H-02 do 2º). **Defeitos reais achados só por um externo: 0.** Defeitos reais achados só pelo Revisor interno: ≥ 9 (D6 `gate_record`, schema sem `ref`/`valid_to` de nó, `PENDING_ANCESTOR`, `REFUTED` inexistente no CEM-001, `school` sem origem canônica, COL-EXP, SIMILAR_A sem gate, etc.).
+**Conclusão sobre o L3:** em duas tentativas com modelos de outra família e **sem** repositório, a revisão independente **não encontrou ponto cego** do Revisor interno nesta Spec, e rendeu menos que ele (recall ≈ 1/3 dos reais, precisão 4/10 a 4/6 conforme o modelo). Isso **não** prova que o Revisor interno seja suficiente (a lacuna é a ausência de auditor independente **com acesso ao repositório**), mas **reduz** a probabilidade de um defeito material sistemático passando despercebido por correlação de família.
+
+### 7.2 Terceiro externo: Copilot COM acesso ao repositório (somente leitura), mesmo Plan v1.3, 2026-10-17
+Prompt: `revisao-independente/PEDIDO-COPILOT-COM-REPO.txt`. Resultado: `NAO_CONFORME`, 4 achados (todos "crítica"), **0 citações falsas**; cada trecho e linha foi conferido no `plan.md` do `origin/spec006-plan` (1428 linhas). O Copilot **não rodou o gate** (a instrução proibia `scripts/revisor_*`) e **não revalidou** as fontes web (declarou em `nao_verificavel`).
+| Achado | Linhas conferidas | Procede? | Severidade (minha leitura) | Relação com o Revisor interno |
+|---|---|---|---|---|
+| A-01 D6.5 exige `lineage`+`gate_record` sempre | plan.md:858 × 582-591 (CKG-005) e 970-974 (T12) | **Sim** — o changelog da v1.3 diz "CKG-005/T12/T14/schema ajustados", mas o D6 não foi | Maior (BASpec correta; pseudo-algoritmo diverge) | Já achado ("D6 `gate_record` incondicional", §7.1) |
+| A-02 caminho canônico CKG-010(a) INDETERMINADO × "13 BASpecs com ENTÃO verificável" | plan.md:708-722 × 1310-1311; EC-CKG-001 em 1162 | **Sim** quanto ao excesso de afirmação (1311 "nenhuma restou… por falta de verificabilidade") e à PRECOND E3 que admite o caminho (a); o INDETERMINADO em si é declarado | Crítico enquanto o EC-CKG-001 admitir (a) | Mesma raiz do crítico F-02/A-01; a contradição 1310-1311 não consta do registro do §7 |
+| A-03 `collision_record` sem version/supersedes/proveniência (e `canonical_state_transition_record`) | plan.md:1145-1148 e 1123-1127 × D9 1061-1063 e CKG-013 781 | **Sim** (há ainda dois formatos de colisão: `record_kind=collision` em 1130 e o `collision_record` avulso) | Maior (schema) | **Não classificável** só pelo repositório: o texto integral dos achados A-01..A-10/F-01..F-14 do Revisor não está versionado |
+| A-04 BOUNDED LOOP sem valor | plan.md:662 × atomic-spec.md:315 | **Parcial** — há critério (máximo por par; sem retry infinito), falta valor/fonte; SPEC-002/003 usam "uma passada" | Menor/Média | Idem A-03 |
+**Resultado:** precisão alta (0 falsos, 0 citações erradas; ≈ 3 de 4 procedem integralmente, 1 parcial); recall baixo — não viu `PENDING_ANCESTOR` fora do D5, `REFUTED` inexistente no CEM-001, `school` sem origem canônica, `COL-EXP`, `SIMILAR_A` sem gate, EC-CKG-004 em E2. Severidade inflada (4/4 "crítica"). **Defeito real exclusivo de externo: nenhum confirmado** (A-03/A-04 pendentes de cruzar com a lista do Revisor). Decisão de Andraus (chat): avançar com o que há; **não** rodar a rodada 2 por ora. Registro de fato, não homologação; nenhuma decisão aberta fechada.
