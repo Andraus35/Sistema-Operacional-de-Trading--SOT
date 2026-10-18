@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-18",
-  "digest": "c68c807fab16f5d54ae345815bb768c9765114369fe684713ffad6d39b13a8fb",
+  "digest": "d6138c1e7562ceab2fdd0aa133445f8c1c0ec614c0e8b0b52e15bbaf6c1dd07b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1970,14 +1970,14 @@
    "path": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
    "area": "governance",
    "title": "Passagem de sessão — SPEC-006 (errata) e endurecimento do gate — 2026-10-17",
-   "in": 1,
+   "in": 2,
    "out": 13
   },
   {
    "path": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
    "area": "governance",
    "title": "Parecer do Revisor SOT — SPEC-006 errata v1.10 (rodada por delta) — 2026-10-17",
-   "in": 3,
+   "in": 4,
    "out": 2
   },
   {
@@ -2447,7 +2447,7 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
    "in": 2,
-   "out": 9
+   "out": 11
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
@@ -28883,6 +28883,16 @@
    "from": "specs/features/SPEC-006/checks.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
