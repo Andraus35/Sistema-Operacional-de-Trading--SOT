@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-18",
-  "digest": "940f5ff50ab46659a6f832fb44d3be552132234513f7013acf4b519766a2572b",
+  "digest": "b27562e847b9af68cbfef90088acfb36bbf6962a5e926e799bb9caaf4d7b2361",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1340,7 +1340,7 @@
    "path": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
    "area": "governance",
    "title": "DHR-H001-001 — Ata — Fechamento da decisão H-001 (mecanismo físico de armazenamento do Cognitive Knowledge Graph)",
-   "in": 8,
+   "in": 10,
    "out": 14
   },
   {
@@ -1599,7 +1599,7 @@
    "path": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-003 — Ata de Homologação — Errata v1.11 da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 17,
+   "in": 18,
    "out": 13
   },
   {
@@ -2082,7 +2082,7 @@
    "path": "governance/propostas/H001/ESTUDO-TECNOLOGIA-H001-2026-10-18.md",
    "area": "governance",
    "title": "ESTUDO DE TECNOLOGIA — H-001: mecanismo físico de armazenamento da memória permanente do Cognitive Knowledge Graph (SPEC-006)",
-   "in": 2,
+   "in": 4,
    "out": 10
   },
   {
@@ -2594,14 +2594,14 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
    "in": 4,
-   "out": 11
+   "out": 14
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 145,
-   "out": 29
+   "out": 31
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -3277,7 +3277,7 @@
   {
    "id": "DHR-H001-001",
    "defined_in": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
-   "cited_by": 8
+   "cited_by": 10
   },
   {
    "id": "DHR-HOD-001",
@@ -3462,7 +3462,7 @@
   {
    "id": "DHR-SPEC006-003",
    "defined_in": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "DHR-SPEC006-OPCAO2-001",
@@ -3718,6 +3718,11 @@
    "id": "INV-CEB-01",
    "defined_in": "ROADMAP.md",
    "cited_by": 6
+  },
+  {
+   "id": "INV-CKG",
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "INV-CKG-01",
@@ -4587,7 +4592,7 @@
   {
    "id": "RULE-INQ",
    "defined_in": "governance/RULES.md",
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "RULE-INQ-01",
@@ -4927,7 +4932,7 @@
   {
    "id": "RULE-UNC",
    "defined_in": "governance/RULES.md",
-   "cited_by": 34
+   "cited_by": 36
   },
   {
    "id": "RULE-UNC-01",
@@ -32143,7 +32148,27 @@
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
    "type": "id"
   },
   {
@@ -32155,6 +32180,11 @@
    "from": "specs/features/SPEC-006/checks.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/checks.md",
+   "to": "governance/propostas/H001/ESTUDO-TECNOLOGIA-H001-2026-10-18.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-006/checks.md",
@@ -32248,6 +32278,11 @@
   },
   {
    "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/DHR-SPEC005-002_Ata_Homologacao_SPEC-005.md",
    "type": "id"
   },
@@ -32284,6 +32319,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/propostas/H001/ESTUDO-TECNOLOGIA-H001-2026-10-18.md",
    "type": "path"
   },
   {

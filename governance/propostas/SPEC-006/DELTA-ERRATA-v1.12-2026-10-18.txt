@@ -1,0 +1,523 @@
+# Delta v1.11 (origin/main) -> v1.12 (working tree) — gerado por scripts/spec_delta.py; dado de estado
+DELTA specs/features/SPEC-006/plan.md vs origin/main: 32 alterados · 0 adicionados · 0 removidos · 90 inalterados (de 122 blocos)
+  alterados: ADV-CKG-09, ADV-CKG-14, BASpec-CKG-010, BASpec-CKG-011, EC-CKG-006, autopré-check-de-redução-de-viés-§7-bis-eua-e18-obrigatório-, autopré-check-do-especificador-§7-do-pep-001-, cabeçalho, cobertura-lacuna-canônicos-spec-004-spec-005-não-duplicar-cc, constitution-check-cc-01..cc-12-atomic-spec-v1.5-§10.5-, contrato-do-nó-relação-esqueleto-proposta-, d0-missão-intenção-, d2-regras-fonte-única-de-cada-obrigação-normativa-, d2.1-matriz-de-integridade-da-ontologia-rule-ckg-001-propost, d4-algoritmo, d5-máquina-de-estados-lifecycle-do-nó-relação-estado-projeçã, d8-rigor-adversarial-focado-casos-de-negação-nos-pontos-de-r, d9-auditabilidade-por-referência-, def:RULE-CKG-011, def:RULE-CTF, def:RULE-INQ, etiquetagem-e-status-epistemológico-trace-06-, fora-do-escopo-non-goals-, herança-delta-§8.3-eua-e04-rule-hd-, histórico-de-versões, i-o-schema-lógico-referência-não-redefine-chm-cem-ccm-, impacto-rule-hg-04-, natureza-do-componente, nota-de-gate-passo-11-bis-rmr-001-, riscos-técnicos-e-salvaguardas, roteamento-de-modelo-cee-001-§5-, tasks-adiadas-fase-spec-first-
+  fontes citadas (sha256 de 12): 18 — use --fontes para listar
+
+## fontes
+0c74d2c91cf9  canon/CCM-001-canonical-conviction-model.md
+114fe8743662  canon/CEE-001-cognitive-economy-efficiency-v2.0.md
+73b0066680be  canon/CEM-001-canonical-evidence-model.md
+18e685930480  canon/CHM-001-canonical-hypothesis-model.md
+31f9a9c72e2c  governance/CONSTITUTION.md
+647e9d4fa466  backlog/RMR-001_Painel_Backlog.md
+e5c4a8a78619  governance/RULES.md
+c11d0b457ff3  canon/SAS-001-structural-agent-spec.md
+99dfa8a4720c  specs/features/SPEC-001/plan.md
+04b9361ba7d3  specs/features/SPEC-002/plan.md
+2faca8c1ce75  specs/features/SPEC-003/plan.md
+e9b6a70d1d84  specs/features/SPEC-004/plan.md
+d29e8e861ba7  specs/features/SPEC-005/plan.md
+479baab698c6  specs/features/SPEC-006/plan.md
+5ba3223e75a4  specs/features/SPEC-019/plan.md
+34fd309c755f  specs/features/SPEC-020/plan.md
+7c3f504fff69  specs/features/SPEC-021/plan.md
+abc3f88fc61d  atomic-spec.md
+
+## gates rodados pelo Orquestrador (não pelo Revisor)
+RESULTADO: PASS — todos os 13 checks estruturais aprovados
+  AVISO [D ] mudancas_vs_versao_anterior: referência acrescentada: BL-003 (2→3)
+  AVISO [D ] corrigidos_sem_assertiva: 25 linha(s) Corrigido/Resolvido sem assertiva executável
+VEREDITO D: PASSOU_D (≠ CONFORME ≠ homologação)
+TETO DE VEREDITO (revisor.md §3/§8): CONFORME condicional
+ACHADOS=0 em 1 arquivo(s)
+479baab698c6c04ac84cb05c01f9492a3a41651332bef43be82a36fd8e441b7a  specs/features/SPEC-006/plan.md
+1081a4f2f6177516305ad1fa08f2294009c74ca12e980d1a2151f2b002dd404b  specs/features/SPEC-006/checks.md
+
+## diff plan+checks vs origin/main
+diff --git a/specs/features/SPEC-006/checks.md b/specs/features/SPEC-006/checks.md
+index e75d834..5049586 100644
+--- a/specs/features/SPEC-006/checks.md
++++ b/specs/features/SPEC-006/checks.md
+@@ -1,13 +1,13 @@
+ # checks.md — Verificação de Spec da SPEC-006 (fase spec-first)
+ 
+-**Objeto:** `specs/features/SPEC-006/plan.md` **v1.11 (ERRATA PROPOSTA — aditiva/Minor sobre a BASELINE v1.7; INV-07: nada apagado)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico INDETERMINADO = H-001 ABERTA)
++**Objeto:** `specs/features/SPEC-006/plan.md` **v1.12 (ERRATA v1.12 PROPOSTA — Minor/aditiva; aguarda Revisor e Andraus; v1.7+v1.11 seguem vigentes até a homologação; INV-07: nada apagado)** (Cognitive Knowledge Graph — contrato cognitivo da memória semântica permanente; mecanismo físico decidido por Andraus fora da Spec: Opção C — H-001 FECHADA por Andraus, DHR-H001-001). *[Texto anterior preservado — INV-07: "**v1.11 (ERRATA PROPOSTA — aditiva/Minor sobre a BASELINE v1.7; INV-07: nada apagado)** (…; mecanismo físico INDETERMINADO = H-001 ABERTA)"]*
+ **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — NÃO é teste de runtime, NÃO é o parecer do Revisor, NÃO é homologação. [FONTE: atomic-spec §14; ROADMAP §6]
+ **Método:** atomic-spec.md **v1.5**
+-**Data:** 2026-10-18 (v1.11 — ERRATA N-08 + n-a/n-b/n-c do parecer do Revisor sobre a v1.10, §18); 2026-10-16 (v1.10 — ERRATA N-07 + m-A..m-D do parecer do Revisor sobre a v1.9; v1.9 = ERRATA N-01..N-06 sobre a v1.8; v1.8 = ERRATA A-01..A-14 da auditoria independente; v1.7 = Reconciliação BL-011; v1.6 = Rodada 7 N-01..N-09 do parecer sobre a v1.5)
+-**Contagens v1.11 = v1.10, inalteradas (por cabeçalho — recontadas no ambiente pai; declaradas aqui):** 13 BASpec (`### BASpec-CKG-`), 13 EARS (`^N. (CKG-`), 6 EC (`### EC-CKG-`), **19 cenários (`### Cenário-CKG-T` — T01..T19)**, **23 ADV (`### ADV-CKG-` — ADV-01..23)**, INV-CKG-01/02. Alinhadas plan ↔ checks ↔ changelog. (N-07 + m-A..m-D são aditivos POR REFERÊNCIA — regra definida UMA vez em RULE-CKG-010 [N-07] e RULE-CKG-008 [m-A/m-C]; demais seções referenciam por ID — não criam BASpec/EARS/EC/T/ADV novos.)
++**Data:** 2026-10-18 (v1.12 — ERRATA de propagação da DHR-H001-001, §19); 2026-10-18 (v1.11 — ERRATA N-08 + n-a/n-b/n-c do parecer do Revisor sobre a v1.10, §18); 2026-10-16 (v1.10 — ERRATA N-07 + m-A..m-D do parecer do Revisor sobre a v1.9; v1.9 = ERRATA N-01..N-06 sobre a v1.8; v1.8 = ERRATA A-01..A-14 da auditoria independente; v1.7 = Reconciliação BL-011; v1.6 = Rodada 7 N-01..N-09 do parecer sobre a v1.5)
++**Contagens v1.12 = v1.11 = v1.10, inalteradas (a v1.12 não cria nem remove cabeçalho de BASpec/EARS/EC/T/ADV — §19) (por cabeçalho — recontadas no ambiente pai; declaradas aqui):** 13 BASpec (`### BASpec-CKG-`), 13 EARS (`^N. (CKG-`), 6 EC (`### EC-CKG-`), **19 cenários (`### Cenário-CKG-T` — T01..T19)**, **23 ADV (`### ADV-CKG-` — ADV-01..23)**, INV-CKG-01/02. Alinhadas plan ↔ checks ↔ changelog. (N-07 + m-A..m-D são aditivos POR REFERÊNCIA — regra definida UMA vez em RULE-CKG-010 [N-07] e RULE-CKG-008 [m-A/m-C]; demais seções referenciam por ID — não criam BASpec/EARS/EC/T/ADV novos.)
+ 
+ > **Nota de método (Rodada 7):** cada achado marcado "Corrigido" em §11/§12/§14 foi conferido por busca cruzada (grep dos termos/IDs) no plan.md v1.6 **e** neste checks.md, confirmando ZERO resíduo contraditório antes de marcar. Afirmações de grep abaixo são REAIS (rodadas com a ferramenta de busca). O que foi só parcialmente endereçado ou segue em aberto está marcado "Parcial"/"Aberto" (não "Corrigido").
+-> **Itens em aberto (não ✔):** mecanismo físico (H-001); selo de publicação (SPEC-007); produtor/gatilho de promoção trabalho→permanente; consumidor/contrato de consumo de evento pelo KG; emissão pelo KG; allowlist de escritores; host do juízo CKG-008; migração de ontologia; escala de confiança; **limite/timeout da espera `PENDING_ANCESTOR`**; trace de HIPÓTESE (best-effort [PROPOSTA], sem alegação de completude — M-03); **origem/escola de `structure` e elo structure→hypothesis + `school=Fractal` sem produtor — CKG-STRUCT-ORIGIN-001 (N-01/N-09), BL-035**; **admissão/histórico de estados de `conviction` no KG — NEGADA POR PADRÃO por decisão de Andraus (`CONVICTION_HISTORY_UNDEFINED` — N-07; pré-req: histórico de status no CCM-001/SPEC-003 + M-001, ABERTAS)**.
++> **Itens em aberto (não ✔):** *[v1.12: "mecanismo físico (H-001)" saiu desta lista — H-001 FECHADA por Andraus (DHR-H001-001, Opção C); permanece em aberto só a EFICIÊNCIA de consulta multi-salto, até o BUILD medir (D5). Texto anterior preservado — INV-07: a lista começava por "mecanismo físico (H-001);"]* eficiência de consulta multi-salto (até o BUILD medir); selo de publicação (SPEC-007); produtor/gatilho de promoção trabalho→permanente; consumidor/contrato de consumo de evento pelo KG; emissão pelo KG; allowlist de escritores; host do juízo CKG-008; migração de ontologia; escala de confiança; **limite/timeout da espera `PENDING_ANCESTOR`**; trace de HIPÓTESE (best-effort [PROPOSTA], sem alegação de completude — M-03); **origem/escola de `structure` e elo structure→hypothesis + `school=Fractal` sem produtor — CKG-STRUCT-ORIGIN-001 (N-01/N-09), BL-035**; **admissão/histórico de estados de `conviction` no KG — NEGADA POR PADRÃO por decisão de Andraus (`CONVICTION_HISTORY_UNDEFINED` — N-07; pré-req: histórico de status no CCM-001/SPEC-003 + M-001, ABERTAS)**.
+ 
+ ---
+ 
+@@ -19,7 +19,7 @@
+ | EARS referenciam a regra-fonte por ID (ex.: "(CKG-001) Quando…") | ✔ (13 EARS, cada uma com `(CKG-0NN)`; EARS-9 passou a `(CKG-009/005)` cobrindo computed_by≠writer_id — N-03) |
+ | BASpecs referenciam RULE por "Aplica RULE-CKG-0NN" + REFERÊNCIA | ✔ |
+ | D4/D6/EC/D7/D8/Herança referenciam por ID, sem recopiar o texto da regra | ✔ |
+-| Narrativa histórica fora do corpo (só changelog, 1 linha/versão, ordenado 1.0→1.10) | ✔ |
++| Narrativa histórica fora do corpo (só changelog, 1 linha/versão, ordenado 1.0→1.12 *[antes: "1.0→1.10"]*) | ✔ |
+ | Tamanho: cresce pouco pela regra/predicado de N-07/m-A..m-D (aditivo por referência); número exato de linhas OMITIDO aqui (conferir com `wc -l` no ambiente pai — N-04); alvo <1100 não atingido (ver §13) | ✔ |
+ | Reconciliação BL-011 / MC-EXP-001 presente (seção curta A/B/C); EXP-SPEC-001..053 e X-/R- mapeados a RULE-CKG existentes (REFERÊNCIA) ou FORA (SPEC-007/018/K-001); nenhuma RULE-CKG nova; nenhuma decisão aberta fechada | ✔ |
+ 
+@@ -29,7 +29,7 @@
+ 
+ | Nível | Exigido | Presente | Evidência |
+ |---|---|---|---|
+-| D0 Intenção | Sim | ✔ | Missão (preservar/relacionar/consultar; memória permanente ≠ trabalho; H-001 INDETERMINADO) |
++| D0 Intenção | Sim | ✔ | Missão (preservar/relacionar/consultar; memória permanente ≠ trabalho; mecanismo físico fora da Spec — Opção C, DHR-H001-001 *[antes: "H-001 INDETERMINADO"]*) |
+ | D1 Escopo/Non-goals | Sim | ✔ | S1–S14 + Non-goals |
+ | D2 Regra | Sim | ✔ | RULE-CKG-001..013 [PROPOSTA] (fonte única); §D2.1 matriz; §D2.2 colisão (cond. (v) — N-08); §D3.1 vocabulário; INV-CKG-01/02 |
+ | D3 Comportamento | Sim | ✔ | BASpec-CKG-001..013 com CLASSE/MECANISMO (CC-11), referenciando a regra |
+@@ -75,7 +75,7 @@
+ 
+ ## 5. Constitution Check (CC-01..CC-12)
+ 
+-CC-01 (agnóstico; hypothesis.school≠ICT), CC-02 (não redefine; código `CANONICAL_CONTRACT_REDEFINITION_FORBIDDEN` — N-04), CC-03/04 (INV-04 = custo; confiança = regra local), CC-08 (Herança; MODIFIED = SÓ RULE-BB-004 reforçada — o antigo M-01 sobre CEM-001 l.494 foi RETIRADO por premissa falsa em v1.8/A-03; "a partir da admissão" é regra LOCAL CKG-010, não MODIFIED — N-04), CC-09 (H-001 INDETERMINADO; causal c/ mecanismo+regime+posthoc+desfecho derivado; núcleo causal imutável na cadeia INCLUINDO `outcome_ref`/`no_outcome` — N-02/m-A; `conviction` NEGADO por padrão por não haver histórico canônico definido — N-07, sem falsa precisão/atribuição a CCM-001), CC-10 (acepções; REFUTED só CHM — N-06 do parecer anterior), CC-11 (Classe por BASpec, incl. H) = PASS. CC-05/06/07/12 OK/N-A. **PASS.**
++CC-01 (agnóstico; hypothesis.school≠ICT), CC-02 (não redefine; código `CANONICAL_CONTRACT_REDEFINITION_FORBIDDEN` — N-04), CC-03/04 (INV-04 = custo; confiança = regra local), CC-08 (Herança; MODIFIED = SÓ RULE-BB-004 reforçada — o antigo M-01 sobre CEM-001 l.494 foi RETIRADO por premissa falsa em v1.8/A-03; "a partir da admissão" é regra LOCAL CKG-010, não MODIFIED — N-04), CC-09 (mecanismo físico = Opção C por decisão de Andraus — DHR-H001-001; eficiência multi-salto INDETERMINADA até o BUILD medir *[antes: "H-001 INDETERMINADO"]*; causal c/ mecanismo+regime+posthoc+desfecho derivado; núcleo causal imutável na cadeia INCLUINDO `outcome_ref`/`no_outcome` — N-02/m-A; `conviction` NEGADO por padrão por não haver histórico canônico definido — N-07, sem falsa precisão/atribuição a CCM-001), CC-10 (acepções; REFUTED só CHM — N-06 do parecer anterior), CC-11 (Classe por BASpec, incl. H) = PASS. CC-05/06/07/12 OK/N-A. **PASS.**
+ 
+ ---
+ 
+@@ -89,7 +89,7 @@ INHERITS com ID+versão/linha verificados: **SPEC-004 RULE-CBP-004 (l.239-246 
+ 
+ | Check | Resultado |
+ |---|---|
+-| H-001/M-001/J-001/N-001/G-001/K-001/C-001/WF-D03/ECC-03-001 + **CKG-STRUCT-ORIGIN-001 (nova, N-01)** ABERTAS; SPEC-004/005 não reabertas; SPEC-007 não absorvida | ✔ |
++| M-001/J-001/N-001/G-001/K-001/C-001/WF-D03/ECC-03-001 + **CKG-STRUCT-ORIGIN-001 (nova, N-01)** ABERTAS; SPEC-004/005 não reabertas; SPEC-007 não absorvida; [v1.12] H-001 FECHADA por Andraus (DHR-H001-001), citada como tal, nunca como fechada pela Spec *[antes: a lista começava por "H-001/"]* | ✔ |
+ | STRUCT-10: nenhuma forma `fechad*/resolvid*/homologad*` colada a ID de decisão aberta (grep dos IDs: 0 afirmações de fechamento) | ✔ |
+ | `school`/`hierarchy_role` DERIVADOS do produtor **SÓ para hypothesis** (N-01, opção (a) de Andraus); `structure` NÃO deriva school nem origina ORIGINA; SAS-001 §6.12 não é fonte de school; grep `structure.*school`/`school.*structure` no corpo normativo = só nota de exclusão/decisão | ✔ (N-01) |
+ | `school=Fractal` sem produtor em SPEC-001 → registrado [INFERÊNCIA]/[DECISÃO NECESSÁRIA], não inventado | ✔ (N-09) |
+@@ -295,8 +295,30 @@ O número exato de linhas é OMITIDO aqui (N-04) — conferir com `wc -l specs/f
+ 
+ ---
+ 
++## 19. Errata v1.12 — propagação da DHR-H001-001 (H-001 FECHADA por Andraus) — status REAL + assertivas executáveis
++
++> Fonte: `governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md` (D1 Opção C; D2 Opção D desenhada, não ligada; D5 revisão por gatilho no início do BUILD; §3 "sem alterar regra/BASpec/EC do contrato lógico"; §5 abertas); estudo `governance/propostas/H001/ESTUDO-TECNOLOGIA-H001-2026-10-18.md` §4-C/§4-D/§6/§8/§9; `ROADMAP.md` "Decisões FECHADAS". **Só estado do COMO** — nenhuma RULE-CKG, INV-CKG, BASpec, EARS, EC (nível/FAILURE-MODE), T, ADV, esquema ou contagem alterada no mérito; nenhuma regra/mecanismo novo. **O Especificador NÃO tem Bash — NÃO declara gates rodados; as assertivas foram conferidas por Grep no plan.md v1.12.**
++
++| Item | Status | Assertiva executável (plan.md) | Nota |
++|---|---|---|---|
++| Cabeçalho/Status v1.12 | **Aplicado** | assert-present:"ERRATA v1.12 PROPOSTA (aguarda Revisor e Andraus; v1.7+v1.11 seguem vigentes até a homologação)" · assert-present:"Propaga ao estado do COMO a decisão de Andraus que" | Status anterior (v1.11 homologada) preservado após o marcador "Status anterior preservado — INV-07". |
++| Estado vigente "INDETERMINADO / H-001 ABERTA" → "decidido: Opção C" | **Aplicado** | assert-present:"H-001 FECHADA por Andraus — DHR-H001-001" · assert-present:"desenhado e NÃO ligado (DHR-H001-001 D2)" | ID/Missão D0/Non-goals D1/Cobertura×lacuna/Herança (anotação abaixo do ADDED, item original intacto)/CC-09/N8–N17/D4/D5/D9/esqueleto/Plan (natureza, roteamento, riscos, impacto, Tasks)/§7-bis/Etiquetagem/Autopré-check/lista de abertas. Texto anterior entre colchetes itálicos. |
++| Incerteza de EFICIÊNCIA multi-salto (RULE-UNC) mantida e reancorada | **Aplicado** | assert-present:"INDETERMINADA até o BUILD medir — DHR-H001-001 D5" · assert-present:"INDETERMINADO até o BUILD medir (DHR-H001-001 D5)" | RULE-CKG-011, BASpec-CKG-011 (CRITÉRIO 4Es), D4 Trace, EC-CKG-006 FAILURE-MODE (só a âncora; nível E1/modo fail-closed inalterados), §7-bis RULE-UNC. Completude do trace de Evidência continua obrigação (não incerta). |
++| Teto/condição existente só por causa da H-001 removido | **Aplicado** | assert-present:"Registro histórico até a v1.11 — superado na v1.12" | Item "H-001 … Permanece ABERTA" da lista final marcado como histórico; H-001 removida das listas vigentes de abertas (Autopré-check CONS-01, Bloco D, RULE-INQ, Bloco A, checks §7/itens em aberto). Nota A-05 intacta + sub-item de atualização. |
++| ADV-CKG-09 | **Anotado (estado, não mérito)** | assert-present:"Atualização v1.12 — estado, não mérito" | Corpo do caso intacto; leitura vigente do ENTÃO/VERIFICAÇÃO dada em nota; marcador `OPEN_DECISION_H001` mantido como id histórico. |
++| Negação de `conviction` (DHR-SPEC006-003 D2) | **Inalterada** | assert-present:"CONVICTION_HISTORY_UNDEFINED" | — |
++| Demais abertas | **Inalteradas (ABERTAS)** | — | G-001, M-001, J-001, N-001, K-001, C-001, WF-D03, ECC-03-001, CKG-STRUCT-ORIGIN-001, timeout `PENDING_ANCESTOR` (DHR-H001-001 §4/§5). |
++
++**Limitação (INV-07) — sem assert-absent de "H-001 ABERTA":** a cadeia literal sobrevive no changelog 1.0..1.11, nos colchetes "Texto anterior preservado", no item ADDED original do bloco Herança, no corpo original do ADV-CKG-09, no item histórico da lista final, na Nota A-05 e nas seções históricas §15–§18 deste checks. **Conferência complementar para o Orquestrador:** toda ocorrência de "H-001 ABERTA"/"INDETERMINADO (H-001" no plan.md fora do "Histórico de versões" deve estar dentro de um colchete de preservação, de uma anotação "[Atualização v1.12" adjacente ou de um item marcado "Registro histórico".
++
++**[DECISÃO NECESSÁRIA] remanescentes:** inalteradas (§15–§18), **exceto** que a H-001 (mecanismo físico + A-05 dona) foi FECHADA por Andraus (DHR-H001-001) — o registro em §15–§18 fica como histórico (INV-07). Contagens inalteradas: 13 BASpec, 13 EARS, 6 EC, 19 T, 23 ADV.
++
++---
++
+ ## Resultado da verificação de spec
+ 
++> **[v1.12]** Estruturalmente CONFORME (well-formedness) também na v1.12 — errata de propagação da DHR-H001-001 (§19), contagens inalteradas, sem regra nova; CONS-01: H-001 FECHADA por Andraus (DHR-H001-001), demais abertas permanecem ABERTAS. O parágrafo abaixo (v1.11) fica como registro (INV-07).
++
+ **Estruturalmente CONFORME** (well-formedness) na v1.11 (ERRATA N-08 + n-a/n-b/n-c do parecer do Revisor sobre a v1.10 — §18; propagação por referência, contagens inalteradas), que preserva a v1.10 (ERRATA N-07 + m-A..m-D do parecer do Revisor sobre a v1.9). 13 BASpecs (D/C/H), 13 EARS (referenciando regra-fonte), 6 EC (escrita = E3 / leitura = E1 separados — A-14), §D2.1/§D2.2 (cond. (v) — N-08; dois modos de INVALIDA — N-05)/§D3.1 (`CAUSAL_CORE_IMMUTABLE_IN_CHAIN` em pai próprio — m-C; `CONVICTION_HISTORY_UNDEFINED` sob `ADMISSION_REJECTED` — N-07; `CANONICAL_HISTORY_UNRESOLVABLE`), INV-CKG-01/02, proveniência condicional, CKG-010 TRAJETÓRIA POR TIPO + `conviction` NEGADO por padrão (N-07) + `canonical_history_ref` (A-02/N-01) [PROPOSTA], **19 cenários (T01..T19)**, **23 adversariais (ADV-01..23)** (contagens declaradas; recontar cabeçalhos no ambiente pai: 13 BASpec/13 EARS/6 EC/19 T/23 ADV — N-07/m-A..m-D são aditivos POR REFERÊNCIA, sem BASpec/EARS/EC/T/ADV novos). v1.7 acrescentou a **Reconciliação BL-011 / MC-EXP-001** (seção curta, sem regra nova). CONS-01 preservado (H-001, J-001, K-001, M-001, N-001, G-001, CKG-STRUCT-ORIGIN-001, admissão de `conviction` e demais ABERTAS; nenhuma fechada), gate RMR-001 (BL-011 reconciliado, Disposição PARCIAL, estado inalterado; BL-029/BL-035 `Em espera`). N-07 + m-A..m-D em §17 com assertivas executáveis (conferidas por grep no plan.md v1.10); N-01..N-06 em §16; A-01..A-14 em §15.
+ 
+ > Feedback interno de verificação de spec — **NÃO** é o parecer do Revisor nem homologação. Próximo passo: gates no ambiente pai (Especificador sem Bash) — `validate_spec_sot.py`, `revisor_gate.py`, `check_repo_research.py --all`, `check_doc_sync.py`, `backlog_triggers.py`, `check_invariants.py`, `build_map.py --check` — e submissão ao Revisor SOT.
+diff --git a/specs/features/SPEC-006/plan.md b/specs/features/SPEC-006/plan.md
+index bfa3a73..8e396fb 100644
+--- a/specs/features/SPEC-006/plan.md
++++ b/specs/features/SPEC-006/plan.md
+@@ -2,9 +2,9 @@
+ 
+ | Campo | Valor |
+ |---|---|
+-| ID | SPEC-006 — Cognitive Knowledge Graph (contrato cognitivo da **memória semântica permanente** do SOT — ontologia enxuta + entidades/relações tipadas + temporalidade + proveniência por referência + lifecycle + confiança de relação + consulta cognitiva + governança de escrita; **mecanismo físico de armazenamento INDETERMINADO — H-001 ABERTA**) |
+-| Versão | 1.11 (ERRATA HOMOLOGADA — **Major (mudança restritiva)**, condicionada, sobre a baseline v1.7 — DHR-SPEC006-003, Andraus 2026-10-18; proposta originalmente como Minor/aditiva, classificação decidida por Andraus como Major [n-c]; INV-07: nada apagado, v1.7 preservada no changelog) |
+-| Status | **HOMOLOGADA — ERRATA v1.11 (Major, condicionada) sobre a baseline v1.7, DHR-SPEC006-003** (Andraus, chat 2026-10-18; parecer do Revisor por delta **CONFORME condicional**; gate de código rodado pelo Orquestrador, não pelo Revisor; **H-001 segue ABERTA**; nenhuma conformidade plena afirmada — DHR-SPEC006-003 §3). A negação de `conviction` por padrão (`CONVICTION_HISTORY_UNDEFINED`) está registrada na DHR-SPEC006-003 D2 **com condição de reversão** (vale até Andraus definir o histórico de estados da convicção — CCM-001/SPEC-003/M-001, abertas; não fecha M-001). **Edição editorial pós-homologação (só cabeçalho/Status; nenhuma regra/BASpec/EARS/EC/T/ADV/contagem alterada):** o hash auditado e homologado do `plan.md` antes desta edição era sha256 `8527addb878d7585dbebdf66d376161af91d217c5f0f26c5355eb94a806beba6` (DHR-SPEC006-003 §2). *[Texto anterior preservado — INV-07: "BASELINE v1.7 — ERRATA v1.11 PROPOSTA (aguarda Revisor e Andraus); a v1.7 segue vigente até a homologação da errata."]* (DHR-SPEC006-002) A v1.7 foi **HOMOLOGADA — BASELINE v1.7** (Andraus, 2026-10-13, DHR-SPEC006-002; abertura DHR-SPEC006-001; parecer do Revisor CONFORME COM RESSALVAS); a errata v1.8 incorporou as correções A-01..A-14 da auditoria independente (`governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md` §3); a errata v1.9 incorporou as correções N-01..N-06 do parecer do Revisor sobre a v1.8; a **errata v1.10** incorpora as correções N-07 (Média) + m-A..m-D (Menores) do parecer do Revisor sobre a v1.9 — **aditiva, Minor, nenhuma regra apagada**; a **errata v1.11** incorpora N-08 (Média) + n-a/n-b/n-c (Menores) do parecer do Revisor sobre a v1.10 (`governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md`) — propagação, sem regra nova (a classificação "Minor/aditiva" é de Andraus — n-c). RULE-CKG-001..013 e INV-CKG-01/02 vigentes por homologação da v1.7 (registro físico em `RULES.md` diferido — RULE-HG-02). **H-001 (mecanismo físico do KG) permanece ABERTA — nem a v1.7 nem esta errata a fecham** (CONS-01; só Andraus). M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 seguem ABERTAS; **CKG-STRUCT-ORIGIN-001 (N-01/N-09) ABERTA** (BL-035). **A-05 (governança): H-001 ficou sem dono após a homologação da v1.7; o re-apontamento (ROADMAP §6 / atomic-spec §12 / revisor.md §8) é decisão de Andraus — esta errata NÃO escolhe a dona** (ver nota A-05 no bloco de decisões abertas). |
++| ID | SPEC-006 — Cognitive Knowledge Graph (contrato cognitivo da **memória semântica permanente** do SOT — ontologia enxuta + entidades/relações tipadas + temporalidade + proveniência por referência + lifecycle + confiança de relação + consulta cognitiva + governança de escrita; **mecanismo físico de armazenamento decidido: Opção C — PostgreSQL como fonte única de verdade (decisão de Andraus, DHR-H001-001, 2026-10-18; tomada fora desta Spec)**) *[Texto anterior preservado — INV-07: "mecanismo físico de armazenamento INDETERMINADO — H-001 ABERTA"]* |
++| Versão | **1.12 (ERRATA PROPOSTA — Minor/aditiva, INV-07: nada apagado; propaga ao estado do COMO a decisão de Andraus que fechou a H-001 — DHR-H001-001, 2026-10-18; classificação final é de Andraus)** sobre a v1.11 homologada. *[Valor anterior preservado — INV-07:]* 1.11 (ERRATA HOMOLOGADA — **Major (mudança restritiva)**, condicionada, sobre a baseline v1.7 — DHR-SPEC006-003, Andraus 2026-10-18; proposta originalmente como Minor/aditiva, classificação decidida por Andraus como Major [n-c]; INV-07: nada apagado, v1.7 preservada no changelog) |
++| Status | **ERRATA v1.12 PROPOSTA (aguarda Revisor e Andraus; v1.7+v1.11 seguem vigentes até a homologação).** A errata v1.12 só atualiza o **estado do COMO**: onde o texto vigente dizia "mecanismo físico INDETERMINADO / H-001 ABERTA", passa a dizer "decidido: Opção C (DHR-H001-001, 2026-10-18)" — PostgreSQL como fonte única de verdade, registros só-inserção, colunas bitemporais, travessia recursiva no banco (DHR-H001-001 D1); Opção D (índice de grafo derivado e reconstruível) **desenhada e NÃO ligada** até o BUILD medir (D2); revisão por gatilho no início do BUILD (D5). **H-001 foi FECHADA por Andraus (DHR-H001-001), fora desta Spec** — a SPEC-006 não a decide. **Nenhuma RULE-CKG, INV-CKG, BASpec, EARS, EC, T, ADV, esquema ou contagem muda no mérito** (DHR-H001-001 §3: "sem alterar regra/BASpec/EC do contrato lógico"); a incerteza de EFICIÊNCIA de consulta multi-salto (RULE-UNC) permanece, reancorada "até o BUILD medir (DHR-H001-001 D5)". A negação de `conviction` por padrão (DHR-SPEC006-003 D2) **não muda**. G-001, M-001, J-001, N-001, K-001, C-001, WF-D03, ECC-03-001 e CKG-STRUCT-ORIGIN-001 seguem **ABERTAS** (DHR-H001-001 §4/§5). *[Status anterior preservado — INV-07:]* **HOMOLOGADA — ERRATA v1.11 (Major, condicionada) sobre a baseline v1.7, DHR-SPEC006-003** (Andraus, chat 2026-10-18; parecer do Revisor por delta **CONFORME condicional**; gate de código rodado pelo Orquestrador, não pelo Revisor; **H-001 segue ABERTA**; nenhuma conformidade plena afirmada — DHR-SPEC006-003 §3). A negação de `conviction` por padrão (`CONVICTION_HISTORY_UNDEFINED`) está registrada na DHR-SPEC006-003 D2 **com condição de reversão** (vale até Andraus definir o histórico de estados da convicção — CCM-001/SPEC-003/M-001, abertas; não fecha M-001). **Edição editorial pós-homologação (só cabeçalho/Status; nenhuma regra/BASpec/EARS/EC/T/ADV/contagem alterada):** o hash auditado e homologado do `plan.md` antes desta edição era sha256 `8527addb878d7585dbebdf66d376161af91d217c5f0f26c5355eb94a806beba6` (DHR-SPEC006-003 §2). *[Texto anterior preservado — INV-07: "BASELINE v1.7 — ERRATA v1.11 PROPOSTA (aguarda Revisor e Andraus); a v1.7 segue vigente até a homologação da errata."]* (DHR-SPEC006-002) A v1.7 foi **HOMOLOGADA — BASELINE v1.7** (Andraus, 2026-10-13, DHR-SPEC006-002; abertura DHR-SPEC006-001; parecer do Revisor CONFORME COM RESSALVAS); a errata v1.8 incorporou as correções A-01..A-14 da auditoria independente (`governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md` §3); a errata v1.9 incorporou as correções N-01..N-06 do parecer do Revisor sobre a v1.8; a **errata v1.10** incorpora as correções N-07 (Média) + m-A..m-D (Menores) do parecer do Revisor sobre a v1.9 — **aditiva, Minor, nenhuma regra apagada**; a **errata v1.11** incorpora N-08 (Média) + n-a/n-b/n-c (Menores) do parecer do Revisor sobre a v1.10 (`governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md`) — propagação, sem regra nova (a classificação "Minor/aditiva" é de Andraus — n-c). RULE-CKG-001..013 e INV-CKG-01/02 vigentes por homologação da v1.7 (registro físico em `RULES.md` diferido — RULE-HG-02). **H-001 (mecanismo físico do KG) permanece ABERTA — nem a v1.7 nem esta errata a fecham** (CONS-01; só Andraus). M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 seguem ABERTAS; **CKG-STRUCT-ORIGIN-001 (N-01/N-09) ABERTA** (BL-035). **A-05 (governança): H-001 ficou sem dono após a homologação da v1.7; o re-apontamento (ROADMAP §6 / atomic-spec §12 / revisor.md §8) é decisão de Andraus — esta errata NÃO escolhe a dona** (ver nota A-05 no bloco de decisões abertas). |
+ | Fonte | ROADMAP §6 (FASE 3); `specs/features/SPEC-006/ABERTURA.md` + `research.md` + `sources/` (Dossiê — RULE-ECC-01/02/04/06; validade CRITICAL 90 dias, limite 2027-01-03); DHR-SPEC006-001; atomic-spec **v1.5** (§3 emenda SPEC006-MATRIZ → CRITICAL · D0–D7); `governance/RULES.md` (RULE-BB-004, RULE-CAU-01/02/03, RULE-MECH-01, RULE-HD-02/03/04, RULE-ONT-01/02); `canon/CEM-001` (Responsabilidades do KG l.608-615), `canon/CHM-001`, `canon/CCM-001`, `canon/CEE-001` l.111, `canon/SAS-001` §6.12; `WORKFLOW.md` (conformidade, não editada) |
+ | Complexidade | **CRITICAL** [FONTE: ROADMAP §6; atomic-spec §3 (emenda SPEC006-MATRIZ) "Knowledge Graph \| CRITICAL \| D0–D7"; DHR-SPEC006-001 Q-ABERTURA-2] |
+ | Profundidade-alvo | **D0–D7 + D8 adversarial focado** nos pontos sensíveis (imutabilidade INV-07, confiança ≠ Convicção INV-04, causalidade pós-hoc RULE-CAU, colisão, governança de escrita), sem elevar o profile em silêncio [FONTE: ROADMAP §6; AGENTS.md §4; DHR-SPEC006-001 Q-ABERTURA-2] |
+@@ -19,9 +19,9 @@
+ 
+ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (standard + adversarial).
+ 
+-**Princípio fundador (transversal):** **MEMÓRIA PERMANENTE ≠ MEMÓRIA DE TRABALHO.** *"Blackboard ↓ memória de trabalho. Knowledge Graph ↓ memória permanente. Nunca misturar."* (KERNEL-V2; ROADMAP §5/§6). O KG é a **representação semântica permanente do conhecimento já validado e suas relações auditáveis** — não é "banco de grafos" (research.md §0) e não é memória de trabalho (SPEC-004). Este Plan define **o QUE** (contrato cognitivo), com o **mecanismo físico INDETERMINADO = H-001 (ABERTA)** — decisão de engenharia de Andraus, não fechada aqui. [FONTE: ROADMAP §6; DHR-SPEC006-001 Q-ABERTURA-3; research.md §0/§8]
++**Princípio fundador (transversal):** **MEMÓRIA PERMANENTE ≠ MEMÓRIA DE TRABALHO.** *"Blackboard ↓ memória de trabalho. Knowledge Graph ↓ memória permanente. Nunca misturar."* (KERNEL-V2; ROADMAP §5/§6). O KG é a **representação semântica permanente do conhecimento já validado e suas relações auditáveis** — não é "banco de grafos" (research.md §0) e não é memória de trabalho (SPEC-004). Este Plan define **o QUE** (contrato cognitivo); o **COMO físico foi decidido por Andraus fora desta Spec: Opção C** — PostgreSQL como fonte única de verdade, registros só-inserção, colunas bitemporais explícitas, travessia por consultas recursivas no banco; Opção D (índice de grafo derivado) desenhada e NÃO ligada até o BUILD medir; revisão por gatilho no início do BUILD (decisão do mecanismo físico FECHADA por Andraus — DHR-H001-001 D1/D2/D5, 2026-10-18; ROADMAP "Decisões FECHADAS"; estudo `governance/propostas/H001/ESTUDO-TECNOLOGIA-H001-2026-10-18.md` §1/§4-C/§4-D). *Desambiguação [INFERÊNCIA]: "Opção C/D" aqui são rótulos do estudo H-001 (§2/§4); "Opção A/B" deste Plan são os rótulos de recorte do `research.md`/ABERTURA — séries distintas.* O contrato lógico não depende dessa escolha (estudo §6). *[Texto anterior preservado — INV-07: "com o **mecanismo físico INDETERMINADO = H-001 (ABERTA)** — decisão de engenharia de Andraus, não fechada aqui."]* [FONTE: ROADMAP §6; DHR-SPEC006-001 Q-ABERTURA-3; research.md §0/§8; DHR-H001-001]
+ 
+-**Status epistemológico de cabeçalho:** a SPEC-006 é a **camada Harness/operacional da memória permanente** sobre responsabilidades que os canônicos BASELINED já atribuem ao KG (CEM-001 l.608-615 Responsabilidades do KG; l.489-497 tabela "Consumo pelos Componentes" — estados da EVIDÊNCIA, A-03; l.562-565 Cognitive Trace Reconstruction; CONSTITUTION l.233 EC-COG-003; SAS-001 §6.12; CEE-001 l.111). **NÃO redefine** CHM-001/CEM-001/CCM-001, nem reabre SPEC-004/SPEC-005 (**CC-02/CONST-01/INV-09**). **H-001** permanece **ABERTA**. [FONTE: ROADMAP §6/§7; atomic-spec §12; DHR-SPEC006-001 §3]
++**Status epistemológico de cabeçalho:** a SPEC-006 é a **camada Harness/operacional da memória permanente** sobre responsabilidades que os canônicos BASELINED já atribuem ao KG (CEM-001 l.608-615 Responsabilidades do KG; l.489-497 tabela "Consumo pelos Componentes" — estados da EVIDÊNCIA, A-03; l.562-565 Cognitive Trace Reconstruction; CONSTITUTION l.233 EC-COG-003; SAS-001 §6.12; CEE-001 l.111). **NÃO redefine** CHM-001/CEM-001/CCM-001, nem reabre SPEC-004/SPEC-005 (**CC-02/CONST-01/INV-09**). **decisão do mecanismo físico FECHADA por Andraus (DHR-H001-001, 2026-10-18) — mecanismo físico = Opção C; não decidida por esta Spec.** *[Texto anterior preservado — INV-07: "**H-001** permanece **ABERTA**."]* [FONTE: ROADMAP §6/§7; atomic-spec §12; DHR-SPEC006-001 §3; DHR-H001-001]
+ 
+ ### Histórico de versões
+ 
+@@ -39,6 +39,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
+ | 1.9 | 2026-10-16 | **ERRATA PROPOSTA (Minor/aditiva — INV-07: nada apagado; v1.7 segue vigente).** Incorpora N-01..N-06 do parecer do Revisor sobre a v1.8 (2 Média + 4 Menores). **N-01** (Média) predicado de trajetória de admissão (RULE-CKG-010) redefinido POR TIPO — hypothesis: esteve em ACTIVE∨DOMINANT (CHM-001); evidence: esteve em ACTIVE (CEM-001 l.258-262); conviction: esteve em COMPUTED∨GATED_PASS (CCM-001 l.58/78) — corrigindo o predicado global "ACTIVE" que degenerava toda conviction; prova da trajetória vem de `canonical_history_ref` (campo do node_record, resolvido no canônico CHM/CEM/CCM, nunca do payload; ausência ⇒ `CANONICAL_HISTORY_UNRESOLVABLE`); T09 positivo por tipo + ADV-21 negativo por tipo. **N-02** (Média) `formulated_at` (RULE-CKG-008): núcleo causal (`mechanism`/`direction`/`conditions`/`regime`) IMUTÁVEL na cadeia `supersedes` (`CAUSAL_CORE_IMMUTABLE_IN_CHAIN`; correção do núcleo exige NOVA afirmação causal com `formulated_at` próprio — fecha racionalização pós-hoc por reescrita); REMOVIDA a alternativa "`recorded_at` da hipótese referenciada" (sem campo/precedência, permitia antedatar); ADV-04 caso (g). **N-03** (Menor) propagação por referência: BASpec-CKG-001/EARS-1/EC-CKG-001 PRECOND (fail-closed de hypothesis A-04); BASpec-CKG-010/EARS-10/D4/D6 passo 2 (trajetória por tipo); Autopré-check corrigido (T09 positivo; TRAJECTORY_NEVER_ACTIVE em ADV-21). **N-04** (Menor, checks) alinha §5/§6/§11 ao M-01 RETIRADO (A-03); omite contagem de linhas estimada; §8 lista citações novas. **N-05** (Menor) RULE-CKG-013 desambigua A-11: INVALIDA AUTORIZADA (fecha `valid_to` atomicamente ⇒ não colide) vs INVALIDA CONTESTADA/PENDENTE (sem fechamento ⇒ admitida e MARCADA, cond. (v) alcançável — escolha conservadora: admitir+marcar, N-08); alinha D6 passo 7/ADV-18. **N-06** (Menor) matriz DEPENDE_DE declara pares admitidos ((hypothesis\|mission)→(hypothesis\|evidence); conviction→(evidence\|hypothesis); narrative→(evidence\|hypothesis)); narrative→hypothesis "agrega" etiquetado [INFERÊNCIA]; citação BASpec-CBP-007 corrigida l.543-559→l.543-565. Contagens: 13 BASpecs, 6 EC, 13 EARS, **19 cenários (T01..T19)**, **23 ADV (ADV-01..23)**, INV-CKG-01/02. Nenhuma decisão aberta foi tocada; H-001 permanece ABERTA. |
+ | 1.10 | 2026-10-16 | **ERRATA PROPOSTA (Minor/aditiva — INV-07: nada apagado; v1.7 segue vigente).** Incorpora N-07 (Média) + m-A..m-D (Menores) do parecer do Revisor sobre a v1.9. **N-07** (Média): admissão de `conviction` NEGADA por padrão fail-closed (`CONVICTION_HISTORY_UNDEFINED`) — o CCM-001 (l.58/78) define só o enum `status`, sem tabela de transições/estado inicial/registro timestamp-origem-justificativa, e o Cap.5 (l.117) deixa M-001 ABERTA; o predicado de trajetória e o `canonical_history_ref` de `conviction` passam a [PROPOSTA]/[DECISÃO NECESSÁRIA] (pré-req: histórico de status da conviction no CCM-001/SPEC-003 + M-001 — de Andraus, ALHEIAS a esta Spec); removida toda atribuição "CCM-001 mantém histórico"; T09(c)/ADV-21(g) refletem a negação; arestas de SAÍDA de `conviction` na matriz (A-12) permanecem válidas como esquema, mas nó `conviction` só aparece no grafo quando a decisão for tomada; hypothesis/evidence inalterados. **m-A**: núcleo causal imutável na cadeia `supersedes` (RULE-CKG-008) estendido para incluir `outcome_ref` e `no_outcome` (ADV-04 caso (h)). **m-B**: EARS-8 e VERIFICADO POR de BASpec-CKG-008 alinhados por referência a `CAUSAL_CORE_IMMUTABLE_IN_CHAIN`. **m-C**: subcódigo `CAUSAL_CORE_IMMUTABLE_IN_CHAIN` movido para pai próprio em §D3.1 (não é campo faltante); caminho legítimo de correção do núcleo causal declarado (INVALIDA a CAUSA antiga + NOVA CAUSA com `valid_from`/`formulated_at` próprios ⇒ chave natural distinta, sem falso dedupe/DENY). **m-D**: para `evidence` o predicado "esteve em ACTIVE" é defesa em profundidade (não defeito), pois CEM-001 l.446-447 define ACTIVE como estado padrão e l.460-466 só permite saídas a partir de ACTIVE (ADV-21(f) cobre histórico corrompido/não-resolvível). Contagens: 13 BASpecs, 6 EC, 13 EARS, **19 cenários (T01..T19)**, **23 ADV (ADV-01..23)**, INV-CKG-01/02. Nenhuma decisão aberta foi tocada; H-001 permanece ABERTA. |
+ | 1.11 | 2026-10-18 | **ERRATA PROPOSTA (INV-07: nada apagado; v1.7 segue vigente).** Incorpora o parecer do Revisor sobre a v1.10 (N-08 Média + n-a/n-b/n-c Menores), sem regra nova. **N-08**: núcleo causal imutável (incl. `outcome_ref`/`no_outcome`, RULE-CKG-008/m-A) propagado ao GATE DE SAÍDA e ao ENTÃO do BASpec-CKG-008 (fecha m-A/m-B), ao PRECOND do EC-CKG-005 (E3) e ao esquema `causal`. **n-a**: checks §17 (linha N-07) ganha assert-absent das duas formulações superadas (atribuição de histórico ao CCM-001; trajetória de conviction pelo status COMPUTED); rastreio em checks §18. **n-b**: ADV-21(f) alinhado à RULE-CKG-010 e à tabela de transições do CEM-001 l.460-466 (ACTIVE não é único predecessor de ARCHIVED). **n-c**: negação de `conviction` por padrão registrada como decisão de Andraus no chat (2026-10-17) SEM ata — a ata de homologação da errata deve registrá-la; classificação Minor/aditiva = decisão de Andraus. Contagens inalteradas: 13 BASpecs, 6 EC, 13 EARS, 19 cenários (T01..T19), 23 ADV, INV-CKG-01/02. Nenhuma decisão aberta tocada; H-001 ABERTA. **(HOMOLOGADA — ERRATA v1.11, Major (mudança restritiva), condicionada, DHR-SPEC006-003, Andraus 2026-10-18; hash homologado sha256 `8527addb878d7585dbebdf66d376161af91d217c5f0f26c5355eb94a806beba6`; edição editorial posterior só no cabeçalho/Status e nas anotações de status [n-c].)** |
++| 1.12 | 2026-10-18 | **ERRATA PROPOSTA (Minor/aditiva — INV-07: nada apagado; v1.7+v1.11 seguem vigentes até a homologação).** Propaga ao estado do COMO a decisão de Andraus que **fechou a H-001 fora desta Spec** (DHR-H001-001, 2026-10-18; ROADMAP "Decisões FECHADAS"): mecanismo físico = **Opção C** (PostgreSQL fonte única de verdade, só-inserção, bitemporal, travessia recursiva no banco — D1); Opção D desenhada, NÃO ligada (D2); revisão por gatilho no início do BUILD (D5). Frases de estado vigente "INDETERMINADO / H-001 ABERTA" reescritas com o texto anterior preservado entre colchetes; teto/condição que existia só por causa da H-001 removido (Non-goal/Tasks/Compatibilidade/DECISÃO NECESSÁRIA); incerteza de EFICIÊNCIA multi-salto (RULE-UNC) mantida e reancorada "até o BUILD medir (DHR-H001-001 D5)". **Nenhuma RULE-CKG, INV-CKG, BASpec, EARS, EC, T, ADV, esquema ou contagem alterada no mérito**; `conviction` negada por padrão (DHR-SPEC006-003 D2) inalterada; G-001/M-001/J-001/N-001/K-001/C-001/WF-D03/ECC-03-001/CKG-STRUCT-ORIGIN-001 ABERTAS. Contagens: 13 BASpecs, 6 EC, 13 EARS, 19 cenários, 23 ADV, INV-CKG-01/02. |
+ 
+ ---
+ 
+@@ -47,7 +48,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
+ [FONTE: ROADMAP §23 passo 11-bis; DHR-SPEC006-001 §3/§4; DHR-SPEC006-PEND-001; ABERTURA §8/§9; RMR-001 BL-029 + nota DHR-SPEC006-PEND-001 (citados por ID/âncora, não por linha — A-07)]
+ 
+ - **Nenhum item do RMR-001 tem gatilho `spec:SPEC-006` homologado isoladamente.** O início da redação **satisfaz ramos de gatilho** de itens pré-existentes — **tratado como reflexo; promoção/encaminhamento é do gate e de Andraus** (o Especificador NÃO promove — CONS-01).
+-- **BL-003** (persistência física de hipótese/estado) — `Em espera`, gatilho `spec:SPEC-006 em redação` ∨ `spec:SPEC-009 em redação`. **Disposição: PARCIAL** — vinculado à SPEC-006 por regra desde a abertura (DHR-BACKLOG-ABERTURA-001), sem depender de promoção. **Incorporado:** o contrato LÓGICO da memória permanente do KG (o que se grava, versionamento, proveniência, governança de escrita — RULE-CKG-*). **Fora:** a parte **física** (mecanismo de armazenamento) **É** H-001 (ABERTA) / G-001 (ABERTA) → permanece INDETERMINADA, decisão de Andraus (CONS-01); o estado do item no painel não muda (`Absorvido` é de Andraus).
++- **BL-003** (persistência física de hipótese/estado) — `Em espera`, gatilho `spec:SPEC-006 em redação` ∨ `spec:SPEC-009 em redação`. **Disposição: PARCIAL** — vinculado à SPEC-006 por regra desde a abertura (DHR-BACKLOG-ABERTURA-001), sem depender de promoção. **Incorporado:** o contrato LÓGICO da memória permanente do KG (o que se grava, versionamento, proveniência, governança de escrita — RULE-CKG-*). **Fora:** a parte **física** (mecanismo de armazenamento) — no KG, decidida por Andraus fora desta Spec: **Opção C** (decisão do mecanismo físico FECHADA por Andraus — DHR-H001-001, 2026-10-18); o estado persistente por agente segue **G-001 (ABERTA)** (DHR-H001-001 §4: fechar a H-001 não fecha G-001 nem BL-003); o estado do item no painel não muda (`Absorvido` é de Andraus). *[Texto anterior preservado — INV-07: "a parte **física** (mecanismo de armazenamento) **É** H-001 (ABERTA) / G-001 (ABERTA) → permanece INDETERMINADA, decisão de Andraus (CONS-01)"]*
+ - **BL-011** (MC-EXP-001) — `Em espera`, gatilho inclui `spec:SPEC-006 em redação`. **Disposição: PARCIAL** — vinculado por regra desde a abertura; **fonte de requisitos** sob COL-EXP-01..05 (CONFLICT-MAP; prevalece SOT canônico). **Incorporado (já refletido neste Plan):** confiança de relação ≠ Convicção (RULE-CKG-007; INV-04), imutabilidade/append-only (INV-07), fronteira KG × Blackboard (Working Memory = SPEC-004). **Reconciliado (v1.7 — ver seção "Reconciliação BL-011 / MC-EXP-001" abaixo):** a fila EXP-SPEC-001..053 (aberta e lida em `reference/camadas/CAMADA MEMÓRIA.MD` l.818-1038) e os tratamentos X-01/X-04/R-01..R-07 foram cruzados contra os RULE-CKG. Resultado honesto: **(i)** os concernentes à memória **SEMÂNTICA permanente** (imutabilidade, versionamento, proveniência, temporalidade, integridade, conflito, duplicidade, referência ao canônico) já são cobertos por RULE-CKG-001/002/004/005/006/010/012/013 — tratados por **REFERÊNCIA**, não duplicados (CC-02/INV-09); **(ii)** os de memória **EPISÓDICA/experiência** (retrieval, outcome/performance, decisão/execução, lição/feedback, estratégia, harness) são **FORA** → SPEC-007 (retrieval), SPEC-018/K-001 (aprendizado/evolução), Experiência (*"nunca misturar"*); **(iii)** os tratamentos COL-EXP-01..05 estão todos **REFLETIDOS** ou **ADIADOS** conforme `CONFLICT-MAP.md` (prevalece SOT canônico). **Nenhuma lacuna exigiu nova RULE-CKG.** Os resíduos são **[DECISÃO NECESSÁRIA] pré-existentes** (critério de decaimento/valor/retenção → K-001/SPEC-018, já em S14; produtor/gatilho de promoção trabalho→permanente, já em CKG-010; dup. EXP-SPEC-021↔RAG-SPEC-018 ADIADA a SPEC-007/009 — COL-EXP-05). Classificação ≠ aplicação; o estado no painel **NÃO muda** (`Absorvido` é de Andraus).
+ - **BL-010** (MC-RAG-001) — `Em espera`, gatilho `spec:SPEC-007 em redação` ∨ `milestone:FASE 3 iniciada`. BL-010 é fonte da **SPEC-007** → **tangente**; a SPEC-006 respeita a fronteira. **Não promovo**.
+ - **BL-029** (proveniência) — **`Em espera`** (DHR-SPEC006-PEND-001; gatilho `spec:SPEC-014`/`SPEC-018`/`SPEC-045`; o gatilho `spec:SPEC-004` foi CONSUMIDO). **Independente desta Spec** — não absorvido nem promovido. [FONTE: RMR-001 BL-029 / nota DHR-SPEC006-PEND-001 — por ID/âncora, A-07]
+@@ -114,12 +115,12 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D7 + D8 adversarial focado (stan
+ - [x] **CC-06 — Campos SES-001 §59 (Engineering Card):** **N/A** — o artefato é Spec/Plan; §59/§60 tornam-se obrigatórios nas Tasks/Cards (BUILD adiado — atomic-spec §14). Omissão justificada.
+ - [x] **CC-07 — Cadeia de derivação SES-001 §60:** N/A (idem CC-06); rastreabilidade: ROADMAP §6 → Dossiê (research.md, HOMOLOGADO DHR-SPEC006-001) → este Plan.
+ - [x] **CC-08 — Bloco Herança/Delta (§8.3, EUA-E04):** presente; INHERITS/ADDED/MODIFIED com ID+versão (RULE-HD-04); REMOVED vazio; MODIFIED = só RULE-BB-004 REFORÇADA (não altera texto/significado) — o antigo M-01 sobre CEM-001 l.494 foi RETIRADO por premissa falsa (A-03: l.494 trata estados da EVIDÊNCIA; a preservação "a partir da admissão" é regra LOCAL CKG-010, não MODIFIED), sem contradizer o herdado (RULE-HD-02/03). Eixo VERTICAL (RULE-HV) avaliado e não aplicável. [FONTE: EUA-E04; RULE-HD-02/03/04]
+-- [x] **CC-09 — Epistemic Check (RULE-EPI):** mecanismo físico = **INDETERMINADO (H-001 ABERTA)**, não fato; relações causais exigem mecanismo + regime + marcador pós-hoc (RULE-CAU-01/02/03); sem falsa precisão em "confiança de relação" (sem número até calibração); fontes web = DADO [EXTERNO]. [FONTE: RULE-EPI-01..03; RULE-CAU; research.md §8]
++- [x] **CC-09 — Epistemic Check (RULE-EPI):** mecanismo físico = **decidido: Opção C (decisão do mecanismo físico FECHADA por Andraus — DHR-H001-001, 2026-10-18)** — FATO NORMATIVO por decisão de Andraus, não por esta Spec; a EFICIÊNCIA de consulta multi-salto segue INDETERMINADA até o BUILD medir (DHR-H001-001 D5; estudo §5/§9) *[Texto anterior preservado — INV-07: "mecanismo físico = **INDETERMINADO (H-001 ABERTA)**, não fato"]*; relações causais exigem mecanismo + regime + marcador pós-hoc (RULE-CAU-01/02/03); sem falsa precisão em "confiança de relação" (sem número até calibração); fontes web = DADO [EXTERNO]. [FONTE: RULE-EPI-01..03; RULE-CAU; research.md §8]
+ - [x] **CC-10 — Terminologia concorrente (RULE-SEM-01):** tratada (ver "Declaração de acepção semântica"): "conhecimento permanente" vs "memória de trabalho" vs "documento recuperado" vs "Observação" (INV-06); "confiança de relação" vs "Convicção"; "esquecimento" = arquivamento versionado; estados do KG vs estados canônicos homônimos. Nenhum termo canônico redefinido (RULE-SEM-04). [FONTE: RULE-SEM-01/04; INV-06; GLOSSARIO]
+ - [x] **CC-11 — Classe/Mecanismo por BASpec (RULE-MECH-01):** cada BASpec com efeito declara Classe (D/C/H) com critério 4Es; C/H declaram gate de saída determinístico; H declara bounded loop + parada (CKG-008). Por BASpec, nunca por Spec inteira (SES-001 §50). Ver §D3. [FONTE: RULE-MECH-01..04; atomic-spec §9/§10.6]
+ - [x] **CC-12 — Princípios de Domínio `PD-xx` (RULE-PD-01):** **N/A** (DHR-SPEC006-001 §2; ABERTURA §6; research.md §7). Infraestrutura agnóstica de escola. Registrado, não supressão silenciosa. [FONTE: RULE-PD-01; §10.7]
+ 
+-**Disciplinas N8–N17 incidentes (RULES.md v1.5):** RULE-EPI (H-001≠fato), RULE-CAU-01/02/03 (CKG-008), RULE-MET-01 (não-fabricação), RULE-UNC-01..03 (incerteza localizada sobre eficiência de consulta ampla enquanto H-001 ABERTA — não sobre a completude do trace de Evidência), RULE-SEM-01/04, RULE-ONT-01/02, RULE-DEC-01 (o KG armazena/relaciona/consulta, não decide nem executa — INV-05). INDETERMINADO onde há incerteza material. (Detalhe no §7-bis Bloco C.)
++**Disciplinas N8–N17 incidentes (RULES.md v1.5):** RULE-EPI (mecanismo físico = Opção C por decisão de Andraus — DHR-H001-001; desempenho dessa escolha ≠ fato até medição no BUILD), RULE-CAU-01/02/03 (CKG-008), RULE-MET-01 (não-fabricação), RULE-UNC-01..03 (incerteza localizada sobre eficiência de consulta ampla até o BUILD medir (DHR-H001-001 D5) — não sobre a completude do trace de Evidência), *[Texto anterior preservado — INV-07: "RULE-EPI (H-001≠fato)" · "enquanto H-001 ABERTA"]* RULE-SEM-01/04, RULE-ONT-01/02, RULE-DEC-01 (o KG armazena/relaciona/consulta, não decide nem executa — INV-05). INDETERMINADO onde há incerteza material. (Detalhe no §7-bis Bloco C.)
+ 
+ ---
+ 
+@@ -200,6 +201,9 @@ ADDED (delta local — ver "Cobertura × lacuna"):
+   - DETECÇÃO/registro de COLISÃO de relações (RULE-CKG-013)
+   - Declaração de Classe/Mecanismo por BASpec (CC-11); Enforcement Contracts (EC-CKG-001..006)
+   - [PROPOSTA de recorte] contrato cognitivo FECHÁVEL com mecanismo físico INDETERMINADO — NÃO fecha H-001 (Andraus)
++    [Atualização v1.12 — o item acima fica como registro (INV-07)] o mecanismo físico foi decidido por Andraus FORA
++    desta Spec: Opção C (decisão do mecanismo físico FECHADA por Andraus — DHR-H001-001, 2026-10-18); o recorte se mantém — o contrato
++    lógico independe do mecanismo (estudo H-001 §6); nada é ADDED/MODIFIED/REMOVED por isso
+ 
+ MODIFIED (especialização de regra herdada — RULE-HD-02):
+   - RULE-BB-004 (append-only do Blackboard) é REFORÇADA, não alterada, como imutabilidade PERMANENTE do KG (INV-07);
+@@ -243,7 +247,7 @@ REMOVED (só com governança — nunca implícito):
+ | **Consulta cognitiva** | NÃO | LACUNA — ADDED (CKG-011) |
+ | **Governança de escrita + da ontologia** | Parcial — SAS-001 §6.12; SPEC-019 | LACUNA — ADDED (CKG-009; E3) |
+ | **Lifecycle do nó/relação do KG** | Parcial | LACUNA — ADDED (CKG-012) |
+-| **Mecanismo físico de armazenamento** | NÃO — H-001 ABERTA | NÃO fechar — Andraus (INDETERMINADO) |
++| **Mecanismo físico de armazenamento** | Decidido fora da Spec — H-001 FECHADA por Andraus (DHR-H001-001): Opção C | NÃO especificado aqui — COMO físico por referência à ata; contrato lógico inalterado *[Texto anterior preservado — INV-07: "NÃO — H-001 ABERTA \| NÃO fechar — Andraus (INDETERMINADO)"]* |
+ 
+ ---
+ 
+@@ -285,8 +289,9 @@ bitemporal, proveniência condicional, imutabilidade append-only ("esquecimento"
+ confiança de relação (≠ Convicção — INV-04), governança de escrita (E3), fronteira de entrada (canônicos via ciclo de
+ vida + conhecimento formado via selo SPEC-007 [DECISÃO NECESSÁRIA]), consulta cognitiva e **Cognitive Trace
+ Reconstruction COMPLETA da Evidência** (CEM-001 l.608-615) — preservando **memória permanente ≠ trabalho** e deixando o
+-**mecanismo físico INDETERMINADO (H-001 ABERTA)**: define-se **o QUE**, não **o COMO**. [FONTE: ROADMAP §6; CEM-001
+-l.608-615; CHM-001; SAS-001 §6.12; DHR-SPEC006-001; research.md §4]
++**mecanismo físico fora desta Spec — decidido por Andraus: Opção C (decisão do mecanismo físico FECHADA por Andraus — DHR-H001-001)**: define-se
++**o QUE**, não **o COMO**. *[Texto anterior preservado — INV-07: "deixando o **mecanismo físico INDETERMINADO (H-001
++ABERTA)**"]* [FONTE: ROADMAP §6; CEM-001 l.608-615; CHM-001; SAS-001 §6.12; DHR-SPEC006-001; research.md §4; DHR-H001-001]
+ 
+ **O que a Missão NÃO é (fronteira):**
+ - Não é **memória de trabalho** → **SPEC-004 (BASELINE)**. *"Nunca misturar."*
+@@ -296,7 +301,7 @@ l.608-615; CHM-001; SAS-001 §6.12; DHR-SPEC006-001; research.md §4]
+ - Não especifica o **ciclo de evolução (P12)** → **SPEC-018**; **K-001 (ABERTA)**.
+ - Não **computa** convicção → **SPEC-003/CCM-001**; **J-001/N-001 (ABERTAS)**.
+ - Não **redefine** CHM-001/CEM-001/CCM-001 nem SPEC-004/005 → **CC-02/CONST-01/INV-09**.
+-- Não **escolhe o mecanismo físico** → **H-001 (ABERTA — só Andraus)**; INDETERMINADO.
++- Não **escolhe o mecanismo físico** → escolhido por Andraus fora desta Spec: **Opção C** (H-001 FECHADA por Andraus — DHR-H001-001); a Spec só o cita por referência. *[Texto anterior preservado — INV-07: "→ **H-001 (ABERTA — só Andraus)**; INDETERMINADO."]*
+ - Não **decide** nem **executa** ordem → INV-05/RULE-DEC-01.
+ 
+ **Status epistemológico:** RULE-CKG-* e o contrato de nó/relação são **[PROPOSTA]** até homologação. CEM-001, CHM-001,
+@@ -330,7 +335,7 @@ atomic-spec v1.5, INV-*, ENF-* são FATO NORMATIVO. Fontes externas (research.md
+ 
+ | Item | Pertence a | Justificativa |
+ |---|---|---|
+-| Mecanismo físico de armazenamento | **H-001 (ABERTA — só Andraus)** | INDETERMINADO |
++| Mecanismo físico de armazenamento | **Andraus — DHR-H001-001 (decisão do mecanismo físico FECHADA por Andraus): Opção C**; esquema físico/instalação = BUILD (ata §4) | decidido fora da Spec; citado por referência *[Texto anterior preservado — INV-07: "**H-001 (ABERTA — só Andraus)** \| INDETERMINADO"]* |
+ | Memória de trabalho / objetos EMERGENT/CANDIDATE | **SPEC-004 (BASELINE)** | "Nunca misturar"; CC-02/INV-09 |
+ | Notificação/transporte; emissão de evento pelo KG | **SPEC-005 (BASELINE)** | consumo = [INFERÊNCIA]/[DECISÃO NECESSÁRIA]; emissão = [DECISÃO NECESSÁRIA] |
+ | Formação de conhecimento / retrieval | **SPEC-007** | recebe conhecimento publicado |
+@@ -339,7 +344,7 @@ atomic-spec v1.5, INV-*, ENF-* são FATO NORMATIVO. Fontes externas (research.md
+ | Redefinir CHM/CEM/CCM/SPEC-004/005 | canônicos/baseline | CC-02/CONST-01/INV-09 |
+ | Fórmula/pesos/limiares de convicção | **SPEC-003/CCM-001; J-001/N-001 (ABERTAS)** | INV-03/INV-04 |
+ | Componente "Cognitive Ontology" separado | — (ontologia DENTRO da SPEC-006) | DHR-SPEC006-001 Q-ABERTURA-4; criar componente é de Andraus |
+-| Escolher tecnologia de banco de grafos | **H-001 (ABERTA)** | fora do mandato; Andraus |
++| Escolher tecnologia de banco de grafos | **Andraus — DHR-H001-001 (decisão do mecanismo físico FECHADA por Andraus)**: Opção C; índice de grafo derivado (Opção D) desenhado, NÃO ligado até o BUILD medir (D2) | fora do mandato; Andraus *[Texto anterior preservado — INV-07: "**H-001 (ABERTA)**"]* |
+ 
+ ---
+ 
+@@ -539,8 +544,10 @@ RULE-CKG-010: O KG recebe conhecimento por DUAS fontes sob a MESMA governança (
+ RULE-CKG-011: O KG DEVE oferecer CONSULTA cognitiva read-only (padrão/similaridade/causalidade/histórico/multi-salto) sem
+               alterar estado. **Cognitive Trace Reconstruction COMPLETA é obrigação GARANTIDA apenas para a EVIDÊNCIA
+               [M-03]**, navegando as arestas `DERIVA_DE` (evidence→evidence) — completude assegurada por INV-CKG-02 (aresta
+-              obrigatória por ancestral + aciclicidade) e NÃO rebaixada por H-001 (só a EFICIÊNCIA de consultas multi-salto
+-              amplas fica INDETERMINADA). O trace ignora o filtro de validade (ancestral SUPERSEDED/ARCHIVED permanece —
++              obrigatória por ancestral + aciclicidade) e NÃO rebaixada pelo mecanismo físico (Opção C — DHR-H001-001; só a
++              EFICIÊNCIA de consultas multi-salto amplas fica INDETERMINADA até o BUILD medir — DHR-H001-001 D5)
++              *[v1.12 — reancoragem, mérito inalterado; texto anterior preservado — INV-07: "NÃO rebaixada por H-001 (só a
++              EFICIÊNCIA de consultas multi-salto amplas fica INDETERMINADA)"]*. O trace ignora o filtro de validade (ancestral SUPERSEDED/ARCHIVED permanece —
+               CEM-001 l.602). O **trace de HIPÓTESE** (via ORIGINA/HERDA/DEPENDE_DE) é oferecido como **[PROPOSTA] best-effort,
+               SEM alegação de completude** (INV-CKG-02 não cobre essas arestas — não há gate de aresta obrigatória nem de
+               aciclicidade para HERDA/DEPENDE_DE nesta versão; estender é trabalho futuro).
+@@ -650,12 +657,14 @@ RULE-CKG-013: Colisão sse duas relações (i) formam PAR CONTRADITÓRIO da tabe
+ > **INV-CKG-02 (Completude e aciclicidade da linhagem da EVIDÊNCIA) [PROPOSTA]:** admitir um `evidence` DERIVED EXIGE
+ > uma aresta `DERIVA_DE` para CADA ancestral do seu `Lineage` (CEM-001 l.565) — fail-closed se algum ausente (CKG-003);
+ > o grafo DERIVA_DE é ACÍCLICO, incluindo a proibição de **self-loop** (M-02/N-07); o trace ignora validade (ancestral
+-> invalidado permanece — CEM-001 l.602). Garante a COMPLETUDE do trace de EVIDÊNCIA (CEM-001 l.612-614), independente de
+-> H-001. **NÃO cobre o trace de hipótese** (que é [PROPOSTA] best-effort — CKG-011).
++> invalidado permanece — CEM-001 l.602). Garante a COMPLETUDE do trace de EVIDÊNCIA (CEM-001 l.612-614), independente do
++> mecanismo físico (Opção C — DHR-H001-001) *[texto anterior preservado — INV-07: "independente de H-001"]*. **NÃO cobre o trace de hipótese** (que é [PROPOSTA] best-effort — CKG-011).
+ > **Reconciliação com o fail-closed de CKG-003 (N-07):** o fail-closed de CKG-003 e a espera por ordem NÃO se contradizem —
+ > são momentos distintos. O derivado só é ADMITIDO quando TODAS as arestas `DERIVA_DE` por ancestral estão materializáveis
+ > (ancestrais presentes); enquanto um ancestral ainda não chegou, o derivado fica em `PENDING_ANCESTOR` — estado
+-> TRANSITÓRIO em buffer de admissão FORA do armazenamento (não é registro do KG; durabilidade do buffer = H-001). A espera
++> TRANSITÓRIO em buffer de admissão FORA do armazenamento (não é registro do KG; durabilidade do buffer = BUILD sob a
++> Opção C — DHR-H001-001; forma física do buffer = [PROPOSTA de BUILD] do estudo H-001 §4-C, não decidida aqui
++> *[texto anterior preservado — INV-07: "durabilidade do buffer = H-001"]*). A espera
+ > é **BOUNDED por um LIMITE/TIMEOUT de admissão = [DECISÃO NECESSÁRIA]** (parâmetro a calibrar — runtime/K-001; SEM número
+ > arbitrário aqui — RULE-MET-01): esgotado o limite, o derivado é **REJEITADO fail-closed** (`DERIVA_DE_EDGE_MISSING`),
+ > jamais admitido sem todas as arestas e jamais esperando para sempre. Assim: nunca admissão incompleta (CKG-003); nunca
+@@ -964,7 +973,7 @@ BASpec-CKG-010:
+     ENTÃO       (a) rejeitado `FORMED_WITHOUT_SEAL`; (b) rejeitada `CANONICAL_STATUS_NOT_ADMISSIBLE`; (c) ver T09 (admissão positiva por tipo) e ADV-21 (`TRAJECTORY_NEVER_ACTIVE`/`CANONICAL_HISTORY_UNRESOLVABLE` por tipo)
+     VERIFICAÇÃO formed_without_seal_accepted == false; emergent_hypothesis_admitted == false
+ ```
+-> **Produtor/gatilho de promoção = [DECISÃO NECESSÁRIA]** (a SPEC-005 não escreve no KG — plan l.971; atribuir à SPEC-018/K-001 (ABERTA) é proposta a Andraus, não homologada — distinto do critério de ESTADO, que é verificável). `PENDING_ANCESTOR` é estado de BUFFER de admissão, não registro do KG (durabilidade = H-001 ABERTA). [PROPOSTA]
++> **Produtor/gatilho de promoção = [DECISÃO NECESSÁRIA]** (a SPEC-005 não escreve no KG — plan l.971; atribuir à SPEC-018/K-001 (ABERTA) é proposta a Andraus, não homologada — distinto do critério de ESTADO, que é verificável). `PENDING_ANCESTOR` é estado de BUFFER de admissão, não registro do KG (durabilidade = BUILD sob a Opção C — DHR-H001-001; forma física do buffer = [PROPOSTA de BUILD], estudo H-001 §4-C) *[texto anterior preservado — INV-07: "(durabilidade = H-001 ABERTA)"]*. [PROPOSTA]
+ 
+ ### BASpec-CKG-011 — Consulta read-only + Trace completo da Evidência (ver RULE-CKG-011)
+ ```
+@@ -978,7 +987,7 @@ BASpec-CKG-011:
+   CLASSE/MECANISMO:
+     CLASSE      : D (Determinístico)
+     MECANISMO   : travessia determinística de `DERIVA_DE` (evidence) até o fecho transitivo, inclui SUPERSEDED/ARCHIVED; hipótese = best-effort; read-only
+-    CRITÉRIO 4Es: Eficácia (reconstrução completa da Evidência) > Eficiência (eficiência de consulta ampla = H-001)
++    CRITÉRIO 4Es: Eficácia (reconstrução completa da Evidência) > Eficiência (eficiência de consulta ampla = INDETERMINADA até o BUILD medir — DHR-H001-001 D5) *[texto anterior preservado — INV-07: "= H-001"]*
+   VERIFICADO POR:
+     DADO        Evidence-E deriva de D; D de C; C de A e B (3 saltos), com C em SUPERSEDED
+     QUANDO      pede-se Trace Reconstruction de Evidence-E
+@@ -1032,13 +1041,13 @@ BASpec-CKG-013:
+ 
+ ## D4 — Algoritmo
+ 
+-Mecânicas determinísticas (a lógica, não a tecnologia; mecanismo físico = **H-001 ABERTA**). Referenciam as regras D2.
++Mecânicas determinísticas (a lógica, não a tecnologia; mecanismo físico = **Opção C, decidido por Andraus — DHR-H001-001 (decisão do mecanismo físico FECHADA por Andraus)**; a tecnologia não altera estas mecânicas — estudo H-001 §6) *[texto anterior preservado — INV-07: "mecanismo físico = **H-001 ABERTA**"]*. Referenciam as regras D2.
+ 
+ - **Integridade (CKG-001):** aceitar sse tipo ∈ catálogo ∧ (origem.node_type, destino.node_type) ∈ matriz[tipo] ∧ direção/simetria conformes (§D2.1). Nó hypothesis: `school`/`hierarchy_role` (SÓ para hypothesis — N-01) DERIVADOS do `producer_id`/`producer_type` do canônico (`school` ∈ {Elliott,SMC,Fibonacci}; `structure` NÃO deriva school e Fractal não tem produtor em SPEC-001 — CKG-STRUCT-ORIGIN-001 [DECISÃO NECESSÁRIA]); ORIGINA só de hypothesis. **Fail-closed de hypothesis [A-04]:** `aceitar sse hypothesis ⇒ (canonical_ref≠null ∧ producer∈AUTHORIZED_PRODUCERS ∧ school derivável ∧ school≠ICT ∧ (hierarchy_role=PRIMARY ⇒ school=Elliott) ∧ publication.origin≠spec007_seal)` — qualquer predicado falso ⇒ DENY (`HYPOTHESIS_CANONICAL_REF_MISSING`/`HYPOTHESIS_PRODUCER_UNAUTHORIZED`/`SCHOOL_NOT_DERIVABLE`/`HYPOTHESIS_SCHOOL_ICT_FORBIDDEN`/`PRIMARY_NOT_ELLIOTT`/`HYPOTHESIS_VIA_SEAL_FORBIDDEN`), NUNCA falha-aberto; `HERDA ⇒ pai.hierarchy_role=PRIMARY` (e pai PRIMARY é Elliott).
+ - **Admissão (CKG-010) [N-01/N-07]:** `admite(x) sse (x formado ∧ selo SPEC-007) ∨ (x canônico ∧ x.tipo ∈ {hypothesis, evidence} ∧ canonical_status ∈ admissível[tipo] ∧ trajetória[tipo](x))`, com `trajetória[tipo]` = passou pelo ESTADO DE VALIDAÇÃO do tipo — hypothesis: ACTIVE∨DOMINANT; evidence: ACTIVE (ver RULE-CKG-010). **`conviction` é NEGADO POR PADRÃO (`CONVICTION_HISTORY_UNDEFINED`, fail-closed — N-07): não há predicado de trajetória admissível enquanto o histórico canônico de status da conviction (CCM-001 l.58/78 só define o enum) e M-001 (Cap.5 l.117) não existirem — decisões de Andraus.** A trajetória (hypothesis/evidence) é RESOLVIDA do `canonical_history_ref` no canônico (CHM/CEM), nunca do payload: irresolúvel ⇒ `CANONICAL_HISTORY_UNRESOLVABLE`; jamais-validado ⇒ `TRAJECTORY_NEVER_ACTIVE` (fail-closed).
+ - **Validade bitemporal (CKG-004):** criação grava `R0{creation, valid_from, recorded_at}`; mudança grava `R1{invalidation, targets_record_id=R0, valid_to, recorded_at}`; R0 nunca mutado. Rejeita `valid_to < valid_from`. `valid_to=null`≡+∞. valid-time: `válida_em(T) = ∃ creation com valid_from≤T ∧ ¬∃ invalidation aplicável com valid_to≤T`; transaction-time: conjunto com `recorded_at≤R`.
+ - **Imutabilidade / estado derivado + PRECEDÊNCIA (CKG-006/012):** `DELETE/UPDATE de registro ⇒ negado`. Estado(x) por precedência: (1) SUPERSEDED sse ∃ sucessora `supersedes=x`; senão (2) INVALIDATED_IN_TIME sse ∃ invalidation `targets_record_id=x` sem sucessora; senão (3) ARCHIVED sse ∃ archival vigente; senão (4) ACTIVE_KNOWLEDGE.
+-- **Trace Reconstruction (CKG-011):** `trace(x)` = fecho transitivo de `DERIVA_DE` a partir de x para **evidence** — COMPLETO (garantido por INV-CKG-02; ignora validade, inclui SUPERSEDED/ARCHIVED — CEM-001 l.602); ordem = ancestralidade (CEM-001 l.567-577). **Para hipótese** (ORIGINA/HERDA/DEPENDE_DE) = best-effort [PROPOSTA], sem garantia de completude [M-03]. Completude (Evidência) é obrigação; eficiência de travessia ampla = H-001.
++- **Trace Reconstruction (CKG-011):** `trace(x)` = fecho transitivo de `DERIVA_DE` a partir de x para **evidence** — COMPLETO (garantido por INV-CKG-02; ignora validade, inclui SUPERSEDED/ARCHIVED — CEM-001 l.602); ordem = ancestralidade (CEM-001 l.567-577). **Para hipótese** (ORIGINA/HERDA/DEPENDE_DE) = best-effort [PROPOSTA], sem garantia de completude [M-03]. Completude (Evidência) é obrigação; eficiência de travessia ampla = INDETERMINADA até o BUILD medir (DHR-H001-001 D5) *[texto anterior preservado — INV-07: "= H-001"]*.
+ - **Versionamento/dedupe (CKG-012):** atualização aceita sse `supersedes`=última ∧ `version`=anterior+1 ∧ `expected_version`=corrente (compare-and-commit — SPEC-004 CBP-004 l.239-246); ausência de expected_version na atualização ⇒ `EXPECTED_VERSION_REQUIRED`, divergência ⇒ `VERSION_CONFLICT` (códigos de origem SPEC-004 l.243-244 — N-04); 2ª sucessora da mesma versão ⇒ `VERSION_FORK_FORBIDDEN`. **Chave natural (não-canônico):** `(node_type, natural_key)` para asset/timeframe/regime/narrative/observation/learning/**structure/mission/calibration_metric** (M-06 — lista completa); canônico: `(node_type, canonical_ref)`; relação: `(relation_type, from_node, to_node, target_relation_id, valid_from)` — **`target_relation_id` incluído [A-10]** para que INVALIDA (cujo `to_node=null` e alvo é uma RELAÇÃO) não colapse: duas INVALIDA da mesma origem, no mesmo `valid_from`, contra relações-alvo DIFERENTES, têm chaves distintas (não há falso dedupe/DENY). Reescrita idêntica = no-op; divergente sem supersedes ⇒ DENY.
+ - **Gate causal (CKG-008):** `CAUSA ⇒ {mechanism, direction, conditions, regime} ≠ ∅ ∧ posthoc_flag booleano ∧ (outcome_ref XOR no_outcome=true+justificativa)`. Quando `outcome_ref`: `outcome_timestamp := recorded_at(registro apontado por outcome_ref)` [N-02] — payload posterior ⇒ `OUTCOME_TIMESTAMP_INVALID`; `no_outcome=true ∧ outcome_ref` ⇒ `NO_OUTCOME_CONFLICT`; `formulated_at := recorded_at(1ª versão da cadeia supersedes da CAUSA)` [A-01; alternativa "hipótese referenciada" removida — N-02] e `[formulated_at>outcome_timestamp ⇒ posthoc_flag=true]`, `[formulated_at≤outcome_timestamp ⇒ posthoc_flag=false legítimo, não pós-hoc]` (o `recorded_at` do registro corrente NÃO é o baseline — seria sempre > outcome, degenerando). **Núcleo causal imutável na cadeia [N-02/m-A]:** sucessora que ALTERA mechanism/direction/conditions/regime **ou `outcome_ref` ou `no_outcome` [m-A]** ⇒ `CAUSAL_CORE_IMMUTABLE_IN_CHAIN` (correção do núcleo exige NOVA CAUSA com `valid_from`/`formulated_at` próprios, aposentando a antiga via INVALIDA — caminho legítimo m-C; ver RULE-CKG-008). `SIMILAR_A ⇒ similarity_basis`. Juízo bounded. Verifica PRESENÇA e carimbo DERIVADO, não veracidade (ENF-03).
+ - **Confiança (CKG-007):** `confidence ∈ escala própria (PARÂMETRO a calibrar — INDETERMINADO)`; proibido em campo de convicção e `¬∃ aresta e : e.to_node.node_type==conviction` (direta ou multi-salto; INV-04).
+@@ -1066,7 +1075,10 @@ Nenhuma fórmula computa convicção; nenhum limiar de convicção nem escala nu
+ 
+ > **Transitórios (NÃO persistidos):** `CANDIDATE_WRITE` (sob gates), `REJECTED` (falhou), `PENDING_ANCESTOR` (aguarda
+ > ancestral) são do fluxo/buffer de admissão — nada persistido quando rejeitado. Correção/reativação = NOVO registro.
+-> Mecanismo físico = **INDETERMINADO (H-001 ABERTA)**; Opção B (banco de grafos) registrada e ADIADA (research.md §3.5).
++> Mecanismo físico = **Opção C, decidido por Andraus (DHR-H001-001; decisão do mecanismo físico FECHADA por Andraus)**; Opção B do `research.md`
++> (banco de grafos) segue registrada e ADIADA (research.md §3.5); o índice de grafo derivado (Opção D do estudo H-001)
++> está desenhado e NÃO ligado (DHR-H001-001 D2). *[Texto anterior preservado — INV-07: "Mecanismo físico = **INDETERMINADO
++> (H-001 ABERTA)**"]*
+ > [FONTE: RULE-CKG-006/012; SPEC-004 INV-CBP-01; DHR-SPEC006-001 §3]
+ 
+ ---
+@@ -1269,7 +1281,7 @@ VERIFICAÇÃO written == false; fail_open == false; school_not_derivable_denied
+ 
+ ## D8 — Rigor adversarial focado (casos de negação nos pontos de risco)
+ 
+-> **23 casos** cobrindo as 13 BASpecs + fronteiras/decisões abertas. Transversal: **fail-closed**, **nunca deletar/mutar**, **mecanismo físico INDETERMINADO (H-001)**. Todo `rejected_reason` de RUNTIME consta de §D3.1; ADV-08/09/10 são checagens de REVISÃO/spec-time (A-13), não gates de runtime.
++> **23 casos** cobrindo as 13 BASpecs + fronteiras/decisões abertas. Transversal: **fail-closed**, **nunca deletar/mutar**, **mecanismo físico decidido fora da Spec (Opção C — DHR-H001-001; H-001 FECHADA por Andraus), sem efeito sobre os casos** *[texto anterior preservado — INV-07: "**mecanismo físico INDETERMINADO (H-001)**"]*. Todo `rejected_reason` de RUNTIME consta de §D3.1; ADV-08/09/10 são checagens de REVISÃO/spec-time (A-13), não gates de runtime.
+ 
+ ### ADV-CKG-01 — Deleção disfarçada de "esquecimento" (CKG-006)
+ **DADO:** "esquecer" traduzido em DELETE físico. **QUANDO:** o gate roda. **ENTÃO:** negar; só arquivamento versionado. **PORQUE:** INV-07. **VERIFICAÇÃO:** physical_delete == false.
+@@ -1299,6 +1311,7 @@ VERIFICAÇÃO written == false; fail_open == false; school_not_derivable_denied
+ ### ADV-CKG-09 — Mecanismo físico fixado por inércia (CONS-01/mandato) [CHECAGEM DE REVISÃO/SPEC-TIME — A-13]
+ > **Reclassificado (A-13):** governança de spec-time (o Revisor/Andraus verificam que a Spec não fecha H-001), NÃO gate de runtime. `OPEN_DECISION_H001` é marcador de revisão, não `rejected_reason` de runtime.
+ **DADO:** pressão para fixar "grafo real"/escolher engine na Spec. **QUANDO:** a revisão de decisões abertas roda (spec-time). **ENTÃO:** achado de revisão — mecanismo físico permanece INDETERMINADO; Opção B ADIADA. **PORQUE:** H-001 é de Andraus (CONS-01). **VERIFICAÇÃO (revisão):** a Spec não fecha H-001 (conferível por leitura — grep de fechamento = 0).
++> **[Atualização v1.12 — estado, não mérito; o caso acima fica como registro (INV-07)]:** a decisão do mecanismo físico foi FECHADA por Andraus fora desta Spec (DHR-H001-001, 2026-10-18 — Opção C). O objetivo do caso (a Spec **não fixa** mecanismo físico por inércia nem por conta própria — CONS-01) permanece; desde a v1.12 o "ENTÃO" se lê: o mecanismo físico é o **decidido por Andraus (Opção C), citado por referência à ata**, sem regra física nova na Spec; a "Opção B" do `research.md` segue ADIADA. A VERIFICAÇÃO passa a ser: toda menção ao fechamento da H-001 atribui-o a Andraus/DHR-H001-001, nunca a esta Spec. O marcador `OPEN_DECISION_H001` fica como identificador histórico de revisão (não renomeado — ids estáveis).
+ 
+ ### ADV-CKG-10 — Absorver vizinhos / tocar decisão aberta (fronteiras/CONS-01) [CHECAGEM DE REVISÃO/SPEC-TIME — A-13]
+ > **Reclassificado (A-13):** checagem de ESCOPO de spec-time, NÃO gate de runtime. `OUT_OF_SCOPE_OR_OPEN_DECISION` é marcador de revisão, não `rejected_reason` de runtime.
+@@ -1314,7 +1327,7 @@ VERIFICAÇÃO written == false; fail_open == false; school_not_derivable_denied
+ **DADO:** `valid_to` escrito SOBRE o registro de criação (mutação), ou `valid_to < valid_from`. **QUANDO:** a invalidação roda. **ENTÃO:** rejeitar; invalidação só por NOVO registro; janela inválida `INVALID_TIME_WINDOW`. **PORQUE:** append-only real (INV-CBP-01). **VERIFICAÇÃO:** existing_record_mutated == false; invalid_time_window_rejected == true.
+ 
+ ### ADV-CKG-14 — Trace incompleto ou consulta que muta estado (CKG-011)
+-**DADO:** reconstrução de EVIDÊNCIA que para no 1º salto, ou consulta que grava. **QUANDO:** a consulta roda. **ENTÃO:** exigir fecho completo da Evidência (obrigação); consulta read-only. **PORQUE:** CEM-001 l.612-614; H-001 não rebaixa a completude. **VERIFICAÇÃO:** trace_complete == true; state_mutated_by_query == false.
++**DADO:** reconstrução de EVIDÊNCIA que para no 1º salto, ou consulta que grava. **QUANDO:** a consulta roda. **ENTÃO:** exigir fecho completo da Evidência (obrigação); consulta read-only. **PORQUE:** CEM-001 l.612-614; o mecanismo físico (Opção C — DHR-H001-001) não rebaixa a completude *[texto anterior preservado — INV-07: "H-001 não rebaixa a completude"]*. **VERIFICAÇÃO:** trace_complete == true; state_mutated_by_query == false.
+ 
+ ### ADV-CKG-15 — Transição remove/reescreve a versão anterior (CKG-012/INV-07)
+ **DADO:** SUPERSEDED implementado apagando/reescrevendo a versão anterior. **QUANDO:** a transição roda. **ENTÃO:** rejeitar; anterior preservada; estado = projeção derivada. **PORQUE:** INV-07; INV-CBP-01. **VERIFICAÇÃO:** old_version_preserved == true; old_version_mutated == false.
+@@ -1357,15 +1370,19 @@ Cada registro DEVE ser reconstruível (P13): tipo, `version`, `supersedes`, `exp
+ `gate_record` se gate; `lineage` se derivado), validade (`valid_from`/`valid_to`/`recorded_at`) e `collision_record`
+ quando houver. A **Trace Reconstruction COMPLETA da EVIDÊNCIA** é capacidade central (CEM-001 l.608-615) — comportamento
+ verificável (CKG-011); o trace de hipótese é best-effort [PROPOSTA]. Observabilidade agregada = SPEC-040; reconstrução
+-expandida de trabalho = SPEC-004 — aqui por referência (coerente com D0–D7 e H-001 ABERTA). [FONTE: CONSTITUTION P13;
+-CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
++expandida de trabalho = SPEC-004 — aqui por referência (coerente com D0–D7 e com o mecanismo físico decidido fora da Spec —
++Opção C, DHR-H001-001; o log só-inserção é a trilha — estudo H-001 §5 "Auditoria") *[texto anterior preservado — INV-07:
++"(coerente com D0–D7 e H-001 ABERTA)" · "[FONTE: …; H-001 ABERTA]"]*. [FONTE: CONSTITUTION P13; CEM-001 l.608-615;
++SPEC-004 replay; DHR-H001-001]
+ 
+ ---
+ 
+ ## Contrato do nó/relação — esqueleto [PROPOSTA]
+ 
+ > Produto central. **Referencia** os canônicos por `canonical_ref`; **não** os redefine (CC-02). Mecanismo físico =
+-> **INDETERMINADO (H-001 ABERTA)**. Todo write é E3.
++> **Opção C, decidido por Andraus (DHR-H001-001; decisão do mecanismo físico FECHADA por Andraus)** — este esqueleto é LÓGICO e não muda; a forma
++> física (tabelas/visões) é [PROPOSTA de BUILD] do estudo H-001 §4-C, não decidida aqui *[texto anterior preservado — INV-07:
++> "Mecanismo físico = **INDETERMINADO (H-001 ABERTA)**"]*. Todo write é E3.
+ >
+ > **Identidade [M-05]:** `computed_by` = identidade AUTENTICADA do PRODUTOR/proponente; `writer_id` = identidade
+ > AUTENTICADA do COMMITTER (runtime; serviço do KG para collision/transition). São DISTINTOS (não é mais `writer_id ==
+@@ -1444,7 +1461,7 @@ CEM-001 l.608-615; SPEC-004 replay; H-001 ABERTA]
+   }
+ }
+ ```
+-> Nenhum campo computa convicção nem deriva de custo (INV-04). `knowledge_state` é projeção derivada, não campo. Mecanismo físico = INDETERMINADO (H-001 ABERTA).
++> Nenhum campo computa convicção nem deriva de custo (INV-04). `knowledge_state` é projeção derivada, não campo. Mecanismo físico = Opção C, decidido por Andraus (DHR-H001-001; decisão do mecanismo físico FECHADA por Andraus) *[texto anterior preservado — INV-07: "INDETERMINADO (H-001 ABERTA)"]*.
+ 
+ ---
+ 
+@@ -1518,7 +1535,7 @@ PRECOND      : (consulta read-only) AND (consumidor autorizado a ler) AND **[A-1
+ POSTCOND     : resposta/trace da Evidência COMPLETO; trace de hipótese best-effort; nenhum estado alterado; confiança não exposta em objeto de convicção
+ POLICY       : RULE-CKG-011; RULE-CKG-007 (guard de leitura — A-14); CEM-001 l.608-615/l.612-614; SAS-001 §6.12; INV-04
+ LEVEL        : E1 (Contratual — leitura observável; não muta estado) — **o guard de leitura da confiança é E1, distinto do guard de ESCRITA E3 (EC-CKG-004) — A-14**
+-FAILURE-MODE : Fail-closed — consulta que tente mutar ⇒ negada; consulta que exponha confiança em campo de convicção ⇒ filtrada/negada (E1); completude do trace de Evidência é obrigatória; eficiência ampla = INDETERMINADO até H-001
++FAILURE-MODE : Fail-closed — consulta que tente mutar ⇒ negada; consulta que exponha confiança em campo de convicção ⇒ filtrada/negada (E1); completude do trace de Evidência é obrigatória; eficiência ampla = INDETERMINADO até o BUILD medir (DHR-H001-001 D5) [v1.12 — reancoragem, nível/modo inalterados; texto anterior preservado — INV-07: "INDETERMINADO até H-001"]
+ EVIDENCE     : log de consulta read-only; trace = fecho transitivo de DERIVA_DE; verificação de que o resultado não traz `relation_confidence` em campo de convicção
+ ```
+ 
+@@ -1532,12 +1549,15 @@ Combina gates constitutivos (Classe C: ontologia/integridade, proveniência, imu
+ isolamento confiança×convicção, colisão) + mecânica determinística (Classe D: catálogo, temporalidade bitemporal,
+ lifecycle, consulta/trace) + um juízo com gate de saída (Classe H: similaridade/causalidade). **Não guarda trabalho, não
+ transporta, não forma conhecimento, não decide, não computa convicção, não executa, e NÃO escolhe o mecanismo físico
+-(H-001 ABERTA).** [FONTE: ROADMAP §6; CEM-001 l.608-615; SAS-001 §6.12; research.md §3/§4]
++(escolhido por Andraus fora desta Spec — Opção C, DHR-H001-001; decisão do mecanismo físico FECHADA por Andraus).** *[texto anterior preservado —
++INV-07: "(H-001 ABERTA)"]* [FONTE: ROADMAP §6; CEM-001 l.608-615; SAS-001 §6.12; research.md §3/§4]
+ 
+ ### Roteamento de modelo (CEE-001 §5)
+ Gates C/D não requerem LLM. O juízo de similaridade/causalidade (Classe H, CKG-008) pode usar apoio semântico **apenas
+-como detector** para PROPOR; o gate de saída é **determinístico** (ENF-03). Mecanismo físico = **INDETERMINADO = H-001
+-(ABERTA)**. [FONTE: CEE-001 §5; ENF-03; H-001 ABERTA]
++como detector** para PROPOR; o gate de saída é **determinístico** (ENF-03). Mecanismo físico = **Opção C, decidido por
++Andraus (DHR-H001-001)** — sem chamada a LLM por escrita (estudo H-001 §5 "Custo operacional"); roteamento inalterado
++*[texto anterior preservado — INV-07: "Mecanismo físico = **INDETERMINADO = H-001 (ABERTA)**" · "[FONTE: …; H-001 ABERTA]"]*.
++[FONTE: CEE-001 §5; ENF-03; DHR-H001-001]
+ 
+ ### Dependências técnicas
+ CEM-001 (BASELINE) · CHM-001 · CCM-001 · CEE-001 l.111 · SAS-001 §6.12 · SPEC-004 v1.2 (BASELINE — proveniência/
+@@ -1552,8 +1572,9 @@ elegíveis, nenhum adotado).
+ ### Riscos técnicos e Salvaguardas
+ | Risco | Salvaguarda |
+ |---|---|
+-| Banco de grafos por inércia do nome "Graph" | Opção A; Opção B ADIADA; mecanismo físico = H-001 (ABERTA); ADV-09 |
+-| Fixar H-001 por engano | contrato independe de H-001; H-001 [DECISÃO NECESSÁRIA]; ADV-09; CONS-01 |
++| Banco de grafos por inércia do nome "Graph" | Opção A; Opção B ADIADA; mecanismo físico = Opção C decidida por Andraus (DHR-H001-001 — grafo nativo não adotado como verdade; índice derivado D desenhado, não ligado); ADV-09 *[texto anterior preservado — INV-07: "mecanismo físico = H-001 (ABERTA)"]* |
++| Fixar H-001 por engano | contrato independe do mecanismo físico; H-001 FECHADA por Andraus (DHR-H001-001), nunca por esta Spec; ADV-09; CONS-01 *[texto anterior preservado — INV-07: "contrato independe de H-001; H-001 [DECISÃO NECESSÁRIA]"]* |
++| [v1.12] Escolha física envelhecer antes do BUILD | revisão por gatilho no início do BUILD (DHR-H001-001 D5; estudo H-001 §8) — cita a ata, não cria regra |
+ | Absorver a SPEC-007 (formação/retrieval) | Non-goal; CKG-010 (selo); ADV-08 |
+ | Reabrir/duplicar SPEC-004/005 | CC-02; cobertura×lacuna; INV-09; ADV-10 |
+ | Confiança virar Convicção | INV-04; CKG-007; EC-CKG-004; ADV-03/05 |
+@@ -1572,14 +1593,15 @@ elegíveis, nenhum adotado).
+ - **Schemas:** introduz o schema lógico do registro de nó/relação; nenhum schema canônico nem SPEC-004/005 alterado.
+ - **RAG/KG:** especifica o contrato do próprio KG; formação/retrieval em SPEC-007 (não absorvida).
+ - **Skills:** nenhuma afetada; INV-06 preservado.
+-- **Testes:** adiciona `checks.md`; mecanismo físico fica para BUILD (H-001).
++- **Testes:** adiciona `checks.md`; a implementação física (Opção C — DHR-H001-001) fica para o BUILD *[texto anterior preservado — INV-07: "mecanismo físico fica para BUILD (H-001)"]*.
+ - **Modelos/Specs:** CEM/CHM/CCM/SPEC-004/005 não alterados; RULE-BB-004 reforçada no eixo permanente.
+-- **Compatibilidade:** Minor — não toca canônico baselined, não reabre SPEC-004/005, não fecha decisão aberta (H-001 ABERTA).
++- **Compatibilidade:** Minor — não toca canônico baselined, não reabre SPEC-004/005, não fecha decisão aberta (a H-001 foi FECHADA por Andraus na DHR-H001-001, fora desta Spec; a errata v1.12 só propaga a referência) *[texto anterior preservado — INV-07: "(H-001 ABERTA)"]*.
+ 
+ ### Tasks (adiadas — fase spec-first)
+ BUILD/Tasks/Engineering Cards adiados (atomic-spec §14). Aplicarão SES-001 §59/§60 (CC-06/CC-07), a Classe por BASpec
+-(CC-11) e o mecanismo físico (INDETERMINADO, **H-001**). O fechamento de H-001 é de Andraus; a homologação do Plan não o
+-exige (contrato fechável com mecanismo físico aberto — Opção A).
++(CC-11) e o mecanismo físico **decidido por Andraus: Opção C (DHR-H001-001)**, com revisão por gatilho no início do BUILD
++(D5). *[Texto anterior preservado — INV-07: "e o mecanismo físico (INDETERMINADO, **H-001**). O fechamento de H-001 é de
++Andraus; a homologação do Plan não o exige (contrato fechável com mecanismo físico aberto — Opção A)."]*
+ 
+ ---
+ 
+@@ -1589,11 +1611,13 @@ exige (contrato fechável com mecanismo físico aberto — Opção A).
+ e ≥1 caso de negação em D8 (CKG-001→ADV-12/17/23,T01/T18/T19; 002→ADV-11,T02/T09; 003→ADV-12/16/20,T03; 004→ADV-13,T04; 005→ADV-06/22,
+ T14/T17; 006→ADV-01/19,T05; 007→ADV-03/05,T06; 008→ADV-04,T07/T16 (incl. caso POSITIVO formulated_at<outcome — A-01); 009→ADV-07/22,T08/T17; 010→ADV-08/21,T09 (admissão POSITIVA por tipo — N-01; TRAJECTORY_NEVER_ACTIVE/CANONICAL_HISTORY_UNRESOLVABLE por tipo ficam em ADV-21, não em T09 — N-03); 011→ADV-14,T10; 012→
+ ADV-15/19,T13; 013→ADV-02/18,T11). "Se a BASpec estivesse errada" é observável em cada caso. Nenhuma restou [DECISÃO
+-NECESSÁRIA] por falta de verificabilidade (H-001/selo SPEC-007/M-001/J-001/N-001/G-001/K-001/C-001/WF-D03 são fronteiras/
+-decisões abertas explícitas, não falhas de verificabilidade).
++NECESSÁRIA] por falta de verificabilidade (selo SPEC-007/M-001/J-001/N-001/G-001/K-001/C-001/WF-D03 são fronteiras/
++decisões abertas explícitas, não falhas de verificabilidade; a decisão do mecanismo físico foi FECHADA por Andraus — DHR-H001-001 — e não altera
++nenhum ENTÃO) *[texto anterior preservado — INV-07: "(H-001/selo SPEC-007/M-001/…/WF-D03 são fronteiras/decisões abertas
++explícitas…)"]*.
+ 
+ **Bloco B — herança obrigação-a-obrigação (CC-08):** evidência por obrigação herdada:
+-- CEM-001 "preservar os estados (da Evidência) / trace COMPLETO" → CKG-010 preserva os estados **a partir da admissão** como regra LOCAL (A-03 — o MODIFIED de CEM-001 l.494 foi RETIRADO por premissa falsa; EMERGENT/CANDIDATE são estados da HIPÓTESE e cabem à SPEC-004, não há obrigação canônica de guardá-los no KG) + CKG-011 trace completo da EVIDÊNCIA (não rebaixado por H-001; hipótese = [PROPOSTA]); admissão exige trajetória que passou pelo ESTADO DE VALIDAÇÃO DO TIPO (predicado POR TIPO — A-02/N-01; hypothesis ACTIVE∨DOMINANT, evidence ACTIVE; **conviction NEGADO por padrão — N-07, CCM-001 não define histórico de status, M-001 ABERTA**), provada via `canonical_history_ref` no canônico; não redefine.
++- CEM-001 "preservar os estados (da Evidência) / trace COMPLETO" → CKG-010 preserva os estados **a partir da admissão** como regra LOCAL (A-03 — o MODIFIED de CEM-001 l.494 foi RETIRADO por premissa falsa; EMERGENT/CANDIDATE são estados da HIPÓTESE e cabem à SPEC-004, não há obrigação canônica de guardá-los no KG) + CKG-011 trace completo da EVIDÊNCIA (não rebaixado pelo mecanismo físico — Opção C, DHR-H001-001 *[texto anterior preservado — INV-07: "não rebaixado por H-001"]*; hipótese = [PROPOSTA]); admissão exige trajetória que passou pelo ESTADO DE VALIDAÇÃO DO TIPO (predicado POR TIPO — A-02/N-01; hypothesis ACTIVE∨DOMINANT, evidence ACTIVE; **conviction NEGADO por padrão — N-07, CCM-001 não define histórico de status, M-001 ABERTA**), provada via `canonical_history_ref` no canônico; não redefine.
+ - CEM-001 Cap.5 `Lineage` → tipo DERIVA_DE (aresta) + `provenance_ref.lineage` (campo local [PROPOSTA]), distinguidos.
+ - CHM-001 (estados/versionamento) → CKG-002/012 por referência; não transiciona.
+ - CCM-001 → CKG-007/EC-CKG-004 isolam confiança (INV-04); `conviction` é **NEGADO por padrão na admissão** (`CONVICTION_HISTORY_UNDEFINED` — N-07; CCM-001 l.58/78 define só o enum `status`, sem histórico de transições; M-001 Cap.5 l.117 ABERTA; pré-requisito/decisão de Andraus), logo nenhum estado de conviction é admitido no KG nesta versão (CKG-010).
+@@ -1604,13 +1628,13 @@ decisões abertas explícitas, não falhas de verificabilidade).
+ Nenhuma obrigação herdada suprimida (REMOVED vazio) nem contradita (MODIFIED = RULE-BB-004 reforçada; o antigo M-01 sobre CEM-001 l.494 foi RETIRADO por premissa falsa — A-03 — e a preservação "a partir da admissão" passou a regra LOCAL CKG-010, RULE-HD-02/03). **Eixo VERTICAL (RULE-HV) não aplicável.**
+ 
+ **Bloco C — epistêmico / disciplinas N8–N17 (verificado — sem achado residual):**
+-- **RULE-EPI-01..03:** H-001/mecanismo físico = INDETERMINADO (não fato); nenhuma hipótese tratada como fato.
++- **RULE-EPI-01..03:** mecanismo físico = Opção C por decisão de Andraus (DHR-H001-001 — FATO NORMATIVO pela ata, não por esta Spec); o desempenho multi-salto dessa escolha NÃO é tratado como fato (medido só no BUILD — D5; estudo §9); nenhuma hipótese tratada como fato. *[Texto anterior preservado — INV-07: "H-001/mecanismo físico = INDETERMINADO (não fato)"]*
+ - **RULE-SEM-01/04:** acepções declaradas (CC-10); termos canônicos não redefinidos.
+ - **RULE-ONT-01/02:** ontologia declarada (§D2.1); `school`/`hierarchy_role` derivados do produtor **só para hypothesis** (N-01; structure/Fractal sem fonte segura = CKG-STRUCT-ORIGIN-001 [DECISÃO NECESSÁRIA]); `ontological_status` {observational, theoretical} (RULE-ONT-01, l.671); alteração por governança (RULE-ONT-02/CKG-009).
+-- **RULE-INQ:** questões abertas (H-001, selo SPEC-007, allowlist, host do juízo, migração de ontologia) formuladas como [DECISÃO NECESSÁRIA], não respondidas por suposição.
++- **RULE-INQ:** questões abertas (selo SPEC-007, allowlist, host do juízo, migração de ontologia) formuladas como [DECISÃO NECESSÁRIA], não respondidas por suposição; a H-001 foi respondida por Andraus (DHR-H001-001), não por suposição desta Spec. *[Texto anterior preservado — INV-07: "questões abertas (H-001, selo SPEC-007, …)"]*
+ - **RULE-CAU-01/02/03:** CKG-008 exige mechanism+direction+conditions (01), regime (02), marcador pós-hoc + desfecho (03/M-04); gate verifica presença (ENF-03).
+ - **RULE-CTF:** nenhuma afirmação contrafactual carregada; "o que seria observável se errada" é só teste de verificabilidade.
+-- **RULE-UNC-01..03:** incerteza localizada (eficiência de consulta ampla até H-001); completude do trace de Evidência NÃO é incerta.
++- **RULE-UNC-01..03:** incerteza localizada (eficiência de consulta ampla até o BUILD medir — DHR-H001-001 D5 *[texto anterior preservado — INV-07: "até H-001"]*); completude do trace de Evidência NÃO é incerta.
+ - **RULE-PRB:** nenhuma probabilidade/precisão numérica; confiança = PARÂMETRO a calibrar, sem número.
+ - **RULE-DEC-01:** o KG armazena/relaciona/consulta; não decide nem executa (INV-05).
+ - **RULE-MET-01:** nenhuma escala/limiar fabricado; SRC-FORGET-01 = DADO não-verbatim (não sustenta sozinha alegação carregada — "esquecimento=arquivamento" apoia-se em INV-07/RULE-BB-004).
+@@ -1618,9 +1642,11 @@ Nenhuma obrigação herdada suprimida (REMOVED vazio) nem contradita (MODIFIED =
+ **Bloco D — reforço de escopo:** a Spec **preserva/relaciona/consulta** conhecimento permanente, **não guarda trabalho**
+ (SPEC-004), **não transporta** (SPEC-005), **não forma** (SPEC-007), **não executa** (INV-05/RULE-DEC-01), **não decide**
+ nem **computa** convicção. Nenhuma BASpec cruza a fronteira SOT→execução downstream. Dependências de Andraus (homologação;
+-RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migração de ontologia; **CKG-STRUCT-ORIGIN-001**
++RULE-CKG/contrato; selo SPEC-007; allowlist/host do juízo; migração de ontologia; **CKG-STRUCT-ORIGIN-001**
+ (origem/escola de `structure`; `school=Fractal` — N-01/N-09, BL-035); **timeout `PENDING_ANCESTOR`** (N-07)) marcadas
+-[PROPOSTA]/[DECISÃO NECESSÁRIA]; M-001/J-001/N-001/G-001/K-001/C-001/WF-D03/ECC-03-001 abertas, não tocadas.
++[PROPOSTA]/[DECISÃO NECESSÁRIA]; M-001/J-001/N-001/G-001/K-001/C-001/WF-D03/ECC-03-001 abertas, não tocadas. A **H-001** já
++foi decidida por Andraus (DHR-H001-001 — Opção C) e é citada como FATO pela ata, não como dependência aberta. *[Texto
++anterior preservado — INV-07: a lista de dependências incluía "**H-001**" entre "RULE-CKG/contrato;" e "selo SPEC-007".]*
+ 
+ ---
+ 
+@@ -1635,7 +1661,9 @@ RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migraçã
+ | Origem/escola de `structure` e elo `structure→hypothesis`; `school=Fractal` sem produtor (N-09) | [DECISÃO NECESSÁRIA] | **CKG-STRUCT-ORIGIN-001 — ABERTA** (dona: Andraus; BL-035); N-01 opção (a) |
+ | Fontes SRC-ZEP-01/PROV-01/MEMVSKG-01; REPO-graphiti/graphrag/cognee/mem0 | [EXTERNO] | DADO, nunca baseline |
+ | SRC-FORGET-01 (sumário WebSearch) | [EXTERNO] | DADO **não-verbatim** — não sustenta sozinha alegação carregada |
+-| Mecanismo físico de armazenamento | [DECISÃO NECESSÁRIA] | **H-001 — EM ABERTO — não fechar** (Andraus) |
++| Mecanismo físico de armazenamento | [FONTE] | **FATO NORMATIVO por decisão de Andraus — decisão do mecanismo físico FECHADA por Andraus (DHR-H001-001, 2026-10-18): Opção C** (PostgreSQL fonte única de verdade, só-inserção, bitemporal, travessia recursiva no banco — D1); revisão por gatilho no início do BUILD (D5); não decidido por esta Spec *[texto anterior preservado — INV-07: "[DECISÃO NECESSÁRIA] \| **H-001 — EM ABERTO — não fechar** (Andraus)"]* |
++| Eficiência de consulta multi-salto sob a Opção C | [INFERÊNCIA] | INDETERMINADO até o BUILD medir (DHR-H001-001 D5; estudo H-001 §9) — sem número (RULE-MET-01) |
++| Índice de grafo derivado (Opção D do estudo H-001) | [FONTE] | Desenhado e **NÃO ligado** até o BUILD medir (DHR-H001-001 D2) |
+ | Banco de grafos dedicado (Opção B) | [DECISÃO NECESSÁRIA] | **ADIADO** — registrado, não apagado (INV-07) |
+ | Escala numérica de confiança de relação | [DECISÃO NECESSÁRIA] | PARÂMETRO a calibrar — INDETERMINADO (não toca J-001/N-001) |
+ | Limite/timeout da espera `PENDING_ANCESTOR` (buffer de admissão — N-07) | [DECISÃO NECESSÁRIA] | BOUNDED; valor = runtime/K-001; esgotado ⇒ fail-closed |
+@@ -1666,9 +1694,9 @@ RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migraçã
+ [x] Profundidade D0–D7 (+ D8 focado); §D2.1 (matriz) + §D2.2 (colisão); §D3.1 (vocabulário); D4; D5 (estado derivado); D6; D7 x19; D8 x23; D9 por referência.
+ [x] Enforcement Contract em todo ato com efeito (EC-CKG-001..006); escrita = E3; E1 consulta; guard confiança×convicção = E3; ENF-07 amostral nos E3 (CONDICIONAL até limiar).
+ [x] Status epistemológico aplicado (FATO NORMATIVO / PROPOSTA / INFERÊNCIA / EXTERNO / DECISÃO NECESSÁRIA).
+-[x] CONS-01: H-001, M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 e a nova CKG-STRUCT-ORIGIN-001 (N-01/N-09; BL-035) + o timeout `PENDING_ANCESTOR` (N-07) permanecem ABERTAS; nenhuma usada como invariante fechado; STRUCT-10 respeitado.
++[x] CONS-01: M-001, J-001, N-001, G-001, K-001, C-001, WF-D03, ECC-03-001 e a nova CKG-STRUCT-ORIGIN-001 (N-01/N-09; BL-035) + o timeout `PENDING_ANCESTOR` (N-07) permanecem ABERTAS; nenhuma usada como invariante fechado; STRUCT-10 respeitado. [v1.12] decisão do mecanismo físico FECHADA por Andraus (DHR-H001-001; ROADMAP "Decisões FECHADAS") — citada como fato pela ata, nunca como fechada por esta Spec. *[Texto anterior preservado — INV-07: a lista começava por "H-001,".]*
+ [x] Etiquetagem [FONTE]/[INFERÊNCIA]/[PROPOSTA]/[DECISÃO NECESSÁRIA]/[EXTERNO] aplicada.
+-[x] CONSOLIDAÇÃO (Rodada 6, preservada): cada regra definida UMA vez (RULE-CKG/BASpec); EARS/D4/D6/EC/T/ADV/Herança referenciam por ID; narrativa histórica só no changelog (1 linha/versão, ordenado 1.0→1.11).
++[x] CONSOLIDAÇÃO (Rodada 6, preservada): cada regra definida UMA vez (RULE-CKG/BASpec); EARS/D4/D6/EC/T/ADV/Herança referenciam por ID; narrativa histórica só no changelog (1 linha/versão, ordenado 1.0→1.12).
+ [x] Integridade: nenhuma fonte inventada; âncoras canônicas RE-VERIFICADAS na errata v1.8 (A-06..A-09) e v1.9 (N-01: CEM-001 l.258-262 estado de validação da Evidência = ACTIVE; CCM-001 l.58/78 = COMPUTED/GATED_PASS; N-06: BASpec-CBP-007 l.543-565): CEM-001 l.258-262/l.473-475/l.602/l.606/l.608-615 e l.489-497 (tabela Consumo — l.494 é estados da EVIDÊNCIA, não obrigação sobre hipótese — A-03); CHM-001 §4.3 l.744-748/l.379 (A-02); CCM-001 l.58/78; CONSTITUTION l.191/192 (A-09); SPEC-001 l.97/100/104/108/515-520/524; SPEC-004 CBP-004 l.239-246/CBP-007 l.264-270 (DEFINIÇÃO; BASpec em l.543-565 — A-06/N-06)/CBP-014 l.311-319; SPEC-005 l.971 (A-09); RULES ONT-01 l.671/ONT-02 l.672 (A-09); ABERTURA §10 R-8 (A-08); RMR-001 por ID/âncora BL-029 (nota DHR-SPEC006-PEND-001) `Em espera` — A-07.
+ [x] 4Es na ordem; Conformidade > Eficácia. Latência não material (consulta opcional/não-bloqueante — SAS-001 §6.12).
+ [x] Dependências a montante homologadas; selo SPEC-007 marcado [DECISÃO NECESSÁRIA].
+@@ -1685,9 +1713,11 @@ RULE-CKG/contrato; **H-001**; selo SPEC-007; allowlist/host do juízo; migraçã
+ **Pronto para revisão.**
+ 
+ [DECISÃO NECESSÁRIA] / abertas nesta Spec (não fechadas — CONS-01):
+-- **H-001** — a SPEC-006 **propõe o recorte** (contrato independe do mecanismo físico), mas **não decide** — é de Andraus. Permanece ABERTA.
++- *[Registro histórico até a v1.11 — superado na v1.12, ver atualização abaixo]* **H-001** — a SPEC-006 **propõe o recorte** (contrato independe do mecanismo físico), mas **não decide** — é de Andraus. Permanece ABERTA.
+   - **Nota A-05 (governança — achado da auditoria independente):** a SPEC-006 foi homologada (v1.7) com **H-001 ABERTA** (Opção A, correto), mas **H-001 ficou SEM DONO** após a homologação — ROADMAP §6, atomic-spec §12 e revisor.md §8 ainda atribuem H-001 à SPEC-006 (já homologada). O **re-apontamento da dona de H-001** (ex.: BL com gatilho de BUILD/Spec futura, e atualização de ROADMAP §6 / atomic-spec §12 / revisor.md §8) é **decisão exclusiva de Andraus** — esta errata **NÃO escolhe a dona** nem edita aqueles documentos (CONS-01; AGENTS §10). Apenas REGISTRA o achado.
++  - **[Atualização v1.12 — os dois itens acima ficam como registro histórico (INV-07)]:** a **decisão do mecanismo físico foi FECHADA por Andraus** (DHR-H001-001, chat 2026-10-18; ROADMAP "Decisões FECHADAS") **fora desta Spec**: Opção C — PostgreSQL como fonte única de verdade, só-inserção, bitemporal, travessia recursiva no banco (D1); Opção D desenhada e NÃO ligada até o BUILD medir (D2); revisão por gatilho no início do BUILD (D5). Com isso a H-001 **sai desta lista de abertas**; a pendência da Nota A-05 (dona) perdeu objeto por decisão de Andraus (a própria DHR-H001-001 §3/D4 atualizou ROADMAP/atomic-spec §12/revisor.md §8) — a SPEC-006 não escolheu dona nem editou aqueles documentos.
+ - **Opção B (banco de grafos)** — ADIADA (registrada, não apagada — INV-07).
++- **[v1.12] Eficiência de consulta multi-salto sob a Opção C** — INDETERMINADA até o BUILD medir; ligar o índice derivado (Opção D do estudo H-001) depende dessa medição (DHR-H001-001 D2/D5). Não é decisão aberta nova — é a incerteza RULE-UNC já existente, reancorada.
+ - **Escala de confiança de relação** — PARÂMETRO a calibrar (INDETERMINADO; não toca J-001/N-001).
+ - **Limite/timeout da espera em `PENDING_ANCESTOR`** (buffer de admissão, INV-CKG-02/N-07) — BOUNDED, mas o valor é [DECISÃO NECESSÁRIA] (runtime/K-001; sem número arbitrário — RULE-MET-01); esgotado ⇒ fail-closed `DERIVA_DE_EDGE_MISSING`.
+ - **Contrato do selo de publicação** — dependência da **SPEC-007**; [DECISÃO NECESSÁRIA].
