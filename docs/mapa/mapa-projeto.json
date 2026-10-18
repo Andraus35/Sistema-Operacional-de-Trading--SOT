@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-18",
-  "digest": "59f1e07f9e82d89f62c39f3ee9f1a093127074e5e887e7b1742e31ad996df6d3",
+  "digest": "5c91a282074e67a0651df6b5f3f4fc22eef54827b07ae80413a3135a070063ff",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -137,7 +137,7 @@
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
    "in": 237,
-   "out": 67
+   "out": 68
   },
   {
    "path": "WORKFLOW.md",
@@ -774,7 +774,7 @@
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
    "in": 109,
-   "out": 186
+   "out": 187
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -1536,7 +1536,7 @@
    "path": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-003 — Ata de Homologação — Errata v1.11 da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 4,
+   "in": 7,
    "out": 13
   },
   {
@@ -2524,7 +2524,7 @@
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 134,
-   "out": 28
+   "out": 29
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -3380,7 +3380,7 @@
   {
    "id": "DHR-SPEC006-003",
    "defined_in": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
-   "cited_by": 4
+   "cited_by": 7
   },
   {
    "id": "DHR-SPEC006-OPCAO2-001",
@@ -6657,6 +6657,11 @@
   {
    "from": "ROADMAP.md",
    "to": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "ROADMAP.md",
+   "to": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
    "type": "id"
   },
   {
@@ -16856,6 +16861,16 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md",
    "type": "id"
   },
@@ -17168,6 +17183,11 @@
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
@@ -30632,6 +30652,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
    "type": "id"
   },
   {
