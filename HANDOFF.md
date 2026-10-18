@@ -1,10 +1,10 @@
 ---
-handoff_id: HO-2026-10-18-51
-previous: HO-2026-10-18-50
+handoff_id: HO-2026-10-18-52
+previous: HO-2026-10-18-51
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
 base_commit: 0de7534
-spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATA v1.11 HOMOLOGADAS (DHR-SPEC006-002/-003); H-001 ABERTA — frente atual: ABRIR H-001 (ordem de Andraus); próxima Spec do ROADMAP = SPEC-007 (abertura pendente de autorização)
+spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATA v1.11 HOMOLOGADAS (DHR-SPEC006-002/-003); H-001 ABERTA — Andraus quer levá-la à decisão final (tecnologia incluída) após medir hash/sincronização e criar o roteamento por tarefa; próxima Spec do ROADMAP = SPEC-007 (abertura pendente)
 fase: spec-first
 autor: Orquestrador
 ---
@@ -13,6 +13,9 @@ autor: Orquestrador
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência com a realidade, a realidade prevalece.
 
 ## 1. Objetivo da frente atual
+**ATUALIZAÇÃO HO-52 (ordem de Andraus, 2026-10-18):** em vez de só "abrir", levar a H-001 à **decisão final por inteiro, tecnologia incluída, sem pendência nem quebra documental**, depois de (a) medir a eficácia do hash (`spec_delta`) e do carimbo de sincronização (RPSA) e (b) implantar o **roteamento determinístico por tarefa** (Orquestrador agrupa por modelo: Opus 5.5 desenho × Sonnet 5.5 auditoria; faz sozinho as correções mínimas seguindo os relatórios do Revisor). **Plano (PROPOSTA): `governance/propostas/PLANO-FECHAR-H001-E-ROTEAR-MODELOS-2026-10-18.md` — aguardando aprovação de Andraus.** Andraus pediu para **aguardar o plano antes de abrir o PR do handoff**. Nada do plano foi executado; nenhuma decisão alterada.
+
+(Texto anterior HO-51:)
 **Abrir a H-001** (ordem de Andraus no chat, 2026-10-18: "vamos abrir H-001"). H-001 = *"Knowledge Graph: grafo real ou estrutura em memória?"* (`atomic-spec.md` §12 l.378), dona nominal SPEC-006, hoje **ABERTA**. "Abrir" = levar a decisão a Andraus com estudo e perguntas; **NÃO é fechar**. Fechar exige decisão expressa dele + ata + atualizar `ROADMAP.md` ("Decisões FECHADAS") e `AGENTS.md` §7.
 
 ## 2. Estado (fatos conferidos em 2026-10-18)
@@ -30,7 +33,7 @@ autor: Orquestrador
 Ver §2. Nenhum código alterado nesta rodada (só documentos).
 
 ## 5. Próximo passo único
-**Abrir a H-001 com Andraus** (sem fechá-la):
+**Aprovação do plano por Andraus** (`governance/propostas/PLANO-FECHAR-H001-E-ROTEAR-MODELOS-2026-10-18.md`): Fase 0 medir → Fase 1 roteador/2 agentes por papel (ordem+ata) → Fase 2 decisão final da H-001. Detalhe do estudo da H-001 (antes "abrir"):
 1. Ler: `atomic-spec.md` §12 l.378; `governance/DHR-SPEC006-001_*` (Q-ABERTURA-3: regras do contrato FECHADAS, tecnologia de armazenamento EM ABERTO — "Opção A"); `specs/features/SPEC-006/research.md` (conclusão: "Knowledge Graph" no SOT = memória semântica permanente, **não** necessariamente banco de grafos; KERNEL-V2 l.1101-1104) e `specs/features/SPEC-006/sources/REPO-{graphiti,cognee,graphrag,mem0}.txt`, `SRC-ZEP-01.txt`, `SRC-MEMVSKG-01.txt`; `plan.md` (limites declarados "integridade física sem digest", "eficiência de travessia ampla = H-001/BUILD").
 2. Acionar o **Especificador SOT** para uma **PROPOSTA** de estudo da H-001: opções (p.ex. grafo real/property graph · grafo temporal estilo Graphiti · estrutura em memória/relacional + log append-only), critérios (imutabilidade INV-07, auditoria E3 fail-closed, trace completo CEM-001, custo/Economicidade só depois de Eficácia — 4Es, SOT não executa ordem), o que cada opção exige de BUILD, gatilhos e dependências. **Rotular [PROPOSTA]; nada vira baseline.**
 3. Levar a Andraus por **AskUserQuestion** (linguagem simples; recomendação primeiro). Só se ele mandar encerrar a H-001: ata nova (`DHR-…`), registro em `ROADMAP.md` e `AGENTS.md` §7, tratamento do teto "CONFORME condicional" e reavaliação do BL-003 (gatilho SPEC-006/SPEC-009) — **só por ordem expressa**; as outras decisões abertas seguem como estão.
