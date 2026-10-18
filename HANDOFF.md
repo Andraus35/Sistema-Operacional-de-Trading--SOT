@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-63
-previous: HO-2026-10-18-62
+handoff_id: HO-2026-10-18-64
+previous: HO-2026-10-18-63
 data: 2026-10-18
 branch: claude/amazing-fermat-dnbjtz
 base_commit: 5695217
@@ -22,7 +22,7 @@ autor: Orquestrador
 - `main` = `5695217` (PRs #122 roteador, #123 H-001/errata v1.12, #124 detector+selo mesclados). Este ramo (`claude/amazing-fermat-dnbjtz`) reiniciado da main; PR de manutenção aberto no fim da sessão.
 - SPEC-006: plan.md final sha256 `71834065…` (ver parecer); a v1.11 homologada era `0f461e88…` (auditado `8527addb…`). Errata v1.12 **HOMOLOGADA** (plan.md sha256 `dd5a609f…`, checks `1ee11bb7…`). Pendente só o merge do PR #123 (assinatura).
 - Detector `gate_extra.py` corrigido (#124): `decisoes_abertas_fechadas` subtrai as decisões FECHADAS do ROADMAP. A grafia "decisão do mecanismo físico FECHADA" no plan da SPEC-006 (15 linhas) pode ficar — desfazer só por errata futura (hash).
-- `gate_extra.py` e `spec_delta.py` **no selo** (19 arquivos) e no CODEOWNERS (decisão de Andraus; `DHR-ROTEAMENTO-003` §8 cobre o `gate_extra`; o `spec_delta` entrou no PR de manutenção, mesma lógica, a registrar na ata). `check_refs` 0 ERRO (exemplo de caminho no relatório da auditoria corrigido, editorial). Registro de mecanismos: minuta de ata de vigência pronta em `governance/propostas/MINUTA-ATA-REGISTRO-MECANISMOS-VIGENTE-2026-10-18.md` (aguarda assinatura de Andraus).
+- `gate_extra.py` e `spec_delta.py` **no selo** (19 arquivos) e no CODEOWNERS (decisão de Andraus; `DHR-ROTEAMENTO-003` §8 cobre o `gate_extra`; o `spec_delta` entrou no PR de manutenção, mesma lógica, a registrar na ata). `check_refs` 0 ERRO (exemplo de caminho no relatório da auditoria corrigido, editorial). Registro de mecanismos: minuta de ata de vigência pronta em `governance/propostas/MINUTA-ATA-REGISTRO-MECANISMOS-VIGENTE-2026-10-18.md` (aguarda assinatura de Andraus). **Verificação ao vivo feita (2026-10-18, pedida por Andraus):** 34 dos 36 itens antes `inferido-do-codigo` foram exercitados e têm evidência em `verificado_em`; restam sem exercício `wf.auditor-externo` (pausado) e `cfg.pre-commit` (proposta).
 - **BLOQUEIO da SPEC-007:** Andraus criou o repositório paralelo `https://github.com/Andraus35/Inteligencia-SOT` (Benchmark do RAG: motores/agentes/skills dele **NÃO** entram no SOT; só as entregas que forem objeto do SOT Harness são analisadas para uso/integração, no todo ou em partes, sob a soberania dos motores/agentes/controles do SOT). O Especificador deve consultá-lo no Dossiê de Pesquisa. **Esta sessão NÃO tem acesso ao repo** (`add_repo` negado: privado/sem o app do Claude) — Andraus precisa conectar o GitHub/instalar o app nele (https://claude.ai/connect-github) e iniciar sessão com o repo selecionado. Não simular o conteúdo.
 
 ## 3. Histórico resumido (HO-34..57; cópias integrais em `docs/handoffs/`)
@@ -33,7 +33,7 @@ Lição: rodar a suíte COMPLETA de testes antes de empurrar (o CI do PR #123 fa
 validate_spec_sot 13/13 · revisor_gate PASSOU_D · check_invariants 0 · check_doc_sync 0 · check_rpsa OK · selo íntegro · mapa em dia (conferir no PR).
 
 ## 5. Próximo passo único
-(a) mesclar o PR de manutenção com CI verde (AGENTS.md §10); (b) **abertura da SPEC-007** assim que o `Inteligencia-SOT` estiver acessível (ROADMAP §23 passo 1-bis: Dossiê de Pesquisa **incluindo o Benchmark** → proposta → homologação de Andraus); (c) assinatura do registro de mecanismos (minuta pronta) [PRAZO: 2026-10-24]; (d) piloto de esforço (`effort`) quando Andraus quiser. **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001.
+(a) mesclar o PR de manutenção com CI verde (AGENTS.md §10); (b) **abertura da SPEC-007** assim que o `Inteligencia-SOT` estiver acessível (ROADMAP §23 passo 1-bis: Dossiê de Pesquisa **incluindo o Benchmark** → proposta → homologação de Andraus); (c) assinatura do registro de mecanismos (minuta pronta; verificação ao vivo concluída) [PRAZO: 2026-10-24]; (d) piloto de esforço (`effort`) quando Andraus quiser. **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - `DHR-H001-001` (H-001 fechada, Opção C), `DHR-SPEC006-001/-002/-003`, `DHR-ROTEAMENTO-003` + Emenda 1. Decisões abertas/fechadas: ler o `ROADMAP.md`.

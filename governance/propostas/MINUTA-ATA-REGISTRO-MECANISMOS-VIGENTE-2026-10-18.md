@@ -16,7 +16,7 @@ Mudar `status_do_registro` de `PROPOSTA` para `VIGENTE` e trocar o texto de `avi
 | **Total** | **48** | `check_coesao`: ERRO=0 WARN=0 INFO=5 |
 
 ## 3. Ressalvas honestas a ler antes de assinar
-- **36 dos 48** itens têm `verificado_em: inferido-do-codigo` (lidos do código, não exercitados ao vivo). "VIGENTE" aqui significa *registro de referência aceito*, não *funcionamento comprovado*. Ver `governance/AUDITORIA-COESAO-MECANISMOS-2026-10-17.md`.
+- **Verificação ao vivo feita em 2026-10-18** (pedida por Andraus): dos 36 itens que estavam `inferido-do-codigo`, **34** foram exercitados (hooks com payload real/vazio, gates e detectores com exit 0 e saída conferida, testes de unidade no CI, acionamento observado nesta sessão) e têm `verificado_em` atualizado; **2** seguem sem exercício ao vivo: `wf.auditor-externo` (pausado) e `cfg.pre-commit` (só vale após `pre-commit install`). Os `skill.*` legados e `cfg.eslintrc/prettierrc` foram só conferidos por existência/validade. "VIGENTE" significa *registro de referência aceito, com evidência por item*; o limite de cada verificação está escrito no próprio `verificado_em` (ex.: `post-edit-check` só provado fail-open, sem teste de conteúdo).
 - Os 2 itens `inerte-em-nuvem` e os 2 `pausado` são honestamente classificados; assinar não os reativa.
 - Escopo do registro: quem cria/altera um mecanismo atualiza o registro no mesmo PR (COE-14 acusa omissão ou item órfão).
 
