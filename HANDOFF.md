@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-56
-previous: HO-2026-10-18-55
+handoff_id: HO-2026-10-18-57
+previous: HO-2026-10-18-56
 data: 2026-10-18
 branch: claude/amazing-fermat-dnbjtz
 base_commit: 6549517
@@ -27,7 +27,7 @@ autor: Orquestrador
 - **SPEC-006 (13 funções `CKG-001..013`) = baseline v1.7 + errata v1.11 (Major, condicionada)**; plan.md sha256 `0f461e88…`. Parecer do Revisor = CONFORME condicional (teto: H-001 aberta). Não foi subdividida em Specs numeradas (Opção 2, `DHR-SPEC006-OPCAO2-001`; Plan v1.8 arquivado em `governance/propostas/SPEC-006/linha-spec006-plan/`). ROADMAP:177 diz "H-001 permanece ABERTA".
 - Ramos remotos: só `main` e o ramo desta sessão; PRs #31 e #2 fechados. Os 8 ramos com commits próprios listados em `governance/propostas/SPEC-006/LISTA-RAMOS-E-PRS-OBSOLETOS-2026-10-18.md` já não aparecem em `origin` (conferir com `python scripts/check_branches.py`).
 
-## 3. Histórico resumido (HO-34..55; cópias integrais em `docs/handoffs/`)
+## 3. Histórico resumido (HO-34..56; cópias integrais em `docs/handoffs/`)
 - SPEC-006 refeita e reconciliada com a v1.7 homologada (PR #118); ferramentas `spec_delta.py`, `gate_extra.py`, atas `DHR-BACKLOG-ABERTURA-001`, `DHR-REVISOR-DELTA-001`. Errata v1.11 homologada (`DHR-SPEC006-003`; não fecha M-001). Plano + Fase 0 (PR #121).
 - Lições: não empurrar WIP enquanto o Especificador edita; ao reescrever o handoff, arquivar o anterior como **cópia exata** (HO-04) e não citar ata inexistente (HO-06); heredoc sem aspas expande crases — usar `'EOF'`.
 
