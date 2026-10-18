@@ -32,9 +32,9 @@
    "canal": "settings.json PreToolUse Agent",
    "tipo": "hook",
    "estado": "ativo",
-   "enforca": "Nega model/effort por invocação nos agentes de construção; Haiku em gate/soberano",
+   "enforca": "Nega effort por invocação; model nos agentes de construção só se CLASSE-TAREFA válida e model igual à tabela da classe (fail-closed); Haiku em gate/soberano",
    "ata": "DHR-ROTEAMENTO-003",
-   "verificado_em": "2026-10-17: confirmado ao vivo em sessão"
+   "verificado_em": "2026-10-18: testes tests/test_roteador_modelos.py"
   },
   {
    "id": "hook.post-edit-check",
@@ -282,7 +282,7 @@
    "canal": "biblioteca de roteador-modelos.js",
    "tipo": "hook",
    "estado": "ativo",
-   "enforca": "Tabela e regras do roteador de modelos",
+   "enforca": "Tabela classe->modelo (M/S1/S2/S3/O), classificador de achados e conferência do delta da classe M (CLI classificar/conferir)",
    "ata": "DHR-ROTEAMENTO-003",
    "verificado_em": "inferido-do-codigo"
   },
@@ -453,6 +453,26 @@
    "nota": "Arquivada (movida, não apagada) em DHR-COESAO-002: estava solta em .claude/skills/ e não era carregada.",
    "verificado_em": "inferido-do-codigo",
    "ata": "DHR-COESAO-002"
+  },
+  {
+   "id": "hook.branches-session-start",
+   "arquivo": "scripts/branches-hook.js",
+   "canal": "settings.json SessionStart",
+   "tipo": "hook",
+   "estado": "ativo",
+   "enforca": "Avisa (informativo) de ramos remotos órfãos ou apagáveis na abertura da sessão",
+   "ata": "DHR-ROTEAMENTO-003",
+   "verificado_em": "2026-10-18: execução local"
+  },
+  {
+   "id": "lib.check-branches",
+   "arquivo": "scripts/check_branches.py",
+   "canal": "biblioteca de branches-hook.js; uso manual",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "BR-01 ramo à frente da main não citado no HANDOFF; BR-02 ramo contido na main (apagável); somente leitura",
+   "ata": "DHR-ROTEAMENTO-003",
+   "verificado_em": "2026-10-18: tests/test_check_branches.py"
   }
  ]
 }
