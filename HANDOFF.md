@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-52
-previous: HO-2026-10-18-51
+handoff_id: HO-2026-10-18-53
+previous: HO-2026-10-18-52
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
 base_commit: 0de7534
@@ -13,6 +13,9 @@ autor: Orquestrador
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência com a realidade, a realidade prevalece.
 
 ## 1. Objetivo da frente atual
+**HO-53 (Andraus, AskUserQuestion, 2026-10-18):** (1) plano APROVADO para começar pela **Fase 0 — CONCLUÍDA** (medição no próprio plano: hash/delta −26% a −31% por rodada, manter; carimbo ≈ 15 mil tokens/rodada, manter; desperdício real = agente caro em ajuste mínimo e rodada integral repetida). (2) **Processo — escolhidos:** detector de ramos órfãos na abertura da sessão (entra com a Fase 1), **menos PRs: um por frente de trabalho** (mesclar documentos sozinho com CI verde, como o `AGENTS.md` §10 já permite), e **Andraus liga "apagar ramo após o merge" no GitHub** (Settings; a sessão não exclui ramo remoto). (3) **O PR do plano + handoff NÃO foi aberto: vai junto com a Fase 1, num PR só.** Plano e handoff ficam no ramo `claude/blissful-pasteur-gkiz2m`. **Fase 1 depende de ordem expressa de Andraus** (novos `.claude/agents/*`, `AGENTS.md` §3, emenda à DHR-ROTEAMENTO-003, RPSA, selo) — não iniciada.
+
+(Texto anterior HO-52:)
 **ATUALIZAÇÃO HO-52 (ordem de Andraus, 2026-10-18):** em vez de só "abrir", levar a H-001 à **decisão final por inteiro, tecnologia incluída, sem pendência nem quebra documental**, depois de (a) medir a eficácia do hash (`spec_delta`) e do carimbo de sincronização (RPSA) e (b) implantar o **roteamento determinístico por tarefa** (Orquestrador agrupa por modelo: Opus 5.5 desenho × Sonnet 5.5 auditoria; faz sozinho as correções mínimas seguindo os relatórios do Revisor). **Plano (PROPOSTA): `governance/propostas/PLANO-FECHAR-H001-E-ROTEAR-MODELOS-2026-10-18.md` — aguardando aprovação de Andraus.** Andraus pediu para **aguardar o plano antes de abrir o PR do handoff**. Nada do plano foi executado; nenhuma decisão alterada.
 
 (Texto anterior HO-51:)
