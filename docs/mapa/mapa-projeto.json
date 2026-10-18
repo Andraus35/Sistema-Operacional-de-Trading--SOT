@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-18",
-  "digest": "8e33b3e31889d544db2548f61206110a4907fb195586d034b1e6e3c302d1bee7",
+  "digest": "097d3bc0ae20de3d3d0cca77b73fcba306828b444bbd1a268c90b4e253113eaa",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1977,7 +1977,7 @@
    "path": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
    "area": "governance",
    "title": "Parecer do Revisor SOT — SPEC-006 errata v1.10 (rodada por delta) — 2026-10-17",
-   "in": 2,
+   "in": 3,
    "out": 2
   },
   {
@@ -2454,7 +2454,7 @@
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 124,
-   "out": 27
+   "out": 28
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -29002,6 +29002,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md",
    "type": "path"
   },
   {
