@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-18-62
-previous: HO-2026-10-18-61
+handoff_id: HO-2026-10-18-64
+previous: HO-2026-10-18-63
 data: 2026-10-18
 branch: claude/amazing-fermat-dnbjtz
-base_commit: ce4b05c
+base_commit: 5695217
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATA v1.11 HOMOLOGADAS (DHR-SPEC006-002/-003); H-001 FECHADA por Andraus (DHR-H001-001, Opção C); ERRATA v1.12 HOMOLOGADA — Minor/aditiva (DHR-SPEC006-004, Andraus 2026-10-18); próxima Spec do ROADMAP = SPEC-007 (abertura pendente)
 fase: spec-first
 autor: Orquestrador
@@ -19,10 +19,11 @@ autor: Orquestrador
 - **P3 processo:** um PR por frente; Andraus já apagou os 12 ramos e ligou "apagar ramo após o merge".
 
 ## 2. Estado (fatos conferidos em 2026-10-18)
-- `main` = `ce4b05c` (PRs #122 roteador e #123 H-001/errata v1.12 mesclados). Este ramo (`claude/amazing-fermat-dnbjtz`) reiniciado da main; PR do ajuste do detector aberto no fim da sessão.
+- `main` = `5695217` (PRs #122 roteador, #123 H-001/errata v1.12, #124 detector+selo mesclados). Este ramo (`claude/amazing-fermat-dnbjtz`) reiniciado da main; PR de manutenção aberto no fim da sessão.
 - SPEC-006: plan.md final sha256 `71834065…` (ver parecer); a v1.11 homologada era `0f461e88…` (auditado `8527addb…`). Errata v1.12 **HOMOLOGADA** (plan.md sha256 `dd5a609f…`, checks `1ee11bb7…`). Pendente só o merge do PR #123 (assinatura).
-- Detector `scripts/gate_extra.py` **corrigido neste PR** (autorizado por Andraus): `decisoes_abertas_fechadas`/`ids_abertos_do_status` subtraem as decisões que o ROADMAP declara FECHADAS (`ids_fechados_roadmap`; 1º ID por segmento `·`, só segmento que diz fechada/decidida/supersedida). Sem o ajuste, restaurar a grafia "H-001 FECHADA" no plan dava 18 achados falsos; com o ajuste, 0. A grafia "decisão do mecanismo físico FECHADA" no plan (15 linhas) pode ficar — desfazer só por errata futura (hash).
-- Resíduos herdados: `check_refs` 1 ERRO (`AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md:227`). COE-14 resolvido (`gate_extra.py`/`spec_delta.py` agora em `MECANISMOS.json`). `gate_extra.py` **entrou no selo** (18 arquivos) e no CODEOWNERS — decisão de Andraus (2026-10-18), `DHR-ROTEAMENTO-003` §8.
+- Detector `gate_extra.py` corrigido (#124): `decisoes_abertas_fechadas` subtrai as decisões FECHADAS do ROADMAP. A grafia "decisão do mecanismo físico FECHADA" no plan da SPEC-006 (15 linhas) pode ficar — desfazer só por errata futura (hash).
+- `gate_extra.py` e `spec_delta.py` **no selo** (19 arquivos) e no CODEOWNERS (decisão de Andraus; `DHR-ROTEAMENTO-003` §8 cobre o `gate_extra`; o `spec_delta` entrou no PR de manutenção, mesma lógica, a registrar na ata). `check_refs` 0 ERRO (exemplo de caminho no relatório da auditoria corrigido, editorial). Registro de mecanismos: minuta de ata de vigência pronta em `governance/propostas/MINUTA-ATA-REGISTRO-MECANISMOS-VIGENTE-2026-10-18.md` (aguarda assinatura de Andraus). **Verificação ao vivo feita (2026-10-18, pedida por Andraus):** 34 dos 36 itens antes `inferido-do-codigo` foram exercitados e têm evidência em `verificado_em`; restam sem exercício `wf.auditor-externo` (pausado) e `cfg.pre-commit` (proposta).
+- **BLOQUEIO da SPEC-007:** Andraus criou o repositório paralelo `https://github.com/Andraus35/Inteligencia-SOT` (Benchmark do RAG: motores/agentes/skills dele **NÃO** entram no SOT; só as entregas que forem objeto do SOT Harness são analisadas para uso/integração, no todo ou em partes, sob a soberania dos motores/agentes/controles do SOT). O Especificador deve consultá-lo no Dossiê de Pesquisa. **Esta sessão NÃO tem acesso ao repo** (`add_repo` negado: privado/sem o app do Claude) — Andraus precisa conectar o GitHub/instalar o app nele (https://claude.ai/connect-github) e iniciar sessão com o repo selecionado. Não simular o conteúdo.
 
 ## 3. Histórico resumido (HO-34..57; cópias integrais em `docs/handoffs/`)
 - SPEC-006 reconciliada (PR #118), errata v1.11 homologada (`DHR-SPEC006-003`), plano + Fase 0 (#121), Fase 1 roteador (#122). Lições: não empurrar WIP enquanto o Especificador edita; arquivar o handoff anterior como **cópia exata** (HO-04) e commitar o handoff uma só vez por id; heredoc com `'EOF'`; o detector de decisões abertas usa o 1º segmento "·" da linha de "Decisões FECHADAS" como lista e captura todos os IDs dele — novas decisões fechadas entram a partir do 2º segmento.
@@ -32,7 +33,7 @@ Lição: rodar a suíte COMPLETA de testes antes de empurrar (o CI do PR #123 fa
 validate_spec_sot 13/13 · revisor_gate PASSOU_D · check_invariants 0 · check_doc_sync 0 · check_rpsa OK · selo íntegro · mapa em dia (conferir no PR).
 
 ## 5. Próximo passo único
-(a) mesclar o PR do detector com CI verde (AGENTS.md §10); (b) **abertura da SPEC-007** (ROADMAP §23 passo 1-bis: Dossiê de Pesquisa → proposta → homologação de Andraus); (c) piloto de esforço (`effort`) quando Andraus quiser. **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
+(a) mesclar o PR de manutenção com CI verde (AGENTS.md §10); (b) **abertura da SPEC-007** assim que o `Inteligencia-SOT` estiver acessível (ROADMAP §23 passo 1-bis: Dossiê de Pesquisa **incluindo o Benchmark** → proposta → homologação de Andraus); (c) assinatura do registro de mecanismos (minuta pronta; verificação ao vivo concluída) [PRAZO: 2026-10-24]; (d) piloto de esforço (`effort`) quando Andraus quiser. **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 - `DHR-H001-001` (H-001 fechada, Opção C), `DHR-SPEC006-001/-002/-003`, `DHR-ROTEAMENTO-003` + Emenda 1. Decisões abertas/fechadas: ler o `ROADMAP.md`.
