@@ -45,7 +45,7 @@ Custo estimado [INFERÊNCIA]: estudo ~150–250 mil (Opus) + sincronização doc
 **Riscos:** (a) fechar a tecnologia em spec-first pode envelhecer — mitigar com cláusula de revisão por gatilho (ex.: início do BUILD); (b) 4 arquivos protegidos tocados — exige ordem expressa; (c) classe M mal classificada — mitigada por escalada automática quando gate/delta divergem; (d) mais agentes = mais carimbos RPSA para manter.
 
 ## Decisões que são só de Andraus
-Aprovar o plano e a ordem das fases · criar `especificador-leve`/`revisor-profundo` (e emendar a DHR-ROTEAMENTO-003) · a tecnologia da H-001 · autorizar a edição dos arquivos protegidos listados · destino dos 12 ramos e abertura da SPEC-007.
+Aprovar o plano e a ordem das fases · emendar a DHR-ROTEAMENTO-003 (hook valida `model` contra a tabela; 2 agentes, sem criar outros) · a tecnologia da H-001 · autorizar a edição dos arquivos protegidos listados · destino dos 12 ramos e abertura da SPEC-007.
 
 ## Resultado da Fase 0 (2026-10-18) — medição, sem mudar nenhum arquivo normativo
 | Mecanismo | Medido | Veredito (proposta) |
