@@ -11,7 +11,7 @@ Funções (cada uma devolve [(linha, mensagem)]):
                           e, quando há ID citado junto, o ID é DEFINIDO no intervalo (não apenas mencionado).
   contagens_declaradas    "13 BASpecs", "6 EC", "17 cenários", "22 adversariais" (fora do changelog) × cabeçalhos reais.
   piso_enforcement        Spec do Knowledge Graph: EC de escrita/publicação/commit com LEVEL < E3 (atomic-spec §10.2).
-  decisoes_abertas_fechadas  ID de decisão aberta (lido do Status do plan) com palavra de fechamento NA MESMA ORAÇÃO, sem negação/pendência.
+  decisoes_abertas_fechadas  ID de decisão aberta (lido do Status do plan, menos as FECHADAS no ROADMAP) com palavra de fechamento NA MESMA ORAÇÃO, sem negação/pendência.
   invariantes_estritos    ICT cria hipótese / custo-confiança no Conviction Vector, sem a isenção por `INV-nn` ou `≠`.
   assertivas_checks       `assert-present:"x"` / `assert-absent:"x"` das linhas "Corrigido" do checks.md executadas contra o plan.md.
   teto_de_veredito        teto do veredito do Revisor (revisor.md §3/§8): decisão aberta que bloqueia a Spec ⇒ "CONFORME condicional".
@@ -206,16 +206,41 @@ def campos_por_bloco(texto):
 
 
 # ---------------------------------------------------------------------------------------------- decisões abertas fechadas
-def ids_abertos_do_status(texto):
+_PREFIXOS_NAO_DECISAO = ("DHR-", "SPEC-", "BL-", "RULE-", "INV-", "EUA-")
+
+
+def ids_fechados_roadmap(root=ROOT):
+    """IDs que o ROADMAP declara FECHADOS na linha `| Decisões FECHADAS |` (fonte de verdade — AGENTS.md §7).
+    Um ID por segmento separado por `·` (o PRIMEIRO citado; os demais são menções de passagem), e só em segmento que diz
+    fechada/decidida/homologada/supersedida. Sem ROADMAP/linha ⇒ conjunto vazio (comportamento anterior)."""
+    rm = _ler(Path(root) / "ROADMAP.md") or ""
+    m = re.search(r"^\|\s*Decisões FECHADAS\s*\|(.*)$", rm, re.M)
+    if not m:
+        return set()
+    fechados = set()
+    for seg in re.split(r"·", re.sub(r"~~.*?~~", "", m.group(1))):
+        seg = seg.replace("*", "")
+        if not (_FECHA.search(seg) or re.search(r"supersedid", seg, re.I)):
+            continue
+        ident = _ID_DECISAO.search(seg)
+        if ident and re.search(r"\d", ident.group(0)) and not ident.group(0).startswith(_PREFIXOS_NAO_DECISAO):
+            fechados.add(ident.group(0))
+    return fechados
+
+
+def ids_abertos_do_status(texto, fechados=None):
+    """IDs de decisão citados no Status do plan, menos os que o ROADMAP já declara fechados (o Status preservado por INV-07 cita
+    'H-001 ABERTA' como histórico; sem esta subtração o detector tratava uma decisão fechada como aberta)."""
     m = re.search(r"^\|\s*Status\s*\|([^\n]*)", texto, re.M)
     if not m:
         return set()
     s = m.group(1)
-    return {x for x in _ID_DECISAO.findall(s) if re.search(r"\d", x) and not x.startswith(("DHR-", "SPEC-", "BL-", "RULE-", "INV-", "EUA-"))}
+    ids = {x for x in _ID_DECISAO.findall(s) if re.search(r"\d", x) and not x.startswith(_PREFIXOS_NAO_DECISAO)}
+    return ids - (ids_fechados_roadmap() if fechados is None else set(fechados))
 
 
-def decisoes_abertas_fechadas(texto, extras=()):
-    abertos = ids_abertos_do_status(texto) | set(extras)
+def decisoes_abertas_fechadas(texto, extras=(), fechados=None):
+    abertos = ids_abertos_do_status(texto, fechados) | set(extras)
     achados = []
     for i, linha in enumerate(texto.splitlines(), 1):
         if re.match(r"^\|\s*(Status|\d+\.\d+)\s*\|", linha):  # cabeçalho/histórico já dizem "permanece/NÃO fecha"
