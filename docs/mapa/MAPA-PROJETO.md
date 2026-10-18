@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-18** · digest `b3acba395db0544c` · **361** documentos · **4870** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-18** · digest `7c11f12d95ca9f62` · **361** documentos · **4871** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -31,7 +31,7 @@ flowchart LR
   docs["docs"] -->|595| governance["governance"]
   governance["governance"] -->|514| specs["specs"]
   governance["governance"] -->|343| raiz["raiz"]
-  specs["specs"] -->|267| governance["governance"]
+  specs["specs"] -->|268| governance["governance"]
   docs["docs"] -->|196| raiz["raiz"]
   docs["docs"] -->|169| specs["specs"]
   governance["governance"] -->|150| backlog["backlog"]
@@ -225,7 +225,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md) | DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revis... | 39 | 6 |
 | [DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md) | DHR-AUDITOR-EXTERNO-016 — Ata — Fusão do que era útil dos subagentes de 1ª ge... | 41 | 9 |
 | [DHR-AUDITOR-EXTERNO-017_Ata_Deteccao_Deterministica_e_Guarda_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-017_Ata_Deteccao_Deterministica_e_Guarda_do_Revisor.md) | DHR-AUDITOR-EXTERNO-017 — Ata — Detectores determinísticos adicionais no gate... | 4 | 10 |
-| [DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md](../../governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md) | DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop... | 29 | 5 |
+| [DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md](../../governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md) | DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop... | 30 | 5 |
 | [DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md](../../governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md) | DHR-BACKLOG-001 — Ata — Promoção de BL-003 e BL-011 a ATIVADO (gatilho `spec:... | 13 | 4 |
 | [DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md](../../governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md) | DHR-BL008-001 — Ata de Homologação — Mapa de Auditoria da SPEC-001 (BL-008) | 9 | 11 |
 | [DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md](../../governance/DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md) | DHR-BL009-001 — Ata de Homologação — Mapa de Auditoria do SAS-001 (BL-009) | 3 | 6 |
@@ -419,7 +419,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [parecer-revisor-rodada6.md](../../specs/features/SPEC-006/parecer-revisor-rodada6.md) | Parecer do Revisor SOT — SPEC-006 Plan v1.5 (rodada 6) — 2026-10-17 | 2 | 6 |
 | [parecer-revisor-rodada7.md](../../specs/features/SPEC-006/parecer-revisor-rodada7.md) | Parecer do Revisor SOT — SPEC-006 Plan v1.6 (rodada 7) — 2026-10-17 | 1 | 8 |
 | [parecer-revisor-rodada8.md](../../specs/features/SPEC-006/parecer-revisor-rodada8.md) | Parecer do Revisor — rodada 8 — SPEC-006 plan v1.7 (núcleo, Opção 2) — 2026-1... | 5 | 5 |
-| [parecer-revisor-rodada9.md](../../specs/features/SPEC-006/parecer-revisor-rodada9.md) | Parecer do Revisor — rodada 9 — SPEC-006 plan v1.8 — 2026-10-18 | 1 | 2 |
+| [parecer-revisor-rodada9.md](../../specs/features/SPEC-006/parecer-revisor-rodada9.md) | Parecer do Revisor — rodada 9 — SPEC-006 plan v1.8 — 2026-10-18 | 1 | 3 |
 | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 113 | 26 |
 | [research.md](../../specs/features/SPEC-006/research.md) | Dossiê de Pesquisa — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, FA... | 2 | 23 |
 | [SPEC-019/checks.md](../../specs/features/SPEC-019/checks.md) | checks.md — Verificação de Spec da SPEC-019 (fase spec-first) | 1 | 8 |

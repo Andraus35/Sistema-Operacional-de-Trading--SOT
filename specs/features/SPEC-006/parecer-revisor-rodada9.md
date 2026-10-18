@@ -20,3 +20,6 @@ r8-l (R-04..R-06 CONFORME × ADIADOS) · volume/acesso do log (`input_snapshot`)
 
 ## Interpelações (11)
 NO_OP × divergente e "vigente" · "mesmo payload" · identidade do solicitante no log · reexecução ENF-07 com estado de `decided_at` · extremidade inexistente · serialização/revalidação no commit e reparo de collision perdido · operação desconhecida / "tentar gravar" / leitura do log · assimetria `valid_to` · mapa passo→`gate_id` · versionamento do `mapa_produtor` · auditoria de `kg_record` indevido e PASS órfão.
+
+## Nota de guarda pós-Revisor (DHR-AUDITOR-EXTERNO-018) — Orquestrador
+Gate de código sobre `plan.md` v1.8 rodado pelo harness e pelo Orquestrador: **VEREDITO D: PASSOU_D** (≠ CONFORME ≠ homologação); **sinais H: 0** (nada a confirmar/descartar). As 2 verificações informativas do repositório inteiro apontam para outros arquivos, fora do escopo da SPEC-006. O veredito semântico (NÃO CONFORME, 4 Médias) independe do resultado D.
