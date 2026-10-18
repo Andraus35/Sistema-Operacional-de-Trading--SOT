@@ -20,3 +20,5 @@
 /scripts/revisor-posguarda.js        @Andraus35
 /scripts/roteador_modelos.py         @Andraus35
 /scripts/roteador-modelos.js         @Andraus35
+# DHR-ROTEAMENTO-003 §8 (Andraus, 2026-10-18): detectores D do gate do Revisor entram no selo.
+/scripts/gate_extra.py               @Andraus35

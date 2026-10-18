@@ -482,7 +482,8 @@
    "estado": "ativo",
    "enforca": "Citações arquivo:linha, contagens declaradas, piso de enforcement do KG, decisões abertas tratadas como fechadas (subtrai as FECHADAS do ROADMAP), invariantes estritos, assertivas do checks.md, teto de veredito",
    "ata": "DHR-AUDITOR-EXTERNO-017",
-   "verificado_em": "2026-10-18: tests/test_gate_extra.py (32 testes, CI)"
+   "verificado_em": "2026-10-18: tests/test_gate_extra.py (32 testes, CI)",
+   "nota": "Selado em GATE-MANIFEST.sha256 e com dono em CODEOWNERS desde 2026-10-18 (decisão de Andraus, chat)."
   },
   {
    "id": "det.spec-delta",
