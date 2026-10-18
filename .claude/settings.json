@@ -140,6 +140,11 @@
             "type": "command",
             "command": "node scripts/handoff-hook.js session-start",
             "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "node scripts/branches-hook.js session-start",
+            "timeout": 30
           }
         ]
       }
