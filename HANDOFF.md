@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-18-39
-previous: HO-2026-10-18-38
+handoff_id: HO-2026-10-18-40
+previous: HO-2026-10-18-39
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
-base_commit: d5f43c6
+base_commit: e399d77
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-40 — Revisor sobre o Plan v1.8 (rodada 9): NÃO CONFORME (0 Críticas, 4 Médias R9-1..R9-4, 11 Menores).** Registro em `specs/features/SPEC-006/parecer-revisor-rodada9.md`. R8-1..R8-4 SANADAS; as 4 novas vêm de NO_OP, `input_snapshot`/log, extremidade de relação e concorrência da unidade atômica. R9-1 conferido no texto (procede). Gate D: PASSOU_D, H=0. Padrão: cada rodada sana 4 Médias e o Plan cresce; Andraus decide se segue (v1.9) ou muda de estratégia. Nada homologado.
 - **HO-39 — Plan v1.8 da SPEC-006 (candidato, NÃO homologado):** Especificador sanou R8-1..R8-4 (D4.0 com 5 classes de operação; D4.19 cobre campos de todo record_kind; "registros derivados" kg_internal; `GATE_RECORD_UNRESOLVED` + `collision_pair`) e r8-a..r8-k; 1224→1379 linhas (+13%, pode ser questionado); 24 EARS, 26 cenários, 27 ADV. Respostas às 11 interpelações em checks.md §13.3. Gates: validate_spec_sot PASS 12/12, revisor_gate PASSOU_D (H=0), invariantes 0, refs/doc_sync/repo_research sem ERRO, lint 22/22. **Pendências de Andraus registradas como [DECISÃO NECESSÁRIA]:** r8-l (R-04..R-06 "CONFORME" × "ADIADOS"), política de volume do log (`input_snapshot`), "ato de governança" (K-001 aberta). Revisor ainda NÃO auditou a v1.8. Roteador de modelos verificado ativo (hook + telemetria, 4 usos).
 - **HO-38 — Revisor sobre o Plan v1.7: NÃO CONFORME (0 Críticas, 4 Médias R8-1..R8-4, 13 Menores).** Registro em `specs/features/SPEC-006/parecer-revisor-rodada8.md`. R7-3/R7-4 sanadas; R7-1/R7-2 em parte. R8-1 e R8-2 conferidos contra o texto (procedem). Andraus autorizou acionar o Revisor (AskUserQuestion). Nada homologado.
 - **HO-37 — Plan v1.7 da SPEC-006 (candidato, NÃO homologado):** ata `governance/DHR-SPEC006-002_*` registrou Opção 2 + nota aditiva (RPSA registrada). Especificador redigiu `specs/features/SPEC-006/plan.md` (1498→1224 linhas; núcleo com regra única de admissão D4.15 que nega por padrão; caminhos (a)/(b)/(c), selo e SEAL_MISSING viraram emendas E-a..E-e sem contrato; histórico v1.0–v1.6 no Apêndice H do checks.md). Gates determinísticos: validate_spec_sot PASS (12/12), revisor_gate PASSOU_D, check_invariants 0, check_refs/doc_sync/repo_research sem ERRO, mapa em dia, lint 22/22. **Revisor ainda NÃO auditou a v1.7** (códigos novos que ele não viu: RECORD_MUTATION_FORBIDDEN, WRITER_UNAUTHORIZED, ONTOLOGY_CHANGE_NOT_GOVERNED, QUERY_WRITE_FORBIDDEN). Teto do parecer segue CONFORME condicional (ROADMAP:177 × Q-ABERTURA-3, H-001 — só Andraus).
@@ -52,7 +53,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Acionar o Revisor SOT sobre o Plan v1.8** (rodada 9; só por ordem de Andraus) e conferir cada achado contra o texto. Teto: CONFORME condicional (H-001, só Andraus). Nada homologado; decisões abertas intactas.
+**Andraus decide o rumo da SPEC-006 após a rodada 9:** (a) Plan v1.9 sanando R9-1..R9-4; (b) parar e consolidar (fonte única mais radical / reduzir o núcleo); (c) adiar. Nada feito sem ordem. Teto CONFORME condicional (H-001).
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
