@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-41
-previous: HO-2026-10-18-40
+handoff_id: HO-2026-10-18-42
+previous: HO-2026-10-18-41
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
 base_commit: 82e67b5
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-42 — PR #118 (rascunho) aberto e inscrito.** CI falhou só por selo divergente (4 testes de `test_revisor_gate_mcp`). **Andraus autorizou (AskUserQuestion) regravar o selo:** `gate_manifest.py --write` (17 arquivos, 5 hashes mudaram: revisor_gate, validate_spec_sot, check_refs, backlog_triggers, build_map); `--check` íntegro; `test_gate_manifest` + `test_revisor_gate_mcp` 19/19 OK. Segue pendente: R3 do RPSA (edições de agente das 2 atas), ROADMAP/CATALOGO, rumo da errata v1.10.
 - **HO-41 — RECONCILIAÇÃO (ordem de Andraus: "Conciliar e integrar onde necessário o aproveitamento").** Descoberta: o ramo `ccr-63ea68aa-ks4bkd` era uma 2ª linha da SPEC-006, nunca mesclada à main: **SPEC-006 v1.7 HOMOLOGADA BASELINE em 2026-10-13** (ata `DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md`, decisão de Andraus no chat), auditoria independente, erratas v1.8–v1.10 (v1.10 NÃO CONFORME no último parecer: N-08 Média + 3 Menores), `spec_delta.py`, `gate_extra.py`, `DHR-BACKLOG-ABERTURA-001`, `DHR-REVISOR-DELTA-001`. O trabalho de HO-35..40 (Opção 2, Plan v1.7/v1.8, rodadas 8-9) partiu do candidato antigo `spec006-plan` e **fica arquivado** em `governance/propostas/SPEC-006/linha-spec006-plan/` (INV-07), sem valor de baseline.
 - **Integrado (merge no ramo de trabalho, sem PR):** Plan/checks v1.10 do ramo antigo; ferramentas e testes; as 2 atas; RMR-001. **Protegidos ficaram como na main** (AGENTS, `.claude/agents/*`, ROADMAP, CATALOGO). Minha ata renomeada **DHR-SPEC006-OPCAO2-001** (o número 002 é a homologação). RPSA: as 2 atas novas entram `em_escopo=sim, sync=pendente` (edições de agente NÃO integradas) ⇒ **R3 acusa** até Andraus decidir.
 - **Verificado:** validate_spec_sot 13/13 PASS; revisor_gate PASSOU_D (teto CONFORME condicional por H-001); doc_sync/handoff sem ERRO; **5 testes falham porque o selo do gate diverge** (5 scripts alterados; regravar o selo = decisão de Andraus); `check_refs` 1 ERRO herdado do ramo antigo (AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md:227); COE-14 WARN (gate_extra/spec_delta fora do registro de mecanismos).
@@ -57,7 +58,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Andraus decide, sobre a integração:** (1) regravar o selo do gate (`gate_manifest.py`); (2) aplicar em `especificador.md`/`revisor.md` as edições das atas BACKLOG-ABERTURA-001 e REVISOR-DELTA-001 (zera R3); (3) atualizar ROADMAP/CATALOGO para "SPEC-006 BASELINE v1.7" (a divergência com o ramo antigo); (4) o rumo da errata v1.10 (parecer NÃO CONFORME: N-08). Só então reaplicar a consolidação sobre a baseline. Nada homologado por esta sessão; decisões abertas intactas.
+**Andraus decide, sobre a integração:** (1) ~~regravar o selo~~ FEITO no HO-42; (2) aplicar em `especificador.md`/`revisor.md` as edições das atas BACKLOG-ABERTURA-001 e REVISOR-DELTA-001 (zera R3); (3) atualizar ROADMAP/CATALOGO para "SPEC-006 BASELINE v1.7" (a divergência com o ramo antigo); (4) o rumo da errata v1.10 (parecer NÃO CONFORME: N-08). Só então reaplicar a consolidação sobre a baseline. Nada homologado por esta sessão; decisões abertas intactas.
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
