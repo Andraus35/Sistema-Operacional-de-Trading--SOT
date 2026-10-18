@@ -298,6 +298,8 @@ Localização das atas: `governance/DHR-*.md`. ADRs do cluster HOC-003: `governa
 | PB-*/PE-* (Basilar/Estrutural) | Prospectivo-obrigatório a partir de SPEC-001 | Gate do Revisor nas novas specs |
 | PCO-*/PO-*/PS-* (Cognitivo/Operacional/Situacional) | Ativado-por-contexto | Critério de qualidade, não gate eliminatório |
 
+**Registro (2026-10-13, DHR-SPEC006-002 — decisão direta de Andraus em chat; assinatura = decisão registrada):** **SPEC-006 (Cognitive Knowledge Graph) — HOMOLOGADA — BASELINE v1.7** (Trilha B; CRITICAL · D0–D7 + D8; 13 BASpecs, 6 ECs; Revisor CONFORME COM RESSALVAS v1.7); RULE-CKG-001..013 + INV-CKG-01/02 vigentes por homologação (registro físico diferido); **H-001 permanece ABERTA**; CKG-STRUCT-ORIGIN-001 em BL-035 (`Em espera`). Registro anterior: **DHR-BACKLOG-ABERTURA-001 (2026-10-13)** — backlog vinculado por regra à abertura de Spec (`[STRUCT-13]`).
+
 ---
 
 *Catálogo Oficial do SOT. Homologação F.1 registrada em 2026-09-15 (Andraus). Camada Principiológica registrada em 2026-09-16. Registros anteriores preservados; nada é removido, apenas superseded.*

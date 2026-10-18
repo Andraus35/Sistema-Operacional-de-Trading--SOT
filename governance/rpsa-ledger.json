@@ -222,6 +222,20 @@
       "motivo": "Altera convencao de governanca (quem assina e como) e o AGENTS.md; nenhum texto de arquivo de agente e alterado."
     },
     {
+      "id": "DHR-SPEC006-002",
+      "data": "2026-10-13",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Integrada em 2026-10-18 do ramo ccr-63ea68aa-ks4bkd (ata de 2026-10-13): homologação de Spec, não altera texto de agente (classificação declarada na própria ata)."
+    },
+    {
+      "id": "DHR-BACKLOG-ABERTURA-001",
+      "data": "2026-10-13",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Integrada em 2026-10-18 (ata de 2026-10-13): passo de abertura em especificador.md e item de auditoria em revisor.md aplicados na reconciliação (autorizado por Andraus, AskUserQuestion 2026-10-18)."
+    },
+    {
       "id": "DHR-PCC-001",
       "data": "2026-10-17",
       "em_escopo": false,
@@ -332,6 +346,20 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Atualiza apenas o estado de dois itens do painel de backlog RMR-001; nenhum arquivo de agente, checklist, metodo nem regra e alterado."
+    },
+    {
+      "id": "DHR-REVISOR-DELTA-001",
+      "data": "2026-10-17",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Integrada em 2026-10-18 (ata de 2026-10-17): seção 3-bis em revisor.md aplicada na reconciliação (autorizado por Andraus, AskUserQuestion 2026-10-18)."
+    },
+    {
+      "id": "DHR-SPEC006-OPCAO2-001",
+      "data": "2026-10-18",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra decisao de processo de uma Spec; nao altera texto de nenhum arquivo de agente."
     }
   ]
 }

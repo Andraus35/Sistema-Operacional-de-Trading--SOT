@@ -73,13 +73,23 @@ def esc(s: str) -> str:
     return s.replace("|", "\\|")
 
 
+def _digest_of(text: dict) -> str:
+    digest_src = "\n".join(f"{p}:{hashlib.sha256(text[p].encode('utf-8')).hexdigest()}" for p in sorted(text))
+    return hashlib.sha256(digest_src.encode("utf-8")).hexdigest()
+
+
+def quick_digest() -> str:
+    """Digest do CONTEÚDO dos documentos SEM montar o mapa (≈0,03 s contra ≈11 s do build completo).
+    Mesma fórmula do build(): permite que `--check` compare o hash antes de qualquer trabalho caro."""
+    return _digest_of({cr.rel(p): cr.read(p) for p in cr.list_docs()})
+
+
 def build():
     docs, reg, findings, edges, counts = cr.analyze()
     paths = [cr.rel(p) for p in docs]
     text = {cr.rel(p): cr.read(p) for p in docs}
 
-    digest_src = "\n".join(f"{p}:{hashlib.sha256(text[p].encode('utf-8')).hexdigest()}" for p in sorted(paths))
-    digest = hashlib.sha256(digest_src.encode("utf-8")).hexdigest()
+    digest = _digest_of(text)
 
     # --- onde cada ID é definido -------------------------------------------------
     def_doc = {}
@@ -326,11 +336,11 @@ def main():
     args = ap.parse_args()
     out = Path(args.out)
 
-    m = build()
     js = out / "mapa-projeto.json"
 
     stale = out / STALE_MARKER
     if args.check:
+        # caminho rápido: o hash decide sozinho; o mapa completo NÃO é montado só para comparar (11 s → ≈0,3 s)
         if stale.exists():
             print("Mapa marcado como DEFASADO (o hook não conseguiu regenerá-lo, ex.: Python ausente) — "
                   "rode: python scripts/build_map.py")
@@ -339,12 +349,13 @@ def main():
             print("Mapa ausente — rode: python scripts/build_map.py")
             sys.exit(2)
         old = json.loads(js.read_text(encoding="utf-8"))["meta"]["digest"]
-        if old != m["digest"]:
+        if old != quick_digest():
             print("Mapa DESATUALIZADO (documentos mudaram) — rode: python scripts/build_map.py")
             sys.exit(1)
         print("Mapa em dia.")
         sys.exit(0)
 
+    m = build()
     out.mkdir(parents=True, exist_ok=True)
     atomic_write(out / "MAPA-PROJETO.md", render_md(m, args.date))
     atomic_write(js, render_json(m, args.date))

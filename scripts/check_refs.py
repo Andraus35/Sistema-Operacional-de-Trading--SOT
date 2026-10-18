@@ -51,8 +51,12 @@ PLACEHOLDER = re.compile(r"^-(?:nnn|NNN|xxx?|XXX?|##+|n+)\b")
 DEF_CORPUS = re.compile(
     r"^(governance/(RULES|CONSTITUTION|CONFLICT-MAP|GPR-001[^/]*|SES-001[^/]*)\.md"
     r"|atomic-spec\.md|ROADMAP\.md|canon/[^/]+\.md|GLOSSARIO\.md"
-    r"|specs/[^/]+\.spec\.md|specs/features/[^/]+/plan\.md)$"
+    r"|specs/[^/]+\.spec\.md)$"
 )
+# plan.md de Spec define regra/invariante só em linha de DEFINIÇÃO (início da linha + ':' / '—' / '(' / negrito), não por mera menção
+# (auditoria independente SPEC-006, mutação M10: RULE inventada citada num plan.md "definia a si mesma").
+PLAN_DEF = re.compile(r"^specs/features/[^/]+/plan\.md$")
+DEF_LINE = re.compile(r"^[\s#>*|`\-]*\**((?:RULE|INV)-[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*)\**\s*(?::|—|–|\(|\[|\.\.|/|$)", re.M)
 
 TOKEN = {
     "SPEC": re.compile(r"(?<![\w-])SPEC-(\d{3})(?![\w-])"),
@@ -152,6 +156,10 @@ class Registry:
                 t = read(p)
                 self.rules |= {m.group(0) for m in TOKEN["RULE"].finditer(t)}
                 self.invs |= {m.group(0) for m in TOKEN["INV"].finditer(t)}
+            elif PLAN_DEF.match(rel(p)):
+                for m in DEF_LINE.finditer(read(p)):  # inclui blocos cercados: definições de plan.md vivem em ``` também
+                    tok = m.group(1)
+                    (self.rules if tok.startswith("RULE-") else self.invs).add(tok)
 
     @staticmethod
     def _family_ok(tok: str, defined: set) -> bool:
@@ -178,8 +186,8 @@ class Registry:
 
 
 def classify_severity(path: str, kind: str) -> str:
-    if FROZEN.search(path) or "PROPOSTA" in path:
-        return "INFO"
+    if FROZEN.search(path) or "PROPOSTA" in path or "/propostas/" in path:
+        return "INFO"  # atas congeladas e propostas/relatórios consultivos (podem citar IDs de exemplo, siglas curtas, mutações)
     if path.startswith("reference/"):
         return "INFO"  # referências externas: namespaces locais próprios (I-EXP, INV-EPI...)
     if kind in ("RULE", "INV"):
@@ -224,12 +232,20 @@ def analyze():
         r = rel(p)
         raw = read(p)
         text = strip_fences(raw)
+        # plan.md de Spec: RULE/INV dentro de ``` também são verificados (EC, BASpec vivem em bloco cercado);
+        # os demais tipos (DHR/EUA/SPEC/BL) seguem sem varrer blocos, onde há placeholders de exemplo.
+        fence_lines = raw.split("\n") if PLAN_DEF.match(r) else None
         # linhas originais para reportar nº de linha aproximado
         lines = text.split("\n")
         for i, line in enumerate(lines, 1):
             for kind, rx in TOKEN.items():
-                for m in rx.finditer(line):
+                src_line = line
+                if fence_lines is not None and kind in ("RULE", "INV") and i <= len(fence_lines):
+                    src_line = fence_lines[i - 1]
+                for m in rx.finditer(src_line):
                     tok = m.group(0)
+                    if kind == "RULE" and re.match(r"RULE-(XYZ|XXX|X)(-|$)", tok):
+                        continue  # placeholder de exemplo
                     if PLACEHOLDER.match(line[m.end():m.end() + 5]):
                         continue
                     if kind == "SPEC" and not (ROOT / "ROADMAP.md").exists():
