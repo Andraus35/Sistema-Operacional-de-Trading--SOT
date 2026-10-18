@@ -15,3 +15,8 @@ Delta 10 de 122 blocos (ADV-CKG-21, BASpec-CKG-008, EC-CKG-005, autopré-check, 
 
 ## 4. Encaminhamento (só Andraus)
 Homologar a errata (ata nova, p.ex. DHR-SPEC006-003) registrando a negação de `conviction` e a classificação Minor/aditiva; dona de H-001 (divergência ROADMAP × ata de abertura). Recomendado: corrigir n-d antes da ata.
+
+## Nota de guarda pós-Revisor (DHR-AUDITOR-EXTERNO-018) — Orquestrador, 2026-10-18
+- **G2 (gate de código):** `revisor_gate` sobre `plan.md` v1.11 = **PASSOU_D**, sinais H = 0 (≠ CONFORME ≠ homologação). Avisos informativos fora do escopo da Spec: `check_refs` WARN em `checks.md:188` (texto do comando `wc -l …plan.md`, não é referência real) e 3 verificações do repositório inteiro sobre outros arquivos. Nenhum achado do Revisor depende deles.
+- **G1 (núcleo do Passo 0):** conferido pelo Orquestrador. `atomic-spec.md:15/67` — Knowledge Graph = **CRITICAL · D0–D7** (emenda SPEC006-MATRIZ), coerente com o parecer; `governance/RULES.md:680-681` — RULE-CAU existe como o Plan cita. O Revisor não declarou o que não abriu; fica registrado que o núcleo foi verificado aqui.
+- **G3 (citação plan.md:438):** a citação do Revisor «NÃO pode ALTERAR o NÚCLEO CAUSAL = mechanism/direction/conditions…» **existe** em `plan.md:438-440`, mas quebra de linha (438→439) impede a busca literal; o conteúdo confere («**E TAMBÉM `outcome_ref` E `no_outcome` [m-A]**» em :440). Achado mantido.

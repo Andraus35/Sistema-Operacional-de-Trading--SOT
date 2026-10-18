@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-18",
-  "digest": "70cdece44d4169e18a56391af2fc419fcdade1d9b7b35cbd8bb8b24707282b61",
+  "digest": "046ea6c9ec2b22c73017e39bbdad2993264a36fb323569261d4b22aef50213e8",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -955,7 +955,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 36,
+   "in": 37,
    "out": 5
   },
   {
@@ -2006,7 +2006,7 @@
    "area": "governance",
    "title": "Parecer do Revisor SOT — SPEC-006 errata v1.11 (rodada por delta) — 2026-10-18",
    "in": 2,
-   "out": 3
+   "out": 5
   },
   {
    "path": "governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md",
@@ -2334,7 +2334,7 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 43,
+   "in": 44,
    "out": 2
   },
   {
@@ -2938,7 +2938,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -3693,7 +3693,7 @@
   {
    "id": "RULE-CAU",
    "defined_in": "governance/RULES.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "RULE-CAU-01",
@@ -26544,8 +26544,23 @@
   },
   {
    "from": "governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md",
