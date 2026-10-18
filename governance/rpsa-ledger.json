@@ -374,6 +374,13 @@
       "em_escopo": true,
       "sync": "fonte-unica",
       "motivo": "Fecha a decisão H-001: revisor.md §8 e especificador.md deixam de listá-la como bloqueador aberto."
+    },
+    {
+      "id": "DHR-SPEC006-004",
+      "data": "2026-10-18",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de errata de Spec: não altera texto de agente."
     }
   ]
 }

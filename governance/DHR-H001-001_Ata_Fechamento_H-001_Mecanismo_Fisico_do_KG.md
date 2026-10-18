@@ -40,7 +40,7 @@ Graphiti/Zep (invalida arestas por chamada a LLM — contradiz RULE-CKG-004 e EN
 G-001 · K-001 · M-001 · J-001 · N-001 · C-001 · WF-D03 (residual) · ECC-03-001 · SPEC-045-RUNTIME-001 · RULE-REG-001 (conforme ROADMAP). **Fechada por esta ata: H-001.**
 
 ## 6. Registro
-- [x] Esta ata · [x] ROADMAP · [x] AGENTS §7 · [x] atomic-spec §12 · [x] revisor.md / especificador.md · [x] CATALOGO / CIC / RMR-001 · [ ] errata SPEC-006 + Revisor por delta · [x] RPSA · [ ] merge (assinatura)
+- [x] Esta ata · [x] ROADMAP · [x] AGENTS §7 · [x] atomic-spec §12 · [x] revisor.md / especificador.md · [x] CATALOGO / CIC / RMR-001 · [x] errata SPEC-006 v1.12 + Revisor por delta (CONFORME condicional; HOMOLOGADA Minor/aditiva — DHR-SPEC006-004) · [x] RPSA · [ ] merge (assinatura)
 
 ---
 
