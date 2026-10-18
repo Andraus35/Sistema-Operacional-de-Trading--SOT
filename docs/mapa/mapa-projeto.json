@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-18",
-  "digest": "b38d01885e924c38efc14ccbf5be79d20211d3e69441337707d3d86b6f9c4857",
+  "digest": "8e33b3e31889d544db2548f61206110a4907fb195586d034b1e6e3c302d1bee7",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1970,7 +1970,7 @@
    "path": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
    "area": "governance",
    "title": "Passagem de sessão — SPEC-006 (errata) e endurecimento do gate — 2026-10-17",
-   "in": 0,
+   "in": 1,
    "out": 13
   },
   {
@@ -2454,7 +2454,7 @@
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
    "in": 124,
-   "out": 26
+   "out": 27
   },
   {
    "path": "specs/features/SPEC-006/research.md",
@@ -28997,6 +28997,11 @@
   {
    "from": "specs/features/SPEC-006/plan.md",
    "to": "governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/plan.md",
+   "to": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
    "type": "path"
   },
   {
