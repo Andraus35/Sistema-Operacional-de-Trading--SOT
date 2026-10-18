@@ -493,7 +493,8 @@
    "estado": "ativo",
    "enforca": "Delta por hash de blocos entre duas versões de um plan.md + inventário de fontes citadas com sha256",
    "ata": "DHR-REVISOR-DELTA-001",
-   "verificado_em": "2026-10-18: tests/test_spec_delta.py (CI)"
+   "verificado_em": "2026-10-18: tests/test_spec_delta.py (CI)",
+   "nota": "Selado em GATE-MANIFEST.sha256 e com dono em CODEOWNERS desde 2026-10-18 (decisão de Andraus, chat)."
   }
  ]
 }
