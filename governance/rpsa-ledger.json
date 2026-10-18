@@ -360,6 +360,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registra decisao de processo de uma Spec; nao altera texto de nenhum arquivo de agente."
+    },
+    {
+      "id": "DHR-SPEC006-003",
+      "data": "2026-10-18",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de errata de Spec: não altera texto de agente."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-48
-previous: HO-2026-10-18-47
+handoff_id: HO-2026-10-18-49
+previous: HO-2026-10-18-48
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
 base_commit: 154a7e9
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-49 — ERRATA v1.11 DA SPEC-006 HOMOLOGADA por Andraus (chat, 2026-10-18: "Sim, homologo a errata v1.11").** Ata: `governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md` — **Major (mudança restritiva)**, **homologação CONDICIONADA** (CONFORME condicional; H-001 ABERTA; gate rodado pelo Orquestrador), negação de `conviction` por padrão registrada com condição de reversão (vale até Andraus definir o histórico de estados da convicção; não fecha M-001), evidência amarrada: plan.md sha256 `8527addb…`, checks.md `239a233e…` (só correção n-d pós-parecer). RPSA: `nao/fonte-unica`. **ROADMAP/CATALOGO NÃO alterados** (só por ordem expressa); cabeçalho do plan.md ainda diz "PROPOSTA" (muda o hash; pendente, Especificador por ordem de Andraus). Decisões abertas intactas.
 - **HO-48 — pontos sensíveis da minuta decididos por Andraus (AskUserQuestion, 2026-10-18):** classificação **Major (mudança restritiva)**; negação de `conviction` **registrada com condição de reversão** (vale até Andraus definir o histórico de estados da convicção; não fecha M-001); homologar **com a condição escrita** (CONFORME condicional, H-001 aberta, gate rodado pelo Orquestrador); evidência = **sha256 do plan.md `8527addb…`** (idêntico ao auditado) + gate + ressalva de que o `checks.md` só recebeu a correção editorial n-d. Minuta atualizada. **Falta a assinatura expressa de Andraus** (D1); nada homologado.
 - **HO-47 — PR #118 MESCLADO** (Andraus: "Mesclar"; main `154a7e9`). Respostas de Andraus (AskUserQuestion): (1) **preparar minuta da ata** de homologação da errata v1.11 → `governance/propostas/SPEC-006/MINUTA-ATA-HOMOLOGACAO-ERRATA-v1.11.md` ([PROPOSTA], sem número de ata; Andraus preenche D1-D3 e assina no chat); (2) **H-001: adiar e manter ABERTA** (divergência ROADMAP:177 × Q-ABERTURA-3 segue pendência dele); (3) **ramos/PRs antigos: só listar** → `governance/propostas/SPEC-006/LISTA-RAMOS-E-PRS-OBSOLETOS-2026-10-18.md` (nada fechado/apagado). Ramo de trabalho recriado da main (PR anterior mesclado).
 - **HO-46 (correção da cadeia; conteúdo do HO-45) — Revisor por delta sobre a errata v1.11: CONFORME condicional** (0 Críticas, 0 Médias, 2 Menores n-d/n-e; N-08, m-A, m-B, n-b FECHADOS). Registro em `governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md`. n-d conferido (procede). Teto: H-001 aberta + gate fora da sessão do Revisor. **Nada homologado.** Andraus escolheu manter o PR #118 em rascunho até este parecer; agora decide.
@@ -63,7 +64,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Andraus assina (ou não) a homologação da errata v1.11 no chat** — com isso o Controlador registra a ata (número novo), classifica no RPSA e, por ordem expressa, ajusta ROADMAP/CATALOGO. Sem assinatura, a errata fica como proposta. Também dele: H-001 e demais decisões abertas; destino dos ramos/PRs da lista.
+**Andraus decide (nada feito sem ordem):** (a) atualizar ROADMAP/CATALOGO para registrar a DHR-SPEC006-003 e a baseline com a errata; (b) atualizar o cabeçalho do plan.md ("PROPOSTA" → homologada) pelo Especificador (muda o hash); (c) H-001 e a divergência ROADMAP:177 × Q-ABERTURA-3; (d) destino dos ramos/PRs da lista; (e) abrir a SPEC-007 (abertura pendente de autorização).
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
