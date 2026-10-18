@@ -1,4 +1,4 @@
-# DHR-SPEC006-002 — Ata — SPEC-006 em etapas (Opção 2) e nota aditiva ao painel
+# DHR-SPEC006-OPCAO2-001 — Ata — SPEC-006 em etapas (Opção 2) e nota aditiva ao painel
 
 | Campo | Valor |
 |---|---|
@@ -6,7 +6,7 @@
 | Para | Especificador SOT / Revisor SOT / Controlador |
 | Ref | `governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md` (Q-ABERTURA-5); `governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md` ([PROPOSTA]); pareceres do Revisor rodadas 5–7 (ramo `spec006-plan`) |
 | Data | 2026-10-18 |
-| Status | **DECISÃO REGISTRADA — NÃO é baseline.** Não homologa Spec nem Plan; não fecha decisão aberta (CONS-01). |
+| Status | **RENUMERADA em 2026-10-18** (era DHR-SPEC006-002; o número pertence à ata de homologação da SPEC-006 v1.7, de 2026-10-13, integrada do ramo `ccr-63ea68aa-ks4bkd`). **Contexto:** esta ata foi escrita sobre a linha `spec006-plan` (Plan v1.6, "Plan pendente"), sem conhecimento da baseline v1.7; a decisão de Andraus (Opção 2/nota aditiva) vale como **registro de intenção** e deve ser reavaliada à luz da baseline — ver reconciliação. **DECISÃO REGISTRADA — NÃO é baseline.** Não homologa Spec nem Plan; não fecha decisão aberta (CONS-01). |
 | Compatibilidade | Minor (aditiva; não toca modelo canônico baselined) |
 | RPSA-escopo | nao |
 | RPSA-sync | fonte-unica |

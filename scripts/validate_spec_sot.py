@@ -445,6 +445,43 @@ def check_pesquisa_repositorios(content: str, filepath: Path = None):
     return (True, "") if ok else (False, msg if msg.startswith("RULE-ECC-06") else "RULE-ECC-06: " + msg)
 
 
+@check(
+    name="[STRUCT-13] Backlog da abertura declarado (DHR-BACKLOG-ABERTURA-001)",
+    source="DHR-BACKLOG-ABERTURA-001 / RMR-001 §4-bis / ROADMAP §23 passo 1-bis"
+)
+def check_backlog_abertura(content: str, filepath: Path = None):
+    """
+    Gate determinístico da vinculação por abertura: todo item do RMR-001 cujo gatilho tem
+    `spec:SPEC-nnn em redação` fica vinculado à Spec SEM depender de promoção de Andraus, e o
+    Plan DEVE declarar, na linha que cita o BL-nnn, `Disposição: INCORPORADO|PARCIAL|REFERÊNCIA|FORA`
+    (+ motivo, auditado pelo Revisor). Não retroage: Spec já homologada (baseline) não é alcançada (INV-07).
+    """
+    if filepath is None:
+        return True, ""
+    folder = filepath.resolve().parent
+    m = re.match(r"SPEC-(\d{3})$", folder.name)
+    if not m or not re.search(r"RULE-ECC-0[12]", content):
+        return True, ""  # fora do regime de Especificação Emergente / sem número de Spec — não incide
+    root = folder.parent.parent.parent
+    if not (root / "backlog" / "RMR-001_Painel_Backlog.md").exists():
+        return True, ""  # fora do repositório (ex.: teste isolado) — não aplicável
+    import backlog_triggers as bt  # mesma pasta scripts/
+    facts = bt.Facts(root)
+    if m.group(1) in facts.homolog:
+        return True, ""
+    items = bt.parse_items(bt.read(root / "backlog" / "RMR-001_Painel_Backlog.md"))
+    faltam = [x["id"] for x in bt.abertura_scope(items, m.group(1), facts)
+              if not bt.plan_declara(content, x["id"])]
+    if faltam:
+        return False, (
+            f"Itens do RMR-001 vinculados por regra à abertura de SPEC-{m.group(1)} sem disposição no Plan: "
+            + ", ".join(faltam)
+            + ". Declare na linha de cada BL: `Disposição: INCORPORADO|PARCIAL|REFERÊNCIA|FORA` + motivo "
+            "(fail-closed; rode `python scripts/backlog_triggers.py --abertura SPEC-" + m.group(1) + "`)."
+        )
+    return True, ""
+
+
 # ─────────────────────────────────────────────
 # ENGINE DE EXECUÇÃO
 # ─────────────────────────────────────────────

@@ -1,10 +1,10 @@
 ---
-handoff_id: HO-2026-10-18-40
-previous: HO-2026-10-18-39
+handoff_id: HO-2026-10-18-41
+previous: HO-2026-10-18-40
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
-base_commit: e399d77
-spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
+base_commit: 82e67b5
+spec_autorizada: SPEC-006 = BASELINE v1.7 homologada em 2026-10-13 (DHR-SPEC006-002, linha integrada do ramo ccr-63ea68aa-ks4bkd); ERRATA v1.10 PROPOSTA em revisão — ROADMAP da main ainda diz "Plan pendente" (divergência; ROADMAP prevalece até Andraus)
 fase: spec-first
 autor: Orquestrador
 ---
@@ -19,6 +19,10 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-41 — RECONCILIAÇÃO (ordem de Andraus: "Conciliar e integrar onde necessário o aproveitamento").** Descoberta: o ramo `ccr-63ea68aa-ks4bkd` era uma 2ª linha da SPEC-006, nunca mesclada à main: **SPEC-006 v1.7 HOMOLOGADA BASELINE em 2026-10-13** (ata `DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md`, decisão de Andraus no chat), auditoria independente, erratas v1.8–v1.10 (v1.10 NÃO CONFORME no último parecer: N-08 Média + 3 Menores), `spec_delta.py`, `gate_extra.py`, `DHR-BACKLOG-ABERTURA-001`, `DHR-REVISOR-DELTA-001`. O trabalho de HO-35..40 (Opção 2, Plan v1.7/v1.8, rodadas 8-9) partiu do candidato antigo `spec006-plan` e **fica arquivado** em `governance/propostas/SPEC-006/linha-spec006-plan/` (INV-07), sem valor de baseline.
+- **Integrado (merge no ramo de trabalho, sem PR):** Plan/checks v1.10 do ramo antigo; ferramentas e testes; as 2 atas; RMR-001. **Protegidos ficaram como na main** (AGENTS, `.claude/agents/*`, ROADMAP, CATALOGO). Minha ata renomeada **DHR-SPEC006-OPCAO2-001** (o número 002 é a homologação). RPSA: as 2 atas novas entram `em_escopo=sim, sync=pendente` (edições de agente NÃO integradas) ⇒ **R3 acusa** até Andraus decidir.
+- **Verificado:** validate_spec_sot 13/13 PASS; revisor_gate PASSOU_D (teto CONFORME condicional por H-001); doc_sync/handoff sem ERRO; **5 testes falham porque o selo do gate diverge** (5 scripts alterados; regravar o selo = decisão de Andraus); `check_refs` 1 ERRO herdado do ramo antigo (AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md:227); COE-14 WARN (gate_extra/spec_delta fora do registro de mecanismos).
+- A **proposta de consolidação C** (`PROPOSTA-CONSOLIDACAO.md` no scratchpad, não versionada) foi escrita sobre a linha ARQUIVADA: reavaliar antes de usar.
 - **HO-40 — Revisor sobre o Plan v1.8 (rodada 9): NÃO CONFORME (0 Críticas, 4 Médias R9-1..R9-4, 11 Menores).** Registro em `specs/features/SPEC-006/parecer-revisor-rodada9.md`. R8-1..R8-4 SANADAS; as 4 novas vêm de NO_OP, `input_snapshot`/log, extremidade de relação e concorrência da unidade atômica. R9-1 conferido no texto (procede). Gate D: PASSOU_D, H=0. Padrão: cada rodada sana 4 Médias e o Plan cresce; Andraus decide se segue (v1.9) ou muda de estratégia. Nada homologado.
 - **HO-39 — Plan v1.8 da SPEC-006 (candidato, NÃO homologado):** Especificador sanou R8-1..R8-4 (D4.0 com 5 classes de operação; D4.19 cobre campos de todo record_kind; "registros derivados" kg_internal; `GATE_RECORD_UNRESOLVED` + `collision_pair`) e r8-a..r8-k; 1224→1379 linhas (+13%, pode ser questionado); 24 EARS, 26 cenários, 27 ADV. Respostas às 11 interpelações em checks.md §13.3. Gates: validate_spec_sot PASS 12/12, revisor_gate PASSOU_D (H=0), invariantes 0, refs/doc_sync/repo_research sem ERRO, lint 22/22. **Pendências de Andraus registradas como [DECISÃO NECESSÁRIA]:** r8-l (R-04..R-06 "CONFORME" × "ADIADOS"), política de volume do log (`input_snapshot`), "ato de governança" (K-001 aberta). Revisor ainda NÃO auditou a v1.8. Roteador de modelos verificado ativo (hook + telemetria, 4 usos).
 - **HO-38 — Revisor sobre o Plan v1.7: NÃO CONFORME (0 Críticas, 4 Médias R8-1..R8-4, 13 Menores).** Registro em `specs/features/SPEC-006/parecer-revisor-rodada8.md`. R7-3/R7-4 sanadas; R7-1/R7-2 em parte. R8-1 e R8-2 conferidos contra o texto (procedem). Andraus autorizou acionar o Revisor (AskUserQuestion). Nada homologado.
@@ -53,7 +57,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Andraus decide o rumo da SPEC-006 após a rodada 9:** (a) Plan v1.9 sanando R9-1..R9-4; (b) parar e consolidar (fonte única mais radical / reduzir o núcleo); (c) adiar. Nada feito sem ordem. Teto CONFORME condicional (H-001).
+**Andraus decide, sobre a integração:** (1) regravar o selo do gate (`gate_manifest.py`); (2) aplicar em `especificador.md`/`revisor.md` as edições das atas BACKLOG-ABERTURA-001 e REVISOR-DELTA-001 (zera R3); (3) atualizar ROADMAP/CATALOGO para "SPEC-006 BASELINE v1.7" (a divergência com o ramo antigo); (4) o rumo da errata v1.10 (parecer NÃO CONFORME: N-08). Só então reaplicar a consolidação sobre a baseline. Nada homologado por esta sessão; decisões abertas intactas.
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)

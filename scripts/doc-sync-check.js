@@ -19,6 +19,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const CHECK = path.join(__dirname, 'check_doc_sync.py');
+const BACKLOG = path.join(__dirname, 'backlog_triggers.py');
 
 function pythonUnavailable(r) {
   if (r.error) return true;
@@ -26,9 +27,9 @@ function pythonUnavailable(r) {
   return /Python was not found|Microsoft Store|não foi encontrado/i.test(String(r.stderr) + String(r.stdout));
 }
 
-function run() {
+function run(script, extra) {
   for (const [exe, pre] of [['python', []], ['python3', []], ['py', ['-3']]]) {
-    const r = spawnSync(exe, [...pre, CHECK], { cwd: ROOT, encoding: 'utf8' });
+    const r = spawnSync(exe, [...pre, script, ...(extra || [])], { cwd: ROOT, encoding: 'utf8' });
     if (!pythonUnavailable(r)) return r;
   }
   return null;
@@ -40,7 +41,7 @@ if (mode !== 'stop' && mode !== 'session-start') {
   process.exit(0);
 }
 
-const r = run();
+const r = run(CHECK);
 if (!r) {
   // Python indisponível: silencioso aqui (map-sync.js já sinaliza isso para o mapa;
   // não duplicar o aviso). O backstop continua sendo o CI (setup-python garantido).
@@ -52,5 +53,17 @@ if (m && (Number(m[1]) > 0 || Number(m[2]) > 0)) {
     `doc-sync: ${m[1]} achado(s) ERRO, ${m[2]} WARN de sincronização documental — ` +
     'rode "python scripts/check_doc_sync.py" para ver o detalhe (achado de gate; Revisor/Andraus decidem, não este hook).'
   );
+}
+
+// Vinculação de backlog por abertura (DHR-BACKLOG-ABERTURA-001): Spec em redação cujo plan.md
+// ainda não declara a Disposição de cada item vinculado por regra. Informativo (o GATE é o
+// [STRUCT-13] do validate_spec_sot.py); nunca bloqueia nem promove.
+const b = run(BACKLOG, ['--abertura-pendentes']);
+if (b) {
+  const lines = String(b.stdout || '').split('\n').filter(l => l.startsWith('ABERTURA-PENDENTE SPEC-'));
+  if (lines.length) {
+    console.log('backlog-abertura: ' + lines.join(' | ') + ' — declare "Disposição: INCORPORADO|PARCIAL|REFERÊNCIA|FORA" no plan.md ' +
+      '(rode "python scripts/backlog_triggers.py --abertura SPEC-NNN"; o gate é o [STRUCT-13]).');
+  }
 }
 process.exit(0);
