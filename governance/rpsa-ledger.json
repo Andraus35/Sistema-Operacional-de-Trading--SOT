@@ -232,8 +232,8 @@
       "id": "DHR-BACKLOG-ABERTURA-001",
       "data": "2026-10-13",
       "em_escopo": true,
-      "sync": "pendente",
-      "motivo": "Integrada em 2026-10-18 (ata de 2026-10-13): exige passo em especificador.md e item em revisor.md; essas edições NÃO foram integradas (agentes seguem a main); aguarda decisão de Andraus."
+      "sync": "propagado",
+      "motivo": "Integrada em 2026-10-18 (ata de 2026-10-13): passo de abertura em especificador.md e item de auditoria em revisor.md aplicados na reconciliação (autorizado por Andraus, AskUserQuestion 2026-10-18)."
     },
     {
       "id": "DHR-PCC-001",
@@ -351,8 +351,8 @@
       "id": "DHR-REVISOR-DELTA-001",
       "data": "2026-10-17",
       "em_escopo": true,
-      "sync": "pendente",
-      "motivo": "Integrada em 2026-10-18 (ata de 2026-10-17): exige a seção 3-bis em revisor.md; NÃO integrada (agentes seguem a main); aguarda decisão de Andraus."
+      "sync": "propagado",
+      "motivo": "Integrada em 2026-10-18 (ata de 2026-10-17): seção 3-bis em revisor.md aplicada na reconciliação (autorizado por Andraus, AskUserQuestion 2026-10-18)."
     },
     {
       "id": "DHR-SPEC006-OPCAO2-001",
