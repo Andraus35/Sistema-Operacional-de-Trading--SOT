@@ -54,8 +54,30 @@ class Enforcement(unittest.TestCase):
 
 class DecisoesAbertas(unittest.TestCase):
     def test_fechamento_perto_de_aberta_em_outra_oracao(self):  # M01b
-        t = STATUS + "H-001 está aberta aqui. Depois: H-001 FECHADA pelo plano.\n"
+        t = "| Status | **CANDIDATO** — G-001 permanece ABERTA. |\nG-001 está aberta aqui. Depois: G-001 FECHADA pelo plano.\n"
         self.assertTrue(g.decisoes_abertas_fechadas(t))
+
+    def test_decisao_fechada_no_roadmap_nao_e_tratada_como_aberta(self):  # DHR-H001-001: o Status preservado cita "H-001 ABERTA" (INV-07)
+        t = STATUS + "A decisão H-001 FECHADA por Andraus (DHR-H001-001).\n"
+        self.assertEqual(g.decisoes_abertas_fechadas(t), [])
+        self.assertIn("H-001", g.ids_fechados_roadmap())
+        self.assertNotIn("H-001", g.ids_abertos_do_status(STATUS))
+        self.assertTrue(g.decisoes_abertas_fechadas(t, fechados=set()))  # sem o ROADMAP, o comportamento antigo se mantém
+
+    def test_roadmap_nao_fecha_o_que_ele_nao_fechou(self):
+        t = "| Status | **CANDIDATO** — WF-D03 segue ABERTA. |\nWF-D03 FECHADA.\n"
+        self.assertNotIn("WF-D03", g.ids_fechados_roadmap())
+        self.assertTrue(g.decisoes_abertas_fechadas(t))
+
+    def test_ids_fechados_roadmap_primeiro_id_por_segmento_e_sem_roadmap(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(g.ids_fechados_roadmap(d), set())
+            (Path(d) / "ROADMAP.md").write_text(
+                "| Decisões abertas ativas | G-001 · K-001 |\n"
+                "| Decisões FECHADAS | **A-001 — FECHADA (x); menciona G-001** · **B-002 — SUPERSEDIDA** · **~~C-003~~ FECHADA** · **D-004 aberta** |\n",
+                encoding="utf-8")
+            self.assertEqual(g.ids_fechados_roadmap(d), {"A-001", "B-002"})
 
     def test_ids_fora_do_padrao_antigo(self):  # M02
         t = STATUS + "WF-D03 FECHADA; CKG-STRUCT-ORIGIN-001 resolvida; ECC-03-001 resolvida.\n"

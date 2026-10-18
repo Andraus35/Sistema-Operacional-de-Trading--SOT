@@ -473,6 +473,27 @@
    "enforca": "BR-01 ramo à frente da main não citado no HANDOFF; BR-02 ramo contido na main (apagável); somente leitura",
    "ata": "DHR-ROTEAMENTO-003",
    "verificado_em": "2026-10-18: tests/test_check_branches.py"
+  },
+  {
+   "id": "det.gate-extra",
+   "arquivo": "scripts/gate_extra.py",
+   "canal": "biblioteca de revisor_gate.py (Classe D, gate do Revisor)",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Citações arquivo:linha, contagens declaradas, piso de enforcement do KG, decisões abertas tratadas como fechadas (subtrai as FECHADAS do ROADMAP), invariantes estritos, assertivas do checks.md, teto de veredito",
+   "ata": "DHR-AUDITOR-EXTERNO-017",
+   "verificado_em": "2026-10-18: tests/test_gate_extra.py (32 testes, CI)",
+   "nota": "Selado em GATE-MANIFEST.sha256 e com dono em CODEOWNERS desde 2026-10-18 (decisão de Andraus, chat)."
+  },
+  {
+   "id": "det.spec-delta",
+   "arquivo": "scripts/spec_delta.py",
+   "canal": "CLI do Orquestrador; entrada do Revisor por delta (revisor.md §3-bis)",
+   "tipo": "detector",
+   "estado": "ativo",
+   "enforca": "Delta por hash de blocos entre duas versões de um plan.md + inventário de fontes citadas com sha256",
+   "ata": "DHR-REVISOR-DELTA-001",
+   "verificado_em": "2026-10-18: tests/test_spec_delta.py (CI)"
   }
  ]
 }
