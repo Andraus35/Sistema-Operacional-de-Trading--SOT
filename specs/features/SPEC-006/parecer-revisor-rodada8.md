@@ -17,3 +17,6 @@ r8-a EARS não autocontidos (D4.15 prevalece) · r8-b `no-op`/ausência de log f
 
 ## Interpelações ao Especificador (11)
 Posição em D4.0 dos 3 códigos de operação e "ato de governança"; negação de consulta no log × "zero registros" e E1 do EC-006; quem exige os 3 campos de CEM l.428; contrato de `collision`/`DERIVA_DE`; predicado/código do `gate_record`; separação de funções; reexecução ENF-07; teste negativo do Lineage; `supersedes` em 2ª creation; `valid_to` × S14; divergência CONFORME × ADIADOS de R-04..R-06.
+
+## Nota de guarda pós-Revisor (DHR-AUDITOR-EXTERNO-018) — Orquestrador
+Gate de código sobre `plan.md` v1.7 rodado pelo harness e pelo Orquestrador: **VEREDITO D: PASSOU_D** (≠ CONFORME ≠ homologação); **sinais H: 0** (nada a confirmar/descartar). As 2 verificações informativas do repositório inteiro (`pipeline_schemas`, `specs_1a_geracao`) apontam para outros arquivos, fora do escopo da SPEC-006. O MCP do gate segue ausente no Revisor em nuvem; o parecer semântico independe do resultado D.

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-18",
-  "digest": "17e7fc4f53703f39d65d9b301607d2ab040ff2a82511cb148bb4c2700fba40b3",
+  "digest": "9a56e3e2b12321e09bffc632d411f4f173ee5642a66c9c113394ce12837880ab",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -899,7 +899,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 26,
+   "in": 27,
    "out": 5
   },
   {
@@ -2349,7 +2349,7 @@
    "area": "specs",
    "title": "Parecer do Revisor — rodada 8 — SPEC-006 plan v1.7 (núcleo, Opção 2) — 2026-10-18",
    "in": 1,
-   "out": 4
+   "out": 5
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
@@ -2807,7 +2807,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -27090,6 +27090,11 @@
    "from": "specs/features/SPEC-006/parecer-revisor-rodada7.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/parecer-revisor-rodada8.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
   },
   {
    "from": "specs/features/SPEC-006/parecer-revisor-rodada8.md",
