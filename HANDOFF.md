@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-59
-previous: HO-2026-10-18-58
+handoff_id: HO-2026-10-18-60
+previous: HO-2026-10-18-59
 data: 2026-10-18
 branch: claude/amazing-fermat-dnbjtz
 base_commit: 836e04b
@@ -15,12 +15,12 @@ autor: Orquestrador
 ## 1. Objetivo da frente atual — prioridades de Andraus (chat, 2026-10-18)
 - **P0 medir hash/carimbo** FEITO; **P1 roteamento de modelos** FEITO e MESCLADO (PR #122, `836e04b`): classes M/S1/S2/S3/O, hook fail-closed com classe DERIVADA de fatos (`ALVO`/`BASE`/`PARECER`/`FICHA`), detector de ramos órfãos, `DHR-ROTEAMENTO-003` §7 (Emenda 1). Uso: `python scripts/roteador_modelos.py classificar|conferir ficha.json`; prompt do agente leva `CLASSE-TAREFA: <classe>` + `model` igual à tabela (Especificador/abertura/errata = O·opus; Revisor delta = S2·sonnet; integral CRITICAL = S3·opus; ficha mecânica = M, o Orquestrador executa). `effort` segue negado (piloto pendente).
 - **P2 H-001 (Fase 2): decidida por Andraus em 2026-10-18 — Opção C (PostgreSQL só-inserção, bitemporal, travessia recursiva; índice de grafo derivado desenhado e não ligado; licença PostgreSQL ≈ BSD/MIT; revisão por gatilho no início do BUILD)** — ata `DHR-H001-001`; estudo [PROPOSTA] em `governance/propostas/H001/`. Aplicado neste PR: ata, ROADMAP, `AGENTS.md` §7, `atomic-spec.md` §12, `revisor.md`/`especificador.md` (RPSA registrado e alinhado), CATALOGO, CIC-001, RMR-001 e **errata v1.12** da SPEC-006 (plan+checks, aditiva, sem regra nova).
-- **Parecer do Revisor (Sonnet, por delta)** sobre a v1.12: **CONFORME condicional**, 0 Críticas, 0 Médias, 5 Menores (`governance/propostas/PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md`). m1/m2/m4/m5 corrigidas pelo Orquestrador (classe M) **depois** do parecer — hashes finais diferem dos auditados (adendo no parecer); m3 (ADV-09) é ciência de Andraus. Andraus **homologou como Minor/aditiva** (`DHR-SPEC006-004`; correções m1/m2/m4/m5 aceitas sem nova auditoria; m3 ciente).
+- **Parecer do Revisor (Sonnet, por delta)** sobre a v1.12: **CONFORME condicional**, 0 Críticas, 0 Médias, 5 Menores (`governance/propostas/PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md`). m1/m2/m4/m5 corrigidas pelo Orquestrador (classe M) **depois** do parecer — hashes finais diferem dos auditados (adendo no parecer); m3 (ADV-09) é ciência de Andraus. Andraus **homologou como Minor/aditiva** (`DHR-SPEC006-004`; correções m1/m2/m4/m5 aceitas sem nova auditoria; m3 ciente). Adendo do Revisor achou **m6** (Média pré-existente: plan dizia BL-003/BL-011 `Em espera`, painel `ATIVADO`) — Andraus mandou corrigir (feito, DHR-SPEC006-004 D5).
 - **P3 processo:** um PR por frente; Andraus já apagou os 12 ramos e ligou "apagar ramo após o merge".
 
 ## 2. Estado (fatos conferidos em 2026-10-18)
 - `main` = `836e04b` (PR #122). Este ramo (`claude/amazing-fermat-dnbjtz`) reiniciado da main e à frente com a Fase 2; PR único aberto no fim da sessão.
-- SPEC-006: plan.md final sha256 `71834065…` (ver parecer); a v1.11 homologada era `0f461e88…` (auditado `8527addb…`). Errata v1.12 **HOMOLOGADA** (plan.md sha256 `7ce76f10…`, checks `1ee11bb7…`). Pendente só o merge do PR #123 (assinatura).
+- SPEC-006: plan.md final sha256 `71834065…` (ver parecer); a v1.11 homologada era `0f461e88…` (auditado `8527addb…`). Errata v1.12 **HOMOLOGADA** (plan.md sha256 `dd5a609f…`, checks `1ee11bb7…`). Pendente só o merge do PR #123 (assinatura).
 - Detector `scripts/gate_extra.py::decisoes_abertas_fechadas` lê os IDs "abertos" do Status do plan e **não consulta o ROADMAP**: acusa "H-001 FECHADA" mesmo fechada. Contornado reescrevendo 15 linhas para "decisão do mecanismo físico FECHADA" (neutro, segundo o Revisor). **Ajuste autorizado por Andraus, ainda NÃO feito** (§5).
 - Resíduos herdados: `check_refs` 1 ERRO (`AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md:227`); COE-14 WARN `gate_extra.py`/`spec_delta.py` fora de `MECANISMOS.json`.
 
@@ -28,6 +28,7 @@ autor: Orquestrador
 - SPEC-006 reconciliada (PR #118), errata v1.11 homologada (`DHR-SPEC006-003`), plano + Fase 0 (#121), Fase 1 roteador (#122). Lições: não empurrar WIP enquanto o Especificador edita; arquivar o handoff anterior como **cópia exata** (HO-04) e commitar o handoff uma só vez por id; heredoc com `'EOF'`; o detector de decisões abertas usa o 1º segmento "·" da linha de "Decisões FECHADAS" como lista e captura todos os IDs dele — novas decisões fechadas entram a partir do 2º segmento.
 
 ## 4. Verificado
+Lição: rodar a suíte COMPLETA de testes antes de empurrar (o CI do PR #123 falhou em `tests/test_gate_extra.py` porque o teto de veredito ainda tratava a H-001 como bloqueador da SPEC-006; corrigido no PR).
 validate_spec_sot 13/13 · revisor_gate PASSOU_D · check_invariants 0 · check_doc_sync 0 · check_rpsa OK · selo íntegro · mapa em dia (conferir no PR).
 
 ## 5. Próximo passo único

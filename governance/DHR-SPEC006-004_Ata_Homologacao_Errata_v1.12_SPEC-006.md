@@ -18,10 +18,11 @@
 | D1 | Homologar a errata v1.12 | **Sim** |
 | D2 | Classificação | **Minor/aditiva** |
 | D3 | Ciência do achado m3 (ADV-09) | A verificação spec-time do ADV-09 passa de "grep de fechamento = 0" para "toda menção ao fechamento atribui a Andraus/DHR-H001-001" — consequência necessária do fato novo; texto antigo preservado |
+| D5 | Achado m6 do adendo do Revisor (Média, **pré-existente**, não introduzido pela v1.12): o plan dizia BL-003/BL-011 `Em espera`, mas o painel RMR-001 os registra `ATIVADO` (DHR-BACKLOG-001, 2026-10-17) | **Corrigir agora, uma linha** (plan.md l.51 e l.52, texto anterior preservado; classe M; sem regra nova). Aceita sem nova auditoria; o Revisor deixou a decisão (aceitar × reabrir) a Andraus |
 | D4 | Correções pós-parecer (m1, m2, m4, m5) | Aceitas **sem nova auditoria** do Revisor (precedente: DHR-SPEC006-003 D5); texto prescrito pelo próprio parecer, aplicado pelo Orquestrador como classe M, sem regra/campo/mecanismo novo |
 
 ## 2. Evidência amarrada `[FATO]`
-- `specs/features/SPEC-006/plan.md` sha256 `7ce76f106da79b03762afac5a1a9865b26813f7b075acfb406d280573dec5e6d` — **difere** do auditado pelo Revisor (`479baab6…`): diferença = correções m1/m2/m4/m5 (9 linhas) **mais** o marcador de homologação no Status (edição editorial só dessa célula, feita por esta ata). Não reauditada.
+- `specs/features/SPEC-006/plan.md` sha256 `dd5a609f30078515c673a9e66990c54ee0c5e2ab881b6bcc51d6a573579b6255` — **difere** do auditado pelo Revisor (`479baab6…`): diferença = correções m1/m2/m4/m5 (9 linhas) **mais** o marcador de homologação no Status (edição editorial só dessa célula, feita por esta ata) **e a correção m6** (D5). Não reauditada.
 - `specs/features/SPEC-006/checks.md` sha256 `1ee11bb7652f59dc5560bf115f78746b4cb3453c33971dcb605443e84b9506b5` — difere do auditado (`1081a4f2…`) pelas correções m1/m5 (4 linhas). Não reauditado.
 - Gate de código (rodado pelo Orquestrador, não pelo Revisor): `validate_spec_sot` 13/13 PASS · `revisor_gate` **PASSOU_D** · `check_invariants` 0 achados.
 
