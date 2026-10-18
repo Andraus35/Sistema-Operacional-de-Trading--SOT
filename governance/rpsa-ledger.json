@@ -332,6 +332,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Atualiza apenas o estado de dois itens do painel de backlog RMR-001; nenhum arquivo de agente, checklist, metodo nem regra e alterado."
+    },
+    {
+      "id": "DHR-SPEC006-002",
+      "data": "2026-10-18",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra decisao de processo de uma Spec; nao altera texto de nenhum arquivo de agente."
     }
   ]
 }
