@@ -45,3 +45,12 @@ Custo estimado [INFERÊNCIA]: estudo ~150–250 mil (Opus) + sincronização doc
 
 ## Decisões que são só de Andraus
 Aprovar o plano e a ordem das fases · criar `especificador-leve`/`revisor-profundo` (e emendar a DHR-ROTEAMENTO-003) · a tecnologia da H-001 · autorizar a edição dos arquivos protegidos listados · destino dos 12 ramos e abertura da SPEC-007.
+
+## Resultado da Fase 0 (2026-10-18) — medição, sem mudar nenhum arquivo normativo
+| Mecanismo | Medido | Veredito (proposta) |
+|---|---|---|
+| **Hash / delta por bloco** (`spec_delta.py`) | Revisão integral 203–218 mil tokens × por delta 151 mil (10 de 122 blocos): **−26% a −31%** | **Manter.** Só vale quando < 50% dos blocos mudam, sem mudança de Complexidade e com parecer anterior (já é a regra do `revisor.md` §3-bis) |
+| **Carimbo de última sincronização** (`sincronizado-até` × livro-razão RPSA) | Dispensa reabrir 15 atas EUA-E04..E18 (≈ 15 mil tokens de leitura por agente, por rodada); o Revisor registrou "não reabri" | **Manter.** Custo ≈ 0 (verificação de 1 linha pelo `check_rpsa`) |
+| **Ficha de correção mínima feita por agente caro** | Cabeçalho (5 linhas): 58 mil; N-08 + menores: 106 mil; o Orquestrador fez correções equivalentes de 1 linha com poucos mil | **Mudar** → Fase 1 (classe M) |
+| **Rodada integral repetida** | Rodadas 8 e 9 integrais: 218 + 203 mil, cada uma abriu 4 Médias novas ("catraca") | **Mudar** → regra de congelamento (Fase 1) |
+**Régua adotada para decidir:** manter um mecanismo se economiza ≥ 25% por rodada sem perder achado; reavaliar na próxima Spec CRITICAL. Limite da medição: n = 1 delta (v1.11) e 2 integrais; confirmar com o banco de defeitos plantados antes de tornar a régua norma.
