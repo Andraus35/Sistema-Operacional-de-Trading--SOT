@@ -9,7 +9,7 @@
 | Ref | `specs/features/SPEC-006/plan.md` + `checks.md` (errata **v1.11 PROPOSTA** sobre a baseline v1.7 — `DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md`); parecer do Revisor por delta: **CONFORME condicional** (`governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md`, `plan.md` sha256 `8527addb…` na revisão; n-d corrigido depois); parecer anterior sobre a v1.10: NÃO CONFORME (N-08 Média, agora FECHADA) |
 | Data | a preencher na assinatura |
 | Status | **a preencher: HOMOLOGADA — ERRATA v1.11 (Minor/aditiva)** *ou* **NÃO HOMOLOGADA** |
-| Compatibilidade | **Decisão de Andraus** — proposta: Minor/aditiva (não redefine CHM-001/CEM-001/CCM-001; não fecha decisão aberta). Observação do Revisor: a v1.7 já admitia `conviction` por estado; a negação por padrão **restringe** isso — se Andraus considerar que isso não é aditivo, classificar como Major e tratar como Plan novo |
+| Compatibilidade | **Major (mudança restritiva)** — escolha de Andraus no chat (2026-10-18): a v1.7 já admitia `conviction` por estado e a errata passa a **negá-la por padrão**, restringindo um contrato baselined (não é "aditiva"). Não redefine CHM-001/CEM-001/CCM-001 e não fecha decisão aberta. Homologada como errata com ata própria e ressalva expressa; a v1.7 permanece como registro histórico (INV-07) |
 | RPSA-escopo | nao *(proposta: a errata não altera texto de agente)* |
 | RPSA-sync | fonte-unica |
 | RPSA-motivo | Homologação de errata de Spec; não altera texto de agente. |
@@ -17,9 +17,15 @@
 ## 1. Decisão a registrar (preencher)
 | # | Item | Decisão de Andraus |
 |---|---|---|
-| D1 | Homologar a errata v1.11 como errata da baseline v1.7 | ☐ sim ☐ não ☐ adiar |
-| D2 | **Negação de `conviction` por padrão no KG** (`CONVICTION_HISTORY_UNDEFINED`) até Andraus definir o histórico de estados da convicção (CCM-001/SPEC-003/M-001, abertas) — decisão de Andraus no chat de **2026-10-17**, hoje **sem ata**; esta ata a registraria (n-c do parecer) | ☐ registrar ☐ não |
-| D3 | Classificação Minor/aditiva (ver "Compatibilidade") | ☐ Minor ☐ Major |
+| D1 | Homologar a errata v1.11 como errata da baseline v1.7 | ☐ sim ☐ não ☐ adiar *(falta a assinatura expressa de Andraus no chat)* |
+| D2 | **Negação de `conviction` por padrão no KG** (`CONVICTION_HISTORY_UNDEFINED`) — decisão de Andraus no chat de **2026-10-17**, até então sem ata; esta ata a registra (n-c do parecer). **Condição de reversão:** vale até Andraus definir o histórico de estados da convicção (CCM-001/SPEC-003/M-001, abertas); a definição desse histórico reabre a regra. Fail-closed e reversível; **não fecha M-001** | ☑ registrar com condição de reversão *(escolha de Andraus, 2026-10-18)* |
+| D3 | Classificação da errata | ☑ **Major (mudança restritiva)** *(escolha de Andraus, 2026-10-18)* |
+| D4 | Condição de conformidade | ☑ homologar **com a condição escrita**: o parecer do Revisor é **CONFORME condicional**; **H-001 segue ABERTA** (divergência ROADMAP:177 × Q-ABERTURA-3 não resolvida); o gate de código foi rodado pelo **Orquestrador**, não pelo Revisor (a ferramenta do gate não está exposta ao Revisor em nuvem). Nada é apresentado como conformidade plena *(escolha de Andraus, 2026-10-18)* |
+
+## 1-bis. Evidência amarrada (escolha de Andraus, 2026-10-18)
+- `specs/features/SPEC-006/plan.md` sha256 `8527addb878d7585dbebdf66d376161af91d217c5f0f26c5355eb94a806beba6` — **idêntico** ao hash que o Revisor auditou por delta (base `ae3b819`, v1.10).
+- Gate de código sobre esse `plan.md`: validate_spec_sot 13/13 PASS · revisor_gate **PASSOU_D**, 0 sinais H · check_invariants 0 achados (rodados pelo Orquestrador).
+- `specs/features/SPEC-006/checks.md`: recebeu **somente a correção editorial n-d** (§17, linha m-A) **depois** do parecer; não foi reauditado pelo Revisor. Hash e commit a preencher na assinatura (`sha256sum`, commit `0e4275f` na linha de trabalho).
 
 ## 2. O que a errata v1.11 estabelece `[FATO, se assinada]`
 - **N-08 (Média):** o núcleo causal imutável na cadeia `supersedes` inclui `outcome_ref`/`no_outcome` além de `mechanism`/`direction`/`conditions`/`regime` — em RULE-CKG-008, BASpec-CKG-008 (GATE DE SAÍDA), EC-CKG-005 (PRECOND, E3), esquema `causal` e ADV-04(h); m-A/m-B fechados.

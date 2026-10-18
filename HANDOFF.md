@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-47
-previous: HO-2026-10-18-46
+handoff_id: HO-2026-10-18-48
+previous: HO-2026-10-18-47
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
 base_commit: 154a7e9
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-48 — pontos sensíveis da minuta decididos por Andraus (AskUserQuestion, 2026-10-18):** classificação **Major (mudança restritiva)**; negação de `conviction` **registrada com condição de reversão** (vale até Andraus definir o histórico de estados da convicção; não fecha M-001); homologar **com a condição escrita** (CONFORME condicional, H-001 aberta, gate rodado pelo Orquestrador); evidência = **sha256 do plan.md `8527addb…`** (idêntico ao auditado) + gate + ressalva de que o `checks.md` só recebeu a correção editorial n-d. Minuta atualizada. **Falta a assinatura expressa de Andraus** (D1); nada homologado.
 - **HO-47 — PR #118 MESCLADO** (Andraus: "Mesclar"; main `154a7e9`). Respostas de Andraus (AskUserQuestion): (1) **preparar minuta da ata** de homologação da errata v1.11 → `governance/propostas/SPEC-006/MINUTA-ATA-HOMOLOGACAO-ERRATA-v1.11.md` ([PROPOSTA], sem número de ata; Andraus preenche D1-D3 e assina no chat); (2) **H-001: adiar e manter ABERTA** (divergência ROADMAP:177 × Q-ABERTURA-3 segue pendência dele); (3) **ramos/PRs antigos: só listar** → `governance/propostas/SPEC-006/LISTA-RAMOS-E-PRS-OBSOLETOS-2026-10-18.md` (nada fechado/apagado). Ramo de trabalho recriado da main (PR anterior mesclado).
 - **HO-46 (correção da cadeia; conteúdo do HO-45) — Revisor por delta sobre a errata v1.11: CONFORME condicional** (0 Críticas, 0 Médias, 2 Menores n-d/n-e; N-08, m-A, m-B, n-b FECHADOS). Registro em `governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md`. n-d conferido (procede). Teto: H-001 aberta + gate fora da sessão do Revisor. **Nada homologado.** Andraus escolheu manter o PR #118 em rascunho até este parecer; agora decide.
 - **HO-44 — Errata v1.11 da SPEC-006 (candidata, NÃO homologada)** no PR #118: Especificador sanou N-08 (outcome_ref/no_outcome no GATE DE SAÍDA do BASpec-008, EC-005 PRECOND e esquema `causal`; m-A/m-B), n-a (assert-absent no checks §17/§18, com limite declarado), n-b (ADV-21(f)), n-c (negação de `conviction` por padrão = decisão de Andraus no chat 2026-10-17 **sem ata ainda**; a ata de homologação da errata deve registrá-la, AGENTS §10). Orquestrador corrigiu 1 citação do changelog que o detector lia errado. Gates: validate 13/13, revisor_gate PASSOU_D (H=0), invariantes 0, doc_sync 0, RPSA ok, selo íntegro, testes ok. **Revisor ainda NÃO auditou a v1.11.** Lição: enquanto o Especificador edita, não empurrar WIP (CI fica vermelho pelo mapa/gate).
@@ -62,7 +63,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Andraus lê a minuta e decide (chat):** homologar a errata v1.11 (D1), registrar a negação de `conviction` (D2) e a classificação Minor/aditiva (D3). Só depois o Controlador registra a ata, classifica no RPSA e (por ordem expressa) ajusta ROADMAP/CATALOGO. Também dele: H-001 e demais decisões abertas; destino dos ramos/PRs da lista. Nada disso foi feito.
+**Andraus assina (ou não) a homologação da errata v1.11 no chat** — com isso o Controlador registra a ata (número novo), classifica no RPSA e, por ordem expressa, ajusta ROADMAP/CATALOGO. Sem assinatura, a errata fica como proposta. Também dele: H-001 e demais decisões abertas; destino dos ramos/PRs da lista.
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
