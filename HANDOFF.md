@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-18-45
-previous: HO-2026-10-18-44
+handoff_id: HO-2026-10-18-46
+previous: HO-2026-10-18-45
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
 base_commit: 82e67b5
@@ -19,7 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
-- **HO-45 — Revisor por delta sobre a errata v1.11: CONFORME condicional** (0 Críticas, 0 Médias, 2 Menores n-d/n-e; N-08, m-A, m-B, n-b FECHADOS). Registro em `governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md`. n-d conferido (procede). Teto: H-001 aberta + gate fora da sessão do Revisor. **Nada homologado.** Andraus escolheu manter o PR #118 em rascunho até este parecer; agora decide.
+- **HO-46 (correção da cadeia; conteúdo do HO-45) — Revisor por delta sobre a errata v1.11: CONFORME condicional** (0 Críticas, 0 Médias, 2 Menores n-d/n-e; N-08, m-A, m-B, n-b FECHADOS). Registro em `governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md`. n-d conferido (procede). Teto: H-001 aberta + gate fora da sessão do Revisor. **Nada homologado.** Andraus escolheu manter o PR #118 em rascunho até este parecer; agora decide.
 - **HO-44 — Errata v1.11 da SPEC-006 (candidata, NÃO homologada)** no PR #118: Especificador sanou N-08 (outcome_ref/no_outcome no GATE DE SAÍDA do BASpec-008, EC-005 PRECOND e esquema `causal`; m-A/m-B), n-a (assert-absent no checks §17/§18, com limite declarado), n-b (ADV-21(f)), n-c (negação de `conviction` por padrão = decisão de Andraus no chat 2026-10-17 **sem ata ainda**; a ata de homologação da errata deve registrá-la, AGENTS §10). Orquestrador corrigiu 1 citação do changelog que o detector lia errado. Gates: validate 13/13, revisor_gate PASSOU_D (H=0), invariantes 0, doc_sync 0, RPSA ok, selo íntegro, testes ok. **Revisor ainda NÃO auditou a v1.11.** Lição: enquanto o Especificador edita, não empurrar WIP (CI fica vermelho pelo mapa/gate).
 - **HO-43 — decisões de Andraus (AskUserQuestion, 2026-10-18) executadas no PR #118:** (1) edições das atas BACKLOG-ABERTURA-001 e REVISOR-DELTA-001 aplicadas em `especificador.md`/`revisor.md` (merge 3-vias preservando o resto da main; só o carimbo conflitou) e RPSA marcado `propagado` + carimbos alinhados (`check_rpsa --write`); (2) ROADMAP e CATALOGO atualizados para "SPEC-006 BASELINE v1.7" (próximo autorizado = SPEC-007, abertura pendente); (3) rumo da errata v1.10 = corrigir N-08 e Menores por delta; (4) ramo `ccr-63ea68aa-ks4bkd` e PRs #31/#2: **só listar, Andraus decide** (nada fechado/apagado). Verificado: 289 testes OK, lint 22/22, validate 13/13, gate PASSOU_D, RPSA ok, selo íntegro, doc_sync 0; `check_refs` 1 ERRO herdado (AUDITORIA RELATORIO.md:227) e COE-14 WARN (gate_extra/spec_delta fora do registro).
 - **HO-42 — PR #118 (rascunho) aberto e inscrito.** CI falhou só por selo divergente (4 testes de `test_revisor_gate_mcp`). **Andraus autorizou (AskUserQuestion) regravar o selo:** `gate_manifest.py --write` (17 arquivos, 5 hashes mudaram: revisor_gate, validate_spec_sot, check_refs, backlog_triggers, build_map); `--check` íntegro; `test_gate_manifest` + `test_revisor_gate_mcp` 19/19 OK. Segue pendente: R3 do RPSA (edições de agente das 2 atas), ROADMAP/CATALOGO, rumo da errata v1.10.
