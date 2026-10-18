@@ -128,9 +128,14 @@ class Candidato(unittest.TestCase):
 
 class Teto(unittest.TestCase):
     def test_gate_fora_da_sessao_do_revisor_limita(self):
+        status_g = "| Status | **CANDIDATO** — G-001 permanece ABERTA; WF-D03 segue ABERTA. |\n"
+        teto, mot = g.teto_de_veredito("SPEC-009", status_g, ROOT, gate_executado_pelo_revisor=True)
+        self.assertEqual(teto, "CONFORME condicional")  # G-001 aberta bloqueia a SPEC-009 (revisor.md §8)
+        self.assertTrue(any("G-001" in m for m in mot))
+
+    def test_h001_fechada_nao_limita_a_spec006(self):  # DHR-H001-001: H-001 deixou de ser bloqueador (revisor.md §8)
         teto, mot = g.teto_de_veredito("SPEC-006", STATUS, ROOT, gate_executado_pelo_revisor=True)
-        self.assertEqual(teto, "CONFORME condicional")  # H-001 aberta bloqueia a SPEC-006 (revisor.md §8)
-        self.assertTrue(any("H-001" in m for m in mot))
+        self.assertEqual((teto, mot), ("CONFORME", []))
 
     def test_sem_bloqueio_e_com_gate_no_revisor(self):
         teto, mot = g.teto_de_veredito("SPEC-001", "| Status | x |\n", ROOT, gate_executado_pelo_revisor=True)

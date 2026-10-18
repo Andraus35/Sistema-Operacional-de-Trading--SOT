@@ -375,7 +375,7 @@ STATUS           :  [PROPOSTA] — efetiva na homologação da Spec; registrado 
 |---|---|---|
 | **J-001** | Fórmula/pesos/limiares **definitivos** do Conviction Vector (CCM-001 pendente de redação — SPEC-003). **Reduzido (Q-002/Q-008):** dimensionalidade = 8 (fechada); limiares de Fase Piloto (≥70%, 7/9) homologados como interinos. Resta a fórmula de agregação, pesos e limiares definitivos pós-backtest. | Trava E3 do gate Convicção→Decisão; SPEC-003 |
 | G-001 | Schema de estado persistente por agente (P08) | SPEC-009 |
-| H-001 | Knowledge Graph: grafo real ou estrutura em memória? | SPEC-006 |
+| ~~H-001~~ | ~~Knowledge Graph: grafo real ou estrutura em memória?~~ → **FECHADA** (DHR-H001-001, 2026-10-18): mecanismo físico = PostgreSQL só-inserção, bitemporal (Opção C); índice de grafo derivado só se o BUILD medir necessidade. | SPEC-006 |
 | ~~I-001~~ | ~~Skills como unidades formais separadas?~~ → **FECHADA** (DHR-I001-001, 2026-09-28): direção **híbrida por Classe** (Opção C) — Classe D (determinística/certificável) formaliza como Skill separada; Classe P (julgamento) permanece comportamento interno do agente. Critério de corte exato: Dossiê de abertura da SPEC-025. | SPEC-025 |
 | K-001 | Ciclo P12 detalhado (evolução do conhecimento) | SPEC-018 |
 | L-001 | Governança do próprio harness / policy versionada | SPEC-019 |

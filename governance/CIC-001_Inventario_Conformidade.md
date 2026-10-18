@@ -187,7 +187,7 @@ Conforme K-PAP-005 (DHR-PAP-001-B ss3), apenas as open decisions que tocam um pr
 |---|---|---|---|---|
 | **J-001** | Formula/pesos/limiares definitivos do Conviction Vector | PC-04 (piso de conviccao), PCO-06 (nao-reducao) | GPR-001 ss2.1 PC-04, ss2.4 PCO-06 | atomic-spec.md ss12 |
 | **G-001** | Schema de estado persistente por agente | PE-07 (modularidade), PB-07 (auditabilidade) | GPR-001 ss2.3 PE-07, ss2.2 PB-07 | atomic-spec.md ss12 |
-| **H-001** | Knowledge Graph: grafo real ou estrutura em memoria? | PE-05 (Blackboard vs KG), PB-05 (rastreabilidade) | GPR-001 ss2.3 PE-05, ss2.2 PB-05 | atomic-spec.md ss12 |
+| ~~**H-001**~~ **FECHADA** (DHR-H001-001, 2026-10-18: PostgreSQL só-inserção bitemporal, Opção C) | ~~Knowledge Graph: grafo real ou estrutura em memoria?~~ | PE-05 (Blackboard vs KG), PB-05 (rastreabilidade) | GPR-001 ss2.3 PE-05, ss2.2 PB-05 | atomic-spec.md ss12 |
 | **K-001** | Ciclo P12 detalhado (evolucao do conhecimento) | PO-05 (policies nao auto-aprendidas), PB-05 (rastreabilidade) | GPR-001 ss2.5 PO-05, ss2.2 PB-05 | atomic-spec.md ss12 |
 | **M-001** | Estados do Blackboard para objetos NAO-hipotese | PE-05 (Blackboard como memoria de trabalho) | GPR-001 ss2.3 PE-05 | atomic-spec.md ss12 |
 | **N-001** | Pesos por ativo do Conviction Vector | PC-04, PCO-06 (mesmo vinculo de J-001) | GPR-001 ss2.1 PC-04, ss2.4 PCO-06 | atomic-spec.md ss12 |
