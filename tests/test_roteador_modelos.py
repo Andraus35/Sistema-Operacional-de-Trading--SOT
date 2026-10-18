@@ -14,11 +14,73 @@ def d(**k):
     return r.decidir(k)[0]
 
 
-def cls(c):
-    return f"Audite o delta.\nCLASSE-TAREFA: {c}\n"
+def cls(c, extra=""):
+    return f"Audite o delta.\nCLASSE-TAREFA: {c}\n{extra}"
+
+
+def plan(compl, n=10, mudar=()):
+    """plan.md sintético com n blocos; `mudar` = índices com texto diferente."""
+    out = [f"# Plan\nComplexidade: {compl}\n"]
+    for i in range(n):
+        out.append(f"## Bloco {i}\ntexto {'novo' if i in mudar else 'velho'} {i}\n")
+    return "\n".join(out)
 
 
 class Roteador(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self._root = r.ROOT
+        r.ROOT = self.root
+        (self.root / "crit.md").write_text(plan("CRITICAL"), encoding="utf-8")
+        (self.root / "med.md").write_text(plan("MEDIUM"), encoding="utf-8")
+        (self.root / "crit_base.md").write_text(plan("CRITICAL"), encoding="utf-8")
+        (self.root / "crit_poucas.md").write_text(plan("CRITICAL", mudar=(1,)), encoding="utf-8")
+        (self.root / "crit_muitas.md").write_text(plan("CRITICAL", mudar=range(8)), encoding="utf-8")
+        (self.root / "parecer.md").write_text("parecer", encoding="utf-8")
+        (self.root / "fm.json").write_text(json.dumps({"achados": [achado()]}), encoding="utf-8")
+        (self.root / "fc.json").write_text(json.dumps({"achados": [achado(natureza="conferencia")]}), encoding="utf-8")
+
+    def tearDown(self):
+        r.ROOT = self._root
+        self.tmp.cleanup()
+
+    def test_classe_derivada_do_alvo(self):
+        self.assertEqual(r.derivar_classe("especificador", ""), "O")
+        self.assertEqual(r.derivar_classe("revisor", "ALVO: crit.md"), "S3")
+        self.assertEqual(r.derivar_classe("revisor", "ALVO: med.md"), "S2")
+        self.assertIsNone(r.derivar_classe("revisor", ""))
+        self.assertIsNone(r.derivar_classe("revisor", "ALVO: ../fora.md"))
+        self.assertIsNone(r.derivar_classe("revisor", "ALVO: nao_existe.md"))
+
+    def test_delta_aplicavel_so_com_base_parecer_e_menos_da_metade(self):
+        base = "BASE: crit_base.md\nPARECER: parecer.md"
+        self.assertEqual(r.derivar_classe("revisor", "ALVO: crit_poucas.md\n" + base), "S2")
+        self.assertEqual(r.derivar_classe("revisor", "ALVO: crit_muitas.md\n" + base), "S3")  # > metade => integral
+        self.assertEqual(r.derivar_classe("revisor", "ALVO: crit_poucas.md\nBASE: crit_base.md"), "S3")  # sem parecer anterior
+        (self.root / "med_base.md").write_text(plan("MEDIUM"), encoding="utf-8")
+        self.assertEqual(r.derivar_classe("revisor", "ALVO: crit_poucas.md\nBASE: med_base.md\nPARECER: parecer.md"), "S3")  # Complexidade mudou
+
+    def test_ficha_define_s1_e_m(self):
+        self.assertEqual(r.derivar_classe("revisor", "FICHA: fc.json"), "S1")
+        self.assertEqual(r.derivar_classe("especificador", "FICHA: fm.json"), "M")
+        self.assertEqual(r.derivar_classe("revisor", "FICHA: fm.json"), "M")
+
+    def test_declaracao_deve_igualar_derivada(self):
+        ok = lambda c, ex, m="sonnet": d(subagent_type="Revisor SOT", model=m, prompt=cls(c, ex))
+        self.assertEqual(ok("S3", "ALVO: crit.md", "opus"), "permitir")
+        self.assertEqual(ok("S2", "ALVO: crit.md"), "negar")          # declarou S2, derivada S3 (rebaixar o Revisor)
+        self.assertEqual(ok("S2", "ALVO: med.md"), "permitir")
+        self.assertEqual(ok("S3", "ALVO: med.md", "opus"), "negar")   # declarou S3, derivada S2 (gasto indevido)
+        self.assertEqual(ok("S2", ""), "negar")                       # sem ALVO: não derivável
+        self.assertEqual(ok("S1", "FICHA: fc.json"), "permitir")
+        self.assertEqual(ok("S2", "FICHA: fc.json"), "negar")
+
+    def test_abertura_de_spec_e_desenho_e_ficha_mecanica_nao_vai_a_agente(self):
+        self.assertEqual(d(subagent_type="Especificador SOT", model="opus", prompt=cls("O")), "permitir")
+        self.assertEqual(d(subagent_type="Especificador SOT", prompt=cls("O", "FICHA: fm.json")), "negar")
+        self.assertEqual(d(subagent_type="Especificador SOT", model="opus", prompt=cls("O", "FICHA: fm.json")), "negar")
+
     def test_especificador_e_revisor_sem_parametro(self):
         self.assertEqual(d(subagent_type="Revisor SOT", prompt="audite"), "permitir")
         self.assertEqual(d(subagent_type="Especificador SOT"), "permitir")
@@ -32,19 +94,19 @@ class Roteador(unittest.TestCase):
     def test_effort_sempre_negado(self):
         for t in ("Revisor SOT", "Especificador SOT"):
             self.assertEqual(d(subagent_type=t, effort="low"), "negar")
-            self.assertEqual(d(subagent_type=t, effort="low", model="sonnet", prompt=cls("S2")), "negar")
+            self.assertEqual(d(subagent_type=t, effort="low", model="sonnet", prompt=cls("S2", "ALVO: med.md")), "negar")
 
     def test_model_igual_a_tabela_da_classe_permitido(self):
-        self.assertEqual(d(subagent_type="Revisor SOT", model="sonnet", prompt=cls("S1")), "permitir")
-        self.assertEqual(d(subagent_type="Revisor SOT", model="claude-sonnet-5-5", prompt=cls("S2")), "permitir")
-        self.assertEqual(d(subagent_type="Revisor SOT", model="opus", prompt=cls("S3")), "permitir")
+        self.assertEqual(d(subagent_type="Revisor SOT", model="sonnet", prompt=cls("S1", "FICHA: fc.json")), "permitir")
+        self.assertEqual(d(subagent_type="Revisor SOT", model="claude-sonnet-5-5", prompt=cls("S2", "ALVO: med.md")), "permitir")
+        self.assertEqual(d(subagent_type="Revisor SOT", model="opus", prompt=cls("S3", "ALVO: crit.md")), "permitir")
         self.assertEqual(d(subagent_type="Especificador SOT", model="opus", prompt=cls("O")), "permitir")
 
     def test_model_diferente_da_tabela_negado(self):
-        self.assertEqual(d(subagent_type="Revisor SOT", model="opus", prompt=cls("S2")), "negar")
+        self.assertEqual(d(subagent_type="Revisor SOT", model="opus", prompt=cls("S2", "ALVO: med.md")), "negar")
         self.assertEqual(d(subagent_type="Especificador SOT", model="sonnet", prompt=cls("O")), "negar")
-        self.assertEqual(d(subagent_type="Revisor SOT", model="claude-sonnet-4-6", prompt=cls("S2")), "negar")
-        self.assertEqual(d(subagent_type="Revisor SOT", model="haiku", prompt=cls("S1")), "negar")
+        self.assertEqual(d(subagent_type="Revisor SOT", model="claude-sonnet-4-6", prompt=cls("S2", "ALVO: med.md")), "negar")
+        self.assertEqual(d(subagent_type="Revisor SOT", model="haiku", prompt=cls("S1", "FICHA: fc.json")), "negar")
 
     def test_classe_incompativel_com_agente_negada_mesmo_sem_model(self):
         self.assertEqual(d(subagent_type="Revisor SOT", prompt=cls("O")), "negar")
@@ -58,7 +120,7 @@ class Roteador(unittest.TestCase):
         self.assertIsNone(r.extrair_classe("CLASSE-TAREFA: S1\nCLASSE-TAREFA: O"))
         self.assertIsNone(r.extrair_classe("texto CLASSE-TAREFA: S1 no meio"))
         self.assertEqual(r.extrair_classe("a\nCLASSE-TAREFA: s2\n"), "S2")
-        self.assertEqual(d(subagent_type="Revisor SOT", model="sonnet", prompt="CLASSE-TAREFA: S2\nCLASSE-TAREFA: S2"), "permitir")
+        self.assertEqual(d(subagent_type="Revisor SOT", model="sonnet", prompt="CLASSE-TAREFA: S2\nCLASSE-TAREFA: S2\nALVO: med.md"), "permitir")
         self.assertEqual(d(subagent_type="Revisor SOT", model="sonnet", prompt="CLASSE-TAREFA: S1\nCLASSE-TAREFA: S2"), "negar")
         self.assertEqual(d(subagent_type="Revisor SOT", model="sonnet", prompt="CLASSE-TAREFA: S1\nCLASSE-TAREFA: O"), "negar")
 

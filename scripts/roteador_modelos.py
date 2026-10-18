@@ -20,6 +20,11 @@ Regras do hook para Especificador SOT / Revisor SOT:
          compatível com o agente e o `model` é IGUAL ao da tabela da classe. Qualquer outra coisa (sem classe, classe inválida/
          ambígua, agente incompatível, modelo diferente) => NEGA; sem `model` vale o frontmatter. FAIL-CLOSED no override.
   R-AC3  `CLASSE-TAREFA: M` enviada a agente => NEGA (o Orquestrador executa a classe M).
+  R-AC4  a classe DECLARADA é conferida contra a classe DERIVADA de fatos objetivos do repositório (derivar_classe); divergência
+         ou impossibilidade de derivar => NEGA. Entradas na linha própria do prompt: `ALVO: <plan.md>` (Revisor), `BASE: <ref|arquivo>`
+         + `PARECER: <arquivo>` (revisão por delta), `FICHA: <json>` (achados). Especificador (abertura de Spec, Plan, errata) => O;
+         com FICHA toda M => M (negado). Revisor: FICHA só de `conferencia` => S1; delta aplicável (revisor.md §3-bis.6) => S2;
+         integral => S3 se Complexidade CRITICAL, senão S2.
 Demais regras (R-GATE, R-N4, R-ALLOW) inalteradas. Detector/regra de forma, não julga o mérito (ENF-03). Falha na leitura do
 evento => libera (não há o que conferir); falha dentro da decisão sobre um agente de construção com model/effort => NEGA.
 Telemetria mínima (R8): uma linha JSON por invocação em <tmp>/sot-roteador/uso.jsonl (dado de estado, não normativo).
@@ -79,6 +84,63 @@ def extrair_classe(texto):
     return c if c in CLASSES else None
 
 
+def _campo(texto, nome):
+    ach = re.findall(rf"^[ \t]*{nome}:[ \t]*(\S.*?)[ \t]*$", texto or "", re.M)
+    return ach[0] if len(set(ach)) == 1 else None
+
+
+def _caminho(valor):
+    """Caminho do prompt resolvido dentro do repositório; None se fora dele ou inexistente."""
+    p = (Path(ROOT) / valor).resolve()
+    try:
+        p.relative_to(Path(ROOT).resolve())
+    except ValueError:
+        return None
+    return p if p.is_file() else None
+
+
+def _complexidade(texto):
+    m = re.search(r"Complexidade\W{0,20}\**(LOW|MEDIUM|HIGH|CRITICAL)\b", texto)
+    return m.group(1) if m else None
+
+
+def derivar_classe(agente, prompt):
+    """Classe derivada de FATOS objetivos (não da declaração). None = não derivável (=> override negado, fail-closed)."""
+    ficha = None
+    fv = _campo(prompt, "FICHA")
+    if fv:
+        fp = _caminho(fv)
+        if not fp:
+            return None
+        ficha = json.loads(fp.read_text(encoding="utf-8")).get("achados") or []
+        if not ficha:
+            return None
+        classes = {classificar_achado(a) for a in ficha}
+        if classes == {"M"}:
+            return "M"
+        if agente == "revisor" and classes == {"S1"}:
+            return "S1"
+    if agente == "especificador":
+        return "O"
+    alvo = _caminho(_campo(prompt, "ALVO") or "")
+    if not alvo:
+        return None
+    atual = alvo.read_text(encoding="utf-8", errors="replace")
+    compl = _complexidade(atual)
+    if not compl:
+        return None
+    base, parecer = _campo(prompt, "BASE"), _campo(prompt, "PARECER")
+    if base and parecer and _caminho(parecer):
+        import spec_delta
+        base_txt = spec_delta.ler_base(str(_caminho(base) or base), alvo)
+        d = spec_delta.delta(base_txt, atual)
+        total = max(d["total_base"], d["total_atual"], 1)
+        mudou = len(d["adicionados"]) + len(d["removidos"]) + len(d["alterados"])
+        if mudou * 2 <= total and _complexidade(base_txt) == compl:  # revisor.md §3-bis.6: > metade alterada ou Complexidade mudou => integral
+            return "S2"
+    return "S3" if compl == "CRITICAL" else "S2"
+
+
 def _decidir_ac(tipo, entrada):
     modelo, esforco = entrada.get("model"), entrada.get("effort")
     agente = "especificador" if re.search(r"especificador", tipo, re.I) else "revisor"
@@ -86,7 +148,14 @@ def _decidir_ac(tipo, entrada):
     if esforco:
         return "negar", (f"R-AC1: '{tipo}': `effort` por invocação é proibido (coluna reservada e desligada até o piloto de esforço; "
                          "DHR-ROTEAMENTO-003 Emenda 1).")
-    if classe == "M":
+    prompt = str(entrada.get("prompt") or "")
+    derivada = None
+    if classe or modelo or _campo(prompt, "FICHA"):
+        try:
+            derivada = derivar_classe(agente, prompt)
+        except Exception:
+            derivada = None
+    if classe == "M" or derivada == "M":
         return "negar", "R-AC3: classe M é executada pelo Orquestrador (ficha de correção); não é enviada a agente."
     if classe and CLASSES[classe]["agente"] != agente:
         return "negar", f"R-AC2: classe {classe} não é do agente '{tipo}' (tabela: {CLASSES[classe]['agente']})."
@@ -95,6 +164,11 @@ def _decidir_ac(tipo, entrada):
     if classe is None:
         return "negar", (f"R-AC2: `model={modelo}` exige `CLASSE-TAREFA: <classe>` válida e única no prompt "
                          "(fail-closed: sem classe vale o frontmatter).")
+    if derivada is None:
+        return "negar", ("R-AC4: classe não derivável de fatos do repositório (ALVO/BASE/PARECER/FICHA ausentes ou ilegíveis); "
+                         "override negado, vale o frontmatter.")
+    if derivada != classe:
+        return "negar", f"R-AC4: classe declarada {classe} diverge da derivada {derivada} (fatos do repositório); declare {derivada}."
     esperado = CLASSES[classe]["modelo"]
     if familia(modelo) != esperado:
         return "negar", f"R-AC2: classe {classe} usa '{esperado}' (tabela); recebido `model={modelo}`."
