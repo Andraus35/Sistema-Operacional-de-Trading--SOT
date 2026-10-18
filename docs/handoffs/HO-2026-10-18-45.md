@@ -61,7 +61,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Andraus decide:** (a) corrigir n-d (Menor) antes da ata; (b) homologar a errata v1.11 — ata nova (ex.: DHR-SPEC006-003) registrando a negação de `conviction` (decisão de 2026-10-17) e a classificação Minor/aditiva; (c) tirar o PR #118 de rascunho para mesclar; (d) dona de H-001. Nada feito sem ordem.
+**Andraus decide:** (a) corrigir n-d (Menor) antes da ata; (b) homologar a errata v1.11 — ata nova registrando a negação de `conviction` (decisão de 2026-10-17) e a classificação Minor/aditiva; (c) tirar o PR #118 de rascunho para mesclar; (d) dona de H-001. Nada feito sem ordem.
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
