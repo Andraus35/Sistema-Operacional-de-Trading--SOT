@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-17-36
-previous: HO-2026-10-17-35
-data: 2026-10-17
+handoff_id: HO-2026-10-18-37
+previous: HO-2026-10-17-36
+data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
-base_commit: dff55d5
+base_commit: 50eb182
 spec_autorizada: SPEC-006 (abertura homologada, DHR-SPEC006-001; Plan pendente — só por ordem de Andraus) — ROADMAP prevalece
 fase: spec-first
 autor: Orquestrador
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-37 — Plan v1.7 da SPEC-006 (candidato, NÃO homologado):** ata `governance/DHR-SPEC006-002_*` registrou Opção 2 + nota aditiva (RPSA registrada). Especificador redigiu `specs/features/SPEC-006/plan.md` (1498→1224 linhas; núcleo com regra única de admissão D4.15 que nega por padrão; caminhos (a)/(b)/(c), selo e SEAL_MISSING viraram emendas E-a..E-e sem contrato; histórico v1.0–v1.6 no Apêndice H do checks.md). Gates determinísticos: validate_spec_sot PASS (12/12), revisor_gate PASSOU_D, check_invariants 0, check_refs/doc_sync/repo_research sem ERRO, mapa em dia, lint 22/22. **Revisor ainda NÃO auditou a v1.7** (códigos novos que ele não viu: RECORD_MUTATION_FORBIDDEN, WRITER_UNAUTHORIZED, ONTOLOGY_CHANGE_NOT_GOVERNED, QUERY_WRITE_FORBIDDEN). Teto do parecer segue CONFORME condicional (ROADMAP:177 × Q-ABERTURA-3, H-001 — só Andraus).
 - **HO-35 — divisão da SPEC-006 (só proposta):** reverificação ao vivo ok (CI `main` verde, detectores sem ERRO). Especificador entregou `governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md` ([PROPOSTA], não normativa): causa dos achados = cópias da mesma regra, não amplitude; 4 Médias abertas (R7-1..R7-4) estão no núcleo/fronteira, nenhuma em causalidade. **Andraus escolheu no chat a Opção 2** (mesmo número, em etapas: v1.0 núcleo que nega toda escrita sem contrato de admissão + caminhos (a)/(b)/(c) como emendas aditivas + enxugamento). **Andraus decidiu no chat (AskUserQuestion): a Opção 2 conta como NOTA ADITIVA, sem re-apontamento formal** de BL-003/BL-011/DHR-BACKLOG-001 (o número SPEC-006 não muda). **Ainda NÃO registrado em ata/ROADMAP/RMR-001** (cabe ao Controlador, por ordem) e nada homologado; H-001 e demais decisões abertas intactas.
 - **Revisão independente de outro modelo (critério L3) na SPEC-006 v1.3 (Plan candidato no ramo `spec006-plan`, fora da main):** 2 modelos externos **sem repositório** → 10 achados: 2 falsos, 4 lacunas já declaradas pelo autor, 4 reais (todos já no Revisor interno); **0 defeito real exclusivo de externo**; Revisor interno achou ≥9 que nenhum externo viu. Registro em `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md` §7 e §7.1. Conclusão: independência sem leitura do repositório rende pouco.
 - **Próxima rodada (Andraus faz no VS Code com Copilot COM acesso ao repo em nuvem):** prompt pronto em `revisao-independente/PEDIDO-COPILOT-COM-REPO.txt` (autoriza leitura, indica o ramo/caminho do Plan, proíbe abrir pastas do Revisor para preservar independência). Andraus cola o JSON de volta aqui; conferir cada achado contra o texto real e comparar com o Revisor interno (2 rodadas já feitas; achados A-01..A-10 / F-01..F-14, 1 crítico: herança "preservar todos os estados" × admissão INDETERMINADA × CEM-001:494).
@@ -49,7 +50,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Registrar a escolha da Opção 2 e preparar a v1.0 núcleo da SPEC-006 — somente por ordem de Andraus.** (1) Ata/DHR da decisão (Q-ABERTURA-5): Opção 2 + nota aditiva (já decidido no chat; falta só a ata e a nota no RMR-001). (2) Só depois, Especificador: Plan v1.7 enxugado (fonte única; remover critério (a) proposto e `SEAL_MISSING`; ver proposta §Opção 2). (3) Divergência ROADMAP:177 × DHR-SPEC006-001:20 (H-001) segue limitando o parecer a CONFORME condicional — decisão de Andraus. Nada disso foi feito.
+**Acionar o Revisor SOT sobre o Plan v1.7 da SPEC-006** (`specs/features/SPEC-006/plan.md` + `checks.md`; conferir cada achado contra o texto real; guarda pós-Revisor G1/G2/G3 vale). Depois: eventual v1.8 pelo Especificador; homologação só de Andraus. Nada homologado; H-001 e demais decisões abertas intactas. Opcional de Andraus: ponteiro da ata nas linhas BL-003/BL-011 do RMR-001.
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
