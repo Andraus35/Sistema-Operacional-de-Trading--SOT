@@ -39,3 +39,10 @@ O parecer do Revisor é **CONFORME condicional**, não pleno: **H-001 segue ABER
 ## 6. Pendências (não decididas por esta ata)
 - O cabeçalho/Status do `plan.md` ainda diz "ERRATA v1.11 PROPOSTA (aguarda Revisor e Andraus)". A homologação consta **desta ata**; atualizar o texto do cabeçalho muda o hash do `plan.md` e fica para o Especificador, por ordem de Andraus.
 - `ROADMAP.md` e `CATALOGO-OFICIAL.md` **não** foram alterados por este ato (só por ordem expressa de Andraus).
+
+## 7. Adendo (2026-10-18) — edição editorial pós-homologação do cabeçalho `[FATO]`
+Por decisão de Andraus (chat, 2026-10-18, AskUserQuestion), o Especificador atualizou **somente** o cabeçalho/Status do `plan.md` ("PROPOSTA" → "HOMOLOGADA — ERRATA v1.11 (Major, condicionada)"). Edições: `plan.md` linhas 6, 7, 41, 54 e ~1646 (Versão, Status, histórico v1.11, Nota de gate, anotação de status na tabela de decisões abertas). **Nenhuma regra, BASpec, EARS, D4/D6, EC, T, ADV, schema, contagem ou decisão aberta foi alterada**; verificado por delta (4 de 122 blocos alterados: cabeçalho, histórico, nota de gate, etiquetagem).
+- Hash **auditado/homologado** (§2): `plan.md` sha256 `8527addb878d7585dbebdf66d376161af91d217c5f0f26c5355eb94a806beba6`.
+- Hash **após a edição editorial**: `plan.md` sha256 `0f461e88b744960a1dab7e8b1d9d6a0a75bd3932d46f8a7a4529761fe3d88155`; `checks.md` sha256 `239a233e9ba4c2d18b82dfe499abf772553cedc17f8a8ca0a3bb12e17d647f4b`.
+- Gate sobre o `plan.md` atual: validate_spec_sot 13/13 PASS · revisor_gate PASSOU_D (teto CONFORME condicional) · check_invariants 0.
+- Pendência §6 (cabeçalho) **satisfeita**. ROADMAP e CATALOGO registrados no mesmo PR por decisão de Andraus; a linha 177 do ROADMAP passa a dizer que o H-001 permanece ABERTA (texto anterior preservado como histórico, INV-07).

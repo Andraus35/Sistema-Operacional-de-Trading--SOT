@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-18-49
-previous: HO-2026-10-18-48
+handoff_id: HO-2026-10-18-50
+previous: HO-2026-10-18-49
 data: 2026-10-18
 branch: claude/blissful-pasteur-gkiz2m
-base_commit: 154a7e9
+base_commit: 04c7340
 spec_autorizada: SPEC-006 = BASELINE v1.7 homologada em 2026-10-13 (DHR-SPEC006-002, linha integrada do ramo ccr-63ea68aa-ks4bkd); ERRATA v1.10 PROPOSTA em revisão — ROADMAP da main ainda diz "Plan pendente" (divergência; ROADMAP prevalece até Andraus)
 fase: spec-first
 autor: Orquestrador
@@ -19,6 +19,7 @@ Reforçar o Revisor SOT (independente, determinístico + adversarial/probabilís
 Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-005; SPEC-006 com abertura homologada e Plan não iniciado. PCC-001 Fases 1 e 2 em vigor na `main` (D-PCC-3/4/5 em aberto).
 
 ## 3. Feito nesta sessão
+- **HO-50 — PR #119 MESCLADO** (`04c7340`, ordem de Andraus). Decisões dele (AskUserQuestion, 2026-10-18) executadas: (1) **ROADMAP/CATALOGO** registram a DHR-SPEC006-003 (linha da SPEC-006 e registro aditivo); (2) **cabeçalho do plan.md** → "HOMOLOGADA" pelo Especificador (editorial; hash auditado `8527addb…` → novo `0f461e88…`; adendo §7 na ata); (3) **ROADMAP:177** corrigido: "H-001 permanece ABERTA" (frase antiga preservada como histórico); (4) **PRs #31 e #2 FECHADOS**; os 12 ramos contidos na main **NÃO foram apagados** (esta sessão não consegue excluir ramo remoto; o proxy ignora `push --delete`) — apagar pelo GitHub/terminal de Andraus: assinatura-delegacao-merge, ccr-63ea68aa-ks4bkd, ccr-7917ac44-2l55cz, ccr-a5f30778-9nezl9, ccr-d43bf9b0-h336k5, claude/new-session-ch6cqa, f3-aplicacao, gate-detectores, revisor-modelo-metodo-v2, revisor-passo8-i001-l001, rpsa-registra-013-assinatura, spec006-abertura-homologada. Os 8 ramos com commits próprios seguem intocados. H-001 e demais decisões abertas intactas.
 - **HO-49 — ERRATA v1.11 DA SPEC-006 HOMOLOGADA por Andraus (chat, 2026-10-18: "Sim, homologo a errata v1.11").** Ata: `governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md` — **Major (mudança restritiva)**, **homologação CONDICIONADA** (CONFORME condicional; H-001 ABERTA; gate rodado pelo Orquestrador), negação de `conviction` por padrão registrada com condição de reversão (vale até Andraus definir o histórico de estados da convicção; não fecha M-001), evidência amarrada: plan.md sha256 `8527addb…`, checks.md `239a233e…` (só correção n-d pós-parecer). RPSA: `nao/fonte-unica`. **ROADMAP/CATALOGO NÃO alterados** (só por ordem expressa); cabeçalho do plan.md ainda diz "PROPOSTA" (muda o hash; pendente, Especificador por ordem de Andraus). Decisões abertas intactas.
 - **HO-48 — pontos sensíveis da minuta decididos por Andraus (AskUserQuestion, 2026-10-18):** classificação **Major (mudança restritiva)**; negação de `conviction` **registrada com condição de reversão** (vale até Andraus definir o histórico de estados da convicção; não fecha M-001); homologar **com a condição escrita** (CONFORME condicional, H-001 aberta, gate rodado pelo Orquestrador); evidência = **sha256 do plan.md `8527addb…`** (idêntico ao auditado) + gate + ressalva de que o `checks.md` só recebeu a correção editorial n-d. Minuta atualizada. **Falta a assinatura expressa de Andraus** (D1); nada homologado.
 - **HO-47 — PR #118 MESCLADO** (Andraus: "Mesclar"; main `154a7e9`). Respostas de Andraus (AskUserQuestion): (1) **preparar minuta da ata** de homologação da errata v1.11 → `governance/propostas/SPEC-006/MINUTA-ATA-HOMOLOGACAO-ERRATA-v1.11.md` ([PROPOSTA], sem número de ata; Andraus preenche D1-D3 e assina no chat); (2) **H-001: adiar e manter ABERTA** (divergência ROADMAP:177 × Q-ABERTURA-3 segue pendência dele); (3) **ramos/PRs antigos: só listar** → `governance/propostas/SPEC-006/LISTA-RAMOS-E-PRS-OBSOLETOS-2026-10-18.md` (nada fechado/apagado). Ramo de trabalho recriado da main (PR anterior mesclado).
@@ -64,7 +65,7 @@ Fase spec-first; BUILD/VERIFY-de-código adiados. Última Spec homologada: SPEC-
 Ver §3. Nada de código alterado.
 
 ## 5. Próximo passo único
-**Andraus decide (nada feito sem ordem):** (a) atualizar ROADMAP/CATALOGO para registrar a DHR-SPEC006-003 e a baseline com a errata; (b) atualizar o cabeçalho do plan.md ("PROPOSTA" → homologada) pelo Especificador (muda o hash); (c) H-001 e a divergência ROADMAP:177 × Q-ABERTURA-3; (d) destino dos ramos/PRs da lista; (e) abrir a SPEC-007 (abertura pendente de autorização).
+**Andraus:** mesclar o PR com ROADMAP/CATALOGO/cabeçalho/adendo; apagar os 12 ramos (lista acima); decidir H-001 (mecanismo físico) e demais decisões abertas; autorizar a abertura da SPEC-007 (ROADMAP §23 passo 1-bis). Nada disso foi feito sem ordem.
 Pendências só de Andraus (não decidir por ele): H-001 e demais decisões abertas; R-07/fila EXP-SPEC; estado do BL-003; critério de admissão (a), selo SPEC-007. Lembrete vigente: assinar o registro de mecanismos como VIGENTE [PRAZO: 2026-10-24].
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
