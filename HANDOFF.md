@@ -1,12 +1,13 @@
 ---
-handoff_id: HO-2026-10-19-68
-previous: HO-2026-10-19-67
+handoff_id: HO-2026-10-19-69
+previous: HO-2026-10-19-68
 data: 2026-10-19
 branch: claude/amazing-fermat-dnbjtz
-base_commit: 339d5da
+base_commit: 033f42c
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12 HOMOLOGADAS (H-001 FECHADA, DHR-H001-001); SPEC-007 = ABERTURA HOMOLOGADA (DHR-SPEC007-001, 2026-10-19; uma Spec CRITICAL; NÃO é baseline); Plan da SPEC-007 pendente, só por ordem de Andraus
 fase: spec-first
 autor: Orquestrador
+anexo: governance/propostas/SPEC-007/BRIEFING-PLAN-SPEC007-2026-10-19.md
 ---
 # HANDOFF — SOT
 
@@ -18,18 +19,19 @@ autor: Orquestrador
 - **Resposta dada a Andraus:** ainda não dá para adicionar conhecimento por RAG — fase de especificação; ordem: abertura homologada → Plan da SPEC-007 → Revisor → homologação → só então BUILD (sem data no ROADMAP). Nada entra no caderno permanente sem carimbo.
 
 ## 2. Estado (fatos conferidos em 2026-10-19)
-- `main` = `339d5da` (PRs #122–#127: roteador, H-001/errata v1.12, detector+selo, mecanismos verificados, abertura da SPEC-007 homologada, registro de mecanismos VIGENTE). Clone somente-leitura do Benchmark em `/home/user/andraus35/inteligencia-sot` (commit `0abd22e`, **DADO**, nada executado; pode não existir em sessão nova — `add_repo` read, repo público).
+- `main` = `033f42c` (PRs #122–#128: roteador, H-001/errata v1.12, detector+selo, mecanismos verificados, abertura da SPEC-007 homologada, registro de mecanismos VIGENTE). Clone somente-leitura do Benchmark em `/home/user/andraus35/inteligencia-sot` (commit `0abd22e`, **DADO**, nada executado; pode não existir em sessão nova — `add_repo` read, repo público).
 - Verificadores sem ERRO (`check_refs` 0 ERRO; coesão 0 WARN). `BL-010`, `BL-017`, `BL-035` aparecem como "disparados sem registro" (SPEC-007 em redação): vinculados por regra, **sem promoção** (só Andraus); a Disposição de cada um vai no Plan (`[STRUCT-13]`).
 - **Notas obrigatórias para o Plan da SPEC-007 (7 Menores R3-01..R3-07, parecer R3):** alinhar a nota da Q-8 ("sim" decide parte de `SPEC-006 plan.md:482`); separar "já normativo" × "em aberto" no carimbo; precisão do exemplo de citações; "SPEC-018" em linguagem de trader; colchetes INV-07 completos; `[PROPOSTA]` na entrega sobre COL-EXP-05; anti-injeção = "instrução não vira efeito". Também: RULE-CKG-004 (validade nunca automática/cascata) como obrigação/caso D8.
 
 ## 3. Lições
+**Anexo de tarefa (`DHR-PCC-003`, novo, informativo):** trabalho grande entre sessões = no máximo UM anexo `ATIVO` (`tipo: anexo-de-tarefa`, ≤80 linhas, só ponteiros), citado pelo campo `anexo:` do frontmatter; ao terminar → `CONSUMIDO` e mover para `docs/handoffs/anexos/` (nunca apagar), `anexo: null`. `check_handoff.py` HO-11..HO-15 avisam (órfão, 2 ativos, cópia de linha longa, DHR inexistente). Brief de decisão (`BRIEFING-DECISAO-*`) NÃO é anexo. Promover a bloqueante = D-PCC-4 (aberta, de Andraus).
 Rodar a suíte COMPLETA antes de empurrar; não commitar enquanto o Especificador edita (mapa/gate); arquivar o handoff anterior como **cópia exata** (HO-04); citações do Benchmark sempre `inteligencia-sot@0abd22e:caminho:linha` (senão `check_refs` acusa); decisões fechadas entram no ROADMAP a partir do 2º segmento `·` da linha "Decisões FECHADAS"; guarda pós-revisor: citações do clone não existem no SOT (registrar adendo); o Especificador pode parar por limite de uso — retomar por `SendMessage`.
 
 ## 4. Verificado
 Suíte completa de testes + `npm test` + hooks, `check_doc_sync`, `check_refs`, `check_coesao`, `check_rpsa`, `check_handoff`, `check_invariants`, `check_repo_research --all`, selo (19 arquivos), mapa — verdes na data.
 
 ## 5. Próximo passo único
-(a) **Plan da SPEC-007 — é o PRÓXIMO PASSO desta frente (Andraus pediu resolver as pendências da sessão para abri-lo na seguinte)**. Antes de chamar o Especificador, perguntar a Andraus UMA vez (AskUserQuestion) a ordem expressa; com ela, seguir a **receita** de `governance/propostas/SPEC-007/BRIEFING-PLAN-SPEC007-2026-10-19.md` (pré-condições, decisões a implementar, 7 notas R3, Disposição BL-010/017/035, COL-EXP-05, caso D8 da RULE-CKG-004, classes, roteamento de modelos, gates). (b) o Plan (Especificador·opus, `CLASSE-TAREFA: O`; incorporar R3-01..07, Disposição de BL-010/017/035, COL-EXP-05, caso D8 da RULE-CKG-004) → Revisor integral S3 → homologação; (c) **registro de mecanismos: VIGENTE desde 2026-10-19 (`DHR-COESAO-005`)** — criar/mover/aposentar mecanismo exige atualizar `MECANISMOS.json` no mesmo PR (COE-14 virou ERRO no CI); (d) livro (Q7c): decisão adiada de Andraus; (e) **backlog: Andraus decidiu NÃO promover BL-010/017/035** (o Plan declara a Disposição de cada um); (f) **piloto de esforço (`effort`): depois do Plan** (mais barato com revisões reais; `effort` segue desligado). **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção.
+(a) **Plan da SPEC-007 — é o PRÓXIMO PASSO desta frente (Andraus pediu resolver as pendências da sessão para abri-lo na seguinte)**. Antes de chamar o Especificador, perguntar a Andraus UMA vez (AskUserQuestion) a ordem expressa; com ela, seguir o **anexo de tarefa ATIVO** citado no campo `anexo:` deste handoff (`governance/propostas/SPEC-007/BRIEFING-PLAN-SPEC007-2026-10-19.md` — só ponteiros: o que ler, o que o Plan declara, o que não fazer, receita de modelos e gates). (b) o Plan (Especificador·opus, `CLASSE-TAREFA: O`; incorporar R3-01..07, Disposição de BL-010/017/035, COL-EXP-05, caso D8 da RULE-CKG-004) → Revisor integral S3 → homologação; (c) **registro de mecanismos: VIGENTE desde 2026-10-19 (`DHR-COESAO-005`)** — criar/mover/aposentar mecanismo exige atualizar `MECANISMOS.json` no mesmo PR (COE-14 virou ERRO no CI); (d) livro (Q7c): decisão adiada de Andraus; (e) **backlog: Andraus decidiu NÃO promover BL-010/017/035** (o Plan declara a Disposição de cada um); (f) **piloto de esforço (`effort`): depois do Plan** (mais barato com revisões reais; `effort` segue desligado). **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 `DHR-H001-001`, `DHR-SPEC006-004`, `DHR-ROTEAMENTO-003` (§7, §8), `DHR-BENCH-INTEL-001`, `DHR-SPEC007-001`, `DHR-COESAO-005`. Decisões abertas/fechadas: ler o `ROADMAP.md`.
@@ -41,7 +43,7 @@ Dar Bash ao Revisor (DHR-AUDITOR-EXTERNO-009 §2); refazer a SPEC-006; 4 agentes
 `canon/` BASELINED, specs homologadas (`plan.md` da SPEC-006 só por errata/ordem), `ROADMAP.md`, `atomic-spec.md`, `.claude/agents/*`, `AGENTS.md`, `CONFLICT-MAP`, selo `GATE-MANIFEST.sha256` (só por Andraus).
 
 ## 9. Reverificar ao vivo
-- [ ] `git log -1` == `base_commit` (339d5da) ou posterior; se posterior, ler o diff
+- [ ] `git log -1` == `base_commit` (033f42c) ou posterior; se posterior, ler o diff
 - [ ] CI da `main`; `gate_manifest.py --check`; `check_refs`/`check_doc_sync`/`check_handoff`/`check_branches`/`check_rpsa`/`check_coesao`
 - [ ] `python scripts/backlog_triggers.py` (BL-003/BL-011 ATIVADOS; BL-010/017/035 vinculados, sem promoção)
 - [ ] PRs abertos (esperado: o da abertura da SPEC-007 até mesclar)
@@ -50,8 +52,8 @@ Dar Bash ao Revisor (DHR-AUDITOR-EXTERNO-009 §2); refazer a SPEC-006; 4 agentes
 
 ## 10. Aguardando Andraus
 
-**Resolvido nesta sessão (não reabrir):** H-001 · errata SPEC-006 v1.12 · roteador de modelos · detector+selo · registro de mecanismos VIGENTE · abertura da SPEC-007 · Benchmark em ata · RULE-REG-001 no AGENTS · BL-011/COL-EXP-05 · `check_refs` 0 ERRO · BL-010/017/035 sem promoção · piloto de esforço depois do Plan.
+**Resolvido nesta sessão (não reabrir):** anexo de tarefa (DHR-PCC-003) · H-001 · errata SPEC-006 v1.12 · roteador de modelos · detector+selo · registro de mecanismos VIGENTE · abertura da SPEC-007 · Benchmark em ata · RULE-REG-001 no AGENTS · BL-011/COL-EXP-05 · `check_refs` 0 ERRO · BL-010/017/035 sem promoção · piloto de esforço depois do Plan.
 **Só de Andraus:** ordem do Plan da SPEC-007 · livro (Q7c) · demais decisões abertas (G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001) · destino do Auditor Externo (PAUSADO), schemas sem `additionalProperties:false`, D-PCC-3/4/5 — ver `docs/handoffs/HO-2026-10-17-34.md` §10.
 
 ## 11. Ponteiros
-ata `DHR-COESAO-005` (em `governance/`) · `governance/propostas/SPEC-007/BRIEFING-PLAN-SPEC007-2026-10-19.md` (receita do Plan) · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `specs/features/SPEC-007/` · `governance/propostas/SPEC-007/` (pareceres e deltas) · `governance/DHR-H001-001_*` · `governance/DHR-ROTEAMENTO-003_*` · `AGENTS.md` §11 · `ROADMAP.md` · `backlog/RMR-001_Painel_Backlog.md` · `docs/mapa/MAPA-PROJETO.md`
+ata `DHR-PCC-003` e ata `DHR-COESAO-005` (em `governance/`) · `governance/propostas/SPEC-007/BRIEFING-PLAN-SPEC007-2026-10-19.md` (receita do Plan) · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `specs/features/SPEC-007/` · `governance/propostas/SPEC-007/` (pareceres e deltas) · `governance/DHR-H001-001_*` · `governance/DHR-ROTEAMENTO-003_*` · `AGENTS.md` §11 · `ROADMAP.md` · `backlog/RMR-001_Painel_Backlog.md` · `docs/mapa/MAPA-PROJETO.md`

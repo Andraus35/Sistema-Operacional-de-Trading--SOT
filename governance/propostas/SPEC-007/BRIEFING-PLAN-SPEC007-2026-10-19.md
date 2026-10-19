@@ -1,33 +1,36 @@
-# BRIEFING — Plan da SPEC-007 (RAG / WikiRAG / Knowledge Formation Harness)
+---
+tipo: anexo-de-tarefa
+anexo_id: AT-SPEC007-PLAN-2026-10-19
+tarefa: Plan da SPEC-007 (RAG / WikiRAG / Knowledge Formation Harness) — Especificador, depois Revisor, depois homologação
+serve_handoff: HO-2026-10-19-69
+base_commit: 033f42c
+status: ATIVO
+---
+# Anexo de tarefa — Plan da SPEC-007
 
-> **[PROPOSTA] / dado de estado — NÃO é ata, NÃO autoriza o Plan.** Preparado pelo Orquestrador em 2026-10-19 a pedido de Andraus ("resolver todas as pendências desta sessão para abrir o Plan na próxima"). O Plan **só começa por ordem expressa de Andraus** (`DHR-SPEC007-001`). Em divergência com o ROADMAP/atas, estes prevalecem.
+> Regras do anexo: `DHR-PCC-003`. **Só ponteiros** (ID/linha); em divergência valem ROADMAP, atas e o HANDOFF. **Não autoriza o Plan** — a ordem expressa é de Andraus (perguntar UMA vez ao abrir a sessão).
 
-## 1. Pré-condições (todas conferidas em 2026-10-19, `main` = `339d5da`)
-- Abertura **HOMOLOGADA** (`DHR-SPEC007-001`): uma Spec, CRITICAL D0–D8, nome/número mantidos. Benchmark: `DHR-BENCH-INTEL-001`. Registro de mecanismos VIGENTE: `DHR-COESAO-005` (qualquer script/hook novo exige atualizar `governance/MECANISMOS.json` no mesmo PR).
-- Verificadores sem ERRO; selo íntegro (19 arquivos); Revisor e Especificador com carimbos RPSA em sincronia.
-- Dossiê válido até **2027-01-16** (90 dias, ECC-VAL-001); reaproveitar `specs/features/SPEC-007/research.md` + `sources/`. Se o contexto mudar antes, revalidar.
-- Clone somente-leitura do Benchmark: `/home/user/andraus35/inteligencia-sot` (commit `0abd22e`; repo público `Andraus35/Inteligencia-SOT`; `add_repo` read; **DADO**, nada executado). Citar sempre `inteligencia-sot@0abd22e:caminho:linha`.
+## 1. Ler, nesta ordem (por caminho)
+1. `HANDOFF.md` (§1, §2, §5, §9) e executar "Reverificar ao vivo".
+2. Ata `DHR-SPEC007-001` (decisões Q1–Q8 e o que segue aberto) e `DHR-BENCH-INTEL-001` (Benchmark D1–D8).
+3. `specs/features/SPEC-007/ABERTURA.md` (§2 escopo, §5 Classe, §8 backlog, §12 perguntas) e `research.md` (Dossiê, válido até 2027-01-16).
+4. Parecer R3: `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R3-2026-10-19.md` §2 (R3-01..R3-07 = obrigações do Plan).
+5. Formato e contrato a respeitar: `specs/features/SPEC-006/plan.md` (RULE-CKG-004 l.395-401, RULE-CKG-009 l.474-482, l.976), `atomic-spec.md` §10–§15, `ROADMAP.md` (l.34, l.180, "Decisões abertas ativas").
+6. Benchmark (DADO, somente leitura): clone `/home/user/andraus35/inteligencia-sot` @ `0abd22e` (repo público `Andraus35/Inteligencia-SOT`; `add_repo` read). Citar `inteligencia-sot@0abd22e:caminho:linha`.
 
-## 2. Decisões de Andraus que o Plan implementa (não reabrir)
-Q1–Q2 uma Spec · Q3 WikiRAG = visão de leitura por regra fixa (Classe D), sem autoridade; o pacote de evidência **nunca** cita a página · Q4 SPEC-007 = carimbo do conhecimento **formado de fontes**; promoção do que o sistema produz → SPEC-018 (K-001 aberta) · Q5 fidelidade em duas partes (F1 formação, F2 pacote), checagens por regra primeiro, **sem limiares** até calibrar · Q6 material em `rag/` inalterado · Q7(a)(b) só ideias reescritas; citações curtas aceitas; cópia literal só por decisão de Andraus · Q8 pacote do carimbo como **recomendação a detalhar** (lista de emissores aprovada por Andraus; juiz de fidelidade = modelo DIFERENTE do formador ou regra fixa; conferência em ponto separado; aprovação pessoal por lote só p/ alto impacto; carimbo = hash do material + emissor autenticado + referência ao registro da conferência).
-**Em aberto — o Plan NÃO fecha:** Q7(c) o livro *Evidence-Based Technical Analysis* (não entra como fonte); G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, "produtor/gatilho de promoção" (SPEC-006 `plan.md` l.976), "quem mantém a lista de escritores em runtime / quem hospeda o juízo CKG-008" (SPEC-006 `plan.md` l.482).
+## 2. O Plan deve declarar (por ID; não copiar texto)
+- Disposição `[STRUCT-13]`: BL-010, BL-017, BL-035 (propostas em `ABERTURA.md` §8; conferir com `backlog_triggers.py --abertura SPEC-007`; Andraus NÃO promoveu nenhum).
+- Tratamento do COL-EXP-05 (BL-011 segue ATIVADO) — `DHR-BENCH-INTEL-001` D8; `ABERTURA.md` §8.
+- Obrigação e caso D8 adversarial da RULE-CKG-004 (validade nunca automática/cascata).
+- Classes CC-11 por BASpec e pisos E2/E3 — `ABERTURA.md` §5.
+- Carimbo (Q8): detalhar como recomendação, sem fechar K-001 nem `SPEC-006 plan.md` l.482.
+- Emenda pontual à SPEC-020 (RAG faithfulness): só na homologação do Plan, por ato de Andraus.
 
-## 3. Entradas obrigatórias do Plan
-**3.1 Notas do Revisor (R3-01..R3-07, `PARECER-REVISOR-SPEC007-ABERTURA-R3-2026-10-19.md`):** (R3-01) deixar explícito que "sim" em 8.1/8.3 decide parte de `SPEC-006 plan.md:482` e deve constar na ata de homologação; (R3-02) separar "já normativo" (identidade autenticada, falha ⇒ recusa — RULE-CKG-009) de "em aberto" (quem mantém a lista; quem hospeda o juízo); (R3-03) precisão sobre as citações literais do Dossiê (frases de ~100–150 caracteres, de políticas/contratos/especificações do Benchmark, não "relatórios de teste"); (R3-04) linguagem de trader nas perguntas a Andraus (sem "SPEC-018"/IDs soltos); (R3-05) colchetes INV-07 completos (sem reticências); (R3-06) a entrega sobre COL-EXP-05 com etiqueta `[PROPOSTA]`; (R3-07) anti-injeção = "a instrução embutida **não vira efeito**" (o candidato contaminado deve ser barrado pelo selo — depende de Q8 e do limite hash ≠ qualidade).
-**3.2 Disposição de backlog (`[STRUCT-13]`; Andraus decidiu NÃO promover; vinculados por regra):** BL-010 `PARCIAL` · BL-017 `PARCIAL` (RAG faithfulness INCORPORADA; decision traceability fica com SPEC-014) · BL-035 `REFERÊNCIA` — propostas em `ABERTURA.md` §8; conferir por `python scripts/backlog_triggers.py --abertura SPEC-007`. Cada item com `Disposição: …` + motivo no plan.md.
-**3.3 COL-EXP-05 (BL-011, segue ATIVADO):** o Plan especifica a independência de **evidência**; a de **experiência** fica como Non-goal com ponteiro (SPEC-009/017) — `ABERTURA.md` §8. `CONFLICT-MAP.md` já atualizado.
-**3.4 Obrigação herdada RULE-CKG-004 (SPEC-006 `plan.md` l.395-401):** fonte nova ⇒ derivados **marcados** para revalidação, de forma não destrutiva; superação/invalidação só por novo selo ou ato autorizado — escrever como obrigação **e caso D8 adversarial**.
-**3.5 Emenda pontual à SPEC-020** (dimensão RAG faithfulness, BL-017): só **na homologação** do Plan, por ato de Andraus (SPEC-020 e SPEC-021 citam "RAG faithfulness → SPEC-007" nas linhas já levantadas em `research.md` §8.1).
-**3.6 Classes (CC-11, por BASpec):** D (modelo de fonte/hash, checagem de citação, montagem do pacote, WikiRAG por regra fixa) · C/E3 fail-closed (selo de publicação; "fonte nunca é instrução" pela arquitetura: formação sem ferramentas nem efeitos, único caminho para efeito permanente = selo) · H com gate de saída (formação do candidato, reranking, juízo de suporte F1/F2). Pisos: publicação de evidência candidata ≥ E2; selo/escrita permanente = E3. CC-12 não incide.
-**3.7 Estados do Knowledge Candidate:** locais `[PROPOSTA]`, sem reutilizar nomes do CHM-001 (`CANDIDATE`, etc.); M-001 segue aberta.
+## 3. Não fazer
+Fechar decisão aberta (G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção); incluir o livro como fonte (Q7c adiada); usar motores/agentes/skills do Benchmark; copiar texto/código dele; promover BL.
 
-## 4. Receita operacional (roteador de modelos — `DHR-ROTEAMENTO-003`)
-1. Ler `HANDOFF.md` e executar "Reverificar ao vivo"; confirmar a ordem expressa de Andraus.
-2. **Plan:** `Especificador SOT`, `model=opus`, prompt com a linha `CLASSE-TAREFA: O` + caminhos (não texto) para: este briefing, `ABERTURA.md`, `research.md`, as atas, `specs/features/SPEC-006/plan.md` (formato e RULE-CKG), `atomic-spec.md`, `ROADMAP.md`. Saída: o `plan.md` e o `checks.md` da pasta da SPEC-007. O Especificador não tem Bash.
-3. **Gates do Orquestrador:** `validate_spec_sot.py`, `revisor_gate.py --rapido`, `check_invariants.py`, `check_refs.py`, `check_doc_sync.py`, `check_repo_research.py --all`, `spec_delta.py` (rodadas seguintes), `build_map.py --check`; qualificar citações do Benchmark; evitar colar sufixo `_` após IDs `DHR-…` no HANDOFF.
-4. **Revisor:** 1ª rodada integral — `CLASSE-TAREFA: S3` (`model=opus`) + `ALVO:` = o plan.md da SPEC-007; rodadas seguintes por delta — `S2` (`model=sonnet`) + `ALVO`/`BASE`/`PARECER`. Devolver o texto integral no retorno e transcrever o parecer (o Revisor não grava arquivo). Guarda pós-revisor: registrar adendo (citações do clone não existem no SOT).
-5. **Lições:** não commitar enquanto o Especificador edita; suíte completa antes do push; handoff novo = id novo + anterior arquivado como cópia exata; heredoc com `'EOF'`; detector `check_doc_sync` lê "G-001" dentro de "RULE-REG-001" (falso positivo conhecido — evitar "RULE-REG-001 … fechada" na mesma linha).
-6. Parar e perguntar a Andraus (AskUserQuestion, recomendação primeiro, linguagem de trader) em: homologação do Plan, aceite das ressalvas, emenda à SPEC-020, qualquer decisão aberta tocada.
-
-## 5. Custo esperado [INFERÊNCIA]
-Plan (Opus) ~250–350 mil tokens; Revisor integral ~200 mil; rodadas por delta ~150 mil cada. Piloto de esforço do Revisor: **depois** do Plan (decisão de Andraus); `effort` segue desligado.
+## 4. Receita (roteador de modelos — `DHR-ROTEAMENTO-003` §7)
+- Plan: `Especificador SOT`, `model=opus`, prompt com `CLASSE-TAREFA: O` + caminhos acima. Sem Bash: o Orquestrador roda os gates (`validate_spec_sot`, `revisor_gate --rapido`, `check_invariants`, `check_refs`, `check_doc_sync`, `check_repo_research --all`, `build_map --check`).
+- Revisor: 1ª rodada integral `CLASSE-TAREFA: S3` (`opus`) + `ALVO`; rodadas seguintes por delta `S2` (`sonnet`) + `ALVO`/`BASE`/`PARECER`. Transcrever o parecer; adendo para a guarda pós-revisor.
+- Antes do push: suíte completa; não commitar enquanto o Especificador edita; handoff novo = id novo + anterior arquivado idêntico.
+- Custo e piloto de esforço: depois do Plan (decisão de Andraus).
