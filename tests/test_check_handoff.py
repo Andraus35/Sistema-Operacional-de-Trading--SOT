@@ -176,5 +176,89 @@ class Handoff(unittest.TestCase):
         _, rep, _ = self.run_check("--hoje", "2026-10-23")
         self.assertFalse(any("2026-10-24" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-10"))
 
+    # ---- anexo de tarefa (DHR-PCC-003): HO-11..HO-15 ----------------------------------------------------------------
+    def anexo(self, nome="BRIEFING-X.md", status="ATIVO", extra="", faltando=(), base="HEAD"):
+        d = self.d / "governance" / "propostas" / "T"
+        d.mkdir(parents=True, exist_ok=True)
+        fm = {"tipo": "anexo-de-tarefa", "anexo_id": "AT-1", "tarefa": "Plan X", "serve_handoff": "HO-1",
+              "base_commit": base, "status": status}
+        head = "\n".join(f"{k}: {v}" for k, v in fm.items() if k not in faltando)
+        (d / nome).write_text(f"---\n{head}\n---\n# Anexo\n- ponteiro por ID\n{extra}\n", encoding="utf-8")
+        return f"governance/propostas/T/{nome}"
+
+    def com_anexo(self, caminho, **kw):
+        base = self.commit("base")
+        extra = kw.pop("extra", "")
+        self.write(doc(base=base, **kw).replace("autor: Orquestrador", f"autor: Orquestrador\nanexo: {caminho}") if caminho else doc(base=base, **kw))
+        self.commit("handoff")
+        return base
+
+    def test_sem_anexo_nada_muda(self):
+        self.first()
+        _, _, ach = self.run_check()
+        self.assertFalse({a for a in ach if a[1] in ("HO-11", "HO-12", "HO-13", "HO-14", "HO-15")})
+
+    def test_anexo_valido_citado_sem_achados(self):
+        c = self.anexo()
+        self.com_anexo(c)
+        code, _, ach = self.run_check()
+        self.assertEqual(code, 0)
+        self.assertEqual(ach, set())
+
+    def test_ho11_anexo_inexistente_e_frontmatter_incompleto(self):
+        self.com_anexo("governance/propostas/T/NAO-EXISTE.md")
+        code, _, ach = self.run_check()
+        self.assertEqual(code, 1)
+        self.assertIn(("ERRO", "HO-11"), ach)
+        c = self.anexo(faltando=("tarefa",))
+        self.com_anexo(c)
+        _, rep, ach = self.run_check()
+        self.assertTrue(any("tarefa" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-11"))
+        c = self.anexo(status="TALVEZ")
+        self.com_anexo(c)
+        _, rep, _ = self.run_check()
+        self.assertTrue(any("fora de ATIVO|CONSUMIDO" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-11"))
+
+    def test_ho12_orfao_e_mais_de_um_ativo_e_consumido_citado(self):
+        self.anexo("A.md")
+        self.com_anexo(None)
+        _, _, ach = self.run_check()
+        self.assertIn(("WARN", "HO-12"), ach)          # ATIVO sem citação
+        c1 = self.anexo("B.md")
+        self.com_anexo(c1)
+        _, rep, _ = self.run_check()
+        self.assertTrue(any("máximo 1" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-12"))
+        (self.d / "governance" / "propostas" / "T" / "A.md").unlink()
+        c2 = self.anexo("B.md", status="CONSUMIDO")
+        self.com_anexo(c2)
+        _, rep, _ = self.run_check()
+        self.assertTrue(any("CONSUMIDO" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-12"))
+
+    def test_ho13_anexo_grande(self):
+        c = self.anexo(extra="\n".join(f"- linha {i}" for i in range(90)))
+        self.com_anexo(c)
+        _, _, ach = self.run_check()
+        self.assertIn(("WARN", "HO-13"), ach)
+
+    def test_ho14_dhr_inexistente_decisao_aberta_e_segredo(self):
+        c = self.anexo(extra="Ver DHR-FANTASMA-009.\nG-001 FECHADA.\ntoken: abcdef123456789")
+        self.com_anexo(c)
+        code, rep, ach = self.run_check()
+        self.assertEqual(code, 1)
+        msgs = " ".join(a["mensagem"] for a in rep["achados"] if a["id"] == "HO-14")
+        self.assertIn("DHR-FANTASMA-009", msgs)
+        self.assertIn("G-001", msgs)
+        self.assertIn("segredo", msgs)
+
+    def test_ho15_copia_de_linha_longa_da_fonte(self):
+        longa = "A decisao X foi tomada por Andraus em chat com todas as condicoes descritas aqui para teste de copia literal de linha longa"
+        (self.d / "governance" / "DHR-OK-001_Ata.md").write_text(longa + "\n", encoding="utf-8")
+        c = self.anexo(extra=longa)
+        self.com_anexo(c)
+        _, rep, ach = self.run_check()
+        self.assertIn(("WARN", "HO-15"), ach)
+        self.assertTrue(any("DHR-OK-001_Ata.md" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-15"))
+
+
 if __name__ == "__main__":
     unittest.main()

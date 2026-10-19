@@ -39,6 +39,10 @@
 
 Consequência: não se cria `state.md`, `decisions.md` e `tasks.json` paralelos (duplicariam DHR/CATALOGO/RMR-001 e gerariam divergência — pior que ausência). O handoff **aponta** para eles.
 
+### 3.5 Anexo de tarefa (DHR-PCC-003, 2026-10-19) — extensão do handoff, sem memória paralela
+
+Para trabalho grande entre sessões (ex.: o Plan de uma Spec CRITICAL) que não cabe nas 150 linhas do handoff: **um** anexo `tipo: anexo-de-tarefa`, `status: ATIVO`, citado pelo campo `anexo:` do frontmatter do handoff; **só ponteiros** (ID/linha), ≤80 linhas, cabeçalho padrão (`anexo_id`, `tarefa`, `serve_handoff`, `base_commit`, `status`); ao terminar, `CONSUMIDO` e movido para `docs/handoffs/anexos/` (INV-07). Não confundir com o *brief de decisão* (`BRIEFING-DECISAO-*`, para Andraus decidir) nem com passagens de sessão antigas (histórico). Verificação informativa: `check_handoff.py` HO-11..HO-15; a promoção a bloqueante é a D-PCC-4 (aberta). *[Texto aditivo — INV-07; nada acima foi alterado.]*
+
 ---
 
 ## 2. Arquitetura de memória em camadas

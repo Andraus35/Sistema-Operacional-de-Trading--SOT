@@ -22,6 +22,13 @@ Checagens (ID = PCC-001 §5.1):
            autorizado" do ROADMAP (ROADMAP prevalece)                          → WARN
     HO-08  padrão de segredo/credencial                                        → ERRO
     HO-09  linguagem de homologação/baseline sem ID DHR na mesma linha         → WARN
+    HO-11  anexo de tarefa (DHR-PCC-003): `anexo:` do handoff aponta arquivo inexistente ou o anexo
+           tem frontmatter incompleto / status fora de ATIVO|CONSUMIDO                       → ERRO
+    HO-12  anexo ATIVO não citado pelo handoff, mais de um ATIVO, ou anexo CONSUMIDO ainda
+           citado pelo handoff                                                                → WARN
+    HO-13  anexo com mais de 80 linhas                                                        → WARN
+    HO-14  anexo cita DHR sem ata, trata decisão ABERTA como fechada ou tem segredo           → ERRO
+    HO-15  anexo copia linha longa (≥120 car.) do HANDOFF/ROADMAP/atas (aponte, não copie)    → WARN
     HO-10  pendência com `[PRAZO: AAAA-MM-DD]` vencida (hoje ≥ data): reaparece em TODA
            abertura de sessão (hook SessionStart) até a linha ser resolvida ou reagendada → WARN
 
@@ -61,6 +68,11 @@ HOMOLOG_WORDS = re.compile(r"\b(foi|ficou|fica|está|estão|é|são|agora)\s+(ho
 DHR = re.compile(r"\bDHR-[A-Z0-9]+(?:-[A-Z0-9]+)*\b")
 PRAZO = re.compile(r"\[PRAZO:\s*(\d{4}-\d{2}-\d{2})\]")
 IGNORED_PREFIXES = ("HANDOFF.md", "docs/handoffs/", "docs/mapa/")
+ANEXO_KEYS = ["tipo", "anexo_id", "tarefa", "serve_handoff", "base_commit", "status"]
+ANEXO_STATUS = ("ATIVO", "CONSUMIDO")
+ANEXO_MAX_LINES = 80
+ANEXO_MIN_COPY = 120
+ANEXO_DIRS = ("governance/propostas", "docs/handoffs/anexos")
 
 
 def git(root, *args):
@@ -209,7 +221,98 @@ def analyze(root: Path, today=None):
             if hoje >= d:
                 txt = PRAZO.sub("", ln).strip(" -*")[:110]
                 f.append(("WARN", "HO-10", f"L{i}: pendência vencida em {d.isoformat()} — {txt}"))
+    f.extend(analyze_anexos(root, fm, open_ids, names, cat, in_git))
     return f, fm
+
+
+def _is_anexo(text):
+    fm, _ = parse(text)
+    return fm.get("tipo") == "anexo-de-tarefa"
+
+
+def find_anexos(root: Path):
+    """Arquivos .md com frontmatter `tipo: anexo-de-tarefa` em governance/propostas e docs/handoffs/anexos."""
+    out = []
+    for d in ANEXO_DIRS:
+        base = root / d
+        if not base.exists():
+            continue
+        for p in sorted(base.rglob("*.md")):
+            try:
+                head = p.read_text(encoding="utf-8", errors="replace")[:800]
+            except OSError:
+                continue
+            if _is_anexo(head + "\n"):
+                out.append(p)
+    return out
+
+
+def analyze_anexos(root, hfm, open_ids, dhr_names, cat, in_git):
+    """Anexo de tarefa (DHR-PCC-003): extensão do HANDOFF, no máximo um ATIVO, só ponteiros. Detector, não Gate (ENF-03)."""
+    f = []
+    cited = (hfm or {}).get("anexo", "")
+    cited = "" if cited.lower() in ("", "null", "nenhum") else cited
+    all_anexos = find_anexos(root)
+    rel = lambda p: p.relative_to(root).as_posix()
+    ativos = []
+    for p in all_anexos:
+        afm, _ = parse(p.read_text(encoding="utf-8", errors="replace"))
+        if afm.get("status") == "ATIVO":
+            ativos.append(rel(p))
+    if len(ativos) > 1:
+        f.append(("WARN", "HO-12", f"{len(ativos)} anexos ATIVO ao mesmo tempo (máximo 1): {', '.join(ativos)}"))
+    for a in ativos:
+        if a != cited:
+            f.append(("WARN", "HO-12", f"anexo ATIVO {a} não é citado pelo campo `anexo:` do handoff (órfão/ambíguo)"))
+    if not cited:
+        return f
+    ap = root / cited
+    if not ap.exists():
+        f.append(("ERRO", "HO-11", f"`anexo: {cited}` aponta arquivo inexistente"))
+        return f
+    atext = ap.read_text(encoding="utf-8", errors="replace")
+    afm, abody = parse(atext)
+    alines = atext.split("\n")
+    miss = [k for k in ANEXO_KEYS if not afm.get(k)]
+    if miss:
+        f.append(("ERRO", "HO-11", f"anexo {cited}: frontmatter sem campo(s) {', '.join(miss)}"))
+    if afm.get("tipo") and afm.get("tipo") != "anexo-de-tarefa":
+        f.append(("ERRO", "HO-11", f"anexo {cited}: tipo='{afm.get('tipo')}' (esperado anexo-de-tarefa)"))
+    if afm.get("status") and afm["status"] not in ANEXO_STATUS:
+        f.append(("ERRO", "HO-11", f"anexo {cited}: status='{afm['status']}' fora de {'|'.join(ANEXO_STATUS)}"))
+    if afm.get("status") == "CONSUMIDO":
+        f.append(("WARN", "HO-12", f"anexo {cited} está CONSUMIDO mas o handoff ainda o cita: arquive em docs/handoffs/anexos/ e limpe `anexo:`"))
+    if in_git and afm.get("base_commit"):
+        b = afm["base_commit"]
+        if git(root, "cat-file", "-e", f"{b}^{{commit}}") is None:
+            f.append(("WARN", "HO-11", f"anexo {cited}: base_commit {b} não existe no histórico"))
+    if len(alines) > ANEXO_MAX_LINES:
+        f.append(("WARN", "HO-13", f"anexo {cited}: {len(alines)} linhas (> {ANEXO_MAX_LINES}); só ponteiros, sem copiar"))
+    for d in sorted(set(DHR.findall(abody))):
+        if not any(n.startswith(d + "_") or n == d + ".md" for n in dhr_names) and d not in cat:
+            f.append(("ERRO", "HO-14", f"anexo {cited}: {d} citada sem ata em governance/ nem registro no CATALOGO"))
+    for i, ln in enumerate(alines, 1):
+        if CLOSED_WORDS.search(ln) and not re.search(r"ABERT", ln, re.I):
+            for oid in open_ids:
+                if re.search(rf"(?<![A-Za-z0-9-]){re.escape(oid)}(?![A-Za-z0-9-])", ln):
+                    f.append(("ERRO", "HO-14", f"anexo {cited} L{i}: decisão ABERTA {oid} escrita como fechada/decidida (CONS-01)"))
+        if SECRET.search(ln):
+            f.append(("ERRO", "HO-14", f"anexo {cited} L{i}: possível segredo/credencial"))
+    # HO-15 — "aponte, não copie" (PCC-001): linha longa repetida literalmente em fonte de verdade
+    fontes = {}
+    for src in [root / "HANDOFF.md", root / "ROADMAP.md", *sorted((root / "governance").glob("DHR-*.md"))]:
+        try:
+            fontes[src.name] = src.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            pass
+    for i, ln in enumerate(alines, 1):
+        t = ln.strip(" -*>|\t")
+        if len(t) >= ANEXO_MIN_COPY:
+            for nome, txt in fontes.items():
+                if t in txt:
+                    f.append(("WARN", "HO-15", f"anexo {cited} L{i}: linha longa copiada de {nome} (aponte por ID/linha, não copie)"))
+                    break
+    return f
 
 
 def main():

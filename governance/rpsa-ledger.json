@@ -402,6 +402,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Muda o status de um registro de estado e uma nota de AGENTS §8; nenhum arquivo de agente, checklist nem método é alterado."
+    },
+    {
+      "id": "DHR-PCC-003",
+      "data": "2026-10-19",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Acrescenta checagens informativas ao detector do handoff e um item de protocolo em AGENTS §11; nenhum arquivo de agente, checklist nem método é alterado."
     }
   ]
 }

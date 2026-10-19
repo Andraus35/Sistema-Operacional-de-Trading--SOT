@@ -101,9 +101,10 @@
    "canal": "settings.json Stop/SubagentStop/SessionStart",
    "tipo": "hook",
    "estado": "ativo",
-   "enforca": "Injeta o HANDOFF e avisa defasagem (não bloqueia)",
-   "ata": "DHR-PCC-002",
-   "verificado_em": "2026-10-17: confirmado ao vivo em sessão"
+   "enforca": "Injeta o HANDOFF e o cabeçalho do anexo de tarefa ativo; avisa defasagem/anexo inválido (não bloqueia)",
+   "ata": "DHR-PCC-003",
+   "verificado_em": "2026-10-19: tests/test-handoff-hook.js (npm run test:hooks); ao vivo em SessionStart",
+   "nota": "Origem DHR-PCC-002 (detector e hooks); DHR-PCC-003 acrescenta o anexo de tarefa (HO-11..HO-15)."
   },
   {
    "id": "hook.revisor-posguarda",
@@ -201,10 +202,10 @@
    "canal": "CI (informativo) + hook",
    "tipo": "detector",
    "estado": "ativo",
-   "enforca": "Integridade e defasagem do HANDOFF",
-   "ata": "DHR-PCC-002",
-   "verificado_em": "2026-10-18: ao vivo — 0 achados, exit 0; também apanhou HO-03/HO-04 reais nesta sessão",
-   "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart."
+   "enforca": "Integridade e defasagem do HANDOFF; anexo de tarefa: HO-11 (existência/cabeçalho), HO-12 (órfão/mais de um ATIVO/CONSUMIDO citado), HO-13 (>80 linhas), HO-14 (DHR sem ata, decisão aberta como fechada, segredo), HO-15 (cópia de linha longa)",
+   "ata": "DHR-PCC-003",
+   "verificado_em": "2026-10-19: tests/test_check_handoff.py (21 testes, CI); ao vivo no handoff com anexo",
+   "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart. Origem DHR-PCC-002 (detector e hooks); DHR-PCC-003 acrescenta o anexo de tarefa (HO-11..HO-15)."
   },
   {
    "id": "det.check-invariants",
