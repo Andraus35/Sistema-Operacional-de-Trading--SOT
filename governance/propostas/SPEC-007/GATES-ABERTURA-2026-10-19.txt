@@ -1,0 +1,25 @@
+# Gates rodados pelo Orquestrador sobre a abertura da SPEC-007 (2026-10-19) — dado de estado, não parecer
+## backlog_triggers --abertura SPEC-007
+ITENS VINCULADOS À ABERTURA DE SPEC-007 (3) — por regra, sem promoção (DHR-BACKLOG-ABERTURA-001)
+  - BL-010 [Em espera] alcance=TOTAL — MC-RAG-001 — Master Contract da Camada RAG (candidato)
+  - BL-017 [Em espera] alcance=TOTAL — Fechamento das dimensões B da SPEC-020 (avaliação dependente-de-upstream)
+  - BL-035 [Em espera] alcance=TOTAL — CKG-STRUCT-ORIGIN-001 — origem/escola de `structure` e elo `structure→hypothesis` no Cognitive Knowledge Graph (+ `school=Fractal` sem produtor, N-09)
+O Plan deve declarar `Disposição: INCORPORADO|PARCIAL|REFERÊNCIA|FORA` + motivo em cada item ([STRUCT-13]).
+## check_repo_research --all
+VERIFICADOR RULE-ECC-06 — pesquisa em repositórios seguros e bem avaliados
+  [OK] SPEC-004
+  [OK] SPEC-005
+  [OK] SPEC-006
+  [OK] SPEC-007
+ERRO=0
+LEMBRETE: gate estrutural; não verifica a veracidade dos números (sem web — ENF-03). exit 0 ≠ CONFORME.
+## check_refs
+ERRO=0 WARN=5 INFO=310  (use --info para ver os históricos)
+## check_doc_sync
+ERRO=0 WARN=0 INFO=0
+## check_invariants (ABERTURA, research)
+ACHADOS=0 em 2 arquivo(s)
+## sha256
+afa380752843c102b0c95dd9de945536317a66334e364fb694577c30fbd3ee06  specs/features/SPEC-007/ABERTURA.md
+e0d70ed17f8ddc21be2a899ee017709fa8e6ba4436c7e2177f99b77a9037668f  specs/features/SPEC-007/research.md
+## Benchmark: clone somente-leitura em /home/user/andraus35/inteligencia-sot, commit 0abd22e89221a8b4dd8a047f15dfaf8c03675ff8
