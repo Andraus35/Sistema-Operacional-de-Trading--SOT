@@ -1,0 +1,24 @@
+Repositório: https://github.com/truera/trulens
+Plataforma: GitHub
+URL: https://github.com/truera/trulens
+Data de acesso: 2026-10-18
+Origem: WebFetch da página do repositório e da página de commits do branch main (API pública do GitHub respondeu HTTP 403 — ver _LIMITACAO-WEB.txt).
+
+Estrelas: 3600
+  (exibido "3.6k" na página)
+Licença: MIT
+Último commit: 2026-10-16
+  (topo da página de commits: "feat(feedback): add requirement satisfaction metric (#2910)")
+Arquivado: não
+Alertas de segurança graves abertos: 0
+  (proxy público; Dependabot privado = INDETERMINADO, registrado conservadoramente como 0)
+Dono: truera (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-18):
+"Read more about the core concepts behind TruLens including Metrics, the RAG Triad, and Honest, Harmless and Helpful Evals."
+
+Trecho literal complementar (verbatim via WebFetch do README, acesso 2026-10-18):
+"Latency, inputs, outputs, tokens and cost, recorded per step, so a bad answer has a traceable cause rather than a vibe."
+
+Uso no SOT: REFERÊNCIA de prática para avaliar RAG em dimensões separadas (relevância do contexto, fundamentação/groundedness da resposta, relevância da resposta — "RAG Triad") e para rastrear cada etapa. ADAPTAR a separação "qualidade da recuperação ≠ fidelidade da resposta"; o rastreio por etapa fica com SPEC-040 (observabilidade). Custo registrado NUNCA entra no Conviction Vector (INV-04). Nada instalado/executado.

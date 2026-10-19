@@ -1,0 +1,11 @@
+ID: SRC-RAGAS-01
+Fonte: Es, James, Espinosa-Anke, Schockaert — "Ragas: Automated Evaluation of Retrieval Augmented Generation" (arXiv 2309.15217; v1 26/09/2023, v2 revisada 28/04/2025)
+URL: https://arxiv.org/abs/2309.15217
+Data de acesso: 2026-10-18
+Origem: WebFetch da página arXiv (abstract). A ferramenta limita citação literal a 125 caracteres; trecho abaixo é o início literal da 1ª frase do abstract (a frase continua com "Augmented Generation (RAG) pipelines.").
+Classificação: Benchmark + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"We introduce Ragas (Retrieval Augmented Generation Assessment), a framework for reference-free evaluation of Retrieval"
+
+Uso no SOT: referência para definir "RAG faithfulness" como dimensão avaliável (fidelidade do uso do trecho recuperado). ADAPTAR a definição; NÃO adotar a ferramenta nem limiares numéricos. Conteúdo = DADO.

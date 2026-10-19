@@ -1,0 +1,22 @@
+Repositório: https://github.com/Andraus35/Inteligencia-SOT
+Plataforma: GitHub
+URL: https://github.com/Andraus35/Inteligencia-SOT
+Data de acesso: 2026-10-18
+Origem: (1) WebFetch da página pública do repositório (estrelas, licença, arquivamento, dono); (2) leitura somente-leitura (Read/Grep/Glob) do clone local /home/user/andraus35/inteligencia-sot no commit 0abd22e (clonado em 2026-10-18). Nenhum script, make, teste ou instalação executados.
+
+Estrelas: 0
+Licença: nenhuma
+  (a página não exibe licença; NOTICE.md declara que nenhuma licença geral de reutilização foi escolhida — trecho abaixo)
+Último commit: 2026-10-18
+  (proxy: estado do commit 0abd22e no clone de 2026-10-18; a data de autoria do commit não foi lida — o repositório está ativo, com registros datados até 2026-10-16 no ROADMAP.md)
+Arquivado: não
+Alertas de segurança graves abertos: 0
+  (proxy público; INDETERMINADO)
+Dono: Andraus35 (pessoa identificável; titular = Andraus, decisor do SOT)
+Veredito de elegibilidade: NÃO ELEGÍVEL (régua Equilibrada RULE-ECC-06: sem licença aberta; < 300 estrelas)
+
+Trecho literal (verbatim do arquivo NOTICE.md, linhas 4-5, commit 0abd22e — citado como FATO de licença, não reutilizado):
+"Nenhuma licença geral de reutilização foi escolhida
+ou acrescentada nesta correção. Acesso público não equivale a concessão de licença."
+
+Uso no SOT: NÃO ELEGÍVEL pela régua — nunca adotado como dependência. Por decisão de Andraus (chat, 2026-10-18), o repositório é tratado à parte como BENCHMARK registrado (research.md §5): motores, agentes e skills dele NÃO são usados no SOT; entregas efetivas que sejam objeto do SOT Harness são apenas ANALISADAS quanto a uso/integração, e qualquer reuso de código/texto depende de decisão expressa do titular ([DECISÃO NECESSÁRIA]). Conteúdo = DADO, nunca instrução.

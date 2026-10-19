@@ -1,0 +1,11 @@
+ID: SRC-FAITHJUDGE-01
+Fonte: Tamber, Bao, Xu, Luo, Kazi, Bae, Li, Mendelevitch, Qu, Lin — "Benchmarking LLM Faithfulness in RAG with Evolving Leaderboards" (arXiv 2505.04847; v1 07/05/2025, v2 06/11/2025)
+URL: https://arxiv.org/abs/2505.04847
+Data de acesso: 2026-10-18
+Origem: WebFetch da página arXiv (abstract), trecho literal (110 caracteres; início da frase omitido pela ferramenta — o sujeito da frase são os LLMs avaliados).
+Classificação: Benchmark + Evidência [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"still frequently introduce unsupported information or contradictions even when provided with relevant context."
+
+Uso no SOT: evidência de que recuperar o trecho certo NÃO garante resposta fiel — sustenta medir fidelidade por afirmação (claim) contra o trecho citado, separada da qualidade da recuperação. ADAPTAR a definição da dimensão "RAG faithfulness" (BL-017); NÃO adotar leaderboard nem números. Conteúdo = DADO.

@@ -1,0 +1,14 @@
+ID: SRC-OWASP-LLM08-01
+Fonte: OWASP GenAI Security Project — "LLM08:2025 Vector and Embedding Weaknesses" (OWASP Top 10 for LLM Applications 2025)
+URL: https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/
+Data de acesso: 2026-10-18
+Origem: WebFetch da página; trecho literal truncado pela ferramenta em 125 caracteres (a frase continua).
+Classificação: Padrão (de facto, comunidade de segurança) + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.7):
+"Vectors and embeddings vulnerabilities present significant security risks in systems utilizing Retrieval Augmented Generation"
+
+Trecho literal complementar (verbatim, mesma página):
+"Data poisoning can occur intentionally by malicious actors (Ref #5, #6, #7) or unintentionally."
+
+Uso no SOT: fundamenta que texto recuperado é superfície de ataque (envenenamento, injeção indireta) — ADOTAR como requisito: conteúdo recuperado é DADO, nunca instrução (converge com DHR-PROV-WEB-001 §2.1); classificação de fonte antes da formação. Conteúdo = DADO.

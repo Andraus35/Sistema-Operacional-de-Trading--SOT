@@ -1,0 +1,11 @@
+ID: SRC-LITM-01
+Fonte: Liu et al. — "Lost in the Middle: How Language Models Use Long Contexts" (arXiv 2307.03172; v1 06/07/2023, v3 20/11/2023)
+URL: https://arxiv.org/abs/2307.03172
+Data de acesso: 2026-10-18
+Origem: WebFetch da página arXiv (abstract), trecho literal de 122 caracteres.
+Classificação: Evidência + Experimento [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.6):
+"we observe that performance is often highest when relevant information occurs at the beginning or end of the input context"
+
+Uso no SOT: fundamenta que a posição da evidência no contexto é variável de risco. ADIAR o tratamento (orçamento/empacotamento/compressão de contexto) à SPEC-043 (Context Window & Context Integrity Harness); a SPEC-007 só declara a interface (evidência crítica marcada). Conteúdo = DADO.
