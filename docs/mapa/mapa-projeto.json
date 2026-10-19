@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-19",
-  "digest": "b8e0099655e27cfb1aacaec5341a9640f7682332d86c8b6b7fe85f4749b23f2d",
+  "digest": "151364f109b07cf6431b5e09bd8684a4814af174d216b966d7ce239a575bccb4",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -4893,7 +4893,7 @@
   {
    "id": "RULE-REG-001",
    "defined_in": "governance/RULES.md",
-   "cited_by": 31
+   "cited_by": 30
   },
   {
    "id": "RULE-SDD",
