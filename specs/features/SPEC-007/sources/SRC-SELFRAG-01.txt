@@ -1,0 +1,11 @@
+ID: SRC-SELFRAG-01
+Fonte: Asai, Wu, Wang, Sil, Hajishirzi — "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection" (arXiv 2310.11511; 17/10/2023)
+URL: https://arxiv.org/abs/2310.11511
+Data de acesso: 2026-10-18
+Origem: WebFetch da página arXiv (abstract), trecho literal de 115 caracteres.
+Classificação: Experimento + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.3):
+"Our framework trains a single arbitrary LM that adaptively retrieves passages on-demand, and generates and reflects"
+
+Uso no SOT: referência para recuperação ADAPTATIVA (recuperar só quando há justificativa). ADAPTAR o princípio como laço limitado (bounded loop + critério de parada, RULE-MECH-03); REJEITAR a autocrítica do próprio modelo como gate (o gate de saída é do harness — ENF-03). Conteúdo = DADO.

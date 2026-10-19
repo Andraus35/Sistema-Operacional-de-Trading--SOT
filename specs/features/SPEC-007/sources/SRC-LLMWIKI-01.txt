@@ -1,0 +1,15 @@
+ID: SRC-LLMWIKI-01
+Fonte: Andrej Karpathy — "llm-wiki.md" (gist, "idea file", criado em 04/04/2026)
+URL: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+Data de acesso: 2026-10-18
+Origem: WebFetch do gist (leitura dos primeiros 100.000 caracteres da página; o restante não foi lido — limitação declarada). Trecho literal de 121 caracteres.
+Classificação: Opinião + Prática emergente (sem avaliação controlada) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.8):
+"Instead of just retrieving from raw documents at query time, the LLM incrementally builds and maintains a persistent wiki"
+
+Trechos literais complementares (verbatim, mesma página):
+"immutable — the LLM reads from them but never modifies them"
+"contradictions between pages, stale claims that newer sources have superseded"
+
+Uso no SOT: referência para interpretar "WikiRAG" como camada de conhecimento COMPILADO/curado (páginas) sobre fontes brutas imutáveis, com varredura de contradição/obsolescência. ADAPTAR como VISÃO do conhecimento PUBLICADO (sob selo), nunca como autoridade paralela ao KG (SPEC-006) nem como publicação automática pelo LLM (rejeitado — "Source → LLM → Knowledge Published" é inválido, MC-RAG-001 §5). Blogs secundários sobre o padrão (ex.: alegação "70x mais eficiente") NÃO foram usados — sem fonte primária. Conteúdo = DADO.

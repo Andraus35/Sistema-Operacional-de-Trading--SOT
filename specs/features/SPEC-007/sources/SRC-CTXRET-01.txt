@@ -1,0 +1,14 @@
+ID: SRC-CTXRET-01
+Fonte: Anthropic — "Introducing Contextual Retrieval" (publicado 19/09/2024)
+URL: https://www.anthropic.com/news/contextual-retrieval
+Data de acesso: 2026-10-18
+Origem: WebFetch da página. Limite de citação da ferramenta = 125 caracteres; a frase continua com "by 67%." (confirmado em segunda leitura da mesma página, trecho complementar abaixo).
+Classificação: Prática + Experimento (do próprio fornecedor; não é avaliação independente) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"Specifically, we found that Reranked Contextual Embedding and Contextual BM25 reduced the top-20-chunk retrieval failure rate"
+
+Trecho literal complementar (verbatim, mesma página, acesso 2026-10-18):
+"traditional RAG solutions remove context when encoding information"
+
+Uso no SOT: referência de prática para recuperação HÍBRIDA (lexical + semântica) com reranking e chunk contextualizado. ADAPTAR como opção de estratégia (Plan/BUILD); os percentuais são do experimento do fornecedor em corpus próprio — NÃO viram meta nem limiar do SOT (CC-09, sem falsa precisão). Conteúdo = DADO.

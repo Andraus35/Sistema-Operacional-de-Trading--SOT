@@ -1,0 +1,20 @@
+Limitações da pesquisa web — Dossiê SPEC-007 (acesso 2026-10-18)
+
+1. API pública do GitHub (api.github.com) respondeu HTTP 403 para todas as consultas desta sessão.
+   Métricas de repositório (estrelas, licença, arquivamento, dono) foram lidas da página HTML pública;
+   a data do último commit foi lida do topo da página de commits do branch main. Estrelas são o valor
+   arredondado exibido pela página (ex.: "16.1k" -> 16100). Alertas de segurança: o estado privado do
+   Dependabot não é público -> INDETERMINADO, registrado conservadoramente como 0 (mesmo critério da SPEC-006).
+2. A ferramenta WebFetch limita cada citação literal a 125 caracteres. Os trechos em sources/*.txt são
+   literais e têm >=100 caracteres, mas podem ser o INÍCIO (ou um recorte) de uma frase mais longa — isso
+   está anotado em cada captura. Nenhum trecho foi completado por paráfrase.
+3. Fontes secundárias (blogs sobre o padrão "LLM Wiki", páginas de fornecedores sobre faithfulness) apareceram
+   na busca, mas NÃO sustentam alegação carregada; foi usada a fonte primária (gist de Karpathy) e papers arXiv.
+   Alegações numéricas sem fonte primária (ex.: "70x mais eficiente que RAG") foram descartadas.
+4. Percentuais de experimentos de fornecedores (SRC-CTXRET-01) valem para o corpus deles; não são limiares do SOT.
+5. O gist SRC-LLMWIKI-01 foi lido só nos primeiros 100.000 caracteres da página.
+6. IDs arXiv usados foram abertos individualmente por WebFetch (2309.15217, 2305.14627, 2310.11511,
+   2307.03172, 2505.04847); nenhum ID foi citado só por sumário de busca.
+7. O repositório Benchmark (Andraus35/Inteligencia-SOT) foi lido localmente, somente leitura, no commit 0abd22e.
+   Nenhum script/make/teste dele foi executado; nada foi instalado; nenhum texto dele foi copiado para o SOT
+   além de citações curtas de FATO (arquivo:linha) necessárias à auditoria.

@@ -1,0 +1,21 @@
+Repositório: https://github.com/princeton-nlp/ALCE
+Plataforma: GitHub
+URL: https://github.com/princeton-nlp/ALCE
+Data de acesso: 2026-10-18
+Origem: WebFetch da página do repositório e da página de commits do branch main (API pública do GitHub respondeu HTTP 403 — ver _LIMITACAO-WEB.txt).
+
+Estrelas: 527
+Licença: MIT
+Último commit: 2024-10-09
+  (topo da página de commits: 246c476 "Update README.md"; 739 dias antes do acesso — FORA da janela <=12 meses)
+Arquivado: não
+  (nenhum aviso de arquivamento exibido)
+Alertas de segurança graves abertos: 0
+  (proxy público; INDETERMINADO, registrado conservadoramente como 0)
+Dono: princeton-nlp (grupo de pesquisa identificável)
+Veredito de elegibilidade: NÃO ELEGÍVEL (régua Equilibrada RULE-ECC-06: último commit há mais de 12 meses)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-18):
+"We provide automatic evaluation code of LLM generations around three dimensions: fluency, correctness, and citation quality."
+
+Uso no SOT: NÃO ELEGÍVEL — registrado e descartado; o código NÃO é adotado nem adaptado. A alegação sobre citações usa o PAPER (SRC-ALCE-01), não o repositório.

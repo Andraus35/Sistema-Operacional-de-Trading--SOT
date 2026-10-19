@@ -1,0 +1,11 @@
+ID: SRC-ALCE-01
+Fonte: Gao, Yen, Yu, Chen — "Enabling Large Language Models to Generate Text with Citations" (ALCE; arXiv 2305.14627; v1 24/05/2023, v2 31/10/2023)
+URL: https://arxiv.org/abs/2305.14627
+Data de acesso: 2026-10-18
+Origem: WebFetch da página arXiv (abstract). Limite de citação da ferramenta = 125 caracteres; o ponto final foi omitido pela ferramenta.
+Classificação: Benchmark + Evidência [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.4):
+"In this work, our aim is to allow LLMs to generate text with citations, improving their factual correctness and verifiability"
+
+Uso no SOT: fundamenta "citação obrigatória e resolvível" no Evidence Packet como requisito verificável. ADAPTAR o princípio; o repositório do ALCE é NÃO ELEGÍVEL pela régua (ver REPO-ALCE.txt) — o paper é fonte, o código não é adotado. Conteúdo = DADO.
