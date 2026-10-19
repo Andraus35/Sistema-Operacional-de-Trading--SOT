@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-19",
-  "digest": "db3c13b9cb9dca604b8fbfd1086dc217053bac22a54977fe9ad3e215f5a6eb65",
+  "digest": "e8777ffaedeb29ff8a2d6f3a90894eaec8b4a9e7eb10facdf68f3ae529923309",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,7 +101,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 148,
+   "in": 150,
    "out": 45
   },
   {
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 260,
+   "in": 261,
    "out": 70
   },
   {
@@ -150,7 +150,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 171,
+   "in": 172,
    "out": 36
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 248,
+   "in": 249,
    "out": 109
   },
   {
@@ -220,7 +220,7 @@
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 97,
+   "in": 98,
    "out": 0
   },
   {
@@ -934,7 +934,7 @@
    "path": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
    "area": "governance",
    "title": "DHR-ARQ-002 — Ata de Unificação: Manager Agent absorve o Synthesis Agent (propagação do ADR-MANAGER-001 §2.1)",
-   "in": 19,
+   "in": 20,
    "out": 17
   },
   {
@@ -1081,14 +1081,14 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 42,
+   "in": 43,
    "out": 5
   },
   {
    "path": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
    "area": "governance",
    "title": "DHR-BACKLOG-001 — Ata — Promoção de BL-003 e BL-011 a ATIVADO (gatilho `spec:SPEC-006 em redação`)",
-   "in": 26,
+   "in": 28,
    "out": 4
   },
   {
@@ -1097,6 +1097,13 @@
    "title": "DHR-BACKLOG-ABERTURA-001 — Ata — Backlog vinculado por regra à abertura de cada Spec (determinístico)",
    "in": 28,
    "out": 6
+  },
+  {
+   "path": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "area": "governance",
+   "title": "DHR-BENCH-INTEL-001 — Ata — Repositório paralelo `Inteligencia-SOT` como Benchmark do RAG",
+   "in": 2,
+   "out": 5
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -1354,7 +1361,7 @@
    "path": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
    "area": "governance",
    "title": "DHR-EUA-E19a — Ata de Homologação — Restauração Semântica do Signal Package",
-   "in": 25,
+   "in": 26,
    "out": 10
   },
   {
@@ -1515,7 +1522,7 @@
    "path": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
    "area": "governance",
    "title": "DHR-REG-001 — Ata de Homologação — Registro Físico das 11 Famílias Cognitivas (RULE-REG-001)",
-   "in": 13,
+   "in": 15,
    "out": 16
   },
   {
@@ -2040,7 +2047,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 316,
+   "in": 317,
    "out": 39
   },
   {
@@ -2285,8 +2292,8 @@
    "path": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
    "area": "governance",
    "title": "PARECER DO REVISOR SOT — ABERTURA da SPEC-007 (revisão integral, 1ª rodada) — 2026-10-19",
-   "in": 0,
-   "out": 12
+   "in": 2,
+   "out": 14
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -2537,7 +2544,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 157,
+   "in": 158,
    "out": 9
   },
   {
@@ -2692,14 +2699,14 @@
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness (slot ROADMAP §6, FASE 3)",
    "in": 1,
-   "out": 17
+   "out": 24
   },
   {
    "path": "specs/features/SPEC-007/research.md",
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness (slot ROADMAP §6, FASE 3)",
    "in": 1,
-   "out": 23
+   "out": 28
   },
   {
    "path": "specs/features/SPEC-019/checks.md",
@@ -3023,7 +3030,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -3043,7 +3050,7 @@
   {
    "id": "DHR-ARQ-002",
    "defined_in": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
-   "cited_by": 19
+   "cited_by": 20
   },
   {
    "id": "DHR-ASK-002",
@@ -3148,17 +3155,22 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 42
+   "cited_by": 43
   },
   {
    "id": "DHR-BACKLOG-001",
    "defined_in": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
-   "cited_by": 26
+   "cited_by": 28
   },
   {
    "id": "DHR-BACKLOG-ABERTURA-001",
    "defined_in": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "cited_by": 28
+  },
+  {
+   "id": "DHR-BENCH-INTEL-001",
+   "defined_in": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "cited_by": 2
   },
   {
    "id": "DHR-BL008-001",
@@ -3343,7 +3355,7 @@
   {
    "id": "DHR-EUA-E19a",
    "defined_in": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "DHR-EUA-E20",
@@ -3463,7 +3475,7 @@
   {
    "id": "DHR-REG-001",
    "defined_in": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
-   "cited_by": 12
+   "cited_by": 14
   },
   {
    "id": "DHR-REVISOR-DELTA-001",
@@ -3788,7 +3800,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 225
+   "cited_by": 226
   },
   {
    "id": "INV-08",
@@ -3798,7 +3810,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 102
+   "cited_by": 103
   },
   {
    "id": "INV-10",
@@ -4188,7 +4200,7 @@
   {
    "id": "RULE-CKG-004",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 6
   },
   {
    "id": "RULE-CKG-005",
@@ -4303,7 +4315,7 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 81
+   "cited_by": 82
   },
   {
    "id": "RULE-ECC-02",
@@ -5083,7 +5095,7 @@
   {
    "id": "SPEC-007",
    "defined_in": "ROADMAP.md",
-   "cited_by": 82
+   "cited_by": 83
   },
   {
    "id": "SPEC-008",
@@ -21103,6 +21115,36 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
+   "type": "path"
+  },
+  {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
    "to": "atomic-spec.md",
    "type": "path"
@@ -31079,7 +31121,17 @@
   },
   {
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "type": "id"
   },
   {
@@ -33674,8 +33726,18 @@
   },
   {
    "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
    "to": "ROADMAP.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "ROADMAP.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-007/ABERTURA.md",
@@ -33684,7 +33746,27 @@
   },
   {
    "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
    "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
    "type": "id"
   },
   {
@@ -33699,8 +33781,18 @@
   },
   {
    "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-007/ABERTURA.md",
@@ -33784,12 +33876,32 @@
   },
   {
    "from": "specs/features/SPEC-007/research.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/research.md",
+   "to": "canon/CHM-001-canonical-hypothesis-model.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/research.md",
    "to": "governance/CONFLICT-MAP.md",
    "type": "path"
   },
   {
    "from": "specs/features/SPEC-007/research.md",
+   "to": "governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/research.md",
    "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/research.md",
+   "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "type": "id"
   },
   {
@@ -33814,6 +33926,11 @@
   },
   {
    "from": "specs/features/SPEC-007/research.md",
+   "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/research.md",
    "to": "governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md",
    "type": "id"
   },
@@ -33830,6 +33947,11 @@
   {
    "from": "specs/features/SPEC-007/research.md",
    "to": "reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/research.md",
+   "to": "specs/features/SPEC-001/plan.md",
    "type": "path"
   },
   {

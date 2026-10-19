@@ -39,3 +39,7 @@ Sem web: não atesta a veracidade das páginas nem dos números de repositório 
 
 ## 6. Encaminhamento
 Devolver ao Especificador (correções A-01..A-12 + perguntas); nova rodada **por delta** (DHR-REVISOR-DELTA-001). Decisões de Andraus levantadas: itens 3–8 do §4, A-01 (AGENTS.md §7) e A-08 (BL-011).
+
+---
+## Adendo do Orquestrador (guarda pós-revisor G3, DHR-AUDITOR-EXTERNO-018) — 2026-10-19
+A guarda acusou 12 citações do parecer como "não conferem". Verificado: **11 são caminhos do repositório-benchmark** (`inteligencia-sot@0abd22e:docs/GATE-ARTEFATO-IMPLEMENTADO.md:79` e `:35`, `inteligencia-sot@0abd22e:docs/governanca/POLITICA.md:31` e `:19`, `inteligencia-sot@0abd22e:docs/governanca/CONTRATOS.md:3`, `inteligencia-sot@0abd22e:docs/REVISOR-ADVERSARIAL-HIBRIDO-2026-10-13.md:12`, `inteligencia-sot@0abd22e:docs/governanca/DECISOES.md:13`, `inteligencia-sot@0abd22e:rag/traducao/MASTER-PROJETO-TRADUCAO.md:3`, `inteligencia-sot@0abd22e:rag/traducao/documento-ativo.json:3`, `inteligencia-sot@0abd22e:docs/CONTRATO-OCR-IMPLEMENTADO.md:51`, `inteligencia-sot@0abd22e:docs/retomada/MARKDOWN-SPEC.md:16`) — existem no clone `/home/user/andraus35/inteligencia-sot` (commit `0abd22e`) com a linha citada, e **não** no SOT, por isso o detector (que resolve no SOT) não os acha; o Revisor as conferiu no clone (20 citações). A 12ª, `atomic-spec.md:238`, existe: a linha diz *"Commit crítico (TMP, KG publicado, transição crítica) → E3 mínimo"*; o Revisor a parafraseou como «KG publicado → E3 mínimo» (paráfrase, mesmo sentido). Nenhum achado depende de citação inexistente.

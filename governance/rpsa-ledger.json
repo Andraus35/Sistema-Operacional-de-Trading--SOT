@@ -381,6 +381,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologação de errata de Spec: não altera texto de agente."
+    },
+    {
+      "id": "DHR-BENCH-INTEL-001",
+      "data": "2026-10-19",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra a política de uso de um repositório de referência; não altera texto de agente nem método."
     }
   ]
 }
