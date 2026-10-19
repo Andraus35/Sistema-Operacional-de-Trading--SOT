@@ -1,0 +1,41 @@
+# PARECER DO REVISOR SOT — ABERTURA da SPEC-007 (revisão integral, 1ª rodada) — 2026-10-19
+
+> **Transcrição pelo Orquestrador** do retorno do Revisor SOT (Opus, `CLASSE-TAREFA: S3`), que não tem Write/Edit (ENF-03). Conteúdo reproduzido sem mudança de mérito; tabelas longas resumidas onde indicado. **Não é homologação; só Andraus homologa.** Escopo: o PROCESSO da abertura (AGENTS.md §5; ROADMAP §23 passo 1-bis; atomic-spec §15; RULE-ECC-01/02/04/06). Ainda não há Plan.
+
+## 1. Veredito
+**NÃO CONFORME** — 3 Médias (A-01, A-02, A-03), 0 Críticas, 9 Menores. Teto, mesmo corrigido: CONFORME condicional (o `revisor_gate` não rodou na sessão do Revisor; gates rodados pelo Orquestrador = dado de estado). As correções são leves (texto em 2 lugares + 2 perguntas a Andraus reformuladas/acrescentadas); a próxima rodada pode ser **por delta**.
+Hashes declarados pelo Orquestrador (não recomputados pelo Revisor): ABERTURA `afa38075…fbd3ee06` · research `e0d70ed1…7037668f`. Complexidade proposta CRITICAL D0–D8 (confere ROADMAP.md:180).
+
+## 2. O que está sólido
+Citações entre aspas: **13/13** batem com `sources/`. Régua RULE-ECC-06 aplicada de forma coerente (ragas, haystack, trulens elegíveis; ALCE e inteligencia-sot não elegíveis, nenhum não elegível adotado). Validade do Dossiê 90 dias (até 2027-01-16) conferida. **Benchmark tratado como DADO: 20 citações conferidas no clone (commit 0abd22e); nada copiado fora do Dossiê; licença como [DECISÃO NECESSÁRIA].** Nenhuma decisão aberta foi fechada. RULE-ECC-05 e CC-12 não incidem (corretos). Passos 2, 3, 6, 7 e 8: PASS.
+
+## 3. Achados
+- **A-01 (Média)** — RULE-REG-001 aparece como "permanecem abertas" em `ABERTURA.md:119` e `research.md:183`, mas `ROADMAP.md:37` a registra **FECHADA** (Andraus, 2026-09-28, DHR-REG-001). Retirar das abertas nos dois documentos. *Para Andraus:* `AGENTS.md` §7 ainda diz "RULE-REG-001 … Aberta" (o ROADMAP prevalece; corrigir o AGENTS.md é decisão sua, AGENTS §10).
+- **A-02 (Média)** — Autoridade e independência do selo não postas a Andraus (ABERTURA §2 l.33, §5 l.80-81, Q-ABERTURA-4). Falta dizer quem emite o selo (identidade autenticada, allowlist, aprovação humana por lote) e se o juiz de fidelidade (Classe H) é independente do modelo que formou o candidato. SPEC-006 deixa "quem mantém a allowlist de escritores" em [DECISÃO NECESSÁRIA] (K-001/SPEC-018; plan.md:482; RULE-CKG-009); o Benchmark exige aprovação por documento/lote (`inteligencia-sot@0abd22e:docs/governanca/POLITICA.md:31`). Sem isso o mesmo LLM propõe e valida (risco ENF-03). Ação: acrescentar pergunta (emissor, independência formador/juiz, conteúdo do selo: hash + emissor autenticado + registro de validação); declarar que toca K-001 (aberta) sem fechá-la. Adversarial: o vínculo ao hash prova identidade, não qualidade da validação.
+- **A-03 (Média)** — Classe de produção e consumo do WikiRAG indefinidos (ABERTURA §2 l.37, Q-ABERTURA-3 l.174, research §3.8): página determinística ou escrita por modelo? O Evidence Packet/agentes podem citá-la? Página escrita por LLM e consumida como fonte = conhecimento formado sem selo (contradiz RULE-CKG-010 `FORMED_WITHOUT_SEAL` e o R-8). Ação: declarar a Classe da compilação (D, ou H com gate) e a regra "o pacote cita só itens publicados e fontes, nunca a página"; pôr ambos na Q-ABERTURA-3.
+- **A-04 (Menor)** — Trechos capturados de RAGAS/ragas/trulens sustentam só em parte "dimensões/métricas separadas" (research §2 l.56, §4 l.111/113): capturar trecho que sustente ou rebaixar a [INFERÊNCIA].
+- **A-05 (Menor)** — Citações do Benchmark sem qualificador (`research.md:152` "AGENTS.md", `:130/153` `documento-ativo.json`) e agregadas (`AGENTS.md:66-72` só sustenta "Harness Score L4 Paladini", l.70; Marian/WMT24++/MQM/Tesseract/Poppler/skills vêm de README.md:20-21 e 46-47). Qualificar e desagregar.
+- **A-06 (Menor)** — Mapeamento do MC-RAG-001 (research §7) incompleto: RAG-SPEC-039/040/041/046 sem destino (`reference/camadas/MC-RAG-001…md:1110-1117`); fragiliza a disposição PARCIAL do BL-010. Declarar destino (ex.: 041 → SPEC-040).
+- **A-07 (Menor)** — Homônimo não declarado no CC-10: "Knowledge/Evidence Candidate" × `CANDIDATE` (CHM-001:329/332). Declarar a acepção e proibir reutilizar nomes de estado do CHM nos estados locais.
+- **A-08 (Menor, com encaminhamento a Andraus)** — ABERTURA §8 (l.126) diz que o BL-011 "não vincula por regra" (verdade pelo script) mas omite que está **ATIVADO** (RMR-001:118, 2026-10-17); a SPEC-006 deu PARCIAL e adiou COL-EXP-05 "→ SPEC-007/009". Item ATIVADO sem encaminhamento é achado de gate (ROADMAP §23 passo 11-bis). Declarar o estado e propor o encaminhamento.
+- **A-09 (Menor)** — Sem termos de busca explícitos (atomic-spec §15 item 1); mesmo padrão das aberturas SPEC-004/005/006, não bloqueia.
+- **A-10 (Menor, RULE-EPI)** — `research.md:74` "O estado da arte e o próprio SOT convergem" sem fonte [EXTERNO]: etiquetar [INFERÊNCIA] ou citar.
+- **A-11 (Menor)** — ABERTURA §5 (l.80): "conteúdo de fonte nunca é instrução" como Classe C — detectar injeção é probabilístico; para ser C/fail-closed a garantia vem da arquitetura (formação sem ferramentas nem efeitos; publicação só via selo). O Plan deve declarar o mecanismo.
+- **A-12 (Menor)** — Opção C (research §8.1 l.212): lista de erratum omite as referências de SPEC-020 (l.116/144/720/728) e SPEC-021 (l.160/762) a "RAG faithfulness → SPEC-007". Só pesa se Andraus escolher a C.
+- **Observação para o Plan:** RULE-CKG-004 (plan.md:395-401): mudança de validade é ato autorizado, nunca automática/cascata — "fonte nova ⇒ derivados marcados para revalidação" é compatível se a marcação não for destrutiva e a superação/invalidação só ocorrer por novo selo ou ato autorizado; escrever como obrigação e caso D8. (A regra "LLM é detector, nunca gate" está em RULE-CKG-008/009 e EC-CKG-003/005, não na 004.)
+
+## 4. Perguntas a Andraus faltantes ou mal formuladas (segundo o Revisor)
+1. Falta: **autoridade do selo** (A-02) — gate D + juiz H independente, ou também aprovação humana por lote (como o IG-09 do Benchmark)?
+2. Q-ABERTURA-3 mal formulada (A-03): página gerada por regra ou por modelo? Analistas podem usá-la como fonte?
+3. Q-ABERTURA-7(a): "então hoje não é preciso dar licença" é inferência jurídica apresentada como conclusão — etiquetar [INFERÊNCIA] e pedir confirmação do titular de que as citações curtas de auditoria no Dossiê são aceitáveis.
+4. Q-ABERTURA-7(c): o direito sobre o livro (obra de terceiro, ISBN 0470008741) não é "decisão" de Andraus; a pergunta certa é se ele tem ou obterá autorização do titular, ou restringe a uso privado, e se o corpus pode ir a provedor externo de embeddings/LLM (o Benchmark: "Aprovação do corpus não permite transmissão externa", ROADMAP.md:128; POLITICA.md:33).
+5. Q-ABERTURA-4: responder "sim" atribui à SPEC-018 a dona do caminho (a) de promoção — decide parte do item [DECISÃO NECESSÁRIA] da SPEC-006 l.976; deve constar na ata.
+6. Falta: **BL-011** (ATIVADO) — marcar `Absorvido` ou re-apontar o resíduo COL-EXP-05?
+7. Falta: **registro em ata** da decisão de 2026-10-18 sobre o Inteligencia-SOT como Benchmark e da autorização para iniciar a abertura (hoje só chat + HANDOFF; AGENTS §10).
+8. Complemento à Q-ABERTURA-6: confirmar que as Specs GEN-1 que referenciam `rag/*.knowledge.md` ficam inalteradas (INV-09).
+
+## 5. Limites e riscos residuais
+Sem web: não atesta a veracidade das páginas nem dos números de repositório (as capturas tornam a verificação possível depois). `revisor_gate` não visto rodando na sessão do Revisor. Não verificou se a árvore de trabalho do clone difere do commit 0abd22e. O Revisor não conseguiu gravar este arquivo (ENF-03).
+
+## 6. Encaminhamento
+Devolver ao Especificador (correções A-01..A-12 + perguntas); nova rodada **por delta** (DHR-REVISOR-DELTA-001). Decisões de Andraus levantadas: itens 3–8 do §4, A-01 (AGENTS.md §7) e A-08 (BL-011).
