@@ -144,7 +144,7 @@ Inversão contextual ocorre quando um princípio normalmente de menor peso passa
 | BL-011 | COL-EXP-02 | Quality Gates G0–G8 (§52) | L1–L4 / L0–L4 | SOT | REJEITAR global → gate LOCAL | K-MAN-15 |
 | BL-011 | COL-EXP-03 | I-EXP-01..12 (§51) / EXP-P01..P14 (§5) | INV/PC/PB | SOT | ADAPTAR como LOCAIS | K-MAN-15 |
 | BL-011 | COL-EXP-04 | Working Memory §7.6 | Blackboard/SPEC-004 | SOT | ADIAR/RELOCAR a SPEC-004 | K-MAN-15 |
-| BL-011 | COL-EXP-05 | EXP-SPEC-021 ↔ RAG-SPEC-018 (dup.) | RULE-004 | SOT | ADIAR reconciliação (SPEC-006/009) | K-MAN-15 |
+| BL-011 | COL-EXP-05 | EXP-SPEC-021 ↔ RAG-SPEC-018 (dup.) | RULE-004 | SOT | ~~ADIAR reconciliação (SPEC-006/009)~~ → **re-apontada à SPEC-007** (Andraus, 2026-10-19, DHR-BENCH-INTEL-001 D8; abertura homologada em DHR-SPEC007-001; o Plan da SPEC-007 deve tratá-la) | K-MAN-15 |
 | BL-012 | COL-COG-01 | Estados cognitivos §7 | CHM-001/RULE-BB-003 (CC-02) | CHM-001 | REJEITAR §7 → mapear p/ CHM-001 | K-MAN-16 |
 | BL-012 | COL-COG-02 | Quality Gates G0–G9 (§22) | L1–L4 / L0–L4 | SOT | REJEITAR global → gate LOCAL | K-MAN-16 |
 | BL-012 | COL-COG-03 | I-COG-01..12 (§21) / COG-P01..P15 (§4) | N8–N17/INV/PC/PB | SOT | ADAPTAR como LOCAIS | K-MAN-16 |
