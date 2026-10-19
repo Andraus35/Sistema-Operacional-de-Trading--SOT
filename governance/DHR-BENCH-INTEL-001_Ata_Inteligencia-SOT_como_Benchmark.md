@@ -7,7 +7,7 @@
 | Ref | Repositório `https://github.com/Andraus35/Inteligencia-SOT` (público; clone somente-leitura, commit `0abd22e`); abertura da SPEC-007 (`specs/features/SPEC-007/`); `ROADMAP.md` §23 passo 1-bis |
 | Data | 2026-10-19 |
 | Status | **DECISÃO DE ANDRAUS REGISTRADA** (chat, 2026-10-18, e confirmação por AskUserQuestion em 2026-10-19: "Registrar em ata agora"). Assinatura = decisão registrada no chat e citada nesta ata (AGENTS.md §10). **Não homologa a SPEC-007, não define escopo e não fecha decisão aberta.** |
-| Compatibilidade | Aditiva (INV-07). Não altera `AGENTS.md`, agentes, `canon/` nem método. |
+| Compatibilidade | Aditiva (INV-07). Não altera agentes, `canon/` nem método. Única edição em arquivo protegido: uma linha do `AGENTS.md` §7 (RULE-REG-001 marcada FECHADA — D7, ordem expressa de Andraus). *[Texto anterior preservado — INV-07: "Não altera `AGENTS.md`, agentes, `canon/` nem método."]* |
 | RPSA-escopo | nao |
 | RPSA-sync | fonte-unica |
 | RPSA-motivo | Registra a política de uso de um repositório de referência; não altera texto de agente nem método. |
