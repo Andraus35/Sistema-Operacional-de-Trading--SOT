@@ -52,4 +52,4 @@ Dar Bash ao Revisor (DHR-AUDITOR-EXTERNO-009 §2); refazer a SPEC-006; 4 agentes
 Plan da SPEC-007 (ordem) · livro (Q7c) · demais decisões abertas · destino do Auditor Externo (PAUSADO), schemas sem `additionalProperties:false`, piloto de esforço, D-PCC-3/4/5 — ver `docs/handoffs/HO-2026-10-17-34.md` §10.
 
 ## 11. Ponteiros
-`governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md` · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `specs/features/SPEC-007/` · `governance/propostas/SPEC-007/` (pareceres e deltas) · `governance/DHR-H001-001_*` · `governance/DHR-ROTEAMENTO-003_*` · `AGENTS.md` §11 · `ROADMAP.md` · `backlog/RMR-001_Painel_Backlog.md` · `docs/mapa/MAPA-PROJETO.md`
+ata `DHR-COESAO-005` (em `governance/`) · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `specs/features/SPEC-007/` · `governance/propostas/SPEC-007/` (pareceres e deltas) · `governance/DHR-H001-001_*` · `governance/DHR-ROTEAMENTO-003_*` · `AGENTS.md` §11 · `ROADMAP.md` · `backlog/RMR-001_Painel_Backlog.md` · `docs/mapa/MAPA-PROJETO.md`

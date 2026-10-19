@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-19** · digest `ce04c437ddce93d9` · **413** documentos · **6131** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-19** · digest `ad5c4f0314ea320b` · **413** documentos · **6130** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -35,7 +35,7 @@ flowchart LR
   specs["specs"] -->|295| governance["governance"]
   docs["docs"] -->|258| specs["specs"]
   governance["governance"] -->|174| backlog["backlog"]
-  raiz["raiz"] -->|132| governance["governance"]
+  raiz["raiz"] -->|131| governance["governance"]
   backlog["backlog"] -->|106| governance["governance"]
   _claude[".claude"] -->|100| governance["governance"]
   docs["docs"] -->|100| backlog["backlog"]

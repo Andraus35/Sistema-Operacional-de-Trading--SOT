@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-19",
-  "digest": "ce04c437ddce93d915bdc51171144348e324dfc7f16487271594f2f1b5761c9e",
+  "digest": "ad5c4f0314ea320b1eda96b46b5f96efc8ad215f573d22dacbc24e85f610dfd1",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -6470,11 +6470,6 @@
    "from": "HANDOFF.md",
    "to": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
    "type": "id"
-  },
-  {
-   "from": "HANDOFF.md",
-   "to": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
-   "type": "path"
   },
   {
    "from": "HANDOFF.md",
