@@ -24,3 +24,8 @@ Q-3, Q-4, Q-6 bem formuladas; Q-7 e Q-8 aceitáveis com os resíduos N-02, N-04,
 
 ## 5. Encaminhamento (Revisor)
 N-01 (urgente) e N-02..N-09 ao Especificador numa passada; depois pode seguir a Andraus como CONFORME condicional. Andraus decide: as 8 perguntas de abertura; o registro em ata/nota do RMR-001 da re-apontagem de COL-EXP-05 (e CONFLICT-MAP:147 pós-homologação).
+
+---
+## Adendo do Orquestrador (guarda pós-revisor G1/G3, DHR-AUDITOR-EXTERNO-018) — 2026-10-19
+- **G3 (citações "não encontradas"):** as 7 (`inteligencia-sot@0abd22e:docs/HARNESS-QUALIDADE.md:4`, `inteligencia-sot@0abd22e:docs/GATE-ARTEFATO-IMPLEMENTADO.md:25`, `inteligencia-sot@0abd22e:docs/governanca/POLITICA.md:19`, `inteligencia-sot@0abd22e:docs/governanca/CONTRATOS.md:3`, `inteligencia-sot@0abd22e:docs/REVISOR-ADVERSARIAL-HIBRIDO-2026-10-13.md:14`, `inteligencia-sot@0abd22e:docs/governanca/DECISOES.md:13`, `inteligencia-sot@0abd22e:rag/traducao/documento-ativo.json:3`) são caminhos do **repositório-benchmark** (clone `/home/user/andraus35/inteligencia-sot`, commit `0abd22e`): conferido que os arquivos existem lá e têm a linha citada; o detector os resolve no SOT e por isso não os acha. Nenhum achado depende de citação inexistente.
+- **G1 (`governance/RULES.md` não aberto na 2ª rodada):** a 2ª rodada foi por delta e herdou do parecer da 1ª rodada, que abriu o `RULES.md` (RULE-004 l.36, RULE-HG-07 l.395, RULE-ECC-06 l.498, RULE-MECH-03 l.534, RULE-MM-05 l.638, RULE-MET-01 l.705). Conferência complementar do Orquestrador (Grep): os **14 IDs `RULE-*` citados** em ABERTURA.md e research.md (exceto `RULE-CKG-*`/`RULE-CBP-*`, que vivem em plans de Spec e não em `RULES.md`) **existem** em `governance/RULES.md`. Não é parecer do Revisor.

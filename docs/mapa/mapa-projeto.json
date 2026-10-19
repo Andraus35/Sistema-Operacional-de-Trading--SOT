@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-19",
-  "digest": "753f74aa19e9282eb6671ff93be52f09546044dcbd93020c371274f27f05a2af",
+  "digest": "88a22f9a7bba140cf0bd0e59e8f48c917e7de347eeb3fc09189cc12989100266",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -193,7 +193,7 @@
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
    "in": 250,
-   "out": 109
+   "out": 110
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
@@ -899,7 +899,7 @@
    "path": "governance/CONFLICT-MAP.md",
    "area": "governance",
    "title": "Conflict Map — SOT (Sistema Operacional de Trading)",
-   "in": 48,
+   "in": 50,
    "out": 37
   },
   {
@@ -1081,7 +1081,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 43,
+   "in": 44,
    "out": 5
   },
   {
@@ -1102,8 +1102,8 @@
    "path": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "area": "governance",
    "title": "DHR-BENCH-INTEL-001 — Ata — Repositório paralelo `Inteligencia-SOT` como Benchmark do RAG",
-   "in": 4,
-   "out": 6
+   "in": 5,
+   "out": 8
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -2299,8 +2299,8 @@
    "path": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md",
    "area": "governance",
    "title": "PARECER DO REVISOR SOT — ABERTURA da SPEC-007, 2ª rodada (por delta, S2/Sonnet) — 2026-10-19",
-   "in": 0,
-   "out": 9
+   "in": 1,
+   "out": 10
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -2691,7 +2691,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 158,
+   "in": 159,
    "out": 33
   },
   {
@@ -2706,7 +2706,7 @@
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness (slot ROADMAP §6, FASE 3)",
    "in": 1,
-   "out": 24
+   "out": 26
   },
   {
    "path": "specs/features/SPEC-007/research.md",
@@ -2917,7 +2917,7 @@
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 73
+   "cited_by": 74
   },
   {
    "id": "BL-012",
@@ -3162,7 +3162,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 43
+   "cited_by": 44
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -3177,7 +3177,7 @@
   {
    "id": "DHR-BENCH-INTEL-001",
    "defined_in": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "DHR-BL008-001",
@@ -3962,7 +3962,7 @@
   {
    "id": "RULE-CBP",
    "defined_in": "ROADMAP.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-CBP-001",
@@ -4187,7 +4187,7 @@
   {
    "id": "RULE-CKG",
    "defined_in": "ROADMAP.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-CKG-001",
@@ -4232,7 +4232,7 @@
   {
    "id": "RULE-CKG-009",
    "defined_in": null,
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-CKG-010",
@@ -4347,7 +4347,7 @@
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 29
+   "cited_by": 30
   },
   {
    "id": "RULE-EH",
@@ -4577,7 +4577,7 @@
   {
    "id": "RULE-HG-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-HG-08",
@@ -4742,7 +4742,7 @@
   {
    "id": "RULE-MECH-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "RULE-MECH-04",
@@ -4757,7 +4757,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 71
+   "cited_by": 72
   },
   {
    "id": "RULE-MET-02",
@@ -4797,7 +4797,7 @@
   {
    "id": "RULE-MM-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "RULE-MM-06",
@@ -5097,7 +5097,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 158
+   "cited_by": 159
   },
   {
    "id": "SPEC-007",
@@ -7754,6 +7754,11 @@
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "type": "id"
   },
   {
@@ -21153,6 +21158,11 @@
   },
   {
    "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "governance/CONFLICT-MAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
    "type": "id"
   },
@@ -21170,6 +21180,11 @@
    "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -31228,6 +31243,11 @@
   },
   {
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md",
    "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "type": "id"
   },
@@ -31235,6 +31255,11 @@
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md",
+   "to": "governance/RULES.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md",
@@ -33818,6 +33843,11 @@
   },
   {
    "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/CONFLICT-MAP.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
    "to": "governance/DHR-ARQ-002_Ata_Manager_Absorve_Synthesis.md",
    "type": "id"
   },
@@ -33864,6 +33894,11 @@
   {
    "from": "specs/features/SPEC-007/ABERTURA.md",
    "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/ABERTURA.md",
+   "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md",
    "type": "path"
   },
   {
@@ -33975,6 +34010,11 @@
    "from": "specs/features/SPEC-007/research.md",
    "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/research.md",
+   "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-007/research.md",
