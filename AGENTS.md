@@ -163,7 +163,7 @@ python scripts/build_map.py --check             # exit 1 se o mapa está desatua
 npx harness-score   # maturidade do harness (opcional)
 ```
 
-> **Demais scripts, hooks, workflows e guardas** (`gate_manifest`, `revisor_detectores`, `revisor_guard`, `revisor_posguarda`, `roteador_modelos`, `route_aex`, `rpsa_auto`, `run_gates`, …): estado e finalidade no registro `governance/MECANISMOS.json` (**PROPOSTA** até Andraus assinar como VIGENTE; DHR-COESAO-003). Esta lista traz só os comandos de uso diário; o registro é a fonte única de *estado* (ativo / inerte / pausado / legado).
+> **Demais scripts, hooks, workflows e guardas** (`gate_manifest`, `revisor_detectores`, `revisor_guard`, `revisor_posguarda`, `roteador_modelos`, `route_aex`, `rpsa_auto`, `run_gates`, …): estado e finalidade no registro `governance/MECANISMOS.json` (**VIGENTE** desde 2026-10-19 — DHR-COESAO-005, decisão de Andraus; criar/mover/aposentar mecanismo exige atualizar o registro no mesmo PR, senão COE-14 reprova no CI) *[texto anterior preservado — INV-07: "PROPOSTA até Andraus assinar como VIGENTE; DHR-COESAO-003"]*. Esta lista traz só os comandos de uso diário; o registro é a fonte única de *estado* (ativo / inerte / pausado / legado).
 
 Skill operacional: `tlc-spec-lean` (overlay de governança GUS-TLC-001).
 
