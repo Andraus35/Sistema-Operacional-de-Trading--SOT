@@ -1,5 +1,7 @@
 # MINUTA — Ata de vigência do registro de mecanismos (`governance/MECANISMOS.json`)
 
+> **Executada em 2026-10-19:** Andraus assinou (chat) — ver `governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md`. Texto abaixo mantido como registro (INV-07).
+
 > **[PROPOSTA] — minuta preparada pelo Orquestrador a pedido de Andraus (chat, 2026-10-18). NÃO é ata, NÃO torna o registro vigente.** Só vale com a decisão de Andraus registrada no chat e citada na ata final (AGENTS.md §10). Prazo do lembrete: **2026-10-24** (HANDOFF §10). Número sugerido da ata: `DHR-COESAO-005`.
 
 ## 1. O que a decisão faria

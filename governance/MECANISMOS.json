@@ -1,9 +1,9 @@
 {
  "registro": "MECANISMOS",
- "versao": "0.1",
- "status_do_registro": "PROPOSTA",
+ "versao": "1.0",
+ "status_do_registro": "VIGENTE",
  "gerado_em": "2026-10-17",
- "aviso": "PROPOSTA — vira vigente só com o merge de Andraus (DHR-COESAO-001). Dado de estado, não autoridade: não homologa nem fecha decisão aberta (CONS-01). Em divergência com a realidade, a realidade prevalece; o detector COE-14 acusa a divergência.",
+ "aviso": "VIGENTE desde 2026-10-19 (DHR-COESAO-005, decisão de Andraus). Dado de estado, não autoridade: não homologa nem fecha decisão aberta (CONS-01). Em divergência com a realidade, a realidade prevalece; o detector COE-14 acusa a divergência (ERRO enquanto VIGENTE: quem cria, move ou aposenta um mecanismo atualiza este registro no mesmo PR).",
  "mecanismos": [
   {
    "id": "hook.gate-check.pretooluse",
@@ -244,7 +244,7 @@
    "enforca": "Coesão do harness (COE-01..14)",
    "ata": "DHR-COESAO-001",
    "verificado_em": "2026-10-18: ao vivo — ERRO=0 WARN=0; tests/test_check_coesao.py no CI",
-   "nota": "COE-01/02/04/05 bloqueiam no CI (ERRO); COE-14 só avisa enquanto o registro é PROPOSTA. Verificador de RULE-COESAO-01/02/03 (DHR-COESAO-003)."
+   "nota": "COE-01/02/04/05 bloqueiam no CI (ERRO); COE-14 passou a ERRO com o registro VIGENTE (DHR-COESAO-005, 2026-10-19). Verificador de RULE-COESAO-01/02/03 (DHR-COESAO-003)."
   },
   {
    "id": "det.revisor-detectores",
@@ -496,5 +496,6 @@
    "verificado_em": "2026-10-18: tests/test_spec_delta.py (CI)",
    "nota": "Selado em GATE-MANIFEST.sha256 e com dono em CODEOWNERS desde 2026-10-18 (decisão de Andraus, chat)."
   }
- ]
+ ],
+ "vigente_desde": "2026-10-19"
 }
