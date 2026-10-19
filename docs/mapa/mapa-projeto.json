@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-19",
-  "digest": "e8777ffaedeb29ff8a2d6f3a90894eaec8b4a9e7eb10facdf68f3ae529923309",
+  "digest": "e69b100b36d1aea28e8065e1a1a52bfbeb9ab3994f1ead6810f16c669dc9b77c",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -102,7 +102,7 @@
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
    "in": 150,
-   "out": 45
+   "out": 47
   },
   {
    "path": "GLOSSARIO.md",
@@ -1102,8 +1102,8 @@
    "path": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "area": "governance",
    "title": "DHR-BENCH-INTEL-001 — Ata — Repositório paralelo `Inteligencia-SOT` como Benchmark do RAG",
-   "in": 2,
-   "out": 5
+   "in": 3,
+   "out": 6
   },
   {
    "path": "governance/DHR-BL008-001_Ata_Homologacao_Mapa_Auditoria_SPEC-001.md",
@@ -1522,7 +1522,7 @@
    "path": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
    "area": "governance",
    "title": "DHR-REG-001 — Ata de Homologação — Registro Físico das 11 Famílias Cognitivas (RULE-REG-001)",
-   "in": 15,
+   "in": 17,
    "out": 16
   },
   {
@@ -3170,7 +3170,7 @@
   {
    "id": "DHR-BENCH-INTEL-001",
    "defined_in": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-BL008-001",
@@ -3475,7 +3475,7 @@
   {
    "id": "DHR-REG-001",
    "defined_in": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
-   "cited_by": 14
+   "cited_by": 16
   },
   {
    "id": "DHR-REVISOR-DELTA-001",
@@ -4860,7 +4860,7 @@
   {
    "id": "RULE-REG-001",
    "defined_in": "governance/RULES.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "RULE-SDD",
@@ -6136,6 +6136,11 @@
   },
   {
    "from": "AGENTS.md",
+   "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
    "to": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
    "type": "id"
   },
@@ -6217,6 +6222,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-PCC-002_Ata_Fase2_Detector_e_Hooks_do_Handoff.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
    "type": "id"
   },
   {
@@ -21136,8 +21146,18 @@
   },
   {
    "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "to": "governance/RULES.md",
+   "type": "path"
   },
   {
    "from": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
