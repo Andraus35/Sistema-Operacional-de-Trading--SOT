@@ -24,3 +24,7 @@ Revisor sugere corrigir r6-n1..r6-n3 junto, sem nova rodada (editoriais, nenhuma
 
 ## Adendo da guarda / Orquestrador (2026-10-24)
 `python scripts/revisor_gate.py specs/features/SPEC-007/plan.md` (completo, não só `--rapido`) = `PASSOU_D`, 0 sinais H, teto CONFORME condicional; avisos anteriores eram texto histórico dos Anexos. Isso cumpre a condição (a) do Revisor; a elevação a CONFORME pleno e a homologação continuam fora deste parecer.
+
+## Adendo 2 da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G1:** `ROADMAP.md` aberto ao vivo: l.34 registra a divisão decidida (DHR-SPEC007-002) e SPEC-007 sem Plan aprovado; l.37 "Decisões FECHADAS" registra DHR-SPEC007-003/004 com K-001 e M-001 abertas. Confere com o que o Plan e o parecer afirmam. Nada a retirar.
+- **G2:** `revisor_gate.py` = `PASSOU_D`, 0 sinais H. Avisos (l.31, 3345, 3421, 3422, 3443): l.31 = linha da v1.0 na tabela de versões; as demais ficam dentro do Anexo R (texto v1.x preservado e recuado, INV-07). A RULE-CKG-008 está definida em `specs/features/SPEC-006/plan.md` l.429-472. O corpo vigente tem 12 BASpec (recontado pelo Revisor, 87 cabeçalhos). Falsos positivos; sem achado novo.
