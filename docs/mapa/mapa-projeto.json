@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "a70d1d41549e3286bbcdc0672360daa0f83e774996144655dc2a7b29289f170d",
+  "digest": "eff5332b95f8df3be6b8811de9bc7936ec54c5327af116d44339b61543703198",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -5069,12 +5069,12 @@
   {
    "id": "RULE-KFH-015",
    "defined_in": null,
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-KFH-016",
    "defined_in": null,
-   "cited_by": 2
+   "cited_by": 4
   },
   {
    "id": "RULE-KFH-017",
@@ -5089,7 +5089,7 @@
   {
    "id": "RULE-KFH-019",
    "defined_in": null,
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-KFH-020",
