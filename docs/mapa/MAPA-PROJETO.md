@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-24** · digest `bd2ed771f1d6d2e7` · **439** documentos · **6661** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-24** · digest `a70d1d41549e3286` · **439** documentos · **6667** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -31,7 +31,7 @@ flowchart LR
   docs["docs"] -->|1206| governance["governance"]
   governance["governance"] -->|733| specs["specs"]
   governance["governance"] -->|397| raiz["raiz"]
-  specs["specs"] -->|345| governance["governance"]
+  specs["specs"] -->|347| governance["governance"]
   docs["docs"] -->|340| specs["specs"]
   docs["docs"] -->|338| raiz["raiz"]
   governance["governance"] -->|186| backlog["backlog"]
@@ -64,7 +64,7 @@ flowchart LR
 
 | ID | Documentos que citam | Definido em |
 |---|---:|---|
-| `INV-07` | 254 | [governance/RULES.md](../../governance/RULES.md) |
+| `INV-07` | 255 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-006` | 187 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
 | `SPEC-002` | 149 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
 | `SPEC-003` | 145 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
@@ -131,7 +131,7 @@ flowchart LR
 | `SPEC-035` | Indicativa (não aberta) | — | 0 |
 | `SPEC-036` | Indicativa (não aberta) | — | 2 |
 | `SPEC-037` | Indicativa (não aberta) | — | 1 |
-| `SPEC-038` | **Homologada** | [specs/features/SPEC-038/plan.md](../../specs/features/SPEC-038/plan.md) | 30 |
+| `SPEC-038` | **Homologada** | [specs/features/SPEC-038/plan.md](../../specs/features/SPEC-038/plan.md) | 32 |
 | `SPEC-039` | Indicativa (não aberta) | — | 8 |
 | `SPEC-040` | Indicativa (não aberta) | — | 20 |
 | `SPEC-041` | Indicativa (não aberta) | — | 12 |
@@ -163,7 +163,6 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 - [governance/propostas/SPEC-006/linha-spec006-plan/checks-v1.8-candidato.md](../../governance/propostas/SPEC-006/linha-spec006-plan/checks-v1.8-candidato.md) — checks.md — Verificação de Spec da SPEC-006 (fase spec-first)
 - [governance/propostas/SPEC-006/linha-spec006-plan/plan-v1.8-candidato.md](../../governance/propostas/SPEC-006/linha-spec006-plan/plan-v1.8-candidato.md) — SPEC-006 — Cognitive Knowledge Graph
 - [governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R2-2026-10-23.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R2-2026-10-23.md) — Parecer do Revisor — Plan da SPEC-007 v1.1 (CANDIDATA), rodada 2 (S2, revisão integral na prática) — 2026-10-23
-- [governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md) — Parecer do Revisor — Proposta de abertura da SPEC-048 + Dossiê, rodada 1 (S3, integral) — 2026-10-24
 - [rag/elliott-wave.knowledge.md](../../rag/elliott-wave.knowledge.md) — RAG — Elliott Wave Specialist Knowledge Base
 - [rag/fibonacci.knowledge.md](../../rag/fibonacci.knowledge.md) — RAG — Fibonacci Validator Knowledge Base
 - [rag/ict.knowledge.md](../../rag/ict.knowledge.md) — RAG — ICT Specialist Knowledge Base
@@ -339,7 +338,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md](../../governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md) | [HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] ERRATUM-SPEC001-... | 3 | 21 |
 | [ERRATUM-SPEC005-001_Estado_BL-008.md](../../governance/ERRATUM-SPEC005-001_Estado_BL-008.md) | ERRATUM-SPEC005-001 — Estado do BL-008: `Absorvido`, não `ATIVADO` — erratum ... | 1 | 13 |
 | [ERRATUM-SPEC019-001_PROPOSTA.md](../../governance/ERRATUM-SPEC019-001_PROPOSTA.md) | ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homolog... | 0 | 9 |
-| [ERRATUM-SPEC020-001_Fechamento_tool_correctness.md](../../governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md) | ERRATUM-SPEC020-001 — Fechamento da dimensão B "tool correctness" (BL-017) — ... | 3 | 9 |
+| [ERRATUM-SPEC020-001_Fechamento_tool_correctness.md](../../governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md) | ERRATUM-SPEC020-001 — Fechamento da dimensão B "tool correctness" (BL-017) — ... | 4 | 9 |
 | [ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md](../../governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md) | Estudo — garantias determinísticas para prevenir os erros de coesão (hooks, r... | 29 | 8 |
 | [EUA-E04_Heranca_Delta_PROPOSTA.md](../../governance/EUA-E04_Heranca_Delta_PROPOSTA.md) | EUA-E04 — Bloco "Herança / Delta" no atomic-spec §8 (PROPOSTA) | 3 | 6 |
 | [EUA-E05_Epistemic_Check_PROPOSTA.md](../../governance/EUA-E05_Epistemic_Check_PROPOSTA.md) | EUA-E05 — Epistemic Check no atomic-spec §11 (PROPOSTA) | 3 | 8 |
@@ -419,7 +418,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md) | Parecer do Revisor — Plan reduzido da SPEC-007 v2.0 (CANDIDATA), rodada 4 (S3... | 3 | 7 |
 | [PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md) | Parecer do Revisor — Plan reduzido da SPEC-007 v2.1 (CANDIDATA), rodada 5 (S2... | 2 | 8 |
 | [PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md) | Parecer do Revisor — Plan reduzido da SPEC-007 v2.2 (CANDIDATA), rodada 6 (S2... | 2 | 8 |
-| [PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md) | Parecer do Revisor — Proposta de abertura da SPEC-048 + Dossiê, rodada 1 (S3,... | 0 | 13 |
+| [PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md) | Parecer do Revisor — Proposta de abertura da SPEC-048 + Dossiê, rodada 1 (S3,... | 1 | 13 |
 
 ### canon
 
@@ -477,15 +476,15 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-021/research.md) | SPEC-021 — Harness Score / Maturity Model — DOSSIÊ DE PESQUISA (ABERTURA) | 1 | 19 |
 | [ABERTURA.md](../../specs/features/SPEC-038/ABERTURA.md) | Proposta de Abertura — SPEC-038: Trading Analysis Tool Harness | 6 | 18 |
 | [SPEC-038/checks.md](../../specs/features/SPEC-038/checks.md) | SPEC-038 — Trading Analysis Tool Harness (Checks — verificação de spec) | 1 | 8 |
-| [SPEC-038/plan.md](../../specs/features/SPEC-038/plan.md) | SPEC-038 — Trading Analysis Tool Harness (Plan) | 30 | 22 |
+| [SPEC-038/plan.md](../../specs/features/SPEC-038/plan.md) | SPEC-038 — Trading Analysis Tool Harness (Plan) | 32 | 22 |
 | [research.md](../../specs/features/SPEC-038/research.md) | Dossiê de Pesquisa — SPEC-038: Trading Analysis Tool Harness | 4 | 20 |
 | [DOSSIE-PESQUISA.md](../../specs/features/SPEC-046/DOSSIE-PESQUISA.md) | Dossiê de Pesquisa — SPEC-046 (Grupo B: Caching de Spec-Time — Especificador/... | 3 | 9 |
 | [PROPOSTA-ABERTURA.md](../../specs/features/SPEC-046/PROPOSTA-ABERTURA.md) | Proposta de Abertura — SPEC-046: Spec-Time Context Caching Harness (Grupo B —... | 4 | 21 |
 | [SPEC-046/checks.md](../../specs/features/SPEC-046/checks.md) | checks.md — Verificação de Spec da SPEC-046 (fase spec-first) | 1 | 9 |
 | [SPEC-046/plan.md](../../specs/features/SPEC-046/plan.md) | SPEC-046 — Spec-Time Context Caching Harness (Especificador/Revisor) | 29 | 23 |
 | [research.md](../../specs/features/SPEC-046/research.md) | Dossiê de Pesquisa — SPEC-046 (companion — convenção de nome do gate determin... | 0 | 5 |
-| [ABERTURA.md](../../specs/features/SPEC-048/ABERTURA.md) | Proposta de Abertura — SPEC-048: RAG Retrieval & Evidence Packet Harness (slo... | 2 | 21 |
-| [research.md](../../specs/features/SPEC-048/research.md) | Dossiê de Pesquisa — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ... | 1 | 24 |
+| [ABERTURA.md](../../specs/features/SPEC-048/ABERTURA.md) | Proposta de Abertura — SPEC-048: RAG Retrieval & Evidence Packet Harness (slo... | 2 | 23 |
+| [research.md](../../specs/features/SPEC-048/research.md) | Dossiê de Pesquisa — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ... | 1 | 26 |
 | [fibonacci.spec.md](../../specs/fibonacci.spec.md) | Spec — Fibonacci Validator | 3 | 1 |
 | [ict.spec.md](../../specs/ict.spec.md) | Spec — ICT Specialist (Execution Intelligence) | 2 | 1 |
 | [smc.spec.md](../../specs/smc.spec.md) | Spec — SMC Specialist (Institutional Intelligence) | 2 | 0 |

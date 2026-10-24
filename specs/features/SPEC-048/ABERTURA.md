@@ -4,6 +4,7 @@
 **Autor:** Especificador Principal SOT (Claude Code, Opus 5.5)
 **Data:** 2026-10-24
 **Status:** **PROPOSTA DE ABERTURA** — aguarda parecer do Revisor (sobre o processo do Dossiê) e **homologação de Andraus** da definição da Spec. **NÃO** é baseline. O Plan (`plan.md`/`checks.md`) **não** foi escrito e só começa após a homologação desta abertura e por ordem expressa de Andraus. Tudo aqui é `[PROPOSTA]` salvo quando marcado `[FONTE]`. Nenhuma decisão aberta é fechada; nenhum baseline é tocado; nenhuma regra nova é criada (os requisitos descritos só valem se Andraus homologar e o Plan os redigir).
+**Revisão 2 (2026-10-24, por delta):** ajustes do parecer R1 do Revisor (`governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md`, CONFORME condicional — 10 Menores): m-01, m-03, m-05, m-06, m-07 corrigidos no texto; etiqueta `[FONTE]` da causa do vazio do backlog; m-02, m-04, m-08, m-10 (e m-03) registrados como **condições obrigatórias do Plan** (§15). Texto anterior preservado entre colchetes (INV-07). m-09 (registro em ata da ordem de abertura) é do Orquestrador/Andraus.
 **Depende de:** `research.md` (mesmo diretório — ler primeiro: §0 auditoria, §3 comparação, §4 repositórios, §8 escopo/re-apontamento) e `sources/`.
 **Autorização:** ordem expressa de Andraus (chat, 2026-10-24, "Abrir a SPEC-048: Dossiê de abertura"), transmitida pelo Orquestrador; base DHR-SPEC007-002 §7.
 
@@ -22,7 +23,7 @@
 | **Maturidade-alvo** | L3 (Testável) na baseline; gate E3 por-Spec (RULE-MM-05, SPEC-021) | Mesmo regime das SPEC-004..007. |
 | **Classe predominante** (orientação, não vinculante — CC-11 por BASpec) | **D** (filtros, contagem, montagem, citação, WikiRAG, registro) · **C** (guardas E3) · **H** (reordenação/laço, redator, juiz F2 — sempre com gate de saída, limite e parada) | Ver §4. |
 
-**Natureza:** Spec de **infraestrutura cognitiva de consulta** (Trilha B), agnóstica de escola. CC-12 **não incide**; RULE-ECC-05 **incidência parcial proposta** (research §9).
+**Natureza:** Spec de **infraestrutura cognitiva de consulta** (Trilha B), agnóstica de escola. CC-12 **não incide**; RULE-ECC-05 **não incide — confronto voluntário com o WORKFLOW**, palavra final de Andraus na Q-ABERTURA-8 (research §9; correção m-06). *[texto anterior — INV-07: "RULE-ECC-05 **incidência parcial proposta** (research §9)."]*
 
 ---
 
@@ -33,7 +34,7 @@
 - **S2 Exclusões declaradas, nunca silenciosas:** fonte com uso não liberado (`rights_status` efetivo INDETERMINADO) nunca chega ao pacote; para consumidor "de fora", conteúdo sem permissão efetiva de envio é excluído — **usando a CIM da SPEC-007** (ponto 3), sem redefini-la.
 - **S3 Contagem de independência** por origem-raiz, com a definição **da SPEC-007** (P-14); cadeia irresolúvel ⇒ INDETERMINADO.
 - **S4 Pacote de evidência candidata:** itens com citação resolvível, slots sempre presentes de **contraevidência** e **lacunas**, escopo temporal, evidência crítica marcada, estimativa de tamanho, marca "a revalidar", texto de fonte em `source_text` com `content_role = DATA`; **marca distinta** entre "conhecimento carimbado" e "trecho de fonte não carimbado" (research §3.3); **sem** conclusão/decisão/direção de trade; **nunca** cita página WikiRAG.
-- **S5 Entrega (P-9 — decidido):** direto ao analista que pediu, só leitura, registrada; sem Blackboard. `consumer_locus` derivado do registro de provedores da SPEC-007 (research §3.7).
+- **S5 Entrega (P-9 — decidido):** direto ao analista que pediu, só leitura, registrada; sem Blackboard. `consumer_locus` derivado do registro de provedores da SPEC-007 (research §3.7). **Lacuna (m-05):** falta a ligação **analista ↔ modelo em que roda** (o registro de provedores é por modelo; a identidade autenticada é do analista); sem ela, todo analista conta como "fora" (ausência ⇒ EXTERNO; P-12).
 - **S6 F2:** suporte de cada afirmação entregue no trecho citado — parte D e depois juízo H por modelo distinto do redator; afirmação sem suporte removida e registrada como lacuna; limiares INDETERMINADO. **Redator da síntese mínima opcional** (proposta: desligado por padrão — Q-ABERTURA-5).
 - **S7 Relevância ≠ convicção** (INV-04): escores, suporte e custo em namespace próprio; guard E3.
 - **S8 WikiRAG** (Q3 — decidido): versão de leitura por regra fixa a partir de itens carimbados; lado a lado nas contradições; sem autoridade; E1.
@@ -63,13 +64,13 @@
 | Motores/agentes/skills do Inteligencia-SOT; cópia de texto/código | DHR-BENCH-INTEL-001 | — (Benchmark) |
 
 ### Contrato com a SPEC-007 (montante — BASELINE)
-A SPEC-048 **cumpre** os requisitos propostos na seção "Interface com a SPEC-048" do plano da SPEC-007 (pontos 1–6): serve como conhecimento só itens carimbados; não serve fonte com uso INDETERMINADO; conta independência pela origem-raiz de lá; toda chamada de modelo (reordenador, embeddings, redator, juiz F2) passa pela CIM sem texto solto; só **lê** atos; expõe "a revalidar"; serve os dois lados de uma contradição; usa só os IDs de modelo gravados pela CIM. **Não** emite selo, não muta candidato, não grava marca nem ato.
+A SPEC-048 **cumpre** os requisitos propostos na seção "Interface com a SPEC-048" do plano da SPEC-007 (pontos 1–6): serve como conhecimento só itens carimbados; não serve fonte com uso INDETERMINADO; conta independência pela origem-raiz de lá; ponto 3, literal: "toda chamada de modelo da consulta (reranker, embeddings, redator, juiz F2) passa pela CIM, sem texto solto e com uso liberado para qualquer executor" (`specs/features/SPEC-007/plan.md` l.1224; correção m-03) *[texto anterior — INV-07: "toda chamada de modelo (reordenador, embeddings, redator, juiz F2) passa pela CIM sem texto solto"]*; só **lê** atos; expõe "a revalidar"; serve os dois lados de uma contradição; usa só os IDs de modelo gravados pela CIM. **Não** emite selo, não muta candidato, não grava marca nem ato.
 
 ---
 
 ## 3. Quantidade e cláusula de divisão
 
-**1 Spec** (research §8.1, Opção A). O insumo transferido é menor que a SPEC-007 reduzida [8 BASpec contra 12] e cabe numa sessão de revisão. **Cláusula de divisão:** se, ao redigir o Plan, ele passar de uma revisão, volto a Andraus propondo tirar a **WikiRAG** para Spec própria (visão E1, menor acoplamento), com número a definir na abertura dela. Rejeitadas: dividir agora (custa uma abertura sem ganho de Eficácia) e fundir WikiRAG na SPEC-043 (que é contexto de trabalho, não leitura de conhecimento).
+**1 Spec** (research §8.1, Opção A). O insumo transferido é menor que a SPEC-007 reduzida [8 BASpec contra 12] e cabe numa sessão de revisão. Inventário completo do insumo (correção m-07): research §0 (e) e §8.1 — inclui também a parte "feedback" do EC-KFH-010, D4.3/D4.5, as métricas (T.11) e a metade F2 da emenda (T.12); logo, [4 EC inteiros + 1 parte], não "4 EC". **Cláusula de divisão:** se, ao redigir o Plan, ele passar de uma revisão, volto a Andraus propondo tirar a **WikiRAG** para Spec própria (visão E1, menor acoplamento), com número a definir na abertura dela. Rejeitadas: dividir agora (custa uma abertura sem ganho de Eficácia) e fundir WikiRAG na SPEC-043 (que é contexto de trabalho, não leitura de conhecimento).
 
 ---
 
@@ -99,7 +100,7 @@ Não é Spec de especialidade de escola. Nenhum `PD-xx`.
 | CC-04 | OK | Nenhuma Salvaguarda tocada; o pacote não é sinal. |
 | CC-05 | Aplica | CRITICAL proposto. |
 | CC-06/07 | Diferido ao Plan | Engineering Cards no BUILD. |
-| CC-08 | **Aplica — foco** | INHERITS: SPEC-007 v2.3 (Interface; INV-KFH-02; RULE-KFH-001/019/020), SPEC-006 (RULE-CKG-010/011), SPEC-004 v1.2 (RULE-CBP-014), CEM-001, CCM-001, SPEC-020 (dimensão B, metade F2), RULE-004/MET-01. Obrigações que **acompanharam** o comportamento transferido (lista do plano da SPEC-007, "Obrigações herdadas que ACOMPANHAM comportamento transferido") devem reaparecer aqui uma a uma, com evidência (§7-bis Bloco B no Plan). REMOVED vazio. |
+| CC-08 | **Aplica — foco** | INHERITS: SPEC-007 v2.3 (Interface; INV-KFH-02; RULE-KFH-001/019/020), SPEC-006 (RULE-CKG-010/011), SPEC-004 v1.2 (RULE-CBP-014), CEM-001, CCM-001, SPEC-020 (dimensão B, metade F2), RULE-004/MET-01. Obrigações que **acompanharam** o comportamento transferido (lista do plano da SPEC-007, "Obrigações herdadas que ACOMPANHAM comportamento transferido") devem reaparecer aqui uma a uma, com evidência (§7-bis Bloco B no Plan). **REMOVED a decidir no Plan (m-04):** a P-9 eliminou a entrega no Blackboard que SPEC-004 RULE-CBP-002/004/005 e RULE-BB-001 regiam — o Plan dispõe cada uma (REMOVED fundamentado na P-9 ou a forma que permanece); ver §15. *[texto anterior — INV-07: "REMOVED vazio."]* |
 | CC-09 | **Aplica** | Limiares F2, limites de laço e latência = INDETERMINADO; números de paper/fornecedor não viram meta; F2 mede **suporte**, não dependência (research §3.2). |
 | CC-10 | **Aplica** | Acepções a declarar: **trecho de fonte** ≠ **item carimbado** ≠ **evidência candidata** (pacote) ≠ **Evidência** (agente, CEM) ≠ **Observação** (Skill); **WikiRAG** (visão) ≠ KG; **"recuperação"** (conhecimento — 048) ≠ "recuperação" de contexto (SPEC-043); **"entregar"** (resposta só leitura) ≠ **"publicar"** (KG/Blackboard). |
 | CC-11 | Aplica (§4) | Por BASpec. |
@@ -122,9 +123,9 @@ Não é Spec de especialidade de escola. Nenhum `PD-xx`.
 
 ## 8. Re-apontamento — errata e gatilhos (só proposta; nada executado)
 
-**Errata aditiva (no Plan, para homologação conjunta — D5).** Linhas conferidas em 2026-10-24 (research §8.2): SPEC-002 l.170/848; SPEC-003 l.1080; SPEC-006 l.299/341/1594 **+ l.12/76/261/1309/1578**; SPEC-020 l.116/144/**515**/720/728 (divisão F1/F2); **SPEC-021 l.160/762** (divisão F1/F2). **Conflito registrado:** a lista da DHR-SPEC007-002 §4 tem menos linhas e cita "ROADMAP l.291" (hoje l.298); a ata manda reconferir no momento do erratum — proponho cobrir o conjunto atual (Q-ABERTURA-7). Em todas, a **formação e o selo seguem na SPEC-007**; só "retrieval/pacote/F2" re-aponta. ROADMAP l.298/l.400: atualização pelo Orquestrador/Andraus, não por errata de Spec. ROADMAP l.390 (SPEC-045-RUNTIME-001): **não** tocado — decisão aberta.
+**Errata aditiva (no Plan, para homologação conjunta — D5).** **Critério (m-01):** toda ocorrência de "SPEC-007" junto de retrieval / recuperação / evidence candidate / pacote / RAG faithfulness em **Specs baselined e erratas homologadas**, reconferida por busca ao redigir a errata. Resultado da busca de 2026-10-24 (research §8.2 — não é lista fechada): SPEC-002 l.170/848; SPEC-003 l.1080; SPEC-006 l.299/341/1594 **+ l.12/52/76/98/261/1309/1578**; SPEC-020 l.116/144/**515**/720/728 (divisão F1/F2); **SPEC-021 l.160/762**; **SPEC-038 l.916**; **ERRATUM-SPEC020-001 l.14** (só nota aditiva). **Conflito registrado:** a lista da DHR-SPEC007-002 §4 tem menos linhas e cita "ROADMAP l.291" (hoje l.298); a ata manda reconferir no momento do erratum — proponho que a ata da abertura registre o **critério** (Q-ABERTURA-7). *[texto anterior — INV-07: "Linhas conferidas em 2026-10-24 (research §8.2): SPEC-002 l.170/848; SPEC-003 l.1080; SPEC-006 l.299/341/1594 + l.12/76/261/1309/1578; SPEC-020 l.116/144/515/720/728 (divisão F1/F2); SPEC-021 l.160/762 (divisão F1/F2). … proponho cobrir o conjunto atual (Q-ABERTURA-7)."]* Em todas, a **formação e o selo seguem na SPEC-007**; só "retrieval/pacote/F2" re-aponta. ROADMAP l.298/l.400: atualização pelo Orquestrador/Andraus, não por errata de Spec. ROADMAP l.390 (SPEC-045-RUNTIME-001): **não** tocado — decisão aberta.
 
-**Gatilhos do RMR-001.** Pela regra do script, `--abertura SPEC-048` deve listar **nenhum** item: o gatilho adicional do BL-017 está na coluna de notas, não na de gatilho (research §8.3 — `[INFERÊNCIA]`, a confirmar). Proposta (aditiva, gatilho original preservado): acrescentar `∨ spec:SPEC-048 em redação` à coluna de gatilho do **BL-017** e do **BL-010** (Q-ABERTURA-6).
+**Gatilhos do RMR-001.** Pela regra do script, `--abertura SPEC-048` deve listar **nenhum** item: o gatilho adicional do BL-017 está na coluna de notas, não na de gatilho (research §8.3 — `[FONTE]`: `scripts/backlog_triggers.py` `abertura_scope` lê só a coluna de gatilho, causa confirmada pelo Revisor no parecer R1) *[etiqueta anterior — INV-07: "`[INFERÊNCIA]`, a confirmar"]*. Até a Q-ABERTURA-6, **BL-017 e BL-010 são tratados como vinculados de fato** (m-02). Proposta (aditiva, gatilho original preservado): acrescentar `∨ spec:SPEC-048 em redação` à coluna de gatilho do **BL-017** e do **BL-010** (Q-ABERTURA-6).
 
 ---
 
@@ -135,6 +136,7 @@ Não é Spec de especialidade de escola. Nenhum `PD-xx`.
 - **BL-011** (MC-EXP-001, **`ATIVADO`**, não vinculado por regra) — `Disposição: PARCIAL` *(proposta)* — motivo: só a **contagem no pacote** (COL-EXP-05 por P-14); segue `ATIVADO` (encerrar é de Andraus).
 - **BL-029** (não vinculado) — `Disposição: REFERÊNCIA` *(proposta, voluntária)* — motivo: gates D recomputam o que o modelo propõe (citação, atribuição, IDs da CIM).
 - **BL-035** e **BL-003** — não tocados (a SPEC-048 não admite nada no KG nem persiste hipótese/estado).
+- **Vínculo de fato (m-02):** até Andraus decidir a Q-ABERTURA-6, o Plan declara `Disposição:` para BL-017 e BL-010 como itens **vinculados**; Estado no painel inalterado.
 - **Resultado esperado do `backlog_triggers --abertura SPEC-048`:** nenhum item (ver §8). Se o script listar algo diferente, prevalece o script e eu reviso as disposições.
 
 ---
@@ -185,8 +187,8 @@ O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLO
 
 2. **Q-ABERTURA-2 (uma Spec ou duas).** *Recomendação: uma Spec só (busca + contagem de fontes independentes + pacote + entrega + conferência de cada frase + página de leitura).* Se ficar grande demais para revisar de uma vez, volto propondo separar só a página de leitura. **Confirma?**
 
-3. **Q-ABERTURA-3 (analista que roda em modelo de fora).** Pelas suas decisões anteriores, um modelo de empresa terceira conta como "fora", e um modelo só conta como "de casa" quando você confirma. Consequência: **se um analista rodar em modelo de fora, ele só recebe trechos de fontes que você liberou para envio externo**; o resto vem como "falta declarada" no pacote. *Recomendação: aceitar essa consequência, sem exceção — quem decide é você, liberando fonte a fonte ou confirmando modelos de casa.* **Aceita?**
-   > *Nota técnica:* `consumer_locus` derivado do registro de provedores da SPEC-007 (P-4b, P-12); research §3.7.
+3. **Q-ABERTURA-3 (analista que roda em modelo de fora).** Pelas suas decisões anteriores, um modelo de empresa terceira conta como "fora", e um modelo só conta como "de casa" quando você confirma. **Hoje, por padrão, todo analista conta como "fora"**: você ainda não confirmou nenhum modelo de casa, e o sistema ainda nem registra em qual modelo cada analista roda. Na prática: **cada analista só recebe trechos de fontes que você liberou para envio externo**; o resto vem como "falta declarada" no pacote — até você confirmar modelos de casa e o detalhamento criar o registro "analista ↔ modelo". *Recomendação: aceitar esse padrão, sem exceção — quem muda é você, liberando fonte a fonte ou confirmando modelos de casa.* **Aceita?**
+   > *Nota técnica:* `consumer_locus` derivado do registro de provedores da SPEC-007 (P-4b, P-12); ligação analista↔modelo = lacuna (m-05); research §3.7. *[texto anterior — INV-07: "Consequência: se um analista rodar em modelo de fora, ele só recebe trechos de fontes que você liberou para envio externo; o resto vem como 'falta declarada' no pacote. Recomendação: aceitar essa consequência, sem exceção — quem decide é você, liberando fonte a fonte ou confirmando modelos de casa."]*
 
 4. **Q-ABERTURA-4 (trecho de fonte × conhecimento carimbado).** Já está decidido que a busca cobre também as fontes originais. *Recomendação: cada item do pacote diz claramente se é **conhecimento carimbado** ou **só um trecho de fonte**, para o analista não confundir um com o outro.* **Confirma?**
 
@@ -195,17 +197,31 @@ O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLO
 6. **Q-ABERTURA-6 (lembrete automático do backlog).** Hoje a anotação "a parte de conferência de frases vai para a SPEC-048" está numa coluna que o verificador automático não lê, então ele não vai lembrar desses itens. *Recomendação: acrescentar a SPEC-048 na coluna de gatilho de dois itens do backlog (sem apagar o gatilho antigo).* **Autoriza?**
    > *Nota técnica:* BL-017 e BL-010, `∨ spec:SPEC-048 em redação`; research §8.3.
 
-7. **Q-ABERTURA-7 (correção de endereço nas Specs já aprovadas).** Várias Specs aprovadas dizem que "a busca é da SPEC-007". Na divisão você mandou corrigir depois, por errata, e listou algumas linhas; conferindo hoje, achei **mais linhas** com o mesmo endereço antigo (inclusive em uma Spec que não estava na lista). *Recomendação: a errata, proposta no detalhamento, cobre todas as linhas achadas, e a ata da abertura registra essa lista ampliada.* **Confirma?**
-   > *Nota técnica:* research §8.2 (SPEC-006 l.12/76/261/1309/1578; SPEC-020 l.515; SPEC-021 l.160/762; ROADMAP l.298 em vez de l.291).
+7. **Q-ABERTURA-7 (correção de endereço nas Specs já aprovadas).** Várias Specs aprovadas dizem que "a busca é da SPEC-007". Na divisão você mandou corrigir depois, por errata, e listou algumas linhas; conferindo hoje, achamos **mais linhas** com o mesmo endereço antigo (inclusive em Specs e numa errata que não estavam na lista). Uma lista fechada pode ficar incompleta de novo. *Recomendação: a ata da abertura registra a **regra de busca** — "toda menção à SPEC-007 junto de busca, pacote ou fidelidade da resposta, em Spec ou errata já aprovada" — e a errata, proposta no detalhamento, corrige tudo o que essa busca achar na hora de ser escrita.* **Confirma?**
+   > *Nota técnica:* critério e resultado de 2026-10-24 em research §8.2 (inclui SPEC-006 l.52/98, SPEC-038 l.916, ERRATUM-SPEC020-001 l.14; ROADMAP l.298 em vez de l.291). *[texto anterior — INV-07: "Recomendação: a errata, proposta no detalhamento, cobre todas as linhas achadas, e a ata da abertura registra essa lista ampliada." / "Nota técnica: research §8.2 (SPEC-006 l.12/76/261/1309/1578; SPEC-020 l.515; SPEC-021 l.160/762; ROADMAP l.298 em vez de l.291)."]*
 
 8. **Q-ABERTURA-8 (conferir com o seu fluxo de trabalho).** O balcão de consulta atende os analistas durante o ciclo. *Recomendação: conferir a Spec com o seu WORKFLOW — independência das fontes em vez de contagem, rótulo de qualidade por escola preservado, horário rígido — sem pesquisar escolas de análise, porque o balcão não analisa mercado.* **Concorda?**
-   > *Nota técnica:* RULE-ECC-05 incidência parcial (lentes 1 e 3; lente 2 registrada como não aplicável); WF-C02, WF-V02, WF-K02; WF-D03 não fechada; research §9.
+   > *Nota técnica:* RULE-ECC-05 **não incide**; o confronto com o WORKFLOW é **voluntário** e a palavra final é sua (m-06); WF-C02, WF-V02, WF-K02; WF-D03 não fechada; research §9. *[texto anterior — INV-07: "RULE-ECC-05 incidência parcial (lentes 1 e 3; lente 2 registrada como não aplicável)"]*
 
 > **Estas 8 perguntas aguardam Andraus na homologação da abertura.** Nenhuma decisão aberta é fechada aqui (CONS-01): M-001, K-001, G-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, Q7c e a forma de confirmar sua identidade seguem abertas.
 
 ---
 
 ## 14. Próximo passo
-`research.md` + `sources/` + esta Proposta seguem para **parecer do Revisor** sobre o processo do Dossiê (RULE-ECC-02/04/06; incidência parcial de ECC-05; não incidência de CC-12; disposições propostas; conflitos registrados; ausência de citação nova do Benchmark) e, depois, **homologação de Andraus** (peso CRITICAL D0–D8, quantidade 1 com cláusula de divisão, fronteiras, Classe orientativa e as 8 perguntas) — **antes** de qualquer `plan.md`/`checks.md`, que só começam por ordem expressa dele.
+`research.md` + `sources/` + esta Proposta seguem para **parecer do Revisor** sobre o processo do Dossiê (RULE-ECC-02/04/06; não incidência de ECC-05 com confronto voluntário — *[antes: "incidência parcial de ECC-05"]*; não incidência de CC-12; disposições propostas; conflitos registrados; ausência de citação nova do Benchmark) e, depois, **homologação de Andraus** (peso CRITICAL D0–D8, quantidade 1 com cláusula de divisão, fronteiras, Classe orientativa e as 8 perguntas) — **antes** de qualquer `plan.md`/`checks.md`, que só começam por ordem expressa dele.
+
+---
+
+## 15. Condições obrigatórias do Plan (parecer R1 do Revisor — só valem se a abertura for homologada)
+
+| # | Condição | Origem |
+|---|---|---|
+| 1 | Transcrever **literalmente** o ponto 3 da Interface da SPEC-007 ("… passa pela CIM, sem texto solto e com uso liberado para qualquer executor") — nunca paráfrase. | m-03 |
+| 2 | Dispor **explicitamente**, uma a uma, SPEC-004 RULE-CBP-002, RULE-CBP-004, RULE-CBP-005 e RULE-BB-001 (que regiam a entrega no Blackboard eliminada pela P-9): REMOVED fundamentado na P-9 (com referência à DHR-SPEC007-003) ou a forma que permanece. Silêncio = herança não demonstrada (Crítica). | m-04 |
+| 3 | Trazer **método amostral de falso-ACEITE** do juiz F2 (análogo ao ENF-07), sem número de corte (limiares INDETERMINADO). | m-08 |
+| 4 | Propor a errata/metade F2 **coordenada** com a metade F1 da emenda à SPEC-020 (mesmas linhas l.116/144/515/720/728), sem textos que se contradigam. | m-10 |
+| 5 | Tratar **BL-017 e BL-010 como vinculados de fato** e declarar `Disposição:` para os dois até Andraus decidir a Q-ABERTURA-6. | m-02 |
+| 6 | Declarar a lacuna **analista ↔ modelo em que roda** e aplicar o padrão "fora" enquanto ela existir. | m-05 |
+| 7 | Redigir a errata de re-apontamento pelo **critério de busca** (§8), reconferido no momento da redação. | m-01 |
 
 **Pronto para revisão.**

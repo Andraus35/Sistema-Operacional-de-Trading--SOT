@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "bd2ed771f1d6d2e765c23a401040d9d530588f288a917360c2fb9085a4d9e37e",
+  "digest": "a70d1d41549e3286bbcdc0672360daa0f83e774996144655dc2a7b29289f170d",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1928,7 +1928,7 @@
    "path": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-001 — Fechamento da dimensão B \"tool correctness\" (BL-017) — erratum ADITIVO",
-   "in": 3,
+   "in": 4,
    "out": 9
   },
   {
@@ -2488,7 +2488,7 @@
    "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md",
    "area": "governance",
    "title": "Parecer do Revisor — Proposta de abertura da SPEC-048 + Dossiê, rodada 1 (S3, integral) — 2026-10-24",
-   "in": 0,
+   "in": 1,
    "out": 13
   },
   {
@@ -2992,7 +2992,7 @@
    "path": "specs/features/SPEC-038/plan.md",
    "area": "specs",
    "title": "SPEC-038 — Trading Analysis Tool Harness (Plan)",
-   "in": 30,
+   "in": 32,
    "out": 22
   },
   {
@@ -3042,14 +3042,14 @@
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ROADMAP §6, FASE 3)",
    "in": 2,
-   "out": 21
+   "out": 23
   },
   {
    "path": "specs/features/SPEC-048/research.md",
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ROADMAP §6, FASE 3)",
    "in": 1,
-   "out": 24
+   "out": 26
   },
   {
    "path": "specs/fibonacci.spec.md",
@@ -4059,7 +4059,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 254
+   "cited_by": 255
   },
   {
    "id": "INV-08",
@@ -4159,7 +4159,7 @@
   {
    "id": "RULE-BB-001",
    "defined_in": "governance/RULES.md",
-   "cited_by": 20
+   "cited_by": 22
   },
   {
    "id": "RULE-BB-002",
@@ -4239,7 +4239,7 @@
   {
    "id": "RULE-CBP-002",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 6
   },
   {
    "id": "RULE-CBP-003",
@@ -4249,12 +4249,12 @@
   {
    "id": "RULE-CBP-004",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-CBP-005",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-CBP-006",
@@ -5629,7 +5629,7 @@
   {
    "id": "SPEC-038",
    "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 30
+   "cited_by": 32
   },
   {
    "id": "SPEC-039",
@@ -38750,6 +38750,11 @@
   },
   {
    "from": "specs/features/SPEC-048/ABERTURA.md",
+   "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/ABERTURA.md",
    "to": "specs/features/SPEC-001/checks.md",
    "type": "path"
   },
@@ -38790,12 +38795,22 @@
   },
   {
    "from": "specs/features/SPEC-048/ABERTURA.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/ABERTURA.md",
    "to": "specs/features/SPEC-020/plan.md",
    "type": "id"
   },
   {
    "from": "specs/features/SPEC-048/ABERTURA.md",
    "to": "specs/features/SPEC-021/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-048/ABERTURA.md",
+   "to": "specs/features/SPEC-038/plan.md",
    "type": "id"
   },
   {
@@ -38880,6 +38895,11 @@
   },
   {
    "from": "specs/features/SPEC-048/research.md",
+   "to": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/research.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
@@ -38961,6 +38981,16 @@
   {
    "from": "specs/features/SPEC-048/research.md",
    "to": "specs/features/SPEC-021/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/research.md",
+   "to": "specs/features/SPEC-038/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-048/research.md",
+   "to": "specs/features/SPEC-038/plan.md",
    "type": "path"
   },
   {
