@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "c126b5c408376850505a9d5f78a215846b0a24f49e705b49705f63cfd4b5e0aa",
+  "digest": "c64a003627d3b68b72a1357886a7cef2cdcd0d0fe3760d05fd9be224e6c94d5f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1781,7 +1781,7 @@
    "path": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-004 — Ata de Decisão — Respostas P-12..P-14 do Plan reduzido da SPEC-007 e ordem da rodada 5",
-   "in": 4,
+   "in": 5,
    "out": 8
   },
   {
@@ -2450,6 +2450,13 @@
    "out": 7
   },
   {
+   "path": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — Plan reduzido da SPEC-007 v2.1 (CANDIDATA), rodada 5 (S2) — 2026-10-24",
+   "in": 0,
+   "out": 4
+  },
+  {
    "path": "rag/elliott-wave.knowledge.md",
    "area": "rag",
    "title": "RAG — Elliott Wave Specialist Knowledge Base",
@@ -2838,7 +2845,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 179,
+   "in": 180,
    "out": 34
   },
   {
@@ -2866,7 +2873,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 105,
+   "in": 106,
    "out": 33
   },
   {
@@ -2901,7 +2908,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 82,
+   "in": 83,
    "out": 21
   },
   {
@@ -3778,7 +3785,7 @@
   {
    "id": "DHR-SPEC007-004",
    "defined_in": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "DHR-SPEC019",
@@ -4963,7 +4970,7 @@
   {
    "id": "RULE-KFH-006",
    "defined_in": null,
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-KFH-007",
@@ -5028,7 +5035,7 @@
   {
    "id": "RULE-KFH-019",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-KFH-020",
@@ -5408,12 +5415,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 179
+   "cited_by": 180
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 105
+   "cited_by": 106
   },
   {
    "id": "SPEC-008",
@@ -5478,7 +5485,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 82
+   "cited_by": 83
   },
   {
    "id": "SPEC-021",
@@ -33520,6 +33527,26 @@
   {
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
    "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
+   "to": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
+   "to": "specs/features/SPEC-020/plan.md",
    "type": "id"
   },
   {
