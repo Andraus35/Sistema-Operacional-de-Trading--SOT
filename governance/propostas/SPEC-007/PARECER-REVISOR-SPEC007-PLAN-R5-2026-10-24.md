@@ -16,3 +16,7 @@ Gates do Orquestrador; sha256; fidelidade palavra por palavra dos Anexos T/R.1-R
 
 ## Encaminhamento
 Devolver ao Especificador: R5-M1 (obrigatória) + r5-n1..r5-n7. Rodada 6 por delta restrita a BASpec-KFH-006, EC-KFH-003, F0.4, T10, T25, contrato `model_invocation_record`, ADV-27/28/30/32, D3.1 l.808 e checks.md. Depois: CONFORME condicional esperado, aguardando Andraus sobre a forma de confirmar a identidade, a extensão de INVALIDATION (r4-n8), a homologação das errata E-1..E-3 e da emenda à SPEC-020, e as demais decisões abertas.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G1:** abertos ao vivo `atomic-spec.md` (§10.2, escala E0–E3, l.226), `governance/RULES.md` (RULE-HD-01..04, l.655-658) e `backlog/RMR-001_Painel_Backlog.md` (BL-029 `Em espera`). Conferem com o que o Plan e o parecer afirmam. Nada a retirar.
+- **G2:** `revisor_gate.py` = `PASSOU_D`, 0 sinais H. Avisos conferidos: l.31 (linha da v1.0 na tabela de versões), l.3285/3361/3362/3383 (todas dentro do Anexo R, l.2440-3535, texto v1.x preservado e recuado, INV-07). A RULE-CKG-008 está definida em `specs/features/SPEC-006/plan.md` l.429-472. O corpo vigente tem 12 BASpec (recontado pelo Revisor: 87 cabeçalhos). Falsos positivos de texto histórico; sem achado novo.
