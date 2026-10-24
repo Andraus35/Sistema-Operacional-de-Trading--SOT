@@ -1,16 +1,34 @@
 # checks.md — Verificação de Spec da SPEC-007 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-007/plan.md` **v2.1 (CANDIDATA — Plan reduzido, correção da rodada 4; aguarda Revisor rodada 5, por delta contra o commit da v2.0, e homologação de Andraus)** (RAG / WikiRAG / Knowledge Formation Harness). *[v2.0: "v2.0 (CANDIDATA — Plan reduzido: formação + selo; DHR-SPEC007-002, Opção C; aguarda Revisor rodada 4, por delta contra o commit da v1.2, e homologação de Andraus)"; v1.2: "v1.2 (CANDIDATA — correção da rodada 2 do Revisor; aguarda rodada 3 por delta e homologação de Andraus)"; v1.1: "v1.1 (CANDIDATA — correção da rodada 1 do Revisor; aguarda rodada 2 por delta e homologação de Andraus)"; v1.0: "v1.0 (CANDIDATA — aguarda Revisor integral e homologação de Andraus)"]*
+**Objeto:** `specs/features/SPEC-007/plan.md` **v2.2 (CANDIDATA — Plan reduzido, correção da rodada 5; aguarda Revisor rodada 6, por delta contra o commit 7168d76, e homologação de Andraus)** (RAG / WikiRAG / Knowledge Formation Harness). *[v2.1: "v2.1 (CANDIDATA — Plan reduzido, correção da rodada 4; aguarda Revisor rodada 5, por delta contra o commit da v2.0, e homologação de Andraus)"; v2.0: "v2.0 (CANDIDATA — Plan reduzido: formação + selo; DHR-SPEC007-002, Opção C; aguarda Revisor rodada 4, por delta contra o commit da v1.2, e homologação de Andraus)"; v1.2: "v1.2 (CANDIDATA — correção da rodada 2 do Revisor; aguarda rodada 3 por delta e homologação de Andraus)"; v1.1: "v1.1 (CANDIDATA — correção da rodada 1 do Revisor; aguarda rodada 2 por delta e homologação de Andraus)"; v1.0: "v1.0 (CANDIDATA — aguarda Revisor integral e homologação de Andraus)"]*
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — **NÃO** é teste de runtime, **NÃO** é parecer do Revisor, **NÃO** é homologação. "VERIFY" interno = feedback. [FONTE: atomic-spec §14]
 **Método:** atomic-spec.md v1.5 · tlc-spec-lean (PLAN = Spec; CHECKS = verificação de spec) · overlay GUS-TLC-001
-**Data:** 2026-10-24 (v2.0 e v2.1); 2026-10-23 (v1.0, v1.1 e v1.2)
-**Ordem de Andraus:** Plan reduzido e rodada 5 — chat 2026-10-24, registradas em ata (DHR-SPEC007-004 §1/§2). *[v2.0: "chat 2026-10-24, \"Plan reduzido da SPEC-007\" (transmitida pelo Orquestrador)."]*
-**Pareceres tratados:** R1 (NÃO CONFORME — 9 Médias; v1.1); R2 (NÃO CONFORME — 5 Médias; v1.2); R3 `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md` (NÃO CONFORME — 5 Médias, 6 Menores; v2.0); **R4** `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md` (NÃO CONFORME — 2 Médias R4-M1/R4-M2, 11 Menores r4-n1..r4-n11; v2.1). Atas incorporadas: DHR-SPEC007-002 (divisão), DHR-SPEC007-003 (P-1..P-11), **DHR-SPEC007-004** (P-12..P-14; ordem da rodada 5).
+**Data:** 2026-10-24 (v2.0, v2.1 e v2.2); 2026-10-23 (v1.0, v1.1 e v1.2)
+**Ordem de Andraus:** Plan reduzido e rodada 5 — chat 2026-10-24, registradas em ata (DHR-SPEC007-004 §1/§2); rodada 6 — chat 2026-10-24, "Corrigir e rever de novo" (transmitida pelo Orquestrador). *[v2.0: "chat 2026-10-24, \"Plan reduzido da SPEC-007\" (transmitida pelo Orquestrador)."]*
+**Pareceres tratados:** R1 (NÃO CONFORME — 9 Médias; v1.1); R2 (NÃO CONFORME — 5 Médias; v1.2); R3 `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md` (NÃO CONFORME — 5 Médias, 6 Menores; v2.0); **R4** `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md` (NÃO CONFORME — 2 Médias R4-M1/R4-M2, 11 Menores r4-n1..r4-n11; v2.1); **R5** `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md` (NÃO CONFORME — 1 Média R5-M1, 7 Menores r5-n1..r5-n7; v2.2). Atas incorporadas: DHR-SPEC007-002 (divisão), DHR-SPEC007-003 (P-1..P-11), **DHR-SPEC007-004** (P-12..P-14; ordem da rodada 5).
 **Contagens declaradas (por cabeçalho/linha em coluna 0 — recontadas por busca nesta sessão; a reconferir no ambiente pai):** **12** RULE-KFH (`^RULE-KFH-`: 001–009, 016, 019, 020), 2 INV-KFH, **12** BASpec (`^### BASpec-KFH-`), **12** EARS (`^N. (KFH-`), **9** EC (`^### EC-KFH-`: 001–006, 010, 011, 012), **18 cenários** (`^### Cenário-KFH-T`: T01–T15, T23, T24, T25), **22 ADV** (`^### ADV-KFH-`: 01–05, 07, 08, 13, 16–22, 24, 25, 27, 28, 30, 31, 32). *[v1.2: vinte/2/vinte/vinte/treze/vinte e seis/vinte e nove; v1.1 e v1.0 no Anexo]* Os Anexos T, R e H do Plan são recuados ou estão em bloco de código: não contam.
 
 > **Natureza dos ✔ abaixo:** estruturais e condicionados. O que depende de Andraus aparece como "Aberto"; as decisões da DHR-SPEC007-003 aparecem como "decidida (DHR-SPEC007-003) — normativa na homologação"; os positivos de selo dependem da **Fixture F0** (estado injetado, D7), que não afirma que esse estado já exista.
 
-Contagens da v2.1 **inalteradas** em relação à v2.0 (nenhum cabeçalho novo; casos novos entraram como subcasos: ADV-22(h), ADV-30(d), ADV-32(d) corrigido e (e) novo).
+Contagens da v2.1 **inalteradas** em relação à v2.0 (nenhum cabeçalho novo; casos novos entraram como subcasos: ADV-22(h), ADV-30(d), ADV-32(d) corrigido e (e) novo). Contagens da v2.2 também inalteradas (subcasos novos: BASpec-KFH-006 VERIFICAÇÃO (b1)–(b4), ADV-27 (i)(j), ADV-28 (e)–(h)).
+
+---
+
+## R5 — verificação das correções (R5-M1) — v2.2
+
+| Média | Âncora no Plan v2.2 | Positivo / negativo | Estado |
+|---|---|---|---|
+| R5-M1 BASpec/EC sem o rótulo | **Mesma expressão do VALIDADO em três lugares:** (1) RULE-KFH-006, frase "expressão única, idêntica no GATE DE SAÍDA da BASpec-KFH-006 e no PRECOND da EC-KFH-003"; (2) BASpec-KFH-006 ENTÃO, REFERÊNCIA (RULE-KFH-006 "ENTRADA DO JUIZ" + RULE-KFH-019 (f1)), GATE DE SAÍDA e VERIFICAÇÃO; (3) EC-KFH-003 PRECOND (e POSTCOND grava `judge_invocation_ref`). Expressão: (IDs gravados pela CIM) ∧ (`judge_model_id ≠ former_model_id`) ∧ (parte D = PASS) ∧ (∀ afirmação = CLEAR) ∧ (linha "rótulo" de `h_result` = CLEAR) ∧ (`judge_invocation_ref.content_refs` ∋ `candidate_ref@version` do candidato e da versão julgados) | caso do rótulo na própria BASpec: (b4) positivo; (b1) rótulo FALHA ⇒ REPROVADO; (b2) juiz sem `candidate_ref` ⇒ INDETERMINADO; (b3) `candidate_ref` de outra versão ⇒ INDETERMINADO; também T25 e ADV-31(a) | ✔ estrutural — RULE, BASpec e EC coerentes |
+
+| Menor | Âncora | Estado |
+|---|---|---|
+| r5-n1 | F0.4 (`formed_inference = false` em a1); T10 (`formed_inference_claim_ids == []`); ADV-30(d) (a2 com `formed_inference = true`) | ✔ |
+| r5-n2 | RULE-KFH-019 (f5) (a)(b)(c) + registro de que (f3) é mais estrita que a ata DHR-SPEC007-004 | ✔ (escolha do lado seguro; ajuste é de Andraus) |
+| r5-n3 | errata E-4 [PROPOSTA] + mapeamento BUILD + RU-8 | ✔ (Aberto até a errata) |
+| r5-n4 | ADV-27 (i)(j); ADV-28 (e)(f)(g) negativos e (h) positivo LOCAL; contrato `locus_basis` | ✔ |
+| r5-n5 | T25 com `resolved_content_hash`; campo no `model_invocation_record` | ✔ |
+| r5-n6 | §D3.1 linhas separadas | ✔ |
+| r5-n7 | títulos do Plan (v2.2); checks.md: ponto 1..6, P-14 decidida, RU-1..RU-8, reconferência na v2.2 | ✔ |
 
 ---
 
@@ -70,12 +88,12 @@ Contagens da v2.1 **inalteradas** em relação à v2.0 (nenhum cabeçalho novo; 
 | Item | Verificação | Estado |
 |---|---|---|
 | Fronteira §3 da divisão | tabela "Mapeamento v1.2 → v2.0" decide RULE a RULE e BASpec a BASpec; tudo que saiu está intacto no Anexo T; IDs transferidos não reutilizados | ✔ |
-| "Usa a trava, não a redefine" | INV-KFH-02 e RULE-KFH-019 "INTERFACE COM A SPEC-048"; seção "Interface com a SPEC-048" (I-1..I-6) | ✔ |
+| "Usa a trava, não a redefine" | INV-KFH-02 e RULE-KFH-019 "INTERFACE COM A SPEC-048"; seção "Interface com a SPEC-048" (ponto 1..6) *[v2.0/v2.1: "(I-1..I-6)"]* | ✔ |
 | SPEC-048 não aberta | nenhum arquivo criado fora de `specs/features/SPEC-007/`; requisitos à SPEC-048 = `[PROPOSTA]` não vinculante | ✔ |
 | ACTREC / RIGHTS / EXTTX / DERIVTX / NODETYPE / SUCC | "decidida (DHR-SPEC007-003)" em RULE-KFH-020 / 001 / 019 (b) / 019 (c) / 007 (iv-bis) / 009 (a) | ✔ (normativa só na homologação) |
 | P-1 / P-2 | RULE-KFH-006 (independência e ponto separado como regra); RULE-KFH-007 (iii) ato ISSUER_LIST; (v) corte definição/regra | ✔; parte de SPEC-006 l.482 → errata **proposta** (E-1) |
 | BBTYPE (P-9) | só no Anexo T (destino SPEC-048) | ✔ |
-| P-5 / P-6 | emenda à SPEC-020 só metade F1; COL-EXP-05: definição de origem-raiz aqui, contagem na SPEC-048 (P-14) | ✔ (P-14 aberta) |
+| P-5 / P-6 | emenda à SPEC-020 só metade F1; COL-EXP-05: definição de origem-raiz aqui, contagem na SPEC-048 (P-14) | ✔ (P-14 decidida — DHR-SPEC007-004) *[v2.0/v2.1: "✔ (P-14 aberta)"]* |
 | Livro (Q7c) | fora (Non-goals; RULE-KFH-001 ALCANCE; quadro de pré-requisitos) | ✔ |
 | Seguem abertas | K-001, M-001, G-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, forma de confirmar a identidade, host do juízo CKG-008 *[v2.0 incluía "SPEC-007-LOCUS-001 (nova)" — decidida na DHR-SPEC007-004]* | Aberto |
 
@@ -140,7 +158,7 @@ Contagens da v2.1 **inalteradas** em relação à v2.0 (nenhum cabeçalho novo; 
 
 ## 5. Constitution Check (CC-01..CC-12)
 
-CC-01 (só `learning`; nunca hipótese), CC-02 (selo = interface; ontologia não estendida; erratas só propostas), CC-03 (nenhum escore produzido aqui; J-001/N-001 abertas), CC-04, CC-05, CC-06/07 N/A, CC-08 (inclui nota de obrigações que acompanham comportamento transferido), CC-09 (INDETERMINADO; RU-1..RU-6), CC-10, CC-11 (pisos E2/E3), CC-12 N/A. **PASS.**
+CC-01 (só `learning`; nunca hipótese), CC-02 (selo = interface; ontologia não estendida; erratas só propostas), CC-03 (nenhum escore produzido aqui; J-001/N-001 abertas), CC-04, CC-05, CC-06/07 N/A, CC-08 (inclui nota de obrigações que acompanham comportamento transferido), CC-09 (INDETERMINADO; RU-1..RU-8 [v2.0/v2.1: "RU-1..RU-6"]), CC-10, CC-11 (pisos E2/E3), CC-12 N/A. **PASS.**
 
 ## 6. Herança obrigação-a-obrigação (§7-bis Bloco B)
 
@@ -185,7 +203,7 @@ REMOVED vazio; MODIFIED vazio.
 | BL-011 | Nota de gate + COL-EXP-05 | PARCIAL [PROPOSTA] (P-6 aceita); segue `ATIVADO` |
 | BL-029 | Nota de gate | REFERÊNCIA [PROPOSTA] (voluntária; não vinculado; `Em espera`) |
 
-`backlog_triggers --abertura SPEC-007`: a reconferir pelo Orquestrador na v2.0 (3 vinculados nas rodadas anteriores). Nenhum item promovido nem encerrado.
+`backlog_triggers --abertura SPEC-007`: a reconferir pelo Orquestrador na v2.2 [v2.0/v2.1: "na v2.0"] (3 vinculados nas rodadas anteriores). Nenhum item promovido nem encerrado.
 
 ## 9. CONS-01
 

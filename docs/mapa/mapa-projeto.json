@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "4062270f16dd98a62f304061346c9bb74d7331480d23386dbdf54e4a4404fe30",
+  "digest": "83342e6ad13156a175c01b527f89edf7b6f86f17a91e2719ffbee5b09fde41e2",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2453,7 +2453,7 @@
    "path": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
    "area": "governance",
    "title": "Parecer do Revisor — Plan reduzido da SPEC-007 v2.1 (CANDIDATA), rodada 5 (S2) — 2026-10-24",
-   "in": 0,
+   "in": 2,
    "out": 8
   },
   {
@@ -2867,14 +2867,14 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-007 (fase spec-first)",
    "in": 2,
-   "out": 12
+   "out": 13
   },
   {
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
    "in": 106,
-   "out": 33
+   "out": 34
   },
   {
    "path": "specs/features/SPEC-007/research.md",
@@ -36376,6 +36376,11 @@
   },
   {
    "from": "specs/features/SPEC-007/checks.md",
+   "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/checks.md",
    "to": "specs/features/SPEC-004/plan.md",
    "type": "id"
   },
@@ -36512,6 +36517,11 @@
   {
    "from": "specs/features/SPEC-007/plan.md",
    "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/plan.md",
+   "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md",
    "type": "path"
   },
   {
