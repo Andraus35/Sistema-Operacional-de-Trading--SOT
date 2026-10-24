@@ -1,11 +1,23 @@
 # checks.md — Verificação de Spec da SPEC-048 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-048/plan.md` **v1.0 (CANDIDATA — primeira entrega do Plan; aguarda Revisor rodada 1, integral, e homologação de Andraus)** (RAG Retrieval & Evidence Packet Harness).
+**Objeto:** `specs/features/SPEC-048/plan.md` **v1.1 (CANDIDATA — correção da rodada 1; aguarda Revisor rodada 2, por delta contra o commit b1a0231, e homologação de Andraus)** (RAG Retrieval & Evidence Packet Harness). *[v1.0: "v1.0 (CANDIDATA — primeira entrega do Plan; aguarda Revisor rodada 1, integral, e homologação de Andraus)"]*
+**Parecer tratado:** R1 `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md` (NÃO CONFORME — 3 Médias M-01..M-03, 14 Menores m-01..m-14, adendo m-15).
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — **NÃO** é teste de runtime, **NÃO** é parecer do Revisor, **NÃO** é homologação. "VERIFY" interno = feedback. [FONTE: atomic-spec §14]
 **Método:** atomic-spec.md v1.5 · tlc-spec-lean (PLAN = Spec; CHECKS = verificação de spec) · overlay GUS-TLC-001
 **Data:** 2026-10-24
 **Ordem de Andraus:** chat 2026-10-24, "Plan da SPEC-048" (transmitida pelo Orquestrador). Decisões posteriores refletidas: DHR-SPEC007-006 (Q7(c) FECHADA — livro só por ato de liberação) e DHR-SPEC007-007 (princípio de autenticação criptográfica dos atos; mecanismo = BUILD).
-**Contagens declaradas (por cabeçalho/linha em coluna 0 — contadas na redação; a reconferir no ambiente pai):** **12** RULE-RET (`^RULE-RET-` em bloco: 001–012), **1** INV-RET (`^INV-RET-01`), **12** BASpec (`^### BASpec-RET-`), **12** EARS (`^N. (RET-`), **8** EC (`^### EC-RET-`: 001–008), **14 cenários** (`^### Cenário-RET-T`: T01–T14), **22 ADV** (`^### ADV-RET-`: 01–22).
+**Contagens declaradas (por cabeçalho/linha em coluna 0 — contadas na redação; a reconferir no ambiente pai):** **12** RULE-RET (`^RULE-RET-` em bloco: 001–012), **1** INV-RET (`^INV-RET-01`), **12** BASpec (`^### BASpec-RET-`), **12** EARS (`^N. (RET-`), **8** EC (`^### EC-RET-`: 001–008), **14 cenários** (`^### Cenário-RET-T`: T01–T14), **23 ADV** (`^### ADV-RET-`: 01–23) *[v1.0: "vinte e dois ADV (01–22)"; ADV-RET-23 acrescentado na v1.1 — M-01]*. Estados locais de D5: `Q_RECEBIDA`, `Q_RECUPERANDO`, `Q_VALIDANDO`, `Q_ENTREGUE`, `Q_NEGADA` (`Q_MONTADO` da v1.0 substituído — M-02).
+
+---
+
+## R1 — verificação das correções (v1.1)
+
+| Achado | Âncora no Plan v1.1 | Positivo / negativo | Estado |
+|---|---|---|---|
+| **M-01** reenvio contornava a guarda | RULE-RET-005 "REENVIO" (i)(ii)(iii); RULE-RET-006 (d); EARS 5; BASpec-RET-005; D4.4 (7); D5; EC-RET-002/003; contrato `delivery_kind`/`supersedes_packet` | T13(a) / ADV-RET-23 | ✔ estrutural — reenvio = nova transmissão sob a guarda E3 |
+| **M-02** D5 contraditório | D5 com `Q_VALIDANDO` (entra antes da aprovação); RULE-RET-004; T04 | T03 / T04 | ✔ — toda transição tem origem e destino coerentes; T04 alcançável |
+| **M-03** síntese sem rótulo | RULE-RET-004 "AFIRMAÇÕES DA SÍNTESE"; RULE-RET-010 GATE; BASpec-RET-010; EARS 10; contrato; EC-RET-006 | ADV-RET-05(d) / ADV-RET-04 | ✔ |
+| m-01..m-15 | tabela "Correções da rodada 1" do Plan | — | ✔ |
 
 > **Natureza dos ✔ abaixo:** estruturais e condicionados. O que depende de Andraus aparece como "Aberto"; os positivos com estado partem da **Fixture Q0** (estado injetado, D7), que não afirma que esse estado já exista (hoje: T01, pacote vazio).
 
@@ -40,8 +52,8 @@
 | CC-01..CC-12 | presentes; N/A justificados (CC-06/07/12) | ✔ |
 | CC-03 | Conviction Vector pendente (J-001 ABERTA); nada da trilha entra nele (RULE-RET-008) | ✔ |
 | CC-08 | INHERITS por ID+versão; REMOVED com referência a decisão de Andraus; MODIFIED vazio | ✔ estrutural |
-| CC-11 | Classe por BASpec: D = 002, 003, 004, 005, 011, 012; C = 006, 007, 008; H = 001, 009, 010 | ✔ |
-| H com BOUNDED LOOP + GATE DE SAÍDA | 001 (`max_retrieval_rounds`), 009 (`max_f2_judge_attempts`), 010 (`max_synthesis_attempts`) | ✔ |
+| CC-11 | Classe por BASpec: D = 002, 003, 004, 005, 012; C = 006, 007, 008; H = 001, 009, 010, 011 *[v1.0: 011 era D — m-10]* | ✔ |
+| H com BOUNDED LOOP + GATE DE SAÍDA | 001 (`max_retrieval_rounds`), 009 (`max_f2_judge_attempts`), 010 (`max_synthesis_attempts`), 011 (`max_audit_rejudge_attempts`) | ✔ |
 | C com GATE DE SAÍDA | 006, 007, 008 | ✔ |
 | Mesma expressão de manutenção da F2 | RULE-RET-009, BASpec-RET-009 GATE DE SAÍDA, EC-RET-006 PRECOND — cinco conjunções, mesma ordem | ✔ — conferir por leitura |
 
@@ -53,13 +65,13 @@
 | 002 | RULE-RET-002 | 2 | D | EC-RET-001 (E2) | P1/U1 (na BASpec) | U3/U9 (na BASpec); T11; ADV-RET-11/12/14 |
 | 003 | RULE-RET-003 | 3 | D | (sem efeito próprio — compõe o pacote, EC-RET-002) | T02 | ADV-RET-09 |
 | 004 | RULE-RET-004 | 4 | D | EC-RET-002 (E2) | T01, T03 | T04; ADV-RET-05(a)/12 |
-| 005 | RULE-RET-005 | 5 | D | EC-RET-002 (E2) | T03, T13(a) | T13(b); ADV-RET-06 |
-| 006 | RULE-RET-006 | 6 | C | EC-RET-003 (E3) | T10 | ADV-RET-16 |
+| 005 | RULE-RET-005 | 5 | D | EC-RET-002 (E2) + EC-RET-003 no reenvio | T03, T13(a) | T13(b); ADV-RET-06; ADV-RET-23 |
+| 006 | RULE-RET-006 | 6 | C | EC-RET-003 (E3) | T10, T13(a) | ADV-RET-16; ADV-RET-23 |
 | 007 | RULE-RET-007 / INV-RET-01 | 7 | C | EC-RET-004 (E3) | caso próprio na BASpec | ADV-RET-01/02/22 |
 | 008 | RULE-RET-008 | 8 | C | EC-RET-005 (E3) | T03 | ADV-RET-10 |
 | 009 | RULE-RET-009 | 9 | H | EC-RET-006 (E2) | T06 (c1/c2) | T05; ADV-RET-07/08/15 |
-| 010 | RULE-RET-010 | 10 | H | EC-RET-006 (E2) | T03 (desligada), T09 | ADV-RET-15/21 |
-| 011 | RULE-RET-011 | 11 | D | EC-RET-007 (E2) | T14 | ADV-RET-18 |
+| 010 | RULE-RET-010 | 10 | H | EC-RET-006 (E2) | T03 (desligada), T09, ADV-RET-05(d) | ADV-RET-04/15/21 |
+| 011 | RULE-RET-011 | 11 | H *[v1.0: D]* | EC-RET-007 (E2) | T14 | ADV-RET-18 |
 | 012 | RULE-RET-012 | 12 | D | EC-RET-008 (E2) | T08 | ADV-RET-13 |
 
 - Todo EC tem os 8 campos; os E3 (003, 004, 005) declaram POLICY e falso-DENY amostral (ENF-07); escala E0–E3 em seção própria (ENF-08). ✔

@@ -3,9 +3,9 @@
 | Campo | Valor |
 |---|---|
 | ID | SPEC-048 — RAG Retrieval & Evidence Packet Harness (Recuperação e Pacote de Evidência). Número e nome decididos por Andraus (DHR-SPEC007-002 D3); abertura homologada (DHR-SPEC048-001). A página de leitura (WikiRAG) **não** está aqui: é da SPEC-049 — WikiRAG Reading View (slot indicativo, NÃO aberta — Q-2). |
-| Versão | **1.0 (CANDIDATA — primeira entrega do Plan)** |
-| Ordem de Andraus | chat 2026-10-24, "Plan da SPEC-048" (transmitida pelo Orquestrador; registro em ata a cargo do Orquestrador/Andraus) |
-| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 1, integral) e homologação de Andraus. NÃO é baseline (INV-09).** Tudo o que este Plan cria (RULE-RET-*, INV-RET-01, BASpec-RET-*, EC-RET-*, cenários, ADV, contratos, estados locais `Q_*`, errata propostas) é **[PROPOSTA]**; as decisões de Andraus já tomadas (DHR-SPEC048-001; DHR-SPEC007-003 P-5/P-9; DHR-SPEC007-004 P-14) viram texto normativo só na homologação deste Plan. |
+| Versão | **1.1 (CANDIDATA — correção da rodada 1 do Revisor)** *[v1.0: "1.0 (CANDIDATA — primeira entrega do Plan)"]* |
+| Ordem de Andraus | **Plan:** chat 2026-10-24, "Plan da SPEC-048" (transmitida pelo Orquestrador). **Correção da rodada 1 (v1.1):** coberta pela mesma ordem (chat 2026-10-24, transmitida pelo Orquestrador). **Registro (m-12):** a ordem ainda não consta em ata nem no ROADMAP (l.187 diz "Plan pendente"); pede-se que a ata de homologação a registre citando o chat de 2026-10-24 — ato do Orquestrador/Andraus, não do Especificador. *[v1.0: "chat 2026-10-24, \"Plan da SPEC-048\" (transmitida pelo Orquestrador; registro em ata a cargo do Orquestrador/Andraus)"]* |
+| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 2, por delta contra o commit b1a0231 da v1.0) e homologação de Andraus. NÃO é baseline (INV-09).** Parecer R1 (`governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md`: NÃO CONFORME — 0 Críticas, 3 Médias M-01..M-03, 14 Menores m-01..m-14 + adendo m-15) corrigido nesta v1.1 (tabela "Correções da rodada 1"). *[v1.0: "PROPOSTA — CANDIDATA; aguarda Revisor (rodada 1, integral) e homologação de Andraus. NÃO é baseline (INV-09)."]* Tudo o que este Plan cria (RULE-RET-*, INV-RET-01, BASpec-RET-*, EC-RET-*, cenários, ADV, contratos, estados locais `Q_*`, errata propostas) é **[PROPOSTA]**; as decisões de Andraus já tomadas (DHR-SPEC048-001; DHR-SPEC007-003 P-5/P-9; DHR-SPEC007-004 P-14) viram texto normativo só na homologação deste Plan. |
 | Fonte | `ROADMAP.md` l.187-190 (slot SPEC-048) e l.192-193 (SPEC-049); `specs/features/SPEC-048/ABERTURA.md` (Revisão 4: §2, §2-bis, §6, §8, §9, §12, §13, §15) + `research.md` + `sources/` (Dossiê — RULE-ECC-01/02/04/06; validade CRITICAL 90 dias, **limite 2027-01-22**); `governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md` (Q-1..Q-8, C-1..C-3, §3 condições); pareceres da abertura `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md` e `...-R2-2026-10-24.md`; DHR-SPEC007-002/003/004/005; `specs/features/SPEC-007/plan.md` v2.3 BASELINE (seção "Interface com a SPEC-048" l.1218-1232; **Anexo T** l.1950-2521 — texto v1.2 transferido, insumo); atomic-spec §10–§15; `governance/RULES.md`; `reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md` (referência externa classificada — K-MAN-14) |
 | Complexidade | CRITICAL [FONTE: DHR-SPEC048-001 Q-1 — "peça crítica, teste de ataque completo"; ROADMAP l.188] |
 | Profundidade-alvo | D0–D8 (standard + adversarial D8) [FONTE: DHR-SPEC048-001 Q-1; AGENTS.md §4] |
@@ -13,7 +13,7 @@
 | Posição no caminho crítico | FASE 3 — MEMÓRIA SEMÂNTICA E RAG; **a jusante** da SPEC-007 v2.3 (BASELINE — itens carimbados, registros de fonte, CIM, atos, marcas) e da SPEC-006 v1.7 + erratas v1.11/v1.12 (consulta read-only); **a montante** dos agentes de trading que pedem consulta durante o ciclo (WF-02..WF-06) e da metade F2 da dimensão B da SPEC-020 (BL-017). Recebe a "evidência candidata a partir de retrieval" hoje atribuída à SPEC-007 por SPEC-002 l.170 (errata de re-apontamento proposta neste Plan). [FONTE: ROADMAP §6; DHR-SPEC007-002 §3-§4] |
 | Nível de maturidade-alvo | **L3 (Testável)** na baseline; gate E3 por-Spec (RULE-MM-05, SPEC-021) |
 | Método | atomic-spec.md v1.5; **RULE-MECH-01** / CC-11 (Classe por BASpec); RULE-PD-01 / CC-12 **(não incide — infraestrutura de consulta agnóstica de escola)**; RULE-ECC-01/02/04/06; RULE-ECC-05 **(não incide; confronto voluntário com o WORKFLOW — Q-8)** |
-| Classe predominante (orientação não-vinculante, §10.6) | Mista — **D** (filtros, contagem, montagem/esquema do pacote, citação e parte D da F2, entrega, auditoria amostral, feedback) · **C** (guardas E3: etapas da consulta sem efeito e só pela CIM; locus/envio na entrega; relevância ≠ convicção) · **H** (recuperação adaptativa/reordenação, redator da síntese, juiz F2 — sempre com laço limitado e gate de saída determinístico) — declaração normativa **por BASpec** (SES-001 §50) |
+| Classe predominante (orientação não-vinculante, §10.6) | Mista — **D** (filtros, contagem, montagem/esquema do pacote, citação e parte D da F2, entrega, auditoria amostral, feedback) · **C** (guardas E3: etapas da consulta sem efeito e só pela CIM; locus/envio na entrega; relevância ≠ convicção) · **H** (recuperação adaptativa/reordenação, redator da síntese, juiz F2 e — v1.1, m-10 — rejulgamento por modelo na auditoria amostral; sempre com laço limitado e gate de saída determinístico) — declaração normativa **por BASpec** (SES-001 §50) |
 | Autor | Especificador Principal SOT (Claude Code, Opus 5.5) |
 | Data | 2026-10-24 |
 | Abertura | DHR-SPEC048-001 (Q-1 CRITICAL D0–D8; Q-2 página de leitura → SPEC-049; Q-3 todo analista "fora" por padrão, sem exceção; Q-4 rótulo carimbado × trecho; Q-5 resumo existe, DESLIGADO; Q-6 gatilho aditivo BL-017/BL-010; Q-7 regra de busca da errata; Q-8 WORKFLOW sem pesquisar escolas; C-1 corte do Anexo T; C-2 SPEC-049 só proposta; C-3 notas aditivas aplicadas) |
@@ -30,7 +30,33 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 
 | Versão | Data | Alterações (1 linha) |
 |---|---|---|
-| 1.0 | 2026-10-24 | Entrega candidata inicial: 12 RULE-RET, 1 INV-RET, 12 BASpec, 12 EARS, 8 EC, 14 cenários (T01..T14), 22 ADV (01..22); mapeamento integral do Anexo T da SPEC-007 para IDs novos; condições 1–8 da ABERTURA §15 cumpridas (tabela própria); errata de re-apontamento e metade F2 da emenda à SPEC-020 propostas, coordenadas com a metade F1. |
+| 1.0 | 2026-10-24 | Entrega candidata inicial: [doze RULE-RET, uma INV-RET, doze BASpec, doze EARS, oito EC, catorze cenários (T01..T14), vinte e dois ADV (01..22)]; mapeamento integral do Anexo T da SPEC-007 para IDs novos; condições 1–8 da ABERTURA §15 cumpridas (tabela própria); errata de re-apontamento e metade F2 da emenda à SPEC-020 propostas, coordenadas com a metade F1. |
+| **1.1** | **2026-10-24** | **Correção do parecer R1 (NÃO CONFORME): M-01 (reenvio passa de novo pela guarda E3 com atos e vínculo vigentes; pacote novo se algo deixou de ser permitido; ADV-RET-23), M-02 (D5 com `Q_VALIDANDO`), M-03 (afirmação da síntese com `content_role = DATA` e `claim_kind = RELATO_ATRIBUIDO`), m-01..m-15.** Contagens: **12 RULE, 1 INV, 12 BASpec, 12 EARS, 8 EC, 14 cenários, 23 ADV**. Texto anterior em colchetes locais (INV-07). |
+
+### Correções da rodada 1 (parecer R1, 2026-10-24) — onde estão (v1.1)
+
+| Achado | Correção (âncora neste arquivo) | Caso positivo / negativo |
+|---|---|---|
+| **M-01** reenvio idempotente contornava a guarda E3 | RULE-RET-005 "REENVIO" (i)(ii)(iii); RULE-RET-006 (d) (roda a cada reenvio; permissão recalculada); EARS 5; BASpec-RET-005; D4.4 passo (7); D5 (`Q_RECEBIDA → Q_VALIDANDO` no reenvio); contrato (`delivery_kind`, `supersedes_packet`); EC-RET-002 PRECOND/POSTCOND/FAILURE-MODE/EVIDENCE; EC-RET-003 PRECOND/POSTCOND/EVIDENCE; §D3.1 `PERMISSION_CHANGED_SINCE_DELIVERY` | T13(a) (reenvio sem mudança ⇒ mesmo `packet_id`, guarda reexecutada) / **ADV-RET-23** (revogação entre 1ª entrega e reenvio ⇒ pacote novo, antigo não reentregue; guarda indisponível ⇒ nada) |
+| **M-02** D5 contraditório | D5 reescrito: `Q_MONTADO` substituído por `Q_VALIDANDO` (entra ANTES da aprovação; sai para `Q_ENTREGUE` ou `Q_NEGADA`); RULE-RET-004 cita `Q_VALIDANDO`; T04 com a transição | T03 (`Q_VALIDANDO → Q_ENTREGUE`) / T04 (`Q_VALIDANDO → Q_NEGADA`) |
+| **M-03** síntese sem rótulo de dado | RULE-RET-004 "AFIRMAÇÕES DA SÍNTESE"; RULE-RET-010 GATE (rótulos gravados pelo harness); BASpec-RET-010 GATE; EARS 10; contrato `minimal_synthesis`; EC-RET-006 PRECOND; §D3.1 sub `SYNTHESIS_CLAIM_UNLABELED` | ADV-RET-05(d) (relato mantido com rótulos) / ADV-RET-04 (sem rótulos ⇒ `SYNTHESIS_CLAIM_INVALID`) |
+| m-01 | "Contrato com a SPEC-007" ponto 5 transcrito inteiro ("lado a lado"), com a parte de recuperação satisfeita pelo slot de contraevidência | — |
+| m-02 | RULE-RET-002 "ESCOLHA DO OUTRO LADO"; D4.1 passo (4); T03 declara U4 admitido | T03 / T11 |
+| m-03 | campo renomeado `consumer_locus_basis` (≠ `locus_basis` da SPEC-007); nota em RULE-RET-006 (a) | — |
+| m-04 | `delivery_record.pipeline_id` (RULE-RET-005; contrato; EC-RET-002 PRECOND/EVIDENCE; T03) | T03 |
+| m-05 | `CONTRADICTION_SIDE_OMITTED` impede a entrega: RULE-RET-002, RULE-RET-004, EC-RET-002 FAILURE-MODE, D5 | ADV-RET-12(b) |
+| m-06 | RULE-RET-007 (b) "VOCABULÁRIO CONTROLADO"; contrato `concept_catalog`; `CONCEPT_REF_UNREGISTERED`; Q0-P2; P-2 | — |
+| m-07 | EC-RET-003 EVIDENCE (recalcula dos atos e origens-raiz); RULE-RET-006 (d); EC-RET-004 EVIDENCE (RULE-KFH-019 (g)) | — |
+| m-08 | INHERITS com versão: SPEC-002 v1.0, CEM-001 v1.0, CCM-001 v1.0, CHM-001 v1.0 | — |
+| m-09 | ADV-RET-10, 13, 21 partem de "Q0, exceto"; ADV-RET-21(c) declara Q0-P2 | — |
+| m-10 | RULE-RET-011 (b) e BASpec-RET-011: rejulgamento por modelo = Classe H com `max_audit_rejudge_attempts` e gate de saída | T14 / ADV-RET-18 |
+| m-11 | errata: linhas da SPEC-021 marcadas como extensão `[INFERÊNCIA]` do critério 1 | — |
+| m-12 | cabeçalho "Ordem de Andraus" (chat 2026-10-24) + pedido de registro na ata de homologação; "Atos seus na homologação" | — |
+| m-13 | Mapeamento do Anexo T, linha RULE-KFH-010 (e-bis): mudança declarada | — |
+| m-14 | P-2, nota técnica: sem E7-1 a compatibilidade depende do BUILD | — |
+| m-15 (adendo) | `packet_hash` = campo PRÓPRIO desta Spec, com `canon`/`H` da SPEC-007 por referência: RULE-RET-004; D4.2 passo (6); contrato; lições; T03 | T03 |
+
+*[v1.0 da linha de §D3.1 reescrita: "| `PACKET_INCOMPLETE` | `COUNTEREVIDENCE_SLOT_MISSING`, `GAP_SLOT_MISSING`, `CITATION_MISSING`, `TEMPORAL_SCOPE_MISSING`, `KNOWLEDGE_STATUS_MISSING`, `CONTENT_ROLE_MISSING` | RET-004; ADV-RET-12 |"; em RULE-RET-006 (d), a frase terminava em "imediatamente antes da entrega (defesa em profundidade)."]*
 
 ---
 
@@ -47,7 +73,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | T.1 — RULE-KFH-001, cláusula "nem entregue a consumidor com `consumer_locus = EXTERNO`" | **048** | **RULE-RET-006** |
 | T.1 — RULE-KFH-010 (a)(b)(c)(f) (estratégias, ranking, filtro temporal, laço) | **048** | **RULE-RET-001** |
 | T.1 — RULE-KFH-010 (d)(e)(e-bis) (read-only, só publicado/registrado, exclusão de uso indeterminado) | **048** | **RULE-RET-002** |
-| T.1 — RULE-KFH-010 (e-bis), parte "consumidor/reranking em provedor externo" e "VERIFICABILIDADE `consumer_locus`" | **048** | **RULE-RET-006** (consumidor) e **RULE-RET-007** (etapas de modelo pela CIM) |
+| T.1 — RULE-KFH-010 (e-bis), parte "consumidor/reranking em provedor externo" e "VERIFICABILIDADE `consumer_locus`" | **048** | **RULE-RET-006** (consumidor) e **RULE-RET-007** (etapas de modelo pela CIM). **Mudança declarada (v1.1 — m-13):** o insumo dizia "quando … a etapa de reranking rodar em provedor externo, excluir unidades com `external_transmission_allowed = FALSE`" (excluir a UNIDADE do pacote); aqui a unidade **não** é excluída por causa do reordenador: a etapa de modelo **não roda** para esses refs (RULE-RET-001 (e), `MODEL_STAGE_SKIPPED`) e a unidade só sai do pacote se a guarda de ENTREGA a barrar (RULE-RET-006). Intenção preservada (nada sem envio liberado vai a modelo de fora); efeito diferente: um consumidor "de casa" ainda pode receber a unidade, sem reordenação |
 | T.1 — RULE-KFH-011 (independência por origem-raiz) | **048** | **RULE-RET-003** (sobre a definição da SPEC-007 RULE-KFH-001 — P-14) |
 | T.1 — RULE-KFH-012, conteúdo do pacote, "DADO, NUNCA INSTRUÇÃO", "NUNCA página WikiRAG", "sem conclusão" | **048** | **RULE-RET-004** (+ rótulo Q-4) |
 | T.1 — RULE-KFH-012, "SÍNTESE MÍNIMA" | **048** | **RULE-RET-010** (redator, DESLIGADO — Q-5) + **RULE-RET-009** (F2) |
@@ -70,7 +96,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | T.6 — D6 "Consulta" | **048** | D6 desta Spec (passo 7 reescrito pela P-9) |
 | T.7 — `evidence_packet`, `feedback_record`, nota BBTYPE | **048** | Contrato lógico desta Spec (reescrito: entrega única RESPOSTA_READ_ONLY; `knowledge_status`; `consumer_locus_basis`); BBTYPE decidida (P-9) |
 | T.8 — T16 / T17 / T18 / T19 / T20 / T21 / T22 / T26 / T25 (parte entrega) | **048** / **049** | T16 → T02; T17 → T03; T18 → T04; T19 → T06; T20 → T07; **T21 → SPEC-049**; T22 → T08; T26 → T09; T25 parte entrega → T10 |
-| T.9 — ADV-06 / 09 / 10 / 11 / 12 / 14 / 15 / 23 / 26 / 29; partes de 05 / 25 / 28 | **048** / **049** | 06 → ADV-RET-07; 09 → 09; 10 → 10; 11 parte pacote → 11 (**parte compilação → SPEC-049**); 12 → 12; 14 → 13; 15 (a)(b) → 05 e 15 (c) → 06; 23 → 01; 26 → 14; 29 → 15; 05 parte pacote → 08; 25 parte "servir só P1" → 12 (**parte "WikiRAG" → SPEC-049**); 28 (a)(b) → 16. Novos: ADV-RET-02, 03, 04, 17, 18, 19, 20, 21, 22 |
+| T.9 — ADV-06 / 09 / 10 / 11 / 12 / 14 / 15 / 23 / 26 / 29; partes de 05 / 25 / 28 | **048** / **049** | 06 → ADV-RET-07; 09 → 09; 10 → 10; 11 parte pacote → 11 (**parte compilação → SPEC-049**); 12 → 12; 14 → 13; 15 (a)(b) → 05 e 15 (c) → 06; 23 → 01; 26 → 14; 29 → 15; 05 parte pacote → 08; 25 parte "servir só P1" → 12 (**parte "WikiRAG" → SPEC-049**); 28 (a)(b) → 16. Novos: ADV-RET-02, 03, 04, 17, 18, 19, 20, 21, 22 e (v1.1) 23 |
 | T.10 — EC-KFH-007 / 008 / 009 / 013; parte "feedback" do EC-KFH-010 | **048** / **049** | 007 → EC-RET-002; 008 → EC-RET-005; **009 → SPEC-049**; 013 → EC-RET-004; feedback → EC-RET-008. Novos: EC-RET-001, 003, 006, 007 |
 | T.11 — métricas F2, independência, lacuna por limite, log de entrega | **048** | seção "Métricas e eventos" |
 | T.12 — metade F2 da emenda à SPEC-020 | **048** | seção "Proposta de emenda pontual à SPEC-020 — metade F2" (coordenada com a F1) |
@@ -86,7 +112,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 
 | Decisão | Fonte | Onde está aqui | Marca |
 |---|---|---|---|
-| Q-1 — CRITICAL D0–D8, teste de ataque completo | DHR-SPEC048-001 | cabeçalho; D8 (22 casos) | decidida |
+| Q-1 — CRITICAL D0–D8, teste de ataque completo | DHR-SPEC048-001 | cabeçalho; D8 (23 casos) *[v1.0: "vinte e dois casos"]* | decidida |
 | Q-2 — página de leitura na SPEC-049 | DHR-SPEC048-001 | Non-goals; RULE-RET-004 (só regra de consumo); "Interface com a SPEC-049" | decidida |
 | Q-3 — todo analista "fora" até confirmar modelos de casa, sem exceção | DHR-SPEC048-001 | RULE-RET-006 (lacuna analista↔modelo; padrão EXTERNO) | decidida; registro do vínculo criado aqui `[PROPOSTA]`; quem o confirma = P-1 `[DECISÃO NECESSÁRIA]` |
 | Q-4 — rótulo "conhecimento carimbado" × "só trecho de fonte" | DHR-SPEC048-001 | RULE-RET-004 (`knowledge_status`, derivado pelo gate) | decidida |
@@ -127,7 +153,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | Lição | Onde |
 |---|---|
 | Pré-condições por cenário via fixture (R3-M1) | D7 "Fixture Q0" (estado injetado); todo cenário/ADV diz "Q0, exceto …" e quebra **uma** condição |
-| Serialização/hash única (R3-M2) | uma só função `canon`/`H` — a da SPEC-007 RULE-KFH-005 (não se cria segunda): `packet_hash`, `resolved_content_hash`, `request_fingerprint` |
+| Serialização/hash única (R3-M2) | uma só função `canon`/`H` — a da SPEC-007 RULE-KFH-005, usada por referência (não se cria segunda); os CAMPOS `packet_hash`, `resolved_content_hash`, `request_fingerprint` são próprios desta Spec, não da SPEC-007 (m-15) *[v1.0: "uma só função `canon`/`H` — a da SPEC-007 RULE-KFH-005 (não se cria segunda): `packet_hash`, `resolved_content_hash`, `request_fingerprint`"]* |
 | Quadro de pré-requisitos mínimos em linguagem de trader (R3-M3) | seção "Pré-requisitos mínimos para o 1º pacote não vazio" |
 | Nenhuma BASpec Classe H sem laço e gate (R2 N-05) | BASpec-RET-001/009/010: BOUNDED LOOP + GATE DE SAÍDA determinístico |
 | Mesma expressão de gate repetida em RULE, BASpec e EC (R5-M1/r6-n1) | expressão de MANUTENÇÃO da F2: RULE-RET-009, BASpec-RET-009 e EC-RET-006 com as mesmas cinco conjunções |
@@ -193,12 +219,13 @@ INHERITS (referência por ID + VERSÃO baseline — RULE-HD-04; NÃO redefinido)
       de promoção — [DECISÃO NECESSÁRIA], não tocado)
   - specs/features/SPEC-004 v1.2 (BASELINE — DHR-SPEC004-003): RULE-CBP-014 (l.311-319, identidade AUTENTICADA pelo runtime,
       nunca do payload) — aplicada à identidade do consumidor e do pipeline
-  - specs/features/SPEC-002 (BASELINE): o AGENTE produz Evidência; l.170/l.848 ("evidence candidate a partir de retrieval")
+  - specs/features/SPEC-002 v1.0 (BASELINE — DHR-SPEC002-001) [v1.0 deste Plan: sem versão — m-08]: o AGENTE produz Evidência; l.170/l.848 ("evidence candidate a partir de retrieval")
       — re-apontamento por errata PROPOSTA neste Plan; até a homologação, a referência vale como está
   - specs/features/SPEC-020 v1.0 (BASELINE): dimensão B "RAG faithfulness" DIFERIDA (l.116/144/515/720/728) — metade F2 aqui
-  - canon/CEM-001 (BASELINE) — Evidência por agentes; idioma canônico (INV-10); o pacote não é Evidence
-  - canon/CCM-001 (BASELINE) — Conviction Vector 8D; nada desta Spec entra nele (INV-04)
-  - canon/CHM-001 (BASELINE) — nomes de estado reservados; estados locais desta Spec usam prefixo `Q_` (CC-10)
+  - canon/CEM-001 v1.0 (BASELINE — CATALOGO-OFICIAL) — Evidência por agentes; idioma canônico (INV-10); o pacote não é Evidence
+  - canon/CCM-001 v1.0 (BASELINE — DHR-SPEC003-001) — Conviction Vector 8D; nada desta Spec entra nele (INV-04)
+  - canon/CHM-001 v1.0 (BASELINE — CATALOGO-OFICIAL) — nomes de estado reservados; estados locais desta Spec usam prefixo `Q_`
+    (CC-10)  [v1.0 deste Plan: as três linhas sem versão — m-08]
   - governance/RULES.md — RULE-BB-001 (l.309); RULE-004 (l.36); RULE-EPI-01/02 (l.661-662); RULE-SEM-01/03/04 (l.666-669);
       RULE-CAU-01 (l.681); RULE-UNC-01 (l.691); RULE-PRB-01 (l.696); RULE-DEC-01 (l.700); RULE-MET-01 (l.705);
       RULE-MECH-01..03 (l.521-538); RULE-HD-02..04 (l.656-658)
@@ -667,7 +694,9 @@ RULE-RET-012: FEEDBACK sobre consulta/pacote é registrado (`feedback_record`, a
 | `EXTERNAL_TRANSMISSION_FORBIDDEN` (código da SPEC-007) | — | RET-006; T10; ADV-RET-16 |
 | `CONTRADICTION_SIDE_OMITTED` | — | RET-002; T11; ADV-RET-12 |
 | `INDEPENDENCE_INDETERMINATE` (marcação) | — | RET-003; T02; ADV-RET-09 |
-| `PACKET_INCOMPLETE` | `COUNTEREVIDENCE_SLOT_MISSING`, `GAP_SLOT_MISSING`, `CITATION_MISSING`, `TEMPORAL_SCOPE_MISSING`, `KNOWLEDGE_STATUS_MISSING`, `CONTENT_ROLE_MISSING` | RET-004; ADV-RET-12 |
+| `PACKET_INCOMPLETE` | `COUNTEREVIDENCE_SLOT_MISSING`, `GAP_SLOT_MISSING`, `CITATION_MISSING`, `TEMPORAL_SCOPE_MISSING`, `KNOWLEDGE_STATUS_MISSING`, `CONTENT_ROLE_MISSING` (sub `SYNTHESIS_CLAIM_UNLABELED` — v1.1, M-03) | RET-004/010; ADV-RET-04/12 |
+| `PERMISSION_CHANGED_SINCE_DELIVERY` (marcação; v1.1, M-01) | — | RET-005/006; ADV-RET-23 |
+| `CONCEPT_REF_UNREGISTERED` (v1.1, m-06) | — | RET-007 |
 | `WIKI_PAGE_CITED_AS_SOURCE` | `MODEL_SUMMARY_CITED_AS_SOURCE` | RET-002/004; T04; ADV-RET-11 |
 | `PACKET_CONCLUSION_FORBIDDEN` | — | RET-004; ADV-RET-05 |
 | `SYNTHESIS_DISABLED` (marcação) / `SYNTHESIS_ENABLE_UNAUTHORIZED` | — | RET-004/010; T03; ADV-RET-21 |
@@ -1311,6 +1340,9 @@ VERIFICAÇÃO f2_audit_record.divergences contém {c3', "UNSUPPORTED_ADDITION"};
 ### ADV-RET-22 — Texto solto ou pedido livre levado ao modelo (RET-007) — ponto 3 literal
 **DADO:** Q0-P2; (a) a etapa de reordenação monta `invoke(stage=rerank, model_ref=MR, template_id=T-RR, content_refs=[U1, U4])` e acrescenta o texto livre do pedido; (b) os `free_terms` de R1 são enviados ao embedder ME; (c) com P-2 não confirmada (Q0), a reordenação tenta rodar com o pedido em lista fechada. **QUANDO:** a CIM / o gate da trilha avaliam. **ENTÃO:** (a) NEGADO pela CIM `INVOCATION_ENVELOPE_INVALID`/`CONTENT_PROVENANCE_MISSING`, nada enviado; (b) barrado antes da CIM: `QUERY_FREE_TEXT_TO_MODEL_FORBIDDEN`; (c) etapa não roda: `MODEL_STAGE_SKIPPED`. **PORQUE:** RULE-RET-007 (b); DHR-SPEC007-005 H-1. **VERIFICAÇÃO:** bytes_sent == 0 em (a)/(b); model_invocations(rerank) == 0 em (c); ordem determinística mantida.
 
+### ADV-RET-23 — Revogação entre a 1ª entrega e o reenvio idempotente (RET-005/006) — novo (v1.1, M-01)
+**DADO:** Q0, exceto: (a) T03 entregue a A1 com U1 (F@h1, envio TRUE) e U4; depois, Andraus grava REVOCATION do ato EXT_TRANSMISSION de F@h1 (SPEC-007 RULE-KFH-020); A1 reenvia R1 idêntico (mesmo r1, mesmo fingerprint); (b) contraste: estado injetado com vínculo A1 → MF' LOCAL (ato LOCAL_EXECUTOR) na 1ª entrega, U2 (G: envio FALSE) entregue; depois REVOCATION do ato LOCAL_EXECUTOR de MF'; A1 reenvia R1; (c) a guarda está indisponível no momento do reenvio. **QUANDO:** o reenvio é processado. **ENTÃO:** (a) a guarda roda de novo com os atos vigentes: U1 agora tem envio FALSE para A1 EXTERNO ⇒ o pacote antigo NÃO é reentregue; gera-se pacote novo sem U1, `supersedes_packet` = pacote antigo, lacuna `PERMISSION_CHANGED_SINCE_DELIVERY` + `EXTERNAL_TRANSMISSION_FORBIDDEN`; (b) A1 volta a EXTERNO ⇒ U2 sai do pacote novo, mesma lacuna; (c) nada reentregue (`DELIVERY_GUARD_UNAVAILABLE`). **PORQUE:** reenvio é nova transmissão; a guarda E3 não se herda de entrega anterior (ENF-04; SPEC-007 RULE-KFH-020 — ato revogado não vale). **VERIFICAÇÃO:** guard_rerun == true; permissão recalculada dos atos vigentes (não de `effective_*` gravado); bytes_de_U1_no_reenvio == 0 em (a); bytes_de_U2_no_reenvio == 0 em (b); packet_id_novo ≠ packet_id_antigo e packet_novo.supersedes_packet == packet_id_antigo; gaps contém "PERMISSION_CHANGED_SINCE_DELIVERY"; em (c) delivered == false; o pacote antigo segue gravado, nunca apagado (INV-07).
+
 ---
 
 ## Métricas e eventos (RAG-SPEC-039 / RAG-SPEC-041)
@@ -1349,17 +1381,24 @@ EFFECT       : Resposta só-leitura ao consumidor autenticado + gravação do de
                sem notificação
 PRECOND      : esquema da RULE-RET-004 completo (slots, citação, rótulo, DATA, sem conclusão, sem citação a página/resumo);
                F2 aplicada (RULE-RET-009); namespace (RULE-RET-008); guarda final de locus/envio aprovada (RULE-RET-006);
-               identidade do consumidor autenticada e igual à do pedido (RULE-CBP-014); request_id sem conflito
-POSTCOND     : pacote imutável entregue só a quem pediu; delivery_record com packet_hash, consumer_locus e consumer_locus_basis; mesmo
-               (request_id, fingerprint) ⇒ mesmo packet_id; nunca rotulado evidence/observation
-POLICY       : RULE-RET-004/005; INV-05/06/10; RULE-DEC-01; RULE-BB-001; DHR-SPEC007-003 P-9; SPEC-004 RULE-CBP-014 (referência)
-LEVEL        : E2 (Operacional — piso "Evidência / Hipótese de Agente → E2"; ABERTURA §4)
-FAILURE-MODE : Fail-closed — esquema incompleto/citação inválida/conclusão ⇒ não entrega (Q_NEGADA); tentativa de Blackboard ⇒
-               PACKET_BLACKBOARD_FORBIDDEN; destinatário ≠ quem pediu ⇒ DELIVERY_TO_NON_REQUESTER_FORBIDDEN; identidade
-               indisponível ⇒ DELIVERY_IDENTITY_UNAUTHENTICATED; lacunas declaradas em vez de omissão; log
-EVIDENCE     : delivery_record por entrega; packet_hash recalculável; verificação de esquema registrada; nenhum objeto da trilha
-               no Blackboard
+               identidade do consumidor autenticada e igual à do pedido (RULE-CBP-014); identidade do harness autenticada pelo
+               runtime (pipeline_id — m-04); request_id sem conflito; NO REENVIO, a guarda (RULE-RET-006) aprovada DE NOVO com os
+               atos e o vínculo vigentes (M-01)
+POSTCOND     : pacote imutável entregue só a quem pediu; delivery_record com packet_hash, consumer_locus, consumer_locus_basis,
+               delivery_kind e pipeline_id; mesmo (request_id, fingerprint) e guarda reaprovada sem exclusão nova ⇒ mesmo
+               packet_id; exclusão nova no reenvio ⇒ pacote novo (supersedes_packet) com PERMISSION_CHANGED_SINCE_DELIVERY, o
+               antigo nunca reentregue; nunca rotulado evidence/observation
+POLICY       : RULE-RET-004/005/006; INV-05/06/10; RULE-DEC-01; RULE-BB-001; DHR-SPEC007-003 P-9; SPEC-004 RULE-CBP-014 (referência)
+LEVEL        : E2 (Operacional — piso "Evidência / Hipótese de Agente → E2"; ABERTURA §4) — a guarda que decide o envio é E3
+               (EC-RET-003) e roda em toda entrega, inclusive reenvio
+FAILURE-MODE : Fail-closed — esquema incompleto/citação inválida/conclusão/CONTRADICTION_SIDE_OMITTED ⇒ não entrega
+               (Q_VALIDANDO → Q_NEGADA); tentativa de Blackboard ⇒ PACKET_BLACKBOARD_FORBIDDEN; destinatário ≠ quem pediu ⇒
+               DELIVERY_TO_NON_REQUESTER_FORBIDDEN; identidade indisponível ⇒ DELIVERY_IDENTITY_UNAUTHENTICATED; guarda
+               indisponível no reenvio ⇒ nada reentregue; lacunas declaradas em vez de omissão; log
+EVIDENCE     : delivery_record por entrega (PRIMEIRA e REENVIO, com pipeline_id); packet_hash recalculável; verificação de
+               esquema registrada; nenhum objeto da trilha no Blackboard; todo REENVIO tem execução da guarda registrada
 ```
+*[v1.0 do EC-RET-002 (INV-07): PRECOND terminava em "identidade do consumidor autenticada e igual à do pedido (RULE-CBP-014); request_id sem conflito"; POSTCOND: "pacote imutável entregue só a quem pediu; delivery_record com packet_hash, consumer_locus e locus_basis; mesmo (request_id, fingerprint) ⇒ mesmo packet_id; nunca rotulado evidence/observation"; POLICY: "RULE-RET-004/005; INV-05/06/10; RULE-DEC-01; RULE-BB-001; DHR-SPEC007-003 P-9; SPEC-004 RULE-CBP-014 (referência)"; LEVEL: "E2 (Operacional — piso \"Evidência / Hipótese de Agente → E2\"; ABERTURA §4)"; FAILURE-MODE: "Fail-closed — esquema incompleto/citação inválida/conclusão ⇒ não entrega (Q_NEGADA); tentativa de Blackboard ⇒ PACKET_BLACKBOARD_FORBIDDEN; destinatário ≠ quem pediu ⇒ DELIVERY_TO_NON_REQUESTER_FORBIDDEN; identidade indisponível ⇒ DELIVERY_IDENTITY_UNAUTHENTICATED; lacunas declaradas em vez de omissão; log"; EVIDENCE: "delivery_record por entrega; packet_hash recalculável; verificação de esquema registrada; nenhum objeto da trilha no Blackboard" — M-01, m-04, m-05]*
 
 ### EC-RET-003 — Guarda de locus e envio na entrega [E3]
 ```
@@ -1369,9 +1408,10 @@ EFFECT       : Liberação de conteúdo de fonte ao executor de modelo em que o 
 PRECOND      : consumer_locus só de consumer_binding válido + registro de provedores da SPEC-007 (LOCAL só com ato
                LOCAL_EXECUTOR válido; sem vínculo ⇒ EXTERNO; locus do pedido ignorado); ∀ item entregue: uso efetivo ≠
                INDETERMINADO; se EXTERNO: ∀ item entregue: envio efetivo = TRUE (conjunção das origens-raiz — P-11); a mesma
-               verificação vale para afirmações da síntese (herdam do item citado)
+               verificação vale para afirmações da síntese (herdam do item citado); a guarda roda em TODA entrega, inclusive no
+               REENVIO idempotente, com atos (incl. REVOCATION) e vínculo vigentes naquele momento (M-01)
 POSTCOND     : só itens permitidos no pacote; excluídos como falta declarada com código e contagem; nenhum byte excluído
-               exposto; consumer_locus_basis gravado
+               exposto; consumer_locus_basis gravado; no reenvio com exclusão nova, pacote novo — o antigo não é reentregue
 POLICY       : RULE-RET-006; SPEC-007 RULE-KFH-019 (b)(c)(d) e Interface ponto 3 (usa, não redefine); DHR-SPEC007-003
                P-4a/P-4b/P-11; DHR-SPEC007-004 P-12; DHR-SPEC048-001 Q-3; atomic-spec §10.2
 LEVEL        : E3 (Crítico — dado entregue a modelo de fora não volta)
@@ -1379,8 +1419,11 @@ FAILURE-MODE : Fail-closed — permissão irresolúvel ⇒ item excluído; guard
                (DELIVERY_GUARD_UNAVAILABLE); log. Falso-DENY E3 por amostragem (ENF-07): itens excluídos são rechecados por
                amostra contra os atos vigentes; taxa = INDETERMINADA (gap aberto, atomic-spec §12)
 EVIDENCE     : delivery_record com consumer_locus/consumer_locus_basis; por item, effective_rights_status/effective_transmission_allowed;
-               auditoria amostral: entregas EXTERNO com item de envio FALSE == 0; locus LOCAL sem ato LOCAL_EXECUTOR == 0 (RU-5)
+               auditoria amostral que RECALCULA a permissão a partir dos atos vigentes no momento da entrega e das origens-raiz,
+               sem usar os effective_* gravados pela própria guarda (m-07): entregas EXTERNO com item de envio FALSE == 0; locus
+               LOCAL sem ato LOCAL_EXECUTOR == 0 (RU-5); reenvios sem execução da guarda == 0 (M-01)
 ```
+*[v1.0 do EC-RET-003 (INV-07): PRECOND terminava em "a mesma verificação vale para afirmações da síntese (herdam do item citado)"; POSTCOND: "só itens permitidos no pacote; excluídos como falta declarada com código e contagem; nenhum byte excluído exposto; locus_basis gravado"; EVIDENCE: "delivery_record com consumer_locus/locus_basis; por item, effective_rights_status/effective_transmission_allowed; auditoria amostral: entregas EXTERNO com item de envio FALSE == 0; locus LOCAL sem ato LOCAL_EXECUTOR == 0 (RU-5)" — M-01, m-03, m-07]*
 
 ### EC-RET-004 — Etapas da consulta sem efeito e só pela CIM [E3]
 ```
@@ -1396,8 +1439,11 @@ FAILURE-MODE : Fail-closed — pedido de efeito negado por capacidade (QUERY_EFF
                (QUERY_FLOW_CHANGE_FORBIDDEN); texto livre a modelo barrado (QUERY_FREE_TEXT_TO_MODEL_FORBIDDEN); CIM indisponível
                ⇒ só estratégias determinísticas; log. Falso-DENY E3 por amostragem (ENF-07; taxa = gap aberto)
 EVIDENCE     : registro de capacidades das etapas; model_invocation_record de toda chamada; retrieval_trace com flow_fields
-               congelados; contagem de pedidos de efeito negados
+               congelados; contagem de pedidos de efeito negados; chamada de modelo que contorne a CIM: detectada pela
+               auditoria do lado do executor/rede prevista na SPEC-007 RULE-KFH-019 (g) — acessos sem model_invocation_record
+               correspondente == 0 (mecanismo = BUILD; m-07)
 ```
+*[v1.0 do EVIDENCE do EC-RET-004: "registro de capacidades das etapas; model_invocation_record de toda chamada; retrieval_trace com flow_fields congelados; contagem de pedidos de efeito negados" — m-07]*
 
 ### EC-RET-005 — Guard relevância ≠ convicção [E3]
 ```
@@ -1418,7 +1464,9 @@ EFFECT       : Gravação append-only de f2_record; remoção, do pacote ainda n
 PRECOND      : item permanece sse parte D (a) = PASS; afirmação da síntese permanece só pela expressão de manutenção da
                RULE-RET-009: (IDs gravados pela CIM) ∧ (juiz ≠ redator) ∧ (parte D = PASS) ∧ (resultado H = CLEAR) ∧
                (f2_invocation_ref aponta model_invocation_record cujos content_refs contêm a afirmação julgada e o item que ela
-               cita); síntese só com synthesis_enabled por ato de Andraus (RULE-RET-010); limites de laço respeitados
+               cita); síntese só com synthesis_enabled por ato de Andraus (RULE-RET-010); limites de laço respeitados; toda
+               afirmação mantida com content_role = DATA e claim_kind = RELATO_ATRIBUIDO gravados pelo harness (gate da
+               RULE-RET-010 — v1.1, M-03; v1.0 sem esta cláusula)
 POSTCOND     : removidos registrados em gaps (CLAIM_UNSUPPORTED_REMOVED / SYNTHESIS_OMITTED); IDs da CIM gravados no pacote;
                nada mantido em silêncio
 POLICY       : RULE-RET-009/010; SPEC-007 RULE-KFH-005/006/019 (a); RULE-MECH-03; INV-07
@@ -1490,7 +1538,7 @@ EVIDENCE     : feedback_record reconstruível; contagem de alterações de confi
 | SPEC-006 `plan.md` l.1594 | "formação/retrieval em SPEC-007 (não absorvida)" | idem l.299 |
 | SPEC-006 `plan.md` l.963 | "formação é SPEC-007" (achada pela busca por "recuperado") | **sem nota** — trata só de formação, que segue na SPEC-007 |
 | SPEC-020 `plan.md` l.116, l.144, l.515, l.720, l.728 | "RAG faithfulness … SPEC-007/038/014" e "RAG faithfulness (SPEC-007) … permanecem diferidas" | **Texto único por linha, coordenado com a metade F1** (abaixo) |
-| SPEC-021 `plan.md` l.160, l.762 | "classe B … **SPEC-007/038/014**" | "Dimensão B 'RAG faithfulness': F1 → SPEC-007; F2 → **SPEC-048**; tool correctness → SPEC-038 (encerrada — ERRATUM-SPEC020-001); decision traceability → SPEC-014." |
+| SPEC-021 `plan.md` l.160, l.762 — **extensão do critério 1 `[INFERÊNCIA]` (m-11):** as linhas dizem "classe B" sem "RAG faithfulness" literal; entram porque "classe B" da SPEC-020 inclui RAG faithfulness (SPEC-020 l.116) — Andraus decide se mantém | "classe B … **SPEC-007/038/014**" | "Dimensão B 'RAG faithfulness': F1 → SPEC-007; F2 → **SPEC-048**; tool correctness → SPEC-038 (encerrada — ERRATUM-SPEC020-001); decision traceability → SPEC-014." |
 | SPEC-038 `plan.md` l.916 | "(RAG faithfulness ↔ SPEC-007; …)" (proposta histórica citada) | "RAG faithfulness divide-se: F1 ↔ SPEC-007; F2 ↔ **SPEC-048** (DHR-SPEC007-002 §4)." |
 | `governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md` l.14 | "**RAG faithfulness ↔ SPEC-007** … permanecem **DIFERIDAS**" | nota **na errata da SPEC-020 proposta aqui** (a ERRATUM-SPEC020-001 homologada não é editada — INV-09): "a dimensão 'RAG faithfulness' divide-se em F1 (SPEC-007) e F2 (SPEC-048); cada metade segue diferida até a homologação da sua emenda" |
 
@@ -1560,7 +1608,7 @@ SPEC-007 v2.3 (CIM, origem-raiz, selo, atos, marcas, registro de provedores) · 
 | R-5 citação correta, frase sem apoio real | RET-009/010; ADV-RET-07; RU-1 |
 | R-6 conclusão disfarçada | esquema (RET-004); juiz F2; síntese desligada (Q-5); ADV-RET-05/04; RU-2 |
 | R-7 página de leitura citada como fonte | RET-002/004 (`WIKI_PAGE_CITED_AS_SOURCE`); T04; ADV-RET-11 |
-| R-8 trecho sem liberação chega a analista "de fora" | RET-006; EC-RET-003 (E3); T10; ADV-RET-16; RU-5 |
+| R-8 trecho sem liberação chega a analista "de fora" | RET-006; EC-RET-003 (E3); T10; ADV-RET-16; RU-5; reenvio reavaliado contra atos vigentes (RET-005 REENVIO; ADV-RET-23 — v1.1, M-01) |
 | R-9 pacote tardio | orçamento SPEC-008 (INDETERMINADO); nunca aumentado (RET-001 (f)); RU-9 |
 | R-10 invadir SPEC-007/043/044/018 | Non-goals; ADV-RET-19 |
 | R-11 número inventado | limiares/limites/taxa INDETERMINADO; ADV-RET-20 |
@@ -1584,7 +1632,7 @@ BUILD/Tasks/Engineering Cards adiados (atomic-spec §14). Aplicarão SES-001 §5
 
 ## Autopré-check de Redução de Viés (§7-bis — EUA-E18, obrigatório CRITICAL)
 
-**Bloco A — pergunta adversarial por BASpec (12):** cada BASpec tem ENTÃO verificável por observador independente (campos e códigos) e ≥1 caso de negação próprio: 001 → T07, negativo próprio (permutação inválida), ADV-RET-02/03; 002 → próprio (U3/U9), T11, ADV-RET-11/12/14; 003 → T02, ADV-RET-09; 004 → T04, ADV-RET-05(a)/12; 005 → T13(b), ADV-RET-06 (positivo T03); 006 → ADV-RET-16 (positivo T10); 007 → ADV-RET-01/02/22 (positivo próprio da BASpec); 008 → ADV-RET-10 (positivo T03); 009 → T05, T06, ADV-RET-07/08/15; 010 → ADV-RET-15/21 (positivos T03 desligada, T09 ligada); 011 → ADV-RET-18 (positivo T14); 012 → ADV-RET-13 (positivo T08). **"QUANDO satisfeito, ENTÃO não deve ocorrer":** RET-001 (modelo propõe nova rodada, mas o harness não a faz se já há suficiência ou se atingiu o limite — T07; ADV-RET-02(a)); RET-002 (item muito relevante, mas uso INDETERMINADO ⇒ não entra — ADV-RET-14); RET-005 (pacote válido, mas destinatário ≠ quem pediu ⇒ não entrega — ADV-RET-06(b)); RET-006 (item servível, mas consumidor EXTERNO e envio FALSE ⇒ não entrega — T10(a)); RET-009 (citação resolve, mas o texto do item difere ⇒ removido — T05); RET-010 (pedido pede síntese, mas sem ato ⇒ desligada — ADV-RET-21). **Se estivesse errada, o que seria observável:** RET-006 errada ⇒ bytes de fonte sem envio liberado em `delivery_record` de consumidor EXTERNO (EC-RET-003 EVIDENCE); RET-007 errada ⇒ `flow_fields` diferentes dos congelados ou chamada sem `model_invocation_record` (EC-RET-004 EVIDENCE); RET-009 errada ⇒ item com `H(canon(source_text)) ≠ resolved_content_hash` entregue (recalculável); RET-003 errada ⇒ grupos que compartilham origem-raiz contados duas vezes (recalculável por D4.3). Nenhuma BASpec ficou sem resposta ancorada.
+**Bloco A — pergunta adversarial por BASpec (12):** cada BASpec tem ENTÃO verificável por observador independente (campos e códigos) e ≥1 caso de negação próprio: 001 → T07, negativo próprio (permutação inválida), ADV-RET-02/03; 002 → próprio (U3/U9), T11, ADV-RET-11/12/14; 003 → T02, ADV-RET-09; 004 → T04, ADV-RET-05(a)/12; 005 → T13(b), ADV-RET-06 (positivo T03); 006 → ADV-RET-16 (positivo T10); 007 → ADV-RET-01/02/22 (positivo próprio da BASpec); 008 → ADV-RET-10 (positivo T03); 009 → T05, T06, ADV-RET-07/08/15; 010 → ADV-RET-15/21 (positivos T03 desligada, T09 ligada); 011 → ADV-RET-18 (positivo T14); 012 → ADV-RET-13 (positivo T08). **"QUANDO satisfeito, ENTÃO não deve ocorrer":** RET-001 (modelo propõe nova rodada, mas o harness não a faz se já há suficiência ou se atingiu o limite — T07; ADV-RET-02(a)); RET-002 (item muito relevante, mas uso INDETERMINADO ⇒ não entra — ADV-RET-14); RET-005 (pacote válido, mas destinatário ≠ quem pediu ⇒ não entrega — ADV-RET-06(b)); RET-006 (item servível, mas consumidor EXTERNO e envio FALSE ⇒ não entrega — T10(a)); RET-009 (citação resolve, mas o texto do item difere ⇒ removido — T05); RET-010 (pedido pede síntese, mas sem ato ⇒ desligada — ADV-RET-21); **v1.1 (M-01):** RET-005/006 (reenvio idêntico, mas ato revogado desde a 1ª entrega ⇒ o pacote antigo NÃO é reentregue — ADV-RET-23; positivo T13(a)); **v1.1 (M-03):** RET-010 (afirmação atribuída e apoiada, mas sem os rótulos de dado ⇒ descartada — ADV-RET-04). **Se estivesse errada, o que seria observável:** RET-006 errada ⇒ bytes de fonte sem envio liberado em `delivery_record` de consumidor EXTERNO (EC-RET-003 EVIDENCE); RET-007 errada ⇒ `flow_fields` diferentes dos congelados ou chamada sem `model_invocation_record` (EC-RET-004 EVIDENCE); RET-009 errada ⇒ item com `H(canon(source_text)) ≠ resolved_content_hash` entregue (recalculável); RET-003 errada ⇒ grupos que compartilham origem-raiz contados duas vezes (recalculável por D4.3). Nenhuma BASpec ficou sem resposta ancorada.
 
 **Bloco B — herança obrigação-a-obrigação (CC-08):**
 - SPEC-007 Interface ponto 1 (só carimbados) → RULE-RET-002 (a); `UNSEALED_NOT_SERVABLE`; ADV-RET-11(b).
@@ -1660,7 +1708,7 @@ Nenhuma obrigação suprimida fora de REMOVED; os três REMOVED têm referência
 > *Nota técnica:* contrato `consumer_binding`; caminho por ato exige errata E7-3 à SPEC-007 (enum fechado de `act_type`); alternativa: registro pelo runtime de implantação, com risco RU-5 maior.
 
 **P-2 — Como o pedido do analista chega aos modelos de busca.** *Recomendação: só como "campos de lista fechada" (ativo, prazo, período, assunto do vocabulário do sistema), nunca como frase livre.* Assim a regra que você já aprovou — "nenhum modelo recebe texto solto" — continua inteira, e a busca por significado e a reordenação por modelo podem funcionar. Enquanto você não decidir, a busca funciona só por palavra, por relação e por data. **Aceita?**
-> *Nota técnica:* RULE-RET-007 (b); compatibilidade com RULE-KFH-019 (f2)/(f5)(b) é `[INFERÊNCIA]`; se preferir texto explícito, errata E7-1 à SPEC-007.
+> *Nota técnica:* RULE-RET-007 (b); compatibilidade com RULE-KFH-019 (f2)/(f5)(b) é `[INFERÊNCIA]` — e fraca: a (f5)(b) trata de reformulação na formação, e o envelope `invoke(stage, model_ref, template_id, content_refs[])` não tem campo de parâmetro; **sem a errata E7-1, a compatibilidade depende do desenho de BUILD do catálogo de templates** (m-14). Recomendação reforçada: errata E7-1. Também integra esta pergunta quem aprova versão nova do catálogo de conceitos (`concept_catalog` — m-06); recomendação: você. *[v1.0: "> *Nota técnica:* RULE-RET-007 (b); compatibilidade com RULE-KFH-019 (f2)/(f5)(b) é `[INFERÊNCIA]`; se preferir texto explícito, errata E7-1 à SPEC-007."]*
 
 **P-3 — (só quando você quiser ligar o resumo) Como você liga.** *Recomendação: por um registro seu do mesmo tipo dos outros (ato), criado por uma pequena errata na linha de montagem, junto com o jeito de o conferente receber as frases do resumo.* Sem isso o resumo continua desligado, como você decidiu. **Pode ficar para quando quiser ligar?**
 > *Nota técnica:* errata E7-2/E7-3 à SPEC-007; RULE-RET-010.
@@ -1671,6 +1719,8 @@ Nenhuma obrigação suprimida fora de REMOVED; os três REMOVED têm referência
 3. Retirada das três regras do quadro compartilhado (RULE-CBP-002/004/005) desta Spec, por causa da sua decisão P-9, e o entendimento de que a entrega direta é "consulta a um serviço" (RULE-BB-001 continua valendo).
 4. Confirmar que "o analista que pediu" inclui o Manager quando ele pedir.
 5. (Orquestrador) atualizar o ROADMAP l.302 e l.404 e, se quiser, o CONFLICT-MAP (COL-EXP-05: contagem aqui, definição na linha de montagem).
+6. (v1.1 — m-12) Registrar na ata de homologação a sua ordem para este detalhamento (chat 2026-10-24, "Plan da SPEC-048"), que hoje só aparece no estado de trabalho.
+7. (v1.1 — m-11) Confirmar se as duas linhas da SPEC-021 que dizem só "classe B" entram na correção de endereço (recomendação: sim).
 
 **O que continua em aberto e depende de você (não perguntado agora):** o mecanismo da sua assinatura (o princípio você já decidiu — DHR-SPEC007-007; o resto é construção); M-001, K-001, G-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção; abertura da SPEC-049. O livro já foi decidido (DHR-SPEC007-006): falta só o seu ato de liberação, na construção.
 
@@ -1693,7 +1743,8 @@ Nenhuma obrigação suprimida fora de REMOVED; os três REMOVED têm referência
 [x] 12 EARS com regra-fonte; 12 BASpec completas; RULEs citadas existem (RULES.md / SPEC-004 / SPEC-006 / SPEC-007) ou são
     [PROPOSTA] desta Spec.
 [x] Profundidade D0–D8: D0, D1, D2 (12 RULE + 1 INV), D3 (12 BASpec + §D3.1), D4 (5 algoritmos com exemplo), D5, D6, D7 (14),
-    D8 (22), D9 por referência.
+    D8 (23), D9 por referência. [v1.0: "D8 (vinte e dois)"]
+[x] v1.1: parecer R1 corrigido — M-01, M-02, M-03 e m-01..m-15 (tabela "Correções da rodada 1"); texto anterior em colchetes.
 [x] Mapeamento integral do Anexo T → IDs da SPEC-048 (e partes → SPEC-049); nenhum ID transferido reutilizado; origem preservada.
 [x] Enforcement Contract em todo efeito (EC-RET-001..008); fail-closed nos E3; ENF-07 amostral nos E3; escala E0–E3 em seção própria.
 [x] Status epistemológico aplicado (tabela TRACE-06).
@@ -1729,4 +1780,4 @@ Nenhuma obrigação suprimida fora de REMOVED; os três REMOVED têm referência
 
 **Dependem de Andraus (não fechadas — CONS-01):** P-1 (vínculo analista↔modelo), P-2 (pedido em lista fechada), P-3 (forma de ligar o resumo) — todas com lado seguro vigente; homologação da emenda metade F2 e da errata de re-apontamento; REMOVED de RULE-CBP-002/004/005; M-001, K-001, G-001, J-001, N-001, C-001 (**ABERTAS**); WF-D03; ECC-03-001; SPEC-045-RUNTIME-001; CKG-STRUCT-ORIGIN-001; produtor/gatilho de promoção; mecanismo de autenticação dos atos (BUILD — princípio decidido, DHR-SPEC007-007); atos de liberação do livro na construção (decisão de uso já tomada — DHR-SPEC007-006); abertura da SPEC-049.
 
-**Volume:** CRITICAL — 12 BASpec / 14 cenários / 22 ADV / 8 EC / 12 RULE + 1 INV + §D3.1 + contrato lógico.
+**Volume:** CRITICAL — 12 BASpec / 14 cenários / 23 ADV / 8 EC / 12 RULE + 1 INV + §D3.1 + contrato lógico. *[v1.0: "vinte e dois ADV"]*
