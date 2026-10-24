@@ -27,6 +27,8 @@
 - Parte dos achados da R3 incide só na trilha de consulta/pacote (R3-M5 em parte, F2, `consumer_locus`, injeção na consulta), outra só na de formação/selo (R3-M1, M2, M4) — a separação reduz o tamanho de cada revisão.
 
 ## 3. Fronteira (decisão D4) — o que fica onde
+
+> **Nota aditiva (DHR-SPEC048-001, C-3, 2026-10-24 — sem mudar regra):** na linha "Visão de leitura \"WikiRAG\"" da tabela abaixo, a coluna da SPEC-048 passa à **SPEC-049 — WikiRAG Reading View** (slot indicativo, NÃO aberta). A SPEC-048 fica com busca, contagem, pacote, entrega e fidelidade F2.
 | SPEC-007 (reduzida — formação + selo) | SPEC-048 (nova — recuperação + pacote) |
 |---|---|
 | Entrada da fonte com proveniência e direito de uso | Busca/recuperação sobre o conhecimento **carimbado** e as fontes originais |

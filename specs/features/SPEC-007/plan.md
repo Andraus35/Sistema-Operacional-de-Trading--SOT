@@ -1,5 +1,7 @@
 # SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)
 
+> **Nota aditiva (DHR-SPEC048-001, C-3, 2026-10-24 — sem mudar regra):** onde este Plan e o Anexo T dizem que a visão de leitura WikiRAG / a página de leitura "vai à SPEC-048" (menções em l.63, 64, 71, 308, 319, 359, 443, 711, 1731, 1801 e no título do Anexo T), leia-se: a página de leitura passa à **SPEC-049 — WikiRAG Reading View** (slot indicativo, NÃO aberta); a SPEC-048 fica com recuperação, contagem, pacote, entrega e fidelidade F2.
+
 | Campo | Valor |
 |---|---|
 | ID | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness, **escopo reduzido pela divisão (DHR-SPEC007-002, Opção C): aquisição com proveniência e direitos, formação, fidelidade F1, validação, selo, sucessão/marca, atos de autorização (ACTREC), camada de invocação de modelo com trava de envio externo e permissão por derivação**. Entrega o **contrato do selo** de que a SPEC-006 depende (RULE-CKG-010 caminho (b)). Recuperação, pacote de evidência, WikiRAG e F2 passam à **SPEC-048** (slot indicativo, NÃO aberta). *[valor anterior — INV-07: "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness (linha de montagem governada que transforma **fonte** em **conhecimento publicado sob selo** e devolve **evidência candidata citável** aos agentes; entrega o **contrato do selo** de que a SPEC-006 depende — RULE-CKG-010 caminho (b))"]* |
