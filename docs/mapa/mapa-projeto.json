@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "53705e7af166f0c524e9d2df3582885a0a242d1b3e62fbaead7f135d89c10805",
+  "digest": "30599773886066264cc4f55c0295ce6985cf1ce864cdb1b0af26227caa811544",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -102,7 +102,7 @@
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
    "in": 172,
-   "out": 52
+   "out": 53
   },
   {
    "path": "GLOSSARIO.md",
@@ -1544,7 +1544,7 @@
    "area": "governance",
    "title": "DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do loop dos construtores (4Es)",
    "in": 5,
-   "out": 8
+   "out": 10
   },
   {
    "path": "governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md",
@@ -1690,7 +1690,7 @@
    "path": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-003 — Ata — Roteador determinístico de modelo por tarefa (hook PreToolUse/Agent)",
-   "in": 61,
+   "in": 63,
    "out": 8
   },
   {
@@ -3167,7 +3167,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 32,
+   "in": 33,
    "out": 38
   },
   {
@@ -3860,7 +3860,7 @@
   {
    "id": "DHR-ROTEAMENTO-003",
    "defined_in": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
-   "cited_by": 61
+   "cited_by": 63
   },
   {
    "id": "DHR-RPSA-001",
@@ -5900,7 +5900,7 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 32
+   "cited_by": 33
   },
   {
    "id": "SPEC-049",
@@ -6852,6 +6852,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
    "type": "id"
   },
   {
@@ -26421,6 +26426,11 @@
   },
   {
    "from": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
    "to": "governance/aprendizado/CAUSAS-PREVENCAO.md",
    "type": "path"
   },
@@ -26442,6 +26452,11 @@
   {
    "from": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
    "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
   {

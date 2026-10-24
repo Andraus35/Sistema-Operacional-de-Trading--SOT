@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-24** · digest `53705e7af166f0c5` · **457** documentos · **7022** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-24** · digest `3059977388606626` · **457** documentos · **7025** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -29,13 +29,13 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 ```mermaid
 flowchart LR
   docs["docs"] -->|1279| governance["governance"]
-  governance["governance"] -->|777| specs["specs"]
+  governance["governance"] -->|778| specs["specs"]
   governance["governance"] -->|403| raiz["raiz"]
   docs["docs"] -->|393| specs["specs"]
   specs["specs"] -->|379| governance["governance"]
   docs["docs"] -->|364| raiz["raiz"]
   governance["governance"] -->|191| backlog["backlog"]
-  raiz["raiz"] -->|153| governance["governance"]
+  raiz["raiz"] -->|154| governance["governance"]
   docs["docs"] -->|118| backlog["backlog"]
   backlog["backlog"] -->|108| governance["governance"]
   _claude[".claude"] -->|100| governance["governance"]
@@ -87,8 +87,8 @@ flowchart LR
 | `DHR-AUDITOR-EXTERNO-009` | 69 | [governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md) |
 | `DHR-SPEC006-001` | 66 | [governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md](../../governance/DHR-SPEC006-001_Ata_Homologacao_Abertura_SPEC-006.md) |
 | `SPEC-019` | 64 | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) |
+| `DHR-ROTEAMENTO-003` | 63 | [governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md](../../governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md) |
 | `BL-029` | 61 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
-| `DHR-ROTEAMENTO-003` | 61 | [governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md](../../governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md) |
 
 ## 4. Cadeia de Specs
 
@@ -141,7 +141,7 @@ flowchart LR
 | `SPEC-045` | Indicativa (não aberta) | — | 9 |
 | `SPEC-046` | **Homologada** | [specs/features/SPEC-046/plan.md](../../specs/features/SPEC-046/plan.md) | 29 |
 | `SPEC-047` | Indicativa (não aberta) | — | 21 |
-| `SPEC-048` | Em redação | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | 32 |
+| `SPEC-048` | Em redação | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | 33 |
 | `SPEC-049` | Indicativa (não aberta) | — | 14 |
 
 ## 5. Backlog e integridade
@@ -177,7 +177,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 
 | Documento | Título | ← | → |
 |---|---|---:|---:|
-| [AGENTS.md](../../AGENTS.md) | AGENTS.md — SOT (Sistema Operacional de Trading) | 172 | 52 |
+| [AGENTS.md](../../AGENTS.md) | AGENTS.md — SOT (Sistema Operacional de Trading) | 172 | 53 |
 | [GLOSSARIO.md](../../GLOSSARIO.md) | GLOSSÁRIO OFICIAL — SOT | 33 | 13 |
 | [HANDOFF.md](../../HANDOFF.md) | HANDOFF — SOT | 14 | 32 |
 | [README.md](../../README.md) | SOT-Harness | 3 | 9 |
@@ -277,7 +277,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md](../../governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md) | DHR-H001-001 — Ata — Fechamento da decisão H-001 (mecanismo físico de armazen... | 37 | 15 |
 | [DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md](../../governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md) | DHR-HOD-001 — Ata de Homologação do Plano de Higiene e Organização Documental... | 3 | 5 |
 | [DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md](../../governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md) | DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades... | 12 | 8 |
-| [DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md](../../governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md) | DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do ... | 5 | 8 |
+| [DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md](../../governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md) | DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do ... | 5 | 10 |
 | [DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md](../../governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md) | DHR-MAN-001 — Ata de Homologação do MAN-001 (Mapa da Arquitetura Normativa) | 4 | 3 |
 | [DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md](../../governance/DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md) | DHR-MC-COG-001 — Ata de Homologação da Admissão ao Backlog (BL-012 · Camada d... | 3 | 5 |
 | [DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md](../../governance/DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md) | DHR-MC-EXP-001 — Ata de Homologação da Admissão ao Backlog (BL-011 · Camada d... | 3 | 8 |
@@ -298,7 +298,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md](../../governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md) | DHR-REVISOR-DELTA-001 — Ata — Revisor SOT passa a revisar por delta (hash por... | 20 | 5 |
 | [DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md](../../governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md) | DHR-ROTEAMENTO-001 — Ata — Decisões D1–D6 sobre roteamento de modelos dos age... | 52 | 8 |
 | [DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md](../../governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md) | DHR-ROTEAMENTO-002 — Ata — Troca do modelo do Especificador SOT de claude-opu... | 34 | 6 |
-| [DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md](../../governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md) | DHR-ROTEAMENTO-003 — Ata — Roteador determinístico de modelo por tarefa (hook... | 61 | 8 |
+| [DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md](../../governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md) | DHR-ROTEAMENTO-003 — Ata — Roteador determinístico de modelo por tarefa (hook... | 63 | 8 |
 | [DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md](../../governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md) | DHR-RPSA-001 — Ata — Automação determinística dos carimbos RPSA e sincronizaç... | 4 | 10 |
 | [DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md](../../governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md) | DHR-RPSA-002 — Ata — Classificação RPSA automática após a aprovação de Andraus | 2 | 7 |
 | [DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md](../../governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md) | DHR-SES-001 — Ata de Homologação: SES-001, EUA-E03 e Emenda de Inversões Cont... | 6 | 5 |
@@ -495,7 +495,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-046/research.md) | Dossiê de Pesquisa — SPEC-046 (companion — convenção de nome do gate determin... | 0 | 5 |
 | [ABERTURA.md](../../specs/features/SPEC-048/ABERTURA.md) | Proposta de Abertura — SPEC-048: RAG Retrieval & Evidence Packet Harness (slo... | 4 | 24 |
 | [SPEC-048/checks.md](../../specs/features/SPEC-048/checks.md) | checks.md — Verificação de Spec da SPEC-048 (fase spec-first) | 2 | 12 |
-| [SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação +... | 32 | 38 |
+| [SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação +... | 33 | 38 |
 | [research.md](../../specs/features/SPEC-048/research.md) | Dossiê de Pesquisa — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ... | 2 | 26 |
 | [fibonacci.spec.md](../../specs/fibonacci.spec.md) | Spec — Fibonacci Validator | 3 | 1 |
 | [ict.spec.md](../../specs/ict.spec.md) | Spec — ICT Specialist (Execution Intelligence) | 2 | 1 |

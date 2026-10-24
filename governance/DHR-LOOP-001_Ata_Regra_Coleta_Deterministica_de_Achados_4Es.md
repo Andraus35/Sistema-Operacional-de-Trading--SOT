@@ -14,6 +14,7 @@
 
 ## 1. A regra (resumo; texto operacional em `AGENTS.md` §12)
 **Após cada parecer do Revisor, o Orquestrador DEVE, nesta ordem:**
+0. **Economia de rodada (acrescentado em 2026-10-24, a pedido de Andraus):** classificar os achados em M/S/O (DHR-ROTEAMENTO-003) e aplicar os **mecânicos pela classe M** (ficha + `roteador_modelos.py conferir`) em vez de reenviá-los a agente caro; o restante segue ao Especificador. *(Primeira aplicação: `governance/propostas/SPEC-048/FICHA-M-PLAN-R3.json`, 6 substituições, `conferir` OK.)*
 1. **Transcrever** o parecer com o bloco `<!-- ACHADOS-ESTRUTURADOS ... -->` (linhas `ID|SEV|CATEGORIA|CAUSA|PREVENCAO`, categoria da taxonomia fixa C01..C10/C99) — fonte determinística e prevalente sobre a heurística.
 2. **Rodar** `python scripts/loop_ledger.py` (gera `governance/aprendizado/LEDGER-ACHADOS.md`: achados por linha e rodada, categorias, recorrência, tendência de Médias, lacunas de prevenção) e commitar o ledger no mesmo commit do parecer.
 3. **Registrar** em `governance/aprendizado/CAUSAS-PREVENCAO.md` (append-only) a **causa-raiz** e a **prevenção** (existente, ausente ou proposta) de toda **Média** e de toda **categoria recorrente** (≥2 rodadas ou ≥2 linhas de trabalho) apontada como **LACUNA DE PREVENÇÃO** no ledger.
