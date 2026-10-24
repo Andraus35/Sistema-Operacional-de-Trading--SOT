@@ -90,3 +90,22 @@ class TestLoopLedger(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestRetrospectiva(unittest.TestCase):
+    def test_retro_check_exige_feita(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            monta(root)
+            self.assertEqual(L.main(["--root", td, "--retro-check", "SPEC-123"]), 1)
+            (root / "governance" / "aprendizado").mkdir(parents=True)
+            (root / L.RETRO).write_text("| SPEC-123 | x | 2026-01-01 | PENDENTE |\n", encoding="utf-8")
+            self.assertEqual(L.main(["--root", td, "--retro-check", "SPEC-123"]), 1)
+            (root / L.RETRO).write_text("| SPEC-123 | x | 2026-01-01 | FEITA |\n", encoding="utf-8")
+            self.assertEqual(L.main(["--root", td, "--retro-check", "SPEC-123"]), 0)
+
+    def test_ledger_lista_specs_sem_retrospectiva(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            monta(root)
+            self.assertIn("SPEC-123", L.gerar(root).split("## 5.")[1].split("## 6.")[0])

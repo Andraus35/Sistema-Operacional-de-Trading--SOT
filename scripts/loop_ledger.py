@@ -16,6 +16,7 @@ Uso:
   python scripts/loop_ledger.py            # (re)gera o ledger
   python scripts/loop_ledger.py --check    # exit 1 se o ledger está desatualizado
   python scripts/loop_ledger.py --stdout   # imprime sem gravar
+  python scripts/loop_ledger.py --retro-check SPEC-007   # exit 1 se falta a retrospectiva de fechamento (antes de abrir outra Spec)
 """
 import argparse
 import re
@@ -26,6 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = "governance/aprendizado/LEDGER-ACHADOS.md"
 REGISTRY = "governance/aprendizado/CAUSAS-PREVENCAO.md"
+RETRO = "governance/aprendizado/RETROSPECTIVAS.md"
 
 # Taxonomia fixa e ORDENADA (a primeira que casa vence). Heurística: não substitui a categoria estruturada do parecer.
 TAXONOMIA = [
@@ -137,6 +139,22 @@ def ler_registro(root):
     return reg
 
 
+def retros_feitas(root):
+    """Specs com retrospectiva de fechamento FEITA: linhas `| SPEC-nnn | ... | FEITA |` em RETROSPECTIVAS.md."""
+    p = root / RETRO
+    feitas = set()
+    if p.exists():
+        for ln in p.read_text(encoding="utf-8").splitlines():
+            m = re.match(r"^\|\s*(SPEC-\d{3})\s*\|.*\|\s*FEITA\s*\|\s*$", ln)
+            if m:
+                feitas.add(m.group(1))
+    return feitas
+
+
+def specs_com_parecer(root):
+    return sorted({chave.split()[0] for chave in coletar(root)})
+
+
 def gerar(root):
     linhas = coletar(root)
     reg = ler_registro(root)
@@ -196,7 +214,13 @@ def gerar(root):
             out.append(f"| {cod} | {nome} | {n} | {rod} | registrar causa-raiz e prevenção proposta em `{REGISTRY}`; gate/processo só por ordem de Andraus |")
     else:
         out.append("Nenhuma.")
-    out += ["", "## 5. Frase de controle", "",
+    feitas = retros_feitas(root)
+    pend = [s for s in specs_com_parecer(root) if s not in feitas]
+    out += ["", "## 5. Retrospectivas de fechamento (individual e coletiva) — regra LOOP-001", "",
+            "O tratamento de melhoria ocorre ao FIM do trabalho completo de uma Spec e ANTES de abrir outra (ordem de Andraus, 2026-10-24). "
+            "Specs com parecer e sem retrospectiva `FEITA` em `" + RETRO + "` (a Spec ainda em curso aparece aqui até fechar; o Orquestrador confere "
+            "`--retro-check SPEC-nnn` de cada Spec FECHADA antes de abrir outra): " + (", ".join(pend) if pend else "nenhuma"), ""]
+    out += ["## 6. Frase de controle", "",
             "Contagens por palavra-chave são **indicativas**; a fonte de verdade de cada achado é o parecer. Nenhuma decisão aberta é fechada por este arquivo (CONS-01).", ""]
     return "\n".join(out)
 
@@ -205,9 +229,16 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--stdout", action="store_true")
+    ap.add_argument("--retro-check", metavar="SPEC-nnn", help="exit 1 se a Spec não tem retrospectiva de fechamento FEITA (usar antes de abrir outra Spec)")
     ap.add_argument("--root", default=str(ROOT))
     a = ap.parse_args(argv)
     root = Path(a.root)
+    if a.retro_check:
+        if a.retro_check in retros_feitas(root):
+            print(f"Retrospectiva de {a.retro_check}: FEITA.")
+            return 0
+        print(f"RETROSPECTIVA PENDENTE para {a.retro_check} — faça (individual e coletiva) em {RETRO} antes de abrir outra Spec, ou Andraus dispensa.")
+        return 1
     txt = gerar(root)
     if a.stdout:
         print(txt)

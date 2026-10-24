@@ -66,6 +66,10 @@ Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo 
 | C06 | contagem_historico_anexo | 7 | 5 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
 | C10 | estado_maquina | 2 | 2 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
 
-## 5. Frase de controle
+## 5. Retrospectivas de fechamento (individual e coletiva) — regra LOOP-001
+
+O tratamento de melhoria ocorre ao FIM do trabalho completo de uma Spec e ANTES de abrir outra (ordem de Andraus, 2026-10-24). Specs com parecer e sem retrospectiva `FEITA` em `governance/aprendizado/RETROSPECTIVAS.md` (a Spec ainda em curso aparece aqui até fechar; o Orquestrador confere `--retro-check SPEC-nnn` de cada Spec FECHADA antes de abrir outra): SPEC-006, SPEC-007, SPEC-048
+
+## 6. Frase de controle
 
 Contagens por palavra-chave são **indicativas**; a fonte de verdade de cada achado é o parecer. Nenhuma decisão aberta é fechada por este arquivo (CONS-01).
