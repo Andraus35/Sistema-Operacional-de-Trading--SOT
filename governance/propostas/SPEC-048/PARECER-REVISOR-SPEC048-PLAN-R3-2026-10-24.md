@@ -29,3 +29,6 @@ n-09|MENOR|C05|Campo de registro (rejected_reason × gaps) e risco residual da e
 
 ## Adendo do Orquestrador (2026-10-24)
 Primeiro parecer transcrito sob a regra LOOP-001 (bloco estruturado acima). O ledger `governance/aprendizado/LEDGER-ACHADOS.md` foi regerado no mesmo commit.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G2:** `revisor_gate.py` sobre o plan.md = `PASSOU_D`, 0 sinais H, **nenhum achado a confirmar ou descartar** (as 4 verificações informativas apontam para outros arquivos, fora do escopo desta Spec). O aviso anterior de `request_fingerprint` não reapareceu.
