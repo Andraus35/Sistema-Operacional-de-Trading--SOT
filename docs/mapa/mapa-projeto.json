@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "53c51f6e8f785afa7a7b664ff70e680d04f2a7b0c1cc4d68ff7e8b8aaa643aed",
+  "digest": "bd439a03b51b16b3657061d87e11623c26d78ffdc375e0ccc1be8480e13d0489",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2565,7 +2565,7 @@
    "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md",
    "area": "governance",
    "title": "Parecer do Revisor — Plan da SPEC-048 v1.1 (CANDIDATO), rodada 2 (S2, por delta contra b1a0231) — 2026-10-24",
-   "in": 1,
+   "in": 2,
    "out": 7
   },
   {
@@ -3126,7 +3126,7 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-048 (fase spec-first)",
    "in": 2,
-   "out": 11
+   "out": 12
   },
   {
    "path": "specs/features/SPEC-048/plan.md",
@@ -40097,6 +40097,11 @@
   {
    "from": "specs/features/SPEC-048/checks.md",
    "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/checks.md",
+   "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md",
    "type": "path"
   },
   {

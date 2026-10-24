@@ -1,6 +1,7 @@
 # checks.md — Verificação de Spec da SPEC-048 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-048/plan.md` **v1.1 (CANDIDATA — correção da rodada 1; aguarda Revisor rodada 2, por delta contra o commit b1a0231, e homologação de Andraus)** (RAG Retrieval & Evidence Packet Harness). *[v1.0: "v1.0 (CANDIDATA — primeira entrega do Plan; aguarda Revisor rodada 1, integral, e homologação de Andraus)"]*
+**Objeto:** `specs/features/SPEC-048/plan.md` **v1.2 (CANDIDATA — correção da rodada 2; aguarda Revisor rodada 3, por delta contra o commit 0c5adfd, e homologação de Andraus)** (RAG Retrieval & Evidence Packet Harness). *[v1.1: "v1.1 (CANDIDATA — correção da rodada 1; aguarda Revisor rodada 2, por delta contra o commit b1a0231, e homologação de Andraus)"]*
+**Parecer tratado na v1.2:** R2 `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md` (NÃO CONFORME — 1 Média N-01, 5 Menores n-02..n-06). Contagens inalteradas. *[v1.0: "v1.0 (CANDIDATA — primeira entrega do Plan; aguarda Revisor rodada 1, integral, e homologação de Andraus)"]*
 **Parecer tratado:** R1 `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md` (NÃO CONFORME — 3 Médias M-01..M-03, 14 Menores m-01..m-14, adendo m-15).
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — **NÃO** é teste de runtime, **NÃO** é parecer do Revisor, **NÃO** é homologação. "VERIFY" interno = feedback. [FONTE: atomic-spec §14]
 **Método:** atomic-spec.md v1.5 · tlc-spec-lean (PLAN = Spec; CHECKS = verificação de spec) · overlay GUS-TLC-001
@@ -9,6 +10,17 @@
 **Contagens declaradas (por cabeçalho/linha em coluna 0 — contadas na redação; a reconferir no ambiente pai):** **12** RULE-RET (`^RULE-RET-` em bloco: 001–012), **1** INV-RET (`^INV-RET-01`), **12** BASpec (`^### BASpec-RET-`), **12** EARS (`^N. (RET-`), **8** EC (`^### EC-RET-`: 001–008), **14 cenários** (`^### Cenário-RET-T`: T01–T14), **23 ADV** (`^### ADV-RET-`: 01–23) *[v1.0: "vinte e dois ADV (01–22)"; ADV-RET-23 acrescentado na v1.1 — M-01]*. Estados locais de D5: `Q_RECEBIDA`, `Q_RECUPERANDO`, `Q_VALIDANDO`, `Q_ENTREGUE`, `Q_NEGADA` (`Q_MONTADO` da v1.0 substituído — M-02).
 
 ---
+
+## R2 — verificação das correções (v1.2)
+
+| Achado | Âncora no Plan v1.2 | Positivo / negativo | Estado |
+|---|---|---|---|
+| **N-01** desfecho duplo da síntese sem rótulo | RULE-RET-004 "AFIRMAÇÕES DA SÍNTESE" (a) gate / (b) rede de segurança; RULE-RET-010 GATE; BASpec-RET-010; EARS 10; §D3.1; EC-RET-006 | ADV-RET-04 positivo / (a)(b) `SYNTHESIS_CLAIM_INVALID` com entrada injetável; (c) `SYNTHESIS_CLAIM_UNLABELED`, não entregue | ✔ — conferir por leitura: cada condição tem um código e um efeito, iguais nos cinco lugares |
+| n-02 | contrato `delivery_record` (`guard_run_ref`, `acts_snapshot_ref`, `guard_evaluated_at`); EC-RET-002/003 EVIDENCE | T13(a); ADV-RET-23 | ✔ |
+| n-03 | RULE-RET-005 "FRESCOR DO REENVIO"; `packet_assembled_at` | T13(a) | ✔ (escolha declarada: "como montado em t0") |
+| n-04 | D5 (`Q_RECUPERANDO → Q_NEGADA`; novo `query_id` por pedido; repetição após `Q_NEGADA`); `query_record.replay_of` | T13(a) | ✔ |
+| n-05 | Termo 9 da acepção; linha das lições reescrita | — | ✔ |
+| n-06 | RULE-RET-005 "RECÁLCULO NO PACOTE NOVO"; D4.4 (7); BASpec-RET-006 QUANDO e VERIFICADO POR | ADV-RET-23 | ✔ |
 
 ## R1 — verificação das correções (v1.1)
 
