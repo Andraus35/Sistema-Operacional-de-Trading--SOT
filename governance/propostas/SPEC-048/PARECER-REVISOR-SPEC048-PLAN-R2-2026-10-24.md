@@ -16,3 +16,6 @@ Gates do Orquestrador; veracidade das fontes web; SPEC-002 v1.0 como homologada 
 
 ## Encaminhamento
 Devolver ao Especificador: N-01 (obrigatória; correção pontual) e, de preferência, n-02..n-06 → v1.2. Rodada 3 por delta contra o commit da v1.1 (0c5adfd). Depois de N-01: CONFORME condicional, pendente de M-001/K-001 e demais decisões abertas e das respostas de Andraus a P-1, P-2, P-3.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G2:** `revisor_gate.py` = `PASSOU_D`, 0 sinais H. O único aviso (`[campos_atribuidos_baseline] plan.md:156 request_fingerprint atribuído a SPEC-007`) já foi tratado pelo Revisor no item (6) do parecer: **falso-positivo** (a l.156 diz que os campos são próprios da SPEC-048; `request_fingerprint` vem da SPEC-004 RULE-CBP-005, l.251/382/729; a SPEC-007 não o contém). A ressalva real (homônimo `resolved_content_hash`) é a n-05, já repassada ao Especificador para a v1.2. Confirmado; nada a descartar além disso.
