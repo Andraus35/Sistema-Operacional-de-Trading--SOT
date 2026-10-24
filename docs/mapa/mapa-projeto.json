@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "eff5332b95f8df3be6b8811de9bc7936ec54c5327af116d44339b61543703198",
+  "digest": "2d4deedbb7a4b42922ec12838b53a5c103c813991eb1e96e45fb20f037d45394",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 281,
+   "in": 282,
    "out": 77
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 276,
+   "in": 277,
    "out": 112
   },
   {
@@ -1781,7 +1781,7 @@
    "path": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC007-002 — Ata de Decisão — Divisão da SPEC-007 (Opção C) e slot da SPEC-048",
-   "in": 16,
+   "in": 17,
    "out": 19
   },
   {
@@ -2173,7 +2173,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 349,
+   "in": 350,
    "out": 39
   },
   {
@@ -2490,6 +2490,13 @@
    "title": "Parecer do Revisor — Proposta de abertura da SPEC-048 + Dossiê, rodada 1 (S3, integral) — 2026-10-24",
    "in": 1,
    "out": 13
+  },
+  {
+   "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — Abertura da SPEC-048 (Revisão 3 do Especificador), rodada 2 (S3) — 2026-10-24",
+   "in": 0,
+   "out": 5
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -2908,7 +2915,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 113,
+   "in": 114,
    "out": 36
   },
   {
@@ -3129,7 +3136,7 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 67
+   "cited_by": 68
   },
   {
    "id": "BL-011",
@@ -3164,7 +3171,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 65
+   "cited_by": 66
   },
   {
    "id": "BL-018",
@@ -3824,7 +3831,7 @@
   {
    "id": "DHR-SPEC007-002",
    "defined_in": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "DHR-SPEC007-003",
@@ -4069,7 +4076,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 105
+   "cited_by": 106
   },
   {
    "id": "INV-10",
@@ -4124,7 +4131,7 @@
   {
    "id": "INV-KFH-02",
    "defined_in": null,
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "INV-RISK",
@@ -5069,12 +5076,12 @@
   {
    "id": "RULE-KFH-015",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-KFH-016",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-KFH-017",
@@ -5474,7 +5481,7 @@
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 113
+   "cited_by": 114
   },
   {
    "id": "SPEC-008",
@@ -5679,7 +5686,7 @@
   {
    "id": "SPEC-048",
    "defined_in": "ROADMAP.md",
-   "cited_by": 17
+   "cited_by": 18
   }
  ],
  "edges": [
@@ -34077,6 +34084,31 @@
    "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md",
    "to": "specs/features/SPEC-048/ABERTURA.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
+   "to": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
   },
   {
    "from": "rag/synthesis.knowledge.md",
