@@ -4,16 +4,16 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-24** · digest `83342e6ad13156a1` · **432** documentos · **6515** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-24** · digest `32df122769c3f216` · **433** documentos · **6520** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
 | Área | Docs | Função | Mais referenciados |
 |---|---:|---|---|
 | **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (274) · [atomic-spec.md](../../atomic-spec.md) (186) · [AGENTS.md](../../AGENTS.md) (162) |
-| **governance** | 227 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (342) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (114) · [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) (80) |
+| **governance** | 228 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (343) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (114) · [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) (80) |
 | **canon** | 9 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (161) · [CCM-001-canonical-conviction-model.md](../../canon/CCM-001-canonical-conviction-model.md) (106) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (101) |
-| **specs** | 49 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (180) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (169) · [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (144) |
+| **specs** | 49 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (181) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (169) · [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (144) |
 | **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (270) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (21) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
 | **reference** | 28 | referências externas não-normativas (camadas, master contracts) | [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (25) · [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (21) · [SOT-RISK-MASTER-001_Consolidado.md](../../reference/SOT-RISK-MASTER-001_Consolidado.md) (8) |
 | **rag** | 5 | chunks de conhecimento por agente | [synthesis.knowledge.md](../../rag/synthesis.knowledge.md) (3) · [smc.knowledge.md](../../rag/smc.knowledge.md) (1) |
@@ -29,7 +29,7 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 ```mermaid
 flowchart LR
   docs["docs"] -->|1185| governance["governance"]
-  governance["governance"] -->|713| specs["specs"]
+  governance["governance"] -->|717| specs["specs"]
   governance["governance"] -->|393| raiz["raiz"]
   docs["docs"] -->|328| raiz["raiz"]
   docs["docs"] -->|326| specs["specs"]
@@ -64,19 +64,19 @@ flowchart LR
 
 | ID | Documentos que citam | Definido em |
 |---|---:|---|
-| `INV-07` | 249 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-006` | 180 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
+| `INV-07` | 250 | [governance/RULES.md](../../governance/RULES.md) |
+| `SPEC-006` | 181 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
 | `SPEC-002` | 144 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
 | `SPEC-003` | 142 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
 | `SPEC-001` | 118 | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) |
-| `SPEC-007` | 106 | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) |
+| `SPEC-007` | 107 | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) |
 | `INV-09` | 104 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-005` | 102 | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) |
 | `BL-011` | 91 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `SPEC-004` | 91 | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) |
 | `BL-003` | 88 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `RULE-ECC-01` | 87 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-020` | 83 | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) |
+| `SPEC-020` | 84 | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) |
 | `INV-05` | 77 | [governance/RULES.md](../../governance/RULES.md) |
 | `EUA-E04` | 75 | [governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) |
 | `RULE-MET-01` | 75 | [governance/RULES.md](../../governance/RULES.md) |
@@ -99,8 +99,8 @@ flowchart LR
 | `SPEC-003` | **Homologada** | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | 142 |
 | `SPEC-004` | **Homologada** | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) | 91 |
 | `SPEC-005` | **Homologada** | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) | 102 |
-| `SPEC-006` | **Homologada** | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | 180 |
-| `SPEC-007` | Em redação | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | 106 |
+| `SPEC-006` | **Homologada** | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | 181 |
+| `SPEC-007` | Em redação | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | 107 |
 | `SPEC-008` | Indicativa (não aberta) | — | 31 |
 | `SPEC-009` | Indicativa (não aberta) | — | 37 |
 | `SPEC-010` | Indicativa (não aberta) | — | 45 |
@@ -113,7 +113,7 @@ flowchart LR
 | `SPEC-017` | Indicativa (não aberta) | — | 7 |
 | `SPEC-018` | Indicativa (não aberta) | — | 71 |
 | `SPEC-019` | **Homologada** | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | 64 |
-| `SPEC-020` | **Homologada** | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | 83 |
+| `SPEC-020` | **Homologada** | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | 84 |
 | `SPEC-021` | **Homologada** | [specs/features/SPEC-021/plan.md](../../specs/features/SPEC-021/plan.md) | 46 |
 | `SPEC-022` | Indicativa (não aberta) | — | 10 |
 | `SPEC-023` | Indicativa (não aberta) | — | 4 |
@@ -163,6 +163,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 - [governance/propostas/SPEC-006/linha-spec006-plan/checks-v1.8-candidato.md](../../governance/propostas/SPEC-006/linha-spec006-plan/checks-v1.8-candidato.md) — checks.md — Verificação de Spec da SPEC-006 (fase spec-first)
 - [governance/propostas/SPEC-006/linha-spec006-plan/plan-v1.8-candidato.md](../../governance/propostas/SPEC-006/linha-spec006-plan/plan-v1.8-candidato.md) — SPEC-006 — Cognitive Knowledge Graph
 - [governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R2-2026-10-23.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R2-2026-10-23.md) — Parecer do Revisor — Plan da SPEC-007 v1.1 (CANDIDATA), rodada 2 (S2, revisão integral na prática) — 2026-10-23
+- [governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md) — Parecer do Revisor — Plan reduzido da SPEC-007 v2.2 (CANDIDATA), rodada 6 (S2) — 2026-10-24
 - [rag/elliott-wave.knowledge.md](../../rag/elliott-wave.knowledge.md) — RAG — Elliott Wave Specialist Knowledge Base
 - [rag/fibonacci.knowledge.md](../../rag/fibonacci.knowledge.md) — RAG — Fibonacci Validator Knowledge Base
 - [rag/ict.knowledge.md](../../rag/ict.knowledge.md) — RAG — ICT Specialist Knowledge Base
@@ -372,7 +373,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md](../../governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md) | PE-PR-PAP-001 — Prompts de Invocação do Especificador e do Revisor para o PAP... | 9 | 13 |
 | [PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md](../../governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md) | PP-PAP-001 — Pacote de Partida do PAP-001 | 12 | 5 |
 | [RCH-001_Registro_Ciclos_Hygiene.md](../../governance/RCH-001_Registro_Ciclos_Hygiene.md) | RCH-001 — Registro de Ciclos de Hygiene de Princípios | 19 | 22 |
-| [RULES.md](../../governance/RULES.md) | Rules — SOT (Sistema Operacional de Trading) | 342 | 39 |
+| [RULES.md](../../governance/RULES.md) | Rules — SOT (Sistema Operacional de Trading) | 343 | 39 |
 | [SES-001_Especializacao_Cognitiva_Trading.md](../../governance/SES-001_Especializacao_Cognitiva_Trading.md) | EMENDA SES-001 | 59 | 3 |
 | [AGENTE-AUDITOR-EXTERNO.md](../../governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md) | AGENTE AUDITOR EXTERNO — SOT (documento de instalação e instruções) | 2 | 12 |
 | [BRIEFING-GPT_PROMPT.md](../../governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md) | BRIEFING-GPT — Instruções prontas para colar no Auditor Externo ("GPT") | 4 | 1 |
@@ -416,6 +417,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md) | Parecer do Revisor — Plan da SPEC-007 v1.2 (CANDIDATA), rodada 3 — 2026-10-24 | 2 | 7 |
 | [PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md) | Parecer do Revisor — Plan reduzido da SPEC-007 v2.0 (CANDIDATA), rodada 4 (S3... | 3 | 7 |
 | [PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md) | Parecer do Revisor — Plan reduzido da SPEC-007 v2.1 (CANDIDATA), rodada 5 (S2... | 2 | 8 |
+| [PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md](../../governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md) | Parecer do Revisor — Plan reduzido da SPEC-007 v2.2 (CANDIDATA), rodada 6 (S2... | 0 | 4 |
 
 ### canon
 
@@ -457,16 +459,16 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-005/research.md) | Dossiê de Pesquisa — SPEC-005: Cognitive Event Bus (slot ROADMAP §5, FASE 2) | 2 | 23 |
 | [ABERTURA.md](../../specs/features/SPEC-006/ABERTURA.md) | Proposta de Abertura — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, ... | 4 | 19 |
 | [SPEC-006/checks.md](../../specs/features/SPEC-006/checks.md) | checks.md — Verificação de Spec da SPEC-006 (fase spec-first) | 5 | 16 |
-| [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 180 | 34 |
+| [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 181 | 34 |
 | [research.md](../../specs/features/SPEC-006/research.md) | Dossiê de Pesquisa — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, FA... | 6 | 24 |
 | [ABERTURA.md](../../specs/features/SPEC-007/ABERTURA.md) | Proposta de Abertura — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness ... | 10 | 26 |
 | [SPEC-007/checks.md](../../specs/features/SPEC-007/checks.md) | checks.md — Verificação de Spec da SPEC-007 (fase spec-first) | 2 | 13 |
-| [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (forma... | 106 | 34 |
+| [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (forma... | 107 | 34 |
 | [research.md](../../specs/features/SPEC-007/research.md) | Dossiê de Pesquisa — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness (s... | 3 | 28 |
 | [SPEC-019/checks.md](../../specs/features/SPEC-019/checks.md) | checks.md — Verificação de Spec da SPEC-019 (fase spec-first) | 1 | 8 |
 | [SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical) | 64 | 19 |
 | [SPEC-020/checks.md](../../specs/features/SPEC-020/checks.md) | checks.md — Verificação de Spec da SPEC-020 (fase spec-first) | 2 | 8 |
-| [SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) | 83 | 21 |
+| [SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) | 84 | 21 |
 | [research.md](../../specs/features/SPEC-020/research.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) — DOSSIÊ DE PESQUISA (... | 1 | 16 |
 | [SPEC-021/checks.md](../../specs/features/SPEC-021/checks.md) | checks.md — Verificação de Spec da SPEC-021 (fase spec-first) | 1 | 10 |
 | [SPEC-021/plan.md](../../specs/features/SPEC-021/plan.md) | SPEC-021 — Harness Score / Maturity Model | 46 | 18 |
