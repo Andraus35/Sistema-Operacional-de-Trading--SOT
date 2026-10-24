@@ -1,0 +1,21 @@
+Repositório: https://github.com/amazon-science/RAGChecker
+Plataforma: GitHub
+URL: https://github.com/amazon-science/RAGChecker
+Data de acesso: 2026-10-24
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 1100
+  (exibido "1.1k" na página)
+Licença: Apache-2.0
+Último commit: 2024-12-13
+  (topo da página de commits do main: "update readme", commit 6091f08 — FORA da janela de 12 meses)
+Arquivado: não
+Alertas de segurança graves abertos: 0
+  (INDETERMINADO, registrado como 0 — mesmo critério)
+Dono: amazon-science (organização identificável)
+Veredito de elegibilidade: NÃO ELEGÍVEL (último commit há mais de 12 meses)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-24):
+"RAGChecker is an advanced automatic evaluation framework designed to assess and diagnose Retrieval-Augmented Generation"
+
+Uso no SOT: registrado e descartado pela régua — código não é adotado; a alegação usa só o paper (SRC-RAGCHECKER-01).

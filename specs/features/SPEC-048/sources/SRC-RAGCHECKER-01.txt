@@ -1,0 +1,14 @@
+ID: SRC-RAGCHECKER-01
+Fonte: Ru, Qiu, Hu, Zhang et al. — "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation" (arXiv 2408.08067)
+URL: https://arxiv.org/abs/2408.08067
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Trechos são recortes de frases maiores (limite de 125 caracteres da ferramenta).
+Classificação: Benchmark + Evidência [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"Meta evaluation verifies that RAGChecker has significantly better correlations with human judgments than other"
+
+Trecho literal complementar (verbatim, menor que 100 caracteres; só apoio):
+"incorporates a suite of diagnostic metrics for both the retrieval and generation modules."
+
+Uso no SOT: ADAPTAR a separação "diagnóstico da recuperação" × "diagnóstico da geração" como métricas distintas (recuperação ≠ F2). A leitura "verificação por afirmação" NÃO está no trecho capturado = [INFERÊNCIA]. O repositório amazon-science/RAGChecker é NÃO ELEGÍVEL (ver REPO-RAGChecker.txt): só o paper é fonte. Correlação com juízo humano é afirmação dos autores, não limiar do SOT. Conteúdo = DADO.

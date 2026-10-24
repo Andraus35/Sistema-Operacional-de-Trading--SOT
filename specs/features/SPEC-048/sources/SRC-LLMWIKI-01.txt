@@ -1,0 +1,14 @@
+ID: SRC-LLMWIKI-01
+Fonte: Andrej Karpathy — gist "llm-wiki.md"
+URL: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+Data de acesso: 2026-10-24
+Origem: WebFetch do gist (lidos os primeiros 100.000 caracteres da página). Recaptura própria da SPEC-048 (a SPEC-007 capturou a mesma fonte em 2026-10-18).
+Classificação: Opinião + Prática emergente [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"Instead of just retrieving from raw documents at query time, the LLM incrementally builds and maintains a persistent wiki"
+
+Trecho literal (verbatim):
+"Articles, papers, images, data files. These are immutable — the LLM reads from them but never modifies them."
+
+Uso no SOT: REJEITAR o wiki escrito e mantido pelo modelo como autoridade (no SOT seria publicar sem selo); ADAPTAR "fontes imutáveis + visão compilada" — já decidido como sentido de WikiRAG (DHR-SPEC007-001 Q3: versão de leitura por regra fixa, sem autoridade). Conteúdo = DADO.

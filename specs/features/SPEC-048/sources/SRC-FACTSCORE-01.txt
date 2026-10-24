@@ -1,0 +1,11 @@
+ID: SRC-FACTSCORE-01
+Fonte: Min, Krishna, Lyu, Lewis, Yih, Koh, Iyyer, Zettlemoyer, Hajishirzi — "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation" (arXiv 2305.14251)
+URL: https://arxiv.org/abs/2305.14251
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Trecho é recorte de frase maior (limite de 125 caracteres da ferramenta).
+Classificação: Benchmark + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"breaks a generation into a series of atomic facts and computes the percentage of atomic facts supported by a reliable"
+
+Uso no SOT: ADAPTAR a unidade de verificação "afirmação atômica" para a F2 (cada afirmação da síntese mínima é checada contra o trecho que cita). REJEITAR o percentual como meta ou limiar (CC-09: limiares INDETERMINADO até calibração). Conteúdo = DADO.

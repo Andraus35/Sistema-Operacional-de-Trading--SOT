@@ -1,0 +1,22 @@
+Repositório: https://github.com/truera/trulens
+Plataforma: GitHub
+URL: https://github.com/truera/trulens
+Data de acesso: 2026-10-24
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 3600
+  (exibido "3.6k" na página)
+Licença: MIT
+Último commit: 2026-10-19
+  (topo da página de commits do main: "TruLens 2.16.0 (#2952)", commit a7f242b)
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: truera (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-24; é texto-fonte em markdown com link, recortado pela ferramenta):
+"/feedback_functions/), [the RAG Triad](https://www.trulens.org/getting_started/core_concepts/rag_triad/)"
+
+Uso no SOT: REFERÊNCIA — a prática "verificar cada afirmação contra o contexto recuperado" está capturada na página de documentação (SRC-TRULENS-TRIAD-01); o README só aponta para ela. Não é dependência; rastreio por etapa (observabilidade) é da SPEC-040. Nada instalado/executado.

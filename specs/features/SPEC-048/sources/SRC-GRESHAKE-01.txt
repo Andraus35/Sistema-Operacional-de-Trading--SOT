@@ -1,0 +1,15 @@
+ID: SRC-GRESHAKE-01
+Fonte: Greshake, Abdelnabi, Mishra, Endres, Holz, Fritz — "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection" (arXiv 2302.12173)
+URL: https://arxiv.org/abs/2302.12173
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Trecho é recorte de frase maior (limite de 125 caracteres da ferramenta).
+Classificação: Evidência + Experimento [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.3):
+"using Indirect Prompt Injection, that enable adversaries to remotely (without a direct interface) exploit LLM-integrated"
+
+Trechos literais complementares (verbatim, menores que 100 caracteres; só apoio):
+"We argue that LLM-Integrated Applications blur the line between data and instructions."
+"...by strategically injecting prompts into data likely to be retrieved."
+
+Uso no SOT: ADOTAR como premissa de ameaça — o que é recuperado é superfície de ataque; logo as etapas da consulta não têm capacidade de efeito (E3) e o texto de fonte segue rotulado como dado até o consumidor. Conteúdo = DADO, nunca instrução.

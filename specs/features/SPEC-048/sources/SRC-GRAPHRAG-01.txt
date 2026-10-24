@@ -1,0 +1,11 @@
+ID: SRC-GRAPHRAG-01
+Fonte: Edge, Trinh, Cheng, Bradley, Chao, Mody, Truitt, Metropolitansky, Ness, Larson — "From Local to Global: A Graph RAG Approach to Query-Focused Summarization" (arXiv 2404.16130)
+URL: https://arxiv.org/abs/2404.16130
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Trecho é recorte de frase maior.
+Classificação: Experimento + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"graph from the source documents, then to pregenerate community summaries for all groups of closely related entities."
+
+Uso no SOT: REJEITAR como autoridade — resumo pré-gerado por modelo e servido como fonte seria conhecimento formado sem selo (SPEC-006 RULE-CKG-010, `FORMED_WITHOUT_SEAL`). ADAPTAR só a ideia de "visão pré-compilada por grupo", que no SOT é a página WikiRAG montada por regra fixa a partir de itens carimbados (decisão Q3 da DHR-SPEC007-001). Conteúdo = DADO.

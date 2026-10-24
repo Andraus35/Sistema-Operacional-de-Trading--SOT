@@ -1,0 +1,22 @@
+Repositório: https://github.com/deepset-ai/haystack
+Plataforma: GitHub
+URL: https://github.com/deepset-ai/haystack
+Data de acesso: 2026-10-24
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 26800
+  (exibido "26.8k" na página)
+Licença: Apache-2.0
+Último commit: 2026-10-24
+  (topo da página de commits do main: "docs: sync Haystack API reference on Docusaurus (#13408)", commit 622967d)
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: deepset-ai (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-24):
+"Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation."
+
+Uso no SOT: REFERÊNCIA — adaptar a separação de etapas (recuperação, roteamento, geração) como contratos distintos e com controle explícito do harness. Framework não escolhido (neutralidade tecnológica; motor = BUILD). Nada instalado/executado.

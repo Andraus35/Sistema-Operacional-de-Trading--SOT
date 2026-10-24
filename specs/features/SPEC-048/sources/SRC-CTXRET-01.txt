@@ -1,0 +1,14 @@
+ID: SRC-CTXRET-01
+Fonte: Anthropic — "Introducing Contextual Retrieval" (2024)
+URL: https://www.anthropic.com/news/contextual-retrieval
+Data de acesso: 2026-10-24
+Origem: WebFetch da página. Recaptura própria da SPEC-048 (a SPEC-007 capturou a mesma fonte em 2026-10-18, com outros trechos).
+Classificação: Prática + Experimento (do fornecedor, em corpus próprio) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.4):
+"Combining Contextual Embeddings and Contextual BM25 reduced the top-20-chunk retrieval failure rate by 49%"
+
+Trecho literal complementar (verbatim, menor que 100 caracteres; só apoio):
+"a ranking function that uses lexical matching to find precise word or phrase matches."
+
+Uso no SOT: ADAPTAR — recuperação híbrida (lexical + semântica) e reordenação como ESTRATÉGIAS DECLARADAS com condição de uso; a busca lexical importa para termos exatos (ticker, nome de padrão, nível numérico). O percentual vale para o corpus do fornecedor: NÃO é meta nem limiar do SOT (CC-09). Motor = BUILD. Conteúdo = DADO.

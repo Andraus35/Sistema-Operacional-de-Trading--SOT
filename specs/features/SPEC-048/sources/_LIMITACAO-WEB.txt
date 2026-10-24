@@ -1,0 +1,22 @@
+Limitações da pesquisa web — Dossiê SPEC-048 (acesso 2026-10-24)
+
+1. Métricas de repositório (estrelas, licença, arquivamento, dono) foram lidas da página HTML pública do GitHub;
+   a data do último commit foi lida do topo da página de commits do branch main. Estrelas são o valor
+   arredondado exibido pela página (ex.: "16.1k" -> 16100). A API do GitHub não foi usada nesta sessão.
+2. Alertas de segurança: o estado privado do Dependabot não é público -> INDETERMINADO, registrado como 0
+   pelo mesmo critério das capturas das SPEC-006 e SPEC-007. É limitação conhecida da régua aplicada sem
+   acesso privilegiado; um repositório com alerta grave não público passaria despercebido.
+3. A ferramenta WebFetch limita cada citação literal a cerca de 125 caracteres. Os trechos principais em
+   sources/*.txt são literais e têm >=100 caracteres; vários são recorte de frase maior (anotado em cada
+   captura). Trechos "complementares" menores que 100 caracteres são só apoio e não sustentam alegação sozinhos.
+   Nenhum trecho foi completado por paráfrase; onde a ferramenta resumiu (BEIR, Spotlighting), o resumo NÃO é citado.
+4. Percentuais de experimentos (SRC-CTXRET-01, SRC-SPOTLIGHT-01) valem para o corpus/modelos dos autores;
+   não são limiares nem metas do SOT (CC-09).
+5. O gist SRC-LLMWIKI-01 foi lido só nos primeiros 100.000 caracteres da página.
+6. IDs arXiv foram abertos individualmente por WebFetch (2412.18004, 2305.14627, 2112.12870, 2305.14251,
+   2408.08067, 2505.04847, 2302.12173, 2403.14720, 2503.18813, 2402.07867, 2104.08663, 2404.16130);
+   nenhum foi citado só por sumário de busca.
+7. O repositório Benchmark (Andraus35/Inteligencia-SOT) NÃO foi lido nesta sessão (clone ausente).
+   Nenhuma citação nova dele foi feita; o Dossiê só remete às linhas B1..B14 do Dossiê da SPEC-007
+   (specs/features/SPEC-007/research.md §5.2), sem reconferência.
+8. Nenhum dado do projeto foi enviado nas consultas; só termos genéricos de pesquisa.

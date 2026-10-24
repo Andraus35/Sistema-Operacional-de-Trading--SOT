@@ -1,0 +1,22 @@
+Repositório: https://github.com/protectai/llm-guard
+Plataforma: GitHub
+URL: https://github.com/protectai/llm-guard
+Data de acesso: 2026-10-24
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 3200
+  (exibido "3.2k" na página)
+Licença: MIT
+Último commit: 2026-07-08
+  (topo da página de commits do main: "Archiving Project (#355)")
+Arquivado: sim
+  (a página mostra "Public archive", arquivado pelo dono em 2026-07-09; aviso de que o projeto não é mais mantido)
+Alertas de segurança graves abertos: 0
+  (INDETERMINADO, registrado como 0 — mesmo critério)
+Dono: protectai (organização identificável)
+Veredito de elegibilidade: NÃO ELEGÍVEL (repositório arquivado)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-24):
+"LLM Guard is designed for easy integration and deployment in production environments. While it's ready to use"
+
+Uso no SOT: registrado e descartado pela régua — nada adotado nem adaptado. Detector de injeção, de qualquer origem, só poderia ser sinal auxiliar (Detector ≠ Gate — ENF-03), nunca a garantia.

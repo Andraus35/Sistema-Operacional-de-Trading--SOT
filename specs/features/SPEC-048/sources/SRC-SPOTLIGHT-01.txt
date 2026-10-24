@@ -1,0 +1,11 @@
+ID: SRC-SPOTLIGHT-01
+Fonte: Hines, Lopez, Hall, Zarfati, Zunger, Kiciman — "Defending Against Indirect Prompt Injection Attacks With Spotlighting" (arXiv 2403.14720)
+URL: https://arxiv.org/abs/2403.14720
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Os percentuais de taxa de ataque do abstract vêm com marcação LaTeX e NÃO foram capturados literalmente — não são usados.
+Classificação: Experimento + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.3):
+"The key insight is to utilize transformations of an input to provide a reliable and continuous signal of its provenance."
+
+Uso no SOT: ADAPTAR — marcar a proveniência do texto de fonte em todo o caminho até o consumidor (rótulo `content_role = DATA` + citação). É defesa PROBABILÍSTICA (reduz, não elimina): serve de camada auxiliar, nunca de gate. Números do experimento não são importados (CC-09). Conteúdo = DADO.

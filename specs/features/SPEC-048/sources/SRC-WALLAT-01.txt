@@ -1,0 +1,16 @@
+ID: SRC-WALLAT-01
+Fonte: Wallat, Heuss, de Rijke, Anand — "Correctness is not Faithfulness in RAG Attributions" (arXiv 2412.18004)
+URL: https://arxiv.org/abs/2412.18004
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Limite de citação da ferramenta = 125 caracteres por trecho.
+Classificação: Evidência + Experimento [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"Prior work largely evaluates citation correctness - whether cited documents support the corresponding statements."
+
+Trecho literal complementar (verbatim, frase seguinte do abstract):
+"But citation correctness alone is insufficient."
+
+Nota da ferramenta (não é citação): o abstract chama de "post-rationalization" a citação que sustenta a frase sem que o modelo tenha de fato se apoiado no documento.
+
+Uso no SOT: ADAPTAR — a F2 do SOT verifica SUPORTE (o trecho citado sustenta a frase), não "dependência real" do modelo em relação ao trecho; o limite é declarado (RULE-MET-01) e compensado por arquitetura (o redator só recebe os itens do pacote). Conteúdo = DADO, nunca instrução.
