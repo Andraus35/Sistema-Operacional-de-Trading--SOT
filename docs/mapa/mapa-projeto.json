@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "c266cefc431d83410e8958d74d0232577bb35ea96e171c6bdce745930bea66e0",
+  "digest": "9637a6f6306f0d52a6dac6ddcc3e6eb25aa468833577e73b859a41af774389b9",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -150,7 +150,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 191,
+   "in": 192,
    "out": 36
   },
   {
@@ -1186,7 +1186,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 51,
+   "in": 52,
    "out": 5
   },
   {
@@ -2545,7 +2545,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Plan da SPEC-048 v1.0 (CANDIDATO), rodada 1 (S3, integral) — 2026-10-24",
    "in": 0,
-   "out": 11
+   "out": 13
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -3449,7 +3449,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 51
+   "cited_by": 52
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -4879,7 +4879,7 @@
   {
    "id": "RULE-HD",
    "defined_in": "governance/RULES.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "RULE-HD-01",
@@ -5114,7 +5114,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-KFH-006",
@@ -34980,7 +34980,17 @@
   },
   {
    "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "type": "id"
   },
   {

@@ -18,3 +18,7 @@ Gate (feito pelo Orquestrador); veracidade das fontes web; nenhum script executa
 
 ## Encaminhamento
 Devolver ao Especificador: M-01..M-03 e, de preferência, m-01..m-14, para a v1.1; rodada 2 por delta (v1.0 commitada em b1a0231). Nenhuma decisão aberta precisa ser fechada para corrigir os três achados.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G1:** `atomic-spec.md` aberto ao vivo anteriormente nesta sessão (§10.2 escala E0–E3, l.226; §15 método do Dossiê; CC-11): confere com as afirmações do Plan sobre pisos E2/E3 e Classe. Nada a retirar.
+- **G2:** `revisor_gate.py` = `PASSOU_D`, 0 sinais H. Um aviso informativo: `[campos_atribuidos_baseline] plan.md:431 campo packet_hash atribuído a SPEC-007, que não o contém`. **Conferido: o aviso procede.** A l.431 diz que `packet_hash` é "H(canon) do pacote — função única da SPEC-007", mas a SPEC-007 baseline não define `packet_hash` (a função de serialização/hash da SPEC-007 é a do selo: `material_hash`/`record_hash`, RULE-KFH-005; o `evidence_packet` do Anexo T não traz `packet_hash`). Registrado como **Menor m-15** (atribuição indevida a baseline; RULE-HD / integridade de citação): o Plan da SPEC-048 deve definir `packet_hash` como função **própria** (reutilizando, se quiser, a função canônica da SPEC-007 por referência, sem atribuir-lhe o campo). Repassado ao Especificador para a v1.1.
