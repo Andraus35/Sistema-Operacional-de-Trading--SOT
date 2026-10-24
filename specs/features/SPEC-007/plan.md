@@ -3,10 +3,10 @@
 | Campo | Valor |
 |---|---|
 | ID | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness, **escopo reduzido pela divisão (DHR-SPEC007-002, Opção C): aquisição com proveniência e direitos, formação, fidelidade F1, validação, selo, sucessão/marca, atos de autorização (ACTREC), camada de invocação de modelo com trava de envio externo e permissão por derivação**. Entrega o **contrato do selo** de que a SPEC-006 depende (RULE-CKG-010 caminho (b)). Recuperação, pacote de evidência, WikiRAG e F2 passam à **SPEC-048** (slot indicativo, NÃO aberta). *[valor anterior — INV-07: "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness (linha de montagem governada que transforma **fonte** em **conhecimento publicado sob selo** e devolve **evidência candidata citável** aos agentes; entrega o **contrato do selo** de que a SPEC-006 depende — RULE-CKG-010 caminho (b))"]* |
-| Versão | **2.0 (CANDIDATA — Plan reduzido)** *[valores anteriores — INV-07: "1.2 (CANDIDATA — correção da rodada 2 do Revisor)"; "1.1 (CANDIDATA — correção da rodada 1 do Revisor)"; "1.0 (CANDIDATA) — primeira entrega do Plan"]* |
-| Ordem de Andraus (m-10a) | **Plan reduzido: chat 2026-10-24, "Plan reduzido da SPEC-007" (transmitida pelo Orquestrador).** Anteriores: Plan — chat 2026-10-23, "Sim, abrir o Plan"; correção da rodada 1 e da rodada 2 — chat 2026-10-23, "Corrigir e rever de novo". |
-| Status | **PROPOSTA — aguarda Revisor (rodada 4, por delta contra o commit da v1.2 no ramo `ccr-3235944c-duo3sl`) e homologação de Andraus.** Pareceres R1, R2 e R3 (`governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md`: NÃO CONFORME — 0 Críticas, 5 Médias R3-M1..R3-M5, 6 Menores r3-n1..r3-n6) tratados nas partes que ficaram nesta Spec (tabela "Correções da rodada 3"). Divisão: DHR-SPEC007-002. Decisões de política de Andraus incorporadas: DHR-SPEC007-003. NÃO é baseline (INV-09). Abertura HOMOLOGADA (DHR-SPEC007-001). Tudo o que este Plan cria (RULE-KFH-*, INV-KFH-*, BASpec-KFH-*, EC-KFH-*, esquemas, estados locais) é **[PROPOSTA]**; as decisões de política da DHR-SPEC007-003 viram texto normativo só na homologação deste Plan. *[v1.2 integral no Anexo R, R.1]* |
-| Fonte | ROADMAP §6 (SPEC-007, l.179-184, incl. a nota de divisão; SPEC-048, l.186-189) e l.34; `specs/features/SPEC-007/ABERTURA.md` + `research.md` + `sources/` (Dossiê — RULE-ECC-01/02/04/06; validade CRITICAL 90 dias, **limite 2027-01-16**); DHR-SPEC007-001 (Q1–Q8); **DHR-SPEC007-002** (D1–D6; fronteira §3; re-apontamentos §4; correção SPEC-047→SPEC-048 §5); **DHR-SPEC007-003** (P-1..P-11); DHR-BENCH-INTEL-001 (D1–D8); parecer R3 da abertura (`governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R3-2026-10-19.md` §2); `specs/features/SPEC-006/plan.md` (RULE-CKG-004 l.395-401, RULE-CKG-008 l.429-472 (núcleo causal l.443-445; chave natural de relação l.453-454), RULE-CKG-009 l.474-483, RULE-CKG-010 l.485-542, l.976, l.1410, l.1415); atomic-spec §10–§15; `governance/RULES.md`; `reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md` (referência externa classificada — K-MAN-14) |
+| Versão | **2.1 (CANDIDATA — Plan reduzido, correção da rodada 4 do Revisor)** *[valores anteriores — INV-07: "2.0 (CANDIDATA — Plan reduzido)"; "1.2 (CANDIDATA — correção da rodada 2 do Revisor)"; "1.1 (CANDIDATA — correção da rodada 1 do Revisor)"; "1.0 (CANDIDATA) — primeira entrega do Plan"]* |
+| Ordem de Andraus (m-10a) | **Rodada 5: chat 2026-10-24, "Corrigir e rever de novo" — registrada em ata, DHR-SPEC007-004 §1 (linha "Ordem").** **Plan reduzido: chat 2026-10-24, "Plan reduzido da SPEC-007" — agora registrada em ata, DHR-SPEC007-004 §2 (r4-n11).** *[v2.0: "**Plan reduzido: chat 2026-10-24, \"Plan reduzido da SPEC-007\" (transmitida pelo Orquestrador).**"]* Anteriores: Plan — chat 2026-10-23, "Sim, abrir o Plan"; correção da rodada 1 e da rodada 2 — chat 2026-10-23, "Corrigir e rever de novo". |
+| Status | **PROPOSTA — aguarda Revisor (rodada 5, por delta contra o commit da v2.0) e homologação de Andraus.** Parecer R4 (`governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md`: NÃO CONFORME — 0 Críticas, 2 Médias R4-M1/R4-M2, 11 Menores r4-n1..r4-n11) corrigido nesta v2.1 (tabela "Correções da rodada 4"); respostas P-12..P-14 de Andraus incorporadas (DHR-SPEC007-004). *[v2.0: "PROPOSTA — aguarda Revisor (rodada 4, por delta contra o commit da v1.2 no ramo `ccr-3235944c-duo3sl`) e homologação de Andraus."]* Pareceres R1, R2 e R3 (`governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md`: NÃO CONFORME — 0 Críticas, 5 Médias R3-M1..R3-M5, 6 Menores r3-n1..r3-n6) tratados nas partes que ficaram nesta Spec (tabela "Correções da rodada 3"). Divisão: DHR-SPEC007-002. Decisões de política de Andraus incorporadas: DHR-SPEC007-003. NÃO é baseline (INV-09). Abertura HOMOLOGADA (DHR-SPEC007-001). Tudo o que este Plan cria (RULE-KFH-*, INV-KFH-*, BASpec-KFH-*, EC-KFH-*, esquemas, estados locais) é **[PROPOSTA]**; as decisões de política da DHR-SPEC007-003 viram texto normativo só na homologação deste Plan. *[v1.2 integral no Anexo R, R.1]* |
+| Fonte | ROADMAP §6 (SPEC-007, l.179-184, incl. a nota de divisão; SPEC-048, l.186-189) e l.34; `specs/features/SPEC-007/ABERTURA.md` + `research.md` + `sources/` (Dossiê — RULE-ECC-01/02/04/06; validade CRITICAL 90 dias, **limite 2027-01-16**); DHR-SPEC007-001 (Q1–Q8); **DHR-SPEC007-002** (D1–D6; fronteira §3; re-apontamentos §4; correção SPEC-047→SPEC-048 §5); **DHR-SPEC007-003** (P-1..P-11); **DHR-SPEC007-004** (P-12..P-14; ordem da rodada 5); DHR-BENCH-INTEL-001 (D1–D8); parecer R3 da abertura (`governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R3-2026-10-19.md` §2); `specs/features/SPEC-006/plan.md` (RULE-CKG-004 l.395-401, RULE-CKG-008 l.429-472 (núcleo causal l.443-445; chave natural de relação l.453-454), RULE-CKG-009 l.474-483, RULE-CKG-010 l.485-542, l.976, l.1410, l.1415); atomic-spec §10–§15; `governance/RULES.md`; `reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md` (referência externa classificada — K-MAN-14) |
 | Complexidade | CRITICAL [FONTE: ROADMAP §6 l.180 "P0 — CRITICAL"; DHR-SPEC007-001 Q1] — mantida após a divisão: o selo alimenta memória permanente (commit crítico E3) e a CIM/os atos são authz irreversíveis |
 | Profundidade-alvo | D0–D8 (standard + adversarial D8) [FONTE: ROADMAP §6 l.180; AGENTS.md §4; DHR-SPEC007-001 Q1] |
 | Profile (Claude Code) | standard + adversarial (D8) |
@@ -15,14 +15,14 @@
 | Método | atomic-spec.md v1.5; **RULE-MECH-01** / CC-11 (Classe por BASpec); RULE-PD-01 / CC-12 **(N/A — infraestrutura agnóstica de escola)**; RULE-ECC-01/02/04/06; RULE-ECC-05 **(N/A — research §9)** |
 | Classe predominante (orientação não-vinculante, §10.6) | Mista — **D** (registro de fonte/hash, unidade com origem, checagens literais de fidelidade, serialização única, marca de revalidação, registro de contradição) · **C** (formação sem efeito, selo E3, guard de validade, CIM, ato de autorização) · **H** (formação do candidato, juízo de fidelidade F1) — declaração normativa **por BASpec** (SES-001 §50) *[v1.2 no Anexo R, R.1]* |
 | Autor | Especificador Principal SOT (Claude Code, Opus 5.5) |
-| Data | 2026-10-24 (v2.0); 2026-10-23 (v1.0–v1.2) |
+| Data | 2026-10-24 (v2.0 e v2.1); 2026-10-23 (v1.0–v1.2) |
 | Abertura | DHR-SPEC007-001 (Q1: CRITICAL D0–D8; Q2: uma Spec, cláusula de divisão em reserva — **superada pela divisão, DHR-SPEC007-002 D1**; Q3: WikiRAG = versão de leitura por regra fixa — agora matéria da SPEC-048; Q4: selo do formado a partir de fontes; Q5: fidelidade F1/F2 sem números; Q6: `rag/` inalterado; Q7(a)(b): só ideias reescritas; **Q7(c) ADIADA**; Q8: pacote do carimbo como recomendação a detalhar aqui) |
 
 Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 
 **Princípio fundador (transversal):** **DOCUMENTO RECUPERADO ≠ VERDADE · TRECHO RECUPERADO ≠ CONHECIMENTO VALIDADO · CONHECIMENTO CANDIDATO ≠ CONHECIMENTO PUBLICADO** [FONTE: ROADMAP l.182 — FATO ARQUITETURAL do slot]. Nesta Spec reduzida, o único caminho de uma fonte até a memória permanente é **formação → validação → selo** (gate não-LLM, E3); o que esta Spec deixa disponível a jusante é **conhecimento carimbado** (no KG, sob selo), os registros de fonte, a **trava de envio** e os **atos**. A entrega de **evidência candidata citável** aos agentes é da SPEC-048 (DHR-SPEC007-002 §3); quem produz **Evidência** segue sendo o agente (CEM-001; INV-06/INV-10). *[v1.2: "O único caminho de uma fonte até a memória permanente é **formação → validação → selo** (gate não-LLM, E3); o único produto entregue aos agentes é **evidência candidata citável** — quem produz **Evidência** é o agente (CEM-001; INV-06/INV-10), e o pacote não é conclusão (INV-05)."]*
 
-**Status epistemológico de cabeçalho:** a SPEC-007 constrói **sobre** a SPEC-006 baselined (memória permanente, admissão, imutabilidade, mecanismo físico — Opção C, DHR-H001-001) e **não a redefine** (CC-02/INV-09). Documentado ≠ homologado (TRACE-06): o MC-RAG-001 e o Benchmark Inteligencia-SOT são **referência/DADO**, nunca baseline. Decisões abertas tocadas e **não fechadas** (CONS-01): M-001, K-001, G-001, J-001, N-001, C-001 (todas **ABERTAS**), WF-D03 (aberta), ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001 (BL-035), "produtor/gatilho de promoção" (SPEC-006 l.976; dono escolhido = SPEC-018 por Q4, o *como* segue aberto), direito de uso do livro (Q7c, ADIADA), forma de confirmar a identidade de Andraus (BUILD — em aberto, DHR-SPEC007-003 §4) e, registrada nesta v2.0, **SPEC-007-LOCUS-001** (quem confirma que um executor de modelo é LOCAL — `[DECISÃO NECESSÁRIA]`, fail-closed). **Decididas por Andraus como política (DHR-SPEC007-003) e incorporadas aqui como regra `[PROPOSTA]` até a homologação:** SPEC-007-ACTREC-001, SPEC-007-RIGHTS-001, SPEC-007-EXTTX-001, SPEC-007-DERIVTX-001, SPEC-007-NODETYPE-001, SPEC-007-SUCC-001 e as respostas P-1/P-2 (carimbo). SPEC-007-BBTYPE-001 (P-9) pertence à SPEC-048. [FONTE: DHR-SPEC007-001 §4; DHR-SPEC007-002 §8; DHR-SPEC007-003 §1/§4]
+**Status epistemológico de cabeçalho:** a SPEC-007 constrói **sobre** a SPEC-006 baselined (memória permanente, admissão, imutabilidade, mecanismo físico — Opção C, DHR-H001-001) e **não a redefine** (CC-02/INV-09). Documentado ≠ homologado (TRACE-06): o MC-RAG-001 e o Benchmark Inteligencia-SOT são **referência/DADO**, nunca baseline. Decisões abertas tocadas e **não fechadas** (CONS-01): M-001, K-001, G-001, J-001, N-001, C-001 (todas **ABERTAS**), WF-D03 (aberta), ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001 (BL-035), "produtor/gatilho de promoção" (SPEC-006 l.976; dono escolhido = SPEC-018 por Q4, o *como* segue aberto), direito de uso do livro (Q7c, ADIADA), forma de confirmar a identidade de Andraus (BUILD — em aberto, DHR-SPEC007-003 §4 e DHR-SPEC007-004 §3). **Decididas por Andraus como política (DHR-SPEC007-003 e DHR-SPEC007-004) e incorporadas aqui como regra `[PROPOSTA]` até a homologação:** SPEC-007-ACTREC-001, SPEC-007-RIGHTS-001, SPEC-007-EXTTX-001, SPEC-007-DERIVTX-001, SPEC-007-NODETYPE-001, SPEC-007-SUCC-001, as respostas P-1/P-2 (carimbo) e, na v2.1, **SPEC-007-LOCUS-001** (P-12: só Andraus confirma, modelo por modelo, que um executor é LOCAL) e P-14 (definição de "mesma origem" aqui; contagem na SPEC-048). A errata aditiva à SPEC-006 (P-13) foi **aprovada para ser proposta** e segue `[PROPOSTA]`. SPEC-007-BBTYPE-001 (P-9) pertence à SPEC-048. [FONTE: DHR-SPEC007-001 §4; DHR-SPEC007-002 §8; DHR-SPEC007-003 §1/§4; DHR-SPEC007-004 §1-§3] *[v2.0, a partir de "forma de confirmar": "forma de confirmar a identidade de Andraus (BUILD — em aberto, DHR-SPEC007-003 §4) e, registrada nesta v2.0, **SPEC-007-LOCUS-001** (quem confirma que um executor de modelo é LOCAL — `[DECISÃO NECESSÁRIA]`, fail-closed). **Decididas por Andraus como política (DHR-SPEC007-003) e incorporadas aqui como regra `[PROPOSTA]` até a homologação:** SPEC-007-ACTREC-001, SPEC-007-RIGHTS-001, SPEC-007-EXTTX-001, SPEC-007-DERIVTX-001, SPEC-007-NODETYPE-001, SPEC-007-SUCC-001 e as respostas P-1/P-2 (carimbo). SPEC-007-BBTYPE-001 (P-9) pertence à SPEC-048. [FONTE: DHR-SPEC007-001 §4; DHR-SPEC007-002 §8; DHR-SPEC007-003 §1/§4]"]*
 
 ### Histórico de versões
 
@@ -32,6 +32,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | 1.1 | 2026-10-23 | Correção do parecer R1 (NÃO CONFORME): M-01..M-09 + Menores m-01..m-11 (m-12 no checks.md). Novas decisões abertas registradas sem decidir (fail-closed no intervalo): SPEC-007-SUCC-001, SPEC-007-RIGHTS-001, SPEC-007-EXTTX-001, SPEC-007-BBTYPE-001; SPEC-007-NODETYPE-001 passa a fail-closed. Contagens: [17 RULE, 2 INV, 17 BASpec, 17 EARS, 10 EC, 23 cenários (T01..T23), 26 ADV (01..26)]. |
 | 1.2 | 2026-10-23 | Correção do parecer R2 (NÃO CONFORME): N-01..N-05 + Menores n-01..n-14. Novas regras RULE-KFH-018 (redator), 019 (CIM — 3º caminho de efeito), 020 (ato de autorização); novas decisões abertas SPEC-007-ACTREC-001 e SPEC-007-DERIVTX-001 (fail-closed). Contagens: [20 RULE, 2 INV, 20 BASpec, 20 EARS, 13 EC, 26 cenários (T01..T26), 29 ADV (01..29)]. Texto v1.1 reescrito preservado no Anexo v1.1 e em colchetes locais. |
 | **2.0** | **2026-10-24** | **Plan reduzido (DHR-SPEC007-002, Opção C).** Ficam RULE-KFH-001..009, 016, 019, 020 + INV-KFH-01/02 (reescritas onde preciso); transferidas à SPEC-048, intactas no Anexo T: RULE-KFH-010..015, 017, 018 e tudo o que delas depende. Incorpora DHR-SPEC007-003 (ACTREC/RIGHTS/EXTTX/DERIVTX/NODETYPE/SUCC e P-1/P-2 decididas; BBTYPE → SPEC-048). Trata R3-M1..R3-M5 e r3-n1..r3-n5 (r3-n6 vai com o pacote). Nova decisão aberta SPEC-007-LOCUS-001 (fail-closed). Contagens vigentes: **12 RULE, 2 INV, 12 BASpec, 12 EARS, 9 EC, 18 cenários, 22 ADV**. Texto v1.2 das partes reescritas no Anexo R; tabelas de correção R1/R2 no Anexo H. |
+| **2.1** | **2026-10-24** | **Correção do parecer R4 (NÃO CONFORME): R4-M1 (o juiz F1 recebe o rótulo — `content_ref` do tipo `candidate_ref@version`), R4-M2 (fonte liberada para uso exigida para QUALQUER executor; texto solto sem referência proibido para qualquer executor) e r4-n1..r4-n11.** Incorpora DHR-SPEC007-004: SPEC-007-LOCUS-001 decidida (act_type LOCAL_EXECUTOR), P-13 aprovada como proposta, P-14 decidida. Contagens inalteradas: **12 RULE, 2 INV, 12 BASpec, 12 EARS, 9 EC, 18 cenários, 22 ADV**. Texto v2.0 das partes reescritas no Anexo R, R.10. |
 
 ---
 
@@ -71,11 +72,12 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | D6 | **007**: Formação, Atualização, Chamadas de modelo · **048**: Consulta | Anexo T (T.6) |
 | Contrato lógico | **007**: source_record … contradiction_mark · **048**: `evidence_packet`, `feedback_record` | Anexo T (T.7) |
 | D7 | **007**: T01–T15, T23, T24, T25 (só CIM) · **048**: T16–T22, T26, parte de entrega da T25 | Anexo T (T.8) |
-| D8 | **007**: ADV-01–05, 07, 08, 13, 16–22, 24, 25, 27, 28 (c)(d) + novos ADV-30..32 · **048**: ADV-06, 09–12, 14, 15, 23, 26, 29, ADV-28 (a)(b), parte "pacote" da ADV-05 e parte "serve só P1" da ADV-25 | Anexo T (T.9) |
+| D8 | **007**: ADV-01–05, 07, 08, 13, 16–22, 24, 25, 27, 28 (a')(c)(d) + novos ADV-30..32 *[v2.0: "28 (c)(d)" — o caso (a') já existia no corpo; r4-n9]* · **048**: ADV-06, 09–12, 14, 15, 23, 26, 29, ADV-28 (a)(b), parte "pacote" da ADV-05 e parte "serve só P1" da ADV-25 | Anexo T (T.9) |
 | Enforcement Contracts | **007**: EC-001–006, 010 (só contradição), 011, 012 · **048**: EC-007, 008, 009, 013, parte "feedback" do EC-010 | Anexo T (T.10) |
 | Métricas (RAG-SPEC-039/041) | **007**: F1, códigos desta Spec, negações da CIM · **048**: F2, independência, lacuna por limite, log de entrega | Anexo T (T.11) |
 | Emenda à SPEC-020 | **007**: metade F1 · **048**: metade F2 (P-5, DHR-SPEC007-003) | Anexo T (T.12) |
 | Perguntas P-1..P-11 | respondidas (DHR-SPEC007-003); P-7 resolvida pela divisão; P-9 → SPEC-048 | Anexo R (R.9) |
+| Perguntas P-12..P-14 (v2.0) | respondidas (DHR-SPEC007-004) | Anexo R (R.10) |
 
 ### Incorporação da DHR-SPEC007-003 (decisões de política de Andraus — viram texto normativo só na homologação)
 
@@ -93,6 +95,34 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | P-6 — "fontes repetidas contam como uma" para evidência | COL-EXP-05 | "Reconciliação COL-EXP-05"; RULE-KFH-001 (origem-raiz) | reconciliação aceita; BL-011 segue `ATIVADO` |
 | P-9 — pacote direto ao analista, só leitura | SPEC-007-BBTYPE-001 | **SPEC-048** (Anexo T) | sai desta Spec |
 | P-7 — tamanho da Spec | SPEC-007-SPLIT-001 | resolvida pela divisão (DHR-SPEC007-002) | — |
+
+### Incorporação da DHR-SPEC007-004 (v2.1 — respostas P-12..P-14 e ordem da rodada 5)
+
+| Resposta | ID | Onde está aqui | Marca anterior → agora |
+|---|---|---|---|
+| P-12 — só Andraus confirma, modelo por modelo, que um executor é LOCAL; até lá nenhum é local | SPEC-007-LOCUS-001 | RULE-KFH-019 (b); RULE-KFH-020 (act_type LOCAL_EXECUTOR); contrato `provider_registry`; quadro de pré-requisitos (passo 4) | [DECISÃO NECESSÁRIA] → **decidida (DHR-SPEC007-004)** |
+| P-13 — propor a errata aditiva à SPEC-006 | — | seção "Proposta de errata aditiva à SPEC-006" (E-1..E-3) | segue **[PROPOSTA]** (aprovada para ser proposta; vale só depois de homologada; nenhum baseline tocado) |
+| P-14 — "mesma origem" definida aqui; contagem no pacote na SPEC-048 | COL-EXP-05 | RULE-KFH-001 (ORIGEM-RAIZ); "Reconciliação COL-EXP-05" item 3; Interface (ponto 2) | [PROPOSTA] → **decidida (DHR-SPEC007-004)**; BL-011 segue `ATIVADO`; CONFLICT-MAP não alterado |
+| Ordem da rodada 5 — fonte liberada para uso exigida para qualquer executor; texto solto de fonte sem referência proibido | — | RULE-KFH-019 (d)/(f3); D4.5; BASpec-KFH-019; EC-KFH-011; ADV-32 | aplicada (R4-M2) |
+| Registro da ordem do Plan reduzido (r4-n11) | — | cabeçalho, linha "Ordem de Andraus" | chat → ata DHR-SPEC007-004 §2 |
+
+### Correções da rodada 4 (parecer R4, 2026-10-24) — onde estão
+
+| Achado | Correção (âncora neste arquivo) | Caso positivo / negativo |
+|---|---|---|
+| **R4-M1** o rótulo não chegava ao juiz F1 | RULE-KFH-019 (f1): novo tipo de `content_ref` **`candidate_ref@version`** — a CIM resolve afirmações + `record_proposal` + `knowledge_kind` + `target_node_type` do candidato armazenado; permissão = conjunção das origens-raiz de todas as afirmações; RULE-KFH-006 "ENTRADA DO JUIZ"; D4.5; contrato (`model_invocation_record`, `validation_record.h_result` com linha `"rótulo"`) | T25 (juiz recebe `candidate_ref@C@1`) / **ADV-31(a)** |
+| **R4-M2** "pode usar" não aplicado a LOCAL; texto livre a LOCAL | RULE-KFH-019 (d) (direito de uso efetivo ≠ INDETERMINADO para **qualquer** executor) e (f3) (texto solto sem referência proibido para **qualquer** executor); D4.5; BASpec-KFH-019 GATE DE SAÍDA; EC-KFH-011 | T25 / **ADV-32 (d)** corrigido e **(e)** novo (LOCAL sem ato RIGHTS) |
+| r4-n1 | RULE-KFH-007 entrada (A) com campo opcional `declared_records?`; D4.2; contrato `seal_request` | ADV-21(d) |
+| r4-n2 | RULE-KFH-007 "ORDEM" com tabela de correspondência condição ↔ passo de D4.2; EARS 7 e EC-KFH-004 remetem à ordem de D4.2 | — |
+| r4-n3 | F0.4 e D4.2/D4.3: afirmação a1 trocada por fato inequívoco de fonte | — |
+| r4-n4 | RULE-KFH-007 (vii) e entrada (A): `succession_of[]` = mapa `record_ref → published_ref@version` | ADV-22(h) |
+| r4-n5 | RULE-KFH-005 função M: o registro leva `formed_inference_claim_ids[]` (marca de inferência chega ao publicado — RULE-EPI-01) | ADV-30(d) |
+| r4-n6 | Interface com a SPEC-048: rótulos "I-1..I-6" trocados por "ponto 1..6" | — |
+| r4-n7 | Errata E-1 reescrita: o que a P-1 decidiu da l.482 e o que segue aberto | — |
+| r4-n8 | RULE-KFH-009 (b): "só Andraus" para INVALIDATION etiquetado **[PROPOSTA]** (extensão da P-8/P-10), a confirmar na homologação | — |
+| r4-n9 | Mapeamento (linha D8) e BASpec-KFH-019 citam ADV-28 (a')(c)(d) | ADV-28 |
+| r4-n10 | RULE-KFH-019 (g): só a CIM tem credencial de executor; detecção de chamada fora da CIM por auditoria do lado do executor (BUILD); RU-7 | ADV-28(d) |
+| r4-n11 | ordem do Plan reduzido registrada na DHR-SPEC007-004 §2 (cabeçalho) | — |
 
 ### Correções da rodada 3 (parecer R3, 2026-10-24) — onde estão
 
@@ -123,10 +153,10 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 - **BL-010** (MC-RAG-001) — `Em espera`. **Disposição: PARCIAL** — motivo: incorporado aqui o núcleo de **fonte, formação, validação, publicação via selo e segurança da formação** (fundamentos/fonte RAG-SPEC-003/004, unidade RAG-SPEC-007, formação RAG-SPEC-008/009, RAG-P04 — RULE-KFH-001..009, 016, 019, 020), com COL-RAG-01..04 aplicados (G0–G8 rejeitados → gates locais; 4Es na ordem do SOT; I-RAG/RAG-P como locais); **vai à SPEC-048** (DHR-SPEC007-002 §3; ela herda o que lhe couber no seu Dossiê — §6): recuperação (RAG-SPEC-013/014/017/020/027), pacote (RAG-SPEC-029/030), independência no pacote (RAG-SPEC-018, conforme RULE-004), feedback (RAG-SPEC-034); **fora** (como na v1.2): Grupo D contexto (RAG-SPEC-021..025) → SPEC-043; aprendizado (032-033, 035) → SPEC-018; experiência → SPEC-009/017; projeção no KG (012) → SPEC-006; orçamento (015) → SPEC-008; observabilidade (041) → SPEC-040; regressão (036) → SPEC-022 (mapa completo em research §7). *[linha v1.2 do BL-010 integral no Anexo R, R.2]*
 - **BL-017** (dimensões B da SPEC-020) — `Em espera`. **Disposição: PARCIAL** — motivo: a dimensão **RAG faithfulness** divide-se (DHR-SPEC007-002 §4; DHR-SPEC007-003 P-5): **F1 aqui** (RULE-KFH-005/006 — fidelidade do conhecimento formado; limiares INDETERMINADO), fechando a metade F1 por emenda pontual à SPEC-020 proposta para a homologação deste Plan; **F2 na SPEC-048** (frase entregue × trecho — gatilho adicional `spec:SPEC-048 em redação`, nota de 2026-10-24 no painel); **decision traceability** permanece com SPEC-014; `tool correctness` já fechada (DHR-SPEC038-002).
 - **BL-035** (CKG-STRUCT-ORIGIN-001) — `Em espera`. **Disposição: REFERÊNCIA** — motivo: o selo carrega a identidade autenticada do emissor e a cadeia de fontes (insumo para a decisão), mas a origem/escola de `structure` é decisão **aberta** de Andraus com emenda da SPEC-006; com a P-3 decidida, o selo só admite `learning` (`structure` é negado — RULE-KFH-007 (iv-bis)) e o conhecimento formado **nunca** origina `hypothesis` (SPEC-006 `HYPOTHESIS_VIA_SEAL_FORBIDDEN`).
-- **BL-011** (MC-EXP-001) — **`ATIVADO`** (DHR-BACKLOG-001), não vinculado por regra (gatilho `spec:SPEC-006/009`), com o resíduo **COL-EXP-05 re-apontado à SPEC-007** (DHR-BENCH-INTEL-001 D8). **Disposição: PARCIAL** `[PROPOSTA]` — motivo: reconciliação aceita por Andraus (DHR-SPEC007-003 P-6); aqui fica a **definição única de origem-raiz** (RULE-KFH-001), que sustenta "fontes repetidas contam como uma" para **evidência**; a **contagem no pacote** (v1.2 RULE-KFH-011) vai à SPEC-048; a independência de **experiência** segue para SPEC-009/017; o item **segue `ATIVADO`** (encerrar é só de Andraus).
+- **BL-011** (MC-EXP-001) — **`ATIVADO`** (DHR-BACKLOG-001), não vinculado por regra (gatilho `spec:SPEC-006/009`), com o resíduo **COL-EXP-05 re-apontado à SPEC-007** (DHR-BENCH-INTEL-001 D8). **Disposição: PARCIAL** `[PROPOSTA]` — motivo: reconciliação aceita por Andraus (DHR-SPEC007-003 P-6) e divisão decidida por ele (DHR-SPEC007-004 P-14); aqui fica a **definição única de origem-raiz** (RULE-KFH-001), que sustenta "fontes repetidas contam como uma" para **evidência**; a **contagem no pacote** (v1.2 RULE-KFH-011) vai à SPEC-048; a independência de **experiência** segue para SPEC-009/017; o item **segue `ATIVADO`** (encerrar é só de Andraus).
 - **BL-029** ("LLM propõe, harness recomputa"; proveniência `computed_by`/`gate_record`) — `Em espera` no painel (`backlog/RMR-001_Painel_Backlog.md` l.136); não vinculado por regra (gatilho `spec:SPEC-014/018/045`). **Disposição: REFERÊNCIA** `[PROPOSTA]` (declaração voluntária, sem vínculo) — motivo: converge com esta Spec (gates D/C recomputam o que o modelo propõe: `material_hash`/`record_hash` recalculados pelo gate, IDs de modelo gravados pela CIM), sem absorver o item; nada promovido. *[v1.2: "Nenhuma disposição declarada aqui (não vinculado); nada promovido. (m-11)"]*
 - **BL-003** — `ATIVADO` (persistência física de hipótese/estado; gatilho SPEC-006/009): **independente desta Spec** — a SPEC-007 não persiste hipótese nem estado por agente (G-001 **ABERTA**). Não tratado aqui; registrado para o gate.
-- **Resultado do `backlog_triggers --abertura SPEC-007` (m-10b):** rodado pelo Orquestrador nas rodadas anteriores — 3 itens vinculados (BL-010, BL-017, BL-035). Não rodado por mim (sem Bash); a reconferir pelo Orquestrador na v2.0.
+- **Resultado do `backlog_triggers --abertura SPEC-007` (m-10b):** rodado pelo Orquestrador nas rodadas anteriores — 3 itens vinculados (BL-010, BL-017, BL-035). Não rodado por mim (sem Bash); a reconferir pelo Orquestrador na v2.1.
 - **Conflito já registrado:** ROADMAP l.34 cita "BL-010 e BL-035" no texto anterior preservado e "BL-010, BL-017 e BL-035" na atualização; a regra (`backlog_triggers.py --abertura`) vincula os três — tratados os três. [FONTE: research §8.3]
 
 ---
@@ -151,9 +181,9 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 
 1. **Diagnóstico `[INFERÊNCIA]`:** a "duplicidade" EXP-SPEC-021 ↔ RAG-SPEC-018 é **uma regra do SOT aplicada a dois objetos**: RULE-004 ("evidências causalmente relacionadas DEVEM ser contadas como uma única") + RULE-MET-01. Não há duas regras a fundir; há dois domínios (evidência × experiência).
 2. **Reconciliação aceita por Andraus (DHR-SPEC007-003 P-6):** "fontes repetidas contam como uma" fica aqui para **evidência**; para experiência, na etapa futura do histórico de operações.
-3. **Divisão entre as duas Specs `[PROPOSTA]` (P-6 manda "definir nos Plans"):** a SPEC-007 reduzida fica com a **definição única de origem-raiz** (RULE-KFH-001 — tradução/OCR/normalização do mesmo bloco = mesma origem; cadeia irresolúvel ⇒ irresolúvel, nunca "independente"), que já sustenta aqui a permissão por derivação (RULE-KFH-019 (c)); a **contagem de origens independentes no pacote** (v1.2 RULE-KFH-011, D4.3 e T16/ADV-09) vai à SPEC-048 (Anexo T), que a aplica sobre essa definição — sem segunda regra. Conforme COL-RAG-04 (não redefine RULE-004).
+3. **Divisão entre as duas Specs — decidida por Andraus (DHR-SPEC007-004 P-14; texto normativo na homologação)** *[v2.0: "**Divisão entre as duas Specs `[PROPOSTA]` (P-6 manda \"definir nos Plans\"):**"]*: a SPEC-007 reduzida fica com a **definição única de origem-raiz** (RULE-KFH-001 — tradução/OCR/normalização do mesmo bloco = mesma origem; cadeia irresolúvel ⇒ irresolúvel, nunca "independente"), que já sustenta aqui a permissão por derivação (RULE-KFH-019 (c)); a **contagem de origens independentes no pacote** (v1.2 RULE-KFH-011, D4.3 e T16/ADV-09) vai à SPEC-048 (Anexo T), que a aplica sobre essa definição — sem segunda regra. Conforme COL-RAG-04 (não redefine RULE-004).
 4. **Non-goal com ponteiro:** a independência de **experiência** (EXP-SPEC-021) é da **SPEC-009/SPEC-017** (G-001 **ABERTA**). Quando um registro de experiência for usado como **fonte** (futuro), entra pela RULE-KFH-001 como qualquer fonte.
-5. **CONFLICT-MAP não alterado** (sem ordem — DHR-SPEC007-002 §6/DHR-SPEC007-003 §3); se Andraus aceitar a divisão do item 3, o re-apontamento parcial de COL-EXP-05 à SPEC-048 é ato dele. **Disposição do BL-011:** PARCIAL; Estado **`ATIVADO` inalterado**.
+5. **CONFLICT-MAP não alterado** (sem ordem — DHR-SPEC007-002 §6/DHR-SPEC007-003 §3/DHR-SPEC007-004 §2); o re-apontamento parcial de COL-EXP-05 à SPEC-048 no CONFLICT-MAP é ato de Andraus *[v2.0: "se Andraus aceitar a divisão do item 3, o re-apontamento parcial de COL-EXP-05 à SPEC-048 é ato dele."]*. **Disposição do BL-011:** PARCIAL; Estado **`ATIVADO` inalterado**.
 
 ---
 
@@ -218,7 +248,7 @@ INHERITS (referência por ID + VERSÃO baseline — RULE-HD-04; NÃO redefinido)
     fail-closed); ENF-01..08; §10.6 Classe; §15 Dossiê
   - Invariantes: INV-04, INV-05, INV-06, INV-07, INV-09, INV-10
   - DHR-PROV-WEB-001 §2.1 — conteúdo externo é DADO, nunca instrução
-  - DHR-SPEC007-002 (divisão) e DHR-SPEC007-003 (decisões de política) — FATO NORMATIVO por ata; viram texto normativo aqui só na
+  - DHR-SPEC007-002 (divisão), DHR-SPEC007-003 e DHR-SPEC007-004 (decisões de política) — FATO NORMATIVO por ata; viram texto normativo aqui só na
     homologação
   - MC-RAG-001 — REFERÊNCIA EXTERNA classificada (K-MAN-14), NÃO baseline; COL-RAG-01..04 homologadas (DHR-BL010-011-012-001)
 
@@ -345,7 +375,7 @@ A SPEC-007 especifica **como o SOT transforma material de leitura em conheciment
 | 1 | O sistema reconhecer que é **você** (identidade confirmada) | — (a forma de confirmar é decisão de construção) | ACTREC — RULE-KFH-020; forma = BUILD | nenhuma liberação, lista, visto ou troca vale |
 | 2 | Você aprovar a **lista de quem pode carimbar** | 1 | ato ISSUER_LIST — RULE-KFH-007 (iii) | nada é carimbado |
 | 3 | Você liberar o **uso** de cada fonte, uma por uma | 1 | ato RIGHTS — P-4a | a fonte fica registrada e parada: não é lida pela linha nem chega aos analistas |
-| 4 | Você liberar o **envio para fora** de cada fonte (os modelos de terceiro contam como "fora") — **ou** a leitura e a conferência rodarem em **dois modelos diferentes "de casa"** | 1 e 3; o caminho "de casa" depende também de você dizer quem confirma que um modelo é de casa (P-12) | ato EXT_TRANSMISSION — P-4b; SPEC-007-LOCUS-001 | nenhum modelo pode ler a fonte |
+| 4 | Você liberar o **envio para fora** de cada fonte (os modelos de terceiro contam como "fora") — **ou** a leitura e a conferência rodarem em **dois modelos diferentes "de casa"** | 1 e 3; o caminho "de casa" depende também de você confirmar, modelo por modelo, que cada um roda em casa (decidido — P-12) | ato EXT_TRANSMISSION — P-4b; ato LOCAL_EXECUTOR — SPEC-007-LOCUS-001 (decidida, DHR-SPEC007-004) | nenhum modelo pode ler a fonte *[v2.0, coluna "Depende de": "1 e 3; o caminho \"de casa\" depende também de você dizer quem confirma que um modelo é de casa (P-12)"; coluna "Nota técnica": "ato EXT_TRANSMISSION — P-4b; SPEC-007-LOCUS-001"]* |
 | 5 | Se a ficha for **definição ou regra**: o seu visto no lote | 1 (e 2–4 para a ficha chegar até aí) | ato HUMAN_APPROVAL_LOT — P-2 | definições e regras não são carimbadas; fatos e relações passam pela conferência automática |
 | 6 | Para **trocar** algo já carimbado (edição nova): a sua autorização de troca, por lote | 1 | ato SUCCESSION — P-8 | o antigo continua valendo, marcado "a revalidar" |
 | — | "Gaveta" do caderno: aprendizado (`learning`) | já decidido (P-3) | RULE-KFH-007 (iv-bis) | — |
@@ -472,7 +502,10 @@ RULE-KFH-005: VALIDAÇÃO F1 — parte DETERMINÍSTICA (roda ANTES de qualquer j
                 M (materialização de registro) := função DETERMINÍSTICA do pipeline que, a partir do candidato ARMAZENADO,
                   produz cada registro = {`record_ref`, `record_kind`, campos estruturais declarados (`node_type` :=
                   `target_node_type`; `from`/`to`; campos da RULE-CKG-008 quando CAUSA/SIMILAR_A), campos de CONTEÚDO :=
-                  texto EXATO das afirmações de `content_claim_ids[]`, na ordem declarada}. M EXCLUI o que não é material:
+                  texto EXATO das afirmações de `content_claim_ids[]`, na ordem declarada, `formed_inference_claim_ids[]` :=
+                  os `content_claim_ids` cuja afirmação tem `formed_inference=true` (r4-n5: a marca de inferência chega ao
+                  registro publicado e entra no `record_hash` — RULE-EPI-01; lista vazia quando não há)} *[v2.0: "texto EXATO
+                  das afirmações de `content_claim_ids[]`, na ordem declarada}."]*. M EXCLUI o que não é material:
                   `publication.*` (incl. `seal_ref`), `supersedes`/`version`/`expected_version`, IDs atribuídos pelo KG,
                   `writer_id`, `computed_by`, carimbos de tempo. Mesmo candidato ⇒ mesmos registros materializados.
                 canon(x) := UMA serialização canônica para toda a Spec (chaves em ordem lexicográfica; texto em Unicode
@@ -494,7 +527,10 @@ RULE-KFH-006: VALIDAÇÃO F1 — JUÍZO (Classe H), só após RULE-KFH-005 passa
               RULE-CAU-01) e afirmação ausente da fonte sem marcação; e, sobre o candidato inteiro, RÓTULO DE IMPACTO
               DIMINUÍDO (R3-M4): `knowledge_kind` declarado de impacto MENOR que o conteúdo (conteúdo é definição ou regra e
               o rótulo é fato_de_fonte/relação) ⇒ FALHA no eixo `KIND_MISCLASSIFIED`; rótulo de impacto MAIOR que o conteúdo
-              não é falha (só passa a exigir visto). INDEPENDÊNCIA DO JUIZ — DECIDIDA como regra (DHR-SPEC007-003 P-1;
+              não é falha (só passa a exigir visto). ENTRADA DO JUIZ (R4-M1): o juiz é chamado pela CIM com o `content_ref`
+              do tipo `candidate_ref@version` (RULE-KFH-019 (f1)), que a CIM resolve em afirmações + trechos citados +
+              `record_proposal` + `knowledge_kind` + `target_node_type` do candidato ARMAZENADO; sem esse ref o juízo do
+              rótulo não roda e o resultado do rótulo é INDETERMINADO (`KC_INDETERMINADO`, não sela). INDEPENDÊNCIA DO JUIZ — DECIDIDA como regra (DHR-SPEC007-003 P-1;
               recomendações 8.2/8.3): `judge_model_id ≠ former_model_id` E o juiz roda em PONTO SEPARADO do formador, SEM
               capacidade de escrita (só devolve o resultado ao gate; verificado pelo registro de capacidades — EC-KFH-003; o
               host concreto é BUILD) — mesmo modelo em contexto novo NÃO é independente (`JUDGE_NOT_INDEPENDENT` ⇒
@@ -511,20 +547,33 @@ RULE-KFH-006: VALIDAÇÃO F1 — JUÍZO (Classe H), só após RULE-KFH-005 passa
               [Fonte: research §3.5 (SRC-FAITHJUDGE-01/SRC-RAGAS-01); DHR-SPEC007-001 Q5/Q8.2/Q8.3; DHR-SPEC007-003 P-1/P-2;
               ENF-03; RULE-MECH-03; RULE-MET-01; parecer R3 M4]  [PROPOSTA]  (texto v1.2 integral no Anexo R, R.5)
 
-RULE-KFH-007: O SELO DE PUBLICAÇÃO é gate NÃO-LLM, E3, fail-closed. ENTRADAS (r3-n1/R3-M2): (A) `seal_request(
-              candidate_ref@version, succession_of?, human_approval_ref?, succession_authorization_ref?)` + identidade do
-              emissor fornecida pelo runtime — o pedido NÃO carrega conteúdo nem registros (se trouxer lista de registros,
-              ela é comparada à derivada em (ii)); o `seal_id` é ALOCADO pelo gate; (B) `seal_submit(seal_id@seal_version)`.
-              ORDEM (N-01/R3-M1): o gate avalia na ordem fixa de D4.2 e devolve o PRIMEIRO código que falha (fail-fast);
+RULE-KFH-007: O SELO DE PUBLICAÇÃO é gate NÃO-LLM, E3, fail-closed. ENTRADAS (r3-n1/R3-M2/r4-n1/r4-n4): (A) `seal_request(
+              candidate_ref@version, declared_records?, succession_of[]?, human_approval_ref?, succession_authorization_ref?)`
+              + identidade do emissor fornecida pelo runtime — o pedido NÃO carrega conteúdo; `declared_records?` é um campo
+              OPCIONAL só de conferência (lista {`record_ref`, `record_kind`, `record_hash`} que o solicitante espera selar),
+              comparado à lista derivada em (ii) e NUNCA usado como fonte do que é selado; `succession_of[]?` é um MAPA
+              `record_ref → published_ref@version` (um par por registro que sucede item vigente), com
+              `succession_authorization_ref` cujo escopo cobre todos os pares; o `seal_id` é ALOCADO pelo gate;
+              (B) `seal_submit(seal_id@seal_version)`.
+              ORDEM (N-01/R3-M1/r4-n2): o gate avalia na ordem fixa de D4.2 e devolve o PRIMEIRO código que falha (fail-fast);
               por isso cada cenário de selo parte da Fixture F0 (D7), que satisfaz todos os passos anteriores, e quebra uma
-              condição só. Só é emitido se TODAS valem:
+              condição só. CORRESPONDÊNCIA condição ↔ passo de D4.2 (a ordem que vale é a dos PASSOS): (i)↔(1); (ii)↔(2);
+              (iii)↔(3); (iv)↔(4); (iv-bis)↔(4-bis); (v)↔(5); (vii) gatilho de sucessora e núcleo causal↔(5-bis);
+              (vi)↔(6); (vii) campos da RULE-CKG-008↔(7); (vii-bis)↔(7-bis); (viii)↔(8); (ix)↔(9)–(11). Só é emitido se
+              TODAS valem: *[v2.0 do cabeçalho: "ENTRADAS (r3-n1/R3-M2): (A) `seal_request(candidate_ref@version,
+              succession_of?, human_approval_ref?, succession_authorization_ref?)` + identidade do emissor fornecida pelo
+              runtime — o pedido NÃO carrega conteúdo nem registros (se trouxer lista de registros, ela é comparada à
+              derivada em (ii)); o `seal_id` é ALOCADO pelo gate; (B) `seal_submit(seal_id@seal_version)`. ORDEM
+              (N-01/R3-M1): o gate avalia na ordem fixa de D4.2 e devolve o PRIMEIRO código que falha (fail-fast); por isso
+              cada cenário de selo parte da Fixture F0 (D7), que satisfaz todos os passos anteriores, e quebra uma condição
+              só. Só é emitido se TODAS valem:"]*
               (i) `validation_record` de `candidate_ref@version` com resultado VALIDADO (RULE-KFH-005 ∧ 006) — senão
               `VALIDATION_NOT_VALIDATED`;
               (ii) IGUALDADE COM O VALIDADO (N-02/R3-M2): o gate recalcula `material_hash` (serialização única — RULE-KFH-005)
               sobre o candidato ARMAZENADO — inclusive `knowledge_kind` e `target_node_type` (R3-M4) — e exige igualdade com
               `validation_record.material_hash`; deriva `sealed_records[]` = {`record_ref`, `record_kind`, `record_hash`} do
               mesmo candidato — senão `SEAL_HASH_MISMATCH` (sub `SEAL_RECORDS_DIFFER_FROM_VALIDATED` quando o pedido trouxe
-              lista de registros diferente da derivada);
+              `declared_records` diferente da lista derivada);
               (iii) emissor com identidade AUTENTICADA pelo runtime (RULE-CBP-014) e pertencente à LISTA DE EMISSORES DO SELO
               — regra LOCAL, análoga à RULE-CKG-009 (m-02); DECIDIDA (DHR-SPEC007-003 P-1): a lista é o escopo do
               `authorization_act_record` VÁLIDO de act_type ISSUER_LIST mais recente (RULE-KFH-020), aprovado por Andraus;
@@ -549,8 +598,12 @@ RULE-KFH-007: O SELO DE PUBLICAÇÃO é gate NÃO-LLM, E3, fail-closed. ENTRADAS
               `SEAL_SCOPE_INVALID`); GATILHO DE SUCESSORA (n-01/r3-n3): o gate consulta o KG (read-only, RULE-CKG-011) pela
               CHAVE NATURAL de cada registro — de NÓ: `natural_key` (SPEC-006 `plan.md` l.1410); de RELAÇÃO:
               `(relation_type, from_node, to_node, target_relation_id, valid_from)` (SPEC-006 `plan.md` l.453-454); se já
-              existe registro vigente com a mesma chave, o pedido DEVE declarar `succession_of = esse registro@versão` e
-              seguir a RULE-KFH-009 (a) — senão `SEAL_SCOPE_INVALID` (sub `SUCCESSION_UNDECLARED`; impede nó paralelo);
+              existe registro vigente com a mesma chave, o pedido DEVE trazer, em `succession_of[]`, o par `record_ref →
+              esse registro@versão` (um par por registro que colide — r4-n4) e seguir a RULE-KFH-009 (a) — senão
+              `SEAL_SCOPE_INVALID` (sub `SUCCESSION_UNDECLARED`; impede nó paralelo); par em `succession_of[]` para registro
+              que NÃO colide ⇒ mesmo código (sucessão inexistente não é declarada) *[v2.0: "o pedido DEVE declarar
+              `succession_of = esse registro@versão` e seguir a RULE-KFH-009 (a) — senão `SEAL_SCOPE_INVALID` (sub
+              `SUCCESSION_UNDECLARED`; impede nó paralelo);"]*;
               relação com `valid_from` distinto é chave distinta (semântica da SPEC-006, não alterada aqui); sucessora que
               altere o NÚCLEO CAUSAL (SPEC-006 RULE-CKG-008, `plan.md` l.443-445) NÃO é sucessão — `SEAL_SCOPE_INVALID`
               (sub `CAUSAL_CORE_IMMUTABLE_IN_CHAIN`); o caminho é ato INVALIDATION da CAUSA antiga (RULE-KFH-009 (b)) +
@@ -609,7 +662,9 @@ RULE-KFH-009: (EXTENSÃO LOCAL da RULE-CKG-004 — m-01: a RULE-CKG-004 rege a v
               delegar depois a troca de itens comuns à conferência automática é decisão futura dele, não prevista aqui. Sem
               o ato, o gate de selo nega a sucessora (`SUCCESSION_AUTHORIZATION_MISSING`) e o item anterior permanece
               vigente. (b) INVALIDAÇÃO (r3-n5(d)): o pipeline só PEDE invalidação de publicado por ato de act_type
-              INVALIDATION (RULE-KFH-020; escopo = `published_ref@version`), gravado e aprovado por Andraus; a escrita do
+              INVALIDATION (RULE-KFH-020; escopo = `published_ref@version`), gravado e aprovado por Andraus — exigir ato de
+              Andraus também para a INVALIDAÇÃO (e não só para a troca, P-8) é extensão desta Spec da P-8/P-10, `[PROPOSTA]`
+              a confirmar por Andraus na homologação (r4-n8); a escrita do
               registro de invalidação é do KG, sob RULE-CKG-009/004 (SPEC-006, não redefinida). Assim a cadeia "marca → nova
               formação → novo selo" NUNCA substitui nem aposenta publicado sem ato humano. NUNCA de forma automática nem em
               CASCATA: nenhum evento de fonte, marca de revalidação, contradição ou mudança em item relacionado dispara, por
@@ -636,40 +691,61 @@ RULE-KFH-019: (N-04) CAMADA DE INVOCAÇÃO DE MODELO (CIM) — caminho de efeito
               (b) PROVEDOR EXTERNO — DEFINIÇÃO ÚNICA, DECIDIDA (DHR-SPEC007-003 P-4b; SPEC-007-EXTTX-001): todo executor de
               modelo ou serviço que NÃO roda em execução local controlada pelo SOT; o MODELO DE TERCEIRO CONTRATADO PELO
               SISTEMA É EXTERNO. `provider_locus` vem do REGISTRO DE PROVEDORES da CIM (r3-n5(c); [PROPOSTA]): cada executor
-              consta como LOCAL ou EXTERNO; executor ausente do registro ⇒ EXTERNO. QUEM confirma que um executor é LOCAL =
-              [DECISÃO NECESSÁRIA — SPEC-007-LOCUS-001, de Andraus]; NO INTERVALO (fail-closed) nenhum executor é LOCAL;
-              (c) PERMISSÃO EFETIVA DE ENVIO de um conteúdo := conjunção (E lógico) de `external_transmission_allowed` de
-              TODAS as suas origens-raiz (RULE-KFH-001) ao longo da cadeia de derivação (unidade → afirmação/candidato →
-              registro selado → item publicado) — DECIDIDA (DHR-SPEC007-003 P-11; SPEC-007-DERIVTX-001): o derivado HERDA a
-              restrição (regra mais restritiva), inclusive conhecimento reescrito; vale igualmente para `rights_status`
-              efetivo (o mais restritivo entre as origens-raiz; INDETERMINADO domina); origem-raiz irresolúvel ⇒ FALSE /
-              INDETERMINADO;
-              (d) chamada com `provider_locus = EXTERNO` cujo conteúdo tenha permissão efetiva FALSE ⇒ NEGADA, nada é
-              enviado (`EXTERNAL_TRANSMISSION_FORBIDDEN`);
+              consta como LOCAL ou EXTERNO; executor ausente do registro ⇒ EXTERNO. QUEM confirma que um executor é LOCAL —
+              DECIDIDA (DHR-SPEC007-004 P-12; SPEC-007-LOCUS-001): SÓ ANDRAUS, MODELO POR MODELO, por
+              `authorization_act_record` VÁLIDO de act_type LOCAL_EXECUTOR cujo escopo contém o `model_ref` (RULE-KFH-020);
+              entrada LOCAL sem esse ato é tratada como EXTERNO; até o 1º ato, nenhum executor é LOCAL;
+              (c) PERMISSÃO EFETIVA de um conteúdo — DUAS, calculadas sobre TODAS as suas origens-raiz (RULE-KFH-001) ao longo
+              da cadeia de derivação (unidade → afirmação/candidato → registro selado → item publicado) — DECIDIDA
+              (DHR-SPEC007-003 P-11; SPEC-007-DERIVTX-001), o derivado HERDA a restrição (regra mais restritiva), inclusive
+              conhecimento reescrito: (c1) ENVIO := conjunção (E lógico) de `external_transmission_allowed`; (c2) USO :=
+              `rights_status` efetivo, o mais restritivo entre as origens-raiz (INDETERMINADO domina); origem-raiz
+              irresolúvel ⇒ ENVIO FALSE e USO INDETERMINADO;
+              (d) DUAS TRAVAS, nesta ordem (R4-M2; ordem da rodada 5, DHR-SPEC007-004): (d1) para QUALQUER executor, LOCAL
+              ou EXTERNO, algum conteúdo com USO efetivo INDETERMINADO ⇒ NEGADA, nada é enviado (`SOURCE_RIGHTS_INDETERMINATE`
+              — "pode usar" vale também para modelo de casa, P-4a/P-11); (d2) com `provider_locus = EXTERNO`, algum conteúdo
+              com ENVIO efetivo FALSE ⇒ NEGADA, nada é enviado (`EXTERNAL_TRANSMISSION_FORBIDDEN`);
               (e) devolve à etapa só texto (sem ferramentas);
-              (f) ENVELOPE DE ENTRADA (R3-M5): a etapa chama `invoke(stage, model_ref, template_id, content_refs[],
-              free_text?)`. (f1) Conteúdo de fonte, ou derivado dela, SÓ entra por `content_ref` (`semantic_unit_ref` |
-              `claim_ref@candidate_version` | `published_ref@version`); a CIM RESOLVE cada ref no registro do pipeline e
-              busca ELA MESMA os bytes — a etapa não fornece os bytes; ref irresolúvel ⇒ `INVOCATION_ENVELOPE_INVALID` (sub
-              `CONTENT_REF_UNRESOLVABLE`). (f2) O texto de instrução vem SÓ de `template_id` de um CATÁLOGO DE MODELOS DE
-              INSTRUÇÃO registrado (texto fixo, com hash, não derivado de fonte; [PROPOSTA]) — `template_id` fora do catálogo
-              ⇒ `INVOCATION_ENVELOPE_INVALID` (sub `TEMPLATE_UNREGISTERED`). (f3) Qualquer TEXTO LIVRE sem `content_ref`
-              (prompt composto, resumo, tradução, colagem) tem origem-raiz IRRESOLÚVEL ⇒ permissão efetiva FALSE ⇒ não sai
-              para provedor EXTERNO (`EXTERNAL_TRANSMISSION_FORBIDDEN`, sub `CONTENT_PROVENANCE_MISSING`); a provedor LOCAL
-              é aceito e registrado. (f4) Saída de modelo usada como entrada de outra chamada só volta por `content_ref` do
-              objeto registrado que a contém (ex.: `claim_ref@candidate_version`), herdando a origem-raiz pela cadeia.
+              (f) ENVELOPE DE ENTRADA (R3-M5/R4-M1/R4-M2): a etapa chama `invoke(stage, model_ref, template_id,
+              content_refs[])` — o envelope NÃO tem campo de texto livre. (f1) Conteúdo de fonte, ou derivado dela, SÓ entra
+              por `content_ref` de um destes tipos: `semantic_unit_ref` | `claim_ref@candidate_version` |
+              **`candidate_ref@version`** (R4-M1: a CIM resolve, do candidato ARMAZENADO, todas as afirmações com seus trechos
+              citados, o `record_proposal`, o `knowledge_kind` e o `target_node_type` — é o tipo usado para chamar o juiz F1,
+              que assim recebe o rótulo a julgar; origens-raiz = união das origens-raiz de todas as afirmações; permissões
+              (c1)/(c2) calculadas sobre essa união) | `published_ref@version`; a CIM RESOLVE cada ref no registro do
+              pipeline e busca ELA MESMA os bytes — a etapa não fornece os bytes; ref irresolúvel ⇒
+              `INVOCATION_ENVELOPE_INVALID` (sub `CONTENT_REF_UNRESOLVABLE`). (f2) O texto de instrução vem SÓ de
+              `template_id` de um CATÁLOGO DE MODELOS DE INSTRUÇÃO registrado (texto fixo, com hash, não derivado de fonte;
+              [PROPOSTA]) — `template_id` fora do catálogo ⇒ `INVOCATION_ENVELOPE_INVALID` (sub `TEMPLATE_UNREGISTERED`).
+              (f3) TEXTO SOLTO PROIBIDO PARA QUALQUER EXECUTOR (R4-M2; DHR-SPEC007-004, ordem da rodada 5 — "lado seguro"):
+              pedido que traga qualquer texto fora de `template_id` + `content_refs` (prompt composto, resumo, tradução,
+              colagem), seja para executor LOCAL ou EXTERNO ⇒ NEGADO, nada é enviado (`INVOCATION_ENVELOPE_INVALID`, sub
+              `CONTENT_PROVENANCE_MISSING`). (f4) Saída de modelo usada como entrada de outra chamada só volta por
+              `content_ref` do objeto registrado que a contém (ex.: `claim_ref@candidate_version`), herdando a origem-raiz
+              pela cadeia.
+              (g) RASTRO E DETECÇÃO DE CHAMADA FORA DA CIM (r4-n10): só a CIM detém credencial de acesso aos executores de
+              modelo (as etapas não têm credencial); a detecção de chamada que contorne a CIM é por auditoria do lado do
+              executor/rede (registros de acesso do provedor e de saída de rede conferidos contra `model_invocation_record`)
+              — mecanismo concreto = BUILD; risco residual RU-7 (§7-bis Bloco C).
               INTERFACE COM A SPEC-048 [PROPOSTA]: a entrega de pacote a consumidor externo aplica o mesmo teste (c)/(d) item a
               item — obrigação da SPEC-048, que USA esta trava (cláusula v1.2 no Anexo T, T.1).
-              [Fonte: INV-KFH-02; DHR-PROV-WEB-001 §2.1; DHR-SPEC007-003 P-4b/P-11; ENF-03/04; atomic-spec §10.2; pareceres
-              R2 N-04/n-11/n-13 e R3 M5/r3-n5]  [PROPOSTA]  (texto v1.2 integral no Anexo R, R.5)
+              [Fonte: INV-KFH-02; DHR-PROV-WEB-001 §2.1; DHR-SPEC007-003 P-4a/P-4b/P-11; DHR-SPEC007-004 P-12 e ordem da
+              rodada 5; ENF-03/04; atomic-spec §10.2; pareceres R2 N-04/n-11/n-13, R3 M5/r3-n5 e R4 M1/M2/r4-n10]  [PROPOSTA]
+              (texto v2.0 integral no Anexo R, R.10; v1.2 no Anexo R, R.5)
 
 RULE-KFH-020: (N-03) ATO DE AUTORIZAÇÃO — representação verificável, SEM criar autoridade nova. Toda referência a "ato de
               Andraus" (`rights_decision_ref`, `transmission_decision_ref`, `issuer_list_ref`, `human_approval_ref`,
-              `succession_authorization_ref`, `invalidation_ref`) DEVE resolver para um `authorization_act_record`
-              APPEND-ONLY com: `act_id`; `act_type` ∈ {RIGHTS, EXT_TRANSMISSION, ISSUER_LIST, HUMAN_APPROVAL_LOT, SUCCESSION,
-              INVALIDATION, REVOCATION} (ISSUER_LIST e INVALIDATION — r3-n5(b)(d)); `decision` (valor decidido); `scope[]` =
-              lista EXATA dos objetos alcançados (`source_id@source_hash` | `issuer_id` | `candidate_ref@version` +
-              `material_hash` | `published_ref@version` | `act_id`, este só em REVOCATION); `scope_hash` = hash da
+              `succession_authorization_ref`, `invalidation_ref`, `local_executor_ref`) DEVE resolver para um
+              `authorization_act_record` APPEND-ONLY com: `act_id`; `act_type` ∈ {RIGHTS, EXT_TRANSMISSION, ISSUER_LIST,
+              HUMAN_APPROVAL_LOT, SUCCESSION, INVALIDATION, LOCAL_EXECUTOR, REVOCATION} (ISSUER_LIST e INVALIDATION —
+              r3-n5(b)(d); LOCAL_EXECUTOR — DHR-SPEC007-004 P-12); `decision` (valor decidido); `scope[]` = lista EXATA dos
+              objetos alcançados (`source_id@source_hash` | `issuer_id` | `model_ref` | `candidate_ref@version` +
+              `material_hash` | `published_ref@version` | `act_id`, este só em REVOCATION); *[v2.0: "`succession_authorization_ref`,
+              `invalidation_ref`) DEVE resolver para um `authorization_act_record` APPEND-ONLY com: `act_id`; `act_type` ∈
+              {RIGHTS, EXT_TRANSMISSION, ISSUER_LIST, HUMAN_APPROVAL_LOT, SUCCESSION, INVALIDATION, REVOCATION} (ISSUER_LIST e
+              INVALIDATION — r3-n5(b)(d)); `decision` (valor decidido); `scope[]` = lista EXATA dos objetos alcançados
+              (`source_id@source_hash` | `issuer_id` | `candidate_ref@version` + `material_hash` | `published_ref@version` |
+              `act_id`, este só em REVOCATION);"]* `scope_hash` = hash da
               serialização canônica de `scope[]` (o "lote" — mesma função canon da RULE-KFH-005); `approver_id` = identidade
               HUMANA confirmada pelo runtime, nunca do payload; `decision_source_ref` (ata ou registro de chat —
               rastreabilidade, NÃO prova); `recorded_by` (mesma identidade confirmada); `recorded_at`.
@@ -686,12 +762,14 @@ RULE-KFH-020: (N-03) ATO DE AUTORIZAÇÃO — representação verificável, SEM 
               `AUTH_ACT_UNRESOLVABLE` (subs `AUTH_ACT_TYPE_MISMATCH`, `AUTH_ACT_SCOPE_MISMATCH`,
               `AUTH_ACT_APPROVER_UNAUTHORIZED`, `AUTH_ACT_REVOKED`, `AUTH_IDENTITY_UNAVAILABLE`).
               REGRA DE FUNCIONAMENTO (DHR-SPEC007-003 §2 — o fail-closed deixa de ser "intervalo" e passa a ser a regra):
-              sem ato válido nada vale — nenhuma fonte liberada, nenhum envio externo, lista de emissores vazia (nenhum
-              selo), nenhum selo ALTO, nenhuma sucessão, nenhuma invalidação pedida pelo pipeline; a linha fica parada até
+              sem ato válido nada vale — nenhuma fonte liberada, nenhum envio externo, nenhum executor LOCAL, lista de
+              emissores vazia (nenhum selo), nenhum selo ALTO, nenhuma sucessão, nenhuma invalidação pedida pelo pipeline
+              *[v2.0: sem "nenhum executor LOCAL"]*; a linha fica parada até
               a 1ª liberação real (seção "Pré-requisitos mínimos"). Gravar o registro é efeito E3 (EC-KFH-012). Esta regra
               só REPRESENTA as decisões de Andraus; não cria autoridade.
               [Fonte: SPEC-004 RULE-CBP-014 (princípio); INV-07; atomic-spec §10.2 (authz E3); DHR-SPEC007-001 Q8.4;
-              DHR-SPEC007-003 P-10/§2/§4; pareceres R2 N-03 e R3 r3-n5]  [PROPOSTA]  (texto v1.2 integral no Anexo R, R.5)
+              DHR-SPEC007-003 P-10/§2/§4; DHR-SPEC007-004 P-12; pareceres R2 N-03 e R3 r3-n5]  [PROPOSTA]  (texto v1.2
+              integral no Anexo R, R.5)
 ```
 
 ---
@@ -705,12 +783,13 @@ RULE-KFH-020: (N-03) ATO DE AUTORIZAÇÃO — representação verificável, SEM 
 3. (KFH-003) Quando uma unidade semântica é criada, o pipeline DEVE exigir origem resolvível (`source_id@hash` + `span_locator`) e DEVE excluí-la da formação se não resolver.
 4. (KFH-004) Quando a formação devolve um candidato, o pipeline DEVE rejeitar afirmação sem `span_ref` resolvível, DEVE exigir `formed_inference=true` em afirmação ausente da fonte e DEVE exigir `target_node_type = learning`.
 5. (KFH-005) Quando um candidato entra em validação, o pipeline DEVE executar as checagens determinísticas (citação, trecho, literais, cobertura afirmação↔registro, tipo) antes de qualquer juízo por modelo, DEVE gravar o `material_hash` pela serialização única (incluindo `knowledge_kind` e `target_node_type`) e DEVE reprovar o candidato se alguma falhar.
-6. (KFH-006) Quando o juízo de fidelidade é executado, o pipeline DEVE exigir juiz com `judge_model_id ≠ former_model_id` (IDs gravados pela CIM) em ponto separado sem escrita, DEVE reprovar rótulo de impacto diminuído (`KIND_MISCLASSIFIED`) e DEVE marcar `VALIDADO` só se a parte D passou e tudo é CLEAR (FALHA prevalece sobre INDETERMINADO).
-7. (KFH-007) Quando o selo é solicitado, o gate DEVE recalcular o `material_hash` sobre o candidato armazenado, derivar `sealed_records[]`, avaliar as condições (i)–(vii-bis) na ordem fixa devolvendo o primeiro código que falha e gravar selo e reserva numa única unidade atômica só se todas valem; e quando o selo é submetido, o pipeline DEVE materializar cada registro, conferir o `record_hash` e negar (fail-closed) qualquer divergência ou reuso.
+6. (KFH-006) Quando o juízo de fidelidade é executado, o pipeline DEVE entregar ao juiz o candidato inteiro, com o rótulo, por `candidate_ref@version` via CIM, DEVE exigir juiz com `judge_model_id ≠ former_model_id` (IDs gravados pela CIM) em ponto separado sem escrita, DEVE reprovar rótulo de impacto diminuído (`KIND_MISCLASSIFIED`) e DEVE marcar `VALIDADO` só se a parte D passou e tudo é CLEAR (FALHA prevalece sobre INDETERMINADO).
+7. (KFH-007) Quando o selo é solicitado, o gate DEVE recalcular o `material_hash` sobre o candidato armazenado, derivar `sealed_records[]`, avaliar as condições (i)–(vii-bis) na ordem dos passos (1)–(7-bis) de D4.2 (correspondência na RULE-KFH-007) devolvendo o primeiro código que falha e gravar selo e reserva numa única unidade atômica só se todas valem; e quando o selo é submetido, o pipeline DEVE materializar cada registro, conferir o `record_hash` e negar (fail-closed) qualquer divergência ou reuso.
 8. (KFH-008) Quando uma fonte registrada recebe nova versão, o pipeline DEVE gravar marca de revalidação não destrutiva nos derivados diretos e NÃO DEVE alterar validade, estado ou visibilidade de nada.
 9. (KFH-009) Quando qualquer evento tenta mudar a validade de conhecimento publicado sem sucessão autorizada (`supersedes`/`version+1`/`expected_version` + ato SUCCESSION de Andraus) nem invalidação autorizada (ato INVALIDATION de Andraus), o pipeline DEVE negar a mudança e NÃO DEVE propagá-la em cascata.
 10. (KFH-016) Quando uma contradição é detectada, o pipeline DEVE registrá-la preservando ambos os lados e NÃO DEVE resolvê-la, alterar validade nem mudar o estado ou a visibilidade de um dos lados.
-11. (KFH-019) Quando qualquer etapa chama um modelo, a CIM DEVE resolver ela mesma os `content_ref`, gravar `model_id` e `provider_locus` da chamada e DEVE negar o envio a provedor externo de conteúdo com permissão efetiva FALSE (conjunção das origens-raiz) ou de texto livre sem `content_ref`.
+11. (KFH-019) Quando qualquer etapa chama um modelo, a CIM DEVE resolver ela mesma os `content_ref`, gravar `model_id` e `provider_locus` da chamada, DEVE negar a chamada a QUALQUER executor se algum conteúdo tiver direito de uso efetivo INDETERMINADO ou se houver texto solto fora de `template_id` + `content_refs`, e DEVE negar o envio a provedor externo de conteúdo com permissão efetiva de envio FALSE (conjunção das origens-raiz).
+*[EARS 7 e 11 da v2.0: "7. (KFH-007) Quando o selo é solicitado, o gate DEVE recalcular o `material_hash` sobre o candidato armazenado, derivar `sealed_records[]`, avaliar as condições (i)–(vii-bis) na ordem fixa devolvendo o primeiro código que falha e gravar selo e reserva numa única unidade atômica só se todas valem; e quando o selo é submetido, o pipeline DEVE materializar cada registro, conferir o `record_hash` e negar (fail-closed) qualquer divergência ou reuso."; "11. (KFH-019) Quando qualquer etapa chama um modelo, a CIM DEVE resolver ela mesma os `content_ref`, gravar `model_id` e `provider_locus` da chamada e DEVE negar o envio a provedor externo de conteúdo com permissão efetiva FALSE (conjunção das origens-raiz) ou de texto livre sem `content_ref`."; EARS 6 da v2.0 sem a cláusula "DEVE entregar ao juiz o candidato inteiro, com o rótulo, por `candidate_ref@version` via CIM,"]*
 12. (KFH-020) Quando um gate encontra uma referência a ato de autorização, o gate DEVE aceitá-la só se resolver para `authorization_act_record` válido (tipo, escopo, `scope_hash`, aprovado e gravado pela identidade confirmada de Andraus, não revogado) e DEVE negar (fail-closed) caso contrário.
 
 ---
@@ -724,10 +803,9 @@ RULE-KFH-020: (N-03) ATO DE AUTORIZAÇÃO — representação verificável, SEM 
 | Código-pai | Subcódigos | Uso |
 |---|---|---|
 | `SOURCE_UNREGISTERED` | `SOURCE_HASH_MISSING`, `SOURCE_LOCATOR_MISSING`, `SOURCE_UNCLASSIFIED` | KFH-001; T01 |
-| `SOURCE_RIGHTS_INDETERMINATE` (pai próprio — n-03: fonte registrada, mas parada) | — | KFH-001; T02 |
-| `EXTERNAL_TRANSMISSION_FORBIDDEN` | `CONTENT_PROVENANCE_MISSING` (R3-M5) | KFH-001/019; ADV-20/28/32 |
-| `INVOCATION_ENVELOPE_INVALID` (R3-M5) | `TEMPLATE_UNREGISTERED`, `CONTENT_REF_UNRESOLVABLE` | KFH-019; ADV-32 |
-| `AUTH_ACT_UNRESOLVABLE` (N-03) | `AUTH_ACT_TYPE_MISMATCH`, `AUTH_ACT_SCOPE_MISMATCH`, `AUTH_ACT_APPROVER_UNAUTHORIZED`, `AUTH_ACT_REVOKED`, `AUTH_IDENTITY_UNAVAILABLE` (r3-n5(a)) | KFH-020 (e usos em KFH-001/007/009); T24; ADV-27 |
+| `SOURCE_RIGHTS_INDETERMINATE` (pai próprio — n-03: fonte registrada, mas parada; v2.1: também a trava (d1) da CIM para qualquer executor — R4-M2) | — | KFH-001/019; T02; ADV-32(e) |
+| `EXTERNAL_TRANSMISSION_FORBIDDEN` | — | KFH-001/019; ADV-20/28/32 |
+| `INVOCATION_ENVELOPE_INVALID` (R3-M5) | `TEMPLATE_UNREGISTERED`, `CONTENT_REF_UNRESOLVABLE`, `CONTENT_PROVENANCE_MISSING` (v2.1: texto solto, qualquer executor — R4-M2) | KFH-019; ADV-32 || `AUTH_ACT_UNRESOLVABLE` (N-03) | `AUTH_ACT_TYPE_MISMATCH`, `AUTH_ACT_SCOPE_MISMATCH`, `AUTH_ACT_APPROVER_UNAUTHORIZED`, `AUTH_ACT_REVOKED`, `AUTH_IDENTITY_UNAVAILABLE` (r3-n5(a)) | KFH-020 (e usos em KFH-001/007/009); T24; ADV-27 |
 | `RECORD_CONTENT_NOT_VALIDATED` (N-02) | — | KFH-005; ADV-30(c) |
 | `SEAL_REVOCATION_REQUESTED` (marcação — n-07; registro `seal_revocation_request`) | — | EC-KFH-004 (compensação) |
 | `FORMATION_EFFECT_FORBIDDEN` | `FORMATION_TOOL_CALL_FORBIDDEN`, `FORMATION_WRITE_FORBIDDEN` | KFH-002; T03; ADV-02 |
@@ -744,6 +822,8 @@ RULE-KFH-020: (N-03) ATO DE AUTORIZAÇÃO — representação verificável, SEM 
 | `AUTOMATIC_VALIDITY_CHANGE_FORBIDDEN` | `CASCADE_INVALIDATION_FORBIDDEN` | KFH-009; T15; ADV-07 |
 | `CONTRADICTION_SILENT_RESOLUTION_FORBIDDEN` | — | KFH-016; ADV-25 |
 | `SCOPE_OR_OPEN_DECISION_VIOLATION` **(checagem de REVISÃO/spec-time — não é código de runtime)** | `OUT_OF_SCOPE_043_044_018`, `OUT_OF_SCOPE_048` (v2.0), `OPEN_DECISION_TOUCHED`, `EXTERNAL_THRESHOLD_IMPORTED`, `BENCHMARK_ARTIFACT_IMPORTED` | ADV-13/17/18/19 |
+
+*[v2.0 de três linhas desta tabela: "| `SOURCE_RIGHTS_INDETERMINATE` (pai próprio — n-03: fonte registrada, mas parada) | — | KFH-001; T02 |"; "| `EXTERNAL_TRANSMISSION_FORBIDDEN` | `CONTENT_PROVENANCE_MISSING` (R3-M5) | KFH-001/019; ADV-20/28/32 |"; "| `INVOCATION_ENVELOPE_INVALID` (R3-M5) | `TEMPLATE_UNREGISTERED`, `CONTENT_REF_UNRESOLVABLE` | KFH-019; ADV-32 |"]*
 
 ### BASpec-KFH-001 — Registro de fonte antes da formação (ver RULE-KFH-001)
 ```
@@ -873,7 +953,7 @@ BASpec-KFH-006:
 BASpec-KFH-007:
   QUANDO:       O selo de um candidato é solicitado (entrada A) ou submetido (entrada B)
   ENTÃO:        Aplica RULE-KFH-007 — (A) recalcula material_hash sobre o candidato ARMAZENADO (serialização única, incl.
-                knowledge_kind e target_node_type) e deriva sealed_records; avalia (i)–(vii-bis) na ordem fixa (fail-fast);
+                knowledge_kind e target_node_type) e deriva sealed_records; avalia (i)–(vii-bis) na ordem dos passos de D4.2 (fail-fast);
                 só se todas valem grava selo + reserva numa única unidade atômica; (B) consumo único; materializa cada
                 registro por M, confere record_hash e submete ao KG pelo caminho (b) com publication.seal_ref; qualquer
                 falha ⇒ sem selo / nada submetido, candidato preservado
@@ -964,31 +1044,35 @@ BASpec-KFH-016:
 BASpec-KFH-019:
   QUANDO:       Qualquer etapa do pipeline chama um modelo (nesta Spec: formação e juiz F1; por interface, etapas da SPEC-048)
   ENTÃO:        Aplica RULE-KFH-019 — a chamada passa só pela CIM, pelo envelope invoke(stage, model_ref, template_id,
-                content_refs[], free_text?); a CIM resolve ela mesma os content_refs, toma provider_locus do registro de
-                provedores (ausente ⇒ EXTERNO), grava model_id e provider_locus; se o provedor é EXTERNO e algum conteúdo
-                tem permissão efetiva FALSE (conjunção das origens-raiz) ou há texto livre sem content_ref, nega e nada é enviado
-  PORQUE:       Invocar modelo externo é transmissão de conteúdo — caminho de efeito irreversível (dado enviado não volta);
-                a CIM só pode verificar proveniência do que ela mesma resolveu (R3-M5)
-  REFERÊNCIA:   RULE-KFH-019; RULE-KFH-001 (origem-raiz); INV-KFH-02; DHR-PROV-WEB-001 §2.1; DHR-SPEC007-003 P-4b/P-11
+                content_refs[]) sem campo de texto livre; a CIM resolve ela mesma os content_refs (incl. candidate_ref@version,
+                que leva o rótulo ao juiz F1), toma provider_locus do registro de provedores (LOCAL só com ato LOCAL_EXECUTOR
+                de Andraus; senão EXTERNO), grava model_id e provider_locus; nega e nada é enviado se: há texto solto (qualquer
+                executor); algum conteúdo tem direito de uso efetivo INDETERMINADO (qualquer executor); ou o provedor é
+                EXTERNO e algum conteúdo tem permissão efetiva de envio FALSE (conjunção das origens-raiz)
+  PORQUE:       Invocar modelo é transmissão de conteúdo — externo é irreversível; e "pode usar" vale também em casa
+                (P-4a/P-11; R4-M2); a CIM só pode verificar proveniência do que ela mesma resolveu (R3-M5)
+  REFERÊNCIA:   RULE-KFH-019; RULE-KFH-001 (origem-raiz); RULE-KFH-020 (LOCAL_EXECUTOR); INV-KFH-02; DHR-PROV-WEB-001 §2.1;
+                DHR-SPEC007-003 P-4a/P-4b/P-11; DHR-SPEC007-004 P-12
   CLASSE/MECANISMO:
     CLASSE      : C (Constitutivo)
-    MECANISMO   : proxy único de invocação + resolução própria de content_refs + verificação de permissão efetiva antes do envio
-    GATE DE SAÍDA: envelope válido ∧ ((provider_locus = LOCAL) ∨ (∀ content_ref: permissão efetiva = TRUE ∧ rights efetivo ≠
-                  INDETERMINADO ∧ free_text ausente)) ⇒ envia; senão DENY
-    CRITÉRIO 4Es: Conformidade > Eficácia — vazamento é irreversível
+    MECANISMO   : proxy único de invocação + resolução própria de content_refs + verificação de uso e de envio antes de enviar
+    GATE DE SAÍDA: envelope válido (template no catálogo ∧ refs resolvíveis ∧ nenhum texto solto) ∧ (∀ content_ref: uso
+                  efetivo ≠ INDETERMINADO) ∧ ((provider_locus = LOCAL por ato válido) ∨ (∀ content_ref: envio efetivo = TRUE))
+                  ⇒ envia; senão DENY
+    CRITÉRIO 4Es: Conformidade > Eficácia — vazamento é irreversível; uso não liberado não vira conhecimento
   VERIFICADO POR:
-    DADO        T25 (positivo) e ADV-28 (c)(d) / ADV-32 (negativos)
+    DADO        T25 (positivo) e ADV-28 (a')(c)(d) / ADV-32 (a)–(e) (negativos)
     QUANDO      a CIM avalia a chamada
     ENTÃO       ver T25/ADV-28/ADV-32
     VERIFICAÇÃO ver T25/ADV-28/ADV-32
 ```
-*[v1.2 integral no Anexo R, R.6]*
+*[v1.2 integral no Anexo R, R.6; v2.0 integral no Anexo R, R.10]*
 
 ### BASpec-KFH-020 — Ato de autorização verificável (ver RULE-KFH-020) [E3] (N-03)
 ```
 BASpec-KFH-020:
   QUANDO:       Um gate encontra referência a ato de autorização (direitos, envio, lista de emissores, aprovação de lote,
-                sucessão, invalidação)
+                sucessão, invalidação, executor local)
   ENTÃO:        Aplica RULE-KFH-020 — aceita só se resolve para authorization_act_record válido (tipo, objeto ∈ escopo,
                 scope_hash, approver_id = recorded_by = identidade confirmada de Andraus, não revogado); senão nega;
                 identidade indisponível ⇒ nega tudo
@@ -1014,15 +1098,15 @@ BASpec-KFH-020:
 
 **D4.1 — Checagem literal (RULE-KFH-005).** ENTRADA: afirmação `a`, trecho resolvido `t`. PROCESSO: (1) resolve `source_id@hash` e `span_locator` → `t` (falha ⇒ `CITATION_UNRESOLVABLE`); (2) extrai de `a` e de `t` os literais: números (com unidade e sinal), percentuais, datas e marcadores de negação da lista local `[PROPOSTA]` ("não", "nunca", "sem", "nenhum"); (3) cada literal de `a` deve existir em `t` com o mesmo valor, unidade e sinal; negação presente em `t` e ausente em `a` (ou vice-versa) ⇒ `NEGATION_ALTERED`. SAÍDA: PASS | FALHA(eixo). EXEMPLO: `t` = "o índice caiu 3% em março" · `a` = "o índice caiu 30% em março" ⇒ `NUMBER_ALTERED`; `t` = "não houve rompimento" · `a` = "houve rompimento" ⇒ `NEGATION_ALTERED`; `a` = "o índice caiu 3% em março" ⇒ PASS. *Limite honesto:* modalidade, condição e causa não são confiavelmente detectáveis por lista lexical — ficam com o juízo H (RULE-KFH-006).
 
-**D4.2 — Gate do selo (RULE-KFH-007) — v2.0.** ENTRADAS: (A) `seal_request(candidate_ref@version, succession_of?, human_approval_ref?, succession_authorization_ref?)` + identidade do emissor fornecida pelo runtime; (B) `seal_submit(seal_id@seal_version)`. PROCESSO (A) — **ordem fixa, fail-fast: devolve o PRIMEIRO código que falha (N-01/R3-M1)**: (1) carrega `validation_record` de `candidate_ref@version`; resultado ≠ VALIDADO ⇒ `VALIDATION_NOT_VALIDATED`; (2) **hash único (R3-M2):** `h := material_hash(candidato ARMAZENADO)` (D4.3) e `S := sealed_records` derivada do mesmo candidato; `h ≠ validation_record.material_hash` ⇒ `SEAL_HASH_MISMATCH`; se o pedido trouxe lista de registros ≠ `S` ⇒ `SEAL_HASH_MISMATCH`/`SEAL_RECORDS_DIFFER_FROM_VALIDATED`; (3) identidade do emissor indisponível, ou emissor ∉ escopo do ato ISSUER_LIST válido mais recente (lista vazia sem ato) ⇒ `SEAL_ISSUER_UNAUTHORIZED`; (4) `knowledge_kind`/`target_node_type` ∈ {hypothesis, evidence, observation, conviction} ⇒ `SEAL_CANONICAL_TYPE_FORBIDDEN`; (4-bis) algum nó com `node_type ≠ learning` ⇒ `TARGET_NODE_TYPE_FORBIDDEN`; (5) `impact_class := ALTO` se `knowledge_kind` ∈ {definição, regra} ou AUSENTE, senão PADRAO (valor declarado ignorado); ALTO ⇒ `human_approval_ref` resolvido por RULE-KFH-020 (HUMAN_APPROVAL_LOT; escopo ∋ `candidate_ref@version` + `h`) — senão `HUMAN_APPROVAL_MISSING`; (5-bis) para cada registro de `S`, chave natural (nó: `natural_key`; relação: `(relation_type, from_node, to_node, target_relation_id, valid_from)`) vigente no KG (consulta read-only) ∧ sem `succession_of` ⇒ `SEAL_SCOPE_INVALID`/`SUCCESSION_UNDECLARED`; com `succession_of`: `succession_authorization_ref` resolvido por RULE-KFH-020 (SUCCESSION; escopo ∋ `published_ref@version` substituído e `candidate_ref@version` + `h`) — senão `SUCCESSION_AUTHORIZATION_MISSING`; CAUSA com núcleo causal alterado ⇒ `SEAL_SCOPE_INVALID`/`CAUSAL_CORE_IMMUTABLE_IN_CHAIN`; (6) alguma origem-raiz com `rights_status` efetivo INDETERMINADO ⇒ `SEAL_SOURCE_RIGHTS_INDETERMINATE`; (7) CAUSA/SIMILAR_A sem campos RULE-CKG-008 ⇒ `SEAL_SCOPE_INVALID`; (7-bis) existe `seal_consumption` de `candidate_ref@version` com status RESERVADO sem desfecho ou SUBMETIDO ⇒ `CANDIDATE_ALREADY_SEALED`; (8) **numa única unidade atômica (r3-n1):** aloca `seal_id@1`, grava `publication_seal(S, h, …)` e `seal_consumption(RESERVADO)` — ou nada. SAÍDA (A): `seal_id` | `SEAL_DENIED(sub)`. PROCESSO (B): (9) carrega o `seal_consumption` do selo; já tem desfecho (SUBMETIDO/FALHOU) ⇒ `SEAL_ALREADY_CONSUMED`; (10) para cada registro de `S`: materializa por M a partir do candidato armazenado e recalcula `record_hash`; diverge ⇒ `SEAL_CONTENT_MISMATCH`, nada submetido, consumo anexa FALHOU; (11) submete cada registro materializado + `publication.origin = spec007_seal` + `publication.seal_ref` (+ `supersedes`/`version`/`expected_version` se sucessora); anexa SUBMETIDO (ou FALHOU se o KG negar, ex.: `VERSION_CONFLICT`). SAÍDA (B): registros submetidos | `SEAL_DENIED(sub)`.
-EXEMPLO (Fixture F0, D7): `C@1` com `claims=[a1 "o índice X é calculado sobre o fechamento diário" — span F@h1#s3]`, `record_proposal=[N1 (nó; conteúdo ← a1)]`, `knowledge_kind = fato_de_fonte`, `target_node_type = learning` ⇒ `rh1 = record_hash(N1)`, `h7 = material_hash(C@1)` (D4.3); `validation_record.material_hash = h7`; `seal_request(C@1)` por E1 (no ato ISSUER_LIST) ⇒ (1)–(7-bis) passam, PADRAO ⇒ sem visto; (8) `S1@1` + RESERVADO; `seal_submit(S1@1)` ⇒ M(N1) recalculado = `rh1` ⇒ N1 submetido com `seal_ref = S1@1`; SUBMETIDO. Negativos: texto de a1 trocado no armazenado ⇒ (2) `SEAL_HASH_MISMATCH` (ADV-30(a)); pedido com lista `[N1, R9]` ⇒ (2) sub `SEAL_RECORDS_DIFFER_FROM_VALIDATED` (ADV-21(d)); sem ato ISSUER_LIST ⇒ (3) (T12(c)); `knowledge_kind = regra` sem visto ⇒ (5) (T14); segundo `seal_submit(S1@1)` ⇒ (9) `SEAL_ALREADY_CONSUMED`; novo `seal_request(C@1)` durante RESERVADO ou após SUBMETIDO ⇒ (7-bis) `CANDIDATE_ALREADY_SEALED`.
-*[D4.2 v1.2 integral no Anexo R, R.7; D4.2 v1.1 integral no Anexo R, R.7 (já preservada na v1.2)]*
+**D4.2 — Gate do selo (RULE-KFH-007) — v2.1.** ENTRADAS: (A) `seal_request(candidate_ref@version, declared_records?, succession_of[]?, human_approval_ref?, succession_authorization_ref?)` + identidade do emissor fornecida pelo runtime (r4-n1/r4-n4); (B) `seal_submit(seal_id@seal_version)`. PROCESSO (A) — **ordem fixa, fail-fast: devolve o PRIMEIRO código que falha (N-01/R3-M1)**: (1) carrega `validation_record` de `candidate_ref@version`; resultado ≠ VALIDADO ⇒ `VALIDATION_NOT_VALIDATED`; (2) **hash único (R3-M2):** `h := material_hash(candidato ARMAZENADO)` (D4.3) e `S := sealed_records` derivada do mesmo candidato; `h ≠ validation_record.material_hash` ⇒ `SEAL_HASH_MISMATCH`; se o pedido trouxe `declared_records` ≠ `S` ⇒ `SEAL_HASH_MISMATCH`/`SEAL_RECORDS_DIFFER_FROM_VALIDATED`; (3) identidade do emissor indisponível, ou emissor ∉ escopo do ato ISSUER_LIST válido mais recente (lista vazia sem ato) ⇒ `SEAL_ISSUER_UNAUTHORIZED`; (4) `knowledge_kind`/`target_node_type` ∈ {hypothesis, evidence, observation, conviction} ⇒ `SEAL_CANONICAL_TYPE_FORBIDDEN`; (4-bis) algum nó com `node_type ≠ learning` ⇒ `TARGET_NODE_TYPE_FORBIDDEN`; (5) `impact_class := ALTO` se `knowledge_kind` ∈ {definição, regra} ou AUSENTE, senão PADRAO (valor declarado ignorado); ALTO ⇒ `human_approval_ref` resolvido por RULE-KFH-020 (HUMAN_APPROVAL_LOT; escopo ∋ `candidate_ref@version` + `h`) — senão `HUMAN_APPROVAL_MISSING`; (5-bis) para cada registro de `S`, chave natural (nó: `natural_key`; relação: `(relation_type, from_node, to_node, target_relation_id, valid_from)`) vigente no KG (consulta read-only) ∧ sem par para esse `record_ref` em `succession_of[]` ⇒ `SEAL_SCOPE_INVALID`/`SUCCESSION_UNDECLARED`; par em `succession_of[]` para registro sem colisão ⇒ mesmo código; com pares: `succession_authorization_ref` resolvido por RULE-KFH-020 (SUCCESSION; escopo ∋ todos os `published_ref@version` substituídos e `candidate_ref@version` + `h`) — senão `SUCCESSION_AUTHORIZATION_MISSING`; CAUSA com núcleo causal alterado ⇒ `SEAL_SCOPE_INVALID`/`CAUSAL_CORE_IMMUTABLE_IN_CHAIN`; (6) alguma origem-raiz com `rights_status` efetivo INDETERMINADO ⇒ `SEAL_SOURCE_RIGHTS_INDETERMINATE`; (7) CAUSA/SIMILAR_A sem campos RULE-CKG-008 ⇒ `SEAL_SCOPE_INVALID`; (7-bis) existe `seal_consumption` de `candidate_ref@version` com status RESERVADO sem desfecho ou SUBMETIDO ⇒ `CANDIDATE_ALREADY_SEALED`; (8) **numa única unidade atômica (r3-n1):** aloca `seal_id@1`, grava `publication_seal(S, h, …)` e `seal_consumption(RESERVADO)` — ou nada. SAÍDA (A): `seal_id` | `SEAL_DENIED(sub)`. PROCESSO (B): (9) carrega o `seal_consumption` do selo; já tem desfecho (SUBMETIDO/FALHOU) ⇒ `SEAL_ALREADY_CONSUMED`; (10) para cada registro de `S`: materializa por M a partir do candidato armazenado e recalcula `record_hash`; diverge ⇒ `SEAL_CONTENT_MISMATCH`, nada submetido, consumo anexa FALHOU; (11) submete cada registro materializado + `publication.origin = spec007_seal` + `publication.seal_ref` (+ `supersedes`/`version`/`expected_version` se sucessora); anexa SUBMETIDO (ou FALHOU se o KG negar, ex.: `VERSION_CONFLICT`). SAÍDA (B): registros submetidos | `SEAL_DENIED(sub)`.
+EXEMPLO (Fixture F0, D7): `C@1` com `claims=[a1 "o relatório R registra que o índice X fechou março com queda de 3%" — span F@h1#s3]` (fato de fonte inequívoco: não define nem prescreve — r4-n3), `record_proposal=[N1 (nó; conteúdo ← a1)]`, `knowledge_kind = fato_de_fonte`, `target_node_type = learning` ⇒ `rh1 = record_hash(N1)`, `h7 = material_hash(C@1)` (D4.3); `validation_record.material_hash = h7`; `seal_request(C@1)` por E1 (no ato ISSUER_LIST) ⇒ (1)–(7-bis) passam, PADRAO ⇒ sem visto; (8) `S1@1` + RESERVADO; `seal_submit(S1@1)` ⇒ M(N1) recalculado = `rh1` ⇒ N1 submetido com `seal_ref = S1@1`; SUBMETIDO. Negativos: texto de a1 trocado no armazenado ⇒ (2) `SEAL_HASH_MISMATCH` (ADV-30(a)); pedido com `declared_records = [N1, R9]` ⇒ (2) sub `SEAL_RECORDS_DIFFER_FROM_VALIDATED` (ADV-21(d)); sem ato ISSUER_LIST ⇒ (3) (T12(c)); `knowledge_kind = regra` sem visto ⇒ (5) (T14); segundo `seal_submit(S1@1)` ⇒ (9) `SEAL_ALREADY_CONSUMED`; novo `seal_request(C@1)` durante RESERVADO ou após SUBMETIDO ⇒ (7-bis) `CANDIDATE_ALREADY_SEALED`.
+*[D4.2 v2.0 integral no Anexo R, R.10; D4.2 v1.2 integral no Anexo R, R.7; D4.2 v1.1 integral no Anexo R, R.7 (já preservada na v1.2)]*
 
-**D4.3 — Serialização única e materialização (RULE-KFH-005) — novo na v2.0 (R3-M2).** ENTRADA: candidato armazenado `C@v`. PROCESSO: (1) para cada `r ∈ record_proposal` (ordenados por `record_ref`): `M(r)` = {`record_ref`, `record_kind`, campos estruturais declarados, `node_type := target_node_type`, conteúdo := texto exato das afirmações de `content_claim_ids` na ordem declarada}; `rh_r := H(canon(M(r)))`; (2) `records := [{record_ref, record_kind, rh_r}]`; (3) `material_hash := H(canon({C@v, claims[{claim_id, text, span_refs, formed_inference}], records, knowledge_kind|AUSENTE, target_node_type}))`. Nenhum valor de hash é lido do armazenado ou do pedido. SAÍDA: `material_hash`, `records`. EXEMPLO: `C@1` do D4.2 ⇒ `rh1`, `h7`. (a) Trocar o texto de a1 para "o índice X é calculado sobre o fechamento semanal" e regravar no armazenado um `record_hash` coerente com o texto novo ⇒ o passo (1) recalcula `rh1'` do texto novo e o passo (3) dá `h8 ≠ h7` (o texto de a1 entra em `claims[]` e em M) ⇒ `SEAL_HASH_MISMATCH`. (b) Trocar `knowledge_kind` de `regra` para `fato_de_fonte` depois da validação ⇒ `h ≠ h7` (o rótulo está no hash — R3-M4). (c) Acrescentar ao pedido de selo a relação R9 não proposta ⇒ a lista do pedido ≠ `records` ⇒ `SEAL_RECORDS_DIFFER_FROM_VALIDATED`.
+**D4.3 — Serialização única e materialização (RULE-KFH-005) — novo na v2.0 (R3-M2).** ENTRADA: candidato armazenado `C@v`. PROCESSO: (1) para cada `r ∈ record_proposal` (ordenados por `record_ref`): `M(r)` = {`record_ref`, `record_kind`, campos estruturais declarados, `node_type := target_node_type`, conteúdo := texto exato das afirmações de `content_claim_ids` na ordem declarada, `formed_inference_claim_ids` := os desses IDs com `formed_inference=true` (r4-n5)}; `rh_r := H(canon(M(r)))`; (2) `records := [{record_ref, record_kind, rh_r}]`; (3) `material_hash := H(canon({C@v, claims[{claim_id, text, span_refs, formed_inference}], records, knowledge_kind|AUSENTE, target_node_type}))`. Nenhum valor de hash é lido do armazenado ou do pedido. SAÍDA: `material_hash`, `records`. EXEMPLO: `C@1` do D4.2 ⇒ `rh1`, `h7`. (a) Trocar o texto de a1 para "o relatório R registra que o índice X fechou março com queda de 5%" e regravar no armazenado um `record_hash` coerente com o texto novo ⇒ o passo (1) recalcula `rh1'` do texto novo e o passo (3) dá `h8 ≠ h7` (o texto de a1 entra em `claims[]` e em M) ⇒ `SEAL_HASH_MISMATCH`. (b) Trocar `knowledge_kind` de `regra` para `fato_de_fonte` depois da validação ⇒ `h ≠ h7` (o rótulo está no hash — R3-M4). (c) Pedido de selo com `declared_records` contendo a relação R9 não proposta ⇒ `declared_records` ≠ `records` ⇒ `SEAL_RECORDS_DIFFER_FROM_VALIDATED`. (d) Apagar a marca `formed_inference` de uma afirmação usada em N1 depois da validação ⇒ muda `claims[]` e `formed_inference_claim_ids` de M(N1) ⇒ `h ≠ h7` (r4-n5). *[D4.3 v2.0 integral no Anexo R, R.10]*
 
 **D4.4 — Marca de revalidação (RULE-KFH-008).** PROCESSO: nova versão de `source_id` com `hash ≠` último registrado ⇒ para cada candidato/selo/item publicado com `source_refs ∋ source_id@hash_antigo` ⇒ grava `revalidation_mark(item_ref, source_id, hash_antigo, hash_novo, recorded_at)`; enfileira formação sobre a nova versão. Nenhuma escrita no KG. EXEMPLO: F v1 (h1) → P1 e P2 publicados, **ambos derivados diretamente de F** (`source_refs ∋ F@h1`); F v2 (h2) ⇒ 2 marcas; KG inalterado; P1/P2 legíveis com "a revalidar". Contraste (T15): se P2 só **depende** de P1 no KG (sem `source_refs ∋ F`), só P1 recebe marca; a omissão de P2 é a **LACUNA** declarada da RULE-KFH-008 (sinalizar dependentes = [DECISÃO NECESSÁRIA], sugestão de dono SPEC-018) — não é proteção contra cascata, pois a marca é não destrutiva (r3-n2). Sucessão de P1 só quando o novo candidato de v2 for VALIDADO **e** houver ato SUCCESSION de Andraus, por lote (DHR-SPEC007-003 P-8): o registro sucessor leva `supersedes = P1@vN`, `version = N+1`, `expected_version = N` (RULE-CKG-012); sem o ato, P1 continua vigente e marcado (RULE-KFH-009 (a)). *[v1.2 integral no Anexo R, R.7]*
 
-**D4.5 — Envelope da CIM (RULE-KFH-019 (f)) — novo na v2.0 (R3-M5).** ENTRADA: `invoke(stage, model_ref, template_id, content_refs[], free_text?)`. PROCESSO: (1) `provider_locus := registro_de_provedores(model_ref)`; ausente ⇒ EXTERNO (no intervalo de SPEC-007-LOCUS-001, nenhum executor é LOCAL); (2) `template_id ∉ catálogo` ⇒ NEGADO `INVOCATION_ENVELOPE_INVALID`/`TEMPLATE_UNREGISTERED`; (3) para cada `content_ref`: a CIM resolve no registro do pipeline, busca os bytes e calcula as origens-raiz (RULE-KFH-001); irresolúvel ⇒ NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_REF_UNRESOLVABLE`; (4) se EXTERNO: exige ∀ ref permissão efetiva TRUE e `rights_status` efetivo ≠ INDETERMINADO, e `free_text` ausente — senão NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN` (sub `CONTENT_PROVENANCE_MISSING` quando o motivo é `free_text`); (5) monta a chamada só com o texto do template + bytes resolvidos pela própria CIM (+ `free_text` apenas se LOCAL); grava `model_invocation_record` (ENVIADO|NEGADO); envia; devolve só texto. SAÍDA: texto | NEGADO(código). EXEMPLO (P-4b com ato EXT_TRANSMISSION só para F@h1): formação em executor EXTERNO com `content_refs = [U1 (de F@h1)]` ⇒ ENVIADO; com `[U1, U2 (de G@h2, sem ato)]` ⇒ NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN`; com `[U1]` e `free_text` = "trecho de G colado pela etapa" ⇒ NEGADO `CONTENT_PROVENANCE_MISSING`; juiz chamado com `claim_ref@C@1` cuja afirmação deriva de U1 e U2 ⇒ conjunção TRUE ∧ FALSE = FALSE ⇒ NEGADO (DERIVTX).
+**D4.5 — Envelope da CIM (RULE-KFH-019 (d)/(f)) — v2.1 (R3-M5/R4-M1/R4-M2).** ENTRADA: `invoke(stage, model_ref, template_id, content_refs[])` — o envelope não tem campo de texto livre. PROCESSO: (1) qualquer texto no pedido fora de `template_id` + `content_refs` ⇒ NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_PROVENANCE_MISSING`, para QUALQUER executor; (2) `template_id ∉ catálogo` ⇒ NEGADO `INVOCATION_ENVELOPE_INVALID`/`TEMPLATE_UNREGISTERED`; (3) `provider_locus := registro_de_provedores(model_ref)`, LOCAL só se houver ato LOCAL_EXECUTOR válido de Andraus com `model_ref` no escopo (DHR-SPEC007-004 P-12); senão EXTERNO; (4) para cada `content_ref` (tipos: `semantic_unit_ref`, `claim_ref@candidate_version`, `candidate_ref@version`, `published_ref@version`): a CIM resolve no registro do pipeline, busca os bytes e calcula as origens-raiz (RULE-KFH-001) — para `candidate_ref@version`, resolve todas as afirmações com trechos citados, o `record_proposal`, o `knowledge_kind` e o `target_node_type`, e as origens-raiz são a união das origens de todas as afirmações; irresolúvel ⇒ NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_REF_UNRESOLVABLE`; (5) trava (d1), QUALQUER executor: algum ref com USO efetivo INDETERMINADO ⇒ NEGADO `SOURCE_RIGHTS_INDETERMINATE`; (6) trava (d2), só EXTERNO: algum ref com ENVIO efetivo FALSE ⇒ NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN`; (7) monta a chamada só com o texto do template + bytes resolvidos pela própria CIM; grava `model_invocation_record` (ENVIADO|NEGADO); envia; devolve só texto. SAÍDA: texto | NEGADO(código). EXEMPLO (F@h1 com atos RIGHTS e EXT_TRANSMISSION; G@h2 com ato RIGHTS e sem EXT_TRANSMISSION; H@h3 sem ato nenhum): formação em executor EXTERNO com `[U1 (de F@h1)]` ⇒ ENVIADO; com `[U1, U2 (de G@h2)]` ⇒ NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN`; o mesmo `[U1, U2]` em executor LOCAL confirmado por ato ⇒ ENVIADO; `[U3 (de H@h3)]` em executor LOCAL confirmado ⇒ NEGADO `SOURCE_RIGHTS_INDETERMINATE` (R4-M2); qualquer chamada com texto colado pela etapa ⇒ NEGADO `CONTENT_PROVENANCE_MISSING`, LOCAL ou EXTERNO; juiz F1 chamado com `candidate_ref@C@1` ⇒ recebe afirmações + `knowledge_kind` + `target_node_type` (R4-M1); se alguma afirmação de C@1 deriva de U2 (G@h2), o envio a juiz EXTERNO tem conjunção TRUE ∧ FALSE = FALSE ⇒ NEGADO (DERIVTX). *[D4.5 v2.0 integral no Anexo R, R.10]*
 
 *(D4.3 "Independência por origem-raiz" e D4.5 "Recuperação adaptativa" da v1.2 foram à SPEC-048 — Anexo T, T.5.)*
 
@@ -1050,7 +1134,7 @@ Marca `a_revalidar` é **marca**, não estado (KFH-008). Nenhuma transição rea
 
 **Formação (fora do ciclo de trading — `[PROPOSTA]`):** (0) pré-requisitos mínimos cumpridos (seção própria — sem eles a linha está parada) → (1) registro de fonte (KFH-001; uso e envio só por ato de Andraus) → (2) unidades (KFH-003) → (3) formação sem efeito (KFH-002/004), modelo só pela CIM (KFH-019) → (4) validação D e serialização única (KFH-005) → (5) juízo independente, incl. rótulo (KFH-006; IDs da CIM) → (6) [se ALTO] ato HUMAN_APPROVAL_LOT de Andraus → (7) gate de selo, entrada (A) (KFH-007): selo + reserva atômicos → (8) entrada (B): materialização pelo pipeline, conferência de `record_hash`, submissão ao KG pelo caminho (b) com `publication.seal_ref`; o **committer do KG** escreve sob RULE-CKG-009 (`computed_by` = pipeline ≠ `writer_id`) → (9) notificação "selo emitido" pelo envelope da SPEC-005 (só notifica; o tipo do evento = `[PROPOSTA]` a registrar na SPEC-005 por governança, sem redefinir transporte).
 
-**Chamadas de modelo (N-04/R3-M5):** toda chamada de modelo passa pela CIM (RULE-KFH-019; EC-KFH-011) pelo envelope `invoke(...)`; a CIM resolve os `content_ref`, grava `model_invocation_record` e nega envio externo de conteúdo com permissão efetiva FALSE ou de texto livre.
+**Chamadas de modelo (N-04/R3-M5/R4-M1/R4-M2):** toda chamada de modelo passa pela CIM (RULE-KFH-019; EC-KFH-011) pelo envelope `invoke(...)` sem texto livre; o juiz F1 é chamado com `candidate_ref@version` (recebe o rótulo); a CIM resolve os `content_ref`, grava `model_invocation_record`, nega a QUALQUER executor conteúdo sem uso liberado ou texto solto, e nega envio externo de conteúdo com permissão efetiva de envio FALSE. *[v2.0: "**Chamadas de modelo (N-04/R3-M5):** toda chamada de modelo passa pela CIM (RULE-KFH-019; EC-KFH-011) pelo envelope `invoke(...)`; a CIM resolve os `content_ref`, grava `model_invocation_record` e nega envio externo de conteúdo com permissão efetiva FALSE ou de texto livre."]*
 
 **Atualização:** nova versão de fonte → marca só nos derivados diretos (KFH-008) → nova formação → validação → **ato SUCCESSION de Andraus, por lote** (P-8) → novo selo de sucessora → sucessão no KG com `supersedes`/`version+1`/`expected_version` (RULE-CKG-012). Sem o ato, o publicado anterior segue vigente e marcado. Aposentar sem substituto = ato INVALIDATION de Andraus → registro de invalidação escrito pelo KG (RULE-CKG-009/004). Nunca o caminho inverso nem em cascata (KFH-009).
 
@@ -1066,13 +1150,15 @@ Marca `a_revalidar` é **marca**, não estado (KFH-008). Nenhuma transição rea
 
 | # | A SPEC-007 oferece | Onde | Requisito proposto à SPEC-048 |
 |---|---|---|---|
-| I-1 | **Itens carimbados**: nós `learning` publicados via selo, lidos do KG por consulta read-only (RULE-CKG-011), com `publication.seal_ref` e a cadeia selo → `validation_record` → candidato → unidade → fonte@hash (D9) | RULE-KFH-007; INV-KFH-01 | servir como conhecimento **só** itens carimbados; candidato não selado nunca é conhecimento servível |
-| I-2 | **Fontes e unidades registradas** com `rights_status`/`external_transmission_allowed` efetivos e origem-raiz | RULE-KFH-001/003 | não servir unidade de fonte com `rights_status` efetivo INDETERMINADO; usar a definição de origem-raiz daqui para contar independência (COL-EXP-05) |
-| I-3 | **Trava de envio**: a CIM — único acesso a modelo; permissão efetiva por derivação; envelope por `content_ref` | RULE-KFH-019 | toda chamada de modelo da consulta (reranker, embeddings, redator, juiz F2) passa pela CIM; entrega a consumidor externo aplica o teste (c)/(d) item a item; **usa** a trava, não a redefine |
-| I-4 | **Atos de Andraus** (`authorization_act_record`) | RULE-KFH-020 | só **lê** atos; não grava; não cria ato próprio sem decisão de Andraus |
-| I-5 | **Marcas**: `revalidation_mark`, `contradiction_mark` | RULE-KFH-008/016 | expor "a revalidar"; servir os dois lados de uma contradição, lado a lado |
-| I-6 | **IDs de modelo** gravados pela CIM (`model_invocation_record`) | RULE-KFH-019 (a) | usar só esses IDs para a independência do juiz F2 |
+| ponto 1 | **Itens carimbados**: nós `learning` publicados via selo, lidos do KG por consulta read-only (RULE-CKG-011), com `publication.seal_ref` e a cadeia selo → `validation_record` → candidato → unidade → fonte@hash (D9) | RULE-KFH-007; INV-KFH-01 | servir como conhecimento **só** itens carimbados; candidato não selado nunca é conhecimento servível |
+| ponto 2 | **Fontes e unidades registradas** com `rights_status`/`external_transmission_allowed` efetivos e origem-raiz | RULE-KFH-001/003 | não servir unidade de fonte com `rights_status` efetivo INDETERMINADO; usar a definição de origem-raiz daqui para contar independência (COL-EXP-05 — decidido, DHR-SPEC007-004 P-14) |
+| ponto 3 | **Trava de envio**: a CIM — único acesso a modelo; permissão efetiva por derivação; envelope por `content_ref` | RULE-KFH-019 | toda chamada de modelo da consulta (reranker, embeddings, redator, juiz F2) passa pela CIM, sem texto solto e com uso liberado para qualquer executor; entrega a consumidor externo aplica o teste (c)/(d) item a item; **usa** a trava, não a redefine |
+| ponto 4 | **Atos de Andraus** (`authorization_act_record`) | RULE-KFH-020 | só **lê** atos; não grava; não cria ato próprio sem decisão de Andraus |
+| ponto 5 | **Marcas**: `revalidation_mark`, `contradiction_mark` | RULE-KFH-008/016 | expor "a revalidar"; servir os dois lados de uma contradição, lado a lado |
+| ponto 6 | **IDs de modelo** gravados pela CIM (`model_invocation_record`) | RULE-KFH-019 (a) | usar só esses IDs para a independência do juiz F2 |
 | — | O que **não** é interface | — | a SPEC-048 não emite selo, não muta candidato, não grava marca nem ato |
+
+*[v2.0: os pontos da tabela eram rotulados "I-1".."I-6" — trocados por "ponto 1".."ponto 6" porque colidiam com rótulos I-xx de referência externa (CONFLICT-MAP l.9, K-MAN-02 — r4-n6); pontos 2 e 3 ganharam, na v2.1, as cláusulas "decidido, DHR-SPEC007-004 P-14" e "sem texto solto e com uso liberado para qualquer executor"]*
 
 ---
 
@@ -1092,14 +1178,20 @@ knowledge_candidate: candidate_id, version, supersedes_candidate?, claims[{claim
                      campo de hash do candidato é lido por gate
 validation_record  : validation_id, candidate_ref@version, material_hash (RULE-KFH-005, calculado pelo gate), records[{record_ref,
                      record_kind, record_hash}] (derivada), d_result{PASS|FALHA(eixo)} (incl. cobertura e tipo),
-                     h_result[{claim_id | "rótulo", CLEAR|FALHA(eixo)|INDETERMINADO}] (incl. KIND_MISCLASSIFIED),
-                     judge_model_id, former_model_id (gravados pela CIM), outcome{VALIDADO|REPROVADO|INDETERMINADO}, recorded_at
+                     h_result[{subject: claim_id | "rótulo", result: CLEAR|FALHA(eixo)|INDETERMINADO}] — uma linha por
+                     afirmação e UMA linha `subject = "rótulo"` (eixo possível: KIND_MISCLASSIFIED; INDETERMINADO se o juiz não
+                     recebeu `candidate_ref@version` — R4-M1), judge_invocation_ref (→ model_invocation_record com
+                     candidate_ref@version), judge_model_id, former_model_id (gravados pela CIM),
+                     outcome{VALIDADO|REPROVADO|INDETERMINADO}, recorded_at
+seal_request       : candidate_ref@version, declared_records?[{record_ref, record_kind, record_hash}] (só conferência — r4-n1),
+                     succession_of[]?{record_ref → published_ref@version} (r4-n4), human_approval_ref?, succession_authorization_ref?
+                     — identidade do emissor vem do runtime, nunca do pedido
 publication_seal   : seal_id (alocado pelo gate), seal_version, material_hash (o MESMO do validation_record), sealed_records[
                      {record_ref, record_kind, record_hash}] (derivada do candidato armazenado), candidate_ref@version,
                      validation_record_ref, issuer_id, issuer_list_ref (→ act_id ISSUER_LIST), judge_model_id, former_model_id,
-                     impact_class (derivado pelo gate), human_approval_ref? (→ act_id), succession_of?{published_ref@version},
-                     succession_authorization_ref? (→ act_id), source_refs[], knowledge_kind, target_node_type,
-                     publication.origin = "spec007_seal", sealed_at
+                     impact_class (derivado pelo gate), human_approval_ref? (→ act_id), succession_of[]?{record_ref →
+                     published_ref@version}, succession_authorization_ref? (→ act_id), source_refs[], knowledge_kind,
+                     target_node_type, publication.origin = "spec007_seal", sealed_at
 seal_consumption   : seal_id@seal_version, candidate_ref@version, status{RESERVADO → SUBMETIDO | FALHOU} (append-only; RESERVADO
                      gravado na MESMA unidade atômica do selo — r3-n1), submitted_records[{record_ref, record_hash,
                      kg_record_id}], recorded_at   — 1 reserva por selo; ≤ 1 RESERVADO-sem-desfecho ou SUBMETIDO por
@@ -1107,15 +1199,18 @@ seal_consumption   : seal_id@seal_version, candidate_ref@version, status{RESERVA
 seal_revocation_request : request_id, seal_id@seal_version, motivo, detected_by (auditoria amostral — Detector), recorded_at
                      — só PEDE ato autorizado (INVALIDATION — RULE-KFH-020; RULE-CKG-009/004); não revoga nada (n-07)
 authorization_act_record : act_id, act_type{RIGHTS|EXT_TRANSMISSION|ISSUER_LIST|HUMAN_APPROVAL_LOT|SUCCESSION|INVALIDATION|
-                     REVOCATION}, decision, scope[] (objetos exatos), scope_hash (canon da RULE-KFH-005), approver_id (= identidade
+                     LOCAL_EXECUTOR|REVOCATION}, decision, scope[] (objetos exatos), scope_hash (canon da RULE-KFH-005), approver_id (= identidade
                      confirmada de Andraus), decision_source_ref (rastreabilidade, não prova), recorded_by (= approver_id),
                      recorded_at — append-only (RULE-KFH-020)
 model_invocation_record : invocation_id, stage{formação|juiz_F1|(etapas da SPEC-048, quando existirem)}, model_ref, model_id,
-                     provider_locus{LOCAL|EXTERNO} (do registro de provedores), template_id, content_refs[] (resolvidos pela
-                     CIM, com origens-raiz e permissão efetiva calculada), free_text_present(bool), decision{ENVIADO|NEGADO},
-                     rejected_reason?, recorded_at — gravado pela CIM (RULE-KFH-019)
-provider_registry  : model_ref, provider_locus{LOCAL|EXTERNO}, confirmed_by? (SPEC-007-LOCUS-001 — em aberto; no intervalo nenhuma
-                     entrada LOCAL), recorded_at — append-only; ausência ⇒ EXTERNO
+                     provider_locus{LOCAL|EXTERNO} (do registro de provedores), template_id, content_refs[{ref_type{
+                     semantic_unit_ref|claim_ref@candidate_version|candidate_ref@version|published_ref@version}, ref,
+                     origens-raiz, uso_efetivo, envio_efetivo}] (resolvidos pela CIM), extra_text_rejected(bool — houve texto
+                     solto no pedido; sempre NEGADO), decision{ENVIADO|NEGADO}, rejected_reason?, recorded_at — gravado pela CIM
+                     (RULE-KFH-019)
+provider_registry  : model_ref, provider_locus{LOCAL|EXTERNO}, local_executor_ref? (→ act_id LOCAL_EXECUTOR de Andraus —
+                     SPEC-007-LOCUS-001 decidida, DHR-SPEC007-004 P-12; LOCAL sem ato válido ⇒ tratado como EXTERNO),
+                     recorded_at — append-only; ausência ⇒ EXTERNO
 instruction_template : template_id, template_hash, stage, text (fixo; não derivado de fonte), recorded_at — catálogo [PROPOSTA]
 registro submetido : (campos do node_record/relation_record da SPEC-006, NÃO redefinidos) = M(r) + publication.origin =
                      "spec007_seal" + publication.seal_ref = seal_id@seal_version + [sucessora: supersedes, version,
@@ -1123,7 +1218,7 @@ registro submetido : (campos do node_record/relation_record da SPEC-006, NÃO re
 revalidation_mark  : mark_id, item_ref, source_id, old_hash, new_hash, recorded_at
 contradiction_mark : mark_id, refs[2..n], scope, window, recorded_at
 ```
-*[contrato v1.2 integral no Anexo R, R.7; `evidence_packet` e `feedback_record` v1.2 no Anexo T, T.7]*
+*[contrato v2.0 (linhas reescritas) integral no Anexo R, R.10; contrato v1.2 integral no Anexo R, R.7; `evidence_packet` e `feedback_record` v1.2 no Anexo T, T.7. Na v2.1, M(r) — e logo o registro submetido — passa a levar `formed_inference_claim_ids[]` (r4-n5).]*
 
 ---
 
@@ -1132,8 +1227,8 @@ contradiction_mark : mark_id, refs[2..n], scope, window, recorded_at
 > **Fixture F0 — estado injetado para teste por passo (R3-M1).** O gate de selo é fail-fast na ordem de D4.2; por isso todo cenário/ADV que testa um passo do selo parte de F0 — que satisfaz **todos** os passos — e quebra **uma** condição ("F0, exceto …"). O resultado esperado é o código do passo quebrado. F0 é **estado de teste injetado**, não afirmação de que esse estado já existe no SOT (hoje não existe: a linha está parada — seção "Pré-requisitos mínimos").
 > - **F0.1** identidade confirmada de Andraus disponível ao runtime (ACTREC — P-10; forma = BUILD).
 > - **F0.2** ato **A1** {ISSUER_LIST, scope = [E1]} válido, gravado e aprovado por Andraus (P-1); emissor **E1** autenticado pelo runtime.
-> - **F0.3** fonte **F@h1** registrada, com ato **A2** {RIGHTS, PRIVADO, scope = [F@h1]} (P-4a) e ato **A3** {EXT_TRANSMISSION, TRUE, scope = [F@h1]} (P-4b), ambos válidos — necessário porque, no intervalo de SPEC-007-LOCUS-001, nenhum executor é LOCAL; formador **MF** e juiz **MJ** são modelos distintos, juiz em ponto sem escrita.
-> - **F0.4** candidato **C@1** = {claims = [a1, com `span_ref` em F@h1], record_proposal = [N1 (nó; conteúdo ← a1)], `knowledge_kind = fato_de_fonte`, `target_node_type = learning`}; `validation_record` VALIDADO com `material_hash = h7` (D4.2/D4.3).
+> - **F0.3** fonte **F@h1** registrada, com ato **A2** {RIGHTS, PRIVADO, scope = [F@h1]} (P-4a) e ato **A3** {EXT_TRANSMISSION, TRUE, scope = [F@h1]} (P-4b), ambos válidos; formador **MF** e juiz **MJ** são modelos distintos, juiz em ponto sem escrita, ambos executores EXTERNO (nenhum ato LOCAL_EXECUTOR na fixture; o caminho "de casa" com ato LOCAL_EXECUTOR é testado à parte em ADV-32(d)(e)); o juiz recebe `candidate_ref@C@1` (R4-M1). *[v2.0: "ambos válidos — necessário porque, no intervalo de SPEC-007-LOCUS-001, nenhum executor é LOCAL; formador **MF** e juiz **MJ** são modelos distintos, juiz em ponto sem escrita."]*
+> - **F0.4** candidato **C@1** = {claims = [a1 = "o relatório R registra que o índice X fechou março com queda de 3%" — fato de fonte inequívoco (r4-n3), com `span_ref` em F@h1], record_proposal = [N1 (nó; conteúdo ← a1)], `knowledge_kind = fato_de_fonte`, `target_node_type = learning`}; `validation_record` VALIDADO com `material_hash = h7` (D4.2/D4.3).
 > - **F0.5** nenhum registro vigente no KG com a chave natural de N1; nenhum `seal_consumption` de C@1.
 > Cenários fora do selo declaram só o que usam. *[nota de pré-condições v1.2 integral no Anexo R, R.8]*
 
@@ -1288,17 +1383,22 @@ VERIFICAÇÃO act_valid == true; G.rights_status == "PRIVADO"; G@h2 ∈ act.scop
             (contraste negativo: ADV-KFH-27)
 ```
 
-### Cenário-KFH-T25 — Invocação de modelo com permissão efetiva TRUE (KFH-019) — positivo (N-04/R3-M5)
+### Cenário-KFH-T25 — Juiz F1 recebe o candidato com o rótulo pela CIM (KFH-019/006) — positivo (N-04/R3-M5/R4-M1)
 ```
-DADO        F0.3 (F@h1 com A2 e A3); também G@h2 com atos RIGHTS e EXT_TRANSMISSION válidos; o juiz MJ, em executor EXTERNO do
-            registro de provedores, é chamado por invoke(stage=juiz_F1, model_ref=MJ, template_id=T-JF1 (no catálogo),
-            content_refs=[claim_ref@C@1, U1 (de F@h1), U7 (de G@h2)], sem free_text)
+DADO        F0.3 (F@h1 com A2 e A3) e F0.4 (C@1, todas as afirmações com origem-raiz F); o juiz MJ, executor EXTERNO do registro
+            de provedores, é chamado por invoke(stage=juiz_F1, model_ref=MJ, template_id=T-JF1 (no catálogo),
+            content_refs=[candidate_ref@C@1]) — envelope sem texto solto
 QUANDO      a CIM avalia a chamada
-ENTÃO       a CIM resolve ela mesma os três refs, calcula a permissão efetiva (TRUE ∧ TRUE) e envia; grava a invocação
-VERIFICAÇÃO effective_transmission_allowed == TRUE; invocation.decision == "ENVIADO"; invocation.provider_locus == "EXTERNO";
-            invocation.content_refs_resolved_by == "CIM"; invocation.free_text_present == false
-            (contraste negativo: ADV-KFH-28 (c)(d), ADV-KFH-32)
+ENTÃO       a CIM resolve ela mesma o candidato armazenado (afirmações + trechos citados + record_proposal + knowledge_kind +
+            target_node_type), calcula uso efetivo (PRIVADO) e envio efetivo (TRUE) sobre a união das origens-raiz e envia;
+            grava a invocação; o juiz devolve uma linha de h_result por afirmação e uma linha "rótulo"
+VERIFICAÇÃO invocation.decision == "ENVIADO"; invocation.provider_locus == "EXTERNO"; invocation.content_refs[0].ref_type ==
+            "candidate_ref@version"; resolved_payload contém knowledge_kind == "fato_de_fonte" e target_node_type == "learning";
+            invocation.extra_text_rejected == false; validation_record.h_result contém subject == "rótulo";
+            validation_record.judge_invocation_ref == invocation_id
+            (contraste negativo: ADV-KFH-28 (a')(c)(d), ADV-KFH-31(a), ADV-KFH-32)
 ```
+*[T25 v2.0 integral no Anexo R, R.10]*
 *[v1.2 dos cenários T10–T14, T23–T25 integral no Anexo R, R.8; a parte "entrega a consumidor EXTERNO" da T25 v1.2 vai à SPEC-048 — Anexo T, T.8]*
 
 ---
@@ -1338,7 +1438,7 @@ VERIFICAÇÃO effective_transmission_allowed == TRUE; invocation.decision == "EN
 **DADO:** Plan especifica compressão de contexto, detector geral de alucinação, aprendizado, **ou** volta a especificar recuperação, pacote, WikiRAG ou F2 nesta Spec. **ENTÃO:** achado `OUT_OF_SCOPE_043_044_018` ou `OUT_OF_SCOPE_048`. **VERIFICAÇÃO:** Non-goals respeitados; RULE-KFH-010..015/017/018 só no Anexo T (não vigentes). *[v1.2: "Absorver SPEC-043/044/018 … achado `OUT_OF_SCOPE_043_044_018`"]*
 
 ### ADV-KFH-18 — Fechar decisão aberta [REVISÃO/spec-time] + tipo de nó proibido [runtime]
-**DADO:** (a) [spec-time] Plan trata como decidido o host do juízo CKG-008 (SPEC-006 l.482), os estados do candidato no Blackboard (M-001 **ABERTA**), K-001 (**ABERTA**), a forma de confirmar a identidade de Andraus (BUILD), quem confirma executor LOCAL (SPEC-007-LOCUS-001) ou o livro (Q7c); ou trata as decisões da DHR-SPEC007-003 como já normativas antes da homologação; (b) [runtime] F0, exceto: pedido de selo para candidato com `target_node_type = structure` (estado injetado, como em T13). **ENTÃO:** (a) achado `OPEN_DECISION_TOUCHED`; (b) `TARGET_NODE_TYPE_FORBIDDEN` no passo (4-bis), nenhum selo. **VERIFICAÇÃO:** (a) todos marcados [PROPOSTA]/[DECISÃO NECESSÁRIA]/"decidida (DHR-SPEC007-003), normativa na homologação"; (b) seal_emitted == false.
+**DADO:** (a) [spec-time] Plan trata como decidido o host do juízo CKG-008 (SPEC-006 l.482), os estados do candidato no Blackboard (M-001 **ABERTA**), K-001 (**ABERTA**), a forma de confirmar a identidade de Andraus (BUILD) ou o livro (Q7c); ou trata as decisões da DHR-SPEC007-003/DHR-SPEC007-004 como já normativas antes da homologação *[v2.0: "a forma de confirmar a identidade de Andraus (BUILD), quem confirma executor LOCAL (SPEC-007-LOCUS-001) ou o livro (Q7c); ou trata as decisões da DHR-SPEC007-003 como já normativas antes da homologação;" — LOCUS-001 foi decidida (DHR-SPEC007-004 P-12)]*; (b) [runtime] F0, exceto: pedido de selo para candidato com `target_node_type = structure` (estado injetado, como em T13). **ENTÃO:** (a) achado `OPEN_DECISION_TOUCHED`; (b) `TARGET_NODE_TYPE_FORBIDDEN` no passo (4-bis), nenhum selo. **VERIFICAÇÃO:** (a) todos marcados [PROPOSTA]/[DECISÃO NECESSÁRIA]/"decidida (DHR-SPEC007-003), normativa na homologação"; (b) seal_emitted == false.
 
 ### ADV-KFH-19 — Artefato do Benchmark tratado como do SOT [REVISÃO/spec-time + runtime]
 **DADO:** "corpus aprovado" do paralelo tratado como publicado; vocabulário UNPROVEN/BLOCKED adotado; texto copiado. **ENTÃO:** spec-time: `BENCHMARK_ARTIFACT_IMPORTED`; runtime: o manifesto do paralelo só entra como **fonte** (KFH-001), nunca como publicado. **VERIFICAÇÃO:** benchmark_items_published_without_seal == 0.
@@ -1347,10 +1447,10 @@ VERIFICAÇÃO effective_transmission_allowed == TRUE; invocation.decision == "EN
 **DADO:** (a) etapa de embeddings externa recebe trecho de fonte com `external_transmission_allowed=false`; (b) formação por modelo hospedado em provedor externo sobre a mesma fonte; (c) alguém sem `transmission_decision_ref` de Andraus tenta mudar o campo para TRUE. **QUANDO:** o envio/alteração é tentado. **ENTÃO:** negado nos três. **VERIFICAÇÃO:** rejected_reason == "EXTERNAL_TRANSMISSION_FORBIDDEN" em (a)/(b); bytes_sent == 0; em (c) field_value == false (sem referência ⇒ FALSE).
 
 ### ADV-KFH-21 — Selo reaproveitado, pedido com registros, reserva (M-01/N-02/r3-n1) (KFH-007)
-**DADO (todos: F0, com selo S1@1 já emitido e RESERVADO para C@1 quando indicado):** (a) entre (A) e (B), o candidato armazenado é alterado (N1 materializado passa a `rh2`); (b) depois de N1 SUBMETIDO, alguém reapresenta `seal_submit(S1@1)`; (c) tentativa de submeter ao KG registro sem `publication.seal_ref` por fora do pipeline; (d) `seal_request(C@1)` trazendo a lista `[N1, R9]`, onde R9 não está no `record_proposal`; (e) submissão de S1@1 falha no meio ⇒ consumo FALHOU; reapresentar `seal_submit(S1@1)`; (f) novo `seal_request(C@1)` enquanto S1@1 está RESERVADO sem desfecho. **QUANDO:** o gate/a submissão rodam. **ENTÃO:** (a) `SEAL_CONTENT_MISMATCH` no passo (10), nada submetido, consumo FALHOU; (b) `SEAL_ALREADY_CONSUMED`; (c) o pipeline não submete registro sem `seal_ref` (só ele monta a submissão) e o KG o rejeitaria como `FORMED_WITHOUT_SEAL`; (d) `SEAL_HASH_MISMATCH`/`SEAL_RECORDS_DIFFER_FROM_VALIDATED` no passo (2); (e) `SEAL_ALREADY_CONSUMED` (falha exige novo selo); (f) `CANDIDATE_ALREADY_SEALED` no passo (7-bis). **PORQUE:** selo vincula conteúdo e uso único; hash ≠ autorização genérica. **VERIFICAÇÃO:** kg_records_written ≤ 1 por candidato (só o N1 materializado do validado); reuse_accepted == false; seal_without_reservation == 0.
+**DADO (todos: F0, com selo S1@1 já emitido e RESERVADO para C@1 quando indicado):** (a) entre (A) e (B), o candidato armazenado é alterado (N1 materializado passa a `rh2`); (b) depois de N1 SUBMETIDO, alguém reapresenta `seal_submit(S1@1)`; (c) tentativa de submeter ao KG registro sem `publication.seal_ref` por fora do pipeline; (d) `seal_request(C@1)` trazendo `declared_records = [N1, R9]`, onde R9 não está no `record_proposal` *[v2.0: "trazendo a lista `[N1, R9]`"]*; (e) submissão de S1@1 falha no meio ⇒ consumo FALHOU; reapresentar `seal_submit(S1@1)`; (f) novo `seal_request(C@1)` enquanto S1@1 está RESERVADO sem desfecho. **QUANDO:** o gate/a submissão rodam. **ENTÃO:** (a) `SEAL_CONTENT_MISMATCH` no passo (10), nada submetido, consumo FALHOU; (b) `SEAL_ALREADY_CONSUMED`; (c) o pipeline não submete registro sem `seal_ref` (só ele monta a submissão) e o KG o rejeitaria como `FORMED_WITHOUT_SEAL`; (d) `SEAL_HASH_MISMATCH`/`SEAL_RECORDS_DIFFER_FROM_VALIDATED` no passo (2); (e) `SEAL_ALREADY_CONSUMED` (falha exige novo selo); (f) `CANDIDATE_ALREADY_SEALED` no passo (7-bis). **PORQUE:** selo vincula conteúdo e uso único; hash ≠ autorização genérica. **VERIFICAÇÃO:** kg_records_written ≤ 1 por candidato (só o N1 materializado do validado); reuse_accepted == false; seal_without_reservation == 0.
 
 ### ADV-KFH-22 — Sucessão sem autorização, com versão errada ou por chave de relação (M-02/n-01/n-10/r3-n3) (KFH-009)
-**DADO (todos: F0, exceto o indicado):** (a) P1@v3 vigente com a mesma chave natural de N1; o pedido declara `succession_of = P1@v3` sem `succession_authorization_ref`; (b) com ato SUCCESSION válido, mas `expected_version = 2` (corrente = 3); (c) sem `supersedes` na sucessora (seria 2º nó paralelo); (d) `succession_authorization_ref` aponta texto de ata, não `authorization_act_record`; (e) pedido SEM `succession_of` cuja chave natural de nó é a de P1 vigente; (f) sucessora de relação CAUSA alterando o mecanismo; (g) relação R com chave `(relation_type, from, to, target_relation_id, valid_from)` idêntica à de relação vigente, sem `succession_of` — e contraste: mesma relação com `valid_from` distinto. **QUANDO:** selo/submissão rodam. **ENTÃO:** (a) `SUCCESSION_AUTHORIZATION_MISSING`; (b) o KG nega `VERSION_CONFLICT` (RULE-CKG-012), consumo FALHOU; (c) `SEAL_SCOPE_INVALID`; (d) `AUTH_ACT_UNRESOLVABLE` ⇒ `SUCCESSION_AUTHORIZATION_MISSING`; (e) `SUCCESSION_UNDECLARED`; (f) `CAUSAL_CORE_IMMUTABLE_IN_CHAIN` (caminho: ato INVALIDATION + nova CAUSA com `valid_from` próprio); (g) `SUCCESSION_UNDECLARED`; no contraste, chave distinta ⇒ não é sucessão (semântica da SPEC-006). P1@v3 segue vigente e marcado. **PORQUE:** RULE-KFH-009 (a); RULE-CKG-004/012; SPEC-006 l.453-454. **VERIFICAÇÃO:** p1_v3_valid == true; successor_written == false em (a)–(g).
+**DADO (todos: F0, exceto o indicado):** (a) P1@v3 vigente com a mesma chave natural de N1; o pedido declara `succession_of[] = {N1 → P1@v3}` sem `succession_authorization_ref`; (b) com ato SUCCESSION válido, mas `expected_version = 2` (corrente = 3); (c) sem `supersedes` na sucessora (seria 2º nó paralelo); (d) `succession_authorization_ref` aponta texto de ata, não `authorization_act_record`; (e) pedido SEM par em `succession_of[]` para N1, cuja chave natural de nó é a de P1 vigente; (f) sucessora de relação CAUSA alterando o mecanismo; (g) relação R com chave `(relation_type, from, to, target_relation_id, valid_from)` idêntica à de relação vigente, sem par em `succession_of[]` — e contraste: mesma relação com `valid_from` distinto; (h) (r4-n4) candidato com N1 e N2, cada um colidindo com um publicado vigente (P1@v3 e P2@v5): pedido com só `{N1 → P1@v3}` — e contraste positivo com `{N1 → P1@v3, N2 → P2@v5}` e ato SUCCESSION cujo escopo cobre P1@v3, P2@v5 e C@1 + `h`. **QUANDO:** selo/submissão rodam. **ENTÃO:** (a) `SUCCESSION_AUTHORIZATION_MISSING`; (b) o KG nega `VERSION_CONFLICT` (RULE-CKG-012), consumo FALHOU; (c) `SEAL_SCOPE_INVALID`; (d) `AUTH_ACT_UNRESOLVABLE` ⇒ `SUCCESSION_AUTHORIZATION_MISSING`; (e) `SUCCESSION_UNDECLARED`; (f) `CAUSAL_CORE_IMMUTABLE_IN_CHAIN` (caminho: ato INVALIDATION + nova CAUSA com `valid_from` próprio); (g) `SUCCESSION_UNDECLARED`; no contraste, chave distinta ⇒ não é sucessão (semântica da SPEC-006); (h) `SUCCESSION_UNDECLARED` (N2 sem par); no contraste, selo emitido e dois sucessores submetidos (P1@v4, P2@v6). P1@v3 segue vigente e marcado nos negativos. **PORQUE:** RULE-KFH-009 (a); RULE-CKG-004/012; SPEC-006 l.453-454. **VERIFICAÇÃO:** p1_v3_valid == true; successor_written == false em (a)–(h) negativos; no contraste de (h), successors_written == 2. *[ADV-22 v2.0 integral no Anexo R, R.10]*
 
 ### ADV-KFH-24 — ID de modelo forjado para simular independência (M-08) (KFH-006)
 **DADO:** o juiz é o mesmo modelo do formador, mas a saída do juiz (ou o payload) declara `judge_model_id = "modelo-B"`. **QUANDO:** o gate de saída do juízo roda. **ENTÃO:** o gate usa só os IDs gravados pela CIM; diverge do declarado ⇒ `MODEL_ID_UNAUTHENTICATED` ⇒ INDETERMINADO; sem selo. **VERIFICAÇÃO:** id_source == "runtime"; state == "KC_INDETERMINADO".
@@ -1362,22 +1462,22 @@ VERIFICAÇÃO effective_transmission_allowed == TRUE; invocation.decision == "EN
 **DADO:** (a) `rights_decision_ref` = "ver ata do chat" (texto livre, sem registro); (b) registro existe mas a fonte F@h2 não está no `scope[]` (o ato era para F@h1); (c) `scope_hash` recalculado ≠ gravado (escopo alterado depois); (d) `approver_id` ≠ Andraus (outra identidade, ainda que autenticada); (e) REVOCATION posterior; (f) identidade de Andraus indisponível no momento da gravação ou da resolução; (g) ato de act_type ISSUER_LIST usado como liberação de uso (RIGHTS); (h) `recorded_by` ≠ `approver_id`. **QUANDO:** o gate resolve. **ENTÃO:** todos negados: (a) `AUTH_ACT_UNRESOLVABLE`; (b)/(c) `AUTH_ACT_SCOPE_MISMATCH`; (d)/(h) `AUTH_ACT_APPROVER_UNAUTHORIZED`; (e) `AUTH_ACT_REVOKED`; (f) `AUTH_IDENTITY_UNAVAILABLE`; (g) `AUTH_ACT_TYPE_MISMATCH`; a fonte segue INDETERMINADO/FALSE. **VERIFICAÇÃO:** act_valid == false; field_unchanged == true. *[v1.2 integral no Anexo R, R.8]*
 
 ### ADV-KFH-28 — Vazamento por derivação na CIM (N-04) (KFH-019)
-**DADO:** (a') juiz em executor EXTERNO chamado com `claim_ref` de afirmação derivada de F (FALSE) e G (TRUE); (c) embeddings em provedor EXTERNO sobre unidade de F; (d) etapa chama, por conveniência, um modelo externo fora da CIM. **QUANDO:** a CIM avalia. **ENTÃO:** (a') permissão efetiva = FALSE ∧ TRUE = FALSE ⇒ NEGADO (`EXTERNAL_TRANSMISSION_FORBIDDEN`; DERIVTX decidida — P-11); (c) negado, nada enviado; (d) impossível por desenho (CIM é o único acesso a modelo) — se detectado em auditoria, é falha de implementação E3. **VERIFICAÇÃO:** bytes_sent_external == 0; invocation.decision == "NEGADO" em (a') e (c). *[v1.2 integral no Anexo R, R.8; casos (a)/(b) de entrega a consumidor e "locus ausente" foram à SPEC-048 — Anexo T, T.9]*
+**DADO:** (a') juiz em executor EXTERNO chamado com `claim_ref` de afirmação derivada de F (FALSE) e G (TRUE); (c) embeddings em provedor EXTERNO sobre unidade de F; (d) etapa chama, por conveniência, um modelo externo fora da CIM. **QUANDO:** a CIM avalia. **ENTÃO:** (a') permissão efetiva = FALSE ∧ TRUE = FALSE ⇒ NEGADO (`EXTERNAL_TRANSMISSION_FORBIDDEN`; DERIVTX decidida — P-11); (c) negado, nada enviado; (d) impossível por desenho (só a CIM tem credencial de executor — RULE-KFH-019 (g)); a chamada contornada não gera `model_invocation_record`, e é detectada pela auditoria do lado do executor/rede que confronta acessos com os registros da CIM (BUILD; r4-n10) — se detectada, é falha de implementação E3 (RU-7). **VERIFICAÇÃO:** bytes_sent_external == 0; invocation.decision == "NEGADO" em (a') e (c); em (d), executor_access_without_invocation_record é sinalizado pela auditoria. *[v2.0 do ENTÃO (d): "(d) impossível por desenho (CIM é o único acesso a modelo) — se detectado em auditoria, é falha de implementação E3. **VERIFICAÇÃO:** bytes_sent_external == 0; invocation.decision == \"NEGADO\" em (a') e (c)."]* *[v1.2 integral no Anexo R, R.8; casos (a)/(b) de entrega a consumidor e "locus ausente" foram à SPEC-048 — Anexo T, T.9]*
 
 ### ADV-KFH-30 — Troca de conteúdo com `record_hash` "coerente" (R3-M2) (KFH-005/007)
-**DADO:** F0, exceto: (a) depois da validação, o texto de a1 é trocado no candidato armazenado e um campo `record_hash` armazenado é recalculado pelo atacante para "bater" com o texto novo; (b) entre (A) e (B), uma etapa entrega ao pipeline um registro N1' pronto, com conteúdo trocado e `record_hash` coerente com N1'; (c) candidato cujo registro N2 não tem nenhum `content_claim_id` (texto de registro sem afirmação validada). **QUANDO:** validação/selo/submissão rodam. **ENTÃO:** (a) o gate não lê o campo armazenado; recalcula `material_hash` (o texto de a1 está em `claims[]` e em M) ⇒ `SEAL_HASH_MISMATCH` no passo (2); (b) o pipeline não aceita registro pronto: materializa N1 por M a partir do candidato armazenado; se o armazenado também foi trocado ⇒ `SEAL_CONTENT_MISMATCH` no passo (10); senão N1' é ignorado e só o N1 validado é submetido; (c) já na validação `RECORD_CONTENT_NOT_VALIDATED`. **PORQUE:** hashes calculados só pelo pipeline sobre a materialização (RULE-KFH-005 SERIALIZAÇÃO ÚNICA). **VERIFICAÇÃO:** stored_hash_read == false; submitted_record == M(N1 validado) ou nenhum; risco residual RU-3 (KG não confere até a errata) declarado.
+**DADO:** F0, exceto: (a) depois da validação, o texto de a1 é trocado no candidato armazenado e um campo `record_hash` armazenado é recalculado pelo atacante para "bater" com o texto novo; (b) entre (A) e (B), uma etapa entrega ao pipeline um registro N1' pronto, com conteúdo trocado e `record_hash` coerente com N1'; (c) candidato cujo registro N2 não tem nenhum `content_claim_id` (texto de registro sem afirmação validada); (d) (r4-n5) depois da validação, a marca `formed_inference=true` de uma afirmação usada em N1 é apagada no armazenado (inferência passaria a parecer texto da fonte no KG). **QUANDO:** validação/selo/submissão rodam. **ENTÃO:** (a) o gate não lê o campo armazenado; recalcula `material_hash` (o texto de a1 está em `claims[]` e em M) ⇒ `SEAL_HASH_MISMATCH` no passo (2); (b) o pipeline não aceita registro pronto: materializa N1 por M a partir do candidato armazenado; se o armazenado também foi trocado ⇒ `SEAL_CONTENT_MISMATCH` no passo (10); senão N1' é ignorado e só o N1 validado é submetido; (c) já na validação `RECORD_CONTENT_NOT_VALIDATED`; (d) `formed_inference` está em `claims[]` e em `formed_inference_claim_ids` de M(N1) ⇒ `SEAL_HASH_MISMATCH` no passo (2); no caso válido, o registro publicado leva `formed_inference_claim_ids` (RULE-EPI-01). **PORQUE:** hashes calculados só pelo pipeline sobre a materialização (RULE-KFH-005 SERIALIZAÇÃO ÚNICA). **VERIFICAÇÃO:** stored_hash_read == false; submitted_record == M(N1 validado) ou nenhum; em (d) seal_emitted == false; risco residual RU-3 (KG não confere até a errata) declarado. *[ADV-30 v2.0: sem o caso (d)]*
 
 ### ADV-KFH-31 — Rótulo de impacto diminuído (R3-M4) (KFH-004/005/006/007)
-**DADO:** (a) formação propõe `knowledge_kind = fato_de_fonte` para a afirmação "toda vela de rompimento acima da máxima de 20 períodos é sinal de entrada" (é uma **regra**); (b) depois da validação, alguém troca `knowledge_kind` de `regra` para `fato_de_fonte` no candidato armazenado; (c) `knowledge_kind` ausente. **QUANDO:** juízo F1 e gate de selo (F0 nos demais aspectos). **ENTÃO:** (a) o juiz marca FALHA eixo `KIND_MISCLASSIFIED` ⇒ `KC_REPROVADO` (nova formação); se o juiz NÃO marcar, o selo sai como PADRAO — **risco residual RU-4** (RULE-UNC-01), contido pela auditoria amostral de rótulos (EC-KFH-004); (b) o rótulo está no `material_hash` ⇒ `SEAL_HASH_MISMATCH`; (c) tratado como ALTO ⇒ sem visto ⇒ `HUMAN_APPROVAL_MISSING`. **VERIFICAÇÃO:** (a) failure_axis == "KIND_MISCLASSIFIED" quando detectado; (b) seal_emitted == false; (c) derived_impact_class == "ALTO".
+**DADO:** (a) formação propõe `knowledge_kind = fato_de_fonte` para a afirmação "toda vela de rompimento acima da máxima de 20 períodos é sinal de entrada" (é uma **regra**); (b) depois da validação, alguém troca `knowledge_kind` de `regra` para `fato_de_fonte` no candidato armazenado; (c) `knowledge_kind` ausente. **QUANDO:** juízo F1 e gate de selo (F0 nos demais aspectos). **ENTÃO:** (a) o juiz, chamado pela CIM com `candidate_ref@version` (recebe a afirmação E o rótulo `fato_de_fonte` — R4-M1; T25), marca FALHA eixo `KIND_MISCLASSIFIED` na linha "rótulo" de `h_result` ⇒ `KC_REPROVADO` (nova formação); se o juiz for chamado sem `candidate_ref@version`, a linha "rótulo" fica INDETERMINADO ⇒ `KC_INDETERMINADO` (RULE-KFH-006 ENTRADA DO JUIZ) *[v2.0: "(a) o juiz marca FALHA eixo `KIND_MISCLASSIFIED` ⇒ `KC_REPROVADO` (nova formação);"]*; se o juiz NÃO marcar, o selo sai como PADRAO — **risco residual RU-4** (RULE-UNC-01), contido pela auditoria amostral de rótulos (EC-KFH-004); (b) o rótulo está no `material_hash` ⇒ `SEAL_HASH_MISMATCH`; (c) tratado como ALTO ⇒ sem visto ⇒ `HUMAN_APPROVAL_MISSING`. **VERIFICAÇÃO:** (a) failure_axis == "KIND_MISCLASSIFIED" quando detectado; (b) seal_emitted == false; (c) derived_impact_class == "ALTO".
 
-### ADV-KFH-32 — Texto de fonte colado sem `content_ref` (R3-M5) (KFH-019)
-**DADO:** F0, exceto: G@h2 registrada sem ato EXT_TRANSMISSION; a etapa de formação monta `invoke(stage=formação, model_ref=MF (EXTERNO), template_id=T-F (no catálogo), content_refs=[U1 (de F@h1)], free_text = "<trecho de G@h2 colado>")`; variantes: (b) o mesmo trecho dentro de um `template_id` que não está no catálogo; (c) `content_refs` com um ref inexistente; (d) a mesma chamada a executor LOCAL (supondo SPEC-007-LOCUS-001 decidida com MF' local). **QUANDO:** a CIM avalia. **ENTÃO:** (a) NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN`/`CONTENT_PROVENANCE_MISSING` — nada enviado; (b) NEGADO `INVOCATION_ENVELOPE_INVALID`/`TEMPLATE_UNREGISTERED`; (c) NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_REF_UNRESOLVABLE`; (d) aceito e registrado (texto livre a LOCAL não sai de casa); afirmações sem `span_ref` para unidade registrada seguem barradas na formação/validação (KFH-004/005). **VERIFICAÇÃO:** bytes_sent_external == 0 em (a)–(c); invocation.free_text_present == true e decision == "NEGADO" em (a). **Risco residual (RU-6):** conteúdo de fonte reescrito dentro de uma saída registrada e reenviado por `content_ref` herda a origem-raiz pela cadeia (f4); conteúdo disfarçado fora de qualquer ref só existe em texto livre, que não sai.
+### ADV-KFH-32 — Texto solto sem `content_ref` e fonte sem "pode usar" em executor de casa (R3-M5/R4-M2) (KFH-019)
+**DADO:** F0, exceto: G@h2 registrada com ato RIGHTS e sem ato EXT_TRANSMISSION; H@h3 registrada sem ato nenhum (uso INDETERMINADO); MF' é executor LOCAL confirmado por ato LOCAL_EXECUTOR de Andraus (DHR-SPEC007-004 P-12); casos: (a) a etapa de formação monta `invoke(stage=formação, model_ref=MF (EXTERNO), template_id=T-F (no catálogo), content_refs=[U1 (de F@h1)])` e acrescenta ao pedido o texto "<trecho de G@h2 colado>"; (b) o mesmo trecho dentro de um `template_id` que não está no catálogo; (c) `content_refs` com um ref inexistente; (d) a chamada (a), com o texto colado, a MF' (LOCAL); (e) chamada a MF' (LOCAL), sem texto solto, com `content_refs = [U3 (de H@h3)]` — fonte sem ato RIGHTS. **QUANDO:** a CIM avalia. **ENTÃO:** (a) NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_PROVENANCE_MISSING` — nada enviado; (b) NEGADO `INVOCATION_ENVELOPE_INVALID`/`TEMPLATE_UNREGISTERED`; (c) NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_REF_UNRESOLVABLE`; (d) **NEGADO** `INVOCATION_ENVELOPE_INVALID`/`CONTENT_PROVENANCE_MISSING` — texto solto é proibido também em casa (R4-M2; ordem da rodada 5); (e) **NEGADO** `SOURCE_RIGHTS_INDETERMINATE` — "pode usar" vale para qualquer executor (P-4a/P-11; trava (d1)). **VERIFICAÇÃO:** bytes_sent == 0 em (a)–(e) (inclusive a executor LOCAL em (d)/(e)); invocation.extra_text_rejected == true em (a)/(d); invocation.decision == "NEGADO" em todos. **Risco residual (RU-6):** conteúdo de fonte reescrito dentro de uma saída registrada e reenviado por `content_ref` herda a origem-raiz pela cadeia (f4); conteúdo disfarçado como texto solto é recusado em qualquer executor. *[ADV-32 v2.0 integral no Anexo R, R.10]*
 
 ---
 
 ## Métricas e eventos (RAG-SPEC-039 / RAG-SPEC-041) — m-08
 
-- **Métricas (RAG-SPEC-039) — dono da DEFINIÇÃO (n-13; research §7 l.214):** após a divisão, esta Spec define `[PROPOSTA]` só as métricas da **formação**: (1) F1 por afirmação e por rótulo (CLEAR/FALHA/INDETERMINADO por eixo — RULE-KFH-005/006, incl. `KIND_MISCLASSIFIED`); (2) taxa de citação resolvível na formação; (3) contagens de recusa/marcação por código de §D3.1; (4) chamadas da CIM NEGADAS por código (`EXTERNAL_TRANSMISSION_FORBIDDEN`, `CONTENT_PROVENANCE_MISSING`, `INVOCATION_ENVELOPE_INVALID`); (5) selos emitidos × negados por passo de D4.2. **Sem limiares** (INDETERMINADO). F2, independência por pacote e lacuna por limite vão à SPEC-048 (Anexo T, T.11). A INTEGRAÇÃO na avaliação do harness é da SPEC-020; custo e latência ficam fora (INV-04; SPEC-008/043). *[v1.2 integral no Anexo R, R.9]*
+- **Métricas (RAG-SPEC-039) — dono da DEFINIÇÃO (n-13; research §7 l.214):** após a divisão, esta Spec define `[PROPOSTA]` só as métricas da **formação**: (1) F1 por afirmação e por rótulo (CLEAR/FALHA/INDETERMINADO por eixo — RULE-KFH-005/006, incl. `KIND_MISCLASSIFIED`); (2) taxa de citação resolvível na formação; (3) contagens de recusa/marcação por código de §D3.1; (4) chamadas da CIM NEGADAS por código (`SOURCE_RIGHTS_INDETERMINATE`, `EXTERNAL_TRANSMISSION_FORBIDDEN`, `INVOCATION_ENVELOPE_INVALID` e sub `CONTENT_PROVENANCE_MISSING`) e por locus (LOCAL/EXTERNO) *[v2.0: "(4) chamadas da CIM NEGADAS por código (`EXTERNAL_TRANSMISSION_FORBIDDEN`, `CONTENT_PROVENANCE_MISSING`, `INVOCATION_ENVELOPE_INVALID`);"]*; (5) selos emitidos × negados por passo de D4.2. **Sem limiares** (INDETERMINADO). F2, independência por pacote e lacuna por limite vão à SPEC-048 (Anexo T, T.11). A INTEGRAÇÃO na avaliação do harness é da SPEC-020; custo e latência ficam fora (INV-04; SPEC-008/043). *[v1.2 integral no Anexo R, R.9]*
 - **Eventos/campos observáveis (RAG-SPEC-041):** a SPEC-007 declara os registros que emite (`source_record`, `validation_record`, `publication_seal`, `seal_consumption`, `seal_revocation_request`, `authorization_act_record`, `model_invocation_record`, `revalidation_mark`, `contradiction_mark`) e a notificação "selo emitido" (D6); contrato de observabilidade = **SPEC-040** (Detector ≠ Gate).
 
 ---
@@ -1432,10 +1532,12 @@ EVIDENCE     : candidato + validation_record reconstruíveis (material_hash reca
 ```
 CAPABILITY   : Emitir publication_seal (entrada A) e submeter o material selado ao KG pelo caminho (b) (entrada B)
 EFFECT       : Commit crítico — habilita escrita permanente no KG (pelo committer do KG, RULE-CKG-009)
-PRECOND      : (A) condições (i)–(vii-bis) da RULE-KFH-007 na ordem fixa: VALIDADO; material_hash recalculado do candidato
+PRECOND      : (A) condições (i)–(vii-bis) da RULE-KFH-007, avaliadas na ordem dos passos (1)–(7-bis) de D4.2 (correspondência
+               na RULE-KFH-007 — r4-n2) [v2.0: "na ordem fixa"]: VALIDADO; material_hash recalculado do candidato
                armazenado == o do validation_record (incl. knowledge_kind/target_node_type); emissor autenticado no escopo do ato
                ISSUER_LIST válido; tipo não canônico; node_type = learning; impact_class derivado + ato HUMAN_APPROVAL_LOT se
-               ALTO; sucessão declarada pela chave natural (nó/relação) e ato SUCCESSION se sucessora; direitos efetivos
+               ALTO; sucessão declarada por registro em succession_of[] pela chave natural (nó/relação) e ato SUCCESSION se
+               sucessora; declared_records, se presente, igual à lista derivada; direitos efetivos
                definidos; campos RULE-CKG-008; nenhum consumo RESERVADO/SUBMETIDO do candidato. (B) consumo ainda sem desfecho;
                record_hash de M(r) recalculado == sealed_records
 POSTCOND     : publication_seal e seal_consumption(RESERVADO) gravados na MESMA unidade atômica, ou nada (r3-n1); cada registro
@@ -1499,29 +1601,38 @@ EVIDENCE     : marcas reconstruíveis com os dois lados; lados inalterados
 ### EC-KFH-011 — Camada de Invocação de Modelo (CIM) [E3] (N-04/R3-M5)
 ```
 CAPABILITY   : Encaminhar chamadas de modelo das etapas do pipeline pelo envelope invoke(stage, model_ref, template_id,
-               content_refs[], free_text?) e gravar model_id/provider_locus
-EFFECT       : Transmissão de conteúdo a provedor (externo ou local) — efeito externo irreversível quando EXTERNO
-PRECOND      : chamada originada de etapa registrada; template_id no catálogo; todo content_ref resolvido PELA CIM no registro do
-               pipeline; provider_locus do registro de provedores (ausente ⇒ EXTERNO; nenhum LOCAL enquanto SPEC-007-LOCUS-001
-               estiver em aberto); se EXTERNO: ∀ content_ref permissão efetiva de envio = TRUE (conjunção das origens-raiz —
-               DERIVTX decidida, P-11) ∧ rights_status efetivo ≠ INDETERMINADO ∧ free_text ausente
-POSTCOND     : model_invocation_record gravado (ENVIADO|NEGADO, com template_id, refs resolvidos e free_text_present); IDs
-               disponíveis à RULE-KFH-006; a etapa recebe só texto; a chamada leva só texto do template + bytes resolvidos pela
-               CIM (+ free_text só se LOCAL)
-POLICY       : RULE-KFH-019; RULE-KFH-001 (origem-raiz); INV-KFH-02; DHR-PROV-WEB-001 §2.1; DHR-SPEC007-003 P-4b/P-11
-LEVEL        : E3 (Crítico — dado enviado não volta)
-FAILURE-MODE : Fail-closed — permissão FALSE/irresolúvel, texto livre a EXTERNO, template fora do catálogo ou ref irresolúvel ⇒
-               NEGADO, nada enviado; CIM indisponível ⇒ nenhuma etapa chama modelo; log. Falso-DENY E3 por amostragem (ENF-07)
-EVIDENCE     : model_invocation_record por chamada; auditoria amostral: envios EXTERNOS com permissão FALSE ou com free_text == 0;
-               executores marcados LOCAL conferidos contra o registro de provedores (RU-5)
+               content_refs[]) — sem campo de texto livre — e gravar model_id/provider_locus
+EFFECT       : Transmissão de conteúdo a executor de modelo (externo ou local) — efeito externo irreversível quando EXTERNO;
+               uso de conteúdo para formar conhecimento em qualquer executor
+PRECOND      : chamada originada de etapa registrada; nenhum texto fora de template_id + content_refs (qualquer executor — R4-M2);
+               template_id no catálogo; todo content_ref (incl. candidate_ref@version — R4-M1) resolvido PELA CIM no registro do
+               pipeline; ∀ content_ref: uso efetivo (rights_status, o mais restritivo das origens-raiz) ≠ INDETERMINADO, para
+               QUALQUER executor (R4-M2); provider_locus do registro de provedores — LOCAL só com ato LOCAL_EXECUTOR válido de
+               Andraus (decidido — DHR-SPEC007-004 P-12), senão EXTERNO; se EXTERNO: ∀ content_ref envio efetivo = TRUE
+               (conjunção das origens-raiz — DERIVTX decidida, P-11)
+POSTCOND     : model_invocation_record gravado (ENVIADO|NEGADO, com template_id, refs resolvidos por tipo e extra_text_rejected);
+               IDs disponíveis à RULE-KFH-006; a etapa recebe só texto; a chamada leva só texto do template + bytes resolvidos
+               pela CIM
+POLICY       : RULE-KFH-019; RULE-KFH-001 (origem-raiz); RULE-KFH-020 (LOCAL_EXECUTOR); INV-KFH-02; DHR-PROV-WEB-001 §2.1;
+               DHR-SPEC007-003 P-4a/P-4b/P-11; DHR-SPEC007-004 P-12 e ordem da rodada 5
+LEVEL        : E3 (Crítico — dado enviado não volta; uso não liberado vira conhecimento)
+FAILURE-MODE : Fail-closed — texto solto (qualquer executor), uso INDETERMINADO (qualquer executor), envio FALSE a EXTERNO,
+               template fora do catálogo ou ref irresolúvel ⇒ NEGADO, nada enviado; CIM indisponível ⇒ nenhuma etapa chama
+               modelo; log. Falso-DENY E3 por amostragem (ENF-07)
+EVIDENCE     : model_invocation_record por chamada; auditoria amostral: chamadas ENVIADAS com uso INDETERMINADO, com texto solto ou
+               (EXTERNO) com envio FALSE == 0; executores marcados LOCAL conferidos contra atos LOCAL_EXECUTOR (RU-5); acessos
+               registrados do lado do executor/rede sem model_invocation_record correspondente == 0 (chamada fora da CIM —
+               RULE-KFH-019 (g); r4-n10; mecanismo = BUILD; RU-7)
 ```
-*[v1.2 integral no Anexo R, R.8]*
+*[v1.2 integral no Anexo R, R.8; v2.0 integral no Anexo R, R.10]*
 
 ### EC-KFH-012 — Registro e uso de ato de autorização [E3] (N-03/N-04 (2))
 ```
 CAPABILITY   : Gravar authorization_act_record (RIGHTS, EXT_TRANSMISSION, ISSUER_LIST, HUMAN_APPROVAL_LOT, SUCCESSION,
-               INVALIDATION, REVOCATION) e aplicá-lo à fonte/lista de emissores/selo/sucessão/invalidação
-EFFECT       : Liberação de uso, de envio externo, de emissores do selo, de selo ALTO, de sucessão ou de invalidação — authz
+               INVALIDATION, LOCAL_EXECUTOR, REVOCATION) e aplicá-lo à fonte/lista de emissores/selo/sucessão/invalidação/
+               registro de provedores [v2.0: sem LOCAL_EXECUTOR e sem "registro de provedores"]
+EFFECT       : Liberação de uso, de envio externo, de emissores do selo, de selo ALTO, de sucessão, de invalidação ou de
+               executor local — authz
                irreversível na prática
 PRECOND      : identidade confirmada de Andraus disponível; approver_id = recorded_by = Andraus (decidido — DHR-SPEC007-003 P-10;
                forma de confirmar = BUILD); scope[] exato e scope_hash conferido
@@ -1530,7 +1641,8 @@ POSTCOND     : registro append-only; o objeto alcançado ganha NOVO registro com
 POLICY       : RULE-KFH-020; RULE-KFH-001/007/009; atomic-spec §10.2 (authz)
 LEVEL        : E3 (Crítico — authz; irreversível)
 FAILURE-MODE : Fail-closed — identidade indisponível ou ato irresolúvel ⇒ nada gravado/aceito; valores permanecem
-               INDETERMINADO/FALSE, lista de emissores vazia, selo ALTO, sucessão e invalidação negados; log. Falso-DENY E3
+               INDETERMINADO/FALSE, nenhum executor LOCAL, lista de emissores vazia, selo ALTO, sucessão e invalidação negados;
+               log. Falso-DENY E3
                por amostragem (ENF-07)
 EVIDENCE     : authorization_act_record reconstruível; trilha objeto → act_id → approver_id (Andraus)
 ```
@@ -1553,9 +1665,9 @@ EVIDENCE     : authorization_act_record reconstruível; trilha objeto → act_id
 
 ## Proposta de errata aditiva à SPEC-006 — `[PROPOSTA]`, só por ato de Andraus
 
-[FONTE: `specs/features/SPEC-006/plan.md` l.482 e l.1415; DHR-SPEC007-003 linha P-1 e §5 ("errata aditiva à SPEC-006 l.482 (a propor)"); parecer R2 n-14]
+[FONTE: `specs/features/SPEC-006/plan.md` l.482 e l.1415; DHR-SPEC007-003 linha P-1 e §5 ("errata aditiva à SPEC-006 l.482 (a propor)"); **DHR-SPEC007-004 P-13 (aprovado propor a errata; vale só depois de homologada; nenhum baseline tocado agora)**; parecer R2 n-14]
 
-- **E-1 (l.482 — decidida em parte por P-1):** acrescentar, sem alterar o texto baselined, que "quem mantém a allowlist de escritores" foi decidido por Andraus (DHR-SPEC007-003 P-1): **Andraus aprova a lista** (no caminho (b), pela lista de emissores do selo — ato ISSUER_LIST, RULE-KFH-020); "quem hospeda o juízo CKG-008" **segue `[DECISÃO NECESSÁRIA]`**; K-001 **segue ABERTA**.
+- **E-1 (l.482 — a parte que a P-1 decidiu; r4-n7):** a l.482 tem dois itens em aberto: (1) "quem mantém a allowlist de escritores" do KG e (2) "quem hospeda o juízo CKG-008". A ata DHR-SPEC007-003 (linha P-1) registra que a resposta P-1 **decide parte da l.482: quem mantém a lista de quem grava**. Texto proposto da errata, aditivo e sem alterar o baselined: *"Item (1) — decidido por Andraus (DHR-SPEC007-003 P-1): a lista de quem grava é aprovada por Andraus. No caminho (b) (conhecimento formado via selo — RULE-CKG-010), essa lista é a lista de emissores do selo da SPEC-007 (ato ISSUER_LIST, RULE-KFH-020); a escrita continua sob a RULE-CKG-009 pelo committer do KG. Item (2) — segue [DECISÃO NECESSÁRIA]."* A seção "Carimbo" A-bis desta Spec continua valendo: a lista de emissores é regra LOCAL análoga à RULE-CKG-009 e não redefine os escritores do caminho (a); se Andraus quiser que a errata cubra também a lista de escritores do caminho (a), isso é decisão dele na homologação da errata. K-001 **segue ABERTA**. *[v2.0: "acrescentar, sem alterar o texto baselined, que \"quem mantém a allowlist de escritores\" foi decidido por Andraus (DHR-SPEC007-003 P-1): **Andraus aprova a lista** (no caminho (b), pela lista de emissores do selo — ato ISSUER_LIST, RULE-KFH-020); \"quem hospeda o juízo CKG-008\" **segue `[DECISÃO NECESSÁRIA]`**; K-001 **segue ABERTA**." — título "E-1 (l.482 — decidida em parte por P-1)"]*
 - **E-2 (l.1415 — `seal_ref`):** registrar que o contrato do selo é o da RULE-KFH-007 (ix) desta Spec (`publication.seal_ref = seal_id@seal_version`), quando homologada.
 - **E-3 (verificação no committer — n-14/R3-M2):** o committer do KG, ao receber registro com `publication.origin = spec007_seal`, confere `seal_ref`, recalcula o `record_hash` do registro recebido (sem `publication.*` e sem campos de sucessão) pela serialização única da RULE-KFH-005 e o compara com `sealed_records[]` do selo; divergência ⇒ recusa. Fecha o risco RU-3.
 - **Forma:** errata aditiva, **número a atribuir por Andraus**; o texto da SPEC-006 não é editado pelo Especificador (INV-09; HANDOFF §8). Não é efeito deste Plan.
@@ -1578,10 +1690,10 @@ EVIDENCE     : authorization_act_record reconstruível; trilha objeto → act_id
 Pipeline lógico de **formação governada** (fora do ciclo de trading): registro de fonte, formação, validação F1, selo, submissão ao KG, marcas, atos de Andraus e a CIM que serve também a trilha de consulta da SPEC-048. Gates C/D sem LLM (selo, guard de validade, checagens literais, serialização única, CIM, resolução de ato); etapas H com gate de saída e limite (formação, juízo F1). Não guarda verdade permanente (SPEC-006), não guarda trabalho (SPEC-004), não transporta (SPEC-005), não recupera nem entrega pacote (SPEC-048), não decide nem executa (INV-05), não computa convicção. *[v1.2 integral no Anexo R, R.9]*
 
 ### Roteamento de modelo (CEE-001 §5) — `[PROPOSTA]`
-Gates C/D: **sem LLM**. Formação (H): modelo de linguagem de capacidade intermediária (classe Sonnet) como proponente. Juízo de fidelidade (H): **modelo com identificador distinto do formador**, em ponto separado sem escrita (P-1; a classe é secundária à independência). Roteamento final, custos e tipos cognitivos = BUILD (CEE-001 §5); custo nunca rebaixa nível (atomic-spec §10.1 item 4) e nunca entra no Conviction Vector (INV-04). **Restrição de envio externo (decidida — P-4b):** um modelo de classe Sonnet acessado por API de terceiro é **provedor externo** pela definição ÚNICA da RULE-KFH-019 (b); toda chamada passa pela CIM (EC-KFH-011); logo formação e juízo em provedor de terceiro só ocorrem sobre fontes com `external_transmission_allowed = TRUE` por ato de Andraus. **Consequência declarada (R3-M3 — corrige a v1.2):** com as decisões da DHR-SPEC007-003, **a linha de montagem inteira fica parada** até o quadro "Pré-requisitos mínimos" ser cumprido — não só "para fontes não liberadas": sem a identidade confirmada de Andraus nenhum ato vale; sem liberação de uso nenhuma fonte entra na formação (nem com modelo de casa); sem lista de carimbadores nenhum selo; sem liberação de envio, só modelos "de casa" — e, enquanto SPEC-007-LOCUS-001 estiver em aberto, nenhum modelo conta como de casa. Para a SPEC-048 (interface), sem itens carimbados nem fontes liberadas a consulta só poderá devolver pacote vazio com a falta declarada. *[Roteamento v1.2 integral no Anexo R, R.9 — a frase corrigida era: "Consequência declarada: até Andraus liberar fontes ou decidir o perímetro, a trilha de formação fica parada para fontes não liberadas — custo assumido pelo fail-closed (mesma observação feita na Q7(c) da abertura sobre \"só local\")."]*
+Gates C/D: **sem LLM**. Formação (H): modelo de linguagem de capacidade intermediária (classe Sonnet) como proponente. Juízo de fidelidade (H): **modelo com identificador distinto do formador**, em ponto separado sem escrita (P-1; a classe é secundária à independência). Roteamento final, custos e tipos cognitivos = BUILD (CEE-001 §5); custo nunca rebaixa nível (atomic-spec §10.1 item 4) e nunca entra no Conviction Vector (INV-04). **Restrição de envio externo (decidida — P-4b):** um modelo de classe Sonnet acessado por API de terceiro é **provedor externo** pela definição ÚNICA da RULE-KFH-019 (b); toda chamada passa pela CIM (EC-KFH-011); logo formação e juízo em provedor de terceiro só ocorrem sobre fontes com `external_transmission_allowed = TRUE` por ato de Andraus. **Consequência declarada (R3-M3 — corrige a v1.2):** com as decisões da DHR-SPEC007-003, **a linha de montagem inteira fica parada** até o quadro "Pré-requisitos mínimos" ser cumprido — não só "para fontes não liberadas": sem a identidade confirmada de Andraus nenhum ato vale; sem liberação de uso nenhuma fonte entra na formação (nem com modelo de casa); sem lista de carimbadores nenhum selo; sem liberação de envio, só modelos "de casa" — e um modelo só conta como de casa depois que Andraus o confirma, modelo por modelo (ato LOCAL_EXECUTOR — DHR-SPEC007-004 P-12); mesmo em casa, a fonte precisa estar liberada para uso e nenhum texto solto é aceito (R4-M2) *[v2.0: "— e, enquanto SPEC-007-LOCUS-001 estiver em aberto, nenhum modelo conta como de casa."]*. Para a SPEC-048 (interface), sem itens carimbados nem fontes liberadas a consulta só poderá devolver pacote vazio com a falta declarada. *[Roteamento v1.2 integral no Anexo R, R.9 — a frase corrigida era: "Consequência declarada: até Andraus liberar fontes ou decidir o perímetro, a trilha de formação fica parada para fontes não liberadas — custo assumido pelo fail-closed (mesma observação feita na Q7(c) da abertura sobre \"só local\")."]*
 
 ### Dependências técnicas
-SPEC-006 v1.7+v1.11/v1.12 (RULE-CKG-004/005/008/009/010/011/012/013; Opção C) · SPEC-004 v1.2 (RULE-CBP-014, princípio) · SPEC-005 v1.0 (notificação) · SPEC-002 (proveniência por referência) · CEM-001/CHM-001/CCM-001 · SPEC-020 (dimensão B, metade F1) · SPEC-048 (consumidora — slot indicativo) · SPEC-043/044/018/009/017/040/022 (fronteiras) · RULES (RULE-004, EPI, CAU, SEM, UNC, PRB, DEC, MET, MECH) · atomic-spec v1.5 · DHR-SPEC007-002/003. Externas `[EXTERNO]`, DADO, não-baseline: research §2 (SRC-RAGAS-01, SRC-FAITHJUDGE-01, SRC-ALCE-01, SRC-CTXRET-01, SRC-SELFRAG-01, SRC-LITM-01, SRC-OWASP-LLM08-01, SRC-LLMWIKI-01) e §4 (ragas, haystack, trulens — elegíveis, nenhum adotado como dependência).
+SPEC-006 v1.7+v1.11/v1.12 (RULE-CKG-004/005/008/009/010/011/012/013; Opção C) · SPEC-004 v1.2 (RULE-CBP-014, princípio) · SPEC-005 v1.0 (notificação) · SPEC-002 (proveniência por referência) · CEM-001/CHM-001/CCM-001 · SPEC-020 (dimensão B, metade F1) · SPEC-048 (consumidora — slot indicativo) · SPEC-043/044/018/009/017/040/022 (fronteiras) · RULES (RULE-004, EPI, CAU, SEM, UNC, PRB, DEC, MET, MECH) · atomic-spec v1.5 · DHR-SPEC007-002/003/004. Externas `[EXTERNO]`, DADO, não-baseline: research §2 (SRC-RAGAS-01, SRC-FAITHJUDGE-01, SRC-ALCE-01, SRC-CTXRET-01, SRC-SELFRAG-01, SRC-LITM-01, SRC-OWASP-LLM08-01, SRC-LLMWIKI-01) e §4 (ragas, haystack, trulens — elegíveis, nenhum adotado como dependência).
 
 ### Riscos técnicos e Salvaguardas
 | Risco (ABERTURA §10) | Salvaguarda |
@@ -1596,8 +1708,14 @@ SPEC-006 v1.7+v1.11/v1.12 (RULE-CKG-004/005/008/009/010/011/012/013; Opção C) 
 | R-11 juiz = mesmo modelo | KFH-006; T09; ADV-04/24 |
 | R-12 hash ≠ qualidade | KFH-007 exige validação; ADV-03 (risco residual) |
 | Troca de conteúdo entre validação e KG (R3-M2) | serialização única + materialização pelo pipeline; ADV-30; auditoria amostral (EC-004); errata E-3 proposta |
-| Rótulo de impacto diminuído (R3-M4) | rótulo no hash; eixo `KIND_MISCLASSIFIED`; ADV-31; RU-4 |
-| Vazamento por texto livre (R3-M5) | envelope por `content_ref`; ADV-32 |
+| Rótulo de impacto diminuído (R3-M4/R4-M1) | rótulo no hash; juiz recebe o rótulo por `candidate_ref@version`; eixo `KIND_MISCLASSIFIED`; ADV-31; RU-4 |
+| Vazamento ou uso não liberado por texto solto / em casa (R3-M5/R4-M2) | envelope só por `content_ref`, sem texto livre, para qualquer executor; uso liberado exigido para qualquer executor; LOCAL só por ato de Andraus; ADV-32 |
+| Chamada que contorna a CIM (r4-n10) | só a CIM tem credencial; auditoria do lado do executor/rede (BUILD); ADV-28(d); RU-7 |
+
+*[v2.0 de duas linhas: "| Rótulo de impacto diminuído (R3-M4) | rótulo no hash; eixo `KIND_MISCLASSIFIED`; ADV-31; RU-4 |"; "| Vazamento por texto livre (R3-M5) | envelope por `content_ref`; ADV-32 |"]*
+
+| Risco (cont.) | Salvaguarda |
+|---|---|
 | Cascata de validade (RULE-CKG-004) | KFH-008/009; EC-005/006; ADV-07/08 |
 | *R-3, R-4, R-8 (relevância, falsa independência, WikiRAG)* | *foram à SPEC-048 com o comportamento — Anexo T, T.13* |
 
@@ -1616,7 +1734,7 @@ BUILD/Tasks/Engineering Cards adiados (atomic-spec §14). Aplicarão SES-001 §5
 
 ## Autopré-check de Redução de Viés (§7-bis — EUA-E18, obrigatório CRITICAL)
 
-**Bloco A — pergunta adversarial por BASpec (12 vigentes)** *[v1.2: "(17)" no título, com complemento para 018–020; v1.2 integral no Anexo R, R.9]*: cada BASpec tem ENTÃO verificável por observador independente (campos booleanos/códigos) e ≥1 caso de negação: 001→T01/T02/ADV-20; 002→T03/ADV-02; 003→T04; 004→T05/ADV-31(a); 005→T06/T07/ADV-05/ADV-30(c); 006→T08/T09/ADV-04/24/31(a); 007→T11–T14/ADV-01/03/16/18(b)/21/30/31(b)(c) (positivo T10); 008→T15/ADV-08; 009→ADV-07/22 (positivo T23); 016→ADV-25 (positivo: cenário da própria BASpec); 019→ADV-20/28/32 (positivo T25); 020→ADV-27 (positivo T24). "QUANDO satisfeito, ENTÃO não deve ocorrer": KFH-007 (VALIDADO mas hash recalculado diverge — T11/ADV-30(a); selo emitido mas conteúdo trocado/reuso — ADV-21; rótulo trocado após validação — ADV-31(b)); KFH-008 (nova versão mas a marca não pode invalidar — ADV-07); KFH-009 (sucessor VALIDADO mas sem ato — ADV-22); KFH-019 (modelo chamado mas conteúdo com permissão FALSE ou texto livre ⇒ não envia — ADV-28/32); KFH-020 (ato existe mas objeto fora do escopo ou aprovador ≠ Andraus ⇒ não vale — ADV-27(b)(d)). Nenhuma BASpec ficou sem resposta ancorada. **Fixture F0** garante que cada negativo do selo é alcançável no estado declarado (R3-M1).
+**Bloco A — pergunta adversarial por BASpec (12 vigentes)** *[v1.2: "(17)" no título, com complemento para 018–020; v1.2 integral no Anexo R, R.9]*: cada BASpec tem ENTÃO verificável por observador independente (campos booleanos/códigos) e ≥1 caso de negação: 001→T01/T02/ADV-20; 002→T03/ADV-02; 003→T04; 004→T05/ADV-31(a); 005→T06/T07/ADV-05/ADV-30(c); 006→T08/T09/ADV-04/24/31(a); 007→T11–T14/ADV-01/03/16/18(b)/21/30/31(b)(c) (positivo T10); 008→T15/ADV-08; 009→ADV-07/22 (positivo T23); 016→ADV-25 (positivo: cenário da própria BASpec); 019→ADV-20/28 (a')(c)(d)/32 (a)–(e) (positivo T25); 020→ADV-27 (positivo T24) *[v2.0: "019→ADV-20/28/32 (positivo T25)"]*. "QUANDO satisfeito, ENTÃO não deve ocorrer": KFH-007 (VALIDADO mas hash recalculado diverge — T11/ADV-30(a); selo emitido mas conteúdo trocado/reuso — ADV-21; rótulo trocado após validação — ADV-31(b)); KFH-008 (nova versão mas a marca não pode invalidar — ADV-07); KFH-009 (sucessor VALIDADO mas sem ato — ADV-22); KFH-019 (modelo chamado mas conteúdo com permissão de envio FALSE, texto solto ou — mesmo em executor de casa — uso não liberado ⇒ não envia — ADV-28/32 (d)(e)); KFH-006 (juiz chamado, mas sem `candidate_ref@version` ⇒ o rótulo fica INDETERMINADO, não sela — ADV-31(a)); KFH-020 (ato existe mas objeto fora do escopo ou aprovador ≠ Andraus ⇒ não vale — ADV-27(b)(d)). Nenhuma BASpec ficou sem resposta ancorada. **Fixture F0** garante que cada negativo do selo é alcançável no estado declarado (R3-M1).
 
 **Bloco B — herança obrigação-a-obrigação (CC-08):**
 - RULE-CKG-004 (validade de relação = ato autorizado, nunca automática/cascata) → estendida LOCALMENTE a todo publicado (m-01): RULE-KFH-008/009, EC-KFH-005/006, T15, **ADV-KFH-07** (caso D8 mantido).
@@ -1642,12 +1760,12 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
 **Bloco C — epistêmico:**
 - RULE-EPI-01/02, RULE-CAU-01: o juízo F1 bloqueia associação→causa; o Plan não afirma que F1 **garante** fidelidade — afirma que **detecta** classes de falha.
 - Hipótese ≠ fato: "`learning` é o tipo natural" segue `[INFERÊNCIA]` (aceita por Andraus como encaixe — P-3); eficácia do juízo contra injeção = INDETERMINADA (ADV-03).
-- RULE-UNC-01 — incertezas LOCALIZADAS (riscos residuais): **RU-1** (modelo) juiz independente enganado por conteúdo contaminado (ADV-03); **RU-2** (modelo) IDs distintos ≠ erros independentes (RULE-KFH-006); **RU-3** (fronteira KG) sem a errata E-3, o KG não confere `seal_ref`/`record_hash` (RULE-KFH-007 (ix); contenção amostral EC-004); **RU-4** (semântica) rótulo de impacto diminuído que o juiz não marca (RULE-KFH-006/007 (v); ADV-31; contenção amostral EC-004); **RU-5** (implementação) executor de terceiro classificado LOCAL no registro de provedores (RULE-KFH-019 (b); SPEC-007-LOCUS-001 em aberto, fail-closed; auditoria EC-011); **RU-6** (modelo) conteúdo de fonte reescrito dentro de saída registrada — coberto por herança de origem-raiz (f4); disfarce em texto livre não sai para fora (ADV-32).
+- RULE-UNC-01 — incertezas LOCALIZADAS (riscos residuais): **RU-1** (modelo) juiz independente enganado por conteúdo contaminado (ADV-03); **RU-2** (modelo) IDs distintos ≠ erros independentes (RULE-KFH-006); **RU-3** (fronteira KG) sem a errata E-3, o KG não confere `seal_ref`/`record_hash` (RULE-KFH-007 (ix); contenção amostral EC-004); **RU-4** (semântica) rótulo de impacto diminuído que o juiz não marca, mesmo recebendo o rótulo por `candidate_ref@version` (R4-M1 tornou o juízo do rótulo possível, não garantido — RULE-KFH-006/007 (v); ADV-31; contenção amostral EC-004); **RU-5** (implementação/governança) executor de terceiro confirmado como LOCAL por engano no ato LOCAL_EXECUTOR, ou entrada LOCAL sem ato aceita por falha de implementação (RULE-KFH-019 (b); auditoria EC-011); **RU-6** (modelo) conteúdo de fonte reescrito dentro de saída registrada — coberto por herança de origem-raiz (f4); texto solto é recusado em qualquer executor (ADV-32); **RU-7** (implementação) chamada que contorna a CIM — só detectável a posteriori pela auditoria do lado do executor/rede (RULE-KFH-019 (g); ADV-28(d); mecanismo = BUILD). *[v2.0 de RU-4..RU-6: "**RU-4** (semântica) rótulo de impacto diminuído que o juiz não marca (RULE-KFH-006/007 (v); ADV-31; contenção amostral EC-004); **RU-5** (implementação) executor de terceiro classificado LOCAL no registro de provedores (RULE-KFH-019 (b); SPEC-007-LOCUS-001 em aberto, fail-closed; auditoria EC-011); **RU-6** (modelo) conteúdo de fonte reescrito dentro de saída registrada — coberto por herança de origem-raiz (f4); disfarce em texto livre não sai para fora (ADV-32)."]*
 - INDETERMINADO usado em: validação, origem-raiz irresolúvel, limites, limiares, taxa de amostragem.
 - RULE-PRB-01: nenhuma probabilidade declarada.
 - Sem falsa precisão: nenhum número de limiar; exemplos numéricos são exemplos de algoritmo, não metas.
 
-**Bloco D — reforço de escopo:** nada aqui é recomendação nem sinal (INV-05/RULE-DEC-01); nenhuma BASpec cruza para execução; dependências de Andraus marcadas `[DECISÃO NECESSÁRIA]` (abertas) ou "decidida (DHR-SPEC007-003)" (política a normatizar na homologação) — nunca como fato normativo vigente antes da homologação.
+**Bloco D — reforço de escopo:** nada aqui é recomendação nem sinal (INV-05/RULE-DEC-01); nenhuma BASpec cruza para execução; dependências de Andraus marcadas `[DECISÃO NECESSÁRIA]` (abertas) ou "decidida (DHR-SPEC007-003/DHR-SPEC007-004)" (política a normatizar na homologação) — nunca como fato normativo vigente antes da homologação.
 
 ---
 
@@ -1658,17 +1776,18 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
 | SPEC-006 v1.7+v1.11/v1.12 (RULE-CKG-*); SPEC-004 v1.2; SPEC-005 v1.0; SPEC-002; SPEC-020 v1.0; CEM/CHM/CCM | [FONTE] | FATO NORMATIVO (BASELINE) |
 | atomic-spec v1.5; RULES (RULE-004, EPI, CAU, SEM, UNC, PRB, DEC, MET, MECH); INV-*; ENF-* | [FONTE] | FATO NORMATIVO |
 | DHR-SPEC007-001 (Q1–Q8); DHR-SPEC007-002 (divisão); DHR-BENCH-INTEL-001 (D1–D8); DHR-H001-001 | [FONTE] | FATO NORMATIVO (decisões de Andraus em ata) |
-| DHR-SPEC007-003 (P-1..P-11 — ACTREC, RIGHTS, EXTTX, DERIVTX, NODETYPE, SUCC, P-1/P-2, P-5, P-6) | [FONTE] | FATO NORMATIVO **como decisão de política em ata**; vira **texto normativo** só na homologação deste Plan (a ata não homologa Plan) |
+| DHR-SPEC007-003 (P-1..P-11 — ACTREC, RIGHTS, EXTTX, DERIVTX, NODETYPE, SUCC, P-1/P-2, P-5, P-6) e DHR-SPEC007-004 (P-12 LOCUS, P-13, P-14; ordem da rodada 5) | [FONTE] | FATO NORMATIVO **como decisão de política em ata**; vira **texto normativo** só na homologação deste Plan (a ata não homologa Plan) |
 | ROADMAP l.182 (cadeia e regras do slot); SPEC-048 (slot) | [FONTE] | FATO ARQUITETURAL (slot indicativo; SPEC-048 NÃO aberta) |
 | RULE-KFH-001..009, 016, 019, 020; INV-KFH-01/02; BASpec/EC/T/ADV; contrato lógico; estados `KC_*`; serialização única; Fixture F0 | [PROPOSTA] | Requer homologação |
 | Anexo T (texto v1.2 transferido à SPEC-048) | [PROPOSTA] | Insumo do Plan da SPEC-048; **não vigente aqui**; não é baseline |
 | Interface com a SPEC-048 (requisitos a ela) | [PROPOSTA] | Não vinculante até a abertura e homologação da SPEC-048 |
-| Quem confirma executor LOCAL (SPEC-007-LOCUS-001) | [DECISÃO NECESSÁRIA] | Em aberto; intervalo: nenhum executor LOCAL (fail-closed) — P-12 |
+| Quem confirma executor LOCAL (SPEC-007-LOCUS-001) | [FONTE] | Decidida (DHR-SPEC007-004 P-12): só Andraus, modelo por modelo (ato LOCAL_EXECUTOR); texto normativo na homologação *[v2.0: "[DECISÃO NECESSÁRIA] — Em aberto; intervalo: nenhum executor LOCAL (fail-closed) — P-12"]* |
+| Exigir ato de Andraus também para INVALIDATION (extensão da P-8/P-10 — r4-n8) | [PROPOSTA] | A confirmar por Andraus na homologação |
 | Forma de confirmar a identidade de Andraus | [DECISÃO NECESSÁRIA] | Em aberto (BUILD — DHR-SPEC007-003 §4) |
 | Host do juízo CKG-008 (SPEC-006 l.482) | [DECISÃO NECESSÁRIA] | Em aberto (runtime; K-001/SPEC-018) |
 | Sinalização de dependentes de item marcado "a revalidar" | [DECISÃO NECESSÁRIA] | Lacuna sem ID (n-05); sugestão de dono SPEC-018 |
-| Errata aditiva à SPEC-006 (E-1 l.482; E-2 l.1415; E-3 committer) | [PROPOSTA] | Só por ato de Andraus — P-13 |
-| Divisão de COL-EXP-05 (definição aqui; contagem na SPEC-048) | [PROPOSTA] | P-6 aceita a reconciliação; a divisão entre Plans — P-14 |
+| Errata aditiva à SPEC-006 (E-1 l.482; E-2 l.1415; E-3 committer) | [PROPOSTA] | Aprovada para ser proposta (DHR-SPEC007-004 P-13); vale só depois de homologada por Andraus *[v2.0: "Só por ato de Andraus — P-13"]* |
+| Divisão de COL-EXP-05 (definição aqui; contagem na SPEC-048) | [FONTE] | Decidida (DHR-SPEC007-004 P-14); texto normativo na homologação *[v2.0: "[PROPOSTA] — P-6 aceita a reconciliação; a divisão entre Plans — P-14"]* |
 | Emenda à SPEC-020 (metade F1) | [PROPOSTA] | Só por ato de Andraus na homologação (P-5 decidida como forma) |
 | Tipo de evento "selo emitido" na SPEC-005 | [PROPOSTA] | Registro por governança da SPEC-005 |
 | Registro de provedores; catálogo de modelos de instrução | [PROPOSTA] | Contrato aqui; conteúdo no BUILD |
@@ -1687,16 +1806,15 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
 
 ## Perguntas a Andraus (homologação do Plan) — só o que ainda depende de você, em linguagem de trader (R3-04)
 
-> As perguntas P-1..P-11 da v1.2 **já foram respondidas** (DHR-SPEC007-003) e estão incorporadas como regra; P-7 (tamanho) foi resolvida pela divisão; P-9 (onde o pacote é entregue) vai à SPEC-048. Texto v1.2 das perguntas no Anexo R, R.9.
+> As perguntas P-1..P-11 da v1.2 **já foram respondidas** (DHR-SPEC007-003) e as P-12..P-14 da v2.0 **também** (DHR-SPEC007-004); todas estão incorporadas. P-7 (tamanho) foi resolvida pela divisão; P-9 (onde o pacote é entregue) vai à SPEC-048. **Nenhuma pergunta nova de política nesta v2.1.** Texto v1.2 das perguntas no Anexo R, R.9; texto v2.0 das P-12..P-14 no Anexo R, R.10.
 
-12. **P-12 — Quem confirma que um modelo roda "em casa".** Você decidiu que modelo de terceiro conta como "fora". Falta dizer **quem confirma** que um modelo roda de fato dentro de casa — se alguém marcar um serviço de fora como "de casa", a porta de saída fica aberta. *Recomendação: só você confirma, modelo por modelo (registro seu, como as liberações de fonte); até lá, nenhum modelo conta como de casa e a linha só anda com fontes liberadas para fora.* **Concorda?**
-    > *Nota técnica:* SPEC-007-LOCUS-001 (`[DECISÃO NECESSÁRIA]`); RULE-KFH-019 (b); registro de provedores; se aprovada, vira `act_type` próprio [PROPOSTA] na RULE-KFH-020.
-13. **P-13 — Ajuste no caderno permanente.** Sua resposta P-1 já decidiu quem aprova a lista de quem grava no caderno; o caderno ainda diz "em aberto" nesse ponto e não confere o carimbo ao receber uma ficha. *Recomendação: aprovar a proposta de um ajuste aditivo ao caderno — registrar a sua decisão sobre a lista, apontar o carimbo desta etapa e fazer o caderno conferir o "código" do carimbo ao gravar.* **Aprova propor o ajuste (número seu)?**
-    > *Nota técnica:* errata aditiva à SPEC-006 E-1 (l.482), E-2 (l.1415), E-3 (committer confere `seal_ref`/`record_hash`); fecha RU-3; host do juízo CKG-008 e K-001 seguem ABERTOS.
-14. **P-14 — "Fontes repetidas contam como uma" entre as duas etapas.** Você aceitou a regra para evidência. *Recomendação: a definição de "mesma origem" fica nesta etapa (que já a usa para a trava de saída) e a contagem no pacote fica na etapa de consulta.* **Concorda?**
-    > *Nota técnica:* COL-EXP-05; RULE-KFH-001 (origem-raiz) × v1.2 RULE-KFH-011 (Anexo T); BL-011 segue `ATIVADO`; CONFLICT-MAP não alterado.
+**Atos seus na homologação (não são perguntas novas — decisões de forma já tomadas ou confirmação do que o Plan propõe):**
+1. Emenda à avaliação geral, metade F1 (P-5).
+2. Confirmar que as decisões das atas DHR-SPEC007-003 e DHR-SPEC007-004 passam a texto normativo com este Plan.
+3. Confirmar, ou recusar, que **aposentar** algo já carimbado também exige registro seu (a troca já exige — P-8; estender à aposentadoria é proposta deste Plan — r4-n8). Se recusar, a regra de aposentadoria volta a ficar em aberto e, até decisão sua, nada é aposentado pelo pipeline.
+4. A errata do caderno permanente (P-13): aprovada para ser proposta; vale só quando você a homologar, com o número que der.
 
-**Atos seus na homologação (não são perguntas — já decididos como forma):** emenda à avaliação geral, metade F1 (P-5); confirmação de que as decisões da DHR-SPEC007-003 passam a texto normativo com este Plan.
+**O que continua em aberto e depende de você (não perguntado agora):** forma de confirmar a sua identidade (decisão de construção); host do juízo do caderno (SPEC-006 l.482, item 2); K-001; M-001 e demais da lista CONS-01; livro (Q7c); abertura da SPEC-048.
 
 ---
 
@@ -1705,10 +1823,12 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
 ```
 [x] ROADMAP.md lido: SPEC-007 abertura homologada, DIVIDIDA (l.184 — DHR-SPEC007-002); SPEC-048 slot indicativo NÃO aberto (l.186-189, l.517); decisões abertas ativas registradas.
 [x] atomic-spec.md lido: §10–§15 (E0–E3, pisos §10.2, Classe §10.6, PD §10.7, etiquetagem §11, CONS-01 §12, invariantes §13, Dossiê §15).
-[x] Ordem expressa de Andraus para o Plan reduzido (chat 2026-10-24) citada no cabeçalho; DHR-SPEC007-002 e DHR-SPEC007-003 lidas.
+[x] Ordem expressa de Andraus para o Plan reduzido e para a rodada 5 (chat 2026-10-24) registrada em ata (DHR-SPEC007-004 §1/§2) e citada no cabeçalho; DHR-SPEC007-002, DHR-SPEC007-003 e DHR-SPEC007-004 lidas.
+[x] Rodada 4 do Revisor: R4-M1 e R4-M2 corrigidas (tabela "Correções da rodada 4", com positivo/negativo); r4-n1..r4-n11 incorporadas.
+[x] DHR-SPEC007-004 incorporada: SPEC-007-LOCUS-001 "decidida (DHR-SPEC007-004)"; P-13 = errata [PROPOSTA]; P-14 decidida; perguntas P-12..P-14 retiradas da lista pendente.
 [x] Nenhum invariante violado; INV-04/05/06/07/09/10 preservados; selo, CIM, atos e guard de validade em E3.
 [x] Constitution Check CC-01..CC-12 (N/A justificados: CC-06/07/12); CC-11 por BASpec; pisos E2/E3.
-[x] Disciplinas N8–N17 (§7-bis Bloco C; RU-1..RU-6).
+[x] Disciplinas N8–N17 (§7-bis Bloco C; RU-1..RU-7). [v2.0: "RU-1..RU-6"]
 [x] Referências externas classificadas [EXTERNO]; nenhuma importada como baseline; nada copiado do Benchmark; 7 citações do Dossiê não reconferíveis (clone ausente).
 [x] Spec sem implementação; Plan derivado da abertura homologada e da divisão; Tasks adiadas.
 [x] 12 EARS com regra-fonte; 12 BASpecs completas; RULEs citadas existem (RULES.md / SPEC-006 / SPEC-004) ou são [PROPOSTA] desta Spec. [v1.2: vinte EARS e vinte BASpecs — linha integral no Anexo R, R.9]
@@ -1718,10 +1838,10 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
 [x] DHR-SPEC007-003 incorporada: ACTREC/RIGHTS/EXTTX/DERIVTX/NODETYPE/SUCC "decidida (DHR-SPEC007-003)"; P-1/P-2 como regra; BBTYPE → SPEC-048; livro (Q7c) fora; K-001, M-001 e demais seguem abertas.
 [x] Enforcement Contract em todo efeito (EC-KFH-001..006, 010, 011, 012); fail-closed nos E3; ENF-07 amostral; escala E0–E3 em seção própria.
 [x] Status epistemológico aplicado (tabela TRACE-06; decisão de política em ata ≠ texto normativo antes da homologação).
-[x] CONS-01: G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, livro (Q7c), forma de confirmar a identidade, host do juízo CKG-008, SPEC-007-LOCUS-001 — todas abertas, nenhuma usada como invariante fechado.
+[x] CONS-01: G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, livro (Q7c), forma de confirmar a identidade, host do juízo CKG-008 — todas abertas, nenhuma usada como invariante fechado; SPEC-007-LOCUS-001 decidida por Andraus (DHR-SPEC007-004) [v2.0: listava SPEC-007-LOCUS-001 entre as abertas].
 [x] Etiquetagem [FONTE]/[INFERÊNCIA]/[PROPOSTA]/[DECISÃO NECESSÁRIA]/[EXTERNO].
 [x] Conflitos registrados: l.482 (parte decidida em ata, baseline não editado — errata proposta); ROADMAP l.34 × regra de vinculação (já registrado); correção SPEC-047→SPEC-048 (DHR-SPEC007-002 §5) — esta entrega usa SPEC-048.
-[x] Integridade: âncoras conferidas nesta sessão — ROADMAP l.179-189; SPEC-006 l.440-489, l.1400-1419 (l.1405/1410/1415); SPEC-004 l.311-319; DHR-SPEC007-002; DHR-SPEC007-003; pareceres R1/R2/R3. Demais âncoras herdadas da v1.2 (conferidas naquela sessão).
+[x] Integridade: âncoras conferidas nesta sessão — ROADMAP l.179-189; SPEC-006 l.440-489, l.1400-1419 (l.1405/1410/1415); SPEC-004 l.311-319; DHR-SPEC007-002; DHR-SPEC007-003; DHR-SPEC007-004; pareceres R1/R2/R3/R4. Demais âncoras herdadas da v1.2 (conferidas naquela sessão).
 [x] 4Es na ordem (Conformidade > Eficácia > Efetividade > Eficiência > Economicidade); latência: formação fora do ciclo de trading (a latência da consulta é da SPEC-048).
 [x] Dependências a montante homologadas (SPEC-002/004/005/006/020); nenhuma dependência da SPEC-048 (ela é a jusante).
 [x] "VERIFY" da skill não apresentado como CONFORME.
@@ -1736,7 +1856,7 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
 
 **Pronto para revisão.**
 
-**Dependem de Andraus (não fechadas — CONS-01):** P-12 (SPEC-007-LOCUS-001), P-13 (errata aditiva à SPEC-006), P-14 (divisão de COL-EXP-05); emenda à SPEC-020 metade F1 (ato na homologação); forma de confirmar a identidade (BUILD); host do juízo CKG-008 (SPEC-006 l.482); sinalização de dependentes (lacuna); livro (Q7c, ADIADA); M-001, K-001, G-001, J-001, N-001, C-001 (**ABERTAS**); WF-D03; ECC-03-001; SPEC-045-RUNTIME-001; CKG-STRUCT-ORIGIN-001 (BL-035); produtor/gatilho de promoção (SPEC-006 l.976 — dono SPEC-018, "como" em aberto); abertura da SPEC-048 (só por ordem dele).
+**Dependem de Andraus (não fechadas — CONS-01):** homologação da errata aditiva à SPEC-006 (P-13 aprovou só propô-la); confirmar a extensão do ato de Andraus à INVALIDATION (r4-n8, [PROPOSTA]); emenda à SPEC-020 metade F1 (ato na homologação); *[v2.0 começava por: "P-12 (SPEC-007-LOCUS-001), P-13 (errata aditiva à SPEC-006), P-14 (divisão de COL-EXP-05);" — P-12 e P-14 decididas e P-13 respondida, DHR-SPEC007-004]* forma de confirmar a identidade (BUILD); host do juízo CKG-008 (SPEC-006 l.482); sinalização de dependentes (lacuna); livro (Q7c, ADIADA); M-001, K-001, G-001, J-001, N-001, C-001 (**ABERTAS**); WF-D03; ECC-03-001; SPEC-045-RUNTIME-001; CKG-STRUCT-ORIGIN-001 (BL-035); produtor/gatilho de promoção (SPEC-006 l.976 — dono SPEC-018, "como" em aberto); abertura da SPEC-048 (só por ordem dele).
 
 **Volume:** CRITICAL reduzida — 12 BASpecs / 18 cenários / 22 ADV / 9 EC + §D3.1 + contrato lógico *[v1.2: vinte BASpecs, vinte e seis cenários, vinte e nove casos adversariais e treze EC — linha integral no Anexo R, R.9]*.
 
@@ -3261,6 +3381,153 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
     **Dependem de Andraus (não fechadas — CONS-01) (v1.2):** P-1..P-11 acima (P-4 dividida em P-4a/P-4b); quem mantém a lista de emissores/escritores e onde roda o juízo (SPEC-006 l.482 — em aberto); corte de alto impacto; SPEC-007-NODETYPE-001; SPEC-007-SUCC-001; SPEC-007-RIGHTS-001; SPEC-007-EXTTX-001; SPEC-007-BBTYPE-001; SPEC-007-ACTREC-001; SPEC-007-DERIVTX-001; sinalização de dependentes (lacuna); errata à SPEC-006 para o committer verificar `seal_ref`/hash (proposta); emenda à SPEC-020; livro (Q7c, ADIADA); M-001, K-001, G-001, J-001, N-001, C-001 (**ABERTAS**); WF-D03; ECC-03-001; SPEC-045-RUNTIME-001; CKG-STRUCT-ORIGIN-001 (BL-035); produtor/gatilho de promoção (SPEC-006 l.976 — dono SPEC-018, "como" em aberto).
 
     **Volume (registrado, NÃO dividido) (v1.2):** CRITICAL, 20 BASpecs / 26 cenários / 29 ADV / 13 EC + §D3.1 + contrato lógico *[v1.1: "17 BASpecs / 23 cenários / 26 ADV"; v1.0: "22 cenários / 20 ADV"]*. A divisão (Opção C da ABERTURA §3) é decisão exclusiva de Andraus (P-7).
+```
+
+### R.10 — Texto anterior preservado (v2.0) das partes reescritas na v2.1 (rodada 5; integral)
+
+```text
+    [RULE-KFH-006 (v2.0): idêntica à v2.1, sem o parágrafo que começa em "ENTRADA DO JUIZ (R4-M1)" e termina em
+    "(`KC_INDETERMINADO`, não sela)." — o parágrafo foi ACRESCENTADO na v2.1; nada foi retirado.]
+    [RULE-KFH-005 (v2.0), função M: os campos de conteúdo terminavam em "texto EXATO das afirmações de `content_claim_ids[]`,
+    na ordem declarada}." — `formed_inference_claim_ids[]` foi ACRESCENTADO na v2.1 (r4-n5).]
+    [RULE-KFH-007 (v2.0): cabeçalho ENTRADAS/ORDEM e trecho do gatilho de sucessora preservados em colchete local no corpo.]
+    [RULE-KFH-009 (v2.0), item (b): idêntico, sem a frase "— exigir ato de Andraus também para a INVALIDAÇÃO (e não só para a
+    troca, P-8) é extensão desta Spec da P-8/P-10, `[PROPOSTA]` a confirmar por Andraus na homologação (r4-n8);".]
+    [RULE-KFH-020 (v2.0): lista de act_type e de escopo preservada em colchete local no corpo; Fonte sem "DHR-SPEC007-004 P-12".]
+
+    RULE-KFH-019 (v2.0):
+                  (N-04) CAMADA DE INVOCAÇÃO DE MODELO (CIM) — caminho de efeito externo (INV-KFH-02), E3, gate não-LLM,
+                  fail-closed. Toda chamada de modelo desta Spec (formação, juiz F1) — e, por interface, das etapas da SPEC-048
+                  quando ela existir — passa SÓ pela CIM; nenhuma etapa tem outro acesso a modelo. A CIM:
+                  (a) GRAVA, da chamada efetivamente feita, `model_id` e `provider_locus` — âncora da "camada de invocação"
+                  citada na RULE-KFH-006 (n-11);
+                  (b) PROVEDOR EXTERNO — DEFINIÇÃO ÚNICA, DECIDIDA (DHR-SPEC007-003 P-4b; SPEC-007-EXTTX-001): todo executor de
+                  modelo ou serviço que NÃO roda em execução local controlada pelo SOT; o MODELO DE TERCEIRO CONTRATADO PELO
+                  SISTEMA É EXTERNO. `provider_locus` vem do REGISTRO DE PROVEDORES da CIM (r3-n5(c); [PROPOSTA]): cada executor
+                  consta como LOCAL ou EXTERNO; executor ausente do registro ⇒ EXTERNO. QUEM confirma que um executor é LOCAL =
+                  [DECISÃO NECESSÁRIA — SPEC-007-LOCUS-001, de Andraus]; NO INTERVALO (fail-closed) nenhum executor é LOCAL;
+                  (c) PERMISSÃO EFETIVA DE ENVIO de um conteúdo := conjunção (E lógico) de `external_transmission_allowed` de
+                  TODAS as suas origens-raiz (RULE-KFH-001) ao longo da cadeia de derivação (unidade → afirmação/candidato →
+                  registro selado → item publicado) — DECIDIDA (DHR-SPEC007-003 P-11; SPEC-007-DERIVTX-001): o derivado HERDA a
+                  restrição (regra mais restritiva), inclusive conhecimento reescrito; vale igualmente para `rights_status`
+                  efetivo (o mais restritivo entre as origens-raiz; INDETERMINADO domina); origem-raiz irresolúvel ⇒ FALSE /
+                  INDETERMINADO;
+                  (d) chamada com `provider_locus = EXTERNO` cujo conteúdo tenha permissão efetiva FALSE ⇒ NEGADA, nada é
+                  enviado (`EXTERNAL_TRANSMISSION_FORBIDDEN`);
+                  (e) devolve à etapa só texto (sem ferramentas);
+                  (f) ENVELOPE DE ENTRADA (R3-M5): a etapa chama `invoke(stage, model_ref, template_id, content_refs[],
+                  free_text?)`. (f1) Conteúdo de fonte, ou derivado dela, SÓ entra por `content_ref` (`semantic_unit_ref` |
+                  `claim_ref@candidate_version` | `published_ref@version`); a CIM RESOLVE cada ref no registro do pipeline e
+                  busca ELA MESMA os bytes — a etapa não fornece os bytes; ref irresolúvel ⇒ `INVOCATION_ENVELOPE_INVALID` (sub
+                  `CONTENT_REF_UNRESOLVABLE`). (f2) O texto de instrução vem SÓ de `template_id` de um CATÁLOGO DE MODELOS DE
+                  INSTRUÇÃO registrado (texto fixo, com hash, não derivado de fonte; [PROPOSTA]) — `template_id` fora do catálogo
+                  ⇒ `INVOCATION_ENVELOPE_INVALID` (sub `TEMPLATE_UNREGISTERED`). (f3) Qualquer TEXTO LIVRE sem `content_ref`
+                  (prompt composto, resumo, tradução, colagem) tem origem-raiz IRRESOLÚVEL ⇒ permissão efetiva FALSE ⇒ não sai
+                  para provedor EXTERNO (`EXTERNAL_TRANSMISSION_FORBIDDEN`, sub `CONTENT_PROVENANCE_MISSING`); a provedor LOCAL
+                  é aceito e registrado. (f4) Saída de modelo usada como entrada de outra chamada só volta por `content_ref` do
+                  objeto registrado que a contém (ex.: `claim_ref@candidate_version`), herdando a origem-raiz pela cadeia.
+                  INTERFACE COM A SPEC-048 [PROPOSTA]: a entrega de pacote a consumidor externo aplica o mesmo teste (c)/(d) item a
+                  item — obrigação da SPEC-048, que USA esta trava (cláusula v1.2 no Anexo T, T.1).
+                  [Fonte: INV-KFH-02; DHR-PROV-WEB-001 §2.1; DHR-SPEC007-003 P-4b/P-11; ENF-03/04; atomic-spec §10.2; pareceres
+                  R2 N-04/n-11/n-13 e R3 M5/r3-n5]  [PROPOSTA]  (texto v1.2 integral no Anexo R, R.5)
+
+    BASpec-KFH-019 (v2.0), campos reescritos:
+      ENTÃO:        Aplica RULE-KFH-019 — a chamada passa só pela CIM, pelo envelope invoke(stage, model_ref, template_id,
+                    content_refs[], free_text?); a CIM resolve ela mesma os content_refs, toma provider_locus do registro de
+                    provedores (ausente ⇒ EXTERNO), grava model_id e provider_locus; se o provedor é EXTERNO e algum conteúdo
+                    tem permissão efetiva FALSE (conjunção das origens-raiz) ou há texto livre sem content_ref, nega e nada é enviado
+      PORQUE:       Invocar modelo externo é transmissão de conteúdo — caminho de efeito irreversível (dado enviado não volta);
+                    a CIM só pode verificar proveniência do que ela mesma resolveu (R3-M5)
+      REFERÊNCIA:   RULE-KFH-019; RULE-KFH-001 (origem-raiz); INV-KFH-02; DHR-PROV-WEB-001 §2.1; DHR-SPEC007-003 P-4b/P-11
+        MECANISMO   : proxy único de invocação + resolução própria de content_refs + verificação de permissão efetiva antes do envio
+        GATE DE SAÍDA: envelope válido ∧ ((provider_locus = LOCAL) ∨ (∀ content_ref: permissão efetiva = TRUE ∧ rights efetivo ≠
+                      INDETERMINADO ∧ free_text ausente)) ⇒ envia; senão DENY
+        CRITÉRIO 4Es: Conformidade > Eficácia — vazamento é irreversível
+        DADO        T25 (positivo) e ADV-28 (c)(d) / ADV-32 (negativos)
+    BASpec-KFH-007 (v2.0), ENTÃO, segunda linha: "knowledge_kind e target_node_type) e deriva sealed_records; avalia (i)–(vii-bis)
+    na ordem fixa (fail-fast);" — na v2.1 "na ordem fixa" virou "na ordem dos passos de D4.2"; as demais linhas são idênticas. BASpec-KFH-020 (v2.0), QUANDO: sem ", executor local".
+
+    **D4.2 — Gate do selo (RULE-KFH-007) — v2.0.** ENTRADAS: (A) `seal_request(candidate_ref@version, succession_of?, human_approval_ref?, succession_authorization_ref?)` + identidade do emissor fornecida pelo runtime; (B) `seal_submit(seal_id@seal_version)`. PROCESSO (A) — **ordem fixa, fail-fast: devolve o PRIMEIRO código que falha (N-01/R3-M1)**: (1) carrega `validation_record` de `candidate_ref@version`; resultado ≠ VALIDADO ⇒ `VALIDATION_NOT_VALIDATED`; (2) **hash único (R3-M2):** `h := material_hash(candidato ARMAZENADO)` (D4.3) e `S := sealed_records` derivada do mesmo candidato; `h ≠ validation_record.material_hash` ⇒ `SEAL_HASH_MISMATCH`; se o pedido trouxe lista de registros ≠ `S` ⇒ `SEAL_HASH_MISMATCH`/`SEAL_RECORDS_DIFFER_FROM_VALIDATED`; (3) identidade do emissor indisponível, ou emissor ∉ escopo do ato ISSUER_LIST válido mais recente (lista vazia sem ato) ⇒ `SEAL_ISSUER_UNAUTHORIZED`; (4) `knowledge_kind`/`target_node_type` ∈ {hypothesis, evidence, observation, conviction} ⇒ `SEAL_CANONICAL_TYPE_FORBIDDEN`; (4-bis) algum nó com `node_type ≠ learning` ⇒ `TARGET_NODE_TYPE_FORBIDDEN`; (5) `impact_class := ALTO` se `knowledge_kind` ∈ {definição, regra} ou AUSENTE, senão PADRAO (valor declarado ignorado); ALTO ⇒ `human_approval_ref` resolvido por RULE-KFH-020 (HUMAN_APPROVAL_LOT; escopo ∋ `candidate_ref@version` + `h`) — senão `HUMAN_APPROVAL_MISSING`; (5-bis) para cada registro de `S`, chave natural (nó: `natural_key`; relação: `(relation_type, from_node, to_node, target_relation_id, valid_from)`) vigente no KG (consulta read-only) ∧ sem `succession_of` ⇒ `SEAL_SCOPE_INVALID`/`SUCCESSION_UNDECLARED`; com `succession_of`: `succession_authorization_ref` resolvido por RULE-KFH-020 (SUCCESSION; escopo ∋ `published_ref@version` substituído e `candidate_ref@version` + `h`) — senão `SUCCESSION_AUTHORIZATION_MISSING`; CAUSA com núcleo causal alterado ⇒ `SEAL_SCOPE_INVALID`/`CAUSAL_CORE_IMMUTABLE_IN_CHAIN`; (6) alguma origem-raiz com `rights_status` efetivo INDETERMINADO ⇒ `SEAL_SOURCE_RIGHTS_INDETERMINATE`; (7) CAUSA/SIMILAR_A sem campos RULE-CKG-008 ⇒ `SEAL_SCOPE_INVALID`; (7-bis) existe `seal_consumption` de `candidate_ref@version` com status RESERVADO sem desfecho ou SUBMETIDO ⇒ `CANDIDATE_ALREADY_SEALED`; (8) **numa única unidade atômica (r3-n1):** aloca `seal_id@1`, grava `publication_seal(S, h, …)` e `seal_consumption(RESERVADO)` — ou nada. SAÍDA (A): `seal_id` | `SEAL_DENIED(sub)`. PROCESSO (B): (9) carrega o `seal_consumption` do selo; já tem desfecho (SUBMETIDO/FALHOU) ⇒ `SEAL_ALREADY_CONSUMED`; (10) para cada registro de `S`: materializa por M a partir do candidato armazenado e recalcula `record_hash`; diverge ⇒ `SEAL_CONTENT_MISMATCH`, nada submetido, consumo anexa FALHOU; (11) submete cada registro materializado + `publication.origin = spec007_seal` + `publication.seal_ref` (+ `supersedes`/`version`/`expected_version` se sucessora); anexa SUBMETIDO (ou FALHOU se o KG negar, ex.: `VERSION_CONFLICT`). SAÍDA (B): registros submetidos | `SEAL_DENIED(sub)`.
+    EXEMPLO (Fixture F0, D7): `C@1` com `claims=[a1 "o índice X é calculado sobre o fechamento diário" — span F@h1#s3]`, `record_proposal=[N1 (nó; conteúdo ← a1)]`, `knowledge_kind = fato_de_fonte`, `target_node_type = learning` ⇒ `rh1 = record_hash(N1)`, `h7 = material_hash(C@1)` (D4.3); `validation_record.material_hash = h7`; `seal_request(C@1)` por E1 (no ato ISSUER_LIST) ⇒ (1)–(7-bis) passam, PADRAO ⇒ sem visto; (8) `S1@1` + RESERVADO; `seal_submit(S1@1)` ⇒ M(N1) recalculado = `rh1` ⇒ N1 submetido com `seal_ref = S1@1`; SUBMETIDO. Negativos: texto de a1 trocado no armazenado ⇒ (2) `SEAL_HASH_MISMATCH` (ADV-30(a)); pedido com lista `[N1, R9]` ⇒ (2) sub `SEAL_RECORDS_DIFFER_FROM_VALIDATED` (ADV-21(d)); sem ato ISSUER_LIST ⇒ (3) (T12(c)); `knowledge_kind = regra` sem visto ⇒ (5) (T14); segundo `seal_submit(S1@1)` ⇒ (9) `SEAL_ALREADY_CONSUMED`; novo `seal_request(C@1)` durante RESERVADO ou após SUBMETIDO ⇒ (7-bis) `CANDIDATE_ALREADY_SEALED`.
+
+    **D4.3 — Serialização única e materialização (RULE-KFH-005) — novo na v2.0 (R3-M2).** ENTRADA: candidato armazenado `C@v`. PROCESSO: (1) para cada `r ∈ record_proposal` (ordenados por `record_ref`): `M(r)` = {`record_ref`, `record_kind`, campos estruturais declarados, `node_type := target_node_type`, conteúdo := texto exato das afirmações de `content_claim_ids` na ordem declarada}; `rh_r := H(canon(M(r)))`; (2) `records := [{record_ref, record_kind, rh_r}]`; (3) `material_hash := H(canon({C@v, claims[{claim_id, text, span_refs, formed_inference}], records, knowledge_kind|AUSENTE, target_node_type}))`. Nenhum valor de hash é lido do armazenado ou do pedido. SAÍDA: `material_hash`, `records`. EXEMPLO: `C@1` do D4.2 ⇒ `rh1`, `h7`. (a) Trocar o texto de a1 para "o índice X é calculado sobre o fechamento semanal" e regravar no armazenado um `record_hash` coerente com o texto novo ⇒ o passo (1) recalcula `rh1'` do texto novo e o passo (3) dá `h8 ≠ h7` (o texto de a1 entra em `claims[]` e em M) ⇒ `SEAL_HASH_MISMATCH`. (b) Trocar `knowledge_kind` de `regra` para `fato_de_fonte` depois da validação ⇒ `h ≠ h7` (o rótulo está no hash — R3-M4). (c) Acrescentar ao pedido de selo a relação R9 não proposta ⇒ a lista do pedido ≠ `records` ⇒ `SEAL_RECORDS_DIFFER_FROM_VALIDATED`.
+
+    **D4.5 — Envelope da CIM (RULE-KFH-019 (f)) — novo na v2.0 (R3-M5).** ENTRADA: `invoke(stage, model_ref, template_id, content_refs[], free_text?)`. PROCESSO: (1) `provider_locus := registro_de_provedores(model_ref)`; ausente ⇒ EXTERNO (no intervalo de SPEC-007-LOCUS-001, nenhum executor é LOCAL); (2) `template_id ∉ catálogo` ⇒ NEGADO `INVOCATION_ENVELOPE_INVALID`/`TEMPLATE_UNREGISTERED`; (3) para cada `content_ref`: a CIM resolve no registro do pipeline, busca os bytes e calcula as origens-raiz (RULE-KFH-001); irresolúvel ⇒ NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_REF_UNRESOLVABLE`; (4) se EXTERNO: exige ∀ ref permissão efetiva TRUE e `rights_status` efetivo ≠ INDETERMINADO, e `free_text` ausente — senão NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN` (sub `CONTENT_PROVENANCE_MISSING` quando o motivo é `free_text`); (5) monta a chamada só com o texto do template + bytes resolvidos pela própria CIM (+ `free_text` apenas se LOCAL); grava `model_invocation_record` (ENVIADO|NEGADO); envia; devolve só texto. SAÍDA: texto | NEGADO(código). EXEMPLO (P-4b com ato EXT_TRANSMISSION só para F@h1): formação em executor EXTERNO com `content_refs = [U1 (de F@h1)]` ⇒ ENVIADO; com `[U1, U2 (de G@h2, sem ato)]` ⇒ NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN`; com `[U1]` e `free_text` = "trecho de G colado pela etapa" ⇒ NEGADO `CONTENT_PROVENANCE_MISSING`; juiz chamado com `claim_ref@C@1` cuja afirmação deriva de U1 e U2 ⇒ conjunção TRUE ∧ FALSE = FALSE ⇒ NEGADO (DERIVTX).
+
+    Contrato lógico (v2.0) — linhas reescritas na v2.1:
+    validation_record  : validation_id, candidate_ref@version, material_hash (RULE-KFH-005, calculado pelo gate), records[{record_ref,
+                         record_kind, record_hash}] (derivada), d_result{PASS|FALHA(eixo)} (incl. cobertura e tipo),
+                         h_result[{claim_id | "rótulo", CLEAR|FALHA(eixo)|INDETERMINADO}] (incl. KIND_MISCLASSIFIED),
+                         judge_model_id, former_model_id (gravados pela CIM), outcome{VALIDADO|REPROVADO|INDETERMINADO}, recorded_at
+    publication_seal   : seal_id (alocado pelo gate), seal_version, material_hash (o MESMO do validation_record), sealed_records[
+                         {record_ref, record_kind, record_hash}] (derivada do candidato armazenado), candidate_ref@version,
+                         validation_record_ref, issuer_id, issuer_list_ref (→ act_id ISSUER_LIST), judge_model_id, former_model_id,
+                         impact_class (derivado pelo gate), human_approval_ref? (→ act_id), succession_of?{published_ref@version},
+                         succession_authorization_ref? (→ act_id), source_refs[], knowledge_kind, target_node_type,
+                         publication.origin = "spec007_seal", sealed_at
+    authorization_act_record : act_id, act_type{RIGHTS|EXT_TRANSMISSION|ISSUER_LIST|HUMAN_APPROVAL_LOT|SUCCESSION|INVALIDATION|
+                         REVOCATION}, decision, scope[] (objetos exatos), scope_hash (canon da RULE-KFH-005), approver_id (= identidade
+                         confirmada de Andraus), decision_source_ref (rastreabilidade, não prova), recorded_by (= approver_id),
+                         recorded_at — append-only (RULE-KFH-020)
+    model_invocation_record : invocation_id, stage{formação|juiz_F1|(etapas da SPEC-048, quando existirem)}, model_ref, model_id,
+                         provider_locus{LOCAL|EXTERNO} (do registro de provedores), template_id, content_refs[] (resolvidos pela
+                         CIM, com origens-raiz e permissão efetiva calculada), free_text_present(bool), decision{ENVIADO|NEGADO},
+                         rejected_reason?, recorded_at — gravado pela CIM (RULE-KFH-019)
+    provider_registry  : model_ref, provider_locus{LOCAL|EXTERNO}, confirmed_by? (SPEC-007-LOCUS-001 — em aberto; no intervalo nenhuma
+                         entrada LOCAL), recorded_at — append-only; ausência ⇒ EXTERNO
+    [seal_request: linha nova na v2.1]
+
+    ### Cenário-KFH-T25 (v2.0) — Invocação de modelo com permissão efetiva TRUE (KFH-019) — positivo (N-04/R3-M5)
+    ```
+    DADO        F0.3 (F@h1 com A2 e A3); também G@h2 com atos RIGHTS e EXT_TRANSMISSION válidos; o juiz MJ, em executor EXTERNO do
+                registro de provedores, é chamado por invoke(stage=juiz_F1, model_ref=MJ, template_id=T-JF1 (no catálogo),
+                content_refs=[claim_ref@C@1, U1 (de F@h1), U7 (de G@h2)], sem free_text)
+    QUANDO      a CIM avalia a chamada
+    ENTÃO       a CIM resolve ela mesma os três refs, calcula a permissão efetiva (TRUE ∧ TRUE) e envia; grava a invocação
+    VERIFICAÇÃO effective_transmission_allowed == TRUE; invocation.decision == "ENVIADO"; invocation.provider_locus == "EXTERNO";
+                invocation.content_refs_resolved_by == "CIM"; invocation.free_text_present == false
+                (contraste negativo: ADV-KFH-28 (c)(d), ADV-KFH-32)
+    ```
+    [F0.4 (v2.0): "- **F0.4** candidato **C@1** = {claims = [a1, com `span_ref` em F@h1], record_proposal = [N1 (nó; conteúdo ← a1)],
+    `knowledge_kind = fato_de_fonte`, `target_node_type = learning`}; `validation_record` VALIDADO com `material_hash = h7`
+    (D4.2/D4.3)." — o texto de a1 vinha do exemplo do D4.2 v2.0 acima.]
+
+    ### ADV-KFH-22 (v2.0) — Sucessão sem autorização, com versão errada ou por chave de relação (M-02/n-01/n-10/r3-n3) (KFH-009)
+    **DADO (todos: F0, exceto o indicado):** (a) P1@v3 vigente com a mesma chave natural de N1; o pedido declara `succession_of = P1@v3` sem `succession_authorization_ref`; (b) com ato SUCCESSION válido, mas `expected_version = 2` (corrente = 3); (c) sem `supersedes` na sucessora (seria 2º nó paralelo); (d) `succession_authorization_ref` aponta texto de ata, não `authorization_act_record`; (e) pedido SEM `succession_of` cuja chave natural de nó é a de P1 vigente; (f) sucessora de relação CAUSA alterando o mecanismo; (g) relação R com chave `(relation_type, from, to, target_relation_id, valid_from)` idêntica à de relação vigente, sem `succession_of` — e contraste: mesma relação com `valid_from` distinto. **QUANDO:** selo/submissão rodam. **ENTÃO:** (a) `SUCCESSION_AUTHORIZATION_MISSING`; (b) o KG nega `VERSION_CONFLICT` (RULE-CKG-012), consumo FALHOU; (c) `SEAL_SCOPE_INVALID`; (d) `AUTH_ACT_UNRESOLVABLE` ⇒ `SUCCESSION_AUTHORIZATION_MISSING`; (e) `SUCCESSION_UNDECLARED`; (f) `CAUSAL_CORE_IMMUTABLE_IN_CHAIN` (caminho: ato INVALIDATION + nova CAUSA com `valid_from` próprio); (g) `SUCCESSION_UNDECLARED`; no contraste, chave distinta ⇒ não é sucessão (semântica da SPEC-006). P1@v3 segue vigente e marcado. **PORQUE:** RULE-KFH-009 (a); RULE-CKG-004/012; SPEC-006 l.453-454. **VERIFICAÇÃO:** p1_v3_valid == true; successor_written == false em (a)–(g).
+
+    ### ADV-KFH-32 (v2.0) — Texto de fonte colado sem `content_ref` (R3-M5) (KFH-019)
+    **DADO:** F0, exceto: G@h2 registrada sem ato EXT_TRANSMISSION; a etapa de formação monta `invoke(stage=formação, model_ref=MF (EXTERNO), template_id=T-F (no catálogo), content_refs=[U1 (de F@h1)], free_text = "<trecho de G@h2 colado>")`; variantes: (b) o mesmo trecho dentro de um `template_id` que não está no catálogo; (c) `content_refs` com um ref inexistente; (d) a mesma chamada a executor LOCAL (supondo SPEC-007-LOCUS-001 decidida com MF' local). **QUANDO:** a CIM avalia. **ENTÃO:** (a) NEGADO `EXTERNAL_TRANSMISSION_FORBIDDEN`/`CONTENT_PROVENANCE_MISSING` — nada enviado; (b) NEGADO `INVOCATION_ENVELOPE_INVALID`/`TEMPLATE_UNREGISTERED`; (c) NEGADO `INVOCATION_ENVELOPE_INVALID`/`CONTENT_REF_UNRESOLVABLE`; (d) aceito e registrado (texto livre a LOCAL não sai de casa); afirmações sem `span_ref` para unidade registrada seguem barradas na formação/validação (KFH-004/005). **VERIFICAÇÃO:** bytes_sent_external == 0 em (a)–(c); invocation.free_text_present == true e decision == "NEGADO" em (a). **Risco residual (RU-6):** conteúdo de fonte reescrito dentro de uma saída registrada e reenviado por `content_ref` herda a origem-raiz pela cadeia (f4); conteúdo disfarçado fora de qualquer ref só existe em texto livre, que não sai.
+
+    ### EC-KFH-011 (v2.0) — Camada de Invocação de Modelo (CIM) [E3] (N-04/R3-M5)
+    ```
+    CAPABILITY   : Encaminhar chamadas de modelo das etapas do pipeline pelo envelope invoke(stage, model_ref, template_id,
+                   content_refs[], free_text?) e gravar model_id/provider_locus
+    EFFECT       : Transmissão de conteúdo a provedor (externo ou local) — efeito externo irreversível quando EXTERNO
+    PRECOND      : chamada originada de etapa registrada; template_id no catálogo; todo content_ref resolvido PELA CIM no registro do
+                   pipeline; provider_locus do registro de provedores (ausente ⇒ EXTERNO; nenhum LOCAL enquanto SPEC-007-LOCUS-001
+                   estiver em aberto); se EXTERNO: ∀ content_ref permissão efetiva de envio = TRUE (conjunção das origens-raiz —
+                   DERIVTX decidida, P-11) ∧ rights_status efetivo ≠ INDETERMINADO ∧ free_text ausente
+    POSTCOND     : model_invocation_record gravado (ENVIADO|NEGADO, com template_id, refs resolvidos e free_text_present); IDs
+                   disponíveis à RULE-KFH-006; a etapa recebe só texto; a chamada leva só texto do template + bytes resolvidos pela
+                   CIM (+ free_text só se LOCAL)
+    POLICY       : RULE-KFH-019; RULE-KFH-001 (origem-raiz); INV-KFH-02; DHR-PROV-WEB-001 §2.1; DHR-SPEC007-003 P-4b/P-11
+    LEVEL        : E3 (Crítico — dado enviado não volta)
+    FAILURE-MODE : Fail-closed — permissão FALSE/irresolúvel, texto livre a EXTERNO, template fora do catálogo ou ref irresolúvel ⇒
+                   NEGADO, nada enviado; CIM indisponível ⇒ nenhuma etapa chama modelo; log. Falso-DENY E3 por amostragem (ENF-07)
+    EVIDENCE     : model_invocation_record por chamada; auditoria amostral: envios EXTERNOS com permissão FALSE ou com free_text == 0;
+                   executores marcados LOCAL conferidos contra o registro de provedores (RU-5)
+    ```
+
+    ## Perguntas a Andraus (v2.0) — P-12..P-14 (respondidas na DHR-SPEC007-004)
+    12. **P-12 — Quem confirma que um modelo roda "em casa".** Você decidiu que modelo de terceiro conta como "fora". Falta dizer **quem confirma** que um modelo roda de fato dentro de casa — se alguém marcar um serviço de fora como "de casa", a porta de saída fica aberta. *Recomendação: só você confirma, modelo por modelo (registro seu, como as liberações de fonte); até lá, nenhum modelo conta como de casa e a linha só anda com fontes liberadas para fora.* **Concorda?**
+        > *Nota técnica:* SPEC-007-LOCUS-001 (`[DECISÃO NECESSÁRIA]`); RULE-KFH-019 (b); registro de provedores; se aprovada, vira `act_type` próprio [PROPOSTA] na RULE-KFH-020.
+    13. **P-13 — Ajuste no caderno permanente.** Sua resposta P-1 já decidiu quem aprova a lista de quem grava no caderno; o caderno ainda diz "em aberto" nesse ponto e não confere o carimbo ao receber uma ficha. *Recomendação: aprovar a proposta de um ajuste aditivo ao caderno — registrar a sua decisão sobre a lista, apontar o carimbo desta etapa e fazer o caderno conferir o "código" do carimbo ao gravar.* **Aprova propor o ajuste (número seu)?**
+        > *Nota técnica:* errata aditiva à SPEC-006 E-1 (l.482), E-2 (l.1415), E-3 (committer confere `seal_ref`/`record_hash`); fecha RU-3; host do juízo CKG-008 e K-001 seguem ABERTOS.
+    14. **P-14 — "Fontes repetidas contam como uma" entre as duas etapas.** Você aceitou a regra para evidência. *Recomendação: a definição de "mesma origem" fica nesta etapa (que já a usa para a trava de saída) e a contagem no pacote fica na etapa de consulta.* **Concorda?**
+        > *Nota técnica:* COL-EXP-05; RULE-KFH-001 (origem-raiz) × v1.2 RULE-KFH-011 (Anexo T); BL-011 segue `ATIVADO`; CONFLICT-MAP não alterado.
+    **Atos seus na homologação (v2.0):** emenda à avaliação geral, metade F1 (P-5); confirmação de que as decisões da DHR-SPEC007-003 passam a texto normativo com este Plan.
+
+    Interface com a SPEC-048 (v2.0): primeira coluna "I-1".."I-6" (ver colchete local no corpo).
 ```
 
 ---

@@ -1,14 +1,48 @@
 # checks.md — Verificação de Spec da SPEC-007 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-007/plan.md` **v2.0 (CANDIDATA — Plan reduzido: formação + selo; DHR-SPEC007-002, Opção C; aguarda Revisor rodada 4, por delta contra o commit da v1.2, e homologação de Andraus)** (RAG / WikiRAG / Knowledge Formation Harness). *[v1.2: "v1.2 (CANDIDATA — correção da rodada 2 do Revisor; aguarda rodada 3 por delta e homologação de Andraus)"; v1.1: "v1.1 (CANDIDATA — correção da rodada 1 do Revisor; aguarda rodada 2 por delta e homologação de Andraus)"; v1.0: "v1.0 (CANDIDATA — aguarda Revisor integral e homologação de Andraus)"]*
+**Objeto:** `specs/features/SPEC-007/plan.md` **v2.1 (CANDIDATA — Plan reduzido, correção da rodada 4; aguarda Revisor rodada 5, por delta contra o commit da v2.0, e homologação de Andraus)** (RAG / WikiRAG / Knowledge Formation Harness). *[v2.0: "v2.0 (CANDIDATA — Plan reduzido: formação + selo; DHR-SPEC007-002, Opção C; aguarda Revisor rodada 4, por delta contra o commit da v1.2, e homologação de Andraus)"; v1.2: "v1.2 (CANDIDATA — correção da rodada 2 do Revisor; aguarda rodada 3 por delta e homologação de Andraus)"; v1.1: "v1.1 (CANDIDATA — correção da rodada 1 do Revisor; aguarda rodada 2 por delta e homologação de Andraus)"; v1.0: "v1.0 (CANDIDATA — aguarda Revisor integral e homologação de Andraus)"]*
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — **NÃO** é teste de runtime, **NÃO** é parecer do Revisor, **NÃO** é homologação. "VERIFY" interno = feedback. [FONTE: atomic-spec §14]
 **Método:** atomic-spec.md v1.5 · tlc-spec-lean (PLAN = Spec; CHECKS = verificação de spec) · overlay GUS-TLC-001
-**Data:** 2026-10-24 (v2.0); 2026-10-23 (v1.0, v1.1 e v1.2)
-**Ordem de Andraus:** chat 2026-10-24, "Plan reduzido da SPEC-007" (transmitida pelo Orquestrador).
-**Pareceres tratados:** R1 (NÃO CONFORME — 9 Médias; v1.1); R2 (NÃO CONFORME — 5 Médias; v1.2); **R3** `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md` (NÃO CONFORME — 5 Médias R3-M1..R3-M5, 6 Menores r3-n1..r3-n6; v2.0). Atas incorporadas: DHR-SPEC007-002 (divisão), DHR-SPEC007-003 (P-1..P-11).
+**Data:** 2026-10-24 (v2.0 e v2.1); 2026-10-23 (v1.0, v1.1 e v1.2)
+**Ordem de Andraus:** Plan reduzido e rodada 5 — chat 2026-10-24, registradas em ata (DHR-SPEC007-004 §1/§2). *[v2.0: "chat 2026-10-24, \"Plan reduzido da SPEC-007\" (transmitida pelo Orquestrador)."]*
+**Pareceres tratados:** R1 (NÃO CONFORME — 9 Médias; v1.1); R2 (NÃO CONFORME — 5 Médias; v1.2); R3 `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md` (NÃO CONFORME — 5 Médias, 6 Menores; v2.0); **R4** `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md` (NÃO CONFORME — 2 Médias R4-M1/R4-M2, 11 Menores r4-n1..r4-n11; v2.1). Atas incorporadas: DHR-SPEC007-002 (divisão), DHR-SPEC007-003 (P-1..P-11), **DHR-SPEC007-004** (P-12..P-14; ordem da rodada 5).
 **Contagens declaradas (por cabeçalho/linha em coluna 0 — recontadas por busca nesta sessão; a reconferir no ambiente pai):** **12** RULE-KFH (`^RULE-KFH-`: 001–009, 016, 019, 020), 2 INV-KFH, **12** BASpec (`^### BASpec-KFH-`), **12** EARS (`^N. (KFH-`), **9** EC (`^### EC-KFH-`: 001–006, 010, 011, 012), **18 cenários** (`^### Cenário-KFH-T`: T01–T15, T23, T24, T25), **22 ADV** (`^### ADV-KFH-`: 01–05, 07, 08, 13, 16–22, 24, 25, 27, 28, 30, 31, 32). *[v1.2: vinte/2/vinte/vinte/treze/vinte e seis/vinte e nove; v1.1 e v1.0 no Anexo]* Os Anexos T, R e H do Plan são recuados ou estão em bloco de código: não contam.
 
 > **Natureza dos ✔ abaixo:** estruturais e condicionados. O que depende de Andraus aparece como "Aberto"; as decisões da DHR-SPEC007-003 aparecem como "decidida (DHR-SPEC007-003) — normativa na homologação"; os positivos de selo dependem da **Fixture F0** (estado injetado, D7), que não afirma que esse estado já exista.
+
+Contagens da v2.1 **inalteradas** em relação à v2.0 (nenhum cabeçalho novo; casos novos entraram como subcasos: ADV-22(h), ADV-30(d), ADV-32(d) corrigido e (e) novo).
+
+---
+
+## R4 — verificação das correções (R4-M1, R4-M2) — v2.1
+
+| Média | Âncora no Plan v2.1 | Positivo / negativo | Estado |
+|---|---|---|---|
+| R4-M1 rótulo não chegava ao juiz F1 | RULE-KFH-019 (f1) novo tipo `candidate_ref@version` (afirmações + `record_proposal` + `knowledge_kind` + `target_node_type`; permissões sobre a união das origens-raiz); RULE-KFH-006 "ENTRADA DO JUIZ" (sem esse ref, linha "rótulo" = INDETERMINADO); D4.5 passo (4); contrato `validation_record.h_result` (linha `subject = "rótulo"`, `judge_invocation_ref`) e `model_invocation_record.content_refs[].ref_type`; EARS 6 | T25 / ADV-31(a) | ✔ estrutural; RU-4 permanece (juízo possível ≠ garantido) |
+| R4-M2 "pode usar" e texto livre em casa | RULE-KFH-019 (d) duas travas — (d1) uso efetivo ≠ INDETERMINADO para QUALQUER executor, (d2) envio só p/ EXTERNO; (f3) texto solto proibido para qualquer executor (envelope sem campo de texto livre); D4.5 passos (1),(5),(6); BASpec-KFH-019 GATE DE SAÍDA; EC-KFH-011; EARS 11 | T25 / ADV-32 (d) corrigido (LOCAL com texto colado ⇒ NEGADO) e (e) novo (LOCAL sem ato RIGHTS ⇒ `SOURCE_RIGHTS_INDETERMINATE`) | ✔ estrutural (opção "proibir" — ordem de Andraus, DHR-SPEC007-004) |
+
+| Menor | Âncora | Estado |
+|---|---|---|
+| r4-n1 | RULE-KFH-007 entrada (A) `declared_records?`; D4.2; contrato `seal_request`; ADV-21(d) | ✔ |
+| r4-n2 | RULE-KFH-007 "CORRESPONDÊNCIA condição ↔ passo"; EARS 7; EC-KFH-004 PRECOND; BASpec-KFH-007 | ✔ |
+| r4-n3 | F0.4; D4.2/D4.3: a1 = "o relatório R registra que o índice X fechou março com queda de 3%" | ✔ |
+| r4-n4 | `succession_of[]` (mapa por registro) na RULE-KFH-007 (vii)/entrada, D4.2 (5-bis), contrato; ADV-22(h) | ✔ |
+| r4-n5 | função M com `formed_inference_claim_ids[]` (RULE-KFH-005; D4.3); ADV-30(d) | ✔ |
+| r4-n6 | Interface: "ponto 1..6" | ✔ |
+| r4-n7 | errata E-1 reescrita (o que a P-1 decidiu × o que segue aberto) | ✔ |
+| r4-n8 | RULE-KFH-009 (b): INVALIDATION com ato de Andraus = [PROPOSTA] a confirmar na homologação | ✔ (Aberto até a homologação) |
+| r4-n9 | Mapeamento (linha D8) e BASpec-KFH-019 citam ADV-28 (a')(c)(d) | ✔ |
+| r4-n10 | RULE-KFH-019 (g); EC-KFH-011 EVIDENCE; ADV-28(d); RU-7 (mecanismo = BUILD) | ✔ |
+| r4-n11 | cabeçalho cita DHR-SPEC007-004 §2 | ✔ |
+
+## DHR-SPEC007-004 — verificação de incorporação (v2.1)
+
+| Item | Verificação | Estado |
+|---|---|---|
+| P-12 / SPEC-007-LOCUS-001 | "decidida (DHR-SPEC007-004)": RULE-KFH-019 (b); act_type LOCAL_EXECUTOR na RULE-KFH-020; `provider_registry.local_executor_ref`; quadro de pré-requisitos (passo 4) | ✔ (normativa na homologação) |
+| P-13 | errata aditiva à SPEC-006 segue [PROPOSTA]; nenhum baseline tocado | ✔ |
+| P-14 | definição de "mesma origem" aqui; contagem na SPEC-048 — COL-EXP-05 item 3, Interface ponto 2, BL-011 | ✔; CONFLICT-MAP não alterado |
+| Perguntas pendentes | P-12..P-14 retiradas; só "atos na homologação" e itens abertos listados | ✔ |
 
 ---
 
@@ -43,7 +77,7 @@
 | BBTYPE (P-9) | só no Anexo T (destino SPEC-048) | ✔ |
 | P-5 / P-6 | emenda à SPEC-020 só metade F1; COL-EXP-05: definição de origem-raiz aqui, contagem na SPEC-048 (P-14) | ✔ (P-14 aberta) |
 | Livro (Q7c) | fora (Non-goals; RULE-KFH-001 ALCANCE; quadro de pré-requisitos) | ✔ |
-| Seguem abertas | K-001, M-001, G-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, forma de confirmar a identidade, host do juízo CKG-008, SPEC-007-LOCUS-001 (nova) | Aberto |
+| Seguem abertas | K-001, M-001, G-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, forma de confirmar a identidade, host do juízo CKG-008 *[v2.0 incluía "SPEC-007-LOCUS-001 (nova)" — decidida na DHR-SPEC007-004]* | Aberto |
 
 ---
 
@@ -65,7 +99,7 @@
 | D0 Intenção | Sim | ✔ | Missão (formação + selo) |
 | D1 Escopo/Non-goals | Sim | ✔ | S1–S10 + Non-goals (SPEC-048, livro Q7c, `rag/` GEN-1, Benchmark) |
 | D2 Regra | Sim | ✔ | 12 RULE-KFH + INV-KFH-01/02 [PROPOSTA] |
-| D3 Comportamento | Sim | ✔ | 12 BASpecs; §D3.1 (novos: `TARGET_NODE_TYPE_FORBIDDEN`, `KIND_MISCLASSIFIED`, `INVOCATION_ENVELOPE_INVALID`, `CONTENT_PROVENANCE_MISSING`, `AUTH_IDENTITY_UNAVAILABLE`, `OUT_OF_SCOPE_048`) |
+| D3 Comportamento | Sim | ✔ | 12 BASpecs; §D3.1 (novos na v2.0: `TARGET_NODE_TYPE_FORBIDDEN`, `KIND_MISCLASSIFIED`, `INVOCATION_ENVELOPE_INVALID`, `CONTENT_PROVENANCE_MISSING`, `AUTH_IDENTITY_UNAVAILABLE`, `OUT_OF_SCOPE_048`; v2.1: `CONTENT_PROVENANCE_MISSING` passa a sub de `INVOCATION_ENVELOPE_INVALID`; `SOURCE_RIGHTS_INDETERMINATE` também na CIM) |
 | D4 Algoritmo | Determinísticos/semi | ✔ | D4.1 literal; D4.2 selo (entradas A/B, fail-fast, atômico); D4.3 serialização (novo); D4.4 marca; D4.5 envelope CIM (novo) — todos com exemplo |
 | D5 Estado | Sim | ✔ | `KC_*`; M-001 aberta |
 | D6 Protocolo | Sim | ✔ | formação (com passo 0 de pré-requisitos); chamadas de modelo; atualização (SUCCESSION/INVALIDATION); contradição |
@@ -95,7 +129,7 @@
 | ENF-01 EC em todo efeito | ✔ EC-KFH-001..006, 010, 011, 012 (EC-007/008/009/013 e a parte "feedback" do EC-010 foram à SPEC-048 — Anexo T) |
 | ENF-02 nível ≥ piso | ✔ registros operacionais E2 (001, 003, 005, 010); formação sem efeito, selo, guard de validade, CIM, ato = E3 |
 | ENF-03 Detector ≠ Gate | ✔ juízo H propõe; gates D/C decidem; auditoria amostral (EC-004 (i)–(iii); EC-011) = Detector (gera pedido, não revoga) |
-| ENF-04 fail-closed | ✔ incl. identidade indisponível, lista de emissores vazia sem ato, nenhum executor LOCAL enquanto SPEC-007-LOCUS-001 aberta |
+| ENF-04 fail-closed | ✔ incl. identidade indisponível, lista de emissores vazia sem ato, nenhum executor LOCAL sem ato LOCAL_EXECUTOR de Andraus (DHR-SPEC007-004 P-12), uso não liberado e texto solto negados para qualquer executor (v2.1) *[v2.0: "nenhum executor LOCAL enquanto SPEC-007-LOCUS-001 aberta"]* |
 | ENF-05 | ✔ (feedback foi à SPEC-048; aqui nenhuma política é alterada por evento do pipeline) |
 | ENF-06 E0 | N/A |
 | ENF-07 falso-DENY E3 | ✔ amostral (limiar = gap aberto) |
@@ -155,11 +189,12 @@ REMOVED vazio; MODIFIED vazio.
 
 ## 9. CONS-01
 
-Abertas (não usadas como invariante fechado): G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção (como), livro (Q7c), forma de confirmar a identidade de Andraus, host do juízo CKG-008, sinalização de dependentes (lacuna), **SPEC-007-LOCUS-001** (nova; fail-closed: nenhum executor LOCAL). Decididas como política (DHR-SPEC007-003) e tratadas como "decidida — normativa na homologação": ACTREC, RIGHTS, EXTTX, DERIVTX, NODETYPE, SUCC, P-1/P-2. **PASS (a confirmar por STRUCT-10).**
+Abertas (não usadas como invariante fechado): G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção (como), livro (Q7c), forma de confirmar a identidade de Andraus, host do juízo CKG-008, sinalização de dependentes (lacuna); [PROPOSTA] a confirmar: ato de Andraus para INVALIDATION (r4-n8). Decididas como política (DHR-SPEC007-003 e DHR-SPEC007-004) e tratadas como "decidida — normativa na homologação": ACTREC, RIGHTS, EXTTX, DERIVTX, NODETYPE, SUCC, P-1/P-2, **SPEC-007-LOCUS-001** (P-12), P-14. *[v2.0: listava "**SPEC-007-LOCUS-001** (nova; fail-closed: nenhum executor LOCAL)" entre as abertas e só a DHR-SPEC007-003 entre as decididas]* **PASS (a confirmar por STRUCT-10).**
 
 ## 10. Integridade de fontes
 
-- Âncoras conferidas nesta sessão: ROADMAP l.179-189 (nota de divisão; slot SPEC-048), l.517; SPEC-006 `plan.md` l.420-489 (RULE-CKG-007..010; núcleo causal l.443-445; chave de relação l.453-454; l.482), l.1400-1419 (l.1405 node_type; l.1410 natural_key; l.1415 publication/seal_ref); SPEC-004 `plan.md` l.311-319 (RULE-CBP-014); DHR-SPEC007-002; DHR-SPEC007-003; pareceres R1/R2/R3. Demais âncoras herdadas da v1.2 (conferidas naquela sessão; ver Anexo).
+- v2.1: conferidos nesta sessão o parecer R4 e a ata DHR-SPEC007-004 (P-12..P-14, ordem da rodada 5, registro da ordem do Plan reduzido em §2).
+- Âncoras conferidas na sessão da v2.0: ROADMAP l.179-189 (nota de divisão; slot SPEC-048), l.517; SPEC-006 `plan.md` l.420-489 (RULE-CKG-007..010; núcleo causal l.443-445; chave de relação l.453-454; l.482), l.1400-1419 (l.1405 node_type; l.1410 natural_key; l.1415 publication/seal_ref); SPEC-004 `plan.md` l.311-319 (RULE-CBP-014); DHR-SPEC007-002; DHR-SPEC007-003; pareceres R1/R2/R3. Demais âncoras herdadas da v1.2 (conferidas naquela sessão; ver Anexo).
 - **Benchmark:** clone ausente. As 7 citações `inteligencia-sot@0abd22e:` vêm só do Dossiê (research §5.2); nenhuma nova; nenhuma reconferida; nada copiado.
 - **Contagens históricas** em texto preservado (Anexos R/T/H e colchetes) não são contagens vigentes; aviso do detector `contagens_declaradas` sobre elas = histórico (ver HANDOFF §3).
 - **Fora do meu escopo de edição:** cabeçalho da SPEC-006 ("1.12 ERRATA PROPOSTA"); erratas à SPEC-006/SPEC-020 (só propostas no Plan); CONFLICT-MAP (COL-EXP-05).

@@ -20,3 +20,7 @@ Fidelidade dos Anexos T e R ao commit 54fa53a palavra por palavra (sem git); 7 c
 
 ## Encaminhamento
 Devolver ao Especificador: R4-M1, R4-M2 (+ Menores na mesma passada). Rodada 5 por delta: RULE-KFH-006/007/019, D4.2, D4.3, D4.5, F0, T25, ADV-21/28/31/32, BASpec-019, EC-004, EC-011, errata E-1, tabelas de Incorporação e Interface, checks.md.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G1:** `atomic-spec.md` aberto ao vivo (§10.2 Escala E0–E3 na l.226; CC-11/Classe nas seções citadas pelo Plan). Conferem com as afirmações do Plan sobre pisos E2/E3 e CC-11. Nada a retirar.
+- **G2:** `revisor_gate.py` = `PASSOU_D`, 0 sinais H. Avisos conferidos no plan.md (numeração do momento da guarda): l.31 = linha da v1.0 na tabela de versões (contagem antiga já entre colchetes); l.3241/3242/3263 = texto do Autopré-check e da linha de volume da v1.2 **preservados nos Anexos** (recuados, INV-07); l.3165 = citação da RULE-CKG-008 l.443-445 em texto v1.2 preservado no Anexo R — a regra está definida em `specs/features/SPEC-006/plan.md` l.429-472 (conferida pelo Revisor). Todos são texto histórico; o corpo vigente tem 12 BASpec, 12 RULE, 9 EC (recontado pelo Revisor). Falsos positivos; sem achado novo.

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "45e71708a5abcb12b090df5f4b6c35fee8fd9a80e4dc90e2f3a701088bce35e9",
+  "digest": "c126b5c408376850505a9d5f78a215846b0a24f49e705b49705f63cfd4b5e0aa",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -150,7 +150,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 184,
+   "in": 185,
    "out": 36
   },
   {
@@ -1144,7 +1144,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 48,
+   "in": 49,
    "out": 5
   },
   {
@@ -1781,7 +1781,7 @@
    "path": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-004 — Ata de Decisão — Respostas P-12..P-14 do Plan reduzido da SPEC-007 e ordem da rodada 5",
-   "in": 2,
+   "in": 4,
    "out": 8
   },
   {
@@ -2446,8 +2446,8 @@
    "path": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
    "area": "governance",
    "title": "Parecer do Revisor — Plan reduzido da SPEC-007 v2.0 (CANDIDATA), rodada 4 (S3) — 2026-10-24",
-   "in": 1,
-   "out": 4
+   "in": 3,
+   "out": 7
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -2838,7 +2838,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 178,
+   "in": 179,
    "out": 34
   },
   {
@@ -2860,14 +2860,14 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-007 (fase spec-first)",
    "in": 2,
-   "out": 10
+   "out": 12
   },
   {
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
    "in": 105,
-   "out": 31
+   "out": 33
   },
   {
    "path": "specs/features/SPEC-007/research.md",
@@ -3323,7 +3323,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 48
+   "cited_by": 49
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -3778,7 +3778,7 @@
   {
    "id": "DHR-SPEC007-004",
    "defined_in": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
-   "cited_by": 2
+   "cited_by": 4
   },
   {
    "id": "DHR-SPEC019",
@@ -3998,7 +3998,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 247
+   "cited_by": 248
   },
   {
    "id": "INV-08",
@@ -4433,7 +4433,7 @@
   {
    "id": "RULE-CKG-008",
    "defined_in": null,
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "RULE-CKG-009",
@@ -5408,7 +5408,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 178
+   "cited_by": 179
   },
   {
    "id": "SPEC-007",
@@ -33489,6 +33489,16 @@
   },
   {
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
    "to": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
    "type": "id"
   },
@@ -33496,6 +33506,16 @@
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
@@ -36274,12 +36294,22 @@
   },
   {
    "from": "specs/features/SPEC-007/checks.md",
+   "to": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/checks.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
   {
    "from": "specs/features/SPEC-007/checks.md",
    "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/checks.md",
+   "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
    "type": "path"
   },
   {
@@ -36384,6 +36414,11 @@
   },
   {
    "from": "specs/features/SPEC-007/plan.md",
+   "to": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-007/plan.md",
    "to": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
    "type": "id"
   },
@@ -36410,6 +36445,11 @@
   {
    "from": "specs/features/SPEC-007/plan.md",
    "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R3-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-007/plan.md",
+   "to": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md",
    "type": "path"
   },
   {
