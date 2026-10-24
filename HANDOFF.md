@@ -1,10 +1,10 @@
 ---
-handoff_id: HO-2026-10-24-73
-previous: HO-2026-10-24-72
+handoff_id: HO-2026-10-24-74
+previous: HO-2026-10-24-73
 data: 2026-10-24
 branch: ccr-3235944c-duo3sl
 base_commit: 74b1de3
-spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12 HOMOLOGADAS; SPEC-007 = ABERTURA HOMOLOGADA (DHR-SPEC007-001), DIVIDIDA pela Opção C (DHR-SPEC007-002): reduzida a formação + selo; Plan reduzido v2.3 = CANDIDATO, parecer R6 CONFORME condicional, aguarda homologação de Andraus (não é baseline); SPEC-048 = slot indicativo, NÃO aberta
+spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12 HOMOLOGADAS; SPEC-007 = ABERTURA HOMOLOGADA (DHR-SPEC007-001), DIVIDIDA pela Opção C (DHR-SPEC007-002): reduzida a formação + selo; Plan reduzido v2.3 = HOMOLOGADO — BASELINE (DHR-SPEC007-005, Andraus 2026-10-24; Revisor R6 CONFORME condicional; sem BUILD); SPEC-048 = slot indicativo, NÃO aberta
 fase: spec-first
 autor: Orquestrador
 anexo: governance/propostas/SPEC-007/BRIEFING-PLAN-SPEC007-2026-10-19.md
@@ -15,7 +15,7 @@ anexo: governance/propostas/SPEC-007/BRIEFING-PLAN-SPEC007-2026-10-19.md
 
 ## 1. Frente atual (Andraus, chat 2026-10-23/24)
 - **Plan da SPEC-007:** v1.2 (Revisor 3× NÃO CONFORME) → divisão Opção C decidida (`DHR-SPEC007-002`; SPEC-007 = formação + selo; **SPEC-048** = recuperação + pacote, slot indicativo, NÃO aberta) → respostas P-1..P-11 (`DHR-SPEC007-003`) e P-12..P-14 + ordem da rodada 5 (`DHR-SPEC007-004`) → Plan reduzido v2.0 (R4: 2 Médias) → v2.1 (R5: 1 Média) → v2.2 (**R6: CONFORME condicional**, 0 Críticas/Médias, 3 Menores) → **v2.3** (3 Menores editoriais r6-n1..n3 fechados; sem nova rodada, como sugeriu o Revisor). Pareceres R1–R6 em `governance/propostas/SPEC-007/`. Contagens vigentes: 12 RULE-KFH, 2 INV, 12 BASpec, 12 EARS, 9 EC, 18 cenários, 22 ADV. Gates verdes na v2.3 (`revisor_gate` completo = PASSOU_D, que cumpre a condição do Revisor).
-- **O Plan v2.3 é CANDIDATO.** Baseline só por homologação de Andraus (ata própria). **A decidir por ele na homologação:** (f3) só a letra da ata (texto solto de fonte) ou a regra mais estrita do Plan; errata aditiva ao caderno SPEC-006 (E-1..E-4, P-13: só proposta); emenda de fidelidade à SPEC-020 (metade F1); INVALIDATION "só Andraus" (r4-n8, [PROPOSTA]); forma de confirmar a identidade de Andraus (BUILD).
+- **Plan reduzido v2.3 HOMOLOGADO — BASELINE** (Andraus, chat 2026-10-24, `DHR-SPEC007-005`). Decididos na ata: regra estrita de texto solto (nenhum modelo recebe texto fora de template + referências registradas); errata à SPEC-006 (E-1..E-4) e emenda à SPEC-020 (metade F1) **em passos à parte, ainda não redigidas**; só Andraus invalida conhecimento carimbado. ROADMAP, CATALOGO e cabeçalho do plan.md atualizados (texto anterior preservado). BL-010/017/035: estados no painel inalterados (`Em espera`).
 - **Nenhuma decisão aberta foi fechada** além das registradas nas atas 002/003/004; K-001, M-001 e demais seguem ABERTAS. Fail-closed vale: sem registro de ato de Andraus nada é carimbado nem liberado, linha parada.
 
 ## 2. Estado (fatos conferidos em 2026-10-24)
@@ -30,10 +30,10 @@ Roteador exige linhas `ALVO:` (um único caminho), `BASE:` e `PARECER:` em linha
 `validate_spec_sot` 13/13, `revisor_gate --rapido` PASSOU_D, `check_invariants` 0, `check_refs` 0 ERRO, `check_doc_sync`, `check_repo_research --all`, `backlog_triggers --abertura SPEC-007`, `build_map --check` — verdes na v1.2. Suíte completa de testes NÃO rodada nesta sessão (só documentos).
 
 ## 5. Próximo passo único
-(a) **Homologação do Plan reduzido da SPEC-007 v2.3 por Andraus** (ou nova rodada, se ele quiser): o Orquestrador prepara a ata (DHR) com os itens de §1; só Andraus homologa. (b) **Abertura da SPEC-048** (só por ordem de Andraus): Dossiê próprio (RULE-ECC-01/02/06, atomic-spec §15; `research.md` da SPEC-007 é insumo), proposta, Revisor, homologação; o Anexo T do plan.md é insumo do Plan dela; o Plan dela propõe a errata aditiva de re-apontamento (ata 002 §4). (c) Livro (Q7c): decisão de Andraus. (d) Piloto de esforço depois do Plan. **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção.
+(a) **Abertura da SPEC-048** (só por ordem de Andraus): Dossiê próprio (RULE-ECC-01/02/06, atomic-spec §15; `research.md` da SPEC-007 é insumo), proposta de abertura, Revisor, homologação; o Anexo T do plan.md da SPEC-007 é insumo do Plan dela; o Plan dela propõe a errata aditiva de re-apontamento (ata 002 §4). (b) Passos à parte, cada um só por ordem de Andraus: errata aditiva à SPEC-006 (E-1..E-4) e emenda à SPEC-020 (metade F1; a metade F2 vai com a SPEC-048). (c) Antes de qualquer BUILD: Andraus registrar as primeiras liberações (ACTREC/RIGHTS/EXT/LOCAL_EXECUTOR) e definir a forma de confirmar a identidade dele; sem BUILD (fase spec-first). (d) Livro (Q7c): decisão de Andraus. (e) Piloto de esforço depois do Plan. **Seguem abertas:** G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
-`DHR-SPEC007-004`, `DHR-SPEC007-003`, `DHR-SPEC007-002`, `DHR-SPEC007-001`, `DHR-BENCH-INTEL-001`, `DHR-H001-001`, `DHR-SPEC006-004`, `DHR-ROTEAMENTO-003`, `DHR-COESAO-005`, `DHR-PCC-003`. Decisões abertas/fechadas: ler o `ROADMAP.md`.
+`DHR-SPEC007-005`, `DHR-SPEC007-004`, `DHR-SPEC007-003`, `DHR-SPEC007-002`, `DHR-SPEC007-001`, `DHR-BENCH-INTEL-001`, `DHR-H001-001`, `DHR-SPEC006-004`, `DHR-ROTEAMENTO-003`, `DHR-COESAO-005`, `DHR-PCC-003`. Decisões abertas/fechadas: ler o `ROADMAP.md`.
 
 ## 7. Becos sem saída
 Dar Bash ao Revisor; refazer a SPEC-006; usar motores/agentes/skills do Inteligencia-SOT (Benchmark apenas); copiar texto/código dele; incluir o livro como fonte; tratar o Plan v1.2 como pronto (3× NÃO CONFORME); abrir a SPEC-048 ou escrever Plan de qualquer das duas sem ordem expressa; editar baselines (SPEC-002/003/006/020) antes da errata homologada.
@@ -50,7 +50,7 @@ Dar Bash ao Revisor; refazer a SPEC-006; usar motores/agentes/skills do Intelige
 - [ ] Versão vigente de `WORKFLOW.md` (cabeçalho)
 
 ## 10. Aguardando Andraus
-**Só de Andraus:** homologar (ou não) o Plan reduzido v2.3 · ordem para abrir a SPEC-048 · ordens para errata/CONFLICT-MAP decorrentes de `DHR-SPEC007-003/004` · livro (Q7c) · demais decisões abertas (G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001) · destino do Auditor Externo (PAUSADO), D-PCC-3/4/5.
+**Só de Andraus:** ordem para abrir a SPEC-048 · ordem para a errata SPEC-006 e a emenda SPEC-020 · ordens para errata/CONFLICT-MAP decorrentes de `DHR-SPEC007-003/004` · livro (Q7c) · demais decisões abertas (G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001) · destino do Auditor Externo (PAUSADO), D-PCC-3/4/5.
 
 ## 11. Ponteiros
-`specs/features/SPEC-007/` (ABERTURA, research, plan v1.2, checks) · `governance/propostas/SPEC-007/` (briefing-anexo e pareceres R1–R3) · `governance/DHR-SPEC007-004_*` (P-12..P-14) · `governance/DHR-SPEC007-003_*` (respostas P-1..P-11) · `governance/DHR-SPEC007-002_*` (divisão) · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `ROADMAP.md` · `AGENTS.md` §11 · `docs/handoffs/HO-2026-10-24-72.md` · `docs/mapa/MAPA-PROJETO.md`
+`specs/features/SPEC-007/` (ABERTURA, research, plan v1.2, checks) · `governance/propostas/SPEC-007/` (briefing-anexo e pareceres R1–R3) · `governance/DHR-SPEC007-005_*` (homologação) · `governance/DHR-SPEC007-004_*` (P-12..P-14) · `governance/DHR-SPEC007-003_*` (respostas P-1..P-11) · `governance/DHR-SPEC007-002_*` (divisão) · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `ROADMAP.md` · `AGENTS.md` §11 · `docs/handoffs/HO-2026-10-24-73.md` · `docs/mapa/MAPA-PROJETO.md`
