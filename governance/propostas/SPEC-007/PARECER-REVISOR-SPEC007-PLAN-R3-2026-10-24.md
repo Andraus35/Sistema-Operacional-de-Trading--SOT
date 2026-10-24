@@ -23,3 +23,7 @@ SUCC-001, RIGHTS-001, EXTTX-001, NODETYPE-001, ACTREC-001, DERIVTX-001: [DECISÃ
 
 ## Encaminhamento
 Devolver ao Especificador: R3-M1..R3-M5 (Menores oportunistas). Rodada 4 por delta sobre D2 (KFH-001/004/005/006/007/019/020), D4.2, D7, EC-004/011/012, Perguntas a Andraus e checks.md. CONFORME condicional possível se as Médias forem resolvidas e Andraus aceitar que os positivos dependem de P-1, P-3, P-4a/P-4b, P-9 e P-10.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G1:** abertos ao vivo `atomic-spec.md` (§10.2, escala E0–E3, E3 = policy/authz/commit gate/audit/rollback/fail-closed, l.226-233) e `backlog/RMR-001_Painel_Backlog.md` (BL-029 l.136). Conferem com o que o parecer e o Plan afirmam (pisos E3 dos guards; BL-029 mencionado sem disposição). Nada a retirar.
+- **G2:** `revisor_gate.py` = `PASSOU_D`, 0 sinais H. Avisos conferidos: (a) `plan.md:1827` cita "RULE-CKG-008 l.443-445" que fica em `specs/features/SPEC-006/plan.md` (l.443-445 = imutabilidade do núcleo causal, `CAUSAL_CORE_IMMUTABLE_IN_CHAIN`, conferido); o detector procurou a definição no plan da SPEC-007 — falso positivo de caminho. (b) `plan.md:1918/1919/1945` "17 BASpec"/"26 ADV" estão em texto histórico entre colchetes (`[v1.1: ...]`) ou na linha de volume vigente (20 BASpec / 26 cenários / 29 ADV, já recontada pelo Revisor); a l.1945 mistura o valor vigente e o histórico na mesma linha. Falsos positivos; sem achado novo.
