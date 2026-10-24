@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-24",
-  "digest": "2d4deedbb7a4b42922ec12838b53a5c103c813991eb1e96e45fb20f037d45394",
+  "digest": "8ce7274dbef9bb5b71607f17ca651169759c9a24c292ae322c11cd5cbec71fa8",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2495,7 +2495,7 @@
    "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
    "area": "governance",
    "title": "Parecer do Revisor — Abertura da SPEC-048 (Revisão 3 do Especificador), rodada 2 (S3) — 2026-10-24",
-   "in": 0,
+   "in": 1,
    "out": 5
   },
   {
@@ -3049,7 +3049,7 @@
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ROADMAP §6, FASE 3)",
    "in": 2,
-   "out": 23
+   "out": 24
   },
   {
    "path": "specs/features/SPEC-048/research.md",
@@ -4076,7 +4076,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 106
+   "cited_by": 107
   },
   {
    "id": "INV-10",
@@ -38762,6 +38762,11 @@
   },
   {
    "from": "specs/features/SPEC-048/ABERTURA.md",
+   "to": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/ABERTURA.md",
    "to": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
    "type": "id"
   },
@@ -38783,6 +38788,11 @@
   {
    "from": "specs/features/SPEC-048/ABERTURA.md",
    "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/ABERTURA.md",
+   "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
    "type": "path"
   },
   {
@@ -38909,6 +38919,11 @@
    "from": "specs/features/SPEC-048/research.md",
    "to": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-048/research.md",
+   "to": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-048/research.md",
