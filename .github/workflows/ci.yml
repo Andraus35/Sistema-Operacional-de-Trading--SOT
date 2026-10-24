@@ -117,6 +117,15 @@ jobs:
       - name: Backlog abertura tests
         run: python -m unittest tests/test_backlog_abertura.py
 
+      # Ledger determinístico dos achados do loop dos construtores (LOOP-001, DHR-LOOP-001; bloqueante: se falhar, a coleta deixou de ser determinística).
+      - name: Loop ledger tests
+        run: python -m unittest tests/test_loop_ledger.py
+
+      # Informativo (não bloqueia): ledger de achados desatualizado em relação aos pareceres.
+      - name: Loop ledger freshness (informative)
+        run: python scripts/loop_ledger.py --check
+        continue-on-error: true
+
       # Testes da ferramenta de carimbos (bloqueante: se falhar, a ferramenta está quebrada).
       - name: RPSA tool tests
         run: python -m unittest tests/test_rpsa.py

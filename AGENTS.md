@@ -157,6 +157,7 @@ python scripts/check_handoff.py                 # integridade/defasagem do HANDO
 python scripts/check_invariants.py [arq.md]    # valores e ordem das regras fixas (R:R, score/convicção, 8 dimensões, hierarquia, 7 estados, 4Es, validade do Dossiê); informativo — Detector ≠ Gate (DHR-AUDITOR-EXTERNO-008 R2)
 python scripts/revisor_gate.py <doc> [--rapido] [--json]  # gate fundido do Revisor: Classe D (reprova) + sinais H (só candidatos); PASSOU_D / REPROVADO_D (DHR-AUDITOR-EXTERNO-009)
 python scripts/revisor_gate_mcp.py              # servidor MCP somente-leitura que expõe revisor_gate ao Revisor (sem Bash); uso pelo harness, não manual (DHR-AUDITOR-EXTERNO-009/011)
+python scripts/loop_ledger.py                   # ledger determinístico dos achados dos pareceres (LOOP-001, DHR-LOOP-001): recorrência, causas, lacunas de prevenção; --check p/ defasagem; informativo — Detector ≠ Gate
 python scripts/check_coesao.py                  # coesão do harness (COE-01..14; DHR-COESAO-001/003): bloqueia só ERRO — hook sem script, teste fora do CI, ata inexistente, caixa de nome; o resto é relatório
 python scripts/build_map.py                     # (re)gera o mapa do projeto — obrigatório após alterar .md (BL-019)
 python scripts/build_map.py --check             # exit 1 se o mapa está desatualizado (CI/pre-commit)
@@ -190,3 +191,16 @@ A assinatura de Andraus é a **decisão dele registrada no chat e citada na ata*
 - Entrega só está completa com o handoff reescrito (anterior copiado sem alteração para `docs/handoffs/HO-<id>.md`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas.
 - Fase 2 (DHR-PCC-002): `python scripts/check_handoff.py` + hooks `SessionStart`/`Stop`/`SubagentStop` (`scripts/handoff-hook.js`) injetam o handoff e avisam de defasagem de forma **não-bloqueante**; CI informativo. É Detector (ENF-03), não Gate; promoção a bloqueante só por decisão de Andraus (D-PCC-4, em aberto).
 - Anexo de tarefa (DHR-PCC-003): trabalho grande entre sessões leva **um** anexo `ATIVO` (`tipo: anexo-de-tarefa`), citado pelo campo `anexo:` do handoff, **só ponteiros** (ID/linha; nada de copiar decisão), ≤80 linhas; ao terminar vira `CONSUMIDO` e é movido para `docs/handoffs/anexos/` (INV-07). O handoff segue sendo o único ponto de entrada; `check_handoff.py` (HO-11..HO-15) é Detector, informativo.
+
+---
+
+## 12. Aprendizado do loop dos construtores (LOOP-001 / DHR-LOOP-001 — ordem expressa de Andraus, 2026-10-24)
+
+Regra **determinística** do Orquestrador, a cada parecer do Revisor (objetivo: refinar continuamente o loop Especificador↔Revisor sob os 4Es — Conformidade > Eficácia > Efetividade > Eficiência > Economicidade):
+1. **Transcrever o parecer com o bloco** `<!-- ACHADOS-ESTRUTURADOS` + linhas `ID|SEV|CATEGORIA|CAUSA|PREVENCAO` + `-->` (SEV = CRITICA|MEDIA|MENOR; CATEGORIA = C01 contradição interna · C02 ambiguidade/vocabulário · C03 pré-condição de teste · C04 herança/rastreabilidade · C05 observabilidade/enforcement · C06 contagem/histórico/anexo · C07 citação/âncora · C08 decisão aberta/escopo · C09 segurança/guarda · C10 máquina de estados · C99 outros).
+2. **Rodar** `python scripts/loop_ledger.py` e commitar `governance/aprendizado/LEDGER-ACHADOS.md` com o parecer.
+3. **Registrar** em `governance/aprendizado/CAUSAS-PREVENCAO.md` (append-only) a causa-raiz e a prevenção de toda **Média** e de toda **categoria recorrente** (≥2 rodadas ou ≥2 linhas) listada em "LACUNAS DE PREVENÇÃO".
+4. **Informar no HANDOFF** as 3 categorias mais recorrentes e as lacunas abertas.
+5. **Propor** (nunca aplicar) gates/processo em `governance/propostas/MELHORIAS-PROCESSO/`; só viram mecanismo por ordem expressa de Andraus, com `governance/MECANISMOS.json` no mesmo PR (COE-14).
+
+O ledger é **Detector** (ENF-03): classificação por palavra-chave é indicativa, o parecer é a fonte; não fecha decisão aberta (CONS-01); Economicidade = INDETERMINADO (tokens não medidos).
