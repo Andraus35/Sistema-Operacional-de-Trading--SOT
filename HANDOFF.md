@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-25-81
-previous: HO-2026-10-24-80
+handoff_id: HO-2026-10-25-82
+previous: HO-2026-10-25-81
 data: 2026-10-25
 branch: ccr-3235944c-duo3sl
 base_commit: 74b1de3
@@ -62,4 +62,4 @@ Dar Bash ao Revisor; refazer a SPEC-006; usar motores/agentes/skills do Intelige
 **Só de Andraus:** ordem para o Plan da SPEC-048 e para a abertura da SPEC-049 · ordem para a errata SPEC-006, a emenda SPEC-020 e a errata de re-apontamento · ordens para errata/CONFLICT-MAP decorrentes de `DHR-SPEC007-003/004` · livro (Q7c) · demais decisões abertas (G-001, K-001, M-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001) · destino do Auditor Externo (PAUSADO), D-PCC-3/4/5.
 
 ## 11. Ponteiros
-`specs/features/SPEC-007/` (ABERTURA, research, plan v1.2, checks) · `governance/propostas/SPEC-007/` (briefing-anexo e pareceres R1–R3) · `governance/DHR-SPEC048-001_*` (abertura SPEC-048) · `specs/features/SPEC-048/` (ABERTURA, research, sources) · `governance/propostas/SPEC-048/` (pareceres) · `governance/DHR-SPEC007-005_*` (homologação) · `governance/DHR-SPEC007-004_*` (P-12..P-14) · `governance/DHR-SPEC007-003_*` (respostas P-1..P-11) · `governance/DHR-SPEC007-002_*` (divisão) · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `ROADMAP.md` · `AGENTS.md` §11 · `docs/handoffs/HO-2026-10-24-80.md` · `governance/DHR-ROTEAMENTO-004_*` · `governance/aprendizado/` · `governance/propostas/MELHORIAS-PROCESSO/` · `docs/mapa/MAPA-PROJETO.md`
+`specs/features/SPEC-007/` (ABERTURA, research, plan v1.2, checks) · `governance/propostas/SPEC-007/` (briefing-anexo e pareceres R1–R3) · `governance/DHR-SPEC048-001_*` (abertura SPEC-048) · `specs/features/SPEC-048/` (ABERTURA, research, sources) · `governance/propostas/SPEC-048/` (pareceres) · `governance/DHR-SPEC007-005_*` (homologação) · `governance/DHR-SPEC007-004_*` (P-12..P-14) · `governance/DHR-SPEC007-003_*` (respostas P-1..P-11) · `governance/DHR-SPEC007-002_*` (divisão) · `governance/DHR-SPEC007-001_*` · `governance/DHR-BENCH-INTEL-001_*` · `ROADMAP.md` · `AGENTS.md` §11 · `docs/handoffs/HO-2026-10-25-81.md` · `governance/DHR-ROTEAMENTO-004_*` · `governance/aprendizado/` · `governance/propostas/MELHORIAS-PROCESSO/` · `docs/mapa/MAPA-PROJETO.md`
