@@ -4,17 +4,17 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-25** · digest `4aeb2dd8546c45fd` · **471** documentos · **7369** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-25** · digest `d8fad664152b1b7b` · **471** documentos · **7375** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
 | Área | Docs | Função | Mais referenciados |
 |---|---:|---|---|
-| **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (300) · [atomic-spec.md](../../atomic-spec.md) (202) · [AGENTS.md](../../AGENTS.md) (182) |
+| **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (301) · [atomic-spec.md](../../atomic-spec.md) (203) · [AGENTS.md](../../AGENTS.md) (182) |
 | **governance** | 247 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (379) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (121) · [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) (94) |
 | **canon** | 9 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (165) · [CCM-001-canonical-conviction-model.md](../../canon/CCM-001-canonical-conviction-model.md) (110) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (104) |
 | **specs** | 53 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (205) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (186) · [SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) (166) |
-| **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (296) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (21) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
+| **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (297) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (21) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
 | **reference** | 28 | referências externas não-normativas (camadas, master contracts) | [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (25) · [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (24) · [SOT-RISK-MASTER-001_Consolidado.md](../../reference/SOT-RISK-MASTER-001_Consolidado.md) (8) |
 | **rag** | 5 | chunks de conhecimento por agente | [synthesis.knowledge.md](../../rag/synthesis.knowledge.md) (3) · [smc.knowledge.md](../../rag/smc.knowledge.md) (1) |
 | **.claude** | 9 | agentes e skills do Claude Code | [especificador.md](../../.claude/agents/especificador.md) (97) · [revisor.md](../../.claude/agents/revisor.md) (79) · [SKILL.md](../../.claude/skills/harness-eval/SKILL.md) (3) |
@@ -31,10 +31,10 @@ flowchart LR
   docs["docs"] -->|1437| governance["governance"]
   governance["governance"] -->|795| specs["specs"]
   docs["docs"] -->|449| specs["specs"]
-  governance["governance"] -->|408| raiz["raiz"]
+  governance["governance"] -->|410| raiz["raiz"]
   docs["docs"] -->|399| raiz["raiz"]
   specs["specs"] -->|384| governance["governance"]
-  governance["governance"] -->|192| backlog["backlog"]
+  governance["governance"] -->|194| backlog["backlog"]
   raiz["raiz"] -->|165| governance["governance"]
   docs["docs"] -->|125| backlog["backlog"]
   backlog["backlog"] -->|108| governance["governance"]
@@ -77,8 +77,8 @@ flowchart LR
 | `SPEC-005` | 104 | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) |
 | `SPEC-004` | 99 | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) |
 | `RULE-ECC-01` | 92 | [governance/RULES.md](../../governance/RULES.md) |
-| `BL-010` | 84 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
-| `BL-017` | 82 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
+| `BL-010` | 85 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
+| `BL-017` | 83 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `INV-05` | 79 | [governance/RULES.md](../../governance/RULES.md) |
 | `RULE-MET-01` | 77 | [governance/RULES.md](../../governance/RULES.md) |
 | `EUA-E04` | 76 | [governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) |
@@ -181,9 +181,9 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [GLOSSARIO.md](../../GLOSSARIO.md) | GLOSSÁRIO OFICIAL — SOT | 33 | 13 |
 | [HANDOFF.md](../../HANDOFF.md) | HANDOFF — SOT | 14 | 38 |
 | [README.md](../../README.md) | SOT-Harness | 3 | 9 |
-| [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 300 | 82 |
+| [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 301 | 82 |
 | [WORKFLOW.md](../../WORKFLOW.md) | WORKFLOW — Setup Operacional Canônico do SOT | 128 | 12 |
-| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 202 | 36 |
+| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 203 | 36 |
 
 ### governance
 
@@ -228,7 +228,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md) | DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revis... | 56 | 6 |
 | [DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md) | DHR-AUDITOR-EXTERNO-016 — Ata — Fusão do que era útil dos subagentes de 1ª ge... | 56 | 9 |
 | [DHR-AUDITOR-EXTERNO-017_Ata_Deteccao_Deterministica_e_Guarda_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-017_Ata_Deteccao_Deterministica_e_Guarda_do_Revisor.md) | DHR-AUDITOR-EXTERNO-017 — Ata — Detectores determinísticos adicionais no gate... | 4 | 10 |
-| [DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md](../../governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md) | DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop... | 55 | 5 |
+| [DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md](../../governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md) | DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop... | 56 | 5 |
 | [DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md](../../governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md) | DHR-BACKLOG-001 — Ata — Promoção de BL-003 e BL-011 a ATIVADO (gatilho `spec:... | 29 | 4 |
 | [DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md](../../governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md) | DHR-BACKLOG-ABERTURA-001 — Ata — Backlog vinculado por regra à abertura de ca... | 33 | 7 |
 | [DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md](../../governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md) | DHR-BENCH-INTEL-001 — Ata — Repositório paralelo `Inteligencia-SOT` como Benc... | 37 | 9 |
@@ -435,7 +435,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md) | Parecer do Revisor — Plan da SPEC-048 v1.1 (CANDIDATO), rodada 2 (S2, por del... | 3 | 7 |
 | [PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md) | Parecer do Revisor — Plan da SPEC-048 v1.2 (CANDIDATO), rodada 3 (S2, por del... | 3 | 9 |
 | [PARECER-REVISOR-SPEC048-PLAN-R4-2026-10-25.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R4-2026-10-25.md) | Parecer do Revisor — Plan da SPEC-048 v1.3 (CANDIDATO), rodada 4 (S2, por del... | 9 | 4 |
-| [PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md) | Parecer do Revisor — Plan da SPEC-048 v1.4, rodada 5 (delta, S2) — 2026-10-25 | 2 | 3 |
+| [PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md) | Parecer do Revisor — Plan da SPEC-048 v1.4, rodada 5 (delta, S2) — 2026-10-25 | 2 | 7 |
 
 ### canon
 
@@ -518,7 +518,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) | BL-018 — Risk Agent SOT (Família RISK-SPEC) | 21 | 17 |
 | [BL-025-CACHE-ISS-001-analise.md](../../backlog/BL-025-CACHE-ISS-001-analise.md) | BL-025 — CACHE-ISS-001 — Análise Técnica Preparatória | 5 | 15 |
 | [BL-034-OBSERVABILIDADE-LOGS-AGENTES-backlog.md](../../backlog/BL-034-OBSERVABILIDADE-LOGS-AGENTES-backlog.md) | BL-034 — Observabilidade e logs de agentes (master externo) — intake de backlog | 5 | 7 |
-| [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) | RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação | 296 | 114 |
+| [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) | RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação | 297 | 114 |
 
 ### reference
 

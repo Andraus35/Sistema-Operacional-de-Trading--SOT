@@ -71,3 +71,7 @@ ID|SEV|CATEGORIA|CAUSA|PREVENCAO
 -->
 
 Nenhum FICHA-M: não há achado Menor mecânico.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-25; DHR-AUDITOR-EXTERNO-018)
+- **G2:** `revisor_gate.py` sobre o plan.md = `PASSOU_D`, 0 sinais H, teto CONFORME condicional; **nenhum achado a confirmar ou descartar** (as verificações informativas apontam para outros arquivos, fora do escopo desta Spec).
+- **G1:** o Revisor não reabriu o núcleo do Passo 0 nesta rodada por ser **delta** (as rodadas R1–R4 já o auditaram, ver pareceres anteriores). Âncoras dependentes conferidas ao vivo pelo Orquestrador: `ROADMAP.md` (slots SPEC-048/049, l.187-193), `backlog/RMR-001_Painel_Backlog.md` (BL-010/BL-017), `governance/RULES.md` (RULE-ECC-06, RULE-HG-02), `atomic-spec.md` §15 — existem e conferem. Nada a descartar.

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "4aeb2dd8546c45fd9c434ec20890fb089e83cecc3e1d7877fa7227b86eb3862c",
+  "digest": "d8fad664152b1b7b226fe37590ae6fb7a0d8e7b23b58dcfde8308d5b7a66005b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 300,
+   "in": 301,
    "out": 82
   },
   {
@@ -150,7 +150,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 202,
+   "in": 203,
    "out": 36
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 296,
+   "in": 297,
    "out": 114
   },
   {
@@ -1249,7 +1249,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 55,
+   "in": 56,
    "out": 5
   },
   {
@@ -2699,7 +2699,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Plan da SPEC-048 v1.4, rodada 5 (delta, S2) — 2026-10-25",
    "in": 2,
-   "out": 3
+   "out": 7
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -3353,7 +3353,7 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 84
+   "cited_by": 85
   },
   {
    "id": "BL-011",
@@ -3388,7 +3388,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 82
+   "cited_by": 83
   },
   {
    "id": "BL-018",
@@ -3603,7 +3603,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 55
+   "cited_by": 56
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -4888,7 +4888,7 @@
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "RULE-EH",
@@ -5093,7 +5093,7 @@
   {
    "id": "RULE-HG-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 32
+   "cited_by": 33
   },
   {
    "id": "RULE-HG-03",
@@ -37569,8 +37569,38 @@
   },
   {
    "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
+   "to": "governance/RULES.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md",
