@@ -24,3 +24,6 @@ ID|SEV|CATEGORIA|CAUSA|PREVENCAO
 n-10|MENOR|C01|Três regras de idempotência (R1/R2/R3) escritas sem ordem de precedência; a correção do n-07 abriu uma via equivalente|G-C matriz de rastreio + G-F tabela de estados: toda regra de decisão sobre o mesmo par declara precedência e tem cenário para cada interseção
 n-11|MENOR|C06|Correção do n-07 não propagou o vocabulário (referência × consulta anterior) a D5, contrato, histórico e EC|G-D varredura de impacto: listar todas as ocorrências de termo/predicado redefinido
 -->
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-25; DHR-AUDITOR-EXTERNO-018)
+- **G2:** `revisor_gate.py` sobre o plan.md = `PASSOU_D`, 0 sinais H, **nenhum achado a confirmar ou descartar** (as 4 verificações informativas apontam para outros arquivos, fora do escopo desta Spec).
