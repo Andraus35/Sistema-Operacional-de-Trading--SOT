@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "4deb02aaf2d5ce981ff97b1b2c80c246ef0df76e2b65be2918d5cca7196d54c3",
+  "digest": "dc6a8a4d7f8e887eb5ed54dcfa35951f221c08a6ba547350d1d93429a7e5f5b5",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2551,7 +2551,7 @@
    "path": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
    "area": "governance",
    "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R1) — 2026-10-25",
-   "in": 1,
+   "in": 2,
    "out": 5
   },
   {
@@ -3110,9 +3110,9 @@
   {
    "path": "specs/features/SPEC-006/errata-v1.13.md",
    "area": "specs",
-   "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4)",
+   "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) — texto v1.1",
    "in": 1,
-   "out": 15
+   "out": 16
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
@@ -5321,7 +5321,7 @@
   {
    "id": "RULE-KFH-004",
    "defined_in": null,
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-KFH-005",
@@ -5346,7 +5346,7 @@
   {
    "id": "RULE-KFH-009",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-KFH-010",
@@ -40299,6 +40299,11 @@
    "from": "specs/features/SPEC-006/errata-v1.13.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-006/errata-v1.13.md",

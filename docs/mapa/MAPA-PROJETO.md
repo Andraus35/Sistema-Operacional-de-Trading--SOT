@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-25** · digest `4deb02aaf2d5ce98` · **475** documentos · **7448** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-25** · digest `dc6a8a4d7f8e887e` · **475** documentos · **7449** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -33,7 +33,7 @@ flowchart LR
   docs["docs"] -->|457| specs["specs"]
   governance["governance"] -->|413| raiz["raiz"]
   docs["docs"] -->|404| raiz["raiz"]
-  specs["specs"] -->|394| governance["governance"]
+  specs["specs"] -->|395| governance["governance"]
   governance["governance"] -->|194| backlog["backlog"]
   raiz["raiz"] -->|165| governance["governance"]
   docs["docs"] -->|126| backlog["backlog"]
@@ -413,7 +413,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md](../../governance/propostas/SPEC-002/REAUDITORIA-SPEC002-001_PROPOSTA-CORRECOES.md) | REAUDITORIA-SPEC002-001 — Proposta de Correções — SPEC-002 | 1 | 6 |
 | [LISTA-RAMOS-E-PRS-OBSOLETOS-2026-10-18.md](../../governance/propostas/SPEC-006/LISTA-RAMOS-E-PRS-OBSOLETOS-2026-10-18.md) | Lista — ramos remotos e PRs candidatos a limpeza (2026-10-18) | 11 | 4 |
 | [MINUTA-ATA-HOMOLOGACAO-ERRATA-v1.11.md](../../governance/propostas/SPEC-006/MINUTA-ATA-HOMOLOGACAO-ERRATA-v1.11.md) | MINUTA — Ata de homologação da errata v1.11 da SPEC-006 (Cognitive Knowledge ... | 5 | 11 |
-| [PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md](../../governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md) | Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R1) — 2026-10-25 | 1 | 5 |
+| [PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md](../../governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md) | Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R1) — 2026-10-25 | 2 | 5 |
 | [PROPOSTA-DIVISAO-2026-10-17.md](../../governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md) | PROPOSTA — Divisão da SPEC-006 (Cognitive Knowledge Graph) — para decisão de ... | 18 | 24 |
 | [checks-v1.8-candidato.md](../../governance/propostas/SPEC-006/linha-spec006-plan/checks-v1.8-candidato.md) | checks.md — Verificação de Spec da SPEC-006 (fase spec-first) | 0 | 16 |
 | [parecer-revisor-rodada5.md](../../governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada5.md) | Parecer do Revisor SOT — SPEC-006 Plan v1.4 (rodada 5) — 2026-10-17 | 4 | 6 |
@@ -479,7 +479,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-005/research.md) | Dossiê de Pesquisa — SPEC-005: Cognitive Event Bus (slot ROADMAP §5, FASE 2) | 2 | 23 |
 | [ABERTURA.md](../../specs/features/SPEC-006/ABERTURA.md) | Proposta de Abertura — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, ... | 5 | 19 |
 | [SPEC-006/checks.md](../../specs/features/SPEC-006/checks.md) | checks.md — Verificação de Spec da SPEC-006 (fase spec-first) | 6 | 16 |
-| [errata-v1.13.md](../../specs/features/SPEC-006/errata-v1.13.md) | SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) | 1 | 15 |
+| [errata-v1.13.md](../../specs/features/SPEC-006/errata-v1.13.md) | SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4)... | 1 | 16 |
 | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 209 | 34 |
 | [research.md](../../specs/features/SPEC-006/research.md) | Dossiê de Pesquisa — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, FA... | 6 | 24 |
 | [ABERTURA.md](../../specs/features/SPEC-007/ABERTURA.md) | Proposta de Abertura — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness ... | 11 | 26 |
