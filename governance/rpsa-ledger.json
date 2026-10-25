@@ -409,6 +409,90 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Acrescenta checagens informativas ao detector do handoff e um item de protocolo em AGENTS §11; nenhum arquivo de agente, checklist nem método é alterado."
+    },
+    {
+      "id": "DHR-LOOP-001",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Regra operacional do Orquestrador e detector: não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-004",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Regra de roteamento do Orquestrador/hook: não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-SPEC007-002",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Decisão de decomposição de Spec e registro de slot: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-SPEC007-003",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro de decisões de política de Spec em redação: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-SPEC007-004",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro de decisões de política de Spec em redação: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-SPEC007-005",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de Plan de Spec em redação: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-SPEC007-006",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro de decisão de política sobre uma fonte: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-SPEC007-007",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Diretriz de política de identidade para a construção: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-SPEC048-001",
+      "data": "2026-10-24",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de abertura de Spec e registro de slot: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-005",
+      "data": "2026-10-25",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Regra operacional do Orquestrador: não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-ROTEAMENTO-006",
+      "data": "2026-10-25",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Regra operacional do Orquestrador: não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-SPEC048-002",
+      "data": "2026-10-25",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de Plan de Spec em redação: não altera texto de agente nem método."
     }
   ]
 }
