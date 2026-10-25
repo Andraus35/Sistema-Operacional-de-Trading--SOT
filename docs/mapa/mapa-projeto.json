@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "b68c7ef8ab3ecf9db23f73ee3532a30978ca2cf067b701aee42a6dc2215802ba",
+  "digest": "f15031c8d017939914d6dd0162b2252697347d6ebefa3ea2311bd6d2005ea7b1",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,7 +101,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 183,
+   "in": 184,
    "out": 57
   },
   {
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 303,
+   "in": 304,
    "out": 82
   },
   {
@@ -1722,6 +1722,13 @@
    "out": 16
   },
   {
+   "path": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "area": "governance",
+   "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
+   "in": 0,
+   "out": 9
+  },
+  {
    "path": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
    "area": "governance",
    "title": "DHR-REVISOR-DELTA-001 — Ata — Revisor SOT passa a revisar por delta (hash por bloco) nas rodadas seguintes",
@@ -1928,7 +1935,7 @@
    "path": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formação + selo)",
-   "in": 21,
+   "in": 22,
    "out": 11
   },
   {
@@ -2005,7 +2012,7 @@
    "path": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-001 — Ata de Homologação — Abertura da SPEC-048 (RAG Retrieval & Evidence Packet Harness) e slot da SPEC-049 (WikiRAG Reading View)",
-   "in": 22,
+   "in": 23,
    "out": 16
   },
   {
@@ -2355,7 +2362,7 @@
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
    "area": "governance",
    "title": "RETROSPECTIVAS DE FECHAMENTO DO LOOP DOS CONSTRUTORES (LOOP-001 / DHR-LOOP-001)",
-   "in": 13,
+   "in": 14,
    "out": 12
   },
   {
@@ -3097,7 +3104,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 206,
+   "in": 207,
    "out": 34
   },
   {
@@ -3125,7 +3132,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 140,
+   "in": 141,
    "out": 38
   },
   {
@@ -3160,7 +3167,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 111,
+   "in": 112,
    "out": 21
   },
   {
@@ -3272,7 +3279,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 47,
+   "in": 48,
    "out": 41
   },
   {
@@ -3948,6 +3955,11 @@
    "cited_by": 17
   },
   {
+   "id": "DHR-RETRO-001",
+   "defined_in": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "cited_by": 0
+  },
+  {
    "id": "DHR-REVISOR-DELTA-001",
    "defined_in": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
    "cited_by": 20
@@ -4090,7 +4102,7 @@
   {
    "id": "DHR-SPEC007-005",
    "defined_in": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "DHR-SPEC007-006",
@@ -4150,7 +4162,7 @@
   {
    "id": "DHR-SPEC048-001",
    "defined_in": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "DHR-SPEC048-002",
@@ -5815,12 +5827,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 206
+   "cited_by": 207
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 140
+   "cited_by": 141
   },
   {
    "id": "SPEC-008",
@@ -5885,7 +5897,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 111
+   "cited_by": 112
   },
   {
    "id": "SPEC-021",
@@ -6025,12 +6037,12 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 47
+   "cited_by": 48
   },
   {
    "id": "SPEC-049",
    "defined_in": "ROADMAP.md",
-   "cited_by": 23
+   "cited_by": 24
   }
  ],
  "edges": [
@@ -28837,6 +28849,51 @@
   {
    "from": "governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md",
    "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
   {

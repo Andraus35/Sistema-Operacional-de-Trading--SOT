@@ -493,6 +493,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologação de Plan de Spec em redação: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-RETRO-001",
+      "data": "2026-10-25",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Decisão de processo e ordem de serviço: não altera texto de agente de construção nem método."
     }
   ]
 }
