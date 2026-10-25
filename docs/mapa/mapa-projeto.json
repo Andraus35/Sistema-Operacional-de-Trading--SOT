@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "f15031c8d017939914d6dd0162b2252697347d6ebefa3ea2311bd6d2005ea7b1",
+  "digest": "d161ae40542292d221f85319ebd49412ee5090474dab6bdd4fbee1adb91c9cdd",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 304,
+   "in": 305,
    "out": 82
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 298,
+   "in": 299,
    "out": 114
   },
   {
@@ -1725,7 +1725,7 @@
    "path": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
    "area": "governance",
    "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
-   "in": 0,
+   "in": 1,
    "out": 9
   },
   {
@@ -1879,14 +1879,14 @@
    "path": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-003 — Ata de Homologação — Errata v1.11 da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 27,
+   "in": 28,
    "out": 13
   },
   {
    "path": "governance/DHR-SPEC006-004_Ata_Homologacao_Errata_v1.12_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-004 — Ata de Homologação — Errata v1.12 da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 33,
+   "in": 34,
    "out": 11
   },
   {
@@ -1914,28 +1914,28 @@
    "path": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC007-002 — Ata de Decisão — Divisão da SPEC-007 (Opção C) e slot da SPEC-048",
-   "in": 33,
+   "in": 34,
    "out": 21
   },
   {
    "path": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-003 — Ata de Decisão — Respostas de Andraus às perguntas P-1..P-11 do Plan v1.2 da SPEC-007",
-   "in": 31,
+   "in": 32,
    "out": 12
   },
   {
    "path": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-004 — Ata de Decisão — Respostas P-12..P-14 do Plan reduzido da SPEC-007 e ordem da rodada 5",
-   "in": 23,
+   "in": 24,
    "out": 9
   },
   {
    "path": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formação + selo)",
-   "in": 22,
+   "in": 23,
    "out": 11
   },
   {
@@ -1949,7 +1949,7 @@
    "path": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
    "area": "governance",
    "title": "DHR-SPEC007-007 — Ata de Decisão — Diretriz de autenticação criptográfica dos atos de Andraus (ACTREC)",
-   "in": 15,
+   "in": 16,
    "out": 6
   },
   {
@@ -2089,7 +2089,7 @@
    "path": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-001 — Fechamento da dimensão B \"tool correctness\" (BL-017) — erratum ADITIVO",
-   "in": 5,
+   "in": 6,
    "out": 9
   },
   {
@@ -2334,7 +2334,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 380,
+   "in": 381,
    "out": 39
   },
   {
@@ -3097,14 +3097,21 @@
    "path": "specs/features/SPEC-006/checks.md",
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-006 (fase spec-first)",
-   "in": 5,
+   "in": 6,
    "out": 16
+  },
+  {
+   "path": "specs/features/SPEC-006/errata-v1.13.md",
+   "area": "specs",
+   "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4)",
+   "in": 0,
+   "out": 15
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 207,
+   "in": 208,
    "out": 34
   },
   {
@@ -3132,7 +3139,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 141,
+   "in": 142,
    "out": 38
   },
   {
@@ -3332,7 +3339,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 106
+   "cited_by": 107
   },
   {
    "id": "BL-004",
@@ -3367,12 +3374,12 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 86
+   "cited_by": 87
   },
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 114
+   "cited_by": 115
   },
   {
    "id": "BL-012",
@@ -3462,7 +3469,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 69
+   "cited_by": 70
   },
   {
    "id": "BL-030",
@@ -3492,7 +3499,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 45
+   "cited_by": 46
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -3957,7 +3964,7 @@
   {
    "id": "DHR-RETRO-001",
    "defined_in": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
-   "cited_by": 0
+   "cited_by": 1
   },
   {
    "id": "DHR-REVISOR-DELTA-001",
@@ -4062,12 +4069,12 @@
   {
    "id": "DHR-SPEC006-003",
    "defined_in": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
-   "cited_by": 27
+   "cited_by": 28
   },
   {
    "id": "DHR-SPEC006-004",
    "defined_in": "governance/DHR-SPEC006-004_Ata_Homologacao_Errata_v1.12_SPEC-006.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "DHR-SPEC006-OPCAO2-001",
@@ -4087,22 +4094,22 @@
   {
    "id": "DHR-SPEC007-002",
    "defined_in": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "DHR-SPEC007-003",
    "defined_in": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
-   "cited_by": 31
+   "cited_by": 32
   },
   {
    "id": "DHR-SPEC007-004",
    "defined_in": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "DHR-SPEC007-005",
    "defined_in": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "DHR-SPEC007-006",
@@ -4112,7 +4119,7 @@
   {
    "id": "DHR-SPEC007-007",
    "defined_in": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "DHR-SPEC019",
@@ -4327,12 +4334,12 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 70
+   "cited_by": 71
   },
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 79
+   "cited_by": 80
   },
   {
    "id": "INV-06",
@@ -4342,7 +4349,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 279
+   "cited_by": 280
   },
   {
    "id": "INV-08",
@@ -4352,7 +4359,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 108
+   "cited_by": 109
   },
   {
    "id": "INV-10",
@@ -4752,7 +4759,7 @@
   {
    "id": "RULE-CKG-001",
    "defined_in": "ROADMAP.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "RULE-CKG-002",
@@ -4772,7 +4779,7 @@
   {
    "id": "RULE-CKG-005",
    "defined_in": null,
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-CKG-006",
@@ -4782,32 +4789,32 @@
   {
    "id": "RULE-CKG-007",
    "defined_in": null,
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-CKG-008",
    "defined_in": null,
-   "cited_by": 20
+   "cited_by": 21
   },
   {
    "id": "RULE-CKG-009",
    "defined_in": null,
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-CKG-010",
    "defined_in": null,
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "RULE-CKG-011",
    "defined_in": null,
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "RULE-CKG-012",
    "defined_in": null,
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-CKG-013",
@@ -4962,7 +4969,7 @@
   {
    "id": "RULE-EPI-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "RULE-EPI-02",
@@ -5087,7 +5094,7 @@
   {
    "id": "RULE-HD-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "RULE-HD-03",
@@ -5267,7 +5274,7 @@
   {
    "id": "RULE-INQ",
    "defined_in": "governance/RULES.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "RULE-INQ-01",
@@ -5312,7 +5319,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-KFH-006",
@@ -5322,7 +5329,7 @@
   {
    "id": "RULE-KFH-007",
    "defined_in": null,
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-KFH-008",
@@ -5387,7 +5394,7 @@
   {
    "id": "RULE-KFH-020",
    "defined_in": null,
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "RULE-MECH",
@@ -5782,7 +5789,7 @@
   {
    "id": "RULE-UNC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "RULE-UNC-02",
@@ -5827,12 +5834,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 207
+   "cited_by": 208
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 141
+   "cited_by": 142
   },
   {
    "id": "SPEC-008",
@@ -5887,7 +5894,7 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 74
+   "cited_by": 75
   },
   {
    "id": "SPEC-019",
@@ -40200,6 +40207,91 @@
    "from": "specs/features/SPEC-006/checks.md",
    "to": "specs/features/SPEC-007/plan.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-SPEC006-004_Ata_Homologacao_Errata_v1.12_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "specs/features/SPEC-006/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-006/errata-v1.13.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-006/plan.md",
