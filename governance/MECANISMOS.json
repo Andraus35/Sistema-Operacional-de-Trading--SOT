@@ -507,6 +507,17 @@
       "ata": "DHR-LOOP-001",
       "nota": "Detector (ENF-03), classificação por palavra-chave indicativa; não promove nem fecha decisão aberta.",
       "verificado_em": "2026-10-24: ao vivo — gerou governance/aprendizado/LEDGER-ACHADOS.md sobre 19 pareceres; tests/test_loop_ledger.py (7 testes) no CI"
+    },
+    {
+      "id": "rot.aplicar-ficha-m",
+      "arquivo": "scripts/aplicar_ficha_m.py",
+      "canal": "CLI do Orquestrador (classe M) + CI (teste bloqueante)",
+      "tipo": "utilitario",
+      "estado": "ativo",
+      "enforca": "Correção determinística de achados MENORES mecânicos pelo Orquestrador (âncora por texto único, atômica, teto 10 linhas/2 arquivos, sem criar ID/regra); escala o resto ao Especificador",
+      "ata": "DHR-ROTEAMENTO-006",
+      "nota": "Não toca arquivo selado; nunca corrige Média/Crítica nem semântica.",
+      "verificado_em": "2026-10-25: tests/test_aplicar_ficha_m.py (9 testes) no CI"
     }
   ],
   "vigente_desde": "2026-10-19"

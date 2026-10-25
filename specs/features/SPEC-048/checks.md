@@ -13,6 +13,13 @@
 
 ---
 
+## R4 — verificação das correções (v1.4)
+
+| Achado | Âncora no Plan v1.4 | Positivo / negativo | Estado |
+|---|---|---|---|
+| n-10 | RULE-RET-005 "PRECEDÊNCIA" (R4 → R3 → R1 → R2 → pedido novo) e "CONCORRÊNCIA" (≤ 1 consulta em curso por par, checagem atômica); R2 só com desfecho substantivo; D5 `Q_RECEBIDA` | T13 (d2)(d3) | ✔ — toda interseção R1/R2/R3 tem um único desfecho |
+| n-11 | D5 e contrato `replay_of`; ressalva n-04 (Plan e acima); EC-RET-002 FAILURE-MODE | — | ✔ |
+
 ## R3 — verificação das correções (v1.3)
 
 | Achado | Âncora no Plan v1.3 | Positivo / negativo | Estado |
@@ -28,7 +35,7 @@
 | **N-01** desfecho duplo da síntese sem rótulo | RULE-RET-004 "AFIRMAÇÕES DA SÍNTESE" (a) gate / (b) rede de segurança; RULE-RET-010 GATE; BASpec-RET-010; EARS 10; §D3.1; EC-RET-006 | ADV-RET-04 positivo / (a)(b) `SYNTHESIS_CLAIM_INVALID` com entrada injetável; (c) `SYNTHESIS_CLAIM_UNLABELED`, não entregue | ✔ — conferir por leitura: cada condição tem um código e um efeito, iguais nos cinco lugares |
 | n-02 | contrato `delivery_record` (`guard_run_ref`, `acts_snapshot_ref`, `guard_evaluated_at`); EC-RET-002/003 EVIDENCE | T13(a); ADV-RET-23 | ✔ |
 | n-03 | RULE-RET-005 "FRESCOR DO REENVIO"; `packet_assembled_at` | T13(a) | ✔ (escolha declarada: "como montado em t0") |
-| n-04 | D5 (`Q_RECUPERANDO → Q_NEGADA`; novo `query_id` por pedido; repetição após `Q_NEGADA`); `query_record.replay_of` | T13(a) | ✔ |
+| n-04 | D5 (`Q_RECUPERANDO → Q_NEGADA`; novo `query_id` por pedido; repetição após `Q_NEGADA`); `query_record.replay_of` — **ressalva (v1.4, n-11):** "repetição após `Q_NEGADA` = pedido novo" só vale para par sem consulta de referência (R2), depois de R4 e R3 na ordem de precedência | T13(a) | ✔ |
 | n-05 | Termo 9 da acepção; linha das lições reescrita | — | ✔ |
 | n-06 | RULE-RET-005 "RECÁLCULO NO PACOTE NOVO"; D4.4 (7); BASpec-RET-006 QUANDO e VERIFICADO POR | ADV-RET-23 | ✔ |
 

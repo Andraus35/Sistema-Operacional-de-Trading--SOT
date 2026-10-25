@@ -23,3 +23,6 @@ Linha-índice (lida pelo script; Estado `FEITA` só quando a seção corresponde
 ### Nota de desvio — Orquestrador (individual), 2026-10-25 (insumo da retrospectiva da SPEC-048)
 O Orquestrador aplicou 6 correções de Menores do parecer R3 do Plan da SPEC-048 pela classe M (ficha `FICHA-M-PLAN-R3.json`), contra a regra que Andraus explicitou em 2026-10-25 ("achados menores não são corrigidos pelo orquestrador", `DHR-ROTEAMENTO-005`). Causa: leitura extensiva da classe M da `DHR-ROTEAMENTO-003` e do passo 0 criado por mim em `DHR-LOOP-001` sem perguntar o alcance. Prevenção: classe M só para falhas do próprio Orquestrador/gates; alinhar o código do roteador (proposta em `DHR-ROTEAMENTO-005` §3). Categoria: C08 (escopo/alcance da regra).
 
+
+### Retratação da "Nota de desvio" acima — Orquestrador, 2026-10-25 (append-only, INV-07)
+A nota anterior está **incorreta**: Andraus esclareceu que quis dizer o oposto ("os achados menores devem ser identificados e corrigidos deterministicamente pelo orquestrador", `DHR-ROTEAMENTO-006`). As 6 correções da R3 estavam conformes. O erro real foi meu: interpretei uma frase ambígua como proibição sem confirmar o alcance e deixei o mecanismo determinístico faltando (existia só `classificar/conferir`). Prevenção: `scripts/aplicar_ficha_m.py` + bloco `FICHA-M` no parecer. Categoria: C02 (ambiguidade).
