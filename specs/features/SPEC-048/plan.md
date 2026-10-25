@@ -36,6 +36,13 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | **1.2** | **2026-10-24** | **Correção do parecer R2 (NÃO CONFORME): N-01 (um desfecho por condição na síntese: rótulo/campo vindo do modelo ⇒ `SYNTHESIS_CLAIM_INVALID` no gate; falta dos rótulos do harness na validação final ⇒ `SYNTHESIS_CLAIM_UNLABELED`, pacote não entregue — rede de segurança) e n-02..n-06.** Contagens inalteradas: **12 RULE, 1 INV, 12 BASpec, 12 EARS, 8 EC, 14 cenários, 23 ADV**. Texto anterior em colchetes locais. |
 | **1.1** | **2026-10-24** | **Correção do parecer R1 (NÃO CONFORME): M-01 (reenvio passa de novo pela guarda E3 com atos e vínculo vigentes; pacote novo se algo deixou de ser permitido; ADV-RET-23), M-02 (D5 com `Q_VALIDANDO`), M-03 (afirmação da síntese com `content_role = DATA` e `claim_kind = RELATO_ATRIBUIDO`), m-01..m-15.** Contagens: **12 RULE, 1 INV, 12 BASpec, 12 EARS, 8 EC, 14 cenários, 23 ADV**. Texto anterior em colchetes locais (INV-07). |
 
+### Correções da rodada 4 (parecer R4, 2026-10-25) — onde estão (v1.4)
+
+| Achado | Correção (âncora neste arquivo) | Caso positivo / negativo |
+|---|---|---|
+| **n-10** precedência R1/R2/R3 não declarada | RULE-RET-005, "PRECEDÊNCIA" (ordem fixa R4 → R3 → R1 → R2 → pedido novo) e "CONCORRÊNCIA" (checagem de R3 e abertura da consulta na mesma unidade atômica; ≤ 1 consulta em curso por par); R2 só com desfecho substantivo; R3 com ou sem referência, inclusive reenvio em `Q_VALIDANDO`; D5 coluna "Sai para" de `Q_RECEBIDA` | T13 (d2) segundo repetido com a 1ª em curso ⇒ `REQUEST_IN_PROGRESS`, `packets_created == 1`; (d3) reenvio do caso (ii) em `Q_VALIDANDO` ⇒ `REQUEST_IN_PROGRESS`, um só pacote novo |
+| n-11 | D5 (`replay_of`) e contrato `query_record` com o termo da RULE-RET-005; ressalva R2 na linha n-04 da tabela da rodada 2 e no `checks.md`; EC-RET-002 FAILURE-MODE com `REQUEST_IN_PROGRESS` e `REQUEST_ID_REUSE_CONFLICT` | — |
+
 ### Correções da rodada 3 (parecer R3, 2026-10-24) — onde estão (v1.3)
 
 | Achado | Correção (âncora neste arquivo) | Caso positivo / negativo |
@@ -1889,6 +1896,7 @@ Nenhuma obrigação suprimida fora de REMOVED; os três REMOVED têm referência
     reticências.
 [x] v1.3: parecer R3 — n-07 e n-09(b) corrigidos (tabela "Correções da rodada 3"); n-08 e n-09(a) da classe M preservados;
     contagens e estados inalterados; P-1..P-3 marcadas "respondidas (a registrar na ata de homologação)".
+[x] v1.4: parecer R4 — n-10 e n-11 corrigidos (tabela "Correções da rodada 4"); nenhum estado nem item novo.
 [x] Mapeamento integral do Anexo T → IDs da SPEC-048 (e partes → SPEC-049); nenhum ID transferido reutilizado; origem preservada.
 [x] Enforcement Contract em todo efeito (EC-RET-001..008); fail-closed nos E3; ENF-07 amostral nos E3; escala E0–E3 em seção própria.
 [x] Status epistemológico aplicado (tabela TRACE-06).
