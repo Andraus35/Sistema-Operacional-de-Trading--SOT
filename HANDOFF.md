@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-25-86
-previous: HO-2026-10-25-85
+handoff_id: HO-2026-10-25-87
+previous: HO-2026-10-25-86
 data: 2026-10-25
-branch: ccr-3235944c-duo3sl
-base_commit: 74b1de3
+branch: ccr-166207a9-473jhk
+base_commit: 01a8290
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12 HOMOLOGADAS; SPEC-007 = ABERTURA HOMOLOGADA (DHR-SPEC007-001), DIVIDIDA pela Opção C (DHR-SPEC007-002): reduzida a formação + selo; Plan reduzido v2.3 = HOMOLOGADO — BASELINE (DHR-SPEC007-005, Andraus 2026-10-24; Revisor R6 CONFORME condicional; sem BUILD); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002, Andraus 2026-10-25; Revisor R5 CONFORME condicional; sem BUILD) [antes: ABERTURA HOMOLOGADA (DHR-SPEC048-001)]; SPEC-049 (WikiRAG Reading View) = slot indicativo, NÃO aberta
 fase: spec-first
 autor: Orquestrador
@@ -14,6 +14,7 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência com a realidade, a realidade prevalece.
 
 ## 1. Frente atual (Andraus, chat 2026-10-23/24)
+- **ATUALIZAÇÃO HO-87 (2026-10-25):** PR #130 JÁ MESCLADO na `main` (`01a8290`). Retrospectivas SPEC-007 e SPEC-048 **FEITAS** (`RETROSPECTIVAS.md`, `--retro-check` OK) com propostas P1–P6 **pendentes de decisão de Andraus** (nenhuma aplicada). Nada mais bloqueia abrir outra Spec, mas só por ordem de Andraus. Ramo de trabalho: `ccr-166207a9-473jhk`. Os itens abaixo sobre "falta merge/retrospectiva" estão SUPERADOS.
 - **SPEC-007 reduzida (formação + selo): Plan v2.3 HOMOLOGADO — BASELINE** (`DHR-SPEC007-005`), depois de divisão (`002`) e respostas P-1..P-14 (`003`, `004`). Sem BUILD; fail-closed: nada é liberado ou carimbado sem ato de Andraus. Errata SPEC-006 (E-1..E-4) e emenda SPEC-020 (metade F1): passos à parte, não redigidos. Anexo de tarefa AT-SPEC007-PLAN CONSUMIDO (movido para `docs/handoffs/anexos/`).
 - **SPEC-048 (RAG Retrieval & Evidence Packet Harness): ABERTURA HOMOLOGADA** (Andraus, chat 2026-10-24, `DHR-SPEC048-001`; Revisor R1 e R2 CONFORME condicional; gate PASSOU_D). Decididos: CRITICAL D0–D8; **página de leitura WikiRAG separada na SPEC-049 (slot indicativo, NÃO aberta; peso MEDIUM D0–D5/Classe D só proposta até a abertura dela)**; todo analista conta como "fora" até Andraus confirmar modelos de casa; rótulo carimbado × trecho de fonte; resumo desligado até Andraus ligar; gatilho aditivo `∨ spec:SPEC-048 em redação` em BL-017/BL-010 (Estado inalterado, `backlog_triggers --abertura SPEC-048` lista os dois); regra de busca para a errata; confronto com WORKFLOW sem pesquisar escolas; notas aditivas de endereço na SPEC-007 plan e na ata 002. SPEC-047 estava reservado a Runtime Cognitive Caching (a abertura da SPEC-007 errou).
 - **Q7(c) FECHADA (Andraus, chat 2026-10-24, `DHR-SPEC007-006`):** o livro *Evidence-Based Technical Analysis* PODE ser usado, só para uso pessoal dele (SOT operar o varejo dele); aceita o ENVIO de trechos a empresa de IA, risco de direitos assumido por ele; liberação efetiva = ato registrado por fonte (RIGHTS + EXT_TRANSMISSION) na construção; não é parecer jurídico; reabrir se o SOT/conhecimento for oferecido a terceiros. **Plan da SPEC-048 em redação pelo Especificador (ordem de Andraus, 2026-10-24; ainda sem entrega/commit).**

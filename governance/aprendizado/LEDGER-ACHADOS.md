@@ -70,7 +70,7 @@ Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo 
 
 ## 5. Retrospectivas de fechamento (individual e coletiva) — regra LOOP-001
 
-O tratamento de melhoria ocorre ao FIM do trabalho completo de uma Spec e ANTES de abrir outra (ordem de Andraus, 2026-10-24). Specs com parecer e sem retrospectiva `FEITA` em `governance/aprendizado/RETROSPECTIVAS.md` (a Spec ainda em curso aparece aqui até fechar; o Orquestrador confere `--retro-check SPEC-nnn` de cada Spec FECHADA antes de abrir outra): SPEC-006, SPEC-007, SPEC-048
+O tratamento de melhoria ocorre ao FIM do trabalho completo de uma Spec e ANTES de abrir outra (ordem de Andraus, 2026-10-24). Specs com parecer e sem retrospectiva `FEITA` em `governance/aprendizado/RETROSPECTIVAS.md` (a Spec ainda em curso aparece aqui até fechar; o Orquestrador confere `--retro-check SPEC-nnn` de cada Spec FECHADA antes de abrir outra): SPEC-006
 
 ## 6. Frase de controle
 
