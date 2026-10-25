@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "d161ae40542292d221f85319ebd49412ee5090474dab6bdd4fbee1adb91c9cdd",
+  "digest": "4deb02aaf2d5ce981ff97b1b2c80c246ef0df76e2b65be2918d5cca7196d54c3",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1725,7 +1725,7 @@
    "path": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
    "area": "governance",
    "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
-   "in": 1,
+   "in": 2,
    "out": 9
   },
   {
@@ -1879,7 +1879,7 @@
    "path": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-003 — Ata de Homologação — Errata v1.11 da SPEC-006 (Cognitive Knowledge Graph)",
-   "in": 28,
+   "in": 29,
    "out": 13
   },
   {
@@ -2495,7 +2495,7 @@
    "path": "governance/propostas/PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md",
    "area": "governance",
    "title": "PARECER DO REVISOR SOT — SPEC-006 errata v1.12 (revisão por delta, revisor.md §3-bis) — 2026-10-18",
-   "in": 9,
+   "in": 8,
    "out": 11
   },
   {
@@ -2546,6 +2546,13 @@
    "title": "MINUTA — Ata de homologação da errata v1.11 da SPEC-006 (Cognitive Knowledge Graph)",
    "in": 5,
    "out": 11
+  },
+  {
+   "path": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R1) — 2026-10-25",
+   "in": 1,
+   "out": 5
   },
   {
    "path": "governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md",
@@ -3104,14 +3111,14 @@
    "path": "specs/features/SPEC-006/errata-v1.13.md",
    "area": "specs",
    "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4)",
-   "in": 0,
+   "in": 1,
    "out": 15
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 208,
+   "in": 209,
    "out": 34
   },
   {
@@ -3139,7 +3146,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 142,
+   "in": 143,
    "out": 38
   },
   {
@@ -3964,7 +3971,7 @@
   {
    "id": "DHR-RETRO-001",
    "defined_in": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "DHR-REVISOR-DELTA-001",
@@ -4069,7 +4076,7 @@
   {
    "id": "DHR-SPEC006-003",
    "defined_in": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "DHR-SPEC006-004",
@@ -5834,12 +5841,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 208
+   "cited_by": 209
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 142
+   "cited_by": 143
   },
   {
    "id": "SPEC-008",
@@ -34955,7 +34962,7 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
-   "to": "governance/propostas/PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md",
+   "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
    "type": "path"
   },
   {
@@ -36477,6 +36484,31 @@
    "from": "governance/propostas/SPEC-006/MINUTA-ATA-HOMOLOGACAO-ERRATA-v1.11.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "to": "governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md",
