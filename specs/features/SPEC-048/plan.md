@@ -31,8 +31,19 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | Versão | Data | Alterações (1 linha) |
 |---|---|---|
 | 1.0 | 2026-10-24 | Entrega candidata inicial: [doze RULE-RET, uma INV-RET, doze BASpec, doze EARS, oito EC, catorze cenários (T01..T14), vinte e dois ADV (01..22)]; mapeamento integral do Anexo T da SPEC-007 para IDs novos; condições 1–8 da ABERTURA §15 cumpridas (tabela própria); errata de re-apontamento e metade F2 da emenda à SPEC-020 propostas, coordenadas com a metade F1. |
+| **1.3** | **2026-10-25** | **Menores do parecer R3 (CONFORME condicional): n-07 (regra única de pedido repetido — consulta de referência = a que gravou o pacote entregue do par; reenvio é sempre reentrega desse pacote pela guarda; R1..R4; código `REQUEST_IN_PROGRESS`) e n-09(b) (RU-10: frescor do reenvio "como montado em t0"); n-08 e n-09(a) aplicados antes pelo Orquestrador (classe M).** Contagens inalteradas: **12 RULE, 1 INV, 12 BASpec, 12 EARS, 8 EC, 14 cenários, 23 ADV**; nenhum estado novo. |
 | **1.2** | **2026-10-24** | **Correção do parecer R2 (NÃO CONFORME): N-01 (um desfecho por condição na síntese: rótulo/campo vindo do modelo ⇒ `SYNTHESIS_CLAIM_INVALID` no gate; falta dos rótulos do harness na validação final ⇒ `SYNTHESIS_CLAIM_UNLABELED`, pacote não entregue — rede de segurança) e n-02..n-06.** Contagens inalteradas: **12 RULE, 1 INV, 12 BASpec, 12 EARS, 8 EC, 14 cenários, 23 ADV**. Texto anterior em colchetes locais. |
 | **1.1** | **2026-10-24** | **Correção do parecer R1 (NÃO CONFORME): M-01 (reenvio passa de novo pela guarda E3 com atos e vínculo vigentes; pacote novo se algo deixou de ser permitido; ADV-RET-23), M-02 (D5 com `Q_VALIDANDO`), M-03 (afirmação da síntese com `content_role = DATA` e `claim_kind = RELATO_ATRIBUIDO`), m-01..m-15.** Contagens: **12 RULE, 1 INV, 12 BASpec, 12 EARS, 8 EC, 14 cenários, 23 ADV**. Texto anterior em colchetes locais (INV-07). |
+
+### Correções da rodada 3 (parecer R3, 2026-10-24) — onde estão (v1.3)
+
+| Achado | Correção (âncora neste arquivo) | Caso positivo / negativo |
+|---|---|---|
+| **n-07** pedido repetido com dois caminhos para o mesmo par | RULE-RET-005 "PEDIDO REPETIDO — REGRA ÚNICA" (R1 par com consulta de referência ⇒ sempre reentrega do pacote dela, pela guarda, inclusive depois de reenvio negado; R2 par sem entrega e última consulta negada ⇒ pedido novo; R3 consulta do par em curso ⇒ `REQUEST_IN_PROGRESS`; R4 fingerprint diferente ⇒ `REQUEST_ID_REUSE_CONFLICT`, sem reabrir); D5 coluna "Sai para" de `Q_RECEBIDA` (sem estado novo); D4.4 passo (7); §D3.1 (`REQUEST_IN_PROGRESS`; linha do `REQUEST_ID_REUSE_CONFLICT`) | T13 (c) reenvio após reenvio negado ⇒ mesmo `packet_id`; (d) consulta em curso ⇒ `REQUEST_IN_PROGRESS`; (e) após `Q_NEGADA` sem entrega ⇒ pedido novo; (f) conflito não reabre; ADV-RET-23 acréscimo v1.3 |
+| **n-09 (b)** frescor do reenvio sem risco residual | §7-bis Bloco C **RU-10**; contagem RU-1..RU-10 no CC e no Autopré-check | — |
+| n-08, n-09 (a) | aplicados pelo Orquestrador (classe M, `FICHA-M-PLAN-R3.json`); não alterados nesta v1.3 | — |
+
+*[v1.2 da linha `REQUEST_ID_REUSE_CONFLICT` de §D3.1: "| `REQUEST_ID_REUSE_CONFLICT` | — | RET-005; T13 |"; `REQUEST_IN_PROGRESS` não existia]*
 
 ### Correções da rodada 2 (parecer R2, 2026-10-24) — onde estão (v1.2)
 
@@ -1805,6 +1816,7 @@ Nenhuma obrigação suprimida fora de REMOVED; os três REMOVED têm referência
 ## Perguntas a Andraus (homologação do Plan) — só o que depende de você, em linguagem de trader
 
 > Nenhuma pergunta bloqueia a homologação: em todas, o lado seguro já vale enquanto você não decide.
+> **Atualização v1.3:** P-1, P-2 e P-3 foram **respondidas por Andraus (a registrar na ata de homologação)**, todas na opção recomendada: P-1 — só ele, analista por analista; P-2 — o pedido chega aos modelos só como campos de lista fechada; P-3 — o resumo fica para quando ele quiser ligar. Viram texto normativo só na homologação; até lá o lado seguro descrito em cada pergunta continua valendo. O texto das perguntas abaixo é preservado (INV-07).
 
 **P-1 — Quem confirma em que modelo cada analista roda.** *Recomendação: só você, analista por analista, no mesmo momento em que confirma um modelo como "de casa".* Hoje todo analista conta como "fora" (você já decidiu); para um analista receber trechos que você **não** liberou para fora, o sistema precisa saber que ele roda num modelo de casa — e essa informação não pode vir do próprio analista. Enquanto você não decidir, nenhum analista é tratado como "de casa". **Confirma "só você"?**
 > *Nota técnica:* contrato `consumer_binding`; caminho por ato exige errata E7-3 à SPEC-007 (enum fechado de `act_type`); alternativa: registro pelo runtime de implantação, com risco RU-5 maior.
@@ -1849,6 +1861,8 @@ Nenhuma obrigação suprimida fora de REMOVED; os três REMOVED têm referência
 [x] v1.1: parecer R1 corrigido — M-01, M-02, M-03 e m-01..m-15 (tabela "Correções da rodada 1"); texto anterior em colchetes.
 [x] v1.2: parecer R2 corrigido — N-01 e n-02..n-06 (tabela "Correções da rodada 2"); contagens inalteradas; colchetes sem
     reticências.
+[x] v1.3: parecer R3 — n-07 e n-09(b) corrigidos (tabela "Correções da rodada 3"); n-08 e n-09(a) da classe M preservados;
+    contagens e estados inalterados; P-1..P-3 marcadas "respondidas (a registrar na ata de homologação)".
 [x] Mapeamento integral do Anexo T → IDs da SPEC-048 (e partes → SPEC-049); nenhum ID transferido reutilizado; origem preservada.
 [x] Enforcement Contract em todo efeito (EC-RET-001..008); fail-closed nos E3; ENF-07 amostral nos E3; escala E0–E3 em seção própria.
 [x] Status epistemológico aplicado (tabela TRACE-06).

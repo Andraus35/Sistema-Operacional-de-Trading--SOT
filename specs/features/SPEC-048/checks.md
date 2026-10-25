@@ -1,6 +1,7 @@
 # checks.md — Verificação de Spec da SPEC-048 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-048/plan.md` **v1.2 (CANDIDATA — correção da rodada 2; aguarda Revisor rodada 3, por delta contra o commit 0c5adfd, e homologação de Andraus)** (RAG Retrieval & Evidence Packet Harness). *[v1.1: "v1.1 (CANDIDATA — correção da rodada 1; aguarda Revisor rodada 2, por delta contra o commit b1a0231, e homologação de Andraus)"]*
+**Objeto:** `specs/features/SPEC-048/plan.md` **v1.3 (CANDIDATA — Menores do parecer R3, CONFORME condicional; aguarda Revisor rodada 4, por delta contra o commit 183c1b4, e homologação de Andraus)** (RAG Retrieval & Evidence Packet Harness). *[v1.2: "v1.2 (CANDIDATA — correção da rodada 2; aguarda Revisor rodada 3, por delta contra o commit 0c5adfd, e homologação de Andraus)"]*
+**Parecer tratado na v1.3:** R3 `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md` (CONFORME condicional — n-07..n-09; n-08 e n-09(a) aplicados pelo Orquestrador como classe M). Contagens inalteradas; nenhum estado novo. *[v1.1: "v1.1 (CANDIDATA — correção da rodada 1; aguarda Revisor rodada 2, por delta contra o commit b1a0231, e homologação de Andraus)"]*
 **Parecer tratado na v1.2:** R2 `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md` (NÃO CONFORME — 1 Média N-01, 5 Menores n-02..n-06). Contagens inalteradas. *[v1.0: "v1.0 (CANDIDATA — primeira entrega do Plan; aguarda Revisor rodada 1, integral, e homologação de Andraus)"]*
 **Parecer tratado:** R1 `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md` (NÃO CONFORME — 3 Médias M-01..M-03, 14 Menores m-01..m-14, adendo m-15).
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe bem-formados) — **NÃO** é teste de runtime, **NÃO** é parecer do Revisor, **NÃO** é homologação. "VERIFY" interno = feedback. [FONTE: atomic-spec §14]
@@ -10,6 +11,14 @@
 **Contagens declaradas (por cabeçalho/linha em coluna 0 — contadas na redação; a reconferir no ambiente pai):** **12** RULE-RET (`^RULE-RET-` em bloco: 001–012), **1** INV-RET (`^INV-RET-01`), **12** BASpec (`^### BASpec-RET-`), **12** EARS (`^N. (RET-`), **8** EC (`^### EC-RET-`: 001–008), **14 cenários** (`^### Cenário-RET-T`: T01–T14), **23 ADV** (`^### ADV-RET-`: 01–23) *[v1.0: "vinte e dois ADV (01–22)"; ADV-RET-23 acrescentado na v1.1 — M-01]*. Estados locais de D5: `Q_RECEBIDA`, `Q_RECUPERANDO`, `Q_VALIDANDO`, `Q_ENTREGUE`, `Q_NEGADA` (`Q_MONTADO` da v1.0 substituído — M-02).
 
 ---
+
+## R3 — verificação das correções (v1.3)
+
+| Achado | Âncora no Plan v1.3 | Positivo / negativo | Estado |
+|---|---|---|---|
+| n-07 | RULE-RET-005 "PEDIDO REPETIDO — REGRA ÚNICA" R1..R4; D5 (`Q_RECEBIDA`, "Sai para"); D4.4 (7); §D3.1 `REQUEST_IN_PROGRESS` | T13 (c)(d)(e)(f); ADV-RET-23 (acréscimo v1.3) | ✔ — cada situação de pedido repetido tem um único desfecho; par já entregue nunca ganha 2º `packet_id` fora do caso (ii) |
+| n-09 (b) | §7-bis Bloco C RU-10 | — | ✔ |
+| n-08, n-09 (a) | classe M (Orquestrador) | — | não alterados nesta v1.3 |
 
 ## R2 — verificação das correções (v1.2)
 

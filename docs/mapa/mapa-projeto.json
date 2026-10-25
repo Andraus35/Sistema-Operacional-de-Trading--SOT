@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "38227e68a02c70786076b19373b9e4a7071a6f1af681f6863283a3f3f4ea5307",
+  "digest": "ec938ebba7ec18cfcbc0eab3d820a74a47d4fc2cc45b11bf456d76d11f6d1d70",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2621,7 +2621,7 @@
    "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md",
    "area": "governance",
    "title": "Parecer do Revisor — Plan da SPEC-048 v1.2 (CANDIDATO), rodada 3 (S2, por delta contra 0c5adfd) — 2026-10-24",
-   "in": 1,
+   "in": 3,
    "out": 9
   },
   {
@@ -3182,14 +3182,14 @@
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-048 (fase spec-first)",
    "in": 2,
-   "out": 12
+   "out": 13
   },
   {
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
    "in": 35,
-   "out": 38
+   "out": 39
   },
   {
    "path": "specs/features/SPEC-048/research.md",
@@ -40877,6 +40877,11 @@
   },
   {
    "from": "specs/features/SPEC-048/checks.md",
+   "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/checks.md",
    "to": "specs/features/SPEC-007/plan.md",
    "type": "id"
   },
@@ -41023,6 +41028,11 @@
   {
    "from": "specs/features/SPEC-048/plan.md",
    "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/plan.md",
+   "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md",
    "type": "path"
   },
   {
