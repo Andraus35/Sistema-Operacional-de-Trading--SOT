@@ -29,12 +29,12 @@
     {
       "id": "hook.roteador-modelos",
       "arquivo": "scripts/roteador-modelos.js",
-      "canal": "settings.json PreToolUse Agent",
+      "canal": "settings.json PreToolUse Agent|SendMessage",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Nega effort por invocação; model nos agentes de construção só se CLASSE-TAREFA válida e model igual à tabela da classe (fail-closed); Haiku em gate/soberano",
-      "ata": "DHR-ROTEAMENTO-003",
-      "verificado_em": "2026-10-18: testes tests/test_roteador_modelos.py"
+      "enforca": "Nega effort por invocação; model nos agentes de construção só se CLASSE-TAREFA válida e model igual à tabela da classe (fail-closed); Haiku em gate/soberano; R-AC5 ordem de correção ao Especificador exige FICHA que classifique todos os achados do parecer e nega classe M pendente; R-AC6 cobre SendMessage",
+      "ata": "DHR-ROTEAMENTO-004",
+      "verificado_em": "2026-10-24: ao vivo — SendMessage com PARECER sem FICHA => deny; mensagem comum => permitida; tests/test_roteador_modelos.py (38 testes) no CI"
     },
     {
       "id": "hook.post-edit-check",
@@ -283,9 +283,9 @@
       "canal": "biblioteca de roteador-modelos.js",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Tabela classe->modelo (M/S1/S2/S3/O), classificador de achados e conferência do delta da classe M (CLI classificar/conferir)",
-      "ata": "DHR-ROTEAMENTO-003",
-      "verificado_em": "2026-10-18: ao vivo — hook aceitou Especificador/Revisor com CLASSE-TAREFA e model da tabela e negou o desvio; tests/test_roteador_modelos.py no CI"
+      "enforca": "Tabela classe->modelo (M/S1/S2/S3/O), classificador de achados e conferência do delta da classe M (CLI classificar/conferir); verificar_ordem_correcao (R-AC5), decidir_mensagem (R-AC6), CLI esqueleto",
+      "ata": "DHR-ROTEAMENTO-004",
+      "verificado_em": "2026-10-24: ao vivo — esqueleto gera ficha de todos os achados do parecer; 38 testes"
     },
     {
       "id": "lib.hook-io",

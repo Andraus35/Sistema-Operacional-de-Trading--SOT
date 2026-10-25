@@ -6,6 +6,7 @@ Uso:
   (sem argumentos)                         hook PreToolUse/Agent: lê o evento em stdin e emite permissionDecision deny quando a tabela nega.
   classificar <ficha.json>                 agrupa os achados da rodada por classe (M / S1 / S2 / S3 / O) -> JSON em stdout.
   conferir <ficha.json> [--base REF]       classe M: confere que o que mudou no working tree é SÓ o que a ficha lista; exit 1 = ESCALA.
+  esqueleto <parecer.md>                   gera ficha com TODOS os achados do bloco ACHADOS-ESTRUTURADOS (natureza `desenho` => O) p/ o Orquestrador classificar.
 
 Tabela classe -> executor/modelo (estática e versionada; sem roteador aprendido):
   M   Orquestrador (sem agente)          achado com arquivo:linha + texto antigo -> novo + condição; sem criar regra/campo/mecanismo
@@ -25,6 +26,11 @@ Regras do hook para Especificador SOT / Revisor SOT:
          + `PARECER: <arquivo>` (revisão por delta), `FICHA: <json>` (achados). Especificador (abertura de Spec, Plan, errata) => O;
          com FICHA toda M => M (negado). Revisor: FICHA só de `conferencia` => S1; delta aplicável (revisor.md §3-bis.6) => S2;
          integral => S3 se Complexidade CRITICAL, senão S2.
+  R-AC5  ORDEM DE CORREÇÃO ao Especificador (prompt/mensagem com `PARECER:`) exige `FICHA: <json>` que CLASSIFIQUE todos os achados do
+         bloco `ACHADOS-ESTRUTURADOS` do parecer (LOOP-001) e NEGA se restar achado classe M não aplicado: o Orquestrador aplica a
+         classe M (`conferir`) antes de acionar o Especificador em modelo caro (DHR-ROTEAMENTO-004).
+  R-AC6  `SendMessage` a agente de construção que cite `PARECER:` é tratada como R-AC5 e exige `CLASSE-TAREFA:` válida (a via de
+         continuação de agente não contorna o roteador).
 Demais regras (R-GATE, R-N4, R-ALLOW) inalteradas. Detector/regra de forma, não julga o mérito (ENF-03). Falha na leitura do
 evento => libera (não há o que conferir); falha dentro da decisão sobre um agente de construção com model/effort => NEGA.
 Telemetria mínima (R8): uma linha JSON por invocação em <tmp>/sot-roteador/uso.jsonl (dado de estado, não normativo).
@@ -141,6 +147,59 @@ def derivar_classe(agente, prompt):
     return "S3" if compl == "CRITICAL" else "S2"
 
 
+def _aplicado(a):
+    """Achado M já aplicado: o texto novo está nas linhas prescritas do arquivo."""
+    try:
+        texto = (Path(ROOT) / a["arquivo"]).read_text(encoding="utf-8").splitlines()
+        novo = str(a["novo"]).splitlines()
+        return texto[a["linha"] - 1:a["linha"] - 1 + len(novo)] == novo
+    except (OSError, KeyError, TypeError, IndexError):
+        return False
+
+
+def _ids_parecer(caminho):
+    import loop_ledger
+    txt = Path(caminho).read_text(encoding="utf-8", errors="replace")
+    return [a["id"] for a in loop_ledger.extrair_estruturado(txt)]
+
+
+def verificar_ordem_correcao(prompt):
+    """R-AC5. -> None se a ordem de correção está em conformidade, ou o motivo da negação (fail-closed)."""
+    parecer = _campo(prompt, "PARECER")
+    if not parecer:
+        return None
+    pp = _caminho(parecer)
+    if not pp:
+        return "R-AC5: PARECER ilegível ou fora do repositório."
+    ids = _ids_parecer(pp)
+    if not ids:
+        return ("R-AC5: o PARECER não traz o bloco ACHADOS-ESTRUTURADOS (LOOP-001 passo 1); sem ele não há como conferir que todos os achados "
+                "foram classificados. Transcreva o parecer com o bloco.")
+    fv = _campo(prompt, "FICHA")
+    fp = _caminho(fv) if fv else None
+    if not fp:
+        return ("R-AC5: ordem de correção exige `FICHA: <json>` classificando todos os achados do PARECER "
+                "(gere o esqueleto: python scripts/roteador_modelos.py esqueleto <parecer.md>).")
+    try:
+        ficha = json.loads(fp.read_text(encoding="utf-8")).get("achados") or []
+    except ValueError:
+        return "R-AC5: FICHA ilegível."
+    fids = [str(a.get("id")) for a in ficha]
+    faltam = [i for i in ids if not any(f == i or f.startswith(i + "(") for f in fids)]
+    if faltam:
+        return f"R-AC5: a FICHA não classifica os achados {faltam[:8]} do PARECER (cobertura total obrigatória)."
+    pend = [str(a.get("id")) for a in ficha if classificar_achado(a) == "M" and not _aplicado(a)]
+    if pend:
+        return (f"R-AC5: classe M pendente {pend[:8]}: o Orquestrador aplica a ficha (roteador_modelos.py conferir) ANTES de acionar o "
+                "Especificador em modelo caro (DHR-ROTEAMENTO-004).")
+    return None
+
+
+def esqueleto(parecer):
+    ids = _ids_parecer(parecer)
+    return {"achados": [{"id": i, "natureza": "desenho"} for i in ids]}
+
+
 def _decidir_ac(tipo, entrada):
     modelo, esforco = entrada.get("model"), entrada.get("effort")
     agente = "especificador" if re.search(r"especificador", tipo, re.I) else "revisor"
@@ -149,6 +208,10 @@ def _decidir_ac(tipo, entrada):
         return "negar", (f"R-AC1: '{tipo}': `effort` por invocação é proibido (coluna reservada e desligada até o piloto de esforço; "
                          "DHR-ROTEAMENTO-003 Emenda 1).")
     prompt = str(entrada.get("prompt") or "")
+    if agente == "especificador":
+        motivo_ac5 = verificar_ordem_correcao(prompt)
+        if motivo_ac5:
+            return "negar", motivo_ac5
     derivada = None
     if classe or modelo or _campo(prompt, "FICHA"):
         try:
@@ -173,6 +236,23 @@ def _decidir_ac(tipo, entrada):
     if familia(modelo) != esperado:
         return "negar", f"R-AC2: classe {classe} usa '{esperado}' (tabela); recebido `model={modelo}`."
     return "permitir", f"R-AC2: classe {classe} -> {esperado} (igual à tabela)"
+
+
+def decidir_mensagem(entrada):
+    """R-AC6: SendMessage a agente de construção com `PARECER:` segue R-AC5 e exige CLASSE-TAREFA válida; demais mensagens passam."""
+    msg = str(entrada.get("message") or "")
+    if not _campo(msg, "PARECER") and not MARCADOR.search(msg):
+        return "permitir", "R-AC6: mensagem sem PARECER/CLASSE-TAREFA"
+    classe = extrair_classe(msg)
+    if _campo(msg, "PARECER") and classe is None:
+        return "negar", "R-AC6: mensagem com `PARECER:` a agente de construção exige `CLASSE-TAREFA: <classe>` válida e única."
+    if classe == "M":
+        return "negar", "R-AC3: classe M é executada pelo Orquestrador (ficha de correção); não é enviada a agente."
+    if classe == "O":
+        motivo = verificar_ordem_correcao(msg)
+        if motivo:
+            return "negar", motivo
+    return "permitir", "R-AC6: mensagem conforme"
 
 
 def decidir(entrada):
@@ -320,10 +400,14 @@ def registrar(entrada, decisao, motivo):
 def hook():
     try:
         ev = json.loads(sys.stdin.read() or "{}")
-        if ev.get("tool_name") not in (None, "Agent", "Task"):
+        nome = ev.get("tool_name")
+        if nome not in (None, "Agent", "Task", "SendMessage"):
             return 0
         entrada = ev.get("tool_input") or {}
-        decisao, motivo = decidir(entrada)
+        if nome == "SendMessage":
+            decisao, motivo = decidir_mensagem(entrada)
+        else:
+            decisao, motivo = decidir(entrada)
         registrar(entrada, decisao, motivo)
     except Exception:
         return 0
@@ -337,6 +421,9 @@ def main(argv):
     if len(argv) < 2:
         return hook()
     cmd = argv[1]
+    if cmd == "esqueleto" and len(argv) >= 3:
+        print(json.dumps(esqueleto(argv[2]), ensure_ascii=False, indent=1))
+        return 0
     if cmd not in ("classificar", "conferir") or len(argv) < 3:
         print(__doc__)
         return 2
