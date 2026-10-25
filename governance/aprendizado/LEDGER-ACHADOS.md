@@ -27,8 +27,9 @@
 | SPEC-048 PLAN | R2 | `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R2-2026-10-24.md` | 0 | 1 | 5 |
 | SPEC-048 PLAN | R3 | `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md` | 0 | 0 | 3 |
 | SPEC-048 PLAN | R4 | `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R4-2026-10-25.md` | 0 | 0 | 2 |
+| SPEC-048 PLAN | R5 | `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md` | 0 | 0 | 0 |
 
-Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem achados; **não** é prova de ausência de achados): `governance/propostas/PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada5.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada6.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada7.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada8.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada9.md`, `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md`, `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md`, `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R3-2026-10-19.md`
+Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem achados; **não** é prova de ausência de achados): `governance/propostas/PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada5.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada6.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada7.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada8.md`, `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada9.md`, `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-2026-10-19.md`, `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R2-2026-10-19.md`, `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-ABERTURA-R3-2026-10-19.md`, `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md`
 
 ## 2. Tendência por linha de trabalho (Médias por rodada) — Eficácia e Eficiência
 
@@ -38,7 +39,7 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 | SPEC-007 ABERTURA | 0 → 0 → 0 | 3 | R3 |
 | SPEC-007 PLAN | 9 → 5 → 5 → 2 → 1 → 0 | 6 | R6 |
 | SPEC-048 ABERTURA | 0 → 0 | 2 | R2 |
-| SPEC-048 PLAN | 3 → 1 → 0 → 0 | 4 | R4 |
+| SPEC-048 PLAN | 3 → 1 → 0 → 0 → 0 | 5 | R5 |
 
 Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo repositório.
 
