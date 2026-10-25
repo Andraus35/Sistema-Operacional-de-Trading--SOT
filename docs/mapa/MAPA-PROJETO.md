@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-25** · digest `37e690c1cc7ba300` · **467** documentos · **7265** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-25** · digest `eb852b643d4f6cff` · **467** documentos · **7265** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -147,7 +147,7 @@ flowchart LR
 ## 5. Backlog e integridade
 
 - **Backlog (RMR-001):** ATIVADOS = BL-003, BL-011 · disparados sem registro = 4 · verificação manual = 3 itens (`python scripts/backlog_triggers.py`).
-- **Referências (check_refs):** ERRO=0 · WARN=6 · INFO=321 (históricos congelados) — `python scripts/check_refs.py`.
+- **Referências (check_refs):** ERRO=0 · WARN=6 · INFO=320 (históricos congelados) — `python scripts/check_refs.py`.
 
 ## 6. Documentos sem referência de entrada
 
