@@ -37,3 +37,6 @@ G-001 · K-001 · M-001 · J-001 · N-001 · C-001 · WF-D03 · ECC-03-001 · SP
 | Q-8 | Arquivo à parte + ponteiro de uma linha |
 | Q-9 | Major |
 Q-10 (inclusão de `relation_type`/formato `from`/`to`/`natural_key`/`valid_from` em M) e o código `SEAL_SUCCESSION_MISMATCH` (proposta do Especificador) **seguem pendentes**. Nenhuma errata está homologada; K-001 e demais decisões abertas seguem abertas (CONS-01).
+
+## 5. Adendo 2 — Q-10 e código de troca (chat, 2026-10-25) `[FATO]`
+**Q-10:** `relation_type` entra em M; `natural_key` e `valid_from` ficam fora de M (atribuídos pelo KG). **Código de troca:** adotar `SEAL_SUCCESSION_MISMATCH` para `supersedes` divergente do selo. Efeito na errata: v1.1 em revisão será ajustada (v1.2) após o parecer; nenhuma errata homologada; decisões abertas seguem abertas (CONS-01).
