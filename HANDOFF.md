@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-25-83
-previous: HO-2026-10-25-82
+handoff_id: HO-2026-10-25-84
+previous: HO-2026-10-25-83
 data: 2026-10-25
 branch: ccr-3235944c-duo3sl
 base_commit: 74b1de3
