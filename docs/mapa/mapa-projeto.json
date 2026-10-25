@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "e23fc49e168d31af6e896326f87e21aa8129a8357865087e854f1e74466827a2",
+  "digest": "8831cde49b472a5b0c10d44ea93fafcc4b6ad63a199102d97c767a48d83ddc7f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -928,7 +928,7 @@
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 1,
-   "out": 35
+   "out": 36
   },
   {
    "path": "docs/handoffs/anexos/AT-SPEC007-PLAN-2026-10-19.md",
@@ -1725,7 +1725,7 @@
    "path": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-005 — Ata de Decisão — O Orquestrador não corrige achados do Revisor (nenhuma severidade)",
-   "in": 5,
+   "in": 6,
    "out": 6
   },
   {
@@ -2649,7 +2649,7 @@
    "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R4-2026-10-25.md",
    "area": "governance",
    "title": "Parecer do Revisor — Plan da SPEC-048 v1.3 (CANDIDATO), rodada 4 (S2, por delta contra 51e20e3) — 2026-10-25",
-   "in": 3,
+   "in": 4,
    "out": 4
   },
   {
@@ -3217,7 +3217,7 @@
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
    "in": 39,
-   "out": 39
+   "out": 40
   },
   {
    "path": "specs/features/SPEC-048/research.md",
@@ -3919,7 +3919,7 @@
   {
    "id": "DHR-ROTEAMENTO-005",
    "defined_in": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "DHR-RPSA-001",
@@ -21206,6 +21206,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-25-81.md",
    "to": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-25-81.md",
+   "to": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
    "type": "id"
   },
   {
@@ -41531,6 +41536,11 @@
   {
    "from": "specs/features/SPEC-048/plan.md",
    "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R3-2026-10-24.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/plan.md",
+   "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R4-2026-10-25.md",
    "type": "path"
   },
   {
