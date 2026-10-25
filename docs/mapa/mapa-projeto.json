@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "b03b052c966fbfe27162b2ea654ad7047a7bdf9b82bd5910ebab2b75b67c47d5",
+  "digest": "756e946497cc8f47f3ff05989e2365a741abee66d1d1f0c21c33503ee9daed0a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 299,
+   "in": 300,
    "out": 114
   },
   {
@@ -2356,7 +2356,7 @@
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
    "in": 13,
-   "out": 30
+   "out": 31
   },
   {
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
@@ -2560,6 +2560,13 @@
    "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R2, por delta) — 2026-10-25",
    "in": 2,
    "out": 3
+  },
+  {
+   "path": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R3, v1.2, delta com B1 integral) — 2026-10-25",
+   "in": 1,
+   "out": 4
   },
   {
    "path": "governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md",
@@ -2978,7 +2985,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 187,
+   "in": 188,
    "out": 9
   },
   {
@@ -3118,14 +3125,14 @@
    "path": "specs/features/SPEC-006/errata-v1.13.md",
    "area": "specs",
    "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) — texto v1.2",
-   "in": 2,
+   "in": 3,
    "out": 16
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 210,
+   "in": 211,
    "out": 34
   },
   {
@@ -3153,7 +3160,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 143,
+   "in": 144,
    "out": 38
   },
   {
@@ -5343,7 +5350,7 @@
   {
    "id": "RULE-KFH-007",
    "defined_in": null,
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-KFH-008",
@@ -5848,12 +5855,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 210
+   "cited_by": 211
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 143
+   "cited_by": 144
   },
   {
    "id": "SPEC-008",
@@ -34979,6 +34986,11 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada5.md",
    "type": "path"
   },
@@ -36535,6 +36547,26 @@
   {
    "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R2-2026-10-25.md",
    "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md",
+   "to": "specs/features/SPEC-007/plan.md",
    "type": "id"
   },
   {

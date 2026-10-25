@@ -40,3 +40,6 @@ Q-10 (inclusão de `relation_type`/formato `from`/`to`/`natural_key`/`valid_from
 
 ## 5. Adendo 2 — Q-10 e código de troca (chat, 2026-10-25) `[FATO]`
 **Q-10:** `relation_type` entra em M; `natural_key` e `valid_from` ficam fora de M (atribuídos pelo KG). **Código de troca:** adotar `SEAL_SUCCESSION_MISMATCH` para `supersedes` divergente do selo. Efeito na errata: v1.1 em revisão será ajustada (v1.2) após o parecer; nenhuma errata homologada; decisões abertas seguem abertas (CONS-01).
+
+## 6. Adendo 3 — Q-10 (b), Q-11 e nome do código (chat, 2026-10-25) `[FATO]`
+**Q-10 (b):** forma dos campos-ponteiro em M = regra do Mapa de formato (mesmo selo → `formation.record_ref` do alvo; alvo já no grafo → id do grafo literal; alvo ausente → recusa). **Q-11:** item 4 (b) adotado — selo que declara troca que o registro não traz ⇒ recusa. **Código:** `SEAL_RECORD_NOT_IN_SEAL` confirmado. Errata em v1.2 com parecer R3 CONFORME condicional; ajustes N1/N4 e atualização dos pendentes seguem para a v1.3; **nenhuma errata homologada**; decisões abertas seguem abertas (CONS-01).
