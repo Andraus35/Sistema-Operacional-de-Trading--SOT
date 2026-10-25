@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "ec938ebba7ec18cfcbc0eab3d820a74a47d4fc2cc45b11bf456d76d11f6d1d70",
+  "digest": "3e41426418d599bc0ccff45b033d12f6413732fc0c945c2f9fe867e05c3509bf",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1186,7 +1186,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revisão, selo do gate e medição do Revisor no banco de estresse",
-   "in": 55,
+   "in": 56,
    "out": 6
   },
   {
@@ -1705,7 +1705,7 @@
    "area": "governance",
    "title": "DHR-ROTEAMENTO-004 — Ata de Decisão — Roteamento determinístico de ACHADOS (ordem de correção) e via SendMessage",
    "in": 2,
-   "out": 5
+   "out": 6
   },
   {
    "path": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
@@ -3511,7 +3511,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-015",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
-   "cited_by": 55
+   "cited_by": 56
   },
   {
    "id": "DHR-AUDITOR-EXTERNO-016",
@@ -27474,6 +27474,11 @@
    "from": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
    "to": "governance/CATALOGO-OFICIAL.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",

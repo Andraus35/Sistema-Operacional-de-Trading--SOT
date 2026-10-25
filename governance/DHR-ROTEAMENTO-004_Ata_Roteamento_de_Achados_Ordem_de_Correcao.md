@@ -30,11 +30,14 @@
 ## 4. Efeitos aplicados
 `scripts/roteador_modelos.py` (R-AC5/R-AC6/esqueleto), `tests/test_roteador_modelos.py` (+8 testes, 38 no total), `.claude/settings.json` (matcher), `AGENTS.md` §12 (passo 0), `governance/MECANISMOS.json` (entradas do roteador atualizadas), `governance/CATALOGO-OFICIAL.md`. Teste ao vivo do hook: `SendMessage` com `PARECER:` sem `FICHA` ⇒ deny; mensagem comum ⇒ permitida.
 
+## 4-bis. Selo do gate (aprovação de Andraus, chat 2026-10-24/25)
+`scripts/roteador_modelos.py` é arquivo selado em `governance/GATE-MANIFEST.sha256` (DHR-AUDITOR-EXTERNO-015); a mudança de selo é decisão de Andraus (AGENTS.md §10). **Andraus aprovou o novo selo** ("Aprovar o novo selo", por AskUserQuestion). Selo regravado com `python scripts/gate_manifest.py --write`: **somente** a linha de `scripts/roteador_modelos.py` mudou — `72769199…ba42` → `0b177009…1dd6` (sha256 completo: `0b1770098a9bdb9378c1f3245b98e37fe4ccc58e6f8c0fcf74249ac6b3a21dd6`); `gate_manifest.py --check` = "Gate íntegro".
+
 ## 5. Permanecem ABERTAS (CONS-01)
 G-001 · K-001 · M-001 · J-001 · N-001 · C-001 · WF-D03 (residual) · ECC-03-001 · SPEC-045-RUNTIME-001 · CKG-STRUCT-ORIGIN-001 · produtor/gatilho de promoção · mecanismo da autenticação dos atos de Andraus (BUILD). **Nenhuma decisão aberta foi fechada por esta ata.**
 
 ## 6. Registro
-- [x] Esta ata · [x] roteador + testes · [x] settings.json · [x] AGENTS.md · [x] MECANISMOS.json · [x] CATALOGO · [ ] merge (assinatura)
+- [x] Esta ata · [x] roteador + testes · [x] settings.json · [x] AGENTS.md · [x] MECANISMOS.json · [x] CATALOGO · [x] selo do gate regravado (aprovado por Andraus) · [ ] merge (assinatura)
 
 ---
 
