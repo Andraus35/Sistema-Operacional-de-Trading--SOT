@@ -1,0 +1,29 @@
+# Parecer do Revisor — Plan da SPEC-007 v1.2 (CANDIDATA), rodada 3 — 2026-10-24
+
+> Transcrição pelo Orquestrador do relatório do Revisor SOT (somente leitura; revisão integral na prática — v1.0/v1.1 não commitadas, sem `spec_delta`). **Veredito: NÃO CONFORME** — 0 Críticas, 5 Médias (R3-M1..R3-M5), 6 Menores (r3-n1..r3-n6). Não é homologação; nenhuma decisão aberta fechada de fato (CONS-01). Teto sem as Médias: CONFORME condicional (gate não verificado pelo Revisor). Gates do Orquestrador na v1.2, exit 0 (um `DHR-XYZ` placeholder da ADV-27 reescrito; aviso de contagem l.1918 = texto histórico entre colchetes).
+
+## Médias da R2
+N-03 (ato de Andraus representável: RULE/BASpec-KFH-020, EC-KFH-012 E3) e N-05 (F2/síntese: KFH-012 D+H, KFH-018 redator Classe H, EC-013) **corrigidas**. N-04 corrigida em (1)(2)(4), parcial em (3) → R3-M5. N-01 e N-02 **parciais** → R3-M1, R3-M2.
+
+## Médias novas
+- **R3-M1** Pré-condições só corrigidas para P-3: o gate é fail-fast e o passo (3) (emissor ∈ lista, P-1) vem antes de (4)/(4-bis)/(5). T13, T14, T23, ADV-18(b), ADV-21, ADV-22 não declaram P-1 nem fixture de candidato VALIDADO com fonte liberada (RIGHTS/EXTTX); resultados esperados inalcançáveis no estado declarado. Nota do D7 l.1242 incompleta. Ação: declarar a cadeia P-1+VALIDADO+P-3 em cada cenário pós-(3), ou testar por passo injetando estado.
+- **R3-M2** `material_hash` ainda não fecha (N-02): `record_proposal[]` e `sealed_records[]` são estruturas diferentes (`record_hash` entra ou não na serialização?); sem regra de materialização determinística do registro submetido; conteúdo trocado com `record_hash` coerente passa (ADV-21(d) cobre só acréscimo). Ação: serialização única, `record_hash` do registro materializado pelo pipeline (sem `seal_ref`), caso negativo de troca de conteúdo.
+- **R3-M3** O conjunto fail-closed deixa a linha inteira parada e isso não está consolidado a Andraus: sem P-10 (ACTREC) ninguém libera fonte (nem modelo local); sem P-1/P-3 nenhum selo; consulta devolve pacote vazio; sucessão nula. Roteamento l.1769 subestima ("parada para fontes não liberadas"); dependência P-4a/P-4b/P-8/P-2 → P-10 não dita; frase "nem entregue aos analistas" da P-4 v1.1 perdida. Ação: quadro de pré-requisitos mínimos (P-1, P-3, P-10, P-4a, P-4b/locus) com ordem; corrigir Roteamento.
+- **R3-M4** Gatilho de alto impacto depende de `knowledge_kind` declarado pelo formador, sem validação nem cobertura pelo hash: rotular "regra" como `fato_de_fonte` escapa da aprovação de lote (Q8.4). Ação: pôr `knowledge_kind` e `target_node_type` no `material_hash`; eixo F1 (ex.: `KIND_MISCLASSIFIED`) ou classificação por regra; ADV de rótulo diminuído; ou risco residual declarado (RULE-UNC-01).
+- **R3-M5** A CIM (E3) não tem envelope de entrada que permita verificar a "permissão efetiva por conteúdo": nada diz como a CIM sabe a proveniência dos bytes; texto composto pela etapa (prompt, resumo, tradução) sem proveniência obrigatória; ADV-28(d) cobre só desvio da própria CIM. Ação: texto de fonte só por `content_ref` resolvido pela CIM no registro; texto livre sem referência não sai para provedor externo; caso negativo "texto de F colado sem `content_ref`".
+
+## Menores
+r3-n1 D4.2/uso único: entrada sem `seal_id`; (7-bis) olha só SUBMETIDO; (8) grava antes de (9) reservar; unidade atômica. · r3-n2 D4.4 (l.1149) e T15 (l.1368) ainda justificam omissão do dependente com "seria cascata", contra KFH-008 v1.2. · r3-n3 gatilho de sucessora: `natural_key` (SPEC-006 l.1410) é só de nó; chave de relação (l.453-454) inclui `valid_from`. · r3-n4 títulos "Bloco A (17)" (l.1806) e "S1–S12" (l.244, há S13/S14) sem colchetes de histórico. · r3-n5 (a) autenticação do aprovador humano não cabe na RULE-CBP-014 (agent_id/computed_by); (b) aprovação da lista de emissores/"onde roda o juízo" sem `act_type`; (c) "registro do consumidor" sem âncora; (d) invalidação autorizada da CAUSA antiga sem `act_type`. · r3-n6 BBTYPE-001: T17 sem pré-condição P-9; sem fallback se P-9 recusada; "fail-closed" impreciso (canal alternativo).
+
+## Decisões abertas (CONS-01)
+SUCC-001, RIGHTS-001, EXTTX-001, NODETYPE-001, ACTREC-001, DERIVTX-001: [DECISÃO NECESSÁRIA] com fail-closed. BBTYPE-001: intervalo = canal alternativo (não estrito). Nenhuma tratada como fechada.
+
+## Não verificável
+7 citações `inteligencia-sot@0abd22e` (clone ausente); veracidade das fontes web; fidelidade dos Anexos v1.0/v1.1 (não commitados); gates do Orquestrador.
+
+## Encaminhamento
+Devolver ao Especificador: R3-M1..R3-M5 (Menores oportunistas). Rodada 4 por delta sobre D2 (KFH-001/004/005/006/007/019/020), D4.2, D7, EC-004/011/012, Perguntas a Andraus e checks.md. CONFORME condicional possível se as Médias forem resolvidas e Andraus aceitar que os positivos dependem de P-1, P-3, P-4a/P-4b, P-9 e P-10.
+
+## Adendo da guarda pós-revisor (Orquestrador, 2026-10-24; DHR-AUDITOR-EXTERNO-018)
+- **G1:** abertos ao vivo `atomic-spec.md` (§10.2, escala E0–E3, E3 = policy/authz/commit gate/audit/rollback/fail-closed, l.226-233) e `backlog/RMR-001_Painel_Backlog.md` (BL-029 l.136). Conferem com o que o parecer e o Plan afirmam (pisos E3 dos guards; BL-029 mencionado sem disposição). Nada a retirar.
+- **G2:** `revisor_gate.py` = `PASSOU_D`, 0 sinais H. Avisos conferidos: (a) `plan.md:1827` cita "RULE-CKG-008 l.443-445" que fica em `specs/features/SPEC-006/plan.md` (l.443-445 = imutabilidade do núcleo causal, `CAUSAL_CORE_IMMUTABLE_IN_CHAIN`, conferido); o detector procurou a definição no plan da SPEC-007 — falso positivo de caminho. (b) `plan.md:1918/1919/1945` "17 BASpec"/"26 ADV" estão em texto histórico entre colchetes (`[v1.1: ...]`) ou na linha de volume vigente (20 BASpec / 26 cenários / 29 ADV, já recontada pelo Revisor); a l.1945 mistura o valor vigente e o histórico na mesma linha. Falsos positivos; sem achado novo.

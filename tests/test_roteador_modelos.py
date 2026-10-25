@@ -229,5 +229,85 @@ class Conferir(unittest.TestCase):
         self.assertEqual(json.loads(out.stdout), {"M": ["A1"]})
 
 
+PARECER_COM_BLOCO = """# Parecer
+<!-- ACHADOS-ESTRUTURADOS
+ID|SEV|CATEGORIA|CAUSA|PREVENCAO
+n-01|MENOR|C06|redacao|G-G
+n-02|MENOR|C01|contradicao|G-B
+-->
+"""
+
+
+class OrdemDeCorrecao(unittest.TestCase):
+    """R-AC5/R-AC6 (DHR-ROTEAMENTO-004): achados classificados e classe M aplicada pelo Orquestrador antes do Especificador."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        self._root = r.ROOT
+        r.ROOT = self.root
+        (self.root / "parecer.md").write_text(PARECER_COM_BLOCO, encoding="utf-8")
+        (self.root / "sem_bloco.md").write_text("# Parecer sem bloco", encoding="utf-8")
+        (self.root / "plan.md").write_text("linha um\nlinha dois velha\nlinha tres\n", encoding="utf-8")
+
+    def tearDown(self):
+        r.ROOT = self._root
+        self.tmp.cleanup()
+
+    def ficha(self, nome, achados):
+        (self.root / nome).write_text(json.dumps({"achados": achados}), encoding="utf-8")
+
+    def m(self, id_, novo):
+        return {"id": id_, "arquivo": "plan.md", "linha": 2, "antigo": "linha dois velha", "novo": novo, "condicao": "grep novo", "natureza": "mecanica"}
+
+    def prompt(self, ficha="f.json", parecer="parecer.md"):
+        return f"CLASSE-TAREFA: O\nPARECER: {parecer}\nFICHA: {ficha}\nCorrija."
+
+    def test_sem_ficha_nega(self):
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": f"CLASSE-TAREFA: O\nPARECER: parecer.md\nCorrija."})
+        self.assertEqual(d_, "negar")
+        self.assertIn("R-AC5", motivo)
+
+    def test_parecer_sem_bloco_nega(self):
+        self.ficha("f.json", [{"id": "n-01", "natureza": "desenho"}])
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt(parecer="sem_bloco.md")})
+        self.assertEqual(d_, "negar")
+        self.assertIn("ACHADOS-ESTRUTURADOS", motivo)
+
+    def test_cobertura_incompleta_nega(self):
+        self.ficha("f.json", [{"id": "n-01", "natureza": "desenho"}])
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})
+        self.assertEqual(d_, "negar")
+        self.assertIn("n-02", motivo)
+
+    def test_classe_m_pendente_nega_e_aplicada_libera(self):
+        self.ficha("f.json", [self.m("n-01", "linha dois nova"), {"id": "n-02", "natureza": "desenho"}])
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})
+        self.assertEqual(d_, "negar")
+        self.assertIn("classe M pendente", motivo)
+        (self.root / "plan.md").write_text("linha um\nlinha dois nova\nlinha tres\n", encoding="utf-8")  # Orquestrador aplicou
+        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})[0], "permitir")
+
+    def test_id_com_sufixo_cobre_o_achado(self):
+        self.ficha("f.json", [{"id": "n-01(1)", "natureza": "desenho"}, {"id": "n-01(2)", "natureza": "desenho"}, {"id": "n-02", "natureza": "desenho"}])
+        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})[0], "permitir")
+
+    def test_prompt_sem_parecer_nao_e_afetado(self):
+        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "prompt": "Escreva o Plan."})[0], "permitir")
+
+    def test_sendmessage_exige_classe_e_ficha(self):
+        self.ficha("f.json", [{"id": "n-01", "natureza": "desenho"}, {"id": "n-02", "natureza": "desenho"}])
+        self.assertEqual(r.decidir_mensagem({"message": "PARECER: parecer.md\nCorrija."})[0], "negar")  # sem CLASSE-TAREFA
+        self.assertEqual(r.decidir_mensagem({"message": "CLASSE-TAREFA: M\nPARECER: parecer.md"})[0], "negar")  # M é do Orquestrador
+        self.assertEqual(r.decidir_mensagem({"message": "CLASSE-TAREFA: O\nPARECER: parecer.md\nCorrija."})[0], "negar")  # sem FICHA
+        self.assertEqual(r.decidir_mensagem({"message": self.prompt()})[0], "permitir")
+        self.assertEqual(r.decidir_mensagem({"message": "Retome de onde parou."})[0], "permitir")
+
+    def test_esqueleto_lista_todos_os_ids(self):
+        sk = r.esqueleto(self.root / "parecer.md")
+        self.assertEqual([a["id"] for a in sk["achados"]], ["n-01", "n-02"])
+        self.assertTrue(all(r.classificar_achado(a) == "O" for a in sk["achados"]))
+
+
 if __name__ == "__main__":
     unittest.main()

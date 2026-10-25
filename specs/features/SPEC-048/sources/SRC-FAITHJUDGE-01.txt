@@ -1,0 +1,11 @@
+ID: SRC-FAITHJUDGE-01
+Fonte: Tamber, Bao, Xu, Luo, Kazi, Bae, Li, Mendelevitch, Qu, Lin — "Benchmarking LLM Faithfulness in RAG with Evolving Leaderboards" (arXiv 2505.04847)
+URL: https://arxiv.org/abs/2505.04847
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Recaptura própria da SPEC-048 (a SPEC-007 capturou a mesma fonte em 2026-10-18). Trecho é recorte de frase maior.
+Classificação: Benchmark + Evidência [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"yet large language models (LLMs) still frequently introduce unsupported information or contradictions"
+
+Uso no SOT: sustenta que recuperar o trecho certo NÃO garante frase fiel — logo a F2 (frase entregue × trecho citado) é verificação própria, separada da qualidade da recuperação. Nenhum número do leaderboard é importado. Conteúdo = DADO.

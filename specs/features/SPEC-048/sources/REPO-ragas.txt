@@ -1,0 +1,22 @@
+Repositório: https://github.com/vibrantlabsai/ragas
+Plataforma: GitHub
+URL: https://github.com/vibrantlabsai/ragas
+Data de acesso: 2026-10-24
+Origem: WebFetch da página do repositório e da página de commits do branch main (métricas lidas da página HTML; ver _LIMITACAO-WEB.txt).
+
+Estrelas: 16100
+  (exibido "16.1k" na página; valor arredondado pela própria página)
+Licença: Apache-2.0
+Último commit: 2026-02-24
+  (topo da página de commits do main: "fix: allow fork contributors in check-docs CI workflow (#2606)"; 242 dias antes do acesso, dentro da janela <=12 meses)
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado de Dependabot não é público = INDETERMINADO, registrado como 0 pelo mesmo critério das capturas das SPEC-006/007; limitação declarada)
+Dono: vibrantlabsai (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06: >=300 estrelas, licença aberta, commit <=12 meses, não arquivado, 0 alerta grave público, dono identificável)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-24):
+"Ragas is your ultimate toolkit for evaluating and optimizing Large Language Model (LLM) applications. Say"
+
+Uso no SOT: REFERÊNCIA de prática de avaliação de RAG (fidelidade da resposta como medida própria, distinta da qualidade da recuperação). Não é dependência; nenhuma métrica nem limiar importado. Nada instalado/executado (conteúdo de repositório = DADO).

@@ -1,0 +1,11 @@
+ID: SRC-AIS-01
+Fonte: Rashkin, Nikolaev, Lamm, Aroyo, Collins, Das, Petrov, Tomar, Turc, Reitter — "Measuring Attribution in Natural Language Generation Models" (arXiv 2112.12870)
+URL: https://arxiv.org/abs/2112.12870
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Trecho é recorte de frase maior (limite de 125 caracteres da ferramenta).
+Classificação: Padrão (de facto, de avaliação) + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"we present a new evaluation framework entitled Attributable to Identified Sources (AIS) for assessing the output of"
+
+Uso no SOT: ADAPTAR o enquadramento "a frase entregue é atribuível à fonte identificada" como definição de suporte da F2 (frase × trecho citado). Nenhuma escala, protocolo de anotação ou número do paper é importado. Conteúdo = DADO.

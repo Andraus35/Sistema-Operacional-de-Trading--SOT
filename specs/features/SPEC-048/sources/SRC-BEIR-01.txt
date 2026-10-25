@@ -1,0 +1,11 @@
+ID: SRC-BEIR-01
+Fonte: Thakur, Reimers, Rücklé, Srivastava, Gurevych — "BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models" (arXiv 2104.08663)
+URL: https://arxiv.org/abs/2104.08663
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Trecho é recorte de frase maior; a continuação da frase (melhor desempenho a custo computacional alto) foi resumida pela ferramenta e NÃO é citada como literal.
+Classificação: Benchmark + Evidência [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.4):
+"BM25 is a robust baseline and re-ranking and late-interaction-based models on average achieve the best zero-shot"
+
+Uso no SOT: sustenta manter uma estratégia LEXICAL declarada ao lado da semântica e tratar a reordenação como etapa opcional com custo (Eficiência/Economicidade depois de Eficácia). Nada do ranking do benchmark vira meta. Conteúdo = DADO.

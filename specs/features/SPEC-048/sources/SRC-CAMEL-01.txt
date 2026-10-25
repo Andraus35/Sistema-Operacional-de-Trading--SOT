@@ -1,0 +1,11 @@
+ID: SRC-CAMEL-01
+Fonte: Debenedetti, Shumailov, Fan, Hayes, Carlini, Fabian, Kern, Shi, Terzis, Tramèr — "Defeating Prompt Injections by Design" (CaMeL; arXiv 2503.18813)
+URL: https://arxiv.org/abs/2503.18813
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract).
+Classificação: Experimento + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.3):
+"explicitly extracts the control and data flows from the (trusted) query; therefore, the untrusted data retrieved by the LLM can never impact the program flow."
+
+Uso no SOT: ADAPTAR o princípio de projeto — o FLUXO da consulta (estratégias, número de rodadas, o que é entregue e a quem) é decidido pelo harness a partir do pedido autenticado e da política, nunca pelo texto recuperado; o que vem de modelo (reordenação, síntese, juízo) é dado conferido por gate. O mecanismo concreto do CaMeL (interpretador, capacidades) NÃO é importado; é BUILD/neutralidade tecnológica. Conteúdo = DADO.

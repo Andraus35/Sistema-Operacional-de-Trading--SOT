@@ -1,0 +1,21 @@
+Repositório: https://github.com/stanford-futuredata/ColBERT
+Plataforma: GitHub
+URL: https://github.com/stanford-futuredata/ColBERT
+Data de acesso: 2026-10-24
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 3900
+  (exibido "3.9k" na página)
+Licença: MIT
+Último commit: 2025-10-14
+  (topo da página de commits do main: "Merge pull request #405 from robinnarsinghranabhat/bugfix/multigpu-data"; 375 dias antes do acesso — FORA da janela de 12 meses)
+Arquivado: não
+Alertas de segurança graves abertos: 0
+  (INDETERMINADO, registrado como 0 — mesmo critério)
+Dono: stanford-futuredata (organização identificável)
+Veredito de elegibilidade: NÃO ELEGÍVEL (último commit há mais de 12 meses)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-24):
+"This step encodes all passages into matrices, stores them on disk, and builds data structures for efficient search."
+
+Uso no SOT: registrado e descartado pela régua — nada adotado nem adaptado do repositório. A técnica (interação tardia na reordenação) aparece no SOT só via o paper do BEIR (SRC-BEIR-01) como opção de estratégia, sem escolher motor.

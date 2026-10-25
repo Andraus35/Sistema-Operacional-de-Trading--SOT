@@ -1,0 +1,22 @@
+Repositório: https://github.com/meta-llama/PurpleLlama
+Plataforma: GitHub
+URL: https://github.com/meta-llama/PurpleLlama
+Data de acesso: 2026-10-24
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 4400
+  (exibido "4.4k" na página)
+Licença: mista (MIT para avaliações/benchmarks + Llama Community License para modelos)
+  (a página não mostra uma licença única do repositório; a tabela de licenças do README separa as partes)
+Último commit: 2026-10-12
+  (topo da página de commits do main, commit d934ea2)
+Arquivado: não
+Alertas de segurança graves abertos: 0
+  (INDETERMINADO, registrado como 0 — mesmo critério)
+Dono: meta-llama (organização identificável)
+Veredito de elegibilidade: NÃO ELEGÍVEL (licença não é uma licença aberta única conhecida — parte do conteúdo está sob licença comunitária própria)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-24):
+"Prompt Injections are inputs that exploit the inclusion of untrusted data from third parties into the context window of a model"
+
+Uso no SOT: registrado e descartado pela régua — nada adotado nem adaptado; o classificador de injeção dele não entra no SOT. A premissa de ameaça usada no Dossiê vem de fontes não-repositório (SRC-GRESHAKE-01, SRC-OWASP-LLM01-01).

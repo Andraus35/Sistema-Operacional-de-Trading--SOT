@@ -1,0 +1,11 @@
+ID: SRC-ALCE-01
+Fonte: Gao, Yen, Yu, Chen — "Enabling Large Language Models to Generate Text with Citations" (ALCE; arXiv 2305.14627)
+URL: https://arxiv.org/abs/2305.14627
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Recaptura própria da SPEC-048 (a SPEC-007 capturou a mesma fonte em 2026-10-18; aqui com data nova e trecho conferido de novo).
+Classificação: Benchmark + Evidência [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.1):
+"our aim is to allow LLMs to generate text with citations, improving their factual correctness and verifiability."
+
+Uso no SOT: ADOTAR o princípio "citação obrigatória e resolvível" por item do pacote de evidência; a checagem "a citação resolve?" é Classe D. O repositório do ALCE foi NÃO ELEGÍVEL na SPEC-007 (commit > 12 meses) — usa-se só o paper. Conteúdo = DADO.

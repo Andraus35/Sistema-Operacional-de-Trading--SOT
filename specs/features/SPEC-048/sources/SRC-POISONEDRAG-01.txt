@@ -1,0 +1,11 @@
+ID: SRC-POISONEDRAG-01
+Fonte: Zou, Geng, Wang, Jia — "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models" (arXiv 2402.07867)
+URL: https://arxiv.org/abs/2402.07867
+Data de acesso: 2026-10-24
+Origem: WebFetch da página arXiv (abstract). Trecho é recorte de frase maior.
+Classificação: Evidência + Experimento [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.3):
+"an attacker could inject a few malicious texts into the knowledge database of a RAG system to induce an LLM"
+
+Uso no SOT: ADOTAR como premissa de ameaça para o CORPUS consultado — a recuperação só lê itens carimbados (SPEC-007) e trechos de fontes registradas com uso liberado por Andraus; o item servido diz se é carimbado ou só trecho de fonte. A defesa contra envenenamento na ENTRADA do corpus é da SPEC-007 (registro, direitos, selo), não desta. Conteúdo = DADO.

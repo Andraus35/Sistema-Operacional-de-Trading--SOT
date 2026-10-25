@@ -1,0 +1,11 @@
+ID: SRC-TRULENS-TRIAD-01
+Fonte: TruLens — página de documentação "RAG Triad" (conceitos centrais)
+URL: https://www.trulens.org/getting_started/core_concepts/rag_triad/
+Data de acesso: 2026-10-24
+Origem: WebFetch da página de documentação (título exibido: "RAG Triad - TruLens"). Trecho é recorte de frase maior (limite de 125 caracteres da ferramenta).
+Classificação: Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"To verify the groundedness of our application, we can separate the response into individual claims and independently search"
+
+Uso no SOT: ADAPTAR a prática "separar a resposta em afirmações e verificar cada uma" como método da parte H da F2 (juízo por afirmação, depois das checagens D). Ferramenta não adotada como dependência (motor = BUILD). Conteúdo = DADO.
