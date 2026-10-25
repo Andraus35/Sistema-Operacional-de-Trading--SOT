@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "881b0b2f8c235e639bf551bfdc4c0375de85cced547b80410ecfd4c2b812de88",
+  "digest": "b03b052c966fbfe27162b2ea654ad7047a7bdf9b82bd5910ebab2b75b67c47d5",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2551,14 +2551,14 @@
    "path": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
    "area": "governance",
    "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R1) — 2026-10-25",
-   "in": 2,
+   "in": 1,
    "out": 5
   },
   {
    "path": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R2-2026-10-25.md",
    "area": "governance",
    "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R2, por delta) — 2026-10-25",
-   "in": 1,
+   "in": 2,
    "out": 3
   },
   {
@@ -3117,7 +3117,7 @@
   {
    "path": "specs/features/SPEC-006/errata-v1.13.md",
    "area": "specs",
-   "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) — texto v1.1",
+   "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) — texto v1.2",
    "in": 2,
    "out": 16
   },
@@ -40329,7 +40329,7 @@
   },
   {
    "from": "specs/features/SPEC-006/errata-v1.13.md",
-   "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
+   "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R2-2026-10-25.md",
    "type": "path"
   },
   {
