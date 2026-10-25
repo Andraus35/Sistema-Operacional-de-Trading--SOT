@@ -6,7 +6,7 @@
 | Spec afetada | SPEC-006 — Cognitive Knowledge Graph (HOMOLOGADA — BASELINE v1.7 + errata v1.11 [DHR-SPEC006-003] + errata v1.12 [DHR-SPEC006-004]). **Esta errata NÃO edita texto baselined** (INV-07/INV-09): `specs/features/SPEC-006/plan.md` e `specs/features/SPEC-006/checks.md` ficam como estão até a homologação. |
 | Natureza | **PROPOSTA de errata aditiva.** Aguarda o Revisor e a homologação de Andraus. Não é baseline (INV-09). Nada nela vale antes da homologação. |
 | Ordem | DHR-RETRO-001 §1 "Próxima frente" item (1) e §2 ("uma de cada vez, nesta ordem, cada uma com Revisor e homologação própria de Andraus. Nenhum baseline é editado antes da homologação da respectiva errata") `[FONTE — FATO NORMATIVO: decisão de Andraus registrada em ata]` |
-| Decisões de Andraus incorporadas | Q-1 = só o caminho (b) · Q-2 = incluir `publication` no registro de relação · Q-3 = conferir `supersedes` contra `succession_of[]` do selo · Q-8 = arquivo à parte com ponteiro de uma linha no plan.md (forma A) · Q-9 = Major (precedente DHR-SPEC006-003 D3). `[FONTE — decisão de Andraus no chat, 2026-10-25, passada pelo Orquestrador na ordem de serviço desta v1.1, com referência a DHR-RETRO-001]`. **Falta registrar em ata:** o texto atual de DHR-RETRO-001 (§1–§3) não traz Q-1..Q-9. Registrar essas respostas em ata antes da homologação cabe ao Orquestrador (AGENTS.md §10). `[INFERÊNCIA — achado desta redação]` |
+| Decisões de Andraus incorporadas | Q-1 = só o caminho (b) · Q-2 = incluir `publication` no registro de relação · Q-3 = conferir `supersedes` contra `succession_of[]` do selo · Q-8 = arquivo à parte com ponteiro de uma linha no plan.md (forma A) · Q-9 = Major (precedente DHR-SPEC006-003 D3) · Q-4 = não exigir selo `RESERVADO` · Q-5 = sim (`SEAL_REF_UNRESOLVABLE` para selo não resolvido + `SEAL_CONTENT_MISMATCH` reaproveitado da SPEC-007; caso "`record_ref` fora de `sealed_records`" nomeado pelo que falhou, conforme A7) · Q-6 = `content_claim_ids[]` fora do hash (ponteiro de auditoria) · Q-7 = não nesta errata (marca de inferência na consulta fica fora). `[FONTE — decisões de Andraus no chat, 2026-10-25, passadas pelo Orquestrador (Q-1/2/3/8/9 na ordem de serviço desta v1.1, com referência a DHR-RETRO-001; Q-4..Q-7 em mensagem posterior do mesmo dia)]`. **Falta registrar em ata:** o texto atual de DHR-RETRO-001 (§1–§3) não traz Q-1..Q-9. Registrar essas respostas em ata antes da homologação cabe ao Orquestrador (AGENTS.md §10). `[INFERÊNCIA — achado desta redação]` |
 | Origem do conteúdo | `specs/features/SPEC-007/plan.md` v2.3 (BASELINE, DHR-SPEC007-005): seção "Proposta de errata aditiva à SPEC-006", itens E-1..E-4; riscos RU-3 e RU-8 (§7-bis Bloco C); RULE-KFH-004 (proposta de registros), RULE-KFH-005 (M, canon, H), RULE-KFH-007 (vii)/(ix), esquemas `publication_seal` e "registro submetido", EC-KFH-004. Também: DHR-SPEC007-003 P-1; DHR-SPEC007-005 H-2. `[FONTE]` |
 | Base auditável | sha256 do plan.md da SPEC-006 conferido pelo Orquestrador em 2026-10-25 = `dd5a609f3007…`, igual ao da DHR-SPEC006-004 §2 (parecer R1, "Encaminhamento"). `[FONTE]` |
 | Âncoras | **Por ID + texto literal entre aspas, nunca por número de linha** (alinhado à proposta P3 — ainda proposta a especificar, DHR-RETRO-001 §1). Números de linha ("l.1410", "l.526") só ajudam a achar o trecho; o que vale é o texto. |
@@ -113,7 +113,7 @@ A RULE-KFH-005 define M **por inclusão**: "cada registro = {`record_ref`, `reco
 | `node_type` | **entra** | "`node_type` := `target_node_type`" (= `learning`; RULE-KFH-007 (iv-bis)) |
 | `formation.content` (E-4) | **entra** | "campos de CONTEÚDO" de M |
 | `formation.formed_inference_claim_ids` (E-4) | **entra** | `formed_inference_claim_ids[]` de M ("entra no `record_hash`") |
-| `formation.content_claim_ids` (E-4) | fora | **premissa da Q-6, PENDENTE:** fica fora do hash, como ponteiro de auditoria |
+| `formation.content_claim_ids` (E-4) | fora | **decisão de Andraus (Q-6):** fica fora do hash, como ponteiro de auditoria |
 | `node_id` | fora | ID atribuído pelo KG (M exclui) |
 | `record_kind` (`creation \| …`) | fora | outro campo, com outro sentido. `[INFERÊNCIA]` No caminho (b) é `creation`; a invalidação vem por ato (SPEC-007 RULE-KFH-009 (b)), não por selo |
 | `version`, `expected_version`, `supersedes` | fora | M exclui sucessão; `supersedes` é conferido no item 4 |
@@ -142,7 +142,7 @@ A RULE-KFH-005 define M **por inclusão**: "cada registro = {`record_ref`, `reco
 | `causal.outcome_timestamp`, `causal.formulated_at` | fora | a SPEC-006 diz que eles "NÃO vêm do payload": o KG os deriva de `recorded_at`. São tempos atribuídos pelo KG |
 | `similarity_basis` | **entra** se SIMILAR_A | campo da RULE-CKG-008 |
 | `formation.content`, `formation.formed_inference_claim_ids` (E-4) | **entra** | conteúdo e marca de inferência de M |
-| `formation.content_claim_ids` (E-4) | fora | premissa da Q-6, PENDENTE |
+| `formation.content_claim_ids` (E-4) | fora | decisão de Andraus (Q-6): ponteiro de auditoria |
 | `relation_id` | fora | ID atribuído pelo KG |
 | `record_kind` (`creation \| …`) | fora | outro campo (ver nó) |
 | `version`, `expected_version`, `supersedes`, `targets_record_id` | fora | sucessão (conferida no item 4) / fora da lista de inclusão |
@@ -158,14 +158,14 @@ Se esses trechos forem lidos como H(canon(M(r))), que é a definição de `recor
 
 **Notas de precisão** `[INFERÊNCIA]`:
 - **Por que o item 4.** Os campos de sucessão ficam **fora** do `record_hash` (RULE-KFH-007 (ix)). Sem o item 4 (a), um committer que contorne o pipeline poderia pegar conteúdo selado e pendurar nele um `supersedes` que Andraus não autorizou. Isso fere SPEC-007-SUCC-001 ("só Andraus autoriza troca de carimbado, por lote" — ROADMAP "Decisões FECHADAS"), e a RULE-CKG-012 não percebe, porque só confere a ordem das versões. O item 4 (b) é a **leitura desta errata** de "conferir contra" (Q-3) nos dois sentidos. Se o committer tirar o `supersedes` que o selo declarou, nasce um nó paralelo, que a SPEC-007 (vii) proíbe ("impede nó paralelo"). A RULE-CKG-012 ("mesma chave natural sem `supersedes` divergente ⇒ DENY") só barra isso se a `natural_key` não for mexida, e a `natural_key` fica fora de M. Se o Revisor ou Andraus lerem Q-3 só no sentido (a), basta retirar o 4 (b) e o caso ADV-21 (p).
-- **Reuso do selo** (o mesmo registro selado enviado de novo): a RULE-CKG-012 já trata ("Reescrita idêntica = no-op"). **Premissa da Q-4, PENDENTE: não** se exige que o consumo do selo ainda esteja `RESERVADO`.
-- **Códigos (parecer R1, A7): cada código diz o que falhou.** `SEAL_REF_UNRESOLVABLE` (o selo não resolve), `SEAL_REGISTRY_UNAVAILABLE` (não deu para ler o registro de selos), `SEAL_RECORD_NOT_IN_SEAL` (o selo resolve, mas o registro não está nele) e `SEAL_SUCCESSION_MISMATCH` (sucessão diferente da declarada) são **subcódigos novos** `[PROPOSTA]` do pai existente `ADMISSION_REJECTED` (§D3.1). `SEAL_CONTENT_MISMATCH` é **o mesmo código** da SPEC-007 RULE-KFH-007 (ix), com o mesmo sentido (conteúdo ≠ selado), agora usado também pelo KG. Nenhum código pai novo. **Premissa da Q-5, PENDENTE: sim.**
+- **Reuso do selo** (o mesmo registro selado enviado de novo): a RULE-CKG-012 já trata ("Reescrita idêntica = no-op"). **Decisão de Andraus (Q-4):** o KG **não** exige que o consumo do selo ainda esteja `RESERVADO`.
+- **Códigos (decisão de Andraus, Q-5; parecer R1, A7): subcódigos do pai existente `ADMISSION_REJECTED` (§D3.1), cada um dizendo o que falhou.** `SEAL_REF_UNRESOLVABLE` = o selo não se resolve (ref ausente, mal formada, inexistente ou registro de selos indisponível). `SEAL_CONTENT_MISMATCH` = **o mesmo código** da SPEC-007 RULE-KFH-007 (ix), com o mesmo sentido (conteúdo ≠ selado), agora usado também pelo KG. `SEAL_RECORD_NOT_IN_SEAL` = o selo resolve, mas o `record_ref` não está em `sealed_records[]` (nome dado pelo que falhou, como Andraus mandou em Q-5). `SEAL_SUCCESSION_MISMATCH` = `supersedes` diferente da sucessão declarada no selo `[PROPOSTA — nome pela mesma regra de A7; Q-5 não cita este caso pelo nome]`. Nenhum código pai novo.
 
 **Texto aditivo proposto: notas de propagação por referência (a regra é definida UMA vez, na RULE-CKG-010 acima)** `[PROPOSTA]`
 - BASpec-CKG-010, MECANISMO, depois de "(b) gate (selo SPEC-007 presente)": *"[v1.13 — E-3] e conferido pelo committer (RULE-CKG-010, conferência do selo, itens 1–4)"*.
 - EC-CKG-001, PRECOND, depois de "∨ selo SPEC-007 — CKG-010)": *"[v1.13 — E-3] (selo conferido: seal_ref resolve ∧ formation.record_ref ∈ sealed_records ∧ H(canon(M(r))) = record_hash selado ∧ supersedes ↔ succession_of do selo)"*.
 - D4, item "Admissão (CKG-010)", depois de "(x formado ∧ selo SPEC-007)": *"[v1.13 — E-3] ∧ selo_conferido(x)"*.
-- §D3.1, linha `ADMISSION_REJECTED`: acrescentar *"`SEAL_REF_UNRESOLVABLE`, `SEAL_REGISTRY_UNAVAILABLE`, `SEAL_RECORD_NOT_IN_SEAL`, `SEAL_SUCCESSION_MISMATCH` (v1.13 — E-3), `SEAL_CONTENT_MISMATCH` (v1.13 — E-3; código da SPEC-007)"*.
+- §D3.1, linha `ADMISSION_REJECTED`: acrescentar *"`SEAL_REF_UNRESOLVABLE`, `SEAL_RECORD_NOT_IN_SEAL`, `SEAL_SUCCESSION_MISMATCH` (v1.13 — E-3), `SEAL_CONTENT_MISMATCH` (v1.13 — E-3; código da SPEC-007)"*.
 - I/O Schema, `node_record` e `relation_record`: campos `formation` (E-4) e, só no `relation_record`, `publication` (E-2(b)).
 
 ### Enforcement Contract — o que a E-3 muda no EC-CKG-001 (continua um EC só; o nível não muda)
@@ -183,7 +183,7 @@ POSTCOND     : só se grava registro formado cujo conteúdo em M é igual ao val
 POLICY       : RULE-CKG-009/010 (+ cláusula E-3); SPEC-007 RULE-KFH-005/007 (vii)/(ix), INV-KFH-01, SPEC-007-SUCC-001;
                atomic-spec §10.2
 LEVEL        : E3 (Crítico — "KG publicado → E3 mínimo"; irreversível) — igual ao vigente
-FAILURE-MODE : Fail-closed — ADMISSION_REJECTED com SEAL_REF_UNRESOLVABLE | SEAL_REGISTRY_UNAVAILABLE |
+FAILURE-MODE : Fail-closed — ADMISSION_REJECTED com SEAL_REF_UNRESOLVABLE (incl. registro de selos indisponível) |
                SEAL_RECORD_NOT_IN_SEAL | SEAL_CONTENT_MISMATCH | SEAL_SUCCESSION_MISMATCH; nada gravado; log.
                Falso-DENY E3 por amostragem (ENF-07; limiar = gap aberto)
 EVIDENCE     : por recusa: seal_ref, formation.record_ref, record_hash recalculado × selado, supersedes × par do
@@ -201,9 +201,9 @@ EVIDENCE     : por recusa: seal_ref, formation.record_ref, record_hash recalcula
 - **ADV-CKG-21 (j):** `seal_ref = S@1`, mas `formation.record_ref = N2` (fora de `sealed_records`) ou sem `formation.record_ref` ⇒ `SEAL_RECORD_NOT_IN_SEAL`; `written == false`.
 - **ADV-CKG-21 (k) — conteúdo trocado:** `seal_ref = S@1`, `formation.record_ref = N1`, texto de `formation.content` alterado ⇒ hash ≠ h1 ⇒ `SEAL_CONTENT_MISMATCH`; `written == false`.
 - **ADV-CKG-21 (l) — marca de inferência apagada:** como (k), mas só `formation.formed_inference_claim_ids` muda de `[c2]` para `[]`. Como `c2` tem `formed_inference=true`, a lista selada não é vazia ⇒ hash ≠ h1 ⇒ `SEAL_CONTENT_MISMATCH`; `written == false`.
-- **ADV-CKG-21 (m) — o QUANDO vale, mas a recusa NÃO deve acontecer:** N1 igual ao selado em tudo que entra em M. Difere só em campos fora de M: `node_id`, `record_kind = creation`, `schema_version`, `provenance_ref.*` (incl. `who`/`when`/`lineage`), `writer_id`, `created_at`/`valid_from`/`recorded_at`, `publication.seal_ref` válido e `formation.content_claim_ids` (premissa da Q-6) ⇒ **admitido** (sem recusa falsa); `recomputed_record_hash == "h1"`; `false_deny == false`. (A `natural_key` fica de fora deste caso de propósito: mudá-la é o risco declarado na Q-10 (c), não um comportamento desejado.)
+- **ADV-CKG-21 (m) — o QUANDO vale, mas a recusa NÃO deve acontecer:** N1 igual ao selado em tudo que entra em M. Difere só em campos fora de M: `node_id`, `record_kind = creation`, `schema_version`, `provenance_ref.*` (incl. `who`/`when`/`lineage`), `writer_id`, `created_at`/`valid_from`/`recorded_at`, `publication.seal_ref` válido e `formation.content_claim_ids` (fora do hash — Q-6) ⇒ **admitido** (sem recusa falsa); `recomputed_record_hash == "h1"`; `false_deny == false`. (A `natural_key` fica de fora deste caso de propósito: mudá-la é o risco declarado na Q-10 (c), não um comportamento desejado.)
 - **ADV-CKG-21 (n) — sucessão não declarada:** N1 igual ao selado em `S@1`, com `supersedes = "KG-N-X-v2"`, mas `succession_of[]` de S@1 está vazio ⇒ `SEAL_SUCCESSION_MISMATCH`; `written == false`.
-- **ADV-CKG-21 (o) — registro de selos indisponível** ⇒ `SEAL_REGISTRY_UNAVAILABLE` (fail-closed); `written == false`; `fail_closed == true`.
+- **ADV-CKG-21 (o) — registro de selos indisponível** ⇒ `SEAL_REF_UNRESOLVABLE` com motivo `registry_unavailable` no log (fail-closed); `written == false`; `fail_closed == true`.
 - **ADV-CKG-21 (p) — sucessão declarada e omitida:** N1 com `seal_ref = S2@1` e sem `supersedes` ⇒ `SEAL_SUCCESSION_MISMATCH`; `written == false`. O mesmo vale para `supersedes = "KG-N-X-v1"` (versão diferente da do par).
 - **ADV-CKG-21 (q) — relação religada:** R1 com `seal_ref = S@1`, mas `to_node = KG-N-Q` ⇒ M.to ≠ selado ⇒ hash ≠ h2 ⇒ `SEAL_CONTENT_MISMATCH`; `written == false`.
 - **ADV-CKG-21 (r) — relação sem `formation`:** R1 com `seal_ref = S@1` e sem bloco `formation` ⇒ `SEAL_RECORD_NOT_IN_SEAL` (não há `record_ref`); `written == false`.
@@ -211,7 +211,7 @@ EVIDENCE     : por recusa: seal_ref, formation.record_ref, record_hash recalcula
 **Efeito sobre RU-3:** com a E-3, a E-2(b) e a E-4, RU-3 **fecha para tudo o que está em M**, em nós e em relações. Ficam três riscos declarados `[INFERÊNCIA]`:
 1. **Campos de identidade fora de M** (`natural_key` do nó; `valid_from` da relação, que faz parte da chave natural). Um committer que contorne o pipeline poderia mudar esses campos sem mudar o hash. A sucessão declarada continua protegida pelo item 4 (b), mas um nó novo sem sucessão poderia entrar com outra chave. Contenção: cadeia D9 a partir de `seal_ref` + auditoria amostral da SPEC-007. Ver Q-10 (c).
 2. **Implementação:** um committer que não rode a conferência. Isso é falha de BUILD E3, que a auditoria amostral da SPEC-007 (EC-KFH-004 (ii)) detecta e que continua ativa. O texto de (ii) é mais estreito que M (ver "Divergência registrada").
-3. **Premissas pendentes** Q-4, Q-5, Q-6, Q-7 e Q-10.
+3. **Premissas pendentes da Q-10** (a)/(b)/(c). (Q-4..Q-7 já foram decididas por Andraus.)
 
 ---
 
@@ -227,15 +227,15 @@ EVIDENCE     : por recusa: seal_ref, formation.record_ref, record_hash recalcula
 
 **Notas** `[INFERÊNCIA]`:
 - **No caminho (b), na prática, o bloco é obrigatório.** Registro selado sem `formation` não tem `record_ref`, e a E-3 o recusa no item 2 (`SEAL_RECORD_NOT_IN_SEAL`; casos ADV-21 (j)/(r)). Por isso não é preciso uma regra "obrigatório" à parte (fonte única).
-- **`content_claim_ids[]` dentro do hash.** A RULE-KFH-005 põe na saída de M o **texto** das afirmações e os `formed_inference_claim_ids`, mas não diz se a **lista** `content_claim_ids[]` também sai de M. **Premissa da Q-6, PENDENTE: fica fora do hash**, como ponteiro de auditoria, conferível pela cadeia D9 a partir de `seal_ref`. A errata **não afirma** que `content_claim_ids[]` está coberto pelo hash.
-- **Efeito sobre RU-8:** a marca de inferência fica **no próprio registro do KG** (nó e relação) e entra na conferência da E-3 (caso ADV-CKG-21 (l)). Sobra um risco: quem lê o registro e **ignora** o bloco `formation`. **Premissa da Q-7, PENDENTE: não** se obriga a consulta (RULE-CKG-011/EC-CKG-006) a mostrar o bloco, porque isso seria regra nova. RU-8 fica **menor, mas não some** (RULE-UNC-01).
+- **`content_claim_ids[]` dentro do hash.** A RULE-KFH-005 põe na saída de M o **texto** das afirmações e os `formed_inference_claim_ids`, mas não diz se a **lista** `content_claim_ids[]` também sai de M. **Decisão de Andraus (Q-6): fica fora do hash**, como ponteiro de auditoria, conferível pela cadeia D9 a partir de `seal_ref`. Portanto `content_claim_ids[]` **não** está coberto pelo hash, e a SPEC-007 não muda.
+- **Efeito sobre RU-8:** a marca de inferência fica **no próprio registro do KG** (nó e relação) e entra na conferência da E-3 (caso ADV-CKG-21 (l)). Sobra um risco: quem lê o registro e **ignora** o bloco `formation`. **Decisão de Andraus (Q-7): não nesta errata** — a consulta (RULE-CKG-011/EC-CKG-006) não é obrigada a mostrar o bloco; a marca de inferência na consulta fica fora. RU-8 fica **menor, mas não some** (RULE-UNC-01).
 
 ---
 
 ## Herança/Delta desta errata (CC-08; RULE-HD-02/03/04)
 
 - **INHERITS** (ID + versão): SPEC-007 v2.3 (BASELINE, DHR-SPEC007-005): RULE-KFH-004 (`record_proposal`: `record_ref`, `record_kind{nó|relação}`, `from`/`to`, `content_claim_ids[]`); RULE-KFH-005 (M por inclusão, canon, H, `record_hash`); RULE-KFH-007 (vii) (`succession_of[]` = mapa `record_ref → published_ref@version`; "impede nó paralelo") e (ix) (`publication.origin`, `publication.seal_ref = seal_id@seal_version`, campos fora do hash); esquema `publication_seal` (`sealed_records[]`, `succession_of[]?`); RULE-KFH-020 (ato `ISSUER_LIST`); SPEC-007-SUCC-001. SPEC-006 v1.12 (DHR-SPEC006-004): RULE-CKG-005/008/009/010/012, BASpec-CKG-010, EC-CKG-001, §D3.1, I/O Schema `node_record`/`relation_record`.
-- **ADDED:** nota E-1 (só caminho (b)); nota E-2; bloco `publication` no `relation_record` (E-2(b)); cláusula de conferência do selo na RULE-CKG-010 (E-3, itens 1–4), Mapa de formato, Tabelas de projeção M e notas de propagação; subcódigos `SEAL_REF_UNRESOLVABLE`, `SEAL_REGISTRY_UNAVAILABLE`, `SEAL_RECORD_NOT_IN_SEAL`, `SEAL_SUCCESSION_MISMATCH`; uso de `SEAL_CONTENT_MISMATCH` no KG; bloco `formation` no `node_record` e no `relation_record` (E-4); letras T09 (d)–(f) e ADV-CKG-21 (i)–(r).
+- **ADDED:** nota E-1 (só caminho (b)); nota E-2; bloco `publication` no `relation_record` (E-2(b)); cláusula de conferência do selo na RULE-CKG-010 (E-3, itens 1–4), Mapa de formato, Tabelas de projeção M e notas de propagação; subcódigos `SEAL_REF_UNRESOLVABLE`, `SEAL_RECORD_NOT_IN_SEAL`, `SEAL_SUCCESSION_MISMATCH`; uso de `SEAL_CONTENT_MISMATCH` no KG; bloco `formation` no `node_record` e no `relation_record` (E-4); letras T09 (d)–(f) e ADV-CKG-21 (i)–(r).
 - **MODIFIED:** nenhum. A E-3 **acrescenta** condição ao caminho (b) sem mudar o texto existente. No efeito ela é restritiva (Compatibilidade = Major).
 - **REMOVED:** vazio.
 
@@ -252,8 +252,8 @@ EVIDENCE     : por recusa: seal_ref, formation.record_ref, record_hash recalcula
 | RULE-KFH-007 (ix): "A ESCRITA permanece sob RULE-CKG-009 pelo committer do KG" | E-1 e E-3 ("sob a RULE-CKG-009") |
 | RULE-CKG-010 (b): formado sem selo ⇒ `FORMED_WITHOUT_SEAL` | mantido; a E-3 vem depois dele |
 | RULE-CKG-010 (b): hypothesis via selo proibida (`HYPOTHESIS_VIA_SEAL_FORBIDDEN`) | não mexida; a E-3 não abre tipo novo |
-| RULE-CKG-009: falha de auth ⇒ não autorizado (fail-closed) | E-3 item 1: registro de selos indisponível ⇒ `SEAL_REGISTRY_UNAVAILABLE` (mesmo espírito) |
-| RULE-CKG-012: compare-and-commit, sem fork; reescrita idêntica = no-op | não mexida; o item 4 vem antes dela; reuso fica com ela (premissa da Q-4) |
+| RULE-CKG-009: falha de auth ⇒ não autorizado (fail-closed) | E-3 item 1: registro de selos indisponível ⇒ `SEAL_REF_UNRESOLVABLE` (mesmo espírito) |
+| RULE-CKG-012: compare-and-commit, sem fork; reescrita idêntica = no-op | não mexida; o item 4 vem antes dela; reuso fica com ela (Q-4) |
 
 Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA — conferido lendo os textos citados]`
 
@@ -269,7 +269,7 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA — conf
 | CC-05 | PASS | CRITICAL (da SPEC-006) |
 | CC-06/CC-07 | N/A | Não é Engineering Card |
 | CC-08 | PASS | Herança/Delta acima, com evidência obrigação a obrigação |
-| CC-09 | PASS | Riscos RU-3/RU-8 declarados com o que sobra; pontos sem texto na SPEC-007 (`content_claim_ids`, `relation_type`, formato de `from`/`to`) ficam como premissa de pergunta pendente, não como fato; nenhum número inventado |
+| CC-09 | PASS | Riscos RU-3/RU-8 declarados com o que sobra; `content_claim_ids` fora do hash por decisão de Andraus (Q-6); pontos sem texto na SPEC-007 (`relation_type`, formato de `from`/`to`) ficam como premissa da Q-10, pendente, não como fato; nenhum número inventado |
 | CC-10 | PASS | "selo", "selado" e "conferência" no sentido da SPEC-007; cada código diz o que falhou (A7); nenhum termo do GLOSSARIO redefinido |
 | CC-11 | PASS | E-3 herda a Classe C da BASpec-CKG-010 (gate determinístico) |
 | CC-12 | N/A | Infraestrutura sem escola (como a SPEC-006) |
@@ -285,11 +285,11 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA — conf
 
 **Bloco C — epistêmico:**
 - "Fecha RU-3 para o que está em M" é afirmação causal com mecanismo declarado (igualdade de hash sobre a mesma serialização e a mesma projeção). Não é correlação.
-- O que sobra fica declarado como risco, não como resolvido: campos de identidade fora de M (`natural_key`, `valid_from` — Q-10 (c)); committer sem a conferência (implementação); leitor que ignora `formation` (RU-8 menor; premissa da Q-7); divergência de texto com EC-KFH-004 (ii).
-- Ficam INDETERMINADOS até as respostas de Andraus: `content_claim_ids` no hash (Q-6); `relation_type` em M e formato de `from`/`to` (Q-10 (a)/(b)). O texto usa premissas declaradas, não fatos.
+- O que sobra fica declarado como risco, não como resolvido: campos de identidade fora de M (`natural_key`, `valid_from` — Q-10 (c)); committer sem a conferência (implementação); leitor que ignora `formation` (RU-8 menor; Q-7 decidida: fora desta errata); divergência de texto com EC-KFH-004 (ii).
+- Ficam INDETERMINADOS até a resposta de Andraus: `relation_type` em M e formato de `from`/`to` (Q-10 (a)/(b)). O texto usa premissas declaradas, não fatos.
 - Nenhuma probabilidade ou número declarado. A taxa de amostragem continua INDETERMINADA (ENF-07, gap aberto).
 
-**Bloco D:** a errata não executa nada e não cruza para a execução (INV-05). Toda dependência de Andraus está marcada como pergunta pendente com premissa ou como [DECISÃO NECESSÁRIA].
+**Bloco D:** a errata não executa nada e não cruza para a execução (INV-05). Toda dependência de Andraus ainda aberta está marcada como pergunta pendente com premissa (Q-10) ou como [DECISÃO NECESSÁRIA].
 
 ---
 
@@ -315,12 +315,12 @@ Este arquivo **é** a errata, no mesmo padrão de arquivo à parte do `governanc
 - **Q-3:** conferir `supersedes` contra `succession_of[]` do selo → E-3 item 4. O sentido (b) (sucessão declarada e omitida) é leitura desta errata e está marcado na nota "Por que o item 4".
 - **Q-8:** forma A → "Forma de aplicação".
 - **Q-9:** Major → cabeçalho "Compatibilidade".
+- **Q-4:** **não** exigir consumo `RESERVADO` → nota "Reuso do selo"; a repetição idêntica é no-op (RULE-CKG-012).
+- **Q-5:** **sim**: subcódigos de `ADMISSION_REJECTED` → `SEAL_REF_UNRESOLVABLE` para selo não resolvido (o registro de selos indisponível entra aqui) e `SEAL_CONTENT_MISMATCH` reusado da SPEC-007. O caso "`record_ref` fora de `sealed_records`" leva o nome do que falhou: `SEAL_RECORD_NOT_IN_SEAL` (A7). Nota "Códigos". `SEAL_SUCCESSION_MISMATCH` segue a mesma regra, mas Q-5 não o cita pelo nome: está marcado `[PROPOSTA]`.
+- **Q-6:** `content_claim_ids[]` **fora** do hash (ponteiro de auditoria) → Tabelas de projeção M; nota E-4.
+- **Q-7:** **não** nesta errata (a marca de inferência na consulta fica fora) → E-4 "Efeito sobre RU-8".
 
-**PENDENTES — cada uma diz a premissa que o texto usa até a resposta:**
-- **Q-4:** o KG deve exigir que o **consumo do selo** ainda esteja `RESERVADO` (para barrar reuso do selo)? **Premissa no texto: não.** A repetição idêntica já é no-op (RULE-CKG-012).
-- **Q-5:** os códigos de recusa ficam como subcódigos de `ADMISSION_REJECTED`: quatro novos (`SEAL_REF_UNRESOLVABLE`, `SEAL_REGISTRY_UNAVAILABLE`, `SEAL_RECORD_NOT_IN_SEAL`, `SEAL_SUCCESSION_MISMATCH`) e `SEAL_CONTENT_MISMATCH` reusado da SPEC-007? **Premissa no texto: sim.**
-- **Q-6:** a lista `content_claim_ids[]` entra no hash do selo? Se a resposta for "sim", a mudança é na SPEC-007, não nesta errata. **Premissa no texto: fica fora do hash** (ponteiro de auditoria).
-- **Q-7:** a consulta do KG deve **mostrar sempre** a marca de inferência? Seria regra nova. **Premissa no texto: não**; RU-8 fica menor, não eliminado.
+**PENDENTE — com a premissa que o texto usa até a resposta:**
 - **Q-10 (nova, aberta pelos achados A1/A2):** três pontos onde a RULE-KFH-005 não dá o texto exato. (a) `relation_type` entra em M? **Premissa: sim** (campo estrutural declarado). (b) Formato de `from`/`to` em M: `record_ref` para ponta do mesmo selo, id do KG para ponta que já existe? **Premissa: sim** (Mapa de formato). (c) `natural_key` do nó e `valid_from` da relação ficam fora de M? **Premissa: sim**, com o risco declarado em "Efeito sobre RU-3". Se a resposta de Andraus diferir da premissa em (a) ou (b), muda a Tabela de projeção desta errata (e, se preciso, a SPEC-007). Em (c), pôr esses campos em M seria mudança na SPEC-007.
 
 ---
@@ -345,14 +345,14 @@ Locais nesta errata e âncoras (por ID/texto) no baseline. Numa correção futur
 | `relation_type` em M (premissa da Q-10 (a)) | Tabela relação; §7-bis Bloco A/C; CC-09; Q-10 | I/O Schema `relation_record.relation_type` |
 | `natural_key`/`valid_from` fora de M = risco (Q-10 (c)) | Tabela nó/relação; "Efeito sobre RU-3" item 1; nota "Por que o item 4"; ADV-21 (m) (exclusão); §7-bis Bloco C; Q-10 | I/O Schema `natural_key`; RULE-CKG-008 (chave natural da relação) |
 | Conferência do selo em 4 passos | E-3 cláusula; propagação; EC delta; Classe ("as 4 conferências"); casos T09 (d)–(f)/ADV-21 (i)–(r) | BASpec-CKG-010 MECANISMO; EC-CKG-001 PRECOND; D4 "Admissão (CKG-010)" |
-| Códigos: 4 subcódigos novos + `SEAL_CONTENT_MISMATCH` reusado, sob `ADMISSION_REJECTED` (premissa da Q-5) | E-3 cláusula; nota "Códigos"; propagação §D3.1; EC delta FAILURE-MODE; casos ADV-21; Herança ADDED; Q-5 | §D3.1 linha `ADMISSION_REJECTED` |
+| Códigos (Q-5): `SEAL_REF_UNRESOLVABLE` (incl. registro indisponível), `SEAL_RECORD_NOT_IN_SEAL`, `SEAL_SUCCESSION_MISMATCH` [PROPOSTA] + `SEAL_CONTENT_MISMATCH` reusado, sob `ADMISSION_REJECTED` | E-3 cláusula; nota "Códigos"; propagação §D3.1; EC delta FAILURE-MODE; casos ADV-21; Herança ADDED; Q-5 | §D3.1 linha `ADMISSION_REJECTED` |
 | Item 4 (b) = leitura de Q-3 nos dois sentidos | E-3 item 4; nota "Por que o item 4"; ADV-21 (p); Perguntas Q-3 | RULE-CKG-012 (não editada) |
 | Divergência com SPEC-007 EC-KFH-004 (ii)/RULE-KFH-007 (ix) (exclusão × inclusão) | "Divergência registrada"; "Efeito sobre RU-3" item 2; CC-02; §7-bis Bloco C; CONS-01 | — (texto da SPEC-007, não editado) |
 | RU-3 fecha para o que está em M (nós e relações) | "Efeito sobre RU-3"; E-2(b) "Ligação"; §7-bis Bloco C | — (RU-3 é da SPEC-007) |
 | `formation` = `record_ref` + `content` + `content_claim_ids[]` + `formed_inference_claim_ids[]`, em nó e relação | E-4 texto e notas; Tabelas; ADV-21 (l)/(r); Herança ADDED | I/O Schema `node_record`/`relation_record` |
-| `content_claim_ids[]` fora do hash (premissa da Q-6) | Tabelas; E-4 nota; ADV-21 (m); §7-bis Bloco C; Q-6 | — |
-| RU-8 menor, não eliminado (premissa da Q-7) | E-4 "Efeito sobre RU-8"; §7-bis Bloco C; Q-7 | — (RU-8 é da SPEC-007) |
-| Reuso do selo = no-op (premissa da Q-4) | nota "Reuso do selo"; Herança (RULE-CKG-012); Q-4 | RULE-CKG-012 ("reescrita idêntica = no-op") |
+| `content_claim_ids[]` fora do hash (decidido, Q-6) | Tabelas; E-4 nota; ADV-21 (m); §7-bis Bloco C; Q-6 | — |
+| RU-8 menor, não eliminado; consulta não obrigada a mostrar `formation` (decidido, Q-7) | E-4 "Efeito sobre RU-8"; §7-bis Bloco C; Q-7 | — (RU-8 é da SPEC-007) |
+| Reuso do selo = no-op; sem exigir `RESERVADO` (decidido, Q-4) | nota "Reuso do selo"; Herança (RULE-CKG-012); Q-4 | RULE-CKG-012 ("reescrita idêntica = no-op") |
 | Compatibilidade = Major (Q-9) | cabeçalho; Herança MODIFIED; Perguntas Q-9 | Histórico de versões linha 1.11 |
 | Forma A: ponteiro de uma linha no plan.md (Q-8) | Forma de aplicação; Verificação (assert-present) | Histórico de versões |
 | Nenhum ID novo de RULE/BASpec/EC/T/ADV; contagens 13/6/13/19/23 sem mudança | §0; casos ("letras novas"); Herança ADDED | Histórico de versões linha 1.12 (contagens) |
@@ -366,11 +366,11 @@ Locais nesta errata e âncoras (por ID/texto) no baseline. Numa correção futur
 | A1 (Média) | `record_ref` passa a morar em `formation.record_ref`, dentro de M (Mapa de formato); E-3 item 2 usa esse campo; mapa `supersedes` ↔ `published_ref@version`; ADV (n) passa a usar `"KG-N-X-v2"` ≡ `KG-N-X@2` (a v1.0 usava `KG-N-X@2` como `supersedes`) |
 | A2 (Média) | "excluindo tudo o que M exclui" vira M **por inclusão**; Tabelas de projeção M campo a campo (nó e relação); a nota "Lista de exclusão completa" sai; Herança linha 2 refeita; ADV (m) ampliado; divergência com EC-KFH-004 (ii) registrada |
 | A3 (Média) | `formation` vai também para o `relation_record`; Tabela relação; casos T09 (e), ADV (q)/(r); RU-3 "fecha para o que está em M" em nós e relações, com os riscos que sobram |
-| A4 (Média) | Q-1/2/3/8/9 incorporadas sem ramo condicional; Q-4..Q-7 pendentes com premissa declarada; Q-10 nova (aberta por A1/A2), também com premissa |
+| A4 (Média) | Q-1..Q-9 todas decididas por Andraus e incorporadas sem ramo condicional (Q-4..Q-7 respondidas no chat de 2026-10-25, depois da primeira redação desta v1.1); só Q-10 (nova, aberta por A1/A2) fica pendente, com premissa |
 | A5 (Menor) | ponto de partida com `c2` (`formed_inference=true`) e `formed_inference_claim_ids = [c2]`; ADV (l) discrimina |
 | A6a (Menor) | já aplicado pelo Orquestrador (Ficha-M); mantido no cabeçalho "Âncoras" |
 | A6b (Menor) | "(P2/P4)" vira "(P2 em vigor; P4 ainda proposta — DHR-RETRO-001 §1)" em "Forma de aplicação" |
-| A7 (Menor) | códigos dizem o que falhou: `SEAL_RECORD_NOT_IN_SEAL` (antes `SEAL_REF_UNRESOLVABLE` para registro fora do selo), `SEAL_REGISTRY_UNAVAILABLE`, `SEAL_SUCCESSION_MISMATCH` (antes `SEAL_CONTENT_MISMATCH` para sucessão); Q-5 com a lista nova; divergência com EC-KFH-004 (ii) registrada |
+| A7 (Menor) | códigos dizem o que falhou: `SEAL_RECORD_NOT_IN_SEAL` (antes `SEAL_REF_UNRESOLVABLE` para registro fora do selo — Q-5), `SEAL_SUCCESSION_MISMATCH` (antes `SEAL_CONTENT_MISMATCH` para sucessão — [PROPOSTA]); registro de selos indisponível continua em `SEAL_REF_UNRESOLVABLE` (Q-5: "selo não resolvido"), com motivo no log; divergência com EC-KFH-004 (ii) registrada |
 | Fora do parecer | "Forma de aplicação": a v1.0 previa uma linha no Histórico **e** um marcador no Status. Com Q-8 ("ponteiro de uma linha"), fica só a linha no Histórico |
 
 ---

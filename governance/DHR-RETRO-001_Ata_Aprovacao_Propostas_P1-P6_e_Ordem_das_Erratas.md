@@ -23,3 +23,17 @@ Uma de cada vez, nesta ordem, cada uma com Revisor e homologação própria de A
 
 ## 3. Permanecem ABERTAS (CONS-01)
 G-001 · K-001 · M-001 · J-001 · N-001 · C-001 · WF-D03 · ECC-03-001 · SPEC-045-RUNTIME-001 · CKG-STRUCT-ORIGIN-001. Nenhuma foi fechada.
+
+## 4. Adendo — respostas de Andraus sobre a errata da SPEC-006 (chat, 2026-10-25) `[FATO]`
+| Pergunta | Resposta |
+|---|---|
+| Q-1 (E-1) | Só o caminho (b) (conhecimento formado via selo) |
+| Q-2 | Incluir `publication` no registro de relação |
+| Q-3 | Conferir `supersedes` contra o selo |
+| Q-4 | Não exigir selo ainda RESERVADO |
+| Q-5 | `SEAL_REF_UNRESOLVABLE` (selo não resolvido) + `SEAL_CONTENT_MISMATCH` (reaproveitado da SPEC-007) |
+| Q-6 | `content_claim_ids[]` fora do hash (ponteiro de auditoria) |
+| Q-7 | Marca de inferência na consulta: não nesta errata |
+| Q-8 | Arquivo à parte + ponteiro de uma linha |
+| Q-9 | Major |
+Q-10 (inclusão de `relation_type`/formato `from`/`to`/`natural_key`/`valid_from` em M) e o código `SEAL_SUCCESSION_MISMATCH` (proposta do Especificador) **seguem pendentes**. Nenhuma errata está homologada; K-001 e demais decisões abertas seguem abertas (CONS-01).
