@@ -19,3 +19,7 @@ Linha-índice (lida pelo script; Estado `FEITA` só quando a seção corresponde
 7. Atualizar `CAUSAS-PREVENCAO.md` e marcar a linha-índice como `FEITA` com a data.
 
 <!-- Entradas de retrospectiva abaixo (uma seção por Spec), append-only -->
+
+### Nota de desvio — Orquestrador (individual), 2026-10-25 (insumo da retrospectiva da SPEC-048)
+O Orquestrador aplicou 6 correções de Menores do parecer R3 do Plan da SPEC-048 pela classe M (ficha `FICHA-M-PLAN-R3.json`), contra a regra que Andraus explicitou em 2026-10-25 ("achados menores não são corrigidos pelo orquestrador", `DHR-ROTEAMENTO-005`). Causa: leitura extensiva da classe M da `DHR-ROTEAMENTO-003` e do passo 0 criado por mim em `DHR-LOOP-001` sem perguntar o alcance. Prevenção: classe M só para falhas do próprio Orquestrador/gates; alinhar o código do roteador (proposta em `DHR-ROTEAMENTO-005` §3). Categoria: C08 (escopo/alcance da regra).
+

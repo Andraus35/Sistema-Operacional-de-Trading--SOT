@@ -52,7 +52,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | **N-01** dois códigos e dois efeitos para "afirmação sem rótulo" | Um desfecho por condição: **(a)** rótulo ou campo extra vindo do MODELO ⇒ descartada no gate, `SYNTHESIS_CLAIM_INVALID`, pacote segue; **(b)** rede de segurança — afirmação sem os rótulos gravados pelo HARNESS na validação final ⇒ `PACKET_INCOMPLETE`/`SYNTHESIS_CLAIM_UNLABELED`, pacote NÃO entregue. Âncoras: RULE-RET-004 "AFIRMAÇÕES DA SÍNTESE" (a)(b); RULE-RET-010 GATE DE SAÍDA; BASpec-RET-010 GATE; EARS 10; §D3.1 (linhas `PACKET_INCOMPLETE` e `SYNTHESIS_CLAIM_INVALID`); EC-RET-006 PRECOND/POSTCOND/FAILURE-MODE/EVIDENCE | ADV-RET-04: positivo (relato mantido com rótulos do harness) / (a)(b) entradas injetáveis com `content_role = "INSTRUCTION"` e `claim_kind = "CONCLUSAO"` vindos do modelo ⇒ `SYNTHESIS_CLAIM_INVALID`; (c) falha injetada do harness ⇒ `SYNTHESIS_CLAIM_UNLABELED`, não entregue |
 | n-02 | `delivery_record.guard_run_ref`, `acts_snapshot_ref`, `guard_evaluated_at` (contrato; RULE-RET-005 "REGISTRO DA GUARDA"; D4.4 (7)); EVIDENCE de EC-RET-002/003 | T13(a); ADV-RET-23 |
 | n-03 | RULE-RET-005 "FRESCOR DO REENVIO": devolução "como montado em t0", com `packet_assembled_at` e `guard_evaluated_at` visíveis; estado atual = pedido novo | T13(a) |
-| n-04 | D5: `Q_RECUPERANDO → Q_NEGADA`; cada pedido (inclusive reenvio) abre novo `query_id` com `replay_of`; repetição após `Q_NEGADA` = caminho de pedido novo (RULE-RET-005; contrato `query_record`) | T13(a) |
+| n-04 | D5: `Q_RECUPERANDO → Q_NEGADA`; cada pedido (inclusive reenvio) abre novo `query_id` com `replay_of`; repetição após `Q_NEGADA` = caminho de pedido novo (RULE-RET-005; contrato `query_record`) — **ressalva (v1.4, n-11):** desde a v1.3 isso só vale para par SEM consulta de referência (R2 da regra única da RULE-RET-005); par com referência é sempre reenvio (R1), e consulta do par em curso tem precedência (R3) | T13(a) |
 | n-05 | homônimos declarados (Termo 9 da acepção; linha "Serialização/hash única" das lições reescrita) | — |
 | n-06 | (a) RULE-RET-005 "RECÁLCULO NO PACOTE NOVO" e D4.4 (7); (b) BASpec-RET-006 com o reenvio no QUANDO e T13(a)/ADV-RET-23 no VERIFICADO POR | ADV-RET-23 |
 
@@ -565,13 +565,27 @@ RULE-RET-005: ENTREGA (P-9 — decidida, DHR-SPEC007-003): o pacote validado é 
               for negado (ex.: guarda indisponível — ADV-RET-23(c)), a consulta do reenvio termina `Q_NEGADA` e a consulta de
               referência NÃO muda — o próximo reenvio volta a pedir a reentrega do MESMO pacote, sem segundo `packet_id`
               (segundo `packet_id` só existe pelo caso (ii), com `supersedes_packet`); (R2) o par NÃO tem consulta de
-              referência e a última consulta do par terminou `Q_NEGADA` (nada foi entregue) ⇒ pedido novo: recuperação, como
-              a 1ª vez (gera o 1º `packet_id` do par, se entregar); (R3) o par tem consulta ainda EM CURSO (`Q_RECUPERANDO` ou
-              `Q_VALIDANDO`, sem entrega) ⇒ o pedido repetido NÃO abre segunda recuperação: o `query_record` novo termina
-              `Q_NEGADA` com `REQUEST_IN_PROGRESS`, e a consulta em curso segue e entrega normalmente (quem pediu repete
-              depois e cai em R1); (R4) mesmo `request_id` com fingerprint DIFERENTE do ligado ⇒ `REQUEST_ID_REUSE_CONFLICT`,
-              sempre — a negação não reabre a checagem nem muda a ligação; o par conflitante nunca gera consulta de
-              referência. *[v1.2: "PEDIDO REPETIDO APÓS `Q_NEGADA` (v1.2 — n-04 (c)): mesmo (`request_id`, fingerprint)
+              referência e a última consulta do par COM DESFECHO SUBSTANTIVO terminou `Q_NEGADA` (nada foi entregue; negações
+              por `REQUEST_IN_PROGRESS` não contam como desfecho substantivo e são ignoradas) ⇒ pedido novo: recuperação, como
+              a 1ª vez (gera o 1º `packet_id` do par, se entregar); (R3) o par tem consulta ainda EM CURSO (`Q_RECUPERANDO`, ou
+              `Q_VALIDANDO` — inclusive a de um REENVIO —), COM OU SEM consulta de referência ⇒ o pedido repetido NÃO abre
+              segunda recuperação nem segundo reenvio: o `query_record` novo termina `Q_NEGADA` com `REQUEST_IN_PROGRESS`, e a
+              consulta em curso segue e termina normalmente (quem pediu repete depois e cai em R1 ou R2); (R4) mesmo
+              `request_id` com fingerprint DIFERENTE do ligado ⇒ `REQUEST_ID_REUSE_CONFLICT`, sempre — a negação não reabre a
+              checagem nem muda a ligação; o par conflitante nunca gera consulta de referência.
+              PRECEDÊNCIA (v1.4 — n-10; ordem fixa, um desfecho): (1) R4 — identidade do par (fingerprint ligado ao
+              `request_id`); (2) R3 — consulta do mesmo par em curso, com ou sem referência: é a PRIMEIRA checagem entre as
+              situações do mesmo par; (3) R1 — o par tem consulta de referência; (4) R2 — sem referência e última consulta com
+              desfecho substantivo negada; (5) nenhuma consulta anterior do par ⇒ pedido novo. CONCORRÊNCIA: a checagem de
+              R3 e a abertura da consulta que vai recuperar ou reenviar são feitas na MESMA unidade atômica, de modo que
+              existe NO MÁXIMO UMA consulta em curso por par — logo nunca há duas recuperações concorrentes nem dois reenvios
+              simultâneos que gerem dois pacotes novos com `supersedes_packet` para o mesmo pacote antigo no caso (ii).
+              *[v1.3 de R2 e R3: "(R2) o par NÃO tem consulta de referência e a última consulta do par terminou `Q_NEGADA`
+              (nada foi entregue) ⇒ pedido novo: recuperação, como a 1ª vez (gera o 1º `packet_id` do par, se entregar); (R3)
+              o par tem consulta ainda EM CURSO (`Q_RECUPERANDO` ou `Q_VALIDANDO`, sem entrega) ⇒ o pedido repetido NÃO abre
+              segunda recuperação: o `query_record` novo termina `Q_NEGADA` com `REQUEST_IN_PROGRESS`, e a consulta em curso
+              segue e entrega normalmente (quem pediu repete depois e cai em R1);" — sem precedência declarada; um segundo
+              repetido com a 1ª consulta ainda em curso caía na letra de R2 (parecer R4, n-10)]* *[v1.2: "PEDIDO REPETIDO APÓS `Q_NEGADA` (v1.2 — n-04 (c)): mesmo (`request_id`, fingerprint)
               cuja consulta anterior terminou em `Q_NEGADA` não reproduz a negação nem reaproveita nada: abre consulta nova
               (novo `query_id`, `replay_of` = consulta negada) e segue o caminho do pedido novo." — com reenvio negado seguido
               de novo reenvio, gerava segundo `packet_id` para par já entregue (parecer R3, n-07)]* *[v1.0: "mesmo par ⇒ devolve o mesmo `packet_id`, sem novo pacote; mesmo
@@ -1094,13 +1108,13 @@ BASpec-RET-012:
 
 | Estado | Entra quando | Sai para | Emite |
 |---|---|---|---|
-| `Q_RECEBIDA` | pedido com identidade autenticada (RULE-CBP-014). **Cada pedido — inclusive reenvio — abre um NOVO `query_record` (novo `query_id`, com `replay_of` = consulta anterior quando for repetição); estado terminal nunca é reaberto** (v1.2 — n-04 (b)) | Pela REGRA ÚNICA de pedido repetido da RULE-RET-005 (v1.3 — n-07): `Q_VALIDANDO` (R1: o par tem CONSULTA DE REFERÊNCIA — a que gravou o pacote entregue mais recente — ⇒ reentrega desse pacote, revalidado pela guarda; vale também depois de um reenvio negado) · `Q_RECUPERANDO` (pedido novo; ou R2: o par nunca teve entrega e a última consulta terminou `Q_NEGADA`) · `Q_NEGADA` (identidade indisponível; R3: consulta do mesmo par ainda em curso — `REQUEST_IN_PROGRESS`; R4: `request_id` com fingerprint diferente do ligado — `REQUEST_ID_REUSE_CONFLICT`, sem reabrir) | `query_record` |
+| `Q_RECEBIDA` | pedido com identidade autenticada (RULE-CBP-014). **Cada pedido — inclusive reenvio — abre um NOVO `query_record` (novo `query_id`, com `replay_of` = consulta de referência do par ou, sem ela, a última consulta do par — v1.4, n-11 *[v1.2/v1.3: "consulta anterior quando for repetição"]*); estado terminal nunca é reaberto** (v1.2 — n-04 (b)) | Pela REGRA ÚNICA de pedido repetido da RULE-RET-005, na ordem de PRECEDÊNCIA R4 → R3 → R1 → R2 (v1.3 — n-07; precedência v1.4 — n-10): `Q_VALIDANDO` (R1: o par tem CONSULTA DE REFERÊNCIA — a que gravou o pacote entregue mais recente — ⇒ reentrega desse pacote, revalidado pela guarda; vale também depois de um reenvio negado) · `Q_RECUPERANDO` (pedido novo; ou R2: o par nunca teve entrega e a última consulta com desfecho substantivo terminou `Q_NEGADA`, ignoradas as negações por `REQUEST_IN_PROGRESS`) · `Q_NEGADA` (identidade indisponível; R3: consulta do mesmo par ainda em curso — `Q_RECUPERANDO` ou `Q_VALIDANDO`, inclusive de reenvio, com ou sem referência — `REQUEST_IN_PROGRESS`; R4: `request_id` com fingerprint diferente do ligado — `REQUEST_ID_REUSE_CONFLICT`, sem reabrir) | `query_record` |
 | `Q_RECUPERANDO` | campos de fluxo congelados (D4.1 passo 1) | `Q_VALIDANDO` (suficiência ou limite — pacote montado, ainda NÃO aprovado) · `Q_NEGADA` (v1.2 — n-04 (a): guarda indisponível durante a recuperação, `DELIVERY_GUARD_UNAVAILABLE`; identidade perdida; orçamento esgotado sem conseguir montar nem o pacote vazio) | `retrieval_trace` |
 | `Q_VALIDANDO` | pacote montado (ou pacote gravado, no reenvio) entra em F2, namespace, guarda final e validação de esquema | `Q_ENTREGUE` (todos aprovados) · `Q_NEGADA` (falha de esquema; `CONTRADICTION_SIDE_OMITTED`; guarda indisponível) | `f2_record` |
 | `Q_ENTREGUE` | resposta só-leitura entregue a quem pediu | terminal | `delivery_record` |
 | `Q_NEGADA` | qualquer fail-closed com código | terminal (novo pedido = nova consulta) | `query_record` com código |
 
-*[v1.0 (M-02 — transições contraditórias): "| `Q_RECEBIDA` | pedido com identidade autenticada (RULE-CBP-014) | `Q_RECUPERANDO` · `Q_NEGADA` (identidade indisponível; `request_id` em conflito) | `query_record` |"; "| `Q_RECUPERANDO` | campos de fluxo congelados (D4.1 passo 1) | `Q_MONTADO` (suficiência ou limite) | `retrieval_trace` |"; "| `Q_MONTADO` | esquema, F2, namespace e guarda final aprovados | `Q_ENTREGUE` · `Q_NEGADA` (falha de esquema; guarda indisponível) | `f2_record` |". O estado `Q_MONTADO` foi substituído por `Q_VALIDANDO`, que entra ANTES da aprovação; assim T04 (falha de esquema ⇒ `Q_NEGADA`) é alcançável.]* *[v1.1 de duas linhas (n-04): "| `Q_RECEBIDA` | pedido com identidade autenticada (RULE-CBP-014) | `Q_RECUPERANDO` (pedido novo) · `Q_VALIDANDO` (REENVIO: mesmo `request_id` e fingerprint — o pacote já gravado é revalidado, M-01) · `Q_NEGADA` (identidade indisponível; `request_id` com fingerprint diferente) | `query_record` |"; "| `Q_RECUPERANDO` | campos de fluxo congelados (D4.1 passo 1) | `Q_VALIDANDO` (suficiência ou limite — pacote montado, ainda NÃO aprovado) | `retrieval_trace` |"]* *(CIM indisponível não leva a `Q_NEGADA`: a consulta segue só com estratégias determinísticas — RULE-RET-007 (g).)* *[v1.2 da coluna "Sai para" de `Q_RECEBIDA` (n-07): "`Q_RECUPERANDO` (pedido novo; ou repetição de pedido cuja consulta anterior terminou em `Q_NEGADA` — n-04 (c)) · `Q_VALIDANDO` (REENVIO de pedido cuja consulta anterior terminou em `Q_ENTREGUE`: o pacote já gravado é revalidado, M-01) · `Q_NEGADA` (identidade indisponível; `request_id` com fingerprint diferente)"]*
+*[v1.0 (M-02 — transições contraditórias): "| `Q_RECEBIDA` | pedido com identidade autenticada (RULE-CBP-014) | `Q_RECUPERANDO` · `Q_NEGADA` (identidade indisponível; `request_id` em conflito) | `query_record` |"; "| `Q_RECUPERANDO` | campos de fluxo congelados (D4.1 passo 1) | `Q_MONTADO` (suficiência ou limite) | `retrieval_trace` |"; "| `Q_MONTADO` | esquema, F2, namespace e guarda final aprovados | `Q_ENTREGUE` · `Q_NEGADA` (falha de esquema; guarda indisponível) | `f2_record` |". O estado `Q_MONTADO` foi substituído por `Q_VALIDANDO`, que entra ANTES da aprovação; assim T04 (falha de esquema ⇒ `Q_NEGADA`) é alcançável.]* *[v1.1 de duas linhas (n-04): "| `Q_RECEBIDA` | pedido com identidade autenticada (RULE-CBP-014) | `Q_RECUPERANDO` (pedido novo) · `Q_VALIDANDO` (REENVIO: mesmo `request_id` e fingerprint — o pacote já gravado é revalidado, M-01) · `Q_NEGADA` (identidade indisponível; `request_id` com fingerprint diferente) | `query_record` |"; "| `Q_RECUPERANDO` | campos de fluxo congelados (D4.1 passo 1) | `Q_VALIDANDO` (suficiência ou limite — pacote montado, ainda NÃO aprovado) | `retrieval_trace` |"]* *(CIM indisponível não leva a `Q_NEGADA`: a consulta segue só com estratégias determinísticas — RULE-RET-007 (g).)* *[v1.3 da coluna "Sai para" de `Q_RECEBIDA` (n-10): começava por "Pela REGRA ÚNICA de pedido repetido da RULE-RET-005 (v1.3 — n-07):"; R2 dizia "o par nunca teve entrega e a última consulta terminou `Q_NEGADA`"; R3 dizia "consulta do mesmo par ainda em curso — `REQUEST_IN_PROGRESS`"]* *[v1.2 da coluna "Sai para" de `Q_RECEBIDA` (n-07): "`Q_RECUPERANDO` (pedido novo; ou repetição de pedido cuja consulta anterior terminou em `Q_NEGADA` — n-04 (c)) · `Q_VALIDANDO` (REENVIO de pedido cuja consulta anterior terminou em `Q_ENTREGUE`: o pacote já gravado é revalidado, M-01) · `Q_NEGADA` (identidade indisponível; `request_id` com fingerprint diferente)"]*
 
 ---
 
@@ -1145,7 +1159,8 @@ query_request    : request_id, asset?, timeframe?, temporal_window, concept_refs
                    free_terms[]? (só busca LEXICAL determinística; nunca vai a modelo), budget_ref (SPEC-008)
                    — consumer_id vem do runtime; consumer_locus NÃO é campo do pedido (se vier, é ignorado)
 query_record     : query_id, request_id, request_fingerprint (H(canon(pedido))), consumer_id, state{Q_*}, rejected_reason?,
-                   packet_id?, replay_of? (query_id anterior, quando repetição — v1.2, n-04), recorded_at — append-only;
+                   packet_id?, replay_of? (consulta de referência do par ou, sem ela, a última consulta do par — RULE-RET-005;
+                   v1.4, n-11 [v1.2/v1.3: "query_id anterior, quando repetição — v1.2, n-04"]), recorded_at — append-only;
                    (request_id, fingerprint, resultado) na mesma unidade atômica; cada pedido, inclusive reenvio, = novo query_id
                    [v1.1: sem replay_of nem a última frase]
 retrieval_trace  : query_id, flow_fields{strategies[], temporal_filter, max_retrieval_rounds, destinatário} (congelados no
@@ -1351,6 +1366,13 @@ VERIFICAÇÃO (a) guard_rerun == true (permissão recalculada dos atos vigentes,
             (d) Q0, exceto: a consulta de R1 está em Q_RECUPERANDO; A1 repete R1 idêntico ⇒ R3: query_record novo termina
                 Q_NEGADA com rejected_reason == "REQUEST_IN_PROGRESS"; a consulta em curso segue e entrega packet_id_1;
                 retrieval_traces abertos para r1 == 1
+                [v1.4 — n-10, subcasos de (d)] (d2) ainda com a 1ª consulta em Q_RECUPERANDO, A1 repete R1 uma SEGUNDA vez
+                (a 1ª repetição já terminou Q_NEGADA por REQUEST_IN_PROGRESS) ⇒ precedência: R3 vem antes de R2 e a
+                negação por REQUEST_IN_PROGRESS não conta como desfecho substantivo ⇒ de novo REQUEST_IN_PROGRESS;
+                retrieval_traces abertos para r1 == 1; ao fim, packets_created == 1 para o par; (d3) par COM consulta de
+                referência (T03 entregue) e um REENVIO em Q_VALIDANDO, com exclusão nova (caso (ii)) em curso; A1 repete R1
+                ⇒ R3 (precede R1): REQUEST_IN_PROGRESS; um só pacote novo com supersedes_packet == packet_id_1 é gerado
+                (pacotes com supersedes_packet == packet_id_1 == 1); consultas em curso por par ≤ 1 em todo instante
             (e) Q0, exceto: a 1ª consulta de R1 terminou Q_NEGADA sem entrega (ex.: falha de esquema, T04); A1 repete R1 ⇒
                 R2: pedido novo, recuperação roda, gera o 1º packet_id do par
             (f) depois do (b): A1 envia de novo o pedido com fingerprint diferente ⇒ REQUEST_ID_REUSE_CONFLICT outra vez

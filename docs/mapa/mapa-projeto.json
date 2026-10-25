@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "d47460c0d98bc561f21fb59f0e8396c177a62ac138afa8eedf522c7f9c134258",
+  "digest": "f59b93b1271834c4f44d90caf1af7ff0420e40349f07266f866698b5a212c5b5",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,8 +101,8 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 175,
-   "out": 55
+   "in": 176,
+   "out": 56
   },
   {
    "path": "GLOSSARIO.md",
@@ -1012,7 +1012,7 @@
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
    "in": 120,
-   "out": 205
+   "out": 206
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -1557,8 +1557,8 @@
    "path": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
    "area": "governance",
    "title": "DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do loop dos construtores (4Es)",
-   "in": 9,
-   "out": 11
+   "in": 10,
+   "out": 13
   },
   {
    "path": "governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md",
@@ -1704,14 +1704,21 @@
    "path": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-003 — Ata — Roteador determinístico de modelo por tarefa (hook PreToolUse/Agent)",
-   "in": 67,
+   "in": 69,
    "out": 8
   },
   {
    "path": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-004 — Ata de Decisão — Roteamento determinístico de ACHADOS (ordem de correção) e via SendMessage",
-   "in": 3,
+   "in": 4,
+   "out": 6
+  },
+  {
+   "path": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "area": "governance",
+   "title": "DHR-ROTEAMENTO-005 — Ata de Decisão — O Orquestrador não corrige achados do Revisor (nenhuma severidade)",
+   "in": 4,
    "out": 6
   },
   {
@@ -2264,7 +2271,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 370,
+   "in": 371,
    "out": 39
   },
   {
@@ -2292,8 +2299,8 @@
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
    "area": "governance",
    "title": "RETROSPECTIVAS DE FECHAMENTO DO LOOP DOS CONSTRUTORES (LOOP-001 / DHR-LOOP-001)",
-   "in": 5,
-   "out": 7
+   "in": 6,
+   "out": 9
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
@@ -3202,7 +3209,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 37,
+   "in": 38,
    "out": 39
   },
   {
@@ -3785,7 +3792,7 @@
   {
    "id": "DHR-LOOP-001",
    "defined_in": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "DHR-MAN-001",
@@ -3895,12 +3902,17 @@
   {
    "id": "DHR-ROTEAMENTO-003",
    "defined_in": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
-   "cited_by": 67
+   "cited_by": 69
   },
   {
    "id": "DHR-ROTEAMENTO-004",
    "defined_in": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
-   "cited_by": 3
+   "cited_by": 4
+  },
+  {
+   "id": "DHR-ROTEAMENTO-005",
+   "defined_in": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "cited_by": 4
   },
   {
    "id": "DHR-RPSA-001",
@@ -4245,7 +4257,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 269
+   "cited_by": 270
   },
   {
    "id": "INV-08",
@@ -5940,7 +5952,7 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 37
+   "cited_by": 38
   },
   {
    "id": "SPEC-049",
@@ -6902,6 +6914,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
    "type": "id"
   },
   {
@@ -22366,6 +22383,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
    "type": "id"
   },
@@ -26851,6 +26873,16 @@
   },
   {
    "from": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "to": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
    "to": "governance/aprendizado/CAUSAS-PREVENCAO.md",
    "type": "path"
   },
@@ -27692,6 +27724,36 @@
   {
    "from": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
    "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "to": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
+   "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
   {
@@ -33547,6 +33609,16 @@
   {
    "from": "governance/aprendizado/RETROSPECTIVAS.md",
    "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/aprendizado/RETROSPECTIVAS.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/aprendizado/RETROSPECTIVAS.md",
+   "to": "governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md",
    "type": "id"
   },
   {
