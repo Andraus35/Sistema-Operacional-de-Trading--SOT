@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-25",
-  "digest": "9b084c2c92e1bcb18dd212b1ab3ee28039c888dcf6fd62abda86d0ec02c42e99",
+  "digest": "c705c647c70d427e8f4b7801c2ef72470032dd375c8f8f8fd2378f14ed9ae1e5",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 300,
+   "in": 301,
    "out": 114
   },
   {
@@ -2356,7 +2356,7 @@
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
    "in": 13,
-   "out": 31
+   "out": 32
   },
   {
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
@@ -2567,6 +2567,13 @@
    "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R3, v1.2, delta com B1 integral) — 2026-10-25",
    "in": 2,
    "out": 4
+  },
+  {
+   "path": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R4-2026-10-25.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — Errata aditiva v1.13 à SPEC-006 (R4, v1.3, delta curto) — 2026-10-25",
+   "in": 1,
+   "out": 3
   },
   {
    "path": "governance/propostas/SPEC-006/PROPOSTA-DIVISAO-2026-10-17.md",
@@ -2985,7 +2992,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 188,
+   "in": 189,
    "out": 9
   },
   {
@@ -3125,14 +3132,14 @@
    "path": "specs/features/SPEC-006/errata-v1.13.md",
    "area": "specs",
    "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) — texto v1.3",
-   "in": 3,
+   "in": 4,
    "out": 17
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 211,
+   "in": 212,
    "out": 34
   },
   {
@@ -5855,7 +5862,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 211
+   "cited_by": 212
   },
   {
    "id": "SPEC-007",
@@ -34991,6 +34998,11 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R4-2026-10-25.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada5.md",
    "type": "path"
   },
@@ -36567,6 +36579,21 @@
   {
    "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md",
    "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R4-2026-10-25.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R4-2026-10-25.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R4-2026-10-25.md",
+   "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
   },
   {

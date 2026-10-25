@@ -9,6 +9,7 @@
 | SPEC-006 OUTRO | R1 | `governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md` | 0 | 4 | 3 |
 | SPEC-006 OUTRO | R2 | `governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R2-2026-10-25.md` | 0 | 1 | 4 |
 | SPEC-006 OUTRO | R3 | `governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R3-2026-10-25.md` | 0 | 0 | 4 |
+| SPEC-006 OUTRO | R4 | `governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R4-2026-10-25.md` | 0 | 0 | 1 |
 | SPEC-006 OUTRO | R5 | `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada5.md` | 0 | 0 | 0 |
 | SPEC-006 OUTRO | R6 | `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada6.md` | 0 | 0 | 0 |
 | SPEC-006 OUTRO | R7 | `governance/propostas/SPEC-006/linha-spec006-plan/parecer-revisor-rodada7.md` | 0 | 0 | 0 |
@@ -37,7 +38,7 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 
 | Linha | Médias por rodada | Rodadas lidas | Última rodada com 0 Média+Crítica |
 |---|---|---|---|
-| SPEC-006 OUTRO | 4 → 1 → 0 → 0 → 0 → 0 → 0 → 0 | 8 | R9 |
+| SPEC-006 OUTRO | 4 → 1 → 0 → 0 → 0 → 0 → 0 → 0 → 0 | 9 | R9 |
 | SPEC-007 ABERTURA | 0 → 0 → 0 | 3 | R3 |
 | SPEC-007 PLAN | 9 → 5 → 5 → 2 → 1 → 0 | 6 | R6 |
 | SPEC-048 ABERTURA | 0 → 0 | 2 | R2 |
@@ -50,7 +51,7 @@ Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo 
 | Cod | Categoria | Achados | Rodadas distintas | Linhas distintas | Recorrente | Prevenção registrada |
 |---|---|---|---|---|---|---|
 | C01 | contradicao_interna | 17 | 9 | 3 | SIM | AUSENTE |
-| C02 | ambiguidade_vocabulario | 15 | 11 | 4 | SIM | Parcial: RULE-SEM-01 / CC-10 (Revisor confere à mão) |
+| C02 | ambiguidade_vocabulario | 16 | 12 | 4 | SIM | Parcial: RULE-SEM-01 / CC-10 (Revisor confere à mão) |
 | C03 | precondicao_teste | 3 | 2 | 2 | SIM | AUSENTE |
 | C04 | heranca_rastreabilidade | 12 | 8 | 4 | SIM | Parcial: RULE-HD-01..04 e Bloco B (Revisor confere à mão) |
 | C05 | observabilidade_enforcement | 15 | 7 | 3 | SIM | Parcial: ENF-01..08 e Passo 7 (Revisor) |
