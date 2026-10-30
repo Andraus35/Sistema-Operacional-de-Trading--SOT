@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "c3ca5a2089a6a731f786e11a7ee8850a380040dd0ab44abc4870a63a7a058efe",
+  "digest": "b39b1d8651346dbae2c016c7866639a1f572528bba8463ab7d80cdf6bdb45922",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,8 +101,8 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 189,
-   "out": 58
+   "in": 190,
+   "out": 60
   },
   {
    "path": "GLOSSARIO.md",
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 309,
+   "in": 310,
    "out": 82
   },
   {
@@ -1375,7 +1375,7 @@
    "path": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
    "area": "governance",
    "title": "DHR-COESAO-005 — Ata — Registro de mecanismos (`governance/MECANISMOS.json`) passa a VIGENTE",
-   "in": 30,
+   "in": 31,
    "out": 7
   },
   {
@@ -1426,6 +1426,13 @@
    "title": "DHR-DOCSYNC-002 — Ata de Homologação — Encaminhamento dos Residuais de DHR-DOCSYNC-001",
    "in": 5,
    "out": 20
+  },
+  {
+   "path": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "area": "governance",
+   "title": "DHR-DOCSYNC-003 — Ata de Decisão — Detector de sincronização casa ID inteiro; AGENTS.md §7 corrige SPEC-020-PRINC-001",
+   "in": 1,
+   "out": 7
   },
   {
    "path": "governance/DHR-ECC05-001_Ata_Homologacao_Pesquisa_Multi_Lente.md",
@@ -2005,7 +2012,7 @@
    "path": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
    "area": "governance",
    "title": "DHR-SPEC020-001 — Ata de Homologação — SPEC-020 v1.0 (Harness Evaluation Specification, núcleo A)",
-   "in": 14,
+   "in": 16,
    "out": 9
   },
   {
@@ -2383,7 +2390,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 386,
+   "in": 387,
    "out": 39
   },
   {
@@ -2747,7 +2754,7 @@
    "path": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
    "area": "governance",
    "title": "Parecer do Revisor — ERRATUM-SPEC020-002 v1.0 (metade F1 da dimensão B) — R1 integral (S3, opus) — 2026-10-30",
-   "in": 1,
+   "in": 2,
    "out": 7
   },
   {
@@ -3258,7 +3265,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 118,
+   "in": 119,
    "out": 21
   },
   {
@@ -3778,7 +3785,7 @@
   {
    "id": "DHR-COESAO-005",
    "defined_in": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
-   "cited_by": 30
+   "cited_by": 31
   },
   {
    "id": "DHR-DEC-001",
@@ -3814,6 +3821,11 @@
    "id": "DHR-DOCSYNC-002",
    "defined_in": "governance/DHR-DOCSYNC-002_Ata_Homologacao_Encaminhamento_Residuais.md",
    "cited_by": 5
+  },
+  {
+   "id": "DHR-DOCSYNC-003",
+   "defined_in": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "cited_by": 1
   },
   {
    "id": "DHR-ECC05-001",
@@ -4233,7 +4245,7 @@
   {
    "id": "DHR-SPEC020-001",
    "defined_in": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
-   "cited_by": 14
+   "cited_by": 16
   },
   {
    "id": "DHR-SPEC021-001",
@@ -4448,7 +4460,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 284
+   "cited_by": 285
   },
   {
    "id": "INV-08",
@@ -6003,7 +6015,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 118
+   "cited_by": 119
   },
   {
    "id": "SPEC-021",
@@ -7029,6 +7041,11 @@
   },
   {
    "from": "AGENTS.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
    "to": "governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md",
    "type": "id"
   },
@@ -7135,6 +7152,11 @@
   {
    "from": "AGENTS.md",
    "to": "governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md",
+   "type": "id"
+  },
+  {
+   "from": "AGENTS.md",
+   "to": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
    "type": "id"
   },
   {
@@ -27575,6 +27597,41 @@
   {
    "from": "governance/DHR-DOCSYNC-002_Ata_Homologacao_Encaminhamento_Residuais.md",
    "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "to": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "to": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "to": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "to": "specs/features/SPEC-020/plan.md",
    "type": "id"
   },
   {

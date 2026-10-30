@@ -202,9 +202,9 @@
       "canal": "CI (informativo) + hook",
       "tipo": "detector",
       "estado": "ativo",
-      "enforca": "CONS-01 e sincronização documental",
-      "ata": "DHR-DOCSYNC-001",
-      "verificado_em": "2026-10-18: ao vivo — 0 achados, exit 0; tests/test_check_doc_sync.py no CI"
+      "enforca": "CONS-01 e sincronização documental (D1 casa só ID inteiro — DHR-DOCSYNC-003)",
+      "ata": "DHR-DOCSYNC-003",
+      "verificado_em": "2026-10-30: tests/test_check_doc_sync.py (16 testes) no CI; falso positivo C-001 em SPEC-020-PRINC-001 eliminado"
     },
     {
       "id": "det.check-handoff",

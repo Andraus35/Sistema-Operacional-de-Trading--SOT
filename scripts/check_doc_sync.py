@@ -252,16 +252,17 @@ def check_d1_d2(root: Path, docs, facts: Facts, findings):
         # (a) declaração inline de alta confiança: "ID — FECHADA"/"ID RESOLVIDA" adjacente
         for i, line in enumerate(lines, 1):
             for dec_id in facts.decisions_open:
-                idx = line.find(dec_id)
-                if idx < 0:
-                    continue
-                tail = line[idx + len(dec_id):idx + len(dec_id) + 20]
-                head = line[max(0, idx - 20):idx]
-                if INLINE_CLOSED.match(tail) and not GATILHO_PREFIX.search(head):
-                    findings.append((
-                        "ERRO", r, i,
-                        f"decisão ABERTA '{dec_id}' declarada fechada/resolvida inline — CONS-01: {line.strip()[:140]}"
-                    ))
+                # ID INTEIRO (DHR-DOCSYNC-003): "C-001" não casa dentro de "SPEC-020-PRINC-001"
+                for mm in re.finditer(r"(?<![A-Za-z0-9-])" + re.escape(dec_id) + r"(?![A-Za-z0-9-])", line):
+                    idx = mm.start()
+                    tail = line[idx + len(dec_id):idx + len(dec_id) + 20]
+                    head = line[max(0, idx - 20):idx]
+                    if INLINE_CLOSED.match(tail) and not GATILHO_PREFIX.search(head):
+                        findings.append((
+                            "ERRO", r, i,
+                            f"decisão ABERTA '{dec_id}' declarada fechada/resolvida inline — CONS-01: {line.strip()[:140]}"
+                        ))
+                        break
 
         # (b) tabela sob CABEÇALHO markdown de registro de decisão (ex.: CIC-001 "### 5.1
         # Open decisions") — só em documentos que SÃO o registro (REGISTRY_GLOBS); e só
