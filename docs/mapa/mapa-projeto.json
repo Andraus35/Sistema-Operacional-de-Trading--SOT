@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "d670b3ff444e41b700dc27fa79e8df2f1a8d9191aba4743cf1990e9e6ab46283",
+  "digest": "a34f899b35506400d0acc4cce70487bbf3c995839aa62707b913671cc61674e6",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2146,7 +2146,7 @@
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
    "in": 2,
-   "out": 28
+   "out": 29
   },
   {
    "path": "governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md",
@@ -2761,7 +2761,7 @@
    "path": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
    "area": "governance",
    "title": "Parecer do Revisor — ERRATUM-SPEC020-002 v1.1 — R2 integral (S3, opus) — 2026-10-30",
-   "in": 1,
+   "in": 2,
    "out": 7
   },
   {
@@ -33159,6 +33159,11 @@
   {
    "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "to": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "to": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
    "type": "path"
   },
   {
