@@ -10,7 +10,7 @@ regra/campo/ID/mecanismo). Atômico: qualquer falha na verificação restaura os
 
 Critérios por achado (todos objetivos): sev == MENOR · arquivo dentro do repositório · `antigo` ocorre EXATAMENTE 1 vez no arquivo ·
 `novo` != `antigo` e mesmo número de linhas · `condicao` não vazia · `novo` não introduz ID normativo (RULE|INV|ENF|STRUCT|CKG|WF|DHR|EUA)
-inexistente em `antigo` · arquivo sem edições não commitadas de outro agente (quando em git) · lote ≤ 10 linhas e ≤ 2 arquivos.
+inexistente em `antigo` NEM no arquivo · arquivo sem edições não commitadas de outro agente (quando em git) · lote ≤ 10 linhas e ≤ 2 arquivos.
 
 Uso:
   python scripts/aplicar_ficha_m.py <parecer.md|ficha.json> [--dry] [--saida FICHA.json]
@@ -74,7 +74,7 @@ def avaliar(a, root):
         return "condição verificável ausente"
     if len(antigo.splitlines()) != len(novo.splitlines()):
         return "substituição muda o número de linhas (inserção/remoção não é mecânica)"
-    if R._cria_algo(a):
+    if R._cria_algo(a, root):
         return "cria regra/campo/mecanismo/ID normativo novo"
     n = p.read_text(encoding="utf-8").count(antigo)
     if n != 1:

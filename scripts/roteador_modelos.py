@@ -10,6 +10,7 @@ Uso:
 
 Tabela classe -> executor/modelo (estática e versionada; sem roteador aprendido):
   M   Orquestrador (sem agente)          achado com arquivo:linha + texto antigo -> novo + condição; sem criar regra/campo/mecanismo
+                                         (ID normativo que o arquivo-alvo JÁ contém não conta como "novo" — DHR-ROTEAMENTO-007)
   S1  Revisor SOT  -> sonnet             conferência mecânica (citações, banco de regressão)
   S2  Revisor SOT  -> sonnet             auditoria por delta
   S3  Revisor SOT  -> opus               revisão integral de Spec CRITICAL
@@ -29,6 +30,8 @@ Regras do hook para Especificador SOT / Revisor SOT:
   R-AC5  ORDEM DE CORREÇÃO ao Especificador (prompt/mensagem com `PARECER:`) exige `FICHA: <json>` que CLASSIFIQUE todos os achados do
          bloco `ACHADOS-ESTRUTURADOS` do parecer (LOOP-001) e NEGA se restar achado classe M não aplicado: o Orquestrador aplica a
          classe M (`conferir`) antes de acionar o Especificador em modelo caro (DHR-ROTEAMENTO-004).
+  R-AC7  (DHR-ROTEAMENTO-007, ordem de Andraus 2026-10-30) TODA invocação de Especificador SOT / Revisor SOT exige `model` + `CLASSE-TAREFA`
+         (R-AC2/R-AC4 conferem); sem `model` => NEGA. Antes o frontmatter era o fallback silencioso e a alternância por tarefa não ocorria.
   R-AC6  `SendMessage` a agente de construção que cite `PARECER:` é tratada como R-AC5 e exige `CLASSE-TAREFA:` válida (a via de
          continuação de agente não contorna o roteador).
 Demais regras (R-GATE, R-N4, R-ALLOW) inalteradas. Detector/regra de forma, não julga o mérito (ENF-03). Falha na leitura do
@@ -65,7 +68,7 @@ MARCADOR = re.compile(r"^[ \t]*CLASSE-TAREFA:[ \t]*(\S+)[ \t]*$", re.M)
 # --- critérios objetivos da classe M ---------------------------------------------------------------------------------
 MAX_LINHAS_M = 10
 MAX_ARQUIVOS_M = 2
-NATUREZA_PARA_CLASSE = {"conferencia": "S1", "auditoria": "S2", "integral": "S3"}
+NATUREZA_PARA_CLASSE = {"conferencia": "S1", "auditoria": "S2", "integral": "S3", "aplicado_m": "M"}
 ID_NORMATIVO = re.compile(r"\b(?:RULE|INV|ENF|STRUCT|CKG|WF|DHR|EUA)-[A-Z0-9][A-Z0-9-]*\b")
 FLAGS_CRIACAO = ("cria_regra", "cria_campo", "cria_mecanismo")
 
@@ -148,7 +151,9 @@ def derivar_classe(agente, prompt):
 
 
 def _aplicado(a):
-    """Achado M já aplicado: o texto novo está nas linhas prescritas do arquivo."""
+    """Achado M já aplicado: o texto novo está nas linhas prescritas do arquivo (ou marcado `aplicado_m` pelo esqueleto)."""
+    if a.get("natureza") == "aplicado_m":
+        return True
     try:
         texto = (Path(ROOT) / a["arquivo"]).read_text(encoding="utf-8").splitlines()
         novo = str(a["novo"]).splitlines()
@@ -195,9 +200,40 @@ def verificar_ordem_correcao(prompt):
     return None
 
 
+FICHA_M_BLOCO = re.compile(r"<!--\s*FICHA-M\s*(\{.*?\})\s*-->", re.S)
+
+
+def _itens_ficha_m(parecer):
+    """Itens do bloco `<!-- FICHA-M {json} -->` do parecer ([] se ausente ou ilegível)."""
+    txt = Path(parecer).read_text(encoding="utf-8", errors="replace")
+    itens = []
+    for bloco in FICHA_M_BLOCO.findall(txt):
+        try:
+            itens += json.loads(bloco).get("achados") or []
+        except ValueError:
+            pass
+    return itens
+
+
+def _item_aplicado(it):
+    """Item FICHA-M aplicado: o texto novo está no arquivo e o antigo não (âncora por texto, não por linha)."""
+    try:
+        t = (Path(ROOT) / str(it["arquivo"])).read_text(encoding="utf-8")
+        return str(it["novo"]) in t and str(it["antigo"]) not in t
+    except (OSError, KeyError, ValueError):
+        return False
+
+
 def esqueleto(parecer):
-    ids = _ids_parecer(parecer)
-    return {"achados": [{"id": i, "natureza": "desenho"} for i in ids]}
+    """Ficha de TODOS os achados do parecer. Achado cujos itens FICHA-M (id igual, ou id + 1 letra) foram TODOS aplicados já nasce
+    classe M (`aplicado_m`): a classificação dos mecânicos acontece na 1ª rodada (DHR-ROTEAMENTO-007). O resto = `desenho` (O)."""
+    itens = _itens_ficha_m(parecer)
+    out = []
+    for i in _ids_parecer(parecer):
+        meus = [it for it in itens if str(it.get("id")) == i or re.fullmatch(re.escape(i) + r"[a-z]", str(it.get("id")))]
+        mec = bool(meus) and all(str(it.get("sev", "")).upper() == "MENOR" and _item_aplicado(it) for it in meus)
+        out.append({"id": i, "natureza": "aplicado_m" if mec else "desenho"})
+    return {"achados": out}
 
 
 def _decidir_ac(tipo, entrada):
@@ -223,7 +259,8 @@ def _decidir_ac(tipo, entrada):
     if classe and CLASSES[classe]["agente"] != agente:
         return "negar", f"R-AC2: classe {classe} não é do agente '{tipo}' (tabela: {CLASSES[classe]['agente']})."
     if not modelo:
-        return "permitir", "R-AC: modelo do frontmatter"
+        return "negar", (f"R-AC7: '{tipo}' exige `model` + `CLASSE-TAREFA: <classe>` em TODA invocação (alternância por tarefa obrigatória; "
+                         "DHR-ROTEAMENTO-007). Classe -> modelo: S1/S2 sonnet, S3 opus, O opus; derive a classe pela tabela.")
     if classe is None:
         return "negar", (f"R-AC2: `model={modelo}` exige `CLASSE-TAREFA: <classe>` válida e única no prompt "
                          "(fail-closed: sem classe vale o frontmatter).")
@@ -283,10 +320,20 @@ def _linhas(a):
     return max(1, len(str(a.get("antigo") or "").splitlines()))
 
 
-def _cria_algo(a):
+def _ids_do_arquivo(a, root):
+    """IDs normativos que o arquivo-alvo já contém (ID existente não é ID 'novo'; DHR-ROTEAMENTO-007). Ilegível => vazio (estrito)."""
+    try:
+        return set(ID_NORMATIVO.findall((Path(root) / str(a.get("arquivo") or "")).read_text(encoding="utf-8", errors="replace")))
+    except (OSError, ValueError):
+        return set()
+
+
+def _cria_algo(a, root=None):
     if any(a.get(f) for f in FLAGS_CRIACAO):
         return True
     novos = set(ID_NORMATIVO.findall(str(a.get("novo") or ""))) - set(ID_NORMATIVO.findall(str(a.get("antigo") or "")))
+    if novos and a.get("arquivo"):
+        novos -= _ids_do_arquivo(a, ROOT if root is None else root)
     return bool(novos)
 
 
@@ -315,7 +362,7 @@ def agrupar(achados):
     linhas, arquivos = 0, set()
     for a in achados:
         c = classificar_achado(a)
-        if c == "M":
+        if c == "M" and a.get("natureza") != "aplicado_m":
             if linhas + _linhas(a) > MAX_LINHAS_M or len(arquivos | {a["arquivo"]}) > MAX_ARQUIVOS_M:
                 c = "O"
             else:
@@ -345,7 +392,7 @@ def _hunks(arquivo, base, root):
 def conferir(ficha, base="HEAD", root=ROOT):
     """-> lista de divergências (vazia = ok). Qualquer divergência => ESCALA (o Orquestrador não improvisa)."""
     root = Path(root)
-    achados = [a for a in ficha.get("achados", []) if classificar_achado(a) == "M"]
+    achados = [a for a in ficha.get("achados", []) if classificar_achado(a) == "M" and a.get("natureza") != "aplicado_m"]
     problemas = []
     if not achados:
         return ["ficha sem achado de classe M"]

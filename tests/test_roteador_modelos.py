@@ -81,9 +81,12 @@ class Roteador(unittest.TestCase):
         self.assertEqual(d(subagent_type="Especificador SOT", prompt=cls("O", "FICHA: fm.json")), "negar")
         self.assertEqual(d(subagent_type="Especificador SOT", model="opus", prompt=cls("O", "FICHA: fm.json")), "negar")
 
-    def test_especificador_e_revisor_sem_parametro(self):
-        self.assertEqual(d(subagent_type="Revisor SOT", prompt="audite"), "permitir")
-        self.assertEqual(d(subagent_type="Especificador SOT"), "permitir")
+    def test_sem_model_negado_r_ac7(self):
+        """R-AC7 (DHR-ROTEAMENTO-007): sem `model` + CLASSE-TAREFA não há fallback silencioso para o frontmatter."""
+        self.assertEqual(d(subagent_type="Revisor SOT", prompt="audite"), "negar")
+        self.assertEqual(d(subagent_type="Especificador SOT"), "negar")
+        self.assertEqual(d(subagent_type="Especificador SOT", prompt=cls("O")), "negar")
+        self.assertEqual(d(subagent_type="Especificador SOT", model="opus", prompt=cls("O")), "permitir")
 
     def test_model_sem_classe_negado_fail_closed(self):
         for t in ("Revisor SOT", "Especificador SOT"):
@@ -166,6 +169,15 @@ class Classificacao(unittest.TestCase):
         self.assertEqual(r.classificar_achado(achado(cria_mecanismo=True)), "O")
         self.assertEqual(r.classificar_achado(achado(novo="vale RULE-ZZ-99")), "O")
         self.assertEqual(r.classificar_achado(achado(antigo="RULE-ZZ-99", novo="RULE-ZZ-99 ok")), "M")
+
+    def test_id_ja_presente_no_arquivo_nao_e_novo(self):
+        """DHR-ROTEAMENTO-007: ID que o arquivo-alvo já contém não é 'ID novo' (falso positivo A6b/B3a/N3 da errata SPEC-006)."""
+        with tempfile.TemporaryDirectory() as t:
+            (Path(t) / "x.md").write_text("um\ncita DHR-ZZ-001 em outro ponto\n", encoding="utf-8")
+            a = achado(novo="dois (DHR-ZZ-001 §4)")
+            self.assertFalse(r._cria_algo(a, t))
+            self.assertTrue(r._cria_algo(achado(novo="dois (DHR-YY-009)"), t))  # ID inexistente no arquivo continua 'novo'
+            self.assertTrue(r._cria_algo(a, tempfile.gettempdir()))  # arquivo ilegível => estrito
 
     def test_natureza_auditoria(self):
         self.assertEqual(r.classificar_achado(achado(natureza="conferencia")), "S1")
@@ -264,36 +276,36 @@ class OrdemDeCorrecao(unittest.TestCase):
         return f"CLASSE-TAREFA: O\nPARECER: {parecer}\nFICHA: {ficha}\nCorrija."
 
     def test_sem_ficha_nega(self):
-        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": f"CLASSE-TAREFA: O\nPARECER: parecer.md\nCorrija."})
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": f"CLASSE-TAREFA: O\nPARECER: parecer.md\nCorrija."})
         self.assertEqual(d_, "negar")
         self.assertIn("R-AC5", motivo)
 
     def test_parecer_sem_bloco_nega(self):
         self.ficha("f.json", [{"id": "n-01", "natureza": "desenho"}])
-        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt(parecer="sem_bloco.md")})
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": self.prompt(parecer="sem_bloco.md")})
         self.assertEqual(d_, "negar")
         self.assertIn("ACHADOS-ESTRUTURADOS", motivo)
 
     def test_cobertura_incompleta_nega(self):
         self.ficha("f.json", [{"id": "n-01", "natureza": "desenho"}])
-        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": self.prompt()})
         self.assertEqual(d_, "negar")
         self.assertIn("n-02", motivo)
 
     def test_classe_m_pendente_nega_e_aplicada_libera(self):
         self.ficha("f.json", [self.m("n-01", "linha dois nova"), {"id": "n-02", "natureza": "desenho"}])
-        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})
+        d_, motivo = r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": self.prompt()})
         self.assertEqual(d_, "negar")
         self.assertIn("classe M pendente", motivo)
         (self.root / "plan.md").write_text("linha um\nlinha dois nova\nlinha tres\n", encoding="utf-8")  # Orquestrador aplicou
-        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})[0], "permitir")
+        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": self.prompt()})[0], "permitir")
 
     def test_id_com_sufixo_cobre_o_achado(self):
         self.ficha("f.json", [{"id": "n-01(1)", "natureza": "desenho"}, {"id": "n-01(2)", "natureza": "desenho"}, {"id": "n-02", "natureza": "desenho"}])
-        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "prompt": self.prompt()})[0], "permitir")
+        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": self.prompt()})[0], "permitir")
 
     def test_prompt_sem_parecer_nao_e_afetado(self):
-        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "prompt": "Escreva o Plan."})[0], "permitir")
+        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": "CLASSE-TAREFA: O\nEscreva o Plan."})[0], "permitir")
 
     def test_sendmessage_exige_classe_e_ficha(self):
         self.ficha("f.json", [{"id": "n-01", "natureza": "desenho"}, {"id": "n-02", "natureza": "desenho"}])
@@ -302,6 +314,18 @@ class OrdemDeCorrecao(unittest.TestCase):
         self.assertEqual(r.decidir_mensagem({"message": "CLASSE-TAREFA: O\nPARECER: parecer.md\nCorrija."})[0], "negar")  # sem FICHA
         self.assertEqual(r.decidir_mensagem({"message": self.prompt()})[0], "permitir")
         self.assertEqual(r.decidir_mensagem({"message": "Retome de onde parou."})[0], "permitir")
+
+    def test_esqueleto_marca_mecanico_aplicado_na_primeira_rodada(self):
+        """DHR-ROTEAMENTO-007: achado cujos itens FICHA-M já foram aplicados nasce classe M; os demais seguem O."""
+        (self.root / "plan.md").write_text("linha um\nlinha dois nova\nlinha tres\n", encoding="utf-8")
+        ficha_m = '<!-- FICHA-M\n{"achados":[{"id":"n-01a","sev":"MENOR","arquivo":"plan.md","antigo":"linha dois velha","novo":"linha dois nova","condicao":"x"}]}\n-->\n'
+        (self.root / "parecer.md").write_text(PARECER_COM_BLOCO + ficha_m, encoding="utf-8")
+        sk = r.esqueleto(self.root / "parecer.md")
+        self.assertEqual({a["id"]: a["natureza"] for a in sk["achados"]}, {"n-01": "aplicado_m", "n-02": "desenho"})
+        self.ficha("f.json", sk["achados"])
+        self.assertEqual(r.decidir({"subagent_type": "Especificador SOT", "model": "opus", "prompt": self.prompt()})[0], "permitir")
+        (self.root / "plan.md").write_text("linha um\nlinha dois velha\nlinha tres\n", encoding="utf-8")  # ainda NÃO aplicado
+        self.assertEqual({a["id"]: a["natureza"] for a in r.esqueleto(self.root / "parecer.md")["achados"]}["n-01"], "desenho")
 
     def test_esqueleto_lista_todos_os_ids(self):
         sk = r.esqueleto(self.root / "parecer.md")
