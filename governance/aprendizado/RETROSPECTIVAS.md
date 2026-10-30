@@ -52,3 +52,6 @@ Pergunta de Andraus: o Orquestrador está **corrigindo de fato os achados Menore
 
 ### Resposta de Andraus às propostas a/b/c (chat, 2026-10-30; `DHR-ROTEAMENTO-007`) — Orquestrador (append-only)
 As 3 propostas foram **aprovadas na íntegra** e implementadas: (a) `_cria_algo` ignora ID já presente no arquivo; (b) `esqueleto` marca `aplicado_m` os achados cujos FICHA-M já foram aplicados, e o Orquestrador passa `model` + `CLASSE-TAREFA` em toda chamada; (c) hook R-AC7 nega invocação de Especificador/Revisor sem `model` + `CLASSE-TAREFA`. Selo do gate regravado por ordem dele (só `roteador_modelos.py`).
+
+### Nota de erro do Orquestrador (individual), 2026-10-30 — achado M-1 do ERRATUM-SPEC020-002 (append-only)
+A ordem de serviço do erratum listou SPEC-020-PRINC-001 como ABERTA copiando o `AGENTS.md` §7, enquanto o `ROADMAP.md` (que prevalece) a dá FECHADA (DHR-SPEC020-001). O Especificador sinalizou a divergência; o Revisor a pegou como Média C08. Causa: fonte errada para o estado de decisões. Prevenção: extrair abertas/fechadas só de `ROADMAP.md` "Decisões abertas ativas"/"Decisões FECHADAS" na ordem de serviço. Primeiro uso do roteamento obrigatório com o Revisor (S3/opus, `ALVO:`) e da classe M na 1ª rodada: 4 de 4 Menores mecânicos aplicados sem falso positivo.

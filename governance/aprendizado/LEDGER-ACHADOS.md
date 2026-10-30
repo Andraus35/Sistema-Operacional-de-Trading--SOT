@@ -24,6 +24,7 @@
 | SPEC-007 PLAN | R4 | `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R4-2026-10-24.md` | 0 | 2 | 11 |
 | SPEC-007 PLAN | R5 | `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R5-2026-10-24.md` | 0 | 1 | 7 |
 | SPEC-007 PLAN | R6 | `governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md` | 0 | 0 | 4 |
+| SPEC-020 OUTRO | R1 | `governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md` | 0 | 4 | 5 |
 | SPEC-048 ABERTURA | R1 | `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md` | 0 | 0 | 10 |
 | SPEC-048 ABERTURA | R2 | `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md` | 0 | 0 | 7 |
 | SPEC-048 PLAN | R1 | `governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md` | 0 | 3 | 14 |
@@ -41,6 +42,7 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 | SPEC-006 OUTRO | 4 → 1 → 0 → 0 → 0 → 0 → 0 → 0 → 0 | 9 | R9 |
 | SPEC-007 ABERTURA | 0 → 0 → 0 | 3 | R3 |
 | SPEC-007 PLAN | 9 → 5 → 5 → 2 → 1 → 0 | 6 | R6 |
+| SPEC-020 OUTRO | 4 | 1 | — |
 | SPEC-048 ABERTURA | 0 → 0 | 2 | R2 |
 | SPEC-048 PLAN | 3 → 1 → 0 → 0 → 0 | 5 | R5 |
 
@@ -50,16 +52,16 @@ Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo 
 
 | Cod | Categoria | Achados | Rodadas distintas | Linhas distintas | Recorrente | Prevenção registrada |
 |---|---|---|---|---|---|---|
-| C01 | contradicao_interna | 17 | 9 | 3 | SIM | AUSENTE |
-| C02 | ambiguidade_vocabulario | 16 | 12 | 4 | SIM | Parcial: RULE-SEM-01 / CC-10 (Revisor confere à mão) |
+| C01 | contradicao_interna | 18 | 10 | 4 | SIM | AUSENTE |
+| C02 | ambiguidade_vocabulario | 17 | 13 | 5 | SIM | Parcial: RULE-SEM-01 / CC-10 (Revisor confere à mão) |
 | C03 | precondicao_teste | 3 | 2 | 2 | SIM | AUSENTE |
-| C04 | heranca_rastreabilidade | 12 | 8 | 4 | SIM | Parcial: RULE-HD-01..04 e Bloco B (Revisor confere à mão) |
-| C05 | observabilidade_enforcement | 15 | 7 | 3 | SIM | Parcial: ENF-01..08 e Passo 7 (Revisor) |
+| C04 | heranca_rastreabilidade | 13 | 9 | 5 | SIM | Parcial: RULE-HD-01..04 e Bloco B (Revisor confere à mão) |
+| C05 | observabilidade_enforcement | 16 | 8 | 4 | SIM | Parcial: ENF-01..08 e Passo 7 (Revisor) |
 | C06 | contagem_historico_anexo | 9 | 7 | 4 | SIM | AUSENTE |
-| C07 | citacao_ancora | 26 | 11 | 4 | SIM | Parcial: `check_refs.py` (arquivos/IDs), não linhas |
-| C08 | decisao_aberta_escopo | 5 | 5 | 2 | SIM | Parcial: CONS-01, `check_doc_sync.py`, Revisor |
+| C07 | citacao_ancora | 28 | 12 | 5 | SIM | Parcial: `check_refs.py` (arquivos/IDs), não linhas |
+| C08 | decisao_aberta_escopo | 7 | 6 | 3 | SIM | Parcial: CONS-01, `check_doc_sync.py`, Revisor |
 | C09 | seguranca_guarda | 4 | 3 | 2 | SIM | Parcial: pisos E3, ADV D8, Revisor |
-| C10 | estado_maquina | 2 | 2 | 1 | SIM | AUSENTE |
+| C10 | estado_maquina | 3 | 3 | 2 | SIM | AUSENTE |
 | C99 | outros | 30 | 7 | 3 | SIM | AUSENTE |
 
 ## 4. LACUNAS DE PREVENÇÃO (categoria recorrente sem prevenção registrada ou AUSENTE)
@@ -67,14 +69,14 @@ Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo 
 | Cod | Categoria | Achados | Rodadas | Ação exigida pela regra LOOP-001 |
 |---|---|---|---|---|
 | C99 | outros | 30 | 7 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
-| C01 | contradicao_interna | 17 | 9 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
+| C01 | contradicao_interna | 18 | 10 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
 | C06 | contagem_historico_anexo | 9 | 7 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
 | C03 | precondicao_teste | 3 | 2 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
-| C10 | estado_maquina | 2 | 2 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
+| C10 | estado_maquina | 3 | 3 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
 
 ## 5. Retrospectivas de fechamento (individual e coletiva) — regra LOOP-001
 
-O tratamento de melhoria ocorre ao FIM do trabalho completo de uma Spec e ANTES de abrir outra (ordem de Andraus, 2026-10-24). Specs com parecer e sem retrospectiva `FEITA` em `governance/aprendizado/RETROSPECTIVAS.md` (a Spec ainda em curso aparece aqui até fechar; o Orquestrador confere `--retro-check SPEC-nnn` de cada Spec FECHADA antes de abrir outra): SPEC-006
+O tratamento de melhoria ocorre ao FIM do trabalho completo de uma Spec e ANTES de abrir outra (ordem de Andraus, 2026-10-24). Specs com parecer e sem retrospectiva `FEITA` em `governance/aprendizado/RETROSPECTIVAS.md` (a Spec ainda em curso aparece aqui até fechar; o Orquestrador confere `--retro-check SPEC-nnn` de cada Spec FECHADA antes de abrir outra): SPEC-006, SPEC-020
 
 ## 6. Frase de controle
 

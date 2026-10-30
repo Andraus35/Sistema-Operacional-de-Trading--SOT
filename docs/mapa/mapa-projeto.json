@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "27ac1fd6625976e4c77554e781ea6b894dbc8d9b684f84fc2e01a51bf6971844",
+  "digest": "c3ca5a2089a6a731f786e11a7ee8850a380040dd0ab44abc4870a63a7a058efe",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,7 +101,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 188,
+   "in": 189,
    "out": 58
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 306,
+   "in": 307,
    "out": 114
   },
   {
@@ -2005,7 +2005,7 @@
    "path": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
    "area": "governance",
    "title": "DHR-SPEC020-001 — Ata de Homologação — SPEC-020 v1.0 (Harness Evaluation Specification, núcleo A)",
-   "in": 12,
+   "in": 14,
    "out": 9
   },
   {
@@ -2138,7 +2138,7 @@
    "path": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
-   "in": 0,
+   "in": 1,
    "out": 25
   },
   {
@@ -2383,7 +2383,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 385,
+   "in": 386,
    "out": 39
   },
   {
@@ -2405,14 +2405,14 @@
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
    "in": 16,
-   "out": 32
+   "out": 34
   },
   {
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
    "area": "governance",
    "title": "RETROSPECTIVAS DE FECHAMENTO DO LOOP DOS CONSTRUTORES (LOOP-001 / DHR-LOOP-001)",
    "in": 18,
-   "out": 14
+   "out": 16
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
@@ -2742,6 +2742,13 @@
    "title": "Parecer do Revisor — Plan reduzido da SPEC-007 v2.2 (CANDIDATA), rodada 6 (S2) — 2026-10-24",
    "in": 3,
    "out": 8
+  },
+  {
+   "path": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — ERRATUM-SPEC020-002 v1.0 (metade F1 da dimensão B) — R1 integral (S3, opus) — 2026-10-30",
+   "in": 1,
+   "out": 7
   },
   {
    "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md",
@@ -3188,7 +3195,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 219,
+   "in": 220,
    "out": 36
   },
   {
@@ -3251,7 +3258,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 116,
+   "in": 118,
    "out": 21
   },
   {
@@ -3363,7 +3370,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 52,
+   "in": 53,
    "out": 41
   },
   {
@@ -3486,7 +3493,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 88
+   "cited_by": 89
   },
   {
    "id": "BL-018",
@@ -4226,7 +4233,7 @@
   {
    "id": "DHR-SPEC020-001",
    "defined_in": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
-   "cited_by": 12
+   "cited_by": 14
   },
   {
    "id": "DHR-SPEC021-001",
@@ -5086,7 +5093,7 @@
   {
    "id": "RULE-EV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-EV-03",
@@ -5411,7 +5418,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-KFH-006",
@@ -5926,7 +5933,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 219
+   "cited_by": 220
   },
   {
    "id": "SPEC-007",
@@ -5996,7 +6003,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 116
+   "cited_by": 118
   },
   {
    "id": "SPEC-021",
@@ -6136,7 +6143,7 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 52
+   "cited_by": 53
   },
   {
    "id": "SPEC-049",
@@ -36042,6 +36049,11 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md",
    "type": "path"
   },
@@ -36087,13 +36099,28 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
   {
    "from": "governance/aprendizado/RETROSPECTIVAS.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/RETROSPECTIVAS.md",
    "to": "ROADMAP.md",
    "type": "id"
+  },
+  {
+   "from": "governance/aprendizado/RETROSPECTIVAS.md",
+   "to": "ROADMAP.md",
+   "type": "path"
   },
   {
    "from": "governance/aprendizado/RETROSPECTIVAS.md",
@@ -36123,6 +36150,11 @@
   {
    "from": "governance/aprendizado/RETROSPECTIVAS.md",
    "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/aprendizado/RETROSPECTIVAS.md",
+   "to": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
    "type": "id"
   },
   {
@@ -38683,6 +38715,41 @@
   {
    "from": "governance/propostas/SPEC-007/PARECER-REVISOR-SPEC007-PLAN-R6-2026-10-24.md",
    "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
   {
