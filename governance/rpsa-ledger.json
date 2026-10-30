@@ -514,6 +514,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Regra operacional do Orquestrador/hook: não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-MERGE-001",
+      "data": "2026-10-30",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Regra operacional do Orquestrador/hook: não altera texto de agente de construção nem método."
     }
   ]
 }

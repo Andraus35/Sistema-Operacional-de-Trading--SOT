@@ -19,6 +19,11 @@
 // escrita em TEXTO ("Quer que eu…?") em vez de AskUserQuestion, e a 1ª regra só cobre entrega do Especificador/Revisor.
 //   pergunta-em-texto = a última fala termina em pergunta/oferta/pedido de decisão E não houve AskUserQuestion depois da
 //                       última mensagem HUMANA do turno. Bloqueia 1 vez por fala (mesmo hash) e nunca com stop_hook_active.
+// 3ª regra (DHR-MERGE-001, 2026-10-30 — ordem de Andraus: "ser deterministicamente avisado quando já posso mesclar"):
+//   pronto-para-mesclar = `python scripts/merge_ready.py --json` devolve PRONTO (PR aberto do ramo atual, mergeable_state clean, cabeça
+//                         do PR == HEAD local, árvore limpa, todos os check-runs concluídos com sucesso). Bloqueia 1 vez por commit-cabeça
+//                         e manda perguntar a Andraus por AskUserQuestion: "já é possível e seguro mesclar; mesclo ao seu comando".
+//                         NUNCA mescla (a mesclagem é ato de Andraus — AGENTS.md §10). Indeterminado/erro de rede => libera (fail-open).
 // Limites honestos: ids de agentes lançados antes de uma compactação/retomada da sessão não são reconhecidos (fail-open);
 // o histórico é assíncrono — por isso o marcador. É Detector/lembrete (ENF-03): nunca decide, nunca homologa; qualquer
 // falha libera o encerramento (fail-open).
@@ -129,6 +134,37 @@ function decidirPergunta(payload, transcriptText, estado) {
   };
 }
 
+function consultarMerge() {
+  // Chama o detector Python (REST via gh). Falha/timeout => null (fail-open).
+  const { spawnSync } = require('child_process');
+  for (const [exe, pre] of [['python', []], ['python3', []], ['py', ['-3']]]) {
+    const r = spawnSync(exe, [...pre, require('path').join(__dirname, 'merge_ready.py'), '--json'], { encoding: 'utf8', timeout: 25000, cwd: require('path').join(__dirname, '..') });
+    if (r.error || r.status === 9009) continue;
+    try { return JSON.parse(r.stdout); } catch (_) { return null; }
+  }
+  return null;
+}
+
+function decidirMerge(payload, info, estado) {
+  if (payload.stop_hook_active) return null;
+  if (!info || info.estado !== 'PRONTO' || !info.extra) return null;
+  const chave = `${info.extra.numero}@${info.extra.cabeca || ''}`;
+  if (!info.extra.cabeca) return null;                                             // sem cabeça não há chave de deduplicação: não avisa
+  if (estado.mergeNotified === chave) return null;                                 // já avisei por esta cabeça
+  const donos = (info.extra.arquivos_de_andraus || []);
+  return {
+    merge: chave,
+    reason: [
+      `AVISO DETERMINÍSTICO (regra de Andraus) — JÁ É POSSÍVEL E SEGURO MESCLAR: PR #${info.extra.numero} (${info.extra.titulo}) ${info.extra.url}`,
+      'Verificado por código: PR aberto, sem conflito, estado "clean", cabeça igual ao HEAD local, árvore limpa e todos os checks concluídos com sucesso.',
+      donos.length ? `Atenção: o PR toca arquivos reservados a Andraus pelo CODEOWNERS (${donos.slice(0, 6).join(', ')}${donos.length > 6 ? ', …' : ''}) — a aprovação é dele.` : 'Nenhum arquivo reservado ao CODEOWNERS no PR.',
+      'Antes de encerrar, FALE COM ANDRAUS usando AskUserQuestion (linguagem de trader, 3 a 5 linhas): diga que já é possível e seguro mesclar e que você mescla ao comando dele.',
+      'Opções: "Mesclar agora (Recomendado)" · "Esperar mais trabalho antes de mesclar" · "Adiar". NÃO mescle sem a resposta dele (AGENTS.md §10); nunca feche decisão aberta (CONS-01).',
+      'Este aviso não se repete para o mesmo commit-cabeça do PR.',
+    ].join('\n'),
+  };
+}
+
 if (require.main === module) {
   try {
     let raw = '';
@@ -138,8 +174,10 @@ if (require.main === module) {
     const { file } = stateFile(payload.session_id);
     let estado = {}; try { estado = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (_) { /* sem estado */ }
     const texto = fs.readFileSync(payload.transcript_path, 'utf8');
-    const d = decidir(payload, texto, estado) || decidirPergunta(payload, texto, estado);
+    let d = decidir(payload, texto, estado) || decidirPergunta(payload, texto, estado);
+    if (!d && !payload.stop_hook_active) d = decidirMerge(payload, consultarMerge(), estado);
     if (d) {
+      if (d.merge) estado.mergeNotified = d.merge;
       if (d.maisRecente) estado.blockedForTs = d.maisRecente;
       if (d.hash) estado.blockedTextHash = d.hash;
       try { fs.mkdirSync(require('path').dirname(file), { recursive: true }); fs.writeFileSync(file, JSON.stringify(estado)); } catch (_) { /* estado é best-effort */ }
@@ -149,4 +187,4 @@ if (require.main === module) {
   process.exit(0);
 }
 
-module.exports = { analisar, decidir, decidirPergunta, ehPerguntaEmTexto };
+module.exports = { analisar, decidir, decidirPergunta, decidirMerge, ehPerguntaEmTexto };

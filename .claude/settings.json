@@ -82,7 +82,7 @@
           {
             "type": "command",
             "command": "node scripts/andraus-ask-guard.js",
-            "timeout": 15
+            "timeout": 40
           },
           {
             "type": "command",
