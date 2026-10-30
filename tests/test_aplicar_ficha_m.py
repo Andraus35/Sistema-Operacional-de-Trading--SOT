@@ -51,6 +51,12 @@ class AplicarFichaM(unittest.TestCase):
         self.assertEqual({e["id"] for e in rel["escalados"]}, {"n-04", "n-05"})
         self.assertEqual(self.txt(), BASE)
 
+    def test_id_ja_presente_no_arquivo_nao_escala(self):
+        """DHR-ROTEAMENTO-007: ID que o arquivo já contém não é 'novo' (antes escalava por engano)."""
+        (self.root / "plan.md").write_text(BASE + "ref DHR-ZZ-001 aqui\n", encoding="utf-8")
+        rel, _, _ = A.aplicar([ach("n-08", "linha um", "linha um (DHR-ZZ-001)")], self.root)
+        self.assertEqual(rel["aplicados"], ["n-08"])
+
     def test_teto_do_lote_escala_o_excedente(self):
         texto = "\n".join(f"l{i} velha" for i in range(12)) + "\n"
         (self.root / "plan.md").write_text(texto, encoding="utf-8")

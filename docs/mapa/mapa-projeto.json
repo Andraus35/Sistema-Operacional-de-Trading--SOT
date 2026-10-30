@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "67c955fa8e76a0785ac92300a6bc21727b47e5abf66614323e5a937046d08c8d",
+  "digest": "32d9a0bbfc2652c0b987e12baf3f77b9916bf2b5c4203955358f34475023958a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1361,7 +1361,7 @@
    "path": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
    "area": "governance",
    "title": "DHR-COESAO-005 — Ata — Registro de mecanismos (`governance/MECANISMOS.json`) passa a VIGENTE",
-   "in": 26,
+   "in": 27,
    "out": 7
   },
   {
@@ -1760,14 +1760,14 @@
    "path": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-003 — Ata — Roteador determinístico de modelo por tarefa (hook PreToolUse/Agent)",
-   "in": 77,
+   "in": 78,
    "out": 8
   },
   {
    "path": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-004 — Ata de Decisão — Roteamento determinístico de ACHADOS (ordem de correção) e via SendMessage",
-   "in": 12,
+   "in": 13,
    "out": 6
   },
   {
@@ -1783,6 +1783,13 @@
    "title": "DHR-ROTEAMENTO-006 — Ata de Decisão — O Orquestrador identifica e corrige deterministicamente os Menores mecânicos (supera a DHR-ROTEAMENTO-005)",
    "in": 9,
    "out": 8
+  },
+  {
+   "path": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "area": "governance",
+   "title": "DHR-ROTEAMENTO-007 — Ata de Decisão — Roteamento de modelo obrigatório por hook, M classificada na 1ª rodada e detector de ID",
+   "in": 1,
+   "out": 5
   },
   {
    "path": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
@@ -2376,8 +2383,8 @@
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
    "area": "governance",
    "title": "RETROSPECTIVAS DE FECHAMENTO DO LOOP DOS CONSTRUTORES (LOOP-001 / DHR-LOOP-001)",
-   "in": 15,
-   "out": 13
+   "in": 16,
+   "out": 14
   },
   {
    "path": "governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md",
@@ -3153,7 +3160,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 215,
+   "in": 216,
    "out": 36
   },
   {
@@ -3736,7 +3743,7 @@
   {
    "id": "DHR-COESAO-005",
    "defined_in": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "DHR-DEC-001",
@@ -4026,12 +4033,12 @@
   {
    "id": "DHR-ROTEAMENTO-003",
    "defined_in": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
-   "cited_by": 77
+   "cited_by": 78
   },
   {
    "id": "DHR-ROTEAMENTO-004",
    "defined_in": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "DHR-ROTEAMENTO-005",
@@ -4042,6 +4049,11 @@
    "id": "DHR-ROTEAMENTO-006",
    "defined_in": "governance/DHR-ROTEAMENTO-006_Ata_Orquestrador_Corrige_Menores_Mecanicos.md",
    "cited_by": 9
+  },
+  {
+   "id": "DHR-ROTEAMENTO-007",
+   "defined_in": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "cited_by": 1
   },
   {
    "id": "DHR-RPSA-001",
@@ -5881,7 +5893,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 215
+   "cited_by": 216
   },
   {
    "id": "SPEC-007",
@@ -29401,6 +29413,31 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "to": "governance/DHR-COESAO-005_Ata_Registro_de_Mecanismos_VIGENTE.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "to": "governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "to": "governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md",
    "to": ".claude/agents/especificador.md",
    "type": "path"
@@ -35438,6 +35475,11 @@
   {
    "from": "governance/aprendizado/RETROSPECTIVAS.md",
    "to": "governance/DHR-ROTEAMENTO-006_Ata_Orquestrador_Corrige_Menores_Mecanicos.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/aprendizado/RETROSPECTIVAS.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
    "type": "id"
   },
   {
