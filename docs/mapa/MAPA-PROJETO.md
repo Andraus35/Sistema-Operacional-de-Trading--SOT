@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-30** · digest `afc64ce4f7dd83d5` · **493** documentos · **7805** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-30** · digest `823cb527ec277c90` · **493** documentos · **7801** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -29,7 +29,7 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 ```mermaid
 flowchart LR
   docs["docs"] -->|1571| governance["governance"]
-  governance["governance"] -->|871| specs["specs"]
+  governance["governance"] -->|870| specs["specs"]
   docs["docs"] -->|492| specs["specs"]
   governance["governance"] -->|425| raiz["raiz"]
   docs["docs"] -->|424| raiz["raiz"]
@@ -42,7 +42,7 @@ flowchart LR
   docs["docs"] -->|92| _claude[".claude"]
   specs["specs"] -->|88| raiz["raiz"]
   governance["governance"] -->|81| _claude[".claude"]
-  governance["governance"] -->|63| reference["reference"]
+  governance["governance"] -->|64| reference["reference"]
   raiz["raiz"] -->|53| specs["specs"]
   specs["specs"] -->|53| backlog["backlog"]
   backlog["backlog"] -->|40| specs["specs"]
@@ -83,7 +83,7 @@ flowchart LR
 | `DHR-ROTEAMENTO-003` | 81 | [governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md](../../governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md) |
 | `RULE-MET-01` | 78 | [governance/RULES.md](../../governance/RULES.md) |
 | `EUA-E04` | 76 | [governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) |
-| `SPEC-018` | 76 | [ROADMAP.md](../../ROADMAP.md) |
+| `SPEC-018` | 75 | [ROADMAP.md](../../ROADMAP.md) |
 | `BL-029` | 74 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `INV-04` | 72 | [governance/RULES.md](../../governance/RULES.md) |
 | `DHR-AUDITOR-EXTERNO-009` | 69 | [governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md) |
@@ -111,7 +111,7 @@ flowchart LR
 | `SPEC-015` | Indicativa (não aberta) | — | 23 |
 | `SPEC-016` | Indicativa (não aberta) | — | 17 |
 | `SPEC-017` | Indicativa (não aberta) | — | 8 |
-| `SPEC-018` | Indicativa (não aberta) | — | 76 |
+| `SPEC-018` | Indicativa (não aberta) | — | 75 |
 | `SPEC-019` | **Homologada** | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | 64 |
 | `SPEC-020` | **Homologada** | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | 125 |
 | `SPEC-021` | **Homologada** | [specs/features/SPEC-021/plan.md](../../specs/features/SPEC-021/plan.md) | 54 |
@@ -267,7 +267,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md](../../governance/DHR-EUA-E14_Ata_Homologacao_Camada_Metacognicao.md) | DHR-EUA-E14 — Ata de Homologação da Emenda EUA-E14 (Camada Metacognição) | 11 | 5 |
 | [DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md](../../governance/DHR-EUA-E15_Ata_Homologacao_Redesignacao_Piloto_SPEC-001.md) | DHR-EUA-E15 — Ata de Homologação da Redesignação do Piloto de Incorporação (S... | 20 | 6 |
 | [DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md](../../governance/DHR-EUA-E16_Ata_Homologacao_Sincronizacao_Agentes.md) | DHR-EUA-E16 — Ata de Homologação da Sincronização dos Agentes + RPSA | 25 | 6 |
-| [DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md](../../governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md) | DHR-EUA-E17 — Ata de Homologação: Reposicionamento das Specs de Governança do... | 25 | 16 |
+| [DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md](../../governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md) | DHR-EUA-E17 — Ata de Homologação: Reposicionamento das Specs de Governança do... | 24 | 16 |
 | [DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md](../../governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md) | DHR-EUA-E18 — Ata de Homologação: Redução de Viés e Uso Sincronizado da Spec-... | 31 | 16 |
 | [DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md](../../governance/DHR-EUA-E19_Ata_Homologacao_Economia_Tokens_Camada_Meta.md) | DHR-EUA-E19 — Ata de Homologação: Economia de Tokens na Camada Meta (Roteamen... | 23 | 11 |
 | [DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md](../../governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md) | DHR-EUA-E19a — Ata de Homologação — Restauração Semântica do Signal Package | 26 | 10 |
@@ -329,7 +329,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md](../../governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md) | DHR-SPEC007-002 — Ata de Decisão — Divisão da SPEC-007 (Opção C) e slot da SP... | 40 | 21 |
 | [DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md](../../governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md) | DHR-SPEC007-003 — Ata de Decisão — Respostas de Andraus às perguntas P-1..P-1... | 39 | 12 |
 | [DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md](../../governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md) | DHR-SPEC007-004 — Ata de Decisão — Respostas P-12..P-14 do Plan reduzido da S... | 30 | 9 |
-| [DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md](../../governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md) | DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formaç... | 31 | 11 |
+| [DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md](../../governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md) | DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formaç... | 30 | 11 |
 | [DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md](../../governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md) | DHR-SPEC007-006 — Ata de Decisão — Q7(c): uso do livro *Evidence-Based Techni... | 21 | 9 |
 | [DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md](../../governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md) | DHR-SPEC007-007 — Ata de Decisão — Diretriz de autenticação criptográfica dos... | 20 | 6 |
 | [DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md](../../governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md) | DHR-SPEC019-001 — Ata de Homologação — SPEC-019 v1.0 (Harness Governance & Ev... | 17 | 6 |
@@ -337,7 +337,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md](../../governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md) | DHR-SPEC020-002 — Ata de Homologação — ERRATUM-SPEC020-002 (dimensão B "RAG f... | 4 | 14 |
 | [DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md](../../governance/DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md) | DHR-SPEC021-001 — Ata de Homologação — SPEC-021 v1.0 (Harness Score / Maturit... | 8 | 7 |
 | [DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md](../../governance/DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md) | DHR-SPEC038-001 — Ata de Homologação — Abertura da SPEC-038 (Trading Analysis... | 9 | 14 |
-| [DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md](../../governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md) | DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harnes... | 15 | 12 |
+| [DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md](../../governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md) | DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harnes... | 14 | 12 |
 | [DHR-SPEC046-001_Ata_Homologacao_Abertura_SPEC-046.md](../../governance/DHR-SPEC046-001_Ata_Homologacao_Abertura_SPEC-046.md) | DHR-SPEC046-001 — Ata de Homologação — Abertura da SPEC-046 (Spec-Time Contex... | 7 | 12 |
 | [DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md](../../governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md) | DHR-SPEC046-002 — Ata de Homologação — SPEC-046 v1.0 (Spec-Time Context Cachi... | 6 | 15 |
 | [DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md](../../governance/DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md) | DHR-SPEC046-003 — Ata de Homologação — SPEC-046 v1.1 (Emenda: Caching Inter-S... | 4 | 8 |
@@ -348,13 +348,13 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md](../../governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md) | DHR-WF-001 — Ata de Homologação — WORKFLOW.md soberano na raiz + conformidade... | 9 | 8 |
 | [DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md](../../governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md) | DHR-WF-002 — Ata de Homologação — WORKFLOW.md v2.0 (decisões sobre o Dossiê d... | 5 | 8 |
 | [EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md](../../governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md) | [HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] EMENDA-SPEC001-0... | 1 | 15 |
-| [ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md](../../governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md) | ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: ... | 2 | 34 |
+| [ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md](../../governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md) | ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: ... | 2 | 31 |
 | [ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md](../../governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md) | ERRATUM-SPEC001-001 — Âncora de fonte: SAS-001 §6.7 → §6.10 (metadados de tra... | 3 | 5 |
 | [ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md](../../governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md) | [HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] ERRATUM-SPEC001-... | 3 | 21 |
 | [ERRATUM-SPEC005-001_Estado_BL-008.md](../../governance/ERRATUM-SPEC005-001_Estado_BL-008.md) | ERRATUM-SPEC005-001 — Estado do BL-008: `Absorvido`, não `ATIVADO` — erratum ... | 1 | 13 |
 | [ERRATUM-SPEC019-001_PROPOSTA.md](../../governance/ERRATUM-SPEC019-001_PROPOSTA.md) | ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homolog... | 0 | 9 |
-| [ERRATUM-SPEC020-001_Fechamento_tool_correctness.md](../../governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md) | ERRATUM-SPEC020-001 — Fechamento da dimensão B "tool correctness" (BL-017) — ... | 7 | 9 |
-| [ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md](../../governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md) | ERRATUM-SPEC020-002 — Dimensão B "RAG faithfulness", metade F1 (fidelidade do... | 6 | 31 |
+| [ERRATUM-SPEC020-001_Fechamento_tool_correctness.md](../../governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md) | ERRATUM-SPEC020-001 — Fechamento da dimensão B "tool correctness" (BL-017) — ... | 6 | 9 |
+| [ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md](../../governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md) | ERRATUM-SPEC020-002 — Dimensão B "RAG faithfulness", metade F1 (fidelidade do... | 5 | 31 |
 | [ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md](../../governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md) | Estudo — garantias determinísticas para prevenir os erros de coesão (hooks, r... | 29 | 8 |
 | [EUA-E04_Heranca_Delta_PROPOSTA.md](../../governance/EUA-E04_Heranca_Delta_PROPOSTA.md) | EUA-E04 — Bloco "Herança / Delta" no atomic-spec §8 (PROPOSTA) | 3 | 6 |
 | [EUA-E05_Epistemic_Check_PROPOSTA.md](../../governance/EUA-E05_Epistemic_Check_PROPOSTA.md) | EUA-E05 — Epistemic Check no atomic-spec §11 (PROPOSTA) | 3 | 8 |
@@ -414,7 +414,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md](../../governance/propostas/PARECER-REVISOR-SPEC006-v1.11-2026-10-18.md) | Parecer do Revisor SOT — SPEC-006 errata v1.11 (rodada por delta) — 2026-10-18 | 8 | 6 |
 | [PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md](../../governance/propostas/PARECER-REVISOR-SPEC006-v1.12-2026-10-18.md) | PARECER DO REVISOR SOT — SPEC-006 errata v1.12 (revisão por delta, revisor.md... | 8 | 11 |
 | [PLANO-FECHAR-H001-E-ROTEAR-MODELOS-2026-10-18.md](../../governance/propostas/PLANO-FECHAR-H001-E-ROTEAR-MODELOS-2026-10-18.md) | PLANO — Fechar a H-001 sem quebra documental + roteamento de modelos por tare... | 8 | 13 |
-| [PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md](../../governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md) | Parecer do Revisor — ERRATUM-REAPONT-001 v1.0 (R1, S2/sonnet) — 2026-10-30 | 1 | 10 |
+| [PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md](../../governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md) | Parecer do Revisor — ERRATUM-REAPONT-001 v1.0 (R1, S2/sonnet) — 2026-10-30 | 2 | 10 |
 | [AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md](../../governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md) | Auditoria de tarefas por criticidade e Dossiê de roteamento de modelos (camad... | 4 | 22 |
 | [TELEMETRIA-ONDA0.md](../../governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md) | Telemetria manual — onda 0 de roteamento (rascunho, não normativo) | 3 | 3 |
 | [ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md](../../governance/propostas/SPEC-002/ERRATUM-SPEC002-001_Aditivo_PROPOSTO.md) | [ERRATUM-PROPOSTO — NÃO APLICADO] ERRATUM-SPEC002-001 — Erratum ADITIVO único... | 0 | 19 |
@@ -555,7 +555,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [CAMADA GOVERNANÇA CONHECIMENTO.MD](../../reference/camadas/CAMADA%20GOVERNAN%C3%87A%20CONHECIMENTO.MD) | MC-GOV-001 — MASTER CONTRACT DA CAMADA DE GOVERNANÇA | 3 | 0 |
 | [CAMADA INCERTEZA.MD](../../reference/camadas/CAMADA%20INCERTEZA.MD) | MASTER SPEC | 2 | 0 |
 | [CAMADA INQUÉRITO.MD](../../reference/camadas/CAMADA%20INQU%C3%89RITO.MD) | MIQG-001 | 2 | 0 |
-| [CAMADA MEMÓRIA.MD](../../reference/camadas/CAMADA%20MEM%C3%93RIA.MD) | MC-EXP-001 — MASTER CONTRACT DA CAMADA DE EXPERIÊNCIA E MEMÓRIA | 7 | 0 |
+| [CAMADA MEMÓRIA.MD](../../reference/camadas/CAMADA%20MEM%C3%93RIA.MD) | MC-EXP-001 — MASTER CONTRACT DA CAMADA DE EXPERIÊNCIA E MEMÓRIA | 8 | 0 |
 | [CAMADA METACOGNIÇÃO.MD](../../reference/camadas/CAMADA%20METACOGNI%C3%87%C3%83O.MD) | MASTER DOCUMENTO | 3 | 0 |
 | [CAMADA ONTOLÓGICA.MD](../../reference/camadas/CAMADA%20ONTOL%C3%93GICA.MD) | MASTER SPEC — CAMADA ONTOLÓGICA DO UNIVERSO COGNITIVO DO LLM | 2 | 0 |
 | [CAMADA PRINCIPIOLÓGICA.MD](../../reference/camadas/CAMADA%20PRINCIPIOL%C3%93GICA.MD) | CMHP-001 | 5 | 0 |

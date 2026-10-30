@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "afc64ce4f7dd83d5aac84c27ddd4babf8c417cfb98b27e9056ec8e2ec8373cb2",
+  "digest": "823cb527ec277c90c1881df9b6e65100e7c56190d84c29bdc1b21bca907ffd48",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1557,7 +1557,7 @@
    "path": "governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
    "area": "governance",
    "title": "DHR-EUA-E17 — Ata de Homologação: Reposicionamento das Specs de Governança do Harness (FASE GOV)",
-   "in": 25,
+   "in": 24,
    "out": 16
   },
   {
@@ -1991,7 +1991,7 @@
    "path": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formação + selo)",
-   "in": 31,
+   "in": 30,
    "out": 11
   },
   {
@@ -2047,7 +2047,7 @@
    "path": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
    "area": "governance",
    "title": "DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harness) — BASELINE v1.1",
-   "in": 15,
+   "in": 14,
    "out": 12
   },
   {
@@ -2125,7 +2125,7 @@
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
    "in": 2,
-   "out": 34
+   "out": 31
   },
   {
    "path": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
@@ -2159,14 +2159,14 @@
    "path": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-001 — Fechamento da dimensão B \"tool correctness\" (BL-017) — erratum ADITIVO",
-   "in": 7,
+   "in": 6,
    "out": 9
   },
   {
    "path": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
-   "in": 6,
+   "in": 5,
    "out": 31
   },
   {
@@ -2586,7 +2586,7 @@
    "path": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
    "area": "governance",
    "title": "Parecer do Revisor — ERRATUM-REAPONT-001 v1.0 (R1, S2/sonnet) — 2026-10-30",
-   "in": 1,
+   "in": 2,
    "out": 10
   },
   {
@@ -2985,7 +2985,7 @@
    "path": "reference/camadas/CAMADA MEMÓRIA.MD",
    "area": "reference",
    "title": "MC-EXP-001 — MASTER CONTRACT DA CAMADA DE EXPERIÊNCIA E MEMÓRIA",
-   "in": 7,
+   "in": 8,
    "out": 0
   },
   {
@@ -4262,7 +4262,7 @@
   {
    "id": "DHR-SPEC007-005",
    "defined_in": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "cited_by": 31
+   "cited_by": 30
   },
   {
    "id": "DHR-SPEC007-006",
@@ -4307,7 +4307,7 @@
   {
    "id": "DHR-SPEC038-002",
    "defined_in": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
-   "cited_by": 15
+   "cited_by": 14
   },
   {
    "id": "DHR-SPEC046-001",
@@ -4437,7 +4437,7 @@
   {
    "id": "EUA-E17",
    "defined_in": "governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
-   "cited_by": 22
+   "cited_by": 21
   },
   {
    "id": "EUA-E18",
@@ -4502,7 +4502,7 @@
   {
    "id": "INV-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 40
+   "cited_by": 39
   },
   {
    "id": "INV-07",
@@ -5252,7 +5252,7 @@
   {
    "id": "RULE-HD-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 37
+   "cited_by": 36
   },
   {
    "id": "RULE-HD-03",
@@ -5477,7 +5477,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 10
+   "cited_by": 9
   },
   {
    "id": "RULE-KFH-006",
@@ -5707,7 +5707,7 @@
   {
    "id": "RULE-RET-001",
    "defined_in": null,
-   "cited_by": 5
+   "cited_by": 4
   },
   {
    "id": "RULE-RET-002",
@@ -6052,7 +6052,7 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 76
+   "cited_by": 75
   },
   {
    "id": "SPEC-019",
@@ -33088,11 +33088,6 @@
   },
   {
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
-   "to": "governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
    "type": "id"
   },
@@ -33118,17 +33113,7 @@
   },
   {
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
-   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
-   "to": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
    "type": "id"
   },
   {
@@ -33143,18 +33128,18 @@
   },
   {
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
-   "to": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
-   "type": "path"
-  },
-  {
-   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
-   "to": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
-   "type": "path"
-  },
-  {
-   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "reference/camadas/CAMADA MEMÓRIA.MD",
+   "type": "path"
   },
   {
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
@@ -33210,11 +33195,6 @@
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "to": "specs/features/SPEC-007/plan.md",
    "type": "id"
-  },
-  {
-   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
-   "to": "specs/features/SPEC-007/plan.md",
-   "type": "path"
   },
   {
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
