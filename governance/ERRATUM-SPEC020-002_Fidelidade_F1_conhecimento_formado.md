@@ -182,7 +182,7 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA — conf
 ## 7. §7-bis — Redução de viés (CRITICAL)
 
 **Bloco A — pergunta adversarial (o critério da seção 1, única parte com efeito de avaliação):**
-- *Se o critério estivesse errado, o que se veria?* (1) Uma Spec futura do grupo (A) que pula a parte D, aceita juiz igual ao formador ou fixa limiar de paper sairia com F1 = PASS no `checks.md`. Observável pelos casos herdados: Cenário-KFH-T06/T07 (literais), T09 e ADV-KFH-04/24 (independência), ADV-KFH-13 (limiar externo). (2) Uma Spec do grupo (B) que abre escrita no KG fora do selo sem ser apanhada: observável por ADV-KFH-01. (3) O erratum lido como fechamento da "RAG faithfulness" inteira: o BL-017 encerrado ou a F2 tratada como fechada no ROADMAP/RMR-001. (4) Leitura retroativa: alguém reabrindo a SPEC-006/007/048 por F1 — observável como pedido de reconferência, contrário a 1.2.
+- *Se o critério estivesse errado, o que se veria?* (1) Uma Spec futura do grupo (A) que pula a parte D, aceita juiz igual ao formador ou fixa limiar de paper sairia com F1 = PASS no `checks.md`. Observável pelos casos herdados: Cenário-KFH-T06/T07 (literais), T09 e ADV-KFH-04/24 (independência), ADV-KFH-13 (limiar externo). (2) Uma Spec do grupo (B) que abre escrita no KG fora do selo sem ser apanhada: observável por ADV-KFH-01. (3) O erratum lido como fechamento da "RAG faithfulness" inteira: o BL-017 encerrado ou a F2 tratada como fechada no ROADMAP/RMR-001. (4) Leitura retroativa: alguém reabrindo a SPEC-006/007/048 por F1 com base neste erratum, sem ordem de Andraus — observável como pedido de reconferência, contrário a 1.2 (a etapa futura de revisão das specs pretéritas, se Andraus a ordenar, é ato à parte).
 - *O ENTÃO pode ser conferido por um observador independente?* **Em parte.** A parte literal (1.4) é conferível por qualquer um com busca de texto. A parte de julgamento ("enfraquece em substância?") **não** é determinística: depende do Revisor como detector e da homologação de Andraus. Isso está declarado como lacuna (seção 3, Lacuna 2), não escondido.
 - *Existe QUANDO satisfeito sem que o ENTÃO deva acontecer?* Sim, coberto: (a) Spec do grupo (B) — confere-se só o item 5; (b) Spec fora de (A) e (B) — não recebe estado F1 (1.5); (c) conhecimento do caminho (a) ou de experiência — fora de F1 (1.3).
 
@@ -249,7 +249,7 @@ O `checks.md` da SPEC-020 **não** é editado: este erratum o cobre por referên
 
 *[v1.1: as linhas Q-2, Q-3, Q-4 e Q-7 eram perguntas com opções — texto no Anexo V1.1]*
 
-**Pendentes para a homologação** (premissa usada no texto até a resposta):
+**Pendentes para a homologação** (premissa usada no texto até a resposta; a linha Q-8 fica só como registro — já respondida, DHR-DOCSYNC-003):
 
 | # | Pergunta | Premissa / recomendação |
 |---|---|---|
@@ -288,7 +288,7 @@ Numa correção futura, corrigir **todos** os locais da linha. (O Anexo V1.0 é 
 | Estado das decisões tirado só do ROADMAP; SPEC-020-PRINC-001 (FECHADA, efetiva) fora da lista de abertas; AGENTS.md §7 saneado (DHR-DOCSYNC-003) *[v1.1: "AGENTS.md §7 defasado"]* | Cabeçalho "Fonte do estado das decisões"; §4 (lista e nota); Q-8 (respondida); registro de mudanças (M-1; m-1 do R2) | ROADMAP "Decisões abertas ativas" e "Decisões FECHADAS"; DHR-SPEC020-001 item 1; AGENTS.md §7; DHR-DOCSYNC-003 item a |
 | Abertas registradas só em ata (CKG-STRUCT-ORIGIN-001; produtor/gatilho de promoção) e mecanismo de assinatura | §4 | DHR-SPEC048-002 §5; ROADMAP "Decisões FECHADAS" (Autenticação dos atos) |
 | Compatibilidade proposta Minor | Cabeçalho; seção 8; Q-3 | RULES.md (CLASSE-MECH-001, PRINC-BID-001); DHR-SPEC038-002; DHR-SPEC006-003 D3; DHR-SPEC006-005 |
-| Forma A: uma linha ao fim do plan.md | Seção 9; Q-4; seção 13 (assertivas) | SPEC-020: linha "**Errata aditiva (2026-10-03, DHR-SPEC038-002)**" |
+| Forma A: uma linha ao fim do plan.md | Seção 9; Q-4; seção 14 (assertivas) | SPEC-020: linha "**Errata aditiva (2026-10-03, DHR-SPEC038-002)**" |
 
 ---
 
