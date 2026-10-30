@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "b39b1d8651346dbae2c016c7866639a1f572528bba8463ab7d80cdf6bdb45922",
+  "digest": "1bf601da7ad1c34e3c775345c66fd9f9a159952ff2241fc69469d453f594b169",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2146,7 +2146,7 @@
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
    "in": 1,
-   "out": 25
+   "out": 28
   },
   {
    "path": "governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md",
@@ -2754,7 +2754,7 @@
    "path": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
    "area": "governance",
    "title": "Parecer do Revisor — ERRATUM-SPEC020-002 v1.0 (metade F1 da dimensão B) — R1 integral (S3, opus) — 2026-10-30",
-   "in": 2,
+   "in": 3,
    "out": 7
   },
   {
@@ -3055,7 +3055,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 193,
+   "in": 194,
    "out": 9
   },
   {
@@ -3083,7 +3083,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 170,
+   "in": 171,
    "out": 19
   },
   {
@@ -3590,7 +3590,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 49
+   "cited_by": 50
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -5115,7 +5115,7 @@
   {
    "id": "RULE-EV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-EV-05",
@@ -5235,7 +5235,7 @@
   {
    "id": "RULE-HG-03",
    "defined_in": "governance/RULES.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "RULE-HG-04",
@@ -5515,7 +5515,7 @@
   {
    "id": "RULE-MECH-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 52
+   "cited_by": 53
   },
   {
    "id": "RULE-MECH-02",
@@ -5615,7 +5615,7 @@
   {
    "id": "RULE-PD-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 40
+   "cited_by": 41
   },
   {
    "id": "RULE-PD-02",
@@ -5920,12 +5920,12 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 118
+   "cited_by": 119
   },
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 170
+   "cited_by": 171
   },
   {
    "id": "SPEC-003",
@@ -5960,7 +5960,7 @@
   {
    "id": "SPEC-009",
    "defined_in": "ROADMAP.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "SPEC-010",
@@ -6160,7 +6160,7 @@
   {
    "id": "SPEC-049",
    "defined_in": "ROADMAP.md",
-   "cited_by": 27
+   "cited_by": 28
   }
  ],
  "edges": [
@@ -33146,8 +33146,28 @@
   },
   {
    "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "to": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "to": "specs/features/SPEC-001/checks.md",
    "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
