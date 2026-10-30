@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "823cb527ec277c90c1881df9b6e65100e7c56190d84c29bdc1b21bca907ffd48",
+  "digest": "4c805d8fdd0f9d7b84639887e1c93626d7b65c3fd1087b4023eb15869ea2c955",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -6007,7 +6007,7 @@
   {
    "id": "SPEC-009",
    "defined_in": "ROADMAP.md",
-   "cited_by": 42
+   "cited_by": 43
   },
   {
    "id": "SPEC-010",

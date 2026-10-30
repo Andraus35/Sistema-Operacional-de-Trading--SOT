@@ -61,3 +61,6 @@ Q-1, Q-5, Q-6, Q-9 seguem para a homologação. **Nenhuma errata/emenda homologa
 | Q-3/Q-4 (extensão) | **Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada) |
 | Q-8 (ROADMAP) | **Sim**: nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele |
 Q-5, Q-6, Q-7 seguem com a premissa do texto até a homologação. **Nenhuma errata homologada por este adendo**; decisões abertas seguem abertas (CONS-01).
+
+## 9. Adendo 6 — Q-9 do ERRATUM-REAPONT-001 (chat, 2026-10-30) `[FATO]`
+**Q-9 (recuperação de experiência — EXP-SPEC-015..020 e 022):** destino = **SPEC-009/017, como endereço indicativo** (as Specs não estão abertas; G-001 e a decisão de fundo seguem abertas). Entra no erratum como nota própria (N-G) para as linhas L-05 (1ª parte) e L-06 da SPEC-006. Nenhuma errata homologada por este adendo; decisões abertas seguem abertas (CONS-01).

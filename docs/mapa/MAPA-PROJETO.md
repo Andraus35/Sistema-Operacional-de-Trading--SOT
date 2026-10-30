@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-30** · digest `823cb527ec277c90` · **493** documentos · **7801** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-30** · digest `4c805d8fdd0f9d7b` · **493** documentos · **7801** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -102,7 +102,7 @@ flowchart LR
 | `SPEC-006` | **Homologada** | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | 224 |
 | `SPEC-007` | **Homologada** | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | 153 |
 | `SPEC-008` | Indicativa (não aberta) | — | 34 |
-| `SPEC-009` | Indicativa (não aberta) | — | 42 |
+| `SPEC-009` | Indicativa (não aberta) | — | 43 |
 | `SPEC-010` | Indicativa (não aberta) | — | 48 |
 | `SPEC-011` | Indicativa (não aberta) | — | 6 |
 | `SPEC-012` | Indicativa (não aberta) | — | 6 |
