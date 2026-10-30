@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "a34f899b35506400d0acc4cce70487bbf3c995839aa62707b913671cc61674e6",
+  "digest": "23d64450ef2093f79db858c35f0fa2f65939239e27885866151ed80c8402153c",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1431,7 +1431,7 @@
    "path": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
    "area": "governance",
    "title": "DHR-DOCSYNC-003 — Ata de Decisão — Detector de sincronização casa ID inteiro; AGENTS.md §7 corrige SPEC-020-PRINC-001",
-   "in": 2,
+   "in": 3,
    "out": 7
   },
   {
@@ -2146,7 +2146,7 @@
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
    "in": 2,
-   "out": 29
+   "out": 30
   },
   {
    "path": "governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md",
@@ -3832,7 +3832,7 @@
   {
    "id": "DHR-DOCSYNC-003",
    "defined_in": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-ECC05-001",
@@ -33079,6 +33079,11 @@
   {
    "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
    "type": "id"
   },
   {

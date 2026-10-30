@@ -11,7 +11,8 @@
 | Origem do conteúdo | `specs/features/SPEC-007/plan.md` v2.3 (BASELINE, DHR-SPEC007-005), seção "Proposta de emenda pontual à SPEC-020 (dimensão B \"RAG faithfulness\") — metade F1"; RULE-KFH-005; RULE-KFH-006; INV-KFH-01; BASpec-KFH-005/006; EC-KFH-003/004; Cenário-KFH-T06..T09; ADV-KFH-01/03/04/05/13/24. SPEC-020: D5, D6, I/O Schema "Resultado de avaliação de lente". Atas: DHR-SPEC007-001 Q5; DHR-SPEC007-002 §3/§4; DHR-SPEC007-003 P-5; DHR-SPEC007-005 H-3; DHR-SPEC048-001 (condição m-10); DHR-SPEC048-002 §3/§5; DHR-SPEC020-001. `[FONTE]` |
 | Âncoras | **Por ID + texto literal entre aspas, nunca por número de linha** (prática P2 em vigor; P3 ainda a especificar — DHR-RETRO-001 §1). |
 | Complexidade | CRITICAL (a da SPEC-020; não muda) · D0–D8 focado no que o erratum toca · profile standard + adversarial. |
-| Compatibilidade proposta | **Minor**, com aplicação **prospectiva** (recomendação; decisão de Andraus — Q-3). Justificativa na seção 8. `[PROPOSTA]` |
+| Respostas de Andraus incorporadas | DHR-RETRO-001 §7 (Adendo 4, chat 2026-10-30): **Q-3** = só daqui em diante (prospectiva); **Q-2** = critério definido, limiares INDETERMINADO, Revisor dá o veredito como detector até existir gate; **Q-4** = arquivo à parte + uma linha no plano da SPEC-020; **Q-7** = só registrar a lacuna (dependência de futura errata da SPEC-007). Q-1, Q-5, Q-6 e Q-9 seguem para a homologação. `[FONTE — FATO NORMATIVO: ata]` |
+| Compatibilidade proposta | **Minor**, com aplicação **prospectiva** — o alcance prospectivo foi decidido por Andraus (Q-3, DHR-RETRO-001 §7); a classificação Minor é proposta do Especificador, **a confirmar na homologação**. Justificativa na seção 8. `[PROPOSTA]` *[v1.1: "**Minor**, com aplicação **prospectiva** (recomendação; decisão de Andraus — Q-3). Justificativa na seção 8."]* |
 | Status epistemológico | `[FONTE]` = conferido nos arquivos citados; `[INFERÊNCIA]` = leitura do Especificador, a conferir pelo Revisor; `[PROPOSTA]` = o que se pede a Andraus; `[DECISÃO NECESSÁRIA]` = lacuna que o Especificador não resolve. |
 | Autor | Especificador Principal SOT (Claude Code, Opus 5.5) |
 | Data | 2026-10-30 |
@@ -32,7 +33,7 @@ A SPEC-020 deixou a dimensão B "RAG faithfulness" **DIFERIDA** até o component
 >
 > **1.1 Critério.** Na dimensão B **"RAG faithfulness"** da SPEC-020 (classe dependente-de-upstream; Non-goal "Dimensões **classe B** (RAG faithfulness / tool correctness / decision traceability)"), a parte que trata da **fidelidade do conhecimento formado** (metade **F1**) passa a ter **critério verificável definido**: a **conformidade a F1 da SPEC-007** (BASELINE v2.3, DHR-SPEC007-005) — **RULE-KFH-005** ("VALIDAÇÃO F1 — parte DETERMINÍSTICA (roda ANTES de qualquer juízo por modelo)") e **RULE-KFH-006** ("VALIDAÇÃO F1 — JUÍZO (Classe H), só após RULE-KFH-005 passar"), nesta ordem.
 >
-> **1.2 Quem fica sujeito, e a que (aplicação prospectiva).** O critério incide **só** sobre Spec, Plan ou errata **homologados depois deste erratum** (molde da CC-11/RULE-MECH-01 e da CC-12/RULE-PD-01: "prospectiva"). **Não há reconferência** das Specs já homologadas (SPEC-006, SPEC-007, SPEC-048): elas não ganham nem perdem conformidade por este erratum. Ficam sujeitas, e só elas:
+> **1.2 Quem fica sujeito, e a que (aplicação prospectiva).** O critério incide **só** sobre Spec, Plan ou errata **homologados depois deste erratum** (molde da CC-11/RULE-MECH-01 e da CC-12/RULE-PD-01: "prospectiva"). **Não há reconferência** das Specs já homologadas (SPEC-006, SPEC-007, SPEC-048): elas não ganham nem perdem conformidade por este erratum (decidido por Andraus: "só daqui em diante" — DHR-RETRO-001 §7, Q-3). Andraus registrou a intenção de uma **etapa futura de revisão das specs pretéritas** ("Teremos uma etapa futura de revisão das specs pretéritas"), **sem ordem nem escopo definidos**: não é decisão aberta nova, não foi ordenada e não é reconferência por este erratum. Ficam sujeitas, e só elas:
 > - **(A) Formação:** Spec/errata cujo escopo inclua **formar conhecimento a partir de fonte registrada com destino ao KG pelo caminho (b) da RULE-CKG-010** (via selo), ou **mudar esse caminho** (ex.: futura errata da SPEC-007). Conferem-se os itens 1–6 abaixo.
 > - **(B) Admissão ou consumo:** Spec/errata **cujo escopo inclua admitir** conhecimento carimbado no KG pelo caminho (b) (ex.: errata futura da SPEC-006 que trate dessa admissão) **ou consumir** conhecimento carimbado (ex.: errata futura da SPEC-048 que trate desse consumo; slot SPEC-049, quando aberto), **ou mudar esse caminho de admissão/consumo**. Uma errata dessas Specs que não toque admissão nem consumo **não é sujeita**. Confere-se só o item 5 (não cria caminho que contorne F1). A fidelidade do que ela **entrega** é matéria da metade F2, fora deste erratum.
 > - **Demais Specs:** **nenhuma obrigação nova** — não registram nada sobre F1 (seção 1.4).
@@ -106,9 +107,9 @@ Os enunciados abaixo continuam no baseline como estão. Depois da homologação,
 - **Nada se contradiz** entre a seção 1 deste erratum e a "Proposta de emenda pontual à SPEC-020 … metade F2" da SPEC-048: as duas usam "limiares INDETERMINADO até calibração com amostra", mantêm *decision traceability* com a SPEC-014 e não editam a SPEC-020. `[INFERÊNCIA — conferido lendo as duas seções]`
 - **Nota sobre o ERRATUM-SPEC020-001.** A frase dele "**RAG faithfulness ↔ SPEC-007** … permanecem **DIFERIDAS**" (seção "O que NÃO muda") **não é editada** (homologado; INV-09). Leitura vigente: "a dimensão 'RAG faithfulness' divide-se em F1 (SPEC-007) e F2 (SPEC-048); a metade F1 tem critério por este erratum; a metade F2 segue diferida até a homologação do seu erratum". Mesmo texto que a SPEC-048 propôs para essa linha, com o ajuste acima. `[FONTE: SPEC-048 plan.md, linha da tabela de re-apontamento sobre `governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md`]`
 
-**Lacuna 1 — calibração (não resolvida).** Para F2 existe auditoria amostral de falso-ACEITE do juiz (SPEC-048, RULE-RET-011). Para F1, a SPEC-007 **não** traz auditoria amostral de falso-CLEAR do juiz F1: há só o risco residual RU-1 ("eficácia = INDETERMINADA até calibração"; mitigações declaradas no ADV-KFH-03: visto de lote para definições/regras (P-2) e marca de contradição) e a auditoria amostral do `record_hash` (EC-KFH-004), que confere identidade, não qualidade. Logo, "calibração com amostra" da metade F1 **não tem dono nem método definidos**. Este erratum não cria um (seria regra nova na SPEC-007). `[DECISÃO NECESSÁRIA — Q-7]`
+**Lacuna 1 — calibração (não resolvida).** Para F2 existe auditoria amostral de falso-ACEITE do juiz (SPEC-048, RULE-RET-011). Para F1, a SPEC-007 **não** traz auditoria amostral de falso-CLEAR do juiz F1: há só o risco residual RU-1 ("eficácia = INDETERMINADA até calibração"; mitigações declaradas no ADV-KFH-03: visto de lote para definições/regras (P-2) e marca de contradição) e a auditoria amostral do `record_hash` (EC-KFH-004), que confere identidade, não qualidade. Logo, "calibração com amostra" da metade F1 **não tem dono nem método definidos**. Este erratum não cria um (seria regra nova na SPEC-007). **Decidido por Andraus (Q-7, DHR-RETRO-001 §7): só registrar a lacuna**, como **dependência de futura errata da SPEC-007** (sem ordem dada para essa errata). `[FONTE: DHR-RETRO-001 §7]` *[v1.1: "`[DECISÃO NECESSÁRIA — Q-7]`"]*
 
-**Lacuna 2 — sem gate determinístico para F1 em tempo de Spec (não resolvida).** Nenhum script do repositório confere os itens 1–6 (1.4). A parte literal poderia virar gate (busca de IDs/códigos/expressão), mas criar mecanismo é proposta de processo, com `governance/MECANISMOS.json` no mesmo PR e só por ordem de Andraus (AGENTS.md §12, passo 5). Até lá, o veredito é do Revisor como detector e a vigência é de Andraus. `[DECISÃO NECESSÁRIA — Q-9]`
+**Lacuna 2 — sem gate determinístico para F1 em tempo de Spec (não resolvida).** Nenhum script do repositório confere os itens 1–6 (1.4). A parte literal poderia virar gate (busca de IDs/códigos/expressão), mas criar mecanismo é proposta de processo, com `governance/MECANISMOS.json` no mesmo PR e só por ordem de Andraus (AGENTS.md §12, passo 5). Até lá, o veredito é do Revisor como detector e a vigência é de Andraus (confirmado por Andraus como estado da metade F1 — Q-2, DHR-RETRO-001 §7). O que fazer com a lacuna segue pendente. `[DECISÃO NECESSÁRIA — Q-9]`
 
 ---
 
@@ -119,7 +120,7 @@ Os enunciados abaixo continuam no baseline como estão. Depois da homologação,
 - Nenhuma regra da SPEC-007 é alterada; RULE-KFH-005/006 são **usadas por referência**.
 - **Permanecem ABERTAS** (nenhuma fechada por este erratum), conforme o `ROADMAP.md`, linha "Decisões abertas ativas": J-001 · G-001 · K-001 · C-001 · M-001 · N-001 · SPEC-045-RUNTIME-001 · ECC-03-001 · WORKFLOW-SOT-001 (residual: só WF-D03). `[FONTE: ROADMAP.md "Decisões abertas ativas"]`
 - **Também abertas, registradas em ata (não constam da linha do ROADMAP):** CKG-STRUCT-ORIGIN-001 (BL-035) e "produtor/gatilho de promoção" `[FONTE: DHR-SPEC048-002 §5]`; o **mecanismo** de assinatura dos atos de Andraus (o princípio foi decidido; "o MECANISMO … segue ABERTO para a construção") `[FONTE: ROADMAP.md "Decisões FECHADAS", item "Autenticação dos atos de Andraus"]`.
-  - *Nota de divergência (registrada, não resolvida):* SPEC-020-PRINC-001 (FECHADA, segundo o ROADMAP, linha "Decisões FECHADAS": "SPEC-020 homologada, 2026-09-27, DHR-SPEC020-001"; e EFETIVA segundo a própria ata DHR-SPEC020-001, item 1: "SPEC-020-PRINC-001 — EFETIVA"). O AGENTS.md §7 ainda a lista entre as ativas: está **defasado**. A v1.0 deste erratum repetiu esse erro porque a ordem de serviço copiou o AGENTS.md §7 (parecer R1, M-1). O saneamento é de Andraus: AGENTS.md é arquivo protegido (AGENTS.md §10). Este erratum **não toca** a decisão: só deixa de listá-la como aberta. `[FONTE: ROADMAP.md "Decisões FECHADAS"; DHR-SPEC020-001; AGENTS.md §7 — Q-8]`
+  - *Nota de divergência (registrada, não resolvida):* SPEC-020-PRINC-001 (FECHADA, segundo o ROADMAP, linha "Decisões FECHADAS": "SPEC-020 homologada, 2026-09-27, DHR-SPEC020-001"; e EFETIVA segundo a própria ata DHR-SPEC020-001, item 1: "SPEC-020-PRINC-001 — EFETIVA"). O AGENTS.md §7 a listava entre as ativas (defasado); a v1.0 deste erratum repetiu esse erro porque a ordem de serviço copiou o AGENTS.md §7 (parecer R1, M-1). Saneado por Andraus em 2026-10-30 (DHR-DOCSYNC-003, item a). *[v1.1: "O AGENTS.md §7 ainda a lista entre as ativas: está **defasado**. … O saneamento é de Andraus: AGENTS.md é arquivo protegido (AGENTS.md §10)."]* Este erratum **não toca** a decisão: só deixa de listá-la como aberta. `[FONTE: ROADMAP.md "Decisões FECHADAS"; DHR-SPEC020-001; AGENTS.md §7; DHR-DOCSYNC-003 — Q-8]`
 - **Linha de montagem da SPEC-007 segue parada** até as liberações de Andraus (DHR-SPEC007-005 §3). Este erratum define critério; não libera nada.
 
 ---
@@ -171,7 +172,7 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA — conf
 | CC-05 | PASS | CRITICAL (da SPEC-020) |
 | CC-06/CC-07 | N/A | Não é Engineering Card |
 | CC-08 | PASS | Seção 5, com evidência obrigação a obrigação |
-| CC-09 | PASS | Limiares INDETERMINADO; limite RULE-MET-01 declarado (1.7); lacunas de calibração e de gate marcadas [DECISÃO NECESSÁRIA] (seção 3); nenhum número; veredito não atribuído a gate inexistente (1.4) |
+| CC-09 | PASS | Limiares INDETERMINADO; limite RULE-MET-01 declarado (1.7); lacuna de calibração registrada por decisão de Andraus (Q-7) e lacuna de gate marcada [DECISÃO NECESSÁRIA] (seção 3); nenhum número; veredito não atribuído a gate inexistente (1.4) |
 | CC-10 | PASS | "faithfulness" externo (SRC-RAGAS-01) ≠ F1 do SOT (fidelidade do formado à fonte citada) ≠ F2 (suporte do entregue) ≠ verdade; declarado em 1.7 e seção 3 |
 | CC-11 | N/A | O erratum não cria BASpec com efeito; as Classes D (KFH-005) e H (KFH-006) são herdadas da SPEC-007 |
 | CC-12 | N/A | Meta-harness sem escola (como a SPEC-020) |
@@ -205,7 +206,7 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA — conf
 | Quem | Obrigação nova | Desde quando |
 |---|---|---|
 | Spec/errata do grupo (A) — formação pelo caminho (b), ou mudança desse caminho (ex.: futura errata da SPEC-007) | Itens 1–6 e linha "Dimensão B — F1" no próprio `checks.md` | Homologada depois deste erratum |
-| Spec/errata do grupo (B) — admite ou consome carimbado (ex.: futuras erratas da SPEC-006/SPEC-048; slot SPEC-049, se aberto) | Item 5 e a mesma linha no `checks.md` | Homologada depois deste erratum |
+| Spec/errata do grupo (B) — cujo escopo inclua admitir ou consumir carimbado, ou mudar esse caminho (ex.: futuras erratas da SPEC-006/SPEC-048 que tratem disso; slot SPEC-049, se aberto); errata alheia à admissão/consumo não é sujeita *[v1.1: "admite ou consome carimbado (ex.: futuras erratas da SPEC-006/SPEC-048; slot SPEC-049, se aberto)"]* | Item 5 (literal: só INV-KFH-01 ou equivalente) e a mesma linha no `checks.md` | Homologada depois deste erratum |
 | Revisor | Conferir essa linha nas Specs dos grupos (A)/(B), como detector (1.4) | Pareceres sobre essas Specs |
 | SPEC-006, SPEC-007, SPEC-048 homologadas | **Nenhuma** — sem reconferência | — |
 | Demais Specs | **Nenhuma** | — |
@@ -219,38 +220,44 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA — conf
 | Modelos dependentes | SPEC-020, SPEC-007, SPEC-048, ERRATUM-SPEC020-001: texto não alterado. ROADMAP §12 (linha das dimensões B) e caminho crítico ("007 RAG (fecha 020: RAG faithfulness)"), RMR-001 (nota em BL-017) e CATALOGO: atualização aditiva **pelo Orquestrador, na homologação**, não por este erratum |
 | Re-apontamentos em SPEC-021/SPEC-038 | Fora deste erratum: são da errata de re-apontamento (DHR-RETRO-001 §1, item (3)) |
 
-**Compatibilidade proposta: Minor** `[PROPOSTA — Q-3]`.
+**Alcance decidido:** prospectivo — "só daqui em diante" (Andraus, Q-3, DHR-RETRO-001 §7). A "etapa futura de revisão das specs pretéritas" é intenção de Andraus **sem ordem nem escopo**; não entra nesta análise. `[FONTE]`
+
+**Compatibilidade proposta: Minor** — proposta do Especificador, **a confirmar na homologação** (DHR-RETRO-001 §7). `[PROPOSTA]`
 - *A favor de Minor:* (1) a aplicação é **prospectiva** e **não retroage** — nenhuma Spec homologada ganha ou perde conformidade; (2) o critério cai numa dimensão que **não era avaliada** (DIFERIDA), então nada que antes passava passa a reprovar; (3) não muda regra, lente, estado, transição nem schema; (4) precedentes de critérios novos e prospectivos foram Minor: CLASSE-MECH-001 (RULE-MECH-01..04, "compatibilidade Minor", "prospectiva desde SPEC-002") e PRINC-BID-001 (RULE-PD-01..03, "compatibilidade Minor", "prospectiva desde SPEC-002") — registros no topo do `governance/RULES.md`; e o ERRATUM-SPEC020-001, na homologação Minor da DHR-SPEC038-002.
-- *A favor de Major (para Andraus pesar):* cria obrigação nova para Specs futuras dos grupos (A)/(B) e mais um item para o Revisor. As erratas restritivas da SPEC-006 (v1.11 e v1.13) foram Major (DHR-SPEC006-003 D3; DHR-SPEC006-005). A diferença: lá o KG passava a **recusar o que aceitava**, com efeito sobre o baseline vigente; aqui não há efeito sobre nada já homologado. `[INFERÊNCIA]`
-- *Se Andraus preferir reconferência* (aplicar F1 também às SPEC-006/007/048 homologadas), a classificação deveria ser revista para Major, porque passaria a haver efeito retroativo possível. Recomendação: prospectiva (Q-3).
+- *A favor de Major (para Andraus pesar):* cria obrigação nova para Specs futuras dos grupos (A)/(B) e mais um item para o Revisor. As erratas restritivas da SPEC-006 (v1.11 e v1.13) foram Major (DHR-SPEC006-003 D3; DHR-SPEC006-005). A diferença: lá o KG passava a **recusar o que aceitava**, com efeito sobre o baseline vigente; aqui não há efeito sobre nada já homologado. `[INFERÊNCIA]` *[v1.1 tinha um 3º item, "Se Andraus preferir reconferência … Major" — ramo encerrado pela resposta Q-3; texto no Anexo V1.1]*
 
 ---
 
-## 9. Forma de aplicação proposta (depois da homologação) `[PROPOSTA — Q-4]`
+## 9. Forma de aplicação (depois da homologação) — decidida (Q-4 = forma A, DHR-RETRO-001 §7)
 
-**Forma A (recomendada — mesmo padrão do ERRATUM-SPEC020-001 e da Q-8 da errata v1.13 da SPEC-006):** este arquivo **é** o erratum. O plan.md da SPEC-020 recebe **uma linha** ao final, logo depois da linha "**Errata aditiva (2026-10-03, DHR-SPEC038-002)**", apontando para este arquivo. Texto proposto da linha:
+**Arquivo à parte + uma linha no plano** (mesmo padrão do ERRATUM-SPEC020-001 e da Q-8 da errata v1.13 da SPEC-006): este arquivo **é** o erratum. O plan.md da SPEC-020 recebe **uma linha** ao final, logo depois da linha "**Errata aditiva (2026-10-03, DHR-SPEC038-002)**", apontando para este arquivo. Texto proposto da linha:
 
 > **Errata aditiva (data da homologação, ata a atribuir):** dimensão B "RAG faithfulness", **metade F1** (conhecimento formado) — critério verificável = conformidade a F1 da SPEC-007 (RULE-KFH-005/006), aplicação prospectiva, limiares INDETERMINADO — ver `governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md`. Texto acima não alterado (INV-09); metade F2 (SPEC-048) e decision traceability (SPEC-014) permanecem diferidas.
 
-O `checks.md` da SPEC-020 **não** é editado: este erratum o cobre por referência.
-
-**Forma B (alternativa, proposta no Plan da SPEC-048):** notas aditivas em cada um dos enunciados da seção 2. Desvantagem: mais pontos de edição no baseline e mais chance de contradição entre eles (C01 recorrente — RETROSPECTIVAS, Especificador).
+O `checks.md` da SPEC-020 **não** é editado: este erratum o cobre por referência. A "data da homologação" e a ata da linha acima são preenchidas pelo Orquestrador no ato. *[v1.1 descrevia também a "Forma B" (notas em cada enunciado, proposta no Plan da SPEC-048) — ramo encerrado pela resposta Q-4; texto no Anexo V1.1]*
 
 ---
 
 ## 10. Perguntas para Andraus
 
-| # | Pergunta | Recomendação |
+**Respondidas (DHR-RETRO-001 §7, Adendo 4, chat 2026-10-30) — incorporadas acima, sem ramo condicional:**
+- **Q-2:** critério definido, limiares INDETERMINADO; o Revisor dá o veredito como detector até existir gate → 1.4, 1.9, seção 3 (Lacuna 2).
+- **Q-3:** só daqui em diante (prospectiva); "Teremos uma etapa futura de revisão das specs pretéritas" = intenção futura, sem ordem nem escopo, não é decisão aberta nova → 1.2, seção 8. Classificação Minor = proposta, a confirmar na homologação → cabeçalho, seção 8.
+- **Q-4:** arquivo à parte + uma linha no plano da SPEC-020 → seção 9.
+- **Q-7:** só registrar a lacuna (dependência de futura errata da SPEC-007) → seção 3 (Lacuna 1).
+- **Q-8:** ver linha abaixo.
+
+*[v1.1: as linhas Q-2, Q-3, Q-4 e Q-7 eram perguntas com opções — texto no Anexo V1.1]*
+
+**Pendentes para a homologação** (premissa usada no texto até a resposta):
+
+| # | Pergunta | Premissa / recomendação |
 |---|---|---|
-| Q-1 | Homologar o texto da seção 1 (critério da metade F1)? | Sim |
-| Q-2 | Estado da metade F1 depois do erratum: (a) "critério definido, limiares INDETERMINADO, veredito em spec-time do Revisor como detector até haver gate" ou (b) "fechável, mas só fechada depois da calibração com amostra e de um gate determinístico"? (O ERRATUM-SPEC020-001, diferentemente, declarou *tool correctness* "FECHÁVEL e FECHADA".) | (a) — coerente com a nota de gate da SPEC-007 ("fechando a metade F1"); as lacunas ficam em Q-7 e Q-9 |
-| Q-3 | Compatibilidade e alcance: Minor com aplicação **prospectiva** (sem reconferência das SPEC-006/007/048), ou reconferência das homologadas (e então Major)? | Minor, prospectiva |
-| Q-4 | Forma de aplicação: A (arquivo à parte + uma linha ao fim do plan.md) ou B (nota em cada enunciado)? | A |
-| Q-5 | Aceitar o ajuste ao "texto único" da SPEC-048 ("F2: DIFERIDA até o erratum à parte — DHR-SPEC048-002 §3", no lugar de "na homologação do Plan da SPEC-048") e pedir que o erratum da metade F2 use a mesma redação? | Sim |
-| Q-6 | Confirmar o código ERRATUM-SPEC020-002? | Sim |
-| Q-7 | Calibração com amostra da metade F1 sem dono nem método (seção 3, Lacuna 1): (a) só registrar a lacuna agora; (b) encaminhar a uma futura errata da SPEC-007 (auditoria amostral de falso-CLEAR do juiz F1, análoga à RULE-RET-011); (c) deixar para o BUILD | (a) agora, com (b) anotada como dependência — mesmo tratamento que a DHR-SPEC006-005 D4 deu às dependências da SPEC-007 |
-| Q-8 | O AGENTS.md §7 ainda lista SPEC-020-PRINC-001 entre as ativas, contra o ROADMAP e a DHR-SPEC020-001 (efetiva desde 2026-09-27). Sanear o AGENTS.md §7 (arquivo protegido — só por decisão sua) em ato à parte? | Sim, fora deste erratum; a ordem de serviço deve tirar o estado das decisões só do ROADMAP |
-| Q-9 | Gate determinístico para a parte literal de F1 em tempo de Spec (seção 3, Lacuna 2): (a) só registrar; (b) pedir proposta em `governance/propostas/MELHORIAS-PROCESSO/` (com MECANISMOS.json no PR, se virar mecanismo) | (a) agora; (b) se aparecer a primeira Spec do grupo (A) |
+| Q-1 | Homologar o texto da seção 1 (critério da metade F1)? | Premissa: sim — o texto está escrito como vai valer |
+| Q-5 | Aceitar o ajuste ao "texto único" da SPEC-048 ("F2: DIFERIDA até o erratum à parte — DHR-SPEC048-002 §3", no lugar de "na homologação do Plan da SPEC-048") e pedir que o erratum da metade F2 use a mesma redação? | Premissa: sim — seções 1.9 e 3 já usam a redação ajustada |
+| Q-6 | Confirmar o código ERRATUM-SPEC020-002? | Premissa: sim — o arquivo e a linha da seção 9 usam esse código |
+| Q-8 | **Respondida** (Andraus, 2026-10-30, DHR-DOCSYNC-003, item a: AGENTS.md §7 saneado); nada a decidir neste erratum. *[v1.1: "O AGENTS.md §7 ainda lista SPEC-020-PRINC-001 entre as ativas, contra o ROADMAP e a DHR-SPEC020-001 (efetiva desde 2026-09-27). Sanear o AGENTS.md §7 (arquivo protegido — só por decisão sua) em ato à parte?"]* | — (segue valendo: a ordem de serviço tira o estado das decisões só do ROADMAP) |
+| Q-9 | Gate determinístico para a parte literal de F1 em tempo de Spec (seção 3, Lacuna 2): (a) só registrar; (b) pedir proposta em `governance/propostas/MELHORIAS-PROCESSO/` (com MECANISMOS.json no PR, se virar mecanismo) | Premissa: (a) — o texto só registra a lacuna; (b) se aparecer a primeira Spec do grupo (A) |
 
 ---
 
@@ -263,7 +270,7 @@ Numa correção futura, corrigir **todos** os locais da linha. (O Anexo V1.0 é 
 | Metade F1 = conformidade a RULE-KFH-005 (antes) e RULE-KFH-006 (depois) | §0; 1.1; 1.2 itens 1–3; Herança INHERITS/tabela; linha proposta (§9); Q-1 | SPEC-007: RULE-KFH-005, RULE-KFH-006, seção "Proposta de emenda pontual à SPEC-020 … metade F1"; SPEC-020: D0 "O que a Missão NÃO é", D1 Non-goals |
 | Aplicação prospectiva; sem reconferência das SPEC-006/007/048; grupos (A)/(B); demais sem obrigação | §0; 1.2; 1.5 (Spec não sujeita); §7-bis Bloco A (4); seção 8 (tabela "Quem" e Minor/Major); linha proposta (§9); Q-3 | RULES.md, registros de CLASSE-MECH-001 e PRINC-BID-001 ("prospectiva") |
 | Fora de F1: caminho (a) e conhecimento de experiência (K-001 aberta) | 1.3; CC-02; Herança tabela (RULE-CKG-010); §7-bis Bloco A (c) | SPEC-006: RULE-CKG-010; ROADMAP "Decisões abertas ativas" (K-001) |
-| Parte literal × parte de julgamento; veredito do Revisor como detector; vigência só de Andraus | 1.4; 1.8; Herança (D6, RULE-EV-02); CC-09; §7-bis Bloco A/C; Q-2 | SPEC-020: D6 passos 7 e 8; D5 tabela de estados; schema `veredito_por`; RULE-EV-02 |
+| Parte literal × parte de julgamento, **divididas por grupo** — literal (A) = RULE-KFH-005/006, INV-KFH-01, `judge_model_id ≠ former_model_id`, códigos `KC_*`/`JUDGE_NOT_INDEPENDENT`/`MODEL_ID_UNAUTHENTICATED`, sem limiar numérico; literal (B) = só INV-KFH-01 ou equivalente; "sem caminho que contorne o selo" = julgamento nos dois grupos; veredito do Revisor como detector; vigência só de Andraus | 1.2 (itens e grupos); 1.4; 1.5 ("1–6 em (A); só 5 em (B)"); 1.8; Herança (D6, RULE-EV-02; linha D5); seção 8 (tabela "Quem"); CC-09; §7-bis Bloco A/C; Q-2 | SPEC-020: D6 passos 7 e 8; D5 tabela de estados; schema `veredito_por`; RULE-EV-02 |
 | Sem gate determinístico para F1 em spec-time (lacuna) | 1.4; seção 3 (Lacuna 2); CC-09; §7-bis Bloco A; Q-9 | — |
 | Estados só do D5, sem estado/transição nova; Spec não sujeita não recebe estado; registro "Dimensão B — F1" no `checks.md` | §0; 1.5; Herança ADDED/MODIFIED/tabela; seção 8 (Testes, Schemas) | SPEC-020: D5 (estados e transições); I/O Schema "Resultado de avaliação de lente" |
 | Enum `lente` inalterado; F1 não é 10ª lente | §0; 1.5; Herança tabela; seção 8 (Schemas) | SPEC-020: I/O Schema |
@@ -274,10 +281,11 @@ Numa correção futura, corrigir **todos** os locais da linha. (O Anexo V1.0 é 
 | A dimensão "RAG faithfulness" inteira não fecha; BL-017 não fecha (PARCIAL; `Em espera`) | §0; 1.9; seção 2 (Riscos); §4; §7-bis Bloco A (3) | RMR-001 BL-017; SPEC-007 "Nota de gate" (Disposição PARCIAL) |
 | ADV-EV-06 vale para F2 e *decision traceability*; não para F1 | 1.9; seção 2; Herança tabela | SPEC-020: ADV-EV-06; Riscos "Classe B tratada como fechada" |
 | Limite: F1 ≠ verdade da fonte ≠ relevância; independência de identidade ≠ de erro; RU-1 | 1.7; CC-10; §7-bis Bloco C | SPEC-007: RULE-KFH-006 "LIMITE (RULE-MET-01)", ADV-KFH-03 |
-| Lacuna de calibração: sem auditoria amostral do juiz F1 | Seção 3 (Lacuna 1); CC-09; Q-7 | SPEC-007: ADV-KFH-03 (RU-1), EC-KFH-004; SPEC-048: RULE-RET-011 (só F2) |
+| Respostas de Andraus Q-2/Q-3/Q-4/Q-7 (DHR-RETRO-001 §7); Q-1/Q-5/Q-6/Q-9 pendentes com premissa; intenção futura de revisão das specs pretéritas (sem ordem nem escopo) | Cabeçalho ("Respostas de Andraus incorporadas"; "Compatibilidade proposta"); 1.2; seção 3 (Lacunas 1 e 2); CC-09; seção 8; seção 9; seção 10 | DHR-RETRO-001 §7 |
+| Lacuna de calibração: sem auditoria amostral do juiz F1; só registrada (Q-7), dependência de futura errata da SPEC-007 | Seção 3 (Lacuna 1); CC-09; Q-7 (respondida) | SPEC-007: ADV-KFH-03 (RU-1), EC-KFH-004; SPEC-048: RULE-RET-011 (só F2) |
 | Ajuste ao "texto único" da SPEC-048 | Seção 3; 1.9; Q-5 | SPEC-048: "Texto único por linha da SPEC-020 — coordenado com a metade F1"; DHR-SPEC048-002 §3 |
 | Leitura vigente da frase do ERRATUM-SPEC020-001 | Seção 3; Herança tabela | ERRATUM-SPEC020-001, "O que NÃO muda" |
-| Estado das decisões tirado só do ROADMAP; SPEC-020-PRINC-001 (FECHADA, efetiva) fora da lista de abertas; AGENTS.md §7 defasado | Cabeçalho "Fonte do estado das decisões"; §4 (lista e nota); Q-8; registro de mudanças (M-1) | ROADMAP "Decisões abertas ativas" e "Decisões FECHADAS"; DHR-SPEC020-001 item 1; AGENTS.md §7 |
+| Estado das decisões tirado só do ROADMAP; SPEC-020-PRINC-001 (FECHADA, efetiva) fora da lista de abertas; AGENTS.md §7 saneado (DHR-DOCSYNC-003) *[v1.1: "AGENTS.md §7 defasado"]* | Cabeçalho "Fonte do estado das decisões"; §4 (lista e nota); Q-8 (respondida); registro de mudanças (M-1; m-1 do R2) | ROADMAP "Decisões abertas ativas" e "Decisões FECHADAS"; DHR-SPEC020-001 item 1; AGENTS.md §7; DHR-DOCSYNC-003 item a |
 | Abertas registradas só em ata (CKG-STRUCT-ORIGIN-001; produtor/gatilho de promoção) e mecanismo de assinatura | §4 | DHR-SPEC048-002 §5; ROADMAP "Decisões FECHADAS" (Autenticação dos atos) |
 | Compatibilidade proposta Minor | Cabeçalho; seção 8; Q-3 | RULES.md (CLASSE-MECH-001, PRINC-BID-001); DHR-SPEC038-002; DHR-SPEC006-003 D3; DHR-SPEC006-005 |
 | Forma A: uma linha ao fim do plan.md | Seção 9; Q-4; seção 13 (assertivas) | SPEC-020: linha "**Errata aditiva (2026-10-03, DHR-SPEC038-002)**" |
@@ -289,6 +297,16 @@ Numa correção futura, corrigir **todos** os locais da linha. (O Anexo V1.0 é 
 Este erratum não é abertura de Spec: aplica um critério já pesquisado e homologado no Dossiê da SPEC-007 (research §2/§3.5 — SRC-RAGAS-01, SRC-FAITHJUDGE-01, SRC-ALCE-01; classificação e capturas lá). Nenhuma fonte externa nova foi consultada nem importada; as citadas seguem `[EXTERNO]`, DADO, nunca baseline (RULE-EV-07; DHR-PROV-WEB-001 §2.1). `[FONTE: SPEC-007 plan.md "Dependências técnicas"]`
 
 ---
+
+## 13-A. Registro de mudanças v1.1 → v1.2 (parecer R2 e DHR-RETRO-001 §7)
+
+| Achado / decisão | O que mudou |
+|---|---|
+| N-1 (Média) | 1.4 "Parte literal" dividida por grupo: (A) = conjunto da v1.1; (B) = só INV-KFH-01 ou equivalente. "Sem caminho que contorne o selo" passou à parte de julgamento, nos dois grupos. Propagado: tabela do §8 (coluna "Obrigação nova" do grupo (B)) e linha "Parte literal × parte de julgamento" do §11. Conferidas as demais seções que enumeram o que se confere (1.2, 1.5, §7-bis Bloco A): já estavam divididas |
+| m-1 (Menor) | Nota do §4, [FONTE] da nota, Q-8 (Respondida) e linha do §11: AGENTS.md §7 saneado por Andraus (DHR-DOCSYNC-003, item a); texto da v1.1 entre colchetes |
+| m-2 (Menor) | Aplicado pelo Orquestrador (ficha M) na v1.1 e mantido (linha D5 da tabela de herança) |
+| m-3 (Menor) | Grupo (B) com o mesmo gatilho de escopo do (A) ("cujo escopo inclua admitir … ou consumir …"), em 1.2 e na tabela do §8; errata alheia à admissão/consumo não é sujeita |
+| Adendo 4 (DHR-RETRO-001 §7) | Q-2, Q-3, Q-4 e Q-7 respondidas e incorporadas sem ramo condicional: cabeçalho (nova linha "Respostas de Andraus incorporadas"; "Compatibilidade proposta"), 1.2 (prospectiva decidida; intenção futura de revisão das specs pretéritas, sem ordem nem escopo, sem decisão aberta nova), seção 3 (Lacuna 1 só registrada; Lacuna 2 com o estado confirmado), CC-09, seção 8 (alcance decidido; ramo "reconferência → Major" retirado), seção 9 (forma A decidida; "Forma B" retirada), seção 10 (Q-1, Q-5, Q-6, Q-9 pendentes com premissa), §11 (linha nova) |
 
 ## 13. Registro de mudanças v1.0 → v1.1 (parecer R1)
 
@@ -310,7 +328,7 @@ Este erratum não é abertura de Spec: aplica um critério já pesquisado e homo
 - Nenhum ID novo de RULE/BASpec/EC/T/ADV; nenhum placeholder de ata com formato de ID; nenhum ID de decisão aberta seguido de "— FECHADA"/": FECHADA".
 - **Assertivas para o Orquestrador/Revisor.** **Antes** da homologação: o `specs/features/SPEC-020/plan.md` não contém `ERRATUM-SPEC020-002` (assert-absent) e o `checks.md` não muda. **Depois** (Forma A): assert-present de **uma** linha nova ao final do plan.md apontando para este arquivo; nenhuma outra linha alterada.
 - **Gates — o Especificador NÃO os executou (não tem Bash). Ficam para o Orquestrador:**
-  - `python scripts/check_doc_sync.py` (o ERRO da linha da nota de divergência — §4 — não pode reaparecer)
+  - `python scripts/check_doc_sync.py` (detector já corrigido por DHR-DOCSYNC-003 item b; ERRO deve ser 0)
   - `python scripts/check_refs.py`
   - `python scripts/check_invariants.py governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md`
   - `python scripts/revisor_gate.py governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md`
@@ -321,7 +339,22 @@ Este erratum não é abertura de Spec: aplica um critério já pesquisado e homo
 
 "VERIFY" interno ≠ CONFORME ≠ homologação.
 
-**Pronto para revisão (v1.1).**
+**Pronto para revisão (v1.2).** *[v1.1: "Pronto para revisão (v1.1)."]*
+
+---
+
+## Anexo V1.1 — trechos da v1.1 trocados na v1.2 (preservados — INV-07; NÃO VALEM MAIS)
+
+A v1.1 inteira está no commit `9a3f0bf`. Trechos substituídos (os demais estão entre colchetes no próprio local):
+
+- **1.4, Parte literal (N-1):** "**Parte literal** (busca de texto possível): presença, na Spec sujeita, das referências RULE-KFH-005, RULE-KFH-006 e INV-KFH-01 (ou de texto equivalente que as transcreva); presença da expressão `judge_model_id ≠ former_model_id` e dos códigos `KC_REPROVADO`, `KC_INDETERMINADO`, `JUDGE_NOT_INDEPENDENT`, `MODEL_ID_UNAUTHENTICATED`; ausência de número declarado como limiar de fidelidade (ADV-KFH-13)."
+- **1.2, grupo (B) (m-3):** "**(B) Admissão ou consumo:** Spec/errata que **admite** (ex.: errata futura da SPEC-006, caminho (b)) ou **consome** (ex.: errata futura da SPEC-048; slot SPEC-049, quando aberto) conhecimento carimbado."
+- **§8, 3º item (Adendo 4, Q-3):** "*Se Andraus preferir reconferência* (aplicar F1 também às SPEC-006/007/048 homologadas), a classificação deveria ser revista para Major, porque passaria a haver efeito retroativo possível. Recomendação: prospectiva (Q-3)."
+- **§8, cabeçalho da compatibilidade (Adendo 4):** "**Compatibilidade proposta: Minor** `[PROPOSTA — Q-3]`."
+- **§9 (Adendo 4, Q-4):** título "Forma de aplicação proposta (depois da homologação) `[PROPOSTA — Q-4]`"; "**Forma A (recomendada — …)**"; e "**Forma B (alternativa, proposta no Plan da SPEC-048):** notas aditivas em cada um dos enunciados da seção 2. Desvantagem: mais pontos de edição no baseline e mais chance de contradição entre eles (C01 recorrente — RETROSPECTIVAS, Especificador)."
+- **§10, linhas Q-2/Q-3/Q-4/Q-7 (Adendo 4):** Q-2 "(a) critério definido … ou (b) fechável, mas só fechada depois da calibração com amostra e de um gate determinístico?" — rec. (a); Q-3 "Minor com aplicação prospectiva … ou reconferência das homologadas (e então Major)?" — rec. Minor, prospectiva; Q-4 "A … ou B …?" — rec. A; Q-7 "(a) só registrar …; (b) futura errata da SPEC-007 …; (c) BUILD" — rec. (a) com (b) anotada. Q-1/Q-5/Q-6 tinham só "Recomendação: Sim".
+- **Seção 3, Lacuna 1 (Adendo 4, Q-7):** terminava em "`[DECISÃO NECESSÁRIA — Q-7]`".
+- **CC-09 (Adendo 4):** "lacunas de calibração e de gate marcadas [DECISÃO NECESSÁRIA] (seção 3)".
 
 ---
 
