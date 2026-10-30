@@ -34,7 +34,7 @@
       "estado": "ativo",
       "enforca": "Nega effort por invocação; model nos agentes de construção só se CLASSE-TAREFA válida e model igual à tabela da classe (fail-closed); R-AC7: TODA invocação de Especificador/Revisor exige model + CLASSE-TAREFA (sem fallback ao frontmatter); Haiku em gate/soberano; R-AC5 ordem de correção ao Especificador exige FICHA que classifique todos os achados do parecer e nega classe M pendente; R-AC6 cobre SendMessage",
       "ata": "DHR-ROTEAMENTO-007",
-      "verificado_em": "2026-10-30: tests/test_roteador_modelos.py (49 testes) no CI; R-AC7 ao vivo: invocação de Revisor SOT sem model => deny"
+      "verificado_em": "2026-10-30: tests/test_roteador_modelos.py (49 testes) no CI; ao vivo (2026-10-30): sem model => deny; Revisor sem ALVO/FICHA => deny (R-AC4); Especificador model=opus + CLASSE-TAREFA O => permitido"
     },
     {
       "id": "hook.post-edit-check",
