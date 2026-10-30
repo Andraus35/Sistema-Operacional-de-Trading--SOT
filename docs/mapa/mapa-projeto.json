@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "1bf601da7ad1c34e3c775345c66fd9f9a159952ff2241fc69469d453f594b169",
+  "digest": "d670b3ff444e41b700dc27fa79e8df2f1a8d9191aba4743cf1990e9e6ab46283",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 307,
+   "in": 308,
    "out": 114
   },
   {
@@ -1431,7 +1431,7 @@
    "path": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
    "area": "governance",
    "title": "DHR-DOCSYNC-003 — Ata de Decisão — Detector de sincronização casa ID inteiro; AGENTS.md §7 corrige SPEC-020-PRINC-001",
-   "in": 1,
+   "in": 2,
    "out": 7
   },
   {
@@ -2012,7 +2012,7 @@
    "path": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
    "area": "governance",
    "title": "DHR-SPEC020-001 — Ata de Homologação — SPEC-020 v1.0 (Harness Evaluation Specification, núcleo A)",
-   "in": 16,
+   "in": 17,
    "out": 9
   },
   {
@@ -2068,7 +2068,7 @@
    "path": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-002 — Ata de Homologação — Plan da SPEC-048 v1.4 (RAG Retrieval & Evidence Packet Harness)",
-   "in": 10,
+   "in": 11,
    "out": 15
   },
   {
@@ -2145,7 +2145,7 @@
    "path": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
-   "in": 1,
+   "in": 2,
    "out": 28
   },
   {
@@ -2412,7 +2412,7 @@
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
    "in": 16,
-   "out": 34
+   "out": 35
   },
   {
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
@@ -2755,6 +2755,13 @@
    "area": "governance",
    "title": "Parecer do Revisor — ERRATUM-SPEC020-002 v1.0 (metade F1 da dimensão B) — R1 integral (S3, opus) — 2026-10-30",
    "in": 3,
+   "out": 7
+  },
+  {
+   "path": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — ERRATUM-SPEC020-002 v1.1 — R2 integral (S3, opus) — 2026-10-30",
+   "in": 1,
    "out": 7
   },
   {
@@ -3202,7 +3209,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 220,
+   "in": 221,
    "out": 36
   },
   {
@@ -3265,7 +3272,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 119,
+   "in": 120,
    "out": 21
   },
   {
@@ -3377,7 +3384,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 53,
+   "in": 54,
    "out": 41
   },
   {
@@ -3825,7 +3832,7 @@
   {
    "id": "DHR-DOCSYNC-003",
    "defined_in": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
-   "cited_by": 1
+   "cited_by": 2
   },
   {
    "id": "DHR-ECC05-001",
@@ -4245,7 +4252,7 @@
   {
    "id": "DHR-SPEC020-001",
    "defined_in": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "DHR-SPEC021-001",
@@ -4285,7 +4292,7 @@
   {
    "id": "DHR-SPEC048-002",
    "defined_in": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "DHR-TAX-001",
@@ -4520,7 +4527,7 @@
   {
    "id": "INV-KFH-01",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "INV-KFH-02",
@@ -5430,7 +5437,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-KFH-006",
@@ -5945,7 +5952,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 220
+   "cited_by": 221
   },
   {
    "id": "SPEC-007",
@@ -6015,7 +6022,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 119
+   "cited_by": 120
   },
   {
    "id": "SPEC-021",
@@ -6155,7 +6162,7 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 53
+   "cited_by": 54
   },
   {
    "id": "SPEC-049",
@@ -36131,6 +36138,11 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R1-2026-10-24.md",
    "type": "path"
   },
@@ -38826,6 +38838,41 @@
   },
   {
    "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "to": "governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "to": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-020/PARECER-REVISOR-ERRATUM-SPEC020-002-R2-2026-10-30.md",
    "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },

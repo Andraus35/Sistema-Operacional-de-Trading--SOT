@@ -137,7 +137,7 @@ Os enunciados abaixo continuam no baseline como estão. Depois da homologação,
 | RULE-EV-02: "O LLM NUNCA é o gate de aprovação de uma Spec" | 1.4 (Revisor como detector; vigência só de Andraus) e 1.8 |
 | D6 passo 7: Revisor "(detector, não gate)"; passo 8: "Andraus homologa … A avaliação NÃO homologa" | 1.4 |
 | RULE-EV-03: hallucination é detector | Não mexida; F1 não substitui a lente hallucination |
-| D5: estados e transições; DETECTED→PASS/FAIL nunca por juízo do LLM | 1.5 usa só transições existentes; nenhuma transição por LLM |
+| D5: estados e transições; DETECTED→PASS/FAIL nunca por juízo do LLM | 1.5 usa só transições existentes; DETECTED→PASS/FAIL nunca pelo detector: veredito do Revisor (valor `revisor` já admitido pelo D5) e vigência só de Andraus; tensão com o invariante do D5 herdada e declarada em 1.4 |
 | RULE-EV-04: FAIL adversarial → caso versionado | 1.5 (`FAIL → REGRESSED`) |
 | RULE-EV-05: sem limiar de convicção | 1.8; F1 não tem convicção (J-001 intocada) |
 | RULE-EV-07: externo subordinado, nunca baseline | 1.8; nenhuma métrica externa importada (ADV-KFH-13) |
