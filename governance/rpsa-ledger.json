@@ -528,6 +528,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Correção de dado em texto de projeto e de detector: não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-SPEC020-002",
+      "data": "2026-10-30",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de erratum de Spec: não altera texto de agente."
     }
   ]
 }

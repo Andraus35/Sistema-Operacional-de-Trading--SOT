@@ -726,3 +726,5 @@ Carregado do Dossiê para o Revisor:
 ---
 
 **Errata aditiva (2026-10-03, DHR-SPEC038-002):** dimensão B `tool correctness` FECHADA pela conformidade ao contrato por-ferramenta da SPEC-038 — ver `governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md`. Texto acima não alterado (INV-09); RAG faithfulness (SPEC-007) e decision traceability (SPEC-014) permanecem diferidas.
+
+**Errata aditiva (2026-10-30, DHR-SPEC020-002):** dimensão B "RAG faithfulness", **metade F1** (conhecimento formado) — critério verificável = conformidade a F1 da SPEC-007 (RULE-KFH-005/006), aplicação prospectiva, limiares INDETERMINADO — ver `governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md`. Texto acima não alterado (INV-09); metade F2 (SPEC-048) e decision traceability (SPEC-014) permanecem diferidas.
