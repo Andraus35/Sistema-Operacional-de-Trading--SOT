@@ -145,6 +145,21 @@ o = rem({ subagent_type: 'Revisor SOT', run_in_background: false });
 check('síncrono mantém "acabou de chegar uma entrega"', /acabou de chegar/.test(o.stdout), o.stdout);
 o = rem({ subagent_type: 'Explore' }); check('outro agente não dispara lembrete', o.stdout === '');
 
+
+// 22. 3ª regra (DHR-MERGE-001): aviso determinístico "já é possível e seguro mesclar" — função pura, 1 vez por commit-cabeça
+const guard = require(path.join(root, 'scripts', 'andraus-ask-guard.js'));
+const pronto = { estado: 'PRONTO', motivos: [], extra: { numero: 9, cabeca: 'sha1', url: 'http://x/pull/9', titulo: 'T', arquivos_de_andraus: [] } };
+let mg = guard.decidirMerge({}, pronto, {});
+check('pronto para mesclar bloqueia e manda perguntar', !!mg && /JÁ É POSSÍVEL E SEGURO MESCLAR/.test(mg.reason) && /AskUserQuestion/.test(mg.reason) && /ao comando/.test(mg.reason), JSON.stringify(mg));
+check('aviso não manda mesclar sozinho', /NÃO mescle sem a resposta/.test(mg.reason));
+check('mesma cabeça já avisada libera', guard.decidirMerge({}, pronto, { mergeNotified: mg.merge }) === null);
+check('nova cabeça avisa de novo', guard.decidirMerge({}, { ...pronto, extra: { ...pronto.extra, cabeca: 'sha2' } }, { mergeNotified: mg.merge }) !== null);
+check('não pronto / indeterminado / sem info libera', guard.decidirMerge({}, { estado: 'NAO_PRONTO' }, {}) === null && guard.decidirMerge({}, { estado: 'INDETERMINADO' }, {}) === null && guard.decidirMerge({}, null, {}) === null);
+check('stop_hook_active libera', guard.decidirMerge({ stop_hook_active: true }, pronto, {}) === null);
+check('sem cabeça não avisa (sem chave de deduplicação)', guard.decidirMerge({}, { estado: 'PRONTO', extra: { numero: 9 } }, {}) === null);
+mg = guard.decidirMerge({}, { ...pronto, extra: { ...pronto.extra, arquivos_de_andraus: ['scripts/roteador_modelos.py'] } }, {});
+check('avisa quando o PR toca arquivos do CODEOWNERS', /CODEOWNERS/.test(mg.reason) && /roteador_modelos/.test(mg.reason));
+
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log(fail ? `\n${fail} falha(s)` : '\nTodos os testes do guard/marcador/lembrete passaram');
 process.exit(fail ? 1 : 0);

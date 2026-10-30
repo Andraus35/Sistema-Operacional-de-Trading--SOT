@@ -43,3 +43,12 @@ Q-10 (inclusão de `relation_type`/formato `from`/`to`/`natural_key`/`valid_from
 
 ## 6. Adendo 3 — Q-10 (b), Q-11 e nome do código (chat, 2026-10-25) `[FATO]`
 **Q-10 (b):** forma dos campos-ponteiro em M = regra do Mapa de formato (mesmo selo → `formation.record_ref` do alvo; alvo já no grafo → id do grafo literal; alvo ausente → recusa). **Q-11:** item 4 (b) adotado — selo que declara troca que o registro não traz ⇒ recusa. **Código:** `SEAL_RECORD_NOT_IN_SEAL` confirmado. Errata em v1.2 com parecer R3 CONFORME condicional; ajustes N1/N4 e atualização dos pendentes seguem para a v1.3; **nenhuma errata homologada**; decisões abertas seguem abertas (CONS-01).
+
+## 7. Adendo 4 — respostas sobre o ERRATUM-SPEC020-002 (chat, 2026-10-30) `[FATO]`
+| Pergunta | Resposta de Andraus |
+|---|---|
+| Q-3 (alcance / Minor×Major) | **Só daqui em diante** (prospectiva): "Teremos uma etapa futura de revisão das specs pretéritas." Classificação proposta pelo Especificador: Minor (a confirmar na homologação). A revisão das Specs já homologadas é intenção futura de Andraus, **sem ordem nem escopo definidos** — não é decisão aberta nova, nem foi ordenada |
+| Q-2 (estado do F1) | Critério definido, limiares em aberto (INDETERMINADO); o Revisor dá o veredito como detector até existir gate |
+| Q-4 (forma de aplicação) | Arquivo à parte + uma linha no plano da SPEC-020 |
+| Q-7 (calibração do F1) | Só registrar a lacuna (dependência de futura errata da SPEC-007) |
+Q-1, Q-5, Q-6, Q-9 seguem para a homologação. **Nenhuma errata/emenda homologada por este adendo**; decisões abertas seguem abertas (CONS-01).

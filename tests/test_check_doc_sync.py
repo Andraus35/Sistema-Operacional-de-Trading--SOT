@@ -79,6 +79,16 @@ class DocSync(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertTrue(any("ABERTA 'K-001' declarada fechada" in m for m in self.msgs(rep)))
 
+    def test_d1_id_aberto_nao_casa_dentro_de_id_maior(self):
+        """DHR-DOCSYNC-003: 'K-001' não casa dentro de 'SPEC-020-K-001'; o ID inteiro continua casando."""
+        doc = "Nota: **SPEC-020-K-001 — FECHADA** (outra decisão).\n"
+        code, rep = self.run_check({"governance/QUALQUER-ATA-EDITAVEL.md": doc})
+        self.assertFalse(any("ABERTA 'K-001'" in m for m in self.msgs(rep)))
+        doc2 = "Antes SPEC-020-K-001 ok; depois **K-001 — FECHADA** de verdade.\n"
+        code, rep = self.run_check({"governance/QUALQUER-ATA-EDITAVEL.md": doc2})
+        self.assertEqual(code, 1)
+        self.assertTrue(any("ABERTA 'K-001' declarada fechada" in m for m in self.msgs(rep)))
+
     # --- D3: RULE citada em [Fonte:] do RULES.md sem seção própria ---
     def test_d3_rule_sem_secao_propria(self):
         rules = "## Regras de Governança do Harness (RULE-HG)\nRULE-HG-01: texto.\n\n" \

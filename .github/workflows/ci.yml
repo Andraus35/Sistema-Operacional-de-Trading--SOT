@@ -125,6 +125,10 @@ jobs:
       - name: Aplicar ficha M tests
         run: python -m unittest tests/test_aplicar_ficha_m.py
 
+      # Detector 'pronto para mesclar' (DHR-MERGE-001; bloqueante: o aviso a Andraus deixaria de ser determinístico).
+      - name: Merge ready tests
+        run: python -m unittest tests/test_merge_ready.py
+
       # Informativo (não bloqueia): ledger de achados desatualizado em relação aos pareceres.
       - name: Loop ledger freshness (informative)
         run: python scripts/loop_ledger.py --check

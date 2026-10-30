@@ -81,9 +81,19 @@
       "canal": "settings.json Stop",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Bloqueia fim de turno sem AskUserQuestion após entrega do Especificador/Revisor ou pergunta em texto",
-      "ata": "DHR-ASK-002",
-      "verificado_em": "2026-10-17: confirmado ao vivo em sessão"
+      "enforca": "Bloqueia fim de turno sem AskUserQuestion após entrega do Especificador/Revisor ou pergunta em texto; 3ª regra: avisa deterministicamente (1 vez por commit-cabeça do PR) quando já é possível e seguro mesclar (via scripts/merge_ready.py) e manda perguntar a Andraus; nunca mescla",
+      "ata": "DHR-MERGE-001",
+      "verificado_em": "2026-10-30: tests/test-ask-guard.js (+8 casos da 3ª regra) no CI; ao vivo [conferir no 1º PR verde]"
+    },
+    {
+      "id": "lib.merge-ready",
+      "arquivo": "scripts/merge_ready.py",
+      "canal": "chamado por scripts/andraus-ask-guard.js (Stop); CLI manual: python scripts/merge_ready.py [--json]",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "Detector (ENF-03) de 'pronto para mesclar': PR aberto do ramo, mergeable_state clean, cabeça do PR == HEAD local, árvore limpa, todos os check-runs concluídos com sucesso; informa arquivos do CODEOWNERS; REST via gh (GraphQL indisponível); erro de rede => INDETERMINADO; nunca mescla",
+      "ata": "DHR-MERGE-001",
+      "verificado_em": "2026-10-30: tests/test_merge_ready.py (10 testes) no CI; CLI sem PR => NAO_PRONTO"
     },
     {
       "id": "hook.doc-sync-check",
@@ -192,9 +202,9 @@
       "canal": "CI (informativo) + hook",
       "tipo": "detector",
       "estado": "ativo",
-      "enforca": "CONS-01 e sincronização documental",
-      "ata": "DHR-DOCSYNC-001",
-      "verificado_em": "2026-10-18: ao vivo — 0 achados, exit 0; tests/test_check_doc_sync.py no CI"
+      "enforca": "CONS-01 e sincronização documental (D1 casa só ID inteiro — DHR-DOCSYNC-003)",
+      "ata": "DHR-DOCSYNC-003",
+      "verificado_em": "2026-10-30: tests/test_check_doc_sync.py (16 testes) no CI; falso positivo C-001 em SPEC-020-PRINC-001 eliminado"
     },
     {
       "id": "det.check-handoff",
