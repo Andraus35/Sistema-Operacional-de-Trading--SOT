@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "15dc415ae99d3611fbc49efe7031f72e219752df91a9853976333217515911b3",
+  "digest": "97339a5d0a186f526893df02dead3e9922c85b31013422d5446e412b217ceaac",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 312,
+   "in": 313,
    "out": 82
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 311,
+   "in": 312,
    "out": 114
   },
   {
@@ -213,7 +213,7 @@
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 165,
+   "in": 166,
    "out": 2
   },
   {
@@ -1081,7 +1081,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 122,
+   "in": 123,
    "out": 208
   },
   {
@@ -1102,7 +1102,7 @@
    "path": "governance/CONFLICT-MAP.md",
    "area": "governance",
    "title": "Conflict Map — SOT (Sistema Operacional de Trading)",
-   "in": 57,
+   "in": 58,
    "out": 40
   },
   {
@@ -1305,7 +1305,7 @@
    "path": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
    "area": "governance",
    "title": "DHR-BENCH-INTEL-001 — Ata — Repositório paralelo `Inteligencia-SOT` como Benchmark do RAG",
-   "in": 42,
+   "in": 43,
    "out": 9
   },
   {
@@ -1557,7 +1557,7 @@
    "path": "governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
    "area": "governance",
    "title": "DHR-EUA-E17 — Ata de Homologação: Reposicionamento das Specs de Governança do Harness (FASE GOV)",
-   "in": 24,
+   "in": 25,
    "out": 16
   },
   {
@@ -1767,7 +1767,7 @@
    "path": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
    "area": "governance",
    "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
-   "in": 11,
+   "in": 12,
    "out": 9
   },
   {
@@ -1942,7 +1942,7 @@
    "path": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-005 — Ata de Homologação — Errata aditiva v1.13 da SPEC-006 (ligação com o selo da SPEC-007)",
-   "in": 7,
+   "in": 8,
    "out": 11
   },
   {
@@ -1970,28 +1970,28 @@
    "path": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC007-002 — Ata de Decisão — Divisão da SPEC-007 (Opção C) e slot da SPEC-048",
-   "in": 39,
+   "in": 40,
    "out": 21
   },
   {
    "path": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-003 — Ata de Decisão — Respostas de Andraus às perguntas P-1..P-11 do Plan v1.2 da SPEC-007",
-   "in": 38,
+   "in": 39,
    "out": 12
   },
   {
    "path": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-004 — Ata de Decisão — Respostas P-12..P-14 do Plan reduzido da SPEC-007 e ordem da rodada 5",
-   "in": 29,
+   "in": 30,
    "out": 9
   },
   {
    "path": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formação + selo)",
-   "in": 30,
+   "in": 31,
    "out": 11
   },
   {
@@ -2026,7 +2026,7 @@
    "path": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
    "area": "governance",
    "title": "DHR-SPEC020-002 — Ata de Homologação — ERRATUM-SPEC020-002 (dimensão B \"RAG faithfulness\", metade F1)",
-   "in": 3,
+   "in": 4,
    "out": 14
   },
   {
@@ -2047,7 +2047,7 @@
    "path": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
    "area": "governance",
    "title": "DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harness) — BASELINE v1.1",
-   "in": 14,
+   "in": 15,
    "out": 12
   },
   {
@@ -2075,14 +2075,14 @@
    "path": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-001 — Ata de Homologação — Abertura da SPEC-048 (RAG Retrieval & Evidence Packet Harness) e slot da SPEC-049 (WikiRAG Reading View)",
-   "in": 28,
+   "in": 29,
    "out": 16
   },
   {
    "path": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-002 — Ata de Homologação — Plan da SPEC-048 v1.4 (RAG Retrieval & Evidence Packet Harness)",
-   "in": 12,
+   "in": 13,
    "out": 15
   },
   {
@@ -2121,6 +2121,13 @@
    "out": 15
   },
   {
+   "path": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "area": "governance",
+   "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
+   "in": 0,
+   "out": 34
+  },
+  {
    "path": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
    "area": "governance",
    "title": "ERRATUM-SPEC001-001 — Âncora de fonte: SAS-001 §6.7 → §6.10 (metadados de transporte) — erratum ADITIVO",
@@ -2152,14 +2159,14 @@
    "path": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-001 — Fechamento da dimensão B \"tool correctness\" (BL-017) — erratum ADITIVO",
-   "in": 6,
+   "in": 7,
    "out": 9
   },
   {
    "path": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
-   "in": 5,
+   "in": 6,
    "out": 31
   },
   {
@@ -2404,7 +2411,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 388,
+   "in": 389,
    "out": 39
   },
   {
@@ -3027,7 +3034,7 @@
    "path": "reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md",
    "area": "reference",
    "title": "MC-RAG-001 — Master Contract da Camada RAG",
-   "in": 24,
+   "in": 25,
    "out": 0
   },
   {
@@ -3076,14 +3083,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 56,
+   "in": 57,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 196,
+   "in": 197,
    "out": 9
   },
   {
@@ -3111,14 +3118,14 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 172,
+   "in": 173,
    "out": 19
   },
   {
    "path": "specs/features/SPEC-002/research.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness — DOSSIÊ DE PESQUISA (ABERTURA)",
-   "in": 39,
+   "in": 40,
    "out": 21
   },
   {
@@ -3132,7 +3139,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 147,
+   "in": 148,
    "out": 26
   },
   {
@@ -3153,7 +3160,7 @@
    "path": "specs/features/SPEC-004/ABERTURA.md",
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-004: Cognitive Blackboard Protocol",
-   "in": 37,
+   "in": 38,
    "out": 17
   },
   {
@@ -3167,7 +3174,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 99,
+   "in": 100,
    "out": 22
   },
   {
@@ -3195,7 +3202,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 104,
+   "in": 105,
    "out": 24
   },
   {
@@ -3223,14 +3230,14 @@
    "path": "specs/features/SPEC-006/errata-v1.13.md",
    "area": "specs",
    "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) — texto v1.3",
-   "in": 10,
+   "in": 11,
    "out": 18
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 223,
+   "in": 224,
    "out": 36
   },
   {
@@ -3258,7 +3265,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 151,
+   "in": 152,
    "out": 38
   },
   {
@@ -3293,7 +3300,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 123,
+   "in": 124,
    "out": 24
   },
   {
@@ -3314,7 +3321,7 @@
    "path": "specs/features/SPEC-021/plan.md",
    "area": "specs",
    "title": "SPEC-021 — Harness Score / Maturity Model",
-   "in": 52,
+   "in": 53,
    "out": 18
   },
   {
@@ -3342,7 +3349,7 @@
    "path": "specs/features/SPEC-038/plan.md",
    "area": "specs",
    "title": "SPEC-038 — Trading Analysis Tool Harness (Plan)",
-   "in": 35,
+   "in": 36,
    "out": 22
   },
   {
@@ -3405,7 +3412,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 57,
+   "in": 58,
    "out": 41
   },
   {
@@ -3493,12 +3500,12 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 91
+   "cited_by": 92
   },
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 119
+   "cited_by": 120
   },
   {
    "id": "BL-012",
@@ -3528,7 +3535,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 91
+   "cited_by": 92
   },
   {
    "id": "BL-018",
@@ -3618,7 +3625,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 51
+   "cited_by": 52
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -3758,7 +3765,7 @@
   {
    "id": "DHR-BENCH-INTEL-001",
    "defined_in": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
-   "cited_by": 42
+   "cited_by": 43
   },
   {
    "id": "DHR-BL008-001",
@@ -4093,7 +4100,7 @@
   {
    "id": "DHR-RETRO-001",
    "defined_in": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "DHR-REVISOR-DELTA-001",
@@ -4213,7 +4220,7 @@
   {
    "id": "DHR-SPEC006-005",
    "defined_in": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-SPEC006-OPCAO2-001",
@@ -4233,22 +4240,22 @@
   {
    "id": "DHR-SPEC007-002",
    "defined_in": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "DHR-SPEC007-003",
    "defined_in": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
-   "cited_by": 38
+   "cited_by": 39
   },
   {
    "id": "DHR-SPEC007-004",
    "defined_in": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
-   "cited_by": 29
+   "cited_by": 30
   },
   {
    "id": "DHR-SPEC007-005",
    "defined_in": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "cited_by": 30
+   "cited_by": 31
   },
   {
    "id": "DHR-SPEC007-006",
@@ -4278,7 +4285,7 @@
   {
    "id": "DHR-SPEC020-002",
    "defined_in": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "DHR-SPEC021-001",
@@ -4293,7 +4300,7 @@
   {
    "id": "DHR-SPEC038-002",
    "defined_in": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
-   "cited_by": 14
+   "cited_by": 15
   },
   {
    "id": "DHR-SPEC046-001",
@@ -4313,12 +4320,12 @@
   {
    "id": "DHR-SPEC048-001",
    "defined_in": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "DHR-SPEC048-002",
    "defined_in": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "DHR-TAX-001",
@@ -4423,7 +4430,7 @@
   {
    "id": "EUA-E17",
    "defined_in": "governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "EUA-E18",
@@ -4483,17 +4490,17 @@
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 81
+   "cited_by": 82
   },
   {
    "id": "INV-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 286
+   "cited_by": 287
   },
   {
    "id": "INV-08",
@@ -4503,7 +4510,7 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 110
+   "cited_by": 111
   },
   {
    "id": "INV-10",
@@ -4953,7 +4960,7 @@
   {
    "id": "RULE-CKG-011",
    "defined_in": null,
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-CKG-012",
@@ -5238,7 +5245,7 @@
   {
    "id": "RULE-HD-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "RULE-HD-03",
@@ -5258,7 +5265,7 @@
   {
    "id": "RULE-HG-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "RULE-HG-02",
@@ -5273,7 +5280,7 @@
   {
    "id": "RULE-HG-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-HG-05",
@@ -5443,7 +5450,7 @@
   {
    "id": "RULE-KFH-001",
    "defined_in": null,
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-KFH-002",
@@ -5463,7 +5470,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-KFH-006",
@@ -5693,7 +5700,7 @@
   {
    "id": "RULE-RET-001",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-RET-002",
@@ -5703,7 +5710,7 @@
   {
    "id": "RULE-RET-003",
    "defined_in": null,
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "RULE-RET-004",
@@ -5958,32 +5965,32 @@
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 172
+   "cited_by": 173
   },
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 147
+   "cited_by": 148
   },
   {
    "id": "SPEC-004",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 99
+   "cited_by": 100
   },
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 104
+   "cited_by": 105
   },
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 223
+   "cited_by": 224
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 151
+   "cited_by": 152
   },
   {
    "id": "SPEC-008",
@@ -5993,7 +6000,7 @@
   {
    "id": "SPEC-009",
    "defined_in": "ROADMAP.md",
-   "cited_by": 40
+   "cited_by": 41
   },
   {
    "id": "SPEC-010",
@@ -6018,7 +6025,7 @@
   {
    "id": "SPEC-014",
    "defined_in": "ROADMAP.md",
-   "cited_by": 60
+   "cited_by": 61
   },
   {
    "id": "SPEC-015",
@@ -6033,12 +6040,12 @@
   {
    "id": "SPEC-017",
    "defined_in": "ROADMAP.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 75
+   "cited_by": 76
   },
   {
    "id": "SPEC-019",
@@ -6048,12 +6055,12 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 123
+   "cited_by": 124
   },
   {
    "id": "SPEC-021",
    "defined_in": "specs/features/SPEC-021/plan.md",
-   "cited_by": 52
+   "cited_by": 53
   },
   {
    "id": "SPEC-022",
@@ -6138,7 +6145,7 @@
   {
    "id": "SPEC-038",
    "defined_in": "specs/features/SPEC-038/plan.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "SPEC-039",
@@ -6188,12 +6195,12 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 57
+   "cited_by": 58
   },
   {
    "id": "SPEC-049",
    "defined_in": "ROADMAP.md",
-   "cited_by": 29
+   "cited_by": 30
   }
  ],
  "edges": [
@@ -33036,6 +33043,191 @@
    "from": "governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md",
    "to": "specs/features/SPEC-019/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/CONFLICT-MAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-EUA-E17_Ata_Homologacao_Reposicionamento_Specs_Governanca_Harness.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/ERRATUM-SPEC020-001_Fechamento_tool_correctness.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-002/research.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-004/ABERTURA.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-021/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-038/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "path"
   },
   {
    "from": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
