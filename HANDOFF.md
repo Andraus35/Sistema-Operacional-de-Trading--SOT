@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-25-87
-previous: HO-2026-10-25-86
-data: 2026-10-25
+handoff_id: HO-2026-10-30-88
+previous: HO-2026-10-25-87
+data: 2026-10-30
 branch: ccr-166207a9-473jhk
-base_commit: 01a8290
+base_commit: dfdb478
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12 HOMOLOGADAS; SPEC-007 = ABERTURA HOMOLOGADA (DHR-SPEC007-001), DIVIDIDA pela Opção C (DHR-SPEC007-002): reduzida a formação + selo; Plan reduzido v2.3 = HOMOLOGADO — BASELINE (DHR-SPEC007-005, Andraus 2026-10-24; Revisor R6 CONFORME condicional; sem BUILD); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002, Andraus 2026-10-25; Revisor R5 CONFORME condicional; sem BUILD) [antes: ABERTURA HOMOLOGADA (DHR-SPEC048-001)]; SPEC-049 (WikiRAG Reading View) = slot indicativo, NÃO aberta
 fase: spec-first
 autor: Orquestrador
@@ -14,6 +14,7 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência com a realidade, a realidade prevalece.
 
 ## 1. Frente atual (Andraus, chat 2026-10-23/24)
+- **ATUALIZAÇÃO HO-88 (2026-10-30):** (1) **ERRATA v1.13 da SPEC-006 HOMOLOGADA** (`DHR-SPEC006-005`; Major, aditiva, arquivo à parte `specs/features/SPEC-006/errata-v1.13.md` + ponteiro no Status do plan.md; Revisor R4 CONFORME condicional; Q-1..Q-11 em `DHR-RETRO-001` §4–§6). (2) `DHR-RETRO-001`: P1–P6 aprovadas (P3/P4 ainda a especificar); ordem das erratas: **SPEC-006 FEITA**, faltam **emenda SPEC-020 (F1)** e **errata de re-apontamento** (uma de cada vez). (3) Andraus pediu VERIFICAR a conduta do Orquestrador antes de seguir: resultado em `RETROSPECTIVAS.md` (Menores mecânicos aplicados 4/7 por `aplicar_ficha_m.py`, 3 falsos positivos de `_cria_algo`; **sem alternância de modelo por tarefa**: nenhuma chamada passou `model`+`CLASSE-TAREFA`); propostas a/b/c **pendentes de Andraus**. (4) Dependências para futura errata da SPEC-007 anotadas (submissão parcial de selo; `valid_from` na chave natural; texto (ix)/EC-KFH-004 (ii)). Itens abaixo sobre "falta merge/retrospectiva" SUPERADOS.
 - **ATUALIZAÇÃO HO-87 (2026-10-25):** PR #130 JÁ MESCLADO na `main` (`01a8290`). Retrospectivas SPEC-007 e SPEC-048 **FEITAS** (`RETROSPECTIVAS.md`, `--retro-check` OK) com propostas P1–P6 **pendentes de decisão de Andraus** (nenhuma aplicada). Nada mais bloqueia abrir outra Spec, mas só por ordem de Andraus. Ramo de trabalho: `ccr-166207a9-473jhk`. Os itens abaixo sobre "falta merge/retrospectiva" estão SUPERADOS.
 - **SPEC-007 reduzida (formação + selo): Plan v2.3 HOMOLOGADO — BASELINE** (`DHR-SPEC007-005`), depois de divisão (`002`) e respostas P-1..P-14 (`003`, `004`). Sem BUILD; fail-closed: nada é liberado ou carimbado sem ato de Andraus. Errata SPEC-006 (E-1..E-4) e emenda SPEC-020 (metade F1): passos à parte, não redigidos. Anexo de tarefa AT-SPEC007-PLAN CONSUMIDO (movido para `docs/handoffs/anexos/`).
 - **SPEC-048 (RAG Retrieval & Evidence Packet Harness): ABERTURA HOMOLOGADA** (Andraus, chat 2026-10-24, `DHR-SPEC048-001`; Revisor R1 e R2 CONFORME condicional; gate PASSOU_D). Decididos: CRITICAL D0–D8; **página de leitura WikiRAG separada na SPEC-049 (slot indicativo, NÃO aberta; peso MEDIUM D0–D5/Classe D só proposta até a abertura dela)**; todo analista conta como "fora" até Andraus confirmar modelos de casa; rótulo carimbado × trecho de fonte; resumo desligado até Andraus ligar; gatilho aditivo `∨ spec:SPEC-048 em redação` em BL-017/BL-010 (Estado inalterado, `backlog_triggers --abertura SPEC-048` lista os dois); regra de busca para a errata; confronto com WORKFLOW sem pesquisar escolas; notas aditivas de endereço na SPEC-007 plan e na ata 002. SPEC-047 estava reservado a Runtime Cognitive Caching (a abertura da SPEC-007 errou).
