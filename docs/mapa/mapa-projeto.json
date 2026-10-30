@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-30",
-  "digest": "97339a5d0a186f526893df02dead3e9922c85b31013422d5446e412b217ceaac",
+  "digest": "afc64ce4f7dd83d5aac84c27ddd4babf8c417cfb98b27e9056ec8e2ec8373cb2",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 313,
+   "in": 314,
    "out": 82
   },
   {
@@ -150,7 +150,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 208,
+   "in": 209,
    "out": 36
   },
   {
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 312,
+   "in": 313,
    "out": 114
   },
   {
@@ -1081,7 +1081,7 @@
    "path": "governance/CATALOGO-OFICIAL.md",
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
-   "in": 123,
+   "in": 124,
    "out": 208
   },
   {
@@ -1768,7 +1768,7 @@
    "area": "governance",
    "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
    "in": 12,
-   "out": 9
+   "out": 10
   },
   {
    "path": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
@@ -2124,7 +2124,7 @@
    "path": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
-   "in": 0,
+   "in": 2,
    "out": 34
   },
   {
@@ -2433,7 +2433,7 @@
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
    "in": 17,
-   "out": 36
+   "out": 37
   },
   {
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
@@ -2581,6 +2581,13 @@
    "title": "PLANO — Fechar a H-001 sem quebra documental + roteamento de modelos por tarefa (economia de rodadas)",
    "in": 8,
    "out": 13
+  },
+  {
+   "path": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — ERRATUM-REAPONT-001 v1.0 (R1, S2/sonnet) — 2026-10-30",
+   "in": 1,
+   "out": 10
   },
   {
    "path": "governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md",
@@ -2978,7 +2985,7 @@
    "path": "reference/camadas/CAMADA MEMÓRIA.MD",
    "area": "reference",
    "title": "MC-EXP-001 — MASTER CONTRACT DA CAMADA DE EXPERIÊNCIA E MEMÓRIA",
-   "in": 6,
+   "in": 7,
    "out": 0
   },
   {
@@ -3090,7 +3097,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 197,
+   "in": 198,
    "out": 9
   },
   {
@@ -3118,7 +3125,7 @@
    "path": "specs/features/SPEC-002/plan.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness",
-   "in": 173,
+   "in": 174,
    "out": 19
   },
   {
@@ -3265,7 +3272,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 152,
+   "in": 153,
    "out": 38
   },
   {
@@ -3300,7 +3307,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 124,
+   "in": 125,
    "out": 24
   },
   {
@@ -3321,7 +3328,7 @@
    "path": "specs/features/SPEC-021/plan.md",
    "area": "specs",
    "title": "SPEC-021 — Harness Score / Maturity Model",
-   "in": 53,
+   "in": 54,
    "out": 18
   },
   {
@@ -3412,7 +3419,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 58,
+   "in": 59,
    "out": 41
   },
   {
@@ -5450,7 +5457,7 @@
   {
    "id": "RULE-KFH-001",
    "defined_in": null,
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "RULE-KFH-002",
@@ -5710,7 +5717,7 @@
   {
    "id": "RULE-RET-003",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-RET-004",
@@ -5965,7 +5972,7 @@
   {
    "id": "SPEC-002",
    "defined_in": "specs/features/SPEC-002/plan.md",
-   "cited_by": 173
+   "cited_by": 174
   },
   {
    "id": "SPEC-003",
@@ -5990,7 +5997,7 @@
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 152
+   "cited_by": 153
   },
   {
    "id": "SPEC-008",
@@ -6000,7 +6007,7 @@
   {
    "id": "SPEC-009",
    "defined_in": "ROADMAP.md",
-   "cited_by": 41
+   "cited_by": 42
   },
   {
    "id": "SPEC-010",
@@ -6055,12 +6062,12 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 124
+   "cited_by": 125
   },
   {
    "id": "SPEC-021",
    "defined_in": "specs/features/SPEC-021/plan.md",
-   "cited_by": 53
+   "cited_by": 54
   },
   {
    "id": "SPEC-022",
@@ -6195,7 +6202,7 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 58
+   "cited_by": 59
   },
   {
    "id": "SPEC-049",
@@ -30011,6 +30018,11 @@
   },
   {
    "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "specs/features/SPEC-021/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
    "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
@@ -36586,6 +36598,11 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
    "type": "path"
   },
@@ -37792,6 +37809,56 @@
   {
    "from": "governance/propostas/PLANO-FECHAR-H001-E-ROTEAR-MODELOS-2026-10-18.md",
    "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "governance/CATALOGO-OFICIAL.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "reference/camadas/CAMADA MEMÓRIA.MD",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-002/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md",
+   "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
   {

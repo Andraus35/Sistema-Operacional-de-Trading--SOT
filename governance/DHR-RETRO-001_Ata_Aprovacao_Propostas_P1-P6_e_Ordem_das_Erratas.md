@@ -52,3 +52,12 @@ Q-10 (inclusão de `relation_type`/formato `from`/`to`/`natural_key`/`valid_from
 | Q-4 (forma de aplicação) | Arquivo à parte + uma linha no plano da SPEC-020 |
 | Q-7 (calibração do F1) | Só registrar a lacuna (dependência de futura errata da SPEC-007) |
 Q-1, Q-5, Q-6, Q-9 seguem para a homologação. **Nenhuma errata/emenda homologada por este adendo**; decisões abertas seguem abertas (CONS-01).
+
+## 8. Adendo 5 — respostas sobre o ERRATUM-REAPONT-001 (chat, 2026-10-30) `[FATO]`
+| Pergunta | Resposta de Andraus |
+|---|---|
+| Q-2 (classificação) | **Patch** (ajuste editorial) |
+| Q-1 (forma) | **Um arquivo único**, com uma linha de ponteiro no fim de cada plan.md afetado |
+| Q-3/Q-4 (extensão) | **Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada) |
+| Q-8 (ROADMAP) | **Sim**: nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele |
+Q-5, Q-6, Q-7 seguem com a premissa do texto até a homologação. **Nenhuma errata homologada por este adendo**; decisões abertas seguem abertas (CONS-01).
