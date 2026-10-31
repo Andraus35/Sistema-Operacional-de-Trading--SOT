@@ -52,7 +52,7 @@
       "canal": "biblioteca de telemetria-tokens.js + CLI `resumo`",
       "tipo": "utilitario",
       "estado": "ativo",
-      "enforca": "Grava metadados (agente, modelo, classe, tokens in/out/cache, duração) em .telemetria/uso-tokens.jsonl (gitignored, sem texto de prompt/resposta); `resumo` agrega por agente/modelo/classe; custo = tokens x governance/telemetria/PRECOS-MODELOS.json (preço null => INDETERMINADO). Só agentes AC; custo fora do Conviction Vector (INV-04)",
+      "enforca": "Grava metadados (agente, modelo, classe, tokens in/out/cache, duração) em .telemetria/uso-tokens.jsonl (gitignored, sem texto de prompt/resposta); `resumo` agrega por agente/modelo/classe; `snapshot` grava governance/aprendizado/TELEMETRIA-TOKENS.md (lido pelo loop_ledger); custo = tokens x governance/telemetria/PRECOS-MODELOS.json (preço null => INDETERMINADO). Só agentes AC; custo fora do Conviction Vector (INV-04)",
       "ata": "DHR-TELEMETRIA-CUSTO-001",
       "verificado_em": "2026-10-31: tests/test_telemetria_tokens.py (7 testes) no CI"
     },

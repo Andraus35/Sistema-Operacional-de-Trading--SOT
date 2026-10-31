@@ -4,6 +4,7 @@ telemetria_tokens.py — telemetria de tokens/custo dos agentes CONSTRUTORES (AC
 
 Uso:
   (sem argumentos)    hook PostToolUse/Agent: lê o evento em stdin e acrescenta UMA linha JSON a .telemetria/uso-tokens.jsonl.
+  snapshot            grava governance/aprendizado/TELEMETRIA-TOKENS.md (retrato datado, versionável; o ledger do loop aponta para ele).
   resumo [--json]     agrega por agente / modelo / classe-de-tarefa: chamadas, tokens (in/out/cache), custo estimado e tokens por chamada.
 
 Garantias: DETECTOR (ENF-03) — nunca nega, nunca altera a chamada, falha => exit 0 silencioso. Não grava o texto do prompt nem da resposta
@@ -124,12 +125,24 @@ def resumo(registros):
     return grupos
 
 
-def main(argv):
-    if len(argv) < 2:
-        return hook()
-    if argv[1] != "resumo":
-        print(__doc__)
-        return 2
+SNAP = ROOT / "governance" / "aprendizado" / "TELEMETRIA-TOKENS.md"
+
+
+def snapshot(regs):
+    g = resumo(regs)
+    out = ["# TELEMETRIA DE TOKENS DOS CONSTRUTORES — retrato (gerado por `python scripts/telemetria_tokens.py snapshot`)", "",
+           "> Dado de estado, NÃO normativo (BL-036 / DHR-TELEMETRIA-CUSTO-001). **Detector (ENF-03)**: não bloqueia, não fecha decisão aberta. "
+           "Custo fora do Conviction Vector (INV-04). Tokens ≠ qualidade (CEE-001): ler junto de Eficácia, nunca isolado. "
+           f"Retrato de {len(regs)} chamada(s) em {time.strftime('%Y-%m-%d', time.gmtime())}; custo em USD só com preços em `governance/telemetria/PRECOS-MODELOS.json` (null => INDETERMINADO).", "",
+           "| Agente | Modelo | Classe | Chamadas | Tokens total | Tokens/chamada | in | out | cache lido | cache criado | Custo USD |", "|---|---|---|---|---|---|---|---|---|---|---|"]
+    for (a, m, c), v in sorted(g.items()):
+        med = round(v["total"] / v["chamadas"]) if v["chamadas"] else 0
+        cu = "INDETERMINADO" if v["custo_indet"] else f"{v['custo']:.4f}"
+        out.append(f"| {a} | {m} | {c} | {v['chamadas']} | {v['total']} | {med} | {v['in']} | {v['out']} | {v['cache_read']} | {v['cache_create']} | {cu} |")
+    return "\n".join(out) + "\n"
+
+
+def _ler():
     regs = []
     if SAIDA.exists():
         for linha in SAIDA.read_text(encoding="utf-8").splitlines():
@@ -137,6 +150,24 @@ def main(argv):
                 regs.append(json.loads(linha))
             except ValueError:
                 pass
+    return regs
+
+
+def main(argv):
+    if len(argv) < 2:
+        return hook()
+    if argv[1] == "snapshot":
+        regs = _ler()
+        if not regs:
+            print("Sem telemetria local (.telemetria/uso-tokens.jsonl): nada a gravar.")
+            return 1
+        SNAP.write_text(snapshot(regs), encoding="utf-8")
+        print(f"gravado {SNAP.relative_to(ROOT)} ({len(regs)} chamada(s))")
+        return 0
+    if argv[1] != "resumo":
+        print(__doc__)
+        return 2
+    regs = _ler()
     g = resumo(regs)
     if "--json" in argv:
         print(json.dumps({"|".join(k): v for k, v in g.items()}, ensure_ascii=False, indent=1))

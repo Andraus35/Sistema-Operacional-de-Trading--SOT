@@ -23,7 +23,7 @@ Implementar já a medição de tokens dos agentes **Construtores (AC)**. Agentes
 - `roteador_modelos.py` (selado em `GATE-MANIFEST.sha256`) **não foi alterado**; a coleta é um script novo e separado.
 - Custo fora do Conviction Vector (INV-04; RULE-KFH-014). Tokens ≠ qualidade: Economicidade nunca acima de Eficácia (4Es).
 - **Validado ao vivo (2026-10-31):** uma chamada real de agente (Explore/haiku) gravou in=2, out=221, cache_read=40828, cache_create=535, total=41586 e 9,5 s; o subagente aparece como linha própria. Ainda não testado com Especificador/Revisor SOT.
-- Não integrado ao `loop_ledger.py` nesta fatia. Nenhuma decisão aberta foi fechada (CONS-01); BL-036 segue `Em espera`.
+- Integrado ao `loop_ledger.py` (2ª fatia): CLI `snapshot` + `governance/aprendizado/TELEMETRIA-TOKENS.md`; Economicidade = PARCIAL (custo USD segue INDETERMINADO). Nenhuma decisão aberta foi fechada (CONS-01); BL-036 segue `Em espera`.
 
 ## 3. Registro
 - [x] Esta ata · [x] script + wrapper + teste · [x] `MECANISMOS.json` · [x] CI · [x] settings.json · [ ] merge (assinatura)

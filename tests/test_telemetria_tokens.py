@@ -41,6 +41,12 @@ class Telemetria(unittest.TestCase):
         v = g[("Revisor SOT", "sonnet", "S2")]
         self.assertEqual((v["chamadas"], v["total"], v["custo_indet"]), (2, 2000, 2))
 
+    def test_snapshot_markdown(self):
+        md = T.snapshot([T.extrair(self.EV)])
+        self.assertIn("| Revisor SOT | sonnet | S2 | 1 | 1000 |", md)
+        self.assertIn("INDETERMINADO", md)
+        self.assertNotIn("SEGREDO", md)
+
     def test_tabela_de_precos_nao_inventa(self):
         tab = json.loads(T.PRECOS.read_text(encoding="utf-8"))
         self.assertTrue(all(v is None for m in tab["modelos"].values() for v in m.values()) or tab.get("fonte"))
