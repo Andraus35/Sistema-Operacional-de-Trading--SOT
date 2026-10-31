@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-31-112
-previous: HO-2026-10-31-111
+handoff_id: HO-2026-10-31-113
+previous: HO-2026-10-31-112
 data: 2026-10-31
 branch: ccr-599f6762-60qbvg
 base_commit: d37c6d1
@@ -18,7 +18,7 @@ anexo: null
 
 ## 2. Estado (fatos conferidos em 2026-10-31)
 - **Aplicado nesta sessão (sem arquivo normativo):** `docs/UPGRADES/` movido para `docs/_legacy/UPGRADES/` (git mv; `.rgignore` ajustado); HANDOFF reescrito compacto, anterior arquivado.
-- **Aplicado por ordem de Andraus (chat):** patch do `check_refs.py` (WARN 6→2, 20/20 testes, falha no script atual) em `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md` + 2 `.patch`; selo do gate regravado e MECANISMOS.json atualizado. Mapa JSON fora da árvore: adiado (consumidores: `build_map.py` e 2 testes).
+- **Aplicado por ordem de Andraus (chat):** patch do `check_refs.py` (WARN 6→2; teste adversarial corrigiu regressão da barra inicial; 25/25 testes; 4 mutações mortas) em `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md` + 2 `.patch`; selo do gate regravado e MECANISMOS.json atualizado. Mapa JSON fora da árvore: adiado (consumidores: `build_map.py` e 2 testes).
 - **Não aplicado, por ser do CODEOWNERS ou normativo:** `revisao-independente/` (citada em `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md`), status nos 33 `_PROPOSTA`, atas COE-11.
 - **Atas recentes:** `DHR-SPEC049-001`, `DHR-DIMENSIONAMENTO-001`, `DHR-RETRO-001`, `DHR-CHECKS-INFO-001`, `DHR-MERGE-001`.
 

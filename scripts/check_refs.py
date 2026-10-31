@@ -201,7 +201,7 @@ def resolve_path(src: Path, raw: str, reg: Registry):
     """Retorna (estado, alvo): 'ok' | 'moved' | 'missing'."""
     t = unquote(raw.split("#")[0])
     t = re.sub(r":\d+(?:[-–]\d+)?(?:,\s*\d+)*$", "", t).strip()
-    if t.startswith("/"):  # caminho absoluto do ambiente (ex.: fora do repositório): não é referência do repositório
+    if re.match(r"^/(?:root|home|tmp|usr|etc|opt|var|mnt|proc|dev)(?:/|$)", t):  # raiz do SO/ambiente, fora do repositório (um "/docs/x.md" continua sendo caminho do repo)
         return None, None
     if re.match(r"^(node|python3?|npm|npx|wc|cat|head|tail)\s", t):  # comando: o alvo é o último argumento
         t = t.split()[-1]
