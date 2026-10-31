@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-31-121
-previous: HO-2026-10-31-120
+handoff_id: HO-2026-10-31-122
+previous: HO-2026-10-31-121
 data: 2026-10-31
 branch: ccr-599f6762-60qbvg
 base_commit: d37c6d1
@@ -21,6 +21,7 @@ anexo: null
 - **Aplicado por ordem de Andraus (chat):** patch do `check_refs.py` (WARN 6→2; teste adversarial corrigiu regressão da barra inicial; 25/25 testes; 4 mutações mortas) em `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md` + 2 `.patch`; selo do gate regravado e MECANISMOS.json atualizado. Mapa JSON fora da árvore: adiado (consumidores: `build_map.py` e 2 testes).
 - **Pré-testado, NÃO aplicado (aguarda ordem de Andraus):** prova de conservação para enxugar documentos quentes em `governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/` (8 testes, 4 mutações mortas). AGENTS §7: 5,9 KB→0,3 KB, 53 de 55 IDs já no ROADMAP. ROADMAP linhas 34 e 37 são estado vivo: corte só por julgamento, não mecânico.
 - **harness-eval do AGENTS.md (B+C, Q1=none) FEITO, nada aplicado:** `.harness-eval/runs/2026-10-31-agents/` — trilha A 0 quebrados; B: 52/61 KEEP, 0 Ship, 3 Hold (cabeçalho); C: AGENTS.md = MIXED por ambos os juízes (mesmo modelo). Plano KEEP/CUT em `11-mixed-apply.md`. **Aplicado só o §7 do `AGENTS.md`** por ordem de Andraus (chat, 2026-10-31; `DHR-AGENTS-SEC7-001`): 29.427→24.550 B; texto integral em `docs/_legacy/AGENTS-secao7-arquivo-morto-2026-10-31.md`; conservação OK e `check_invariants` exigiu repor a linha ECC-VAL-001. **Cortes §2, §5, §8, §9, §12 APLICADOS** por ordem de Andraus (chat, 2026-10-31 "Aplicar com segurança"; `DHR-AGENTS-CORTES-001`): `AGENTS.md` 29.427→18.803 B (−36%); arquivo morto em `docs/_legacy/AGENTS-cortes-2-5-8-9-12-arquivo-morto-2026-10-31.md`; conservação OK; suíte 385 OK; idêntico à variante D (teste A/B 17/17). Pendentes não feitos: 2ª checagem da trilha C em outro modelo e teste de comportamento do Especificador/Revisor. Reversão: git + arquivo morto. **Verificação final no AGENTS.md real: A/B 16/17, 17/17, 17/17 (falha única = variância do modelo).**
+- **Pendências baratas APLICADAS** por ordem de Andraus (chat, 2026-10-31; `DHR-HIGIENE-001`): Status das 3 atas COE-11 (texto anterior preservado; itens diferidos seguem diferidos) e 2 avisos reais do `check_refs` (WARN 2→0). Ficam FORA: 33 `_PROPOSTA`, configs órfãs, `reference/` nomes, subpastas de `governance/`, `SPEC-007/plan.md:2650`, cortes do ROADMAP.
 - **Aplicado (sem efeito em conteúdo):** `.gitattributes` marca `docs/mapa/*` e `docs/handoffs/*.md` como `linguist-generated` (recolhe ruído no diff de PR do GitHub; mapa JSON fora da árvore segue adiado).
 - **Não aplicado, por ser do CODEOWNERS ou normativo:** `revisao-independente/` (citada em `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md`), status nos 33 `_PROPOSTA`, atas COE-11.
 - **Atas recentes:** `DHR-SPEC049-001`, `DHR-DIMENSIONAMENTO-001`, `DHR-RETRO-001`, `DHR-CHECKS-INFO-001`, `DHR-MERGE-001`.

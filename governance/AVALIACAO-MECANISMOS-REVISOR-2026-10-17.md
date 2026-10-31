@@ -47,7 +47,7 @@
 ## 6. Próximos passos propostos (nenhum aplicado além do já commitado)
 1. Reiniciar a sessão e confirmar o hook ao vivo (§5 L3.1).
 2. Ligar `onFailure:"block"` no hook se a versão do Claude Code ≥ 2.1.295 (passa a fail-closed).
-3. Ata de política: `RULE-REV-01..03` (parecer com VEREDITO D do harness; núcleo do Passo 0 aberto; citação verificada) + emenda do `revisor.md` — **decisão de Andraus**.
+3. Ata de política (proposta; famílias ainda sem registro em `RULES.md`): `RULE-REV-01..03` (parecer com VEREDITO D do harness; núcleo do Passo 0 aberto; citação verificada) + emenda do `revisor.md` — **decisão de Andraus**.
 4. Reativar o Auditor Externo numa Spec CRITICAL e/ou Andraus escrever 3–5 defeitos (L3.2).
 5. Erratum da SPEC-003 (10 × 11 critérios EARS) — baseline, só Andraus (INV-07).
 

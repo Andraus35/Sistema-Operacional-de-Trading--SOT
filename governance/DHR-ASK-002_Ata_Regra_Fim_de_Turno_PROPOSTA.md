@@ -5,7 +5,7 @@
 | De | Orquestrador interno (registro) — a ratificar por Andraus — Decisor Final / Consensus Authority |
 | Para | Orquestrador interno / Especificador SOT / Revisor SOT |
 | Data | 2026-10-17 |
-| Status | **PROPOSTA — vira vigente só com o merge de Andraus.** Formaliza uma regra que **já opera** por hook desde 2026-10-11 e que não tinha ata (o script `scripts/andraus-ask-guard.js` cita "DHR-ASK-002", mas o arquivo não existia). Não fecha nem abre decisão aberta. |
+| Status | **MESCLADA na `main` por Andraus (PR #111) — vigente.** *[texto anterior preservado — INV-07: "PROPOSTA — vira vigente só com o merge de Andraus."]* Formaliza uma regra que **já opera** por hook desde 2026-10-11 e que não tinha ata (o script `scripts/andraus-ask-guard.js` cita "DHR-ASK-002", mas o arquivo não existia). Não fecha nem abre decisão aberta. |
 | Compatibilidade | Aditiva (INV-07). Não altera hook, script, `AGENTS.md` nem agentes. Reversível por `git revert`. |
 | RPSA-escopo | nao |
 | RPSA-sync | fonte-unica |
