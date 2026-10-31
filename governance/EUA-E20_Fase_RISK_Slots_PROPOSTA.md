@@ -6,7 +6,7 @@
 | Tipo | Emenda de Arquitetura de Especificação — **PROPOSTA** (não aplica slots; não autoriza a família; não fecha decisão) |
 | Autor | Especificador Principal (Claude Code, Opus 4.8) |
 | Data | 2026-10-01 |
-| Status | **PROPOSTA — aguarda parecer do Revisor e homologação de Andraus** |
+| Status | **HOMOLOGADA por instrução direta de Andraus em chat (2026-10-01; ata `DHR-EUA-E20`).** *[texto anterior preservado — INV-07: "PROPOSTA — aguarda parecer do Revisor e homologação de Andraus"]* |
 | Origem | Instrução direta de Andraus (chat, 2026-10-01): a família RISK-SPEC não tem slots numerados no ROADMAP; FASE RISK reservada/futura (EUA-E20); BL-018 guarda 23 RISK-SPEC |
 | Autoridade-fonte | `backlog/BL-018-RISK-AGENT-backlog.md`; `reference/SOT-RISK-MASTER-001_Consolidado.md` §3.6/§6.2; `governance/DHR-EUA-E19a_...md`; `ROADMAP.md`; RULE-ECC-01/02 |
 | Não fecha | Nenhuma decisão aberta (CONS-01). Não numera/autoriza a família. Não edita `WORKFLOW.md`. |

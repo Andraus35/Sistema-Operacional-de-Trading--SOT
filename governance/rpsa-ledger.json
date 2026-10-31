@@ -605,6 +605,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Edita só AGENTS.md/atas/registros de governança; não toca .claude/agents/* nem método."
+    },
+    {
+      "id": "DHR-HIGIENE-002",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Edita só o campo Status de 3 registros de governança; não toca agentes de construção, método nem AGENTS.md."
     }
   ]
 }
