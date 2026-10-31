@@ -24,7 +24,12 @@ class Telemetria(unittest.TestCase):
         self.assertIsNone(r["total"])
 
     def test_custo_indeterminado_sem_preco(self):
-        self.assertIsNone(T.custo(T.extrair(self.EV)))
+        orig = T._preco
+        T._preco = lambda m: {"input": None, "output": None, "cache_read": None, "cache_create": None}
+        try:
+            self.assertIsNone(T.custo(T.extrair(self.EV)))
+        finally:
+            T._preco = orig
 
     def test_custo_com_preco(self):
         orig = T._preco
@@ -39,7 +44,7 @@ class Telemetria(unittest.TestCase):
         r = T.extrair(self.EV)
         g = T.resumo([r, r])
         v = g[("Revisor SOT", "sonnet", "S2")]
-        self.assertEqual((v["chamadas"], v["total"], v["custo_indet"]), (2, 2000, 2))
+        self.assertEqual((v["chamadas"], v["total"], v["custo_indet"]), (2, 2000, 0))
 
     def test_spec_e_alvo_extraidos_e_resumo_por_spec(self):
         ev = json.loads(json.dumps(self.EV))
@@ -63,12 +68,19 @@ class Telemetria(unittest.TestCase):
     def test_snapshot_markdown(self):
         md = T.snapshot([T.extrair(self.EV)])
         self.assertIn("| Revisor SOT | sonnet | S2 | 1 | 1000 |", md)
-        self.assertIn("INDETERMINADO", md)
+        self.assertIn("equivalente API", md)
         self.assertNotIn("SEGREDO", md)
 
-    def test_tabela_de_precos_nao_inventa(self):
+    def test_tabela_de_precos_tem_fonte_e_rotulo(self):
         tab = json.loads(T.PRECOS.read_text(encoding="utf-8"))
-        self.assertTrue(all(v is None for m in tab["modelos"].values() for v in m.values()) or tab.get("fonte"))
+        self.assertTrue(tab.get("fonte", "").startswith("https://"))
+        self.assertIn("NÃO é cobrança", tab["rotulo"])
+        for m in tab["modelos"].values():
+            self.assertTrue(all(isinstance(m[k], (int, float)) for k in ("input", "output", "cache_read", "cache_create")))
+
+    def test_custo_equivalente_haiku_com_tabela_real(self):
+        r = {"model": "haiku", "in": 2, "out": 221, "cache_read": 40828, "cache_create": 535}
+        self.assertAlmostEqual(T.custo(r), (2 * 0.10 + 221 * 0.50 + 40828 * 0.01 + 535 * 0.125) / 1e6)
 
 
 if __name__ == "__main__":

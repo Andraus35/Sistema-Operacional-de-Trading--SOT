@@ -15,7 +15,7 @@
 ## 1. Decisão `[FATO]`
 Implementar já a medição de tokens dos agentes **Construtores (AC)**. Agentes de Trading (AT) não existem (spec-first) e ficam para a SPEC-040.
 1. `scripts/telemetria_tokens.py` + wrapper `scripts/telemetria-tokens.js` (PostToolUse/Agent): grava metadados por chamada (agente, modelo, classe de tarefa, tokens in/out/cache, duração) em `.telemetria/uso-tokens.jsonl` (gitignored). **Não grava texto de prompt nem de resposta.** CLI `resumo` agrega por agente/modelo/classe.
-2. `governance/telemetria/PRECOS-MODELOS.json` (versionada): **todos os preços `null`** — custo = INDETERMINADO até Andraus (ou fonte oficial citada) preencher. Nenhum preço foi inventado.
+2. `governance/telemetria/PRECOS-MODELOS.json` (versionada): *(texto original preservado — INV-07: "todos os preços `null`")* **preenchida em 2026-10-31** a partir da página oficial de preços (fonte e data no arquivo; Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1). Custo rotulado **'equivalente API, não cobrança'** (Andraus usa plano Pro: assinatura fixa). Limitações no arquivo (Haiku >100k, alias→modelo, sem lote/1h). Acompanhar consumo contra o limite do plano = **BL-042** (backlog).
 3. `MECANISMOS.json` (`hook.telemetria-tokens`, `lib.telemetria-tokens`), CI (`tests/test_telemetria_tokens.py`), `.gitignore`.
 
 ## 2. Ressalvas `[FATO]`

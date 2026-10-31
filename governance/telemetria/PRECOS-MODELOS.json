@@ -1,12 +1,16 @@
 {
-  "versao": "0.1-sem-precos",
+  "versao": "1.0-2026-10-31",
   "moeda": "USD",
-  "unidade": "por 1 milhão de tokens",
-  "natureza": "Tabela de preços VERSIONADA da telemetria de custo (BL-036). Dado de estado, NÃO normativo. Preços vazios (null) = custo INDETERMINADO: só Andraus (ou fonte oficial do provedor, citada em `fonte`) preenche. Nenhum preço foi inventado.",
-  "fonte": null,
+  "unidade": "por 1 milhão de tokens (MTok)",
+  "rotulo": "CUSTO EQUIVALENTE A PREÇO DE TABELA DA API — NÃO é cobrança. No plano Pro (assinatura fixa) o custo marginal por chamada é zero; o número serve para comparar agentes/modelos e ponderar tokens por modelo.",
+  "natureza": "Tabela de preços VERSIONADA da telemetria de custo (BL-036/BL-037). Dado de estado, NÃO normativo. Preços copiados da página oficial na data de consulta; nada estimado. Revalidar a cada ciclo (preços mudam).",
+  "fonte": "https://platform.claude.com/docs/en/about-claude/pricing (consultada em 2026-10-31; redireciona de docs.anthropic.com; ver também https://claude.com/pricing)",
+  "mapeamento": "O campo `model` das chamadas é alias (opus/sonnet/haiku). ASSUNÇÃO: alias resolve para a geração vigente listada abaixo (Opus 5.5, Sonnet 5.5, Haiku 5.5). `cache_create` = 5m cache writes; `cache_read` = cache hits. Divergência com o modelo realmente servido => custo equivalente impreciso.",
+  "limitacoes": "Haiku 5.5 tem preço maior para prompts acima de 100.000 tokens (input $0.50, 5m write $0.625, read $0.05, output $2.50); esta tabela usa a faixa até 100k. Tokens por chamada de agente somam vários turnos, então não dá para aplicar a faixa por prompt: Haiku pode estar SUBESTIMADO. Desconto de lote, camadas de contexto longo e 1h cache writes não aplicados.",
   "modelos": {
-    "opus":   {"input": null, "output": null, "cache_read": null, "cache_create": null},
-    "sonnet": {"input": null, "output": null, "cache_read": null, "cache_create": null},
-    "haiku":  {"input": null, "output": null, "cache_read": null, "cache_create": null}
+    "opus":   {"nome": "Claude Opus 5.5",   "input": 4.0,  "output": 20.0, "cache_read": 0.20, "cache_create": 5.0},
+    "sonnet": {"nome": "Claude Sonnet 5.5", "input": 2.0,  "output": 10.0, "cache_read": 0.10, "cache_create": 2.5},
+    "haiku":  {"nome": "Claude Haiku 5.5 (faixa até 100k)", "input": 0.10, "output": 0.50, "cache_read": 0.01, "cache_create": 0.125},
+    "fable":  {"nome": "Claude Fable 5.1",  "input": 10.0, "output": 50.0, "cache_read": 0.25, "cache_create": 12.5}
   }
 }
