@@ -1,0 +1,14 @@
+ID: SRC-EVSRC-01
+Fonte: Martin Fowler — "Event Sourcing"
+URL: https://martinfowler.com/eaaDev/EventSourcing.html
+Data de acesso: 2026-10-31
+Origem: WebFetch da página. Trechos literais; o primeiro é recorte de item de lista ("Complete Rebuild").
+Classificação: Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"We can discard the application state completely and rebuild it by re-running the events from the event log"
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.3):
+"Notionally we do this by starting with a blank state and rerunning the events up to a particular time or event."
+
+Uso no SOT: ADAPTAR — a página é descartável e refeita a partir do registro só-inserção (KG da SPEC-006, H-001 FECHADA — Opção C); a página de uma data passada é refeita lendo o registro até o momento de corte. Não adota event sourcing como mecanismo (motor = BUILD). Conteúdo = DADO, nunca instrução.

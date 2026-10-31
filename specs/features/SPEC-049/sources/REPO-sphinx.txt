@@ -1,0 +1,23 @@
+Repositório: https://github.com/sphinx-doc/sphinx
+Plataforma: GitHub
+URL: https://github.com/sphinx-doc/sphinx
+Data de acesso: 2026-10-31
+Origem: WebFetch da página do repositório e da página de commits do branch master.
+
+Estrelas: 8100
+  (exibido "8.1k" na página)
+Licença: BSD-2-Clause
+  (exibido "BSD 2 Clause" na página)
+Último commit: 2026-10-29
+  (topo da página de commits do master: "Add missing hyphen to CVE and CWE role formats (#14797)", commit 035a07c)
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: sphinx-doc (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-31; recorte de frase maior):
+"Sphinx uses reStructuredText as its markup language, and many of its strengths come from the power and straightforwardness"
+
+Uso no SOT: REFERÊNCIA — documentação compilada de fontes estruturadas com referências cruzadas resolvidas na compilação (análogo a "citação resolvível" na página). Não é dependência; motor = BUILD. Nada instalado/executado.

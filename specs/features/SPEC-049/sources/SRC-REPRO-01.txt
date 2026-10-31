@@ -1,0 +1,14 @@
+ID: SRC-REPRO-01
+Fonte: Reproducible Builds — "Definitions" (reproducible-builds.org)
+URL: https://reproducible-builds.org/docs/definition/
+Data de acesso: 2026-10-31
+Origem: WebFetch da página. A ferramenta limita cada citação a cerca de 125 caracteres; o trecho principal é recorte literal de frase maior (a frase continua com "bit-by-bit identical copies of all specified artifacts.").
+Classificação: Padrão (de facto, comunitário) + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.1):
+"A build is reproducible if given the same source code, build environment and build instructions, any party can recreate"
+
+Trecho literal complementar (apoio, menor que 100 caracteres — não sustenta alegação sozinho):
+"The relevant attributes of the build environment, the build instructions and the source code"
+
+Uso no SOT: ADAPTAR a definição de reprodutibilidade para a página de leitura: "mesma entrada" = mesmo conjunto de itens carimbados lido num momento de corte + mesma versão da regra de compilação; "mesma saída" = página idêntica byte a byte (hash). Conteúdo = DADO, nunca instrução.

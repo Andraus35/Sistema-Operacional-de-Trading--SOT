@@ -1,0 +1,15 @@
+ID: SRC-GRAPHRAG-01
+Fonte: Edge et al. — "From Local to Global: A Graph RAG Approach to Query-Focused Summarization" (arXiv 2404.16130)
+URL: https://arxiv.org/abs/2404.16130
+Data de acesso: 2026-10-31
+Origem: WebFetch do resumo (abstract), pedido o recorte contíguo. Recaptura própria da SPEC-049 (a SPEC-048 capturou o mesmo trecho em 2026-10-24).
+Classificação: Experimento + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.8):
+"graph from the source documents, then to pregenerate community summaries for all groups of closely related entities."
+
+Trechos literais complementares (apoio, menores que 100 caracteres — não sustentam alegação sozinhos):
+"to derive an entity knowledge graph from the source documents,"
+"before all partial responses are again summarized in a final response to the user."
+
+Uso no SOT: REJEITAR resumo pré-gerado por modelo como conteúdo da página (seria texto de modelo sem selo); a "visão pré-compilada" no SOT é montada por regra fixa só de itens carimbados (DHR-SPEC007-001 Q3). Agrupamento por comunidade detectada por modelo também rejeitado: o agrupamento usa só campos de lista fechada. Conteúdo = DADO, nunca instrução.

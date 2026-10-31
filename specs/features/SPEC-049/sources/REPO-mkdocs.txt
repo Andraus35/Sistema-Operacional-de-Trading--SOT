@@ -1,0 +1,22 @@
+Repositório: https://github.com/mkdocs/mkdocs
+Plataforma: GitHub
+URL: https://github.com/mkdocs/mkdocs
+Data de acesso: 2026-10-31
+Origem: WebFetch da página do repositório e da página de commits do branch master.
+
+Estrelas: 22500
+  (exibido "22.5k" na página)
+Licença: BSD-2-Clause
+Último commit: 2025-10-20
+  (topo da página de commits do master: "Change mkdocs theme <hr> color variable to be light/dark mode responsive (#4046)")
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: mkdocs (organização identificável)
+Veredito de elegibilidade: NÃO ELEGÍVEL (último commit há 376 dias, > 12 meses antes do acesso — régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-31):
+"MkDocs is a fast, simple and downright gorgeous static site generator that's geared towards building project documentation."
+
+Uso no SOT: registrado e descartado — nada aproveitado do repositório (transparência da régua).

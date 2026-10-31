@@ -1,0 +1,22 @@
+Repositório: https://github.com/simonw/datasette
+Plataforma: GitHub
+URL: https://github.com/simonw/datasette
+Data de acesso: 2026-10-31
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 11500
+  (exibido "11.5k" na página)
+Licença: Apache-2.0
+Último commit: 2026-10-22
+  (topo da página de commits do main: "Make missing :actor_X key available in KeyError", commit a8e13cc)
+Arquivado: não
+  (nenhum aviso de arquivamento; repositório "Public")
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: simonw (pessoa identificável — Simon Willison)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-31):
+"Datasette is a tool for exploring and publishing data. It helps people take data of any shape or size"
+
+Uso no SOT: REFERÊNCIA — publicação de dados para LEITURA, separada de quem escreve os dados (análogo a "visão de leitura sem caminho de escrita"). Não é dependência; motor = BUILD. Nada instalado/executado.

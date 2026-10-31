@@ -1,0 +1,10 @@
+DELTA specs/features/SPEC-049/ABERTURA.md vs 64ccffd
+SHA256-ALVO: 6599e96bcef5d760b9fdab3d88f7ea928ed587b1862c1e324163cc81879ed6b8
+SHA256-BASE: 07a942c3e73e0c1a61a666a29a99d2f8b9e55a0fa065bc28cf1f30fd2fc3f779
+blocos: 15 alterados · 0 adicionados · 0 removidos · 5 inalterados (de 20 atuais; 20 na base)
+alterados: 1.-número-nome-complexidade-profundidade, 11.-riscos-com-contenção-, 12.-edições-a-documentos-de-governança-não-executadas, 13.-perguntas-a-andraus-linguagem-simples-, 14.-próximo-passo, 15.-condições-propostas-ao-plan-só-valem-se-a-abertura-for-h, 16.-autopré-check-pep-001-§7-resumo, 3.-quantidade-e-dimensionamento-rule-ecc-07-, 4.-classe-rule-mech-01-cc-11-orientação-por-tipo-de-baspec, 6.-constitution-check-preliminar-cc-01..cc-12-a-completar-no, 7.-decisões-de-andraus-que-entram-nesta-spec-disposição-prop, 8.-re-apontamento-errata-e-gatilhos-só-proposta-nada-executa, cabeçalho, contrato-com-as-specs-montante-baseline-, dentro-do-escopo-proposta-
+adicionados: —
+removidos: —
+fontes citadas (sha256 de 12): {"canon/CCM-001-canonical-conviction-model.md": "0c74d2c91cf9", "backlog/RMR-001_Painel_Backlog.md": "6026dc5e3c4d", "governance/RULES.md": "c7445ee07bfb", "specs/features/SPEC-002/plan.md": "372808de15bf", "specs/features/SPEC-003/plan.md": "e023a7ca6c87", "specs/features/SPEC-004/plan.md": "e9b6a70d1d84", "specs/features/SPEC-005/plan.md": "d29e8e861ba7", "specs/features/SPEC-006/plan.md": "f4addd7d7273", "specs/features/SPEC-007/plan.md": "d6f66b079a8d", "specs/features/SPEC-020/plan.md": "0737d7a45e9d", "specs/features/SPEC-021/plan.md": "4d405d305ab0", "specs/features/SPEC-048/plan.md": "113df7339150", "atomic-spec.md": "b9679bfd60b5"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.

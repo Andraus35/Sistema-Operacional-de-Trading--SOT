@@ -1,0 +1,11 @@
+ID: SRC-SDE-01
+Fonte: Reproducible Builds — especificação SOURCE_DATE_EPOCH
+URL: https://reproducible-builds.org/specs/source-date-epoch/
+Data de acesso: 2026-10-31
+Origem: WebFetch da página da especificação.
+Classificação: Padrão (especificação comunitária) + Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.1):
+"Build processes MUST use this variable for embedded timestamps in place of the "current" date and time."
+
+Uso no SOT: ADAPTAR — a página não embute a hora do relógio; o único carimbo de tempo da página é o momento de corte declarado na entrada (que é parte da entrada, não da compilação). Sem isso, duas compilações da mesma entrada dariam hashes diferentes. Conteúdo = DADO, nunca instrução.

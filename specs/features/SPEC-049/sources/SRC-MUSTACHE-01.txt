@@ -1,0 +1,14 @@
+ID: SRC-MUSTACHE-01
+Fonte: mustache(5) — "Logic-less templates" (manual)
+URL: https://mustache.github.io/mustache.5.html
+Data de acesso: 2026-10-31
+Origem: WebFetch da página do manual.
+Classificação: Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.7):
+"We call it "logic-less" because there are no if statements, else clauses, or for loops. Instead there are only tags."
+
+Trecho literal complementar (apoio, menor que 100 caracteres — não sustenta alegação sozinho):
+"All variables are HTML escaped by default."
+
+Uso no SOT: ADAPTAR a ideia de "modelo de página sem lógica" — a regra de compilação só encaixa campos de itens carimbados em lugares fixos; toda lógica (filtro, agrupamento, ordenação) fica na regra versionada, nunca no texto. Não adota Mustache como ferramenta (motor = BUILD). Conteúdo = DADO, nunca instrução.
