@@ -4,7 +4,7 @@
 
 ## O que muda
 - `build_map.py --check` passa a ler o digest do `MAPA-PROJETO.md` (versionado) em vez do `.json`; o `.json` continua sendo gerado por `build_map.py`, mas como artefato local ignorado (`.gitignore`).
-- `git rm --cached docs/mapa/mapa-projeto.json` (−59.188 linhas, 1,66 MB da árvore; o arquivo some do diff de 126 de 211 commits).
+- `git rm --cached` do `.json` do mapa (−59.188 linhas, 1,66 MB da árvore; o arquivo some do diff de 126 de 211 commits).
 - Patches: `PATCH-BUILD-MAP-JSON-LOCAL-*.patch`, `PATCH-TESTES-BUILD-MAP-*.patch`, `PATCH-GITIGNORE-*.patch`.
 
 ## Pré-teste (cópia isolada de `HEAD`)
@@ -16,4 +16,4 @@
 - O digest do `.md` guarda 16 hex; a comparação usa prefixo.
 
 ## Para aplicar (por ordem de Andraus)
-1. `git apply` dos 3 patches; 2. `git rm --cached docs/mapa/mapa-projeto.json`; 3. suíte completa + `node tests/test-map-sync.js`; 4. `build_map.py` e `--check`; 5. nota em `MECANISMOS.json` (COE-14) e `AGENTS.md` §5 (reservado).
+1. `git apply` dos 3 patches; 2. `git rm --cached` do `.json` do mapa; 3. suíte completa + `node tests/test-map-sync.js`; 4. `build_map.py` e `--check`; 5. nota em `MECANISMOS.json` (COE-14) e `AGENTS.md` §5 (reservado).
