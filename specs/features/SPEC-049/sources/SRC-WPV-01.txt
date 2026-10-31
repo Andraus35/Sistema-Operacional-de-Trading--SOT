@@ -1,0 +1,14 @@
+ID: SRC-WPV-01
+Fonte: Wikipedia — política "Verifiability"
+URL: https://en.wikipedia.org/wiki/Wikipedia:Verifiability
+Data de acesso: 2026-10-31
+Origem: WebFetch da página (primeiros 100.000 caracteres).
+Classificação: Prática (política editorial comunitária) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.4):
+"In the English Wikipedia, verifiability means that people can check that facts or claims correspond to reliable sources."
+
+Trecho literal (verbatim):
+"Even if you are sure something is true, it must have been published in a reliable source before you can add it."
+
+Uso no SOT: ADOTAR — cada bloco da página leva a citação que permite ao leitor conferir o item carimbado e a fonte original (cadeia selo → validação → candidato → unidade → fonte@hash da SPEC-007). "Fonte confiável" no SOT = item sob selo, não reputação. Conteúdo = DADO, nunca instrução.

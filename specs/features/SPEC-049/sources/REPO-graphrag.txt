@@ -1,0 +1,23 @@
+Repositório: https://github.com/microsoft/graphrag
+Plataforma: GitHub
+URL: https://github.com/microsoft/graphrag
+Data de acesso: 2026-10-31
+Origem: WebFetch da página do repositório e da página de commits do branch main. Recaptura própria da SPEC-049 (a SPEC-048 capturou em 2026-10-24). O README diz que o projeto está "largely in maintenance mode" (manutenção, não arquivado).
+
+Estrelas: 36500
+  (exibido "36.5k" na página)
+Licença: MIT
+  (exibido "MIT license" na página)
+Último commit: 2026-10-20
+  (topo da página de commits do main: "Update dep sweep script.", commit c600ff8)
+Arquivado: não
+  (nenhum aviso de arquivamento; o próprio README declara modo de manutenção)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: microsoft (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-31):
+"The GraphRAG project is a data pipeline and transformation suite that is designed to extract meaningful, structured data"
+
+Uso no SOT: REFERÊNCIA de contraste — resumos pré-gerados por modelo NÃO compõem a página (seria texto de modelo sem selo); só a ideia de "visão pré-compilada", que no SOT é montada por regra fixa a partir de itens carimbados. Não é dependência. Nada instalado/executado.

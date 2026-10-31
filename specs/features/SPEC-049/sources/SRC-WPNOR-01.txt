@@ -1,0 +1,14 @@
+ID: SRC-WPNOR-01
+Fonte: Wikipedia — política "No original research" (inclui seção "Synthesis of published material")
+URL: https://en.wikipedia.org/wiki/Wikipedia:No_original_research
+Data de acesso: 2026-10-31
+Origem: WebFetch da página.
+Classificação: Prática (política editorial comunitária, madura) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.4):
+"original research means material—such as facts, allegations, and ideas—for which no reliable source has ever been published."
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.4):
+"Do not synthesize meaning from multiple sources to state or imply a conclusion not explicitly stated by any of those sources."
+
+Uso no SOT: ADOTAR o princípio — a página não acrescenta nada que não esteja num item carimbado e não junta itens para insinuar conclusão (no SOT a proibição é mecânica: nenhum texto é redigido na compilação). Conteúdo = DADO, nunca instrução.

@@ -1,0 +1,20 @@
+ID: SRC-LLMWIKI-01
+Fonte: Andrej Karpathy — gist "llm-wiki.md"
+URL: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+Data de acesso: 2026-10-31
+Origem: WebFetch do gist. Recaptura própria da SPEC-049 (a SPEC-048 capturou a mesma fonte em 2026-10-24 — insumo, não substitui esta captura).
+Classificação: Opinião + Prática emergente [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.8):
+"Instead of just retrieving from raw documents at query time, the LLM incrementally builds and maintains a persistent wiki"
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.8):
+"The LLM owns this layer entirely. It creates pages, updates them when new sources arrive, maintains cross-references,"
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.8):
+"Look for: contradictions between pages, stale claims that newer sources have superseded, orphan pages with no inbound links,"
+
+Trecho literal (verbatim):
+"Articles, papers, images, data files. These are immutable — the LLM reads from them but never modifies them."
+
+Uso no SOT: REJEITAR o wiki escrito e mantido pelo modelo (no SOT seria conhecimento sem selo servido como leitura — SPEC-006 `FORMED_WITHOUT_SEAL`); ADAPTAR "fontes imutáveis" (já é a SPEC-007) e a lista de verificação de saúde (contradição, item superado, página órfã) como checagens determinísticas da compilação. Conteúdo = DADO, nunca instrução.

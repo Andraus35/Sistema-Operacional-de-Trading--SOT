@@ -1,0 +1,23 @@
+Repositório: https://github.com/jackyzha0/quartz
+Plataforma: GitHub
+URL: https://github.com/jackyzha0/quartz
+Data de acesso: 2026-10-31
+Origem: WebFetch da página do repositório e da página de commits do branch v4.
+
+Estrelas: 13500
+  (exibido "13.5k" na página)
+Licença: MIT
+  (exibido "MIT license" na página)
+Último commit: 2026-04-20
+  (topo da página de commits do v4: "fix(citations): correct URL for CSL locales (#2377)")
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: jackyzha0 (pessoa identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-31):
+"Quartz is a set of tools that helps you publish your digital garden and notes as a website for free."
+
+Uso no SOT: REFERÊNCIA de contraste — "jardim digital" de notas escritas pela pessoa, com ligações entre páginas; no SOT o conteúdo não é escrito por ninguém na compilação (só itens carimbados). Aproveita-se só a ideia de ligações entre páginas e checagem de página órfã. Não é dependência. Nada instalado/executado.

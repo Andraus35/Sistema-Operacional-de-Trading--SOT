@@ -1,0 +1,14 @@
+ID: SRC-WPNPOV-01
+Fonte: Wikipedia — política "Neutral point of view"
+URL: https://en.wikipedia.org/wiki/Wikipedia:Neutral_point_of_view
+Data de acesso: 2026-10-31
+Origem: WebFetch da página (primeiros 100.000 caracteres). O primeiro trecho é recorte literal da frase de definição.
+Classificação: Prática (política editorial comunitária) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"representing fairly, proportionately, and, as far as possible, without editorial bias, all the significant views"
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"If different reliable sources make conflicting assertions about a matter, treat these assertions as opinions."
+
+Uso no SOT: ADOTAR "sem viés editorial" e "afirmações em conflito não são apresentadas como fato" — contradição aparece lado a lado, sem escolha; REJEITAR "proporcionalmente" como regra de destaque (no SOT nenhum lado ganha espaço ou posição por peso; a ordem é neutra e fixa). Conteúdo = DADO, nunca instrução.

@@ -1,0 +1,22 @@
+Repositório: https://github.com/gohugoio/hugo
+Plataforma: GitHub
+URL: https://github.com/gohugoio/hugo
+Data de acesso: 2026-10-31
+Origem: WebFetch da página do repositório e da página de commits do branch master.
+
+Estrelas: 90300
+  (exibido "90.3k" na página)
+Licença: Apache-2.0
+Último commit: 2026-10-30
+  (topo da página de commits do master: "Update README.md", commit 8502b60)
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério das SPEC-006/007/048; limitação declarada em _LIMITACAO-WEB.txt)
+Dono: gohugoio (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL (régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-10-31):
+"Hugo is a static site generator written in Go, optimized for speed and designed for flexibility. With its advanced"
+
+Uso no SOT: REFERÊNCIA — padrão "página gerada de arquivos-fonte por modelo de página fixo, refeita a qualquer momento". Nenhuma alegação de reprodutibilidade byte a byte do Hugo é feita (não verificada). Não é dependência; motor = BUILD. Nada instalado/executado.

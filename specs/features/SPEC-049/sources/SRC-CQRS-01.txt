@@ -1,0 +1,14 @@
+ID: SRC-CQRS-01
+Fonte: Martin Fowler — "CQRS" (bliki)
+URL: https://martinfowler.com/bliki/CQRS.html
+Data de acesso: 2026-10-31
+Origem: WebFetch da página.
+Classificação: Prática + Opinião (de especialista) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.2):
+"The change that CQRS introduces is to split that conceptual model into separate models for update and display"
+
+Trecho literal (verbatim, base do limite registrado em research.md §3.2):
+"For some situations, this separation can be valuable, but beware that for most systems CQRS adds risky complexity."
+
+Uso no SOT: ADAPTAR só a ideia de "modelo de exibição separado do modelo de escrita" (a página é exibição; a verdade é o KG da SPEC-006); REJEITAR adotar CQRS como arquitetura (complexidade sem ganho; motor = BUILD). Conteúdo = DADO, nunca instrução.

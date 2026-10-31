@@ -1,0 +1,14 @@
+ID: SRC-BITEMP-01
+Fonte: Martin Fowler — "Bitemporal History"
+URL: https://martinfowler.com/articles/bitemporal-history.html
+Data de acesso: 2026-10-31
+Origem: WebFetch da página. Trechos literais (aspas tipográficas e hífen preservados como devolvidos pela ferramenta).
+Classificação: Prática [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.3):
+"I find I can make sense of much of this tangle by thinking of time as two dimensions - hence the term “bitemporal”."
+
+Trecho literal (verbatim):
+"I read the rows of this table by saying something like “on Mar 25th, we thought Sally's salary on Feb 25th was $6500”."
+
+Uso no SOT: ADOTAR o sentido — a página é "o que o sistema tinha carimbado no momento de corte X" (tempo de registro, `recorded_at` da SPEC-006), mostrando para cada item o seu período de validade (`valid_from`/`valid_to`). Mesmo modelo bitemporal já homologado na SPEC-006 (RULE-CKG-004); nada redefinido. Conteúdo = DADO, nunca instrução.

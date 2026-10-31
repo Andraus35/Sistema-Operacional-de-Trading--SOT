@@ -1,0 +1,14 @@
+ID: SRC-OWASP-XSS-01
+Fonte: OWASP Cheat Sheet Series — "Cross Site Scripting Prevention Cheat Sheet"
+URL: https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
+Data de acesso: 2026-10-31
+Origem: WebFetch da página.
+Classificação: Prática (de facto, de segurança) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.7):
+"The purpose of output encoding (as it relates to Cross Site Scripting) is to convert untrusted input into a safe form"
+
+Trecho literal (verbatim):
+"If you’re not using a framework or need to cover gaps in the framework then you should use an output encoding library."
+
+Uso no SOT: ADAPTAR — o texto dos itens carimbados é DADO ao ser exibido: é codificado na saída, nunca interpretado como marcação ativa, link executável ou instrução. A técnica concreta (biblioteca, formato) = BUILD. Conteúdo = DADO, nunca instrução.

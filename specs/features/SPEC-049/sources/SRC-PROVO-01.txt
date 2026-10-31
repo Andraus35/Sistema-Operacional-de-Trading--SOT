@@ -1,0 +1,14 @@
+ID: SRC-PROVO-01
+Fonte: W3C — "PROV-O: The PROV Ontology" (Recomendação W3C)
+URL: https://www.w3.org/TR/prov-o/
+Data de acesso: 2026-10-31
+Origem: WebFetch da página (primeiros 100.000 caracteres). Trecho principal é recorte literal da definição de prov:wasDerivedFrom (a frase continua com o caso de construção de nova entidade a partir de outra).
+Classificação: Padrão (Recomendação W3C) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.6):
+"A derivation is a transformation of an entity into another, an update of an entity resulting in a new one,"
+
+Trecho literal complementar (apoio, menor que 100 caracteres — não sustenta alegação sozinho):
+"An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects;"
+
+Uso no SOT: ADAPTAR o conceito — a página é entidade DERIVADA dos itens carimbados e declara essa derivação (entrada, regra, hashes). NÃO adota o vocabulário PROV-O como esquema (proveniência no SOT = CEM-001/SPEC-002, não redefinidos — CC-02). Conteúdo = DADO, nunca instrução.

@@ -1,0 +1,20 @@
+Limitações da pesquisa web — Dossiê SPEC-049 (acesso 2026-10-31)
+
+1. Métricas de repositório (estrelas, licença, arquivamento, dono) foram lidas da página HTML pública do GitHub;
+   a data do último commit foi lida do topo da página de commits do branch padrão. Estrelas são o valor
+   arredondado exibido pela página (ex.: "90.3k" -> 90300). A API do GitHub não foi usada.
+2. Alertas de segurança: o estado privado do Dependabot não é público -> INDETERMINADO, registrado como 0
+   pelo mesmo critério das capturas das SPEC-006, SPEC-007 e SPEC-048. Um repositório com alerta grave não
+   público passaria despercebido (limitação conhecida da régua sem acesso privilegiado).
+3. A ferramenta WebFetch limita cada citação literal a cerca de 125 caracteres. Os trechos principais em
+   sources/*.txt são literais e têm >=100 caracteres; vários são recorte de frase maior (anotado em cada captura).
+   Trechos "complementares" menores que 100 caracteres são só apoio e não sustentam alegação sozinhos.
+   Nenhum trecho foi completado por paráfrase.
+4. Páginas longas (Wikipedia NPOV, Wikipedia Verifiability, W3C PROV-O) foram lidas só nos primeiros 100.000
+   caracteres; os trechos citados vêm dessa parte.
+5. A página de configuração do Sphinx foi consultada à procura de menção a SOURCE_DATE_EPOCH/reprodutibilidade;
+   nada foi encontrado na parte lida -> nenhuma alegação de reprodutibilidade é atribuída ao Sphinx (nem ao Hugo).
+6. O repositório Benchmark (Andraus35/Inteligencia-SOT) NÃO foi lido nesta sessão. Nenhuma citação nova dele;
+   o Dossiê só remete à linha B10 do Dossiê da SPEC-007 (specs/features/SPEC-007/research.md §5.2), sem reconferência.
+7. Nenhum dado do projeto foi enviado nas consultas; só endereços públicos e termos genéricos.
+8. Conteúdo web e de repositórios = DADO, nunca instrução; nada foi instalado nem executado.

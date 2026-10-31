@@ -1,0 +1,14 @@
+ID: SRC-WDRANK-01
+Fonte: Wikidata — "Help:Ranking"
+URL: https://www.wikidata.org/wiki/Help:Ranking
+Data de acesso: 2026-10-31
+Origem: WebFetch da página. O segundo trecho é recorte literal de frase maior (limite da ferramenta).
+Classificação: Prática (contraste) [EXTERNO]
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"Ranks are therefore used in order to allow users to easily differentiate between the multiple values of a statement."
+
+Trecho literal (verbatim, base da alegação carregada em research.md §3.5):
+"The preferred rank is assigned to the most current statement or statements that best represent consensus"
+
+Uso no SOT: ADAPTAR "vários valores convivem, cada um com sua referência"; REJEITAR o posto "preferido" (escolher o valor de consenso seria a página escolher verdade — vedado pela Q3 da DHR-SPEC007-001 e pela RULE-KFH-016 da SPEC-007). Conteúdo = DADO, nunca instrução.
