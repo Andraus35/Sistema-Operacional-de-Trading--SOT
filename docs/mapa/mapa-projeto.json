@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "912d80d50015c62f9b4e1819bd61b95eab26604d4cb6663edbc333c6fab1fe28",
+  "digest": "29a0f4f94adb5d604add2297b9dde023e15ff93d07829c4a7fcaa9c7c202ebcd",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 336,
+   "in": 337,
    "out": 114
   },
   {
@@ -1396,7 +1396,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 56,
+   "in": 57,
    "out": 5
   },
   {
@@ -3034,8 +3034,8 @@
    "path": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
    "area": "governance",
    "title": "Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) — R2 integral (S2, sonnet) — 2026-10-31",
-   "in": 1,
-   "out": 8
+   "in": 2,
+   "out": 11
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -3286,7 +3286,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 203,
+   "in": 204,
    "out": 9
   },
   {
@@ -3623,7 +3623,7 @@
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3)",
    "in": 3,
-   "out": 25
+   "out": 26
   },
   {
    "path": "specs/features/SPEC-049/research.md",
@@ -3675,7 +3675,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 131
+   "cited_by": 132
   },
   {
    "id": "BL-004",
@@ -3710,12 +3710,12 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 112
+   "cited_by": 113
   },
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 140
+   "cited_by": 141
   },
   {
    "id": "BL-012",
@@ -3745,7 +3745,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 113
+   "cited_by": 114
   },
   {
    "id": "BL-018",
@@ -3805,7 +3805,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 78
+   "cited_by": 79
   },
   {
    "id": "BL-030",
@@ -3835,7 +3835,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 57
+   "cited_by": 58
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -3960,7 +3960,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 56
+   "cited_by": 57
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -5725,7 +5725,7 @@
   {
    "id": "RULE-KFH-009",
    "defined_in": null,
-   "cited_by": 5
+   "cited_by": 7
   },
   {
    "id": "RULE-KFH-010",
@@ -42911,6 +42911,16 @@
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
    "to": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
    "type": "id"
   },
@@ -42918,6 +42928,11 @@
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
    "to": "governance/RULES.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
@@ -42938,6 +42953,11 @@
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
    "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
@@ -48496,6 +48516,11 @@
   },
   {
    "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
    "to": "specs/features/SPEC-001/checks.md",
    "type": "path"
   },
@@ -48528,6 +48553,11 @@
    "from": "specs/features/SPEC-049/ABERTURA.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-049/ABERTURA.md",
@@ -48658,6 +48688,11 @@
    "from": "specs/features/SPEC-049/research.md",
    "to": "specs/features/SPEC-006/plan.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/research.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-049/research.md",
