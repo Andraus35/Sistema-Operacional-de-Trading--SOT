@@ -572,6 +572,13 @@
       "motivo": "Homologacao de abertura de Spec: nao altera texto de agente nem metodo"
     },
     {
+      "id": "DHR-TELEMETRIA-CUSTO-001",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Novo script detector, hook PostToolUse e tabela de preços; não altera texto de agente de construção nem método."
+    },
+    {
       "id": "DHR-SPEC049-002",
       "data": "2026-10-31",
       "em_escopo": false,

@@ -118,7 +118,7 @@ Rodadas por delta: 15/38 · com SHA256-ALVO declarado: 6/38. Convenção no cabe
 Tamanho = estado ATUAL do `plan.md` (não o de cada rodada); tokens por rodada seguem **n/m** (o repositório não os mede — registrar manualmente em `TELEMETRIA-ONDA0.md`).
 
 
-Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo repositório.
+Economicidade (tokens/custo): **PARCIAL** — tokens por agente/modelo/classe medidos em `governance/aprendizado/TELEMETRIA-TOKENS.md` (retrato do hook `telemetria_tokens.py`, BL-036); custo em USD INDETERMINADO sem preços em `governance/telemetria/PRECOS-MODELOS.json`; tokens por rodada seguem n/m aqui. Tokens ≠ qualidade (CEE-001).
 
 ## 3. Categorias, recorrência e prevenção registrada
 

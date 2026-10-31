@@ -37,6 +37,26 @@
       "verificado_em": "2026-10-30: tests/test_roteador_modelos.py (49 testes) no CI; ao vivo (2026-10-30): sem model => deny; Revisor sem ALVO/FICHA => deny (R-AC4); Especificador model=opus + CLASSE-TAREFA O => permitido"
     },
     {
+      "id": "hook.telemetria-tokens",
+      "arquivo": "scripts/telemetria-tokens.js",
+      "canal": "settings.json PostToolUse Agent",
+      "tipo": "hook",
+      "estado": "ativo",
+      "enforca": "Detector (ENF-03), nunca nega: repassa o evento PostToolUse/Agent a scripts/telemetria_tokens.py; fail-open",
+      "ata": "DHR-TELEMETRIA-CUSTO-001",
+      "verificado_em": "2026-10-31: execução ao vivo do wrapper com evento sintético gravou 1 linha; tests/test_telemetria_tokens.py (7 testes) no CI"
+    },
+    {
+      "id": "lib.telemetria-tokens",
+      "arquivo": "scripts/telemetria_tokens.py",
+      "canal": "biblioteca de telemetria-tokens.js + CLI `resumo`",
+      "tipo": "utilitario",
+      "estado": "ativo",
+      "enforca": "Grava metadados (agente, modelo, classe, tokens in/out/cache, duração) em .telemetria/uso-tokens.jsonl (gitignored, sem texto de prompt/resposta); `resumo` agrega por agente/modelo/classe; `snapshot` grava governance/aprendizado/TELEMETRIA-TOKENS.md (lido pelo loop_ledger); custo = tokens x governance/telemetria/PRECOS-MODELOS.json (preço null => INDETERMINADO). Só agentes AC; custo fora do Conviction Vector (INV-04)",
+      "ata": "DHR-TELEMETRIA-CUSTO-001",
+      "verificado_em": "2026-10-31: tests/test_telemetria_tokens.py (7 testes) no CI"
+    },
+    {
       "id": "hook.post-edit-check",
       "arquivo": "scripts/post-edit-check.js",
       "canal": "settings.json PostToolUse Write|Edit|MultiEdit",
