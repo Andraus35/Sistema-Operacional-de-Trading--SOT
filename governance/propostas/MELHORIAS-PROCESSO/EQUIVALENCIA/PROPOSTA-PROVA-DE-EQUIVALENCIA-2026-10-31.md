@@ -23,3 +23,6 @@ Só 2 linhas passam de 1.500 bytes (11.658 B, 15% do arquivo): **linha 34 "Próx
 2. `python governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/equiv_conservacao.py <AGENTS.md anterior (git show)> AGENTS.md <arquivo morto>` → deve imprimir CONSERVADO.
 3. Suíte completa, `check_doc_sync`, `check_handoff`, `check_rpsa --register` se a regra de carimbo do AGENTS exigir (AGENTS.md é monitorado), `build_map`.
 4. Decidir se a ferramenta vira script oficial (exigiria registro em `MECANISMOS.json`, COE-14) ou fica como utilitário de proposta.
+
+## 5. Lição da aplicação do §7 (2026-10-31, `DHR-AGENTS-SEC7-001`)
+A prova de conservação passou, mas o teste `test_check_invariants.TestFontes` falhou: o detector `check_invariants` usa o `AGENTS.md` como **fonte** da validade do Dossiê (LOW 180 / MEDIUM 120 / HIGH-CRITICAL 90), que só existia no §7. **Conservar o texto num arquivo morto não garante que consumidores (detectores, testes) o achem.** Regra para próximos cortes: rodar a suíte completa e `check_invariants` **além** da prova de conservação, e repor no documento enxuto qualquer trecho-fonte que um detector exija. Aqui foi reposta uma linha (ECC-VAL-001, já FECHADA).
