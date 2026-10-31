@@ -198,7 +198,7 @@ Motores, agentes e skills do projeto paralelo **não** são usados; só ideias d
 - **(C) CRITICAL D0–D8** — rejeitada: a página não tem efeito sobre a verdade (E1), não roda no ciclo e não chama modelo; D8 completo não acrescenta Eficácia proporcional.
 
 ### 8.2 Quantidade e dimensionamento (RULE-ECC-07)
-**Spec única.** Escopo pequeno e coeso (um contrato: itens carimbados no corte → página + registro de compilação). Estimativa e cálculo na ABERTURA §3 (≈1.250 linhas de corpo em HIGH; ≈850 em MEDIUM; ambas abaixo de 1.600). Sem divisão.
+**Spec única.** Escopo pequeno e coeso (um contrato: itens carimbados no corte → página + registro de compilação). Estimativa e cálculo na ABERTURA §3 (≈1.250 linhas de corpo em HIGH; ≈880 em MEDIUM; ambas abaixo de 1.600). Sem divisão.
 
 ### 8.3 Re-apontamento em Specs baselined (atomic-spec §15 item 6) — **nenhuma errata necessária**
 Referências de Specs baselined ao slot SPEC-049 (busca 2026-10-31, padrão `SPEC-049|WikiRAG|página de leitura`): `SPEC-007/plan.md` l.3 (nota aditiva C-3) + a nota N-F do ERRATUM-REAPONT-001 (homologado, DHR-REAPONT-001) — já apontam a página à SPEC-049; `SPEC-048/plan.md` l.5, 19, 123-131, 147, 176, 318, 333, 375, 1149-1151, 1267, 1439, 1463, 1658, 1756, 1762 — já apontam à SPEC-049. Como esta abertura **mantém número, nome e fronteira** do slot, **nenhuma errata de re-apontamento** é proposta. **Condição:** se Andraus mudar o número ou a fronteira, ou se o identificador da página não for `reading_view_ref`, a errata volta a ser necessária (SPEC-048 l.1267/l.1439).
