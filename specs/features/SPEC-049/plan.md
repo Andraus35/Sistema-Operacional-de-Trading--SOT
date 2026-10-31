@@ -1,11 +1,11 @@
-# SPEC-049 — WikiRAG Reading View — Plan v1.1 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)
+# SPEC-049 — WikiRAG Reading View — Plan v1.2 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)
 
 | Campo | Valor |
 |---|---|
 | ID | SPEC-049 — WikiRAG Reading View (Visão de Leitura WikiRAG). Número e nome decididos por Andraus (DHR-SPEC048-001 Q-2); abertura homologada (DHR-SPEC049-001). Sentido de "WikiRAG" = Q3 da DHR-SPEC007-001. |
-| Versão | **1.1 (CANDIDATA — correção do parecer R1 do Revisor: M01–M03 + m02–m08; m01 já aplicado pelo Orquestrador)** *[antes: "1.0 (CANDIDATA — primeira entrega do Plan)"]* |
+| Versão | **1.2 (CANDIDATA — passada curta do parecer R2: R2-m01, R2-m02 (resíduo), R2-m03..m06; R2-m07 e R2-m02a já aplicados pelo Orquestrador; respostas de Andraus de 2026-10-31 registradas)** *[antes: "1.1 (CANDIDATA — correção do parecer R1 do Revisor: M01–M03 + m02–m08; m01 já aplicado pelo Orquestrador)"; antes disso: "1.0 (CANDIDATA — primeira entrega do Plan)"]* |
 | Ordem de Andraus | **Plan:** chat 2026-10-31, "Iniciar o Plan da SPEC-049" (transmitida pelo Orquestrador). **Registro:** a DHR-SPEC049-001 §6 ainda marca "[ ] Plan da SPEC-049"; pede-se que a ata de homologação do Plan registre esta ordem citando o chat — ato do Orquestrador/Andraus, não do Especificador. |
-| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 2, por delta) e homologação de Andraus. NÃO é baseline (INV-09).** Tudo o que este Plan cria (INV-WRV-01, RULE-WRV-*, BASpec-WRV-*, EC-WRV-*, cenários, códigos `WRV_*`, contrato lógico, estados locais `W_*`, regra de compilação versão 1, Fixture W0) é **[PROPOSTA]**; as decisões de Andraus já tomadas (DHR-SPEC049-001 P-1..P-7, C-1..C-4; DHR-SPEC007-001 Q3) viram texto normativo só na homologação deste Plan. |
+| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 3, por delta) e homologação de Andraus. NÃO é baseline (INV-09).** Tudo o que este Plan cria (INV-WRV-01, RULE-WRV-*, BASpec-WRV-*, EC-WRV-*, cenários, códigos `WRV_*`, contrato lógico, estados locais `W_*`, regra de compilação versão 1, Fixture W0) é **[PROPOSTA]**; as decisões de Andraus já tomadas (DHR-SPEC049-001 P-1..P-7, C-1..C-4; DHR-SPEC007-001 Q3) viram texto normativo só na homologação deste Plan. |
 | Fonte | `ROADMAP.md` l.192-193 (seção SPEC-049) e l.523 (tabela §25); `specs/features/SPEC-049/ABERTURA.md` (Revisão 3: S1–S11, §3, §4, §11, §13, §15 condições 1–14) + `research.md` + `sources/` (Dossiê — RULE-ECC-01/02/04/06; validade HIGH 90 dias, **limite 2027-01-29**); `governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md` (§1 decisões, §3 condições); DHR-SPEC048-001 (Q-2, C-1, C-2); DHR-SPEC007-001 (Q3); `specs/features/SPEC-007/plan.md` v2.3 BASELINE (INV-KFH-02 l.432-447; Interface pontos 1, 2, 5 l.1224/1225/1228; Anexo T — insumo, não vigente); `specs/features/SPEC-006/plan.md` v1.7 + erratas v1.11/v1.12/v1.13 BASELINE; `specs/features/SPEC-048/plan.md` v1.4 BASELINE (requisito inverso l.1149-1151); atomic-spec §10–§15; `governance/RULES.md` |
 | Complexidade | HIGH [FONTE: DHR-SPEC049-001 §1, linha P-1 — "ALTO: HIGH D0–D7 (D6 N/A), com teste escrito para cada regra, inclusive a trava herdada"] |
 | Profundidade-alvo | D0–D7 (standard); **D6 N/A** (a página não vai ao Blackboard); **D8 não se aplica** (perfil HIGH) [FONTE: DHR-SPEC049-001 P-1; AGENTS.md §4] |
@@ -31,6 +31,7 @@ Complexidade: HIGH. Profundidade-alvo: D0–D7 (standard; D6 N/A).
 |---|---|---|
 | 1.0 | 2026-10-31 | Entrega candidata inicial: 1 INV-WRV, 10 RULE-WRV, 11 EARS, 11 BASpec, 3 EC, 18 cenários (T01..T18); corte C-1 do insumo reescrito com IDs `WRV`; condições 1–14 da ABERTURA §15 + R3-m01 + condições da ata §3 cumpridas (tabela própria). |
 | 1.1 | 2026-10-31 | Parecer R1 (NÃO CONFORME): M01 códigos e cenários dos caminhos fail-closed (§D3.1; T04 (e)(f)(g), T14 (e)(f)(g), T16 (c1)(c2)(e)(f)(g)), registro sem identidade resolvido; M02 `output_hash` sobre a página codificada e `render_profile` no `rule_hash`; M03 unicidade de `ESTATISTICA_DE` restrita a "não causal" (matriz inteira, SPEC-006 l.616-629); m02–m08 (ver tabela "Correções do parecer R1"). Contagens de itens inalteradas. |
+| 1.2 | 2026-10-31 | Parecer R2 (CONFORME condicional, só Menores): R2-m01 T01/BASpec-010 "estado real quando o pré-requisito 0 existir"; R2-m02 Herança (versão, RULE-KFH-019 (b)) e CRITÉRIO 4Es da BASpec-011 por referência; R2-m03 registro próprio = `compilation_record` + `delivery_record`, `compilation_rule_record` não gravado pela compilação; R2-m04 precedência capacidade × identidade (D4.1 (0); T16 (h)); R2-m05 `ENTREGA_NAO_CONFIRMADA` = desfecho projetado; R2-m06 aprovação do primeiro registro da versão 1 = `[DECISÃO NECESSÁRIA]` não bloqueante; respostas de Andraus a P-1/P-2 e ciência dos atos 4/5 registradas (a registrar na ata). Contagens de itens inalteradas. |
 
 ---
 
@@ -177,7 +178,7 @@ Complexidade: HIGH. Profundidade-alvo: D0–D7 (standard; D6 N/A).
 ## Herança / Delta (§8.3 — EUA-E04 / RULE-HD)
 
 ```
-HERANÇA / DELTA — SPEC-049 (v1.0)
+HERANÇA / DELTA — SPEC-049 (v1.2)   [antes: "(v1.0)" — R2-m02]
 
 INHERITS (referência por ID + VERSÃO baseline — RULE-HD-04; NÃO redefinido):
   - specs/features/SPEC-007 v2.3 (BASELINE — DHR-SPEC007-005):
@@ -190,6 +191,7 @@ INHERITS (referência por ID + VERSÃO baseline — RULE-HD-04; NÃO redefinido)
       RULE-KFH-005 (canon/H — função única de serialização e hash); RULE-KFH-007 (selo; publication.seal_ref)
       RULE-KFH-008 (revalidation_mark, não destrutiva); RULE-KFH-009 (validade de publicado só por sucessão/invalidação
         autorizada — l.683-704); RULE-KFH-016 (contradiction_mark, ambos os lados preservados — l.708-716)
+      RULE-KFH-019 (b) (definição ÚNICA de "provedor externo" — l.725-731; por referência na INV-WRV-01) (v1.2, R2-m02)
       RULE-KFH-019 (c1)/(c2) (permissão efetiva ENVIO/USO sobre as origens-raiz — l.732-737) — só a função, para exibir
       RULE-KFH-020 (atos — só LEITURA); contrato lógico l.1239-1265 (source_record, knowledge_candidate.claims[],
         publication_seal.knowledge_kind)
@@ -407,8 +409,9 @@ RULE-WRV-002: REGRA FIXA DE COMPILAÇÃO (VERSIONADA). (a) A regra é registrada
               codificação = BUILD); depois de registrado, trocar formato ou codificador = versão nova. Versão nova = alteração deste Plan por errata homologada por Andraus (INV-09); a
               regra NÃO muda em runtime, por pedido, por item, por feedback nem por modelo.
               (b) AGRUPAMENTO só por campos de lista fechada já existentes no sistema (P-4) — CHAVE 1 "ativo": nó `asset`
-              ligado ao item por relação `ESTATISTICA_DE` (learning → asset, SPEC-006 l.629) registrada até o corte e
-              vigente em `valid_at` [INFERÊNCIA: das 12 relações da matriz da SPEC-006 (l.616-629; enum l.1440), só duas
+              ligado ao item por relação `ESTATISTICA_DE` (learning → asset, SPEC-006 l.629), registrada até o corte;
+              a relação precisa estar vigente na data de referência da validade (campo `valid_at` da entrada desta Spec)
+              [INFERÊNCIA: das 12 relações da matriz da SPEC-006 (l.616-629; enum l.1440), só duas
               admitem `learning` → `asset`: `ESTATISTICA_DE` (l.629) e `CAUSA` (l.627, origem e destino "qualquer", exige
               mecanismo — RULE-CKG-008/RULE-CAU); `ESTATISTICA_DE` é a única NÃO CAUSAL — por isso é a chave; `CAUSA` não
               agrupa; pergunta P-2 deste Plan] *[antes: "é a única relação da ontologia vigente que liga `learning` a
