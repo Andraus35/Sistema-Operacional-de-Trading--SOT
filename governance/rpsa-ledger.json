@@ -570,6 +570,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologacao de abertura de Spec: nao altera texto de agente nem metodo"
+    },
+    {
+      "id": "DHR-SPEC049-002",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologacao de Plan de Spec em redacao: nao altera texto de agente nem metodo"
     }
   ]
 }
