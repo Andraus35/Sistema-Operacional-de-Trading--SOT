@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "9a88591076721327a77f6b0acc2da285a13fff20566900bc8f59be492bdbe5e0",
+  "digest": "aa1fd7d24314cc3428fda50d5c9e0f312b9e6cf8445dbe9078e542a160553e8f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -3677,7 +3677,7 @@
   {
    "path": "specs/features/SPEC-049/plan.md",
    "area": "specs",
-   "title": "SPEC-049 — WikiRAG Reading View — Plan v1.0 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
+   "title": "SPEC-049 — WikiRAG Reading View — Plan v1.1 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
    "in": 66,
    "out": 28
   },
@@ -4961,7 +4961,7 @@
   {
    "id": "RULE-CAU",
    "defined_in": "governance/RULES.md",
-   "cited_by": 29
+   "cited_by": 30
   },
   {
    "id": "RULE-CAU-01",
@@ -5246,7 +5246,7 @@
   {
    "id": "RULE-CKG-008",
    "defined_in": null,
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "RULE-CKG-009",
@@ -5776,7 +5776,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "RULE-KFH-006",
