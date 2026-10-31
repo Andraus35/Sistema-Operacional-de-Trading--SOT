@@ -633,6 +633,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registra retrospectiva e um detector informativo do Orquestrador; a emenda ao revisor.md (P8) tem ata própria (DHR-AGENTS-P8-001, escopo sim)."
+    },
+    {
+      "id": "DHR-RETRO-003",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra decisões de processo e texto do roteiro de retrospectivas; não toca agentes de construção, AGENTS.md nem método."
     }
   ]
 }

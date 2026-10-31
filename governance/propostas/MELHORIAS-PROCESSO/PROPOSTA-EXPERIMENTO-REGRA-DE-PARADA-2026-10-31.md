@@ -28,3 +28,7 @@ Por Spec: rodadas; Médias por rodada; Menores restantes na homologação; **tok
 
 ## 7. Para executar (por ordem de Andraus, quando mandar abrir o próximo Plan)
 1. Ordem de Andraus citando este experimento (ata curta); 2. incluir a regra no **pedido** ao Especificador/Revisor daquele Plan (sem editar `.claude/agents/*` nem `AGENTS.md` ainda); 3. registrar métricas do §5 no ledger/telemetria; 4. retrospectiva no fechamento (LOOP-001 passo 5) decide se a regra vira texto normativo, com `MECANISMOS.json`/`COE-14` no mesmo PR se virar mecanismo.
+
+## 8. Decisão de Andraus (chat, 2026-10-31; `DHR-RETRO-003`)
+**Aprovado como experimento (P10)** para o próximo Plan que ele mandar abrir. Sem esse comando, nada é executado. Ao abrir o Plan, o Orquestrador inclui a regra do §3 e as métricas do §5 no pedido ao Especificador e ao Revisor e registra o baseline; o fechamento (retrospectiva) decide se a regra vira texto normativo.
+
