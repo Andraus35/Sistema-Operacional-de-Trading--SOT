@@ -539,6 +539,17 @@
       "ata": "DHR-DELTA-HASH-001",
       "verificado_em": "2026-10-31: tests/test_delta_pacote.py (CI)",
       "nota": "Reaproveita spec_delta.py (selado) sem alterá-lo; instrumentação correspondente na seção 2-ter do loop_ledger."
+    },
+    {
+      "id": "det.check-dimensionamento",
+      "arquivo": "scripts/check_dimensionamento.py",
+      "canal": "CLI do Orquestrador e passo informativo do CI",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "RULE-ECC-07 (tetos de linhas do corpo do Plan; prospectiva desde a SPEC-049) e DHR-DELTA-HASH-001 (SHA256-ALVO em rodada por delta). Exit 0 sempre: Detector, não Gate",
+      "ata": "DHR-CHECKS-INFO-001",
+      "verificado_em": "2026-10-31: tests/test_check_dimensionamento.py (CI)",
+      "nota": "Informativo (continue-on-error no CI). Promoção a bloqueante só por ordem de Andraus. Não altera arquivo selado."
     }
   ],
   "vigente_desde": "2026-10-19"
