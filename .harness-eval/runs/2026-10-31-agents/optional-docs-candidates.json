@@ -1,0 +1,52 @@
+{
+  "policy": {
+    "agent_harness_refs": "always_include",
+    "adr_rfc_decision_records": "always_exclude",
+    "other_cited_docs": "opt_in_after_user_approval"
+  },
+  "excluded_decision_records": [],
+  "optional_by_type": {
+    ".claude": [
+      ".claude/agents/especificador.md",
+      ".claude/agents/revisor.md"
+    ],
+    ".clinerules": [
+      ".clinerules/sot-map.md"
+    ],
+    ".github": [
+      ".github/workflows/auditor-externo.yml"
+    ],
+    "GLOSSARIO.md": [
+      "GLOSSARIO.md"
+    ],
+    "HANDOFF.md": [
+      "HANDOFF.md"
+    ],
+    "ROADMAP.md": [
+      "ROADMAP.md"
+    ],
+    "WORKFLOW.md": [
+      "WORKFLOW.md"
+    ],
+    "atomic-spec.md": [
+      "atomic-spec.md"
+    ],
+    "docs/agentes": [
+      "docs/agentes/INDICE-AGENTES.md"
+    ],
+    "docs/mapa": [
+      "docs/mapa/MAPA-PROJETO.md"
+    ],
+    "governance": [
+      "governance/CATALOGO-OFICIAL.md",
+      "governance/MECANISMOS.json",
+      "governance/RULES.md",
+      "governance/aprendizado/CAUSAS-PREVENCAO.md",
+      "governance/aprendizado/LEDGER-ACHADOS.md",
+      "governance/aprendizado/RETROSPECTIVAS.md",
+      "governance/propostas/AUDITOR-EXTERNO/OPERACAO.md"
+    ]
+  },
+  "included_optional_docs": [],
+  "included_doc_types": []
+}

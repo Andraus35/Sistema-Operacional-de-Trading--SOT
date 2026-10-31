@@ -1,0 +1,45 @@
+{
+  "root": "/home/user/Sistema-Operacional-de-Trading--SOT",
+  "generated_at": "2026-10-31T14:29:00.109165+00:00",
+  "t0": [
+    "AGENTS.md"
+  ],
+  "t1": [],
+  "t2": [],
+  "manifests": [
+    "package.json"
+  ],
+  "manifest_commands": [
+    "test",
+    "lint",
+    "test:hooks",
+    "test:py",
+    "map",
+    "map:check",
+    "sync",
+    "sync:strict",
+    "handoff",
+    "coesao",
+    "eval",
+    "score",
+    "score:diff"
+  ],
+  "doc_scope": {
+    "included_optional_docs": [],
+    "included_doc_types": [],
+    "excluded_decision_record_count": 0,
+    "optional_type_count": {
+      ".claude": 2,
+      ".clinerules": 1,
+      ".github": 1,
+      "GLOSSARIO.md": 1,
+      "HANDOFF.md": 1,
+      "ROADMAP.md": 1,
+      "WORKFLOW.md": 1,
+      "atomic-spec.md": 1,
+      "docs/agentes": 1,
+      "docs/mapa": 1,
+      "governance": 7
+    }
+  }
+}
