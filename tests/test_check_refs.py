@@ -113,6 +113,30 @@ class CheckRefs(unittest.TestCase):
         (code, out), _ = self.go({"backlog/x.md": "Usa RULE-ZZ-99."}, "--strict")
         self.assertEqual(code, 1, out)
 
+    # --- falsos positivos medidos no repositório real (auditoria 2026-10-31, B10) ---
+    def test_placeholder_0NN_nao_gera_warn(self):
+        (code, out), _ = self.go({"specs/features/SPEC-001/checks.md": "Famílias RULE-CKG-0NN e RULE-KFH-0NN (modelo)."}, "--strict")
+        self.assertEqual(code, 0, out)
+
+    def test_caminho_absoluto_fora_do_repo_nao_e_sugerido_como_movido(self):
+        files = {"README.md": "x", "specs/a.md": "Veja `/root/.ccr/README.md` no ambiente."}
+        (code, out), _ = self.go(files, "--strict")
+        self.assertEqual(code, 0, out)
+
+    def test_comando_wc_usa_o_ultimo_argumento(self):
+        files = {"specs/features/SPEC-001/plan.md": "x", "specs/features/SPEC-006/plan.md": "x",
+                 "specs/features/SPEC-006/checks.md": "Rode `wc -l specs/features/SPEC-006/plan.md`."}
+        (code, out), _ = self.go(files, "--strict")
+        self.assertEqual(code, 0, out)
+
+    def test_regra_real_sem_definicao_continua_alertando(self):
+        (code, out), _ = self.go({"backlog/x.md": "Usa RULE-ZZ-99."}, "--strict")
+        self.assertEqual(code, 1, out)
+
+    def test_caminho_relativo_inexistente_continua_erro(self):
+        (code, out), _ = self.go({"backlog/x.md": "veja `docs/inexistente.md`."})
+        self.assertEqual(code, 1, out)
+
 
 if __name__ == "__main__":
     unittest.main()

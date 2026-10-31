@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-31-111
-previous: HO-2026-10-31-110
+handoff_id: HO-2026-10-31-112
+previous: HO-2026-10-31-111
 data: 2026-10-31
 branch: ccr-599f6762-60qbvg
 base_commit: d37c6d1
@@ -18,7 +18,7 @@ anexo: null
 
 ## 2. Estado (fatos conferidos em 2026-10-31)
 - **Aplicado nesta sessão (sem arquivo normativo):** `docs/UPGRADES/` movido para `docs/_legacy/UPGRADES/` (git mv; `.rgignore` ajustado); HANDOFF reescrito compacto, anterior arquivado.
-- **Pré-testado e NÃO aplicado (aguarda ordem de Andraus):** patch do `check_refs.py` (WARN 6→2, 20/20 testes, falha no script atual) em `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md` + 2 `.patch`; exige regravar o selo do gate. Mapa JSON fora da árvore: adiado (consumidores: `build_map.py` e 2 testes).
+- **Aplicado por ordem de Andraus (chat):** patch do `check_refs.py` (WARN 6→2, 20/20 testes, falha no script atual) em `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md` + 2 `.patch`; selo do gate regravado e MECANISMOS.json atualizado. Mapa JSON fora da árvore: adiado (consumidores: `build_map.py` e 2 testes).
 - **Não aplicado, por ser do CODEOWNERS ou normativo:** `revisao-independente/` (citada em `governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md`), status nos 33 `_PROPOSTA`, atas COE-11.
 - **Atas recentes:** `DHR-SPEC049-001`, `DHR-DIMENSIONAMENTO-001`, `DHR-RETRO-001`, `DHR-CHECKS-INFO-001`, `DHR-MERGE-001`.
 
@@ -49,7 +49,7 @@ Dar Bash ao Revisor; refazer SPEC-006/020; tratar decisão do `AGENTS.md` como m
 - [ ] ROADMAP: linhas "Decisões abertas ativas"/"Decisões FECHADAS"; versão vigente de `WORKFLOW.md`
 
 ## 10. Aguardando Andraus
-Plano da SPEC-049 (só por ordem dele) · aplicar o patch do `check_refs` (selo do gate) · destino da auditoria de burocracia (grupos 2 e 3) · propostas P7–P9 das retrospectivas · H1–H8 e M1–M8 da auditoria de economicidade · erratas/atualizações listadas no §5 · demais decisões abertas do ROADMAP · destino do Auditor Externo (PAUSADO), D-PCC-3/4/5.
+Plano da SPEC-049 (só por ordem dele) · destino da auditoria de burocracia (grupos 2 e 3) · propostas P7–P9 das retrospectivas · H1–H8 e M1–M8 da auditoria de economicidade · erratas/atualizações listadas no §5 · demais decisões abertas do ROADMAP · destino do Auditor Externo (PAUSADO), D-PCC-3/4/5.
 
 ## 11. Ponteiros
 `governance/propostas/MELHORIAS-PROCESSO/` (3 relatórios + auditoria de burocracia) · `governance/aprendizado/` · `governance/MECANISMOS.json` · `docs/handoffs/` · `docs/mapa/MAPA-PROJETO.md` · `specs/features/SPEC-049/` · atas em `governance/` (nome começa pelo ID).

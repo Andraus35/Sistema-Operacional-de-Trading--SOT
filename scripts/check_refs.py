@@ -201,7 +201,9 @@ def resolve_path(src: Path, raw: str, reg: Registry):
     """Retorna (estado, alvo): 'ok' | 'moved' | 'missing'."""
     t = unquote(raw.split("#")[0])
     t = re.sub(r":\d+(?:[-–]\d+)?(?:,\s*\d+)*$", "", t).strip()
-    if re.match(r"^(node|python3?|npm|npx)\s", t):  # comando: o alvo é o último argumento
+    if t.startswith("/"):  # caminho absoluto do ambiente (ex.: fora do repositório): não é referência do repositório
+        return None, None
+    if re.match(r"^(node|python3?|npm|npx|wc|cat|head|tail)\s", t):  # comando: o alvo é o último argumento
         t = t.split()[-1]
     if not PATHLIKE.match(t) or "..." in t or (t.startswith(".") and not t.startswith(("./", "../"))):
         return None, None
@@ -246,6 +248,8 @@ def analyze():
                     tok = m.group(0)
                     if kind == "RULE" and re.match(r"RULE-(XYZ|XXX|X)(-|$)", tok):
                         continue  # placeholder de exemplo
+                    if kind == "RULE" and re.search(r"-(?:0NN|NN|nn|0nn)$", tok):
+                        continue  # placeholder de numeração (RULE-CKG-0NN): padrão, não referência
                     if PLACEHOLDER.match(line[m.end():m.end() + 5]):
                         continue
                     if kind == "SPEC" and not (ROOT / "ROADMAP.md").exists():
