@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "5bacb38a91142953ff716b6d3a0de4c8976aafaa472304b7e6fed15791a366cc",
+  "digest": "6a0d8c01e558e9d496ae1443d8a6d488dde84c10ee5eb0328a03a489cf2bebd1",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -116,7 +116,7 @@
    "area": "raiz",
    "title": "HANDOFF — SOT",
    "in": 15,
-   "out": 29
+   "out": 30
   },
   {
    "path": "README.md",
@@ -136,14 +136,14 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 347,
-   "out": 85
+   "in": 341,
+   "out": 86
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 153,
+   "in": 154,
    "out": 12
   },
   {
@@ -151,7 +151,7 @@
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
    "in": 232,
-   "out": 37
+   "out": 38
   },
   {
    "path": "backlog/ANALISE-PRIORIZACAO-BACKLOG-2026-09-28.md",
@@ -192,35 +192,35 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 341,
+   "in": 342,
    "out": 114
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 112,
+   "in": 113,
    "out": 6
   },
   {
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 88,
+   "in": 89,
    "out": 4
   },
   {
    "path": "canon/CEM-001-canonical-evidence-model.md",
    "area": "canon",
    "title": "CEM-001 — Canonical Evidence Model Specification",
-   "in": 167,
+   "in": 168,
    "out": 2
   },
   {
    "path": "canon/CHM-001-canonical-hypothesis-model.md",
    "area": "canon",
    "title": "CHM-001 — Canonical Hypothesis Model (consolidado)",
-   "in": 105,
+   "in": 106,
    "out": 0
   },
   {
@@ -886,238 +886,238 @@
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 1,
-   "out": 27
+   "out": 28
   },
   {
    "path": "docs/handoffs/HO-2026-10-24-76.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 1,
-   "out": 28
+   "out": 29
   },
   {
    "path": "docs/handoffs/HO-2026-10-24-77.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 1,
-   "out": 29
+   "out": 30
   },
   {
    "path": "docs/handoffs/HO-2026-10-24-78.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 1,
-   "out": 29
+   "out": 30
   },
   {
    "path": "docs/handoffs/HO-2026-10-24-79.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 1,
-   "out": 32
+   "out": 33
   },
   {
    "path": "docs/handoffs/HO-2026-10-24-80.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 1,
-   "out": 33
+   "out": 34
   },
   {
    "path": "docs/handoffs/HO-2026-10-25-81.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 11,
-   "out": 36
+   "out": 37
   },
   {
    "path": "docs/handoffs/HO-2026-10-25-82.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 36
+   "out": 37
   },
   {
    "path": "docs/handoffs/HO-2026-10-25-83.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 37
+   "out": 38
   },
   {
    "path": "docs/handoffs/HO-2026-10-25-84.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 37
+   "out": 38
   },
   {
    "path": "docs/handoffs/HO-2026-10-25-85.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 38
+   "out": 39
   },
   {
    "path": "docs/handoffs/HO-2026-10-25-86.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 38
+   "out": 39
   },
   {
    "path": "docs/handoffs/HO-2026-10-25-87.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 38
+   "out": 39
   },
   {
    "path": "docs/handoffs/HO-2026-10-30-88.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 41
+   "out": 42
   },
   {
    "path": "docs/handoffs/HO-2026-10-30-89.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 42
+   "out": 43
   },
   {
    "path": "docs/handoffs/HO-2026-10-30-90.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 43
+   "out": 44
   },
   {
    "path": "docs/handoffs/HO-2026-10-30-91.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 45
+   "out": 46
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-100.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 27
+   "out": 28
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-101.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 27
+   "out": 28
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-102.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 27
+   "out": 28
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-103.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 28
+   "out": 29
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-104.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 28
+   "out": 29
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-105.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 28
+   "out": 29
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-106.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 28
+   "out": 29
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-107.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 28
+   "out": 29
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-108.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 28
+   "out": 29
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-92.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 46
+   "out": 47
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-93.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 23
+   "out": 24
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-94.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 23
+   "out": 24
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-95.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 24
+   "out": 25
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-96.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 25
+   "out": 26
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-97.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 25
+   "out": 26
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-98.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 26
+   "out": 27
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-99.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
    "in": 0,
-   "out": 26
+   "out": 27
   },
   {
    "path": "docs/handoffs/anexos/AT-SPEC007-PLAN-2026-10-19.md",
@@ -1208,7 +1208,7 @@
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
    "in": 127,
-   "out": 209
+   "out": 210
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -1424,7 +1424,7 @@
    "path": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
    "area": "governance",
    "title": "DHR-BACKLOG-ABERTURA-001 — Ata — Backlog vinculado por regra à abertura de cada Spec (determinístico)",
-   "in": 35,
+   "in": 36,
    "out": 7
   },
   {
@@ -1557,7 +1557,7 @@
    "path": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
    "area": "governance",
    "title": "DHR-DIMENSIONAMENTO-001 — Ata de Decisão — RULE-ECC-07: dimensionamento de Spec (tetos medidos)",
-   "in": 18,
+   "in": 19,
    "out": 7
   },
   {
@@ -1613,7 +1613,7 @@
    "path": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
    "area": "governance",
    "title": "DHR-EUA-E04 — Ata de Homologação da Emenda EUA-E04 (Bloco Herança/Delta)",
-   "in": 77,
+   "in": 78,
    "out": 5
   },
   {
@@ -1711,7 +1711,7 @@
    "path": "governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
    "area": "governance",
    "title": "DHR-EUA-E18 — Ata de Homologação: Redução de Viés e Uso Sincronizado da Spec-Lean",
-   "in": 31,
+   "in": 32,
    "out": 16
   },
   {
@@ -1760,7 +1760,7 @@
    "path": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
    "area": "governance",
    "title": "DHR-H001-001 — Ata — Fechamento da decisão H-001 (mecanismo físico de armazenamento do Cognitive Knowledge Graph)",
-   "in": 51,
+   "in": 52,
    "out": 15
   },
   {
@@ -1900,7 +1900,7 @@
    "path": "governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md",
    "area": "governance",
    "title": "DHR-PROV-WEB-001 — Ata de Homologação — Provisão de Pesquisa Web ao Especificador",
-   "in": 33,
+   "in": 34,
    "out": 2
   },
   {
@@ -1922,7 +1922,7 @@
    "area": "governance",
    "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
    "in": 32,
-   "out": 10
+   "out": 11
   },
   {
    "path": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
@@ -2117,7 +2117,7 @@
    "path": "governance/DHR-SPEC007-001_Ata_Homologacao_Abertura_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-001 — Ata de Homologação — Abertura da SPEC-007 (RAG / WikiRAG / Knowledge Formation Harness)",
-   "in": 43,
+   "in": 44,
    "out": 13
   },
   {
@@ -2125,13 +2125,13 @@
    "area": "governance",
    "title": "DHR-SPEC007-002 — Ata de Decisão — Divisão da SPEC-007 (Opção C) e slot da SPEC-048",
    "in": 42,
-   "out": 21
+   "out": 22
   },
   {
    "path": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-003 — Ata de Decisão — Respostas de Andraus às perguntas P-1..P-11 do Plan v1.2 da SPEC-007",
-   "in": 42,
+   "in": 43,
    "out": 12
   },
   {
@@ -2145,7 +2145,7 @@
    "path": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formação + selo)",
-   "in": 50,
+   "in": 51,
    "out": 11
   },
   {
@@ -2159,7 +2159,7 @@
    "path": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
    "area": "governance",
    "title": "DHR-SPEC007-007 — Ata de Decisão — Diretriz de autenticação criptográfica dos atos de Andraus (ACTREC)",
-   "in": 38,
+   "in": 39,
    "out": 6
   },
   {
@@ -2229,22 +2229,22 @@
    "path": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-001 — Ata de Homologação — Abertura da SPEC-048 (RAG Retrieval & Evidence Packet Harness) e slot da SPEC-049 (WikiRAG Reading View)",
-   "in": 35,
-   "out": 16
+   "in": 36,
+   "out": 17
   },
   {
    "path": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-002 — Ata de Homologação — Plan da SPEC-048 v1.4 (RAG Retrieval & Evidence Packet Harness)",
-   "in": 34,
-   "out": 15
+   "in": 35,
+   "out": 16
   },
   {
    "path": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
    "area": "governance",
    "title": "DHR-SPEC049-001 — Ata de Homologação — Abertura da SPEC-049 (WikiRAG Reading View)",
-   "in": 3,
-   "out": 17
+   "in": 6,
+   "out": 18
   },
   {
    "path": "governance/DHR-TAX-001_Ata_Alinhamento_Taxonomico.md",
@@ -2286,7 +2286,7 @@
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
    "in": 36,
-   "out": 34
+   "out": 35
   },
   {
    "path": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
@@ -2328,7 +2328,7 @@
    "area": "governance",
    "title": "ERRATUM-SPEC020-002 — Dimensão B \"RAG faithfulness\", metade F1 (fidelidade do conhecimento formado) — erratum ADITIVO (PROPOSTA)",
    "in": 5,
-   "out": 31
+   "out": 32
   },
   {
    "path": "governance/ESTUDO-GARANTIAS-DETERMINISTICAS-2026-10-17.md",
@@ -2572,14 +2572,14 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 414,
-   "out": 40
+   "in": 416,
+   "out": 41
   },
   {
    "path": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
    "area": "governance",
    "title": "EMENDA SES-001",
-   "in": 60,
+   "in": 61,
    "out": 3
   },
   {
@@ -3007,7 +3007,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Abertura da SPEC-048 (Revisão 3 do Especificador), rodada 2 (S3) — 2026-10-24",
    "in": 2,
-   "out": 6
+   "out": 7
   },
   {
    "path": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md",
@@ -3049,7 +3049,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) — R1 integral (S2, sonnet) — 2026-10-31",
    "in": 3,
-   "out": 8
+   "out": 9
   },
   {
    "path": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
@@ -3258,7 +3258,7 @@
    "path": "reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md",
    "area": "reference",
    "title": "MC-RAG-001 — Master Contract da Camada RAG",
-   "in": 27,
+   "in": 28,
    "out": 0
   },
   {
@@ -3307,14 +3307,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 58,
+   "in": 57,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 203,
+   "in": 201,
    "out": 9
   },
   {
@@ -3363,7 +3363,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 151,
+   "in": 152,
    "out": 29
   },
   {
@@ -3398,7 +3398,7 @@
    "path": "specs/features/SPEC-004/plan.md",
    "area": "specs",
    "title": "SPEC-004 — Cognitive Blackboard Protocol",
-   "in": 102,
+   "in": 104,
    "out": 22
   },
   {
@@ -3426,7 +3426,7 @@
    "path": "specs/features/SPEC-005/plan.md",
    "area": "specs",
    "title": "SPEC-005 — Cognitive Event Bus",
-   "in": 107,
+   "in": 109,
    "out": 24
   },
   {
@@ -3461,7 +3461,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 252,
+   "in": 254,
    "out": 39
   },
   {
@@ -3489,8 +3489,8 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 184,
-   "out": 40
+   "in": 186,
+   "out": 41
   },
   {
    "path": "specs/features/SPEC-007/research.md",
@@ -3510,7 +3510,7 @@
    "path": "specs/features/SPEC-019/plan.md",
    "area": "specs",
    "title": "SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical)",
-   "in": 65,
+   "in": 66,
    "out": 19
   },
   {
@@ -3524,7 +3524,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 148,
+   "in": 149,
    "out": 24
   },
   {
@@ -3545,7 +3545,7 @@
    "path": "specs/features/SPEC-021/plan.md",
    "area": "specs",
    "title": "SPEC-021 — Harness Score / Maturity Model",
-   "in": 57,
+   "in": 58,
    "out": 21
   },
   {
@@ -3623,42 +3623,56 @@
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ROADMAP §6, FASE 3)",
    "in": 5,
-   "out": 24
+   "out": 25
   },
   {
    "path": "specs/features/SPEC-048/checks.md",
    "area": "specs",
    "title": "checks.md — Verificação de Spec da SPEC-048 (fase spec-first)",
    "in": 2,
-   "out": 14
+   "out": 15
   },
   {
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 94,
-   "out": 41
+   "in": 96,
+   "out": 42
   },
   {
    "path": "specs/features/SPEC-048/research.md",
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ROADMAP §6, FASE 3)",
    "in": 3,
-   "out": 26
+   "out": 27
   },
   {
    "path": "specs/features/SPEC-049/ABERTURA.md",
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3)",
-   "in": 5,
+   "in": 6,
    "out": 26
+  },
+  {
+   "path": "specs/features/SPEC-049/checks.md",
+   "area": "specs",
+   "title": "checks.md — Verificação de Spec da SPEC-049 (fase spec-first)",
+   "in": 2,
+   "out": 10
+  },
+  {
+   "path": "specs/features/SPEC-049/plan.md",
+   "area": "specs",
+   "title": "SPEC-049 — WikiRAG Reading View — Plan v1.0 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
+   "in": 64,
+   "out": 28
   },
   {
    "path": "specs/features/SPEC-049/research.md",
    "area": "specs",
    "title": "Dossiê de Pesquisa — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3)",
-   "in": 1,
-   "out": 20
+   "in": 3,
+   "out": 21
   },
   {
    "path": "specs/fibonacci.spec.md",
@@ -3703,7 +3717,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 135
+   "cited_by": 136
   },
   {
    "id": "BL-004",
@@ -3738,12 +3752,12 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 115
+   "cited_by": 116
   },
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 143
+   "cited_by": 144
   },
   {
    "id": "BL-012",
@@ -3773,7 +3787,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 116
+   "cited_by": 117
   },
   {
    "id": "BL-018",
@@ -3833,7 +3847,7 @@
   {
    "id": "BL-029",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 79
+   "cited_by": 80
   },
   {
    "id": "BL-030",
@@ -3863,7 +3877,7 @@
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 58
+   "cited_by": 59
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -3998,7 +4012,7 @@
   {
    "id": "DHR-BACKLOG-ABERTURA-001",
    "defined_in": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "DHR-BENCH-INTEL-001",
@@ -4093,7 +4107,7 @@
   {
    "id": "DHR-DIMENSIONAMENTO-001",
    "defined_in": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
-   "cited_by": 18
+   "cited_by": 19
   },
   {
    "id": "DHR-DIV-001",
@@ -4238,7 +4252,7 @@
   {
    "id": "DHR-H001-001",
    "defined_in": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
-   "cited_by": 51
+   "cited_by": 52
   },
   {
    "id": "DHR-HOD-001",
@@ -4493,7 +4507,7 @@
   {
    "id": "DHR-SPEC007-001",
    "defined_in": "governance/DHR-SPEC007-001_Ata_Homologacao_Abertura_SPEC-007.md",
-   "cited_by": 43
+   "cited_by": 44
   },
   {
    "id": "DHR-SPEC007-002",
@@ -4503,7 +4517,7 @@
   {
    "id": "DHR-SPEC007-003",
    "defined_in": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
-   "cited_by": 42
+   "cited_by": 43
   },
   {
    "id": "DHR-SPEC007-004",
@@ -4513,7 +4527,7 @@
   {
    "id": "DHR-SPEC007-005",
    "defined_in": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "cited_by": 50
+   "cited_by": 51
   },
   {
    "id": "DHR-SPEC007-006",
@@ -4523,7 +4537,7 @@
   {
    "id": "DHR-SPEC007-007",
    "defined_in": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
-   "cited_by": 38
+   "cited_by": 39
   },
   {
    "id": "DHR-SPEC019",
@@ -4578,17 +4592,17 @@
   {
    "id": "DHR-SPEC048-001",
    "defined_in": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "DHR-SPEC048-002",
    "defined_in": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "DHR-SPEC049-001",
    "defined_in": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
-   "cited_by": 3
+   "cited_by": 6
   },
   {
    "id": "DHR-TAX-001",
@@ -4628,7 +4642,7 @@
   {
    "id": "EUA-E04",
    "defined_in": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
-   "cited_by": 77
+   "cited_by": 78
   },
   {
    "id": "EUA-E05",
@@ -4698,7 +4712,7 @@
   {
    "id": "EUA-E18",
    "defined_in": "governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
-   "cited_by": 30
+   "cited_by": 31
   },
   {
    "id": "EUA-E19",
@@ -4733,12 +4747,12 @@
   {
    "id": "INV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 44
+   "cited_by": 45
   },
   {
    "id": "INV-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 35
+   "cited_by": 36
   },
   {
    "id": "INV-03",
@@ -4748,22 +4762,22 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 74
+   "cited_by": 75
   },
   {
    "id": "INV-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 83
+   "cited_by": 84
   },
   {
    "id": "INV-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 40
+   "cited_by": 41
   },
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 296
+   "cited_by": 297
   },
   {
    "id": "INV-08",
@@ -4773,12 +4787,12 @@
   {
    "id": "INV-09",
    "defined_in": "governance/RULES.md",
-   "cited_by": 113
+   "cited_by": 114
   },
   {
    "id": "INV-10",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "INV-CBP-01",
@@ -4828,7 +4842,7 @@
   {
    "id": "INV-KFH-02",
    "defined_in": "ROADMAP.md",
-   "cited_by": 12
+   "cited_by": 14
   },
   {
    "id": "INV-RET",
@@ -4864,6 +4878,16 @@
    "id": "INV-RISK-RR",
    "defined_in": "atomic-spec.md",
    "cited_by": 13
+  },
+  {
+   "id": "INV-WRV",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "INV-WRV-01",
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-BB",
@@ -4928,7 +4952,7 @@
   {
    "id": "RULE-CAU-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "RULE-CAU-02",
@@ -5013,7 +5037,7 @@
   {
    "id": "RULE-CBP-014",
    "defined_in": null,
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "RULE-CEB",
@@ -5168,7 +5192,7 @@
   {
    "id": "RULE-CKG",
    "defined_in": "ROADMAP.md",
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "RULE-CKG-001",
@@ -5188,7 +5212,7 @@
   {
    "id": "RULE-CKG-004",
    "defined_in": null,
-   "cited_by": 19
+   "cited_by": 21
   },
   {
    "id": "RULE-CKG-005",
@@ -5218,17 +5242,17 @@
   {
    "id": "RULE-CKG-010",
    "defined_in": null,
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "RULE-CKG-011",
    "defined_in": null,
-   "cited_by": 15
+   "cited_by": 16
   },
   {
    "id": "RULE-CKG-012",
    "defined_in": null,
-   "cited_by": 7
+   "cited_by": 9
   },
   {
    "id": "RULE-CKG-013",
@@ -5283,7 +5307,7 @@
   {
    "id": "RULE-DEC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "RULE-DEC-02",
@@ -5303,7 +5327,7 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 96
+   "cited_by": 98
   },
   {
    "id": "RULE-ECC-02",
@@ -5323,7 +5347,7 @@
   {
    "id": "RULE-ECC-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 45
+   "cited_by": 46
   },
   {
    "id": "RULE-ECC-06",
@@ -5333,7 +5357,7 @@
   {
    "id": "RULE-ECC-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 28
+   "cited_by": 30
   },
   {
    "id": "RULE-EH",
@@ -5388,7 +5412,7 @@
   {
    "id": "RULE-EPI-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "RULE-EPI-02",
@@ -5503,17 +5527,17 @@
   {
    "id": "RULE-HD",
    "defined_in": "governance/RULES.md",
-   "cited_by": 41
+   "cited_by": 42
   },
   {
    "id": "RULE-HD-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-HD-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 36
+   "cited_by": 37
   },
   {
    "id": "RULE-HD-03",
@@ -5523,7 +5547,7 @@
   {
    "id": "RULE-HD-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 32
+   "cited_by": 33
   },
   {
    "id": "RULE-HG",
@@ -5538,7 +5562,7 @@
   {
    "id": "RULE-HG-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "RULE-HG-03",
@@ -5548,7 +5572,7 @@
   {
    "id": "RULE-HG-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "RULE-HG-05",
@@ -5638,12 +5662,12 @@
   {
    "id": "RULE-HV",
    "defined_in": "governance/RULES.md",
-   "cited_by": 51
+   "cited_by": 53
   },
   {
    "id": "RULE-HV-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 19
+   "cited_by": 20
   },
   {
    "id": "RULE-HV-02",
@@ -5713,12 +5737,12 @@
   {
    "id": "RULE-KFH",
    "defined_in": null,
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "RULE-KFH-001",
    "defined_in": null,
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-KFH-002",
@@ -5738,7 +5762,7 @@
   {
    "id": "RULE-KFH-005",
    "defined_in": null,
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-KFH-006",
@@ -5748,17 +5772,17 @@
   {
    "id": "RULE-KFH-007",
    "defined_in": null,
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "RULE-KFH-008",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-KFH-009",
    "defined_in": null,
-   "cited_by": 8
+   "cited_by": 10
   },
   {
    "id": "RULE-KFH-010",
@@ -5788,12 +5812,12 @@
   {
    "id": "RULE-KFH-015",
    "defined_in": null,
-   "cited_by": 11
+   "cited_by": 13
   },
   {
    "id": "RULE-KFH-016",
    "defined_in": null,
-   "cited_by": 13
+   "cited_by": 15
   },
   {
    "id": "RULE-KFH-017",
@@ -5808,12 +5832,12 @@
   {
    "id": "RULE-KFH-019",
    "defined_in": null,
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-KFH-020",
    "defined_in": null,
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "RULE-MECH",
@@ -5823,12 +5847,12 @@
   {
    "id": "RULE-MECH-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 54
+   "cited_by": 55
   },
   {
    "id": "RULE-MECH-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 17
+   "cited_by": 18
   },
   {
    "id": "RULE-MECH-03",
@@ -5848,7 +5872,7 @@
   {
    "id": "RULE-MET-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 80
+   "cited_by": 81
   },
   {
    "id": "RULE-MET-02",
@@ -5888,7 +5912,7 @@
   {
    "id": "RULE-MM-05",
    "defined_in": "governance/RULES.md",
-   "cited_by": 26
+   "cited_by": 27
   },
   {
    "id": "RULE-MM-06",
@@ -5908,7 +5932,7 @@
   {
    "id": "RULE-ONT-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "RULE-ONT-02",
@@ -5923,7 +5947,7 @@
   {
    "id": "RULE-PD-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 43
+   "cited_by": 44
   },
   {
    "id": "RULE-PD-02",
@@ -5948,7 +5972,7 @@
   {
    "id": "RULE-PRB-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "RULE-PRB-02",
@@ -6043,7 +6067,7 @@
   {
    "id": "RULE-SEM-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "RULE-SEM-02",
@@ -6208,7 +6232,7 @@
   {
    "id": "RULE-UNC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "RULE-UNC-02",
@@ -6219,6 +6243,61 @@
    "id": "RULE-UNC-03",
    "defined_in": "governance/RULES.md",
    "cited_by": 10
+  },
+  {
+   "id": "RULE-WRV",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-001",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-002",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-003",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-004",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-005",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-006",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-007",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-008",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-009",
+   "defined_in": null,
+   "cited_by": 2
+  },
+  {
+   "id": "RULE-WRV-010",
+   "defined_in": null,
+   "cited_by": 2
   },
   {
    "id": "RULE-XX",
@@ -6238,27 +6317,27 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 151
+   "cited_by": 152
   },
   {
    "id": "SPEC-004",
    "defined_in": "specs/features/SPEC-004/plan.md",
-   "cited_by": 102
+   "cited_by": 104
   },
   {
    "id": "SPEC-005",
    "defined_in": "specs/features/SPEC-005/plan.md",
-   "cited_by": 107
+   "cited_by": 109
   },
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 252
+   "cited_by": 254
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 184
+   "cited_by": 186
   },
   {
    "id": "SPEC-008",
@@ -6273,7 +6352,7 @@
   {
    "id": "SPEC-010",
    "defined_in": "ROADMAP.md",
-   "cited_by": 49
+   "cited_by": 50
   },
   {
    "id": "SPEC-011",
@@ -6313,27 +6392,27 @@
   {
    "id": "SPEC-018",
    "defined_in": "ROADMAP.md",
-   "cited_by": 76
+   "cited_by": 77
   },
   {
    "id": "SPEC-019",
    "defined_in": "specs/features/SPEC-019/plan.md",
-   "cited_by": 65
+   "cited_by": 66
   },
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 148
+   "cited_by": 149
   },
   {
    "id": "SPEC-021",
    "defined_in": "specs/features/SPEC-021/plan.md",
-   "cited_by": 57
+   "cited_by": 58
   },
   {
    "id": "SPEC-022",
    "defined_in": "ROADMAP.md",
-   "cited_by": 13
+   "cited_by": 14
   },
   {
    "id": "SPEC-023",
@@ -6423,7 +6502,7 @@
   {
    "id": "SPEC-040",
    "defined_in": "ROADMAP.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "SPEC-041",
@@ -6448,7 +6527,7 @@
   {
    "id": "SPEC-045",
    "defined_in": "ROADMAP.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "SPEC-046",
@@ -6463,12 +6542,12 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 94
+   "cited_by": 96
   },
   {
    "id": "SPEC-049",
-   "defined_in": "ROADMAP.md",
-   "cited_by": 62
+   "defined_in": "specs/features/SPEC-049/plan.md",
+   "cited_by": 64
   }
  ],
  "edges": [
@@ -7758,6 +7837,11 @@
    "type": "id"
   },
   {
+   "from": "HANDOFF.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "README.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -8298,6 +8382,11 @@
    "type": "id"
   },
   {
+   "from": "ROADMAP.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "WORKFLOW.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -8580,6 +8669,11 @@
   {
    "from": "atomic-spec.md",
    "to": "specs/features/SPEC-021/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "atomic-spec.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -20853,6 +20947,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-24-75.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-24-76.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -21000,6 +21099,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-24-76.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-24-76.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -21158,6 +21262,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-24-77.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-24-78.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -21310,6 +21419,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-24-78.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-24-78.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -21480,6 +21594,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-24-79.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-24-79.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -21655,6 +21774,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-24-80.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-24-80.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -21848,6 +21972,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-25-81.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-25-82.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -22035,6 +22164,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-25-82.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-25-82.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -22233,6 +22367,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-25-83.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-25-84.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -22425,6 +22564,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-25-84.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-25-84.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -22628,6 +22772,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-25-85.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-25-86.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -22828,6 +22977,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-25-86.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-25-87.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -23025,6 +23179,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-25-87.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-25-87.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -23240,6 +23399,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-30-88.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-30-88.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -23460,6 +23624,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-30-89.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-30-89.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -23685,6 +23854,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-30-90.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-30-90.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -23920,6 +24094,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-30-91.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-30-91.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -24063,6 +24242,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-100.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-101.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -24203,6 +24387,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-101.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-102.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -24340,6 +24529,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-31-102.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-102.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -24488,6 +24682,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-103.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-104.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -24633,6 +24832,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-104.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-105.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -24778,6 +24982,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-105.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-106.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -24923,6 +25132,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-106.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-107.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -25068,6 +25282,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-107.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-108.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -25210,6 +25429,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-31-108.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-108.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -25453,6 +25677,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-92.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-93.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -25573,6 +25802,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-93.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-94.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -25690,6 +25924,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-31-94.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-94.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -25818,6 +26057,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-95.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-96.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -25948,6 +26192,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-96.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-97.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -26075,6 +26324,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-31-97.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-97.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -26213,6 +26467,11 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-98.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-99.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -26345,6 +26604,11 @@
   {
    "from": "docs/handoffs/HO-2026-10-31-99.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-99.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -28120,6 +28384,11 @@
   {
    "from": "governance/CATALOGO-OFICIAL.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -29934,11 +30203,6 @@
   },
   {
    "from": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
    "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
    "type": "id"
   },
@@ -29965,6 +30229,11 @@
   {
    "from": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -30554,11 +30823,6 @@
   },
   {
    "from": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
    "to": "atomic-spec.md",
    "type": "path"
   },
@@ -30585,6 +30849,11 @@
   {
    "from": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -33078,6 +33347,11 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
    "to": ".claude/agents/revisor.md",
    "type": "path"
@@ -34798,6 +35072,11 @@
    "type": "id"
   },
   {
+   "from": "governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
    "to": "ROADMAP.md",
    "type": "path"
@@ -35650,11 +35929,6 @@
   {
    "from": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
    "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
-   "to": "ROADMAP.md",
    "type": "path"
   },
   {
@@ -35743,8 +36017,8 @@
    "type": "id"
   },
   {
-   "from": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
-   "to": "ROADMAP.md",
+   "from": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -35828,8 +36102,8 @@
    "type": "path"
   },
   {
-   "from": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
-   "to": "ROADMAP.md",
+   "from": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -35916,6 +36190,11 @@
    "from": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
    "to": "specs/features/SPEC-049/ABERTURA.md",
    "type": "path"
+  },
+  {
+   "from": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/DHR-TAX-001_Ata_Alinhamento_Taxonomico.md",
@@ -36376,6 +36655,11 @@
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "to": "specs/features/SPEC-048/plan.md",
    "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
   },
   {
    "from": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
@@ -36915,6 +37199,11 @@
   {
    "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/ERRATUM-SPEC020-002_Fidelidade_F1_conhecimento_formado.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -39683,6 +39972,11 @@
    "type": "id"
   },
   {
+   "from": "governance/RULES.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
    "to": "atomic-spec.md",
    "type": "path"
@@ -39695,11 +39989,6 @@
   {
    "from": "governance/SES-001_Especializacao_Cognitiva_Trading.md",
    "to": "governance/RULES.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/aprendizado/CAUSAS-PREVENCAO.md",
-   "to": "ROADMAP.md",
    "type": "id"
   },
   {
@@ -39733,8 +40022,8 @@
    "type": "id"
   },
   {
-   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
-   "to": "ROADMAP.md",
+   "from": "governance/aprendizado/CAUSAS-PREVENCAO.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -39965,6 +40254,11 @@
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -40899,11 +41193,6 @@
   },
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
    "to": "atomic-spec.md",
    "type": "path"
   },
@@ -40980,6 +41269,11 @@
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -41449,11 +41743,6 @@
   },
   {
    "from": "governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md",
-   "to": "ROADMAP.md",
-   "type": "id"
-  },
-  {
-   "from": "governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md",
    "to": "governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md",
    "type": "id"
   },
@@ -41470,6 +41759,11 @@
   {
    "from": "governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md",
    "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/ROTEAMENTO-MODELOS/TELEMETRIA-ONDA0.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -43088,6 +43382,11 @@
    "type": "id"
   },
   {
+   "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-ABERTURA-R2-2026-10-24.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R1-2026-10-24.md",
    "to": "atomic-spec.md",
    "type": "path"
@@ -43338,8 +43637,8 @@
    "type": "path"
   },
   {
-   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
-   "to": "ROADMAP.md",
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R1-2026-10-31.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -43393,8 +43692,8 @@
    "type": "path"
   },
   {
-   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md",
-   "to": "ROADMAP.md",
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
   {
@@ -43436,6 +43735,11 @@
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md",
    "to": "specs/features/SPEC-049/ABERTURA.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
   },
   {
    "from": "rag/synthesis.knowledge.md",
@@ -46638,6 +46942,11 @@
    "type": "id"
   },
   {
+   "from": "specs/features/SPEC-007/plan.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "specs/features/SPEC-007/research.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -48418,6 +48727,11 @@
    "type": "path"
   },
   {
+   "from": "specs/features/SPEC-048/ABERTURA.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "specs/features/SPEC-048/checks.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -48491,6 +48805,11 @@
    "from": "specs/features/SPEC-048/checks.md",
    "to": "specs/features/SPEC-048/plan.md",
    "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-048/checks.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
   },
   {
    "from": "specs/features/SPEC-048/plan.md",
@@ -48728,6 +49047,11 @@
    "type": "path"
   },
   {
+   "from": "specs/features/SPEC-048/plan.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "specs/features/SPEC-048/research.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -48918,6 +49242,11 @@
    "type": "path"
   },
   {
+   "from": "specs/features/SPEC-048/research.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "specs/features/SPEC-049/ABERTURA.md",
    "to": "ROADMAP.md",
    "type": "id"
@@ -48994,16 +49323,6 @@
   },
   {
    "from": "specs/features/SPEC-049/ABERTURA.md",
-   "to": "specs/features/SPEC-001/checks.md",
-   "type": "path"
-  },
-  {
-   "from": "specs/features/SPEC-049/ABERTURA.md",
-   "to": "specs/features/SPEC-001/plan.md",
-   "type": "path"
-  },
-  {
-   "from": "specs/features/SPEC-049/ABERTURA.md",
    "to": "specs/features/SPEC-002/plan.md",
    "type": "id"
   },
@@ -49069,6 +49388,251 @@
   },
   {
    "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "specs/features/SPEC-049/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "specs/features/SPEC-049/research.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/checks.md",
+   "to": "specs/features/SPEC-049/research.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-EUA-E18_Ata_Homologacao_Reducao_Vies_Sincronizacao_SpecLean.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC007-001_Ata_Homologacao_Abertura_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-004/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-005/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-019/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-021/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-049/ABERTURA.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
+   "to": "specs/features/SPEC-049/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/plan.md",
    "to": "specs/features/SPEC-049/research.md",
    "type": "path"
   },
@@ -49139,17 +49703,17 @@
   },
   {
    "from": "specs/features/SPEC-049/research.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/research.md",
    "to": "governance/RULES.md",
    "type": "id"
   },
   {
    "from": "specs/features/SPEC-049/research.md",
    "to": "governance/RULES.md",
-   "type": "path"
-  },
-  {
-   "from": "specs/features/SPEC-049/research.md",
-   "to": "specs/features/SPEC-001/plan.md",
    "type": "path"
   },
   {
@@ -49195,6 +49759,16 @@
   {
    "from": "specs/features/SPEC-049/research.md",
    "to": "specs/features/SPEC-049/ABERTURA.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/research.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/research.md",
+   "to": "specs/features/SPEC-049/plan.md",
    "type": "path"
   },
   {
