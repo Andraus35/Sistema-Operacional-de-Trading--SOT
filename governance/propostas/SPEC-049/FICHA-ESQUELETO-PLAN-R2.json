@@ -1,0 +1,32 @@
+{
+ "achados": [
+  {
+   "id": "R2-m01",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m02",
+   "natureza": "aplicado_m"
+  },
+  {
+   "id": "R2-m03",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m04",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m05",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m06",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m07",
+   "natureza": "aplicado_m"
+  }
+ ]
+}

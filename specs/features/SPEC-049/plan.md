@@ -219,7 +219,7 @@ INHERITS (referência por ID + VERSÃO baseline — RULE-HD-04; NÃO redefinido)
 
 ADDED (delta local — [PROPOSTA]):
   - INV-WRV-01; RULE-WRV-001..010; regra de compilação versão 1 (D4.3); contrato lógico (compilation_request,
-    compilation_input, compilation_rule_record, reading_view, compilation_record); estados LOCAIS W_* (D5); Fixture W0;
+    compilation_input, compilation_rule_record, reading_view, compilation_record, delivery_record); estados LOCAIS W_* (D5); Fixture W0;
     códigos WRV_* e os dois códigos do insumo (§D3.1)
 
 MODIFIED: (vazio)
