@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "a07f2314127dcfaae1cdf0ed71486045be748587a78bd30493141de40367b3ab",
+  "digest": "fba6d70d0ac5d318e73dc808250e72a188b0b230167e367148c49dced7dc604d",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1333,7 +1333,7 @@
    "path": "governance/DHR-AGENTS-CORTES-001_Ata_Enxugar_AGENTS_Secoes_2_5_8_9_12.md",
    "area": "governance",
    "title": "DHR-AGENTS-CORTES-001 — Ata de Decisão — Enxugar o AGENTS.md (§2, §5, §8, §9, §12) com correções do teste A/B",
-   "in": 2,
+   "in": 3,
    "out": 5
   },
   {
@@ -2832,7 +2832,7 @@
    "area": "governance",
    "title": "Teste A/B barato e controlado — o AGENTS.md enxuto ainda deixa um agente responder certo?",
    "in": 1,
-   "out": 1
+   "out": 2
   },
   {
    "path": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/TESTE-AB-AGENTS/perguntas.md",
@@ -4018,7 +4018,7 @@
   {
    "id": "DHR-AGENTS-CORTES-001",
    "defined_in": "governance/DHR-AGENTS-CORTES-001_Ata_Enxugar_AGENTS_Secoes_2_5_8_9_12.md",
-   "cited_by": 2
+   "cited_by": 3
   },
   {
    "id": "DHR-AGENTS-SEC7-001",
@@ -42981,6 +42981,11 @@
    "from": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/TESTE-AB-AGENTS/RESULTADO.md",
    "to": "AGENTS.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/TESTE-AB-AGENTS/RESULTADO.md",
+   "to": "governance/DHR-AGENTS-CORTES-001_Ata_Enxugar_AGENTS_Secoes_2_5_8_9_12.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",

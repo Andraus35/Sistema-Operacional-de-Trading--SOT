@@ -26,3 +26,6 @@
 - **n=1 por célula, um modelo pequeno, perguntas escritas por mim** (que conhecia os cortes): há viés e efeito de teto (A e B pontuam o máximo).
 - Mede **achabilidade de informação**, não comportamento ao especificar/revisar uma Spec. Não substitui o teste de comportamento (Especificador/Revisor numa rodada conhecida).
 - Tokens de subagente incluem overhead do harness; não são o custo do documento isolado.
+
+## Verificação final no AGENTS.md REAL aplicado (variante E = `AGENTS.md` pós-`DHR-AGENTS-CORTES-001`, idêntico à variante D)
+3 execuções do mesmo arquivo (Haiku, mesmas 17 perguntas): **16/17, 17/17, 17/17**. A única falha (Q14, validade do Dossiê HIGH → "NAO CONSTA") **não se repetiu em 2 réplicas** com arquivo idêntico, e o texto `HIGH-CRITICAL 90` está presente: é variância do modelo, não perda de conteúdo. Mesma assinatura de ruído já vista em C (Q10 e Q13 trocando de uma rodada para outra). Respostas: `resp2-E.txt`, `resp2-E-r1.txt`, `resp2-E-r2.txt`.
