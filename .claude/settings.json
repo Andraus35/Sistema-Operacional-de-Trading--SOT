@@ -43,6 +43,11 @@
             "type": "command",
             "command": "node scripts/andraus-ask-reminder.js",
             "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "node scripts/telemetria-tokens.js",
+            "timeout": 10
           }
         ]
       },

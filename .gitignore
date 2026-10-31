@@ -39,3 +39,6 @@ temp/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Telemetria de tokens (BL-036) — dado local, não versionado
+.telemetria/
