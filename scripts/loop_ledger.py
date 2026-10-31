@@ -155,6 +155,16 @@ def specs_com_parecer(root):
     return sorted({chave.split()[0] for chave in coletar(root)})
 
 
+def tamanho_plan(root, spec):
+    """Linhas totais e de CORPO (antes do primeiro '## Anexo') do plan.md da Spec; None se ausente. RULE-ECC-07."""
+    f = Path(root) / "specs" / "features" / spec / "plan.md"
+    if not f.is_file():
+        return None
+    linhas = f.read_text(encoding="utf-8", errors="replace").splitlines()
+    corpo = next((i for i, l in enumerate(linhas) if re.match(r"##\s+Anexo\b", l)), len(linhas))
+    return len(linhas), corpo
+
+
 def gerar(root):
     linhas = coletar(root)
     reg = ler_registro(root)
@@ -192,6 +202,20 @@ def gerar(root):
             seq.append(sum(1 for a in ach if a["sev"] in ("Média", "Crítica")))
         zero = [f"R{r}" for r, n in zip(sorted(linhas[linha]), seq) if n == 0 and linhas[linha][r]["achados"] is not None]
         out.append(f"| {linha} | {' → '.join(map(str, seq))} | {len(seq)} | {zero[-1] if zero else '—'} |")
+    # 2-bis. Tamanho do alvo (Plans) x rodadas — insumo para calibrar os tetos da RULE-ECC-07 (medida, não regra)
+    out += ["", "### 2-bis. Tamanho do Plan x rodadas (instrumentação de Economicidade; RULE-ECC-07)", "",
+            "| Linha | Linhas totais | Linhas de corpo | Rodadas | Médias totais | Médias / 100 linhas de corpo | Tokens por rodada |", "|---|---|---|---|---|---|---|"]
+    for linha in sorted(linhas):
+        partes = linha.split()
+        if len(partes) < 2 or partes[1] != "PLAN":
+            continue
+        t = tamanho_plan(root, partes[0])
+        if not t:
+            continue
+        medias = sum(1 for r in linhas[linha] for a in linhas[linha][r]["achados"] if a["sev"] in ("Média", "Crítica"))
+        dens = f"{100 * medias / t[1]:.2f}" if t[1] else "—"
+        out.append(f"| {linha} | {t[0]} | {t[1]} | {len(linhas[linha])} | {medias} | {dens} | n/m |")
+    out += ["", "Tamanho = estado ATUAL do `plan.md` (não o de cada rodada); tokens por rodada seguem **n/m** (o repositório não os mede — registrar manualmente em `TELEMETRIA-ONDA0.md`).", ""]
     out += ["", "Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo repositório.", ""]
     # 3. Categorias e recorrência
     out += ["## 3. Categorias, recorrência e prevenção registrada", "",

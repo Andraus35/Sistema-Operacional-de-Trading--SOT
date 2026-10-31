@@ -53,6 +53,16 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 | SPEC-048 PLAN | 3 → 1 → 0 → 0 → 0 | 5 | R5 |
 | SPEC-? OUTRO | 1 → 0 → 1 → 0 | 4 | R4 |
 
+### 2-bis. Tamanho do Plan x rodadas (instrumentação de Economicidade; RULE-ECC-07)
+
+| Linha | Linhas totais | Linhas de corpo | Rodadas | Médias totais | Médias / 100 linhas de corpo | Tokens por rodada |
+|---|---|---|---|---|---|---|
+| SPEC-007 PLAN | 3851 | 1949 | 6 | 22 | 1.13 | n/m |
+| SPEC-048 PLAN | 1935 | 1935 | 5 | 4 | 0.21 | n/m |
+
+Tamanho = estado ATUAL do `plan.md` (não o de cada rodada); tokens por rodada seguem **n/m** (o repositório não os mede — registrar manualmente em `TELEMETRIA-ONDA0.md`).
+
+
 Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo repositório.
 
 ## 3. Categorias, recorrência e prevenção registrada

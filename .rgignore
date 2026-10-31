@@ -1,0 +1,5 @@
+# Higiene de buscas (auditoria de economicidade, 2026-10-31). Não normativo; NÃO apaga nada (INV-07).
+# Só o que é saída GERADA ou cópia duplicada de handoff; docs/_legacy e docs/UPGRADES ficam pesquisáveis
+# (rastreabilidade de texto superado). Os arquivos abrem por caminho explícito.
+docs/mapa/mapa-projeto.json
+docs/handoffs/

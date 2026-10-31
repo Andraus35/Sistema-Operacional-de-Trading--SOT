@@ -87,6 +87,18 @@ class TestLoopLedger(unittest.TestCase):
             self.assertEqual(L.main(["--root", td]), 0)
             self.assertEqual(L.main(["--root", td, "--check"]), 0)
 
+    def test_tamanho_do_plan_separa_corpo_dos_anexos(self):
+        with tempfile.TemporaryDirectory() as t:
+            root = Path(t)
+            monta(root)
+            plan = root / "specs" / "features" / "SPEC-123" / "plan.md"
+            plan.parent.mkdir(parents=True)
+            plan.write_text("a\nb\nc\n## Anexo R\nx\ny\n", encoding="utf-8")
+            self.assertEqual(L.tamanho_plan(root, "SPEC-123"), (6, 3))
+            self.assertIsNone(L.tamanho_plan(root, "SPEC-999"))
+            self.assertIn("2-bis", L.gerar(root))
+            self.assertIn("| SPEC-123 PLAN | 6 | 3 |", L.gerar(root))
+
 
 if __name__ == "__main__":
     unittest.main()
