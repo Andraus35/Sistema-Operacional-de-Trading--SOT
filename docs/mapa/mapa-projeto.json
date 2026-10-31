@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "cefd0ca8d696d1b50eac72700c2e4d9cae311fa9efc3edc56a0a6813111494a0",
+  "digest": "76866dfc571194276459c0f264273af3b7b7df5abf5d20204c0019b20a3c0a58",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,7 +10,7 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 102,
+   "in": 103,
    "out": 61
   },
   {
@@ -1460,7 +1460,7 @@
    "area": "governance",
    "title": "CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT)",
    "in": 130,
-   "out": 222
+   "out": 223
   },
   {
    "path": "governance/CIC-001_Inventario_Conformidade.md",
@@ -1816,7 +1816,7 @@
    "path": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
    "area": "governance",
    "title": "DHR-DELTA-HASH-001 — Ata de Decisão — Delta por hash: pacote gravado, SHA256-ALVO no pedido e instrumentação do ledger",
-   "in": 40,
+   "in": 38,
    "out": 4
   },
   {
@@ -2112,6 +2112,13 @@
    "title": "DHR-MC-SKL-001 — Ata de Homologação da Admissão ao Backlog (BL-016 · Camada de Skills)",
    "in": 5,
    "out": 7
+  },
+  {
+   "path": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
+   "area": "governance",
+   "title": "DHR-MECH-GATE-001 — Ata de Decisão — check determinístico da Classe/Mecanismo (STRUCT-14) e uso pelo Especificador",
+   "in": 3,
+   "out": 3
   },
   {
    "path": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
@@ -2866,7 +2873,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 456,
+   "in": 457,
    "out": 41
   },
   {
@@ -3720,7 +3727,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 226,
+   "in": 227,
    "out": 9
   },
   {
@@ -4558,7 +4565,7 @@
   {
    "id": "DHR-DELTA-HASH-001",
    "defined_in": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
-   "cited_by": 40
+   "cited_by": 38
   },
   {
    "id": "DHR-DIMENSIONAMENTO-001",
@@ -4769,6 +4776,11 @@
    "id": "DHR-MC-SKL-001",
    "defined_in": "governance/DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md",
    "cited_by": 5
+  },
+  {
+   "id": "DHR-MECH-GATE-001",
+   "defined_in": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
+   "cited_by": 3
   },
   {
    "id": "DHR-MERGE-001",
@@ -5258,7 +5270,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 318
+   "cited_by": 319
   },
   {
    "id": "INV-08",
@@ -6328,7 +6340,7 @@
   {
    "id": "RULE-MECH-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 55
+   "cited_by": 56
   },
   {
    "id": "RULE-MECH-02",
@@ -6788,7 +6800,7 @@
   {
    "id": "SPEC-001",
    "defined_in": "specs/features/SPEC-001/plan.md",
-   "cited_by": 120
+   "cited_by": 121
   },
   {
    "id": "SPEC-002",
@@ -7124,11 +7136,6 @@
   },
   {
    "from": ".claude/agents/especificador.md",
-   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
    "type": "id"
   },
@@ -7205,6 +7212,11 @@
   {
    "from": ".claude/agents/especificador.md",
    "to": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/especificador.md",
+   "to": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
    "type": "id"
   },
   {
@@ -7444,11 +7456,6 @@
   },
   {
    "from": ".claude/agents/revisor.md",
-   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
-   "type": "id"
-  },
-  {
-   "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md",
    "type": "id"
   },
@@ -7525,6 +7532,11 @@
   {
    "from": ".claude/agents/revisor.md",
    "to": "governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md",
+   "type": "id"
+  },
+  {
+   "from": ".claude/agents/revisor.md",
+   "to": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
    "type": "id"
   },
   {
@@ -34169,6 +34181,11 @@
   },
   {
    "from": "governance/CATALOGO-OFICIAL.md",
+   "to": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/CATALOGO-OFICIAL.md",
    "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
    "type": "id"
   },
@@ -39374,6 +39391,21 @@
   },
   {
    "from": "governance/DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
    "to": "specs/features/SPEC-001/plan.md",
    "type": "id"
   },
