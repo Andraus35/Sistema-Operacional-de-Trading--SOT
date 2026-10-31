@@ -5,7 +5,7 @@ telemetria_tokens.py — telemetria de tokens/custo dos agentes CONSTRUTORES (AC
 Uso:
   (sem argumentos)    hook PostToolUse/Agent: lê o evento em stdin e acrescenta UMA linha JSON a .telemetria/uso-tokens.jsonl.
   snapshot            grava governance/aprendizado/TELEMETRIA-TOKENS.md (retrato datado, versionável; o ledger do loop aponta para ele).
-  resumo [--json]     agrega por agente / modelo / classe-de-tarefa: chamadas, tokens (in/out/cache), custo estimado e tokens por chamada.
+  resumo [--json] [--por-spec]   agrega por agente / modelo / classe-de-tarefa (ou por Spec / agente / classe): chamadas, tokens (in/out/cache), custo estimado e tokens por chamada.
 
 Garantias: DETECTOR (ENF-03) — nunca nega, nunca altera a chamada, falha => exit 0 silencioso. Não grava o texto do prompt nem da resposta
 (só metadados). Custo = tokens x tabela versionada governance/telemetria/PRECOS-MODELOS.json; preço ausente => custo INDETERMINADO
@@ -52,9 +52,11 @@ def extrair(ev):
     resp = ev.get("tool_response")
     prompt = str(entrada.get("prompt") or entrada.get("message") or "")
     classe = re.search(r"^\s*CLASSE-TAREFA:\s*(\w+)", prompt, re.M)
+    alvo = re.search(r"^\s*ALVO:\s*(\S+)", prompt, re.M)
+    spec = re.search(r"SPEC-\d{3}", (alvo.group(1) if alvo else "") + " " + prompt)
     r = {"t": int(time.time()), "tool": ev.get("tool_name"), "agente": entrada.get("subagent_type") or entrada.get("to"),
          "model": entrada.get("model"), "classe": classe.group(1).upper() if classe else None,
-         "sessao": ev.get("session_id")}
+         "spec": spec.group(0) if spec else None, "alvo": alvo.group(1) if alvo else None, "sessao": ev.get("session_id")}
     for k, nome in CHAVES.items():
         r[nome] = _busca(resp, k)
     r["total"] = _busca(resp, "totalTokens")
@@ -106,11 +108,14 @@ def custo(reg):
     return total
 
 
-def resumo(registros):
+def resumo(registros, por="agente"):
     grupos = defaultdict(lambda: {"chamadas": 0, "sem_tokens": 0, "total": 0, "in": 0, "out": 0, "cache_read": 0,
                                   "cache_create": 0, "custo": 0.0, "custo_indet": 0})
     for r in registros:
-        g = grupos[(r.get("agente") or "?", r.get("model") or "frontmatter", r.get("classe") or "-")]
+        if por == "spec":
+            g = grupos[(r.get("spec") or "sem-spec", r.get("agente") or "?", r.get("classe") or "-")]
+        else:
+            g = grupos[(r.get("agente") or "?", r.get("model") or "frontmatter", r.get("classe") or "-")]
         g["chamadas"] += 1
         if r.get("total") is None:
             g["sem_tokens"] += 1
@@ -168,12 +173,13 @@ def main(argv):
         print(__doc__)
         return 2
     regs = _ler()
-    g = resumo(regs)
+    por = "spec" if "--por-spec" in argv else "agente"
+    g = resumo(regs, por)
     if "--json" in argv:
         print(json.dumps({"|".join(k): v for k, v in g.items()}, ensure_ascii=False, indent=1))
         return 0
     print(f"Telemetria de tokens (AC) — {len(regs)} chamada(s) em {SAIDA.relative_to(ROOT)}")
-    print("agente | modelo | classe | chamadas | tokens total | tokens/chamada | in | out | cache_r | cache_c | custo USD")
+    print(("spec | agente | classe" if por == "spec" else "agente | modelo | classe") + " | chamadas | tokens total | tokens/chamada | in | out | cache_r | cache_c | custo USD")
     for (a, m, c), v in sorted(g.items()):
         med = round(v["total"] / v["chamadas"]) if v["chamadas"] else 0
         cu = "INDETERMINADO" if v["custo_indet"] else f"{v['custo']:.4f}"

@@ -41,6 +41,14 @@ class Telemetria(unittest.TestCase):
         v = g[("Revisor SOT", "sonnet", "S2")]
         self.assertEqual((v["chamadas"], v["total"], v["custo_indet"]), (2, 2000, 2))
 
+    def test_spec_e_alvo_extraidos_e_resumo_por_spec(self):
+        ev = json.loads(json.dumps(self.EV))
+        ev["tool_input"]["prompt"] = "CLASSE-TAREFA: S2\nALVO: specs/features/SPEC-049/plan.md"
+        r = T.extrair(ev)
+        self.assertEqual((r["spec"], r["alvo"]), ("SPEC-049", "specs/features/SPEC-049/plan.md"))
+        v = T.resumo([r, r], por="spec")[("SPEC-049", "Revisor SOT", "S2")]
+        self.assertEqual(v["total"], 2000)
+
     def test_snapshot_markdown(self):
         md = T.snapshot([T.extrair(self.EV)])
         self.assertIn("| Revisor SOT | sonnet | S2 | 1 | 1000 |", md)
