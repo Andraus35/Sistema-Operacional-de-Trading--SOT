@@ -6,7 +6,7 @@
 | Tipo | Emenda de Arquitetura de Especificação — **PROPOSTA** (não aplica slots; não fecha decisão; não renumera; não edita WORKFLOW.md) |
 | Autor | Especificador Principal (Claude Code, Opus 4.8) |
 | Versão | **2** (2026-10-01) — incorpora a análise de **simetria camadas×agentes** pedida por Andraus e a absorção do Synthesis Agent pelo Manager (**DHR-ARQ-002**). Histórico v1 preservado no §9 (INV-07). |
-| Status | **PROPOSTA — aguarda parecer do Revisor e homologação de Andraus** |
+| Status | **HOMOLOGADA por instrução direta de Andraus em chat (2026-10-01; ata `DHR-EUA-E23`), Alternativa 3-Specs (v2, §5).** *[texto anterior preservado — INV-07: "PROPOSTA — aguarda parecer do Revisor e homologação de Andraus"]* |
 | Origem | Instrução direta de Andraus (chat, 2026-10-01): (a) "Manager dividido entre SPEC-008 e SPEC-015"; (b) "faz sentido 3 Specs — 1ª Orquestração Mecânica, 2ª Missão, 3ª Convicção, dadas as diferenças cognitivas?"; (c) pedido de **simetria** camadas×agentes para definir **quantidades** por melhores práticas |
 | Autoridade-fonte | `ADR-MANAGER-001` (HOMOLOGADO §2.1/§2.3/§2.5); `DHR-ARQ-001`; `DHR-ARQ-002` (Synthesis absorvido); `WORKFLOW.md` (soberano — só por ID); `ROADMAP.md` §7/§21/§26; `GLOSSARIO.md`; RULE-ECC-01/02; RULE-MECH-01/CLASSE-MECH-001 |
 | Não fecha | Nenhuma decisão aberta (CONS-01): SPEC-015-SCOPE, J-001, N-001, M-001, WF-D03 seguem abertas. Não renumera/apaga slots. Não edita WORKFLOW.md. |
