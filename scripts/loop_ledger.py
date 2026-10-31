@@ -245,7 +245,10 @@ def gerar(root):
             out.append(f"| {linha} | R{rod} | {d['modo']} | {d['sha']} | {d['tokens']} |")
     out += ["", f"Rodadas por delta: {n_delta}/{n_total} · com SHA256-ALVO declarado: {n_sha}/{n_total}. Convenção no cabeçalho da transcrição: `MODO:`, `SHA256-ALVO:`, `TOKENS:` (tokens só se o ambiente os informar; nunca estimar).", ""]
     out += ["", "Tamanho = estado ATUAL do `plan.md` (não o de cada rodada); tokens por rodada seguem **n/m** (o repositório não os mede — registrar manualmente em `TELEMETRIA-ONDA0.md`).", ""]
-    out += ["", "Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo repositório.", ""]
+    if (root / "governance" / "aprendizado" / "TELEMETRIA-TOKENS.md").exists():
+        out += ["", "Economicidade (tokens/custo): **PARCIAL** — tokens por agente/modelo/classe medidos em `governance/aprendizado/TELEMETRIA-TOKENS.md` (retrato do hook `telemetria_tokens.py`, BL-036); custo em USD INDETERMINADO sem preços em `governance/telemetria/PRECOS-MODELOS.json`; tokens por rodada seguem n/m aqui. Tokens ≠ qualidade (CEE-001).", ""]
+    else:
+        out += ["", "Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo repositório.", ""]
     # 3. Categorias e recorrência
     out += ["## 3. Categorias, recorrência e prevenção registrada", "",
             "| Cod | Categoria | Achados | Rodadas distintas | Linhas distintas | Recorrente | Prevenção registrada |", "|---|---|---|---|---|---|---|"]
