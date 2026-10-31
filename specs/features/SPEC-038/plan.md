@@ -943,3 +943,5 @@ EVIDENCE     : objeto conforme schema; par (unix, ISO-8601) auditável; registro
 - Nenhuma decisão aberta aparece como invariante fechado nesta entrega (CONS-01).
 
 **Pronto para revisão.**
+
+**Errata aditiva (2026-10-31, DHR-REAPONT-001):** classe B, RAG faithfulness: F1 → SPEC-007, F2 → SPEC-048 (DIFERIDA) (nota N-E) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, nota(s) indicada(s). Texto acima não alterado (INV-09).

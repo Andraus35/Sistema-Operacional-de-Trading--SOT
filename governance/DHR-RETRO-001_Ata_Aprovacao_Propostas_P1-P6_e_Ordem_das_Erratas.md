@@ -52,3 +52,23 @@ Q-10 (inclusão de `relation_type`/formato `from`/`to`/`natural_key`/`valid_from
 | Q-4 (forma de aplicação) | Arquivo à parte + uma linha no plano da SPEC-020 |
 | Q-7 (calibração do F1) | Só registrar a lacuna (dependência de futura errata da SPEC-007) |
 Q-1, Q-5, Q-6, Q-9 seguem para a homologação. **Nenhuma errata/emenda homologada por este adendo**; decisões abertas seguem abertas (CONS-01).
+
+## 8. Adendo 5 — respostas sobre o ERRATUM-REAPONT-001 (chat, 2026-10-30) `[FATO]`
+| Pergunta | Resposta de Andraus |
+|---|---|
+| Q-2 (classificação) | **Patch** (ajuste editorial) |
+| Q-1 (forma) | **Um arquivo único**, com uma linha de ponteiro no fim de cada plan.md afetado |
+| Q-3/Q-4 (extensão) | **Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada) |
+| Q-8 (ROADMAP) | **Sim**: nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele |
+Q-5, Q-6, Q-7 seguem com a premissa do texto até a homologação. **Nenhuma errata homologada por este adendo**; decisões abertas seguem abertas (CONS-01).
+
+## 9. Adendo 6 — Q-9 do ERRATUM-REAPONT-001 (chat, 2026-10-30) `[FATO]`
+**Q-9 (recuperação de experiência — EXP-SPEC-015..020 e 022):** destino = **SPEC-009/017, como endereço indicativo** (as Specs não estão abertas; G-001 e a decisão de fundo seguem abertas). Entra no erratum como nota própria (N-G) para as linhas L-05 (1ª parte) e L-06 da SPEC-006. Nenhuma errata homologada por este adendo; decisões abertas seguem abertas (CONS-01).
+
+## 10. Adendo 7 — confirmações Q-5, Q-6 e Q-7 do ERRATUM-REAPONT-001 (chat, 2026-10-31) `[FATO]`
+| Pergunta | Resposta de Andraus |
+|---|---|
+| Q-5 (SPEC-020 e ERRATUM-SPEC020-001) | **Sem nota nova** (o ERRATUM-SPEC020-002 já dá a leitura de cada linha) |
+| Q-6 (SPEC-007, nota C-3 com linhas desatualizadas) | **Sim**: nota aditiva atualizando a referência das linhas, sem apagar o texto antigo e sem mudar regra |
+| Q-7 (complexidade) | **Baixa (LOW)** |
+Com isso não restam perguntas pendentes no erratum. **Nenhuma errata homologada por este adendo**; decisões abertas seguem abertas (CONS-01).

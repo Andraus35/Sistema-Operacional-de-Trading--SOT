@@ -1731,3 +1731,5 @@ anterior preservado — INV-07: a lista de dependências incluía "**H-001**" en
 **Volume (F-17 — registrado, NÃO dividido):** CRITICAL, 13 BASpecs/19 cenários/23 ADV + §D2.1/§D2.2 + §D3.1 + schema. A
 decisão de DIVIDIR a Spec é **exclusivamente de Andraus (Q-ABERTURA-5)** — o Especificador não divide; slot preservado (INV-07).
 
+
+**Errata aditiva (2026-10-31, DHR-REAPONT-001):** formação e selo → SPEC-007; recuperação do conhecimento → SPEC-048 (N-B, N-C); COL-EXP-05: origem-raiz na SPEC-007, contagem no pacote na SPEC-048 (N-D); recuperação de experiência → SPEC-009/017, endereço indicativo, sem abrir Spec nem decidir G-001 (N-G) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, nota(s) indicada(s). Texto acima não alterado (INV-09).

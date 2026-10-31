@@ -3847,3 +3847,5 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
                          size_estimate, relevance{namespace próprio}, delivery{RESPOSTA_READ_ONLY (intervalo) |
                          BLACKBOARD (após SPEC-007-BBTYPE-001)}, recorded_at
 ```
+
+**Errata aditiva (2026-10-31, DHR-REAPONT-001):** referência de linhas da nota C-3 atualizada 1:1 para a v2.3 (l.65, 66, 73, 310, 321, 361, 445, 713, 1733, 1803; Anexo T em l.1950), mais as menções adicionais l.7, l.21, l.1517 e l.1538; texto antigo preservado; nenhuma regra muda (nota N-F) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, nota(s) indicada(s). Texto acima não alterado (INV-09).

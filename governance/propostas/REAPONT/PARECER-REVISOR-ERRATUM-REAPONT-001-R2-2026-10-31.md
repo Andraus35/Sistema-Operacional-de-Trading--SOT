@@ -1,0 +1,17 @@
+# Parecer do Revisor — ERRATUM-REAPONT-001 v1.2 — R2 por delta (S2, sonnet) — 2026-10-31
+
+> Transcrição pelo Orquestrador (Revisor sem Write). Alvo: `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md` v1.2 (commit `8798701`; base v1.1 `084a7c5`). Gates do Orquestrador: check_refs 0 ERRO; check_doc_sync ERRO=0; check_invariants 0; revisor_gate PASSOU_D; coesão 0 ERRO; mapa em dia; nenhum plan/checks/ROADMAP editado. Revisor abriu ROADMAP, RMR-001, RULES e CATALOGO; no `atomic-spec.md` só buscou "Patch" (sem definição lá; classificação = decisão de Andraus); não reproduziu gate/sha256 (GATE NÃO VERIFICADO por ele).
+
+**VEREDITO: CONFORME condicional** — 0 Críticas, 0 Médias, 3 Menores. M-1 e m-1..m-4 do R1 **resolvidos**: série EXP-SPEC-015..020/022 confirmada como recuperação de experiência (CAMADA MEMÓRIA l.877-908; SPEC-048 l.380/208: experiência → SPEC-009/017); N-G não vai além do Adendo 6 (§9 da DHR-RETRO-001); contagens reproduzidas por Grep (L-30: 13 exato / 16 ampliado; por arquivo; R2); 11 ocorrências não tocadas reabertas, conformes; sem omissão nos critérios 1 e 2; CONS-01 preservado (lista de abertas == ROADMAP l.36, G-001 aberta); aditividade confirmada; Q-1/2/3/4/8 e Adendos 5/6 sem ramo morto; Q-5, Q-6, Q-7 pendentes com premissa. Condições: gate reproduzido (feito pelo Orquestrador: PASSOU_D) e homologação de Andraus (pendente). Não é homologação.
+
+- **m-5 (Menor, C07, mecânico)** — N-D atribui a cláusula "independência de experiência (EXP-SPEC-021) → SPEC-009/017" à P-14; ela vem do baseline (SPEC-007 l.368 / SPEC-048 l.380), não da P-14 nem do Adendo 6. FICHA-M.
+- **m-6 (Menor, C02)** — §13: ponteiro único cita "recuperação de experiência → SPEC-009/017" em alvos (SPEC-002/003/021/038/007) que não recebem a N-G; variar a linha por alvo. Exige redação → Especificador.
+- **m-7 (Menor, C04, observação)** — SPEC-006 plan l.104 ("FORA o que é memória episódica/experiência (SPEC-007/018/K-001)") é vizinha de L-05, não casa R1 e não está em N-G (respeita o Adendo 6); registrar como "não casa o critério; não tocada" no §2/§3. Sem ação obrigatória.
+
+<!-- ACHADOS-ESTRUTURADOS
+m-5|MENOR|C07|Cláusula da independência de experiência (EXP-SPEC-021 → SPEC-009/017) atribuída em N-D à decisão P-14, mas vem do baseline SPEC-007 l.368 / SPEC-048 l.380|Citar, junto de cada cláusula de nota, a fonte exata da cláusula (ata × baseline) em vez de uma fonte única para a frase inteira
+m-6|MENOR|C02|Linha de ponteiro única (§13) cita recuperação de experiência em alvos onde N-G não existe (SPEC-002/003/021/038/007)|Linha de ponteiro específica por alvo, com só as notas N-x que o alvo recebe
+m-7|MENOR|C04|SPEC-006 l.104 (episódica/experiência → SPEC-007/018/K-001) é vizinha de L-05 e não está registrada como não tocada|Registrar vizinhas sem palavra-chave do critério mas semanticamente próximas da ocorrência re-apontada
+-->
+
+<!-- FICHA-M {"achados":[{"id":"m-5","sev":"MENOR","arquivo":"governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md","antigo":"a independência de **experiência** (EXP-SPEC-021) é da SPEC-009/SPEC-017 (G-001 segue ABERTA).","novo":"a independência de **experiência** (EXP-SPEC-021) é da SPEC-009/SPEC-017, conforme a tabela de fronteira da SPEC-007 e os Non-goals da SPEC-048 (não decidido pela P-14; G-001 segue ABERTA).","condicao":"Aplicar apenas se a frase antiga ocorrer exatamente uma vez (N-D, §4). Não mexer em nenhuma outra ocorrência de SPEC-009/017."}]} -->

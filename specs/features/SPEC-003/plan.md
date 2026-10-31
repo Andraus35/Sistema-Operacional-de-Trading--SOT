@@ -1198,3 +1198,5 @@ Pendências conhecidas com dono (ressalvas do parecer, v1.5 — não fecham nada
 Carregado do Dossiê para o Revisor:
 - research.md §6-bis: 1 achado Menor não-bloqueante do parecer do Revisor sobre o research.md (A-01, linguagem sobre BL-012) — já corrigido no Dossiê e refletido na Nota de gate acima.
 - B-001 e dimensionalidade=8 FECHADAS (não reabertas); CEM-001/CHM-001 não redefinidos (CC-02).
+
+**Errata aditiva (2026-10-31, DHR-REAPONT-001):** evidência candidata a partir de recuperação → SPEC-048; formação e selo seguem na SPEC-007 (nota N-A) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, nota(s) indicada(s). Texto acima não alterado (INV-09).

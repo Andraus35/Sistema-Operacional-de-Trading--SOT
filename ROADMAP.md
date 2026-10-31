@@ -299,7 +299,7 @@ P0 — HIGH · D0–D8. Governa o próprio Harness: quem pode alterar Specs; que
 ### SPEC-020 — Harness Evaluation Specification
 **HOMOLOGADA — BASELINE (Andraus, 2026-09-27, DHR-SPEC020-001).** P0 — CRITICAL · D0–D8. Define como o SOT Harness é avaliado. **Faseada por EUA-E17 (Q6 — homologado):**
 - **Núcleo constitutivo (classe A — homologado nesta FASE GOV):** correctness; grounding; hallucination; role adherence; context management; safety; regression; robustness/adversarial (como método); **+ 9ª lente `principle consistency`** (SPEC-020-PRINC-001, efetiva nesta homologação). Estes são **critérios constitutivos** que SPEC-002+ devem satisfazer durante a produção (não apenas sensores posteriores).
-- **Dimensões dependentes-de-upstream (classe B — DIFERIDAS, ver RMR-001/BL-017):** RAG faithfulness (fecha em SPEC-007); tool correctness (**FECHADA** — SPEC-038 homologada, ERRATUM-SPEC020-001, DHR-SPEC038-002, 2026-10-03); decision traceability (fecha em SPEC-014). *(hypothesis consistency já fechável — SPEC-001 homologada.)* As dimensões B NÃO são tratadas como fechadas antes do seu componente-alvo (CONS-01).
+- **Dimensões dependentes-de-upstream (classe B — DIFERIDAS, ver RMR-001/BL-017):** RAG faithfulness (fecha em SPEC-007); tool correctness (**FECHADA** — SPEC-038 homologada, ERRATUM-SPEC020-001, DHR-SPEC038-002, 2026-10-03); decision traceability (fecha em SPEC-014). *(hypothesis consistency já fechável — SPEC-001 homologada.)* As dimensões B NÃO são tratadas como fechadas antes do seu componente-alvo (CONS-01). *[Nota aditiva (ERRATUM-REAPONT-001, DHR-REAPONT-001, 2026-10-31): RAG faithfulness divide-se — metade F1 com critério (ERRATUM-SPEC020-002, DHR-SPEC020-002); metade F2 → SPEC-048, DIFERIDA até o erratum próprio. Texto anterior preservado.]*
 - **SPEC-020-PRINC-001 — FECHADA (efetiva nesta homologação):** a SPEC-020 incorpora a **consistência principiológica do GPR-001 §15** como critério constitutivo verificável (BASpec-EV-009) — operacionalizando o enforcement de precedência e conflito de princípios (GPR-001 §3.2/§6), antes **declarativo** (L0–L1). Ver `specs/features/SPEC-020/plan.md`.
 
 ### SPEC-021 — Harness Score / Maturity Model
@@ -402,6 +402,7 @@ M0 → 001 Hypothesis Harness →
 [FASE GOV] 019 Harness Governance (+ Herança Vertical) → 020 Harness Evaluation (núcleo A) → 021 Harness Score →
 002 Evidence → 003 Conviction Vector → 004 Blackboard → 005 Event Bus →
 006 Knowledge Graph → 007 RAG (fecha 020: RAG faithfulness) →
+(Nota aditiva — ERRATUM-REAPONT-001, DHR-REAPONT-001: 007 fecha só a metade F1; recuperação e pacote, e a metade F2, são da SPEC-048 (DHR-SPEC007-002; DHR-SPEC048-002). Linha acima preservada.)
 008 Manager — Orquestração Mecânica [Fase 1] → 009 Cognitive State → 010 Structural → 011 Fibonacci/Fractal →
 012 Institutional → 013 ICT → 014 Manager — Convicção & Síntese [Fase 2; absorve Synthesis — DHR-ARQ-002/EUA-E23] (fecha 020: decision traceability) →
 015 Manager — Missão & Ciclo de Vida [Fase 0] → 016 Trading Mission Package →
