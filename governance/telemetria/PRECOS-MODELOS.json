@@ -1,0 +1,12 @@
+{
+  "versao": "0.1-sem-precos",
+  "moeda": "USD",
+  "unidade": "por 1 milhão de tokens",
+  "natureza": "Tabela de preços VERSIONADA da telemetria de custo (BL-036). Dado de estado, NÃO normativo. Preços vazios (null) = custo INDETERMINADO: só Andraus (ou fonte oficial do provedor, citada em `fonte`) preenche. Nenhum preço foi inventado.",
+  "fonte": null,
+  "modelos": {
+    "opus":   {"input": null, "output": null, "cache_read": null, "cache_create": null},
+    "sonnet": {"input": null, "output": null, "cache_read": null, "cache_create": null},
+    "haiku":  {"input": null, "output": null, "cache_read": null, "cache_create": null}
+  }
+}
