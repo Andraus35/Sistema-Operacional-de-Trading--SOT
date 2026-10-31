@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "be396ff88d2bc02ae1e8cfd5e279589256f7ff138ce5db8373087937cba3bbfb",
+  "digest": "5bcbc0480f98e45f523c89f8398b6ce34d32f7155f4afe1659dd009aa2787393",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 314,
+   "in": 315,
    "out": 114
   },
   {
@@ -2124,7 +2124,7 @@
    "path": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
-   "in": 4,
+   "in": 5,
    "out": 33
   },
   {
@@ -2341,7 +2341,7 @@
    "path": "governance/MAN-001_Mapa_Arquitetura_Normativa_PROPOSTA.md",
    "area": "governance",
    "title": "MAN-001 — Mapa da Arquitetura Normativa (PROPOSTA)",
-   "in": 42,
+   "in": 43,
    "out": 18
   },
   {
@@ -2433,7 +2433,7 @@
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
    "in": 17,
-   "out": 39
+   "out": 40
   },
   {
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
@@ -2602,6 +2602,13 @@
    "title": "Parecer do Revisor — ERRATUM-REAPONT-001 v1.3 — R3 delta curta (S2, sonnet) — 2026-10-31",
    "in": 2,
    "out": 3
+  },
+  {
+   "path": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R4-2026-10-31.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — ERRATUM-REAPONT-001 v1.4 — R4 delta curta (S2, sonnet) — 2026-10-31",
+   "in": 2,
+   "out": 2
   },
   {
    "path": "governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md",
@@ -3286,7 +3293,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 155,
+   "in": 156,
    "out": 38
   },
   {
@@ -6011,7 +6018,7 @@
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 155
+   "cited_by": 156
   },
   {
    "id": "SPEC-008",
@@ -36617,6 +36624,11 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R4-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
    "type": "path"
   },
@@ -37928,6 +37940,16 @@
   {
    "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md",
    "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R4-2026-10-31.md",
+   "to": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R4-2026-10-31.md",
+   "to": "specs/features/SPEC-007/plan.md",
    "type": "id"
   },
   {
