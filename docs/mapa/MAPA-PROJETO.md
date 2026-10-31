@@ -4,21 +4,21 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-31** · digest `7f7b244e976fabd3` · **536** documentos · **8789** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-31** · digest `fbd627200f2d7542` · **537** documentos · **8817** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
 | Área | Docs | Função | Mais referenciados |
 |---|---:|---|---|
-| **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (356) · [atomic-spec.md](../../atomic-spec.md) (238) · [AGENTS.md](../../AGENTS.md) (218) |
-| **governance** | 280 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (417) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (128) · [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) (124) |
+| **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (357) · [atomic-spec.md](../../atomic-spec.md) (239) · [AGENTS.md](../../AGENTS.md) (219) |
+| **governance** | 280 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (417) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (128) · [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) (125) |
 | **canon** | 9 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (167) · [CCM-001-canonical-conviction-model.md](../../canon/CCM-001-canonical-conviction-model.md) (113) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (105) |
-| **specs** | 56 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (259) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (210) · [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) (191) |
-| **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (349) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (22) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
+| **specs** | 56 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (260) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (211) · [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) (192) |
+| **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (350) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (22) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
 | **reference** | 28 | referências externas não-normativas (camadas, master contracts) | [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (27) · [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (25) · [CAMADA MEMÓRIA.MD](../../reference/camadas/CAMADA%20MEM%C3%93RIA.MD) (9) |
 | **rag** | 5 | chunks de conhecimento por agente | [synthesis.knowledge.md](../../rag/synthesis.knowledge.md) (3) · [smc.knowledge.md](../../rag/smc.knowledge.md) (1) |
 | **.claude** | 9 | agentes e skills do Claude Code | [especificador.md](../../.claude/agents/especificador.md) (101) · [revisor.md](../../.claude/agents/revisor.md) (82) · [SKILL.md](../../.claude/skills/harness-eval/SKILL.md) (3) |
-| **docs** | 131 | documentação histórica e de arranque (não essencial à operação) | [INDICE-AGENTES.md](../../docs/agentes/INDICE-AGENTES.md) (52) · [HO-2026-10-17-34.md](../../docs/handoffs/HO-2026-10-17-34.md) (19) · [HO-2026-10-25-81.md](../../docs/handoffs/HO-2026-10-25-81.md) (11) |
+| **docs** | 132 | documentação histórica e de arranque (não essencial à operação) | [INDICE-AGENTES.md](../../docs/agentes/INDICE-AGENTES.md) (52) · [HO-2026-10-17-34.md](../../docs/handoffs/HO-2026-10-17-34.md) (19) · [HO-2026-10-25-81.md](../../docs/handoffs/HO-2026-10-25-81.md) (11) |
 | **RETOMADA** | 1 | material de retomada (GEH-001) | [GEH-001_Guia_Agente_Especificacoes_Harness.md](../../RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md) (41) |
 | **.clinerules** | 4 | regras Cline | [sot-rag.md](../../.clinerules/sot-rag.md) (2) · [sot-schemas.md](../../.clinerules/sot-schemas.md) (2) · [sot-map.md](../../.clinerules/sot-map.md) (1) |
 
@@ -28,15 +28,15 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 
 ```mermaid
 flowchart LR
-  docs["docs"] -->|1993| governance["governance"]
+  docs["docs"] -->|2009| governance["governance"]
   governance["governance"] -->|949| specs["specs"]
-  docs["docs"] -->|620| specs["specs"]
-  docs["docs"] -->|544| raiz["raiz"]
+  docs["docs"] -->|625| specs["specs"]
+  docs["docs"] -->|549| raiz["raiz"]
   governance["governance"] -->|457| raiz["raiz"]
   specs["specs"] -->|436| governance["governance"]
   governance["governance"] -->|206| backlog["backlog"]
   raiz["raiz"] -->|163| governance["governance"]
-  docs["docs"] -->|154| backlog["backlog"]
+  docs["docs"] -->|155| backlog["backlog"]
   backlog["backlog"] -->|108| governance["governance"]
   _claude[".claude"] -->|102| governance["governance"]
   docs["docs"] -->|92| _claude[".claude"]
@@ -65,20 +65,20 @@ flowchart LR
 | ID | Documentos que citam | Definido em |
 |---|---:|---|
 | `INV-07` | 299 | [governance/RULES.md](../../governance/RULES.md) |
-| `SPEC-006` | 259 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
-| `SPEC-007` | 191 | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) |
+| `SPEC-006` | 260 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
+| `SPEC-007` | 192 | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) |
 | `SPEC-002` | 182 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
-| `SPEC-020` | 156 | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) |
+| `SPEC-020` | 157 | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) |
 | `SPEC-003` | 153 | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) |
 | `BL-011` | 144 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `BL-003` | 136 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
-| `BL-017` | 123 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
+| `BL-017` | 124 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `SPEC-001` | 120 | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) |
 | `BL-010` | 115 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `INV-09` | 113 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-005` | 108 | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) |
 | `SPEC-004` | 104 | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) |
-| `SPEC-048` | 100 | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) |
+| `SPEC-048` | 101 | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) |
 | `RULE-ECC-01` | 96 | [governance/RULES.md](../../governance/RULES.md) |
 | `INV-05` | 83 | [governance/RULES.md](../../governance/RULES.md) |
 | `DHR-ROTEAMENTO-003` | 82 | [governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md](../../governance/DHR-ROTEAMENTO-003_Ata_Roteador_Deterministico_de_Modelos.md) |
@@ -87,8 +87,8 @@ flowchart LR
 | `EUA-E04` | 78 | [governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md](../../governance/DHR-EUA-E04_Ata_Homologacao_Heranca_Delta.md) |
 | `SPEC-018` | 77 | [ROADMAP.md](../../ROADMAP.md) |
 | `INV-04` | 75 | [governance/RULES.md](../../governance/RULES.md) |
+| `SPEC-049` | 70 | [ROADMAP.md](../../ROADMAP.md) |
 | `DHR-AUDITOR-EXTERNO-009` | 69 | [governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-009_Ata_Gate_Fundido_Classe_D_do_Revisor.md) |
-| `SPEC-049` | 69 | [ROADMAP.md](../../ROADMAP.md) |
 
 ## 4. Cadeia de Specs
 
@@ -99,8 +99,8 @@ flowchart LR
 | `SPEC-003` | **Homologada** | [specs/features/SPEC-003/plan.md](../../specs/features/SPEC-003/plan.md) | 153 |
 | `SPEC-004` | **Homologada** | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) | 104 |
 | `SPEC-005` | **Homologada** | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) | 108 |
-| `SPEC-006` | **Homologada** | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | 259 |
-| `SPEC-007` | **Homologada** | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | 191 |
+| `SPEC-006` | **Homologada** | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | 260 |
+| `SPEC-007` | **Homologada** | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | 192 |
 | `SPEC-008` | Indicativa (não aberta) | — | 34 |
 | `SPEC-009` | Indicativa (não aberta) | — | 63 |
 | `SPEC-010` | Indicativa (não aberta) | — | 49 |
@@ -113,7 +113,7 @@ flowchart LR
 | `SPEC-017` | Indicativa (não aberta) | — | 9 |
 | `SPEC-018` | Indicativa (não aberta) | — | 77 |
 | `SPEC-019` | **Homologada** | [specs/features/SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | 66 |
-| `SPEC-020` | **Homologada** | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | 156 |
+| `SPEC-020` | **Homologada** | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | 157 |
 | `SPEC-021` | **Homologada** | [specs/features/SPEC-021/plan.md](../../specs/features/SPEC-021/plan.md) | 57 |
 | `SPEC-022` | Indicativa (não aberta) | — | 13 |
 | `SPEC-023` | Indicativa (não aberta) | — | 4 |
@@ -141,8 +141,8 @@ flowchart LR
 | `SPEC-045` | Indicativa (não aberta) | — | 11 |
 | `SPEC-046` | **Homologada** | [specs/features/SPEC-046/plan.md](../../specs/features/SPEC-046/plan.md) | 31 |
 | `SPEC-047` | Indicativa (não aberta) | — | 35 |
-| `SPEC-048` | **Homologada** | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | 100 |
-| `SPEC-049` | Em redação | [specs/features/SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) | 69 |
+| `SPEC-048` | **Homologada** | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | 101 |
+| `SPEC-049` | Em redação | [specs/features/SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) | 70 |
 
 ## 5. Backlog e integridade
 
@@ -178,13 +178,13 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 
 | Documento | Título | ← | → |
 |---|---|---:|---:|
-| [AGENTS.md](../../AGENTS.md) | AGENTS.md — SOT (Sistema Operacional de Trading) | 218 | 60 |
+| [AGENTS.md](../../AGENTS.md) | AGENTS.md — SOT (Sistema Operacional de Trading) | 219 | 60 |
 | [GLOSSARIO.md](../../GLOSSARIO.md) | GLOSSÁRIO OFICIAL — SOT | 33 | 13 |
 | [HANDOFF.md](../../HANDOFF.md) | HANDOFF — SOT | 16 | 27 |
 | [README.md](../../README.md) | SOT-Harness | 2 | 9 |
-| [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 356 | 85 |
-| [WORKFLOW.md](../../WORKFLOW.md) | WORKFLOW — Setup Operacional Canônico do SOT | 160 | 12 |
-| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 238 | 37 |
+| [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 357 | 85 |
+| [WORKFLOW.md](../../WORKFLOW.md) | WORKFLOW — Setup Operacional Canônico do SOT | 161 | 12 |
+| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 239 | 37 |
 
 ### governance
 
@@ -197,7 +197,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [AUDITORIA-COESAO-MECANISMOS-2026-10-17.md](../../governance/AUDITORIA-COESAO-MECANISMOS-2026-10-17.md) | Auditoria de coesão dos mecanismos do repositório (2026-10-17) | 31 | 17 |
 | [AUDITORIA-HIGIENE-SPECS-2026-10-01.md](../../governance/AUDITORIA-HIGIENE-SPECS-2026-10-01.md) | AUDITORIA DE HIGIENE DAS SPECS — 2026-10-01 | 3 | 15 |
 | [AUDITORIA-REVISOR-MATURIDADE-2026-10-17.md](../../governance/AUDITORIA-REVISOR-MATURIDADE-2026-10-17.md) | Auditoria por testes do Revisor SOT — interpelação e adversarial — nível de m... | 6 | 4 |
-| [AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md](../../governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md) | Avaliação dos mecanismos (regras, guardrails, hooks, policy, determinísticos)... | 41 | 11 |
+| [AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md](../../governance/AVALIACAO-MECANISMOS-REVISOR-2026-10-17.md) | Avaliação dos mecanismos (regras, guardrails, hooks, policy, determinísticos)... | 42 | 11 |
 | [BL-012-DELTA_PROPOSTA.md](../../governance/BL-012-DELTA_PROPOSTA.md) | BL-012 (MC-COG-001) — Reavaliação do DELTA — [PROPOSTA] | 34 | 15 |
 | [BRIEFING-DECISAO-I-001.md](../../governance/BRIEFING-DECISAO-I-001.md) | BRIEFING DE DECISÃO — I-001 ("Skills como unidades formais separadas?") | 5 | 16 |
 | [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) | CATÁLOGO OFICIAL — Estado e Baseline dos Artefatos (SOT) | 128 | 209 |
@@ -237,7 +237,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md](../../governance/DHR-BL009-001_Ata_Homologacao_Mapa_Auditoria_SAS-001.md) | DHR-BL009-001 — Ata de Homologação — Mapa de Auditoria do SAS-001 (BL-009) | 3 | 6 |
 | [DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md](../../governance/DHR-BL010-011-012-001_Ata_Homologacao_Classificacao_Colisoes.md) | DHR-BL010-011-012-001 — Ata de Homologação — Classificação de Colisões (MC-RA... | 8 | 4 |
 | [DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md](../../governance/DHR-BL012-001_Ata_Encerramento_BL-012_Delta.md) | DHR-BL012-001 — Ata — Encerramento do BL-012 (MC-COG-001) após reavaliação do... | 6 | 17 |
-| [DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md](../../governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md) | DHR-CHECKS-INFO-001 — Ata de Decisão — Detectores informativos: dimensionamen... | 13 | 7 |
+| [DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md](../../governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md) | DHR-CHECKS-INFO-001 — Ata de Decisão — Detectores informativos: dimensionamen... | 14 | 7 |
 | [DHR-CIC-001_Ata_Homologacao_CIC-001.md](../../governance/DHR-CIC-001_Ata_Homologacao_CIC-001.md) | DHR-CIC-001 — Ata de Homologação do CIC-001 v1.0 | 5 | 2 |
 | [DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md](../../governance/DHR-CLASSE-MECH-001_Ata_Homologacao_Classe_Mecanismo.md) | DHR-CLASSE-MECH-001 — Ata de Homologação — Taxonomia de Classe/Mecanismo de I... | 12 | 20 |
 | [DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md](../../governance/DHR-COESAO-001_Ata_Decisoes_Auditoria_de_Coesao.md) | DHR-COESAO-001 — Ata — Decisões de Andraus sobre a auditoria de coesão dos me... | 31 | 8 |
@@ -250,11 +250,11 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-DEC-003_Ata_Decisoes_SPEC038_BL.md](../../governance/DHR-DEC-003_Ata_Decisoes_SPEC038_BL.md) | DHR-DEC-003 — Ata de Decisões — SPEC-038 (TVMCP-001), BL-002/012/027/028/029/... | 29 | 9 |
 | [DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md](../../governance/DHR-DEC-004_Ata_Decisoes_BL017_DATASRC_MASTER.md) | DHR-DEC-004 — Ata de Decisões — BL-017, SPEC-038-DATASRC-001, MASTER Market D... | 18 | 13 |
 | [DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md](../../governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md) | DHR-DELTA-HASH-001 — Ata de Decisão — Delta por hash: pacote gravado, SHA256-... | 15 | 4 |
-| [DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md](../../governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md) | DHR-DIMENSIONAMENTO-001 — Ata de Decisão — RULE-ECC-07: dimensionamento de Sp... | 24 | 7 |
+| [DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md](../../governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md) | DHR-DIMENSIONAMENTO-001 — Ata de Decisão — RULE-ECC-07: dimensionamento de Sp... | 25 | 7 |
 | [DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md](../../governance/DHR-DIV-001_Ata_Varredura_Termos_Legados_Canon.md) | DHR-DIV-001 — Ata de Varredura DIV: termos legados em documentos CANON BASELINED | 7 | 12 |
 | [DHR-DOCSYNC-001_Ata_Homologacao_Sincronizacao_Documental.md](../../governance/DHR-DOCSYNC-001_Ata_Homologacao_Sincronizacao_Documental.md) | DHR-DOCSYNC-001 — Ata de Homologação — Detector de Sincronização Documental +... | 2 | 13 |
 | [DHR-DOCSYNC-002_Ata_Homologacao_Encaminhamento_Residuais.md](../../governance/DHR-DOCSYNC-002_Ata_Homologacao_Encaminhamento_Residuais.md) | DHR-DOCSYNC-002 — Ata de Homologação — Encaminhamento dos Residuais de DHR-DO... | 6 | 20 |
-| [DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md](../../governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md) | DHR-DOCSYNC-003 — Ata de Decisão — Detector de sincronização casa ID inteiro;... | 31 | 7 |
+| [DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md](../../governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md) | DHR-DOCSYNC-003 — Ata de Decisão — Detector de sincronização casa ID inteiro;... | 32 | 7 |
 | [DHR-ECC05-001_Ata_Homologacao_Pesquisa_Multi_Lente.md](../../governance/DHR-ECC05-001_Ata_Homologacao_Pesquisa_Multi_Lente.md) | DHR-ECC05-001 — Ata de Homologação — Pesquisa Multi-Lente (RULE-ECC-05) | 9 | 8 |
 | [DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md](../../governance/DHR-ECC06-001_Ata_Homologacao_Pesquisa_Repositorios.md) | DHR-ECC06-001 — Ata de Homologação — RULE-ECC-06: Pesquisa em repositórios se... | 8 | 7 |
 | [DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md](../../governance/DHR-ERRATA-001_Ata_Errata_SPEC001_SPEC005_BL003.md) | DHR-ERRATA-001 — Ata — Errata aditivas (SPEC-001 âncora SAS-001; SPEC-005 est... | 9 | 12 |
@@ -282,7 +282,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md](../../governance/DHR-H001-001_Ata_Fechamento_H-001_Mecanismo_Fisico_do_KG.md) | DHR-H001-001 — Ata — Fechamento da decisão H-001 (mecanismo físico de armazen... | 52 | 15 |
 | [DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md](../../governance/DHR-HOD-001_Ata_Homologacao_Higiene_Documental.md) | DHR-HOD-001 — Ata de Homologação do Plano de Higiene e Organização Documental... | 3 | 5 |
 | [DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md](../../governance/DHR-I001-001_Ata_Homologacao_Fechamento_I-001.md) | DHR-I001-001 — Ata de Homologação — Fechamento de I-001 (Skills como unidades... | 13 | 8 |
-| [DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md](../../governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md) | DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do ... | 45 | 13 |
+| [DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md](../../governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md) | DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do ... | 46 | 13 |
 | [DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md](../../governance/DHR-MAN-001_Ata_Homologacao_Mapa_Arquitetura_Normativa.md) | DHR-MAN-001 — Ata de Homologação do MAN-001 (Mapa da Arquitetura Normativa) | 4 | 3 |
 | [DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md](../../governance/DHR-MC-COG-001_Ata_Admissao_Backlog_BL-012.md) | DHR-MC-COG-001 — Ata de Homologação da Admissão ao Backlog (BL-012 · Camada d... | 3 | 5 |
 | [DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md](../../governance/DHR-MC-EXP-001_Ata_Admissao_Backlog_BL-011.md) | DHR-MC-EXP-001 — Ata de Homologação da Admissão ao Backlog (BL-011 · Camada d... | 3 | 8 |
@@ -290,7 +290,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md](../../governance/DHR-MC-LRN-001_Ata_Admissao_Backlog_BL-015.md) | DHR-MC-LRN-001 — Ata de Homologação da Admissão ao Backlog (BL-015 · Camada d... | 3 | 7 |
 | [DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md](../../governance/DHR-MC-RAG-001_Ata_Admissao_Backlog_BL-010.md) | DHR-MC-RAG-001 — Ata de Homologação da Admissão ao Backlog (BL-010 · Camada RAG) | 4 | 7 |
 | [DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md](../../governance/DHR-MC-SKL-001_Ata_Admissao_Backlog_BL-016.md) | DHR-MC-SKL-001 — Ata de Homologação da Admissão ao Backlog (BL-016 · Camada d... | 5 | 7 |
-| [DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md](../../governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md) | DHR-MERGE-001 — Ata de Decisão — Aviso determinístico "já é possível e seguro... | 26 | 3 |
+| [DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md](../../governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md) | DHR-MERGE-001 — Ata de Decisão — Aviso determinístico "já é possível e seguro... | 27 | 3 |
 | [DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md](../../governance/DHR-PAP-001-A_Adendo_Rehomologacao_PE-PR-PAP-001_v1.1.md) | DHR-PAP-001-A — Adendo de Re-Homologação do PE-PR-PAP-001 v1.1 | 14 | 8 |
 | [DHR-PAP-001-B_Ata_Homologacao_PAP-001.md](../../governance/DHR-PAP-001-B_Ata_Homologacao_PAP-001.md) | DHR-PAP-001-B — Ata de Homologação do PAP-001 v1.1 | 14 | 4 |
 | [DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md](../../governance/DHR-PAP-001-C_Ata_Homologacao_VPD_RMR-001.md) | DHR-PAP-001-C — Ata de Homologação: VPD (Bloco 7), Wiring RMR-001 e Painel RM... | 14 | 6 |
@@ -300,9 +300,9 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-PCC-003_Ata_Anexo_de_Tarefa_do_HANDOFF.md](../../governance/DHR-PCC-003_Ata_Anexo_de_Tarefa_do_HANDOFF.md) | DHR-PCC-003 — Ata — Anexo de tarefa: extensão do HANDOFF para trabalho entre ... | 30 | 9 |
 | [DHR-PRINC-BID-001_Ata_Homologacao_Heranca_Bidirecional.md](../../governance/DHR-PRINC-BID-001_Ata_Homologacao_Heranca_Bidirecional.md) | DHR-PRINC-BID-001 — Ata de Homologação — Herança Principiológica Bidirecional | 9 | 10 |
 | [DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md](../../governance/DHR-PROV-WEB-001_Ata_Provisao_Pesquisa_Web_Especificador.md) | DHR-PROV-WEB-001 — Ata de Homologação — Provisão de Pesquisa Web ao Especific... | 33 | 2 |
-| [DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md](../../governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md) | DHR-REAPONT-001 — Ata de Homologação — ERRATUM-REAPONT-001 (re-apontamento SP... | 34 | 17 |
+| [DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md](../../governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md) | DHR-REAPONT-001 — Ata de Homologação — ERRATUM-REAPONT-001 (re-apontamento SP... | 35 | 17 |
 | [DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md](../../governance/DHR-REG-001_Ata_Homologacao_Registro_Familias_Cognitivas.md) | DHR-REG-001 — Ata de Homologação — Registro Físico das 11 Famílias Cognitivas... | 19 | 16 |
-| [DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md](../../governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md) | DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem d... | 38 | 10 |
+| [DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md](../../governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md) | DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem d... | 39 | 10 |
 | [DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md](../../governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md) | DHR-REVISOR-DELTA-001 — Ata — Revisor SOT passa a revisar por delta (hash por... | 22 | 5 |
 | [DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md](../../governance/DHR-ROTEAMENTO-001_Ata_Decisoes_Roteamento_de_Modelos_Onda0.md) | DHR-ROTEAMENTO-001 — Ata — Decisões D1–D6 sobre roteamento de modelos dos age... | 53 | 8 |
 | [DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md](../../governance/DHR-ROTEAMENTO-002_Ata_Troca_do_Especificador_para_Opus_5_5.md) | DHR-ROTEAMENTO-002 — Ata — Troca do modelo do Especificador SOT de claude-opu... | 35 | 6 |
@@ -310,7 +310,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md](../../governance/DHR-ROTEAMENTO-004_Ata_Roteamento_de_Achados_Ordem_de_Correcao.md) | DHR-ROTEAMENTO-004 — Ata de Decisão — Roteamento determinístico de ACHADOS (o... | 17 | 6 |
 | [DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md](../../governance/DHR-ROTEAMENTO-005_Ata_Orquestrador_Nao_Corrige_Achados_do_Revisor.md) | DHR-ROTEAMENTO-005 — Ata de Decisão — O Orquestrador não corrige achados do R... | 17 | 6 |
 | [DHR-ROTEAMENTO-006_Ata_Orquestrador_Corrige_Menores_Mecanicos.md](../../governance/DHR-ROTEAMENTO-006_Ata_Orquestrador_Corrige_Menores_Mecanicos.md) | DHR-ROTEAMENTO-006 — Ata de Decisão — O Orquestrador identifica e corrige det... | 13 | 8 |
-| [DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md](../../governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md) | DHR-ROTEAMENTO-007 — Ata de Decisão — Roteamento de modelo obrigatório por ho... | 29 | 5 |
+| [DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md](../../governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md) | DHR-ROTEAMENTO-007 — Ata de Decisão — Roteamento de modelo obrigatório por ho... | 30 | 5 |
 | [DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md](../../governance/DHR-RPSA-001_Ata_Automacao_dos_Carimbos_RPSA.md) | DHR-RPSA-001 — Ata — Automação determinística dos carimbos RPSA e sincronizaç... | 4 | 10 |
 | [DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md](../../governance/DHR-RPSA-002_Ata_Classificacao_RPSA_Automatica.md) | DHR-RPSA-002 — Ata — Classificação RPSA automática após a aprovação de Andraus | 2 | 7 |
 | [DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md](../../governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md) | DHR-SES-001 — Ata de Homologação: SES-001, EUA-E03 e Emenda de Inversões Cont... | 6 | 5 |
@@ -327,19 +327,19 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md](../../governance/DHR-SPEC006-002_Ata_Homologacao_SPEC-006.md) | DHR-SPEC006-002 — Ata de Homologação — SPEC-006 (Cognitive Knowledge Graph) v... | 46 | 14 |
 | [DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md](../../governance/DHR-SPEC006-003_Ata_Homologacao_Errata_v1.11_SPEC-006.md) | DHR-SPEC006-003 — Ata de Homologação — Errata v1.11 da SPEC-006 (Cognitive Kn... | 31 | 13 |
 | [DHR-SPEC006-004_Ata_Homologacao_Errata_v1.12_SPEC-006.md](../../governance/DHR-SPEC006-004_Ata_Homologacao_Errata_v1.12_SPEC-006.md) | DHR-SPEC006-004 — Ata de Homologação — Errata v1.12 da SPEC-006 (Cognitive Kn... | 40 | 11 |
-| [DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md](../../governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md) | DHR-SPEC006-005 — Ata de Homologação — Errata aditiva v1.13 da SPEC-006 (liga... | 33 | 11 |
+| [DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md](../../governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md) | DHR-SPEC006-005 — Ata de Homologação — Errata aditiva v1.13 da SPEC-006 (liga... | 34 | 11 |
 | [DHR-SPEC006-OPCAO2-001_Ata_Opcao2_Etapas_e_Nota_Aditiva_SPEC-006.md](../../governance/DHR-SPEC006-OPCAO2-001_Ata_Opcao2_Etapas_e_Nota_Aditiva_SPEC-006.md) | DHR-SPEC006-OPCAO2-001 — Ata — SPEC-006 em etapas (Opção 2) e nota aditiva ao... | 17 | 6 |
 | [DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md](../../governance/DHR-SPEC006-PEND-001_Ata_BL029_EmEspera_e_Emenda_atomic-spec_S3.md) | DHR-SPEC006-PEND-001 — Ata — BL-029 `Em espera` e emenda Minor ao `atomic-spe... | 8 | 12 |
 | [DHR-SPEC007-001_Ata_Homologacao_Abertura_SPEC-007.md](../../governance/DHR-SPEC007-001_Ata_Homologacao_Abertura_SPEC-007.md) | DHR-SPEC007-001 — Ata de Homologação — Abertura da SPEC-007 (RAG / WikiRAG / ... | 43 | 13 |
 | [DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md](../../governance/DHR-SPEC007-002_Ata_Divisao_SPEC-007_e_Slot_SPEC-048.md) | DHR-SPEC007-002 — Ata de Decisão — Divisão da SPEC-007 (Opção C) e slot da SP... | 42 | 21 |
 | [DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md](../../governance/DHR-SPEC007-003_Ata_Respostas_Perguntas_P1-P11_SPEC-007.md) | DHR-SPEC007-003 — Ata de Decisão — Respostas de Andraus às perguntas P-1..P-1... | 42 | 12 |
 | [DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md](../../governance/DHR-SPEC007-004_Ata_Respostas_P12-P14_e_Ordem_Rodada5_SPEC-007.md) | DHR-SPEC007-004 — Ata de Decisão — Respostas P-12..P-14 do Plan reduzido da S... | 32 | 9 |
-| [DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md](../../governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md) | DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formaç... | 56 | 11 |
+| [DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md](../../governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md) | DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formaç... | 57 | 11 |
 | [DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md](../../governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md) | DHR-SPEC007-006 — Ata de Decisão — Q7(c): uso do livro *Evidence-Based Techni... | 39 | 9 |
 | [DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md](../../governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md) | DHR-SPEC007-007 — Ata de Decisão — Diretriz de autenticação criptográfica dos... | 38 | 6 |
 | [DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md](../../governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md) | DHR-SPEC019-001 — Ata de Homologação — SPEC-019 v1.0 (Harness Governance & Ev... | 18 | 6 |
 | [DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md](../../governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md) | DHR-SPEC020-001 — Ata de Homologação — SPEC-020 v1.0 (Harness Evaluation Spec... | 19 | 9 |
-| [DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md](../../governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md) | DHR-SPEC020-002 — Ata de Homologação — ERRATUM-SPEC020-002 (dimensão B "RAG f... | 30 | 14 |
+| [DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md](../../governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md) | DHR-SPEC020-002 — Ata de Homologação — ERRATUM-SPEC020-002 (dimensão B "RAG f... | 31 | 14 |
 | [DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md](../../governance/DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md) | DHR-SPEC021-001 — Ata de Homologação — SPEC-021 v1.0 (Harness Score / Maturit... | 8 | 7 |
 | [DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md](../../governance/DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md) | DHR-SPEC038-001 — Ata de Homologação — Abertura da SPEC-038 (Trading Analysis... | 9 | 14 |
 | [DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md](../../governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md) | DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harnes... | 14 | 12 |
@@ -347,14 +347,14 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md](../../governance/DHR-SPEC046-002_Ata_Homologacao_SPEC-046.md) | DHR-SPEC046-002 — Ata de Homologação — SPEC-046 v1.0 (Spec-Time Context Cachi... | 6 | 15 |
 | [DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md](../../governance/DHR-SPEC046-003_Ata_Homologacao_SPEC-046_v1.1.md) | DHR-SPEC046-003 — Ata de Homologação — SPEC-046 v1.1 (Emenda: Caching Inter-S... | 4 | 8 |
 | [DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md](../../governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md) | DHR-SPEC048-001 — Ata de Homologação — Abertura da SPEC-048 (RAG Retrieval & ... | 35 | 16 |
-| [DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md](../../governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md) | DHR-SPEC048-002 — Ata de Homologação — Plan da SPEC-048 v1.4 (RAG Retrieval &... | 40 | 15 |
-| [DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md](../../governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md) | DHR-SPEC049-001 — Ata de Homologação — Abertura da SPEC-049 (WikiRAG Reading ... | 9 | 17 |
+| [DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md](../../governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md) | DHR-SPEC048-002 — Ata de Homologação — Plan da SPEC-048 v1.4 (RAG Retrieval &... | 41 | 15 |
+| [DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md](../../governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md) | DHR-SPEC049-001 — Ata de Homologação — Abertura da SPEC-049 (WikiRAG Reading ... | 10 | 17 |
 | [DHR-TAX-001_Ata_Alinhamento_Taxonomico.md](../../governance/DHR-TAX-001_Ata_Alinhamento_Taxonomico.md) | DHR-TAX-001 — Ata de Alinhamento Taxonômico — 4 Correções de Bloqueadores Crí... | 11 | 9 |
 | [DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md](../../governance/DHR-VERBATIM-SRC-001_Ata_Homologacao_Captura_Verbatim.md) | DHR-VERBATIM-SRC-001 — Ata de Homologação — Captura Verbatim de Fonte (RULE-E... | 12 | 10 |
 | [DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md](../../governance/DHR-WF-001_Ata_Homologacao_WORKFLOW_Soberano.md) | DHR-WF-001 — Ata de Homologação — WORKFLOW.md soberano na raiz + conformidade... | 9 | 8 |
 | [DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md](../../governance/DHR-WF-002_Ata_Homologacao_WORKFLOW_v2.md) | DHR-WF-002 — Ata de Homologação — WORKFLOW.md v2.0 (decisões sobre o Dossiê d... | 5 | 8 |
 | [EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md](../../governance/EMENDA-SPEC001-001_hierarchy_role_PROPOSTA.md) | [HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] EMENDA-SPEC001-0... | 1 | 15 |
-| [ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md](../../governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md) | ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: ... | 42 | 34 |
+| [ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md](../../governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md) | ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: ... | 43 | 34 |
 | [ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md](../../governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md) | ERRATUM-SPEC001-001 — Âncora de fonte: SAS-001 §6.7 → §6.10 (metadados de tra... | 3 | 5 |
 | [ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md](../../governance/ERRATUM-SPEC001-002_Auditoria_Semantica_Aditivo_PROPOSTO.md) | [HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001] ERRATUM-SPEC001-... | 3 | 21 |
 | [ERRATUM-SPEC005-001_Estado_BL-008.md](../../governance/ERRATUM-SPEC005-001_Estado_BL-008.md) | ERRATUM-SPEC005-001 — Estado do BL-008: `Absorvido`, não `ATIVADO` — erratum ... | 1 | 13 |
@@ -391,7 +391,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [MAPA-AUDITORIA-SPEC-001.md](../../governance/MAPA-AUDITORIA-SPEC-001.md) | Mapa de Auditoria da SPEC-001 (BL-008) — versão canônica completa (14 linhas) | 8 | 32 |
 | [MAPA-AUDITORIA-SPEC-001_LINHAS-ADICIONAIS_RASCUNHO.md](../../governance/MAPA-AUDITORIA-SPEC-001_LINHAS-ADICIONAIS_RASCUNHO.md) | Mapa de Auditoria da SPEC-001 (BL-008) — linhas adicionais EUA-E21 e EUA-E22 ... | 8 | 16 |
 | [PAP-001_Protocolo_Adesao_Progressiva_Principios.md](../../governance/PAP-001_Protocolo_Adesao_Progressiva_Principios.md) | PAP-001 — Protocolo de Adesão Progressiva da Camada de Princípios do SOT | 23 | 17 |
-| [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) | PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orques... | 124 | 14 |
+| [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) | PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orques... | 125 | 14 |
 | [PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md](../../governance/PE-PR-PAP-001_Prompts_Especificador_Revisor_PAP001.md) | PE-PR-PAP-001 — Prompts de Invocação do Especificador e do Revisor para o PAP... | 9 | 13 |
 | [PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md](../../governance/PP-PAP-001_Pacote_Partida_Protocolo_Adesao_Progressiva.md) | PP-PAP-001 — Pacote de Partida do PAP-001 | 12 | 5 |
 | [RCH-001_Registro_Ciclos_Hygiene.md](../../governance/RCH-001_Registro_Ciclos_Hygiene.md) | RCH-001 — Registro de Ciclos de Hygiene de Princípios | 19 | 22 |
@@ -414,12 +414,12 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [RELATORIO.md](../../governance/propostas/AUDITORIA-INDEPENDENTE-SPEC006/RELATORIO.md) | Auditoria Independente e Adversarial: SPEC-006 v1.7 (Cognitive Knowledge Grap... | 14 | 15 |
 | [ESTUDO-TECNOLOGIA-H001-2026-10-18.md](../../governance/propostas/H001/ESTUDO-TECNOLOGIA-H001-2026-10-18.md) | ESTUDO DE TECNOLOGIA — H-001: mecanismo físico de armazenamento da memória pe... | 11 | 11 |
 | [HANDOFF-SPEC006-2026-10-17.md](../../governance/propostas/HANDOFF-SPEC006-2026-10-17.md) | Passagem de sessão — SPEC-006 (errata) e endurecimento do gate — 2026-10-17 | 3 | 16 |
-| [AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md) | Auditoria — burocracia excessiva (método, ferramentas, agentes) e higiene de ... | 8 | 32 |
+| [AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md) | Auditoria — burocracia excessiva (método, ferramentas, agentes) e higiene de ... | 9 | 32 |
 | [AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md) | Auditoria profunda — higiene de leitura e economicidade (4Es) do repositório | 14 | 18 |
 | [ARQUIVO-MORTO-AGENTS-secao7-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/ARQUIVO-MORTO-AGENTS-secao7-2026-10-31.md) | Arquivo morto — AGENTS.md §7 (texto integral até 2026-10-31) | 1 | 29 |
 | [PROPOSTA-PROVA-DE-EQUIVALENCIA-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/PROPOSTA-PROVA-DE-EQUIVALENCIA-2026-10-31.md) | Proposta pré-testada — prova de conservação para enxugar documentos quentes (... | 0 | 7 |
 | [PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md) | Proposta — dimensionamento de Spec: critério medido para "uma Spec ou várias" | 2 | 17 |
-| [PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md) | Proposta pré-testada — falsos positivos do check_refs e destino do mapa JSON | 5 | 2 |
+| [PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md) | Proposta pré-testada — falsos positivos do check_refs e destino do mapa JSON | 6 | 2 |
 | [RELATORIO-MELHORIAS-AGENTES-E-GATES-2026-10-24.md](../../governance/propostas/MELHORIAS-PROCESSO/RELATORIO-MELHORIAS-AGENTES-E-GATES-2026-10-24.md) | Relatório — pontos fracos dos agentes construtores (Especificador e Revisor) ... | 17 | 7 |
 | [MINUTA-ATA-REGISTRO-MECANISMOS-VIGENTE-2026-10-18.md](../../governance/propostas/MINUTA-ATA-REGISTRO-MECANISMOS-VIGENTE-2026-10-18.md) | MINUTA — Ata de vigência do registro de mecanismos (`governance/MECANISMOS.js... | 4 | 4 |
 | [PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md](../../governance/propostas/PARECER-REVISOR-SPEC006-v1.10-2026-10-17.md) | Parecer do Revisor SOT — SPEC-006 errata v1.10 (rodada por delta) — 2026-10-17 | 4 | 3 |
@@ -491,7 +491,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 |---|---|---:|---:|
 | [elliott-wave.spec.md](../../specs/elliott-wave.spec.md) | Spec — Elliott Wave Specialist | 3 | 1 |
 | [SPEC-001/checks.md](../../specs/features/SPEC-001/checks.md) | SPEC-001 — Hypothesis Harness — Verificação de Spec | 59 | 2 |
-| [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | SPEC-001 — Hypothesis Harness | 210 | 9 |
+| [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | SPEC-001 — Hypothesis Harness | 211 | 9 |
 | [DOSSIE-PESQUISA.md](../../specs/features/SPEC-002/DOSSIE-PESQUISA.md) | Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness) | 2 | 14 |
 | [PROPOSTA-ABERTURA.md](../../specs/features/SPEC-002/PROPOSTA-ABERTURA.md) | Proposta de Abertura — SPEC-002: Evidence & Evidence Provenance Harness | 5 | 16 |
 | [SPEC-002/checks.md](../../specs/features/SPEC-002/checks.md) | checks.md — Verificação de Spec da SPEC-002 (fase spec-first) | 3 | 10 |
@@ -512,16 +512,16 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [ABERTURA.md](../../specs/features/SPEC-006/ABERTURA.md) | Proposta de Abertura — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, ... | 5 | 19 |
 | [SPEC-006/checks.md](../../specs/features/SPEC-006/checks.md) | checks.md — Verificação de Spec da SPEC-006 (fase spec-first) | 7 | 16 |
 | [errata-v1.13.md](../../specs/features/SPEC-006/errata-v1.13.md) | SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4)... | 29 | 18 |
-| [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 259 | 39 |
+| [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | SPEC-006 — Cognitive Knowledge Graph | 260 | 39 |
 | [research.md](../../specs/features/SPEC-006/research.md) | Dossiê de Pesquisa — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, FA... | 6 | 24 |
 | [ABERTURA.md](../../specs/features/SPEC-007/ABERTURA.md) | Proposta de Abertura — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness ... | 11 | 26 |
 | [SPEC-007/checks.md](../../specs/features/SPEC-007/checks.md) | checks.md — Verificação de Spec da SPEC-007 (fase spec-first) | 2 | 15 |
-| [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (forma... | 191 | 40 |
+| [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (forma... | 192 | 40 |
 | [research.md](../../specs/features/SPEC-007/research.md) | Dossiê de Pesquisa — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness (s... | 4 | 28 |
 | [SPEC-019/checks.md](../../specs/features/SPEC-019/checks.md) | checks.md — Verificação de Spec da SPEC-019 (fase spec-first) | 1 | 8 |
 | [SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical) | 66 | 19 |
 | [SPEC-020/checks.md](../../specs/features/SPEC-020/checks.md) | checks.md — Verificação de Spec da SPEC-020 (fase spec-first) | 4 | 8 |
-| [SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) | 156 | 24 |
+| [SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) | 157 | 24 |
 | [research.md](../../specs/features/SPEC-020/research.md) | SPEC-020 — Harness Evaluation Specification (núcleo A) — DOSSIÊ DE PESQUISA (... | 2 | 16 |
 | [SPEC-021/checks.md](../../specs/features/SPEC-021/checks.md) | checks.md — Verificação de Spec da SPEC-021 (fase spec-first) | 1 | 10 |
 | [SPEC-021/plan.md](../../specs/features/SPEC-021/plan.md) | SPEC-021 — Harness Score / Maturity Model | 57 | 21 |
@@ -537,7 +537,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-046/research.md) | Dossiê de Pesquisa — SPEC-046 (companion — convenção de nome do gate determin... | 0 | 5 |
 | [ABERTURA.md](../../specs/features/SPEC-048/ABERTURA.md) | Proposta de Abertura — SPEC-048: RAG Retrieval & Evidence Packet Harness (slo... | 5 | 24 |
 | [SPEC-048/checks.md](../../specs/features/SPEC-048/checks.md) | checks.md — Verificação de Spec da SPEC-048 (fase spec-first) | 2 | 14 |
-| [SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação +... | 100 | 41 |
+| [SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação +... | 101 | 41 |
 | [research.md](../../specs/features/SPEC-048/research.md) | Dossiê de Pesquisa — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ... | 3 | 26 |
 | [ABERTURA.md](../../specs/features/SPEC-049/ABERTURA.md) | Proposta de Abertura — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3) | 5 | 26 |
 | [research.md](../../specs/features/SPEC-049/research.md) | Dossiê de Pesquisa — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3) | 1 | 20 |
@@ -555,7 +555,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) | BL-018 — Risk Agent SOT (Família RISK-SPEC) | 22 | 17 |
 | [BL-025-CACHE-ISS-001-analise.md](../../backlog/BL-025-CACHE-ISS-001-analise.md) | BL-025 — CACHE-ISS-001 — Análise Técnica Preparatória | 6 | 15 |
 | [BL-034-OBSERVABILIDADE-LOGS-AGENTES-backlog.md](../../backlog/BL-034-OBSERVABILIDADE-LOGS-AGENTES-backlog.md) | BL-034 — Observabilidade e logs de agentes (master externo) — intake de backlog | 5 | 7 |
-| [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) | RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação | 349 | 114 |
+| [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) | RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação | 350 | 114 |
 
 ### reference
 
@@ -733,12 +733,13 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [HO-2026-10-31-106.md](../../docs/handoffs/HO-2026-10-31-106.md) | HANDOFF — SOT | 0 | 28 |
 | [HO-2026-10-31-107.md](../../docs/handoffs/HO-2026-10-31-107.md) | HANDOFF — SOT | 0 | 28 |
 | [HO-2026-10-31-108.md](../../docs/handoffs/HO-2026-10-31-108.md) | HANDOFF — SOT | 0 | 28 |
-| [HO-2026-10-31-109.md](../../docs/handoffs/HO-2026-10-31-109.md) | HANDOFF — SOT | 6 | 29 |
+| [HO-2026-10-31-109.md](../../docs/handoffs/HO-2026-10-31-109.md) | HANDOFF — SOT | 7 | 29 |
 | [HO-2026-10-31-110.md](../../docs/handoffs/HO-2026-10-31-110.md) | HANDOFF — SOT | 0 | 26 |
 | [HO-2026-10-31-111.md](../../docs/handoffs/HO-2026-10-31-111.md) | HANDOFF — SOT | 0 | 27 |
 | [HO-2026-10-31-112.md](../../docs/handoffs/HO-2026-10-31-112.md) | HANDOFF — SOT | 0 | 27 |
 | [HO-2026-10-31-113.md](../../docs/handoffs/HO-2026-10-31-113.md) | HANDOFF — SOT | 0 | 27 |
 | [HO-2026-10-31-114.md](../../docs/handoffs/HO-2026-10-31-114.md) | HANDOFF — SOT | 0 | 27 |
+| [HO-2026-10-31-115.md](../../docs/handoffs/HO-2026-10-31-115.md) | HANDOFF — SOT | 0 | 27 |
 | [HO-2026-10-31-92.md](../../docs/handoffs/HO-2026-10-31-92.md) | HANDOFF — SOT | 0 | 46 |
 | [HO-2026-10-31-93.md](../../docs/handoffs/HO-2026-10-31-93.md) | HANDOFF — SOT | 0 | 23 |
 | [HO-2026-10-31-94.md](../../docs/handoffs/HO-2026-10-31-94.md) | HANDOFF — SOT | 0 | 23 |
