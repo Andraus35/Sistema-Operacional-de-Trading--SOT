@@ -29,7 +29,7 @@ Leitura: o número de BASpecs varia pouco (9–16); o que explode é o **volume 
 
 ## 3. Proposta (cada item é separável)
 1. **Estimativa na abertura.** O Dossiê/ABERTURA passa a declarar: nº de BASpecs candidatas (títulos), nº de capacidades do ROADMAP cobertas e linhas previstas do Plan. Sem a estimativa, a proposta de "quantidade = 1" é incompleta.
-2. **Teto provisório (a calibrar).** Alerta em 1.000 linhas efetivas de Plan e teto em 1.500, excluindo anexos de texto anterior preservado (INV-07), que passam a arquivo à parte. Acima do teto, divisão obrigatória, proposta a Andraus antes do Plan. Valores **sem calibração**: vêm só da tabela acima.
+2. **Teto provisório, calibrado com o ledger (ver §7).** Medir o **corpo normativo** do Plan (tudo antes dos anexos de texto anterior/transferência/tabelas de rodada). Alerta em ~1.900 linhas de corpo; teto em ~2.000, com confirmação de Andraus para passar. Os anexos de INV-07 saem do cálculo (e, pelo item 6, do arquivo). Base: só 2 Plans no ledger (n=2) — ver limites em §7.
 3. **Regra de corte.** Dividir por **fronteira de contrato** (o que o pedaço consome e produz), nunca por fase nem por tipo de tarefa (GEH-001: handoffs e overhead). Cada pedaço deve ser revisável de forma independente.
 4. **Gate determinístico.** Novo check em `validate_spec_sot.py` (ex.: `[STRUCT-xx]`) que reprova Plan acima do teto antes do Revisor. Substitui a cláusula de divisão auto-avaliada. Informativo no início (mesma régua de introdução gradual de `check_refs.py`); bloqueante só por ordem de Andraus.
 5. **Decomposição confirmada antes do Plan.** Se a estimativa passar de 80% do teto, o Plan só começa após Andraus confirmar a decomposição (evita refazer escopo no meio, como na SPEC-007).
@@ -65,3 +65,44 @@ Leitura: o número de BASpecs varia pouco (9–16); o que explode é o **volume 
 2. **Implicação para o gate:** teto em linhas (item 2 da proposta) é válido como **verificação de segurança**, mas o **critério de corte** deve ser Parnas/INVEST (contrato e capacidade). Tamanho sozinho é métrica fraca (E1, ressalva da comunidade).
 3. **Ajuste sugerido à proposta:** adicionar um segundo eixo ao teto — **unidades lógicas independentes por Spec** — e medir **tempo de revisão por rodada**, para calibrar com dados do próprio SOT (ledger), em vez de importar 200–400 linhas de código.
 4. **Lacunas:** não conferi fontes primárias (relatório SmartBear, Gilb & Graham 1993, Chroma, repositório Google); nenhuma fonte trata especificamente de especificações formais de agentes com revisor LLM.
+
+## 7. Calibração com os dados do ledger (2026-10-31)
+
+> **Dado, não regra.** Fontes: `governance/aprendizado/LEDGER-ACHADOS.md` (rodadas e Médias por linha de trabalho), `git show <commit>:plan.md` (tamanho por versão) e contagem de linhas por seção. **n é muito pequeno:** só 2 Plans têm parecer no ledger (SPEC-007, SPEC-048); SPEC-002…005, 019 e 021 não têm pareceres no repositório; as demais linhas são erratas.
+
+### 7.1 Dados
+| Linha | Tamanho | Rodadas até 0 Média | Médias por rodada | Médias totais | Médias / 100 linhas |
+|---|---|---|---|---|---|
+| SPEC-007 Plan | 3.851 totais; **1.949 de corpo** (anexos R/T/H e textos anteriores = 1.902 linhas, 49%) | 6 | 9→5→5→2→1→0 | 22 | 0,57 total · **1,13 sobre o corpo** |
+| SPEC-048 Plan | 1.657 (v1.0) → 1.935 (v1.4); sem anexos de texto anterior | 3 (R3; R4–R5 só Menores) | 3→1→0→0→0 | 4 | 0,21 |
+| SPEC-006 errata v1.13 | 800 | 3 | 4→1→0→0 | 5 | 0,63 |
+| ERRATUM-SPEC020-002 | 373 | 3 | 4→1→0 | 5 | 1,34 |
+| ERRATUM-REAPONT-001 | 455 | 4 (voltou 1 Média na R3) | 1→0→1→0 | 2 | 0,44 |
+
+### 7.2 O que os dados mostram
+1. **O tamanho total do arquivo engana.** O corpo da SPEC-007 (1.949) é praticamente igual ao da SPEC-048 (1.935), mas a primeira precisou de 6 rodadas e 22 Médias, e a segunda de 3 rodadas e 4 Médias. Metade do arquivo da SPEC-007 eram anexos de texto anterior preservado.
+2. **Tamanho não explica sozinho a convergência.** Documentos pequenos também levaram 3–4 rodadas (erratum SPEC-020: 373 linhas, 5 Médias; maior densidade, 1,34/100). A causa recorrente nos pareceres é a **lista de linhas/âncoras** e o mesmo fato em vários lugares, não o volume.
+3. **O que realmente diferenciou a SPEC-007:** a divisão no meio do Plan (v1.2→v2.0, reescrita), não o tamanho final. Na 048 a separação (SPEC-049) veio **antes** do Plan (na abertura) e o Plan convergiu em 3 rodadas.
+4. **Maior corpo observado que convergiu em ≤ 3 rodadas até 0 Média:** 1.935 linhas (SPEC-048). Maior corpo com Plan homologado: ~1.950 (SPEC-007, após reduzir).
+5. **Não há observação acima de ~1.950 linhas de corpo** que tenha convergido sem reescrita. Logo, qualquer teto acima disso é extrapolação.
+
+### 7.3 Tetos calibrados (provisórios)
+| Parâmetro | Valor | Justificativa pelos dados |
+|---|---|---|
+| Medida | linhas do **corpo normativo** (excluir anexos de texto anterior, transferência e tabelas de rodada) | itens 1 e 2 acima |
+| Alerta | **1.900** linhas de corpo | próximo do maior corpo que convergiu rápido (1.935); nenhum dado abaixo disso mostra problema |
+| Teto | **2.000** linhas de corpo; acima, divisão proposta a Andraus antes de seguir | maior corpo homologado (~1.950); acima não há dado |
+| Gatilho processual (independe do tamanho) | **Mudança de escopo/divisão depois de o Plan começar = nova abertura** (volta a Andraus; Plan antigo congelado) | item 3: foi o maior gerador de rodadas na SPEC-007 |
+| BASpecs por Spec | **~16 como referência**, não teto | todos os Plans medidos têm 9–16 e o volume por BASpec varia mais que a contagem |
+| Rodadas | revisão de processo se passar de **4 rodadas** até 0 Média | 048 e erratas: 3; só a 007 chegou a 6 |
+
+### 7.4 Limites da calibração
+- n=2 Plans; nenhuma estatística (sem intervalo, sem correlação). Os valores são **marcos observados**, não limiares estatísticos.
+- Possível viés de sobrevivência: só Plans que chegaram à revisão aparecem.
+- Não há dados de tokens/tempo (Economicidade: INDETERMINADO) nem de tamanho por rodada na SPEC-007 (histórico git raso).
+- Densidade de achados depende do que o Revisor extraiu para o ledger (heurística; ver aviso do próprio ledger).
+
+### 7.5 Para melhorar a calibração (instrumentação sugerida, sem aplicar)
+1. Registrar no `loop_ledger.py` o **tamanho do alvo por rodada** (`git show <sha>:<arquivo>` e linhas de corpo) ao lado das Médias.
+2. Registrar **tempo/tokens da rodada** quando possível.
+3. Reavaliar os tetos após 4–5 Specs novas (ex.: SPEC-049 em diante) já com a medida; só então propor teto bloqueante.

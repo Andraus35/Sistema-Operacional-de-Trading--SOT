@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "3ca37d14aafb82a2cf2203ca1422676f03612e5cf906550cac8868a83d3cb856",
+  "digest": "c5006c7f6d6dbc588ee9985408e470eb024dd268b788cdd5aa06986d339e12e1",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -136,7 +136,7 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 320,
+   "in": 321,
    "out": 84
   },
   {
@@ -2159,7 +2159,7 @@
    "path": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
-   "in": 18,
+   "in": 19,
    "out": 34
   },
   {
@@ -2467,7 +2467,7 @@
    "path": "governance/aprendizado/LEDGER-ACHADOS.md",
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
-   "in": 18,
+   "in": 19,
    "out": 40
   },
   {
@@ -2580,7 +2580,7 @@
    "area": "governance",
    "title": "Proposta — dimensionamento de Spec: critério medido para \"uma Spec ou várias\"",
    "in": 1,
-   "out": 15
+   "out": 17
   },
   {
    "path": "governance/propostas/MELHORIAS-PROCESSO/RELATORIO-MELHORIAS-AGENTES-E-GATES-2026-10-24.md",
@@ -6275,7 +6275,7 @@
   {
    "id": "SPEC-049",
    "defined_in": "ROADMAP.md",
-   "cited_by": 34
+   "cited_by": 35
   }
  ],
  "edges": [
@@ -38391,6 +38391,11 @@
   },
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
    "to": "atomic-spec.md",
    "type": "path"
   },
@@ -38402,6 +38407,11 @@
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
    "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
+   "to": "governance/aprendizado/LEDGER-ACHADOS.md",
    "type": "path"
   },
   {
