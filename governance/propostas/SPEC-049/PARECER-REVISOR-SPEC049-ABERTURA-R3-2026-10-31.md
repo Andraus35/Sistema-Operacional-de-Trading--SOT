@@ -43,3 +43,6 @@ Resultado de qualquer gate · sha256 do alvo e do research (sem Bash) · veracid
 
 ## 7. Encaminhamento
 Abertura pronta para a homologação de Andraus (ato dele; ata a registrar P-1..P-7 e C-1..C-4). O R3-m01 é Menor e não bloqueia: pode ir ao Especificador (classe O) com a próxima correção ou ficar como condição da homologação, à escolha de Andraus (AGENTS §12). CONFORME condicional não é homologação nem autorização do Plan.
+
+## 8. Adendo do Orquestrador — guarda pós-revisor (DHR-AUDITOR-EXTERNO-018) — dado de estado, não parecer
+- **G1 (`atomic-spec.md` não aberto na sessão do R3, rodada por delta): conferido pelo Orquestrador em 2026-10-31.** O R1 e o R2 já haviam aberto o `atomic-spec.md` (parecer R1 §2 e §3.4; R2 §3 m06) e o R3 herdou essas conferências, como o §3-bis permite. As afirmações da abertura que dependem dele conferem: tabela D0–D8, linha D7 = "Teste … BASpec completo com VERIFICADO POR … HIGH e CRITICAL" (l.52); ENF-07 = "Unidade E3 declara método de falso-DENY" (l.273); CC-11 = Classe C compatível com o risco (l.292); §15 "Abertura de Spec e Dossiê de Pesquisa" (l.439). Nenhuma afirmação do ABERTURA revisão 3 depende de trecho do `atomic-spec.md` diferente dos já conferidos.
