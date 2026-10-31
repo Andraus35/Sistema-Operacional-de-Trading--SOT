@@ -53,3 +53,7 @@ Resultado de qualquer gate · sha256 do alvo/research (sem Bash) · veracidade d
 
 ## 9. Encaminhamento
 Abertura pronta para decisão de Andraus (P-1..P-7, C-1..C-4). Os 2 Menores vão ao Especificador (classe O) no mesmo envio da próxima correção ou ficam como condição da homologação, à escolha de Andraus (AGENTS §12). Não bloqueiam. CONFORME condicional não é homologação nem autorização do Plan.
+
+## 10. Adendo do Orquestrador — guarda pós-revisor (DHR-AUDITOR-EXTERNO-018) — dado de estado, não parecer
+- **G3 (`SPEC-048/plan.md:31` — arquivo não encontrado): falso positivo.** O "31" é a **contagem** de linhas ("Grep de `SPEC-049` em SPEC-048/plan.md: 31 linhas"), não um número de linha. Conferido pelo Orquestrador em 2026-10-31: `grep -c SPEC-049 specs/features/SPEC-048/plan.md` = 31; `reading_view_ref` nas linhas 1103, 1267 e 1439 (como o parecer e o research §8.3 declaram).
+- **G1 (`backlog/RMR-001` não aberto na sessão do R2): conferido pelo Orquestrador.** O painel foi aberto: nenhuma linha contém o gatilho `spec:SPEC-049` (0 ocorrências) e os itens BL-003, BL-010, BL-011, BL-017, BL-029 e BL-035 existem nas linhas 110, 117, 118, 124, 136 e 142; `python scripts/backlog_triggers.py --abertura SPEC-049` = 0 itens vinculados. As afirmações do §9 do ABERTURA que dependem do painel (disposições BL-010/035 REFERÊNCIA, BL-017/029 FORA, nenhum vínculo por regra) permanecem coerentes. O R1 já havia aberto o painel (parecer R1 §2/§3 item 7).
