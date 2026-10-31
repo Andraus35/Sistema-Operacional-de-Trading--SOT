@@ -37,6 +37,7 @@
 | SPEC-049 ABERTURA | R1 | `governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R1-2026-10-31.md` | 0 | 1 | 8 |
 | SPEC-049 ABERTURA | R2 | `governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md` | 0 | 0 | 2 |
 | SPEC-049 ABERTURA | R3 | `governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md` | 0 | 0 | 1 |
+| SPEC-049 PLAN | R1 | `governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R1-2026-10-31.md` | 0 | 3 | 8 |
 | SPEC-? OUTRO | R1 | `governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md` | 0 | 1 | 4 |
 | SPEC-? OUTRO | R2 | `governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R2-2026-10-31.md` | 0 | 0 | 3 |
 | SPEC-? OUTRO | R3 | `governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md` | 0 | 1 | 1 |
@@ -55,6 +56,7 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 | SPEC-048 ABERTURA | 0 → 0 | 2 | R2 |
 | SPEC-048 PLAN | 3 → 1 → 0 → 0 → 0 | 5 | R5 |
 | SPEC-049 ABERTURA | 1 → 0 → 0 | 3 | R3 |
+| SPEC-049 PLAN | 3 | 1 | — |
 | SPEC-? OUTRO | 1 → 0 → 1 → 0 | 4 | R4 |
 
 ### 2-bis. Tamanho do Plan x rodadas (instrumentação de Economicidade; RULE-ECC-07)
@@ -63,6 +65,7 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 |---|---|---|---|---|---|---|
 | SPEC-007 PLAN | 3851 | 1949 | 6 | 22 | 1.13 | n/m |
 | SPEC-048 PLAN | 1935 | 1935 | 5 | 4 | 0.21 | n/m |
+| SPEC-049 PLAN | 1424 | 1424 | 1 | 3 | 0.21 | n/m |
 
 ### 2-ter. Modo da rodada, hash do alvo e tokens (instrumentação do delta por hash; DHR-DELTA-HASH-001)
 
@@ -99,12 +102,13 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 | SPEC-049 ABERTURA | R1 | integral | 07a942c3e73e | 172341 |
 | SPEC-049 ABERTURA | R2 | integral | 6599e96bcef5 | 134928 |
 | SPEC-049 ABERTURA | R3 | delta | 452a4a0ef76b | 105622 |
+| SPEC-049 PLAN | R1 | integral | 89d90ea763bb | 234891 |
 | SPEC-? OUTRO | R1 | delta (inferido) | ausente | n/m |
 | SPEC-? OUTRO | R2 | delta (inferido) | não conferido | n/m |
 | SPEC-? OUTRO | R3 | n/d | ausente | n/m |
 | SPEC-? OUTRO | R4 | n/d | ausente | n/m |
 
-Rodadas por delta: 13/35 · com SHA256-ALVO declarado: 3/35. Convenção no cabeçalho da transcrição: `MODO:`, `SHA256-ALVO:`, `TOKENS:` (tokens só se o ambiente os informar; nunca estimar).
+Rodadas por delta: 13/36 · com SHA256-ALVO declarado: 4/36. Convenção no cabeçalho da transcrição: `MODO:`, `SHA256-ALVO:`, `TOKENS:` (tokens só se o ambiente os informar; nunca estimar).
 
 
 Tamanho = estado ATUAL do `plan.md` (não o de cada rodada); tokens por rodada seguem **n/m** (o repositório não os mede — registrar manualmente em `TELEMETRIA-ONDA0.md`).
@@ -116,16 +120,16 @@ Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo 
 
 | Cod | Categoria | Achados | Rodadas distintas | Linhas distintas | Recorrente | Prevenção registrada |
 |---|---|---|---|---|---|---|
-| C01 | contradicao_interna | 24 | 14 | 5 | SIM | AUSENTE |
-| C02 | ambiguidade_vocabulario | 21 | 17 | 7 | SIM | Parcial: RULE-SEM-01 / CC-10 (Revisor confere à mão) |
-| C03 | precondicao_teste | 3 | 2 | 2 | SIM | AUSENTE |
-| C04 | heranca_rastreabilidade | 16 | 12 | 7 | SIM | Parcial: Revisor |
-| C05 | observabilidade_enforcement | 17 | 9 | 5 | SIM | Parcial: ENF-01..08 e Passo 7 (Revisor) |
+| C01 | contradicao_interna | 25 | 15 | 6 | SIM | AUSENTE |
+| C02 | ambiguidade_vocabulario | 22 | 18 | 8 | SIM | Parcial: RULE-SEM-01 / CC-10 (Revisor confere à mão) |
+| C03 | precondicao_teste | 4 | 3 | 3 | SIM | AUSENTE |
+| C04 | heranca_rastreabilidade | 17 | 13 | 8 | SIM | Parcial: Revisor |
+| C05 | observabilidade_enforcement | 19 | 10 | 6 | SIM | Parcial: ENF-04/07, Passo 7 (Revisor) |
 | C06 | contagem_historico_anexo | 15 | 11 | 7 | SIM | AUSENTE |
-| C07 | citacao_ancora | 37 | 18 | 7 | SIM | Parcial: Grep do Revisor |
-| C08 | decisao_aberta_escopo | 7 | 6 | 3 | SIM | Parcial: CONS-01, `check_doc_sync.py`, Revisor |
+| C07 | citacao_ancora | 39 | 19 | 8 | SIM | Parcial: Grep do Revisor |
+| C08 | decisao_aberta_escopo | 9 | 7 | 4 | SIM | Parcial: CONS-01, `check_doc_sync.py`, Revisor |
 | C09 | seguranca_guarda | 4 | 3 | 2 | SIM | Parcial: pisos E3, ADV D8, Revisor |
-| C10 | estado_maquina | 3 | 3 | 2 | SIM | AUSENTE |
+| C10 | estado_maquina | 4 | 4 | 3 | SIM | AUSENTE |
 | C99 | outros | 30 | 7 | 3 | SIM | AUSENTE |
 
 ## 4. LACUNAS DE PREVENÇÃO (categoria recorrente sem prevenção registrada ou AUSENTE)
@@ -133,10 +137,10 @@ Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo 
 | Cod | Categoria | Achados | Rodadas | Ação exigida pela regra LOOP-001 |
 |---|---|---|---|---|
 | C99 | outros | 30 | 7 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
-| C01 | contradicao_interna | 24 | 14 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
+| C01 | contradicao_interna | 25 | 15 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
 | C06 | contagem_historico_anexo | 15 | 11 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
-| C03 | precondicao_teste | 3 | 2 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
-| C10 | estado_maquina | 3 | 3 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
+| C03 | precondicao_teste | 4 | 3 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
+| C10 | estado_maquina | 4 | 4 | registrar causa-raiz e prevenção proposta em `governance/aprendizado/CAUSAS-PREVENCAO.md`; gate/processo só por ordem de Andraus |
 
 ## 5. Retrospectivas de fechamento (individual e coletiva) — regra LOOP-001
 
