@@ -129,6 +129,10 @@ jobs:
       - name: Backlog abertura tests
         run: python -m unittest tests/test_backlog_abertura.py
 
+      # Classe/Mecanismo por BASpec (RULE-MECH-01..03; STRUCT-14 do validate_spec_sot.py; bloqueante: confere só presença dos campos).
+      - name: Classe/Mecanismo tests
+        run: python -m unittest tests/test_classe_mecanismo.py
+
       # Ledger determinístico dos achados do loop dos construtores (LOOP-001, DHR-LOOP-001; bloqueante: se falhar, a coleta deixou de ser determinística).
       - name: Loop ledger tests
         run: python -m unittest tests/test_loop_ledger.py
