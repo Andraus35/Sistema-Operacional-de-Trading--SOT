@@ -87,6 +87,25 @@ class TestLoopLedger(unittest.TestCase):
             self.assertEqual(L.main(["--root", td]), 0)
             self.assertEqual(L.main(["--root", td, "--check"]), 0)
 
+    def test_tamanho_do_plan_separa_corpo_dos_anexos(self):
+        with tempfile.TemporaryDirectory() as t:
+            root = Path(t)
+            monta(root)
+            plan = root / "specs" / "features" / "SPEC-123" / "plan.md"
+            plan.parent.mkdir(parents=True)
+            plan.write_text("a\nb\nc\n## Anexo R\nx\ny\n", encoding="utf-8")
+            self.assertEqual(L.tamanho_plan(root, "SPEC-123"), (6, 3))
+            self.assertIsNone(L.tamanho_plan(root, "SPEC-999"))
+            self.assertIn("2-bis", L.gerar(root))
+            self.assertIn("| SPEC-123 PLAN | 6 | 3 |", L.gerar(root))
+
+    def test_metadados_da_rodada_modo_sha_e_tokens(self):
+        h = "a" * 64
+        self.assertEqual(L.metadados_rodada(f"MODO: delta\nSHA256-ALVO: {h}\nTOKENS: 72.430\n"), ("delta", "a" * 12, "72.430"))
+        self.assertEqual(L.metadados_rodada("# Parecer R2 por delta\n"), ("delta (inferido)", "ausente", "n/m"))
+        self.assertEqual(L.metadados_rodada("# Parecer\n"), ("n/d", "ausente", "n/m"))
+        self.assertEqual(L.metadados_rodada("# P\nNão conferido: sha256 do documento\n")[1], "não conferido")
+
 
 if __name__ == "__main__":
     unittest.main()

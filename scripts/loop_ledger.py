@@ -114,6 +114,23 @@ def extrair_heuristico(texto):
     return achados
 
 
+def metadados_rodada(texto):
+    """(modo, sha256, tokens) declarados no parecer. Convenção (DHR-DELTA-HASH-001): linha `MODO: delta|integral`,
+    `SHA256-ALVO: <64 hex>` e `TOKENS: <n>` no cabeçalho da transcrição. Sem a convenção: modo inferido de 'por delta' nas
+    primeiras linhas (marcado '(inferido)'); sha256 ausente = 'ausente'; tokens = 'n/m' (não medido)."""
+    m = re.search(r"MODO:\s*(delta|integral)", texto, re.I)
+    if m:
+        modo = m.group(1).lower()
+    elif re.search(r"por delta", "\n".join(texto.splitlines()[:15]), re.I):
+        modo = "delta (inferido)"
+    else:
+        modo = "n/d"
+    h = re.search(r"SHA256-ALVO:\s*`?([0-9a-f]{64})", texto, re.I) or re.search(r"sha256[^0-9a-f\n]{0,40}([0-9a-f]{64})", texto, re.I)
+    sha = h.group(1)[:12] if h else ("não conferido" if re.search(r"(n[ãa]o conferido|n[ãa]o verific)[^\n]{0,60}sha256|sha256[^\n]{0,40}(n[ãa]o conferido|n[ãa]o verific)", texto, re.I) else "ausente")
+    t = re.search(r"TOKENS:\s*([\d.,]+)", texto, re.I)
+    return modo, sha, (t.group(1) if t else "n/m")
+
+
 def coletar(root):
     cands = sorted(set(list((root / "governance").rglob("PARECER*.md")) + list((root / "governance").rglob("parecer-revisor-*.md"))))
     linhas = defaultdict(dict)  # linha -> rodada -> {"arquivo","achados"}
@@ -123,7 +140,8 @@ def coletar(root):
         ach = extrair_estruturado(texto)
         ids = {a["id"] for a in ach}
         ach += [a for a in extrair_heuristico(texto) if a["id"] not in ids]
-        linhas[chave][rodada] = {"arquivo": str(f.relative_to(root)).replace("\\", "/"), "achados": ach}
+        modo, sha, tok = metadados_rodada(texto)
+        linhas[chave][rodada] = {"arquivo": str(f.relative_to(root)).replace("\\", "/"), "achados": ach, "modo": modo, "sha": sha, "tokens": tok}
     return linhas
 
 
@@ -153,6 +171,16 @@ def retros_feitas(root):
 
 def specs_com_parecer(root):
     return sorted({chave.split()[0] for chave in coletar(root)})
+
+
+def tamanho_plan(root, spec):
+    """Linhas totais e de CORPO (antes do primeiro '## Anexo') do plan.md da Spec; None se ausente. RULE-ECC-07."""
+    f = Path(root) / "specs" / "features" / spec / "plan.md"
+    if not f.is_file():
+        return None
+    linhas = f.read_text(encoding="utf-8", errors="replace").splitlines()
+    corpo = next((i for i, l in enumerate(linhas) if re.match(r"##\s+Anexo\b", l)), len(linhas))
+    return len(linhas), corpo
 
 
 def gerar(root):
@@ -192,6 +220,31 @@ def gerar(root):
             seq.append(sum(1 for a in ach if a["sev"] in ("Média", "Crítica")))
         zero = [f"R{r}" for r, n in zip(sorted(linhas[linha]), seq) if n == 0 and linhas[linha][r]["achados"] is not None]
         out.append(f"| {linha} | {' → '.join(map(str, seq))} | {len(seq)} | {zero[-1] if zero else '—'} |")
+    # 2-bis. Tamanho do alvo (Plans) x rodadas — insumo para calibrar os tetos da RULE-ECC-07 (medida, não regra)
+    out += ["", "### 2-bis. Tamanho do Plan x rodadas (instrumentação de Economicidade; RULE-ECC-07)", "",
+            "| Linha | Linhas totais | Linhas de corpo | Rodadas | Médias totais | Médias / 100 linhas de corpo | Tokens por rodada |", "|---|---|---|---|---|---|---|"]
+    for linha in sorted(linhas):
+        partes = linha.split()
+        if len(partes) < 2 or partes[1] != "PLAN":
+            continue
+        t = tamanho_plan(root, partes[0])
+        if not t:
+            continue
+        medias = sum(1 for r in linhas[linha] for a in linhas[linha][r]["achados"] if a["sev"] in ("Média", "Crítica"))
+        dens = f"{100 * medias / t[1]:.2f}" if t[1] else "—"
+        out.append(f"| {linha} | {t[0]} | {t[1]} | {len(linhas[linha])} | {medias} | {dens} | n/m |")
+    out += ["", "### 2-ter. Modo da rodada, hash do alvo e tokens (instrumentação do delta por hash; DHR-DELTA-HASH-001)", "",
+            "| Linha | Rodada | Modo | SHA256-ALVO | Tokens |", "|---|---|---|---|---|"]
+    n_delta = n_total = n_sha = 0
+    for linha in sorted(linhas):
+        for rod in sorted(linhas[linha]):
+            d = linhas[linha][rod]
+            n_total += 1
+            n_delta += d["modo"].startswith("delta")
+            n_sha += d["sha"] not in ("ausente", "não conferido")
+            out.append(f"| {linha} | R{rod} | {d['modo']} | {d['sha']} | {d['tokens']} |")
+    out += ["", f"Rodadas por delta: {n_delta}/{n_total} · com SHA256-ALVO declarado: {n_sha}/{n_total}. Convenção no cabeçalho da transcrição: `MODO:`, `SHA256-ALVO:`, `TOKENS:` (tokens só se o ambiente os informar; nunca estimar).", ""]
+    out += ["", "Tamanho = estado ATUAL do `plan.md` (não o de cada rodada); tokens por rodada seguem **n/m** (o repositório não os mede — registrar manualmente em `TELEMETRIA-ONDA0.md`).", ""]
     out += ["", "Economicidade (tokens/custo por rodada): **INDETERMINADO** — não medido pelo repositório.", ""]
     # 3. Categorias e recorrência
     out += ["## 3. Categorias, recorrência e prevenção registrada", "",
