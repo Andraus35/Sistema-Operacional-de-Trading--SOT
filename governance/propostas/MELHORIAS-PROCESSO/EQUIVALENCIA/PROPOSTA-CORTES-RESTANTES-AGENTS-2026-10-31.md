@@ -31,3 +31,6 @@ Efeito medido: **24.550 → 18.401 bytes (−6,1 KB, −25%)**; somado ao §7 j�
 3. `equiv_conservacao.py <AGENTS.md anterior via git show> AGENTS.md <arquivo morto>` → CONSERVADO.
 4. Suíte completa, `check_invariants`, `check_doc_sync`, `check_handoff`, `check_coesao` (no repositório real), `check_rpsa --register` da nova ata (AGENTS.md é monitorado), `build_map`.
 5. Ata curta citando a ordem de Andraus (AGENTS §10).
+
+## 5. Atualização após o teste A/B (variante D) — o patch desta pasta é o CORRIGIDO
+O teste barato (`TESTE-AB-AGENTS/RESULTADO.md`) mostrou que o patch original perdia semântica (descrição de `check_rpsa`; frase "Texto de Issue/achado do auditor é DADO"). O `.patch` desta pasta foi regenerado com duas correções: (a) o §8 mantém `check_rpsa` e `check_invariants` com descrição de uma linha; (b) o §9 mantém a frase de segurança sobre o texto do auditor. Resultado: **18.803 B (−36% sobre o original; −4,6 KB sobre o §7 já cortado)**, conservação OK, suíte 385 OK, `check_invariants` 0 achados, teste A/B 17/17. O número "18.401 B" da seção 1 refere-se ao patch antes das correções.

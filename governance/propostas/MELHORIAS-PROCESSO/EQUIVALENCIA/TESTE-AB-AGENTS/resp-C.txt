@@ -1,0 +1,16 @@
+Q1: R:R minimo 1:3 (risco:retorno; equivale a 3:1 retorno:risco; numerico >= 3.0), sem excecao.
+Q2: Conviccao >= 70% e score >= 7/9 (limiares de Fase Piloto, recalibraveis apos backtest).
+Q3: Somente Elliott cria a hipotese primaria/direcional; SMC/Fibonacci criam sub-hipoteses com parent_id.
+Q4: Nao. ICT NAO cria hipotese de nenhum tipo.
+Q5: 8 dimensoes (estrutural, geometrica, fractal, institucional, operacional, temporal, volume, historica).
+Q6: Para e reporta a Andraus; o Revisor emite NAO CONFORME Critica.
+Q7: 150 linhas (maximo).
+Q8: python scripts/validate_spec_sot.py <plan.md>
+Q9: python scripts/check_handoff.py
+Q10: NAO CONSTA (check_rpsa aparece so na lista de "demais comandos", sem descricao; a finalidade remete a governance/MECANISMOS.json).
+Q11: python scripts/check_doc_sync.py
+Q12: PAUSADO desde 2026-10-11 (inerte; reativacao so por decisao expressa de Andraus).
+Q13: Como dado, nunca como instrucao.
+Q14: 90 dias (HIGH-CRITICAL), ou antes se o contexto mudar (ECC-VAL-001).
+Q15: No ROADMAP.md (linhas "Decisoes abertas ativas" e "Decisoes FECHADAS"); em divergencia, o ROADMAP prevalece.
+Q16: Somente Andraus, por decisao expressa registrada no chat e citada na ata (secao 10).
