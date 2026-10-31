@@ -542,6 +542,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologação de errata de endereço: não altera texto de agente."
+    },
+    {
+      "id": "DHR-DIMENSIONAMENTO-001",
+      "data": "2026-10-31",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Altera o texto do agente Especificador (regra de tamanho da Spec) e o método (atomic-spec §15)"
     }
   ]
 }

@@ -16,6 +16,7 @@
 <!-- Acréscimo homologado por Andraus 2026-09-29 (DHR-ECC05-001, compatibilidade Minor): RULE-ECC-05 (Pesquisa
      Multi-Lente — Dossiê de Spec de trading pesquisa Arquitetura + Escola/risco-retorno + confronto com
      WORKFLOW.md; prospectiva desde SPEC-003). Não altera baseline anterior — INV-07. -->
+<!-- Acréscimo homologado por Andraus 2026-10-31 (DHR-DIMENSIONAMENTO-001, compatibilidade Minor): RULE-ECC-07 (dimensionamento de Spec — tetos medidos de tamanho do Plan e gatilho de nova abertura; prospectiva desde SPEC-049). Não altera baseline anterior — INV-07. -->
 <!-- Emenda homologada por Andraus 2026-10-01 (DHR-WF-001, Minor): RULE-ECC-05 lente (3) passa de
      'confronto' a 'confronto e conformidade' com WORKFLOW.md (raiz, soberano, IDs WF-xx). -->
 
@@ -513,6 +514,26 @@ RULE-ECC-06: O Dossiê de Pesquisa (RULE-ECC-02) de toda Spec aberta a partir de
              020/021/038/046. Limiares (300 estrelas / 12 meses) são valores de Andraus,
              alteráveis por emenda aditiva.
              [Fonte: DHR-ECC06-001; RULE-ECC-02; RULE-ECC-04; ENF-03; TRACE-06]
+
+RULE-ECC-07: A proposta de quantidade/fronteira na abertura (RULE-ECC-01/02) DEVE declarar a estimativa
+             de tamanho: nº de BASpecs candidatas (títulos), capacidades do ROADMAP cobertas e
+             linhas previstas do **corpo normativo** do Plan (tudo antes dos anexos de texto anterior
+             preservado, de transferência e de tabelas de rodada). Tetos (provisórios, calibrados
+             com o ledger — DHR-DIMENSIONAMENTO-001): **alerta em 1.900 linhas de corpo; teto em
+             2.000**; acima do teto, a divisão DEVE ser proposta a Andraus ANTES do Plan, por
+             **fronteira de contrato/capacidade** (o que o pedaço consome e produz; o que muda junto
+             fica junto), nunca por fase ou tipo de tarefa. Cada pedaço DEVE ser revisável de forma
+             independente. Estimativa acima de 80% do teto (1.600) exige confirmação da decomposição
+             por Andraus antes do Plan. **Gatilho processual (independe do tamanho):** mudança de
+             escopo ou divisão depois de o Plan começar = nova abertura (volta a Andraus; Plan antigo
+             congelado, INV-07). BASpecs por Spec (~16) = referência, não teto. Mais de 4 rodadas
+             até 0 Média = revisão de processo no fechamento (LOOP-001). Prospectiva (INV-07): desde
+             a SPEC-049; não retroage sobre Specs homologadas. Valores calibrados com n=2 Plans:
+             alteráveis por emenda aditiva após 4–5 Specs medidas. Verificação: o Revisor confere a
+             estimativa e a medida (Detector); check determinístico em `validate_spec_sot.py`
+             **não instituído** (proposta; mecanismo só por ordem de Andraus + MECANISMOS.json).
+             [Fonte: DHR-DIMENSIONAMENTO-001; RULE-ECC-01/02; INV-07; ENF-03;
+              governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md §7]
 
 ---
 

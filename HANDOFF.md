@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-10-31-95
-previous: HO-2026-10-31-94
+handoff_id: HO-2026-10-31-96
+previous: HO-2026-10-31-95
 data: 2026-10-31
 branch: ccr-3a6df80c-nej9ne
 base_commit: 82296ba
@@ -14,7 +14,7 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência com a realidade, a realidade prevalece.
 
 ## 1. Frente atual
-As 3 frentes da ordem `DHR-RETRO-001` estão FEITAS e homologadas (errata SPEC-006 v1.13 · ERRATUM-SPEC020-002 F1 · ERRATUM-REAPONT-001). **PR #133 MESCLADO** na `main` (`82296ba`). Nenhuma Spec nova aberta. Auditoria de dimensionamento de Spec feita (sem critério medido de "uma ou várias Specs"); proposta em `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md`, aguardando Andraus.
+As 3 frentes da ordem `DHR-RETRO-001` estão FEITAS e homologadas (errata SPEC-006 v1.13 · ERRATUM-SPEC020-002 F1 · ERRATUM-REAPONT-001). **PR #133 MESCLADO** na `main` (`82296ba`). Nenhuma Spec nova aberta. **RULE-ECC-07 (dimensionamento de Spec: alerta 1.900 / teto 2.000 linhas de corpo; gatilho de nova abertura) aplicada por ordem de Andraus** (`DHR-DIMENSIONAMENTO-001`; RULES.md, atomic-spec §15, especificador.md §5; prospectiva desde SPEC-049). PR aberto, aguardando a ordem de Andraus para mesclar. Check determinístico em `validate_spec_sot.py` **não instituído**.
 
 ## 2. Estado (fatos conferidos em 2026-10-31)
 - **Mesclados na `main`:** PR #133 (`82296ba`, 3 frentes DHR-RETRO-001), PR #131 (errata SPEC-006 + retrospectivas + roteamento, `b097580`) e PR #132 (aviso de merge + erratum SPEC-020 + detector, `6d3b0f9`).
@@ -32,7 +32,7 @@ Categorias mais recorrentes: **C07** citação/âncora (34) · **C02** ambiguida
 (a) ~~Mesclar o PR #133~~ — FEITO. (b) Passos à parte pendentes: erratum **F2** da SPEC-020 (junto da SPEC-048); errata da **SPEC-007** (calibração F1, `valid_from` na chave natural da relação, submissão parcial de selo, texto de (ix)/EC-KFH-004 (ii)); atualização aditiva de **CATALOGO/RMR-001 (BL-017)**; **CONFLICT-MAP** (COL-EXP-05, entrada SPEC-020); etapa futura de **revisão das Specs pretéritas** (intenção de Andraus, sem ordem/escopo). (c) **Abrir SPEC-049** (WikiRAG Reading View; Dossiê próprio — `--retro-check` já liberado). (d) Antes de qualquer BUILD: mecanismo de assinatura (DHR-SPEC007-007) e primeiras liberações assinadas. (e) Livro Q7c: decidido (DHR-SPEC007-006); falta o ato por fonte na construção. **Seguem abertas (ROADMAP):** J-001, G-001, K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, ECC-03-001, WORKFLOW-SOT-001 (WF-D03); mais CKG-STRUCT-ORIGIN-001 e produtor/gatilho de promoção.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
-`DHR-RETRO-001`, `DHR-SPEC006-005`, `DHR-SPEC020-002`, `DHR-REAPONT-001`, `DHR-ROTEAMENTO-007`, `DHR-DOCSYNC-003`, `DHR-MERGE-001`, `DHR-SPEC048-002`, `DHR-SPEC007-005`, `DHR-LOOP-001`. Decisões abertas/fechadas: ler o `ROADMAP.md`.
+`DHR-DIMENSIONAMENTO-001`, `DHR-RETRO-001`, `DHR-SPEC006-005`, `DHR-SPEC020-002`, `DHR-REAPONT-001`, `DHR-ROTEAMENTO-007`, `DHR-DOCSYNC-003`, `DHR-MERGE-001`, `DHR-SPEC048-002`, `DHR-SPEC007-005`, `DHR-LOOP-001`. Decisões abertas/fechadas: ler o `ROADMAP.md`.
 
 ## 7. Becos sem saída
 Dar Bash ao Revisor; refazer SPEC-006/020; tratar decisão do `AGENTS.md` como mais atual que o ROADMAP; chamar Especificador/Revisor sem `model`+`CLASSE-TAREFA` (o hook nega); re-apontar recuperação de EXPERIÊNCIA à SPEC-048 (endereço é SPEC-009/017, indicativo); editar baseline fora de erratum homologado; mesclar sem ordem de Andraus.
@@ -49,7 +49,7 @@ Dar Bash ao Revisor; refazer SPEC-006/020; tratar decisão do `AGENTS.md` como m
 - [ ] ROADMAP: linhas "Decisões abertas ativas"/"Decisões FECHADAS"; versão vigente de `WORKFLOW.md`
 
 ## 10. Aguardando Andraus
-**Só de Andraus:** propostas P7–P9 das retrospectivas · proposta de dimensionamento de Spec (tetos a calibrar) · erratum F2 da SPEC-020, errata da SPEC-007, CATALOGO/RMR-001 (BL-017) e CONFLICT-MAP · revisão futura das Specs pretéritas · abertura da SPEC-049 · mecanismo de assinatura (BUILD) · demais decisões abertas do ROADMAP (J-001, G-001, K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03) · destino do Auditor Externo (PAUSADO), D-PCC-3/4/5.
+**Só de Andraus:** propostas P7–P9 das retrospectivas · check determinístico do dimensionamento (`validate_spec_sot.py` + MECANISMOS.json) e recalibração dos tetos após 4–5 Specs medidas · mesclar o PR do dimensionamento · erratum F2 da SPEC-020, errata da SPEC-007, CATALOGO/RMR-001 (BL-017) e CONFLICT-MAP · revisão futura das Specs pretéritas · abertura da SPEC-049 · mecanismo de assinatura (BUILD) · demais decisões abertas do ROADMAP (J-001, G-001, K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03) · destino do Auditor Externo (PAUSADO), D-PCC-3/4/5.
 
 ## 11. Ponteiros
-Atas em `governance/` (nome começa pelo ID): DHR-RETRO-001, DHR-REAPONT-001, DHR-SPEC020-002, DHR-SPEC006-005, DHR-ROTEAMENTO-007, DHR-DOCSYNC-003, DHR-MERGE-001 · erratas: `governance/ERRATUM-REAPONT-001*`, `governance/ERRATUM-SPEC020-002*`, `specs/features/SPEC-006/errata-v1.13.md` · pareceres/fichas em `governance/propostas/SPEC-006/`, `governance/propostas/SPEC-020/`, `governance/propostas/REAPONT/` · `governance/aprendizado/` · `governance/MECANISMOS.json` · `scripts/roteador_modelos.py`, `scripts/aplicar_ficha_m.py`, `scripts/merge_ready.py`, `scripts/andraus-ask-guard.js` · `docs/handoffs/` (HO-2026-10-31-94) · `docs/mapa/MAPA-PROJETO.md`
+Atas em `governance/` (nome começa pelo ID): DHR-RETRO-001, DHR-REAPONT-001, DHR-SPEC020-002, DHR-SPEC006-005, DHR-ROTEAMENTO-007, DHR-DOCSYNC-003, DHR-MERGE-001 · erratas: `governance/ERRATUM-REAPONT-001*`, `governance/ERRATUM-SPEC020-002*`, `specs/features/SPEC-006/errata-v1.13.md` · pareceres/fichas em `governance/propostas/SPEC-006/`, `governance/propostas/SPEC-020/`, `governance/propostas/REAPONT/` · `governance/aprendizado/` · `governance/MECANISMOS.json` · `scripts/roteador_modelos.py`, `scripts/aplicar_ficha_m.py`, `scripts/merge_ready.py`, `scripts/andraus-ask-guard.js` · `docs/handoffs/` (HO-2026-10-31-95) · `docs/mapa/MAPA-PROJETO.md`
