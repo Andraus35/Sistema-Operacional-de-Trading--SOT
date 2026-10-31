@@ -17,3 +17,7 @@ Colunas: **Cod** | Categoria | Causa-raiz (hipótese do Orquestrador, a validar)
 | C09 | seguranca_guarda | Efeito externo irreversível (envio, reenvio, publicação) por caminho não coberto pela guarda | Parcial: pisos E3, ADV D8, Revisor | Lista de caminhos de efeito por Spec (INV de alcance) + ADV por caminho | Conformidade | 2026-10-24 |
 | C10 | estado_maquina | Tabela de estados em prosa, contradição só vista por leitura | AUSENTE | G-F máquina de estados em tabela verificável | Eficácia | 2026-10-24 |
 | C99 | outros | Classificação heurística não casou; revisar manualmente e, se recorrente, propor categoria nova | AUSENTE | Revisar taxonomia | Efetividade | 2026-10-24 |
+
+| C07 | citacao_ancora | (2026-10-31) Lista de linhas atualizada à mão omitiu 5 das 10 menções (REAPONT M-A) | Parcial: Grep do Revisor | Lista gerada por script a partir da lista antiga + declaração de adicionais (P3/P7) | Eficiência | 2026-10-31 |
+| C01 | contradicao_interna | (2026-10-31) Divisão por grupo (A/B) feita numa seção e não propagada às demais (SPEC-020 N-1) | AUSENTE | Tabela fato→locais como checklist de propagação (P2 em vigor) + P7 | Eficácia | 2026-10-31 |
+| C04 | heranca_rastreabilidade | (2026-10-31) Escopo ampliado sem ata (EXP como RAG, REAPONT M-1; relação sem campo, SPEC-006 A1/A3) | Parcial: Revisor | Abrir o ID de origem da linha antes de classificar; item sem dono em ata vira [DECISÃO NECESSÁRIA] | Conformidade | 2026-10-31 |

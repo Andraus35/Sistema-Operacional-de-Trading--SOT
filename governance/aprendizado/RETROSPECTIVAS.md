@@ -8,6 +8,8 @@ Linha-índice (lida pelo script; Estado `FEITA` só quando a seção corresponde
 |---|---|---|---|
 | SPEC-007 | Plan reduzido homologado (DHR-SPEC007-005); 6 rodadas de Plan + 3 de abertura | 2026-10-25 | FEITA |
 | SPEC-048 | Abertura (DHR-SPEC048-001) e Plan v1.4 (DHR-SPEC048-002) homologados; 2 rodadas de abertura + 5 de Plan | 2026-10-25 | FEITA |
+| SPEC-006 | Errata v1.13 (E-1..E-4) homologada (DHR-SPEC006-005); 4 rodadas (R1 e R2 NÃO CONFORME) | 2026-10-31 | FEITA |
+| SPEC-020 | ERRATUM-SPEC020-002 (F1) homologado (DHR-SPEC020-002) e ERRATUM-REAPONT-001 (DHR-REAPONT-001); 3 + 4 rodadas | 2026-10-31 | FEITA |
 
 ## Roteiro de cada retrospectiva (checklist; todo item exige evidência do ledger ou do parecer)
 1. **Dados:** rodar `loop_ledger.py`; copiar Médias por rodada, rodadas até 0 Média, categorias recorrentes e lacunas de prevenção da Spec; % de achados resolvidos por classe M (economia de rodada).
@@ -55,3 +57,12 @@ As 3 propostas foram **aprovadas na íntegra** e implementadas: (a) `_cria_algo`
 
 ### Nota de erro do Orquestrador (individual), 2026-10-30 — achado M-1 do ERRATUM-SPEC020-002 (append-only)
 A ordem de serviço do erratum listou SPEC-020-PRINC-001 como ABERTA copiando o `AGENTS.md` §7, enquanto o `ROADMAP.md` (que prevalece) a dá FECHADA (DHR-SPEC020-001). O Especificador sinalizou a divergência; o Revisor a pegou como Média C08. Causa: fonte errada para o estado de decisões. Prevenção: extrair abertas/fechadas só de `ROADMAP.md` "Decisões abertas ativas"/"Decisões FECHADAS" na ordem de serviço. Primeiro uso do roteamento obrigatório com o Revisor (S3/opus, `ALVO:`) e da classe M na 1ª rodada: 4 de 4 Menores mecânicos aplicados sem falso positivo.
+
+
+## Retrospectiva SPEC-006 (errata v1.13) e SPEC-020 (ERRATUM-002 F1) + ERRATUM-REAPONT-001 — Orquestrador, 2026-10-31
+**1. Dados (ledger).** Errata SPEC-006: 4 pareceres (R1 e R2 NÃO CONFORME: 4 Médias + 1 Média; R3 e R4 CONFORME condicional). ERRATUM-SPEC020-002: R1 NÃO CONFORME (4 Médias), R2 NÃO CONFORME (1 Média), R3 CONFORME condicional. ERRATUM-REAPONT-001: R1 NÃO CONFORME (1 Média), R2 CONFORME condicional, R3 NÃO CONFORME (1 Média), R4 CONFORME condicional. Menores mecânicos aplicados pelo Orquestrador por ficha M: 1 (R1 SPEC-006) + 4/4 + 1 + 3/3 (SPEC-020) + 1 + 1 (REAPONT) — antes do detector de ID inteiro 3 de 7 escalavam em falso. Categorias mais recorrentes na sessão: C07 citação/âncora (listas de linhas), C01 contradição interna (divisão por grupo propagada pela metade), C04 herança/rastreabilidade (escopo ampliado sem ata).
+**2. Especificador.** Corrige a Média apontada e reintroduz o mesmo tipo de falha na vizinhança (N-1, M-A: ao dividir/atualizar uma lista, propaga a divisão a metade dos locais). Evitaria: tabela fato→locais gerada da tabela de decisão e conferida por Grep contra a fonte, antes de entregar.
+**3. Revisor.** Pegou 2 erros de CONTEÚDO que gates não pegam (recuperação de experiência tratada como RAG; lista de linhas incompleta) — valor da revisão semântica. Limite recorrente: sem Bash/gate/git; G1 (núcleo do Passo 0) frequentemente não aberto em rodadas por delta.
+**4. Orquestrador.** Erros próprios: ordem de serviço copiou decisões do AGENTS.md defasado (M-1 do ERRATUM-SPEC020-002); `git stash` durante a suíte; roteamento por modelo não era obrigatório (corrigido: R-AC7). Acertos: classe M aplicada na 1ª rodada; aviso determinístico de "pronto para mesclar".
+**5. Coletivo.** ~11 rodadas de Revisor para 3 erratas curtas; custo dominado por listas de linhas e por escopo ampliado sem ata. Economicidade: INDETERMINADO.
+**6. Propostas** (só Andraus; nenhuma aplicada): P7 gerar a tabela fato→locais e as listas de linhas por script (G-H âncora por ID+hash, já P3) e conferir contra Grep antes de reenviar ao Revisor; P8 `revisor_gate`/MCP disponível ao Revisor em nuvem (hoje G1/G2 sempre pendentes); P9 checklist do Orquestrador "estado das decisões só do ROADMAP" na ordem de serviço (já em prática). **Decisão de Andraus: pendente.**
