@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "5d7ea9bb1c6e91d2de275ee1dd5abc219f005cc57ae59a2f54f97c173dc156fe",
+  "digest": "1e3982cc89e4cd88fd2f673fa5b0bfd1ac7af388c211d091edb0dbc591150021",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2124,7 +2124,7 @@
    "path": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
-   "in": 3,
+   "in": 4,
    "out": 32
   },
   {
@@ -2433,7 +2433,7 @@
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
    "in": 17,
-   "out": 38
+   "out": 39
   },
   {
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
@@ -2595,6 +2595,13 @@
    "title": "Parecer do Revisor — ERRATUM-REAPONT-001 v1.2 — R2 por delta (S2, sonnet) — 2026-10-31",
    "in": 2,
    "out": 8
+  },
+  {
+   "path": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md",
+   "area": "governance",
+   "title": "Parecer do Revisor — ERRATUM-REAPONT-001 v1.3 — R3 delta curta (S2, sonnet) — 2026-10-31",
+   "in": 2,
+   "out": 3
   },
   {
    "path": "governance/propostas/ROTEAMENTO-MODELOS/AUDITORIA-ROTEAMENTO-MODELOS_PROPOSTA.md",
@@ -3279,7 +3286,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 154,
+   "in": 155,
    "out": 38
   },
   {
@@ -3426,7 +3433,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 60,
+   "in": 61,
    "out": 41
   },
   {
@@ -5534,12 +5541,12 @@
   {
    "id": "RULE-KFH-015",
    "defined_in": null,
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "RULE-KFH-016",
    "defined_in": null,
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "RULE-KFH-017",
@@ -6004,7 +6011,7 @@
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 154
+   "cited_by": 155
   },
   {
    "id": "SPEC-008",
@@ -6209,7 +6216,7 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 60
+   "cited_by": 61
   },
   {
    "id": "SPEC-049",
@@ -36600,6 +36607,11 @@
   },
   {
    "from": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "to": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/aprendizado/LEDGER-ACHADOS.md",
    "to": "governance/propostas/SPEC-006/PARECER-REVISOR-SPEC006-ERRATA-v1.13-R1-2026-10-25.md",
    "type": "path"
   },
@@ -37895,6 +37907,21 @@
   },
   {
    "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R2-2026-10-31.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md",
+   "to": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md",
    "to": "specs/features/SPEC-048/plan.md",
    "type": "id"
   },
