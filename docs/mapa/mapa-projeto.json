@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "ab4c46f4bfe64dc5ce2f9b344dd5941951d64ab734f5bc917b0773496305550f",
+  "digest": "8b2cba6ac3259ca0dba181e5722c4d6907998ad0f65612d4a037d5c6a576283b",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -185,7 +185,7 @@
    "path": "backlog/BL-034-OBSERVABILIDADE-LOGS-AGENTES-backlog.md",
    "area": "backlog",
    "title": "BL-034 — Observabilidade e logs de agentes (master externo) — intake de backlog",
-   "in": 7,
+   "in": 6,
    "out": 7
   },
   {
@@ -193,7 +193,7 @@
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
    "in": 343,
-   "out": 114
+   "out": 115
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
@@ -3076,7 +3076,7 @@
    "path": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
    "area": "governance",
    "title": "Pesquisa — telemetria de custo em tokens de sistemas agênticos (insumo para BL-034 / Dossiê da SPEC-040)",
-   "in": 1,
+   "in": 2,
    "out": 5
   },
   {
@@ -3872,12 +3872,17 @@
   {
    "id": "BL-034",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 7
+   "cited_by": 6
   },
   {
    "id": "BL-035",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
    "cited_by": 58
+  },
+  {
+   "id": "BL-036",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 1
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -5797,7 +5802,7 @@
   {
    "id": "RULE-KFH-014",
    "defined_in": null,
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "RULE-KFH-015",
@@ -9464,6 +9469,11 @@
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/propostas/AUDITOR-EXTERNO/DOSSIE-PESQUISA.md",
+   "type": "path"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
    "type": "path"
   },
   {
