@@ -56,3 +56,6 @@ plan.md lido por inteiro (l.1-1583) e checks.md inteiro · SPEC-007 l.430-447 e 
 
 ## 10. Encaminhamento
 CONFORME condicional → Andraus: registrar na ata a ordem do Plan e as respostas P-1/P-2 e os atos 4/5 (já respondidos no chat; não é homologação); decidir a pergunta nova do 1º registro da regra v1 (errata ou ato próprio). O Orquestrador roda `aplicar_ficha_m.py` para R3-m02a/b/c. R3-m01, m03 e m04 vão ao Especificador no próximo envio ou ficam como condição da homologação, à escolha de Andraus.
+
+## 11. Adendo do Orquestrador — guarda pós-revisor (DHR-AUDITOR-EXTERNO-018) — dado de estado, não parecer
+- **G2 (gate de código rodado pelo harness sobre `plan.md`):** `VEREDITO D: PASSOU_D (≠ CONFORME ≠ homologação)`, sinais H = 0; as 3 verificações informativas do repositório inteiro apontam para OUTROS arquivos, fora do escopo desta Spec. **Não há achado do gate a confirmar ou descartar** com arquivo:linha; coincide com o gate do Orquestrador (`revisor_gate.py` completo = PASSOU_D, sem o aviso `campos_atribuidos_baseline` do R2; `validate_spec_sot.py` 13/13). O teto de veredito continua CONFORME condicional; o veredito semântico do R3 (4 Menores) não depende do gate.

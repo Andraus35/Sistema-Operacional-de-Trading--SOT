@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "505d6303f9343b3cd00333a58b8a271cfb66e0e38ccc6c9598bbe6c3d1528833",
+  "digest": "004bbd092ae7f2765bfe255fdd241c232ea472ab666333011aff2176a1093909",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1438,7 +1438,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 60,
+   "in": 61,
    "out": 5
   },
   {
@@ -3119,7 +3119,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Plan v1.2 da SPEC-049 (WikiRAG Reading View) — R3 por delta (S2, sonnet) — 2026-10-31",
    "in": 1,
-   "out": 9
+   "out": 11
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -3370,7 +3370,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 207,
+   "in": 208,
    "out": 9
   },
   {
@@ -4058,7 +4058,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 60
+   "cited_by": 61
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -44724,6 +44724,11 @@
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R3-2026-10-31.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R3-2026-10-31.md",
    "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
    "type": "id"
   },
@@ -44740,6 +44745,11 @@
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R3-2026-10-31.md",
    "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R3-2026-10-31.md",
+   "to": "specs/features/SPEC-001/plan.md",
    "type": "path"
   },
   {
