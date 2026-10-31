@@ -71,3 +71,6 @@ Cond. 13: SPEC-006 l.400 ("valid_to = null ≡ +∞"), l.556-558 (RULE-CKG-012),
 
 ## 9. Encaminhamento
 Devolver ao Especificador (classe O) com PARECER e FICHA classificando todos os achados; M01..M03 são condição de nova revisão; Menores no mesmo envio; 1 mecânico (R1-m01) fica com o Orquestrador. A rodada 2 pode ser por delta. Pontos para Andraus na homologação: P-1 (guarda de exibição) e P-2 (depois da correção de M03), mais m08(b).
+
+## 10. Adendo do Orquestrador — guarda pós-revisor (DHR-AUDITOR-EXTERNO-018) — dado de estado, não parecer
+- **G2 (gate de código rodado pelo harness sobre `specs/features/SPEC-049/plan.md`):** resultado `VEREDITO D: PASSOU_D (≠ CONFORME ≠ homologação)`, sinais H = 0; as 3 verificações informativas do repositório inteiro apontam para OUTROS arquivos, fora do escopo desta Spec. **Não há achado do gate a confirmar ou descartar** com arquivo:linha: o resultado coincide com o do Orquestrador (`revisor_gate.py` completo = PASSOU_D após a correção da contagem em dígito da l.41, já declarada no pedido ao Revisor; `validate_spec_sot.py` 13/13). O teto de veredito continua CONFORME condicional; o veredito semântico do R1 (NÃO CONFORME por M01–M03) não depende do gate.
