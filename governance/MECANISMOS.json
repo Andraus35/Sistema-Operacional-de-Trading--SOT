@@ -184,8 +184,8 @@
       "canal": "CI + CLI",
       "tipo": "gate",
       "estado": "ativo",
-      "enforca": "Estrutura do plan.md (gate determinístico)",
-      "verificado_em": "2026-10-18: ao vivo — SPEC-006 ⇒ 13/13 PASS, exit 0"
+      "enforca": "Estrutura do plan.md (gate determinístico); STRUCT-14 confere os campos do bloco CLASSE/MECANISMO por BASpec (RULE-MECH-01..03; só presença, qualidade segue com o Revisor/CC-11)",
+      "verificado_em": "2026-10-31: ao vivo — 14 plans de specs/features ⇒ STRUCT-14 PASS; tests/test_classe_mecanismo.py 8/8 (reprova bloco incompleto)"
     },
     {
       "id": "gate.gate-manifest",
