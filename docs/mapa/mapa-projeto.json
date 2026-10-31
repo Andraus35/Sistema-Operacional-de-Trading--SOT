@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "0080eebc9501352285ea221ad52940f59f6b63bdbfaa01413801048d9cf06930",
+  "digest": "959b88425a11c911b0a1161ed472c2b24198de97a1bb607d688f9a4c3598e6ac",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2565,7 +2565,7 @@
    "path": "governance/aprendizado/LEDGER-ACHADOS.md",
    "area": "governance",
    "title": "LEDGER DE ACHADOS DO LOOP DOS CONSTRUTORES — GERADO (não editar à mão)",
-   "in": 19,
+   "in": 20,
    "out": 45
   },
   {
@@ -3020,7 +3020,7 @@
    "path": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R1-2026-10-31.md",
    "area": "governance",
    "title": "Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) — R1 integral (S2, sonnet) — 2026-10-31",
-   "in": 1,
+   "in": 2,
    "out": 8
   },
   {
@@ -3609,7 +3609,7 @@
    "area": "specs",
    "title": "Proposta de Abertura — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3)",
    "in": 2,
-   "out": 23
+   "out": 25
   },
   {
    "path": "specs/features/SPEC-049/research.md",
@@ -48277,6 +48277,21 @@
   },
   {
    "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "governance/aprendizado/LEDGER-ACHADOS.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R1-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
    "to": "specs/features/SPEC-001/checks.md",
    "type": "path"
   },
@@ -48314,6 +48329,11 @@
    "from": "specs/features/SPEC-049/ABERTURA.md",
    "to": "specs/features/SPEC-007/plan.md",
    "type": "id"
+  },
+  {
+   "from": "specs/features/SPEC-049/ABERTURA.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "path"
   },
   {
    "from": "specs/features/SPEC-049/ABERTURA.md",

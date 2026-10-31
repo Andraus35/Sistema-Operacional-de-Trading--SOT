@@ -1,5 +1,7 @@
 # Proposta de Abertura — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3)
 
+> **Revisão 2 — correção do parecer R1** (`governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R1-2026-10-31.md`, NÃO CONFORME: 1 Média + 8 Menores). Onde mudou: R1-M01 → S1, S6, S7, BASpec 1, CC-10, §7 (H-001), R-5/R-8, §13 C-4, §15 cond. 2; R1-m01 → §3, §13 P-7, §16; R1-m04 → S5, §15 cond. 12; R1-m05 → §1, S9, CC-08; R1-m06 → §4, R-9, §15 cond. 9-11; R1-m07 → §8; R1-m08 → contrato com a SPEC-007 (§2). R1-m02 aplicado pelo Orquestrador no `research.md` (não refeito). Texto superado preservado em linhas `[antes: …]` (INV-07).
+
 **Método:** ROADMAP.md §23 passo 1-bis + atomic-spec.md §15 (RULE-ECC-01/02/04/05/06/07) + DHR-BACKLOG-ABERTURA-001
 **Autor:** Especificador Principal SOT (Claude Code, Opus 5.5)
 **Data:** 2026-10-31
@@ -17,7 +19,7 @@
 |---|---|---|
 | **Número** | **SPEC-049** | **Já decidido** por Andraus (DHR-SPEC048-001 Q-2). `[FONTE]` |
 | **Nome** | **"WikiRAG Reading View"** (Visão de Leitura WikiRAG) | **Já decidido** (Q-2). Sentido de "WikiRAG" = Q3 da DHR-SPEC007-001. `[FONTE]` |
-| **Complexidade** | **HIGH — recomendada; a confirmar por Andraus (P-1)**. Alternativa: MEDIUM (proposta do slot, `ROADMAP.md` l.193). | O perfil MEDIUM pára em D5 e não tem D7 (BASpec com VERIFICADO POR — atomic-spec l.52). Sem D7, a **trava E3 herdada** ("compilação WikiRAG" da INV-KFH-02) e a **reconstrução** (insumo T21) ficariam sem teste — mais fraco que o insumo, que vinha de Spec CRITICAL. A C-2 avisou: "Peso médio só se sustenta se essa trava continuar valendo do mesmo jeito" (`SPEC-048/ABERTURA.md` l.218). CRITICAL rejeitada: sem efeito sobre a verdade (E1), fora do ciclo, sem modelo (research §8.1). |
+| **Complexidade** | **HIGH — recomendada; a confirmar por Andraus (P-1)**. Alternativa: MEDIUM (proposta do slot, `ROADMAP.md` l.193). | O perfil MEDIUM pára em D5 e não tem D7 (BASpec com VERIFICADO POR — atomic-spec l.52). Sem D7, a **trava E3** ("compilação WikiRAG" da INV-KFH-02 — herança `[INFERÊNCIA]`, ver S9) e a **reconstrução** (insumo T21) ficariam sem teste — mais fraco que o insumo, que vinha de Spec CRITICAL. A C-2 avisou: "Peso médio só se sustenta se essa trava continuar valendo do mesmo jeito" (`SPEC-048/ABERTURA.md` l.218). CRITICAL rejeitada: sem efeito sobre a verdade (E1), fora do ciclo, sem modelo (research §8.1). |
 | **Profundidade-alvo** | **D0–D7** (standard, AGENTS §4) se HIGH; **D0–D5** se MEDIUM | D6 (protocolo do Blackboard) **não aplicável** — a página não vai ao Blackboard; declarado assim no Plan. Casos negativos transferidos (ADV-KFH-11 parte compilação; omissão de um lado) entram como **cenários negativos de D7**, sem suíte D8. |
 | **Maturidade-alvo** | L3 (Testável) na baseline; gate E3 por-Spec (RULE-MM-05, SPEC-021) | Mesmo regime das SPEC-006/007/048. |
 | **Classe predominante** (orientação, não vinculante — CC-11 por BASpec) | **D** (compilação, reconstrução, citação, lado a lado, exibição) · **C** (trava E3 do compilador) · **H: nenhuma** | Ver §4. Zero Classe H é característica, não lacuna: nenhum modelo é chamado. |
@@ -31,15 +33,18 @@
 ## 2. Fronteira e escopo
 
 ### Dentro do escopo (proposta)
-- **S1 Entrada declarada da compilação:** (i) **momento de corte** (tempo de registro do KG — `recorded_at`, SPEC-006 RULE-CKG-004); (ii) **itens carimbados** (SPEC-007 ponto 1) e **marcas** `revalidation_mark`/`contradiction_mark` (ponto 5) lidos **até o corte**, só por consulta read-only (RULE-CKG-011); (iii) **versão da regra de compilação**. Candidato não selado **nunca** entra (research §3.1).
+- **S1 Entrada declarada da compilação:** (i) **momento de corte** (tempo de registro do KG — `recorded_at`, SPEC-006 RULE-CKG-004); (ii) **itens carimbados** (SPEC-007 ponto 1) e **marcas** `revalidation_mark`/`contradiction_mark` (ponto 5) lidos **até o corte**, só por consulta read-only (RULE-CKG-011); (iii) **versão da regra de compilação**; (iv) **data de referência da validade** (nome proposto `valid_at`) — instante de **tempo de validade** (valid-time, `valid_from`/`valid_to` da RULE-CKG-004) contra o qual cada item é julgado vigente ou encerrado; é campo **próprio** da entrada, distinto do corte (CC-10). `[PROPOSTA]` Regra: o pedido declara `valid_at`; se não declarar, a regra de compilação o preenche **com o mesmo instante do corte**, **antes** de compilar, e grava esse valor como campo da entrada (no registro de compilação) — nunca lido do relógio. São dois campos com papéis diferentes que podem ter o mesmo valor (confirmação C-4). Candidato não selado **nunca** entra (research §3.1, §3.3).
+  *[antes: entrada = (i) corte, (ii) itens/marcas até o corte, (iii) versão da regra — sem referência de tempo para a validade (R1-M01)]*
 - **S2 Regra fixa:** agrupamento **só por campos de lista fechada** do item (ex.: ativo, tipo de nó, assunto do vocabulário do sistema); item sem o campo ⇒ grupo "sem classificação" declarado; **ordem total determinística**; modelo de página **sem lógica** (só encaixa campos); texto fixo da regra (rótulos, títulos) faz parte da versão da regra (research §3.7).
 - **S3 Nenhum texto novo:** a página contém só (a) campos dos itens carimbados copiados como estão, (b) texto fixo da regra, (c) citações e identificadores. Qualquer outro texto ⇒ página **não emitida** (insumo `WIKI_MODEL_TEXT_FORBIDDEN`) (research §3.4).
 - **S4 Citação conferível em cada bloco:** `published_item_ref@version` e a cadeia selo → validação → candidato → unidade → fonte@hash (SPEC-007 ponto 1, D9). Trecho da fonte original: **conforme P-3** (recomendação: não copiar).
-- **S5 Contradição lado a lado:** todos os lados de cada `contradiction_mark` no **mesmo bloco**, cada um com citação; **sem** escolha de verdade, **sem** "preferido", **sem** destaque; **ordem neutra e fixa** (ex.: por identificador — nunca por escola, data, número de fontes ou hierarquia analítica); omitir um lado ⇒ não emite (parte transferida da RULE-KFH-016) (research §3.5).
-- **S6 Tempo e marcas visíveis:** a página diz o **corte**; cada bloco mostra a **validade** do item (`valid_from`/`valid_to`) e "a revalidar" quando houver; item com validade encerrada **nunca** aparece como atual sem sinal (RAG-SPEC-020); item superado é sinalizado e permanece no histórico — nada apagado (INV-07) (research §3.3).
-- **S7 Reconstrução:** mesma entrada (S1) ⇒ mesma página, byte a byte (hash); **nenhuma hora do relógio** na página (o único tempo é o corte); **registro de compilação** só-inserção (entrada, versão da regra, hash da entrada e da saída, relatório de saúde: contradição incompleta, validade vencida, página órfã) (research §3.1, §3.2, §3.8).
+- **S5 Contradição lado a lado:** todos os lados de cada `contradiction_mark` no **mesmo bloco**, cada um com citação; **sem** escolha de verdade, **sem** "preferido", **sem** destaque; **ordem neutra e fixa** (ex.: por identificador — nunca por escola, data, número de fontes ou hierarquia analítica); omitir um lado ⇒ não emite (parte transferida da RULE-KFH-016) (research §3.5). **Granularidade** `[PROPOSTA]`: (a) se o compilador deixar de pôr no bloco um lado que **está na entrada** (item carimbado até o corte), **a página inteira não é emitida** — nada de página parcial sem o bloco, que seria omissão silenciosa — e o registro de compilação grava a recusa com o código `CONTRADICTION_SILENT_RESOLUTION_FORBIDDEN` (código vigente da SPEC-007, `plan.md` l.1678, usado por referência, não redefinido); (b) se um lado **não está na entrada** (não carimbado até o corte), o bloco é emitido com esse lado declarado "lado não exibível" + motivo + identificador da `contradiction_mark`, e a ocorrência vai ao relatório de saúde como "contradição incompleta" (S7). Cenário negativo de (a) e de (b) no Plan.
+- **S6 Tempo e marcas visíveis:** a página diz o **corte** e a **data de referência da validade** (`valid_at`, S1 (iv)); cada bloco mostra a **validade** do item (`valid_from`/`valid_to`), o seu estado **em relação a `valid_at`** — vigente / encerrada / ainda não vigente / validade não informada (sem o campo ⇒ sinal, nunca "atual"; CC-09) — e "a revalidar" quando houver; item com validade encerrada em `valid_at` **nunca** aparece como atual sem sinal (RAG-SPEC-020); a convenção de fronteira (`valid_to = null` ≡ vigente, RULE-CKG-004; inclusão do limite) é fixada no Plan alinhada à SPEC-006; item superado é sinalizado e permanece no histórico — nada apagado (INV-07) (research §3.3).
+  *[antes: "item com validade encerrada nunca aparece como atual sem sinal" — sem dizer contra que data (R1-M01)]*
+- **S7 Reconstrução:** mesma entrada (S1, os **quatro** campos) ⇒ mesma página, byte a byte (hash); **nenhuma hora do relógio** na página nem no julgamento de validade — os únicos tempos são os da entrada (corte e `valid_at`) e os campos de validade dos itens; mesmo corte com `valid_at` diferente = **outra entrada** (página pode diferir, como esperado); **registro de compilação** só-inserção (entrada com os quatro campos — inclusive `valid_at` preenchido por derivação —, versão da regra, hash da entrada e da saída, relatório de saúde: contradição incompleta, validade vencida, página órfã; a página traz o hash da **entrada**, o da **saída** fica só no registro — um hash não pode estar dentro do que mede) (research §3.1, §3.2, §3.6, §3.8).
+  *[antes: "o único tempo é o corte"]*
 - **S8 Sem autoridade:** identificador próprio **`reading_view_ref`**, tipo **disjunto** de `published_item_ref@version` e `source_id@hash` — aceita o requisito inverso da SPEC-048 (`plan.md` l.1149-1151) com o nome que os testes de lá já usam; a página **nunca** é submetida ao KG nem é fonte (research §3.6).
-- **S9 Trava E3 do compilador (herdada):** a compilação **não tem capacidade de efeito permanente nem externo** (definições da SPEC-007 INV-KFH-02, não redefinidas); **zero chamada de modelo** (logo, não usa a CIM); únicos efeitos: **emitir a página** (E1) e **gravar o próprio registro** de compilação (research §0 e).
+- **S9 Trava E3 do compilador (herança `[INFERÊNCIA]`):** a herança **não** vem de texto vinculante: o corpo vinculante da INV-KFH-02 cobre só FORMAÇÃO e F1 (`SPEC-007/plan.md` l.432-443); a "compilação WikiRAG" aparece no parágrafo "INTERFACE COM A SPEC-048 [PROPOSTA]" (l.444-447: "estender esta invariante à trilha de consulta é requisito à SPEC-048"). Ancoragem: o slot "herda a trava "compilação WikiRAG" (INV-KFH-02, E3)" (`ROADMAP.md` l.193) e a C-2 da DHR-SPEC048-001 ("ela herda a trava "compilação WikiRAG" (E3 na SPEC-007)", research §0 b). *[antes: "S9 Trava E3 do compilador (herdada):" sem etiqueta (R1-m05)]* Conteúdo: a compilação **não tem capacidade de efeito permanente nem externo** (definições da SPEC-007 INV-KFH-02, não redefinidas); **zero chamada de modelo** (logo, não usa a CIM); únicos efeitos: **emitir a página** (E1) e **gravar o próprio registro** de compilação (research §0 e).
 - **S10 Exibição como dado e restrição visível:** texto do item codificado na saída, nunca interpretado como marcação ativa, link executável ou instrução; a página mostra a **restrição de uso mais restritiva** dos itens que contém (P-11); leitura **local** (P-2/P-6) (research §3.7, §3.10).
 - **S11 Fail-closed a montante:** sem itens carimbados (linha de montagem parada até a 1ª liberação — DHR-SPEC007-005 §3) ⇒ **página vazia com a falta declarada** — correto, não falha.
 
@@ -62,7 +67,7 @@
 | Caminho de leitura em runtime dos agentes | **SPEC-045-RUNTIME-001 ABERTA** | SPEC-045 |
 
 ### Contrato com as Specs montante (BASELINE)
-- **SPEC-007:** a página **cumpre**, por analogia `[INFERÊNCIA]`, os pontos 1, 2 e 5 da Interface (`plan.md` l.1224, l.1225, l.1228): só itens carimbados; restrição de uso efetiva respeitada e exibida; "a revalidar" exposto e os dois lados de uma contradição lado a lado. Ponto 3 (CIM) **não se aplica** — zero chamada de modelo. Ponto 4: não lê nem grava atos além do que a restrição de uso efetiva já traz. **Não** emite selo, não muta candidato, não grava marca nem ato.
+- **SPEC-007:** a página **cumpre**, por analogia `[INFERÊNCIA]`, os pontos 1, 2 e 5 da Interface (`plan.md` l.1224, l.1225, l.1228), com o texto literal da coluna "Requisito proposto à SPEC-048": ponto 1 — "servir como conhecimento **só** itens carimbados; candidato não selado nunca é conhecimento servível"; ponto 2 — "não servir unidade de fonte com `rights_status` efetivo INDETERMINADO; usar a definição de origem-raiz daqui para contar independência" (a parte de independência não se aplica — a página não conta fontes); ponto 5 — "expor "a revalidar"; servir os dois lados de uma contradição, lado a lado". **Separado do ponto 2:** a **exibição da restrição de uso mais restritiva** (S10) **não** vem do ponto 2; vem da RULE-KFH-001 (restrição efetiva registrada) e da P-11 (derivado herda a restrição, DHR-SPEC007-003/004), declaradas no CC-08. Com P-3 opção (A) (não copiar trecho) o "não servir" literal fica satisfeito por construção; com (B), vale literalmente: trecho de unidade com `rights_status` efetivo INDETERMINADO **não** aparece. *[antes: "só itens carimbados; restrição de uso efetiva respeitada e exibida; …" — paráfrase do ponto 2 (R1-m08)]* Ponto 3 (CIM) **não se aplica** — zero chamada de modelo. Ponto 4: não lê nem grava atos além do que a restrição de uso efetiva já traz. **Não** emite selo, não muta candidato, não grava marca nem ato.
 - **SPEC-006:** só consulta read-only; nada submetido ao KG.
 - **SPEC-048:** nenhuma interface em tempo de execução; esta Spec **entrega** o identificador disjunto `reading_view_ref` que o gate D de lá recusa.
 
@@ -73,7 +78,7 @@
 **Spec única** — um contrato só (itens carimbados no corte → página + registro de compilação); tudo muda junto. Sem divisão.
 
 **BASpecs candidatas (só títulos; numeração no Plan, prefixo `WRV` proposto):**
-1. Entrada da compilação: corte, itens carimbados e marcas lidos só-leitura até o corte, versão da regra
+1. Entrada da compilação: corte, itens carimbados e marcas lidos só-leitura até o corte, versão da regra, data de referência da validade (`valid_at`; derivação declarada se ausente)
 2. Regra fixa: agrupamento por campos de lista fechada, ordem total determinística, modelo de página sem lógica
 3. Nenhum texto novo na compilação
 4. Citação conferível em cada bloco (e trecho de fonte conforme P-3)
@@ -86,23 +91,35 @@
 
 **Capacidades do ROADMAP cobertas** (`ROADMAP.md` l.193 + Q3): visão de leitura por regra fixa (BASpecs 1-2); a partir de itens carimbados da SPEC-007 (1); sem autoridade própria (8); refeita a qualquer momento (7); trava "compilação WikiRAG" E3 (9); contradições lado a lado (5 — C-1); a página nunca é citada (8, lado da página; o lado do pacote é da SPEC-048).
 
-**Linhas previstas do corpo normativo do Plan** `[INFERÊNCIA]` (base: ledger §2-bis — SPEC-048: 1.935 linhas de corpo para 12 BASpecs CRITICAL):
+**Linhas previstas do corpo normativo do Plan** `[INFERÊNCIA]` — derivação mostrada (R1-m01).
 
-| Parte | HIGH D0–D7 | MEDIUM D0–D5 |
+**Base:** ledger §2-bis (`governance/aprendizado/LEDGER-ACHADOS.md` l.63) — SPEC-048: 1.935 linhas de corpo, 12 BASpecs (contadas por cabeçalho `### BASpec-RET-0nn`, `SPEC-048/plan.md` l.808-1078), CRITICAL D0–D8, 4 rodadas de correção. É a Spec irmã mais parecida (mesmo padrão de mapeamento do Anexo T). Decomposição da base por cabeçalhos de seção do próprio `plan.md` da SPEC-048 (contagem de linhas entre cabeçalhos):
+
+| Parte da SPEC-048 (linhas) | Linhas | Comportamento na estimativa |
 |---|---|---|
-| Fixo (cabeçalho, mapeamento do insumo, Herança/Delta, Non-goals, termos CC-10, Constitution Check, checklist) | ~400 | ~380 |
-| 10 BASpecs (RULE + EARS + BASpec; com VERIFICADO POR e cenários em HIGH) | ~10 × 70 = 700 | ~10 × 40 = 400 |
-| 3 Enforcement Contracts (emissão E1; trava E3; registro E1) + códigos de recusa | ~150 | ~100 |
-| **Total estimado** | **≈1.250** (faixa 1.000–1.500) | **≈880** (faixa 700–1.050) |
+| D2 Regras (l.416-745) + corpos das BASpecs (l.808-1098) + D7 cenários (l.1215-1403) | 330 + 291 + 189 = **810** | **variável por BASpec**: 810 / 12 ≈ **67,5** (HIGH); sem D7: (330 + 291) / 12 ≈ **52** (MEDIUM) |
+| Enforcement Contracts (l.1490-1652, 8 ECs) | 163 | **por EC**: ≈ **20** |
+| D8 adversarial (l.1404-1478) | 75 | **0** (nem HIGH nem MEDIUM têm D8) |
+| Restante (cabeçalho, histórico de rodadas, mapeamento, decisões, CC, Herança/Delta, CC-10, D0/D1, EARS, D3.1, D4–D6, interfaces, métricas/D9, escala E0–E3, erratas propostas, Plan/§7-bis/etiquetagem/perguntas/autopré-check) | 887 | **fixo**, com 2 ajustes `[INFERÊNCIA]`: erratas/propostas (l.1664-1721, 58) → ≈10 (aqui não há errata — §8): **−48**; em MEDIUM, §7-bis (l.1779-1817, 39) não é obrigatório: **−39** |
 
-Ambas **abaixo de 1.600** (não exige confirmação de decomposição) e bem abaixo do alerta 1.900 / teto 2.000. **Gatilho processual:** mudar escopo ou dividir depois de o Plan começar = nova abertura.
+| Estimativa SPEC-049 (10 BASpecs, 3 ECs) | HIGH D0–D7 | MEDIUM D0–D5 |
+|---|---|---|
+| Fixo ajustado | 887 − 48 = 839 | 887 − 48 − 39 = 800 |
+| Variável | 10 × 67,5 = 675 | 10 × 52 = 520 |
+| ECs (emissão E1; trava E3; registro E1) | 3 × 20 = 60 | 3 × 20 = 60 |
+| **Total central** | **≈1.570** | **≈1.380** |
+| **Faixa** (−10% / sem o ajuste de erratas) | **1.420–1.620** | **1.240–1.430** |
+| **Extrapolação proporcional** (1.935 / 12 ≈ 161 por BASpec × 10) | **≈1.610** | — (a base é CRITICAL; superestima MEDIUM) |
+
+**Leitura contra a RULE-ECC-07** (`governance/RULES.md` l.518-530): em **HIGH**, o total central (≈1.570) fica a 98% do limiar de **1.600** (80% do teto), e o topo da faixa (≈1.620) e a extrapolação proporcional (≈1.610) **passam** de 1.600 — por precaução (fail-closed), trato HIGH como **exigindo a confirmação de Andraus** da decomposição antes do Plan (**P-7**). Em **MEDIUM**, toda a faixa fica abaixo de 1.600. Ambas bem abaixo do alerta 1.900 / teto 2.000. **Proposta de decomposição:** Spec **única** — dividir partiria um contrato só (entrada → página + registro), em que tudo muda junto; não há fronteira de contrato interna (RULE-ECC-07: "o que muda junto fica junto"). **Incertezas:** base n=1 decomposta (a SPEC-007, 1.949 linhas de corpo, l.62 do ledger, não foi decomposta); o histórico de rodadas cresce com o número de rodadas (na base, l.29-93 ≈ 65 linhas para 4 rodadas). **Gatilho processual:** mudar escopo ou dividir depois de o Plan começar = nova abertura.
+*[antes: fixo ~400/~380 + 10 × 70 / 10 × 40 + ~150/~100 = ≈1.250 (1.000–1.500) / ≈880 (700–1.050), "ambas abaixo de 1.600" — fixo sem derivação (R1-m01)]*
 
 ---
 
 ## 4. Classe RULE-MECH-01 (CC-11) — orientação por tipo de BASpec
 
-- **Classe D:** entrada e corte; agrupamento e ordem; checagem "nenhum texto fora de campos/texto fixo/citações"; citação resolvível; lado a lado e ordem neutra; tempo e marcas; hash e reconstrução; identificador disjunto; codificação na saída; página vazia; registro de compilação.
-- **Classe C (E3, fail-closed):** trava do compilador sem capacidade de efeito (insumo: cláusula "compilação WikiRAG" da INV-KFH-02) — falha ⇒ **não compila** e registra.
+- **Classe D:** entrada (corte e data de referência da validade, com a derivação declarada); agrupamento e ordem; checagem "nenhum texto fora de campos/texto fixo/citações"; citação resolvível; lado a lado e ordem neutra; tempo e marcas; hash e reconstrução; identificador disjunto; codificação na saída; página vazia; registro de compilação.
+- **Classe C (E3, fail-closed):** trava do compilador sem capacidade de efeito (insumo: cláusula "compilação WikiRAG" da INV-KFH-02) — falha ⇒ **não compila** e registra. **Justificativa CC-11** `[INFERÊNCIA]` (atomic-spec l.305 trata Classe C em BASpec de risco baixo como violação): o nível E3 **não** mede a página (E1, sem efeito sobre a verdade), e sim a **capacidade que a trava nega** — o compilador lê texto de item que veio, na origem, de fonte externa (pode trazer instrução embutida — research §3.7); se ganhasse capacidade de efeito, o efeito seria **permanente** (escrita ao KG, selo, ato, configuração — as mesmas definições da INV-KFH-02, `SPEC-007/plan.md` l.433-436, cujos caminhos são E3). Risco da ameaça = alto e irreversível ⇒ C/E3 compatível; e é o piso que o slot declara (`ROADMAP.md` l.193). Economicidade: a trava não chama modelo nem acrescenta etapa cara. O Plan redige esta justificativa por BASpec (§15 cond. 10).
 - **Classe H: nenhuma.** Se um dia se quiser texto de modelo na página (ex.: resumo), é **nova abertura**.
 - **Pisos de nível (D2):** emissão da página **E1** (insumo EC-KFH-009 — visão reconstruível, sem efeito sobre a verdade); registro de compilação **E1**; trava do compilador **E3**. Economicidade nunca rebaixa nível.
 
@@ -125,10 +142,10 @@ Não é Spec de especialidade de escola. Nenhum `PD-xx`.
 | CC-04 | OK | Nenhuma Salvaguarda tocada; a página não é sinal. |
 | CC-05 | Aplica | HIGH proposto (alternativa MEDIUM) — P-1. |
 | CC-06/07 | Diferido ao Plan | Engineering Cards no BUILD. |
-| CC-08 | **Aplica — foco** | INHERITS (ID+versão no Plan): SPEC-007 v2.3 (INV-KFH-02 — cláusula "compilação WikiRAG" via nota C-3; Interface pontos 1, 2, 5; RULE-KFH-001 restrição efetiva e P-11; RULE-KFH-016 registro da contradição; RULE-KFH-007 selo), SPEC-006 v1.7+erratas (RULE-CKG-004, -010, -011), SPEC-048 v1.4 (requisito inverso; `WIKI_PAGE_CITED_AS_SOURCE`), DHR-SPEC007-001 Q3, RULE-MET-01, INV-07, INV-09. **REMOVED vazio** (proposta). Eixo vertical RULE-HV não se aplica (relação horizontal — research §0 i). |
+| CC-08 | **Aplica — foco** | INHERITS (ID+versão no Plan): SPEC-007 v2.3 (INV-KFH-02 — cláusula "compilação WikiRAG" via nota C-3, herança `[INFERÊNCIA]`: o texto-fonte l.444-447 é parágrafo marcado `[PROPOSTA]` ("requisito à SPEC-048"); âncora `ROADMAP.md` l.193 e C-2 da DHR-SPEC048-001 — ver S9; Interface pontos 1, 2, 5; RULE-KFH-001 restrição efetiva e P-11; RULE-KFH-016 registro da contradição; RULE-KFH-007 selo), SPEC-006 v1.7+erratas (RULE-CKG-004, -010, -011), SPEC-048 v1.4 (requisito inverso; `WIKI_PAGE_CITED_AS_SOURCE`), DHR-SPEC007-001 Q3, RULE-MET-01, INV-07, INV-09. **REMOVED vazio** (proposta). Eixo vertical RULE-HV não se aplica (relação horizontal — research §0 i). |
 | CC-09 | **Aplica** | Nenhum número (sem limiar); escola ausente ⇒ INDETERMINADA; "página vazia" é estado válido. |
-| CC-10 | **Aplica** | Acepções: **página de leitura** ≠ KG ≠ pacote ≠ Evidência (CEM) ≠ Observação; **"emitir"** a página ≠ **"publicar"** (KG/Blackboard — vocabulário n-06 da SPEC-007); **"texto de modelo"** = texto novo na compilação, ≠ texto já carimbado (C-1); **"corte"** = tempo de registro, ≠ validade do item. |
-| CC-11 | Aplica (§4) | Por BASpec. |
+| CC-10 | **Aplica** | Acepções: **página de leitura** ≠ KG ≠ pacote ≠ Evidência (CEM) ≠ Observação; **"emitir"** a página ≠ **"publicar"** (KG/Blackboard — vocabulário n-06 da SPEC-007); **"texto de modelo"** = texto novo na compilação, ≠ texto já carimbado (C-1); **"corte"** = tempo de registro (`recorded_at`), ≠ validade do item; **"data de referência da validade"** (`valid_at`) = instante de tempo de validade contra o qual se julga vigente/encerrado — campo próprio da entrada, ≠ corte, mesmo quando derivado com o mesmo valor (S1 (iv)). |
+| CC-11 | Aplica (§4) | Por BASpec; Classe C/E3 da trava justificada pela ameaça e pelo slot (§4), a redigir no Plan. |
 | CC-12 | **NÃO incide** (§5) | — |
 
 ---
@@ -142,13 +159,13 @@ Não é Spec de especialidade de escola. Nenhum `PD-xx`.
 | **C-1** — corte do insumo do Anexo T | DHR-SPEC048-001 | **Incorporar** as partes listadas (research §0 f), reescritas com IDs próprios; nenhum ID `*-KFH-*` reutilizado. |
 | **C-2** — peso só como proposta; atenção à trava E3 | DHR-SPEC048-001 | Respondida aqui: trava mantida em E3 (S9) e P-1 (HIGH recomendado). |
 | **P-11 / P-12 / P-4b** — derivado herda restrição; "de casa" só com ato; modelo de terceiro = "fora" | DHR-SPEC007-003/004 | **Usar** só para exibir a restrição; a página não envia nada a modelo (P-6). |
-| **H-001 FECHADA** — KG só-inserção bitemporal | DHR-H001-001 | **Usar** para o corte e a reconstrução (S1, S7). |
+| **H-001 FECHADA** — KG só-inserção bitemporal | DHR-H001-001 | **Usar** para o corte (tempo de registro), a data de referência da validade (tempo de validade) e a reconstrução (S1, S6, S7). |
 
 ---
 
 ## 8. Re-apontamento — errata e gatilhos (só proposta; nada executado)
 
-**Errata de re-apontamento: nenhuma.** O slot mantém número, nome e fronteira; as Specs baselined que citam a página (SPEC-007 l.3 + nota N-F do ERRATUM-REAPONT-001; SPEC-048 l.5, 19, 123-131, 147, 176, 318, 333, 375, 1149-1151, 1267, 1439, 1463, 1658, 1756, 1762) **já** apontam à SPEC-049 (research §8.3). Condição: se o identificador da página deixar de ser `reading_view_ref`, ou se número/fronteira mudarem, a errata volta a ser necessária.
+**Errata de re-apontamento: nenhuma.** O slot mantém número, nome e fronteira; as Specs baselined que citam a página (SPEC-007 l.3 + nota N-F do ERRATUM-REAPONT-001; SPEC-048 — lista completa por Grep do literal `SPEC-049` e de `reading_view_ref` em research §8.3) **já** apontam à SPEC-049. *[antes: lista "SPEC-048 l.5, 19, 123-131, … 1267, 1439, 1463, 1658, 1756, 1762" — incompleta e com linhas deslocadas (R1-m07)]* Condição: se o identificador da página deixar de ser `reading_view_ref`, ou se número/fronteira mudarem, a errata volta a ser necessária.
 
 **Nota aditiva opcional à SPEC-007** (proposta para o Plan, passo à parte, só se Andraus quiser — conflito de redação research §7 item 2/3): "a cláusula 'compilação WikiRAG' da INV-KFH-02 e os pontos 1, 2 e 5 da Interface valem também para a SPEC-049". Sem ela, a herança fica declarada só no CC-08 desta Spec.
 
@@ -181,11 +198,11 @@ Não é Spec de especialidade de escola. Nenhum `PD-xx`.
 - **R-2 Texto inventado na compilação** — S3 (D): só campos, texto fixo e citações; senão não emite.
 - **R-3 Página escolhe lado de uma contradição** — S5: todos os lados, ordem neutra, sem destaque; omitir ⇒ não emite.
 - **R-4 Ordem ou agrupamento insinuando preferência** — regra fixa por campos de lista fechada; ordem por identificador; hierarquia analítica não usada.
-- **R-5 Página não reconstruível** (hora do relógio, ordem instável) — S7: corte como único tempo; ordem total; hash.
+- **R-5 Página não reconstruível** (hora do relógio, ordem instável, data de validade implícita) — S7: só os tempos da entrada (corte e `valid_at`); ordem total; hash. *[antes: "corte como único tempo"]*
 - **R-6 Compilador ganha capacidade de efeito** — S9 (C, E3, fail-closed): zero modelo, zero escrita fora do próprio registro.
 - **R-7 Texto do item executado como marcação ou instrução** — S10: codificação na saída.
-- **R-8 Conhecimento vencido mostrado como atual** — S6: validade e "a revalidar" visíveis.
-- **R-9 Agente lê a página por porta lateral** — P-2: só leitura humana; requisito às Specs dos agentes.
+- **R-8 Conhecimento vencido mostrado como atual** — S6: validade julgada contra `valid_at` (S1 (iv)) e "a revalidar" visíveis.
+- **R-9 Agente lê a página por porta lateral** — P-2: só leitura humana; requisito às Specs dos agentes (`[INFERÊNCIA]`). **Limitação declarada:** a SPEC-049 **não tem** gate nem detector próprio que impeça um agente de ler a página — ela não controla os consumidores. Contenção existente: `reading_view_ref` disjunto + recusa no gate D do pacote (SPEC-048 `WIKI_PAGE_CITED_AS_SOURCE`), que impede a página de virar **citação**, mas **não** impede leitura. Risco residual registrado; contenção completa depende das Specs dos agentes e da SPEC-045-RUNTIME-001 (ABERTA). Ver §15 cond. 11.
 - **R-10 Trecho não liberado ou restrito exposto** — P-3 (não copiar trecho) e restrição mais restritiva visível; P-6 (não sai da casa).
 - **R-11 Invadir SPEC-007/006/048** — Non-goals e contrato.
 - **R-12 Peso subestimado** — P-1 (HIGH recomendado).
@@ -194,7 +211,7 @@ Não é Spec de especialidade de escola. Nenhum `PD-xx`.
 
 ## 12. Edições a documentos de governança — NÃO executadas
 
-O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLOW, atas, AGENTS.md, agentes, canon nem Specs baselined. Após a homologação, cabe ao Orquestrador/Andraus: registrar a abertura na ata e no ROADMAP (seção SPEC-049 l.192-193 e tabela l.523 — "ABERTURA HOMOLOGADA; Plan pendente"; peso decidido na P-1); registrar as respostas P-1..P-6 e as confirmações C-1..C-3 na ata; CATALOGO-OFICIAL (registro da ata). **Nada a editar** no RMR-001 (nenhum gatilho re-apontado) nem no CONFLICT-MAP. A nota aditiva opcional à SPEC-007 (§8) só se Andraus pedir, em passo à parte.
+O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLOW, atas, AGENTS.md, agentes, canon nem Specs baselined. Após a homologação, cabe ao Orquestrador/Andraus: registrar a abertura na ata e no ROADMAP (seção SPEC-049 l.192-193 e tabela l.523 — "ABERTURA HOMOLOGADA; Plan pendente"; peso decidido na P-1); registrar as respostas P-1..P-7 e as confirmações C-1..C-4 na ata; CATALOGO-OFICIAL (registro da ata). **Nada a editar** no RMR-001 (nenhum gatilho re-apontado) nem no CONFLICT-MAP. A nota aditiva opcional à SPEC-007 (§8) só se Andraus pedir, em passo à parte.
 
 **Comandos a rodar (não tenho Bash — para o Orquestrador):**
 - `python scripts/backlog_triggers.py --abertura SPEC-049` (esperado: nenhum item — §8/§9)
@@ -207,29 +224,32 @@ O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLO
 ## 13. Perguntas a Andraus (linguagem simples)
 
 1. **P-1 (peso).** *Recomendação: tratar a estante de leitura como peça de peso **alto** (HIGH), com teste para cada regra.* Ela não mexe em dinheiro nem roda no ciclo, mas carrega uma trava de nível máximo herdada da linha de montagem ("quem monta a página não pode causar efeito nenhum"). No peso **médio** (o que estava proposto), as regras não ganham teste escrito — essa trava ficaria sem prova. **Prefere alto (recomendado), médio, ou médio com teste só nessa trava e na "página refeita igual"?**
-   > *Nota técnica:* HIGH D0–D7 (D6 N/A) × MEDIUM D0–D5 × MEDIUM + D7 seletivo homologado; ≈1.250 × ≈880 linhas; §1, §3; research §8.1.
+   > *Nota técnica:* HIGH D0–D7 (D6 N/A) × MEDIUM D0–D5 × MEDIUM + D7 seletivo homologado; ≈1.570 × ≈1.380 linhas (derivação §3) *[antes: ≈1.250 × ≈880]*; §1, §3; research §8.1. Se escolher HIGH, ver também P-7.
 2. **P-2 (quem lê).** *Recomendação: a página é **só para pessoas** (você, auditoria). Os analistas-robô e o Manager continuam usando só o balcão de consulta (SPEC-048), que tem as travas de envio e de conferência de frases.* **Confirma?**
    > *Nota técnica:* research §3.9; se não, reavaliar RULE-ECC-05 e SPEC-045-RUNTIME-001 antes do Plan.
 3. **P-3 (trecho da fonte original).** *Recomendação: a página mostra o conhecimento carimbado e o **endereço** da fonte, **sem copiar** trecho do texto original.* Assim nada que não passou pelo carimbo aparece na estante, e a questão de direito de uso do texto original não entra aqui. Alternativa: copiar o trecho só quando a fonte estiver liberada. **Qual prefere?**
    > *Nota técnica:* opções (A)/(B) em research §3.10.
 4. **P-4 (organização das páginas).** *Recomendação: organizar por campos fixos que o sistema já conhece (ativo, tipo, assunto da lista do sistema); o que não tiver o campo vai para "sem classificação", nunca para um grupo adivinhado.* **Confirma?**
    > *Nota técnica:* research §3.7; escola ausente ⇒ "INDETERMINADA" (CKG-STRUCT-ORIGIN-001 segue aberta).
-5. **P-5 (guardar ou refazer).** *Recomendação: a página é **refeita na hora**, a pedido, para a data que você escolher; o sistema guarda só o registro de cada montagem (o que entrou, qual regra, a "impressão digital" do resultado), que prova que ela sai igual.* Alternativa: guardar também uma cópia de cada página. **Qual prefere?**
+5. **P-5 (guardar ou refazer).** *Recomendação: a página é **refeita na hora**, a pedido, para a data que você escolher (a data do "que o sistema sabia" e, se quiser, outra data para julgar o que estava valendo — C-4); o sistema guarda só o registro de cada montagem (o que entrou, qual regra, a "impressão digital" do resultado), que prova que ela sai igual.* Alternativa: guardar também uma cópia de cada página. **Qual prefere?**
    > *Nota técnica:* research §3.2; armazenamento = BUILD; o comportamento (reconstrução por hash) vale nas duas.
 6. **P-6 (mostrar para fora).** *Recomendação: por enquanto a página **não sai da casa** — não é enviada a outra pessoa nem a modelo de empresa terceira; se quiser isso no futuro, decidimos à parte.* **Confirma?**
    > *Nota técnica:* a trava de envio da SPEC-007 rege chamada de modelo, não distribuição a pessoas; research §3.10 e §7 item 6.
+7. **P-7 (tamanho do documento — só se escolher peso alto na P-1).** *Recomendação: manter a estante como **um documento só**.* Pela conta feita com a SPEC-048 como base, o plano no peso alto deve ter cerca de **1.570 linhas** (entre 1.420 e 1.620); a conta mais simples (proporcional) dá **cerca de 1.610**. A regra de tamanho pede que **você confirme** a divisão sempre que a estimativa passar de **1.600** linhas — estamos encostados nesse limite, por isso pergunto. Dividir partiria uma coisa que muda junta (o que entra → a página + o registro da montagem). **Confirma um documento só, ou prefere que eu proponha uma divisão?**
+   > *Nota técnica:* RULE-ECC-07 (`governance/RULES.md` l.526-527: "Estimativa acima de 80% do teto (1.600) exige confirmação da decomposição por Andraus antes do Plan"); derivação em §3; no peso médio (≈1.380) a confirmação não é exigida.
 
 **Confirmações (na homologação):**
 - **C-1 — o que é "texto de modelo".** O conhecimento carimbado foi escrito por um modelo na linha de montagem e depois conferido e carimbado. *Recomendação: a regra "texto de modelo não entra na página" vale para **texto novo** escrito na hora de montar a página; o texto **já carimbado** é exatamente o que a página mostra.* **Confirma?** (research §3.4)
 - **C-2 — nome do identificador.** *Recomendação: usar `reading_view_ref`, o nome que os testes da SPEC-048 já usam — evita corrigir a SPEC-048.* **Confirma?** (research §3.6)
 - **C-3 — onde mora a trava.** *Recomendação: a trava "compilação WikiRAG" fica declarada nesta Spec (herança, CC-08), sem editar a SPEC-007; nota aditiva na SPEC-007 só se você quiser.* **Confirma?** (§8)
+- **C-4 — duas datas na página.** Cada conhecimento carimbado tem um período em que vale (de quando até quando). Para a página avisar "isto já não vale", ela precisa de uma data para comparar — e essa data não pode vir do relógio, senão a página não sairia igual ao ser refeita. *Recomendação: a página leva **duas datas escritas**: (1) "o que o sistema sabia até" (o corte) e (2) "o que estava valendo em" (data de referência da validade). Se você não informar a segunda, ela recebe **a mesma data da primeira**, e isso fica anotado no registro da montagem.* **Confirma?** (S1 (iv), S6, S7; research §3.1, §3.3)
 
 > Nenhuma decisão aberta é fechada (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção e a forma de confirmar a identidade de Andraus seguem abertas.
 
 ---
 
 ## 14. Próximo passo
-`research.md` + `sources/` + esta Proposta seguem para **parecer do Revisor** sobre o processo do Dossiê (RULE-ECC-02/04/06/07; não incidência de ECC-05 e CC-12; disposições propostas; conflitos registrados; ausência de citação nova do Benchmark) e, depois, **homologação de Andraus** (P-1..P-6, C-1..C-3, fronteira e Classe orientativa) — **antes** de qualquer `plan.md`/`checks.md`, que só começam por ordem expressa dele.
+`research.md` + `sources/` + esta Proposta seguem para **parecer do Revisor** sobre o processo do Dossiê (RULE-ECC-02/04/06/07; não incidência de ECC-05 e CC-12; disposições propostas; conflitos registrados; ausência de citação nova do Benchmark) e, depois, **homologação de Andraus** (P-1..P-7, C-1..C-4, fronteira e Classe orientativa) *[antes: "P-1..P-6, C-1..C-3"]* — **antes** de qualquer `plan.md`/`checks.md`, que só começam por ordem expressa dele.
 
 ---
 
@@ -238,13 +258,17 @@ O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLO
 | # | Condição | Origem |
 |---|---|---|
 | 1 | Reescrever o insumo do corte C-1 com IDs próprios (`WRV`), tabela de origem item a item; nenhum ID `*-KFH-*` reutilizado. | research §0 f; padrão SPEC-048 |
-| 2 | Declarar a **entrada** da compilação (corte + itens/marcas até o corte + versão da regra) e a proibição de hora do relógio na página. | research §3.1 |
+| 2 | Declarar a **entrada** da compilação com **quatro** campos (corte + itens/marcas até o corte + versão da regra + data de referência da validade `valid_at`, com a regra de derivação "ausente ⇒ mesmo instante do corte, gravado na entrada"), a proibição de hora do relógio na página **e no julgamento de validade**, e cenário D7 "mesmo corte, `valid_at` diferente ⇒ entradas diferentes". *[antes: "corte + itens/marcas até o corte + versão da regra"]* | research §3.1, §3.3; S1, S6, S7 |
 | 3 | Dispor, no CC-08 (§7-bis Bloco B se HIGH), a cláusula "compilação WikiRAG" da INV-KFH-02 e os pontos 1, 2, 5 da Interface da SPEC-007, um a um, com evidência. | research §7 itens 2-3 |
 | 4 | Fixar a acepção de "texto de modelo" (C-1) e o vocabulário "emitir" ≠ "publicar" (CC-10). | research §3.4 |
 | 5 | Ordem neutra e fixa dos lados de contradição, declarada como regra D, com cenário negativo de omissão. | research §3.5 |
-| 6 | Identificador `reading_view_ref` disjunto, conferido contra `SPEC-048/plan.md` l.1267/l.1439. | research §3.6 |
+| 6 | Identificador `reading_view_ref` disjunto, conferido contra `SPEC-048/plan.md` l.1103/l.1267/l.1439. | research §3.6 |
 | 7 | Não especificar consumo da página por agentes, resumo por modelo nem envio para fora (Non-goals), salvo decisão diferente de Andraus em P-2/P-6. | P-2, P-6 |
-| 8 | Medir o corpo do Plan contra a estimativa (§3) e declarar a medida (RULE-ECC-07). | RULE-ECC-07 |
+| 8 | Medir o corpo do Plan contra a estimativa (§3) e declarar a medida (RULE-ECC-07); se HIGH, só começar após a resposta à P-7. | RULE-ECC-07; P-7 |
+| 9 | **ENF-07:** a unidade E3 (trava do compilador) declara o método de **falso-DENY** — compilação legítima recusada pela trava —, amostral, com limiar = gap aberto (sem número inventado). | atomic-spec l.273 (ENF-07); parecer R1-m06 (a) |
+| 10 | **CC-11:** justificar, na BASpec da trava, Classe C/E3 pela ameaça (capacidade de efeito permanente negada) e pelo piso do slot, não pelo nível da página (E1). | §4; atomic-spec l.292/l.305 |
+| 11 | **Limitação R-9:** declarar que a SPEC-049 não tem gate/detector contra leitura por agente; contenção = `reading_view_ref` + gate D da SPEC-048 + requisito `[INFERÊNCIA]` às Specs dos agentes. | §11 R-9 |
+| 12 | **Omissão de lado (S5):** unidade bloqueada = página inteira; código `CONTRADICTION_SILENT_RESOLUTION_FORBIDDEN` (por referência à SPEC-007); "lado não exibível" quando o lado não está na entrada; cenários negativos de ambos. | S5; parecer R1-m04 |
 
 ---
 
@@ -255,7 +279,7 @@ O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLO
 - [x] Dossiê presente e completo (questões/estratégia, fontes classificadas `[EXTERNO]`, adotar/adaptar/rejeitar/adiar, lacunas, escopo, re-apontamento) — RULE-ECC-02.
 - [x] Captura verbatim por fonte carregada (14 SRC) — RULE-ECC-04; citações no Dossiê idênticas às capturas.
 - [x] "Pesquisa em repositórios" com régua Equilibrada (5 elegíveis, 1 não elegível; nenhum adotado como dependência) — RULE-ECC-06; `check_repo_research` a rodar pelo Orquestrador.
-- [x] Estimativa de tamanho declarada (BASpecs, capacidades, linhas; < 1.600) — RULE-ECC-07.
+- [x] Estimativa de tamanho declarada com derivação (BASpecs, capacidades, linhas: HIGH ≈1.570, faixa 1.420–1.620, proporcional ≈1.610 — toca 1.600 ⇒ P-7; MEDIUM ≈1.380) — RULE-ECC-07. *[antes: "< 1.600"]*
 - [x] RULE-ECC-05 e CC-12 avaliados (não incidem; condicionado à P-2).
 - [x] Classe orientativa por tipo de BASpec; zero H; pisos E1/E3; fail-closed na trava E3.
 - [x] Nenhum invariante violado (INV-04/05/06/07/09/10; hierarquia; Conviction Vector intocado).
