@@ -5,7 +5,7 @@
 | De | Orquestrador interno (registro) — decisão de Andraus — Decisor Final / Consensus Authority |
 | Para | Orquestrador interno / Especificador SOT / Revisor SOT |
 | Data | 2026-10-11 |
-| Status | **PROPOSTA — vira vigente só com o merge de Andraus.** Depende da DHR-AUDITOR-EXTERNO-007 (pausa do auditor). Não fecha nem abre decisão; **não altera** o arquivo do Revisor, checklist, método nem regra. |
+| Status | **MESCLADA na `main` por Andraus (PR #103) — vigente; itens que a ata declara diferidos seguem diferidos.** *[texto anterior preservado — INV-07: "PROPOSTA — vira vigente só com o merge de Andraus."]* Depende da DHR-AUDITOR-EXTERNO-007 (pausa do auditor). Não fecha nem abre decisão; **não altera** o arquivo do Revisor, checklist, método nem regra. |
 | Compatibilidade | Aditiva (INV-07). Cada item autorizado é implementado depois, em PR próprio. |
 | RPSA-escopo | nao |
 | RPSA-sync | fonte-unica |

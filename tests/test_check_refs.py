@@ -113,6 +113,54 @@ class CheckRefs(unittest.TestCase):
         (code, out), _ = self.go({"backlog/x.md": "Usa RULE-ZZ-99."}, "--strict")
         self.assertEqual(code, 1, out)
 
+    # --- falsos positivos medidos no repositório real (auditoria 2026-10-31, B10) ---
+    def test_placeholder_0NN_nao_gera_warn(self):
+        (code, out), _ = self.go({"specs/features/SPEC-001/checks.md": "Famílias RULE-CKG-0NN e RULE-KFH-0NN (modelo)."}, "--strict")
+        self.assertEqual(code, 0, out)
+
+    def test_caminho_absoluto_fora_do_repo_nao_e_sugerido_como_movido(self):
+        files = {"README.md": "x", "specs/a.md": "Veja `/root/.ccr/README.md` no ambiente."}
+        (code, out), _ = self.go(files, "--strict")
+        self.assertEqual(code, 0, out)
+
+    def test_comando_wc_usa_o_ultimo_argumento(self):
+        files = {"specs/features/SPEC-001/plan.md": "x", "specs/features/SPEC-006/plan.md": "x",
+                 "specs/features/SPEC-006/checks.md": "Rode `wc -l specs/features/SPEC-006/plan.md`."}
+        (code, out), _ = self.go(files, "--strict")
+        self.assertEqual(code, 0, out)
+
+    def test_regra_real_sem_definicao_continua_alertando(self):
+        (code, out), _ = self.go({"backlog/x.md": "Usa RULE-ZZ-99."}, "--strict")
+        self.assertEqual(code, 1, out)
+
+    def test_caminho_relativo_inexistente_continua_erro(self):
+        (code, out), _ = self.go({"backlog/x.md": "veja `docs/inexistente.md`."})
+        self.assertEqual(code, 1, out)
+
+    # --- testes adversariais do patch (regressão: "/" não pode mascarar caminho do repositório) ---
+    def test_adv_caminho_com_barra_inicial_inexistente_no_repo_continua_erro(self):
+        (code, out), _ = self.go({"backlog/x.md": "veja `/docs/inexistente.md`."})
+        self.assertEqual(code, 1, out)
+        self.assertIn("caminho inexistente", out)
+
+    def test_adv_caminho_com_barra_inicial_existente_resolve(self):
+        # comportamento já existente antes do patch: "/docs/a.md" resolve para docs/a.md com aviso de caminho desatualizado (nunca ERRO)
+        (code, out), _ = self.go({"docs/a.md": "x", "backlog/x.md": "veja `/docs/a.md`."})
+        self.assertEqual(code, 0, out)
+        self.assertIn("existe em docs/a.md", out)
+
+    def test_adv_comando_cat_com_alvo_inexistente_continua_erro(self):
+        (code, out), _ = self.go({"backlog/x.md": "rode `cat docs/inexistente.md`."})
+        self.assertEqual(code, 1, out)
+
+    def test_adv_placeholder_so_no_fim_da_regra(self):
+        (code, out), _ = self.go({"backlog/x.md": "Usa RULE-ZZ-0NN-01."}, "--strict")
+        self.assertEqual(code, 1, out)
+
+    def test_adv_caminho_do_ambiente_em_home_tmp_usr_e_ignorado(self):
+        (code, out), _ = self.go({"backlog/x.md": "veja `/home/u/a.md`, `/tmp/b.json`, `/usr/c.md`, `/etc/d.yml`."}, "--strict")
+        self.assertEqual(code, 0, out)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -214,7 +214,7 @@
       "tipo": "detector",
       "estado": "ativo",
       "enforca": "Integridade de referências cruzadas",
-      "verificado_em": "2026-10-18: ao vivo — 0 ERRO, exit 0; tests/test_check_refs.py no CI"
+      "verificado_em": "2026-10-31: patch de falsos positivos (placeholder 0NN, raiz do SO fora do repo, comando wc/cat/head/tail) aplicado por ordem de Andraus (chat); teste adversarial achou e corrigiu regressão (barra inicial mascarava caminho do repo); 4 mutações mortas; WARN reais 6→2, ERRO=0; tests/test_check_refs.py 25/25 no CI"
     },
     {
       "id": "det.check-doc-sync",

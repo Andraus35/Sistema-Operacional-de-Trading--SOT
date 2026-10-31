@@ -1,0 +1,5 @@
+# Higiene de diff (auditoria de burocracia, 2026-10-31). Não normativo; NÃO altera conteúdo, fim de linha nem o diff local.
+# Marca como GERADO (o GitHub recolhe estes arquivos na revisão de PR): mapa do projeto e cópias arquivadas de handoff.
+docs/mapa/mapa-projeto.json linguist-generated=true
+docs/mapa/MAPA-PROJETO.md linguist-generated=true
+docs/handoffs/*.md linguist-generated=true

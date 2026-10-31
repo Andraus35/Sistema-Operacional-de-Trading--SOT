@@ -70,7 +70,7 @@ Short-circuit análogo ao RPSA: se `base_commit` do handoff == `HEAD` e a árvor
 | Opção | Caminho | Prós | Contras |
 |---|---|---|---|
 | **A (recomendada)** | `HANDOFF.md` na raiz | Caminho fixo, óbvio para qualquer agente/ferramenta (inclusive Cline); precedente `WORKFLOW.md` | Exige emenda do whitelist HOD-001 §6b.1 + ata |
-| B | `docs/handoff/HANDOFF.md` | Não toca o whitelist | Caminho menos descobrível; `docs/` é "referência/histórica" |
+| B | docs/handoff/HANDOFF.md (opção não adotada; o handoff vive na raiz) | Não toca o whitelist | Caminho menos descobrível; `docs/` é "referência/histórica" |
 
 ### 3.2 Contrato de campos (obrigatórios; o verificador checa presença, data e hash)
 

@@ -584,6 +584,27 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologacao de Plan de Spec em redacao: nao altera texto de agente nem metodo"
+    },
+    {
+      "id": "DHR-AGENTS-SEC7-001",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Edita só AGENTS.md/atas/registros de governança; não toca .claude/agents/* nem método."
+    },
+    {
+      "id": "DHR-AGENTS-CORTES-001",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Edita só AGENTS.md/atas/registros de governança; não toca .claude/agents/* nem método."
+    },
+    {
+      "id": "DHR-HIGIENE-001",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Edita só AGENTS.md/atas/registros de governança; não toca .claude/agents/* nem método."
     }
   ]
 }
