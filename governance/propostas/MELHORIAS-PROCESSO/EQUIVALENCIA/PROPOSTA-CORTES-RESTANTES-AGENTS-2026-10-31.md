@@ -1,6 +1,6 @@
 # Proposta pré-testada — demais cortes do AGENTS.md (§2, §5, §8, §9, §12)
 
-> **Não normativo. PROPOSTA.** Nada foi aplicado em `AGENTS.md`. Por ordem de Andraus (chat, 2026-10-31) só o §7 foi cortado (`DHR-AGENTS-SEC7-001`); estes cortes **não** foram autorizados. Base: `.harness-eval/runs/2026-10-31-agents/11-mixed-apply.md` (KEEP/CUT dos dois juízes). Não fecha nem abre decisão (CONS-01).
+> **Não normativo. PROPOSTA — APLICADA em 2026-10-31 por ordem de Andraus (`DHR-AGENTS-CORTES-001`).** Texto abaixo descreve o estado ANTES da aplicação. Nada foi aplicado em `AGENTS.md` quando foi escrita. Por ordem de Andraus (chat, 2026-10-31) só o §7 foi cortado (`DHR-AGENTS-SEC7-001`); estes cortes **não** foram autorizados. Base: `.harness-eval/runs/2026-10-31-agents/11-mixed-apply.md` (KEEP/CUT dos dois juízes). Não fecha nem abre decisão (CONS-01).
 
 ## 1. O que o patch faz (somente `AGENTS.md`)
 | Seção | Corte | Fica no AGENTS.md |
@@ -26,7 +26,7 @@ Efeito medido: **24.550 → 18.401 bytes (−6,1 KB, −25%)**; somado ao §7 j�
 - Comandos removidos do §8 continuam documentados (MECANISMOS.json e arquivo morto); agentes que dependiam de vê-los no AGENTS.md passam a abrir o registro.
 
 ## 4. Para aplicar (por ordem de Andraus)
-1. `git mv`/copiar `ARQUIVO-MORTO-AGENTS-cortes-2-5-8-9-12-2026-10-31.md` para `docs/_legacy/` (INV-07).
+1. `git mv`/copiar o arquivo morto (JÁ MOVIDO para `docs/_legacy/AGENTS-cortes-2-5-8-9-12-arquivo-morto-2026-10-31.md`, INV-07).
 2. `git apply PATCH-AGENTS-cortes-2-5-8-9-12-2026-10-31.patch`.
 3. `equiv_conservacao.py <AGENTS.md anterior via git show> AGENTS.md <arquivo morto>` → CONSERVADO.
 4. Suíte completa, `check_invariants`, `check_doc_sync`, `check_handoff`, `check_coesao` (no repositório real), `check_rpsa --register` da nova ata (AGENTS.md é monitorado), `build_map`.

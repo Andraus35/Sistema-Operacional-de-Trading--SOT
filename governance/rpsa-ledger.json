@@ -577,6 +577,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Altera só o AGENTS.md; não toca .claude/agents/* nem método."
+    },
+    {
+      "id": "DHR-AGENTS-CORTES-001",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Altera só o AGENTS.md; não toca .claude/agents/* nem método."
     }
   ]
 }
