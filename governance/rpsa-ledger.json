@@ -549,6 +549,13 @@
       "em_escopo": true,
       "sync": "propagado",
       "motivo": "Altera o texto do agente Especificador (regra de tamanho da Spec) e o método (atomic-spec §15)"
+    },
+    {
+      "id": "DHR-DELTA-HASH-001",
+      "data": "2026-10-31",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Acrescenta ao revisor.md §3-bis item 7 a origem do sha256 (Orquestrador) e o formato de cabeçalho do parecer"
     }
   ]
 }

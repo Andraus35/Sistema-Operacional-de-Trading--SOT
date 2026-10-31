@@ -528,6 +528,17 @@
       "ata": "DHR-ROTEAMENTO-006",
       "nota": "Não toca arquivo selado; nunca corrige Média/Crítica nem semântica.",
       "verificado_em": "2026-10-25: tests/test_aplicar_ficha_m.py (9 testes) no CI"
+    },
+    {
+      "id": "util.delta-pacote",
+      "arquivo": "scripts/delta_pacote.py",
+      "canal": "CLI do Orquestrador; entrega ao Revisor o delta gravado em arquivo + SHA256-ALVO (revisor.md §3-bis item 7)",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "Delta por hash SEMPRE gravado ao lado do parecer e sha256 do alvo no pedido (o Revisor não tem Bash). Não é gate",
+      "ata": "DHR-DELTA-HASH-001",
+      "verificado_em": "2026-10-31: tests/test_delta_pacote.py (CI)",
+      "nota": "Reaproveita spec_delta.py (selado) sem alterá-lo; instrumentação correspondente na seção 2-ter do loop_ledger."
     }
   ],
   "vigente_desde": "2026-10-19"

@@ -60,6 +60,46 @@ Arquivos sem nenhum achado extraído (formato fora do padrão ou parecer sem ach
 | SPEC-007 PLAN | 3851 | 1949 | 6 | 22 | 1.13 | n/m |
 | SPEC-048 PLAN | 1935 | 1935 | 5 | 4 | 0.21 | n/m |
 
+### 2-ter. Modo da rodada, hash do alvo e tokens (instrumentação do delta por hash; DHR-DELTA-HASH-001)
+
+| Linha | Rodada | Modo | SHA256-ALVO | Tokens |
+|---|---|---|---|---|
+| SPEC-006 OUTRO | R1 | n/d | ausente | n/m |
+| SPEC-006 OUTRO | R2 | delta (inferido) | ausente | n/m |
+| SPEC-006 OUTRO | R3 | n/d | ausente | n/m |
+| SPEC-006 OUTRO | R4 | n/d | ausente | n/m |
+| SPEC-006 OUTRO | R5 | n/d | ausente | n/m |
+| SPEC-006 OUTRO | R6 | n/d | ausente | n/m |
+| SPEC-006 OUTRO | R7 | n/d | ausente | n/m |
+| SPEC-006 OUTRO | R8 | n/d | ausente | n/m |
+| SPEC-006 OUTRO | R9 | n/d | ausente | n/m |
+| SPEC-007 ABERTURA | R1 | delta (inferido) | ausente | n/m |
+| SPEC-007 ABERTURA | R2 | delta (inferido) | ausente | n/m |
+| SPEC-007 ABERTURA | R3 | delta (inferido) | ausente | n/m |
+| SPEC-007 PLAN | R1 | n/d | ausente | n/m |
+| SPEC-007 PLAN | R2 | n/d | não conferido | n/m |
+| SPEC-007 PLAN | R3 | n/d | ausente | n/m |
+| SPEC-007 PLAN | R4 | n/d | ausente | n/m |
+| SPEC-007 PLAN | R5 | n/d | ausente | n/m |
+| SPEC-007 PLAN | R6 | n/d | ausente | n/m |
+| SPEC-020 OUTRO | R1 | n/d | ausente | n/m |
+| SPEC-020 OUTRO | R2 | delta (inferido) | ausente | n/m |
+| SPEC-020 OUTRO | R3 | n/d | ausente | n/m |
+| SPEC-048 ABERTURA | R1 | n/d | ausente | n/m |
+| SPEC-048 ABERTURA | R2 | delta (inferido) | ausente | n/m |
+| SPEC-048 PLAN | R1 | n/d | ausente | n/m |
+| SPEC-048 PLAN | R2 | delta (inferido) | ausente | n/m |
+| SPEC-048 PLAN | R3 | delta (inferido) | ausente | n/m |
+| SPEC-048 PLAN | R4 | delta (inferido) | ausente | n/m |
+| SPEC-048 PLAN | R5 | delta (inferido) | não conferido | n/m |
+| SPEC-? OUTRO | R1 | delta (inferido) | ausente | n/m |
+| SPEC-? OUTRO | R2 | delta (inferido) | não conferido | n/m |
+| SPEC-? OUTRO | R3 | n/d | ausente | n/m |
+| SPEC-? OUTRO | R4 | n/d | ausente | n/m |
+
+Rodadas por delta: 12/32 · com SHA256-ALVO declarado: 0/32. Convenção no cabeçalho da transcrição: `MODO:`, `SHA256-ALVO:`, `TOKENS:` (tokens só se o ambiente os informar; nunca estimar).
+
+
 Tamanho = estado ATUAL do `plan.md` (não o de cada rodada); tokens por rodada seguem **n/m** (o repositório não os mede — registrar manualmente em `TELEMETRIA-ONDA0.md`).
 
 

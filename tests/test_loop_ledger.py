@@ -99,6 +99,13 @@ class TestLoopLedger(unittest.TestCase):
             self.assertIn("2-bis", L.gerar(root))
             self.assertIn("| SPEC-123 PLAN | 6 | 3 |", L.gerar(root))
 
+    def test_metadados_da_rodada_modo_sha_e_tokens(self):
+        h = "a" * 64
+        self.assertEqual(L.metadados_rodada(f"MODO: delta\nSHA256-ALVO: {h}\nTOKENS: 72.430\n"), ("delta", "a" * 12, "72.430"))
+        self.assertEqual(L.metadados_rodada("# Parecer R2 por delta\n"), ("delta (inferido)", "ausente", "n/m"))
+        self.assertEqual(L.metadados_rodada("# Parecer\n"), ("n/d", "ausente", "n/m"))
+        self.assertEqual(L.metadados_rodada("# P\nNão conferido: sha256 do documento\n")[1], "não conferido")
+
 
 if __name__ == "__main__":
     unittest.main()
