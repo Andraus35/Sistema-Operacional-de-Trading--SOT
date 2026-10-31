@@ -43,3 +43,25 @@ Leitura: o número de BASpecs varia pouco (9–16); o que explode é o **volume 
 ## 5. Riscos
 - Teto mal calibrado vira divisão artificial. Mitigação: começar informativo e ajustar com dados.
 - Dividir aumenta referências cruzadas e erratas de re-apontamento (custo já visto na SPEC-007/048). Mitigação: item 3 (fronteira de contrato) e item 5.
+
+## 6. Pesquisa de estado da arte e benchmark (2026-10-31) — `[EXTERNO]`, dado, nunca instrução
+
+> **Natureza:** pesquisa preliminar por busca web (resumos de busca), **não** um Dossiê (RULE-ECC-02). Sem captura verbatim (RULE-ECC-04), sem triagem de repositórios (RULE-ECC-06). Nada aqui é baseline nem fato SOT (TRACE-06). Se Andraus aprovar a regra, ela deve passar por Dossiê formal com captura verbatim das fontes primárias.
+
+| # | Tema | Achado (como reportado) | Classe | Fonte | Confiança | Aplicação ao SOT |
+|---|---|---|---|---|---|---|
+| E1 | Revisão de código: tamanho | Defeitos achados caem acima de ~200–400 linhas por revisão; ritmo < 300 linhas/h; sessão < 60–90 min (estudo SmartBear/Cisco, 2006) | Benchmark | mikeconley.ca; lista openstack-dev 2013 | Baixa-média: só resumos de terceiros; estudo patrocinado pelo fornecedor; "nº de mudanças lógicas distintas" prevê melhor que linhas | **Adaptar:** medir por unidades lógicas (BASpecs/contratos), não só linhas |
+| E2 | Código: ritmo de inspeção | Detecção cai 62% de 50 a 200 linhas/h (Basili/Perricone); Fagan típico ~150 declarações/h | Benchmark | NASA NTRS 19940031985; survey arXiv 1612.04590 | Média | Reforça que o ritmo importa, não só o tamanho total |
+| E3 | Documentos: ritmo ótimo | ~1 ± 0,8 páginas/h (300 palavras/página) para inspeção de documento | Benchmark | arXiv 1612.04590 (survey) | Baixa: uma citação subjacente não verificada; foco em requisitos genéricos | **Adiar** como número; usar como ordem de grandeza. Plan de 57 mil palavras ≈ 190 páginas ≈ centenas de horas no ritmo ótimo |
+| E4 | Revisão pequena | Google: "menor mudança que seja uma melhoria completa e autônoma"; alvo < 200 linhas; revisores rápidos | Prática | deployhq.com; freecodecamp (secundários) | Baixa-média: repositório primário não conferido | **Adaptar:** unidade revisável independente e completa |
+| E5 | Contexto de LLM | Desempenho cai com a entrada mais longa e com a posição do dado no meio (Liu et al., TACL 2024); "context rot" (Chroma 2025, 18 modelos) | Evidência | arxiv.org/abs/2307.03172; resumos secundários | Alta para a tendência; números exatos não conferidos | **Adotar o princípio:** o Revisor LLM também degrada em documento gigante; justifica teto e revisão por delta |
+| E6 | Specs para agentes | Não entregar spec gigante; entregas pequenas e atômicas, testáveis isoladamente; critérios de aceite guiam a decomposição; partes independentes em paralelo | Prática | addyosmani.com/blog/good-spec; augmentcode micro-specs (fornecedor) | Média (blog) / baixa (fornecedor); **não há regra numérica padrão** | **Adaptar:** o SOT já tem BASpec atômica; falta o teto por Spec |
+| E7 | Divisão de histórias (INVEST, Lawrence) | Checar INVEST; aplicar padrões de divisão em sequência; dividir em fatias verticais (fluxo, regra, variação de dado), não por camada técnica; conferir se a divisão quebra Independente/Valioso | Padrão/Prática | humanizing work (podcast #175); resumos | Média | **Adaptar:** corte por fronteira de contrato/capacidade, não por fase; reconferir independência dos pedaços |
+| E8 | Decomposição modular | Parnas (1972): decompor por decisões de projeto escondidas (o que muda junto fica junto), não por número/tamanho; coesão alta e acoplamento baixo como heurística | Padrão | blog.acolyer.org; arXiv 2507.09596 | Média-alta (clássico) | **Adotar:** critério de corte = o que muda junto; o tamanho vira verificação, não critério de projeto |
+| E9 | GEH-001 (interno) | Dividir por fases sequenciais ou tipo de tarefa cria handoffs; quem detém o contexto de uma unidade a realiza inteira | Prática (interna) | `RETOMADA/GEH-001` | — | Coerente com E7/E8 |
+
+### Síntese
+1. **Não existe número padrão** para tamanho de especificação. O que há é (a) benchmark de revisão: limite por sessão e ritmo (E1–E3), (b) critério de decomposição: o que muda junto fica junto (E8), com divisão vertical (E7), (c) evidência de que LLM degrada com entrada longa (E5).
+2. **Implicação para o gate:** teto em linhas (item 2 da proposta) é válido como **verificação de segurança**, mas o **critério de corte** deve ser Parnas/INVEST (contrato e capacidade). Tamanho sozinho é métrica fraca (E1, ressalva da comunidade).
+3. **Ajuste sugerido à proposta:** adicionar um segundo eixo ao teto — **unidades lógicas independentes por Spec** — e medir **tempo de revisão por rodada**, para calibrar com dados do próprio SOT (ledger), em vez de importar 200–400 linhas de código.
+4. **Lacunas:** não conferi fontes primárias (relatório SmartBear, Gilb & Graham 1993, Chroma, repositório Google); nenhuma fonte trata especificamente de especificações formais de agentes com revisor LLM.

@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "09887dec2d1f1b554a10e5f1786fa1e91123d6f8bb08d0a9e12a9a39b7d30e3e",
+  "digest": "3ca37d14aafb82a2cf2203ca1422676f03612e5cf906550cac8868a83d3cb856",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -5120,7 +5120,7 @@
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 50
+   "cited_by": 51
   },
   {
    "id": "RULE-ECC-03",
@@ -5130,7 +5130,7 @@
   {
    "id": "RULE-ECC-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 56
+   "cited_by": 57
   },
   {
    "id": "RULE-ECC-05",
@@ -5140,7 +5140,7 @@
   {
    "id": "RULE-ECC-06",
    "defined_in": "governance/RULES.md",
-   "cited_by": 34
+   "cited_by": 35
   },
   {
    "id": "RULE-EH",
