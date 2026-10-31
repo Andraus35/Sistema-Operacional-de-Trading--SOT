@@ -4,8 +4,9 @@ telemetria_tokens.py — telemetria de tokens/custo dos agentes CONSTRUTORES (AC
 
 Uso:
   (sem argumentos)    hook PostToolUse/Agent: lê o evento em stdin e acrescenta UMA linha JSON a .telemetria/uso-tokens.jsonl.
+  custo-beneficio     cruza tokens por Spec (telemetria local) com os achados dos pareceres (loop_ledger): tokens por rodada, por achado e por achado Média/Crítica.
   snapshot            grava governance/aprendizado/TELEMETRIA-TOKENS.md (retrato datado, versionável; o ledger do loop aponta para ele).
-  resumo [--json]     agrega por agente / modelo / classe-de-tarefa: chamadas, tokens (in/out/cache), custo estimado e tokens por chamada.
+  resumo [--json] [--por-spec]   agrega por agente / modelo / classe-de-tarefa (ou por Spec / agente / classe): chamadas, tokens (in/out/cache), custo estimado e tokens por chamada.
 
 Garantias: DETECTOR (ENF-03) — nunca nega, nunca altera a chamada, falha => exit 0 silencioso. Não grava o texto do prompt nem da resposta
 (só metadados). Custo = tokens x tabela versionada governance/telemetria/PRECOS-MODELOS.json; preço ausente => custo INDETERMINADO
@@ -52,9 +53,11 @@ def extrair(ev):
     resp = ev.get("tool_response")
     prompt = str(entrada.get("prompt") or entrada.get("message") or "")
     classe = re.search(r"^\s*CLASSE-TAREFA:\s*(\w+)", prompt, re.M)
+    alvo = re.search(r"^\s*ALVO:\s*(\S+)", prompt, re.M)
+    spec = re.search(r"SPEC-\d{3}", (alvo.group(1) if alvo else "") + " " + prompt)
     r = {"t": int(time.time()), "tool": ev.get("tool_name"), "agente": entrada.get("subagent_type") or entrada.get("to"),
          "model": entrada.get("model"), "classe": classe.group(1).upper() if classe else None,
-         "sessao": ev.get("session_id")}
+         "spec": spec.group(0) if spec else None, "alvo": alvo.group(1) if alvo else None, "sessao": ev.get("session_id")}
     for k, nome in CHAVES.items():
         r[nome] = _busca(resp, k)
     r["total"] = _busca(resp, "totalTokens")
@@ -106,11 +109,14 @@ def custo(reg):
     return total
 
 
-def resumo(registros):
+def resumo(registros, por="agente"):
     grupos = defaultdict(lambda: {"chamadas": 0, "sem_tokens": 0, "total": 0, "in": 0, "out": 0, "cache_read": 0,
                                   "cache_create": 0, "custo": 0.0, "custo_indet": 0})
     for r in registros:
-        g = grupos[(r.get("agente") or "?", r.get("model") or "frontmatter", r.get("classe") or "-")]
+        if por == "spec":
+            g = grupos[(r.get("spec") or "sem-spec", r.get("agente") or "?", r.get("classe") or "-")]
+        else:
+            g = grupos[(r.get("agente") or "?", r.get("model") or "frontmatter", r.get("classe") or "-")]
         g["chamadas"] += 1
         if r.get("total") is None:
             g["sem_tokens"] += 1
@@ -142,6 +148,35 @@ def snapshot(regs):
     return "\n".join(out) + "\n"
 
 
+def custo_beneficio(regs, linhas):
+    """Cruza tokens por Spec (telemetria) com rodadas/achados (loop_ledger.coletar). Só razões; sem juízo de mérito.
+    Spec sem telemetria => tokens 'n/m' (não medido; nunca estimar). Tokens != qualidade (CEE-001): ler junto das severidades."""
+    tok = defaultdict(int)
+    for r in regs:
+        if r.get("spec") and r.get("total") is not None:
+            tok[r["spec"]] += r["total"]
+    por_spec = defaultdict(lambda: {"rodadas": 0, "Crítica": 0, "Média": 0, "Menor": 0})
+    for chave, rodadas in linhas.items():
+        spec = chave.split()[0]
+        for d in rodadas.values():
+            s = por_spec[spec]
+            s["rodadas"] += 1
+            for a in d["achados"]:
+                s[a["sev"]] = s.get(a["sev"], 0) + 1
+    linhas_out = []
+    for spec in sorted(set(por_spec) | set(tok)):
+        s = por_spec.get(spec, {"rodadas": 0, "Crítica": 0, "Média": 0, "Menor": 0})
+        n = tok.get(spec)
+        graves = s["Crítica"] + s["Média"]
+        total = graves + s["Menor"]
+        linhas_out.append({"spec": spec, "rodadas": s["rodadas"], "criticas": s["Crítica"], "medias": s["Média"], "menores": s["Menor"],
+                           "tokens": n,
+                           "tokens_por_rodada": round(n / s["rodadas"]) if n is not None and s["rodadas"] else None,
+                           "tokens_por_achado": round(n / total) if n is not None and total else None,
+                           "tokens_por_achado_grave": round(n / graves) if n is not None and graves else None})
+    return linhas_out
+
+
 def _ler():
     regs = []
     if SAIDA.exists():
@@ -156,6 +191,19 @@ def _ler():
 def main(argv):
     if len(argv) < 2:
         return hook()
+    if argv[1] == "custo-beneficio":
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import loop_ledger
+        res = custo_beneficio(_ler(), loop_ledger.coletar(ROOT))
+        if "--json" in argv:
+            print(json.dumps(res, ensure_ascii=False, indent=1))
+            return 0
+        print("spec | rodadas | crít | méd | men | tokens | tokens/rodada | tokens/achado | tokens/achado grave (Crítica+Média)")
+        f = lambda v: "n/m" if v is None else v
+        for r in res:
+            print(f"{r['spec']} | {r['rodadas']} | {r['criticas']} | {r['medias']} | {r['menores']} | {f(r['tokens'])} | {f(r['tokens_por_rodada'])} | {f(r['tokens_por_achado'])} | {f(r['tokens_por_achado_grave'])}")
+        print("LEMBRETE: Detector (ENF-03). n/m = telemetria sem registro da Spec (nunca estimado). Menos tokens por achado NÃO é melhor por si (Eficiência só sobre Eficácia válida, CEE-001); custo fora do Conviction Vector (INV-04).")
+        return 0
     if argv[1] == "snapshot":
         regs = _ler()
         if not regs:
@@ -168,12 +216,13 @@ def main(argv):
         print(__doc__)
         return 2
     regs = _ler()
-    g = resumo(regs)
+    por = "spec" if "--por-spec" in argv else "agente"
+    g = resumo(regs, por)
     if "--json" in argv:
         print(json.dumps({"|".join(k): v for k, v in g.items()}, ensure_ascii=False, indent=1))
         return 0
     print(f"Telemetria de tokens (AC) — {len(regs)} chamada(s) em {SAIDA.relative_to(ROOT)}")
-    print("agente | modelo | classe | chamadas | tokens total | tokens/chamada | in | out | cache_r | cache_c | custo USD")
+    print(("spec | agente | classe" if por == "spec" else "agente | modelo | classe") + " | chamadas | tokens total | tokens/chamada | in | out | cache_r | cache_c | custo USD")
     for (a, m, c), v in sorted(g.items()):
         med = round(v["total"] / v["chamadas"]) if v["chamadas"] else 0
         cu = "INDETERMINADO" if v["custo_indet"] else f"{v['custo']:.4f}"
