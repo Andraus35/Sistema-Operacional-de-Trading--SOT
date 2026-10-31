@@ -4,13 +4,13 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-10-31** · digest `c12fd7c04fb409d1` · **526** documentos · **8547** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-10-31** · digest `5bacb38a91142953` · **526** documentos · **8549** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
 | Área | Docs | Função | Mais referenciados |
 |---|---:|---|---|
-| **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (347) · [atomic-spec.md](../../atomic-spec.md) (231) · [AGENTS.md](../../AGENTS.md) (210) |
+| **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (347) · [atomic-spec.md](../../atomic-spec.md) (232) · [AGENTS.md](../../AGENTS.md) (210) |
 | **governance** | 276 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (414) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (127) · [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) (117) |
 | **canon** | 9 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (167) · [CCM-001-canonical-conviction-model.md](../../canon/CCM-001-canonical-conviction-model.md) (112) · [CHM-001-canonical-hypothesis-model.md](../../canon/CHM-001-canonical-hypothesis-model.md) (105) |
 | **specs** | 56 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (252) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (203) · [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) (184) |
@@ -32,7 +32,7 @@ flowchart LR
   governance["governance"] -->|929| specs["specs"]
   docs["docs"] -->|590| specs["specs"]
   docs["docs"] -->|514| raiz["raiz"]
-  governance["governance"] -->|447| raiz["raiz"]
+  governance["governance"] -->|448| raiz["raiz"]
   specs["specs"] -->|436| governance["governance"]
   governance["governance"] -->|204| backlog["backlog"]
   raiz["raiz"] -->|166| governance["governance"]
@@ -183,7 +183,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [README.md](../../README.md) | SOT-Harness | 3 | 9 |
 | [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 347 | 85 |
 | [WORKFLOW.md](../../WORKFLOW.md) | WORKFLOW — Setup Operacional Canônico do SOT | 153 | 12 |
-| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 231 | 37 |
+| [atomic-spec.md](../../atomic-spec.md) | atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT | 232 | 37 |
 
 ### governance
 
@@ -228,7 +228,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-015_Ata_Brechas_de_Ferramenta_e_Medicao_do_Revisor.md) | DHR-AUDITOR-EXTERNO-015 — Ata — Brechas de ferramenta dos subagentes de revis... | 56 | 6 |
 | [DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-016_Ata_Fusao_dos_Subagentes_Antigos_no_Revisor.md) | DHR-AUDITOR-EXTERNO-016 — Ata — Fusão do que era útil dos subagentes de 1ª ge... | 56 | 9 |
 | [DHR-AUDITOR-EXTERNO-017_Ata_Deteccao_Deterministica_e_Guarda_do_Revisor.md](../../governance/DHR-AUDITOR-EXTERNO-017_Ata_Deteccao_Deterministica_e_Guarda_do_Revisor.md) | DHR-AUDITOR-EXTERNO-017 — Ata — Detectores determinísticos adicionais no gate... | 4 | 10 |
-| [DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md](../../governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md) | DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop... | 57 | 5 |
+| [DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md](../../governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md) | DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop... | 58 | 5 |
 | [DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md](../../governance/DHR-BACKLOG-001_Ata_Promocao_BL003_BL011_ATIVADO.md) | DHR-BACKLOG-001 — Ata — Promoção de BL-003 e BL-011 a ATIVADO (gatilho `spec:... | 29 | 4 |
 | [DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md](../../governance/DHR-BACKLOG-ABERTURA-001_Ata_Vinculacao_Automatica_de_Backlog_na_Abertura.md) | DHR-BACKLOG-ABERTURA-001 — Ata — Backlog vinculado por regra à abertura de ca... | 35 | 7 |
 | [DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md](../../governance/DHR-BENCH-INTEL-001_Ata_Inteligencia-SOT_como_Benchmark.md) | DHR-BENCH-INTEL-001 — Ata — Repositório paralelo `Inteligencia-SOT` como Benc... | 45 | 9 |
@@ -464,7 +464,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md](../../governance/propostas/SPEC-048/PARECER-REVISOR-SPEC048-PLAN-R5-2026-10-25.md) | Parecer do Revisor — Plan da SPEC-048 v1.4, rodada 5 (delta, S2) — 2026-10-25 | 2 | 7 |
 | [PARECER-REVISOR-SPEC049-ABERTURA-R1-2026-10-31.md](../../governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R1-2026-10-31.md) | Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) ... | 3 | 8 |
 | [PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md](../../governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md) | Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) ... | 2 | 10 |
-| [PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md](../../governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md) | Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) ... | 1 | 7 |
+| [PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md](../../governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md) | Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) ... | 1 | 9 |
 
 ### canon
 

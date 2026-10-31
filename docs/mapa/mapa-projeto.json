@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "c12fd7c04fb409d187913775d9bb30122585fa326d255e5b88e51c25007f9508",
+  "digest": "5bacb38a91142953ff716b6d3a0de4c8976aafaa472304b7e6fed15791a366cc",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -150,7 +150,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 231,
+   "in": 232,
    "out": 37
   },
   {
@@ -1410,7 +1410,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 57,
+   "in": 58,
    "out": 5
   },
   {
@@ -3063,7 +3063,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) — R3 por delta (S2, sonnet) — 2026-10-31",
    "in": 1,
-   "out": 7
+   "out": 9
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -3988,7 +3988,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 57
+   "cited_by": 58
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -43399,7 +43399,17 @@
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md",
    "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R3-2026-10-31.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "type": "id"
   },
   {
