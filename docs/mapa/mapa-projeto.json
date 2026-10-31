@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "29a0f4f94adb5d604add2297b9dde023e15ff93d07829c4a7fcaa9c7c202ebcd",
+  "digest": "9e6126280795f0b9b7d42af8a6860a3d1b44f43f73c54b8d48a7c7d261363e38",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -3035,7 +3035,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Proposta de Abertura da SPEC-049 (WikiRAG Reading View) — R2 integral (S2, sonnet) — 2026-10-31",
    "in": 2,
-   "out": 11
+   "out": 10
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -3286,7 +3286,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 204,
+   "in": 203,
    "out": 9
   },
   {
@@ -42928,11 +42928,6 @@
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
    "to": "governance/RULES.md",
    "type": "id"
-  },
-  {
-   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",
-   "to": "specs/features/SPEC-001/plan.md",
-   "type": "path"
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-ABERTURA-R2-2026-10-31.md",

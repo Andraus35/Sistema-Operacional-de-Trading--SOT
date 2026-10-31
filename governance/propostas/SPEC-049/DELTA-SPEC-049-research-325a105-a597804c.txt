@@ -1,0 +1,10 @@
+DELTA specs/features/SPEC-049/research.md vs 325a105
+SHA256-ALVO: a597804cea044efaa9e5264a0be54643b8fc104017ddcbc33b675a562cda793b
+SHA256-BASE: 01d87552e0d537fae3c341a2052a779e2c3de2c6d344a5ab92e245dcb68c622e
+blocos: 6 alterados · 0 adicionados · 0 removidos · 21 inalterados (de 27 atuais; 27 na base)
+alterados: 3.1-reconstrução-verificável-q1-adaptar-a-definição-adotar-s, 3.3-como-estava-em-uma-data-q3-adotar-o-sentido-bitemporal-j, 3.5-conflito-lado-a-lado-sem-escolha-q5-adotar-neutralidade-, 3.8-wiki-de-llm-e-resumo-pré-gerado-q8-rejeitar-como-conteúd, 8.1-peso-opções, cabeçalho
+adicionados: —
+removidos: —
+fontes citadas (sha256 de 12): {"canon/CCM-001-canonical-conviction-model.md": "0c74d2c91cf9", "canon/CEM-001-canonical-evidence-model.md": "73b0066680be", "canon/CHM-001-canonical-hypothesis-model.md": "18e685930480", "backlog/RMR-001_Painel_Backlog.md": "6026dc5e3c4d", "governance/RULES.md": "c7445ee07bfb", "specs/features/SPEC-002/plan.md": "372808de15bf", "specs/features/SPEC-006/plan.md": "f4addd7d7273", "specs/features/SPEC-007/plan.md": "d6f66b079a8d", "specs/features/SPEC-020/plan.md": "0737d7a45e9d", "specs/features/SPEC-048/plan.md": "113df7339150", "atomic-spec.md": "b9679bfd60b5"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.
