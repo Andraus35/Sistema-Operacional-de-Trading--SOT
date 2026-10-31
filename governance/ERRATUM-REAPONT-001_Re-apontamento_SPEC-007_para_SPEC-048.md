@@ -6,13 +6,13 @@
 | Versão | **v1.3** (2026-10-31, curta). Corrige os Menores m-6 e m-7 do parecer R2 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R2-2026-10-31.md`, CONFORME condicional, 0 Médias). O m-5 já foi aplicado pelo Orquestrador por ficha M (N-D) e está mantido. Mudanças: "Registro de mudanças v1.2 → v1.3". Trecho da v1.2 trocado: "Anexo V1.2". *[v1.2: "**v1.2** (2026-10-30, curta). Incorpora …" — continua abaixo.]* **v1.2** (2026-10-30, curta). Incorpora a resposta de Andraus à Q-9 (DHR-RETRO-001 §9, Adendo 6): a recuperação de experiência recebe a nota N-G (endereço indicativo SPEC-009/017). Mudanças: "Registro de mudanças v1.1 → v1.2". Trechos da v1.1 trocados: "Anexo V1.1". *[v1.1: "**v1.1** (2026-10-30, curta). Corrige o parecer R1 …" — continua abaixo.]* **v1.1** (2026-10-30, curta). Corrige o parecer R1 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md`, NÃO CONFORME): M-1 (Média) e m-1..m-4 (Menores). Nenhum achado foi aplicado por ficha M. Incorpora as respostas de Andraus da DHR-RETRO-001 §8 (Adendo 5). Mudanças: "Registro de mudanças v1.0 → v1.1". Trechos da v1.0 trocados: "Anexo V1.0". A v1.0 inteira está no commit `142d29b`. *[v1.0 (2026-10-30): primeira entrega.]* |
 | Natureza | **PROPOSTA de errata aditiva e editorial** (só endereço). Espera o Revisor e a homologação de Andraus. **Não é baseline.** Nada aqui vale antes da homologação (RULE-HG-01/02/03). **Não edita** nenhum `plan.md`, `checks.md`, ata, ERRATUM nem o `ROADMAP.md` (INV-07/INV-09). |
 | Ordem | Ordem de Andraus transmitida pelo Orquestrador (chat, 2026-10-30: "Seguir com a errata de re-apontamento"). Executa a DHR-RETRO-001 §1 ("Próxima frente", item (3): "errata de re-apontamento (regra de busca da ata `DHR-SPEC048-001`, Q-7)") e §2. Os itens (1) e (2) já foram homologados (DHR-SPEC006-005; DHR-SPEC020-002). `[FONTE: FATO NORMATIVO, DHR-RETRO-001. A ordem de 2026-10-30 é registro do Orquestrador]` |
-| Respostas de Andraus incorporadas | DHR-RETRO-001 §8 (Adendo 5, chat 2026-10-30): **Q-2 = Patch** ("ajuste editorial"). **Q-1** = "Um arquivo único, com uma linha de ponteiro no fim de cada plan.md afetado". **Q-3/Q-4** = "**Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada)". **Q-8** = "nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele". DHR-RETRO-001 §9 (Adendo 6, chat 2026-10-30): **Q-9** = "destino = **SPEC-009/017, como endereço indicativo** (as Specs não estão abertas; G-001 e a decisão de fundo seguem abertas). Entra no erratum como nota própria (N-G) para as linhas L-05 (1ª parte) e L-06 da SPEC-006". Q-5, Q-6 e Q-7 seguem com a premissa do texto. `[FONTE: FATO NORMATIVO, ata]` |
+| Respostas de Andraus incorporadas | DHR-RETRO-001 §8 (Adendo 5, chat 2026-10-30): **Q-2 = Patch** ("ajuste editorial"). **Q-1** = "Um arquivo único, com uma linha de ponteiro no fim de cada plan.md afetado". **Q-3/Q-4** = "**Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada)". **Q-8** = "nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele". DHR-RETRO-001 §9 (Adendo 6, chat 2026-10-30): **Q-9** = "destino = **SPEC-009/017, como endereço indicativo** (as Specs não estão abertas; G-001 e a decisão de fundo seguem abertas). Entra no erratum como nota própria (N-G) para as linhas L-05 (1ª parte) e L-06 da SPEC-006". DHR-RETRO-001 §10 (Adendo 7, chat 2026-10-31): **Q-5** = "**Sem nota nova**"; **Q-6** = "**Sim**: nota aditiva atualizando a referência das linhas, sem apagar o texto antigo e sem mudar regra"; **Q-7** = "**Baixa (LOW)**". "Com isso não restam perguntas pendentes no erratum." *[v1.2: "Q-5, Q-6 e Q-7 seguem com a premissa do texto."]* `[FONTE: FATO NORMATIVO, ata]` |
 | Regra que manda esta errata | DHR-SPEC048-001 §1, linha Q-7: "**A ata registra a REGRA DE BUSCA** (critério 1: "SPEC-007" junto de retrieval/recuperação/evidence candidate/pacote/RAG faithfulness, em Spec baselined ou errata homologada; critério 2: "SPEC-048" junto de WikiRAG/página de leitura, em Spec baselined ou ata → Spec da página) e a errata, proposta no Plan da SPEC-048, corrige o que a busca achar na hora de ser escrita". `[FONTE: FATO NORMATIVO]` |
 | Fontes de verdade | DHR-SPEC007-002 §3 (fronteira) e §4 (re-apontamentos "LISTADOS, não executados"). DHR-SPEC007-003 P-6 e DHR-SPEC007-004 P-14 (COL-EXP-05). DHR-SPEC048-002 (Plan v1.4 da SPEC-048 "HOMOLOGADO, BASELINE"; §3). DHR-SPEC020-002 + ERRATUM-SPEC020-002 (metade F1). `[FONTE: FATO NORMATIVO]` |
 | Insumo | `specs/features/SPEC-048/plan.md` (BASELINE v1.4), seção "Proposta de errata aditiva de re-apontamento" (busca de 2026-10-24). A busca foi refeita (seção 2). A proposta antiga serve só de comparação, e **não** foi seguida onde generalizava (M-1). |
 | Fonte do estado das decisões | **Só o `ROADMAP.md`**, linhas "Decisões abertas ativas" e "Decisões FECHADAS". |
 | Âncoras | **Por texto literal entre aspas.** Os "l.NNN" ajudam só a localizar (conferidos em 2026-10-30). |
-| Complexidade | **LOW** (D0–D3, light). Só endereço; sem comportamento, efeito, RULE, BASpec, EC ou estado. Premissa até a homologação (Q-7). |
+| Complexidade | **LOW** (D0–D3, light). Só endereço; sem comportamento, efeito, RULE, BASpec, EC ou estado. **Decidida por Andraus** (Q-7: "Baixa (LOW)", DHR-RETRO-001 §10). |
 | Status epistemológico | `[FONTE]` = conferido no arquivo citado. `[LITERAL]` = busca de texto reproduzível. `[INFERÊNCIA]` = julgamento do Especificador. `[PROPOSTA]` = o que se pede a Andraus. `[DECISÃO NECESSÁRIA]` = lacuna que o Especificador não resolve. |
 | Autor · Data | Especificador Principal SOT (Claude Code, Opus 5.5) · 2026-10-30 |
 
@@ -190,14 +190,14 @@ Cada nota se lê junto do trecho âncora. Texto baselined não muda (INV-09). Ne
 **N-E** (SPEC-038, no trecho L-28; SPEC-021, nos trechos L-26 e L-27):
 > *"Nota aditiva (ERRATUM-REAPONT-001): na classe B, a dimensão 'RAG faithfulness' divide-se (DHR-SPEC007-002 §4). A **metade F1** (conhecimento formado) é da **SPEC-007**, com critério pelo ERRATUM-SPEC020-002 (DHR-SPEC020-002). A **metade F2** (frase/item entregue) é da **SPEC-048** e segue DIFERIDA até a homologação do erratum à parte da metade F2. tool correctness: SPEC-038, encerrada pelo ERRATUM-SPEC020-001. decision traceability: SPEC-014, DIFERIDA. Esta nota só corrige endereço e não antecipa nenhuma dimensão B. Texto acima não alterado (INV-09)."*
 
-**N-F** (SPEC-007, junto da nota C-3; premissa da Q-6): ver seção 6.
+**N-F** (SPEC-007, junto da nota C-3; decidida, Q-6, DHR-RETRO-001 §10): ver seção 6.
 
 **N-G** (SPEC-006, nos trechos L-05 (1ª parte, "memória **EPISÓDICA/experiência** … FORA → SPEC-007 (retrieval)") e L-06 ("§40 Retrieval — 015-020, 022 …")):
 > *"Nota aditiva (ERRATUM-REAPONT-001): a recuperação de **experiência** (EXP-SPEC-015..020 e 022: recuperação, similar, contrastante, temporal, por regime, relevância e pacote de experiência) **não** passa à SPEC-048, cuja busca é só sobre o conhecimento carimbado e as fontes originais (DHR-SPEC007-002 §3), nem fica na SPEC-007 reduzida (formação e selo). Por decisão de Andraus (DHR-RETRO-001 §9), o seu **endereço indicativo** é a **SPEC-009/SPEC-017**. É só endereço: não abre nem autoriza essas Specs, não lhes dá conteúdo nem baseline, e **não decide G-001** nem a forma dessa recuperação, que seguem ABERTAS. A SPEC-006 continua fora (FORA) desse escopo, como já dizia. Texto acima não alterado (INV-09)."*
 
 ---
 
-## 5. SPEC-020 e ERRATUM-SPEC020-001: sem nota nova (premissa da Q-5)
+## 5. SPEC-020 e ERRATUM-SPEC020-001: sem nota nova (decidida, Q-5: "Sem nota nova", DHR-RETRO-001 §10)
 
 - **O endereço já está corrigido por texto homologado.** O ERRATUM-SPEC020-002 §2 ("Leitura vigente") cobre D0 (L-19), D1 (L-20), ADV-EV-06 (L-21), Riscos, Etiquetagem, a lista final (L-22: "'fecha em SPEC-007' lê-se: **metade F1** (este erratum); metade F2 → SPEC-048") e a errata final (L-23: "F1: critério definido; F2: DIFERIDA (SPEC-048)"). O §3 do mesmo erratum cobre a L-29. `[FONTE]`
 - **Uma nota nova duplicaria** o mesmo fato (P2).
@@ -215,9 +215,21 @@ Cada nota se lê junto do trecho âncora. Texto baselined não muda (INV-09). Ne
 - DHR-SPEC048-001: 5 (é a fonte da separação);
 - `ROADMAP.md`: 4 linhas, só para registro: "Próximo trabalho autorizado", "Decisões FECHADAS", a nota C-3 ("Nota aditiva (DHR-SPEC048-001, C-3)") e a tabela do §25. Todas já corretas ou já anotadas.
 
-**SPEC-007.** A nota C-3 ("onde este Plan e o Anexo T dizem que a visão de leitura WikiRAG / a página de leitura \"vai à SPEC-048\" … leia-se: … **SPEC-049**") vale pelo texto e cobre todas as menções de hoje. Mas a lista "(menções em l.63, 64, 71, 308, 319, 359, 443, 711, 1731, 1801 …)" está defasada em relação à v2.3. Nota **N-F** (premissa: sim, Q-6):
+**SPEC-007.** A nota C-3 ("onde este Plan e o Anexo T dizem que a visão de leitura WikiRAG / a página de leitura \"vai à SPEC-048\" … leia-se: … **SPEC-049**") vale pelo texto e cobre todas as menções de hoje. Mas a lista "(menções em l.63, 64, 71, 308, 319, 359, 443, 711, 1731, 1801 …)" está defasada em relação à v2.3. Nota **N-F** (decidida, Q-6: "nota aditiva atualizando a referência das linhas, sem apagar o texto antigo e sem mudar regra", DHR-RETRO-001 §10):
 
-> *"Nota aditiva (ERRATUM-REAPONT-001): os números de linha da nota C-3 são da versão de 2026-10-24 e não se aplicam à v2.3. A nota vale pelo texto ('onde este Plan e o Anexo T dizem…'), que cobre todas as menções. Texto acima não alterado (INV-09)."*
+> *"Nota aditiva (ERRATUM-REAPONT-001): os números de linha da nota C-3 ('l.63, 64, 71, 308, 319, 359, 443, 711, 1731, 1801') são da versão de 2026-10-24. Referência atualizada para a v2.3, por texto (números conferidos em 2026-10-30 só para localizar):*
+> - *campo ID, "Recuperação, pacote de evidência, WikiRAG e F2 passam à SPEC-048" (l.7);*
+> - *campo de atas, "Q3: WikiRAG = versão de leitura por regra fixa — agora matéria da SPEC-048" (l.21);*
+> - *"Recuperação + pacote com citação + independência no pacote + F2 + WikiRAG" (l.310);*
+> - *"juízo F2, compilação WikiRAG) e o gate de montagem/entrega do pacote são da SPEC-048" (l.445);*
+> - *"(recuperação e WikiRAG) é requisito à SPEC-048" (l.713);*
+> - *"\"omitir da recuperação/WikiRAG\" foram à SPEC-048" (l.1538);*
+> - *"EC-KFH-009 WikiRAG … foram à SPEC-048" (l.1733);*
+> - *"R-3, R-4, R-8 (relevância, falsa independência, WikiRAG)" (l.1803);*
+> - *título do Anexo T (l.1950);*
+> - *"\"lado a lado na WikiRAG\" são da SPEC-048" (l.2068).*
+>
+> *A leitura da nota C-3 não muda (a página de leitura → SPEC-049), nenhuma regra muda e o texto antigo da nota fica como está. Texto acima não alterado (INV-09)."*
 
 A DHR-SPEC048-001 §2 cita "l.189/l.517" do ROADMAP; hoje a nota está na l.184. Ata não se edita: fica **só registrado**.
 
@@ -248,15 +260,19 @@ A DHR-SPEC048-001 §2 cita "l.189/l.517" do ROADMAP; hoje a nota está na l.184.
 | COL-EXP-05: origem-raiz na SPEC-007 (RULE-KFH-001); contagem no pacote na SPEC-048 (RULE-RET-003); experiência na SPEC-009/017 | §3; N-D; §7 | L-05 (2ª parte), L-07, L-08, L-16; SPEC-007 "Reconciliação COL-EXP-05" itens 3 e 4; DHR-SPEC007-004 P-14 |
 | Só formação: fica na SPEC-007 | §3 | L-12; errata v1.13 (L-31) |
 | RAG faithfulness: F1 → SPEC-007; F2 → SPEC-048, DIFERIDA | §3; §5; N-E; §7 (ROADMAP, CATALOGO, CONFLICT-MAP) | L-19 a L-24, L-29, L-30 (cobertos pelo ERRATUM-SPEC020-002); L-26, L-27, L-28 |
-| Página de leitura → SPEC-049 | §6; N-F | SPEC-007 nota C-3; ROADMAP nota C-3 |
+| Página de leitura → SPEC-049; referência de linhas da nota C-3 atualizada (Q-6 decidida) | §6; N-F; §13 (linha da SPEC-007); §15 | SPEC-007 nota C-3; ROADMAP nota C-3 |
+| SPEC-020 e ERRATUM-SPEC020-001 sem nota nova (Q-5 decidida) | §5; §15 | ERRATUM-SPEC020-002 §2/§3 |
+| Complexidade LOW (Q-7 decidida) | cabeçalho; CC-05; §15 | — |
+| Linha de ponteiro por alvo, com só as notas que cada alvo recebe | §13 | fim de cada `plan.md` alvo (na homologação) |
 | Registros de gatilho e registros datados: sem nota | §2.1; §3; §7 | L-17; gatilhos do BL-017; CATALOGO; RMR-001 |
+| Vizinha de experiência fora do critério, não tocada (m-7) | §2.1; §3 | SPEC-006 "FORA o que é memória episódica/experiência (SPEC-007/018/K-001)" |
 | Exclusões do critério 1 | §1 (tabela) | SPEC-007 l.261/268 e Anexo R l.2605/2610; SPEC-048 l.253 e seção de proposta |
 
 ---
 
 ## 9. Herança/Delta (CC-08), obrigação a obrigação
 
-- **INHERITS:** DHR-SPEC048-001 Q-7; DHR-SPEC007-002 §3/§4; DHR-SPEC007-003 P-6; DHR-SPEC007-004 P-14; DHR-RETRO-001 §8 e §9; SPEC-048 v1.4 ("Termo 1"; RULE-RET-003; Non-goal de experiência); SPEC-007 v2.3 (RULE-KFH-001; "Reconciliação COL-EXP-05"); ERRATUM-SPEC020-002 (§1.9, §2, §3, Q-5); ERRATUM-SPEC020-001; SPEC-006 (RULE-CKG-011; ADV-CKG-08).
+- **INHERITS:** DHR-SPEC048-001 Q-7; DHR-SPEC007-002 §3/§4; DHR-SPEC007-003 P-6; DHR-SPEC007-004 P-14; DHR-RETRO-001 §8, §9 e §10; SPEC-048 v1.4 ("Termo 1"; RULE-RET-003; Non-goal de experiência); SPEC-007 v2.3 (RULE-KFH-001; "Reconciliação COL-EXP-05"); ERRATUM-SPEC020-002 (§1.9, §2, §3, Q-5); ERRATUM-SPEC020-001; SPEC-006 (RULE-CKG-011; ADV-CKG-08).
 - **ADDED:** notas N-A a N-G.
 - **MODIFIED:** nenhum.
 - **REMOVED:** nenhum.
@@ -286,7 +302,7 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA]`
 | CC-02 | PASS | N-A reafirma que a Evidência é do agente; nada é redefinido |
 | CC-03 | PASS | Convicção intocada; J-001 aberta |
 | CC-04 | PASS | Nenhuma Salvaguarda tocada |
-| CC-05 | PASS | LOW declarado (Q-7) |
+| CC-05 | PASS | LOW, decidido por Andraus (Q-7, DHR-RETRO-001 §10) |
 | CC-06 / CC-07 | N/A | Não é Engineering Card |
 | CC-08 | PASS | Seção 9 |
 | CC-09 | PASS | Literal separado de julgamento; contagens com regex; o endereço da experiência vem de decisão de Andraus (Q-9), declarado como indicativo, sem afirmar escopo nem conteúdo de SPEC-009/017 |
@@ -305,24 +321,25 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA]`
 ## 12. Impacto (RULE-HG-04) e compatibilidade
 
 - **Impacto:** nenhum schema, RAG/KG, Skill, teste ou obrigação.
-- **Linha de ponteiro:** SPEC-002, SPEC-003, SPEC-006, SPEC-021, SPEC-038 e SPEC-007 (esta pela premissa da Q-6).
+- **Linha de ponteiro:** SPEC-002, SPEC-003, SPEC-006, SPEC-021, SPEC-038 e SPEC-007 (Q-6 decidida), cada um com a sua linha (§13).
 - **SPEC-020 e ERRATUM-SPEC020-001:** nada.
 - **ROADMAP:** duas notas aditivas na homologação (§7).
 - **Compatibilidade: Patch (ajuste editorial)**, decidida por Andraus (DHR-RETRO-001 §8, Q-2). `[FONTE]`
 
 ## 13. Forma de aplicação (decidida: Q-1, DHR-RETRO-001 §8)
 
-**Arquivo único** (este) + **uma linha de ponteiro no fim** de cada `plan.md` afetado. `checks.md` não é editado. Texto da linha (o Orquestrador preenche data e ata no ato):
+**Arquivo único** (este) + **uma linha de ponteiro no fim** de cada `plan.md` afetado. `checks.md` não é editado. Cada alvo recebe **a sua própria linha**, que cita só as notas que ele recebe (m-6). O Orquestrador preenche a data e a ata no ato. Prefixo comum a todas: "**Errata aditiva (data da homologação, ata a atribuir):**". Sufixo comum a todas: "— ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, nota(s) indicada(s). Texto acima não alterado (INV-09)."
 
-> **Errata aditiva (data da homologação, ata a atribuir):** re-apontamento de endereço (recuperação de conhecimento/evidência candidata/pacote → SPEC-048; formação e selo seguem na SPEC-007; recuperação de experiência → SPEC-009/017, endereço indicativo, sem abrir Spec nem decidir G-001) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, notas N-x. Texto acima não alterado (INV-09).
+| Alvo | Miolo da linha (entre o prefixo e o sufixo) |
+|---|---|
+| SPEC-002 `plan.md` | "evidência candidata a partir de recuperação → SPEC-048; formação e selo seguem na SPEC-007 (nota N-A)" |
+| SPEC-003 `plan.md` | "evidência candidata a partir de recuperação → SPEC-048; formação e selo seguem na SPEC-007 (nota N-A)" |
+| SPEC-006 `plan.md` | "formação e selo → SPEC-007; recuperação do conhecimento → SPEC-048 (N-B, N-C); COL-EXP-05: origem-raiz na SPEC-007, contagem no pacote na SPEC-048 (N-D); recuperação de experiência → SPEC-009/017, endereço indicativo, sem abrir Spec nem decidir G-001 (N-G)" |
+| SPEC-021 `plan.md` | "classe B, RAG faithfulness: F1 → SPEC-007, F2 → SPEC-048 (DIFERIDA) (nota N-E)" |
+| SPEC-038 `plan.md` | "classe B, RAG faithfulness: F1 → SPEC-007, F2 → SPEC-048 (DIFERIDA) (nota N-E)" |
+| SPEC-007 `plan.md` | "referência de linhas da nota C-3 atualizada para a v2.3; texto antigo preservado; nenhuma regra muda (nota N-F)" |
 
-Alvos:
-- SPEC-002 (N-A);
-- SPEC-003 (N-A);
-- SPEC-006 (N-B, N-C, N-D, N-G);
-- SPEC-021 (N-E);
-- SPEC-038 (N-E);
-- SPEC-007 (N-F; premissa da Q-6).
+Só a linha da SPEC-006 cita a experiência (N-G).
 
 ## 14. O que NÃO muda (CONS-01)
 
@@ -334,20 +351,33 @@ Alvos:
 
 ## 15. Perguntas para Andraus
 
-**Respondidas** (DHR-RETRO-001 §8, Adendo 5, e §9, Adendo 6) e incorporadas sem ramo condicional:
+**Todas respondidas** (DHR-RETRO-001 §8, Adendo 5; §9, Adendo 6; §10, Adendo 7) e incorporadas sem ramo condicional. **Nenhuma pergunta pendente.**
 - **Q-1:** arquivo único + ponteiro (§13).
 - **Q-2:** Patch (§12).
 - **Q-3/Q-4:** incluir L-16 e a SPEC-021 (N-D, N-E).
 - **Q-8:** nota aditiva no ROADMAP na mesma homologação; CONFLICT-MAP só por ordem de Andraus (§7).
 - **Q-9** (DHR-RETRO-001 §9, Adendo 6): a recuperação de experiência (EXP-SPEC-015..020 e 022) vai à SPEC-009/017 como endereço indicativo. As Specs não estão abertas; G-001 e a decisão de fundo seguem abertas. Aplicada em N-G (§3.1, §4).
+- **Q-5** (§10, Adendo 7): "**Sem nota nova** (o ERRATUM-SPEC020-002 já dá a leitura de cada linha)" (§5).
+- **Q-6** (§10, Adendo 7): "**Sim**: nota aditiva atualizando a referência das linhas, sem apagar o texto antigo e sem mudar regra" (N-F, §6).
+- **Q-7** (§10, Adendo 7): "**Baixa (LOW)**" (cabeçalho; CC-05).
 
-**Pendentes** (premissa usada no texto até a resposta):
+---
 
-| # | Pergunta | Premissa / recomendação |
-|---|---|---|
-| Q-5 | SPEC-020 e ERRATUM-SPEC020-001 sem nota nova (cobertos pelo ERRATUM-SPEC020-002 §2/§3)? | Premissa: **sim** (§5) |
-| Q-6 | Nota N-F na SPEC-007 (números de linha defasados na nota C-3)? | Premissa: **sim** (§6) |
-| Q-7 | Complexidade LOW para esta errata? | Premissa: **sim** |
+## Registro de mudanças v1.2 → v1.3
+
+| Origem | O que mudou |
+|---|---|
+| m-5 (R2) | Aplicado pelo Orquestrador por ficha M em N-D (atribuição da cláusula de experiência). Mantido sem alteração |
+| m-6 (R2) | §13: a linha de ponteiro única deu lugar a **uma linha por alvo**, com só as notas que cada um recebe. Só a SPEC-006 cita a experiência (N-G) |
+| m-7 (R2) | §2.1 e §3 registram a vizinha da SPEC-006 "FORA o que é memória episódica/experiência (SPEC-007/018/K-001)" como "não casa o critério; não tocada (o Adendo 6 nomeou só L-05 (1ª parte) e L-06)" |
+| DHR-RETRO-001 §10 (Adendo 7) | Q-5, Q-6 e Q-7 passaram a decididas, sem premissa: cabeçalho (Complexidade), §5 (título), §6 e §4 (N-F), §9 (INHERITS), §10 (CC-05), §12, §15 (nenhuma pergunta pendente), §8 (fato → locais). O texto da N-F passou a **atualizar a referência das linhas**, como a Q-6 manda: lista as menções da v2.3 por texto, sem apagar o texto antigo da nota C-3 |
+
+## Anexo V1.2: trechos substituídos (INV-07)
+
+- **§13 (v1.2), linha única:** "> **Errata aditiva (data da homologação, ata a atribuir):** re-apontamento de endereço (recuperação de conhecimento/evidência candidata/pacote → SPEC-048; formação e selo seguem na SPEC-007; recuperação de experiência → SPEC-009/017, endereço indicativo, sem abrir Spec nem decidir G-001) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, notas N-x. Texto acima não alterado (INV-09)." Alvos: "SPEC-002 (N-A); SPEC-003 (N-A); SPEC-006 (N-B, N-C, N-D, N-G); SPEC-021 (N-E); SPEC-038 (N-E); SPEC-007 (N-F; premissa da Q-6)."
+- **N-F (v1.2):** "*Nota aditiva (ERRATUM-REAPONT-001): os números de linha da nota C-3 são da versão de 2026-10-24 e não se aplicam à v2.3. A nota vale pelo texto ('onde este Plan e o Anexo T dizem…'), que cobre todas as menções. Texto acima não alterado (INV-09).*"
+- **§15 (v1.2), pendentes:** Q-5 "Premissa: **sim** (§5)"; Q-6 "Premissa: **sim** (§6)"; Q-7 "Premissa: **sim**".
+- **Cabeçalho (v1.2), Complexidade:** "Premissa até a homologação (Q-7)." Também em v1.2: "N-F (… premissa da Q-6)", "§5 … (premissa da Q-5)", "Nota **N-F** (premissa: sim, Q-6)", "CC-05 … LOW declarado (Q-7)", "§12 … SPEC-007 (esta pela premissa da Q-6)".
 
 ---
 
