@@ -22,7 +22,7 @@ Implementar já a medição de tokens dos agentes **Construtores (AC)**. Agentes
 - **Detector (ENF-03):** nunca nega nem altera a chamada; falha = silêncio. Não é gate.
 - `roteador_modelos.py` (selado em `GATE-MANIFEST.sha256`) **não foi alterado**; a coleta é um script novo e separado.
 - Custo fora do Conviction Vector (INV-04; RULE-KFH-014). Tokens ≠ qualidade: Economicidade nunca acima de Eficácia (4Es).
-- **Não verificado:** o formato real de `tool_response` do Agent e se subagentes aparecem separados; o `resumo` avisa quando o evento vier sem tokens. Validar na primeira rodada real.
+- **Validado ao vivo (2026-10-31):** uma chamada real de agente (Explore/haiku) gravou in=2, out=221, cache_read=40828, cache_create=535, total=41586 e 9,5 s; o subagente aparece como linha própria. Ainda não testado com Especificador/Revisor SOT.
 - Não integrado ao `loop_ledger.py` nesta fatia. Nenhuma decisão aberta foi fechada (CONS-01); BL-036 segue `Em espera`.
 
 ## 3. Registro
