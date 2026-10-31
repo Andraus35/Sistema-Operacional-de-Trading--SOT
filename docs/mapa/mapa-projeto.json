@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "0971b442ee2b7069b4be2d4835069b71d93634ef79d2f60256a04d5ad4fcfff5",
+  "digest": "a4a97a7ffd60373fbf0f5671d59ae0469c9d160fda37f8c04584e6a7d75b675f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,7 +101,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 221,
+   "in": 228,
    "out": 60
   },
   {
@@ -136,21 +136,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 357,
+   "in": 364,
    "out": 87
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 165,
+   "in": 172,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 245,
+   "in": 252,
    "out": 38
   },
   {
@@ -192,8 +192,8 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 361,
-   "out": 115
+   "in": 368,
+   "out": 117
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
@@ -206,7 +206,7 @@
    "path": "canon/CEE-001-cognitive-economy-efficiency-v2.0.md",
    "area": "canon",
    "title": "CEE-001 — Cognitive Economy & Efficiency Specification",
-   "in": 100,
+   "in": 107,
    "out": 4
   },
   {
@@ -1120,6 +1120,13 @@
    "out": 36
   },
   {
+   "path": "docs/handoffs/HO-2026-10-31-120.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 36
+  },
+  {
    "path": "docs/handoffs/HO-2026-10-31-92.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
@@ -1209,6 +1216,48 @@
    "title": "HANDOFF — SOT",
    "in": 0,
    "out": 32
+  },
+  {
+   "path": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 36
+  },
+  {
+   "path": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 36
+  },
+  {
+   "path": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 33
+  },
+  {
+   "path": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 33
+  },
+  {
+   "path": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 33
+  },
+  {
+   "path": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 33
   },
   {
    "path": "governance/ADR-CONFLUENCE-001-v3_Skills_Confluence_Architecture.md",
@@ -1543,7 +1592,7 @@
    "path": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
    "area": "governance",
    "title": "DHR-CHECKS-INFO-001 — Ata de Decisão — Detectores informativos: dimensionamento de Spec (RULE-ECC-07) e SHA256-ALVO (delta por hash)",
-   "in": 19,
+   "in": 26,
    "out": 7
   },
   {
@@ -1627,14 +1676,14 @@
    "path": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
    "area": "governance",
    "title": "DHR-DELTA-HASH-001 — Ata de Decisão — Delta por hash: pacote gravado, SHA256-ALVO no pedido e instrumentação do ledger",
-   "in": 28,
+   "in": 35,
    "out": 4
   },
   {
    "path": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
    "area": "governance",
    "title": "DHR-DIMENSIONAMENTO-001 — Ata de Decisão — RULE-ECC-07: dimensionamento de Spec (tetos medidos)",
-   "in": 32,
+   "in": 39,
    "out": 7
   },
   {
@@ -1662,7 +1711,7 @@
    "path": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
    "area": "governance",
    "title": "DHR-DOCSYNC-003 — Ata de Decisão — Detector de sincronização casa ID inteiro; AGENTS.md §7 corrige SPEC-020-PRINC-001",
-   "in": 35,
+   "in": 42,
    "out": 7
   },
   {
@@ -1858,7 +1907,7 @@
    "path": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
    "area": "governance",
    "title": "DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do loop dos construtores (4Es)",
-   "in": 50,
+   "in": 57,
    "out": 13
   },
   {
@@ -1914,7 +1963,7 @@
    "path": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
    "area": "governance",
    "title": "DHR-MERGE-001 — Ata de Decisão — Aviso determinístico \"já é possível e seguro mesclar\"",
-   "in": 32,
+   "in": 39,
    "out": 3
   },
   {
@@ -1984,7 +2033,7 @@
    "path": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
    "area": "governance",
    "title": "DHR-REAPONT-001 — Ata de Homologação — ERRATUM-REAPONT-001 (re-apontamento SPEC-007 → SPEC-048)",
-   "in": 40,
+   "in": 47,
    "out": 17
   },
   {
@@ -1998,7 +2047,7 @@
    "path": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
    "area": "governance",
    "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
-   "in": 44,
+   "in": 51,
    "out": 11
   },
   {
@@ -2054,7 +2103,7 @@
    "path": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-007 — Ata de Decisão — Roteamento de modelo obrigatório por hook, M classificada na 1ª rodada e detector de ID",
-   "in": 35,
+   "in": 43,
    "out": 5
   },
   {
@@ -2173,7 +2222,7 @@
    "path": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-005 — Ata de Homologação — Errata aditiva v1.13 da SPEC-006 (ligação com o selo da SPEC-007)",
-   "in": 39,
+   "in": 46,
    "out": 11
   },
   {
@@ -2222,21 +2271,21 @@
    "path": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formação + selo)",
-   "in": 62,
+   "in": 69,
    "out": 11
   },
   {
    "path": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
    "area": "governance",
    "title": "DHR-SPEC007-006 — Ata de Decisão — Q7(c): uso do livro *Evidence-Based Technical Analysis* como fonte",
-   "in": 50,
+   "in": 57,
    "out": 9
   },
   {
    "path": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
    "area": "governance",
    "title": "DHR-SPEC007-007 — Ata de Decisão — Diretriz de autenticação criptográfica dos atos de Andraus (ACTREC)",
-   "in": 50,
+   "in": 57,
    "out": 6
   },
   {
@@ -2257,7 +2306,7 @@
    "path": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
    "area": "governance",
    "title": "DHR-SPEC020-002 — Ata de Homologação — ERRATUM-SPEC020-002 (dimensão B \"RAG faithfulness\", metade F1)",
-   "in": 36,
+   "in": 43,
    "out": 14
   },
   {
@@ -2313,21 +2362,21 @@
    "path": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-002 — Ata de Homologação — Plan da SPEC-048 v1.4 (RAG Retrieval & Evidence Packet Harness)",
-   "in": 46,
+   "in": 53,
    "out": 16
   },
   {
    "path": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
    "area": "governance",
    "title": "DHR-SPEC049-001 — Ata de Homologação — Abertura da SPEC-049 (WikiRAG Reading View)",
-   "in": 21,
+   "in": 28,
    "out": 18
   },
   {
    "path": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
    "area": "governance",
    "title": "DHR-SPEC049-002 — Ata de Homologação — Plan da SPEC-049 v1.2 (WikiRAG Reading View)",
-   "in": 5,
+   "in": 8,
    "out": 12
   },
   {
@@ -2341,7 +2390,7 @@
    "path": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
    "area": "governance",
    "title": "DHR-TELEMETRIA-CUSTO-001 — Ata de Decisão — Telemetria de tokens dos agentes Construtores (BL-036, 1ª fatia)",
-   "in": 9,
+   "in": 17,
    "out": 5
   },
   {
@@ -2376,7 +2425,7 @@
    "path": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
-   "in": 48,
+   "in": 55,
    "out": 35
   },
   {
@@ -2635,7 +2684,7 @@
    "path": "governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md",
    "area": "governance",
    "title": "PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orquestrador (etapa BUILD) (PROPOSTA)",
-   "in": 128,
+   "in": 135,
    "out": 14
   },
   {
@@ -2663,7 +2712,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 434,
+   "in": 441,
    "out": 41
   },
   {
@@ -2691,14 +2740,14 @@
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
    "area": "governance",
    "title": "RETROSPECTIVAS DE FECHAMENTO DO LOOP DOS CONSTRUTORES (LOOP-001 / DHR-LOOP-001)",
-   "in": 48,
+   "in": 55,
    "out": 20
   },
   {
    "path": "governance/aprendizado/TELEMETRIA-TOKENS.md",
    "area": "governance",
    "title": "TELEMETRIA DE TOKENS DOS CONSTRUTORES — retrato (gerado por `python scripts/telemetria_tokens.py snapshot`)",
-   "in": 7,
+   "in": 14,
    "out": 3
   },
   {
@@ -2803,7 +2852,7 @@
    "path": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
    "area": "governance",
    "title": "Auditoria profunda — higiene de leitura e economicidade (4Es) do repositório",
-   "in": 24,
+   "in": 31,
    "out": 18
   },
   {
@@ -3188,7 +3237,7 @@
    "path": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
    "area": "governance",
    "title": "Pesquisa — telemetria de custo em tokens de sistemas agênticos (insumo para BL-034 / Dossiê da SPEC-040)",
-   "in": 10,
+   "in": 17,
    "out": 5
   },
   {
@@ -3433,14 +3482,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 66,
+   "in": 69,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 209,
+   "in": 212,
    "out": 9
   },
   {
@@ -3580,14 +3629,14 @@
    "path": "specs/features/SPEC-006/errata-v1.13.md",
    "area": "specs",
    "title": "SPEC-006 — Errata v1.13 (ADITIVA) — ligação com o selo da SPEC-007 (E-1..E-4) — texto v1.3",
-   "in": 40,
+   "in": 47,
    "out": 18
   },
   {
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 269,
+   "in": 276,
    "out": 39
   },
   {
@@ -3615,7 +3664,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 200,
+   "in": 207,
    "out": 41
   },
   {
@@ -3650,7 +3699,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 160,
+   "in": 167,
    "out": 24
   },
   {
@@ -3762,7 +3811,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 110,
+   "in": 117,
    "out": 42
   },
   {
@@ -3790,7 +3839,7 @@
    "path": "specs/features/SPEC-049/plan.md",
    "area": "specs",
    "title": "SPEC-049 — WikiRAG Reading View — Plan v1.2 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
-   "in": 79,
+   "in": 86,
    "out": 29
   },
   {
@@ -3843,7 +3892,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 149
+   "cited_by": 156
   },
   {
    "id": "BL-004",
@@ -3878,12 +3927,12 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 128
+   "cited_by": 135
   },
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 157
+   "cited_by": 164
   },
   {
    "id": "BL-012",
@@ -3913,7 +3962,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 128
+   "cited_by": 135
   },
   {
    "id": "BL-018",
@@ -4008,7 +4057,37 @@
   {
    "id": "BL-036",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 12
+   "cited_by": 19
+  },
+  {
+   "id": "BL-037",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 6
+  },
+  {
+   "id": "BL-038",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 4
+  },
+  {
+   "id": "BL-039",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 4
+  },
+  {
+   "id": "BL-040",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 4
+  },
+  {
+   "id": "BL-041",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 4
+  },
+  {
+   "id": "BL-042",
+   "defined_in": "backlog/RMR-001_Painel_Backlog.md",
+   "cited_by": 6
   },
   {
    "id": "DHR-ADR-HOC003",
@@ -4173,7 +4252,7 @@
   {
    "id": "DHR-CHECKS-INFO-001",
    "defined_in": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
-   "cited_by": 19
+   "cited_by": 26
   },
   {
    "id": "DHR-CIC-001",
@@ -4233,12 +4312,12 @@
   {
    "id": "DHR-DELTA-HASH-001",
    "defined_in": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
-   "cited_by": 28
+   "cited_by": 35
   },
   {
    "id": "DHR-DIMENSIONAMENTO-001",
    "defined_in": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
-   "cited_by": 32
+   "cited_by": 39
   },
   {
    "id": "DHR-DIV-001",
@@ -4258,7 +4337,7 @@
   {
    "id": "DHR-DOCSYNC-003",
    "defined_in": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
-   "cited_by": 35
+   "cited_by": 42
   },
   {
    "id": "DHR-ECC05-001",
@@ -4398,7 +4477,7 @@
   {
    "id": "DHR-LOOP-001",
    "defined_in": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
-   "cited_by": 50
+   "cited_by": 57
   },
   {
    "id": "DHR-MAN-001",
@@ -4438,7 +4517,7 @@
   {
    "id": "DHR-MERGE-001",
    "defined_in": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
-   "cited_by": 32
+   "cited_by": 39
   },
   {
    "id": "DHR-PAP-001",
@@ -4493,7 +4572,7 @@
   {
    "id": "DHR-REAPONT-001",
    "defined_in": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
-   "cited_by": 40
+   "cited_by": 47
   },
   {
    "id": "DHR-REG-001",
@@ -4503,7 +4582,7 @@
   {
    "id": "DHR-RETRO-001",
    "defined_in": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
-   "cited_by": 44
+   "cited_by": 51
   },
   {
    "id": "DHR-REVISOR-DELTA-001",
@@ -4543,7 +4622,7 @@
   {
    "id": "DHR-ROTEAMENTO-007",
    "defined_in": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
-   "cited_by": 35
+   "cited_by": 43
   },
   {
    "id": "DHR-RPSA-001",
@@ -4623,7 +4702,7 @@
   {
    "id": "DHR-SPEC006-005",
    "defined_in": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
-   "cited_by": 39
+   "cited_by": 46
   },
   {
    "id": "DHR-SPEC006-OPCAO2-001",
@@ -4658,17 +4737,17 @@
   {
    "id": "DHR-SPEC007-005",
    "defined_in": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "cited_by": 62
+   "cited_by": 69
   },
   {
    "id": "DHR-SPEC007-006",
    "defined_in": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
-   "cited_by": 50
+   "cited_by": 57
   },
   {
    "id": "DHR-SPEC007-007",
    "defined_in": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
-   "cited_by": 50
+   "cited_by": 57
   },
   {
    "id": "DHR-SPEC019",
@@ -4688,7 +4767,7 @@
   {
    "id": "DHR-SPEC020-002",
    "defined_in": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
-   "cited_by": 36
+   "cited_by": 43
   },
   {
    "id": "DHR-SPEC021-001",
@@ -4728,17 +4807,17 @@
   {
    "id": "DHR-SPEC048-002",
    "defined_in": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
-   "cited_by": 46
+   "cited_by": 53
   },
   {
    "id": "DHR-SPEC049-001",
    "defined_in": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
-   "cited_by": 21
+   "cited_by": 28
   },
   {
    "id": "DHR-SPEC049-002",
    "defined_in": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
-   "cited_by": 5
+   "cited_by": 8
   },
   {
    "id": "DHR-TAX-001",
@@ -4748,7 +4827,7 @@
   {
    "id": "DHR-TELEMETRIA-CUSTO-001",
    "defined_in": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
-   "cited_by": 9
+   "cited_by": 17
   },
   {
    "id": "DHR-VERBATIM-SRC-001",
@@ -4918,7 +4997,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 301
+   "cited_by": 304
   },
   {
    "id": "INV-08",
@@ -5498,7 +5577,7 @@
   {
    "id": "RULE-ECC-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 45
+   "cited_by": 52
   },
   {
    "id": "RULE-EH",
@@ -6473,12 +6552,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 269
+   "cited_by": 276
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 200
+   "cited_by": 207
   },
   {
    "id": "SPEC-008",
@@ -6488,7 +6567,7 @@
   {
    "id": "SPEC-009",
    "defined_in": "ROADMAP.md",
-   "cited_by": 74
+   "cited_by": 81
   },
   {
    "id": "SPEC-010",
@@ -6543,7 +6622,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 160
+   "cited_by": 167
   },
   {
    "id": "SPEC-021",
@@ -6643,12 +6722,12 @@
   {
    "id": "SPEC-040",
    "defined_in": "ROADMAP.md",
-   "cited_by": 33
+   "cited_by": 40
   },
   {
    "id": "SPEC-041",
    "defined_in": "ROADMAP.md",
-   "cited_by": 13
+   "cited_by": 17
   },
   {
    "id": "SPEC-042",
@@ -6683,12 +6762,12 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 110
+   "cited_by": 117
   },
   {
    "id": "SPEC-049",
    "defined_in": "specs/features/SPEC-049/plan.md",
-   "cited_by": 79
+   "cited_by": 86
   }
  ],
  "edges": [
@@ -9584,6 +9663,11 @@
   },
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/DHR-SES-001_Ata_Homologacao_SES-001_EUA-E03.md",
    "type": "id"
   },
@@ -9681,6 +9765,16 @@
    "from": "backlog/RMR-001_Painel_Backlog.md",
    "to": "governance/DHR-SPEC048-001_Ata_Homologacao_Abertura_SPEC-048.md",
    "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "backlog/RMR-001_Painel_Backlog.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "path"
   },
   {
    "from": "backlog/RMR-001_Painel_Backlog.md",
@@ -26958,6 +27052,191 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/aprendizado/TELEMETRIA-TOKENS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-120.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-92.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -28724,6 +29003,1056 @@
   },
   {
    "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-112.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/aprendizado/TELEMETRIA-TOKENS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/aprendizado/TELEMETRIA-TOKENS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-3a6df80c-nej9ne/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/aprendizado/TELEMETRIA-TOKENS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-116.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/aprendizado/TELEMETRIA-TOKENS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-117.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/aprendizado/TELEMETRIA-TOKENS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-118.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "ROADMAP.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-DOCSYNC-003_Ata_Detector_ID_Inteiro_e_AGENTS_SPEC-020-PRINC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/aprendizado/TELEMETRIA-TOKENS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "governance/propostas/TELEMETRIA-CUSTO/PESQUISA-TELEMETRIA-CUSTO-TOKENS-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "specs/features/SPEC-006/errata-v1.13.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/ramo-ccr-6119d28b-a50xaw/HO-2026-10-31-119.md",
    "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },

@@ -6,7 +6,7 @@ Uso:
   (sem argumentos)    hook PostToolUse/Agent: lê o evento em stdin e acrescenta UMA linha JSON a .telemetria/uso-tokens.jsonl.
   custo-beneficio     cruza tokens por Spec (telemetria local) com os achados dos pareceres (loop_ledger): tokens por rodada, por achado e por achado Média/Crítica.
   snapshot            grava governance/aprendizado/TELEMETRIA-TOKENS.md (retrato datado, versionável; o ledger do loop aponta para ele).
-  resumo [--json] [--por-spec]   agrega por agente / modelo / classe-de-tarefa (ou por Spec / agente / classe): chamadas, tokens (in/out/cache), custo estimado e tokens por chamada.
+  resumo [--json] [--por-spec]   agrega por agente / modelo / classe-de-tarefa (ou por Spec / agente / classe): chamadas, tokens (in/out/cache), custo EQUIVALENTE API (não é cobrança) e tokens por chamada.
 
 Garantias: DETECTOR (ENF-03) — nunca nega, nunca altera a chamada, falha => exit 0 silencioso. Não grava o texto do prompt nem da resposta
 (só metadados). Custo = tokens x tabela versionada governance/telemetria/PRECOS-MODELOS.json; preço ausente => custo INDETERMINADO
@@ -139,8 +139,8 @@ def snapshot(regs):
     out = ["# TELEMETRIA DE TOKENS DOS CONSTRUTORES — retrato (gerado por `python scripts/telemetria_tokens.py snapshot`)", "",
            "> Dado de estado, NÃO normativo (BL-036 / DHR-TELEMETRIA-CUSTO-001). **Detector (ENF-03)**: não bloqueia, não fecha decisão aberta. "
            "Custo fora do Conviction Vector (INV-04). Tokens ≠ qualidade (CEE-001): ler junto de Eficácia, nunca isolado. "
-           f"Retrato de {len(regs)} chamada(s) em {time.strftime('%Y-%m-%d', time.gmtime())}; custo em USD só com preços em `governance/telemetria/PRECOS-MODELOS.json` (null => INDETERMINADO).", "",
-           "| Agente | Modelo | Classe | Chamadas | Tokens total | Tokens/chamada | in | out | cache lido | cache criado | Custo USD |", "|---|---|---|---|---|---|---|---|---|---|---|"]
+           f"Retrato de {len(regs)} chamada(s) em {time.strftime('%Y-%m-%d', time.gmtime())}; custo = EQUIVALENTE a preço de tabela da API, NÃO cobrança (no plano Pro o custo marginal é zero); preços em `governance/telemetria/PRECOS-MODELOS.json` (null => INDETERMINADO).", "",
+           "| Agente | Modelo | Classe | Chamadas | Tokens total | Tokens/chamada | in | out | cache lido | cache criado | Custo equivalente API (USD) |", "|---|---|---|---|---|---|---|---|---|---|---|"]
     for (a, m, c), v in sorted(g.items()):
         med = round(v["total"] / v["chamadas"]) if v["chamadas"] else 0
         cu = "INDETERMINADO" if v["custo_indet"] else f"{v['custo']:.4f}"
@@ -222,14 +222,14 @@ def main(argv):
         print(json.dumps({"|".join(k): v for k, v in g.items()}, ensure_ascii=False, indent=1))
         return 0
     print(f"Telemetria de tokens (AC) — {len(regs)} chamada(s) em {SAIDA.relative_to(ROOT)}")
-    print(("spec | agente | classe" if por == "spec" else "agente | modelo | classe") + " | chamadas | tokens total | tokens/chamada | in | out | cache_r | cache_c | custo USD")
+    print(("spec | agente | classe" if por == "spec" else "agente | modelo | classe") + " | chamadas | tokens total | tokens/chamada | in | out | cache_r | cache_c | custo equivalente API USD (não é cobrança)")
     for (a, m, c), v in sorted(g.items()):
         med = round(v["total"] / v["chamadas"]) if v["chamadas"] else 0
         cu = "INDETERMINADO" if v["custo_indet"] else f"{v['custo']:.4f}"
         print(f"{a} | {m} | {c} | {v['chamadas']} | {v['total']} | {med} | {v['in']} | {v['out']} | {v['cache_read']} | {v['cache_create']} | {cu}")
         if v["sem_tokens"]:
             print(f"  aviso: {v['sem_tokens']} chamada(s) sem tokens no evento (formato do tool_response não reconhecido)")
-    print("LEMBRETE: Detector (ENF-03). Custo fora do Conviction Vector (INV-04). Tokens != qualidade (CEE-001).")
+    print("LEMBRETE: Detector (ENF-03). Custo = equivalente a preço de API, NÃO cobrança (Pro = assinatura fixa). Fora do Conviction Vector (INV-04). Tokens != qualidade (CEE-001).")
     return 0
 
 

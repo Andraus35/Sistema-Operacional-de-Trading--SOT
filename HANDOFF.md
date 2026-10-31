@@ -1,8 +1,8 @@
 ---
-handoff_id: HO-2026-10-31-117
-previous: HO-2026-10-31-116
+handoff_id: HO-2026-10-31-121
+previous: HO-2026-10-31-120
 data: 2026-10-31
-branch: ccr-3a6df80c-nej9ne
+branch: ccr-6119d28b-a50xaw
 base_commit: d30941d
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
@@ -14,6 +14,8 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência com a realidade, a realidade prevalece.
 
 ## 1. Frente atual
+**Telemetria de custo (BL-036/037..042; ramo ccr-6119d28b-a50xaw, PR #144):** coleta de tokens dos construtores (hook PostToolUse/Agent → `.telemetria/`, `scripts/telemetria_tokens.py`: `resumo [--por-spec]`, `snapshot`, `custo-beneficio`), preços oficiais em `governance/telemetria/PRECOS-MODELOS.json` (uso: só Sonnet 5.5 e Opus 5.5; custo rotulado **equivalente API, NÃO cobrança** — plano Pro), ata `DHR-TELEMETRIA-CUSTO-001`, pendências **BL-037..BL-042** `Em espera` (gatilho `spec:SPEC-040 em redação`; `backlog_triggers.py --abertura SPEC-040` lista 8). Revalidar preços a cada ciclo de higiene (manual). Na próxima rodada real (ex.: construção da SPEC-049): `python scripts/telemetria_tokens.py snapshot` e commitar com o ledger. Handoffs desta frente: 110–115 em `docs/handoffs/`, 116–119 em `docs/handoffs/ramo-ccr-6119d28b-a50xaw/`, 120 em `docs/handoffs/`; os da frente SPEC-049 em `docs/handoffs/ramo-ccr-3a6df80c-nej9ne/`. **Duas sessões escrevem HANDOFF.md em paralelo: ao mesclar, conflito de HANDOFF/mapa é esperado — manter o da `main`, acrescentar nota e regenerar o mapa.**
+
 **Decisões de Andraus no fim da sessão de 2026-10-31 (chat, AskUserQuestion):** (1) **retrospectiva de fechamento da SPEC-049: "Aguardar rodada real"** — NÃO feita; segue pendente (LOOP-001 passo 5); sem ela não se abre outra Spec, salvo dispensa expressa dele; (2) **os 3 ajustes de texto do Plan da SPEC-049 (R3-m01, m03, m04): "Na construção"** — nada de errata agora; (3) **higiene de registro: FEITA** neste handoff (CATALOGO ganhou linhas de registro das atas de 2026-10-25 a 2026-10-31; as de 2026-10-12 a 2026-10-19 seguem sem linha — lacuna anterior); (4) **próxima frente: "Enviar ao handoff"** — Andraus NÃO escolheu; a escolha fica registrada aqui como PENDENTE (opções: decidir propostas P7–P9 · higiene de leitura H1/H2 da auditoria (fatia quente do ROADMAP + enxugar §7 do AGENTS.md; arquivos reservados a Andraus) · pendências das Specs anteriores (erratum F2 SPEC-020, errata SPEC-007, CATALOGO/RMR-001 BL-017, CONFLICT-MAP) · abrir outra Spec (exige retrospectiva da SPEC-049 feita ou dispensa)). **PR #143 MESCLADO** na `main` (`d30941d`): Plan v1.2 da SPEC-049 BASELINE (`DHR-SPEC049-002`, 3 condições na ata §3); sem BUILD.
 
 **MERGE de duas sessões em paralelo (2026-10-31):** a `main` avançou com a frente de telemetria de tokens (BL-036, PRs #141/#142, ramo `ccr-6119d28b-a50xaw`) enquanto este ramo (`ccr-3a6df80c-nej9ne`) fechava a SPEC-049; as cadeias de handoff colidiram nos números 110–112. Resolução: a `main` manteve HO-110..115; os arquivos HO-110..112 DESTE ramo estão preservados em `docs/handoffs/ramo-ccr-3a6df80c-nej9ne/` (INV-07); este handoff é o HO-116 (previous 115). **Regra para sessões paralelas:** antes de numerar um handoff, `git fetch origin main` e ler o maior HO já na `main`.
