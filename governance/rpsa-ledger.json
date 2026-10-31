@@ -556,6 +556,13 @@
       "em_escopo": true,
       "sync": "propagado",
       "motivo": "Acrescenta ao revisor.md §3-bis item 7 a origem do sha256 (Orquestrador) e o formato de cabeçalho do parecer"
+    },
+    {
+      "id": "DHR-CHECKS-INFO-001",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Novo script detector e passo de CI; nao altera texto de agente nem metodo"
     }
   ]
 }

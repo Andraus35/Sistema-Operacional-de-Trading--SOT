@@ -117,6 +117,14 @@ jobs:
       - name: Delta pacote tests
         run: python -m unittest tests/test_delta_pacote.py
 
+      # Detectores informativos (DHR-CHECKS-INFO-001): tetos de linhas do Plan (RULE-ECC-07, desde a SPEC-049) e SHA256-ALVO em rodada por delta. Nunca bloqueia.
+      - name: Check dimensionamento e delta por hash (informative)
+        run: python scripts/check_dimensionamento.py
+        continue-on-error: true
+
+      - name: Dimensionamento tests
+        run: python -m unittest tests/test_check_dimensionamento.py
+
       # Vinculação de backlog por abertura (DHR-BACKLOG-ABERTURA-001; bloqueante: se falhar, a regra deixou de ser determinística).
       - name: Backlog abertura tests
         run: python -m unittest tests/test_backlog_abertura.py
