@@ -42,7 +42,7 @@ Complexidade: HIGH. Profundidade-alvo: D0–D7 (standard; D6 N/A).
 | Teto / alerta / confirmação | 2.000 / 1.900 / 1.600 linhas de corpo (`governance/RULES.md` RULE-ECC-07) |
 | Estimativa da abertura | ≈1.570 (faixa 1.420–1.620; proporcional ≈1.610) — dez BASpecs na abertura, 3 EC (ABERTURA §3) *[antes: número em dígito, trocado por extenso — o gate de contagem confere dígito + palavra BASpec contra os cabeçalhos; a diferença já é explicada na linha seguinte]* |
 | Confirmação de Andraus | **um documento só**, encosto no limiar de 1.600 confirmado (DHR-SPEC049-001 P-7) |
-| **Medida deste Plan v1.1** | **1.540 linhas de corpo** (+116 sobre a v1.0 — correções do parecer R1; dentro da faixa estimada 1.420–1.620; −30 sob o central ≈1.570 e −60 sob o limiar de 1.600 confirmado na P-7) *[antes: "Medida deste Plan v1.0 — 1.424 linhas de corpo (… −146 sobre o central ≈1.570)"]* = arquivo inteiro (não há seção `## Anexo`; nenhum texto anterior a preservar na v1.0; nenhum bloco do insumo copiado — só citado por ID e linha). Medida pela mesma régua de `scripts/check_dimensionamento.py` (linhas antes do primeiro `## Anexo`), conferida pelo Especificador por contagem de linhas do arquivo; a reconferir pelo Orquestrador. |
+| **Medida deste Plan v1.2** | **1.583 linhas de corpo** (+43 sobre a v1.1 — passada curta do parecer R2; dentro da faixa estimada 1.420–1.620; +13 sobre o central ≈1.570; −17 sob o limiar de 1.600 confirmado na P-7; −417 sob o teto de 2.000) *[antes: "Medida deste Plan v1.1 — 1.540 linhas de corpo (+116 sobre a v1.0 …; −60 sob o limiar de 1.600)"; antes disso: "v1.0 — 1.424 linhas"]* = arquivo inteiro (não há seção `## Anexo`; nenhum texto anterior a preservar na v1.0; nenhum bloco do insumo copiado — só citado por ID e linha). Medida pela mesma régua de `scripts/check_dimensionamento.py` (linhas antes do primeiro `## Anexo`), conferida pelo Especificador por contagem de linhas do arquivo; a reconferir pelo Orquestrador. |
 | Diferença à estimativa | 11 BASpecs (a "10" da abertura foi dividida em exibição/restrição — BASpec-WRV-009 — e página vazia — BASpec-WRV-010; a trava ganhou BASpec própria, BASpec-WRV-011); 18 cenários; ver a nota de leitura logo abaixo |
 | Gatilho processual | mudança de escopo ou divisão depois deste Plan = **nova abertura** (RULE-ECC-07) |
 
@@ -139,6 +139,19 @@ Complexidade: HIGH. Profundidade-alvo: D0–D7 (standard; D6 N/A).
 | R1-m06 (C05) falso-DENY | EC-WRV-003 FAILURE-MODE; T16 (d) |
 | R1-m07 (C08) "só pessoas" no pedido | RULE-WRV-001 (e); EARS 1; D4.1 (0); T04 (f); Incorporação P-2 |
 | R1-m08 (C08) horizonte; escola | frase do trader; quadro de pré-requisitos (linha 0); "Atos seus", item 4; Incorporação P-4 |
+
+### Correções do parecer R2 (v1.2) — achado → onde mudou
+
+| Achado | Onde mudou |
+|---|---|
+| R2-m01 (C01) "estado real hoje" | BASpec-WRV-010 (CRITÉRIO 4Es, DADO); título de T01; nota da Fixture W0 |
+| R2-m02 (C04) resíduo da herança | Herança/Delta (cabeçalho v1.2; INHERITS RULE-KFH-019 (b)); BASpec-WRV-011 CRITÉRIO 4Es (por referência). ADDED com `delivery_record` = R2-m02a, já aplicado pelo Orquestrador |
+| R2-m03 (C05) registro próprio | INV-WRV-01 (efeito 2; allowlist); BASpec-WRV-011 (ENTÃO; GATE); contrato `compilation_rule_record`; T16 (métrica `writes_outside_own_record`); Métricas; EC-WRV-003 PRECOND/POSTCOND/FAILURE-MODE/EVIDENCE |
+| R2-m04 (C01) capacidade × identidade | D4.1 (0) PRECEDÊNCIA; RULE-WRV-001 (e); EC-WRV-002 PRECOND; §D3.1 (T16 (h)); BASpec-WRV-011 DADO; T16 (h) |
+| R2-m05 (C02) desfecho ≠ código | §D3.1 (linha retirada da tabela → nota "Desfechos projetados"); Métricas (1) |
+| R2-m06 (C08) aprovação do 1º registro | RULE-WRV-002 (a); contrato `approved_ref`; Perguntas a Andraus (pergunta nova); Atos item 5; TRACE-06; listas de pendências |
+| Respostas de Andraus (chat 2026-10-31) | P-1, P-2 e atos 4/5 marcados "RESPONDIDA"/"Ciência tomada" (a registrar na ata; não é homologação); TRACE-06 |
+| Extra (Orquestrador) — falso positivo do detector `campos_atribuidos_baseline` | RULE-WRV-002 (b), CHAVE 1 "ativo": o campo da entrada e a citação da Spec do KG passam a linhas separadas, mesmo sentido |
 
 ---
 
@@ -338,7 +351,10 @@ INV-WRV-01: TRAVA DO COMPILADOR (herança [INFERÊNCIA] da cláusula "compilaç�
             "provedor externo" é a definição ÚNICA da SPEC-007 RULE-KFH-019 (b) (l.725-731) *[antes: as duas definições
             recopiadas entre parênteses — R1-m02]*. A compilação faz ZERO chamada de modelo (não usa a CIM: nenhuma
             etapa dela é etapa de modelo). Os ÚNICOS efeitos são: (1) EMITIR a página como resposta de leitura local a quem
-            pediu (E1 — RULE-WRV-009 (d)); (2) gravar o PRÓPRIO compilation_record, append-only (E1 — RULE-WRV-007 (d)).
+            pediu (E1 — RULE-WRV-009 (d)); (2) gravar no PRÓPRIO registro, append-only (E1 — RULE-WRV-007 (d)). O "registro
+            próprio" abrange `compilation_record` e `delivery_record` (mesma escrita fixa no componente); o
+            `compilation_rule_record` NÃO é gravado pela compilação (vem do registro aprovado da versão — RULE-WRV-002 (a))
+            *[antes: "(2) gravar o PRÓPRIO compilation_record" — R2-m03]*.
             A capacidade é NEGADA POR CONSTRUÇÃO: o registro de capacidades do compilador não contém credencial de escrita
             fora do próprio registro, ferramenta com efeito, acesso a modelo nem canal de saída além da resposta local.
             Pedido de efeito ⇒ negado `WRV_EFFECT_FORBIDDEN` (subs `WRV_KG_WRITE_FORBIDDEN`, `WRV_PAGE_SUBMISSION_FORBIDDEN`,
@@ -349,7 +365,8 @@ INV-WRV-01: TRAVA DO COMPILADOR (herança [INFERÊNCIA] da cláusula "compilaç�
             alguém leia a página (RU-2). Nível E3 (Classe C), fail-closed: ANTES de qualquer leitura, a compilação
             confere o registro de capacidades; indisponível ⇒ `WRV_CAPABILITY_CHECK_FAILED` sub
             `WRV_CAPABILITY_REGISTRY_UNAVAILABLE`; divergente da allowlist desta invariante (contém capacidade além das
-            três: leitura read-only do KG, escrita no próprio compilation_record, resposta local) ⇒ mesmo código, sub
+            três: leitura read-only do KG, escrita no próprio registro (`compilation_record` e `delivery_record`), resposta
+            local) *[antes: "escrita no próprio compilation_record" — R2-m03]* ⇒ mesmo código, sub
             `WRV_CAPABILITY_REGISTRY_DIVERGENT`; em ambos, nada é lido nem compilado e a recusa é gravada no próprio
             compilation_record (a escrita no próprio registro é fixa no componente, não vem do registro de capacidades;
             `capability_check_ref` = referência do registro lido ou AUSENTE). *[antes: "registro de capacidades
@@ -391,7 +408,9 @@ RULE-WRV-001: ENTRADA DA COMPILAÇÃO — QUATRO CAMPOS. (a) A entrada tem exata
               (e) QUEM PEDE: identidade do runtime (SPEC-004 RULE-CBP-014, referência), gravada no compilation_record;
               NÃO é campo da entrada e NÃO muda a página. Identidade autenticada indisponível ⇒ recusa
               `WRV_REQUESTER_IDENTITY_UNAVAILABLE`, gravada com `requester_id` = valor fixo `IDENTIDADE_INDISPONIVEL`
-              (nunca valor do payload). SÓ PESSOAS PEDEM (P-2): identidade autenticada cujo PAPEL no runtime não é PESSOA
+              (nunca valor do payload); o mesmo valor fixo vale em TODA recusa gravada sem identidade autenticada
+              disponível — na v1.2, esta e a de capacidade que a precede (`WRV_CAPABILITY_CHECK_FAILED`; precedência na
+              D4.1 (0); T16 (h)) *[antes: valor fixo "só" nesta recusa — R2-m04]*. SÓ PESSOAS PEDEM (P-2): identidade autenticada cujo PAPEL no runtime não é PESSOA
               (agente analítico, Manager, Risk ou outro componente; papel ausente conta como não-pessoa) ⇒ recusa
               `WRV_REQUESTER_NOT_PERSON`, gravada com o `requester_id` autenticado [INFERÊNCIA: o papel vem da tabela de
               capacidades + papéis da SPEC-004 (l.114); expor o papel é requisito ao runtime/BUILD]. *[antes: sem
@@ -406,7 +425,10 @@ RULE-WRV-002: REGRA FIXA DE COMPILAÇÃO (VERSIONADA). (a) A regra é registrada
               {formato de saída@versão, codificador@versão} — tudo o que influencia os bytes da página entra, assim, no
               `rule_hash` *[antes: lista sem `render_profile` — R1-M02]*. A VERSÃO 1 é a deste Plan (D4.3; contrato
               lógico); o seu `render_profile` é o único item fixado no BUILD, registrado UMA vez com a versão 1 (técnica de
-              codificação = BUILD); depois de registrado, trocar formato ou codificador = versão nova. Versão nova = alteração deste Plan por errata homologada por Andraus (INV-09); a
+              codificação = BUILD); quem APROVA esse primeiro registro (o `approved_ref` do primeiro `rule_hash`, que só
+              existe depois da homologação deste Plan) é [DECISÃO NECESSÁRIA] de Andraus, não bloqueante (errata ou ato
+              próprio — "Perguntas a Andraus"); lado seguro até lá: versão 1 não registrada ⇒ todo pedido recusado
+              `WRV_RULE_VERSION_UNREGISTERED` (RULE-WRV-001 (a)(iii)) (v1.2, R2-m06); depois de registrado, trocar formato ou codificador = versão nova. Versão nova = alteração deste Plan por errata homologada por Andraus (INV-09); a
               regra NÃO muda em runtime, por pedido, por item, por feedback nem por modelo.
               (b) AGRUPAMENTO só por campos de lista fechada já existentes no sistema (P-4) — CHAVE 1 "ativo": nó `asset`
               ligado ao item por relação `ESTATISTICA_DE` (learning → asset, SPEC-006 l.629), registrada até o corte;
@@ -635,10 +657,9 @@ RULE-WRV-010: PÁGINA VAZIA COM A FALTA DECLARADA. Sem item carimbado no `input_
 | `WRV_INPUT_INCOMPLETE` | `WRV_CUTOFF_MISSING`, `WRV_RULE_VERSION_UNREGISTERED`, `WRV_RENDER_PROFILE_UNAVAILABLE` (v1.1) | SPEC-049 | WRV-001; T04 (a)(b)(g) |
 | `WRV_REQUESTER_IDENTITY_UNAVAILABLE` (v1.1) | — | SPEC-049 | WRV-001 (e); T04 (e) |
 | `WRV_REQUESTER_NOT_PERSON` (v1.1) | — | SPEC-049 | WRV-001 (e) (P-2); T04 (f) |
-| `WRV_CAPABILITY_CHECK_FAILED` (v1.1) | `WRV_CAPABILITY_REGISTRY_UNAVAILABLE`, `WRV_CAPABILITY_REGISTRY_DIVERGENT` | SPEC-049 | INV-WRV-01; T16 (f)(g) |
+| `WRV_CAPABILITY_CHECK_FAILED` (v1.1) | `WRV_CAPABILITY_REGISTRY_UNAVAILABLE`, `WRV_CAPABILITY_REGISTRY_DIVERGENT` | SPEC-049 | INV-WRV-01; T16 (f)(g)(h) |
 | `WRV_COMPILATION_RECORD_UNAVAILABLE` (v1.1 — resposta de erro e log do executor; não há registro) | — | SPEC-049 | WRV-007 (d); T14 (e) |
 | `WRV_DELIVERY_FAILED` (v1.1 — NAO_ENTREGUE, no `delivery_record`) | — | SPEC-049 | WRV-007 (d); T14 (f) |
-| `ENTREGA_NAO_CONFIRMADA` (v1.1 — desfecho projetado; Detector) | — | SPEC-049 | WRV-007 (d); T14 (g) |
 | `WRV_CUTOFF_AHEAD_OF_RECORD` / `WRV_READ_HORIZON_UNAVAILABLE` | — | SPEC-049 | WRV-001; T04 |
 | `WRV_UNSEALED_IN_INPUT` | — | SPEC-049 | WRV-001; T05 |
 | `WIKI_MODEL_TEXT_FORBIDDEN` (do insumo) | — | SPEC-049 | WRV-003; T07 |
@@ -656,6 +677,8 @@ RULE-WRV-010: PÁGINA VAZIA COM A FALTA DECLARADA. Sem item carimbado no `input_
 | `WRV_NO_SEALED_ITEMS` (marcação) | — | SPEC-049 | WRV-010; T01 |
 | `WIKI_PAGE_CITED_AS_SOURCE` | — | **SPEC-048** (só referência; não é emitido aqui) | WRV-008 (a); T15 |
 | `CONTRADICTION_SILENT_RESOLUTION_FORBIDDEN` | — | **SPEC-007** (só referência; NÃO é emitido pelo compilador) | WRV-005 (d) — motivo de não reutilizar |
+
+**Desfechos projetados (NÃO são códigos — sem prefixo `WRV_`; valores do `outcome` projetado do contrato `delivery_record`):** `EMITIDA`, `RECUSADA(código)`, `NAO_ENTREGUE(código)` e `ENTREGA_NAO_CONFIRMADA` (montagem aprovada sem `delivery_record`; Detector — WRV-007 (d); T14 (g)); dono SPEC-049. *[antes: linha da tabela "`ENTREGA_NAO_CONFIRMADA` (v1.1 — desfecho projetado; Detector) | — | SPEC-049 | WRV-007 (d); T14 (g)" na coluna "Código-pai" — R2-m05]*
 
 ### BASpec-WRV-001 — Entrada da compilação com quatro campos (ver RULE-WRV-001)
 ```
@@ -853,9 +876,9 @@ BASpec-WRV-010:
   CLASSE/MECANISMO:
     CLASSE      : D (Determinístico)
     MECANISMO   : mesmo caminho da compilação, com input_set sem itens
-    CRITÉRIO 4Es: Eficácia — o estado real de hoje é mostrado como é
+    CRITÉRIO 4Es: Eficácia — o estado real (quando o pré-requisito 0 existir) é mostrado como é [antes: "o estado real de hoje"]
   VERIFICADO POR:
-    DADO        T01 (estado real hoje) e contraste T04 (recusa por corte ausente ≠ página vazia)
+    DADO        T01 (estado real quando o pré-requisito 0 existir — W0.1; antes: "estado real hoje", R2-m01) e contraste T04 (recusa por corte ausente ≠ página vazia)
     QUANDO      a compilação roda
     ENTÃO       T01 emitida vazia; T04 recusada
     VERIFICAÇÃO ver T01 / T04
@@ -868,7 +891,7 @@ BASpec-WRV-011:
                 de modelo ou envio da página para fora
   ENTÃO:        Aplica INV-WRV-01 — capacidade inexistente: WRV_EFFECT_FORBIDDEN (subs), WRV_MODEL_CALL_FORBIDDEN,
                 WRV_EXTERNAL_DISTRIBUTION_FORBIDDEN; únicos efeitos = emissão local da página (E1) e o próprio
-                compilation_record (E1); registro de capacidades indisponível ou divergente ⇒ não lê nem compila,
+                registro — compilation_record e delivery_record (E1) [antes: "o próprio compilation_record" — R2-m03]; registro de capacidades indisponível ou divergente ⇒ não lê nem compila,
                 WRV_CAPABILITY_CHECK_FAILED (subs UNAVAILABLE / DIVERGENT), recusa no próprio registro
   PORQUE:       Instrução embutida em fonte não pode virar efeito (INV-KFH-02, herança [INFERÊNCIA]; DHR-PROV-WEB-001 §2.1)
   REFERÊNCIA:   INV-WRV-01; SPEC-007 INV-KFH-02
@@ -877,17 +900,18 @@ BASpec-WRV-011:
     MECANISMO   : registro de capacidades do compilador (allowlist: leitura read-only do KG; escrita só no próprio registro;
                   resposta local) aplicado pelo runtime; o gate é a própria ausência de capacidade
     GATE DE SAÍDA: determinístico — capacidades exercidas ⊆ allowlist ∧ chamadas de modelo == 0 ∧ escritas fora do
-                  compilation_record == 0 ∧ canais de saída ⊆ {resposta local a quem pediu}
+                  registro próprio (compilation_record, delivery_record) == 0 [antes: "fora do compilation_record"] ∧ canais de saída ⊆ {resposta local a quem pediu}
     CRITÉRIO 4Es: Eficácia sobre Economicidade (condição 10): o nível E3 NÃO mede a página (E1, sem efeito sobre a verdade);
                   mede a CAPACIDADE QUE A TRAVA NEGA — o compilador lê texto que veio de fonte externa (pode trazer
                   instrução — research §3.7) e, se tivesse capacidade de efeito, o efeito seria PERMANENTE ou EXTERNO
-                  (escrita ao KG, selo, ato, configuração, transmissão — definições da INV-KFH-02, l.433-436, cujos
-                  caminhos são E3 na SPEC-007), logo de risco alto e irreversível; é também o piso que o slot declara
+                  (definições só por referência — INV-WRV-01; caminhos E3 na SPEC-007) [antes: "(escrita ao KG, selo,
+                  ato, configuração, transmissão — definições da INV-KFH-02, l.433-436, …)" — R2-m02], logo de risco alto e irreversível; é também o piso que o slot declara
                   (ROADMAP l.193). Classe C aqui não é risco baixo (atomic-spec §10.5, nota CC-11). Economicidade: a trava
                   não chama modelo nem acrescenta etapa cara
   VERIFICADO POR:
     DADO        T16 (a) instrução embutida; (b) chamada de modelo; (c1)(c2) escrita fora do registro; (d) falso-DENY
-                amostral; (e) chamada de ferramenta; (f)(g) registro de capacidades indisponível / divergente; T18 (envio
+                amostral; (e) chamada de ferramenta; (f)(g) registro de capacidades indisponível / divergente; (h)
+                capacidade e identidade ambas indisponíveis (v1.2); T18 (envio
                 para fora)
     QUANDO      a compilação roda
     ENTÃO       ver T16 / T18
@@ -898,7 +922,7 @@ BASpec-WRV-011:
 
 ## D4 — Algoritmo
 
-**D4.1 — Montagem da entrada (RULE-WRV-001).** ENTRADA: pedido {`cutoff`?, `valid_at`?, `rule_version`} + identidade do runtime. PROCESSO: (0) *(v1.1)* confere o registro de capacidades (INV-WRV-01): indisponível ⇒ `WRV_CAPABILITY_REGISTRY_UNAVAILABLE`, divergente ⇒ `WRV_CAPABILITY_REGISTRY_DIVERGENT` (pai `WRV_CAPABILITY_CHECK_FAILED`); identidade autenticada indisponível ⇒ `WRV_REQUESTER_IDENTITY_UNAVAILABLE` (`requester_id = IDENTIDADE_INDISPONIVEL`); papel ≠ PESSOA ⇒ `WRV_REQUESTER_NOT_PERSON`; (1) `cutoff` ausente ⇒ recusa `WRV_CUTOFF_MISSING`; `rule_version` sem `compilation_rule_record` ⇒ recusa `WRV_RULE_VERSION_UNREGISTERED`; `render_profile` da versão não executável ⇒ `WRV_RENDER_PROFILE_UNAVAILABLE`; (2) obtém o horizonte de leitura `RH` da consulta read-only; indisponível ⇒ `WRV_READ_HORIZON_UNAVAILABLE`; `cutoff > RH` ⇒ `WRV_CUTOFF_AHEAD_OF_RECORD`; (3) `valid_at := pedido.valid_at` se declarado, senão `cutoff`; `valid_at_basis := DECLARADO | DERIVADO_DO_CORTE` (só no registro); (4) lê por consulta read-only os nós `learning` com `publication.seal_ref` e os registros deles com `recorded_at ≤ cutoff` (sucessão, invalidação, arquivamento, relações `ESTATISTICA_DE`, fontes e atos das origens-raiz) e as marcas com `recorded_at ≤ cutoff`; (5) objeto sem selo ⇒ `WRV_UNSEALED_IN_INPUT`; (6) `input_set` = lista ordenada de referências@hash; entrada = {`cutoff`, `input_set`, `rule_version@rule_hash`, `valid_at`}; `input_hash := H(canon(entrada))`. SAÍDA: entrada + `input_hash`, ou recusa. EXEMPLO (W0): pedido R1 {cutoff 2026-11-20T00:00:00Z, sem valid_at, rule_version 1}; RH = 2026-12-01T00:00:00Z ⇒ admite; `valid_at = 2026-11-20T00:00:00Z`, basis DERIVADO_DO_CORTE; `input_set` = {P1, P2, P3v1, P3v2, P4 (+ invalidação), P5 (+ marca a revalidar), P6, P7, K1, K2}; C9 (candidato) não é lido.
+**D4.1 — Montagem da entrada (RULE-WRV-001).** ENTRADA: pedido {`cutoff`?, `valid_at`?, `rule_version`} + identidade do runtime. PROCESSO: (0) *(v1.1)* confere o registro de capacidades (INV-WRV-01): indisponível ⇒ `WRV_CAPABILITY_REGISTRY_UNAVAILABLE`, divergente ⇒ `WRV_CAPABILITY_REGISTRY_DIVERGENT` (pai `WRV_CAPABILITY_CHECK_FAILED`); identidade autenticada indisponível ⇒ `WRV_REQUESTER_IDENTITY_UNAVAILABLE` (`requester_id = IDENTIDADE_INDISPONIVEL`); papel ≠ PESSOA ⇒ `WRV_REQUESTER_NOT_PERSON`; PRECEDÊNCIA *(v1.2, R2-m04)*: capacidade → identidade → papel, nesta ordem; a primeira falha decide o código (um só por registro) e as seguintes não são conferidas; `requester_id` gravado = identidade autenticada se disponível, senão `IDENTIDADE_INDISPONIVEL` — logo, capacidade E identidade indisponíveis ⇒ `WRV_CAPABILITY_CHECK_FAILED` com `requester_id = IDENTIDADE_INDISPONIVEL` (T16 (h)); (1) `cutoff` ausente ⇒ recusa `WRV_CUTOFF_MISSING`; `rule_version` sem `compilation_rule_record` ⇒ recusa `WRV_RULE_VERSION_UNREGISTERED`; `render_profile` da versão não executável ⇒ `WRV_RENDER_PROFILE_UNAVAILABLE`; (2) obtém o horizonte de leitura `RH` da consulta read-only; indisponível ⇒ `WRV_READ_HORIZON_UNAVAILABLE`; `cutoff > RH` ⇒ `WRV_CUTOFF_AHEAD_OF_RECORD`; (3) `valid_at := pedido.valid_at` se declarado, senão `cutoff`; `valid_at_basis := DECLARADO | DERIVADO_DO_CORTE` (só no registro); (4) lê por consulta read-only os nós `learning` com `publication.seal_ref` e os registros deles com `recorded_at ≤ cutoff` (sucessão, invalidação, arquivamento, relações `ESTATISTICA_DE`, fontes e atos das origens-raiz) e as marcas com `recorded_at ≤ cutoff`; (5) objeto sem selo ⇒ `WRV_UNSEALED_IN_INPUT`; (6) `input_set` = lista ordenada de referências@hash; entrada = {`cutoff`, `input_set`, `rule_version@rule_hash`, `valid_at`}; `input_hash := H(canon(entrada))`. SAÍDA: entrada + `input_hash`, ou recusa. EXEMPLO (W0): pedido R1 {cutoff 2026-11-20T00:00:00Z, sem valid_at, rule_version 1}; RH = 2026-12-01T00:00:00Z ⇒ admite; `valid_at = 2026-11-20T00:00:00Z`, basis DERIVADO_DO_CORTE; `input_set` = {P1, P2, P3v1, P3v2, P4 (+ invalidação), P5 (+ marca a revalidar), P6, P7, K1, K2}; C9 (candidato) não é lido.
 
 **D4.2 — Janela de validade e estado (RULE-WRV-006).** Para cada item x: `vf(x) := node_record(criação de x).valid_from` (ausente ⇒ ⊥); `vt(x) := valid_to` do registro de invalidação com `targets_record_id = x` e `recorded_at ≤ cutoff` (nenhum ⇒ +∞); estado := ⊥ ⇒ VALIDADE_NAO_INFORMADA; `valid_at < vf` ⇒ AINDA_NAO_VIGENTE; `vf ≤ valid_at < vt` ⇒ VIGENTE; `valid_at ≥ vt` ⇒ ENCERRADA. Sinais pela projeção até o corte (precedência da SPEC-006 l.1049: SUPERSEDED → INVALIDATED_IN_TIME → ARCHIVED → ACTIVE_KNOWLEDGE). EXEMPLO (W0, valid_at 2026-11-20): P4 vf 2026-10-01, vt 2026-11-15 ⇒ ENCERRADA; com valid_at 2026-11-10 ⇒ VIGENTE; P3v1 ⇒ sinal "superado por P3@2"; P6 sem vf ⇒ VALIDADE_NAO_INFORMADA (`WRV_VALIDITY_UNKNOWN`); P1 vf 2026-11-01 ⇒ VIGENTE; com valid_at 2026-10-20 ⇒ AINDA_NAO_VIGENTE.
 
@@ -973,7 +997,9 @@ compilation_input      : cutoff, input_set{items[{published_item_ref@version, it
 compilation_rule_record: rule_version, rule_hash, group_keys[{key, source_field, closed_list[]}], order_spec, template_ref
                          (modelo sem lógica), display_fields[] (lista fechada), fixed_text[{literal_id, text}],
                          reason_vocabulary[], render_profile{format@version, encoder@version} (v1.1 — entra no rule_hash),
-                         approved_ref (homologação do Plan ou de errata — Andraus), recorded_at
+                         approved_ref (ato de aprovação de Andraus — errata homologada; o do PRIMEIRO registro da versão 1
+                         = [DECISÃO NECESSÁRIA], RULE-WRV-002 (a)) [antes: "(homologação do Plan ou de errata — Andraus)"
+                         — R2-m06], recorded_at — NÃO gravado pela compilação (INV-WRV-01, R2-m03)
                          — append-only; fixo em runtime
 reading_view           : reading_view_ref{ref_type = "READING_VIEW", input_hash}, header{cutoff, valid_at, rule_version,
                          input_hash, most_restrictive{use, transmission}, avisos (FIXO)}, sections[{section_key{asset |
@@ -1004,7 +1030,7 @@ delivery_record        : compilation_id, result{ENTREGUE|FALHA_ENTREGA(WRV_DELIV
 
 ## D7 — Cenários de Teste (18 — T01..T18)
 
-> **Fixture W0 — estado injetado para teste (lição R3-M1).** Todo cenário que depende de estado parte de W0 e quebra **uma** condição ("W0, exceto …"). W0 é **estado de teste**, não afirmação de que exista hoje (hoje não há item carimbado — T01 é o estado real).
+> **Fixture W0 — estado injetado para teste (lição R3-M1).** Todo cenário que depende de estado parte de W0 e quebra **uma** condição ("W0, exceto …"). W0 é **estado de teste**, não afirmação de que exista hoje (hoje não há item carimbado — T01 é o estado real quando o pré-requisito 0 existir, W0.1) *[antes: "T01 é o estado real" — R2-m01]*.
 > - **W0.1** quem pede: pessoa autenticada pelo runtime ("A"); horizonte de leitura RH = 2026-12-01T00:00:00Z; regra versão 1 registrada (rule_hash r1).
 > - **W0.2** nós `asset` BTC e XAU; fontes F@h1, E@h3 e G@h2 com atos RIGHTS (uso PRIVADO) registrados antes de 2026-10-01; G@h2 é fonte registrada sem item; P2 deriva de E@h3; os demais itens derivam de F@h1.
 > - **W0.3** itens carimbados (`learning`, `seal_ref` resolvível; recorded_at entre 2026-10-02 e 2026-11-10): **P1** (fato_de_fonte; ESTATISTICA_DE→BTC; valid_from 2026-11-01); **P2** (fato_de_fonte; →BTC; valid_from 2026-11-01); **P3v1** (regra; sem ativo; valid_from 2026-10-01) e **P3v2** sucessora (selo de sucessão autorizado, recorded_at 2026-11-10); **P4** (definição; →XAU; valid_from 2026-10-01; registro de invalidação com valid_to 2026-11-15, recorded_at 2026-11-16); **P5** (fato_de_fonte; →BTC; `revalidation_mark` recorded_at 2026-11-05); **P6** (knowledge_kind AUSENTE; sem ativo; registro de criação sem valid_from — estado injetado); **P7** (knowledge_kind AUSENTE; sem ativo; o `validation_record_ref` do selo não resolve — estado injetado). **Relações `ESTATISTICA_DE`** de P1, P2, P5 (→BTC) e P4 (→XAU): recorded_at igual ao do item, valid_from 2026-10-01, sem invalidação (valid_to = null ≡ +∞) — vigentes em todo `valid_at` dos cenários (2026-10-20, 2026-11-10, 2026-11-20) *(v1.1, R1-m03)*. Papel de A no runtime = PESSOA; registro de capacidades = a allowlist da INV-WRV-01; `render_profile` da versão 1 executável; registro de compilação disponível.
@@ -1012,7 +1038,8 @@ delivery_record        : compilation_id, result{ENTREGUE|FALHA_ENTREGA(WRV_DELIV
 > - **W0.5** **C9** candidato não selado (existe no pipeline da SPEC-007, não no KG).
 > - **W0.6** pedido **R1**: {cutoff 2026-11-20T00:00:00Z, sem valid_at, rule_version 1}. Valores de data são de fixture, não metas.
 
-### Cenário-WRV-T01 — Linha parada: página vazia com a falta declarada (WRV-010) — estado real hoje
+### Cenário-WRV-T01 — Linha parada: página vazia com a falta declarada (WRV-010) — estado real quando o pré-requisito 0 existir
+*[antes: título terminava em "— estado real hoje" — R2-m01; T01 só vale com W0.1 (RH presente, quem pede = PESSOA)]*
 ```
 DADO        W0, exceto: nenhum item carimbado e nenhuma marca no KG
 QUANDO      A envia R1
@@ -1194,19 +1221,23 @@ DADO        W0, exceto, um de cada vez: (a) claims[].text de P5 contém "ignore 
             amostra de N recusas da trava no período + a compilação de referência R1 sobre W0, classificadas contra a
             referência independente (EC-WRV-003); (e) uma etapa tenta chamar ferramenta com efeito (falha injetada); (f)
             registro de capacidades indisponível; (g) registro de capacidades carregado contém credencial de escrita no KG
-            (divergente) *[antes: (c) "registro da SPEC-007 (marca) ou no KG"; (d) rechecada contra o registro de
+            (divergente); (h) *(v1.2, R2-m04)* registro de capacidades indisponível E identidade autenticada indisponível
+            *[antes: (c) "registro da SPEC-007 (marca) ou no KG"; (d) rechecada contra o registro de
             capacidades; sem (e)(f)(g) — R1-m03, R1-m06, R1-M01]*
 QUANDO      a compilação roda
 ENTÃO       (a) texto exibido como dado, nenhum efeito; (b)(c1)(c2)(e) negadas por capacidade; (d) falso-DENY medido;
-            (f)(g) não lê nem compila
+            (f)(g)(h) não lê nem compila
 VERIFICAÇÃO (a) effects_executed == 0; tool_calls == 0; P5 exibido codificado; (b) code == "WRV_MODEL_CALL_FORBIDDEN";
             model_calls == 0; (c1) code == "WRV_EFFECT_FORBIDDEN", sub "WRV_FOREIGN_RECORD_WRITE_FORBIDDEN"; (c2) code ==
-            "WRV_EFFECT_FORBIDDEN", sub "WRV_KG_WRITE_FORBIDDEN"; writes_outside_compilation_record == 0 em (c1)(c2); (d)
+            "WRV_EFFECT_FORBIDDEN", sub "WRV_KG_WRITE_FORBIDDEN"; writes_outside_own_record == 0 em (c1)(c2) (registro
+            próprio = compilation_record + delivery_record; antes: "writes_outside_compilation_record" — R2-m03); (d)
             cada recusa classificada {CORRETA | FALSO_DENY}; R1 legítima recusada pela trava ⇒ FALSO_DENY; taxa
             registrada = INDETERMINADA (sem limiar — gap aberto, ENF-07); (e) code == "WRV_EFFECT_FORBIDDEN", sub
             "WRV_TOOL_CALL_FORBIDDEN"; tool_calls == 0; (f) code == "WRV_CAPABILITY_CHECK_FAILED", sub
             "WRV_CAPABILITY_REGISTRY_UNAVAILABLE", capability_check_ref == AUSENTE; (g) mesmo code, sub
-            "WRV_CAPABILITY_REGISTRY_DIVERGENT"; em (f)(g) kg_reads == 0 e page_emitted == false; em todos,
+            "WRV_CAPABILITY_REGISTRY_DIVERGENT"; (h) code == "WRV_CAPABILITY_CHECK_FAILED", sub
+            "WRV_CAPABILITY_REGISTRY_UNAVAILABLE", code ≠ "WRV_REQUESTER_IDENTITY_UNAVAILABLE" e record.requester_id ==
+            "IDENTIDADE_INDISPONIVEL" (precedência D4.1 (0)); em (f)(g)(h) kg_reads == 0 e page_emitted == false; em todos,
             compilation_record gravado
 ```
 
@@ -1239,8 +1270,8 @@ VERIFICAÇÃO (a)(b)(c) code == "WRV_EXTERNAL_DISTRIBUTION_FORBIDDEN"; external_
 
 ## Métricas e eventos
 
-- **Métricas `[PROPOSTA]` — só desta Spec:** (1) compilações por desfecho (EMITIDA, RECUSADA por código, NAO_ENTREGUE); (2) contradições incompletas por motivo; (3) itens por estado de validade e com "a revalidar"; (4) seções órfãs; (5) divergências de reconstrução (`WIKI_PAGE_NOT_DETERMINISTIC`) e `WRV_CUTOFF_SET_CHANGED`; (6) recusas da trava e falso-DENY amostral. **Sem limiares** (INDETERMINADO). Observabilidade = **SPEC-040** (Detector ≠ Gate).
-- **Registros emitidos:** só `compilation_record` e `delivery_record` (v1.1), no mesmo registro próprio (e, por registro de versão da regra, `compilation_rule_record`). Nenhuma notificação no Event Bus; nada no Blackboard; nada no KG.
+- **Métricas `[PROPOSTA]` — só desta Spec:** (1) compilações por desfecho projetado (EMITIDA, RECUSADA por código, NAO_ENTREGUE, ENTREGA_NAO_CONFIRMADA) *[antes: sem ENTREGA_NAO_CONFIRMADA — R2-m05]*; (2) contradições incompletas por motivo; (3) itens por estado de validade e com "a revalidar"; (4) seções órfãs; (5) divergências de reconstrução (`WIKI_PAGE_NOT_DETERMINISTIC`) e `WRV_CUTOFF_SET_CHANGED`; (6) recusas da trava e falso-DENY amostral. **Sem limiares** (INDETERMINADO). Observabilidade = **SPEC-040** (Detector ≠ Gate).
+- **Registros emitidos:** só `compilation_record` e `delivery_record` (v1.1), no mesmo registro próprio; o `compilation_rule_record` NÃO é gravado pela compilação (registro aprovado da versão — RULE-WRV-002 (a)) *[antes: "(e, por registro de versão da regra, `compilation_rule_record`)" — R2-m03]*. Nenhuma notificação no Event Bus; nada no Blackboard; nada no KG.
 
 ## D9 — Auditabilidade (por referência)
 
@@ -1278,8 +1309,9 @@ EVIDENCE     : compilation_record por compilação (desfecho, input_hash, output
 CAPABILITY   : Gravar o compilation_record de toda compilação (emitida, recusada ou não entregue)
 EFFECT       : Gravação append-only no registro próprio do componente (único caminho de escrita da compilação)
 PRECOND      : os campos calculados até o ponto do desfecho (não calculados = AUSENTE); requester_id do runtime
-               (RULE-CBP-014) ou, só na recusa WRV_REQUESTER_IDENTITY_UNAVAILABLE, o valor fixo IDENTIDADE_INDISPONIVEL
-               (nunca do payload); output_hash calculado quando a página foi montada *[antes: "entrada (quatro campos) e
+               (RULE-CBP-014) ou, sem identidade autenticada disponível (recusa WRV_REQUESTER_IDENTITY_UNAVAILABLE ou, por
+               precedência, WRV_CAPABILITY_CHECK_FAILED — D4.1 (0)), o valor fixo IDENTIDADE_INDISPONIVEL (nunca do
+               payload) [antes: "só na recusa WRV_REQUESTER_IDENTITY_UNAVAILABLE" — R2-m04]; output_hash calculado quando a página foi montada *[antes: "entrada (quatro campos) e
                valid_at_basis calculados; requester_id do runtime (RULE-CBP-014)" — tensão com a recusa sem identidade,
                R1-M01]*
 POSTCOND     : registro imutável; nenhum registro anterior alterado; recorded_at do registro nunca entra na página;
@@ -1300,10 +1332,11 @@ CAPABILITY   : Ler a entrada (read-only), compilar, checar e codificar — sem n
                externo e sem acesso a modelo
 EFFECT       : Nenhum efeito permanente nem externo; únicos efeitos = EC-WRV-001 (emissão local) e EC-WRV-002 (registro
                próprio)
-PRECOND      : registro de capacidades do compilador = allowlist {leitura read-only do KG; escrita só no compilation_record;
-               resposta local a quem pediu}; nenhuma credencial de escrita no KG, na SPEC-007, no Blackboard, no Event Bus
+PRECOND      : registro de capacidades do compilador = allowlist {leitura read-only do KG; escrita só no registro próprio —
+               compilation_record e delivery_record; resposta local a quem pediu} [antes: "escrita só no compilation_record" — R2-m03]; nenhuma credencial de escrita no KG, na SPEC-007, no Blackboard, no Event Bus
                ou em configuração; nenhum acesso a modelo (nem pela CIM); nenhum canal de saída externo
-POSTCOND     : capacidades exercidas ⊆ allowlist; chamadas de modelo == 0; escritas fora do compilation_record == 0
+POSTCOND     : capacidades exercidas ⊆ allowlist; chamadas de modelo == 0; escritas fora do registro próprio == 0
+               [antes: "fora do compilation_record" — R2-m03]
 POLICY       : INV-WRV-01; SPEC-007 INV-KFH-02 (definições, por referência; herança [INFERÊNCIA]); DHR-SPEC049-001 C-3/P-6;
                DHR-PROV-WEB-001 §2.1; atomic-spec §10.2; ENF-03/ENF-04
 LEVEL        : E3 (Crítico — nega capacidade cujo efeito seria permanente/externo e irreversível; piso do slot, ROADMAP l.193)
@@ -1312,14 +1345,16 @@ FAILURE-MODE : Fail-closed — pedido de efeito ⇒ WRV_EFFECT_FORBIDDEN (subs);
                não lê nem compila, WRV_CAPABILITY_CHECK_FAILED (subs WRV_CAPABILITY_REGISTRY_UNAVAILABLE /
                WRV_CAPABILITY_REGISTRY_DIVERGENT — T16 (f)(g)); log. Falso-DENY E3 por amostragem (ENF-07): recusas da trava
                são classificadas, por amostra, contra uma REFERÊNCIA INDEPENDENTE do gate — a lista FECHADA no texto da
-               INV-WRV-01 (os dois efeitos legítimos: emissão local a quem pediu e escrita no próprio compilation_record; e a
+               INV-WRV-01 (os dois efeitos legítimos: emissão local a quem pediu e escrita no registro próprio [antes: "no
+               próprio compilation_record" — R2-m03]; e a
                leitura read-only do KG), não contra o registro de capacidades que decidiu o DENY — e, a cada nova versão do
                registro de capacidades, por uma compilação de referência (R1 sobre W0) que não pode ser recusada pela
                trava; recusa de ação da lista ou da compilação de referência = FALSO_DENY (detecta allowlist estreita
                demais); taxa = INDETERMINADA (gap aberto, atomic-spec §10.4) *[antes: "rechecadas por amostra contra o
                registro de capacidades" — recheca circular, R1-m06]*
 EVIDENCE     : registro de capacidades do compilador versionado; por compilação, capability_check_ref no compilation_record;
-               contagens: model_calls == 0, writes_outside_compilation_record == 0, external_transmissions == 0; auditoria
+               contagens: model_calls == 0, writes_outside_own_record == 0 [antes: "writes_outside_compilation_record" —
+               R2-m03], external_transmissions == 0; auditoria
                do lado do executor/rede (mecanismo = BUILD) sem acesso do compilador fora da allowlist; amostra de falso-DENY
                registrada
 ```
@@ -1455,8 +1490,9 @@ Nenhuma obrigação suprimida (REMOVED vazio); nenhuma contradita (MODIFIED vazi
 | INV-WRV-01; RULE-WRV-001..010; BASpec/EC/T; códigos; contrato lógico; estados `W_*`; regra versão 1; Fixture W0 | [PROPOSTA] | Requer homologação |
 | Herança da trava "compilação WikiRAG" (parágrafo `[PROPOSTA]` da SPEC-007 l.444-447) | [INFERÊNCIA] | Ancorada em ROADMAP l.193 e DHR-SPEC048-001 C-2; declarada aqui por C-3 |
 | Pontos 1, 2 e 5 da Interface valem para a página por analogia | [INFERÊNCIA] | Interface escrita para a SPEC-048; nota aditiva à SPEC-007 só se Andraus pedir |
-| Ativo do item via `ESTATISTICA_DE` — a única relação não causal `learning` → `asset` da matriz (SPEC-006 l.616-629; `CAUSA` l.627 também admite o par, mas é causal) | [INFERÊNCIA] | P-2 deste Plan (não bloqueante; lado seguro: "sem classificação") *[antes: sem a ressalva de `CAUSA` — R1-M03]* |
-| Item com USO INDETERMINADO não exibido; guarda de exibição | [INFERÊNCIA] | Extensão do ponto 2 pela P-11; P-1 deste Plan (lado seguro já vigente) |
+| Ativo do item via `ESTATISTICA_DE` — a única relação não causal `learning` → `asset` da matriz (SPEC-006 l.616-629; `CAUSA` l.627 também admite o par, mas é causal) | [INFERÊNCIA] | P-2 deste Plan — RESPONDIDA por Andraus (chat 2026-10-31; a registrar na ata): só `ESTATISTICA_DE` *[antes: "(não bloqueante; lado seguro: "sem classificação")"; antes disso: sem a ressalva de `CAUSA` — R1-M03]* |
+| Item com USO INDETERMINADO não exibido; guarda de exibição | [INFERÊNCIA] | Extensão do ponto 2 pela P-11; P-1 deste Plan — RESPONDIDA por Andraus (chat 2026-10-31; a registrar na ata): não entregar *[antes: "(lado seguro já vigente)"]* |
+| Aprovação do primeiro registro da versão 1 da regra (`render_profile`/`rule_hash`) (v1.2) | [DECISÃO NECESSÁRIA] | De Andraus, não bloqueante; lado seguro: `WRV_RULE_VERSION_UNREGISTERED` (R2-m06) |
 | Horizonte de leitura exposto pela consulta read-only; atribuição de `recorded_at`; papel PESSOA da identidade no runtime (v1.1) | [INFERÊNCIA] | Requisito ao KG/BUILD/runtime (RU-1; RULE-WRV-001 (e)); pré-requisito 0 do quadro do trader |
 | Tipo do objeto no Blackboard | [DECISÃO NECESSÁRIA] | M-001 — ABERTA; a página não vai ao quadro |
 | Escola de `structure` | [DECISÃO NECESSÁRIA] | CKG-STRUCT-ORIGIN-001 — ABERTA; não usada na versão 1 |
@@ -1472,19 +1508,23 @@ Nenhuma obrigação suprimida (REMOVED vazio); nenhuma contradita (MODIFIED vazi
 > Nenhuma pergunta bloqueia a homologação: em todas, o lado seguro já está escrito no Plan e vale enquanto você não decidir.
 
 **P-1 — Conhecimento que perdeu a liberação depois da data escolhida.** Imagine que você pede a página "do que o sistema sabia em 20/11" e, em 25/11, retirou a liberação de uma fonte. A página de 20/11, se refeita, sairia igual — mas mostraria algo cuja liberação você já retirou. *Recomendação: nesse caso a página **não é entregue** (fica registrado o motivo); você pode pedir uma página com data mais recente, que já sai sem aquele item.* **Confirma?**
+> **RESPONDIDA por Andraus (chat 2026-10-31; a registrar na ata de homologação do Plan — não é homologação):** NÃO entregar a página quando a liberação cai depois do corte, com o motivo registrado — o lado seguro já escrito no Plan (RULE-WRV-009 (c); T17 (c)); nada muda no texto normativo. *(v1.2)*
 > *Nota técnica:* RULE-WRV-009 (c) (guarda de exibição, fora dos bytes da página — a reconstrução não muda); alternativa: entregar com aviso. Também: item cuja fonte já estava sem liberação **na data escolhida** aparece só como "item não exibível" (RULE-WRV-009 (b)).
 
 **P-2 — Como a página sabe de qual ativo é cada conhecimento.** No caderno permanente, um conhecimento carimbado pode ser ligado a um ativo (BTC, ouro, NASDAQ) de dois jeitos: pela ligação "é estatística de" (diz só que o conhecimento descreve aquele ativo) ou pela ligação "causa" (afirma que uma coisa provoca a outra e exige o mecanismo). *Recomendação: separar por ativo só pela ligação "é estatística de", a única que não afirma causa; a ligação "causa" não serve para organizar a página. O que não tiver a ligação "é estatística de" vai para "sem classificação" — nada é adivinhado.* Alternativa: não separar por ativo até existir um campo próprio. **Aceita usar a ligação "é estatística de"?** *[antes: "Hoje o único jeito que o sistema tem de ligar um conhecimento carimbado a um ativo … é a ligação 'é estatística de'" — falso, R1-M03]*
 > *Nota técnica:* RULE-WRV-002 (b); matriz de relações da SPEC-006 (l.616-629; enum l.1440): `ESTATISTICA_DE` (learning → asset, l.629) e `CAUSA` (qualquer → qualquer, exceto destino conviction, l.627) são as duas que admitem o par — `[INFERÊNCIA]`, RU-5.
+> **RESPONDIDA por Andraus (chat 2026-10-31; a registrar na ata de homologação do Plan — não é homologação):** separar por ativo SÓ pela ligação `ESTATISTICA_DE`; o resto vai para "sem classificação"; `CAUSA` não agrupa — é o texto já vigente da RULE-WRV-002 (b) e da D4.3; nada muda no texto normativo. *(v1.2)*
+
+**Pergunta nova (v1.2, R2-m06) — `[DECISÃO NECESSÁRIA]` não bloqueante: quem aprova o primeiro registro da versão 1 da regra.** O formato da página e o programa que a codifica só são escolhidos no BUILD, depois da homologação deste Plan; por isso a "impressão digital" da versão 1 (`rule_hash`) ainda não existe e não pode estar nesta homologação. *Opções (sem recomendação — a decisão é sua):* (a) uma errata deste Plan, homologada por você, que fixa o formato e o codificador; (b) um ato seu, registrado em ata, que aprova o primeiro registro. *Lado seguro enquanto você não decidir:* a versão 1 não está registrada e todo pedido é recusado com `WRV_RULE_VERSION_UNREGISTERED` (RULE-WRV-001 (a)(iii)) — não sai página nenhuma. *Nota técnica:* RULE-WRV-002 (a); contrato `compilation_rule_record.approved_ref`.
 
 **Atos seus na homologação (não são perguntas novas):**
 1. Registrar na ata de homologação a sua ordem para este Plan (chat 2026-10-31, "Iniciar o Plan da SPEC-049").
 2. Confirmar o entendimento de que uma **versão nova da regra de montagem** (rótulos, agrupamento, ordem) só existe por alteração deste Plan homologada por você (RULE-WRV-002 (a)).
 3. (Orquestrador) rodar os gates e, depois da homologação, atualizar ROADMAP/CATALOGO; nada a editar no RMR-001 nem no CONFLICT-MAP.
-4. *(v1.1, R1-m08 (b))* Tomar ciência de que, na versão 1, a **escola não é chave** de organização (o conhecimento carimbado não tem escola — SPEC-006 l.1411); por isso o rótulo "escola INDETERMINADA" da sua decisão P-4 **não aparece** na versão 1 — só valeria numa versão futura que usasse escola.
-5. *(v1.1, R1-M02)* Tomar ciência de que o **formato da página e o programa que a codifica** (com versão) são fixados no BUILD e registrados uma vez com a versão 1 da regra; trocá-los depois = versão nova da regra (item 2).
+4. *(v1.1, R1-m08 (b))* Tomar ciência de que, na versão 1, a **escola não é chave** de organização (o conhecimento carimbado não tem escola — SPEC-006 l.1411); por isso o rótulo "escola INDETERMINADA" da sua decisão P-4 **não aparece** na versão 1 — só valeria numa versão futura que usasse escola. — **Ciência tomada por Andraus (chat 2026-10-31; a registrar na ata).** *(v1.2)*
+5. *(v1.1, R1-M02)* Tomar ciência de que o **formato da página e o programa que a codifica** (com versão) são fixados no BUILD e registrados uma vez com a versão 1 da regra; trocá-los depois = versão nova da regra (item 2). — **Ciência tomada por Andraus (chat 2026-10-31; a registrar na ata).** A aprovação desse primeiro registro é a pergunta nova acima (R2-m06), ainda aberta. *(v1.2)*
 
-**O que continua em aberto e depende de você (não perguntado agora):** M-001, K-001, G-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, forma de confirmar a sua identidade (BUILD); envio da página para fora (P-6: decisão à parte, se um dia quiser).
+**O que continua em aberto e depende de você (não perguntado agora):** aprovação do primeiro registro da versão 1 da regra (pergunta nova acima — aberta); M-001, K-001, G-001, J-001, N-001, C-001, WF-D03, ECC-03-001, SPEC-045-RUNTIME-001, CKG-STRUCT-ORIGIN-001, produtor/gatilho de promoção, forma de confirmar a sua identidade (BUILD); envio da página para fora (P-6: decisão à parte, se um dia quiser).
 
 ---
 
@@ -1538,6 +1578,6 @@ Nenhuma obrigação suprimida (REMOVED vazio); nenhuma contradita (MODIFIED vazi
 
 **Pronto para revisão.**
 
-**Dependem de Andraus (não fechadas — CONS-01):** P-1 (página com item que perdeu a liberação depois do corte) e P-2 (ativo via "estatística de") — ambas com lado seguro vigente; registro da ordem do Plan na ata; M-001, K-001, G-001, J-001, N-001, C-001 (**ABERTAS**); WF-D03; ECC-03-001; SPEC-045-RUNTIME-001; CKG-STRUCT-ORIGIN-001; produtor/gatilho de promoção; forma de confirmar a identidade de Andraus (BUILD).
+**Dependem de Andraus (não fechadas — CONS-01):** registro na ata das respostas a P-1 e P-2 e da ciência dos atos 4 e 5 (RESPONDIDAS no chat 2026-10-31 — não é homologação) *[antes: "P-1 (…) e P-2 (…) — ambas com lado seguro vigente"]*; aprovação do primeiro registro da versão 1 da regra (`[DECISÃO NECESSÁRIA]` não bloqueante, R2-m06); registro da ordem do Plan na ata; M-001, K-001, G-001, J-001, N-001, C-001 (**ABERTAS**); WF-D03; ECC-03-001; SPEC-045-RUNTIME-001; CKG-STRUCT-ORIGIN-001; produtor/gatilho de promoção; forma de confirmar a identidade de Andraus (BUILD).
 
 **Volume:** HIGH — 11 BASpec / 18 cenários / 3 EC / 10 RULE + 1 INV + 11 EARS + §D3.1 + contrato lógico.
