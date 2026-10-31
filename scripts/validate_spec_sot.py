@@ -482,6 +482,51 @@ def check_backlog_abertura(content: str, filepath: Path = None):
     return True, ""
 
 
+@check(
+    name="[STRUCT-14] Classe/Mecanismo por BASpec completa (RULE-MECH-01..03)",
+    source="RULE-MECH-01/02/03 / atomic-spec §10.6 / CC-11 (DHR-CLASSE-MECH-001)"
+)
+def check_classe_mecanismo(content: str):
+    """
+    Gate determinístico dos CAMPOS do bloco de Classe (atomic-spec §10.6). Só incide em Spec que cita
+    RULE-MECH-01 no próprio texto (prospectivo, INV-07). Confere presença, não qualidade:
+    D: MECANISMO + CRITÉRIO 4Es · H: + BOUNDED LOOP + GATE DE SAÍDA · P: + BOUNDED LOOP · C: + GATE DE SAÍDA.
+    Se a justificativa 4Es é adequada ou a Classe C é desperdício (RULE-MECH-02) segue com o Revisor (CC-11).
+    """
+    if not re.search(r"RULE-MECH-01", content):
+        return True, ""
+    lines = content.splitlines()
+    starts = [i for i, ln in enumerate(lines) if re.match(r"\s*CLASSE\s*:\s*[DHPC]\b", ln)]
+    if not starts:
+        return False, (
+            "Spec cita RULE-MECH-01 mas não traz nenhum bloco `CLASSE : D|H|P|C` (atomic-spec §10.6). "
+            "Declare a Classe por BASpec com efeito."
+        )
+    need = {
+        "D": ["MECANISMO", "CRITÉRIO 4Es"],
+        "H": ["MECANISMO", "CRITÉRIO 4Es", "BOUNDED LOOP", "GATE DE SAÍDA"],
+        "P": ["MECANISMO", "CRITÉRIO 4Es", "BOUNDED LOOP"],
+        "C": ["MECANISMO", "CRITÉRIO 4Es", "GATE DE SAÍDA"],
+    }
+    problems = []
+    for n, i in enumerate(starts):
+        end = starts[n + 1] if n + 1 < len(starts) else len(lines)
+        stop = i + 1
+        while stop < end and stop < i + 30 and not re.match(r"\s*(VERIFICADO POR|```|#{1,4} )", lines[stop]):
+            stop += 1
+        block = "\n".join(lines[i:stop]).upper()
+        cls = re.match(r"\s*CLASSE\s*:\s*([DHPC])", lines[i]).group(1)
+        missing = [f for f in need[cls] if not re.search(re.escape(f.upper()) + r"\s*:", block)]
+        if missing:
+            problems.append(f"linha {i + 1} (Classe {cls}): faltam {missing}")
+    if problems:
+        return False, (
+            "Bloco(s) de Classe incompleto(s) (RULE-MECH-03/atomic-spec §10.6): "
+            + "; ".join(problems[:8]) + (f" … (+{len(problems) - 8})" if len(problems) > 8 else "")
+        )
+    return True, ""
+
+
 # ─────────────────────────────────────────────
 # ENGINE DE EXECUÇÃO
 # ─────────────────────────────────────────────

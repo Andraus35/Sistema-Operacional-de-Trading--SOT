@@ -614,6 +614,13 @@
       "motivo": "Edita só o campo Status de 3 registros de governança; não toca agentes de construção, método nem AGENTS.md."
     },
     {
+      "id": "DHR-MECH-GATE-001",
+      "data": "2026-10-31",
+      "em_escopo": true,
+      "sync": "propagado",
+      "motivo": "Altera o texto do agente Especificador (autopré-check §7: rodar o gate determinístico)."
+    },
+    {
       "id": "DHR-AGENTS-P8-001",
       "data": "2026-10-31",
       "em_escopo": true,
