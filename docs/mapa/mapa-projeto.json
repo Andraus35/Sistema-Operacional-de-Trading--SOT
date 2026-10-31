@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "d955def89c9e33d981a935fa865bab5a0528e2f138337e0e8c7df6390fb39f91",
+  "digest": "e162ac94cd2d3f72c26cece23aafc1d3787f3ad03021eb894766998f5d1d87ef",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -1424,7 +1424,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 59,
+   "in": 60,
    "out": 5
   },
   {
@@ -3091,7 +3091,7 @@
    "area": "governance",
    "title": "Parecer do Revisor — Plan v1.1 da SPEC-049 (WikiRAG Reading View) — R2 por delta (S2, sonnet) — 2026-10-31",
    "in": 1,
-   "out": 13
+   "out": 15
   },
   {
    "path": "rag/elliott-wave.knowledge.md",
@@ -3342,7 +3342,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 203,
+   "in": 204,
    "out": 9
   },
   {
@@ -3691,7 +3691,7 @@
   {
    "path": "specs/features/SPEC-049/plan.md",
    "area": "specs",
-   "title": "SPEC-049 — WikiRAG Reading View — Plan v1.1 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
+   "title": "SPEC-049 — WikiRAG Reading View — Plan v1.2 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
    "in": 68,
    "out": 28
   },
@@ -4030,7 +4030,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 59
+   "cited_by": 60
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -5385,7 +5385,7 @@
   {
    "id": "RULE-ECC-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 33
+   "cited_by": 34
   },
   {
    "id": "RULE-EH",
@@ -6285,7 +6285,7 @@
   {
    "id": "RULE-WRV-002",
    "defined_in": null,
-   "cited_by": 3
+   "cited_by": 4
   },
   {
    "id": "RULE-WRV-003",
@@ -44186,6 +44186,11 @@
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
    "to": "atomic-spec.md",
    "type": "path"
   },
@@ -44198,6 +44203,11 @@
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
    "to": "governance/CONFLICT-MAP.md",
    "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
@@ -44216,7 +44226,17 @@
   },
   {
    "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
+   "to": "governance/RULES.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
    "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md",
+   "to": "specs/features/SPEC-001/plan.md",
    "type": "path"
   },
   {
