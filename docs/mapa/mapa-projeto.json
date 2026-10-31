@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "1e3982cc89e4cd88fd2f673fa5b0bfd1ac7af388c211d091edb0dbc591150021",
+  "digest": "be396ff88d2bc02ae1e8cfd5e279589256f7ff138ce5db8373087937cba3bbfb",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -2125,7 +2125,7 @@
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
    "in": 4,
-   "out": 32
+   "out": 33
   },
   {
    "path": "governance/ERRATUM-SPEC001-001_Ancora_SAS-001_6.10.md",
@@ -5541,12 +5541,12 @@
   {
    "id": "RULE-KFH-015",
    "defined_in": null,
-   "cited_by": 8
+   "cited_by": 9
   },
   {
    "id": "RULE-KFH-016",
    "defined_in": null,
-   "cited_by": 9
+   "cited_by": 10
   },
   {
    "id": "RULE-KFH-017",
@@ -33153,6 +33153,11 @@
   {
    "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "to": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R2-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
+   "to": "governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md",
    "type": "path"
   },
   {

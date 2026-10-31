@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Código | **ERRATUM-REAPONT-001**. Número e nome são **propostos**; quem atribui é Andraus, na homologação. |
-| Versão | **v1.3** (2026-10-31, curta). Corrige os Menores m-6 e m-7 do parecer R2 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R2-2026-10-31.md`, CONFORME condicional, 0 Médias). O m-5 já foi aplicado pelo Orquestrador por ficha M (N-D) e está mantido. Mudanças: "Registro de mudanças v1.2 → v1.3". Trecho da v1.2 trocado: "Anexo V1.2". *[v1.2: "**v1.2** (2026-10-30, curta). Incorpora …" — continua abaixo.]* **v1.2** (2026-10-30, curta). Incorpora a resposta de Andraus à Q-9 (DHR-RETRO-001 §9, Adendo 6): a recuperação de experiência recebe a nota N-G (endereço indicativo SPEC-009/017). Mudanças: "Registro de mudanças v1.1 → v1.2". Trechos da v1.1 trocados: "Anexo V1.1". *[v1.1: "**v1.1** (2026-10-30, curta). Corrige o parecer R1 …" — continua abaixo.]* **v1.1** (2026-10-30, curta). Corrige o parecer R1 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md`, NÃO CONFORME): M-1 (Média) e m-1..m-4 (Menores). Nenhum achado foi aplicado por ficha M. Incorpora as respostas de Andraus da DHR-RETRO-001 §8 (Adendo 5). Mudanças: "Registro de mudanças v1.0 → v1.1". Trechos da v1.0 trocados: "Anexo V1.0". A v1.0 inteira está no commit `142d29b`. *[v1.0 (2026-10-30): primeira entrega.]* |
+| Versão | **v1.4** (2026-10-31, mínima: só a N-F). Corrige M-A (Média) e m-8 (Menor) do parecer R3 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R3-2026-10-31.md`). Mudanças: "Registro de mudanças v1.3 → v1.4". Trecho da v1.3 trocado: "Anexo V1.3". *[v1.3: "**v1.3** (2026-10-31, curta). Corrige …" — continua abaixo.]* **v1.3** (2026-10-31, curta). Corrige os Menores m-6 e m-7 do parecer R2 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R2-2026-10-31.md`, CONFORME condicional, 0 Médias). O m-5 já foi aplicado pelo Orquestrador por ficha M (N-D) e está mantido. Mudanças: "Registro de mudanças v1.2 → v1.3". Trecho da v1.2 trocado: "Anexo V1.2". *[v1.2: "**v1.2** (2026-10-30, curta). Incorpora …" — continua abaixo.]* **v1.2** (2026-10-30, curta). Incorpora a resposta de Andraus à Q-9 (DHR-RETRO-001 §9, Adendo 6): a recuperação de experiência recebe a nota N-G (endereço indicativo SPEC-009/017). Mudanças: "Registro de mudanças v1.1 → v1.2". Trechos da v1.1 trocados: "Anexo V1.1". *[v1.1: "**v1.1** (2026-10-30, curta). Corrige o parecer R1 …" — continua abaixo.]* **v1.1** (2026-10-30, curta). Corrige o parecer R1 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md`, NÃO CONFORME): M-1 (Média) e m-1..m-4 (Menores). Nenhum achado foi aplicado por ficha M. Incorpora as respostas de Andraus da DHR-RETRO-001 §8 (Adendo 5). Mudanças: "Registro de mudanças v1.0 → v1.1". Trechos da v1.0 trocados: "Anexo V1.0". A v1.0 inteira está no commit `142d29b`. *[v1.0 (2026-10-30): primeira entrega.]* |
 | Natureza | **PROPOSTA de errata aditiva e editorial** (só endereço). Espera o Revisor e a homologação de Andraus. **Não é baseline.** Nada aqui vale antes da homologação (RULE-HG-01/02/03). **Não edita** nenhum `plan.md`, `checks.md`, ata, ERRATUM nem o `ROADMAP.md` (INV-07/INV-09). |
 | Ordem | Ordem de Andraus transmitida pelo Orquestrador (chat, 2026-10-30: "Seguir com a errata de re-apontamento"). Executa a DHR-RETRO-001 §1 ("Próxima frente", item (3): "errata de re-apontamento (regra de busca da ata `DHR-SPEC048-001`, Q-7)") e §2. Os itens (1) e (2) já foram homologados (DHR-SPEC006-005; DHR-SPEC020-002). `[FONTE: FATO NORMATIVO, DHR-RETRO-001. A ordem de 2026-10-30 é registro do Orquestrador]` |
 | Respostas de Andraus incorporadas | DHR-RETRO-001 §8 (Adendo 5, chat 2026-10-30): **Q-2 = Patch** ("ajuste editorial"). **Q-1** = "Um arquivo único, com uma linha de ponteiro no fim de cada plan.md afetado". **Q-3/Q-4** = "**Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada)". **Q-8** = "nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele". DHR-RETRO-001 §9 (Adendo 6, chat 2026-10-30): **Q-9** = "destino = **SPEC-009/017, como endereço indicativo** (as Specs não estão abertas; G-001 e a decisão de fundo seguem abertas). Entra no erratum como nota própria (N-G) para as linhas L-05 (1ª parte) e L-06 da SPEC-006". DHR-RETRO-001 §10 (Adendo 7, chat 2026-10-31): **Q-5** = "**Sem nota nova**"; **Q-6** = "**Sim**: nota aditiva atualizando a referência das linhas, sem apagar o texto antigo e sem mudar regra"; **Q-7** = "**Baixa (LOW)**". "Com isso não restam perguntas pendentes no erratum." *[v1.2: "Q-5, Q-6 e Q-7 seguem com a premissa do texto."]* `[FONTE: FATO NORMATIVO, ata]` |
@@ -217,19 +217,36 @@ Cada nota se lê junto do trecho âncora. Texto baselined não muda (INV-09). Ne
 
 **SPEC-007.** A nota C-3 ("onde este Plan e o Anexo T dizem que a visão de leitura WikiRAG / a página de leitura \"vai à SPEC-048\" … leia-se: … **SPEC-049**") vale pelo texto e cobre todas as menções de hoje. Mas a lista "(menções em l.63, 64, 71, 308, 319, 359, 443, 711, 1731, 1801 …)" está defasada em relação à v2.3. Nota **N-F** (decidida, Q-6: "nota aditiva atualizando a referência das linhas, sem apagar o texto antigo e sem mudar regra", DHR-RETRO-001 §10):
 
-> *"Nota aditiva (ERRATUM-REAPONT-001): os números de linha da nota C-3 ('l.63, 64, 71, 308, 319, 359, 443, 711, 1731, 1801') são da versão de 2026-10-24. Referência atualizada para a v2.3, por texto (números conferidos em 2026-10-30 só para localizar):*
-> - *campo ID, "Recuperação, pacote de evidência, WikiRAG e F2 passam à SPEC-048" (l.7);*
-> - *campo de atas, "Q3: WikiRAG = versão de leitura por regra fixa — agora matéria da SPEC-048" (l.21);*
-> - *"Recuperação + pacote com citação + independência no pacote + F2 + WikiRAG" (l.310);*
-> - *"juízo F2, compilação WikiRAG) e o gate de montagem/entrega do pacote são da SPEC-048" (l.445);*
-> - *"(recuperação e WikiRAG) é requisito à SPEC-048" (l.713);*
-> - *"\"omitir da recuperação/WikiRAG\" foram à SPEC-048" (l.1538);*
-> - *"EC-KFH-009 WikiRAG … foram à SPEC-048" (l.1733);*
-> - *"R-3, R-4, R-8 (relevância, falsa independência, WikiRAG)" (l.1803);*
-> - *título do Anexo T (l.1950);*
-> - *"\"lado a lado na WikiRAG\" são da SPEC-048" (l.2068).*
+> *"Nota aditiva (ERRATUM-REAPONT-001): os números de linha da nota C-3 ('l.63, 64, 71, 308, 319, 359, 443, 711, 1731, 1801 e no título do Anexo T') são da versão de 2026-10-24. **Critério desta lista:** (A) atualização **1:1**, na mesma ordem, de cada menção da C-3 para a sua linha na v2.3; (B) separadas, as **menções adicionais** achadas na v2.3, que não estavam na lista da C-3. Âncora = texto; números conferidos por busca de 'WikiRAG' no plan v2.3, só para localizar.*
 >
-> *A leitura da nota C-3 não muda (a página de leitura → SPEC-049), nenhuma regra muda e o texto antigo da nota fica como está. Texto acima não alterado (INV-09)."*
+> *(A) Atualização 1:1 da lista da C-3:*
+> 1. *l.63 → **l.65**: "RULE-KFH-015 (WikiRAG) | **048**";*
+> 2. *l.64 → **l.66**: "RULE-KFH-016 (contradição) | **007** (registro) · **048** (servir os dois lados; WikiRAG lado a lado)";*
+> 3. *l.71 → **l.73**: "§D3.1 (códigos) … **048**: recuperação, pacote, WikiRAG, F2, relevância, feedback, redator";*
+> 4. *l.308 → **l.310**: "Recuperação + pacote com citação + independência no pacote + F2 + WikiRAG | NÃO | **SPEC-048**";*
+> 5. *l.319 → **l.321**: "**Termo 3 — WikiRAG:** versão de leitura do **já publicado**, por regra fixa, **sem autoridade**";*
+> 6. *l.359 → **l.361**: "**Recuperação, pacote de evidência com citação, WikiRAG, F2/`minimal_synthesis`/redator, …**";*
+> 7. *l.443 → **l.445**: "juízo F2, compilação WikiRAG) e o gate de montagem/entrega do pacote são da SPEC-048";*
+> 8. *l.711 → **l.713**: "servi-los e exibi-los lado a lado (recuperação e WikiRAG) é requisito à SPEC-048";*
+> 9. *l.1731 → **l.1733**: "EC-KFH-007 entrega do pacote, EC-KFH-008 relevância≠convicção, EC-KFH-009 WikiRAG e EC-KFH-013 etapas da consulta foram à SPEC-048";*
+> 10. *l.1801 → **l.1803**: "R-3, R-4, R-8 (relevância, falsa independência, WikiRAG) | foram à SPEC-048 com o comportamento";*
+> 11. *título do Anexo T → **l.1950**: "## Anexo T — Transferência à SPEC-048 (insumo do Plan dela; não vigente aqui)". O conteúdo do Anexo T (ex.: l.2068, "\"lado a lado na WikiRAG\" são da SPEC-048") já está coberto pela expressão 'e o Anexo T' da C-3.*
+>
+> *(B) Menções adicionais encontradas na v2.3 (não estavam na lista da C-3):*
+> - ***l.7**, campo ID: "Recuperação, pacote de evidência, WikiRAG e F2 passam à **SPEC-048**";*
+> - ***l.21**, campo de atas (Abertura): "Q3: WikiRAG = versão de leitura por regra fixa — agora matéria da SPEC-048";*
+> - ***l.1517**, ADV de escopo: "volta a especificar recuperação, pacote, WikiRAG ou F2 nesta Spec … `OUT_OF_SCOPE_048`";*
+> - ***l.1538**, DADO de cenário: "\"omitir da recuperação/WikiRAG\" foram à SPEC-048".*
+>
+> *A leitura da nota C-3 vale para (A) e (B): a página de leitura passa à SPEC-049. Nenhuma regra muda e o texto antigo da nota fica como está. Texto acima não alterado (INV-09)."*
+>
+> **Conferência da lista (Grep sem diferenciar maiúsculas, padrão `WikiRAG|página de leitura|visão de leitura`, arquivo SPEC-007 `plan.md` v2.3):** 52 linhas. Ficam fora da lista, com motivo:
+> - l.1 (título da Spec) e l.3 (a própria nota C-3);
+> - l.1744: texto v1.2 preservado ("*[v1.2: … página WikiRAG (EC-KFH-009)…]*"), não vigente;
+> - de l.1950 a l.2524: conteúdo do Anexo T, coberto por "e o Anexo T";
+> - de l.2525 em diante: Anexo R e anexos seguintes, texto preservado, não vigente.
+>
+> As 10 menções da C-3 reaparecem com deslocamento de +2 cada uma.
 
 A DHR-SPEC048-001 §2 cita "l.189/l.517" do ROADMAP; hoje a nota está na l.184. Ata não se edita: fica **só registrado**.
 
@@ -260,7 +277,7 @@ A DHR-SPEC048-001 §2 cita "l.189/l.517" do ROADMAP; hoje a nota está na l.184.
 | COL-EXP-05: origem-raiz na SPEC-007 (RULE-KFH-001); contagem no pacote na SPEC-048 (RULE-RET-003); experiência na SPEC-009/017 | §3; N-D; §7 | L-05 (2ª parte), L-07, L-08, L-16; SPEC-007 "Reconciliação COL-EXP-05" itens 3 e 4; DHR-SPEC007-004 P-14 |
 | Só formação: fica na SPEC-007 | §3 | L-12; errata v1.13 (L-31) |
 | RAG faithfulness: F1 → SPEC-007; F2 → SPEC-048, DIFERIDA | §3; §5; N-E; §7 (ROADMAP, CATALOGO, CONFLICT-MAP) | L-19 a L-24, L-29, L-30 (cobertos pelo ERRATUM-SPEC020-002); L-26, L-27, L-28 |
-| Página de leitura → SPEC-049; referência de linhas da nota C-3 atualizada (Q-6 decidida) | §6; N-F; §13 (linha da SPEC-007); §15 | SPEC-007 nota C-3; ROADMAP nota C-3 |
+| Página de leitura → SPEC-049; referência de linhas da nota C-3 atualizada 1:1 (10 menções + título do Anexo T) e menções adicionais à parte (Q-6 decidida) | §6 (N-F, partes (A)/(B) e conferência); §13 (linha da SPEC-007); §15 | SPEC-007 nota C-3 (l.3) e as linhas listadas na N-F; ROADMAP nota C-3 |
 | SPEC-020 e ERRATUM-SPEC020-001 sem nota nova (Q-5 decidida) | §5; §15 | ERRATUM-SPEC020-002 §2/§3 |
 | Complexidade LOW (Q-7 decidida) | cabeçalho; CC-05; §15 | — |
 | Linha de ponteiro por alvo, com só as notas que cada alvo recebe | §13 | fim de cada `plan.md` alvo (na homologação) |
@@ -337,7 +354,7 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA]`
 | SPEC-006 `plan.md` | "formação e selo → SPEC-007; recuperação do conhecimento → SPEC-048 (N-B, N-C); COL-EXP-05: origem-raiz na SPEC-007, contagem no pacote na SPEC-048 (N-D); recuperação de experiência → SPEC-009/017, endereço indicativo, sem abrir Spec nem decidir G-001 (N-G)" |
 | SPEC-021 `plan.md` | "classe B, RAG faithfulness: F1 → SPEC-007, F2 → SPEC-048 (DIFERIDA) (nota N-E)" |
 | SPEC-038 `plan.md` | "classe B, RAG faithfulness: F1 → SPEC-007, F2 → SPEC-048 (DIFERIDA) (nota N-E)" |
-| SPEC-007 `plan.md` | "referência de linhas da nota C-3 atualizada para a v2.3; texto antigo preservado; nenhuma regra muda (nota N-F)" |
+| SPEC-007 `plan.md` | "referência de linhas da nota C-3 atualizada 1:1 para a v2.3 (l.65, 66, 73, 310, 321, 361, 445, 713, 1733, 1803; Anexo T em l.1950), mais as menções adicionais l.7, l.21, l.1517 e l.1538; texto antigo preservado; nenhuma regra muda (nota N-F)" |
 
 Só a linha da SPEC-006 cita a experiência (N-G).
 
@@ -360,6 +377,20 @@ Só a linha da SPEC-006 cita a experiência (N-G).
 - **Q-5** (§10, Adendo 7): "**Sem nota nova** (o ERRATUM-SPEC020-002 já dá a leitura de cada linha)" (§5).
 - **Q-6** (§10, Adendo 7): "**Sim**: nota aditiva atualizando a referência das linhas, sem apagar o texto antigo e sem mudar regra" (N-F, §6).
 - **Q-7** (§10, Adendo 7): "**Baixa (LOW)**" (cabeçalho; CC-05).
+
+---
+
+## Registro de mudanças v1.3 → v1.4
+
+| Achado (R3) | O que mudou |
+|---|---|
+| M-A (Média) | A N-F (§6) passou a reproduzir **1:1** as 10 menções da lista da C-3, mais o título do Anexo T, cada uma com o seu texto e a linha atual (l.65, 66, 73, 310, 321, 361, 445, 713, 1733, 1803; l.1950). Antes, a lista trocava menções da C-3 por outras |
+| m-8 (Menor) | As menções que não estavam na C-3 (l.7, l.21, l.1517, l.1538) ficaram numa parte (B) separada, declarada como "menções adicionais encontradas na v2.3". A l.2068 foi tratada como conteúdo do Anexo T. O critério da lista está na própria nota. Conferência contra Grep ("WikiRAG", 52 linhas) com as exclusões e os motivos. Ajustados §13 (ponteiro da SPEC-007) e §8 |
+
+## Anexo V1.3: trecho substituído (INV-07)
+
+- **N-F (v1.3):** "*… Referência atualizada para a v2.3, por texto (números conferidos em 2026-10-30 só para localizar):* campo ID … (l.7); campo de atas … (l.21); "Recuperação + pacote com citação + independência no pacote + F2 + WikiRAG" (l.310); "juízo F2, compilação WikiRAG) e o gate de montagem/entrega do pacote são da SPEC-048" (l.445); "(recuperação e WikiRAG) é requisito à SPEC-048" (l.713); "\"omitir da recuperação/WikiRAG\" foram à SPEC-048" (l.1538); "EC-KFH-009 WikiRAG … foram à SPEC-048" (l.1733); "R-3, R-4, R-8 (relevância, falsa independência, WikiRAG)" (l.1803); título do Anexo T (l.1950); "\"lado a lado na WikiRAG\" são da SPEC-048" (l.2068). *A leitura da nota C-3 não muda …*"
+- **§13, linha da SPEC-007 (v1.3):** "referência de linhas da nota C-3 atualizada para a v2.3; texto antigo preservado; nenhuma regra muda (nota N-F)".
 
 ---
 
