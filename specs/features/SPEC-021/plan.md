@@ -802,3 +802,5 @@ Nenhuma decisão aberta é usada como invariante fechado (CONS-01).
 **Pronto para revisão.**
 
 [DECISÃO NECESSÁRIA] em aberto nesta Spec (não fechadas — CONS-01): **J-001** (limiares definitivos do Conviction Vector); **classe B** da SPEC-020 (BL-017); **SPEC-045-RUNTIME-001** (tooling de runtime); **ECC-VAL-001** como regra geral; **ECC-03-001**. A homologação plena da SPEC-021 (escada canônica L0–L4 + gate normativo E3 + RULE-MM-01..07) é ato de Andraus, após parecer do Revisor.
+
+**Errata aditiva (2026-10-31, DHR-REAPONT-001):** classe B, RAG faithfulness: F1 → SPEC-007, F2 → SPEC-048 (DIFERIDA) (nota N-E) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, nota(s) indicada(s). Texto acima não alterado (INV-09).

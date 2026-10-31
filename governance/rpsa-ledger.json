@@ -535,6 +535,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologação de erratum de Spec: não altera texto de agente."
+    },
+    {
+      "id": "DHR-REAPONT-001",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de errata de endereço: não altera texto de agente."
     }
   ]
 }
