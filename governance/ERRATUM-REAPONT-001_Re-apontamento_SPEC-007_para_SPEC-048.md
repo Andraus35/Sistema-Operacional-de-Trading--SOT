@@ -3,10 +3,10 @@
 | Campo | Valor |
 |---|---|
 | Código | **ERRATUM-REAPONT-001**. Número e nome são **propostos**; quem atribui é Andraus, na homologação. |
-| Versão | **v1.1** (2026-10-30, curta). Corrige o parecer R1 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md`, NÃO CONFORME): M-1 (Média) e m-1..m-4 (Menores). Nenhum achado foi aplicado por ficha M. Incorpora as respostas de Andraus da DHR-RETRO-001 §8 (Adendo 5). Mudanças: "Registro de mudanças v1.0 → v1.1". Trechos da v1.0 trocados: "Anexo V1.0". A v1.0 inteira está no commit `142d29b`. *[v1.0 (2026-10-30): primeira entrega.]* |
+| Versão | **v1.2** (2026-10-30, curta). Incorpora a resposta de Andraus à Q-9 (DHR-RETRO-001 §9, Adendo 6): a recuperação de experiência recebe a nota N-G (endereço indicativo SPEC-009/017). Mudanças: "Registro de mudanças v1.1 → v1.2". Trechos da v1.1 trocados: "Anexo V1.1". *[v1.1: "**v1.1** (2026-10-30, curta). Corrige o parecer R1 …" — continua abaixo.]* **v1.1** (2026-10-30, curta). Corrige o parecer R1 (`governance/propostas/REAPONT/PARECER-REVISOR-ERRATUM-REAPONT-001-R1-2026-10-30.md`, NÃO CONFORME): M-1 (Média) e m-1..m-4 (Menores). Nenhum achado foi aplicado por ficha M. Incorpora as respostas de Andraus da DHR-RETRO-001 §8 (Adendo 5). Mudanças: "Registro de mudanças v1.0 → v1.1". Trechos da v1.0 trocados: "Anexo V1.0". A v1.0 inteira está no commit `142d29b`. *[v1.0 (2026-10-30): primeira entrega.]* |
 | Natureza | **PROPOSTA de errata aditiva e editorial** (só endereço). Espera o Revisor e a homologação de Andraus. **Não é baseline.** Nada aqui vale antes da homologação (RULE-HG-01/02/03). **Não edita** nenhum `plan.md`, `checks.md`, ata, ERRATUM nem o `ROADMAP.md` (INV-07/INV-09). |
 | Ordem | Ordem de Andraus transmitida pelo Orquestrador (chat, 2026-10-30: "Seguir com a errata de re-apontamento"). Executa a DHR-RETRO-001 §1 ("Próxima frente", item (3): "errata de re-apontamento (regra de busca da ata `DHR-SPEC048-001`, Q-7)") e §2. Os itens (1) e (2) já foram homologados (DHR-SPEC006-005; DHR-SPEC020-002). `[FONTE: FATO NORMATIVO, DHR-RETRO-001. A ordem de 2026-10-30 é registro do Orquestrador]` |
-| Respostas de Andraus incorporadas | DHR-RETRO-001 §8 (Adendo 5, chat 2026-10-30): **Q-2 = Patch** ("ajuste editorial"). **Q-1** = "Um arquivo único, com uma linha de ponteiro no fim de cada plan.md afetado". **Q-3/Q-4** = "**Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada)". **Q-8** = "nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele". Q-5, Q-6 e Q-7 seguem com a premissa do texto. `[FONTE: FATO NORMATIVO, ata]` |
+| Respostas de Andraus incorporadas | DHR-RETRO-001 §8 (Adendo 5, chat 2026-10-30): **Q-2 = Patch** ("ajuste editorial"). **Q-1** = "Um arquivo único, com uma linha de ponteiro no fim de cada plan.md afetado". **Q-3/Q-4** = "**Incluir** a SPEC-021 (leitura estendida da regra de busca) e o trecho da SPEC-006 sobre a duplicação EXP-SPEC-021↔RAG-SPEC-018 (adiada)". **Q-8** = "nota aditiva no ROADMAP na mesma homologação (duas linhas, texto anterior preservado); CONFLICT-MAP só por ordem dele". DHR-RETRO-001 §9 (Adendo 6, chat 2026-10-30): **Q-9** = "destino = **SPEC-009/017, como endereço indicativo** (as Specs não estão abertas; G-001 e a decisão de fundo seguem abertas). Entra no erratum como nota própria (N-G) para as linhas L-05 (1ª parte) e L-06 da SPEC-006". Q-5, Q-6 e Q-7 seguem com a premissa do texto. `[FONTE: FATO NORMATIVO, ata]` |
 | Regra que manda esta errata | DHR-SPEC048-001 §1, linha Q-7: "**A ata registra a REGRA DE BUSCA** (critério 1: "SPEC-007" junto de retrieval/recuperação/evidence candidate/pacote/RAG faithfulness, em Spec baselined ou errata homologada; critério 2: "SPEC-048" junto de WikiRAG/página de leitura, em Spec baselined ou ata → Spec da página) e a errata, proposta no Plan da SPEC-048, corrige o que a busca achar na hora de ser escrita". `[FONTE: FATO NORMATIVO]` |
 | Fontes de verdade | DHR-SPEC007-002 §3 (fronteira) e §4 (re-apontamentos "LISTADOS, não executados"). DHR-SPEC007-003 P-6 e DHR-SPEC007-004 P-14 (COL-EXP-05). DHR-SPEC048-002 (Plan v1.4 da SPEC-048 "HOMOLOGADO, BASELINE"; §3). DHR-SPEC020-002 + ERRATUM-SPEC020-002 (metade F1). `[FONTE: FATO NORMATIVO]` |
 | Insumo | `specs/features/SPEC-048/plan.md` (BASELINE v1.4), seção "Proposta de errata aditiva de re-apontamento" (busca de 2026-10-24). A busca foi refeita (seção 2). A proposta antiga serve só de comparação, e **não** foi seguida onde generalizava (M-1). |
@@ -23,7 +23,7 @@
 A SPEC-007 foi dividida (DHR-SPEC007-002, Opção C). **Formação e selo continuam na SPEC-007.** **Recuperação sobre o conhecimento carimbado e as fontes originais, contagem de origens no pacote, pacote de evidência, entrega e F2** passaram à SPEC-048, que já é baseline (DHR-SPEC048-002). Esta errata põe **notas aditivas de endereço** nos trechos de Specs homologadas que a regra da Q-7 encontrou e que ainda mandam essas coisas à SPEC-007. `[FONTE: DHR-SPEC007-002 §3/§4; DHR-SPEC048-001 Q-7]`
 
 O que a errata **não** faz:
-- **Não re-aponta a recuperação de EXPERIÊNCIA** (série EXP-SPEC-015..022). Nenhuma ata decide o endereço dela depois da divisão. Fica `[DECISÃO NECESSÁRIA]` (seção 3.1; Q-9).
+- **Não manda a recuperação de EXPERIÊNCIA à SPEC-048** (série EXP-SPEC-015..020 e 022). Ela recebe a nota N-G com o **endereço indicativo SPEC-009/017** decidido por Andraus (Q-9, DHR-RETRO-001 §9). Esse endereço não abre essas Specs e não decide G-001 (seção 3.1).
 - Não muda regra, BASpec, EARS, EC, cenário, ADV, estado nem schema.
 - Não cria ID novo.
 - Não define critério para a metade F2: isso é do erratum à parte da SPEC-048 (DHR-SPEC048-002 §3).
@@ -118,7 +118,7 @@ Coluna "Desde 10-24": **mantida** = mesmo texto e já estava na tabela da SPEC-0
 **Régua.** DHR-SPEC007-002 §3 diz que a SPEC-048 faz a "Busca/recuperação sobre o conhecimento **carimbado** e as fontes originais", e a DHR-SPEC007-004 P-14 trata de COL-EXP-05. Logo:
 - **RAG de CONHECIMENTO** (documento, trecho, evidência candidata, pacote) → SPEC-048;
 - **formação, selo e origem-raiz** → SPEC-007;
-- **EXPERIÊNCIA** (série EXP-SPEC, memória episódica) **não está** na fronteira decidida (seção 3.1).
+- **EXPERIÊNCIA** (série EXP-SPEC, memória episódica) **não está** na fronteira da divisão. A recuperação de experiência tem endereço **indicativo** SPEC-009/017, por decisão de Andraus (Q-9; seção 3.1).
 
 **Série EXP reaberta antes de classificar** (M-1). Em `reference/camadas/CAMADA MEMÓRIA.MD`:
 - "EXP-SPEC-015 — Experience Retrieval Contract"
@@ -138,8 +138,8 @@ Toda linha da tabela foi reconferida por esse critério.
 | L-04, L-10, L-11, L-14, L-15 | "formação/retrieval" do conhecimento que o KG recebe publicado | misto, conhecimento: formação fica, recuperação vai | **Nota N-B** |
 | L-13 (ADV-CKG-08) | "extração/retrieval/validação no KG": conhecimento | misto. A VERIFICAÇÃO não muda | **Nota N-B** |
 | L-09 | "documento recuperado" (Termo 4): documento de conhecimento | RAG de conhecimento | **Nota N-C** |
-| **L-05 (1ª parte)** | "memória **EPISÓDICA/experiência** (retrieval, …) … FORA → SPEC-007 (retrieval)" | **recuperação de EXPERIÊNCIA** | **Sem nota. `[DECISÃO NECESSÁRIA]`** (seção 3.1; Q-9) |
-| **L-06** | "§40 Retrieval — 015-020, 022" = EXP-SPEC-015..020 e 022 | **recuperação de EXPERIÊNCIA** | **Sem nota. `[DECISÃO NECESSÁRIA]`** (seção 3.1; Q-9) |
+| **L-05 (1ª parte)** | "memória **EPISÓDICA/experiência** (retrieval, …) … FORA → SPEC-007 (retrieval)" | **recuperação de EXPERIÊNCIA** | **Nota N-G** (endereço indicativo; Q-9) |
+| **L-06** | "§40 Retrieval — 015-020, 022" = EXP-SPEC-015..020 e 022 | **recuperação de EXPERIÊNCIA** | **Nota N-G** (endereço indicativo; Q-9) |
 | L-05 (2ª parte), L-07, L-08, L-16 | COL-EXP-05: duplicação EXP-SPEC-021 ↔ RAG-SPEC-018 (independência) | dividido por decisão: P-6 e P-14 | **Nota N-D** (L-16 incluída por Andraus, Q-3) |
 | L-12 | "formação é SPEC-007" | formação | **Sem nota** (fica) |
 | L-17 | registro do gatilho do BL-010 | registro de estágio. O RMR-001 já tem "∨ `spec:SPEC-048 em redação`" (DHR-SPEC048-001 Q-6) | **Sem nota** |
@@ -149,15 +149,22 @@ Toda linha da tabela foi reconferida por esse critério.
 | L-26, L-27 (SPEC-021), L-28 (SPEC-038) | dimensão B, "SPEC-007" pela RAG faithfulness | dividida | **Nota N-E** (SPEC-021 incluída por Andraus, Q-4) |
 | registros de gatilho do BL-017 | estágio | registro datado | **Sem nota** |
 
-### 3.1 Recuperação de experiência: sem endereço decidido `[DECISÃO NECESSÁRIA]`
+### 3.1 Recuperação de experiência: endereço indicativo SPEC-009/017 (Q-9, decidida) `[FONTE]`
 
-O que está nos textos:
+**Decisão de Andraus** (DHR-RETRO-001 §9, Adendo 6): "destino = **SPEC-009/017, como endereço indicativo** (as Specs não estão abertas; G-001 e a decisão de fundo seguem abertas)". Aplicada pela nota **N-G** (seção 4) nas linhas L-05 (1ª parte) e L-06 da SPEC-006.
+
+O que a decisão **não** faz:
+- não abre nem autoriza a SPEC-009 ou a SPEC-017 (abertura segue o RULE-ECC-01/02);
+- não dá conteúdo normativo nem baseline a elas;
+- não decide G-001 nem a "decisão de fundo" (como a recuperação de experiência funciona).
+
+Contexto que levou à pergunta (os textos que já existiam):
 - O baseline da SPEC-006 mandou a recuperação de experiência (L-05 1ª parte, L-06) à "SPEC-007 (RAG)".
 - A divisão (DHR-SPEC007-002 §3) deu à SPEC-048 só a busca "sobre o conhecimento **carimbado** e as fontes originais". `[FONTE]`
 - A SPEC-048 só trata experiência como Non-goal de independência: "Independência de experiência; estado por agente | COL-EXP-05; **G-001 ABERTA** | SPEC-009/017". `[FONTE: SPEC-048 plan.md]`
 - A SPEC-007 diz: "Quando um registro de experiência for usado como **fonte** (futuro), entra pela RULE-KFH-001 como qualquer fonte". `[FONTE: SPEC-007 plan.md, "Reconciliação COL-EXP-05" item 4]`
 
-**Nenhuma ata decide para onde vai a recuperação de experiência** (EXP-SPEC-015..020 e 022). Re-apontá-la por uma errata Patch criaria endereço sem ata. Essas linhas **ficam como estão** e o destino vai a Andraus (Q-9). Se Andraus decidir antes da homologação, a nota entra nesta errata (N-G, ainda sem texto). Se decidir depois, entra em errata própria. G-001 segue ABERTA.
+Antes do Adendo 6, nenhuma ata decidia o destino. Agora o endereço tem ata (DHR-RETRO-001 §9), e a nota N-G não cria endereço sem decisão. G-001 segue ABERTA.
 
 ---
 
@@ -181,6 +188,9 @@ Cada nota se lê junto do trecho âncora. Texto baselined não muda (INV-09). Ne
 > *"Nota aditiva (ERRATUM-REAPONT-001): na classe B, a dimensão 'RAG faithfulness' divide-se (DHR-SPEC007-002 §4). A **metade F1** (conhecimento formado) é da **SPEC-007**, com critério pelo ERRATUM-SPEC020-002 (DHR-SPEC020-002). A **metade F2** (frase/item entregue) é da **SPEC-048** e segue DIFERIDA até a homologação do erratum à parte da metade F2. tool correctness: SPEC-038, encerrada pelo ERRATUM-SPEC020-001. decision traceability: SPEC-014, DIFERIDA. Esta nota só corrige endereço e não antecipa nenhuma dimensão B. Texto acima não alterado (INV-09)."*
 
 **N-F** (SPEC-007, junto da nota C-3; premissa da Q-6): ver seção 6.
+
+**N-G** (SPEC-006, nos trechos L-05 (1ª parte, "memória **EPISÓDICA/experiência** … FORA → SPEC-007 (retrieval)") e L-06 ("§40 Retrieval — 015-020, 022 …")):
+> *"Nota aditiva (ERRATUM-REAPONT-001): a recuperação de **experiência** (EXP-SPEC-015..020 e 022: recuperação, similar, contrastante, temporal, por regime, relevância e pacote de experiência) **não** passa à SPEC-048, cuja busca é só sobre o conhecimento carimbado e as fontes originais (DHR-SPEC007-002 §3), nem fica na SPEC-007 reduzida (formação e selo). Por decisão de Andraus (DHR-RETRO-001 §9), o seu **endereço indicativo** é a **SPEC-009/SPEC-017**. É só endereço: não abre nem autoriza essas Specs, não lhes dá conteúdo nem baseline, e **não decide G-001** nem a forma dessa recuperação, que seguem ABERTAS. A SPEC-006 continua fora (FORA) desse escopo, como já dizia. Texto acima não alterado (INV-09)."*
 
 ---
 
@@ -231,7 +241,7 @@ A DHR-SPEC048-001 §2 cita "l.189/l.517" do ROADMAP; hoje a nota está na l.184.
 | Fato | Locais nesta errata | Âncoras no baseline (não editadas) |
 |---|---|---|
 | Recuperação de CONHECIMENTO e evidência candidata → SPEC-048; formação e selo → SPEC-007 | §0; §3; N-A; N-B; N-C | L-01, L-02, L-03, L-04, L-09, L-10, L-11, L-13, L-14, L-15; SPEC-048 "Termo 1"; DHR-SPEC007-002 §3 |
-| Recuperação de EXPERIÊNCIA (EXP-SPEC-015..020, 022): sem endereço decidido | §0; §3; §3.1; Q-9 | **L-05 (1ª parte)**, **L-06**; `CAMADA MEMÓRIA.MD` EXP-SPEC-015..022; SPEC-048 Non-goal "Independência de experiência" |
+| Recuperação de EXPERIÊNCIA (EXP-SPEC-015..020, 022) → endereço indicativo SPEC-009/017; não abre Spec; G-001 aberta | §0; §3; §3.1; N-G; §9; §13; Q-9 (respondida) | **L-05 (1ª parte)**, **L-06**; `CAMADA MEMÓRIA.MD` EXP-SPEC-015..022; SPEC-048 Non-goal "Independência de experiência" |
 | COL-EXP-05: origem-raiz na SPEC-007 (RULE-KFH-001); contagem no pacote na SPEC-048 (RULE-RET-003); experiência na SPEC-009/017 | §3; N-D; §7 | L-05 (2ª parte), L-07, L-08, L-16; SPEC-007 "Reconciliação COL-EXP-05" itens 3 e 4; DHR-SPEC007-004 P-14 |
 | Só formação: fica na SPEC-007 | §3 | L-12; errata v1.13 (L-31) |
 | RAG faithfulness: F1 → SPEC-007; F2 → SPEC-048, DIFERIDA | §3; §5; N-E; §7 (ROADMAP, CATALOGO, CONFLICT-MAP) | L-19 a L-24, L-29, L-30 (cobertos pelo ERRATUM-SPEC020-002); L-26, L-27, L-28 |
@@ -243,22 +253,23 @@ A DHR-SPEC048-001 §2 cita "l.189/l.517" do ROADMAP; hoje a nota está na l.184.
 
 ## 9. Herança/Delta (CC-08), obrigação a obrigação
 
-- **INHERITS:** DHR-SPEC048-001 Q-7; DHR-SPEC007-002 §3/§4; DHR-SPEC007-003 P-6; DHR-SPEC007-004 P-14; DHR-RETRO-001 §8; SPEC-048 v1.4 ("Termo 1"; RULE-RET-003; Non-goal de experiência); SPEC-007 v2.3 (RULE-KFH-001; "Reconciliação COL-EXP-05"); ERRATUM-SPEC020-002 (§1.9, §2, §3, Q-5); ERRATUM-SPEC020-001; SPEC-006 (RULE-CKG-011; ADV-CKG-08).
-- **ADDED:** notas N-A a N-F; registro da lacuna da seção 3.1.
+- **INHERITS:** DHR-SPEC048-001 Q-7; DHR-SPEC007-002 §3/§4; DHR-SPEC007-003 P-6; DHR-SPEC007-004 P-14; DHR-RETRO-001 §8 e §9; SPEC-048 v1.4 ("Termo 1"; RULE-RET-003; Non-goal de experiência); SPEC-007 v2.3 (RULE-KFH-001; "Reconciliação COL-EXP-05"); ERRATUM-SPEC020-002 (§1.9, §2, §3, Q-5); ERRATUM-SPEC020-001; SPEC-006 (RULE-CKG-011; ADV-CKG-08).
+- **ADDED:** notas N-A a N-G.
 - **MODIFIED:** nenhum.
 - **REMOVED:** nenhum.
 
 | Obrigação herdada | Onde esta errata a cumpre |
 |---|---|
 | Q-7: buscar "na hora de ser escrita" | §1, §2 (busca refeita, com regex e universo) |
-| DHR-SPEC007-002 §3: a SPEC-048 busca "sobre o conhecimento **carimbado** e as fontes originais" | §3 (régua); §3.1 (experiência não re-apontada) |
+| DHR-SPEC007-002 §3: a SPEC-048 busca "sobre o conhecimento **carimbado** e as fontes originais" | §3 (régua); N-G (experiência não vai à SPEC-048) |
+| DHR-RETRO-001 §9: experiência → SPEC-009/017 "como endereço indicativo"; G-001 e a decisão de fundo abertas | §3.1; N-G (diz que é só endereço, não abre Spec nem decide G-001) |
 | DHR-SPEC007-002 §4: selo e formação continuam na SPEC-007 | L-12 sem nota; N-B |
 | P-6 / P-14 (COL-EXP-05) | N-D |
 | CONFLICT-MAP só por ordem de Andraus | N-D; §7 |
 | DHR-SPEC048-002 §3 e ERRATUM-SPEC020-002 Q-5 (F2 à parte; redação ajustada) | §5; N-E |
 | DHR-RETRO-001 §8 (Q-1, Q-2, Q-3/Q-4, Q-8) | cabeçalho; N-D (L-16); N-E (SPEC-021); §7 (ROADMAP); §12; §13 |
 | INV-07 / INV-09 | todas as notas são aditivas; atas e anexos preservados (§1, §6) |
-| G-001 aberta (experiência) | §3.1; N-D |
+| G-001 aberta (experiência) | §3.1; N-D; N-G |
 
 Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA]`
 
@@ -275,14 +286,14 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA]`
 | CC-05 | PASS | LOW declarado (Q-7) |
 | CC-06 / CC-07 | N/A | Não é Engineering Card |
 | CC-08 | PASS | Seção 9 |
-| CC-09 | PASS | Literal separado de julgamento; contagens com regex; lacuna de experiência marcada `[DECISÃO NECESSÁRIA]`, não resolvida por suposição |
+| CC-09 | PASS | Literal separado de julgamento; contagens com regex; o endereço da experiência vem de decisão de Andraus (Q-9), declarado como indicativo, sem afirmar escopo nem conteúdo de SPEC-009/017 |
 | CC-10 | PASS | Recuperação de conhecimento ≠ recuperação de experiência; evidência candidata ≠ Evidência; F1 ≠ F2 |
 | CC-11 / CC-12 | N/A | Nenhuma BASpec; meta-harness |
 
 ## 11. §7-bis (voluntário em LOW)
 
 - **Bloco A.** Se a errata estivesse errada, o que se veria?
-  - (1) Uma nota mandando à SPEC-048 algo que ela não cobre. Era o caso da v1.0 com a recuperação de experiência (M-1), agora corrigido por §3.1. Observável comparando cada linha com DHR-SPEC007-002 §3 e com a série EXP.
+  - (1) Uma nota mandando à SPEC-048 algo que ela não cobre. Era o caso da v1.0 com a recuperação de experiência (M-1), agora corrigido por §3.1 e N-G. (1b) N-G lida como abertura ou baseline da SPEC-009/017, ou como fechamento de G-001. Evitado pelo próprio texto da nota. Observável comparando cada linha com DHR-SPEC007-002 §3 e com a série EXP.
   - (2) Uma nota que contradiz o ERRATUM-SPEC020-002. Evitado por §5.
   - (3) Uma ocorrência de R1 sem decisão. Conferível refazendo a busca do §1.
 - **Bloco C.** Nenhuma afirmação causal nem número, salvo as contagens de busca, que vêm com regex e universo.
@@ -300,12 +311,12 @@ Nenhuma obrigação herdada foi removida ou enfraquecida. `[INFERÊNCIA]`
 
 **Arquivo único** (este) + **uma linha de ponteiro no fim** de cada `plan.md` afetado. `checks.md` não é editado. Texto da linha (o Orquestrador preenche data e ata no ato):
 
-> **Errata aditiva (data da homologação, ata a atribuir):** re-apontamento de endereço (recuperação de conhecimento/evidência candidata/pacote → SPEC-048; formação e selo seguem na SPEC-007) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, notas N-x. Texto acima não alterado (INV-09).
+> **Errata aditiva (data da homologação, ata a atribuir):** re-apontamento de endereço (recuperação de conhecimento/evidência candidata/pacote → SPEC-048; formação e selo seguem na SPEC-007; recuperação de experiência → SPEC-009/017, endereço indicativo, sem abrir Spec nem decidir G-001) — ver `governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md`, notas N-x. Texto acima não alterado (INV-09).
 
 Alvos:
 - SPEC-002 (N-A);
 - SPEC-003 (N-A);
-- SPEC-006 (N-B, N-C, N-D);
+- SPEC-006 (N-B, N-C, N-D, N-G);
 - SPEC-021 (N-E);
 - SPEC-038 (N-E);
 - SPEC-007 (N-F; premissa da Q-6).
@@ -316,14 +327,16 @@ Alvos:
 - A errata **aplica** a divisão que o ROADMAP lista em "Decisões FECHADAS" (SPEC-007-SPLIT-001, DHR-SPEC007-002) e não a reabre.
 - BL-011 segue `ATIVADO`; BL-010 e BL-017 seguem `Em espera`. Nada é promovido.
 - A metade F2 continua em erratum à parte.
+- O endereço indicativo da recuperação de experiência (N-G) não abre a SPEC-009 nem a SPEC-017 e não decide G-001 (DHR-RETRO-001 §9).
 
 ## 15. Perguntas para Andraus
 
-**Respondidas** (DHR-RETRO-001 §8, Adendo 5) e incorporadas sem ramo condicional:
+**Respondidas** (DHR-RETRO-001 §8, Adendo 5, e §9, Adendo 6) e incorporadas sem ramo condicional:
 - **Q-1:** arquivo único + ponteiro (§13).
 - **Q-2:** Patch (§12).
 - **Q-3/Q-4:** incluir L-16 e a SPEC-021 (N-D, N-E).
 - **Q-8:** nota aditiva no ROADMAP na mesma homologação; CONFLICT-MAP só por ordem de Andraus (§7).
+- **Q-9** (DHR-RETRO-001 §9, Adendo 6): a recuperação de experiência (EXP-SPEC-015..020 e 022) vai à SPEC-009/017 como endereço indicativo. As Specs não estão abertas; G-001 e a decisão de fundo seguem abertas. Aplicada em N-G (§3.1, §4).
 
 **Pendentes** (premissa usada no texto até a resposta):
 
@@ -332,7 +345,25 @@ Alvos:
 | Q-5 | SPEC-020 e ERRATUM-SPEC020-001 sem nota nova (cobertos pelo ERRATUM-SPEC020-002 §2/§3)? | Premissa: **sim** (§5) |
 | Q-6 | Nota N-F na SPEC-007 (números de linha defasados na nota C-3)? | Premissa: **sim** (§6) |
 | Q-7 | Complexidade LOW para esta errata? | Premissa: **sim** |
-| **Q-9 (nova, M-1)** | Destino da **recuperação de experiência** (EXP-SPEC-015..020 e 022), que o baseline da SPEC-006 mandava à "SPEC-007 (RAG)" (L-05 1ª parte; L-06). Opções: **(a)** SPEC-009/SPEC-017 (memória de experiência), como endereço indicativo, com G-001 ABERTA; **(b)** SPEC-048, o que exige ampliar o escopo dela por errata própria (hoje ela só busca "sobre o conhecimento carimbado e as fontes originais"); **(c)** deixar sem endereço até a abertura da SPEC-009/017. | **Recomendo (a).** É coerente com a própria SPEC-006, que classifica essas linhas como "memória **EPISÓDICA/experiência**", e com os Non-goals de experiência da SPEC-007 (item 4) e da SPEC-048 ("SPEC-009/017"). Se decidido antes da homologação, entra aqui como N-G. Até lá, as linhas ficam como estão `[DECISÃO NECESSÁRIA]` |
+
+---
+
+## Registro de mudanças v1.1 → v1.2
+
+| Origem | O que mudou |
+|---|---|
+| Q-9 respondida (DHR-RETRO-001 §9, Adendo 6) | Nova nota **N-G** (§4) nas linhas L-05 (1ª parte) e L-06 da SPEC-006: recuperação de experiência → SPEC-009/017, **endereço indicativo**. A nota não abre essas Specs, não lhes dá baseline e não decide G-001. §3.1 deixou de ser `[DECISÃO NECESSÁRIA]` e passou a decisão registrada. Atualizados: cabeçalho (Versão; Respostas incorporadas), §0, §3 (régua e linhas L-05/L-06), §3.1, §8, §9 (INHERITS, ADDED, tabela), §10 (CC-09), §11 (Bloco A), §13 (linha de ponteiro; alvos da SPEC-006), §14 e §15 (Q-9 passou a respondida; linha da Q-9 saiu da tabela de pendentes) |
+
+## Anexo V1.1: trechos substituídos (INV-07)
+
+- **§0 (v1.1):** "- **Não re-aponta a recuperação de EXPERIÊNCIA** (série EXP-SPEC-015..022). Nenhuma ata decide o endereço dela depois da divisão. Fica `[DECISÃO NECESSÁRIA]` (seção 3.1; Q-9)."
+- **§3, régua (v1.1):** "- **EXPERIÊNCIA** (série EXP-SPEC, memória episódica) **não está** na fronteira decidida (seção 3.1)."
+- **§3, linhas L-05 (1ª parte) e L-06 (v1.1), coluna Ação:** "**Sem nota. `[DECISÃO NECESSÁRIA]`** (seção 3.1; Q-9)"
+- **§3.1, título e fecho (v1.1):** "### 3.1 Recuperação de experiência: sem endereço decidido `[DECISÃO NECESSÁRIA]`" … "**Nenhuma ata decide para onde vai a recuperação de experiência** (EXP-SPEC-015..020 e 022). Re-apontá-la por uma errata Patch criaria endereço sem ata. Essas linhas **ficam como estão** e o destino vai a Andraus (Q-9). Se Andraus decidir antes da homologação, a nota entra nesta errata (N-G, ainda sem texto). Se decidir depois, entra em errata própria. G-001 segue ABERTA."
+- **§8, linha (v1.1):** "\| Recuperação de EXPERIÊNCIA (EXP-SPEC-015..020, 022): sem endereço decidido \| §0; §3; §3.1; Q-9 \|"
+- **§9 (v1.1):** "ADDED: notas N-A a N-F; registro da lacuna da seção 3.1"; tabela: "§3 (régua); §3.1 (experiência não re-apontada)".
+- **§10, CC-09 (v1.1):** "lacuna de experiência marcada `[DECISÃO NECESSÁRIA]`, não resolvida por suposição".
+- **§15, Q-9 (v1.1):** pergunta com as opções (a) SPEC-009/017 como endereço indicativo, (b) SPEC-048 com ampliação de escopo por errata própria e (c) sem endereço até a abertura. Recomendação: (a). Andraus escolheu (a).
 
 ---
 

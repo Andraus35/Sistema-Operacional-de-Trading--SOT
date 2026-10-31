@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-30",
-  "digest": "4c805d8fdd0f9d7b84639887e1c93626d7b65c3fd1087b4023eb15869ea2c955",
+  "generated": "2026-10-31",
+  "digest": "ecc7a5cfc51ca5640fb50768fb11ee4f9a97625ef877eec1f1dfbe1f6ea4006a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -5047,7 +5047,7 @@
   {
    "id": "RULE-ECC-01",
    "defined_in": "governance/RULES.md",
-   "cited_by": 92
+   "cited_by": 93
   },
   {
    "id": "RULE-ECC-02",
