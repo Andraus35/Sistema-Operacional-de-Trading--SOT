@@ -1,0 +1,10 @@
+DELTA specs/features/SPEC-049/checks.md vs 5c54bc4
+SHA256-ALVO: e8d73d80690874b3def32731cd4f7fb7b6a5e3bbbd3e9926b60b9f1509d24620
+SHA256-BASE: 5070a508a7c3a7d5c439bebcc6c4249196cc87714d3fb8c4ee93ecd610561135
+blocos: 4 alterados · 0 adicionados · 0 removidos · 7 inalterados (de 11 atuais; 11 na base)
+alterados: 0.-tabela-fato-locais-ordem-de-serviço-condição-6-, 4.-baspecs-campos-e-classe-cc-11-, 7.-cons-01-e-decisões, cabeçalho
+adicionados: —
+removidos: —
+fontes citadas (sha256 de 12): {"governance/RULES.md": "c7445ee07bfb", "specs/features/SPEC-004/plan.md": "e9b6a70d1d84", "specs/features/SPEC-005/plan.md": "d29e8e861ba7", "specs/features/SPEC-006/plan.md": "f4addd7d7273", "specs/features/SPEC-007/plan.md": "d6f66b079a8d", "specs/features/SPEC-048/plan.md": "113df7339150", "specs/features/SPEC-049/plan.md": "6e5c3ac16f7c", "atomic-spec.md": "b9679bfd60b5"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.

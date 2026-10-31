@@ -1,0 +1,10 @@
+DELTA specs/features/SPEC-049/plan.md vs 5c54bc4
+SHA256-ALVO: 6e5c3ac16f7c636c6ce23d9522f6d3b989a920487b70234bb9f6d8703c467611
+SHA256-BASE: e3382294b0e40d5a6fcfba7b2bd5b647560f9266cc361d32c32870293d09e498
+blocos: 23 alterados · 1 adicionados · 0 removidos · 69 inalterados (de 93 atuais; 92 na base)
+alterados: BASpec-WRV-010, BASpec-WRV-011, Cenário-WRV-T01, Cenário-WRV-T16, EC-WRV-002, EC-WRV-003, autopré-check-do-especificador-§7-do-pep-001-, cabeçalho, contrato-lógico-esqueleto-proposta-referência-não-redefine-c, correções-do-parecer-r1-v1.1-achado-onde-mudou, d2-regras-fonte-única-de-cada-obrigação-, d3.1-vocabulário-unificado-de-códigos-marcações, d4-algoritmo, d7-cenários-de-teste-18-t01..t18-, def:INV-WRV-01, def:RULE-WRV-001, def:RULE-WRV-002, dimensionamento-rule-ecc-07-medida-do-corpo, etiquetagem-e-status-epistemológico-trace-06-, herança-delta-§8.3-eua-e04-rule-hd-, histórico-de-versões, métricas-e-eventos, perguntas-a-andraus-homologação-do-plan-só-o-que-depende-de-
+adicionados: correções-do-parecer-r2-v1.2-achado-onde-mudou
+removidos: —
+fontes citadas (sha256 de 12): {"canon/CCM-001-canonical-conviction-model.md": "0c74d2c91cf9", "canon/CEE-001-cognitive-economy-efficiency-v2.0.md": "114fe8743662", "canon/CEM-001-canonical-evidence-model.md": "73b0066680be", "canon/CHM-001-canonical-hypothesis-model.md": "18e685930480", "backlog/RMR-001_Painel_Backlog.md": "6026dc5e3c4d", "governance/RULES.md": "c7445ee07bfb", "specs/features/SPEC-003/plan.md": "e023a7ca6c87", "specs/features/SPEC-004/plan.md": "e9b6a70d1d84", "specs/features/SPEC-005/plan.md": "d29e8e861ba7", "specs/features/SPEC-006/plan.md": "f4addd7d7273", "specs/features/SPEC-007/plan.md": "d6f66b079a8d", "specs/features/SPEC-019/plan.md": "5ba3223e75a4", "specs/features/SPEC-020/plan.md": "0737d7a45e9d", "specs/features/SPEC-021/plan.md": "4d405d305ab0", "specs/features/SPEC-048/plan.md": "113df7339150", "specs/features/SPEC-049/plan.md": "6e5c3ac16f7c", "atomic-spec.md": "b9679bfd60b5"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.

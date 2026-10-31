@@ -1,0 +1,10 @@
+DELTA specs/features/SPEC-049/checks.md vs b0720c6
+SHA256-ALVO: 3f1371767706c9e6a94209c50416f1856a212588e2932540e45987fd5c4e19e7
+SHA256-BASE: 0e6123ae342d96cd424180bd0fc82de6a522aa4bdbfa7ce1688a166cbc9a4ed1
+blocos: 5 alterados · 0 adicionados · 0 removidos · 6 inalterados (de 11 atuais; 11 na base)
+alterados: 0.-tabela-fato-locais-ordem-de-serviço-condição-6-, 1.-condições-obrigatórias-do-plan-abertura-§15-dhr-spec049-0, 4.-baspecs-campos-e-classe-cc-11-, 6.-enforcement-contracts-mínimos-por-nível-atomic-spec-§10.3, cabeçalho
+adicionados: —
+removidos: —
+fontes citadas (sha256 de 12): {"governance/RULES.md": "c7445ee07bfb", "specs/features/SPEC-004/plan.md": "e9b6a70d1d84", "specs/features/SPEC-005/plan.md": "d29e8e861ba7", "specs/features/SPEC-006/plan.md": "f4addd7d7273", "specs/features/SPEC-007/plan.md": "d6f66b079a8d", "specs/features/SPEC-048/plan.md": "113df7339150", "specs/features/SPEC-049/plan.md": "4656db21b1f1", "atomic-spec.md": "b9679bfd60b5"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.
