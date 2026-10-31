@@ -1,5 +1,7 @@
 # ERRATUM-SPEC019-001 — Correção aditiva do status de L-001 na SPEC-019 homologada (PROPOSTA)
 
+> **Nota de higiene (2026-10-31, `DHR-HIGIENE-002`; ordem de Andraus no chat):** *status de homologação NÃO CONFIRMADO* neste repositório — não localizei ata nem registro no `CATALOGO-OFICIAL.md` que o homologue ou o descarte; ele é citado por outros errata apenas como "padrão" de erratum aditivo. Conferir com Andraus antes de tratá-lo como vigente ou descartado. Esta nota não altera o texto abaixo.
+
 | Campo | Valor |
 |---|---|
 | Código | **ERRATUM-SPEC019-001** (candidato — atribuição final = Controlador) |

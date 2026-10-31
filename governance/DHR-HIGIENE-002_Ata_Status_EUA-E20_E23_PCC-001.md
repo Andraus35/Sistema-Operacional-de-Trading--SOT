@@ -15,8 +15,8 @@
 ## 1. Escopo `[FATO]`
 Atualizar o campo Status de 3 registros cujo texto interno ainda dizia "PROPOSTA", embora haja ata de decisão de Andraus: `EUA-E20_Fase_RISK_Slots_PROPOSTA.md` (ata `DHR-EUA-E20`, 2026-10-01), `EUA-E23_Manager_Unificado_SPEC008_SPEC015_PROPOSTA.md` (ata `DHR-EUA-E23`, 2026-10-01) e `PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md` (Fases 1 e 2 e anexo autorizados por `DHR-PCC-001/002/003`; **Fase 3 segue PROPOSTA**). O **texto anterior ficou preservado** em cada Status (INV-07). Nenhum nome de arquivo foi alterado.
 
-## 2. Fora do escopo `[FATO]`
-Sem evidência de homologação nos registros, **não tocados**: `ERRATUM-SPEC019-001`, `REAUDITORIA-SPEC002-001`, `EMENDA-SPEC001-001`, `MANIFESTO-DE-ESCOPO`, `PROTOCOLO-AUDITOR-EXTERNO`. Os demais ~25 já declaram o status correto por dentro.
+## 2. Verificação dos demais registros apontados `[FATO]`
+Conferidos um a um (título e corpo, não só a tabela de Status): **`EMENDA-SPEC001-001` está HOMOLOGADA** (banner no título: "HOMOLOGADO — aplicado em 2026-10-05, DHR-AUDIT-SPEC001-001"; CATALOGO e ata confirmam) — **nada a mudar**; **`REAUDITORIA-SPEC002-001`, `MANIFESTO-DE-ESCOPO` e `PROTOCOLO-AUDITOR-EXTERNO` já declaram explicitamente "PROPOSTA — NÃO HOMOLOGADO"** e as atas `DHR-AUDITOR-EXTERNO-001..004` não os citam — status correto, **nada a mudar**. Só o **`ERRATUM-SPEC019-001`** tem status ambíguo ("PROPOSTA — nada aplicado", sem ata nem CATALOGO, citado por outros errata só como padrão): recebeu **nota neutra "status NÃO CONFIRMADO"**, sem afirmar homologação nem descarte (ordem de Andraus no chat: "marcar como status não confirmado"; aplicada só onde o status não está estabelecido). Os demais ~25 já declaram o status correto por dentro. *Correção desta ata:* a versão anterior listava os cinco como "sem evidência" porque a varredura olhou só a linha de tabela; a releitura dos títulos mostrou o contrário para quatro deles.
 
 ## 3. Permanecem ABERTAS (CONS-01)
 O estado vem do `ROADMAP.md`. Nenhuma decisão foi fechada ou aberta por esta ata.
