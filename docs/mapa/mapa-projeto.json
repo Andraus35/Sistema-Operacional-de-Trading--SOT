@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-10-31",
-  "digest": "dac5f5a021d15d7efba4fa28f0aba52b09cae2067408a54a246e53623f729343",
+  "digest": "eda4fa67f8266448ddd2dae93a725c097754911b066dd87e8a2fe759552e124f",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,7 +101,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 268,
+   "in": 269,
    "out": 42
   },
   {
@@ -116,7 +116,7 @@
    "area": "raiz",
    "title": "HANDOFF — SOT",
    "in": 19,
-   "out": 43
+   "out": 42
   },
   {
    "path": "README.md",
@@ -3094,6 +3094,13 @@
    "out": 18
   },
   {
+   "path": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/A2/PROPOSTA-A2-1-MAPA-JSON-LOCAL-2026-10-31.md",
+   "area": "governance",
+   "title": "Proposta pré-testada — A2.1: `mapa-projeto.json` fora da árvore versionada",
+   "in": 0,
+   "out": 1
+  },
+  {
    "path": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/ARQUIVO-MORTO-AGENTS-secao7-2026-10-31.md",
    "area": "governance",
    "title": "Arquivo morto — AGENTS.md §7 (texto integral até 2026-10-31)",
@@ -3174,7 +3181,7 @@
    "path": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-A2-RITUAL-DE-FECHAMENTO-2026-10-31.md",
    "area": "governance",
    "title": "Proposta A2 — Ritual de fechamento manual (medida antes de cortar)",
-   "in": 1,
+   "in": 0,
    "out": 6
   },
   {
@@ -8377,11 +8384,6 @@
   {
    "from": "HANDOFF.md",
    "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md",
-   "type": "path"
-  },
-  {
-   "from": "HANDOFF.md",
-   "to": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-A2-RITUAL-DE-FECHAMENTO-2026-10-31.md",
    "type": "path"
   },
   {
@@ -49908,6 +49910,11 @@
    "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
    "to": "specs/features/SPEC-046/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/A2/PROPOSTA-A2-1-MAPA-JSON-LOCAL-2026-10-31.md",
+   "to": "AGENTS.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/ARQUIVO-MORTO-AGENTS-secao7-2026-10-31.md",

@@ -1,0 +1,11 @@
+diff --git a/.gitignore b/.gitignore
+index 71cd068..852c224 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -42,3 +42,6 @@ __pycache__/
+ 
+ # Telemetria de tokens (BL-036) — dado local, não versionado
+ .telemetria/
++
++# Mapa do projeto: grafo JSON e artefato local regenerável (A2.1); o .md segue versionado
++docs/mapa/mapa-projeto.json
