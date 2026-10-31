@@ -1,0 +1,8 @@
+C1: Reporta `VEREDITO D: PASSOU_D (via GATE-D do Orquestrador, sha256 conferido)` e prossegue com o protocolo semântico (§4) — GATE-D vale quando o SHA256-ALVO é igual ao do pedido e todos os campos estão presentes.
+C2: Trata como ferramenta ausente: declara GATE NÃO VERIFICADO e emite no máximo CONFORME condicional — GATE-D com SHA256-ALVO divergente não vale (falha fechada).
+C3: Declara GATE NÃO VERIFICADO e emite no máximo CONFORME condicional — sem ferramenta e sem GATE-D válido, falha fechada, nunca deduzir nem fingir o gate.
+C4: Não emite CONFORME; devolve ao Orquestrador (ou emite NÃO CONFORME Crítica sem análise semântica) — REPROVADO_D impede qualquer CONFORME.
+C5: Trata como ferramenta ausente: GATE NÃO VERIFICADO, no máximo CONFORME condicional — GATE-D só vale com todos os campos presentes (cmd e data faltam).
+C6: Não pode — o Revisor não tem Bash e não confirma o gate por conta própria; o Orquestrador é a fonte do resultado.
+C7: Não — REPROVADO_D mesmo incompleto não se descarta por formato nem se trata como ferramenta ausente; impede qualquer CONFORME e se pede o gate regerado.
+C8: Não — REPROVADO_D com SHA256-ALVO divergente continua impedindo qualquer CONFORME; devolve ao Orquestrador pedindo o gate regerado para a versão correta.

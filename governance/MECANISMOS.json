@@ -570,6 +570,17 @@
       "ata": "DHR-CHECKS-INFO-001",
       "verificado_em": "2026-10-31: tests/test_check_dimensionamento.py (CI)",
       "nota": "Informativo (continue-on-error no CI). Promoção a bloqueante só por ordem de Andraus. Não altera arquivo selado."
+    },
+    {
+      "id": "det.fato-locais",
+      "arquivo": "scripts/fato_locais.py",
+      "canal": "CLI do Orquestrador (antes de reenviar um Plan ao Revisor); sem hook nem passo de CI do script (só o teste)",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "Proposta P7 (aprovada por Andraus em 2026-10-31): tabela fato→locais por script e conferência de listas de linhas escritas à mão (omitidas/sobrando); --base sinaliza propagação parcial. Ataca C07 (citação/âncora) e C01 (contradição interna). Exit 0 sempre (só --strict reprova): Detector, não Gate",
+      "ata": "DHR-RETRO-002",
+      "verificado_em": "2026-10-31: tests/test_fato_locais.py (20 testes, 8 mutantes mortos; CI)",
+      "nota": "Informativo. Acha ocorrências de TEXTO (não sinônimos). Não altera arquivo selado nem agente. Promoção a bloqueante só por ordem de Andraus."
     }
   ],
   "vigente_desde": "2026-10-19"

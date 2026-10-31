@@ -125,6 +125,10 @@ jobs:
       - name: Dimensionamento tests
         run: python -m unittest tests/test_check_dimensionamento.py
 
+      # Detector informativo fato->locais (proposta P7, DHR-RETRO-002): o script só informa; o TESTE é bloqueante (se falhar, a conferência de listas deixou de ser confiável).
+      - name: Fato-locais tests
+        run: python -m unittest tests/test_fato_locais.py
+
       # Vinculação de backlog por abertura (DHR-BACKLOG-ABERTURA-001; bloqueante: se falhar, a regra deixou de ser determinística).
       - name: Backlog abertura tests
         run: python -m unittest tests/test_backlog_abertura.py
