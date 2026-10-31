@@ -24,6 +24,7 @@ Implementar já a medição de tokens dos agentes **Construtores (AC)**. Agentes
 - Custo fora do Conviction Vector (INV-04; RULE-KFH-014). Tokens ≠ qualidade: Economicidade nunca acima de Eficácia (4Es).
 - **Validado ao vivo (2026-10-31):** uma chamada real de agente (Explore/haiku) gravou in=2, out=221, cache_read=40828, cache_create=535, total=41586 e 9,5 s; o subagente aparece como linha própria. Ainda não testado com Especificador/Revisor SOT.
 - Teste pai-filho (2026-10-31): subagente sem ferramenta Agent => sem aninhamento, sem contagem dupla nesta configuração. `resumo --por-spec` liga tokens à Spec (campos `spec`/`alvo` extraídos do prompt).
+- 3ª fatia: CLI `custo-beneficio` (tokens × rodadas/achados por Spec, via `loop_ledger.coletar`); sem telemetria da Spec => n/m. Menos tokens por achado não é melhor por si (Eficiência só sobre Eficácia válida).
 - Integrado ao `loop_ledger.py` (2ª fatia): CLI `snapshot` + `governance/aprendizado/TELEMETRIA-TOKENS.md`; Economicidade = PARCIAL (custo USD segue INDETERMINADO). Nenhuma decisão aberta foi fechada (CONS-01); BL-036 segue `Em espera`.
 
 ## 3. Registro
