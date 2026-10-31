@@ -619,6 +619,20 @@
       "em_escopo": true,
       "sync": "propagado",
       "motivo": "Altera o texto do agente Especificador (autopré-check §7: rodar o gate determinístico)."
+    },
+    {
+      "id": "DHR-AGENTS-P8-001",
+      "data": "2026-10-31",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Emenda ao texto do §3 do Revisor (segundo canal do gate); o Especificador não depende do gate do Revisor e não é alterado."
+    },
+    {
+      "id": "DHR-RETRO-002",
+      "data": "2026-10-31",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra retrospectiva e um detector informativo do Orquestrador; a emenda ao revisor.md (P8) tem ata própria (DHR-AGENTS-P8-001, escopo sim)."
     }
   ]
 }
