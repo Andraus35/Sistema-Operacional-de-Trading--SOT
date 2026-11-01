@@ -298,8 +298,37 @@ def verifica(arquivo, cabeca_esperada=None, continua_de=None, ancora_linha=None)
     return probs
 
 
+def primeira_linha_encadeada(arquivo):
+    """prev_hash da 1a linha valida do arquivo (None = segmento-raiz). Usado para o estado `continuidade nao verificada` (D05)."""
+    try:
+        for l in Path(arquivo).read_bytes().decode("utf-8").split("\n"):
+            if l.strip():
+                ev = json.loads(l)
+                return ev.get("prev_hash") if isinstance(ev, dict) else None
+    except (OSError, ValueError):
+        return None
+    return None
+
+
+def verifica_estado(arquivo, cabeca_esperada=None, continua_de=None, ancora_linha=None):
+    """-> (problemas, avisos). Segmento cuja 1a linha encadeia em hash FORA do arquivo (troca de ramo, recuperacao) e que nao recebeu
+    `continua_de` NAO e problema: e o aviso `continuidade nao verificada`; a integridade interna e verificada a partir desse hash (D05)."""
+    avisos = []
+    if continua_de is None:
+        p0 = primeira_linha_encadeada(arquivo)
+        if p0 is not None:
+            avisos.append(f"continuidade nao verificada: a 1a linha encadeia em {str(p0)[:12]}... fora do arquivo (sem --continua-de nem ancora)")
+            continua_de = p0
+    return verifica(arquivo, cabeca_esperada, continua_de, ancora_linha), avisos
+
+
+def verifica_pasta(pasta):
+    """-> {arquivo: (problemas, avisos)} para todo *.jsonl sob a pasta (sem ancoras: so integridade interna + estado de continuidade)."""
+    return {str(f): verifica_estado(f) for f in sorted(Path(pasta).rglob("*.jsonl"))}
+
+
 def main(argv):
-    """CLI: `emit <arquivo> '<json>' [--camada L1|L2|L3] [--continua-de H]` | `verify <arquivo> [--cabeca H] [--continua-de H] [--ancora N:H]`.
+    """CLI: `emit <arquivo> '<json>' [--camada L1|L2|L3] [--continua-de H]` | `verify <arquivo|pasta> [--cabeca H] [--continua-de H] [--ancora N:H]` (pasta: todos os *.jsonl; AVISO = continuidade nao verificada, nao e problema).
     emit: exit 0 SEMPRE (fail-open; WARN em arquivo). verify: 1 se houver problema."""
     def opt(n):
         if n not in argv: return None
@@ -320,7 +349,16 @@ def main(argv):
         anc = opt("--ancora")
         try: anc = (int(anc.split(":")[0]), anc.split(":")[1]) if anc else None
         except (ValueError, IndexError): print("PROBLEMA: --ancora deve ser N:HASH"); return 2
-        probs = verifica(argv[2], opt("--cabeca"), opt("--continua-de"), anc)
+        if Path(argv[2]).is_dir():
+            res = verifica_pasta(argv[2]); total = 0
+            for f, (probs, avisos) in res.items():
+                for pr in probs: print(f"PROBLEMA: {f}: {pr}")
+                for av in avisos: print(f"AVISO: {f}: {av}")
+                total += len(probs)
+            print(f"{len(res)} arquivo(s); " + ("todas as cadeias integras" if not total else f"{total} problema(s)"))
+            return 1 if total else 0
+        probs, avisos = verifica_estado(argv[2], opt("--cabeca"), opt("--continua-de"), anc)
+        for av in avisos: print("AVISO:", av)
         for pr in probs: print("PROBLEMA:", pr)
         print("cadeia integra" if not probs else f"{len(probs)} problema(s)")
         return 1 if probs else 0
