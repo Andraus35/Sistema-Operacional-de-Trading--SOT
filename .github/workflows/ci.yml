@@ -133,6 +133,10 @@ jobs:
       - name: Pre-entrega tests
         run: python -m unittest tests/test_pre_entrega.py
 
+      # Guarda de fatos defasados nos agentes (DHR-A9TESTE-001; bloqueante: lista fechada de frases já corrigidas pelo repositório).
+      - name: Agentes sem fatos defasados
+        run: python -m unittest tests/test_agentes_sem_fatos_defasados.py
+
       # Vinculação de backlog por abertura (DHR-BACKLOG-ABERTURA-001; bloqueante: se falhar, a regra deixou de ser determinística).
       - name: Backlog abertura tests
         run: python -m unittest tests/test_backlog_abertura.py

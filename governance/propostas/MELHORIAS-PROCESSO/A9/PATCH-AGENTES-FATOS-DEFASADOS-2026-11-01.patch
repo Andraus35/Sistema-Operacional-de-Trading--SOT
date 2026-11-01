@@ -1,0 +1,26 @@
+diff --git a/.claude/agents/especificador.md b/.claude/agents/especificador.md
+index 3a1813c..384482b 100644
+--- a/.claude/agents/especificador.md
++++ b/.claude/agents/especificador.md
+@@ -93,7 +93,7 @@ Para cada unidade de especificação, siga esta ordem e **NÃO pule etapas**:
+ 
+    **Núcleo sempre obrigatório (não-negociável, qualquer complexidade):**
+    - `ROADMAP.md` (raiz) — Spec autorizada, posição no caminho crítico, decisões abertas.
+-   - `atomic-spec.md` (raiz) — método vigente: BASpec, D0–D9, Enforcement, etiquetagem, Constitution Check (CC-01..CC-10).
++   - `atomic-spec.md` (raiz) — método vigente: BASpec, D0–D9, Enforcement, etiquetagem, Constitution Check (CC-01..CC-12).
+    - `governance/RULES.md` — regras vigentes (RULE-*). **Até a v1.5**, as regras cognitivas RULE-EPI/SEM/ONT/INQ/CAU/CTF/UNC/PRB/DEC/MET **ainda não estão no RULES.md** — leia-as nas **atas EUA-E04..E18** (`governance/`).
+    - `backlog/RMR-001_Painel_Backlog.md` — **checar itens `ATIVADO`** (passo 11-bis do ROADMAP §23): item ATIVADO pendente = achado de gate. **Na ABERTURA de Spec (DHR-BACKLOG-ABERTURA-001):** rode `python scripts/backlog_triggers.py --abertura SPEC-nnn`; todo BL listado fica vinculado à Spec por regra (sem esperar promoção de Andraus) e o Plan DEVE declarar em cada um `Disposição: INCORPORADO|PARCIAL|REFERÊNCIA|FORA` + motivo — o `[STRUCT-13]` reprova sem isso. Isto é *gate*, não leitura de baseline — nunca é dispensado, mesmo em LOW (só a leitura *integral* do painel é que pode ser dispensada — ver abaixo).
+    - Se qualquer baseline obrigatório faltar, **pare e informe Andraus**.
+diff --git a/.claude/agents/revisor.md b/.claude/agents/revisor.md
+index 5a85393..4d01393 100644
+--- a/.claude/agents/revisor.md
++++ b/.claude/agents/revisor.md
+@@ -159,7 +159,7 @@ Qualquer violação encerra em NÃO CONFORME Crítica. Verifique:
+ - ICT só executa (entrada, timing, stop, targets, invalidação operacional).
+ - Custo NUNCA entra no Conviction Vector (CEE-001 §10, Salvaguarda 4).
+ - Salvaguardas Constitucionais do CEE-001 respeitadas: §10 (Economia/Roteamento, 5) + §11 (Sinal de Trading, 5) — CEE-001 v2.0 (Q-003).
+-- SOT não executa ordem — produz TMP.
++- SOT não executa ordem — produz o **Signal Package** para o Bot Trade Finance (o TMP é artefato interno entre a Síntese e o Risk Agent; EUA-E19a).
+ - Evidência (Agentes) ≠ Observação (Skills).
+ - Versionamento monotônico (refutado ≠ deletado).
+ - Transcrição literal — RCN-001.
