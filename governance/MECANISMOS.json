@@ -405,8 +405,9 @@
       "tipo": "agente",
       "estado": "ativo",
       "enforca": "Produz Specs/Plans/BASpecs",
-      "ata": "DHR-AGENTES-001",
-      "verificado_em": "2026-10-18: ao vivo — acionado nesta sessão (estudo H-001, errata v1.12) com frontmatter válido; RPSA alinhado"
+      "ata": "DHR-PRE-ENTREGA-001",
+      "verificado_em": "2026-11-01: emenda DHR-PRE-ENTREGA-001 (Autopré-check com pré-gate; fatos defasados corrigidos); RPSA alinhado",
+      "nota": "Ata de origem anterior: DHR-AGENTES-001 (INV-07); emenda vigente: DHR-PRE-ENTREGA-001."
     },
     {
       "id": "agent.revisor",
@@ -581,6 +582,17 @@
       "ata": "DHR-RETRO-002",
       "verificado_em": "2026-10-31: tests/test_fato_locais.py (20 testes, 8 mutantes mortos; CI)",
       "nota": "Informativo. Acha ocorrências de TEXTO (não sinônimos). Não altera arquivo selado nem agente. Promoção a bloqueante só por ordem de Andraus."
+    },
+    {
+      "id": "util.pre-entrega",
+      "arquivo": "scripts/pre_entrega.py",
+      "canal": "CLI do Orquestrador (antes de entregar um Plan ao Revisor); o Especificador não tem Bash",
+      "tipo": "utilitario",
+      "estado": "ativo",
+      "enforca": "Pré-gate unificado (auditoria do Especificador A-1/A-2/A-3): compõe validate_spec_sot, check_repo_research e build_map --check (bloqueantes, como no CI) e check_invariants, check_dimensionamento, check_refs, backlog_triggers e 13 detectores de gate_extra/revisor_detectores (informativos); grava pre-entrega.json com sha256 de plan/checks. Sem lógica nova de detecção",
+      "ata": "DHR-PRE-ENTREGA-001",
+      "verificado_em": "2026-11-01: tests/test_pre_entrega.py (3 testes; CI)",
+      "nota": "Selado em GATE-MANIFEST.sha256 e CODEOWNERS. Detectores informativos; promoção a bloqueante só por ordem de Andraus. Recall dos detectores atuais no backtest da SPEC-049 = 0/3 Médias: o ganho é prova anexa e antecipação."
     }
   ],
   "vigente_desde": "2026-10-19"
