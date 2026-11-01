@@ -640,6 +640,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registra decisões de processo e texto do roteiro de retrospectivas; não toca agentes de construção, AGENTS.md nem método."
+    },
+    {
+      "id": "DHR-AUDITOR-EXTERNO-019",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Move para docs/_legacy/ o workflow, o roteador e as propostas do piloto pausado; nao altera checklist, metodo nem regra dos agentes de construcao."
     }
   ]
 }
