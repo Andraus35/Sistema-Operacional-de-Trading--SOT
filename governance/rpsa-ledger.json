@@ -682,6 +682,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Troca editorial de uma citacao de versao no Plan da SPEC-007; nao altera texto de agente nem metodo."
+    },
+    {
+      "id": "DHR-SPEC020-003",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra no ROADMAP uma pendencia de erratum de Spec ja homologada; nao altera texto de agente nem metodo."
     }
   ]
 }
