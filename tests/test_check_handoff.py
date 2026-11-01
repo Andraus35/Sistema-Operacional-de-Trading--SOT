@@ -124,6 +124,45 @@ class Handoff(unittest.TestCase):
         _, _, ach = self.run_check()
         self.assertIn(("ERRO", "HO-04"), ach)  # difere
 
+    # --- P11: convenção de handoff por ramo (cadeias paralelas) ---
+    def _cadeia_paralela(self, ramo_igual):
+        """HO-1 commitado (nosso); o arquivo HO-1.md em docs/handoffs é de OUTRA cadeia; nossa cópia vai em ramo-x/."""
+        self.first()
+        meu = (self.d / "HANDOFF.md").read_text(encoding="utf-8")
+        (self.d / "docs" / "handoffs" / "HO-1.md").write_text("outra cadeia com o mesmo número\n", encoding="utf-8")
+        ramo = self.d / "docs" / "handoffs" / "ramo-x"
+        ramo.mkdir()
+        (ramo / "HO-1.md").write_text(meu if ramo_igual else meu + "adulterado\n", encoding="utf-8")
+        self.write(doc(hid="HO-2", prev="HO-1", base=self.git("rev-parse", "--short", "HEAD")))
+        return self.run_check()
+
+    def test_p11_cadeia_do_ramo_preservada_exata_vira_info(self):
+        _, rep, ach = self._cadeia_paralela(True)
+        self.assertNotIn(("ERRO", "HO-04"), ach)
+        self.assertIn(("INFO", "HO-04"), ach)
+
+    def test_p11_copia_do_ramo_adulterada_continua_erro(self):
+        _, _, ach = self._cadeia_paralela(False)
+        self.assertIn(("ERRO", "HO-04"), ach)
+
+    def test_p11_sem_copia_no_ramo_continua_erro(self):
+        self.first()
+        (self.d / "docs" / "handoffs" / "HO-1.md").write_text("outra cadeia\n", encoding="utf-8")
+        self.write(doc(hid="HO-2", prev="HO-1", base=self.git("rev-parse", "--short", "HEAD")))
+        _, _, ach = self.run_check()
+        self.assertIn(("ERRO", "HO-04"), ach)
+
+    def test_p11_copia_de_outro_numero_no_ramo_nao_basta(self):
+        self.first()
+        meu = (self.d / "HANDOFF.md").read_text(encoding="utf-8")
+        (self.d / "docs" / "handoffs" / "HO-1.md").write_text("outra cadeia\n", encoding="utf-8")
+        ramo = self.d / "docs" / "handoffs" / "ramo-x"
+        ramo.mkdir()
+        (ramo / "HO-9.md").write_text(meu, encoding="utf-8")   # conteúdo certo, nome (id) errado
+        self.write(doc(hid="HO-2", prev="HO-1", base=self.git("rev-parse", "--short", "HEAD")))
+        _, _, ach = self.run_check()
+        self.assertIn(("ERRO", "HO-04"), ach)
+
     def test_mais_de_150_linhas(self):
         self.commit("x")
         self.write(doc(base=self.git("rev-parse", "--short", "HEAD"), extra="\n".join("l" for _ in range(160))))

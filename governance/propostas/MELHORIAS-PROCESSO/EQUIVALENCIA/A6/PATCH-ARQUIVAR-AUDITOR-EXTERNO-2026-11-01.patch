@@ -1,0 +1,213 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 184d81c..a559ed3 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -158,10 +158,6 @@ jobs:
+       - name: RPSA tool tests
+         run: python -m unittest tests/test_rpsa.py
+ 
+-      # Testes do roteador de achados do Auditor Externo (DHR-AUDITOR-EXTERNO-005; bloqueante: roteador quebrado = faixa rápida insegura).
+-      - name: AEX router tests
+-        run: python -m unittest tests/test_route_aex.py
+-
+       # Testes do registro automático da classificação RPSA (DHR-RPSA-002; bloqueante).
+       - name: RPSA auto tests
+         run: python -m unittest tests/test_rpsa_auto.py
+diff --git a/.github/workflows/auditor-externo.yml b/docs/_legacy/auditor-externo/auditor-externo.yml
+similarity index 100%
+rename from .github/workflows/auditor-externo.yml
+rename to docs/_legacy/auditor-externo/auditor-externo.yml
+diff --git a/governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/AGENTE-AUDITOR-EXTERNO.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/BRIEFING-GPT_PROMPT.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/DIRETIVAS-AO-AUDITOR.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/DOSSIE-PESQUISA.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/DOSSIE-PESQUISA.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/DOSSIE-PESQUISA.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/DOSSIE-PESQUISA.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/MANIFEST.sha256 b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/MANIFEST.sha256
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/MANIFEST.sha256
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/MANIFEST.sha256
+diff --git a/governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/MANIFESTO-DE-ESCOPO_PROPOSTA.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/OPERACAO.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/OPERACAO.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/OPERACAO.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/OPERACAO.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/PROPOSTA-AUTOMACAO-B_GitHub-Action.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/PROTOCOLO-AUDITOR-EXTERNO_PROPOSTA.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/INSTRUCOES-OPERACIONAIS-GPT.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/ISSUE_TEMPLATE-auditoria-externa.yml b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/ISSUE_TEMPLATE-auditoria-externa.yml
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/ISSUE_TEMPLATE-auditoria-externa.yml
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/ISSUE_TEMPLATE-auditoria-externa.yml
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/PROMPT-AUDITOR-CI.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/README-INSTALACAO.md
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/README-INSTALACAO.md
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/README-INSTALACAO.md
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/auditor_bot.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/auditor_bot.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/auditor_bot.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/auditor_bot.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/finding.example.json b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/finding.example.json
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/finding.example.json
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/finding.example.json
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/finding.schema.json b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/finding.schema.json
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/finding.schema.json
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/finding.schema.json
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/install_bot.sh b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/install_bot.sh
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/install_bot.sh
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/install_bot.sh
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/loop_tools.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/loop_tools.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/loop_tools.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/loop_tools.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/poll_requests.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/poll_requests.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/poll_requests.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/poll_requests.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/run_gates.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/run_gates.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/run_gates.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/run_gates.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/selftest.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/selftest.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/selftest.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/selftest.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/setup_auditor.sh b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/setup_auditor.sh
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/setup_auditor.sh
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/setup_auditor.sh
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/submit_finding.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/submit_finding.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/submit_finding.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/submit_finding.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/sync_auditor.sh b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/sync_auditor.sh
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/sync_auditor.sh
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/sync_auditor.sh
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/test_bot.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/test_bot.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/test_bot.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/test_bot.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/test_loop.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/test_loop.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/test_loop.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/test_loop.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/validate_finding.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/validate_finding.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/validate_finding.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/validate_finding.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/kit/verify_access.py b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/verify_access.py
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/kit/verify_access.py
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/kit/verify_access.py
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/REPO-evals.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/REPO-evals.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/REPO-evals.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/REPO-evals.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/REPO-garak.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/REPO-garak.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/REPO-garak.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/REPO-garak.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/REPO-promptfoo.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/REPO-promptfoo.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/REPO-promptfoo.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/REPO-promptfoo.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/SRC-AGENTSMD-01.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-AGENTSMD-01.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/SRC-AGENTSMD-01.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-AGENTSMD-01.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/SRC-CIREV-01.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-CIREV-01.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/SRC-CIREV-01.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-CIREV-01.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/SRC-HALLUC-01.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-HALLUC-01.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/SRC-HALLUC-01.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-HALLUC-01.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/SRC-JUDGE-01.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-JUDGE-01.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/SRC-JUDGE-01.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-JUDGE-01.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/SRC-MSIPI-01.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-MSIPI-01.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/SRC-MSIPI-01.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-MSIPI-01.txt
+diff --git a/governance/propostas/AUDITOR-EXTERNO/sources/SRC-OWASP-01.txt b/docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-OWASP-01.txt
+similarity index 100%
+rename from governance/propostas/AUDITOR-EXTERNO/sources/SRC-OWASP-01.txt
+rename to docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/sources/SRC-OWASP-01.txt
+diff --git a/scripts/route_aex.py b/docs/_legacy/auditor-externo/route_aex.py
+similarity index 100%
+rename from scripts/route_aex.py
+rename to docs/_legacy/auditor-externo/route_aex.py
+diff --git a/tests/test_route_aex.py b/docs/_legacy/auditor-externo/test_route_aex.py
+similarity index 100%
+rename from tests/test_route_aex.py
+rename to docs/_legacy/auditor-externo/test_route_aex.py
+diff --git a/governance/MECANISMOS.json b/governance/MECANISMOS.json
+index c8bc57f..26380b1 100644
+--- a/governance/MECANISMOS.json
++++ b/governance/MECANISMOS.json
+@@ -347,13 +347,13 @@
+     },
+     {
+       "id": "util.route-aex",
+-      "arquivo": "scripts/route_aex.py",
++      "arquivo": "docs/_legacy/auditor-externo/route_aex.py",
+       "canal": "workflow auditor-externo",
+       "tipo": "utilitario",
+-      "estado": "pausado",
++      "estado": "legado",
+       "enforca": "Roteia achados [AEX] do Auditor Externo",
+       "ata": "DHR-AUDITOR-EXTERNO-007",
+-      "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007).",
++      "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007). Arquivado em docs/_legacy/auditor-externo/ (pré-teste A6.3, 2026-11-01).",
+       "verificado_em": "2026-10-18: --help exit 0; tests/test_route_aex.py no CI (canal pausado)"
+     },
+     {
+@@ -389,13 +389,13 @@
+     },
+     {
+       "id": "wf.auditor-externo",
+-      "arquivo": ".github/workflows/auditor-externo.yml",
++      "arquivo": "docs/_legacy/auditor-externo/auditor-externo.yml",
+       "canal": "GitHub Actions",
+       "tipo": "workflow",
+-      "estado": "pausado",
++      "estado": "legado",
+       "enforca": "Loop determinístico com o Auditor Externo",
+       "ata": "DHR-AUDITOR-EXTERNO-007",
+-      "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped.",
++      "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped. Arquivado em docs/_legacy/auditor-externo/ (pré-teste A6.3, 2026-11-01).",
+       "verificado_em": "inferido-do-codigo"
+     },
+     {

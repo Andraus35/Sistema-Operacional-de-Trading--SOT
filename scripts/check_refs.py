@@ -197,6 +197,10 @@ def classify_severity(path: str, kind: str) -> str:
     return "ERRO"
 
 
+# Artefatos gerados localmente e ignorados pelo git (A2.1): citá-los não é referência quebrada em clone limpo.
+GENERATED_LOCAL = {"docs/mapa/mapa-projeto.json"}
+
+
 def resolve_path(src: Path, raw: str, reg: Registry):
     """Retorna (estado, alvo): 'ok' | 'moved' | 'missing'."""
     t = unquote(raw.split("#")[0])
@@ -207,6 +211,8 @@ def resolve_path(src: Path, raw: str, reg: Registry):
         t = t.split()[-1]
     if not PATHLIKE.match(t) or "..." in t or (t.startswith(".") and not t.startswith(("./", "../"))):
         return None, None
+    if t.lstrip("./") in GENERATED_LOCAL:
+        return "ok", t.lstrip("./")
     bare = "/" not in t  # nome sem diretório = atalho de citação, não caminho
     cand = [t, (src.parent / t).relative_to(ROOT).as_posix() if (src.parent / t).resolve().is_relative_to(ROOT) else t]
     for c in cand:
@@ -252,6 +258,8 @@ def analyze():
                         continue  # placeholder de numeração (RULE-CKG-0NN): padrão, não referência
                     if PLACEHOLDER.match(line[m.end():m.end() + 5]):
                         continue
+                    if kind == "RULE" and m.group(0).endswith("-0") and re.match(r"[nN]{2}(?![A-Za-z0-9])", line[m.end():m.end() + 3]):
+                        continue  # placeholder de numeração "RULE-XXX-0nn": o token pára em "-0" e o "nn" fica de fora
                     if kind == "SPEC" and not (ROOT / "ROADMAP.md").exists():
                         continue
                     if reg.defined(kind, m):

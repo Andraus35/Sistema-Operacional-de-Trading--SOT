@@ -118,12 +118,12 @@
     {
       "id": "hook.doc-sync-check",
       "arquivo": "scripts/doc-sync-check.js",
-      "canal": "settings.json Stop/SubagentStop/SessionStart",
+      "canal": "settings.json SessionStart (A6.1: fora de Stop/SubagentStop) + CI informativo",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Avisa drift de sincronização documental (não bloqueia)",
+      "enforca": "Avisa drift de sincronização documental (não bloqueia); repete o aviso só quando o conjunto de achados muda (A6.4)",
       "ata": "DHR-DOCSYNC-001",
-      "verificado_em": "2026-10-18: ao vivo — session-start exit 0"
+      "verificado_em": "2026-11-01 (A6.1/A6.4): tests/test-doc-sync-check.js (npm run test:hooks), 4 mutantes mortos. Antes: 2026-10-18 ao vivo"
     },
     {
       "id": "hook.handoff-hook",
@@ -214,7 +214,7 @@
       "tipo": "detector",
       "estado": "ativo",
       "enforca": "Integridade de referências cruzadas",
-      "verificado_em": "2026-10-31: patch de falsos positivos (placeholder 0NN, raiz do SO fora do repo, comando wc/cat/head/tail) aplicado por ordem de Andraus (chat); teste adversarial achou e corrigiu regressão (barra inicial mascarava caminho do repo); 4 mutações mortas; WARN reais 6→2, ERRO=0; tests/test_check_refs.py 25/25 no CI"
+      "verificado_em": "2026-11-01 (A6.2 reformulado): placeholder RULE-XXX-0nn (token termina em -0 + nn) não é RULE sem definição; WARN 1→0; tests/test_check_refs.py 27/27, mutante morto. Antes: 2026-11-01 (correção do A2.1): GENERATED_LOCAL — docs/mapa/mapa-projeto.json (gitignored) não é caminho quebrado em clone limpo (antes ERRO=3 no CI); tests/test_check_refs.py 26/26, mutante morto. Antes: 2026-10-31: patch de falsos positivos (placeholder 0NN, raiz do SO fora do repo, comando wc/cat/head/tail) aplicado por ordem de Andraus (chat); teste adversarial achou e corrigiu regressão (barra inicial mascarava caminho do repo); 4 mutações mortas; WARN reais 6→2, ERRO=0; tests/test_check_refs.py 25/25 no CI"
     },
     {
       "id": "det.check-doc-sync",
@@ -234,7 +234,7 @@
       "estado": "ativo",
       "enforca": "Integridade e defasagem do HANDOFF; anexo de tarefa: HO-11 (existência/cabeçalho), HO-12 (órfão/mais de um ATIVO/CONSUMIDO citado), HO-13 (>80 linhas), HO-14 (DHR sem ata, decisão aberta como fechada, segredo), HO-15 (cópia de linha longa)",
       "ata": "DHR-PCC-003",
-      "verificado_em": "2026-10-19: tests/test_check_handoff.py (21 testes, CI); ao vivo no handoff com anexo",
+      "verificado_em": "2026-11-01 (P11, ordem de Andraus): tests/test_check_handoff.py 25/25, 4 mutantes mortos; HO-04 aceita cópia exata em docs/handoffs/ramo-*/ como INFO. Antes: 2026-10-19 (21 testes)",
       "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart. Origem DHR-PCC-002 (detector e hooks); DHR-PCC-003 acrescenta o anexo de tarefa (HO-11..HO-15)."
     },
     {
@@ -333,7 +333,7 @@
       "tipo": "utilitario",
       "estado": "ativo",
       "enforca": "Gera o mapa do projeto (BL-019)",
-      "verificado_em": "2026-10-18: ao vivo — geração e --check exit 0 (mapa regenerado várias vezes nesta sessão)"
+      "verificado_em": "2026-11-01 (A2.1): --check lê o digest do MAPA-PROJETO.md; mapa-projeto.json é artefato local ignorado; tests/test_build_map.py 11/11. Antes: 2026-10-18 ao vivo"
     },
     {
       "id": "util.rpsa-auto",
@@ -347,13 +347,13 @@
     },
     {
       "id": "util.route-aex",
-      "arquivo": "scripts/route_aex.py",
+      "arquivo": "docs/_legacy/auditor-externo/route_aex.py",
       "canal": "workflow auditor-externo",
       "tipo": "utilitario",
-      "estado": "pausado",
+      "estado": "legado",
       "enforca": "Roteia achados [AEX] do Auditor Externo",
       "ata": "DHR-AUDITOR-EXTERNO-007",
-      "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007).",
+      "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007). Arquivado em docs/_legacy/auditor-externo/ (pré-teste A6.3, 2026-11-01).",
       "verificado_em": "2026-10-18: --help exit 0; tests/test_route_aex.py no CI (canal pausado)"
     },
     {
@@ -389,13 +389,13 @@
     },
     {
       "id": "wf.auditor-externo",
-      "arquivo": ".github/workflows/auditor-externo.yml",
+      "arquivo": "docs/_legacy/auditor-externo/auditor-externo.yml",
       "canal": "GitHub Actions",
       "tipo": "workflow",
-      "estado": "pausado",
+      "estado": "legado",
       "enforca": "Loop determinístico com o Auditor Externo",
       "ata": "DHR-AUDITOR-EXTERNO-007",
-      "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped.",
+      "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped. Arquivado em docs/_legacy/auditor-externo/ (pré-teste A6.3, 2026-11-01).",
       "verificado_em": "inferido-do-codigo"
     },
     {
@@ -405,8 +405,9 @@
       "tipo": "agente",
       "estado": "ativo",
       "enforca": "Produz Specs/Plans/BASpecs",
-      "ata": "DHR-AGENTES-001",
-      "verificado_em": "2026-10-18: ao vivo — acionado nesta sessão (estudo H-001, errata v1.12) com frontmatter válido; RPSA alinhado"
+      "ata": "DHR-PRE-ENTREGA-001",
+      "verificado_em": "2026-11-01: emenda DHR-PRE-ENTREGA-001 (Autopré-check com pré-gate; fatos defasados corrigidos); RPSA alinhado",
+      "nota": "Ata de origem anterior: DHR-AGENTES-001 (INV-07); emenda vigente: DHR-PRE-ENTREGA-001."
     },
     {
       "id": "agent.revisor",
@@ -581,6 +582,28 @@
       "ata": "DHR-RETRO-002",
       "verificado_em": "2026-10-31: tests/test_fato_locais.py (20 testes, 8 mutantes mortos; CI)",
       "nota": "Informativo. Acha ocorrências de TEXTO (não sinônimos). Não altera arquivo selado nem agente. Promoção a bloqueante só por ordem de Andraus."
+    },
+    {
+      "id": "util.pre-entrega",
+      "arquivo": "scripts/pre_entrega.py",
+      "canal": "CLI do Orquestrador (antes de entregar um Plan ao Revisor); o Especificador não tem Bash",
+      "tipo": "utilitario",
+      "estado": "ativo",
+      "enforca": "Pré-gate unificado (auditoria do Especificador A-1/A-2/A-3): compõe validate_spec_sot, check_repo_research e build_map --check (bloqueantes, como no CI) e check_invariants, check_dimensionamento, check_refs, backlog_triggers e 13 detectores de gate_extra/revisor_detectores (informativos); grava pre-entrega.json com sha256 de plan/checks. Sem lógica nova de detecção",
+      "ata": "DHR-PRE-ENTREGA-001",
+      "verificado_em": "2026-11-01: tests/test_pre_entrega.py (3 testes; CI)",
+      "nota": "Selado em GATE-MANIFEST.sha256 e CODEOWNERS. Detectores informativos; promoção a bloqueante só por ordem de Andraus. Recall dos detectores atuais no backtest da SPEC-049 = 0/3 Médias: o ganho é prova anexa e antecipação."
+    },
+    {
+      "id": "det.agentes-fatos-defasados",
+      "arquivo": "tests/test_agentes_sem_fatos_defasados.py",
+      "canal": "passo bloqueante do CI (teste unitário); sem hook",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "A9-teste: os arquivos de agente não repetem 5 fatos que o repositório já corrigiu (produto = Signal Package, CCM-001 BASELINED, AGENTS §4, CC-01..CC-12, SPEC-003 homologada). Lista fechada: só deriva conhecida",
+      "ata": "DHR-A9TESTE-001",
+      "verificado_em": "2026-11-01: tests/test_agentes_sem_fatos_defasados.py (2 testes; falhava nas 2 linhas antes do patch)",
+      "nota": "Detector em teste de CI. Deriva nova exige acrescentar a frase ao teste. Não altera arquivo selado."
     },
     {
       "id": "lib.log-ac",

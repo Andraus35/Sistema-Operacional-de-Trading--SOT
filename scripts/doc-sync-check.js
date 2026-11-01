@@ -16,6 +16,7 @@
 
 const { spawnSync } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 
 const ROOT = path.join(__dirname, '..');
 const CHECK = path.join(__dirname, 'check_doc_sync.py');
@@ -48,7 +49,17 @@ if (!r) {
   process.exit(0);
 }
 const m = String(r.stdout || '').match(/ERRO=(\d+) WARN=(\d+)/);
+// A6.4: o aviso repetido só reaparece quando o CONJUNTO de achados muda; ERRO > 0 aparece sempre.
+// Estado local (gitignored) em .claude/.doc-sync-estado; falha ao ler/gravar = mostra (nunca esconde).
+const ESTADO = path.join(ROOT, '.claude', '.doc-sync-estado');
+const achados = String(r.stdout || '').split('\n').filter(l => /^\[(ERRO|WARN)\]/.test(l)).join('\n');
+const assinatura = require('crypto').createHash('sha256').update((m ? m[0] : '') + '\n' + achados).digest('hex');
+let jaVisto = false;
+try { jaVisto = fs.readFileSync(ESTADO, 'utf8').trim() === assinatura; } catch (e) { /* mostra */ }
 if (m && (Number(m[1]) > 0 || Number(m[2]) > 0)) {
+  try { fs.writeFileSync(ESTADO, assinatura + '\n'); } catch (e) { /* mostra mesmo assim */ }
+}
+if (m && (Number(m[1]) > 0 || (Number(m[2]) > 0 && !jaVisto))) {
   console.log(
     `doc-sync: ${m[1]} achado(s) ERRO, ${m[2]} WARN de sincronização documental — ` +
     'rode "python scripts/check_doc_sync.py" para ver o detalhe (achado de gate; Revisor/Andraus decidem, não este hook).'
