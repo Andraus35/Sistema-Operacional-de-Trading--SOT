@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-160
-previous: HO-2026-11-01-159
+handoff_id: HO-2026-11-01-161
+previous: HO-2026-11-01-160
 data: 2026-11-01
 branch: ccr-d7f01e4e-c5qpb1
 base_commit: ef87ba1
@@ -14,6 +14,8 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
+**Achado a reportar (não é deste ramo):** `check_refs` está com **ERRO=2 já na `main`** (PR #164 deixou de versionar `governance/aprendizado/LEDGER-ACHADOS.md`; `PARECER-REVISOR-SPEC048-PLAN-R3` e `SPEC-049/ABERTURA.md` ainda o citam; +2 WARN em propostas). Mesma classe do `GENERATED_LOCAL` que o `check_refs` já tem para o mapa; corrigir mexe em arquivo selado, só por ordem de Andraus.
+
 **Propostas desta sessão (a pedido de Andraus, AskUserQuestion 2026-11-01; NADA aplicado; ramo `ccr-d7f01e4e-c5qpb1`):** (1) `PROPOSTA-A2-3-TAGS-DE-HANDOFF-2026-11-01.md` — medido: clone de nuvem é RASO (343 commits), tags não resolvem handoffs antigos; **recomenda não aplicar tags** e criar um utilitário `novo_handoff` (falha alto se âncora ausente; elimina os erros manuais de cadeia desta sessão); (2) `ANALISE-BL-003-BL-011-ATIVADOS-2026-11-01.md` — os dois JÁ foram ativados por Andraus (DHR-BACKLOG-001) e tratados no gate da SPEC-006 (Disposição PARCIAL); **manter ATIVADO**, sem ação nova até a SPEC-009. Ambos em `governance/propostas/MELHORIAS-PROCESSO/`; pedidos correspondentes na pauta (itens 3 e 8).
 
 **A3 (pauta única, ordem de Andraus 2026-11-01):** `governance/PAUTA-DE-DECISOES.md` + ata curta `DHR-A3-001`; HANDOFF §10 virou ponteiro; regra 1 (classes de decisão) NÃO aplicada (pedido 1 da pauta). Cadeia deste ramo (HO-132..151) em `docs/handoffs/ramo-ccr-a79e19ef-2zl738/`.
