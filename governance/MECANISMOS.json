@@ -234,7 +234,7 @@
       "estado": "ativo",
       "enforca": "Integridade e defasagem do HANDOFF; anexo de tarefa: HO-11 (existência/cabeçalho), HO-12 (órfão/mais de um ATIVO/CONSUMIDO citado), HO-13 (>80 linhas), HO-14 (DHR sem ata, decisão aberta como fechada, segredo), HO-15 (cópia de linha longa)",
       "ata": "DHR-PCC-003",
-      "verificado_em": "2026-10-19: tests/test_check_handoff.py (21 testes, CI); ao vivo no handoff com anexo",
+      "verificado_em": "2026-11-01 (P11, ordem de Andraus): tests/test_check_handoff.py 25/25, 4 mutantes mortos; HO-04 aceita cópia exata em docs/handoffs/ramo-*/ como INFO. Antes: 2026-10-19 (21 testes)",
       "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart. Origem DHR-PCC-002 (detector e hooks); DHR-PCC-003 acrescenta o anexo de tarefa (HO-11..HO-15)."
     },
     {
