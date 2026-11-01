@@ -1,0 +1,21 @@
+diff --git a/scripts/build_map.py b/scripts/build_map.py
+index 46f23fe..09c918e 100644
+--- a/scripts/build_map.py
++++ b/scripts/build_map.py
+@@ -345,11 +345,13 @@ def main():
+             print("Mapa marcado como DEFASADO (o hook não conseguiu regenerá-lo, ex.: Python ausente) — "
+                   "rode: python scripts/build_map.py")
+             sys.exit(1)
+-        if not js.exists():
++        md = out / "MAPA-PROJETO.md"
++        if not md.exists():
+             print("Mapa ausente — rode: python scripts/build_map.py")
+             sys.exit(2)
+-        old = json.loads(js.read_text(encoding="utf-8"))["meta"]["digest"]
+-        if old != quick_digest():
++        # A2.1: o digest vem do .md versionado; o .json é artefato local (gitignored) e não entra no --check
++        m_d = re.search(r"digest `([0-9a-f]{16})`", md.read_text(encoding="utf-8"))
++        if not m_d or not quick_digest().startswith(m_d.group(1)):
+             print("Mapa DESATUALIZADO (documentos mudaram) — rode: python scripts/build_map.py")
+             sys.exit(1)
+         print("Mapa em dia.")

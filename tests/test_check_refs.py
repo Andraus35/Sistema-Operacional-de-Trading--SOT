@@ -48,6 +48,17 @@ class CheckRefs(unittest.TestCase):
         (code, out), _ = self.go({"backlog/x.md": "Ver SPEC-001, BL-001, RULE-AA-01, INV-07."})
         self.assertEqual(code, 0, out)
 
+    def test_artefato_gerado_local_nao_e_caminho_quebrado(self):
+        """A2.1: docs/mapa/mapa-projeto.json é gitignored; citá-lo em clone limpo não pode ser ERRO."""
+        repo = Repo({**BASE, "governance/viva.md": "Veja `docs/mapa/mapa-projeto.json`.\n",
+                     "governance/outra.md": "Veja `docs/mapa/outro-inexistente.json`.\n"})
+        try:
+            rc, out = repo.run()
+            self.assertNotIn("mapa-projeto.json", out)
+            self.assertIn("outro-inexistente.json", out)
+        finally:
+            repo.close()
+
     def test_bl_inexistente_em_doc_vivo_e_erro(self):
         (code, out), _ = self.go({"backlog/x.md": "Depende de BL-099."})
         self.assertEqual(code, 1)

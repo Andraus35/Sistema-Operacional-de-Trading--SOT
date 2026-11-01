@@ -167,7 +167,15 @@ def analyze(root: Path, today=None):
                     if ref_id != prev:
                         f.append(("ERRO", "HO-04", f"previous={prev} mas o handoff substituído é {ref_id}"))
                     elif arch.read_text(encoding="utf-8", errors="replace") != ref:
-                        f.append(("ERRO", "HO-04", f"{arch.name} difere do handoff que substituiu (arquivo deve ser cópia exata)"))
+                        # P11 (convenção de handoff por ramo): sessões paralelas repetem números; a cadeia de um ramo que
+                        # colide fica em docs/handoffs/ramo-<ramo>/. Se o substituído está preservado ali, EXATO, é INFO.
+                        ramo = [q for q in sorted((root / "docs" / "handoffs").glob(f"ramo-*/{prev}.md"))
+                                if q.read_text(encoding="utf-8", errors="replace") == ref]
+                        if ramo:
+                            f.append(("INFO", "HO-04", f"{arch.name} é de outra cadeia; o handoff substituído está preservado "
+                                      f"(cópia exata) em {ramo[0].relative_to(root).as_posix()} — convenção de handoff por ramo"))
+                        else:
+                            f.append(("ERRO", "HO-04", f"{arch.name} difere do handoff que substituiu (arquivo deve ser cópia exata)"))
 
     # HO-06
     gov = root / "governance"

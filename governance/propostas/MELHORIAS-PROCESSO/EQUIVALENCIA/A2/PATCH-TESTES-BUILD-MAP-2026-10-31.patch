@@ -1,0 +1,19 @@
+diff --git a/tests/test_build_map.py b/tests/test_build_map.py
+index 339ae0a..4b3c416 100644
+--- a/tests/test_build_map.py
++++ b/tests/test_build_map.py
+@@ -71,6 +71,14 @@ class BuildMap(unittest.TestCase):
+         self.run_map()
+         self.assertRegex(self.md(), r"`SPEC-001` \| \*\*Homologada\*\*")
+ 
++    def test_check_nao_depende_do_json(self):
++        """A2.1: o .json é artefato local; --check decide pelo digest do .md versionado."""
++        self.run_map()
++        (self.d / "docs" / "mapa" / "mapa-projeto.json").unlink()
++        self.assertEqual(self.run_map("--check").returncode, 0)
++        (self.d / "governance" / "RULES.md").write_text("# Regras\nmudou\n", encoding="utf-8")
++        self.assertEqual(self.run_map("--check").returncode, 1)
++
+     def test_aresta_de_caminho_no_json(self):
+         self.run_map()
+         self.assertIn({"from": "ROADMAP.md", "to": "governance/RULES.md", "type": "path"}, self.js()["edges"])

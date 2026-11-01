@@ -72,11 +72,6 @@
           },
           {
             "type": "command",
-            "command": "node scripts/doc-sync-check.js stop",
-            "timeout": 60
-          },
-          {
-            "type": "command",
             "command": "node scripts/handoff-hook.js stop",
             "timeout": 30
           }
@@ -104,11 +99,6 @@
             "type": "command",
             "command": "node scripts/map-sync.js stop",
             "timeout": 120
-          },
-          {
-            "type": "command",
-            "command": "node scripts/doc-sync-check.js stop",
-            "timeout": 60
           },
           {
             "type": "command",
