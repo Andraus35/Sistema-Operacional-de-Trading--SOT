@@ -41,7 +41,7 @@ O Autopré-check é, hoje, **auto-atestação textual** de ~35 caixas. Só 14 ve
 
 > Regra de equilíbrio dos 4Es: cada item traz como **medir antes de promover**.
 
-### P-A — `scripts/pre_entrega.py` (pré-gate unificado, só composição)
+### P-A — `pre_entrega.py` (a criar; pré-gate unificado, só composição)
 Roda, num único comando e sobre um `specs/features/<SPEC>/`: `validate_spec_sot` · `gate_extra` (todas as funções) · `revisor_detectores` · `check_refs` (escopo da Spec) · `check_dimensionamento` · `check_repo_research` · `backlog_triggers --abertura` · `fato_locais` (§P-C2) · `check_invariants` · `build_map --check`. Saída: `pre-entrega.json` com `sha256` do `plan.md`/`checks.md`, exit code e hash por verificação. **Nenhuma lógica nova** — reaproveita scripts já selados. Resolve **A-1, A-2**.
 - Quem roda: Orquestrador (em nuvem) ou hook; o Especificador **não ganha Bash** (Bash + conteúdo web não confiável = superfície de injeção; manter ENF-03). Alternativa a considerar: ferramenta MCP somente-leitura com allowlist (como `sot-revisor-gate`), ressalvando que ela fica **inerte em nuvem**, igual à do Revisor.
 - Fluxo: Especificador edita → Orquestrador roda → devolve o JSON → corrige-se até **zero erro bloqueante** → só então "Pronto para revisão" e o Revisor recebe o mesmo `pre-entrega.json` (casado por `SHA256-ALVO`).
