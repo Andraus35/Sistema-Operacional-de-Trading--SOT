@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-11-01** · digest `ec92f8eefd78fa73` · **694** documentos · **13761** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-11-01** · digest `78ea7081ff56f7f7` · **694** documentos · **13761** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -21,7 +21,7 @@ Gerado em **2026-11-01** · digest `ec92f8eefd78fa73` · **694** documentos · *
 | **docs** | 230 | documentação histórica e de arranque (não essencial à operação) | [HO-2026-10-31-128.md](../../docs/handoffs/HO-2026-10-31-128.md) (68) · [INDICE-AGENTES.md](../../docs/agentes/INDICE-AGENTES.md) (52) · [HO-2026-11-01-140.md](../../docs/handoffs/HO-2026-11-01-140.md) (34) |
 | **RETOMADA** | 1 | material de retomada (GEH-001) | [GEH-001_Guia_Agente_Especificacoes_Harness.md](../../RETOMADA/GEH-001_Guia_Agente_Especificacoes_Harness.md) (41) |
 | **.clinerules** | 4 | regras Cline | [sot-rag.md](../../.clinerules/sot-rag.md) (2) · [sot-schemas.md](../../.clinerules/sot-schemas.md) (2) · [sot-map.md](../../.clinerules/sot-map.md) (1) |
-| **handoffs** | 2 |  |  |
+| **handoffs** | 2 |  | [ccr-b7c09dc1-y4rafd.md](../../handoffs/ccr-b7c09dc1-y4rafd.md) (1) |
 
 ## 2. Dependências entre camadas
 
@@ -29,10 +29,10 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 
 ```mermaid
 flowchart LR
-  docs["docs"] -->|4979| governance["governance"]
+  docs["docs"] -->|4977| governance["governance"]
   docs["docs"] -->|1339| specs["specs"]
   governance["governance"] -->|1042| specs["specs"]
-  docs["docs"] -->|995| raiz["raiz"]
+  docs["docs"] -->|996| raiz["raiz"]
   governance["governance"] -->|517| raiz["raiz"]
   specs["specs"] -->|454| governance["governance"]
   docs["docs"] -->|253| backlog["backlog"]
@@ -193,7 +193,6 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 - [governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md](../../governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R2-2026-10-31.md) — Parecer do Revisor — Plan v1.1 da SPEC-049 (WikiRAG Reading View) — R2 por delta (S2, sonnet) — 2026-10-31
 - [governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R3-2026-10-31.md](../../governance/propostas/SPEC-049/PARECER-REVISOR-SPEC049-PLAN-R3-2026-10-31.md) — Parecer do Revisor — Plan v1.2 da SPEC-049 (WikiRAG Reading View) — R3 por delta (S2, sonnet) — 2026-10-31
 - [handoffs/ccr-4bd4e8a0-d92lc7.md](../../handoffs/ccr-4bd4e8a0-d92lc7.md) — HANDOFF — SOT
-- [handoffs/ccr-b7c09dc1-y4rafd.md](../../handoffs/ccr-b7c09dc1-y4rafd.md) — HANDOFF — SOT
 - [rag/elliott-wave.knowledge.md](../../rag/elliott-wave.knowledge.md) — RAG — Elliott Wave Specialist Knowledge Base
 - [rag/fibonacci.knowledge.md](../../rag/fibonacci.knowledge.md) — RAG — Fibonacci Validator Knowledge Base
 - [rag/ict.knowledge.md](../../rag/ict.knowledge.md) — RAG — ICT Specialist Knowledge Base
@@ -210,7 +209,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 |---|---|---:|---:|
 | [AGENTS.md](../../AGENTS.md) | AGENTS.md — SOT (Sistema Operacional de Trading) | 352 | 41 |
 | [GLOSSARIO.md](../../GLOSSARIO.md) | GLOSSÁRIO OFICIAL — SOT | 35 | 13 |
-| [HANDOFF.md](../../HANDOFF.md) | HANDOFF — SOT | 30 | 54 |
+| [HANDOFF.md](../../HANDOFF.md) | HANDOFF — SOT | 31 | 54 |
 | [README.md](../../README.md) | SOT-Harness | 2 | 9 |
 | [ROADMAP.md](../../ROADMAP.md) | roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo | 473 | 87 |
 | [WORKFLOW.md](../../WORKFLOW.md) | WORKFLOW — Setup Operacional Canônico do SOT | 260 | 12 |
@@ -383,11 +382,11 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md](../../governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md) | DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formaç... | 160 | 11 |
 | [DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md](../../governance/DHR-SPEC007-006_Ata_Decisao_Livro_Q7c.md) | DHR-SPEC007-006 — Ata de Decisão — Q7(c): uso do livro *Evidence-Based Techni... | 65 | 9 |
 | [DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md](../../governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md) | DHR-SPEC007-007 — Ata de Decisão — Diretriz de autenticação criptográfica dos... | 132 | 6 |
-| [DHR-SPEC007-008_Ata_Erratum_Citacao_de_Versao_do_WORKFLOW.md](../../governance/DHR-SPEC007-008_Ata_Erratum_Citacao_de_Versao_do_WORKFLOW.md) | DHR-SPEC007-008 — Ata — Erratum editorial da SPEC-007 (citação de versão do `... | 7 | 7 |
+| [DHR-SPEC007-008_Ata_Erratum_Citacao_de_Versao_do_WORKFLOW.md](../../governance/DHR-SPEC007-008_Ata_Erratum_Citacao_de_Versao_do_WORKFLOW.md) | DHR-SPEC007-008 — Ata — Erratum editorial da SPEC-007 (citação de versão do `... | 6 | 7 |
 | [DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md](../../governance/DHR-SPEC019-001_Ata_Homologacao_SPEC-019.md) | DHR-SPEC019-001 — Ata de Homologação — SPEC-019 v1.0 (Harness Governance & Ev... | 17 | 6 |
 | [DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md](../../governance/DHR-SPEC020-001_Ata_Homologacao_SPEC-020.md) | DHR-SPEC020-001 — Ata de Homologação — SPEC-020 v1.0 (Harness Evaluation Spec... | 18 | 9 |
 | [DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md](../../governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md) | DHR-SPEC020-002 — Ata de Homologação — ERRATUM-SPEC020-002 (dimensão B "RAG f... | 134 | 14 |
-| [DHR-SPEC020-003_Ata_Erratum_F2_Pendente_no_BL-017.md](../../governance/DHR-SPEC020-003_Ata_Erratum_F2_Pendente_no_BL-017.md) | DHR-SPEC020-003 — Ata — Erratum da metade F2 (RAG faithfulness) registrado co... | 6 | 6 |
+| [DHR-SPEC020-003_Ata_Erratum_F2_Pendente_no_BL-017.md](../../governance/DHR-SPEC020-003_Ata_Erratum_F2_Pendente_no_BL-017.md) | DHR-SPEC020-003 — Ata — Erratum da metade F2 (RAG faithfulness) registrado co... | 5 | 6 |
 | [DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md](../../governance/DHR-SPEC021-001_Ata_Homologacao_SPEC-021.md) | DHR-SPEC021-001 — Ata de Homologação — SPEC-021 v1.0 (Harness Score / Maturit... | 8 | 7 |
 | [DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md](../../governance/DHR-SPEC038-001_Ata_Homologacao_Abertura_SPEC-038.md) | DHR-SPEC038-001 — Ata de Homologação — Abertura da SPEC-038 (Trading Analysis... | 9 | 14 |
 | [DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md](../../governance/DHR-SPEC038-002_Ata_Homologacao_SPEC-038.md) | DHR-SPEC038-002 — Ata de Homologação — SPEC-038 (Trading Analysis Tool Harnes... | 14 | 12 |
@@ -956,4 +955,4 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | Documento | Título | ← | → |
 |---|---|---:|---:|
 | [ccr-4bd4e8a0-d92lc7.md](../../handoffs/ccr-4bd4e8a0-d92lc7.md) | HANDOFF — SOT | 0 | 57 |
-| [ccr-b7c09dc1-y4rafd.md](../../handoffs/ccr-b7c09dc1-y4rafd.md) | HANDOFF — SOT | 0 | 56 |
+| [ccr-b7c09dc1-y4rafd.md](../../handoffs/ccr-b7c09dc1-y4rafd.md) | HANDOFF — SOT | 1 | 56 |

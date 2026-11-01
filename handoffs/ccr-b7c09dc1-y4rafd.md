@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-155
-previous: HO-2026-11-01-154
+handoff_id: HO-2026-11-01-156
+previous: HO-2026-11-01-155
 data: 2026-11-01
 branch: ccr-b7c09dc1-y4rafd
 base_commit: 5fd0cd4
@@ -15,7 +15,7 @@ anexo: null
 
 ## 1. Frente atual
 
-**Concorrência de sessões (ramo ccr-b7c09dc1-y4rafd, ordem de Andraus no chat 2026-11-01):** propostas pré-testadas em `governance/propostas/MELHORIAS-PROCESSO/CONCORRENCIA-DE-SESSOES/` (nada aplicado: ledger, mapa fora do Git — `pre_entrega`/`run_gates`/`revisor_gate` são selados e chamam `build_map --check`; Camada A). **PR #159 MESCLADO** (`f22b50e`): handoff por ramo `handoffs/<ramo>.md` com fallback ao `HANDOFF.md`. Colisões reais repetidas (HO-148/149/150 existiram na `main` e neste ramo): a cadeia do ramo está em `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/`. **PR #164 MESCLADO (`ef87ba1`, Andraus mandou mesclar): ledger gerado, lido por `--stdout`, nunca gravado.** Este handoff vive em `handoffs/ccr-b7c09dc1-y4rafd.md` (Camada A); o `HANDOFF.md` da raiz é o da `main`. Ata do mapa (`DHR-MAPA-GERADO-001`): Andraus assinou no chat, aplicação em PR separado. Rascunhos das atas em `CONCORRENCIA-DE-SESSOES/RASCUNHO-ATA-MAPA-GERADO-*` e `RASCUNHO-ATA-LEDGER-GERADO-*` (não vigoram; Andraus assina). Camada B: Andraus não tem ruleset ainda; guia passo a passo dado no chat, aguarda a tela. Ramos sem exclusivos (`ccr-599f6762-60qbvg`, `claude/amazing-fermat-dnbjtz`, `ccr-b7c09dc1-y4rafd-camada-a`): só Andraus apaga (403).
+**Concorrência de sessões (ramo ccr-b7c09dc1-y4rafd, ordem de Andraus no chat 2026-11-01):** propostas pré-testadas em `governance/propostas/MELHORIAS-PROCESSO/CONCORRENCIA-DE-SESSOES/` (nada aplicado: ledger, mapa fora do Git — `pre_entrega`/`run_gates`/`revisor_gate` são selados e chamam `build_map --check`; Camada A). **PR #159 MESCLADO** (`f22b50e`): handoff por ramo `handoffs/<ramo>.md` com fallback ao `HANDOFF.md`. Colisões reais repetidas (HO-148/149/150 existiram na `main` e neste ramo): a cadeia do ramo está em `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/`. **PR #164 MESCLADO (`ef87ba1`, Andraus mandou mesclar): ledger gerado, lido por `--stdout`, nunca gravado.** Este handoff vive em `handoffs/ccr-b7c09dc1-y4rafd.md` (Camada A); o `HANDOFF.md` da raiz é o da `main`. Ata do mapa gerado (rascunho): Andraus assinou no chat, aplicação em PR separado. Rascunhos das atas em `CONCORRENCIA-DE-SESSOES/RASCUNHO-ATA-MAPA-GERADO-*` e `RASCUNHO-ATA-LEDGER-GERADO-*` (não vigoram; Andraus assina). Camada B: Andraus não tem ruleset ainda; guia passo a passo dado no chat, aguarda a tela. Ramos sem exclusivos (`ccr-599f6762-60qbvg`, `claude/amazing-fermat-dnbjtz`, `ccr-b7c09dc1-y4rafd-camada-a`): só Andraus apaga (403).
 
 **Pós-merge do PR #155 (ordem de Andraus: "aplicar as pendências mais baratas e simples; as de rodada cara viram backlog"):** aplicado `log_ac.py verify <pasta>` + estado "continuidade não verificada" (D05) + passo informativo do CI + medições do roteador (p50 ≈ 60–65 ms, p95 ≈ 96–108 ms; volume ≈ 0,6 KB/evento) — detalhe na PROPOSTA §17 e no `BL-043`. **Segue no `BL-043`** (gatilho `spec:SPEC-008 em redação`): auditoria independente do código da F2a (Revisor), D08/D01–D03/hooks JS/timeout do wrapper (selados: ordem+ata+selo), captura de `Stop`, erratum do `RULE-WRV-0nn` da SPEC-049. Nenhum arquivo selado foi alterado.
 
