@@ -1,10 +1,10 @@
-"""Teste (PROPOSTA A9; não instalado): os arquivos de agente não podem repetir fatos que o repositório já corrigiu.
+"""Teste (A9; DHR-A9TESTE-001): os arquivos de agente não podem repetir fatos que o repositório já corrigiu.
 Cada regra cita a autoridade que a tornou defasada. Limite: pega só deriva CONHECIDA (lista fechada), não deriva nova.
-Uso: python -m unittest governance/propostas/MELHORIAS-PROCESSO/A9/test_agentes_sem_fatos_defasados.py  (ROOT = repositório)."""
+Uso: python -m unittest tests/test_agentes_sem_fatos_defasados.py (DHR-A9TESTE-001)."""
 import re, unittest
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[4]
+ROOT = Path(__file__).resolve().parent.parent
 AGENTES = [".claude/agents/especificador.md", ".claude/agents/revisor.md"]
 # (regex, autoridade, o que está certo)
 DEFASADOS = [

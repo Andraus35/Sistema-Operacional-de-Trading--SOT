@@ -654,6 +654,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Modelo de texto e anexo de medição; não toca agente, AGENTS.md, método nem detector."
+    },
+    {
+      "id": "DHR-A9TESTE-001",
+      "data": "2026-11-01",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Duas linhas de fato defasado corrigidas nos agentes (Signal Package; CC-01..CC-12); sem mudança de método nem de fronteira."
     }
   ]
 }

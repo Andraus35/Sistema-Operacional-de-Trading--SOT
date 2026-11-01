@@ -1,6 +1,6 @@
 # Proposta A9 — Checklist duplicado entre Especificador e Revisor (medida antes de cortar)
 
-> **Não normativo. PROPOSTA — NADA APLICADO.** Fonte: `AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md` §A9. Editar `.claude/agents/*` (reservados) exige ordem de Andraus, ata e carimbo RPSA. Não fecha decisão aberta (CONS-01).
+> **Não normativo. Estado atualizado em 2026-11-01: A9-teste APLICADO por ordem de Andraus (DHR-A9TESTE-001); A9-completo NÃO decidido.** Texto original: PROPOSTA — NADA APLICADO. Fonte: `AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md` §A9. Editar `.claude/agents/*` (reservados) exige ordem de Andraus, ata e carimbo RPSA. Não fecha decisão aberta (CONS-01).
 
 ## 1. Medição ao vivo (HEAD `e3c2e95`)
 | Item | Dado |
@@ -19,7 +19,7 @@
 **Correção minha:** na proposta P-B eu escrevi "32 caixas"; o catálogo tem **31** (16 D + 15 ATESTADO). Corrigi o documento.
 
 ## 3. Pré-teste (feito, nada instalado)
-`A9/test_agentes_sem_fatos_defasados.py`: 2 testes; lista fechada de 5 frases defasadas, cada uma com a autoridade que a corrigiu, mais um teste de mutação (o detector não pode ficar mudo). Resultado: **no estado atual falha em 2 linhas** (`revisor.md:162`, `especificador.md:96`); **com `PATCH-AGENTES-FATOS-DEFASADOS-2026-11-01.patch` aplicado numa cópia, passa** (patch: `git apply --check` OK; originais restaurados).
+`tests/test_agentes_sem_fatos_defasados.py` (estava em `A9/` na proposta; movido ao ser aplicado, DHR-A9TESTE-001): 2 testes; lista fechada de 5 frases defasadas, cada uma com a autoridade que a corrigiu, mais um teste de mutação (o detector não pode ficar mudo). Resultado: **no estado atual falha em 2 linhas** (`revisor.md:162`, `especificador.md:96`); **com `PATCH-AGENTES-FATOS-DEFASADOS-2026-11-01.patch` aplicado numa cópia, passa** (patch: `git apply --check` OK; originais restaurados).
 
 ## 4. Opções
 | Opção | Ganho | Risco/custo |

@@ -593,6 +593,17 @@
       "ata": "DHR-PRE-ENTREGA-001",
       "verificado_em": "2026-11-01: tests/test_pre_entrega.py (3 testes; CI)",
       "nota": "Selado em GATE-MANIFEST.sha256 e CODEOWNERS. Detectores informativos; promoção a bloqueante só por ordem de Andraus. Recall dos detectores atuais no backtest da SPEC-049 = 0/3 Médias: o ganho é prova anexa e antecipação."
+    },
+    {
+      "id": "det.agentes-fatos-defasados",
+      "arquivo": "tests/test_agentes_sem_fatos_defasados.py",
+      "canal": "passo bloqueante do CI (teste unitário); sem hook",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "A9-teste: os arquivos de agente não repetem 5 fatos que o repositório já corrigiu (produto = Signal Package, CCM-001 BASELINED, AGENTS §4, CC-01..CC-12, SPEC-003 homologada). Lista fechada: só deriva conhecida",
+      "ata": "DHR-A9TESTE-001",
+      "verificado_em": "2026-11-01: tests/test_agentes_sem_fatos_defasados.py (2 testes; falhava nas 2 linhas antes do patch)",
+      "nota": "Detector em teste de CI. Deriva nova exige acrescentar a frase ao teste. Não altera arquivo selado."
     }
   ],
   "vigente_desde": "2026-10-19"
