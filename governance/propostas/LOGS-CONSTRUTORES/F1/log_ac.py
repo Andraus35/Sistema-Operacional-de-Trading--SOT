@@ -6,17 +6,18 @@ import hashlib, json, re
 from pathlib import Path
 
 SCHEMA = json.loads((Path(__file__).with_name("evento-ac.schema.json")).read_text(encoding="utf-8"))
-PROIBIDAS = {"prompt", "response", "resposta", "content", "conteudo", "text", "texto", "message", "mensagem", "parecer"}
+PROIBIDAS = {"prompt", "response", "resposta", "content", "conteudo", "text", "texto", "message", "mensagem", "parecer",
+            "transcript_path", "cwd", "scratchpad_dir"}
 SEGREDOS = [r"sk-[A-Za-z0-9_-]{16,}", r"gh[pousr]_[A-Za-z0-9]{20,}", r"AKIA[0-9A-Z]{12,}", r"Bearer\s+[A-Za-z0-9._-]{16,}",
             r"-----BEGIN [A-Z ]*PRIVATE KEY-----", r"(?i)(password|senha|secret|token)\s*[=:]\s*\S{6,}"]
 
 
 def _tipo_ok(v, t):
     ts = t if isinstance(t, list) else [t]
-    mapa = {"string": str, "number": (int, float), "object": dict}
+    mapa = {"string": str, "number": (int, float), "integer": int, "object": dict, "array": list}
     for x in ts:
         if x == "null" and v is None: return True
-        if x in mapa and isinstance(v, mapa[x]) and not (x == "number" and isinstance(v, bool)): return True
+        if x in mapa and isinstance(v, mapa[x]) and not (x in ("number", "integer") and isinstance(v, bool)): return True
     return False
 
 
@@ -25,6 +26,8 @@ def _valida_prop(nome, v, p, defs, erros):
     if "const" in p and v != p["const"]: erros.append(f"{nome}: deve ser {p['const']!r}")
     if "enum" in p and v not in p["enum"]: erros.append(f"{nome}: fora do enum ({v!r})")
     if "type" in p and not _tipo_ok(v, p["type"]): erros.append(f"{nome}: tipo invalido"); return
+    if isinstance(v, list) and isinstance(p.get("items"), dict):
+        for i, x in enumerate(v): _valida_prop(f"{nome}[{i}]", x, p["items"], defs, erros)
     if isinstance(v, str):
         if len(v) < p.get("minLength", 0): erros.append(f"{nome}: vazio")
         if len(v) > p.get("maxLength", 10**9): erros.append(f"{nome}: longo demais")

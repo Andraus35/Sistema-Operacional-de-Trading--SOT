@@ -1,39 +1,220 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Evento de log dos agentes Construtores (AC) — v1 PROPOSTA",
-  "description": "Metadados apenas (nunca texto de prompt/parecer). Proposta F1; nao instalado; nao normativo. Nomes convertiveis para OpenTelemetry GenAI (status Development).",
+  "description": "Metadados apenas (nunca texto de prompt/parecer). Proposta F1; nao instalado; nao normativo. Nomes convertiveis para OpenTelemetry GenAI (status Development). Ajustes da pesquisa PESQUISA-LOGS-AGENTES-2026-11-01: decisao no vocabulario do Claude Code; metricas so inteiras (subconjunto JCS RFC 8785); campos de caminho local proibidos.",
   "type": "object",
-  "required": ["ts", "event", "family", "session_id", "run_id", "agent_id", "severity", "status", "operation"],
+  "required": [
+    "ts",
+    "event",
+    "family",
+    "session_id",
+    "run_id",
+    "agent_id",
+    "severity",
+    "status",
+    "operation"
+  ],
   "additionalProperties": false,
   "properties": {
-    "ts": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"},
-    "event": {"enum": ["agent.run", "policy.decision", "gate.result", "invariant.violation", "finding.recorded", "approval.requested", "approval.decided", "decision.recorded", "handoff.created"]},
-    "family": {"const": "AC"},
-    "session_id": {"type": "string", "minLength": 1},
-    "run_id": {"type": "string", "minLength": 1},
-    "parent_run_id": {"type": ["string", "null"]},
-    "task_ref": {"type": ["string", "null"]},
-    "agent_id": {"type": "string", "minLength": 1},
-    "agent_version": {"type": ["string", "null"]},
-    "harness_version": {"type": ["string", "null"]},
-    "model": {"type": ["string", "null"]},
-    "class": {"type": ["string", "null"]},
-    "severity": {"enum": ["INFO", "WARN", "ERROR", "CRITICAL", "AUDIT", "EVALUATION"]},
-    "status": {"type": "string", "minLength": 1},
-    "operation": {"type": "string", "minLength": 1},
-    "policy_id": {"type": ["string", "null"]},
-    "decision": {"enum": ["ALLOW", "DENY", null]},
-    "enforcement_point": {"type": ["string", "null"]},
-    "reason": {"type": ["string", "null"], "maxLength": 300},
-    "input_ref": {"$ref": "#/definitions/ref"},
-    "output_ref": {"$ref": "#/definitions/ref"},
-    "metrics": {"type": "object", "additionalProperties": {"type": ["number", "null"]}},
-    "error": {"type": ["string", "null"], "maxLength": 300},
-    "prev_hash": {"type": ["string", "null"]},
-    "hash": {"type": ["string", "null"]}
+    "ts": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "event": {
+      "enum": [
+        "agent.run",
+        "policy.decision",
+        "gate.result",
+        "invariant.violation",
+        "finding.recorded",
+        "approval.requested",
+        "approval.decided",
+        "decision.recorded",
+        "handoff.created"
+      ]
+    },
+    "family": {
+      "const": "AC"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "task_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "agent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "harness_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "class": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "INFO",
+        "WARN",
+        "ERROR",
+        "CRITICAL",
+        "AUDIT",
+        "EVALUATION"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "decision": {
+      "enum": [
+        "allow",
+        "deny",
+        "ask",
+        "defer",
+        null
+      ]
+    },
+    "enforcement_point": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 300
+    },
+    "input_ref": {
+      "$ref": "#/definitions/ref"
+    },
+    "output_ref": {
+      "$ref": "#/definitions/ref"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      }
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 300
+    },
+    "prev_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "policy_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "redacted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hook_agent_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "semconv_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provider": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
   },
   "definitions": {
-    "ref": {"type": ["object", "null"], "required": ["path", "sha256"], "additionalProperties": false,
-            "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+    "ref": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
   }
 }

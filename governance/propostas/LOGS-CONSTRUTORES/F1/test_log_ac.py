@@ -28,7 +28,7 @@ class T(unittest.TestCase):
     def test_segredo_senha(self): self.assertTrue(L.valida(ev(reason="password=hunter22")))
     def test_hash_malformado(self): self.assertTrue(L.valida(ev(output_ref={"path": "x", "sha256": "zz"})))
     def test_policy_exige_decision(self): self.assertTrue(L.valida(ev(event="policy.decision")))
-    def test_policy_ok(self): self.assertEqual(L.valida(ev(event="policy.decision", decision="DENY", policy_id="R-AC7", enforcement_point="hook:roteador", severity="AUDIT")), [])
+    def test_policy_ok(self): self.assertEqual(L.valida(ev(event="policy.decision", decision="deny", policy_id="R-AC7", enforcement_point="hook:roteador", severity="AUDIT")), [])
     def test_ts_formato(self): self.assertTrue(L.valida(ev(ts="ontem")))
     def test_bool_nao_e_numero(self): self.assertTrue(L.valida(ev(metrics={"in": True})))
     def test_reason_longo(self): self.assertTrue(L.valida(ev(reason="x" * 301)))
@@ -54,6 +54,13 @@ class T(unittest.TestCase):
             f = Path(d) / "l.jsonl"
             with self.assertRaises(ValueError): L.acrescenta(f, ev(family="AT"))
             self.assertFalse(f.exists())
+    def test_decision_vocabulario(self):
+        self.assertTrue(L.valida(ev(event="policy.decision", decision="DENY", policy_id="x")))
+        for d in ("allow", "deny", "ask", "defer"): self.assertEqual(L.valida(ev(event="policy.decision", decision=d, policy_id="x", policy_version="h1", redacted=["prompt"])), [])
+    def test_metricas_so_inteiras(self): self.assertTrue(L.valida(ev(metrics={"in": 1.5})))
+    def test_caminho_local_proibido(self):
+        self.assertTrue(L.valida(ev(metrics={"cwd": 1})))
+    def test_redacted_lista_de_strings(self): self.assertTrue(L.valida(ev(redacted=[1])))
     def test_schema_json_bem_formado(self): self.assertEqual(L.SCHEMA["properties"]["family"]["const"], "AC")
 
 if __name__ == "__main__": unittest.main()
