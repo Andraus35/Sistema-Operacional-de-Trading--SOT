@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-11-01",
-  "digest": "9b4f58975d3e5d94fe5a2f2191de282f995acdcb36a6375c6fde7851f9e84ee4",
+  "digest": "43391b6a6bd947bddc07967ea3904e4b7384594fee9ee0dd4b2a6a841df6321a",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -192,7 +192,7 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 398,
+   "in": 399,
    "out": 117
   },
   {
@@ -2341,7 +2341,7 @@
    "path": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-007 — Ata de Decisão — Roteamento de modelo obrigatório por hook, M classificada na 1ª rodada e detector de ID",
-   "in": 70,
+   "in": 71,
    "out": 5
   },
   {
@@ -3087,10 +3087,17 @@
    "out": 16
   },
   {
+   "path": "governance/propostas/LOGS-CONSTRUTORES/PLANO-F2-2026-11-01.md",
+   "area": "governance",
+   "title": "PLANO F2 — persistência e eventos de política (PLANEJADO, NÃO EXECUTADO)",
+   "in": 0,
+   "out": 3
+  },
+  {
    "path": "governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md",
    "area": "governance",
    "title": "PROPOSTA — Consolidação dos logs dos agentes Construtores (AC)",
-   "in": 2,
+   "in": 3,
    "out": 11
   },
   {
@@ -4427,7 +4434,7 @@
   {
    "id": "BL-040",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 5
+   "cited_by": 6
   },
   {
    "id": "BL-041",
@@ -5022,7 +5029,7 @@
   {
    "id": "DHR-ROTEAMENTO-007",
    "defined_in": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
-   "cited_by": 70
+   "cited_by": 71
   },
   {
    "id": "DHR-RPSA-001",
@@ -49880,6 +49887,21 @@
    "from": "governance/propostas/HANDOFF-SPEC006-2026-10-17.md",
    "to": "specs/features/SPEC-007/plan.md",
    "type": "id"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PLANO-F2-2026-11-01.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PLANO-F2-2026-11-01.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PLANO-F2-2026-11-01.md",
+   "to": "governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md",
+   "type": "path"
   },
   {
    "from": "governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md",
