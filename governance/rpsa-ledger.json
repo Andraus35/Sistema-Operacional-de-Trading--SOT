@@ -675,6 +675,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Log dos Construtores: novo modulo, roteador e telemetria; nao altera texto de agente de construcao nem metodo."
+    },
+    {
+      "id": "DHR-A3-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Documento novo e nao normativo (pauta); nao altera texto de agente nem metodo."
     }
   ]
 }
