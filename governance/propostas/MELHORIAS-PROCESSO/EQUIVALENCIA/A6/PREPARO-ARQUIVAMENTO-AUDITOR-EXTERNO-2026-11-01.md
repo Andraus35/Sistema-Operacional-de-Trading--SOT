@@ -14,7 +14,7 @@
 1. **Referências quebradas:** ≥30 arquivos citam `auditor-externo`/`route_aex`/`AUDITOR-EXTERNO` (atas, pareceres, `MECANISMOS.json`, `propostas/`). `check_refs.py` precisa ficar com ERRO=0: mover só o que `check_refs` tolera em `_legacy/` (históricos viram INFO) e conferir antes/depois.
 2. **Selo/CODEOWNERS:** `route_aex.py` não está no `GATE-MANIFEST` nem no `CODEOWNERS`; nenhum selo muda. `auditor-externo.yml` não é lido por outro workflow.
 3. **Reversão:** `git revert` do commit; nada deletado. Reativar = mover de volta + religar o passo do `ci.yml`.
-4. **Equivalência:** rodar `scripts/equiv_conservacao.py` (utilitário de proposta) entre a árvore antes/depois, como no corte do `AGENTS.md`.
+4. **Equivalência:** rodar `equiv_conservacao.py` (em `governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/`, utilitário de proposta) entre a árvore antes/depois, como no corte do `AGENTS.md`.
 
 ## 3. Para executar (por ordem de Andraus)
 1. Pré-teste em cópia isolada: mover, `check_refs`, `check_coesao`, `build_map`, suíte Python e `npm run test:hooks`. 2. Aplicar no ramo. 3. `AGENTS.md` §9 e `GLOSSARIO.md` só com ordem expressa. 4. Ata curta `DHR-…` com a ordem citada.
