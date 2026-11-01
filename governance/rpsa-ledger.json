@@ -675,6 +675,41 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Log dos Construtores: novo modulo, roteador e telemetria; nao altera texto de agente de construcao nem metodo."
+    },
+    {
+      "id": "DHR-SPEC007-008",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Troca editorial de uma citacao de versao no Plan da SPEC-007; nao altera texto de agente nem metodo."
+    },
+    {
+      "id": "DHR-SPEC020-003",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registra no ROADMAP uma pendencia de erratum de Spec ja homologada; nao altera texto de agente nem metodo."
+    },
+    {
+      "id": "DHR-A3-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Documento novo e nao normativo (pauta); nao altera texto de agente nem metodo."
+    },
+    {
+      "id": "DHR-A5O1-001",
+      "data": "2026-11-01",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Uma frase de revisor.md (Short-circuit) passa a apontar o livro-razao RPSA em vez do CATALOGO; sem mudanca de metodo nem de fronteira."
+    },
+    {
+      "id": "DHR-LEDGER-GERADO-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda só se o ledger derivado é commitado; o método do loop não muda."
     }
   ]
 }

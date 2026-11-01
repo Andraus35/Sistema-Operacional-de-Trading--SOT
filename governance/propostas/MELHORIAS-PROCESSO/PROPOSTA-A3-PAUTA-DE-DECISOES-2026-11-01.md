@@ -2,6 +2,8 @@
 
 > **Não normativo. PROPOSTA — NADA APLICADO.** Fonte: `AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md` §A3 ("o gargalo é a fila de decisões"). "Avançar" lido como seguir para o A3. Não decide por Andraus nem fecha decisão aberta (CONS-01). Recomendação do Orquestrador marcada; a decisão é dele.
 
+> **Atualização 2026-11-01 (`DHR-A3-001`, ordem de Andraus):** a regra 2 e a pauta foram **aplicadas** como `governance/PAUTA-DE-DECISOES.md` (estado atual; vários itens do §2 abaixo já foram decididos e mesclados por outras sessões). A **regra 1** (classes de decisão, `AGENTS.md` §10) **não foi aplicada**: virou o pedido nº 1 da pauta. Texto abaixo preservado (INV-07).
+
 ## 1. Diagnóstico medido (2026-11-01)
 Pedidos em aberto só de Andraus, lidos de `HANDOFF.md` §10, `backlog_triggers.py` e `ROADMAP.md`: **~20 itens** em 4 grupos (abaixo). Backlog: **2 ATIVADOS** (BL-003, BL-011) e **4 "disparados sem registro"** (BL-010, 015, 017, 035). Decisões abertas do ROADMAP: J-001, G-001, K-001, C-001, M-001, N-001, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03 (nenhuma tocada aqui).
 
