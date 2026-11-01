@@ -333,7 +333,7 @@
       "tipo": "utilitario",
       "estado": "ativo",
       "enforca": "Gera o mapa do projeto (BL-019)",
-      "verificado_em": "2026-10-18: ao vivo — geração e --check exit 0 (mapa regenerado várias vezes nesta sessão)"
+      "verificado_em": "2026-11-01 (A2.1): --check lê o digest do MAPA-PROJETO.md; mapa-projeto.json é artefato local ignorado; tests/test_build_map.py 11/11. Antes: 2026-10-18 ao vivo"
     },
     {
       "id": "util.rpsa-auto",
