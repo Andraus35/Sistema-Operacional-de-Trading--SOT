@@ -32,5 +32,7 @@ Aplicar a **F2a** da proposta de logs dos Construtores (fatia segura do plano F2
 ## 3. Pendente (F2b — NÃO feito, não tratado como resolvido)
 Emissão pelos hooks JS (`gate-check`, `andraus-ask-guard`, `andraus-ask-mark`, `revisor-guard`, pós-guarda, `post-edit-check`): bloqueada por **D01** (`hook-io.js` descarta o payload; sem `session_id` os eventos cairiam em `sem-sessao`); percorredor de pasta do `verify` e leitura de âncora; regra do segmento `-r<k>` de recuperação; estado "continuidade não verificada" (D05); disposição de BL-036 (D07); `policy_id` por caminho no ask-guard (D03). Hook de depuração em `settings.json` **não** foi criado: a forma do payload é capturada pela telemetria (só nomes de chaves).
 
+**Destino (Andraus, chat/AskUserQuestion, 2026-11-01: "Colocar como backlog da próxima Spec do road map"):** tudo o que está em §3, mais a **auditoria independente do código aplicado na F2a**, virou o item **BL-043** do `RMR-001` (`Em espera`, gatilho `spec:SPEC-008 em redação`). Nada disso é feito antes, e a SPEC-008 só abre por ordem dele.
+
 ## 4. Registro
 - [x] Esta ata · [x] módulo + esquema + testes · [x] roteador (selo regravado) · [x] telemetria · [x] `MECANISMOS.json` · [ ] merge (mescla só por ordem de Andraus)
