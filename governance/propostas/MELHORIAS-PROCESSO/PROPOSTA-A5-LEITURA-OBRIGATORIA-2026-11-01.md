@@ -32,3 +32,18 @@
 
 ## 4. Recomendação do Orquestrador
 **Aprovar O1** (1 linha, risco mínimo) e **uma medição** de O4 e da abertura real (rodada em primeiro plano com `usage`); **adiar O2 e O3**. Declaro: não verifiquei se o Revisor de fato abre o `CATALOGO-OFICIAL.md` hoje; o ganho de O1 pode ser zero.
+
+## 5. Medição do O4 (Orquestrador, 2026-11-01; ordem de Andraus, AskUserQuestion: "Medir quanto o Especificador lê do backlog")
+**Método:** `A5/medir_leituras.py` sobre as 11 transcrições de subagentes desta sessão (disco, sem rodar agente novo); saída em `A5/MEDICAO-LEITURAS-2026-11-01.txt`. Mede só **resultados de ferramentas** (Read/Grep); tokens = bytes ÷ 4.
+**Resultado (n = 4 Especificador, 5 Revisor, 1 Explore, 1 sem ferramenta útil):**
+| Arquivo | Leitura **inteira** | Maior leitura parcial | Observação |
+|---|---|---|---|
+| `RMR-001` (118 KB) | **0 de 9 agentes** | 11,9 KB (≈ 10%) — Revisor | Especificador: 1 de 4 tocou (Grep 65 B + Read de 2 KB); os outros 3 não abriram |
+| `ROADMAP.md` (80 KB) | **0** | ≈ 1,1 KB | só Grep/Read de §18 |
+| `atomic-spec.md` (40 KB) | **0** | só Grep (≤ 1,8 KB) | |
+| `governance/RULES.md` (53 KB) | **0** | só Grep (≤ 1,8 KB) | |
+| `CATALOGO-OFICIAL.md` (100 KB) | **0** | nunca aberto | o ganho esperado do A5-O1 (ponteiro RPSA) foi ≈ 0 **nesta amostra** |
+Resultados de ferramentas por chamada: **11 mil a 45 mil tokens** (Especificador 11–35 mil; Revisor 17–45 mil).
+**Leitura honesta:** (i) o custo de 62–152 mil tokens por chamada **não vem de ler os arquivos-núcleo inteiros** — os agentes fizeram leitura dirigida (Grep + trechos); o grosso é prompt do agente + contexto acumulado ao longo de 21–59 chamadas de ferramenta; (ii) a "leitura obrigatória" do `especificador.md`/`revisor.md` **não é cumprida literalmente** (o Revisor declarou "Passo 0 parcial" em todas as rodadas), o que é um achado de **Conformidade** a decidir por Andraus, não de economia; (iii) por isso **O2/O3 (cortar o ROADMAP) teriam ganho incerto** e O4 não precisa de texto novo.
+**Limites (declarados):** amostra de **uma só frente**, tarefas de **proposta de processo (MEDIUM), não abertura de Spec** (onde a lista completa é obrigatória para HIGH/CRITICAL); **meus pedidos traziam ESCOPO restrito** (viés: indicavam o que ler); a transcrição não mostra o prompt injetado; n pequeno. **Não vale como medição da abertura de uma Spec HIGH** — isso fica em `BL-044` (medição no próximo Plan, com `usage` em primeiro plano).
+**Recomendação:** **encerrar O4** (medido; sem proposta de texto); **manter O2/O3 adiados**; levar o achado (ii) à pauta como pergunta de Conformidade; repetir a medição na abertura da SPEC-008 (`BL-044`).
