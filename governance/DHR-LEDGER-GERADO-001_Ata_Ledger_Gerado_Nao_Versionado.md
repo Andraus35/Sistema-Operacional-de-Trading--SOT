@@ -24,5 +24,8 @@
 ## 3. Evidência `[FATO]`
 Teste com 2 pareceres reais da SPEC-048 em dois ramos: ledger commitado → `CONFLICT`; ledger gerado → merge limpo e duas gerações idênticas. Não medido nos ~19 pareceres. **Correção:** `ci.yml` chamava `loop_ledger.py --check` como passo informativo; foi trocado por geração informativa (`--stdout`).
 
+## 3-bis. Acoplamento descoberto no CI do PR #164 `[FATO]`
+O `build_map.py` indexa arquivos do **disco**, não do Git. Um `LEDGER-ACHADOS.md` gravado localmente (mesmo ignorado) entra no resumo do mapa commitado e o CI, sem o arquivo, calcula outro resumo (`build_map_check` vermelho). Por isso o ledger é **lido por `--stdout` e nunca gravado**. Alternativa estrutural: tirar também o mapa do Git (rascunho `DHR-MAPA-GERADO-001`).
+
 ## 4. Registro
 - [x] Assinatura de Andraus (chat) · [x] aplicado em PR · [ ] merge (Andraus) · [ ] CATALOGO
