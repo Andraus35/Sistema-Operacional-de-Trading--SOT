@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-10-31",
-  "digest": "ff808aa6eb0949249906d9c524f0657467dc3cbfc59e7cace87aa95b147e71d7",
+  "generated": "2026-11-01",
+  "digest": "a4c61761f965dc203f74bb80ca94d8c2ea00985dc06721dfa2abb64eadb47315",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -10,7 +10,7 @@
    "path": ".claude/agents/especificador.md",
    "area": ".claude",
    "title": "VOCÊ É O ESPECIFICADOR PRINCIPAL DO SOT",
-   "in": 105,
+   "in": 106,
    "out": 61
   },
   {
@@ -101,7 +101,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 266,
+   "in": 267,
    "out": 42
   },
   {
@@ -199,7 +199,7 @@
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 114,
+   "in": 115,
    "out": 6
   },
   {
@@ -2040,7 +2040,7 @@
    "path": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
    "area": "governance",
    "title": "DHR-EUA-E19a — Ata de Homologação — Restauração Semântica do Signal Package",
-   "in": 27,
+   "in": 28,
    "out": 10
   },
   {
@@ -2936,7 +2936,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 464,
+   "in": 465,
    "out": 41
   },
   {
@@ -3078,6 +3078,13 @@
    "title": "Auditoria — burocracia excessiva (método, ferramentas, agentes) e higiene de arquivos",
    "in": 28,
    "out": 37
+  },
+  {
+   "path": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "area": "governance",
+   "title": "Auditoria do Especificador — Autopré-check e prevenção determinística de erros",
+   "in": 0,
+   "out": 12
   },
   {
    "path": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md",
@@ -3811,14 +3818,14 @@
    "path": "specs/features/SPEC-001/checks.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness — Verificação de Spec",
-   "in": 71,
+   "in": 72,
    "out": 2
   },
   {
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 228,
+   "in": 229,
    "out": 9
   },
   {
@@ -3853,7 +3860,7 @@
    "path": "specs/features/SPEC-002/research.md",
    "area": "specs",
    "title": "SPEC-002 — Evidence & Evidence Provenance Harness — DOSSIÊ DE PESQUISA (ABERTURA)",
-   "in": 47,
+   "in": 48,
    "out": 21
   },
   {
@@ -3867,7 +3874,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 154,
+   "in": 155,
    "out": 29
   },
   {
@@ -3965,7 +3972,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 301,
+   "in": 302,
    "out": 39
   },
   {
@@ -4028,7 +4035,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 192,
+   "in": 193,
    "out": 24
   },
   {
@@ -4140,7 +4147,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 141,
+   "in": 142,
    "out": 42
   },
   {
@@ -4168,7 +4175,7 @@
    "path": "specs/features/SPEC-049/plan.md",
    "area": "specs",
    "title": "SPEC-049 — WikiRAG Reading View — Plan v1.2 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
-   "in": 116,
+   "in": 117,
    "out": 29
   },
   {
@@ -5321,7 +5328,7 @@
   {
    "id": "EUA-E19a",
    "defined_in": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
-   "cited_by": 24
+   "cited_by": 25
   },
   {
    "id": "EUA-E20",
@@ -5376,7 +5383,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 326
+   "cited_by": 327
   },
   {
    "id": "INV-08",
@@ -5931,7 +5938,7 @@
   {
    "id": "RULE-ECC-02",
    "defined_in": "governance/RULES.md",
-   "cited_by": 55
+   "cited_by": 56
   },
   {
    "id": "RULE-ECC-03",
@@ -5941,7 +5948,7 @@
   {
    "id": "RULE-ECC-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 60
+   "cited_by": 61
   },
   {
    "id": "RULE-ECC-05",
@@ -5956,7 +5963,7 @@
   {
    "id": "RULE-ECC-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 61
+   "cited_by": 62
   },
   {
    "id": "RULE-EH",
@@ -6916,7 +6923,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 154
+   "cited_by": 155
   },
   {
    "id": "SPEC-004",
@@ -6931,7 +6938,7 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 301
+   "cited_by": 302
   },
   {
    "id": "SPEC-007",
@@ -7001,7 +7008,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 192
+   "cited_by": 193
   },
   {
    "id": "SPEC-021",
@@ -7141,12 +7148,12 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 141
+   "cited_by": 142
   },
   {
    "id": "SPEC-049",
    "defined_in": "specs/features/SPEC-049/plan.md",
-   "cited_by": 116
+   "cited_by": 117
   }
  ],
  "edges": [
@@ -49582,6 +49589,66 @@
   },
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": ".claude/agents/especificador.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "governance/DHR-EUA-E19a_Ata_Homologacao_Restauracao_Signal_Package.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "specs/features/SPEC-001/checks.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "specs/features/SPEC-002/research.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "specs/features/SPEC-003/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
    "to": "specs/features/SPEC-049/plan.md",
    "type": "id"
   },
