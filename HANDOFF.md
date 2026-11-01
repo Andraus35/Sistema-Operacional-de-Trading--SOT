@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-144
-previous: HO-2026-11-01-143
+handoff_id: HO-2026-11-01-145
+previous: HO-2026-11-01-144
 data: 2026-11-01
 branch: ccr-4bd4e8a0-d92lc7
 base_commit: 726c67a
@@ -14,6 +14,8 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
+**DECIDIDO por Andraus (AskUserQuestion, 2026-11-01; `DHR-A7A4-001`, ata no modelo curto):** **A7-lite** (modelo de ata curta, `governance/MODELO-ATA-OPERACIONAL-CURTA.md`; ≤ 15 linhas, só para mudança puramente operacional — o modelo lista quando NÃO vale; log único NÃO adotado) e **A4-b** (o experimento P10 passa a medir também a abertura; adendo em `PROPOSTA-EXPERIMENTO-REGRA-DE-PARADA-2026-10-31.md`; nenhuma norma muda). Frente de burocracia: A2, A3, A6, A7, A4 tratados; **resta A8** (medir antes: telemetria por Spec vazia no ambiente de nuvem) e **A9**. Descoberta: para o Orquestrador, mudança operacional nova → usar o modelo curto.
+
 **A4 (auditoria de burocracia) — proposta medida escrita, NADA aplicado** (`governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-A4-PROPORCIONALIDADE-ABERTURA-PLAN-2026-11-01.md`): as 14 Specs feitas são todas HIGH/CRITICAL e o ROADMAP tem 1 slot MEDIUM em 16 — o A4 como escrito atingiria ≈ 1 Spec e exigiria emenda a `atomic-spec §15`/ROADMAP §23. **Recomendação: A4-b** — estender a regra de parada do P10 à abertura (≈ 39 % dos tokens da SPEC-049) e medir no próximo Plan. Decisões de Andraus pendentes: A7 e A4.
 
 **A7 (auditoria de burocracia) — proposta medida escrita, NADA aplicado** (`governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-A7-LOG-UNICO-DE-DECISOES-2026-11-01.md`): 159 atas (8.222 linhas); só ≈ 8 são puramente operacionais (~3 %); o log único exigiria emenda ao `AGENTS §10`, mudança em `check_handoff` HO-06 (selado) e novo detector. **Recomendação: A7-lite (modelo de ata curta) ou nada**; decisão de Andraus.
