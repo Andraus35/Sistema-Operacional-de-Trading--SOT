@@ -14,7 +14,17 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const CHECK = path.join(__dirname, 'check_handoff.py');
-const HANDOFF = path.join(ROOT, 'HANDOFF.md');
+function handoffPath() {
+  // Camada A: handoff por ramo (handoffs/<ramo>.md); senao HANDOFF.md da raiz.
+  try {
+    const b = spawnSync('git', ['rev-parse', '--abbrev-ref', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).stdout.trim();
+    const nome = b.replace(/[^A-Za-z0-9._-]+/g, '_');
+    const p = path.join(ROOT, 'handoffs', nome + '.md');
+    if (nome && nome !== 'HEAD' && fs.existsSync(p)) return p;
+  } catch (e) { /* cai no padrao */ }
+  return path.join(ROOT, 'HANDOFF.md');
+}
+const HANDOFF = handoffPath();
 
 function pythonUnavailable(r) {
   if (r.error) return true;

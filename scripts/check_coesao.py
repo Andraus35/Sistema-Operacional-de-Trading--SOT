@@ -315,7 +315,7 @@ def check_proposta_residual(ctx):
 
 
 def check_handoff_pending(ctx):
-    for i, ln in enumerate(ctx.read("HANDOFF.md").splitlines(), 1):
+    for i, ln in enumerate("\n".join([ctx.read("HANDOFF.md"), *(ctx.read(f"handoffs/{q.name}") for q in sorted((ctx.root / "handoffs").glob("*.md")))]).splitlines(), 1):
         # só linhas que ESPERAM merge ("Andraus mescla", "Merge da/das …", "PR aberto"); relato histórico não conta
         if not re.search(r"Andraus mescla|^\W*Merge d[ao]s?\b|PR aberto|aguard\w+ (o )?merge", ln, re.I):
             continue

@@ -234,8 +234,8 @@
       "estado": "ativo",
       "enforca": "Integridade e defasagem do HANDOFF; anexo de tarefa: HO-11 (existência/cabeçalho), HO-12 (órfão/mais de um ATIVO/CONSUMIDO citado), HO-13 (>80 linhas), HO-14 (DHR sem ata, decisão aberta como fechada, segredo), HO-15 (cópia de linha longa)",
       "ata": "DHR-PCC-003",
-      "verificado_em": "2026-11-01 (P11, ordem de Andraus): tests/test_check_handoff.py 25/25, 4 mutantes mortos; HO-04 aceita cópia exata em docs/handoffs/ramo-*/ como INFO. Antes: 2026-10-19 (21 testes)",
-      "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart. Origem DHR-PCC-002 (detector e hooks); DHR-PCC-003 acrescenta o anexo de tarefa (HO-11..HO-15)."
+      "verificado_em": "2026-11-01 (Camada A, ordem de Andraus no chat): handoff por ramo — handoff_rel() usa handoffs/<ramo>.md quando existe, senão HANDOFF.md; tests/test_check_handoff.py 28/28 (3 novos; mutante morto). Antes: 2026-11-01 (P11, ordem de Andraus): tests/test_check_handoff.py 25/25, 4 mutantes mortos; HO-04 aceita cópia exata em docs/handoffs/ramo-*/ como INFO. Antes: 2026-10-19 (21 testes)",
+      "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart. Origem DHR-PCC-002 (detector e hooks); DHR-PCC-003 acrescenta o anexo de tarefa (HO-11..HO-15). Camada A: handoff_rel() — handoffs/<ramo>.md tem precedência; scripts/handoff-hook.js, check_branches.py (BR-01) e check_coesao.py (COE-12) leem os mesmos arquivos."
     },
     {
       "id": "det.check-invariants",
@@ -611,9 +611,9 @@
       "canal": "biblioteca usada por roteador_modelos.py e telemetria_tokens.py + CLI emit/verify",
       "tipo": "utilitario",
       "estado": "ativo",
-      "enforca": "Log estruturado dos agentes Construtores (família AC): valida evento contra scripts/evento-ac.schema.json (sem dependências), recusa campos de conteúdo e padrões de segredo (Detector com falsos negativos), cadeia de hash com anexo atômico e trava com prazo, camada forçada pelo caminho (governance/logs/L2|L3), emite_seguro nunca levanta, nome_segmento sessão+ramo. Prova integridade, NÃO autoria. Custo fora do Conviction Vector (INV-04)",
+      "enforca": "Log estruturado dos agentes Construtores (família AC): valida evento contra scripts/evento-ac.schema.json (sem dependências), recusa campos de conteúdo e padrões de segredo (Detector com falsos negativos), cadeia de hash com anexo atômico e trava com prazo, camada forçada pelo caminho (governance/logs/L2|L3), emite_seguro nunca levanta, nome_segmento sessão+ramo. Prova integridade, NÃO autoria. Custo fora do Conviction Vector (INV-04) | CLI verify aceita arquivo ou pasta (todos os *.jsonl); segmento cuja 1a linha encadeia fora do arquivo vira AVISO `continuidade nao verificada` (D05), nao problema; CI: passo informativo `Check Builders log chains` (continue-on-error)",
       "ata": "DHR-LOGS-AC-001",
-      "verificado_em": "2026-11-01: tests/test_log_ac.py (68 testes) no CI; F1 pré-testada com 4 mutações pegas e pareceres R1–R4 do Revisor"
+      "verificado_em": "2026-11-01: tests/test_log_ac.py (72 testes) no CI; verify de pasta no CI (informativo); F1 pre-testada com mutacoes e pareceres R1-R4 do Revisor"
     },
     {
       "id": "cfg.evento-ac-schema",
