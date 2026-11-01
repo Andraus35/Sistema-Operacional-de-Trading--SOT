@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-148
-previous: HO-2026-11-01-147
+handoff_id: HO-2026-11-01-149
+previous: HO-2026-11-01-148
 data: 2026-11-01
 branch: ccr-b7c09dc1-y4rafd
 base_commit: 0a3ef3c
@@ -17,6 +17,8 @@ anexo: null
 **Base: HO-140 da `main` (cópia em `docs/handoffs/HO-2026-11-01-140.md`) mesclada neste ramo; antecessor da cadeia do ramo = HO-136.** **Auditoria do pré-check do Especificador (PR #153, ramo `ccr-4bd4e8a0-d92lc7`; ordens de Andraus no chat, 2026-11-01):** relatório `governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md`. **INSTALADO ("Instalar", `DHR-PRE-ENTREGA-001`):** `scripts/pre_entrega.py` + `tests/test_pre_entrega.py` (selo em `GATE-MANIFEST.sha256` e `CODEOWNERS`; CI; `util.pre-entrega` no `MECANISMOS.json`) e P-F no `.claude/agents/especificador.md`. **Fluxo novo:** o Orquestrador roda `python scripts/pre_entrega.py specs/features/<SPEC>` e anexa o `pre-entrega.json` ao entregar ao Revisor; o Especificador segue sem Bash. **Decisão de Andraus: P-B e C-4 estreito "testar antes de instalar"** — protocolo de medição no fim de `PRE-ENTREGA/PROPOSTA-PRE-ENTREGA-2026-11-01.md`, roda no PRÓXIMO Plan que ele mandar abrir. Em `PRE-ENTREGA/` ficam como PROPOSTA (não instalados, 19 testes): `detectores_novos.py` (C-1a/C-1b úteis como informativos; **C-2 inviável**), `mutacao_pe.py`, `lint_autoprecheck.py` + catálogo. Medidas: detectores atuais 0/3 Médias da SPEC-049 Plan v1.0 (ganho do pré-gate = prova anexa e antecipação, não recall). **Merge do #153 só por ordem de Andraus** (muda selo e arquivo reservado: revisar o diff). *Cadeias próprias que colidiram com a `main`: HO-134..136 em `docs/handoffs/ramo-ccr-4bd4e8a0-d92lc7/`; HO-141..145 do ramo da auditoria em `docs/handoffs/ramo-ccr-d7f01e4e-c5qpb1/` (P11).*
 
 **Sessão ccr-b7c09dc1-y4rafd (2026-11-01, ordem de Andraus no chat):** diagnóstico de concorrência entre sessões (arquivos únicos compartilhados, HO sequencial, 9 ramos parados, controles só avisam) e **PROPOSTA nada aplicada** `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-CONCORRENCIA-DE-SESSOES-2026-11-01.md` (camadas B servidor → A estado compartilhado → C lock). Proteção da `main` NÃO verificada. Aplicar só por ordem expressa de Andraus.
+
+**Camada A pré-testada (Andraus: "avançar"; nada aplicado):** `governance/propostas/MELHORIAS-PROCESSO/CONCORRENCIA-DE-SESSOES/` (proposta + patch de handoff por ramo, 0 conflitos entre 2 ramos; mapa fora do Git exige não editar `build_map.py`, que é selado). Triagem dos ramos feita sem apagar: apagáveis só `ccr-599f6762-60qbvg` e `claude/amazing-fermat-dnbjtz`. Camada B: Andraus liga no GitHub (guia no chat).
 
 **Nenhuma Spec em redação.** Último fechamento: **SPEC-049** (abertura `DHR-SPEC049-001` + Plan v1.2 BASELINE `DHR-SPEC049-002`, sem BUILD). **Retrospectiva da SPEC-049 FEITA** em 2026-10-31 (`DHR-RETRO-002`; `loop_ledger.py --retro-check SPEC-049` = FEITA). Abrir outra Spec continua **só por ordem de Andraus**.
 
