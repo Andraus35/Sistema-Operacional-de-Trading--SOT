@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-135
-previous: HO-2026-11-01-134
+handoff_id: HO-2026-11-01-136
+previous: HO-2026-11-01-135
 data: 2026-11-01
 branch: ccr-4bd4e8a0-d92lc7
 base_commit: a62b95e
@@ -14,6 +14,8 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
+**Decisão de Andraus (chat, 2026-11-01): P-B e C-4 estreito "testar antes de instalar".** Protocolo de medição na seção final de `PRE-ENTREGA/PROPOSTA-PRE-ENTREGA-2026-11-01.md`; roda no PRÓXIMO Plan que ele mandar abrir (combinável com P10). Não abrir Spec só para isso. PR #153 segue sem mesclar.
+
 **P-B + C-4 escritos (ordem de Andraus, 2026-11-01), NÃO instalados** em `governance/propostas/MELHORIAS-PROCESSO/PRE-ENTREGA/` (`lint_autoprecheck.py`, `autoprecheck_catalogo.json`, `checks_ancorado` em `detectores_novos.py`; 19 testes OK). Medida na SPEC-049: Autopré-check hoje com 0/32 itens rastreados; com o rascunho, 13 provados pelo pré-gate + 12 ATESTADO a ancorar. **C-4 largo descartado** (455 alarmes); C-4 estreito = 0 falsos alarmes, mas o ✔ sem evidência (R1-M01) escapa. Instalar exige ordem + ata nova + selo + COE-14.
 
 **INSTALADO por ordem de Andraus ("Instalar", 2026-11-01; `DHR-PRE-ENTREGA-001`):** P-A `scripts/pre_entrega.py` + `tests/test_pre_entrega.py` (selado em `GATE-MANIFEST.sha256` e `CODEOWNERS`; passo no CI; `util.pre-entrega` em `MECANISMOS.json`) e P-F(1–5)+(6) no `.claude/agents/especificador.md` (carimbo RPSA alinhado). **Fluxo novo:** o Orquestrador roda `python scripts/pre_entrega.py specs/features/<SPEC>` e anexa o `pre-entrega.json` ao entregar ao Revisor; o Especificador segue sem Bash. Bloqueantes = os do CI; detectores informativos. **Não instalados (propostas):** `detectores_novos.py` (C-2 inviável), `mutacao_pe.py`, P-B, P-D. Suíte 427 OK. **Medir:** Médias do R1 com/sem pré-gate em 5 rodadas. PR #153 segue **sem mesclar** (mesclar só por ordem dele).

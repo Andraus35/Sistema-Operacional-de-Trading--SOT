@@ -52,3 +52,11 @@ Arquivos: `autoprecheck_catalogo.json` (32 caixas do §7/§7-bis: 16 tipo D com 
 - **Versão estreita adotada:** ID da *própria família* da Spec (a mais frequente no Plan) citado num ✔ e ausente do Plan. **0 falsos alarmes nos 14 baselines**; pega o defeito plantado M5 (ID inexistente). **Mas o caso que mais importa — ✔ sem nenhuma evidência (M6, o achado R1-M01 do Revisor) — ESCAPA**, e 0 achados nas 3 versões reais da SPEC-049. Esse caso só se resolve por evidência por linha (P-B no próprio `checks.md`) e por revisão humana; não por detector de âncora.
 
 **Para instalar (só por ordem de Andraus, ata nova):** mover `lint_autoprecheck.py` + catálogo para `scripts/` e os testes para `tests/`; selar em `GATE-MANIFEST.sha256` e CODEOWNERS; `MECANISMOS.json` (COE-14); incluir o rascunho no fluxo do Orquestrador; decidir os 100 caracteres. C-4 estreito entra como informativo em `pre_entrega.py` (hoje fora dele).
+
+## Decisão de Andraus (chat, 2026-11-01): "Testar antes de instalar" — protocolo de medição
+P-B e C-4 estreito **não são instalados** até haver medida em rodada real. Gatilho: o próximo Plan que Andraus mandar abrir (o mesmo do experimento P10, se ele quiser combinar). Protocolo, para o Orquestrador:
+1. Antes de cada entrega ao Revisor: `python scripts/pre_entrega.py specs/features/<SPEC>` e anexar o `pre-entrega.json`; zerar bloqueantes.
+2. Gerar o rascunho (`lint_autoprecheck.py … --template`) e preencher só os itens ATESTADO; rodar o linter. Anotar quantos itens exigiram âncora e quantos o linter reprovou.
+3. Anotar por rodada: Médias/Menores do parecer; quantos **o pré-gate e o linter já tinham acusado** antes (acerto) e quantos escaparam (recall real); alarmes que não eram defeito (falso alarme).
+4. Comparar o R1 com a base histórica (SPEC-049 Plan R1 = 3 Médias, ≈1,39 M tokens em 3 rodadas; SPEC-048 Plan R1 = 3 Médias) — n pequeno, declarar como tal.
+5. Critério de instalar (proposto; Andraus decide): o pré-gate+linter acusaram ≥1 Média real antes do Revisor **e** falso alarme ≤ 2 por rodada; senão, rever o catálogo antes de selar.
