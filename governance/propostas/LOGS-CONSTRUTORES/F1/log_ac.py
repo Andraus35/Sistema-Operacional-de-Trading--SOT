@@ -237,8 +237,8 @@ def acrescenta(arquivo, ev, camada=None, continua_de=None):
 
 
 def emite_seguro(arquivo, ev, camada=None, canal_warn="arquivo", continua_de=None):
-    """Para hooks de POLITICA: NUNCA levanta, NUNCA altera a decisao (A01). Devolve (ok, motivo). Falha => WARN em stderr
-    (canal nao bloqueante; A12). Tenta o evento minimo (`saneia`) antes de desistir."""
+    """Para hooks de POLITICA: NUNCA levanta, NUNCA altera a decisao (A01). Devolve (ok, motivo). Falha => WARN em arquivo
+    (padrao canal_warn="arquivo"; "stderr" so em hook sem exit 2; A12). Tenta o evento minimo (`saneia`) antes de desistir."""
     try:
         try:
             return True, acrescenta(arquivo, ev, camada, continua_de)["hash"]
