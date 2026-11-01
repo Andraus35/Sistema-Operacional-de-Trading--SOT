@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-143
-previous: HO-2026-11-01-142
+handoff_id: HO-2026-11-01-144
+previous: HO-2026-11-01-143
 data: 2026-11-01
 branch: ccr-4bd4e8a0-d92lc7
 base_commit: 726c67a
@@ -14,6 +14,8 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
+**A4 (auditoria de burocracia) — proposta medida escrita, NADA aplicado** (`governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-A4-PROPORCIONALIDADE-ABERTURA-PLAN-2026-11-01.md`): as 14 Specs feitas são todas HIGH/CRITICAL e o ROADMAP tem 1 slot MEDIUM em 16 — o A4 como escrito atingiria ≈ 1 Spec e exigiria emenda a `atomic-spec §15`/ROADMAP §23. **Recomendação: A4-b** — estender a regra de parada do P10 à abertura (≈ 39 % dos tokens da SPEC-049) e medir no próximo Plan. Decisões de Andraus pendentes: A7 e A4.
+
 **A7 (auditoria de burocracia) — proposta medida escrita, NADA aplicado** (`governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-A7-LOG-UNICO-DE-DECISOES-2026-11-01.md`): 159 atas (8.222 linhas); só ≈ 8 são puramente operacionais (~3 %); o log único exigiria emenda ao `AGENTS §10`, mudança em `check_handoff` HO-06 (selado) e novo detector. **Recomendação: A7-lite (modelo de ata curta) ou nada**; decisão de Andraus.
 
 **Base: HO-140 da `main` (cópia em `docs/handoffs/HO-2026-11-01-140.md`) mesclada neste ramo; antecessor da cadeia do ramo = HO-136.** **Auditoria do pré-check do Especificador (PR #153, ramo `ccr-4bd4e8a0-d92lc7`; ordens de Andraus no chat, 2026-11-01):** relatório `governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md`. **INSTALADO ("Instalar", `DHR-PRE-ENTREGA-001`):** `scripts/pre_entrega.py` + `tests/test_pre_entrega.py` (selo em `GATE-MANIFEST.sha256` e `CODEOWNERS`; CI; `util.pre-entrega` no `MECANISMOS.json`) e P-F no `.claude/agents/especificador.md`. **Fluxo novo:** o Orquestrador roda `python scripts/pre_entrega.py specs/features/<SPEC>` e anexa o `pre-entrega.json` ao entregar ao Revisor; o Especificador segue sem Bash. **Decisão de Andraus: P-B e C-4 estreito "testar antes de instalar"** — protocolo de medição no fim de `PRE-ENTREGA/PROPOSTA-PRE-ENTREGA-2026-11-01.md`, roda no PRÓXIMO Plan que ele mandar abrir. Em `PRE-ENTREGA/` ficam como PROPOSTA (não instalados, 19 testes): `detectores_novos.py` (C-1a/C-1b úteis como informativos; **C-2 inviável**), `mutacao_pe.py`, `lint_autoprecheck.py` + catálogo. Medidas: detectores atuais 0/3 Médias da SPEC-049 Plan v1.0 (ganho do pré-gate = prova anexa e antecipação, não recall). **PR #153 MESCLADO a comando de Andraus ("Mesclar", AskUserQuestion 2026-11-01): merge commit `726c67a`, CI verde, head travado em `c12747a`; ramo reiniciado de `origin/main`.** Em vigor: `pre_entrega.py` (selado) e a emenda ao `especificador.md`. Não em vigor: P-B/C-4 (aguardam a medição). *Cadeia própria HO-134..136 deste ramo (colidiu com a `main`): `docs/handoffs/ramo-ccr-4bd4e8a0-d92lc7/`.*
