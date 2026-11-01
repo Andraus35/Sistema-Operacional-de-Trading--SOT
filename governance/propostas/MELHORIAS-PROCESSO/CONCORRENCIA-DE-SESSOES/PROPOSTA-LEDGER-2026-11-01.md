@@ -11,7 +11,7 @@
 1. `git rm --cached governance/aprendizado/LEDGER-ACHADOS.md` e `.gitignore` do arquivo (mesmo padrão do `mapa-projeto.json`, A2.1).
 2. Nenhum script muda: `loop_ledger.py` gera sob demanda (`--stdout`/padrão) e `--retro-check` já não lê o ledger.
 3. `AGENTS.md` §12 passo 2: trocar "rodar e commitar o ledger" por "o ledger é gerado; o parecer é a fonte" (ata de Andraus). O passo 4 (3 categorias recorrentes no HANDOFF) continua usando a saída do script.
-4. `loop_ledger.py --check` perde sentido enquanto o arquivo não é versionado; não existe chamada dele em `ci.yml`/hooks (verificado por busca), então nada quebra.
+4. `loop_ledger.py --check` perde sentido enquanto o arquivo não é versionado. **Correção (2026-11-01):** a versão anterior deste item dizia que não havia chamada em `ci.yml`; havia, como passo informativo (`continue-on-error`). Na aplicação (PR #164) ele passou a `--stdout`. Nada bloqueante quebrava.
 
 ## 3. Pré-teste (`TESTE-LEDGER-gerado-vs-commitado.sh`, repositório temporário, scripts e pareceres reais)
 Dois ramos, cada um com um parecer diferente da SPEC-048 (R3 e R4) e o ledger regerado:

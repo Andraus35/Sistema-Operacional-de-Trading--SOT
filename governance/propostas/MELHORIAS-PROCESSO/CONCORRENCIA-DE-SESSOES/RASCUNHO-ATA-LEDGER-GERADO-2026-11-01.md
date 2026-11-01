@@ -22,7 +22,7 @@
 3. `MECANISMOS.json`: nota em `loop_ledger` (COE-14). Nenhum script muda.
 
 ## 3. Evidência `[FATO]`
-Teste com 2 pareceres reais da SPEC-048 em dois ramos: ledger commitado → `CONFLICT`; ledger gerado → merge limpo e duas gerações idênticas. Não medido nos ~19 pareceres. Nenhuma chamada do `--check` do ledger em `ci.yml` ou hooks.
+Teste com 2 pareceres reais da SPEC-048 em dois ramos: ledger commitado → `CONFLICT`; ledger gerado → merge limpo e duas gerações idênticas. Não medido nos ~19 pareceres. **Correção:** `ci.yml` chamava `loop_ledger.py --check` (informativo); a ata aplicada (PR #164) o trocou por geração.
 
 ## 4. Registro
 - [ ] Assinatura de Andraus · [ ] aplicar em PR · [ ] CATALOGO
