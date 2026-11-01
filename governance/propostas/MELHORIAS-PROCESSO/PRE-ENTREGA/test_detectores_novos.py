@@ -27,3 +27,12 @@ class T(unittest.TestCase):
         b = "| 1.0 | 2026-10-31 | WRV_AA_BB |\nx WRV_AA_BB\n"; v = "| 1.1 | 2026-10-31 | WRV_CC_DD |\nx WRV_CC_DD\n"
         self.assertEqual(n.token_antigo_presente(b, v), [])
 if __name__ == "__main__": unittest.main()
+
+class TC4(unittest.TestCase):
+    PLAN = "- RULE-WRV-001 e RULE-WRV-002; BASpec-WRV-001; ENF-02\n"
+    def test_limpo(self):
+        self.assertEqual(n.checks_ancorado("| F1 | RULE-WRV-001; ENF-02; RULE-ABC-009 | ✔ |\n", self.PLAN), [])
+    def test_id_proprio_inexistente(self):
+        self.assertEqual(len(n.checks_ancorado("| F1 | RULE-WRV-099 | ✔ |\n", self.PLAN)), 1)
+    def test_sem_marca_nao_conta(self):
+        self.assertEqual(n.checks_ancorado("| F1 | RULE-WRV-099 | pendente |\n", self.PLAN), [])

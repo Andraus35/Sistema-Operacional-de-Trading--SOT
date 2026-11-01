@@ -13,7 +13,7 @@ def todos(plan, checks, base=None, irmaos=None):
          "gate_extra.decisoes": lambda: g.decisoes_abertas_fechadas(plan), "gate_extra.assertivas": lambda: g.assertivas_checks(checks, plan),
          "gate_extra.sem_assertiva": lambda: g.corrigidos_sem_assertiva(checks), "rev.id_norma": lambda: r.id_norma_inexistente(plan, ROOT),
          "rev.contagem": lambda: r.contagem_declarada(plan), "rev.valor_fonte": lambda: r.valor_fonte(plan, ROOT),
-         "NOVO C-1a codigos": lambda: n.codigos_sem_definicao(plan), "NOVO C-1b recusa": lambda: n.recusa_sem_codigo(plan)}
+         "NOVO C-1a codigos": lambda: n.codigos_sem_definicao(plan), "NOVO C-1b recusa": lambda: n.recusa_sem_codigo(plan), "NOVO C-4 checks": lambda: n.checks_ancorado(checks, plan)}
     if base is not None:
         d["NOVO C-2 token"] = lambda: n.token_antigo_presente(base, plan, irmaos)
     out = {}
@@ -40,7 +40,8 @@ def mutantes(plan, checks):
     base = plan
     mp = plan.replace(num.group(0), "9.999", 1) if num else plan
     m["M4 troca um número em 1 local (propagação parcial)"] = (mp, checks, base)
-    m["M5 ✔ novo em checks.md sem evidência"] = (plan, checks + "\n| **F99** Recusa sem código | ✔ |\n", None)
+    m["M5 ✔ novo em checks.md citando ID da Spec que não existe"] = (plan, checks + "\n| **F99** Recusa sem código | RULE-WRV-999 | ✔ |\n", None)
+    m["M6 ✔ novo em checks.md sem evidência nenhuma (sem ID)"] = (plan, checks + "\n| **F98** Recusa sem código | por leitura | ✔ |\n", None)
     return m
 
 

@@ -96,3 +96,29 @@ def token_antigo_presente(base, novo, irmaos=None):
         if locais:
             ach.append((0, f"'{x}' foi trocado por '{y}' (em «{ctx}») mas ainda ocorre em {len(locais)} local(is): {', '.join(locais[:5])}"))
     return ach
+
+
+# ---------------------------------------------------------------------------------------------------- C-4
+ID_PROPRIO = re.compile(r"\b(?:RULE|BASpec|EC|ADV|INV)-([A-Z]{2,5})-(\d+[A-Za-z]?)\b")
+OK_MARCA = re.compile(r"✔|\bPASS\b|✅")
+
+
+def checks_ancorado(checks_texto, plan_texto):
+    """C-4 (versão ESTREITA): linha ✔/PASS do checks.md cita ID da PRÓPRIA família da Spec (a família mais frequente de
+    `RULE|BASpec|EC|ADV|INV-<FAM>-nnn` DEFINIDA no Plan) que NÃO existe no Plan. Ignora ENF/CC/STRUCT (método), placeholders
+    `0NN` e IDs de outra família (herança). Versão larga ('✔ sem âncora') foi medida e DESCARTADA: 455 alarmes em baselines."""
+    fam = {}
+    for f, _ in ID_PROPRIO.findall(plan_texto):
+        fam[f] = fam.get(f, 0) + 1
+    if not fam:
+        return []
+    propria = max(fam, key=fam.get)
+    existentes = set(re.findall(r"\b(?:RULE|BASpec|EC|ADV|INV)-" + propria + r"-\d+[A-Za-z]?\b", plan_texto))
+    ach = []
+    for i, ln in enumerate(checks_texto.splitlines(), 1):
+        if not ln.lstrip().startswith("|") or not OK_MARCA.search(ln):
+            continue
+        for m in re.finditer(r"\b(?:RULE|BASpec|EC|ADV|INV)-" + propria + r"-\d+[A-Za-z]?\b", ln):
+            if m.group(0) not in existentes:
+                ach.append((i, f"âncora {m.group(0)} (família {propria}) citada num ✔ do checks.md não existe no Plan"))
+    return ach
