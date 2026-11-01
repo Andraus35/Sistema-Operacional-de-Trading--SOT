@@ -1,0 +1,3 @@
+# ARQUIVADO — revisao-independente/ (2026-11-01)
+
+Procedimento ad hoc de **revisão independente por outro modelo** (critério de independência do nível 3), usado 2 vezes na SPEC-006 (ramo `spec006-plan`). Sem consumidor no CI, hooks, `package.json` ou scripts (`PROPOSTA-A10-…`, medido em 2026-11-01). **Nada foi apagado ou alterado** (INV-07): `LEIA-ME.txt` e `PEDIDO-COPILOT-COM-REPO.txt` mantêm o mesmo sha256 que tinham em `revisao-independente/` (`534d5325…` e `68910a26…`). Caminho antigo → novo: `revisao-independente/` → `docs/_legacy/revisao-independente/`. Ordem de Andraus: AskUserQuestion, 2026-11-01 ("Aplicar A5-O1 e arquivar revisao-independente"), ata `DHR-A5O1-001`.
