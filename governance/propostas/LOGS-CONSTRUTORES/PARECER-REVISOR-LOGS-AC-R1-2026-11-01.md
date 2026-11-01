@@ -39,3 +39,9 @@ A13|MENOR|C07|regex com $ aceita newline final em ts/sha256; chaves de metrics s
 -->
 
 <!-- FICHA-M {"achados":[]} -->
+
+## Nota do Orquestrador — guarda pós-revisor (DHR-AUDITOR-EXTERNO-018), 2026-11-01
+A guarda acusou G1 e G3 sobre este parecer (o hook do subagente não é honrado em nuvem). Conferência ao vivo:
+- **G3 (citações) — falso positivo do parser:** `scripts/andraus-ask-mark.js:30` contém `fs.writeFileSync(file, JSON.stringify(st));`; `scripts/andraus-ask-guard.js:183` contém `fs.writeFileSync(file, JSON.stringify(estado))`; `.claude/settings.json:18-19` contém `"command": "node scripts/roteador-modelos.js"` e `"timeout": 15`. As frases "registra o hook com" e a lista "ask-mark.js:30, ask-guard.js:183" eram prosa do relatório, não trechos literais. Nenhum achado é retirado.
+- **G1 (núcleo do Passo 0):** o próprio Revisor declarou o Passo 0 **parcial**. O Orquestrador conferiu o que a proposta usa dessas fontes: `ROADMAP.md` §18 (SPEC-040/041 "Indicativo — não aberta", linhas 365–377 e 546–547), `backlog/RMR-001_Painel_Backlog.md` (BL-034 linha 141; BL-038), `atomic-spec.md` (ENF-03 linhas 95 e 269) e `INV-04` em `atomic-spec.md`/`governance/RULES.md`. Sem divergência. Não foi feita releitura integral do ROADMAP/atomic-spec/RULES; a próxima rodada (delta) deve declarar o escopo do Passo 0.
+- Rodar `python scripts/revisor_gate.py` no `plan.md` não se aplica: o alvo é proposta de processo, não Spec (o `GATE-D: PASSOU_D` já foi anotado no pedido).
