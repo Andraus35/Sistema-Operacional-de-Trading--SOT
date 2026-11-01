@@ -49,3 +49,6 @@ docs/mapa/mapa-projeto.json
 
 # Ledger do loop dos construtores: saída gerada por scripts/loop_ledger.py (DHR-LEDGER-GERADO-001); o parecer é a fonte
 governance/aprendizado/LEDGER-ACHADOS.md
+
+# Mapa do projeto: saída gerada por scripts/build_map.py (DHR-MAPA-GERADO-001); o CI gera antes do --check
+docs/mapa/MAPA-PROJETO.md

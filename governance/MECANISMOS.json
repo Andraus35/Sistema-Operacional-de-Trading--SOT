@@ -333,7 +333,8 @@
       "tipo": "utilitario",
       "estado": "ativo",
       "enforca": "Gera o mapa do projeto (BL-019)",
-      "verificado_em": "2026-11-01 (A2.1): --check lê o digest do MAPA-PROJETO.md; mapa-projeto.json é artefato local ignorado; tests/test_build_map.py 11/11. Antes: 2026-10-18 ao vivo"
+      "verificado_em": "2026-11-01 (A2.1): --check lê o digest do MAPA-PROJETO.md; mapa-projeto.json é artefato local ignorado; tests/test_build_map.py 11/11. Antes: 2026-10-18 ao vivo",
+      "nota": "DHR-MAPA-GERADO-001 (2026-11-01): docs/mapa/MAPA-PROJETO.md deixou de ser versionado (.gitignore); o CI gera o mapa antes do --check (passo 'Generate project map') e o pre-commit gera e confere."
     },
     {
       "id": "util.rpsa-auto",
