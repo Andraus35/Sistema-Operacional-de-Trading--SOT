@@ -172,3 +172,5 @@ Condição para a próxima revisão (delta):
 
 ## 8. Encaminhamento
 Devolver ao Especificador (classe O, `PARECER:` + `FICHA:` classificando D01–D08). O Orquestrador aplica D06 pela FICHA-M. Nada vai à homologação do Andraus ainda.
+## Nota do Orquestrador — guarda pós-revisor sobre a R4 (agente a7ff6732…), 2026-11-01
+Três "G3" sobre o D01: `gate-check.js:9`, `hook-io.js:23` e `gate-check.js:9`. As frases acusadas ("Essa função devolve apenas…", a lista de fontes) são prosa do relatório, não trechos literais. Os fatos **conferem**: `scripts/gate-check.js:9` contém `const toolInput = readToolInput();`; `scripts/hook-io.js:23-41` define `readToolInput()`, cuja linha 28 é `return payload.tool_input || payload;` — o `session_id` do payload é descartado. O D01 (Média) é, portanto, **verdadeiro** e segue como pendência da F2b. Nenhum achado é retirado.
