@@ -1,5 +1,6 @@
 import json, os, tempfile, threading, unittest, io, contextlib
 from pathlib import Path
+os.environ.setdefault("LOG_AC_FALHAS", os.path.join(tempfile.gettempdir(), "log-ac-falhas-teste.log"))  # testes nunca poluem o log de falhas real
 import log_ac as L
 
 BASE = {"ts": "2026-11-01T12:00:00Z", "event": "agent.run", "family": "AC", "session_id": "s1", "run_id": "r1",
@@ -168,12 +169,12 @@ class T(unittest.TestCase):
     def test_r2_canal_warn_arquivo_sem_stderr(self):
         import unittest.mock as m
         with tempfile.TemporaryDirectory() as d:
-            os.environ["LOG_AC_FALHAS"] = str(Path(d) / "falhas.log")
+            antigo = os.environ.get("LOG_AC_FALHAS"); os.environ["LOG_AC_FALHAS"] = str(Path(d) / "falhas.log")
             try:
                 with m.patch.object(L, "acrescenta", side_effect=RuntimeError()), contextlib.redirect_stderr(io.StringIO()) as err:
                     ok, _ = L.emite_seguro(Path(d) / "x.jsonl", ev(), canal_warn="arquivo")
                 self.assertFalse(ok); self.assertEqual(err.getvalue(), ""); self.assertIn("WARN", (Path(d) / "falhas.log").read_text())
-            finally: del os.environ["LOG_AC_FALHAS"]
+            finally: os.environ["LOG_AC_FALHAS"] = antigo if antigo is not None else os.path.join(tempfile.gettempdir(), "log-ac-falhas-teste.log")
     def test_r2_cli_emit_e_verify(self):
         import subprocess, sys as S
         with tempfile.TemporaryDirectory() as d:

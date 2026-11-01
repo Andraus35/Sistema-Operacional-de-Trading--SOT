@@ -640,6 +640,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registra decisões de processo e texto do roteiro de retrospectivas; não toca agentes de construção, AGENTS.md nem método."
+    },
+    {
+      "id": "DHR-LOGS-AC-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Log dos Construtores: novo modulo, roteador e telemetria; nao altera texto de agente de construcao nem metodo."
     }
   ]
 }
