@@ -70,6 +70,17 @@ class CheckRefs(unittest.TestCase):
         finally:
             repo.close()
 
+    def test_ledger_gerado_nao_e_caminho_quebrado(self):
+        """DHR-LEDGER-GERADO-001: o ledger é gerado e não versionado; citá-lo em doc vivo não pode ser ERRO."""
+        repo = Repo({**BASE, "governance/viva.md": "Leia `governance/aprendizado/LEDGER-ACHADOS.md` com --stdout.\n",
+                     "governance/outra.md": "Veja `governance/aprendizado/OUTRO-INEXISTENTE.md`.\n"})
+        try:
+            rc, out = repo.run()
+            self.assertNotIn("LEDGER-ACHADOS", out)
+            self.assertIn("OUTRO-INEXISTENTE", out)
+        finally:
+            repo.close()
+
     def test_bl_inexistente_em_doc_vivo_e_erro(self):
         (code, out), _ = self.go({"backlog/x.md": "Depende de BL-099."})
         self.assertEqual(code, 1)

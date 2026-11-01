@@ -12,7 +12,7 @@
 | 5 | A8 = BL-047 (modelo fixo por agente) | normativa | **Adiar** até medir não-inferioridade |
 | 6 | Pendências de Spec: erratum F2 da SPEC-020 (registrado PENDENTE no BL-017, `DHR-SPEC020-003`), `CATALOGO`/RMR-001, `CONFLICT-MAP`, status do `ERRATUM-SPEC019-001` (NÃO CONFIRMADO) | normativa | **Adiar** (exigem julgamento dele) |
 | 7 | Higiene de nomes em `reference/` e subpastas de `governance/` (B7, B9) | normativa, risco médio-alto | **Adiar**: só com script e prova de referências |
-| 8 | A2.3: tags git por handoff no lugar das cópias (`PROPOSTA-A2-3-TAGS-DE-HANDOFF-2026-11-01.md`) | operacional, risco médio | **Recusar tags** (clone raso quebra o HO-04); **aprovar** que o Orquestrador pré-teste o utilitário `novo_handoff` |
+| 8 | A2.3: tags git por handoff no lugar das cópias (`PROPOSTA-A2-3-TAGS-DE-HANDOFF-2026-11-01.md`) | operacional, risco médio | **Recusar tags** (clone raso quebra o HO-04); `novo_handoff` **já PRÉ-TESTADO** (8 testes; 4/5 mutantes mortos, 1 equivalente; `EQUIVALENCIA/A2/novo_handoff/`), **não instalado** — **aprovar** instalar (entra com `MECANISMOS.json`, COE-14) ou adiar |
 
 ## B. Esperando evento (nada a decidir agora)
 P10 (experimento da regra de parada) — no **próximo Plan** que ele mandar abrir. **BL-043** (F2b do log dos Construtores, auditoria do código da F2a, decisões (e)/(g)/(l)) e **BL-044..047** — voltam quando a **SPEC-008** abrir. Mecanismo de assinatura antes de BUILD (`DHR-SPEC007-007`).
