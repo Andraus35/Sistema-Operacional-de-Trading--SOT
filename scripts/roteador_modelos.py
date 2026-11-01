@@ -444,6 +444,43 @@ def registrar(entrada, decisao, motivo):
         pass
 
 
+def _warn_minimo(exc):
+    """WARN sem depender de log_ac (R4/C05): o roteador nunca pode perder a decisao por causa do log."""
+    try:
+        d = ROOT / ".telemetria"; d.mkdir(parents=True, exist_ok=True)
+        with open(d / "log-ac-falhas.log", "a", encoding="utf-8") as f:
+            f.write(time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()) + f" roteador WARN: log_ac indisponivel ({type(exc).__name__})\n")
+    except BaseException:
+        pass
+
+
+def _emitir_log(ev, entrada, decisao, motivo):
+    """DHR-LOGS-AC-001 (F2): evento policy.decision no log dos Construtores. So roda DEPOIS de a decisao estar impressa;
+    isolado: qualquer falha vira WARN e nunca altera a decisao. L1 recebe toda decisao; L2 (git) recebe o deny, sem texto livre."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import hashlib
+        import log_ac
+        deny = decisao == "negar"
+        m = re.search(r"R-[A-Z0-9-]+", motivo or "")
+        sid = str(ev.get("session_id") or "sem-sessao")
+        base = {"ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "event": "policy.decision", "family": "AC",
+                "agent_id": "hook:roteador", "severity": "AUDIT" if deny else "INFO", "status": "DENIED" if deny else "ALLOWED",
+                "operation": "policy.decision", "policy_id": m.group(0) if m else "R-ROTEADOR",
+                "policy_version": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12],
+                "decision": "deny" if deny else "allow", "enforcement_point": "hook:roteador",
+                "task_ref": str(entrada.get("subagent_type") or entrada.get("to") or "")[:100] or None,
+                "model": str(entrada.get("model"))[:100] if entrada.get("model") else None}
+        e1 = log_ac.completa_ids(dict(base, session_id=sid, reason=(motivo or "")[:300]), ev)
+        raiz = log_ac.raiz_repo()
+        log_ac.emite_seguro(raiz / ".telemetria" / "eventos.jsonl", e1, "L1")
+        if deny:
+            e2 = dict(e1, session_id=log_ac.hash_sessao(sid), reason=None)
+            log_ac.emite_seguro(raiz / "governance" / "logs" / "L2" / (log_ac.nome_segmento(sid) + ".jsonl"), e2, "L2")
+    except BaseException as exc:
+        _warn_minimo(exc)
+
+
 def hook():
     try:
         ev = json.loads(sys.stdin.read() or "{}")
@@ -461,6 +498,11 @@ def hook():
     if decisao == "negar":
         print(json.dumps({"hookSpecificOutput": {"hookEventName": "PreToolUse", "permissionDecision": "deny",
                                                  "permissionDecisionReason": "ROTEADOR DE MODELOS (DHR-ROTEAMENTO-003) — " + motivo}}, ensure_ascii=False))
+    try:
+        sys.stdout.flush()
+    except Exception:
+        pass
+    _emitir_log(ev, entrada, decisao, motivo)  # DHR-LOGS-AC-001: depois da decisao e isolado (nunca a altera)
     return 0
 
 

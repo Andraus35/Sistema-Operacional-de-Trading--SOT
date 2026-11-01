@@ -69,14 +69,48 @@ def extrair(ev):
     return r
 
 
+def _forma_payload(ev):
+    """B05 (DHR-LOGS-AC-001): so os NOMES das chaves do payload real (nunca valores), para conferir tool_use_id/prompt_id/agent_id/session_id."""
+    d = SAIDA.parent / "payload-forma.jsonl"
+    if d.exists() and d.stat().st_size > 20000:
+        return
+    forma = {"t": int(time.time()), "evento": ev.get("hook_event_name"), "tool": ev.get("tool_name"), "chaves": sorted(ev.keys()),
+             "tool_input": sorted((ev.get("tool_input") or {}).keys()) if isinstance(ev.get("tool_input"), dict) else None,
+             "tool_response": sorted(ev["tool_response"].keys()) if isinstance(ev.get("tool_response"), dict) else type(ev.get("tool_response")).__name__}
+    with open(d, "a", encoding="utf-8") as f:
+        f.write(json.dumps(forma, ensure_ascii=False) + "\n")
+
+
+def _emitir_log(ev, reg):
+    """DHR-LOGS-AC-001 (F2): agent.run no esquema do log dos Construtores (L1, local). Isolado: falha nunca afeta a telemetria legada."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import log_ac
+    def i(v):
+        return int(v) if isinstance(v, (int, float)) and not isinstance(v, bool) else None
+    e = {"ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "event": "agent.run", "family": "AC", "severity": "INFO",
+         "status": "SUCCEEDED", "operation": "agent.run", "agent_id": str(reg.get("agente") or "desconhecido")[:128],
+         "model": str(reg["model"])[:128] if reg.get("model") else None, "class": reg.get("classe"), "task_ref": reg.get("spec"),
+         "metrics": {"in": i(reg.get("in")), "out": i(reg.get("out")), "cache_read": i(reg.get("cache_read")),
+                     "cache_create": i(reg.get("cache_create")), "total": i(reg.get("total")), "duration_ms": i(reg.get("duracao_ms")),
+                     "tool_uses": i(reg.get("tool_uses"))}}
+    e = log_ac.completa_ids(e, ev)
+    log_ac.emite_seguro(log_ac.raiz_repo() / ".telemetria" / "eventos.jsonl", e, "L1")
+
+
 def hook():
     try:
         ev = json.loads(sys.stdin.read() or "{}")
         if ev.get("tool_name") not in ("Agent", "Task"):
             return 0
         SAIDA.parent.mkdir(parents=True, exist_ok=True)
+        reg = extrair(ev)
         with open(SAIDA, "a", encoding="utf-8") as f:
-            f.write(json.dumps(extrair(ev), ensure_ascii=False) + "\n")
+            f.write(json.dumps(reg, ensure_ascii=False) + "\n")
+        for f_ in (_forma_payload, ):
+            try: f_(ev)
+            except BaseException: pass
+        try: _emitir_log(ev, reg)
+        except BaseException: pass
     except Exception:
         pass
     return 0

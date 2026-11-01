@@ -104,7 +104,7 @@ jobs:
 
       # Detectores D adicionais do gate (DHR-AUDITOR-EXTERNO-017): calibração nos Plans homologados + mutação; guarda do fim do Revisor.
       - name: Revisor detectors and guard tests
-        run: python -m unittest tests/test_revisor_detectores.py tests/test_revisor_guard.py tests/test_revisor_posguarda.py tests/test_roteador_modelos.py tests/test_telemetria_tokens.py
+        run: python -m unittest tests/test_revisor_detectores.py tests/test_revisor_guard.py tests/test_revisor_posguarda.py tests/test_roteador_modelos.py tests/test_telemetria_tokens.py tests/test_log_ac.py tests/test_roteador_log_ac.py tests/test_telemetria_log_ac.py
       # Detectores D do gate do Revisor (auditoria independente SPEC-006; bloqueante: se falhar, o gate voltou a deixar passar o que a auditoria provou que passava).
       - name: Gate extra tests
         run: python -m unittest tests/test_gate_extra.py
@@ -132,6 +132,10 @@ jobs:
       # Pré-gate unificado (DHR-PRE-ENTREGA-001; bloqueante: se o teste falhar, o pré-gate deixou de compor os gates).
       - name: Pre-entrega tests
         run: python -m unittest tests/test_pre_entrega.py
+
+      # Guarda de fatos defasados nos agentes (DHR-A9TESTE-001; bloqueante: lista fechada de frases já corrigidas pelo repositório).
+      - name: Agentes sem fatos defasados
+        run: python -m unittest tests/test_agentes_sem_fatos_defasados.py
 
       # Vinculação de backlog por abertura (DHR-BACKLOG-ABERTURA-001; bloqueante: se falhar, a regra deixou de ser determinística).
       - name: Backlog abertura tests
