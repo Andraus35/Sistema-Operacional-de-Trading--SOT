@@ -4,7 +4,7 @@
 
 ## 1. O que sairia do uso vivo (medido)
 - `.github/workflows/auditor-externo.yml` (326 linhas) → `docs/_legacy/auditor-externo/`.
-- `scripts/route_aex.py` (115) + `tests/test_route_aex.py` (170) + o passo `python -m unittest tests/test_route_aex.py` em `ci.yml` (l.163).
+- `route_aex.py` (115) + `test_route_aex.py` (170) + o passo `unittest` do roteador em `ci.yml` (l.163).
 - `governance/propostas/AUDITOR-EXTERNO/` (316 KB, 10 arquivos + `kit/`).
 - `MECANISMOS.json`: `util.route-aex` e `wf.auditor-externo` (hoje `pausado`) passam a `legado`.
 - `AGENTS.md` §9 (texto lido por todo agente) → uma linha de ponteiro para o arquivo morto, **arquivo reservado: só com ordem expressa**; `GLOSSARIO.md` cita o termo.
