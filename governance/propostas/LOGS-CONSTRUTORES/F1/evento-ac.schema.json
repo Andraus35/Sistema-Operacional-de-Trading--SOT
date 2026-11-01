@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Evento de log dos agentes Construtores (AC) — v1 PROPOSTA",
-  "description": "Metadados apenas (nunca texto de prompt/parecer). Proposta F1; nao instalado; nao normativo. Nomes convertiveis para OpenTelemetry GenAI (status Development). Ajustes da pesquisa PESQUISA-LOGS-AGENTES-2026-11-01: decisao no vocabulario do Claude Code; metricas so inteiras (subconjunto JCS RFC 8785); campos de caminho local proibidos.",
+  "description": "Metadados apenas (nunca texto de prompt/parecer). Proposta F1; nao instalado; nao normativo. Nomes convertiveis para OpenTelemetry GenAI (status Development). Ajustes da pesquisa PESQUISA-LOGS-AGENTES-2026-11-01: decisao no vocabulario do Claude Code; metricas so inteiras (subconjunto JCS RFC 8785); campos de caminho local proibidos. Revisao R1 (PARECER-REVISOR-LOGS-AC-R1): campos string com limite; metrics com chaves fechadas; path relativo ao repositorio; sessao em hash curto nas camadas L2/L3 (regra em log_ac.py).",
   "type": "object",
   "required": [
     "ts",
@@ -38,51 +38,60 @@
     },
     "session_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "maxLength": 128
     },
     "run_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "maxLength": 128
     },
     "parent_run_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "task_ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "agent_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "maxLength": 128
     },
     "agent_version": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "harness_version": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "model": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "class": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "severity": {
       "enum": [
@@ -96,17 +105,20 @@
     },
     "status": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "maxLength": 128
     },
     "operation": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "maxLength": 128
     },
     "policy_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "decision": {
       "enum": [
@@ -121,7 +133,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "reason": {
       "type": [
@@ -138,11 +151,50 @@
     },
     "metrics": {
       "type": "object",
-      "additionalProperties": {
-        "type": [
-          "integer",
-          "null"
-        ]
+      "additionalProperties": false,
+      "properties": {
+        "in": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "out": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "cache_read": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "cache_create": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "total": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "duration_ms": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "tool_uses": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
       }
     },
     "error": {
@@ -156,43 +208,51 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "hash": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "policy_version": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "redacted": {
       "type": "array",
+      "maxItems": 20,
       "items": {
-        "type": "string"
+        "type": "string",
+        "maxLength": 64
       }
     },
     "hook_agent_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "semconv_ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "provider": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     }
   },
   "definitions": {
@@ -208,7 +268,9 @@
       "additionalProperties": false,
       "properties": {
         "path": {
-          "type": "string"
+          "type": "string",
+          "maxLength": 300,
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\.\\.)[A-Za-z0-9_./-]+$"
         },
         "sha256": {
           "type": "string",
