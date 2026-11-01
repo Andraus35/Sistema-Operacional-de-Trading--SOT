@@ -162,9 +162,9 @@ jobs:
       - name: Merge ready tests
         run: python -m unittest tests/test_merge_ready.py
 
-      # Informativo (não bloqueia): ledger de achados desatualizado em relação aos pareceres.
-      - name: Loop ledger freshness (informative)
-        run: python scripts/loop_ledger.py --check
+      # Informativo (não bloqueia): o ledger de achados é GERADO, não versionado (DHR-LEDGER-GERADO-001); aqui só prova que a geração roda.
+      - name: Loop ledger generation (informative)
+        run: python scripts/loop_ledger.py --stdout > /dev/null
         continue-on-error: true
 
       # Testes da ferramenta de carimbos (bloqueante: se falhar, a ferramenta está quebrada).

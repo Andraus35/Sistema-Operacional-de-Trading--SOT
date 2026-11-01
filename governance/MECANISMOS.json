@@ -536,7 +536,7 @@
       "estado": "ativo",
       "enforca": "Coleta determinística de achados dos pareceres: recorrência por categoria, tendência de Médias por rodada, lacunas de prevenção (LOOP-001, 4Es)",
       "ata": "DHR-LOOP-001",
-      "nota": "Detector (ENF-03), classificação por palavra-chave indicativa; não promove nem fecha decisão aberta.",
+      "nota": "Detector (ENF-03), classificação por palavra-chave indicativa; não promove nem fecha decisão aberta. DHR-LEDGER-GERADO-001 (2026-11-01): o ledger passou a ser saída gerada e não versionada (.gitignore); o passo de CI virou geração informativa (--stdout).",
       "verificado_em": "2026-10-24: ao vivo — gerou governance/aprendizado/LEDGER-ACHADOS.md sobre 19 pareceres; tests/test_loop_ledger.py (7 testes) no CI"
     },
     {

@@ -705,6 +705,13 @@
       "motivo": "Uma frase de revisor.md (Short-circuit) passa a apontar o livro-razao RPSA em vez do CATALOGO; sem mudanca de metodo nem de fronteira."
     },
     {
+      "id": "DHR-LEDGER-GERADO-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda só se o ledger derivado é commitado; o método do loop não muda."
+    },
+    {
       "id": "DHR-A5O1-002",
       "data": "2026-11-01",
       "em_escopo": true,
