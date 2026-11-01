@@ -136,16 +136,15 @@ class T(unittest.TestCase):
             f = Path(d) / "l.jsonl"
             for exc in (ValueError("x"), KeyError("k"), RecursionError(), OSError("ro"), RuntimeError("r"), json.JSONDecodeError("m", "d", 0)):
                 with m.patch.object(L, "acrescenta", side_effect=exc), contextlib.redirect_stderr(io.StringIO()) as err:
-                    ok, motivo = L.emite_seguro(f, ev())
+                    ok, motivo = L.emite_seguro(f, ev(), canal_warn="stderr")
                 self.assertFalse(ok); self.assertIn("WARN", err.getvalue())
-    def test_r1_a01_pasta_somente_leitura(self):
+    def test_r1_a01_falha_de_os_open_nao_levanta(self):
+        import unittest.mock as m
         with tempfile.TemporaryDirectory() as d:
-            ro = Path(d) / "ro"; ro.mkdir(); os.chmod(ro, 0o500)
-            try:
-                with contextlib.redirect_stderr(io.StringIO()):
-                    ok, _ = L.emite_seguro(ro / "sub" / "l.jsonl", ev())
-                if os.geteuid() != 0: self.assertFalse(ok)
-            finally: os.chmod(ro, 0o700)
+            for exc in (PermissionError("ro"), OSError(28, "disco cheio")):
+                with m.patch("os.open", side_effect=exc), contextlib.redirect_stderr(io.StringIO()):
+                    ok, _ = L.emite_seguro(Path(d) / "l.jsonl", ev(), canal_warn="stderr")
+                self.assertFalse(ok)
     def test_r1_a01_emite_seguro_grava_evento_minimo(self):
         with tempfile.TemporaryDirectory() as d:
             f = Path(d) / "l.jsonl"
@@ -187,5 +186,80 @@ class T(unittest.TestCase):
     def test_r2_cli_emit_json_invalido_exit0(self):
         import subprocess, sys as S
         r = subprocess.run([S.executable, "-B", str(Path(L.__file__)), "emit", "x.jsonl", "{nao"], capture_output=True, text=True); self.assertEqual(r.returncode, 0)
+
+    # --- R3: achados B01..B13 do parecer R2 ---
+    def test_r3_b01_trava_presa_nao_bloqueia(self):
+        import subprocess, sys as S, time
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "l.jsonl"; L.acrescenta(f, ev())
+            seg = subprocess.Popen([S.executable, "-c", "import fcntl,os,sys,time;fd=os.open(sys.argv[1],os.O_RDWR);fcntl.flock(fd,fcntl.LOCK_EX);print('ok',flush=True);time.sleep(4)", str(f)], stdout=subprocess.PIPE, text=True)
+            try:
+                self.assertEqual(seg.stdout.readline().strip(), "ok")
+                antigo = L.LOCK_PRAZO; L.LOCK_PRAZO = 0.3; t0 = time.monotonic()
+                try:
+                    with contextlib.redirect_stderr(io.StringIO()): ok, motivo = L.emite_seguro(f, ev(run_id="x"), canal_warn="stderr")
+                finally: L.LOCK_PRAZO = antigo
+                self.assertFalse(ok); self.assertEqual(motivo, "TimeoutError"); self.assertLess(time.monotonic() - t0, 2.0)
+                self.assertEqual(len(f.read_text().splitlines()), 1)
+            finally: seg.kill(); seg.wait()
+    def test_r3_b04_camada_forcada_pelo_destino(self):
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d) / "governance" / "logs"
+            self.assertEqual(L.camada_do_caminho(base / "L2" / "a.jsonl"), "L2")
+            self.assertEqual(L.camada_do_caminho(Path(d) / "x.jsonl"), "L1")
+            with self.assertRaises(ValueError): L.camada_do_caminho(base / "a.jsonl")          # dentro de logs, fora de L2/L3
+            with self.assertRaises(ValueError): L.camada_do_caminho(base / "L2" / "a.jsonl", "L1")  # conflito
+            with self.assertRaises(ValueError): L.camada_do_caminho(Path(d) / "x.jsonl", "l2")      # valor desconhecido
+            with self.assertRaises(ValueError): L.acrescenta(base / "L2" / "a.jsonl", ev())         # esquecimento: sessao em claro
+            self.assertFalse((base / "L2" / "a.jsonl").exists())
+            L.acrescenta(base / "L3" / "a.jsonl", ev(session_id=L.hash_sessao("s")))
+    def test_r3_b04_cli_camada_invalida_exit0(self):
+        import subprocess, sys as S
+        with tempfile.TemporaryDirectory() as d:
+            env = dict(os.environ, LOG_AC_FALHAS=str(Path(d) / "f.log"))
+            for args in (["--camada"], ["--camada", "L9"]):
+                r = subprocess.run([S.executable, "-B", str(Path(L.__file__)), "emit", str(Path(d) / "x.jsonl"), json.dumps(ev())] + args, capture_output=True, text=True, env=env)
+                self.assertEqual(r.returncode, 0, r.stderr); self.assertFalse((Path(d) / "x.jsonl").exists())
+    def test_r3_b06_separadores_unicode_de_linha(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "l.jsonl"
+            for ch in ("\u0085", "\u2028", "\u2029", "\x0b", "\x1c"):
+                L.acrescenta(f, ev(reason=f"a{ch}b"))
+            self.assertEqual(L.verifica(f), [])
+            self.assertEqual(len([l for l in f.read_bytes().decode().split("\n") if l]), 5)
+    def test_r3_b05_fallback_de_ids(self):
+        base = {k: v for k, v in BASE.items() if k not in ("session_id", "run_id", "agent_id")}
+        e = L.completa_ids(base, {}); self.assertEqual(L.valida(e), [])
+        pl = {"session_id": "s9", "tool_use_id": "tu_1", "tool_name": "Agent", "tool_input": {"subagent_type": "revisor"}}
+        e = L.completa_ids(base, pl); self.assertEqual((e["session_id"], e["run_id"], e["agent_id"]), ("s9", "tu_1", "revisor"))
+        self.assertEqual(L.completa_ids(base, {"tool_name": "Agent"})["run_id"], L.completa_ids(base, {"tool_name": "Agent"})["run_id"])
+    def test_r3_b08_saneia_campos_obrigatorios(self):
+        e = ev(status="token=abcdef123", task_ref="password=hunter22x")
+        self.assertTrue(L.valida(e)); s = L.saneia(e)
+        self.assertEqual(L.valida(s), []); self.assertEqual(s["status"], "[redigido]"); self.assertIsNone(s["task_ref"])
+        self.assertTrue({"status", "task_ref"} <= set(s["redacted"]))
+    def test_r3_b08_cauda_corrompida_nao_grava_e_nao_levanta(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "l.jsonl"; L.acrescenta(f, ev()); f.write_text(f.read_text() + '{"parcial": ')
+            antes = f.read_text()
+            with contextlib.redirect_stderr(io.StringIO()): ok, _ = L.emite_seguro(f, ev(run_id="n"), canal_warn="stderr")
+            self.assertFalse(ok); self.assertEqual(f.read_text(), antes)  # falha fechada: nao encadeia sobre lixo
+    def test_r3_b02_semente_continua_de(self):
+        with tempfile.TemporaryDirectory() as d:
+            a, b = Path(d) / "a.jsonl", Path(d) / "b.jsonl"
+            s = L.acrescenta(a, ev(run_id="r0")); L.acrescenta(b, ev(run_id="r1"), continua_de=s["hash"]); L.acrescenta(b, ev(run_id="r2"), continua_de=s["hash"])
+            self.assertEqual(L.verifica(b, continua_de=s["hash"]), []); self.assertTrue(L.verifica(b))
+    def test_r3_b12_approval_so_ata_governance(self):
+        e = ev(event="approval.decided", session_id=L.hash_sessao("s"), severity="AUDIT", status="DECIDED")
+        for pth in ("x.md", "docs/DHR-X.md", "governance/outro.md", "governance/DHR-X.txt"):
+            self.assertTrue(L.valida(dict(e, input_ref={"path": pth, "sha256": "b" * 64}), "L2"), pth)
+        self.assertEqual(L.valida(dict(e, input_ref={"path": "governance/DHR-LOGS-AC-001_Ata.md", "sha256": "b" * 64}), "L2"), [])
+    def test_r3_decision_block(self):
+        self.assertEqual(L.valida(ev(event="policy.decision", decision="block", policy_id="stop-hook")), [])
+    def test_r3_b07_varre_isolado(self):
+        for obj in ({"system_prompt": 1}, {"sk-abcdefghijklmnopqrstuv": 1}, {"açao": 1}):
+            er = []; L._varre(obj, "$", er); self.assertTrue(er, obj)
+    def test_r3_b13_raiz_e_warn_ancorados(self):
+        self.assertTrue((L.raiz_repo() / ".git").exists() or os.environ.get("LOG_AC_RAIZ"))
 
 if __name__ == "__main__": unittest.main()
