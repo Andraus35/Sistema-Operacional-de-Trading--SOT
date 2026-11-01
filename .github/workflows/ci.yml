@@ -162,10 +162,6 @@ jobs:
       - name: RPSA tool tests
         run: python -m unittest tests/test_rpsa.py
 
-      # Testes do roteador de achados do Auditor Externo (DHR-AUDITOR-EXTERNO-005; bloqueante: roteador quebrado = faixa rápida insegura).
-      - name: AEX router tests
-        run: python -m unittest tests/test_route_aex.py
-
       # Testes do registro automático da classificação RPSA (DHR-RPSA-002; bloqueante).
       - name: RPSA auto tests
         run: python -m unittest tests/test_rpsa_auto.py

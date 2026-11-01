@@ -214,7 +214,7 @@
       "tipo": "detector",
       "estado": "ativo",
       "enforca": "Integridade de referências cruzadas",
-      "verificado_em": "2026-11-01 (correção do A2.1): GENERATED_LOCAL — docs/mapa/mapa-projeto.json (gitignored) não é caminho quebrado em clone limpo (antes ERRO=3 no CI); tests/test_check_refs.py 26/26, mutante morto. Antes: 2026-10-31: patch de falsos positivos (placeholder 0NN, raiz do SO fora do repo, comando wc/cat/head/tail) aplicado por ordem de Andraus (chat); teste adversarial achou e corrigiu regressão (barra inicial mascarava caminho do repo); 4 mutações mortas; WARN reais 6→2, ERRO=0; tests/test_check_refs.py 25/25 no CI"
+      "verificado_em": "2026-11-01 (A6.2 reformulado): placeholder RULE-XXX-0nn (token termina em -0 + nn) não é RULE sem definição; WARN 1→0; tests/test_check_refs.py 27/27, mutante morto. Antes: 2026-11-01 (correção do A2.1): GENERATED_LOCAL — docs/mapa/mapa-projeto.json (gitignored) não é caminho quebrado em clone limpo (antes ERRO=3 no CI); tests/test_check_refs.py 26/26, mutante morto. Antes: 2026-10-31: patch de falsos positivos (placeholder 0NN, raiz do SO fora do repo, comando wc/cat/head/tail) aplicado por ordem de Andraus (chat); teste adversarial achou e corrigiu regressão (barra inicial mascarava caminho do repo); 4 mutações mortas; WARN reais 6→2, ERRO=0; tests/test_check_refs.py 25/25 no CI"
     },
     {
       "id": "det.check-doc-sync",
@@ -347,13 +347,13 @@
     },
     {
       "id": "util.route-aex",
-      "arquivo": "scripts/route_aex.py",
+      "arquivo": "docs/_legacy/auditor-externo/route_aex.py",
       "canal": "workflow auditor-externo",
       "tipo": "utilitario",
-      "estado": "pausado",
+      "estado": "legado",
       "enforca": "Roteia achados [AEX] do Auditor Externo",
       "ata": "DHR-AUDITOR-EXTERNO-007",
-      "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007).",
+      "nota": "Auditor Externo pausado (DHR-AUDITOR-EXTERNO-007). Arquivado em docs/_legacy/auditor-externo/ (pré-teste A6.3, 2026-11-01).",
       "verificado_em": "2026-10-18: --help exit 0; tests/test_route_aex.py no CI (canal pausado)"
     },
     {
@@ -389,13 +389,13 @@
     },
     {
       "id": "wf.auditor-externo",
-      "arquivo": ".github/workflows/auditor-externo.yml",
+      "arquivo": "docs/_legacy/auditor-externo/auditor-externo.yml",
       "canal": "GitHub Actions",
       "tipo": "workflow",
-      "estado": "pausado",
+      "estado": "legado",
       "enforca": "Loop determinístico com o Auditor Externo",
       "ata": "DHR-AUDITOR-EXTERNO-007",
-      "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped.",
+      "nota": "Pausado (DHR-AUDITOR-EXTERNO-007; AGENTS.md §9 agora diz PAUSADO). Workflow inerte; runs terminam skipped. Arquivado em docs/_legacy/auditor-externo/ (pré-teste A6.3, 2026-11-01).",
       "verificado_em": "inferido-do-codigo"
     },
     {
