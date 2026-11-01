@@ -1,0 +1,10 @@
+DELTA governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md vs 0ac565f
+SHA256-ALVO: 4e595e3c9051aeae453d8cc1d13c83e75750b4d051a1005d76a3f47845c50d06
+SHA256-BASE: db11ad009d0225f5860b34f9503f523a5de065d8e4e37469e4a4cf71cde14e22
+blocos: 2 alterados · 2 adicionados · 0 removidos · 17 inalterados (de 21 atuais; 19 na base)
+alterados: 8.-respostas-de-andraus-chat-2026-11-01-askuserquestion-e-es, 9.-pesquisa-enxuta-entregue-2026-11-01-e-ajustes-incorporado
+adicionados: 12.-r3-código-da-f1-após-o-parecer-r2-orquestrador-2026-11-0, 13.-r3-documento-especificador-2026-11-01-vale-esta-seção-on
+removidos: —
+fontes citadas (sha256 de 12): {"backlog/RMR-001_Painel_Backlog.md": "a5eed1474044", "specs/features/SPEC-049/plan.md": "633ace888a76"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.

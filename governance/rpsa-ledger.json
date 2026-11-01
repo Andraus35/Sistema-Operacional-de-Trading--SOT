@@ -668,6 +668,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Move para docs/_legacy/ o workflow, o roteador e as propostas do piloto pausado; nao altera checklist, metodo nem regra dos agentes de construcao."
+    },
+    {
+      "id": "DHR-LOGS-AC-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Log dos Construtores: novo modulo, roteador e telemetria; nao altera texto de agente de construcao nem metodo."
     }
   ]
 }

@@ -1,0 +1,10 @@
+DELTA governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md vs d87d2aa
+SHA256-ALVO: db11ad009d0225f5860b34f9503f523a5de065d8e4e37469e4a4cf71cde14e22
+SHA256-BASE: 47820379c6917c3f563a2b8279713691e540aa9a489a16fc5e882daea5503440
+blocos: 11 alterados · 3 adicionados · 1 removidos · 5 inalterados (de 19 atuais; 17 na base)
+alterados: 1.-fontes, 4.1-esquema-único-de-evento-json-lines-um-objeto-por-linha-, 4.2-tipos-de-evento-conjunto-fechado-v1-, 4.3-onde-cada-coisa-vive-resolve-o-conflito-volume-persistên, 4.4-segurança-e-privacidade-master-§10-§34-, 4.5-integridade-master-§35-, 5.-fatias-de-entrega-cada-uma-só-por-ordem-de-andraus-, 6.-tensões-e-riscos, 7.-decisões-que-ficam-com-andraus, 8.-respostas-de-andraus-chat-2026-11-01-askuserquestion-e-es, 9.-pesquisa-enxuta-entregue-2026-11-01-e-ajustes-incorporado
+adicionados: 10.-revisão-r1-parecer-parecer-revisor-logs-ac-r1-2026-11-01, 11.-r2-medições-do-orquestrador-2026-11-01-com-bash-e-código, 2.-inventário-o-que-existe-hoje-
+removidos: 2.-inventário-medido-o-que-existe-hoje-
+fontes citadas (sha256 de 12): {"specs/features/SPEC-049/plan.md": "633ace888a76"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.

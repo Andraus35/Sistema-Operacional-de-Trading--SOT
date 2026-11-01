@@ -1,0 +1,10 @@
+DELTA governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md vs ecca665
+SHA256-ALVO: c67b376079ee9e61fb894040d0b8648aab6915966ec3b56b417b35cfbe8deab1
+SHA256-BASE: 4e595e3c9051aeae453d8cc1d13c83e75750b4d051a1005d76a3f47845c50d06
+blocos: 5 alterados · 1 adicionados · 0 removidos · 16 inalterados (de 22 atuais; 21 na base)
+alterados: 4.2-tipos-de-evento-conjunto-fechado-v1-, 4.3-onde-cada-coisa-vive-resolve-o-conflito-volume-persistên, 4.4-segurança-e-privacidade-master-§10-§34-, 8.-respostas-de-andraus-chat-2026-11-01-askuserquestion-e-es, 9.-pesquisa-enxuta-entregue-2026-11-01-e-ajustes-incorporado
+adicionados: 14.-r4-documento-especificador-2026-11-01-resposta-ao-parece
+removidos: —
+fontes citadas (sha256 de 12): {"backlog/RMR-001_Painel_Backlog.md": "a5eed1474044", "specs/features/SPEC-049/plan.md": "633ace888a76"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.
