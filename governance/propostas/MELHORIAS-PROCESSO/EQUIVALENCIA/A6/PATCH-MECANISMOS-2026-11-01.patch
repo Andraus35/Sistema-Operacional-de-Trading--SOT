@@ -1,0 +1,20 @@
+diff --git a/governance/MECANISMOS.json b/governance/MECANISMOS.json
+index 23a1b21..e54faeb 100644
+--- a/governance/MECANISMOS.json
++++ b/governance/MECANISMOS.json
+@@ -118,12 +118,12 @@
+     {
+       "id": "hook.doc-sync-check",
+       "arquivo": "scripts/doc-sync-check.js",
+-      "canal": "settings.json Stop/SubagentStop/SessionStart",
++      "canal": "settings.json SessionStart (A6.1: fora de Stop/SubagentStop) + CI informativo",
+       "tipo": "hook",
+       "estado": "ativo",
+-      "enforca": "Avisa drift de sincronização documental (não bloqueia)",
++      "enforca": "Avisa drift de sincronização documental (não bloqueia); repete o aviso só quando o conjunto de achados muda (A6.4)",
+       "ata": "DHR-DOCSYNC-001",
+-      "verificado_em": "2026-10-18: ao vivo — session-start exit 0"
++      "verificado_em": "2026-11-01 (A6.1/A6.4): tests/test-doc-sync-check.js (npm run test:hooks), 4 mutantes mortos. Antes: 2026-10-18 ao vivo"
+     },
+     {
+       "id": "hook.handoff-hook",
