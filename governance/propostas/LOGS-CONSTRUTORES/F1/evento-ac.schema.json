@@ -1,4 +1,5 @@
 {
+  "$id": "https://sot.local/schemas/evento-ac.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Evento de log dos agentes Construtores (AC) — v1 PROPOSTA",
   "description": "Metadados apenas (nunca texto de prompt/parecer). Proposta F1; nao instalado; nao normativo. Nomes convertiveis para OpenTelemetry GenAI (status Development). Ajustes da pesquisa PESQUISA-LOGS-AGENTES-2026-11-01: decisao no vocabulario do Claude Code; metricas so inteiras (subconjunto JCS RFC 8785); campos de caminho local proibidos. Revisao R1 (PARECER-REVISOR-LOGS-AC-R1): campos string com limite; metrics com chaves fechadas; path relativo ao repositorio; sessao em hash curto nas camadas L2/L3 (regra em log_ac.py). R2: decision aceita 'block' (hooks de fim de turno; aprovado por Andraus no chat 2026-11-01).",

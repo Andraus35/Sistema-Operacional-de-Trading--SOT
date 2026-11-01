@@ -240,7 +240,7 @@ def emite_seguro(arquivo, ev, camada=None, canal_warn="arquivo", continua_de=Non
         except ValueError:
             return True, acrescenta(arquivo, saneia(ev), camada, continua_de)["hash"]
     except BaseException as exc:  # noqa: BLE001 — isolamento total do log em relacao a decisao
-        msg = f"log_ac WARN: evento nao gravado ({type(exc).__name__})\n"
+        msg = f"{time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())} log_ac WARN: evento nao gravado ({type(exc).__name__})\n"
         try:
             if canal_warn == "stderr": sys.stderr.write(msg)  # NAO usar em hook com exit 2: o stderr vai ao modelo
             elif canal_warn == "arquivo":
@@ -277,6 +277,9 @@ def main(argv):
         if n not in argv: return None
         i = argv.index(n)
         return argv[i + 1] if i + 1 < len(argv) else ""
+    if len(argv) >= 2 and argv[1] == "emit" and len(argv) < 4:
+        emite_seguro(os.devnull, {"x": 1}, canal_warn="arquivo")  # argumentos ausentes: so registra o WARN, exit 0
+        return 0
     if len(argv) >= 4 and argv[1] == "emit":
         try: ev = json.loads(argv[3])
         except ValueError: ev = None

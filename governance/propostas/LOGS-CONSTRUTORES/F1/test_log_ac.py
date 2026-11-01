@@ -262,4 +262,13 @@ class T(unittest.TestCase):
     def test_r3_b13_raiz_e_warn_ancorados(self):
         self.assertTrue((L.raiz_repo() / ".git").exists() or os.environ.get("LOG_AC_RAIZ"))
 
+    def test_r4_emit_sem_argumentos_exit0_e_warn_com_data(self):
+        import subprocess, sys as S, re
+        with tempfile.TemporaryDirectory() as d:
+            env = dict(os.environ, LOG_AC_FALHAS=str(Path(d) / "f.log"))
+            r = subprocess.run([S.executable, "-B", str(Path(L.__file__)), "emit"], capture_output=True, text=True, env=env)
+            self.assertEqual(r.returncode, 0)
+            self.assertRegex((Path(d) / "f.log").read_text(), r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z log_ac WARN")
+    def test_r4_esquema_tem_id(self): self.assertTrue(L.SCHEMA.get("$id"))
+
 if __name__ == "__main__": unittest.main()
