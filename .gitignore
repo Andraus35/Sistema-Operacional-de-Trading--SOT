@@ -46,3 +46,6 @@ __pycache__/
 # Mapa do projeto: grafo JSON e artefato local regenerável (A2.1); o .md segue versionado
 docs/mapa/mapa-projeto.json
 .claude/.doc-sync-estado
+
+# Ledger do loop dos construtores: saída gerada por scripts/loop_ledger.py (DHR-LEDGER-GERADO-001); o parecer é a fonte
+governance/aprendizado/LEDGER-ACHADOS.md

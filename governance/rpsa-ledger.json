@@ -696,6 +696,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Documento novo e nao normativo (pauta); nao altera texto de agente nem metodo."
+    },
+    {
+      "id": "DHR-LEDGER-GERADO-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda só se o ledger derivado é commitado; o método do loop não muda."
     }
   ]
 }
