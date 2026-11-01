@@ -640,6 +640,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registra decisões de processo e texto do roteiro de retrospectivas; não toca agentes de construção, AGENTS.md nem método."
+    },
+    {
+      "id": "DHR-PRE-ENTREGA-001",
+      "data": "2026-11-01",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Emenda ao Autopré-check (§7) e correções de fatos defasados no Especificador; a lista de decisões abertas (§9) passa a ponteiro ao ROADMAP (fonte única)."
     }
   ]
 }

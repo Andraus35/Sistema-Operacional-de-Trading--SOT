@@ -1,8 +1,8 @@
 import json, os, subprocess, sys, tempfile, unittest, shutil
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[3]
-SCRIPT = HERE / "pre_entrega.py"
+ROOT = HERE.parent
+SCRIPT = ROOT / "scripts" / "pre_entrega.py"
 
 def run(spec, out):
     return subprocess.run([sys.executable, "-B", str(SCRIPT), spec, "--root", str(ROOT), "--out", str(out)], capture_output=True, text=True)

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""pre_entrega.py — pré-gate unificado antes do Revisor (PROPOSTA; não instalado; ver PROPOSTA-PRE-ENTREGA-2026-11-01.md).
+"""pre_entrega.py — pré-gate unificado antes do Revisor (DHR-PRE-ENTREGA-001; ordem de Andraus, 2026-11-01).
 
 Só COMPÕE scripts já selados (nenhuma lógica nova de detecção). Roda pelo Orquestrador/hook — o Especificador não tem Bash.
 Saída: pre-entrega.json com sha256 de plan.md/checks.md e, por verificação: tipo (bloqueante|informativo), status, achados.
 Bloqueante = o que já é bloqueante no CI (validate_spec_sot, check_repo_research, build_map --check). Detectores = informativos
-até Andraus promover (ENF-03). exit 0 ≠ CONFORME ≠ homologação. Somente leitura (escreve só o --out).
+até Andraus promover (ENF-03). Selado em GATE-MANIFEST.sha256 e CODEOWNERS: o autor da Spec não o altera. exit 0 ≠ CONFORME ≠ homologação. Somente leitura (escreve só o --out).
 
-Uso: python pre_entrega.py specs/features/SPEC-nnn [--root REPO] [--out pre-entrega.json]
+Uso: python scripts/pre_entrega.py specs/features/SPEC-nnn [--root REPO] [--out pre-entrega.json]
 """
 import argparse, hashlib, json, subprocess, sys
 from pathlib import Path
