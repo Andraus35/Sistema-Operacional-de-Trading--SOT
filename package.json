@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node tests/validate-schemas.js",
     "lint": "node tests/lint-specs.js",
-    "test:hooks": "node tests/test-hooks.js && node tests/test-map-sync.js && node tests/test-ask-guard.js && node tests/test-handoff-hook.js",
+    "test:hooks": "node tests/test-hooks.js && node tests/test-map-sync.js && node tests/test-ask-guard.js && node tests/test-handoff-hook.js && node tests/test-doc-sync-check.js",
     "test:py": "python -m unittest discover -s tests -p test_*.py",
     "map": "python scripts/build_map.py",
     "map:check": "python scripts/build_map.py --check",
