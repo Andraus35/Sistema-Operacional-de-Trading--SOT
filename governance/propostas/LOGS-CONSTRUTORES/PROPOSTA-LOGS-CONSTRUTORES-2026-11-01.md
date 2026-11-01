@@ -2,6 +2,8 @@
 
 > **Status: PROPOSTA — não aplicada, não normativa, não é baseline.** Ordem de Andraus (chat, 2026-11-01): "consolidar e solidificar os logs apenas dos construtores segundo melhores práticas e estado da arte; ver referência master no repo; a parte para agentes do Trading fica para Spec ou backlog próprio". Esta proposta **não abre Spec**, **não fecha decisão aberta** (CONS-01) e **não altera** hooks, scripts selados, `AGENTS.md` ou `MECANISMOS.json`. Aplicar exige ordem expressa de Andraus + ata + `MECANISMOS.json` no mesmo PR (COE-14).
 
+**Complexidade: MEDIUM** (proposta de processo; perfil D0–D5; não é Spec).
+
 ## 0. Escopo e fronteira
 - **Dentro:** logs de quem **constrói** o SOT — Especificador, Revisor, Orquestrador, hooks e detectores deste repositório (família AC, `AGENTS.md` §3.1).
 - **Fora:** logs do **produto em operação** (agentes de Trading, AT). Continuam em **SPEC-040/041/042** (slots indicativos) e no backlog **BL-034** (master), **BL-036..042** (telemetria de custo) e **BL-038** (extensão do esquema aos AT). Nenhum item novo de backlog é necessário: o BL-038 já é o "backlog próprio" dos AT. O esquema abaixo é **só AC** e foi desenhado para a SPEC-040 poder **reutilizá-lo ou substituí-lo sem migração forçada** (campo `family`; sem pré-empção, EUA-E21).
