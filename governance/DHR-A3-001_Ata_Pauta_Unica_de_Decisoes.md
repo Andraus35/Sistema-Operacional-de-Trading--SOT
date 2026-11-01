@@ -9,7 +9,7 @@
 | RPSA-sync | fonte-unica |
 | RPSA-motivo | Documento novo e não normativo (pauta); não altera texto de agente nem método. |
 ## Mudança
-- Cria `governance/PAUTA-DE-DECISOES.md` (uma página; 8 pedidos com recomendação marcada; eventos esperados; decisões abertas só listadas). Substitui a prosa de `HANDOFF.md` §10 por ponteiro; vencimento de 14 dias no HANDOFF (`[PRAZO]`, HO-10) = A3 regra 2.
+- Cria `governance/PAUTA-DE-DECISOES.md` (uma página; 7 pedidos com recomendação marcada; eventos esperados; decisões abertas só listadas). Substitui a prosa de `HANDOFF.md` §10 por ponteiro; vencimento de 14 dias no HANDOFF (`[PRAZO]`, HO-10) = A3 regra 2.
 - Marca `PROPOSTA-A3` como aplicada em parte (aditivo).
 ## Verificação
 `check_handoff`, `check_refs`, `check_coesao`, `check_doc_sync`, `check_rpsa`, `build_map --check` e suíte, no commit do PR.

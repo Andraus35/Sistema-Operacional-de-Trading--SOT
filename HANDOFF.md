@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-01-151
-previous: HO-2026-11-01-150
+handoff_id: HO-2026-11-01-157
+previous: HO-2026-11-01-156
 data: 2026-11-01
 branch: ccr-a79e19ef-2zl738
-base_commit: 32acfe7
+base_commit: ef35441
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,9 +14,9 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
-**Pós-merge do PR #155 (ordem de Andraus: "aplicar as pendências mais baratas e simples; as de rodada cara viram backlog"):** aplicado `log_ac.py verify <pasta>` + estado "continuidade não verificada" (D05) + passo informativo do CI + medições do roteador (p50 ≈ 60–65 ms, p95 ≈ 96–108 ms; volume ≈ 0,6 KB/evento) — detalhe na PROPOSTA §17 e no `BL-043`. **Segue no `BL-043`** (gatilho `spec:SPEC-008 em redação`): auditoria independente do código da F2a (Revisor), D08/D01–D03/hooks JS/timeout do wrapper (selados: ordem+ata+selo), captura de `Stop`, erratum do `RULE-WRV-0nn` da SPEC-049. Nenhum arquivo selado foi alterado.
+**A3 (pauta única, ordem de Andraus 2026-11-01):** `governance/PAUTA-DE-DECISOES.md` + ata curta `DHR-A3-001`; HANDOFF §10 virou ponteiro; regra 1 (classes de decisão) NÃO aplicada (pedido 1 da pauta). Cadeia deste ramo (HO-132..151) em `docs/handoffs/ramo-ccr-a79e19ef-2zl738/`.
 
-**A3 (pauta única, nesta sessão, ordem de Andraus 2026-11-01):** `governance/PAUTA-DE-DECISOES.md` + ata curta `DHR-A3-001`; HANDOFF §10 virou ponteiro; regra 1 (classes) NÃO aplicada (pedido 2 da pauta). PR aberto sem mesclar.
+**Pós-merge do PR #155 (ordem de Andraus: "aplicar as pendências mais baratas e simples; as de rodada cara viram backlog"):** aplicado `log_ac.py verify <pasta>` + estado "continuidade não verificada" (D05) + passo informativo do CI + medições do roteador (p50 ≈ 60–65 ms, p95 ≈ 96–108 ms; volume ≈ 0,6 KB/evento) — detalhe na PROPOSTA §17 e no `BL-043`. **Segue no `BL-043`** (gatilho `spec:SPEC-008 em redação`): auditoria independente do código da F2a (Revisor), D08/D01–D03/hooks JS/timeout do wrapper (selados: ordem+ata+selo), captura de `Stop`, erratum do `RULE-WRV-0nn` da SPEC-049. Nenhum arquivo selado foi alterado.
 
 **Log dos Construtores (AC) — PR #155, ramo `ccr-a79e19ef-2zl738`; ordens de Andraus no chat/AskUserQuestion, 2026-11-01:** consolidação dos logs só dos Construtores (os de Trading ficam em SPEC-040/041 e BL-034/038). Proposta + pesquisa + plano F2 + pareceres R1–R4 do Revisor (NÃO CONFORME; Médios 10→6→2→1) em `governance/propostas/LOGS-CONSTRUTORES/`. **F2a APLICADA** (`DHR-LOGS-AC-001`): `scripts/log_ac.py` + `scripts/evento-ac.schema.json`; `roteador_modelos.py` (selo regravado) emite `policy.decision` depois da decisão e isolado (L1 local; **L2 no git** em `governance/logs/L2/<sessão>-<ramo>.jsonl` só para `deny`, sem texto livre, sessão em hash); `telemetria_tokens.py` emite `agent.run`; testes `tests/test_log_ac.py`, `tests/test_roteador_log_ac.py`, `tests/test_telemetria_log_ac.py`; validado ao vivo. **NÃO feitos, por ordem dele viraram o backlog `BL-043`** (`Em espera`, gatilho `spec:SPEC-008 em redação`): **F2b** (hooks JS; D01 `hook-io.js` descarta o `session_id`), D02–D08 e a **auditoria independente do código da F2a**. A cadeia de handoff deste ramo (HO-132..144) está em `docs/handoffs/ramo-ccr-a79e19ef-2zl738/`; este HO-149 é a base da `main` (HO-148) + esta frente.
 
@@ -46,7 +46,7 @@ Ordem classe O ao Especificador (`model: opus` + `CLASSE-TAREFA: O` + `PARECER:`
 Categorias mais recorrentes: **C07** (39) · **C01** (28) · **C02** (24); SPEC-049 (34 achados): C01 7, C07 5, C05 5, C06 5. Lacunas de prevenção abertas: C99, C01, C06, C03, C10. Retrospectivas SPEC-006/007/020/048/049 FEITAS; P1–P9 decididas (P7 e P8 aplicadas via #149; P9 atendida pelo corte do §7); P10–P12 decididas (`DHR-RETRO-003`: P10 experimento, P11 pré-testada sem aplicar, P12 escrita).
 
 ## 5. Próximo passo único
-**Frente da auditoria de burocracia — A3 aplicado (`DHR-A3-001`).** Já na `main`: A2.1, A6.1 parcial/A6.3/A6.4, P11, A7-lite, A4-b, A9-teste. **Falta:** A2 resto (RPSA derivado do git; depende do pedido 3 da pauta), A5, A8=BL-047, A10 e a regra 1 do A3 (pedido 2). Fluxo de cada item: proposta medida → ordem dele → ata curta → gates → PR sem mesclar. **Começar perguntando a Andraus (AskUserQuestion) por qual item.** Se ele mandar mesclar: CI verde, merge commit travando o `expectedHeadSha`, reiniciar o ramo de `origin/main`.
+**Frente da auditoria de burocracia — A3 aplicado (`DHR-A3-001`); A5 e A10: propostas medidas (pedido 4 da pauta, ordem de Andraus).** Já na `main`: A2.1, A6.1 parcial/A6.3/A6.4, P11, A7-lite, A4-b, A9-teste, higiene pós-arquivamento (PR #157). **Falta:** A2 resto (RPSA derivado do git; depende do pedido 2 da pauta), A8=BL-047 e a regra 1 do A3 (pedido 1). Fluxo de cada item: proposta medida → ordem dele → ata curta → gates → PR sem mesclar. Se ele mandar mesclar: CI verde, merge commit travando o `expectedHeadSha`, reiniciar o ramo de `origin/main`.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 `DHR-RETRO-003`, `DHR-RETRO-002`, `DHR-AGENTS-P8-001`, `DHR-AGENTS-CORTES-001`, `DHR-AGENTS-SEC7-001`, `DHR-HIGIENE-001`, `DHR-HIGIENE-002`, `DHR-MECH-GATE-001`, `DHR-SPEC049-002`, `DHR-SPEC049-001`, `DHR-TELEMETRIA-CUSTO-001`, `DHR-CHECKS-INFO-001`, `DHR-DELTA-HASH-001`, `DHR-DIMENSIONAMENTO-001`, `DHR-RETRO-001`, `DHR-ROTEAMENTO-007`, `DHR-MERGE-001`, `DHR-LOOP-001`. Decisões abertas/fechadas: ler o `ROADMAP.md` (linhas "Decisões abertas ativas"/"Decisões FECHADAS").
@@ -66,8 +66,8 @@ Dar Bash ao Revisor; refazer SPEC-006/020/048/049; tratar o `AGENTS.md` como mai
 - *Aviso esperado:* `check_handoff` HO-04 (união das cadeias de handoff); informativo.
 
 ## 10. Aguardando Andraus
-**Tudo o que depende de Andraus está na pauta única `governance/PAUTA-DE-DECISOES.md`** (A3, `DHR-A3-001`: 8 pedidos com recomendação marcada, eventos esperados e decisões abertas só listadas). Responder em uma palavra por item (aprovar · recusar · adiar). Pedido sem decisão volta ao topo com a recomendação padrão. [PRAZO: 2026-11-15] pauta de decisões revisitada se ainda sem resposta.
-O texto anterior desta seção está em `docs/handoffs/HO-2026-11-01-150.md` (INV-07).
+**Tudo o que depende de Andraus está na pauta única `governance/PAUTA-DE-DECISOES.md`** (A3, `DHR-A3-001`: pedidos com recomendação marcada, eventos esperados e decisões abertas só listadas). Responder em uma palavra por item (aprovar · recusar · adiar). Pedido sem decisão volta ao topo com a recomendação padrão. [PRAZO: 2026-11-15] pauta de decisões revisitada se ainda sem resposta.
+O texto anterior desta seção está em `docs/handoffs/HO-2026-11-01-156.md` (INV-07).
 
 ## 11. Ponteiros
 `governance/propostas/MELHORIAS-PROCESSO/` (auditoria de burocracia, propostas, `EQUIVALENCIA/` com prova de conservação e testes A/B, `PATCH-*`) · `governance/aprendizado/` (LEDGER, CAUSAS-PREVENCAO, RETROSPECTIVAS) · `governance/propostas/SPEC-049/` · `governance/MECANISMOS.json` · `.harness-eval/runs/2026-10-31-agents/` (harness-eval do AGENTS.md) · `docs/_legacy/AGENTS-*` (texto cortado) · `docs/handoffs/` e `docs/handoffs/ramo-*/` · `docs/mapa/MAPA-PROJETO.md` (índice gerado) · atas em `governance/` (nome começa pelo ID).

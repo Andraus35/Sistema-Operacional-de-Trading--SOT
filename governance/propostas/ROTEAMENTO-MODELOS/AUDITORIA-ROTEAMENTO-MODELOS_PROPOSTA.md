@@ -50,7 +50,7 @@
 | **Revisor SOT** | `claude-sonnet-5-5`; esforço "alto" **só como conduta** | `revisor.md` frontmatter + §0 | Gate MCP `revisor_gate` + 8 passos + 4-ter + 5-bis. Sem Bash/Write/Edit (DHR-AUDITOR-EXTERNO-009/015). |
 | `sot-spec-reviewer`, `sot-schema-validator` | — | aposentados (DHR-AUDITOR-EXTERNO-016, mesclada após esta proposta) | A-04 **resolvido pela main**: o que era útil foi para o gate do Revisor. |
 | **Scripts/hooks/CI** | Sem LLM (Classe D) | `scripts/`, `.claude/settings.json`, `.github/workflows/` | 15+ verificadores, mapa, RPSA, roteador AEX, manifesto do gate. |
-| **Auditor Externo** | Codex CLI (outra família), 6 chamadas/dia | `governance/propostas/AUDITOR-EXTERNO/OPERACAO.md` | Consultivo; só ao Orquestrador. |
+| **Auditor Externo** | Codex CLI (outra família), 6 chamadas/dia | `docs/_legacy/auditor-externo/propostas-AUDITOR-EXTERNO/OPERACAO.md` | Consultivo; só ao Orquestrador. |
 | **Andraus** | Humano | — | Homologa; decisões CONS-01. Não roteável. |
 
 ### 3.2 Normas vigentes sobre roteamento `[FATO]`
