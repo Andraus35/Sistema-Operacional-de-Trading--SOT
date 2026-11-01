@@ -152,4 +152,40 @@ class T(unittest.TestCase):
             ok, _ = L.emite_seguro(f, ev(event="policy.decision", decision="deny", policy_id="R-AC7", reason="token=abcdef123"))
             self.assertTrue(ok); self.assertIsNone(json.loads(f.read_text())["reason"])
 
+    # --- R2: itens pendentes apontados pelo Especificador ---
+    def test_r2_approval_exige_ata_em_L2(self):
+        e = ev(event="approval.decided", session_id=L.hash_sessao("s"), severity="AUDIT", status="DECIDED")
+        self.assertTrue(L.valida(e, "L2"))
+        self.assertEqual(L.valida(dict(e, input_ref={"path": "governance/DHR-X.md", "sha256": "b" * 64}), "L2"), [])
+        self.assertEqual(L.valida(dict(e, status="sem-ata"), "L2"), [])
+        self.assertEqual(L.valida(e, "L1"), [])
+    def test_r2_ancora_de_linha_prefixo(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "l.jsonl"; hs = [L.acrescenta(f, ev(run_id=f"r{i}"))["hash"] for i in range(5)]
+            self.assertEqual(L.verifica(f, ancora_linha=(3, hs[2])), [])
+            self.assertTrue(L.verifica(f, ancora_linha=(3, hs[1])))
+            ls = f.read_text().splitlines(); f.write_text("\n".join(ls[:2]) + "\n")
+            self.assertTrue(any("truncamento" in p for p in L.verifica(f, ancora_linha=(3, hs[2]))))
+    def test_r2_canal_warn_arquivo_sem_stderr(self):
+        import unittest.mock as m
+        with tempfile.TemporaryDirectory() as d:
+            os.environ["LOG_AC_FALHAS"] = str(Path(d) / "falhas.log")
+            try:
+                with m.patch.object(L, "acrescenta", side_effect=RuntimeError()), contextlib.redirect_stderr(io.StringIO()) as err:
+                    ok, _ = L.emite_seguro(Path(d) / "x.jsonl", ev(), canal_warn="arquivo")
+                self.assertFalse(ok); self.assertEqual(err.getvalue(), ""); self.assertIn("WARN", (Path(d) / "falhas.log").read_text())
+            finally: del os.environ["LOG_AC_FALHAS"]
+    def test_r2_cli_emit_e_verify(self):
+        import subprocess, sys as S
+        with tempfile.TemporaryDirectory() as d:
+            f = str(Path(d) / "l.jsonl"); alvo = str(Path(L.__file__))
+            for i in range(2):
+                r = subprocess.run([S.executable, "-B", alvo, "emit", f, json.dumps(ev(run_id=f"r{i}"))], capture_output=True, text=True); self.assertEqual(r.returncode, 0)
+            r = subprocess.run([S.executable, "-B", alvo, "verify", f], capture_output=True, text=True); self.assertEqual(r.returncode, 0, r.stdout)
+            Path(f).write_text(Path(f).read_text().replace("SUCCEEDED", "FAILED"))
+            r = subprocess.run([S.executable, "-B", alvo, "verify", f], capture_output=True, text=True); self.assertEqual(r.returncode, 1)
+    def test_r2_cli_emit_json_invalido_exit0(self):
+        import subprocess, sys as S
+        r = subprocess.run([S.executable, "-B", str(Path(L.__file__)), "emit", "x.jsonl", "{nao"], capture_output=True, text=True); self.assertEqual(r.returncode, 0)
+
 if __name__ == "__main__": unittest.main()
