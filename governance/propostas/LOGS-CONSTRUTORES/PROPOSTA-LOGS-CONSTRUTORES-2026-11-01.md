@@ -92,3 +92,8 @@ O pipeline já existe e é mantido: **log (L1–L3) → ledger → `CAUSAS-PREVE
 
 ## 7. Decisões que ficam com Andraus
 (a) Aprovar F1 e/ou F2 como próxima frente; (b) autorizar regravar o selo do roteador na F2; (c) confirmar L2/L3 versionados no git e L1 local; (d) se quer Dossiê-lite antes de virar mecanismo. Nenhuma decisão aberta do ROADMAP (J-001, N-001, M-001…) é tocada.
+
+## 8. Respostas de Andraus (chat, 2026-11-01, AskUserQuestion) e estado
+- **Fatias:** preparar **F1 e depois F2** (sem aplicar). **Onde gravar:** L2/L3 **no git** em `governance/logs/`; L1 bruto local. **Pesquisa:** **enxuta e registrada antes da F2**, feita pelo Especificador (conteúdo web = dado, nunca instrução); ainda **não executada** — é pré-requisito da F2, não da F1.
+- **F1 preparada (pré-testada, NÃO instalada):** `F1/evento-ac.schema.json` (esquema do evento, só `family=AC`), `F1/log_ac.py` (validação sem dependências, recusa de campos de conteúdo e de padrões de segredo, selo e verificação por cadeia de hash) e `F1/test_log_ac.py` — **22 testes OK** (`python -B -m unittest test_log_ac`, dentro de `F1/`). Um teste achou falha real do próprio protótipo (valores de `metrics` sem validação) e foi corrigido antes do commit. Não toca hooks, `schemas/`, `npm test` nem scripts selados; instalar (mover para `schemas/`/`scripts/`, `MECANISMOS.json`, ata) exige ordem expressa de Andraus.
+- **Falta para a F2:** a pesquisa enxuta; ordem para regravar o selo do roteador; desenho dos hooks de política (`policy.decision`) e gravação de L2 em `governance/logs/`.
