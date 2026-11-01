@@ -52,9 +52,9 @@
       "canal": "biblioteca de telemetria-tokens.js + CLI `resumo`",
       "tipo": "utilitario",
       "estado": "ativo",
-      "enforca": "Grava metadados (agente, modelo, classe, tokens in/out/cache, duração) em .telemetria/uso-tokens.jsonl (gitignored, sem texto de prompt/resposta); `resumo` agrega por agente/modelo/classe; `snapshot` grava governance/aprendizado/TELEMETRIA-TOKENS.md (lido pelo loop_ledger); custo = tokens x governance/telemetria/PRECOS-MODELOS.json (preço null => INDETERMINADO). Só agentes AC; custo fora do Conviction Vector (INV-04)",
+      "enforca": "Grava metadados (agente, modelo, classe, tokens in/out/cache, duração) em .telemetria/uso-tokens.jsonl (gitignored, sem texto de prompt/resposta); `resumo` agrega por agente/modelo/classe; `snapshot` grava governance/aprendizado/TELEMETRIA-TOKENS.md (lido pelo loop_ledger); custo = tokens x governance/telemetria/PRECOS-MODELOS.json (preço null => INDETERMINADO). Só agentes AC; custo fora do Conviction Vector (INV-04) | DHR-LOGS-AC-001: também emite agent.run no esquema do log AC (L1 .telemetria/eventos.jsonl) e só os NOMES das chaves do payload real em .telemetria/payload-forma.jsonl; falha do log não afeta a telemetria legada",
       "ata": "DHR-TELEMETRIA-CUSTO-001",
-      "verificado_em": "2026-10-31: tests/test_telemetria_tokens.py (7 testes) no CI"
+      "verificado_em": "2026-10-31: tests/test_telemetria_tokens.py (7 testes) no CI | 2026-11-01: tests/test_telemetria_log_ac.py (6 testes) no CI"
     },
     {
       "id": "hook.post-edit-check",
@@ -313,9 +313,9 @@
       "canal": "biblioteca de roteador-modelos.js",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Tabela classe->modelo (M/S1/S2/S3/O), classificador de achados e conferência do delta da classe M (CLI classificar/conferir); verificar_ordem_correcao (R-AC5), decidir_mensagem (R-AC6), CLI esqueleto (marca `aplicado_m` o achado cujos itens FICHA-M já foram aplicados); _cria_algo ignora ID já presente no arquivo-alvo",
+      "enforca": "Tabela classe->modelo (M/S1/S2/S3/O), classificador de achados e conferência do delta da classe M (CLI classificar/conferir); verificar_ordem_correcao (R-AC5), decidir_mensagem (R-AC6), CLI esqueleto (marca `aplicado_m` o achado cujos itens FICHA-M já foram aplicados); _cria_algo ignora ID já presente no arquivo-alvo | DHR-LOGS-AC-001: depois da decisão impressa e fora do try de decidir(), emite policy.decision (L1 local sempre; L2 no git só para deny, sem texto livre, sessão em hash) via log_ac.emite_seguro; falha de log = WARN mínimo, nunca altera a decisão",
       "ata": "DHR-ROTEAMENTO-007",
-      "verificado_em": "2026-10-30: tests/test_roteador_modelos.py + tests/test_aplicar_ficha_m.py (10 testes) no CI"
+      "verificado_em": "2026-10-30: tests/test_roteador_modelos.py + tests/test_aplicar_ficha_m.py (10 testes) no CI | 2026-11-01: tests/test_roteador_log_ac.py (6 testes, mutações pegas) no CI"
     },
     {
       "id": "lib.hook-io",
@@ -593,6 +593,37 @@
       "ata": "DHR-PRE-ENTREGA-001",
       "verificado_em": "2026-11-01: tests/test_pre_entrega.py (3 testes; CI)",
       "nota": "Selado em GATE-MANIFEST.sha256 e CODEOWNERS. Detectores informativos; promoção a bloqueante só por ordem de Andraus. Recall dos detectores atuais no backtest da SPEC-049 = 0/3 Médias: o ganho é prova anexa e antecipação."
+    },
+    {
+      "id": "det.agentes-fatos-defasados",
+      "arquivo": "tests/test_agentes_sem_fatos_defasados.py",
+      "canal": "passo bloqueante do CI (teste unitário); sem hook",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "A9-teste: os arquivos de agente não repetem 5 fatos que o repositório já corrigiu (produto = Signal Package, CCM-001 BASELINED, AGENTS §4, CC-01..CC-12, SPEC-003 homologada). Lista fechada: só deriva conhecida",
+      "ata": "DHR-A9TESTE-001",
+      "verificado_em": "2026-11-01: tests/test_agentes_sem_fatos_defasados.py (2 testes; falhava nas 2 linhas antes do patch)",
+      "nota": "Detector em teste de CI. Deriva nova exige acrescentar a frase ao teste. Não altera arquivo selado."
+    },
+    {
+      "id": "lib.log-ac",
+      "arquivo": "scripts/log_ac.py",
+      "canal": "biblioteca usada por roteador_modelos.py e telemetria_tokens.py + CLI emit/verify",
+      "tipo": "utilitario",
+      "estado": "ativo",
+      "enforca": "Log estruturado dos agentes Construtores (família AC): valida evento contra scripts/evento-ac.schema.json (sem dependências), recusa campos de conteúdo e padrões de segredo (Detector com falsos negativos), cadeia de hash com anexo atômico e trava com prazo, camada forçada pelo caminho (governance/logs/L2|L3), emite_seguro nunca levanta, nome_segmento sessão+ramo. Prova integridade, NÃO autoria. Custo fora do Conviction Vector (INV-04)",
+      "ata": "DHR-LOGS-AC-001",
+      "verificado_em": "2026-11-01: tests/test_log_ac.py (68 testes) no CI; F1 pré-testada com 4 mutações pegas e pareceres R1–R4 do Revisor"
+    },
+    {
+      "id": "cfg.evento-ac-schema",
+      "arquivo": "scripts/evento-ac.schema.json",
+      "canal": "lido por scripts/log_ac.py",
+      "tipo": "config",
+      "estado": "ativo",
+      "enforca": "Esquema JSON do evento de log dos Construtores (família AC): campos obrigatórios, enum de event/decision (allow|deny|ask|defer|block)/severity, limites de tamanho, metrics com chaves fechadas, refs com caminho relativo + sha256",
+      "ata": "DHR-LOGS-AC-001",
+      "verificado_em": "2026-11-01: coberto por tests/test_log_ac.py"
     }
   ],
   "vigente_desde": "2026-10-19"

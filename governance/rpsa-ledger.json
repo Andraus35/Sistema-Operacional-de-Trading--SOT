@@ -649,11 +649,32 @@
       "motivo": "Emenda ao Autopré-check (§7) e correções de fatos defasados no Especificador; a lista de decisões abertas (§9) passa a ponteiro ao ROADMAP (fonte única)."
     },
     {
+      "id": "DHR-A7A4-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Modelo de texto e anexo de medição; não toca agente, AGENTS.md, método nem detector."
+    },
+    {
+      "id": "DHR-A9TESTE-001",
+      "data": "2026-11-01",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Duas linhas de fato defasado corrigidas nos agentes (Signal Package; CC-01..CC-12); sem mudança de método nem de fronteira."
+    },
+    {
       "id": "DHR-AUDITOR-EXTERNO-019",
       "data": "2026-11-01",
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Move para docs/_legacy/ o workflow, o roteador e as propostas do piloto pausado; nao altera checklist, metodo nem regra dos agentes de construcao."
+    },
+    {
+      "id": "DHR-LOGS-AC-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Log dos Construtores: novo modulo, roteador e telemetria; nao altera texto de agente de construcao nem metodo."
     }
   ]
 }

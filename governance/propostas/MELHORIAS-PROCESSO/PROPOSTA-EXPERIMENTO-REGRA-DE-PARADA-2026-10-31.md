@@ -32,3 +32,6 @@ Por Spec: rodadas; Médias por rodada; Menores restantes na homologação; **tok
 ## 8. Decisão de Andraus (chat, 2026-10-31; `DHR-RETRO-003`)
 **Aprovado como experimento (P10)** para o próximo Plan que ele mandar abrir. Sem esse comando, nada é executado. Ao abrir o Plan, o Orquestrador inclui a regra do §3 e as métricas do §5 no pedido ao Especificador e ao Revisor e registra o baseline; o fechamento (retrospectiva) decide se a regra vira texto normativo.
 
+
+## Adendo (2026-11-01, DHR-A7A4-001 — decisão A4-b de Andraus)
+O experimento passa a medir também a **abertura** da Spec: tokens por rodada, Médias por rodada e o ponto de parada (rodada que fecha com 0 Média). Base da comparação: SPEC-049, abertura 906.237 tokens (≈ 39 % do total), Médias 1→0→0. Nenhuma norma muda; vale para o próximo Plan que Andraus mandar abrir. Ver `PROPOSTA-A4-PROPORCIONALIDADE-ABERTURA-PLAN-2026-11-01.md`.
