@@ -1,6 +1,6 @@
 # ERRATUM-SPEC007-PROPOSTO — citação de versão antiga do `WORKFLOW.md` (Patch, editorial). PROPOSTA
 
-> **NADA APLICADO.** Preparado a pedido de Andraus (AskUserQuestion, 2026-11-01: "Preparar a proposta"). Baseline só muda por erratum homologado por ele. Número e nome são **propostos**. Não fecha decisão aberta (CONS-01). Não é parecer do Revisor nem homologação.
+> **HOMOLOGADO por Andraus e APLICADO no ramo (chat, 2026-11-01; ata `DHR-SPEC007-008`); mescla do PR só por ordem dele.** Preparado a pedido de Andraus (AskUserQuestion, 2026-11-01: "Preparar a proposta"). Baseline só muda por erratum homologado por ele. Número e nome são **propostos**. Não fecha decisão aberta (CONS-01). Não é parecer do Revisor nem homologação.
 
 | Campo | Valor |
 |---|---|

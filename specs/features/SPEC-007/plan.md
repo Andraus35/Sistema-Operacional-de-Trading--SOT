@@ -2647,7 +2647,7 @@ Nenhuma obrigação suprimida (REMOVED vazio) nem contradita (MODIFIED vazio).
     > **Termo 6 — "selo"/"carimbo":** registro append-only que vincula **hash do material validado + emissor autenticado + registro da validação** (Q8); ≠ aprovação de corpus de outro projeto (B1).
     > [FONTE: RULE-SEM-01/03/04; INV-06/INV-10; CHM-001; DHR-SPEC007-001 Q3/Q8; GLOSSARIO]
 
-    ## Conformidade com o `WORKFLOW.md` (v1.2) — última frase
+    ## Conformidade com o `WORKFLOW.md` (versão vigente) — última frase
     "Se o BUILD ligar a recuperação à formação de contexto de uma fase do Manager, o `WF-xx` será citado por ID na Spec dona (SPEC-008/043)."
 
     ## D0 — Missão (v1.2)
