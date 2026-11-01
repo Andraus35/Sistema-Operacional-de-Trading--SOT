@@ -703,6 +703,13 @@
       "em_escopo": true,
       "sync": "fonte-unica",
       "motivo": "Uma frase de revisor.md (Short-circuit) passa a apontar o livro-razao RPSA em vez do CATALOGO; sem mudanca de metodo nem de fronteira."
+    },
+    {
+      "id": "DHR-A5O1-002",
+      "data": "2026-11-01",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Uma frase de especificador.md (Short-circuit) passa a apontar o livro-razao RPSA em vez do CATALOGO; mesma correcao ja aplicada ao Revisor; sem mudanca de metodo nem de fronteira."
     }
   ]
 }
