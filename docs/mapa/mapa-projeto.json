@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-11-01",
-  "digest": "54da853950726bd0a2ef8dde90f73d795b10b958df1c0433bc79915e4557647d",
+  "digest": "a5f13010062f170925254aabbaf558652970ba7adcdd855e00def8107c482980",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -101,7 +101,7 @@
    "path": "AGENTS.md",
    "area": "raiz",
    "title": "AGENTS.md — SOT (Sistema Operacional de Trading)",
-   "in": 267,
+   "in": 268,
    "out": 42
   },
   {
@@ -116,7 +116,7 @@
    "area": "raiz",
    "title": "HANDOFF — SOT",
    "in": 18,
-   "out": 42
+   "out": 43
   },
   {
    "path": "README.md",
@@ -136,21 +136,21 @@
    "path": "ROADMAP.md",
    "area": "raiz",
    "title": "roadmap.md — SOT: Road Map Sequencial de Especificação do Harness Cognitivo",
-   "in": 396,
+   "in": 397,
    "out": 87
   },
   {
    "path": "WORKFLOW.md",
    "area": "raiz",
    "title": "WORKFLOW — Setup Operacional Canônico do SOT",
-   "in": 197,
+   "in": 198,
    "out": 12
   },
   {
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 276,
+   "in": 277,
    "out": 38
   },
   {
@@ -192,14 +192,14 @@
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 395,
+   "in": 396,
    "out": 117
   },
   {
    "path": "canon/CCM-001-canonical-conviction-model.md",
    "area": "canon",
    "title": "CCM-001 — Canonical Conviction Model Specification",
-   "in": 115,
+   "in": 116,
    "out": 6
   },
   {
@@ -1179,7 +1179,7 @@
    "path": "docs/handoffs/HO-2026-10-31-128.md",
    "area": "docs",
    "title": "HANDOFF — SOT",
-   "in": 3,
+   "in": 4,
    "out": 45
   },
   {
@@ -1195,6 +1195,13 @@
    "title": "HANDOFF — SOT",
    "in": 0,
    "out": 38
+  },
+  {
+   "path": "docs/handoffs/HO-2026-10-31-131.md",
+   "area": "docs",
+   "title": "HANDOFF — SOT",
+   "in": 0,
+   "out": 42
   },
   {
    "path": "docs/handoffs/HO-2026-10-31-92.md",
@@ -1550,21 +1557,21 @@
    "path": "governance/DHR-AGENTS-CORTES-001_Ata_Enxugar_AGENTS_Secoes_2_5_8_9_12.md",
    "area": "governance",
    "title": "DHR-AGENTS-CORTES-001 — Ata de Decisão — Enxugar o AGENTS.md (§2, §5, §8, §9, §12) com correções do teste A/B",
-   "in": 16,
+   "in": 17,
    "out": 5
   },
   {
    "path": "governance/DHR-AGENTS-P8-001_Ata_Gate_do_Revisor_via_Orquestrador_em_Nuvem.md",
    "area": "governance",
    "title": "DHR-AGENTS-P8-001 — Ata de Decisão — Gate determinístico do Revisor: canal `GATE-D` do Orquestrador em nuvem (proposta P8)",
-   "in": 11,
+   "in": 12,
    "out": 6
   },
   {
    "path": "governance/DHR-AGENTS-SEC7-001_Ata_Enxugar_AGENTS_Secao7.md",
    "area": "governance",
    "title": "DHR-AGENTS-SEC7-001 — Ata de Decisão — Enxugar o AGENTS.md §7 (duplicado do ROADMAP)",
-   "in": 22,
+   "in": 23,
    "out": 6
   },
   {
@@ -1781,7 +1788,7 @@
    "path": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
    "area": "governance",
    "title": "DHR-CHECKS-INFO-001 — Ata de Decisão — Detectores informativos: dimensionamento de Spec (RULE-ECC-07) e SHA256-ALVO (delta por hash)",
-   "in": 50,
+   "in": 51,
    "out": 7
   },
   {
@@ -1809,7 +1816,7 @@
    "path": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
    "area": "governance",
    "title": "DHR-COESAO-002 — Ata — Decisões de Andraus sobre Auditor Externo, pre-commit, camadas do Revisor em nuvem e legado",
-   "in": 39,
+   "in": 40,
    "out": 8
   },
   {
@@ -1865,14 +1872,14 @@
    "path": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
    "area": "governance",
    "title": "DHR-DELTA-HASH-001 — Ata de Decisão — Delta por hash: pacote gravado, SHA256-ALVO no pedido e instrumentação do ledger",
-   "in": 44,
+   "in": 45,
    "out": 4
   },
   {
    "path": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
    "area": "governance",
    "title": "DHR-DIMENSIONAMENTO-001 — Ata de Decisão — RULE-ECC-07: dimensionamento de Spec (tetos medidos)",
-   "in": 63,
+   "in": 64,
    "out": 7
   },
   {
@@ -2047,7 +2054,7 @@
    "path": "governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md",
    "area": "governance",
    "title": "DHR-EUA-E20 — Ata de Homologação: FASE RISK (6 macro-slots indicativos da família RISK-SPEC)",
-   "in": 27,
+   "in": 28,
    "out": 18
   },
   {
@@ -2068,7 +2075,7 @@
    "path": "governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md",
    "area": "governance",
    "title": "DHR-EUA-E23 — Ata de Homologação: Manager Agent Unificado (3 Specs sob \"Manager Contract\")",
-   "in": 22,
+   "in": 23,
    "out": 13
   },
   {
@@ -2082,14 +2089,14 @@
    "path": "governance/DHR-HIGIENE-001_Ata_Pendencias_Baratas_Status_e_Refs.md",
    "area": "governance",
    "title": "DHR-HIGIENE-001 — Ata de Decisão — Pendências baratas de higiene (status de atas e referências)",
-   "in": 12,
+   "in": 13,
    "out": 11
   },
   {
    "path": "governance/DHR-HIGIENE-002_Ata_Status_EUA-E20_E23_PCC-001.md",
    "area": "governance",
    "title": "DHR-HIGIENE-002 — Ata de Decisão — Status de registros desatualizados (EUA-E20, EUA-E23, PCC-001)",
-   "in": 10,
+   "in": 11,
    "out": 13
   },
   {
@@ -2110,7 +2117,7 @@
    "path": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
    "area": "governance",
    "title": "DHR-LOOP-001 — Ata de Decisão — Regra determinística de coleta de achados do loop dos construtores (4Es)",
-   "in": 81,
+   "in": 82,
    "out": 13
   },
   {
@@ -2166,14 +2173,14 @@
    "path": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
    "area": "governance",
    "title": "DHR-MECH-GATE-001 — Ata de Decisão — check determinístico da Classe/Mecanismo (STRUCT-14) e uso pelo Especificador",
-   "in": 7,
+   "in": 8,
    "out": 3
   },
   {
    "path": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
    "area": "governance",
    "title": "DHR-MERGE-001 — Ata de Decisão — Aviso determinístico \"já é possível e seguro mesclar\"",
-   "in": 63,
+   "in": 64,
    "out": 3
   },
   {
@@ -2243,7 +2250,7 @@
    "path": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
    "area": "governance",
    "title": "DHR-REAPONT-001 — Ata de Homologação — ERRATUM-REAPONT-001 (re-apontamento SPEC-007 → SPEC-048)",
-   "in": 71,
+   "in": 72,
    "out": 17
   },
   {
@@ -2257,21 +2264,21 @@
    "path": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
    "area": "governance",
    "title": "DHR-RETRO-001 — Ata de Decisão — Propostas P1–P6 das retrospectivas e ordem das erratas/emenda",
-   "in": 76,
+   "in": 77,
    "out": 11
   },
   {
    "path": "governance/DHR-RETRO-002_Ata_Retrospectiva_SPEC-049_e_P7_P8_P9.md",
    "area": "governance",
    "title": "DHR-RETRO-002 — Ata de Decisão — Retrospectiva da SPEC-049 feita agora; propostas P7, P8 e P9",
-   "in": 7,
+   "in": 8,
    "out": 8
   },
   {
    "path": "governance/DHR-RETRO-003_Ata_P10_P11_P12_e_Proxima_Frente.md",
    "area": "governance",
    "title": "DHR-RETRO-003 — Ata de Decisão — Propostas P10, P11 e P12; próxima frente; merge dos PRs #149 e #151",
-   "in": 4,
+   "in": 5,
    "out": 5
   },
   {
@@ -2327,7 +2334,7 @@
    "path": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
    "area": "governance",
    "title": "DHR-ROTEAMENTO-007 — Ata de Decisão — Roteamento de modelo obrigatório por hook, M classificada na 1ª rodada e detector de ID",
-   "in": 67,
+   "in": 68,
    "out": 5
   },
   {
@@ -2446,7 +2453,7 @@
    "path": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
    "area": "governance",
    "title": "DHR-SPEC006-005 — Ata de Homologação — Errata aditiva v1.13 da SPEC-006 (ligação com o selo da SPEC-007)",
-   "in": 70,
+   "in": 71,
    "out": 11
   },
   {
@@ -2495,7 +2502,7 @@
    "path": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
    "area": "governance",
    "title": "DHR-SPEC007-005 — Ata de Homologação — Plan reduzido da SPEC-007 v2.3 (formação + selo)",
-   "in": 93,
+   "in": 94,
    "out": 11
   },
   {
@@ -2509,7 +2516,7 @@
    "path": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
    "area": "governance",
    "title": "DHR-SPEC007-007 — Ata de Decisão — Diretriz de autenticação criptográfica dos atos de Andraus (ACTREC)",
-   "in": 68,
+   "in": 69,
    "out": 6
   },
   {
@@ -2530,7 +2537,7 @@
    "path": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
    "area": "governance",
    "title": "DHR-SPEC020-002 — Ata de Homologação — ERRATUM-SPEC020-002 (dimensão B \"RAG faithfulness\", metade F1)",
-   "in": 67,
+   "in": 68,
    "out": 14
   },
   {
@@ -2586,21 +2593,21 @@
    "path": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
    "area": "governance",
    "title": "DHR-SPEC048-002 — Ata de Homologação — Plan da SPEC-048 v1.4 (RAG Retrieval & Evidence Packet Harness)",
-   "in": 77,
+   "in": 78,
    "out": 16
   },
   {
    "path": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
    "area": "governance",
    "title": "DHR-SPEC049-001 — Ata de Homologação — Abertura da SPEC-049 (WikiRAG Reading View)",
-   "in": 53,
+   "in": 54,
    "out": 18
   },
   {
    "path": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
    "area": "governance",
    "title": "DHR-SPEC049-002 — Ata de Homologação — Plan da SPEC-049 v1.2 (WikiRAG Reading View)",
-   "in": 23,
+   "in": 24,
    "out": 12
   },
   {
@@ -2614,7 +2621,7 @@
    "path": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
    "area": "governance",
    "title": "DHR-TELEMETRIA-CUSTO-001 — Ata de Decisão — Telemetria de tokens dos agentes Construtores (BL-036, 1ª fatia)",
-   "in": 28,
+   "in": 29,
    "out": 5
   },
   {
@@ -2649,7 +2656,7 @@
    "path": "governance/ERRATUM-REAPONT-001_Re-apontamento_SPEC-007_para_SPEC-048.md",
    "area": "governance",
    "title": "ERRATUM-REAPONT-001: errata aditiva de re-apontamento (recuperação e pacote: SPEC-007 → SPEC-048). PROPOSTA",
-   "in": 79,
+   "in": 80,
    "out": 35
   },
   {
@@ -2908,7 +2915,7 @@
    "path": "governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md",
    "area": "governance",
    "title": "PCC-001 — Plano de Continuidade de Contexto e Memória entre Sessões do Orquestrador (etapa BUILD) (PROPOSTA)",
-   "in": 161,
+   "in": 162,
    "out": 14
   },
   {
@@ -2936,7 +2943,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 465,
+   "in": 466,
    "out": 41
   },
   {
@@ -2964,7 +2971,7 @@
    "path": "governance/aprendizado/RETROSPECTIVAS.md",
    "area": "governance",
    "title": "RETROSPECTIVAS DE FECHAMENTO DO LOOP DOS CONSTRUTORES (LOOP-001 / DHR-LOOP-001)",
-   "in": 68,
+   "in": 69,
    "out": 30
   },
   {
@@ -3076,14 +3083,14 @@
    "path": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md",
    "area": "governance",
    "title": "Auditoria — burocracia excessiva (método, ferramentas, agentes) e higiene de arquivos",
-   "in": 28,
+   "in": 29,
    "out": 37
   },
   {
    "path": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
    "area": "governance",
    "title": "Auditoria do Especificador — Autopré-check e prevenção determinística de erros",
-   "in": 0,
+   "in": 1,
    "out": 12
   },
   {
@@ -3169,6 +3176,13 @@
    "title": "Perguntas (responda cada uma em UMA linha curta, formato `Q<n>: <resposta>`; use SÓ o documento indicado; se o documento não permitir responder, escreva `Q<n>: NAO CONSTA`)",
    "in": 0,
    "out": 0
+  },
+  {
+   "path": "governance/propostas/MELHORIAS-PROCESSO/PRE-ENTREGA/PROPOSTA-PRE-ENTREGA-2026-11-01.md",
+   "area": "governance",
+   "title": "P-A + P-F — pré-gate unificado e higiene do especificador.md",
+   "in": 0,
+   "out": 1
   },
   {
    "path": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md",
@@ -3825,7 +3839,7 @@
    "path": "specs/features/SPEC-001/plan.md",
    "area": "specs",
    "title": "SPEC-001 — Hypothesis Harness",
-   "in": 229,
+   "in": 230,
    "out": 9
   },
   {
@@ -3874,7 +3888,7 @@
    "path": "specs/features/SPEC-003/plan.md",
    "area": "specs",
    "title": "SPEC-003 — Conviction Vector, Evidence Fusion Engine & Conviction Engine",
-   "in": 155,
+   "in": 156,
    "out": 29
   },
   {
@@ -3972,7 +3986,7 @@
    "path": "specs/features/SPEC-006/plan.md",
    "area": "specs",
    "title": "SPEC-006 — Cognitive Knowledge Graph",
-   "in": 302,
+   "in": 303,
    "out": 39
   },
   {
@@ -4000,7 +4014,7 @@
    "path": "specs/features/SPEC-007/plan.md",
    "area": "specs",
    "title": "SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (formação + selo)",
-   "in": 233,
+   "in": 234,
    "out": 41
   },
   {
@@ -4035,7 +4049,7 @@
    "path": "specs/features/SPEC-020/plan.md",
    "area": "specs",
    "title": "SPEC-020 — Harness Evaluation Specification (núcleo A)",
-   "in": 193,
+   "in": 194,
    "out": 24
   },
   {
@@ -4147,7 +4161,7 @@
    "path": "specs/features/SPEC-048/plan.md",
    "area": "specs",
    "title": "SPEC-048 — RAG Retrieval & Evidence Packet Harness — Plan v1.0 (recuperação + contagem + pacote + entrega + F2 + defesa da trilha de consulta)",
-   "in": 142,
+   "in": 143,
    "out": 42
   },
   {
@@ -4175,7 +4189,7 @@
    "path": "specs/features/SPEC-049/plan.md",
    "area": "specs",
    "title": "SPEC-049 — WikiRAG Reading View — Plan v1.2 (visão de leitura por regra fixa, a partir de itens carimbados; sem autoridade)",
-   "in": 117,
+   "in": 118,
    "out": 29
   },
   {
@@ -4228,7 +4242,7 @@
   {
    "id": "BL-003",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 168
+   "cited_by": 169
   },
   {
    "id": "BL-004",
@@ -4263,12 +4277,12 @@
   {
    "id": "BL-010",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 146
+   "cited_by": 147
   },
   {
    "id": "BL-011",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 176
+   "cited_by": 177
   },
   {
    "id": "BL-012",
@@ -4298,7 +4312,7 @@
   {
    "id": "BL-017",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 160
+   "cited_by": 161
   },
   {
    "id": "BL-018",
@@ -4393,7 +4407,7 @@
   {
    "id": "BL-036",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 31
+   "cited_by": 32
   },
   {
    "id": "BL-037",
@@ -4438,17 +4452,17 @@
   {
    "id": "DHR-AGENTS-CORTES-001",
    "defined_in": "governance/DHR-AGENTS-CORTES-001_Ata_Enxugar_AGENTS_Secoes_2_5_8_9_12.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "DHR-AGENTS-P8-001",
    "defined_in": "governance/DHR-AGENTS-P8-001_Ata_Gate_do_Revisor_via_Orquestrador_em_Nuvem.md",
-   "cited_by": 11
+   "cited_by": 12
   },
   {
    "id": "DHR-AGENTS-SEC7-001",
    "defined_in": "governance/DHR-AGENTS-SEC7-001_Ata_Enxugar_AGENTS_Secao7.md",
-   "cited_by": 22
+   "cited_by": 23
   },
   {
    "id": "DHR-ARQ-001",
@@ -4608,7 +4622,7 @@
   {
    "id": "DHR-CHECKS-INFO-001",
    "defined_in": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
-   "cited_by": 50
+   "cited_by": 51
   },
   {
    "id": "DHR-CIC-001",
@@ -4628,7 +4642,7 @@
   {
    "id": "DHR-COESAO-002",
    "defined_in": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "DHR-COESAO-003",
@@ -4668,12 +4682,12 @@
   {
    "id": "DHR-DELTA-HASH-001",
    "defined_in": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
-   "cited_by": 44
+   "cited_by": 45
   },
   {
    "id": "DHR-DIMENSIONAMENTO-001",
    "defined_in": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
-   "cited_by": 63
+   "cited_by": 64
   },
   {
    "id": "DHR-DIV-001",
@@ -4823,12 +4837,12 @@
   {
    "id": "DHR-HIGIENE-001",
    "defined_in": "governance/DHR-HIGIENE-001_Ata_Pendencias_Baratas_Status_e_Refs.md",
-   "cited_by": 12
+   "cited_by": 13
   },
   {
    "id": "DHR-HIGIENE-002",
    "defined_in": "governance/DHR-HIGIENE-002_Ata_Status_EUA-E20_E23_PCC-001.md",
-   "cited_by": 10
+   "cited_by": 11
   },
   {
    "id": "DHR-HOD-001",
@@ -4843,7 +4857,7 @@
   {
    "id": "DHR-LOOP-001",
    "defined_in": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
-   "cited_by": 81
+   "cited_by": 82
   },
   {
    "id": "DHR-MAN-001",
@@ -4883,12 +4897,12 @@
   {
    "id": "DHR-MECH-GATE-001",
    "defined_in": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
-   "cited_by": 6
+   "cited_by": 7
   },
   {
    "id": "DHR-MERGE-001",
    "defined_in": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
-   "cited_by": 63
+   "cited_by": 64
   },
   {
    "id": "DHR-PAP-001",
@@ -4943,7 +4957,7 @@
   {
    "id": "DHR-REAPONT-001",
    "defined_in": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
-   "cited_by": 71
+   "cited_by": 72
   },
   {
    "id": "DHR-REG-001",
@@ -4953,17 +4967,17 @@
   {
    "id": "DHR-RETRO-001",
    "defined_in": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
-   "cited_by": 76
+   "cited_by": 77
   },
   {
    "id": "DHR-RETRO-002",
    "defined_in": "governance/DHR-RETRO-002_Ata_Retrospectiva_SPEC-049_e_P7_P8_P9.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "DHR-RETRO-003",
    "defined_in": "governance/DHR-RETRO-003_Ata_P10_P11_P12_e_Proxima_Frente.md",
-   "cited_by": 4
+   "cited_by": 5
   },
   {
    "id": "DHR-REVISOR-DELTA-001",
@@ -5008,7 +5022,7 @@
   {
    "id": "DHR-ROTEAMENTO-007",
    "defined_in": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
-   "cited_by": 67
+   "cited_by": 68
   },
   {
    "id": "DHR-RPSA-001",
@@ -5088,7 +5102,7 @@
   {
    "id": "DHR-SPEC006-005",
    "defined_in": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
-   "cited_by": 70
+   "cited_by": 71
   },
   {
    "id": "DHR-SPEC006-OPCAO2-001",
@@ -5123,7 +5137,7 @@
   {
    "id": "DHR-SPEC007-005",
    "defined_in": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
-   "cited_by": 93
+   "cited_by": 94
   },
   {
    "id": "DHR-SPEC007-006",
@@ -5133,7 +5147,7 @@
   {
    "id": "DHR-SPEC007-007",
    "defined_in": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
-   "cited_by": 68
+   "cited_by": 69
   },
   {
    "id": "DHR-SPEC019",
@@ -5153,7 +5167,7 @@
   {
    "id": "DHR-SPEC020-002",
    "defined_in": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
-   "cited_by": 67
+   "cited_by": 68
   },
   {
    "id": "DHR-SPEC021-001",
@@ -5193,17 +5207,17 @@
   {
    "id": "DHR-SPEC048-002",
    "defined_in": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
-   "cited_by": 77
+   "cited_by": 78
   },
   {
    "id": "DHR-SPEC049-001",
    "defined_in": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
-   "cited_by": 53
+   "cited_by": 54
   },
   {
    "id": "DHR-SPEC049-002",
    "defined_in": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
-   "cited_by": 23
+   "cited_by": 24
   },
   {
    "id": "DHR-TAX-001",
@@ -5213,7 +5227,7 @@
   {
    "id": "DHR-TELEMETRIA-CUSTO-001",
    "defined_in": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
-   "cited_by": 28
+   "cited_by": 29
   },
   {
    "id": "DHR-VERBATIM-SRC-001",
@@ -5333,7 +5347,7 @@
   {
    "id": "EUA-E20",
    "defined_in": "governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md",
-   "cited_by": 25
+   "cited_by": 26
   },
   {
    "id": "EUA-E21",
@@ -5348,7 +5362,7 @@
   {
    "id": "EUA-E23",
    "defined_in": "governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md",
-   "cited_by": 21
+   "cited_by": 22
   },
   {
    "id": "INV-01",
@@ -5383,7 +5397,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 327
+   "cited_by": 328
   },
   {
    "id": "INV-08",
@@ -6923,7 +6937,7 @@
   {
    "id": "SPEC-003",
    "defined_in": "specs/features/SPEC-003/plan.md",
-   "cited_by": 155
+   "cited_by": 156
   },
   {
    "id": "SPEC-004",
@@ -6938,12 +6952,12 @@
   {
    "id": "SPEC-006",
    "defined_in": "specs/features/SPEC-006/plan.md",
-   "cited_by": 302
+   "cited_by": 303
   },
   {
    "id": "SPEC-007",
    "defined_in": "specs/features/SPEC-007/plan.md",
-   "cited_by": 233
+   "cited_by": 234
   },
   {
    "id": "SPEC-008",
@@ -7008,7 +7022,7 @@
   {
    "id": "SPEC-020",
    "defined_in": "specs/features/SPEC-020/plan.md",
-   "cited_by": 193
+   "cited_by": 194
   },
   {
    "id": "SPEC-021",
@@ -7148,12 +7162,12 @@
   {
    "id": "SPEC-048",
    "defined_in": "specs/features/SPEC-048/plan.md",
-   "cited_by": 142
+   "cited_by": 143
   },
   {
    "id": "SPEC-049",
    "defined_in": "specs/features/SPEC-049/plan.md",
-   "cited_by": 117
+   "cited_by": 118
   }
  ],
  "edges": [
@@ -8370,6 +8384,11 @@
   {
    "from": "HANDOFF.md",
    "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "HANDOFF.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md",
    "type": "path"
   },
   {
@@ -29538,6 +29557,221 @@
    "type": "id"
   },
   {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "AGENTS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "ROADMAP.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "WORKFLOW.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "docs/handoffs/HO-2026-10-31-128.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-AGENTS-CORTES-001_Ata_Enxugar_AGENTS_Secoes_2_5_8_9_12.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-AGENTS-P8-001_Ata_Gate_do_Revisor_via_Orquestrador_em_Nuvem.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-AGENTS-SEC7-001_Ata_Enxugar_AGENTS_Secao7.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-CHECKS-INFO-001_Ata_Detectores_Informativos_Dimensionamento_e_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-COESAO-002_Ata_Decisoes_Legado_Auditor_Precommit_Revisor.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-DELTA-HASH-001_Ata_Delta_por_Hash_Propostas_1_a_3.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-DIMENSIONAMENTO-001_Ata_RULE-ECC-07_Tetos_de_Spec.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-EUA-E20_Ata_Homologacao_Fase_RISK.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-HIGIENE-001_Ata_Pendencias_Baratas_Status_e_Refs.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-HIGIENE-002_Ata_Status_EUA-E20_E23_PCC-001.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-LOOP-001_Ata_Regra_Coleta_Deterministica_de_Achados_4Es.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-MECH-GATE-001_Ata_Check_Deterministico_Classe_Mecanismo.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-MERGE-001_Ata_Aviso_Deterministico_Pronto_para_Mesclar.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-REAPONT-001_Ata_Homologacao_Erratum_Reapontamento.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-RETRO-001_Ata_Aprovacao_Propostas_P1-P6_e_Ordem_das_Erratas.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-RETRO-002_Ata_Retrospectiva_SPEC-049_e_P7_P8_P9.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-RETRO-003_Ata_P10_P11_P12_e_Proxima_Frente.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-ROTEAMENTO-007_Ata_Roteamento_Obrigatorio_e_Detector_de_ID.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-SPEC006-005_Ata_Homologacao_Errata_v1.13_SPEC-006.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-SPEC007-005_Ata_Homologacao_Plan_Reduzido_SPEC-007.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-SPEC007-007_Ata_Diretriz_Autenticacao_Criptografica_dos_Atos.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-SPEC020-002_Ata_Homologacao_Erratum_SPEC020-002_F1.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-SPEC048-002_Ata_Homologacao_Plan_SPEC-048.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-SPEC049-001_Ata_Homologacao_Abertura_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-SPEC049-002_Ata_Homologacao_Plan_SPEC-049.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/DHR-TELEMETRIA-CUSTO-001_Ata_Telemetria_Tokens_Construtores.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/aprendizado/RETROSPECTIVAS.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "specs/features/SPEC-001/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "specs/features/SPEC-006/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "specs/features/SPEC-007/plan.md",
+   "type": "path"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "specs/features/SPEC-020/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "specs/features/SPEC-048/plan.md",
+   "type": "id"
+  },
+  {
+   "from": "docs/handoffs/HO-2026-10-31-131.md",
+   "to": "specs/features/SPEC-049/plan.md",
+   "type": "id"
+  },
+  {
    "from": "docs/handoffs/HO-2026-10-31-92.md",
    "to": "AGENTS.md",
    "type": "path"
@@ -50040,6 +50274,11 @@
   {
    "from": "governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/TESTE-AB-AGENTS/p8-gate-d/revisor-sec3.md",
    "to": "governance/DHR-REVISOR-DELTA-001_Ata_Revisao_por_Delta_com_Hash.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/MELHORIAS-PROCESSO/PRE-ENTREGA/PROPOSTA-PRE-ENTREGA-2026-11-01.md",
+   "to": "specs/features/SPEC-003/plan.md",
    "type": "id"
   },
   {

@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-31-131
-previous: HO-2026-10-31-130
-data: 2026-10-31
-branch: ccr-599f6762-60qbvg
-base_commit: e897eab
+handoff_id: HO-2026-11-01-132
+previous: HO-2026-10-31-131
+data: 2026-11-01
+branch: ccr-4bd4e8a0-d92lc7
+base_commit: a62b95e
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,6 +14,8 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
+**Auditoria do pré-check do Especificador (2026-11-01, ordem de Andraus no chat):** relatório `governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-ESPECIFICADOR-PRECHECK-2026-11-01.md` (achados A-1..A-9; backtest: detectores atuais = 0/3 Médias no Plan v1.0 da SPEC-049) e proposta pré-testada em `.../PRE-ENTREGA/` (`pre_entrega.py` + 3 testes OK, **não instalado**; `PATCH-ESPECIFICADOR-P-F-2026-11-01.patch`, `git apply --check` OK, **não aplicado**). Respostas de Andraus: começar por P-F(1–5)+P-A; quem roda o pré-gate = Orquestrador/hook (Especificador segue sem Bash); detectores informativos até P-E medir falso alarme; handoff + PR sem mesclar. **Nada vira mecanismo sem ordem dele** (ata + `MECANISMOS.json` no mesmo PR, COE-14).
+
 **Nenhuma Spec em redação.** Último fechamento: **SPEC-049** (abertura `DHR-SPEC049-001` + Plan v1.2 BASELINE `DHR-SPEC049-002`, sem BUILD). **Retrospectiva da SPEC-049 FEITA** em 2026-10-31 (`DHR-RETRO-002`; `loop_ledger.py --retro-check SPEC-049` = FEITA). Abrir outra Spec continua **só por ordem de Andraus**.
 
 **Nenhum PR de trabalho aberto além do que traz este próprio handoff (higiene do handoff pós-merge).** O PR **#149** foi **MESCLADO** na `main` (`f4ff6c4`, a comando de Andraus em 2026-10-31): retrospectiva da SPEC-049 FEITA; **P7** `scripts/fato_locais.py` (detector informativo: tabela fato→locais, `--conferir`, `--base`; 20 testes; `MECANISMOS.json` + CI); **P8** emenda ao `.claude/agents/revisor.md` §3 (canal `GATE-D:` do Orquestrador em nuvem; `DHR-AGENTS-P8-001`; resultado negativo nunca se descarta por formato). Para trabalhar: `git checkout -B <ramo> origin/main`.
@@ -36,7 +38,7 @@ Ordem classe O ao Especificador (`model: opus` + `CLASSE-TAREFA: O` + `PARECER:`
 Categorias mais recorrentes: **C07** (39) · **C01** (28) · **C02** (24); SPEC-049 (34 achados): C01 7, C07 5, C05 5, C06 5. Lacunas de prevenção abertas: C99, C01, C06, C03, C10. Retrospectivas SPEC-006/007/020/048/049 FEITAS; P1–P9 decididas (P7 e P8 aplicadas via #149; P9 atendida pelo corte do §7); P10–P12 decididas (`DHR-RETRO-003`: P10 experimento, P11 pré-testada sem aplicar, P12 escrita).
 
 ## 5. Próximo passo único
-**Frente escolhida por Andraus: itens da auditoria de burocracia** (`governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md`, seção 5 "Ordem de ataque"). Cada item: **proposta pré-testada → ordem dele → ata → gates → PR sem mesclar**, e **medir antes de cortar** (regra de equilíbrio dos 4Es). Começar **perguntando a Andraus (AskUserQuestion) por qual item**; recomendação do Orquestrador: **A2** (HANDOFF só com delta/ponteiros e RPSA derivado do git — elimina o ritual manual que mais colidiu e errou nesta sessão; já tem o P11 pré-testado como parte) → **A6** (mecanismos em 3 camadas, com caducidade por detector) → **A3** (decisão em lote) → A7 (log único de decisões operacionais) → A8 (modelo fixo por agente, só depois de medir) → A4 (abertura+Plan em ciclo único para Specs LOW/MEDIUM) → A9 (checklist único D/H). **Fora desta frente, sem mexer:** as linhas 34/37 do `ROADMAP.md` (exigem julgamento dele). Se ele mandar mesclar qualquer PR: CI verde, merge commit travando o `expectedHeadSha`, reiniciar o ramo de `origin/main`.
+**Pendente de ordem de Andraus: aplicar P-F/P-A da auditoria do Especificador** (patch em `PRE-ENTREGA/`; exige ata, `MECANISMOS.json` e emenda ao `.claude/agents/especificador.md`). Depois, P-B + C-1/C-2 e P-E. Frente anterior (segue valendo): **itens da auditoria de burocracia** (`governance/propostas/MELHORIAS-PROCESSO/AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md`, seção 5 "Ordem de ataque"). Cada item: **proposta pré-testada → ordem dele → ata → gates → PR sem mesclar**, e **medir antes de cortar** (regra de equilíbrio dos 4Es). Começar **perguntando a Andraus (AskUserQuestion) por qual item**; recomendação do Orquestrador: **A2** (HANDOFF só com delta/ponteiros e RPSA derivado do git — elimina o ritual manual que mais colidiu e errou nesta sessão; já tem o P11 pré-testado como parte) → **A6** (mecanismos em 3 camadas, com caducidade por detector) → **A3** (decisão em lote) → A7 (log único de decisões operacionais) → A8 (modelo fixo por agente, só depois de medir) → A4 (abertura+Plan em ciclo único para Specs LOW/MEDIUM) → A9 (checklist único D/H). **Fora desta frente, sem mexer:** as linhas 34/37 do `ROADMAP.md` (exigem julgamento dele). Se ele mandar mesclar qualquer PR: CI verde, merge commit travando o `expectedHeadSha`, reiniciar o ramo de `origin/main`.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 `DHR-RETRO-003`, `DHR-RETRO-002`, `DHR-AGENTS-P8-001`, `DHR-AGENTS-CORTES-001`, `DHR-AGENTS-SEC7-001`, `DHR-HIGIENE-001`, `DHR-HIGIENE-002`, `DHR-MECH-GATE-001`, `DHR-SPEC049-002`, `DHR-SPEC049-001`, `DHR-TELEMETRIA-CUSTO-001`, `DHR-CHECKS-INFO-001`, `DHR-DELTA-HASH-001`, `DHR-DIMENSIONAMENTO-001`, `DHR-RETRO-001`, `DHR-ROTEAMENTO-007`, `DHR-MERGE-001`, `DHR-LOOP-001`. Decisões abertas/fechadas: ler o `ROADMAP.md` (linhas "Decisões abertas ativas"/"Decisões FECHADAS").
@@ -56,6 +58,7 @@ Dar Bash ao Revisor; refazer SPEC-006/020/048/049; tratar o `AGENTS.md` como mai
 - *Aviso esperado:* `check_handoff` HO-04 (união das cadeias de handoff); informativo.
 
 ## 10. Aguardando Andraus
+0. **Auditoria do Especificador:** ordem para aplicar P-F(1–5)+P-A (ou ajustar); depois P-B, C-1/C-2, P-E.
 1. **Itens da auditoria de burocracia** (frente escolhida): dizer por qual começar (recomendação: A2 → A6 → A3 …, §5); cada um só por ordem dele. 2. **P10:** mandar abrir o próximo Plan para rodar o experimento da regra de parada (baseline SPEC-049 ≈ 2,30 M tokens). 3. **P11:** ordem para aplicar os patches pré-testados (e, se quiser, o texto da regra no `AGENTS.md` §11, reservado). 4. **Pendências das Specs anteriores** (nenhuma escolhida): erratum F2 da SPEC-020, errata da SPEC-007 (inclui a citação de versão antiga do `WORKFLOW.md` em `plan.md:2650`), CATALOGO/RMR-001 (BL-017), CONFLICT-MAP — ou abrir outra Spec. 5. **Higiene restante:** nomes de `reference/`, subpastas de `governance/`, confirmar o status do `ERRATUM-SPEC019-001`. 6. Antes de qualquer BUILD: mecanismo de assinatura (DHR-SPEC007-007). 7. Decisões abertas do ROADMAP; destino do Auditor Externo (PAUSADO); quem aprova o 1º `render_profile` v1 (decidir na construção).
 
 ## 11. Ponteiros
