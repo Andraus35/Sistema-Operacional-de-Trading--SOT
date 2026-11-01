@@ -1,0 +1,22 @@
+diff --git a/tests/test_check_refs.py b/tests/test_check_refs.py
+index 77db65f..0d6f2e6 100644
+--- a/tests/test_check_refs.py
++++ b/tests/test_check_refs.py
+@@ -59,6 +59,17 @@ class CheckRefs(unittest.TestCase):
+         finally:
+             repo.close()
+ 
++    def test_placeholder_0nn_com_sufixo_separado_nao_e_regra_sem_definicao(self):
++        """RULE-WRV-0nn (família de numeração) não é referência; RULE-WRV-07 inexistente continua sendo achado."""
++        repo = Repo({**BASE, "governance/viva.md": "Contagem de `^RULE-WRV-0nn:` e de RULE-WRV-0NN.\n",
++                     "governance/outra.md": "Cita RULE-WRV-07 e RULE-WRV-0x.\n"})
++        try:
++            rc, out = repo.run()
++            self.assertNotIn("viva.md", out)
++            self.assertIn("RULE-WRV-07", out)
++        finally:
++            repo.close()
++
+     def test_bl_inexistente_em_doc_vivo_e_erro(self):
+         (code, out), _ = self.go({"backlog/x.md": "Depende de BL-099."})
+         self.assertEqual(code, 1)
