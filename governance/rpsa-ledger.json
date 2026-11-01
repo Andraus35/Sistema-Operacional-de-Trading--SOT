@@ -710,6 +710,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Muda só se o ledger derivado é commitado; o método do loop não muda."
+    },
+    {
+      "id": "DHR-A5O1-002",
+      "data": "2026-11-01",
+      "em_escopo": true,
+      "sync": "fonte-unica",
+      "motivo": "Uma frase de especificador.md (Short-circuit) passa a apontar o livro-razao RPSA em vez do CATALOGO; mesma correcao ja aplicada ao Revisor; sem mudanca de metodo nem de fronteira."
     }
   ]
 }
