@@ -129,6 +129,8 @@ def valida(ev, camada="L1"):
         erros.append("policy.decision exige decision e policy_id")
     if ev.get("event") == "approval.decided" and camada in CAMADAS_PUBLICAS:
         ref = ev.get("input_ref")
+        if ev.get("status") == "sem-ata" and not ev.get("task_ref"):
+            erros.append("approval.decided 'sem-ata' exige task_ref (onde a decisao foi tomada)")
         if ev.get("status") != "sem-ata" and not (isinstance(ref, dict) and re.fullmatch(_RE_ATA, str(ref.get("path", "")))):
             erros.append("approval.decided em L2/L3 exige input_ref para governance/DHR-*.md ou status 'sem-ata' (a cadeia nao prova autoria; o verify nao confere existencia da ata)")
     if camada in CAMADAS_PUBLICAS and not _RE_SESSAO_HASH.fullmatch(str(ev.get("session_id", ""))):
@@ -220,6 +222,9 @@ def acrescenta(arquivo, ev, camada=None, continua_de=None):
         ult = _ultima_linha(fd)
         prev = json.loads(ult).get("hash") if ult else continua_de
         dados = (_linha(sela(ev, prev)) + "\n").encode("utf-8"); sel = json.loads(dados)
+        if os.fstat(fd).st_size > 0:
+            os.lseek(fd, -1, os.SEEK_END)
+            if os.read(fd, 1) != b"\n": dados = b"\n" + dados  # arquivo sem \n final: nao cola a proxima linha
         n = 0
         while n < len(dados): n += os.write(fd, dados[n:])  # escrita curta (B08)
         if camada in CAMADAS_PUBLICAS: os.fsync(fd)  # L1 e descartavel: sem fsync (custo/latencia)
@@ -255,11 +260,14 @@ def verifica(arquivo, cabeca_esperada=None, continua_de=None, ancora_linha=None)
     `ancora_linha`=(N, hash): o hash da linha N (1-based, so linhas nao vazias) deve ser o ancorado — vale para segmento que continua crescendo.
     `continua_de`: hash final do segmento anterior (a 1a linha deve encadear nele); sem isso a 1a linha tem prev_hash nulo."""
     probs, prev, ult, n = [], continua_de, None, 0
-    for i, l in enumerate(Path(arquivo).read_bytes().decode("utf-8").split("\n"), 1):
+    try: texto = Path(arquivo).read_bytes().decode("utf-8")
+    except UnicodeDecodeError: return ["arquivo nao e UTF-8 valido"]
+    for i, l in enumerate(texto.split("\n"), 1):
         if not l.strip(): continue
         n += 1
         try: ev = json.loads(l)
         except ValueError: probs.append(f"linha {i}: JSON invalido"); continue
+        if not isinstance(ev, dict): probs.append(f"linha {i}: nao e objeto JSON"); continue
         if ev.get("prev_hash") != prev: probs.append(f"linha {i}: prev_hash nao confere (remocao/reordenacao)")
         if hashlib.sha256(_canon(ev).encode("utf-8")).hexdigest() != ev.get("hash"): probs.append(f"linha {i}: hash nao confere (edicao)")
         prev = ult = ev.get("hash")
@@ -289,7 +297,9 @@ def main(argv):
         emite_seguro(argv[2], ev, opt("--camada"), canal_warn="arquivo", continua_de=opt("--continua-de"))
         return 0
     if len(argv) >= 3 and argv[1] == "verify":
-        anc = opt("--ancora"); anc = (int(anc.split(":")[0]), anc.split(":")[1]) if anc else None
+        anc = opt("--ancora")
+        try: anc = (int(anc.split(":")[0]), anc.split(":")[1]) if anc else None
+        except (ValueError, IndexError): print("PROBLEMA: --ancora deve ser N:HASH"); return 2
         probs = verifica(argv[2], opt("--cabeca"), opt("--continua-de"), anc)
         for pr in probs: print("PROBLEMA:", pr)
         print("cadeia integra" if not probs else f"{len(probs)} problema(s)")

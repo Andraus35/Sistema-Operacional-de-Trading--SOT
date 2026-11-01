@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-11-01",
-  "digest": "8d1cc100119294040a23a849c047f13ed1faaa9c3b7a9d8a76009e3491dcbd35",
+  "digest": "2cc6d446eda1dab0c0ee8a66d1ddf015c6ddccf67aa254c21fada8057033cbdb",
   "normative": false,
   "note": "NÃO-NORMATIVO; regenerável (BL-019)"
  },
@@ -150,7 +150,7 @@
    "path": "atomic-spec.md",
    "area": "raiz",
    "title": "atomic-spec.md — Unidade Atômica de Especificação do Harness Cognitivo do SOT",
-   "in": 284,
+   "in": 285,
    "out": 38
   },
   {
@@ -185,14 +185,14 @@
    "path": "backlog/BL-034-OBSERVABILIDADE-LOGS-AGENTES-backlog.md",
    "area": "backlog",
    "title": "BL-034 — Observabilidade e logs de agentes (master externo) — intake de backlog",
-   "in": 16,
+   "in": 17,
    "out": 7
   },
   {
    "path": "backlog/RMR-001_Painel_Backlog.md",
    "area": "backlog",
    "title": "RMR-001 — Painel Vivo de Backlog e Rastreabilidade de Ativação",
-   "in": 407,
+   "in": 408,
    "out": 117
   },
   {
@@ -1774,7 +1774,7 @@
    "path": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
    "area": "governance",
    "title": "DHR-AUDITOR-EXTERNO-018 — Ata — Guarda pós-Revisor no Orquestrador (hook Stop), porque o SubagentStop não é honrado em nuvem",
-   "in": 62,
+   "in": 63,
    "out": 5
   },
   {
@@ -2985,7 +2985,7 @@
    "path": "governance/RULES.md",
    "area": "governance",
    "title": "Rules — SOT (Sistema Operacional de Trading)",
-   "in": 476,
+   "in": 477,
    "out": 41
   },
   {
@@ -3136,6 +3136,13 @@
    "out": 4
   },
   {
+   "path": "governance/propostas/LOGS-CONSTRUTORES/PARECER-REVISOR-LOGS-AC-R3-2026-11-01.md",
+   "area": "governance",
+   "title": "PARECER DO REVISOR — Logs dos Construtores — R3 — 2026-11-01",
+   "in": 0,
+   "out": 5
+  },
+  {
    "path": "governance/propostas/LOGS-CONSTRUTORES/PESQUISA-LOGS-AGENTES-2026-11-01.md",
    "area": "governance",
    "title": "PESQUISA ENXUTA — Logging/observabilidade de agentes de IA (pré-requisito da F2)",
@@ -3153,7 +3160,7 @@
    "path": "governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md",
    "area": "governance",
    "title": "PROPOSTA — Consolidação dos logs dos agentes Construtores (AC)",
-   "in": 11,
+   "in": 12,
    "out": 14
   },
   {
@@ -4460,7 +4467,7 @@
   {
    "id": "BL-034",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 16
+   "cited_by": 17
   },
   {
    "id": "BL-035",
@@ -4470,7 +4477,7 @@
   {
    "id": "BL-036",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 39
+   "cited_by": 40
   },
   {
    "id": "BL-037",
@@ -4485,7 +4492,7 @@
   {
    "id": "BL-039",
    "defined_in": "backlog/RMR-001_Painel_Backlog.md",
-   "cited_by": 7
+   "cited_by": 8
   },
   {
    "id": "BL-040",
@@ -4645,7 +4652,7 @@
   {
    "id": "DHR-AUDITOR-EXTERNO-018",
    "defined_in": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
-   "cited_by": 62
+   "cited_by": 63
   },
   {
    "id": "DHR-BACKLOG-001",
@@ -5445,7 +5452,7 @@
   {
    "id": "INV-04",
    "defined_in": "governance/RULES.md",
-   "cited_by": 91
+   "cited_by": 92
   },
   {
    "id": "INV-05",
@@ -5460,7 +5467,7 @@
   {
    "id": "INV-07",
    "defined_in": "governance/RULES.md",
-   "cited_by": 337
+   "cited_by": 338
   },
   {
    "id": "INV-08",
@@ -51256,6 +51263,31 @@
   },
   {
    "from": "governance/propostas/LOGS-CONSTRUTORES/PARECER-REVISOR-LOGS-AC-R2-2026-11-01.md",
+   "to": "governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PARECER-REVISOR-LOGS-AC-R3-2026-11-01.md",
+   "to": "atomic-spec.md",
+   "type": "path"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PARECER-REVISOR-LOGS-AC-R3-2026-11-01.md",
+   "to": "backlog/RMR-001_Painel_Backlog.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PARECER-REVISOR-LOGS-AC-R3-2026-11-01.md",
+   "to": "governance/DHR-AUDITOR-EXTERNO-018_Ata_Guarda_Pos_Revisor_no_Orquestrador.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PARECER-REVISOR-LOGS-AC-R3-2026-11-01.md",
+   "to": "governance/RULES.md",
+   "type": "id"
+  },
+  {
+   "from": "governance/propostas/LOGS-CONSTRUTORES/PARECER-REVISOR-LOGS-AC-R3-2026-11-01.md",
    "to": "governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md",
    "type": "path"
   },

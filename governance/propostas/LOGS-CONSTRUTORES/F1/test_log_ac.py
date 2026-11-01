@@ -271,4 +271,22 @@ class T(unittest.TestCase):
             self.assertRegex((Path(d) / "f.log").read_text(), r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z log_ac WARN")
     def test_r4_esquema_tem_id(self): self.assertTrue(L.SCHEMA.get("$id"))
 
+    def test_r5_c06_verify_entradas_invalidas(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "l.jsonl"
+            f.write_text("[1,2]\n"); self.assertTrue(any("objeto" in p for p in L.verifica(f)))
+            f.write_bytes(b"\xff\xfe\n"); self.assertEqual(L.verifica(f), ["arquivo nao e UTF-8 valido"])
+            import subprocess, sys as S
+            L.acrescenta(Path(d) / "ok.jsonl", ev())
+            r = subprocess.run([S.executable, "-B", str(Path(L.__file__)), "verify", str(Path(d) / "ok.jsonl"), "--ancora", "semdoispontos"], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 2); self.assertNotIn("Traceback", r.stderr)
+    def test_r5_c06_sem_ata_exige_task_ref(self):
+        e = ev(event="approval.decided", session_id=L.hash_sessao("s"), severity="AUDIT", status="sem-ata", task_ref=None)
+        self.assertTrue(L.valida(e, "L2")); self.assertEqual(L.valida(dict(e, task_ref="chat-2026-11-01"), "L2"), [])
+    def test_r5_c06_arquivo_sem_newline_final_nao_cola(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "l.jsonl"; L.acrescenta(f, ev(run_id="a"))
+            f.write_bytes(f.read_bytes().rstrip(b"\n"))
+            L.acrescenta(f, ev(run_id="b")); self.assertEqual(len(f.read_text().splitlines()), 2); self.assertEqual(L.verifica(f), [])
+
 if __name__ == "__main__": unittest.main()
