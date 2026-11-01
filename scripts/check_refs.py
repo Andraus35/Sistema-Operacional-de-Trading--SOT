@@ -258,6 +258,8 @@ def analyze():
                         continue  # placeholder de numeração (RULE-CKG-0NN): padrão, não referência
                     if PLACEHOLDER.match(line[m.end():m.end() + 5]):
                         continue
+                    if kind == "RULE" and m.group(0).endswith("-0") and re.match(r"[nN]{2}(?![A-Za-z0-9])", line[m.end():m.end() + 3]):
+                        continue  # placeholder de numeração "RULE-XXX-0nn": o token pára em "-0" e o "nn" fica de fora
                     if kind == "SPEC" and not (ROOT / "ROADMAP.md").exists():
                         continue
                     if reg.defined(kind, m):
