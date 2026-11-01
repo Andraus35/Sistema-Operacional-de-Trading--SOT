@@ -4,7 +4,7 @@
 >
 > Regenerar: `python scripts/build_map.py` · Verificar defasagem: `python scripts/build_map.py --check`
 
-Gerado em **2026-11-01** · digest `a5f13010062f1709` · **603** documentos · **10411** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
+Gerado em **2026-11-01** · digest `f8e43ec67d5b67a2` · **603** documentos · **10414** arestas doc→doc · fontes: `scripts/check_refs.py`, `scripts/backlog_triggers.py`
 
 ## 1. Camadas (por diretório)
 
@@ -13,7 +13,7 @@ Gerado em **2026-11-01** · digest `a5f13010062f1709` · **603** documentos · *
 | **raiz** | 7 | entradas: ROADMAP, atomic-spec, AGENTS, GLOSSARIO, README | [ROADMAP.md](../../ROADMAP.md) (397) · [atomic-spec.md](../../atomic-spec.md) (277) · [AGENTS.md](../../AGENTS.md) (268) |
 | **governance** | 308 | autoridade normativa: Constituição, RULES, CATALOGO, atas DHR, emendas EUA | [RULES.md](../../governance/RULES.md) (466) · [PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md](../../governance/PCC-001_Plano_Continuidade_Contexto_Build_PROPOSTA.md) (162) · [CATALOGO-OFICIAL.md](../../governance/CATALOGO-OFICIAL.md) (130) |
 | **canon** | 9 | modelos canônicos BASELINED (CHM/CEM/CEE/GMC/SDD/PPQ/SAS/CR) | [CEM-001-canonical-evidence-model.md](../../canon/CEM-001-canonical-evidence-model.md) (168) · [CCM-001-canonical-conviction-model.md](../../canon/CCM-001-canonical-conviction-model.md) (116) · [CEE-001-cognitive-economy-efficiency-v2.0.md](../../canon/CEE-001-cognitive-economy-efficiency-v2.0.md) (107) |
-| **specs** | 58 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (303) · [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) (234) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (230) |
+| **specs** | 58 | Specs por feature (plan.md + checks.md) e specs de agente | [SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) (303) · [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) (235) · [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) (230) |
 | **backlog** | 6 | RMR-001 e backlogs (gatilhos de ativação) | [RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) (396) · [BL-018-RISK-AGENT-backlog.md](../../backlog/BL-018-RISK-AGENT-backlog.md) (21) · [BL-016-MC-SKL-001-encaminhamento.md](../../backlog/BL-016-MC-SKL-001-encaminhamento.md) (14) |
 | **reference** | 28 | referências externas não-normativas (camadas, master contracts) | [MC-RAG-001_Master_Contract_Camada_RAG.md](../../reference/camadas/MC-RAG-001_Master_Contract_Camada_RAG.md) (28) · [MC-COG-001_Master_Contract_Camada_Cognicao.md](../../reference/camadas/MC-COG-001_Master_Contract_Camada_Cognicao.md) (25) · [CAMADA MEMÓRIA.MD](../../reference/camadas/CAMADA%20MEM%C3%93RIA.MD) (9) |
 | **rag** | 5 | chunks de conhecimento por agente | [synthesis.knowledge.md](../../rag/synthesis.knowledge.md) (3) · [smc.knowledge.md](../../rag/smc.knowledge.md) (1) |
@@ -29,7 +29,7 @@ Seta A → B = documentos de A referenciam documentos de B (só pares com ≥ 8 
 ```mermaid
 flowchart LR
   docs["docs"] -->|2836| governance["governance"]
-  governance["governance"] -->|1016| specs["specs"]
+  governance["governance"] -->|1019| specs["specs"]
   docs["docs"] -->|894| specs["specs"]
   docs["docs"] -->|713| raiz["raiz"]
   governance["governance"] -->|474| raiz["raiz"]
@@ -66,7 +66,7 @@ flowchart LR
 |---|---:|---|
 | `INV-07` | 328 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-006` | 303 | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) |
-| `SPEC-007` | 234 | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) |
+| `SPEC-007` | 235 | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) |
 | `SPEC-020` | 194 | [specs/features/SPEC-020/plan.md](../../specs/features/SPEC-020/plan.md) |
 | `SPEC-002` | 182 | [specs/features/SPEC-002/plan.md](../../specs/features/SPEC-002/plan.md) |
 | `BL-011` | 177 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
@@ -76,7 +76,7 @@ flowchart LR
 | `BL-010` | 147 | [backlog/RMR-001_Painel_Backlog.md](../../backlog/RMR-001_Painel_Backlog.md) |
 | `SPEC-048` | 143 | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) |
 | `SPEC-001` | 121 | [specs/features/SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) |
-| `SPEC-049` | 118 | [specs/features/SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) |
+| `SPEC-049` | 119 | [specs/features/SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) |
 | `INV-09` | 115 | [governance/RULES.md](../../governance/RULES.md) |
 | `SPEC-005` | 109 | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) |
 | `SPEC-004` | 108 | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) |
@@ -100,7 +100,7 @@ flowchart LR
 | `SPEC-004` | **Homologada** | [specs/features/SPEC-004/plan.md](../../specs/features/SPEC-004/plan.md) | 108 |
 | `SPEC-005` | **Homologada** | [specs/features/SPEC-005/plan.md](../../specs/features/SPEC-005/plan.md) | 109 |
 | `SPEC-006` | **Homologada** | [specs/features/SPEC-006/plan.md](../../specs/features/SPEC-006/plan.md) | 303 |
-| `SPEC-007` | **Homologada** | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | 234 |
+| `SPEC-007` | **Homologada** | [specs/features/SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | 235 |
 | `SPEC-008` | Indicativa (não aberta) | — | 34 |
 | `SPEC-009` | Indicativa (não aberta) | — | 89 |
 | `SPEC-010` | Indicativa (não aberta) | — | 50 |
@@ -142,7 +142,7 @@ flowchart LR
 | `SPEC-046` | **Homologada** | [specs/features/SPEC-046/plan.md](../../specs/features/SPEC-046/plan.md) | 31 |
 | `SPEC-047` | Indicativa (não aberta) | — | 35 |
 | `SPEC-048` | **Homologada** | [specs/features/SPEC-048/plan.md](../../specs/features/SPEC-048/plan.md) | 143 |
-| `SPEC-049` | **Homologada** | [specs/features/SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) | 118 |
+| `SPEC-049` | **Homologada** | [specs/features/SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) | 119 |
 
 ## 5. Backlog e integridade
 
@@ -447,7 +447,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [cenarios.md](../../governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/TESTE-AB-AGENTS/p8-gate-d/cenarios.md) | Cenários do Revisor (responda cada um em UMA linha: `C<n>: <o que o parecer f... | 0 | 0 |
 | [revisor-sec3.md](../../governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/TESTE-AB-AGENTS/p8-gate-d/revisor-sec3.md) | revisor-sec3 | 0 | 2 |
 | [perguntas.md](../../governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/TESTE-AB-AGENTS/perguntas.md) | Perguntas (responda cada uma em UMA linha curta, formato `Q<n>: <resposta>`; ... | 0 | 0 |
-| [PROPOSTA-PRE-ENTREGA-2026-11-01.md](../../governance/propostas/MELHORIAS-PROCESSO/PRE-ENTREGA/PROPOSTA-PRE-ENTREGA-2026-11-01.md) | P-A + P-F — pré-gate unificado e higiene do especificador.md | 0 | 1 |
+| [PROPOSTA-PRE-ENTREGA-2026-11-01.md](../../governance/propostas/MELHORIAS-PROCESSO/PRE-ENTREGA/PROPOSTA-PRE-ENTREGA-2026-11-01.md) | P-A + P-F — pré-gate unificado e higiene do especificador.md | 0 | 4 |
 | [PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-DIMENSIONAMENTO-DE-SPEC-2026-10-31.md) | Proposta — dimensionamento de Spec: critério medido para "uma Spec ou várias" | 2 | 17 |
 | [PROPOSTA-EXPERIMENTO-REGRA-DE-PARADA-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-EXPERIMENTO-REGRA-DE-PARADA-2026-10-31.md) | Proposta — experimento da regra de parada de rodadas (A1 da auditoria de buro... | 8 | 10 |
 | [PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md](../../governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-PATCH-CHECK-REFS-E-MAPA-2026-10-31.md) | Proposta pré-testada — falsos positivos do check_refs e destino do mapa JSON | 12 | 2 |
@@ -526,7 +526,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | Documento | Título | ← | → |
 |---|---|---:|---:|
 | [elliott-wave.spec.md](../../specs/elliott-wave.spec.md) | Spec — Elliott Wave Specialist | 3 | 1 |
-| [SPEC-001/checks.md](../../specs/features/SPEC-001/checks.md) | SPEC-001 — Hypothesis Harness — Verificação de Spec | 72 | 2 |
+| [SPEC-001/checks.md](../../specs/features/SPEC-001/checks.md) | SPEC-001 — Hypothesis Harness — Verificação de Spec | 73 | 2 |
 | [SPEC-001/plan.md](../../specs/features/SPEC-001/plan.md) | SPEC-001 — Hypothesis Harness | 230 | 9 |
 | [DOSSIE-PESQUISA.md](../../specs/features/SPEC-002/DOSSIE-PESQUISA.md) | Dossiê de Pesquisa — SPEC-002 (Evidence & Evidence Provenance Harness) | 2 | 14 |
 | [PROPOSTA-ABERTURA.md](../../specs/features/SPEC-002/PROPOSTA-ABERTURA.md) | Proposta de Abertura — SPEC-002: Evidence & Evidence Provenance Harness | 5 | 16 |
@@ -552,7 +552,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-006/research.md) | Dossiê de Pesquisa — SPEC-006: Cognitive Knowledge Graph (slot ROADMAP §6, FA... | 6 | 24 |
 | [ABERTURA.md](../../specs/features/SPEC-007/ABERTURA.md) | Proposta de Abertura — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness ... | 11 | 26 |
 | [SPEC-007/checks.md](../../specs/features/SPEC-007/checks.md) | checks.md — Verificação de Spec da SPEC-007 (fase spec-first) | 2 | 15 |
-| [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (forma... | 234 | 41 |
+| [SPEC-007/plan.md](../../specs/features/SPEC-007/plan.md) | SPEC-007 — RAG / WikiRAG / Knowledge Formation Harness — Plan REDUZIDO (forma... | 235 | 41 |
 | [research.md](../../specs/features/SPEC-007/research.md) | Dossiê de Pesquisa — SPEC-007: RAG / WikiRAG / Knowledge Formation Harness (s... | 4 | 28 |
 | [SPEC-019/checks.md](../../specs/features/SPEC-019/checks.md) | checks.md — Verificação de Spec da SPEC-019 (fase spec-first) | 1 | 8 |
 | [SPEC-019/plan.md](../../specs/features/SPEC-019/plan.md) | SPEC-019 — Harness Governance & Evolution (+ Contrato de Herança Vertical) | 67 | 19 |
@@ -577,7 +577,7 @@ Nenhum outro documento cita por caminho, por ID resolvido ou pela chave do arqui
 | [research.md](../../specs/features/SPEC-048/research.md) | Dossiê de Pesquisa — SPEC-048: RAG Retrieval & Evidence Packet Harness (slot ... | 3 | 27 |
 | [ABERTURA.md](../../specs/features/SPEC-049/ABERTURA.md) | Proposta de Abertura — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3) | 6 | 26 |
 | [SPEC-049/checks.md](../../specs/features/SPEC-049/checks.md) | checks.md — Verificação de Spec da SPEC-049 (fase spec-first) | 2 | 10 |
-| [SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) | SPEC-049 — WikiRAG Reading View — Plan v1.2 (visão de leitura por regra fixa,... | 118 | 29 |
+| [SPEC-049/plan.md](../../specs/features/SPEC-049/plan.md) | SPEC-049 — WikiRAG Reading View — Plan v1.2 (visão de leitura por regra fixa,... | 119 | 29 |
 | [research.md](../../specs/features/SPEC-049/research.md) | Dossiê de Pesquisa — SPEC-049: WikiRAG Reading View (slot ROADMAP §6, FASE 3) | 3 | 21 |
 | [fibonacci.spec.md](../../specs/fibonacci.spec.md) | Spec — Fibonacci Validator | 3 | 1 |
 | [ict.spec.md](../../specs/ict.spec.md) | Spec — ICT Specialist (Execution Intelligence) | 2 | 1 |
