@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-10-31-131
-previous: HO-2026-10-31-130
-data: 2026-10-31
-branch: ccr-599f6762-60qbvg
-base_commit: e897eab
+handoff_id: HO-2026-11-01-132
+previous: HO-2026-10-31-131
+data: 2026-11-01
+branch: ccr-a79e19ef-2zl738
+base_commit: a62b95e
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -21,6 +21,8 @@ anexo: null
 **Decisões de Andraus no fim da sessão (chat, 2026-10-31; `DHR-RETRO-003`):** **P10** aprovada como **experimento** no PRÓXIMO Plan que ele mandar abrir (regra de parada; nada a executar até esse comando); **P11** aprovada como **proposta pré-testada** — patches em `governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/P11/`, **não aplicados**; **P12** aprovada e escrita (item 8 do roteiro de `RETROSPECTIVAS.md`: retomada = evento verificável **e** prazo-teto de 14 dias, pergunta a Andraus no vencimento); **próxima frente = itens da auditoria de burocracia** (§5).
 
 **Sessão de 2026-10-31 (auditoria de burocracia e higiene; ordens de Andraus no chat; já na `main` via #147 e #148):** `AGENTS.md` 29.427→**18.803 B** (§7: `DHR-AGENTS-SEC7-001`; §2/§5/§8/§9/§12: `DHR-AGENTS-CORTES-001`; texto removido em `docs/_legacy/AGENTS-*-arquivo-morto-*`, prova de conservação `governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/`); `check_refs.py` sem falsos positivos (selo do gate regravado); `.gitattributes`; `docs/UPGRADES`→`_legacy`; status de 3 atas COE-11 e de `EUA-E20`/`EUA-E23`/`PCC-001`, nota em `ERRATUM-SPEC019-001` (`DHR-HIGIENE-001/002`). **Outra sessão:** `[STRUCT-14]` (check de Classe/Mecanismo em `validate_spec_sot.py`; `DHR-MECH-GATE-001`; #150, na `main`).
+
+**Ordem de Andraus (chat, 2026-11-01): consolidar os logs só dos Construtores (AC)**, pelo master `reference/externo/Uso de Logs por Agentes de IA.MD` e estado da arte; logs dos Trading (AT) ficam em SPEC-040/041 e BL-034/038 (sem item novo). Entregue **só a proposta** `governance/propostas/LOGS-CONSTRUTORES/PROPOSTA-LOGS-CONSTRUTORES-2026-11-01.md` (4 camadas, fatias F1–F5; F3 = A7). Nada aplicado; aplicar exige ordem dele + ata + `MECANISMOS.json`. Achados: telemetria e roteador não persistem em nuvem; negações dos hooks não deixam evidência. Aviso: `check_refs` WARN `RULE-WRV-0` em `SPEC-049/checks.md:8` (baseline; causa não investigada).
 
 ## 2. Estado (fatos conferidos em 2026-10-31)
 - `main` em `858315d`. Suíte: **424 testes** OK; `npm test` 11 schemas; `check_refs` ERRO=0; `check_doc_sync` ERRO=0 (1 WARN antigo: `SPEC-007/plan.md:2650` cita versão velha do `WORKFLOW.md`; baseline, só por erratum); `check_coesao` ERRO=0 (2 INFO: configs-marcador da raiz, mantidas de propósito); `gate_manifest`, `check_rpsa`, `build_map --check`, `loop_ledger --check` verdes.
@@ -56,6 +58,7 @@ Dar Bash ao Revisor; refazer SPEC-006/020/048/049; tratar o `AGENTS.md` como mai
 - *Aviso esperado:* `check_handoff` HO-04 (união das cadeias de handoff); informativo.
 
 ## 10. Aguardando Andraus
+0. **Logs dos Construtores:** aprovar F1 e/ou F2 da proposta, autorizar regravar o selo do roteador (F2) e confirmar L2/L3 no git (proposta §7).
 1. **Itens da auditoria de burocracia** (frente escolhida): dizer por qual começar (recomendação: A2 → A6 → A3 …, §5); cada um só por ordem dele. 2. **P10:** mandar abrir o próximo Plan para rodar o experimento da regra de parada (baseline SPEC-049 ≈ 2,30 M tokens). 3. **P11:** ordem para aplicar os patches pré-testados (e, se quiser, o texto da regra no `AGENTS.md` §11, reservado). 4. **Pendências das Specs anteriores** (nenhuma escolhida): erratum F2 da SPEC-020, errata da SPEC-007 (inclui a citação de versão antiga do `WORKFLOW.md` em `plan.md:2650`), CATALOGO/RMR-001 (BL-017), CONFLICT-MAP — ou abrir outra Spec. 5. **Higiene restante:** nomes de `reference/`, subpastas de `governance/`, confirmar o status do `ERRATUM-SPEC019-001`. 6. Antes de qualquer BUILD: mecanismo de assinatura (DHR-SPEC007-007). 7. Decisões abertas do ROADMAP; destino do Auditor Externo (PAUSADO); quem aprova o 1º `render_profile` v1 (decidir na construção).
 
 ## 11. Ponteiros
