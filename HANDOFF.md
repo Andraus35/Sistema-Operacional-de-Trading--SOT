@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-132
-previous: HO-2026-10-31-131
+handoff_id: HO-2026-11-01-133
+previous: HO-2026-11-01-132
 data: 2026-11-01
 branch: ccr-4bd4e8a0-d92lc7
 base_commit: a62b95e
