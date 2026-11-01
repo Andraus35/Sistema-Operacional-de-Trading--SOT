@@ -2,7 +2,7 @@
 
 > **Não normativo. PROPOSTA MEDIDA — NADA APLICADO.** Fonte: `AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md` §A5 e `AUDITORIA-HIGIENE-E-ECONOMICIDADE-2026-10-31.md` (H1–H8). Pedido: nº 4 da `PAUTA-DE-DECISOES.md` (Andraus, AskUserQuestion 2026-11-01). Não decide por Andraus nem fecha decisão aberta (CONS-01). Tokens = **bytes ÷ 4 (estimativa)**; economia por chamada é **INFERÊNCIA**.
 
-> **Atualização 2026-11-01 (`DHR-A5O1-001`, ordem de Andraus):** **O1 APLICADO** em `revisor.md` l.148 (o gêmeo em `especificador.md` l.109 **não**: virou pedido da pauta). O2, O3 e O4 seguem abertos. Texto abaixo preservado (INV-07).
+> **Atualização 2026-11-01 (`DHR-A5O1-001`, ordem de Andraus):** **O1 APLICADO** em `revisor.md` l.148 (o gêmeo em `especificador.md` l.109 foi aplicado depois: `DHR-A5O1-002`). O2, O3 e O4 seguem abertos. Texto abaixo preservado (INV-07).
 
 ## 1. Medido hoje (2026-11-01, `main` em `ef35441`)
 | Arquivo | Bytes | Tokens ≈ | Quem lê |
