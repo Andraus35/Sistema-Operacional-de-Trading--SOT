@@ -298,6 +298,30 @@ class Handoff(unittest.TestCase):
         self.assertIn(("WARN", "HO-15"), ach)
         self.assertTrue(any("DHR-OK-001_Ata.md" in a["mensagem"] for a in rep["achados"] if a["id"] == "HO-15"))
 
+    # --- Camada A (handoff por ramo) -------------------------------------------------------------
+    def test_camada_a_usa_handoffs_do_ramo_quando_existe(self):
+        base = self.commit("base")
+        ramo = self.git("rev-parse", "--abbrev-ref", "HEAD")
+        (self.d / "handoffs").mkdir()
+        (self.d / "handoffs" / f"{ramo}.md").write_text(doc(base=base), encoding="utf-8")
+        self.commit("handoff do ramo")
+        code, _, ach = self.run_check()
+        self.assertEqual(code, 0)
+        self.assertFalse({a for a in ach if a[1] == "HO-01"})  # nao exige HANDOFF.md da raiz
+
+    def test_camada_a_sem_arquivo_do_ramo_exige_o_da_raiz(self):
+        self.commit("base")
+        code, _, ach = self.run_check()
+        self.assertIn(("ERRO", "HO-01"), ach)  # nem raiz nem handoffs/<ramo>.md
+
+    def test_camada_a_arquivo_de_outro_ramo_nao_vale(self):
+        base = self.commit("base")
+        (self.d / "handoffs").mkdir()
+        (self.d / "handoffs" / "outro-ramo.md").write_text(doc(base=base), encoding="utf-8")
+        self.commit("handoff de outro ramo")
+        _, _, ach = self.run_check()
+        self.assertIn(("ERRO", "HO-01"), ach)
+
 
 if __name__ == "__main__":
     unittest.main()
