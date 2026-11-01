@@ -30,3 +30,6 @@ C07|MENOR|C08|decisoes de Andraus do chat de 2026-11-01 seguem como recomendo ou
 -->
 
 <!-- FICHA-M {"achados":[]} -->
+
+## Nota do Orquestrador — guarda pós-revisor sobre o reenvio da R3 (agente a1b722d5…)
+Dois "G3": `test_log_ac.py:265` e `log_ac.py:23`. As frases acusadas ("e o plano ficou para trás…", "levanta no import) apaga todo o log em silêncio…") são prosa do relatório, não trechos literais. Os fatos conferem no código: o esquema é carregado no import por `_carrega_schema()` (que levanta `FileNotFoundError` se faltar), e os testes `test_r4_*` existem no fim de `F1/test_log_ac.py` (a numeração de linha deslocou depois que o Orquestrador acrescentou testes após o parecer). Nenhum achado é retirado.
