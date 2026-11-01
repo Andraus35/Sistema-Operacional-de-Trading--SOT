@@ -2,6 +2,8 @@
 
 > **Não normativo. PROPOSTA MEDIDA — NADA APLICADO.** Fonte: `AUDITORIA-BUROCRACIA-E-HIGIENE-2026-10-31.md` §A10/B5. Pedido: nº 4 da `PAUTA-DE-DECISOES.md` (Andraus, AskUserQuestion 2026-11-01). Não decide por Andraus nem fecha decisão aberta (CONS-01).
 
+> **Atualização 2026-11-01 (`DHR-A5O1-001`, ordem de Andraus):** `revisao-independente/` **ARQUIVADA** em `docs/_legacy/revisao-independente/` (sha256 conservado). A10 fechado. Texto abaixo preservado (INV-07).
+
 ## 1. Medido hoje (2026-11-01)
 | Item | Tamanho | Último commit | Consumidor real | Conclusão |
 |---|---|---|---|---|
