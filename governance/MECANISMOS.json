@@ -118,12 +118,12 @@
     {
       "id": "hook.doc-sync-check",
       "arquivo": "scripts/doc-sync-check.js",
-      "canal": "settings.json Stop/SubagentStop/SessionStart",
+      "canal": "settings.json SessionStart (A6.1: fora de Stop/SubagentStop) + CI informativo",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Avisa drift de sincronização documental (não bloqueia)",
+      "enforca": "Avisa drift de sincronização documental (não bloqueia); repete o aviso só quando o conjunto de achados muda (A6.4)",
       "ata": "DHR-DOCSYNC-001",
-      "verificado_em": "2026-10-18: ao vivo — session-start exit 0"
+      "verificado_em": "2026-11-01 (A6.1/A6.4): tests/test-doc-sync-check.js (npm run test:hooks), 4 mutantes mortos. Antes: 2026-10-18 ao vivo"
     },
     {
       "id": "hook.handoff-hook",
@@ -214,7 +214,7 @@
       "tipo": "detector",
       "estado": "ativo",
       "enforca": "Integridade de referências cruzadas",
-      "verificado_em": "2026-10-31: patch de falsos positivos (placeholder 0NN, raiz do SO fora do repo, comando wc/cat/head/tail) aplicado por ordem de Andraus (chat); teste adversarial achou e corrigiu regressão (barra inicial mascarava caminho do repo); 4 mutações mortas; WARN reais 6→2, ERRO=0; tests/test_check_refs.py 25/25 no CI"
+      "verificado_em": "2026-11-01 (correção do A2.1): GENERATED_LOCAL — docs/mapa/mapa-projeto.json (gitignored) não é caminho quebrado em clone limpo (antes ERRO=3 no CI); tests/test_check_refs.py 26/26, mutante morto. Antes: 2026-10-31: patch de falsos positivos (placeholder 0NN, raiz do SO fora do repo, comando wc/cat/head/tail) aplicado por ordem de Andraus (chat); teste adversarial achou e corrigiu regressão (barra inicial mascarava caminho do repo); 4 mutações mortas; WARN reais 6→2, ERRO=0; tests/test_check_refs.py 25/25 no CI"
     },
     {
       "id": "det.check-doc-sync",
@@ -234,7 +234,7 @@
       "estado": "ativo",
       "enforca": "Integridade e defasagem do HANDOFF; anexo de tarefa: HO-11 (existência/cabeçalho), HO-12 (órfão/mais de um ATIVO/CONSUMIDO citado), HO-13 (>80 linhas), HO-14 (DHR sem ata, decisão aberta como fechada, segredo), HO-15 (cópia de linha longa)",
       "ata": "DHR-PCC-003",
-      "verificado_em": "2026-10-19: tests/test_check_handoff.py (21 testes, CI); ao vivo no handoff com anexo",
+      "verificado_em": "2026-11-01 (P11, ordem de Andraus): tests/test_check_handoff.py 25/25, 4 mutantes mortos; HO-04 aceita cópia exata em docs/handoffs/ramo-*/ como INFO. Antes: 2026-10-19 (21 testes)",
       "nota": "HO-10 (DHR-COESAO-004): [PRAZO: AAAA-MM-DD] vencido no HANDOFF vira WARN a cada SessionStart. Origem DHR-PCC-002 (detector e hooks); DHR-PCC-003 acrescenta o anexo de tarefa (HO-11..HO-15)."
     },
     {
@@ -333,7 +333,7 @@
       "tipo": "utilitario",
       "estado": "ativo",
       "enforca": "Gera o mapa do projeto (BL-019)",
-      "verificado_em": "2026-10-18: ao vivo — geração e --check exit 0 (mapa regenerado várias vezes nesta sessão)"
+      "verificado_em": "2026-11-01 (A2.1): --check lê o digest do MAPA-PROJETO.md; mapa-projeto.json é artefato local ignorado; tests/test_build_map.py 11/11. Antes: 2026-10-18 ao vivo"
     },
     {
       "id": "util.rpsa-auto",
