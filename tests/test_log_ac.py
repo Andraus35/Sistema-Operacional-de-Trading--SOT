@@ -305,4 +305,31 @@ class T(unittest.TestCase):
             with m.patch.object(L, "raiz_repo", return_value=r2): self.assertEqual(L.ramo_atual(), "wt")
             with m.patch.object(L, "raiz_repo", return_value=raiz / "nada"): self.assertIsNone(L.ramo_atual())
 
+    # --- pendencias baratas (verify de pasta, D05) ---
+    def test_d05_segmento_encadeado_sem_ancora_e_aviso_nao_problema(self):
+        with tempfile.TemporaryDirectory() as d:
+            a, b = Path(d) / "a.jsonl", Path(d) / "b.jsonl"
+            s = L.acrescenta(a, ev(run_id="r0")); L.acrescenta(b, ev(run_id="r1"), continua_de=s["hash"]); L.acrescenta(b, ev(run_id="r2"))
+            probs, avisos = L.verifica_estado(b)
+            self.assertEqual(probs, []); self.assertTrue(any("continuidade nao verificada" in x for x in avisos))
+            self.assertEqual(L.verifica_estado(b, continua_de=s["hash"]), ([], []))  # com a ancora: sem aviso
+            self.assertEqual(L.verifica_estado(a), ([], []))  # raiz: sem aviso
+    def test_d05_adulteracao_em_segmento_encadeado_continua_sendo_problema(self):
+        with tempfile.TemporaryDirectory() as d:
+            b = Path(d) / "b.jsonl"; L.acrescenta(b, ev(run_id="r1"), continua_de="f" * 64); L.acrescenta(b, ev(run_id="r2"))
+            b.write_text(b.read_text().replace("SUCCEEDED", "FAILED"))
+            self.assertTrue(L.verifica_estado(b)[0])
+    def test_verify_de_pasta_cli(self):
+        import subprocess, sys as S
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "L2").mkdir(); a, b = Path(d) / "L2" / "a.jsonl", Path(d) / "L2" / "b.jsonl"
+            s = L.acrescenta(a, ev(run_id="r0")); L.acrescenta(b, ev(run_id="r1"), continua_de=s["hash"])
+            r = subprocess.run([S.executable, "-B", str(Path(L.__file__)), "verify", d], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stdout); self.assertIn("2 arquivo(s)", r.stdout); self.assertIn("AVISO", r.stdout)
+            a.write_text(a.read_text().replace("SUCCEEDED", "FAILED"))
+            r = subprocess.run([S.executable, "-B", str(Path(L.__file__)), "verify", d], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 1); self.assertIn("PROBLEMA", r.stdout)
+    def test_verify_de_pasta_vazia_ou_inexistente(self):
+        with tempfile.TemporaryDirectory() as d: self.assertEqual(L.verifica_pasta(d), {})
+
 if __name__ == "__main__": unittest.main()

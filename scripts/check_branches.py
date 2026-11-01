@@ -29,8 +29,8 @@ def analisar(root=ROOT, handoff_texto=None):
     if rc != 0:
         return [], f"{PRINCIPAL} indisponível localmente (git fetch origin main); nada conferido."
     if handoff_texto is None:
-        h = root / "HANDOFF.md"
-        handoff_texto = h.read_text(encoding="utf-8") if h.is_file() else ""
+        partes = [root / "HANDOFF.md", *sorted((root / "handoffs").glob("*.md"))]  # Camada A: handoffs por ramo
+        handoff_texto = "\n".join(p.read_text(encoding="utf-8") for p in partes if p.is_file())
     _, atual = _git(root, "rev-parse", "--abbrev-ref", "HEAD")
     _, refs = _git(root, "for-each-ref", "--format=%(refname:short)", "refs/remotes/origin")
     achados = []

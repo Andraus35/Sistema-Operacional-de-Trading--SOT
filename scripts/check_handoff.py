@@ -67,7 +67,7 @@ CLOSED_WORDS = re.compile(r"FECHAD|DECIDID|RESOLVID", re.I)
 HOMOLOG_WORDS = re.compile(r"\b(foi|ficou|fica|está|estão|é|são|agora)\s+(homologad[oa]s?|baseline[d]?)\b", re.I)
 DHR = re.compile(r"\bDHR-[A-Z0-9]+(?:-[A-Z0-9]+)*\b")
 PRAZO = re.compile(r"\[PRAZO:\s*(\d{4}-\d{2}-\d{2})\]")
-IGNORED_PREFIXES = ("HANDOFF.md", "docs/handoffs/", "docs/mapa/")
+IGNORED_PREFIXES = ("HANDOFF.md", "handoffs/", "docs/handoffs/", "docs/mapa/")
 ANEXO_KEYS = ["tipo", "anexo_id", "tarefa", "serve_handoff", "base_commit", "status"]
 ANEXO_STATUS = ("ATIVO", "CONSUMIDO")
 ANEXO_MAX_LINES = 80
@@ -97,11 +97,23 @@ def parse(text):
     return fm, body
 
 
+
+def handoff_rel(root):
+    """Camada A: handoff por ramo. Se existir `handoffs/<ramo>.md`, ele e o handoff desta sessao;
+    senao vale o `HANDOFF.md` da raiz (compativel com o modelo antigo). Ramos paralelos nao escrevem o mesmo arquivo."""
+    b = git(root, "rev-parse", "--abbrev-ref", "HEAD")
+    nome = re.sub(r"[^A-Za-z0-9._-]+", "_", (b or "").strip())
+    if nome and nome != "HEAD" and (root / "handoffs" / f"{nome}.md").is_file():
+        return f"handoffs/{nome}.md"
+    return "HANDOFF.md"
+
+
 def analyze(root: Path, today=None):
     f = []  # (sev, id, msg)
-    hp = root / "HANDOFF.md"
+    rel = handoff_rel(root)
+    hp = root / rel
     if not hp.exists():
-        return [("ERRO", "HO-01", "HANDOFF.md ausente na raiz")], None
+        return [("ERRO", "HO-01", f"{rel} ausente")], None
     text = hp.read_text(encoding="utf-8", errors="replace")
     fm, body = parse(text)
     lines = text.split("\n")
@@ -132,7 +144,7 @@ def analyze(root: Path, today=None):
             r = subprocess.run(["git", "-C", str(root), "merge-base", "--is-ancestor", base, "HEAD"])
             if r.returncode != 0:
                 f.append(("ERRO", "HO-02", f"base_commit {base} não é ancestral de HEAD"))
-        last_out = git(root, "log", "-1", "--format=%H", "--", "HANDOFF.md")
+        last_out = git(root, "log", "-1", "--format=%H", "--", rel)
         last = last_out.strip() if last_out else None
         # HO-03
         if last:
@@ -155,11 +167,11 @@ def analyze(root: Path, today=None):
             if not arch.exists():
                 f.append(("ERRO", "HO-04", f"previous {prev} não arquivado em docs/handoffs/"))
             else:
-                head = git(root, "show", "HEAD:HANDOFF.md")
+                head = git(root, "show", f"HEAD:{rel}")
                 if head is not None and head != text:
                     ref = head  # handoff reescrito e ainda não commitado: o substituído é o de HEAD
                 elif last and git(root, "rev-parse", f"{last}^") is not None:
-                    ref = git(root, "show", f"{last}^:HANDOFF.md")
+                    ref = git(root, "show", f"{last}^:{rel}")
                 else:
                     ref = None
                 if ref is not None:
@@ -308,7 +320,7 @@ def analyze_anexos(root, hfm, open_ids, dhr_names, cat, in_git):
             f.append(("ERRO", "HO-14", f"anexo {cited} L{i}: possível segredo/credencial"))
     # HO-15 — "aponte, não copie" (PCC-001): linha longa repetida literalmente em fonte de verdade
     fontes = {}
-    for src in [root / "HANDOFF.md", root / "ROADMAP.md", *sorted((root / "governance").glob("DHR-*.md"))]:
+    for src in [root / handoff_rel(root), root / "ROADMAP.md", *sorted((root / "governance").glob("DHR-*.md"))]:
         try:
             fontes[src.name] = src.read_text(encoding="utf-8", errors="replace")
         except OSError:
