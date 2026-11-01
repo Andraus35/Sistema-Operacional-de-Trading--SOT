@@ -21,3 +21,10 @@
 
 ## 4. Declarado
 Contagem de arquivos vem de `grep` desta sessão; não rodei o pré-teste. Reativar o piloto continua possível por decisão dele.
+
+## 5. Resultado do pré-teste (2026-11-01, cópia isolada de `3501b14`; NADA APLICADO)
+Patch: `PATCH-ARQUIVAR-AUDITOR-EXTERNO-2026-11-01.patch` (renomeações `-M`; `git apply --check` limpo no repositório real). Inclui: workflow, `route_aex.py`, teste, pasta `propostas/AUDITOR-EXTERNO` movidos para `docs/_legacy/auditor-externo/`; passo "AEX router tests" removido do `ci.yml` (YAML válido); `util.route-aex` e `wf.auditor-externo` → `legado` em `MECANISMOS.json`.
+- Suíte Python **410 testes OK** (= 430 − 20 do `route_aex`); `npm run test:hooks` verde; `gate_manifest` íntegro (nenhum selo muda); `check_coesao` ERRO=0; `build_map --check` ok; `check_refs` **ERRO=0**, mas **+8 WARN** de caminho desatualizado.
+- **Os 8 WARN, em arquivos vivos:** `AGENTS.md:137` e `governance/CATALOGO-OFICIAL.md:182,184` (**reservados a Andraus**), 4 em propostas/pareceres da própria frente e 1 em `ROTEAMENTO-MODELOS/AUDITORIA…`. Resolver exige editar esses arquivos (AGENTS §9 e CATALOGO), por ordem expressa, ou aceitar os WARN como INFO históricos.
+- Não testado: o CI real; reativação (`git revert`).
+- Decisão de Andraus: aplicar o patch (aceitando 8 WARN até ele autorizar `AGENTS.md`/`CATALOGO`), aplicar junto com a edição desses dois arquivos, ou deixar como está.
