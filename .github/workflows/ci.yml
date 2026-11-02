@@ -31,6 +31,10 @@ jobs:
         with:
           python-version: '3.11'
 
+      # O mapa do projeto é GERADO, não versionado (DHR-MAPA-GERADO-001): gerar antes de qualquer passo/teste que chame `build_map.py --check`.
+      - name: Generate project map
+        run: python scripts/build_map.py
+
       # BLOQUEANTE: gate determinístico de estrutura das Specs (ENF-03: Detector ≠ Gate).
       # Roda validate_spec_sot.py em TODO specs/features/*/plan.md (Specs novas entram sozinhas).
       # exit 1 = NÃO CONFORME Crítica de estrutura; não substitui Revisor nem homologação.
@@ -188,8 +192,8 @@ jobs:
           python -m unittest tests/test_repo_research.py
           python scripts/check_repo_research.py --all
 
-      # BLOQUEANTE: o mapa do projeto (BL-019) deve refletir os documentos. Corrigir com:
-      #   python scripts/build_map.py   (os hooks .claude/settings.json já fazem isso localmente)
+      # BLOQUEANTE: o mapa do projeto (BL-019) gerado acima deve ser coerente (o mapa não é mais versionado; DHR-MAPA-GERADO-001).
+      #   Localmente: python scripts/build_map.py   (os hooks .claude/settings.json já fazem isso)
       - name: Project map up to date
         run: |
           python scripts/build_map.py --check || {
