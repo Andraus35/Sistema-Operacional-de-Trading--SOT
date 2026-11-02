@@ -717,6 +717,20 @@
       "em_escopo": true,
       "sync": "fonte-unica",
       "motivo": "Uma frase de especificador.md (Short-circuit) passa a apontar o livro-razao RPSA em vez do CATALOGO; mesma correcao ja aplicada ao Revisor; sem mudanca de metodo nem de fronteira."
+    },
+    {
+      "id": "DHR-A5O4-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Medicao e documentos novos nao normativos; nao altera texto de agente nem metodo."
+    },
+    {
+      "id": "DHR-MAPA-GERADO-001",
+      "data": "2026-11-01",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda só onde o mapa vive (gerado, não versionado); não toca agentes, método nem leitura obrigatória."
     }
   ]
 }

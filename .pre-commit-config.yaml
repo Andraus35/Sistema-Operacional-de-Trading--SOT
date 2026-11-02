@@ -18,7 +18,7 @@ repos:
       - id: project-map-fresh
         name: Project map up to date (regenerate with scripts/build_map.py)
         language: system
-        entry: python scripts/build_map.py --check
+        entry: sh -c 'python scripts/build_map.py && python scripts/build_map.py --check'
         pass_filenames: false
         types: [markdown]
 
