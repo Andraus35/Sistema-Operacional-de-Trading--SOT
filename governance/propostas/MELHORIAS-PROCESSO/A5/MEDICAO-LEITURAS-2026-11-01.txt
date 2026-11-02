@@ -1,0 +1,32 @@
+a1b722d5 Revisor SOT        ferramentas= 47 resultados= 143359B (~35839 tok)
+    RMR-001     Grep:1804B; Grep:16B; Grep:21B; Read(parcial):2015B; Grep:79B; Grep:16B
+    atomic-spec Grep:1849B
+    ROADMAP     Grep:90B; Read(parcial):1097B
+    MECANISMOS  Grep:199B; Grep:5B; Grep:10B; Read(parcial):698B; Grep:14B
+    RULES       Grep:63B
+a202a67f Especificador SOT  ferramentas= 55 resultados= 104805B (~26201 tok)
+    MECANISMOS  Grep:1272B; Read(parcial):3954B
+a250fb2d Especificador SOT  ferramentas= 43 resultados=  76174B (~19043 tok)
+    RMR-001     Grep:65B; Read(parcial):2015B
+a70295aa Revisor SOT        ferramentas= 41 resultados= 144359B (~36089 tok)
+    RMR-001     Grep:1804B; Grep:65B; Grep:32B; Grep:32B; Grep:1315B; Read(parcial):2015B
+    atomic-spec Grep:955B; Grep:16B
+    RULES       Grep:222B
+    ROADMAP     Grep:90B; Read(parcial):1097B
+a7ff6732 Revisor SOT        ferramentas= 48 resultados= 178481B (~44620 tok)
+    RMR-001     Grep:1804B; Read(parcial):10136B; Grep:31B; Read(parcial):11868B
+    atomic-spec Grep:1849B
+    ROADMAP     Grep:151B; Read(parcial):1009B
+    RULES       Grep:65B; Grep:65B
+    MECANISMOS  Grep:63B
+a92eaed5 Explore            ferramentas=  1 resultados=     61B (~15 tok)
+a93d1174 Revisor SOT        ferramentas= 46 resultados= 147713B (~36928 tok)
+    MECANISMOS  Grep:443B; Read(parcial):1015B; Read(parcial):931B
+    RMR-001     Grep:1804B; Grep:16B; Grep:79B; Grep:376B; Grep:59B; Read(parcial):2938B
+    ROADMAP     Grep:518B; Grep:25B
+    RULES       Grep:1796B
+    atomic-spec Grep:713B
+ab3fc916 Especificador SOT  ferramentas= 21 resultados=  44344B (~11086 tok)
+ada5c1aa Especificador SOT  ferramentas= 59 resultados= 138105B (~34526 tok)
+ae60f7d8 Revisor SOT        ferramentas= 24 resultados=  68150B (~17037 tok)
+    MECANISMOS  Grep:1474B

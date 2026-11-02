@@ -1,8 +1,8 @@
 ---
-handoff_id: HO-2026-11-01-162
-previous: HO-2026-11-01-161
+handoff_id: HO-2026-11-01-163
+previous: HO-2026-11-01-162
 data: 2026-11-01
-branch: ccr-d7f01e4e-c5qpb1
+branch: ccr-a79e19ef-2zl738
 base_commit: b1b0e1b
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
@@ -49,7 +49,12 @@ Ordem classe O ao Especificador (`model: opus` + `CLASSE-TAREFA: O` + `PARECER:`
 Categorias mais recorrentes: **C07** (39) · **C01** (28) · **C02** (24); SPEC-049 (34 achados): C01 7, C07 5, C05 5, C06 5. Lacunas de prevenção abertas: C99, C01, C06, C03, C10. Retrospectivas SPEC-006/007/020/048/049 FEITAS; P1–P9 decididas (P7 e P8 aplicadas via #149; P9 atendida pelo corte do §7); P10–P12 decididas (`DHR-RETRO-003`: P10 experimento, P11 pré-testada sem aplicar, P12 escrita).
 
 ## 5. Próximo passo único
-**Frente da auditoria de burocracia — A3 aplicado (`DHR-A3-001`); **A5-O1 e A10 APLICADOS (`DHR-A5O1-001`: ponteiro RPSA em `revisor.md` l.148; `revisao-independente/` arquivada); o gêmeo em `especificador.md` l.109 também aplicado (`DHR-A5O1-002`); resta A5-O4 (medir) e A5-O2/O3 (pauta pedido 4)**; antes: A5 e A10 propostas medidas ENTREGUES (`PROPOSTA-A5-…`, `PROPOSTA-A10-…`; pedido 4 da pauta; nada aplicado — A10 quase todo falso alarme: sensores do `harness-score`).** Já na `main`: A2.1, A6.1 parcial/A6.3/A6.4, P11, A7-lite, A4-b, A9-teste, higiene pós-arquivamento (PR #157). **Falta:** A2 resto (RPSA derivado do git; depende do pedido 2 da pauta), A8=BL-047 e a regra 1 do A3 (pedido 1). Fluxo de cada item: proposta medida → ordem dele → ata curta → gates → PR sem mesclar. Se ele mandar mesclar: CI verde, merge commit travando o `expectedHeadSha`, reiniciar o ramo de `origin/main`.
+**PARA A PRÓXIMA SESSÃO (Andraus: "Preparar tudo para próxima sessão", 2026-11-01).** Começar por `governance/PAUTA-DE-DECISOES.md` e perguntar (AskUserQuestion) nesta ordem:
+1. **PR #168** (medição A5-O4): mesclado nesta reconciliação se o CI passar; o HO-162 da `main` (ramo `ccr-d7f01e4e-c5qpb1`, #170) foi preservado em `docs/handoffs/HO-2026-11-01-162.md` e este é o HO-163.
+2. **Pedido 4b — RESOLVIDO** pelo PR #170 (`check_refs` ERRO 2→0, ledger gerado em `GENERATED_LOCAL`); a `PROPOSTA-REFS-LEDGER-GERADO-2026-11-01.md` fica como histórico (opção A já aplicada).
+3. **Pedido 4(b)**: o que fazer com a "leitura obrigatória" não cumprida literalmente (`PROPOSTA-A5` §5) — só redijo o texto, a aplicação é dele.
+4. Pedido 1: texto das classes de decisão (`AGENTS.md` §10, reservado). Demais pedidos da pauta: recomendação "adiar". Vencimento da pauta: 2026-11-15.
+**Esperando evento:** SPEC-008 (ativa BL-043..047) e próximo Plan (P10). Fluxo de cada item: proposta medida → ordem dele → ata → gates → PR sem mesclar; se ele mandar mesclar: CI verde, merge commit travando o `expectedHeadSha`, reiniciar o ramo de `origin/main`.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 `DHR-RETRO-003`, `DHR-RETRO-002`, `DHR-AGENTS-P8-001`, `DHR-AGENTS-CORTES-001`, `DHR-AGENTS-SEC7-001`, `DHR-HIGIENE-001`, `DHR-HIGIENE-002`, `DHR-MECH-GATE-001`, `DHR-SPEC049-002`, `DHR-SPEC049-001`, `DHR-TELEMETRIA-CUSTO-001`, `DHR-CHECKS-INFO-001`, `DHR-DELTA-HASH-001`, `DHR-DIMENSIONAMENTO-001`, `DHR-RETRO-001`, `DHR-ROTEAMENTO-007`, `DHR-MERGE-001`, `DHR-LOOP-001`. Decisões abertas/fechadas: ler o `ROADMAP.md` (linhas "Decisões abertas ativas"/"Decisões FECHADAS").
