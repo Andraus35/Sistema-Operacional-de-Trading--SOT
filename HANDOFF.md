@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-01-162
-previous: HO-2026-11-01-161
+handoff_id: HO-2026-11-01-163
+previous: HO-2026-11-01-162
 data: 2026-11-01
 branch: ccr-a79e19ef-2zl738
 base_commit: b1b0e1b
@@ -14,6 +14,9 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
+**Achado RESOLVIDO neste ramo (ordem de Andraus, AskUserQuestion 2026-11-01):** `check_refs` estava com **ERRO=2 já na `main`** (PR #164 deixou de versionar `governance/aprendizado/LEDGER-ACHADOS.md`; `PARECER-REVISOR-SPEC048-PLAN-R3` e `SPEC-049/ABERTURA.md` ainda o citam; +2 WARN em propostas). Corrigido: o ledger gerado entrou no `GENERATED_LOCAL` do `check_refs` (ERRO 2→0, 28 testes, mutante morto; selo regravado só na linha do `check_refs.py`). **`novo_handoff` PRÉ-TESTADO, NÃO instalado** (`governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/A2/novo_handoff/`; 8 testes, 4/5 mutantes mortos, 1 equivalente); este HO-162 foi gravado com ele.
+
+**Propostas desta sessão (a pedido de Andraus, AskUserQuestion 2026-11-01; NADA aplicado; ramo `ccr-d7f01e4e-c5qpb1`):** (1) `PROPOSTA-A2-3-TAGS-DE-HANDOFF-2026-11-01.md` — medido: clone de nuvem é RASO (343 commits), tags não resolvem handoffs antigos; **recomenda não aplicar tags** e criar um utilitário `novo_handoff` (falha alto se âncora ausente; elimina os erros manuais de cadeia desta sessão); (2) `ANALISE-BL-003-BL-011-ATIVADOS-2026-11-01.md` — os dois JÁ foram ativados por Andraus (DHR-BACKLOG-001) e tratados no gate da SPEC-006 (Disposição PARCIAL); **manter ATIVADO**, sem ação nova até a SPEC-009. Ambos em `governance/propostas/MELHORIAS-PROCESSO/`; pedidos correspondentes na pauta (itens 3 e 8).
 **A3 (pauta única, ordem de Andraus 2026-11-01):** `governance/PAUTA-DE-DECISOES.md` + ata curta `DHR-A3-001`; HANDOFF §10 virou ponteiro; regra 1 (classes de decisão) NÃO aplicada (pedido 1 da pauta). Cadeia deste ramo (HO-132..151) em `docs/handoffs/ramo-ccr-a79e19ef-2zl738/`.
 
 **Pós-merge do PR #155 (ordem de Andraus: "aplicar as pendências mais baratas e simples; as de rodada cara viram backlog"):** aplicado `log_ac.py verify <pasta>` + estado "continuidade não verificada" (D05) + passo informativo do CI + medições do roteador (p50 ≈ 60–65 ms, p95 ≈ 96–108 ms; volume ≈ 0,6 KB/evento) — detalhe na PROPOSTA §17 e no `BL-043`. **Segue no `BL-043`** (gatilho `spec:SPEC-008 em redação`): auditoria independente do código da F2a (Revisor), D08/D01–D03/hooks JS/timeout do wrapper (selados: ordem+ata+selo), captura de `Stop`, erratum do `RULE-WRV-0nn` da SPEC-049. Nenhum arquivo selado foi alterado.
@@ -47,8 +50,8 @@ Categorias mais recorrentes: **C07** (39) · **C01** (28) · **C02** (24); SPEC-
 
 ## 5. Próximo passo único
 **PARA A PRÓXIMA SESSÃO (Andraus: "Preparar tudo para próxima sessão", 2026-11-01).** Começar por `governance/PAUTA-DE-DECISOES.md` e perguntar (AskUserQuestion) nesta ordem:
-1. **PR #168** (medição A5-O4; só documentos; CI verde; **ABERTO, sem preferência dele**): mesclar ou esperar — não mesclar sem ordem.
-2. **Pedido 4b — `check_refs` com 2 ERROs na `main`**: proposta pré-testada `governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-REFS-LEDGER-GERADO-2026-11-01.md` (opção A: 1 linha em `GENERATED_LOCAL` de `scripts/check_refs.py`, script **selado** → selo + ata completa (ID a definir na sessão); passos prontos no §3).
+1. **PR #168** (medição A5-O4): mesclado nesta reconciliação se o CI passar; o HO-162 da `main` (ramo `ccr-d7f01e4e-c5qpb1`, #170) foi preservado em `docs/handoffs/HO-2026-11-01-162.md` e este é o HO-163.
+2. **Pedido 4b — RESOLVIDO** pelo PR #170 (`check_refs` ERRO 2→0, ledger gerado em `GENERATED_LOCAL`); a `PROPOSTA-REFS-LEDGER-GERADO-2026-11-01.md` fica como histórico (opção A já aplicada).
 3. **Pedido 4(b)**: o que fazer com a "leitura obrigatória" não cumprida literalmente (`PROPOSTA-A5` §5) — só redijo o texto, a aplicação é dele.
 4. Pedido 1: texto das classes de decisão (`AGENTS.md` §10, reservado). Demais pedidos da pauta: recomendação "adiar". Vencimento da pauta: 2026-11-15.
 **Esperando evento:** SPEC-008 (ativa BL-043..047) e próximo Plan (P10). Fluxo de cada item: proposta medida → ordem dele → ata → gates → PR sem mesclar; se ele mandar mesclar: CI verde, merge commit travando o `expectedHeadSha`, reiniciar o ramo de `origin/main`.
