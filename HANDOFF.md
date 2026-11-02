@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-01-160
-previous: HO-2026-11-01-159
+handoff_id: HO-2026-11-01-162
+previous: HO-2026-11-01-161
 data: 2026-11-01
-branch: ccr-a79e19ef-2zl738
-base_commit: e01ebc8
+branch: ccr-d7f01e4e-c5qpb1
+base_commit: b1b0e1b
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,6 +14,9 @@ anexo: null
 > Ponto de entrada de sessão fria (PCC-001). **Dado de estado**, não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. *(Reescrito limpo em HO-129 a partir de duas sessões em paralelo atualizado em HO-130 após o merge do #149 e em HO-131 após as decisões P10–P12; o texto anterior está em `docs/handoffs/HO-2026-10-31-128.md` e as cadeias paralelas em `docs/handoffs/ramo-*/` — nada perdido, INV-07.)*
 
 ## 1. Frente atual
+**Achado RESOLVIDO neste ramo (ordem de Andraus, AskUserQuestion 2026-11-01):** `check_refs` estava com **ERRO=2 já na `main`** (PR #164 deixou de versionar `governance/aprendizado/LEDGER-ACHADOS.md`; `PARECER-REVISOR-SPEC048-PLAN-R3` e `SPEC-049/ABERTURA.md` ainda o citam; +2 WARN em propostas). Corrigido: o ledger gerado entrou no `GENERATED_LOCAL` do `check_refs` (ERRO 2→0, 28 testes, mutante morto; selo regravado só na linha do `check_refs.py`). **`novo_handoff` PRÉ-TESTADO, NÃO instalado** (`governance/propostas/MELHORIAS-PROCESSO/EQUIVALENCIA/A2/novo_handoff/`; 8 testes, 4/5 mutantes mortos, 1 equivalente); este HO-162 foi gravado com ele.
+
+**Propostas desta sessão (a pedido de Andraus, AskUserQuestion 2026-11-01; NADA aplicado; ramo `ccr-d7f01e4e-c5qpb1`):** (1) `PROPOSTA-A2-3-TAGS-DE-HANDOFF-2026-11-01.md` — medido: clone de nuvem é RASO (343 commits), tags não resolvem handoffs antigos; **recomenda não aplicar tags** e criar um utilitário `novo_handoff` (falha alto se âncora ausente; elimina os erros manuais de cadeia desta sessão); (2) `ANALISE-BL-003-BL-011-ATIVADOS-2026-11-01.md` — os dois JÁ foram ativados por Andraus (DHR-BACKLOG-001) e tratados no gate da SPEC-006 (Disposição PARCIAL); **manter ATIVADO**, sem ação nova até a SPEC-009. Ambos em `governance/propostas/MELHORIAS-PROCESSO/`; pedidos correspondentes na pauta (itens 3 e 8).
 **A3 (pauta única, ordem de Andraus 2026-11-01):** `governance/PAUTA-DE-DECISOES.md` + ata curta `DHR-A3-001`; HANDOFF §10 virou ponteiro; regra 1 (classes de decisão) NÃO aplicada (pedido 1 da pauta). Cadeia deste ramo (HO-132..151) em `docs/handoffs/ramo-ccr-a79e19ef-2zl738/`.
 
 **Pós-merge do PR #155 (ordem de Andraus: "aplicar as pendências mais baratas e simples; as de rodada cara viram backlog"):** aplicado `log_ac.py verify <pasta>` + estado "continuidade não verificada" (D05) + passo informativo do CI + medições do roteador (p50 ≈ 60–65 ms, p95 ≈ 96–108 ms; volume ≈ 0,6 KB/evento) — detalhe na PROPOSTA §17 e no `BL-043`. **Segue no `BL-043`** (gatilho `spec:SPEC-008 em redação`): auditoria independente do código da F2a (Revisor), D08/D01–D03/hooks JS/timeout do wrapper (selados: ordem+ata+selo), captura de `Stop`, erratum do `RULE-WRV-0nn` da SPEC-049. Nenhum arquivo selado foi alterado.

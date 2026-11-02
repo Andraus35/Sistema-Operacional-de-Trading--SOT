@@ -7,11 +7,12 @@
 |---|---|---|---|
 | 1 | Texto da regra "classes de decisão" (operacional × normativa) no `AGENTS.md` §10 (A3, regra 1) — reservado | normativa | **Aprovar que o Orquestrador só REDIJA** a proposta de texto; a aplicação é dele |
 | 2 | `RPSA_AUTO_ENABLED=true` (A2): o workflow grava direto na `main`, fora de "PR é o meio" | operacional, com risco | **Adiar** até ele aceitar (ou recusar) essa exceção |
-| 3 | Promover os `ATIVADOS` BL-003 e BL-011 e os 4 "disparados sem registro" (BL-010, 015, 017, 035) | normativa | **Adiar**: cada um precisa de proposta própria |
+| 3 | Promover os `ATIVADOS` BL-003 e BL-011 e os 4 "disparados sem registro" (BL-010, 015, 017, 035) | normativa | **Adiar**: cada um precisa de proposta própria. **BL-003 e BL-011 analisados** (`ANALISE-BL-003-BL-011-ATIVADOS-2026-11-01.md`): já ativados por Andraus e tratados na SPEC-006 (Disposição PARCIAL); recomendação = **manter `ATIVADO`**, sem ação até a SPEC-009. Os 4 "disparados sem registro" seguem sem análise |
 | 4 | **A5-O1 (Revisor e Especificador) e A10 APLICADOS** (`DHR-A5O1-001` e `DHR-A5O1-002`, ordens de Andraus 2026-11-01). **Resta (decidir):** (b) **A5-O4** — medir quanto o Especificador realmente lê do `RMR-001` (118 KB); (c) **A5-O2/O3** — cortar o ROADMAP (adiar até medir e até ele revisar l.34/37) | operacional (b) / normativa (c) | **(b) aprovar a medição** · **(c) adiar** |
 | 5 | A8 = BL-047 (modelo fixo por agente) | normativa | **Adiar** até medir não-inferioridade |
 | 6 | Pendências de Spec: erratum F2 da SPEC-020 (registrado PENDENTE no BL-017, `DHR-SPEC020-003`), `CATALOGO`/RMR-001, `CONFLICT-MAP`, status do `ERRATUM-SPEC019-001` (NÃO CONFIRMADO) | normativa | **Adiar** (exigem julgamento dele) |
 | 7 | Higiene de nomes em `reference/` e subpastas de `governance/` (B7, B9) | normativa, risco médio-alto | **Adiar**: só com script e prova de referências |
+| 8 | A2.3: tags git por handoff no lugar das cópias (`PROPOSTA-A2-3-TAGS-DE-HANDOFF-2026-11-01.md`) | operacional, risco médio | **Recusar tags** (clone raso quebra o HO-04). O utilitário `novo_handoff` **já está PRÉ-TESTADO** (8 testes; 4/5 mutantes mortos, 1 equivalente; `EQUIVALENCIA/A2/novo_handoff/`), **não instalado** — **aprovar** instalar (entra com `MECANISMOS.json`, COE-14) ou adiar |
 
 ## B. Esperando evento (nada a decidir agora)
 P10 (experimento da regra de parada) — no **próximo Plan** que ele mandar abrir. **BL-043** (F2b do log dos Construtores, auditoria do código da F2a, decisões (e)/(g)/(l)) e **BL-044..047** — voltam quando a **SPEC-008** abrir. Mecanismo de assinatura antes de BUILD (`DHR-SPEC007-007`).

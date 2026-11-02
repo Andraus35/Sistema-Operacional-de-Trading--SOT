@@ -198,7 +198,7 @@ def classify_severity(path: str, kind: str) -> str:
 
 
 # Artefatos gerados localmente e ignorados pelo git (A2.1): citá-los não é referência quebrada em clone limpo.
-GENERATED_LOCAL = {"docs/mapa/mapa-projeto.json"}
+GENERATED_LOCAL = {"docs/mapa/mapa-projeto.json", "governance/aprendizado/LEDGER-ACHADOS.md"}  # DHR-LEDGER-GERADO-001: ledger gerado, não versionado
 
 
 def resolve_path(src: Path, raw: str, reg: Registry):
