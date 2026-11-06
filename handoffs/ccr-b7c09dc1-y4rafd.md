@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-01-157
-previous: HO-2026-11-01-156
-data: 2026-11-01
+handoff_id: HO-2026-11-06-ccrb7c0-1
+previous: HO-2026-11-01-157
+data: 2026-11-06
 branch: ccr-b7c09dc1-y4rafd
-base_commit: b1b0e1b
+base_commit: c81cad3
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -11,9 +11,11 @@ anexo: null
 ---
 # HANDOFF — SOT (ramo ccr-b7c09dc1-y4rafd: concorrência entre sessões)
 
-> Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. Reescrito limpo em HO-157: o texto acumulado de outras sessões foi arquivado em `docs/handoffs/HO-2026-11-01-156.md`.
+> Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. Este ID usa o formato proposto HO-<data>-<ramo curto>-<n> porque o HO-2026-11-01-157 já existia com outro conteúdo em `docs/handoffs/` (ramo `ccr-a79e19ef-2zl738`); a cópia exata do meu HO-157 está em `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/`.
 
 ## 1. Frente atual
+
+**Estado em 2026-11-06:** os PRs #167, #168, #169, #170 e #171 estão mesclados; nenhum PR aberto. Os comandos do ruleset `proteger-main` (sem bypass) e `allow_update_branch` foram entregues a Andraus para rodar no Termux; **não sei se ele rodou** (a ferramenta não lê rulesets). Esta sessão escreveu a proposta de regra do handoff (`governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-HANDOFF-ENTRADA-E-CICLO-DE-VIDA-2026-11-06.md`): raiz como índice, ID por ramo, arquivar handoff de ramo mesclado. **Nada aplicado.** Colisão viva: dois handoffs com o ID HO-2026-11-01-157 na `main`.
 **Problema (ordem de Andraus, chat 2026-11-01):** várias sessões mexem no repositório ao mesmo tempo e geram docs, ramos, PRs e merges conflitantes. **Causa-raiz medida:** arquivos únicos e gerados tocados por toda sessão (mapa 214 toques/30 dias, `HANDOFF.md` 124, ledgers), numeração sequencial de handoff e nenhuma serialização no servidor.
 **Solução em 3 camadas** (`governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-CONCORRENCIA-DE-SESSOES-2026-11-01.md` + pasta `CONCORRENCIA-DE-SESSOES/`):
 - **B (servidor):** ruleset `proteger-main` + merge queue + bypass só do bot do `rpsa-auto`. **Falta Andraus criar no GitHub** (guia passo a passo já dado no chat; começar em *Evaluate*).
@@ -38,7 +40,7 @@ anexo: null
 Sem parecer novo nesta frente; categorias recorrentes e lacunas: rodar `python scripts/loop_ledger.py --stdout` ao receber o próximo parecer.
 
 ## 5. Próximo passo único
-**Aguardar ordem de Andraus** para mesclar **#169 e depois #167** (nessa ordem: o #167 já nasce sem conflito de mapa). Em seguida, conferir a Camada B com um PR de teste (ele deve exigir CI verde, ramo atualizado e fila).
+Aguardar a resposta de Andraus à proposta de regra do handoff (aprovar direção, autorizar pré-teste, autorizar texto do `AGENTS.md` §11). Sem ordem dele, não aplicar nada. Em paralelo, perguntar se o ruleset já foi criado e conferir com um PR de teste em rascunho (só com ordem).
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 `DHR-LEDGER-GERADO-001`. A ata do mapa gerado está no PR #169. Decisões abertas do ROADMAP: nenhuma tocada.
