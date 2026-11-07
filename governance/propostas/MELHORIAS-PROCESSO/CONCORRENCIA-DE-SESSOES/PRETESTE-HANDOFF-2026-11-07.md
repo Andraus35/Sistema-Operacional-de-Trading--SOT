@@ -23,7 +23,7 @@ Efeito do protótipo na `main` real: `HO-16` e `HO-17` acusam só `handoffs/ccr-
 ## 4. Limites
 - HO-16 usa os refs `heads` e `remotes/origin` do clone: em clone raso ou sem fetch pode acusar ramo vivo; por isso é só INFO.
 - Não testei o hook `SessionStart` em ramo novo na nuvem real, só o `check_handoff` por linha de comando.
-- Migrar o `HANDOFF.md` atual da raiz (frente de logs/pauta) para `handoffs/ccr-a79e19ef-2zl738.md` mexe no trabalho de outra sessão: combinar antes.
+- Migrar o `HANDOFF.md` atual da raiz (frente de logs/pauta) para handoffs/ccr-a79e19ef-2zl738.md (arquivo ainda a criar) mexe no trabalho de outra sessão: combinar antes.
 
 ## 5. Decisões que cabem a Andraus
 1. Texto da §3 da proposta no `AGENTS.md` §11, **já com a R1 revista** (ata). 2. Instalar M1/M2 (patch). 3. Migrar a raiz para índice estático.
