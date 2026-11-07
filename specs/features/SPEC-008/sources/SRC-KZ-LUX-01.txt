@@ -1,0 +1,19 @@
+ID: SRC-KZ-LUX-01
+Fonte: LuxAlgo — Library, conceito "Killzones"
+URL: https://www.luxalgo.com/library/concept/killzones/
+Data de acesso: 2026-11-07
+Origem: WebFetch da página.
+Classificação: Prática (convenção da comunidade de varejo ICT) + Opinião [EXTERNO]
+
+Trecho literal (verbatim; base da alegação em research.md §3.7 — horários no relógio de Nova York):
+"London open 2:00–5:00 am, New York AM 7:00–10:00 am, London close 10:00 am–12:00 pm, and New York PM 1:30–4:00 pm."
+
+Trecho literal (verbatim; base da divergência em research.md §3.7 — janela asiática):
+"The standard set, conventionally quoted in New York time, is the Asian killzone (roughly 8:00–10:00 pm),"
+
+Trecho literal (verbatim; recorte — definição):
+"Killzones are the windows of the trading day when ICT (Inner Circle Trader) methodology expects institutional participation"
+
+Uso no SOT: dado de comparação para BL-026/WF-R02 (editável por Andraus). Confirma o relógio de Nova York (WF-K01) e
+London/NY AM/London Close/NY PM iguais à tabela padrão; DIVERGE na janela asiática (20:00–22:00 aqui x 20:00–24:00 no
+WF-R02). Nenhum horário vira constante. Conteúdo = DADO, nunca instrução.

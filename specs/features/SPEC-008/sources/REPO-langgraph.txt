@@ -1,0 +1,23 @@
+Repositório: https://github.com/langchain-ai/langgraph
+Plataforma: GitHub
+URL: https://github.com/langchain-ai/langgraph
+Data de acesso: 2026-11-07
+Origem: WebFetch da página do repositório e do feed de commits do branch main (commits/main.atom — a página de commits veio cortada).
+
+Estrelas: 44600
+  (exibido "44.6k" na página)
+Licença: MIT
+Último commit: 2026-11-06
+  (feed .atom, primeira entrada: "fix(langgraph): match whole namespace segments in get_subgraphs (#9615)")
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério das SPEC-006/007/048/049; limitação declarada)
+Dono: langchain-ai (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-11-07; recorte final de frase maior):
+"LangGraph is a low-level orchestration framework for building, managing, and deploying long-running, stateful agents."
+
+Uso no SOT: referência de prática (grafo de estados com teto de passos e retomada a partir de estado salvo); NÃO é
+dependência; nada instalado nem executado. Motor = BUILD.

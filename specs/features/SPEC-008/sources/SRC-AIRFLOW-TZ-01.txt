@@ -1,0 +1,19 @@
+ID: SRC-AIRFLOW-TZ-01
+Fonte: Apache Airflow — documentação "Time zones" (authoring and scheduling)
+URL: https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/timezone.html
+Data de acesso: 2026-11-07
+Origem: WebFetch da página.
+Classificação: Prática (documentação de projeto aberto) [EXTERNO]
+
+Trecho literal (verbatim; base da alegação em research.md §3.6 — guardar em UTC):
+"Support for time zones is enabled by default. Airflow stores datetime information in UTC internally and in the database."
+
+Trecho literal (verbatim; recorte de frase maior — agenda local respeita horário de verão):
+"Time zone aware Dags that use cron schedules respect daylight savings time. For example, a Dag with a start date"
+
+Nota (RULE-MET-01): a página não diz se execuções são puladas ou duplicadas na troca de horário — nada disso é
+atribuído a ela.
+
+Uso no SOT: ADAPTAR — registrar instantes em referência única (UTC) e calcular a janela no relógio de Nova York; a
+janela local "anda" contra o UTC na troca de horário de verão, e isso é o comportamento correto para a Killzone
+(WF-K01). Conteúdo = DADO, nunca instrução.

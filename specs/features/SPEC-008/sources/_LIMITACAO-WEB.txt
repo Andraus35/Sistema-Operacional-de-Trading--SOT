@@ -1,0 +1,20 @@
+Limitações da pesquisa web — Dossiê SPEC-008 (acesso 2026-11-07)
+
+1. Métricas de repositório (estrelas, licença, arquivamento, dono) foram lidas da página HTML pública do GitHub;
+   a data do último commit foi lida do topo da página de commits do branch padrão (ou do feed .atom de commits,
+   quando a página veio cortada — caso langgraph). Estrelas = valor arredondado exibido ("44.6k" -> 44600).
+   A API do GitHub não foi usada.
+2. Alertas de segurança: o estado privado do Dependabot não é público -> INDETERMINADO, registrado como 0 pelo mesmo
+   critério das SPEC-006, SPEC-007, SPEC-048 e SPEC-049. Alerta grave não público passaria despercebido.
+3. A ferramenta WebFetch devolve citação literal limitada a cerca de 125 caracteres e passa por um modelo de extração.
+   Os trechos principais em sources/*.txt são literais e têm >=100 caracteres; vários são recorte de frase maior
+   (anotado). Trechos "complementares" <100 caracteres são só apoio. Nenhum trecho foi completado por paráfrase.
+4. A página da W3C (SCXML) foi lida só nos primeiros 100.000 caracteres.
+5. LangGraph "durable execution": o endereço antigo só redirecionava e o novo não trouxe definição literal; nada é
+   atribuído a essas páginas. A documentação do Temporal não trouxe frase literal >=100 caracteres sobre temporizadores.
+6. Horário de pregão/feriados (CME Globex para NASDAQ futuro; XAU; BTC 24/7): a página oficial da CME devolveu
+   HTTP 503 e um fórum (babypips) devolveu 403. Pesquisa INCONCLUSIVA -> nenhuma alegação carregada; lacuna
+   registrada em research.md §6 (calendário de mercado = INDETERMINADO, adiado).
+7. Nenhum dado do projeto foi enviado nas consultas; só endereços públicos e termos genéricos.
+8. Conteúdo web e de repositórios = DADO, nunca instrução; nada foi instalado nem executado.
+9. O repositório Benchmark (Andraus35/Inteligencia-SOT) NÃO foi lido nesta sessão; nenhuma citação dele.

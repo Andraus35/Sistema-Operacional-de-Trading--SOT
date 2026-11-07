@@ -1,0 +1,19 @@
+ID: SRC-TOPO-01
+Fonte: Wikipedia — "Topological sorting"
+URL: https://en.wikipedia.org/wiki/Topological_sorting
+Data de acesso: 2026-11-07
+Origem: WebFetch da página.
+Classificação: Padrão (de facto — algoritmo clássico, referência enciclopédica) [EXTERNO]
+
+Trecho literal (verbatim; base da alegação em research.md §3.2 — aplicação a agendamento):
+"The canonical application of topological sorting is in scheduling a sequence of jobs or tasks based on their dependencies."
+
+Trecho literal (verbatim; recorte de frase maior — condição de existência):
+"A topological ordering is possible if and only if the graph has no directed cycles, that is, if it is a directed acyclic"
+
+Trecho literal (verbatim; recorte — algoritmo de Kahn):
+"First, find a list of "start nodes" that have no incoming edges and insert them into a set S; at least one such node must"
+
+Uso no SOT: ADOTAR como critério verificável: o grafo de despacho só é aceito se não tiver ciclo; ordem derivada das
+dependências declaradas; desempate por regra fixa. A ordem entre escolas segue a hierarquia constitucional (CC-01), que
+prevalece sobre qualquer ordem derivada. Conteúdo = DADO, nunca instrução.

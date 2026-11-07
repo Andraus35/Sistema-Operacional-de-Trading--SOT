@@ -1,0 +1,19 @@
+ID: SRC-TEMPORAL-01
+Fonte: Temporal — documentação "Workflows"
+URL: https://docs.temporal.io/workflows
+Data de acesso: 2026-11-07
+Origem: WebFetch da página.
+Classificação: Prática (documentação de produto) [EXTERNO]
+
+Trecho literal (verbatim; base da alegação em research.md §3.4 — execução durável):
+"Temporal Workflows are resilient. They can run—and keep running—for years, even if the underlying infrastructure fails."
+
+Trecho literal (verbatim; base da alegação em research.md §3.4 — determinismo na reexecução):
+"If those values changed, the Workflow could take a different path and fail to match the recorded history."
+
+Trecho complementar (<100 caracteres; só apoio):
+"Timers are recorded as events and don’t “wait” again during replay."
+
+Uso no SOT: ADAPTAR dois princípios — (1) o ciclo sobrevive a queda e retoma do registro; (2) o tempo e qualquer valor
+não determinístico entram como FATO REGISTRADO, nunca relidos na reexecução. REJEITAR adotar Temporal como motor (BUILD;
+neutralidade tecnológica, ROADMAP §22). Conteúdo = DADO, nunca instrução.
