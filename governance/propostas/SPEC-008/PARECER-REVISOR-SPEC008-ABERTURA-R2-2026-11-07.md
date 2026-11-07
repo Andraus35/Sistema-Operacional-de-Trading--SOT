@@ -24,3 +24,11 @@ R2-m02|MENOR|C10|Cobertura dos seis ramos de WF-F01 afirmada ("os demais depende
 -->
 
 <!-- FICHA-M {"achados":[]} -->
+
+---
+
+## Adendo — guarda pós-revisor G1 (2026-11-07) — Revisor SOT, somente leitura
+> Transcrição pelo Orquestrador. O Revisor abriu `atomic-spec.md` (l.172, 276-342, 401, 439-457) e `governance/RULES.md` (l.435, 451, 518-531, 555-558) e conferiu §15, CC-01/INV-01, CC-11, CC-12 e RULE-MECH-03: tudo confere, nada ficou "não verificado" (o gate segue NÃO VERIFICADO por falta da ferramenta/linha `GATE-D:`).
+- **Único ajuste — âncora do ponto (c) do R2-M01:** RULE-MECH-03 cobre só as Classes H e P; a Fase 1 é toda Classe D, então a regra **não incide literalmente**. Âncoras corretas: a própria S8 da ABERTURA (l.43: tetos "por ciclo"; estouro ⇒ estado nomeado + registro + aviso — abrir ciclo novo zera os tetos sem estado nomeado), R-6 e R-2, e o princípio de bounded loop (atomic-spec §10.6 l.315) por analogia. Severidade mantida (Média); pontos (a) e (b) inalterados.
+- R2-m01 e R2-m02: sem alteração. Nenhum achado novo. Veredito segue **NÃO CONFORME** (1 Média, 2 Menores); teto depois da correção: CONFORME condicional.
+- Observação para o Plan (não é achado): CC-01 é Crítica; se Andraus escolher a Opção C da P-11, o Constitution Check do Plan deve declarar a P-11 como pendência explícita.
