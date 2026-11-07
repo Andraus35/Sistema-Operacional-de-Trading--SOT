@@ -14,7 +14,7 @@
 | RPSA-motivo | Muda só o fluxo de ramos e PRs das sessões; não toca agentes, método nem leitura obrigatória. |
 
 ## 1. Fato de partida `[FATO]`
-Hoje **não existe regra** que limite ramos ou PRs abertos: o §10 só diz "PR é o meio" e o §11 manda um handoff por ramo. Desde 01/11 foram 27 PRs mesclados; só uma sessão abriu 14, cerca de 5 deles "só handoff", e criou ramos simultâneos (`-camada-a`, `-ledger`, `-mapa`) por causa de "PR separado". Cada PR a mais custa um ciclo de CI (~4 min) e, com o ruleset, deixa os outros desatualizados.
+Hoje **não existe regra** que limite ramos ou PRs abertos: o §10 só diz "PR é o meio" e o §11 manda um handoff por ramo. Desde 01/11 foram 27 PRs mesclados; só uma sessão abriu 14, cerca de 5 deles "só handoff". **Correção medida depois (PRETESTE-TRAVA-CI-2026-11-07):** em 30 PRs só 1 par da mesma sessão ficou aberto ao mesmo tempo (#167 e #169, 76 min); o excesso foi de **quantidade** de PRs, não de simultaneidade. Cada PR a mais custa um ciclo de CI (~4 min) e, com o ruleset, deixa os outros desatualizados.
 
 ## 2. Decisão proposta `[PROPOSTA]`
 **R1 — Uma frente = um ramo = um PR aberto por vez.** "PR separado" passa a significar **em sequência**: o próximo só abre depois de mesclar o anterior, reaproveitando o mesmo nome de ramo (`git checkout -B <ramo> origin/main`).
@@ -23,7 +23,7 @@ Hoje **não existe regra** que limite ramos ou PRs abertos: o §10 só diz "PR �
 **R4 — PR esperando ordem.** Se a nova tarefa é a mesma do PR, acrescentar commits no mesmo PR (o CI roda de novo). Se é outra tarefa, não abrir outro PR: aguardar ou perguntar a Andraus.
 **R5 — Quando o handoff do ramo é arquivado.** Em vez de "ao mesclar o PR do ramo" (DHR-HANDOFF-RAMO-001 R3), **quando a frente termina**. Entre PRs da mesma frente o handoff do ramo continua em `handoffs/`.
 **R6 — Frentes realmente paralelas** (ex.: logs e concorrência) podem ter um PR cada; cada frente com no máximo um.
-**R7 — Aviso informativo `BR-03`** no `check_branches`: mais de um ramo remoto do mesmo prefixo de sessão (`ccr-<id>-<sufixo>`). Só avisa; não bloqueia.
+**R7 — Verificação mecânica (decisões separadas, opcionais):** `BR-03` (aviso informativo no `check_branches`) e a **trava no CI** U1/U2 (PATCH-PR-UNICO-2026-11-07: U1 reprova o PR mais novo se há outro PR aberto mais antigo da mesma sessão; U2 só avisa PR só de handoff; pré-testada, não instalada). Descrição original do BR-03: no `check_branches`: mais de um ramo remoto do mesmo prefixo de sessão (`ccr-<id>-<sufixo>`). Só avisa; não bloqueia.
 
 ## 3. Texto candidato (NÃO aplicado)
 **`AGENTS.md` §10** — acrescentar ao fim da seção:

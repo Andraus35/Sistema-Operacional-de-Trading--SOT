@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-07-ccrb7c0-10
-previous: HO-2026-11-07-ccrb7c0-9
+handoff_id: HO-2026-11-07-ccrb7c0-11
+previous: HO-2026-11-07-ccrb7c0-10
 data: 2026-11-07
 branch: ccr-b7c09dc1-y4rafd
 base_commit: d3e16b3
@@ -14,6 +14,8 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. Este ID usa o formato proposto HO-<data>-<ramo curto>-<n> porque o HO-2026-11-01-157 já existia com outro conteúdo em `docs/handoffs/` (ramo `ccr-a79e19ef-2zl738`); a cópia exata do meu HO-157 está em `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/`.
 
 ## 1. Frente atual
+
+**"É determinístico?" (Andraus, chat 2026-11-07) → pré-teste da trava no CI, acrescentado no MESMO PR (R4):** `CONCORRENCIA-DE-SESSOES/PRETESTE-TRAVA-CI-2026-11-07.md` + `PATCH-PR-UNICO-2026-11-07.patch` (**não instalado**): U1 reprova o PR mais novo se há outro PR aberto mais antigo da mesma sessão; U2 só avisa PR só de handoff. 12/12 testes, 8 mutantes mortos (1 sobreviveu e ganhou teste), `check_coesao` ERRO=0 só com a ata em `governance/`. Reprodução com 30 PRs reais: U1 teria bloqueado 1 (#169); U2 avisaria 5 de 29. **Falha de desenho achada:** a 1ª versão era simétrica (travaria os dois PRs); corrigida. **Correção de número:** o excesso de PRs foi de quantidade, não de simultaneidade (só 1 par sobreposto em 30). Não testado no GitHub Actions real.
 
 **Pergunta de Andraus (chat, 2026-11-07): "uma branch, um pull request e mesclar" — existe regra? Não existe** (o §10 só diz "PR é o meio"; o §11 manda um handoff por ramo). Rascunho entregue, **não vigora**: `CONCORRENCIA-DE-SESSOES/RASCUNHO-ATA-UM-RAMO-UM-PR-2026-11-07.md` (R1–R7; resolve 5 atritos: "mesclar" contra o §10, "PR separado" = em sequência, handoff arquivado ao fim da FRENTE e não a cada merge, sem PR só de handoff, PR esperando ordem) e patch `PATCH-BR03-check-branches-2026-11-07.patch` (aviso informativo de mais de um ramo da mesma sessão; 6/6 testes, 4 mutantes mortos; **não instalado**). **Este PR segue a regra proposta:** um ramo, um PR, handoff dentro, sem PR só de handoff depois.
 
