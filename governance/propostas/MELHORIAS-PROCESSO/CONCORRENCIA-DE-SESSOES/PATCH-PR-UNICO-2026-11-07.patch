@@ -1,0 +1,225 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 9631c80..66b6970 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -35,6 +35,22 @@ jobs:
+       - name: Generate project map
+         run: python scripts/build_map.py
+ 
++      # Trava "uma frente, um PR por vez" (DHR-UM-RAMO-UM-PR-001): U1 reprova se há OUTRO PR aberto da mesma sessão; U2 só avisa (PR só de handoff).
++      - name: One open PR per session
++        if: github.event_name == 'pull_request'
++        env:
++          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++          HEAD_REF: ${{ github.head_ref }}
++          PR_NUMBER: ${{ github.event.pull_request.number }}
++        run: |
++          gh api --paginate "repos/${{ github.repository }}/pulls?state=open&per_page=100" | python -c "import json,sys; d=json.JSONDecoder(); s=sys.stdin.read().strip(); o=[]; i=0
++          while i < len(s):
++              x,j=d.raw_decode(s,i); o.extend(x if isinstance(x,list) else [x]); i=j
++              while i < len(s) and s[i] in ' \n\r\t': i+=1
++          json.dump(o, open('prs.json','w'))"
++          gh api --paginate "repos/${{ github.repository }}/pulls/$PR_NUMBER/files?per_page=100" --jq '.[].filename' > pr-files.txt
++          python scripts/check_pr_unico.py --head "$HEAD_REF" --pr "$PR_NUMBER" --prs-json prs.json --files pr-files.txt
++
+       # BLOQUEANTE: gate determinístico de estrutura das Specs (ENF-03: Detector ≠ Gate).
+       # Roda validate_spec_sot.py em TODO specs/features/*/plan.md (Specs novas entram sozinhas).
+       # exit 1 = NÃO CONFORME Crítica de estrutura; não substitui Revisor nem homologação.
+@@ -158,6 +174,10 @@ jobs:
+       - name: Loop ledger tests
+         run: python -m unittest tests/test_loop_ledger.py
+ 
++      # Trava "um PR por vez" (DHR-UM-RAMO-UM-PR-001): o script é determinístico; se falhar, a trava deixou de valer.
++      - name: One PR per session tests
++        run: python -m unittest tests/test_check_pr_unico.py
++
+       # Correção determinística de Menores mecânicos pelo Orquestrador (DHR-ROTEAMENTO-006; bloqueante).
+       - name: Aplicar ficha M tests
+         run: python -m unittest tests/test_aplicar_ficha_m.py
+diff --git a/governance/MECANISMOS.json b/governance/MECANISMOS.json
+index 17b0e33..b4ca6d7 100644
+--- a/governance/MECANISMOS.json
++++ b/governance/MECANISMOS.json
+@@ -625,6 +625,17 @@
+       "enforca": "Esquema JSON do evento de log dos Construtores (família AC): campos obrigatórios, enum de event/decision (allow|deny|ask|defer|block)/severity, limites de tamanho, metrics com chaves fechadas, refs com caminho relativo + sha256",
+       "ata": "DHR-LOGS-AC-001",
+       "verificado_em": "2026-11-01: coberto por tests/test_log_ac.py"
++    },
++    {
++      "id": "gate.pr-unico",
++      "arquivo": "scripts/check_pr_unico.py",
++      "canal": "CI (ci.yml, só em pull_request)",
++      "tipo": "gate",
++      "estado": "proposta",
++      "enforca": "U1 reprova o CI quando há OUTRO PR aberto do mesmo prefixo de sessão (ccr-<id>-<sufixo>); U2 avisa PR que altera só handoffs. Sem rede no script: lê JSON da API.",
++      "ata": "DHR-UM-RAMO-UM-PR-001",
++      "verificado_em": "2026-11-07: tests/test_check_pr_unico.py 10/10, 6 mutantes mortos (pré-teste; NÃO instalado)",
++      "nota": "Só entra no ruleset (check obrigatório) por ordem expressa de Andraus."
+     }
+   ],
+   "vigente_desde": "2026-10-19"
+diff --git a/scripts/check_pr_unico.py b/scripts/check_pr_unico.py
+new file mode 100644
+index 0000000..9bd79d2
+--- /dev/null
++++ b/scripts/check_pr_unico.py
+@@ -0,0 +1,77 @@
++#!/usr/bin/env python3
++"""
++check_pr_unico.py — trava determinística "uma frente, um PR aberto por vez" (PROPOSTA DHR-UM-RAMO-UM-PR-001; não instalada).
++
++Roda no CI em eventos de pull_request. Entradas (arquivos JSON/texto vindos da API do GitHub; o script não faz rede):
++  --head REF        ramo de origem do PR atual (github.head_ref)
++  --pr N            número do PR atual
++  --prs-json F      lista de PRs ABERTOS (GET /pulls?state=open): campos number, head.ref
++  --files F         nomes dos arquivos do PR atual, um por linha
++Regras:
++  U1 [FALHA]  existe um PR aberto MAIS ANTIGO cujo ramo tem o mesmo prefixo de sessão ccr-<8 hex>-<6 alfanum>
++              (só o PR mais novo é travado; o mais antigo segue livre, para poder receber push e ser mesclado).
++  U2 [AVISO]  o PR toca SÓ arquivos de handoff (handoffs/, docs/handoffs/, HANDOFF.md): junte ao PR do trabalho.
++Ramo sem prefixo de sessão (ex.: claude/...): U1 não se aplica (sem como agrupar por sessão).
++Exit 1 só em U1. U2 imprime ::warning:: e sai 0. Determinístico: mesma entrada, mesma saída.
++"""
++import argparse
++import json
++import re
++import sys
++
++SESSAO = re.compile(r"^(ccr-[0-9a-f]{8}-[a-z0-9]{6})(?:-.+)?$")
++HANDOFF_PREFIXOS = ("handoffs/", "docs/handoffs/")
++
++
++def chave_sessao(ref):
++    m = SESSAO.match(ref or "")
++    return m.group(1) if m else None
++
++
++def conflitos(head, pr_atual, prs):
++    """Outros PRs abertos da mesma sessão -> [(numero, ramo)]."""
++    k = chave_sessao(head)
++    if not k:
++        return []
++    out = []
++    for p in prs:
++        ref = (p.get("head") or {}).get("ref", "")
++        n = p.get("number")
++        if n is None or n >= pr_atual or ref == head:
++            continue  # só PRs MAIS ANTIGOS bloqueiam: o antigo nunca é travado pelo novo (evita travamento mútuo)
++        if chave_sessao(ref) == k:
++            out.append((p.get("number"), ref))
++    return sorted(out)
++
++
++def so_handoff(arquivos):
++    arq = [a for a in arquivos if a]
++    return bool(arq) and all(a == "HANDOFF.md" or a.startswith(HANDOFF_PREFIXOS) for a in arq)
++
++
++def main(argv=None):
++    ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
++    ap.add_argument("--head", required=True)
++    ap.add_argument("--pr", type=int, required=True)
++    ap.add_argument("--prs-json", required=True)
++    ap.add_argument("--files", required=True)
++    a = ap.parse_args(argv)
++    with open(a.prs_json, encoding="utf-8") as f:
++        prs = json.load(f)
++    with open(a.files, encoding="utf-8") as f:
++        arquivos = f.read().splitlines()
++    rc = 0
++    c = conflitos(a.head, a.pr, prs)
++    if c:
++        lista = ", ".join(f"#{n} ({r})" for n, r in c)
++        print(f"::error title=Mais de um PR aberto na mesma sessão::U1: {lista}. Regra: uma frente, um PR por vez; mescle ou feche o anterior (e rode o CI de novo).")
++        rc = 1
++    if so_handoff(arquivos):
++        print("::warning title=PR só de handoff::U2: este PR só altera handoffs; junte o handoff ao PR do trabalho (sem PR só para registrar merge).")
++    if rc == 0:
++        print("U1 ok: nenhum outro PR aberto desta sessão.")
++    return rc
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git a/tests/test_check_pr_unico.py b/tests/test_check_pr_unico.py
+new file mode 100644
+index 0000000..b9260d1
+--- /dev/null
++++ b/tests/test_check_pr_unico.py
+@@ -0,0 +1,76 @@
++"""Testes da trava 'um PR por vez' (scripts/check_pr_unico.py) — proposta, não instalada."""
++import json
++import subprocess
++import sys
++import tempfile
++import unittest
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent.parent
++sys.path.insert(0, str(ROOT / "scripts"))
++import check_pr_unico as c  # noqa: E402
++
++S1 = "ccr-aaaaaaaa-bbbbbb"
++S2 = "ccr-cccccccc-dddddd"
++
++
++def pr(n, ref):
++    return {"number": n, "head": {"ref": ref}}
++
++
++class Trava(unittest.TestCase):
++    def test_u1_mesma_sessao_outro_pr_aberto(self):
++        self.assertEqual(c.conflitos(S1 + "-mapa", 2, [pr(1, S1), pr(2, S1 + "-mapa")]), [(1, S1)])
++
++    def test_u1_pr_mais_antigo_nao_e_travado_pelo_mais_novo(self):
++        self.assertEqual(c.conflitos(S1, 1, [pr(1, S1), pr(2, S1 + "-mapa")]), [])
++
++    def test_u1_entrada_da_api_sem_numero_ou_sem_head_nao_quebra(self):
++        self.assertEqual(c.conflitos(S1, 5, [{"head": {"ref": S1 + "-x"}}, {"number": 1}, {"number": 2, "head": None}]), [])
++
++    def test_u1_sessoes_diferentes_nao_conflitam(self):
++        self.assertEqual(c.conflitos(S1, 2, [pr(1, S2), pr(2, S1)]), [])
++
++    def test_u1_o_proprio_pr_nao_conta(self):
++        self.assertEqual(c.conflitos(S1, 7, [pr(7, S1)]), [])
++
++    def test_u1_sufixo_conta_como_mesma_sessao(self):
++        self.assertEqual(c.conflitos(S1, 3, [pr(1, S1 + "-ledger"), pr(2, S1 + "-mapa"), pr(3, S1)]), [(1, S1 + "-ledger"), (2, S1 + "-mapa")])
++
++    def test_u1_ramo_sem_prefixo_de_sessao_nao_se_aplica(self):
++        self.assertEqual(c.conflitos("claude/x", 2, [pr(1, "claude/y"), pr(2, "claude/x")]), [])
++
++    def test_u2_so_handoff(self):
++        self.assertTrue(c.so_handoff(["handoffs/a.md", "docs/handoffs/HO-1.md"]))
++        self.assertTrue(c.so_handoff(["HANDOFF.md"]))
++
++    def test_u2_handoff_com_trabalho_nao_acusa(self):
++        self.assertFalse(c.so_handoff(["handoffs/a.md", "governance/x.md"]))
++        self.assertFalse(c.so_handoff([]))
++
++    def _roda(self, head, n, prs, files):
++        with tempfile.TemporaryDirectory() as d:
++            d = Path(d)
++            (d / "p.json").write_text(json.dumps(prs), encoding="utf-8")
++            (d / "f.txt").write_text("\n".join(files), encoding="utf-8")
++            return subprocess.run([sys.executable, str(ROOT / "scripts" / "check_pr_unico.py"), "--head", head, "--pr", str(n),
++                                   "--prs-json", str(d / "p.json"), "--files", str(d / "f.txt")], capture_output=True, text=True)
++
++    def test_cli_u1_falha_exit_1(self):
++        r = self._roda(S1 + "-mapa", 2, [pr(1, S1), pr(2, S1 + "-mapa")], ["governance/x.md"])
++        self.assertEqual(r.returncode, 1)
++        self.assertIn("U1", r.stdout)
++
++    def test_cli_u2_so_avisa_exit_0(self):
++        r = self._roda(S1, 1, [pr(1, S1)], ["handoffs/a.md"])
++        self.assertEqual(r.returncode, 0)
++        self.assertIn("U2", r.stdout)
++
++    def test_cli_limpo_exit_0(self):
++        r = self._roda(S1, 1, [pr(1, S1), pr(2, S2)], ["governance/x.md"])
++        self.assertEqual(r.returncode, 0)
++        self.assertNotIn("::warning", r.stdout)
++
++
++if __name__ == "__main__":
++    unittest.main()

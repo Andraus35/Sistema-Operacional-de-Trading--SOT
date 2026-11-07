@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-07-ccrb7c0-9
-previous: HO-2026-11-07-ccrb7c0-8
+handoff_id: HO-2026-11-07-ccrb7c0-11
+previous: HO-2026-11-07-ccrb7c0-10
 data: 2026-11-07
 branch: ccr-b7c09dc1-y4rafd
-base_commit: 26d3653
+base_commit: d3e16b3
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,6 +14,10 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. Este ID usa o formato proposto HO-<data>-<ramo curto>-<n> porque o HO-2026-11-01-157 já existia com outro conteúdo em `docs/handoffs/` (ramo `ccr-a79e19ef-2zl738`); a cópia exata do meu HO-157 está em `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/`.
 
 ## 1. Frente atual
+
+**"É determinístico?" (Andraus, chat 2026-11-07) → pré-teste da trava no CI, acrescentado no MESMO PR (R4):** `CONCORRENCIA-DE-SESSOES/PRETESTE-TRAVA-CI-2026-11-07.md` + `PATCH-PR-UNICO-2026-11-07.patch` (**não instalado**): U1 reprova o PR mais novo se há outro PR aberto mais antigo da mesma sessão; U2 só avisa PR só de handoff. 12/12 testes, 8 mutantes mortos (1 sobreviveu e ganhou teste), `check_coesao` ERRO=0 só com a ata em `governance/`. Reprodução com 30 PRs reais: U1 teria bloqueado 1 (#169); U2 avisaria 5 de 29. **Falha de desenho achada:** a 1ª versão era simétrica (travaria os dois PRs); corrigida. **Correção de número:** o excesso de PRs foi de quantidade, não de simultaneidade (só 1 par sobreposto em 30). Não testado no GitHub Actions real.
+
+**Pergunta de Andraus (chat, 2026-11-07): "uma branch, um pull request e mesclar" — existe regra? Não existe** (o §10 só diz "PR é o meio"; o §11 manda um handoff por ramo). Rascunho entregue, **não vigora**: `CONCORRENCIA-DE-SESSOES/RASCUNHO-ATA-UM-RAMO-UM-PR-2026-11-07.md` (R1–R7; resolve 5 atritos: "mesclar" contra o §10, "PR separado" = em sequência, handoff arquivado ao fim da FRENTE e não a cada merge, sem PR só de handoff, PR esperando ordem) e patch `PATCH-BR03-check-branches-2026-11-07.patch` (aviso informativo de mais de um ramo da mesma sessão; 6/6 testes, 4 mutantes mortos; **não instalado**). **Este PR segue a regra proposta:** um ramo, um PR, handoff dentro, sem PR só de handoff depois.
 
 **ATA DO HANDOFF POR RAMO ASSINADA E APLICADA EM PR (sem mesclar), 2026-11-07 (Andraus: "Assino a ata, aplicar em PR separado"):** ata `DHR-HANDOFF-RAMO-001` em `governance/`; `AGENTS.md` §11 reescrito (handoff do ramo em `handoffs/<ramo>.md`, ID `HO-<data>-<ramo curto>-<n>`, arquivar ao mesclar; texto anterior preservado); handoff do ramo `ccr-4bd4e8a0-d92lc7` movido para `docs/handoffs/ramo-ccr-4bd4e8a0-d92lc7/`. **Migração do `HANDOFF.md` da raiz FEITA** pela frente dos logs (PR #181, mesclado por Andraus em 2026-11-07): HO-163 arquivado em `docs/handoffs/`, handoff da frente em `handoffs/ccr-a79e19ef-2zl738.md` (ID `HO-2026-11-07-a79e19e-1`), raiz como texto estático (`HO-2026-11-07-raiz-1`). `check_handoff`, `check_refs` e `check_coesao` da `main` com ERRO=0. A ata teve nota de status (passos 2 e 3 aplicados; PR #180 e #181 mesclados). Detectores HO-16/HO-17: não instalados.
 
@@ -52,7 +56,7 @@ anexo: null
 Sem parecer novo nesta frente; categorias recorrentes e lacunas: rodar `python scripts/loop_ledger.py --stdout` ao receber o próximo parecer.
 
 ## 5. Próximo passo único
-No lembrete de 2026-11-14: `git fetch --unshallow`, medir o efeito (merges de integração, conflitos em handoff, colisões de ID, ramos vivos) contra a linha de base e relatar a Andraus por AskUserQuestion; decidir então os detectores HO-16/HO-17 (patch pronto, não instalado). Ao concluir, mover este handoff para `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/` (exceção temporária da ata).
+Aguardar Andraus assinar/editar o rascunho da regra "um ramo, um PR por vez" (só então aplicar nos §10/§11, em PR único). No lembrete de 2026-11-14: medir o efeito, relatar e decidir BR-03 e HO-16/HO-17. Ao concluir a frente, mover este handoff para `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/`.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 `DHR-LEDGER-GERADO-001`, `DHR-HANDOFF-RAMO-001` (aplicada em PR; merge é de Andraus). A ata do mapa gerado está no PR #169. Decisões abertas do ROADMAP: nenhuma tocada.

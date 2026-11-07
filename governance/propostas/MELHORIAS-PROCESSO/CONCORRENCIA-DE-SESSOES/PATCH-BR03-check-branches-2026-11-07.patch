@@ -1,0 +1,82 @@
+diff --git a/scripts/check_branches.py b/scripts/check_branches.py
+index 7331029..553711f 100644
+--- a/scripts/check_branches.py
++++ b/scripts/check_branches.py
+@@ -5,6 +5,7 @@ check_branches.py — detector de ramos órfãos (informativo; Detector ≠ Gate
+ Compara os ramos remotos (refs/remotes/origin/*) com origin/main:
+   BR-01 [WARN] ramo À FRENTE da main (commits próprios) cujo nome NÃO é citado em HANDOFF.md -> trabalho possivelmente esquecido.
+   BR-02 [INFO] ramo totalmente contido na main (0 commits próprios) -> apagável (ligar "apagar ramo após o merge" no GitHub).
++  BR-03 [INFO] mais de um ramo remoto da MESMA sessão (prefixo ccr-<id>-<sufixo>) -> regra proposta: um ramo, um PR por vez.
+ O ramo atual e a main são ignorados. Somente leitura: nunca apaga ramo, nunca fecha PR. Sem origin/main local, só avisa.
+ Saída: linhas "[WARN] BR-01 ..." e "ERRO=0 WARN=n INFO=m". Exit 0 sempre (informativo).
+ """
+@@ -15,6 +16,7 @@ from pathlib import Path
+ 
+ ROOT = Path(__file__).resolve().parent.parent
+ PRINCIPAL = "origin/main"
++SESSAO = re.compile(r"^(ccr-[0-9a-f]{8}-[a-z0-9]{6})(?:-.+)?$")  # prefixo da sessão de nuvem
+ 
+ 
+ def _git(root, *args):
+@@ -34,9 +36,15 @@ def analisar(root=ROOT, handoff_texto=None):
+     _, atual = _git(root, "rev-parse", "--abbrev-ref", "HEAD")
+     _, refs = _git(root, "for-each-ref", "--format=%(refname:short)", "refs/remotes/origin")
+     achados = []
++    sessoes = {}
+     for ref in sorted(r for r in refs.splitlines() if r):
+         nome = ref[len("origin/"):] if ref.startswith("origin/") else ref
+-        if nome in ("HEAD", "main", atual) or ref == "origin":
++        if nome in ("HEAD", "main") or ref == "origin":
++            continue
++        m = SESSAO.match(nome)
++        if m:
++            sessoes.setdefault(m.group(1), []).append(nome)
++        if nome == atual:
+             continue
+         rc, n = _git(root, "rev-list", "--count", f"{PRINCIPAL}..{ref}")
+         if rc != 0 or not n.isdigit():
+@@ -45,6 +53,9 @@ def analisar(root=ROOT, handoff_texto=None):
+             achados.append(("INFO", "BR-02", f"{nome} — contido na main (0 commits próprios): apagável"))
+         elif not re.search(re.escape(nome), handoff_texto):
+             achados.append(("WARN", "BR-01", f"{nome} — {n} commit(s) à frente da main e não citado em HANDOFF.md (órfão?)"))
++    for chave, nomes in sorted(sessoes.items()):
++        if len(nomes) > 1:
++            achados.append(("INFO", "BR-03", f"{chave} — {len(nomes)} ramos da mesma sessão ({', '.join(sorted(nomes))}): regra proposta = um ramo, um PR por vez"))
+     return achados, None
+ 
+ 
+diff --git a/tests/test_check_branches.py b/tests/test_check_branches.py
+index fed940f..541ab8d 100644
+--- a/tests/test_check_branches.py
++++ b/tests/test_check_branches.py
+@@ -60,6 +60,30 @@ class Ramos(unittest.TestCase):
+         achados, _ = c.analisar(self.root, "")
+         self.assertEqual(achados, [])
+ 
++    # --- BR-03 (proposta): mais de um ramo da mesma sessão ------------------------------------------
++    def test_br03_dois_ramos_da_mesma_sessao(self):
++        self.ref("main")
++        self.ref("ccr-aaaaaaaa-bbbbbb")
++        self.ref("ccr-aaaaaaaa-bbbbbb-ledger")
++        achados, _ = c.analisar(self.root, "")
++        self.assertIn(("INFO", "BR-03"), {(n, i) for n, i, _m in achados})
++
++    def test_br03_um_ramo_por_sessao_nao_acusa(self):
++        self.ref("main")
++        self.ref("ccr-aaaaaaaa-bbbbbb")
++        self.ref("ccr-cccccccc-dddddd")
++        achados, _ = c.analisar(self.root, "")
++        self.assertNotIn("BR-03", {i for _n, i, _m in achados})
++
++    def test_br03_conta_o_ramo_atual(self):
++        self.ref("main")
++        self.g("checkout", "-q", "-b", "ccr-aaaaaaaa-bbbbbb")
++        self.commit("a1")
++        self.ref("ccr-aaaaaaaa-bbbbbb", "HEAD")
++        self.ref("ccr-aaaaaaaa-bbbbbb-mapa", "HEAD")
++        achados, _ = c.analisar(self.root, "ccr-aaaaaaaa-bbbbbb-mapa")
++        self.assertIn("BR-03", {i for _n, i, _m in achados})
++
+ 
+ if __name__ == "__main__":
+     unittest.main()
