@@ -25,3 +25,10 @@ R3-m01|MENOR|C06|Lista de pontos novos no item CONS-01 do Autopré-check (§15 l
 -->
 
 <!-- FICHA-M {"achados":[{"id":"R3-m01","sev":"MENOR","arquivo":"specs/features/SPEC-008/ABERTURA.md","linha":327,"antigo":"marcados como pergunta (P-11, P-12, CONF-5), não como invariante.","novo":"marcados como pergunta (P-11, P-12, P-12.1, P-13, CONF-5), não como invariante. *[antes: \"(P-11, P-12, CONF-5)\"]*","condicao":"ABERTURA §15 l.327 lista os pontos novos sem P-12.1 e P-13, que o item R3 (l.333) já cita"}]} -->
+
+---
+
+## Adendo — guarda pós-revisor G1 (2026-11-07) — Revisor SOT, somente leitura
+> Transcrição pelo Orquestrador. O Revisor da R3 abriu `ROADMAP.md` (l.199-204, 36, 524), `governance/RULES.md` (l.518-529 RULE-ECC-07; l.555 RULE-MECH-03), `atomic-spec.md` (l.11-14, 315, 439) e `backlog/RMR-001_Painel_Backlog.md` (BL-003 l.110, BL-011 l.118, BL-026/043/044/045/046 l.133 e l.150-153) e conferiu o que a abertura afirma a partir deles.
+- **Resultado: nada muda.** Veredito segue CONFORME condicional (0 Críticas, 0 Médias, 1 Menor R3-m01, já aplicado pelo Orquestrador como classe M). Nada ficou "não verificado" nos quatro arquivos.
+- Ressalvas: o gate segue NÃO VERIFICADO (sem ferramenta/`GATE-D`); o painel RMR-001 foi lido por grep só nos itens citados (varredura de ATIVADO por script é do Orquestrador); os rótulos de disposição ([STRUCT-13]) dos 5 BLs são dado do Orquestrador (detector não rodado pelo Revisor).
