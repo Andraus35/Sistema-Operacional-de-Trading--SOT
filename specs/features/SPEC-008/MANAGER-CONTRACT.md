@@ -9,7 +9,7 @@
 | Autor | Especificador Principal SOT (Claude Code, Opus 5.5) |
 | Origem | P-4 da abertura da SPEC-008 (`specs/features/SPEC-008/ABERTURA.md` §13), recomendação aceita por Andraus (`governance/DHR-SPEC008-001_Ata_Homologacao_Abertura_SPEC-008.md` §1, linha P-4..P-9; §3: "antes, o Manager Contract curto (P-4, recomendação) para homologação conjunta"); ordem de Andraus em chat, 2026-11-07: "Manager Contract primeiro" (via Orquestrador) |
 | Instituído como direção por | `governance/DHR-EUA-E23_Ata_Homologacao_Manager_Unificado.md` §2 item 2 |
-| Natureza | Documento de **consolidação**. Só junta o que Andraus já decidiu sobre o Manager. **Não** cria regra, campo, estado, transição, ID normativo nem agente. **Não** fecha decisão aberta (CONS-01). **Não** edita `WORKFLOW.md`, `ROADMAP.md`, `AGENTS.md`, `canon/` nem `governance/`. |
+| Natureza | Documento de **consolidação**. Só junta o que Andraus já decidiu sobre o Manager. **Não** cria regra, campo, estado, transição, ID normativo nem agente de trading. **Não** fecha decisão aberta (CONS-01). **Não** edita `WORKFLOW.md`, `ROADMAP.md`, `AGENTS.md`, `canon/` nem `governance/`. |
 | Etiquetas | `[FATO]` = texto de documento homologado, com âncora · `[INFERÊNCIA]` = leitura derivada, com âncora · `[PROPOSTA]` = requer homologação · `[DECISÃO NECESSÁRIA]` = só Andraus |
 
 ---
@@ -29,8 +29,8 @@ O Manager é **um só ator** que trabalha em **três Fases**; este contrato reú
 | 2.1 | O Manager Agent é o **único componente de orquestração** do SOT. | `[FATO]` ADR-MANAGER-001 v1.0 §2.2 |
 | 2.2 | O Manager **não é agente analítico**: não analisa mercado, não formula hipóteses de mercado, não possui skills de análise técnica. Seus domínios são gestão de missões, orquestração de despacho e síntese de convicções. | `[FATO]` ADR-MANAGER-001 v1.0 §2.2 e §2.5 ("FATO NORMATIVO") |
 | 2.3 | Master Orchestrator, Mission Engine, Decision Orchestrator, Orchestration Layer, Agente Decisor e Agente de Síntese **não** aparecem em Spec futura como componente independente; foram absorvidos pelo Manager. | `[FATO]` ADR-MANAGER-001 v1.0 §2.1 ("FATO NORMATIVO"); DHR-ARQ-002 §2 item 1 (Synthesis Agent = Fase 2) |
-| 2.4 | "Conviction Engine" é rótulo de **mecanismo** (CCM-001, SPEC-003) **invocado** pelo Manager — Fase 2; não é agente nem componente separado. | `[FATO]` DHR-ARQ-001 §2 itens 1 e 3 |
-| 2.5 | As três Specs do Manager **não** criam agente adicional; o Manager permanece **um único ator lógico**. | `[FATO]` DHR-EUA-E23 §2 item 2 |
+| 2.4 | "Conviction Engine" é rótulo de **mecanismo** (CCM-001, SPEC-003) **invocado** pelo Manager — Fase 2; não é agente de trading nem componente separado. | `[FATO]` DHR-ARQ-001 §2 itens 1 e 3 |
+| 2.5 | As três Specs do Manager **não** criam agente de trading adicional; o Manager permanece **um único ator lógico**. | `[FATO]` DHR-EUA-E23 §2 item 2 |
 | 2.6 | O "Scheduler" / "Cognitive Scheduler" citado em textos baselined anteriores (CEE-001 §10 S2; CONFLICT-MAP, Inversão #1) designa a função de despacho hoje exercida pelo Manager — não um componente à parte. | `[INFERÊNCIA]` ADR-MANAGER-001 §2.2 (único componente de orquestração) + DHR-EUA-E23 §3 (slot SPEC-008 renomeado de "Cognitive Scheduler"); CONFLICT-MAP l.123 liga a Inversão #1 ao slot SPEC-008 |
 
 ---
@@ -134,7 +134,7 @@ INHERITS : ADR-MANAGER-001 v1.0 (§1.2–1.3, §2.1–2.5, §4.3, §5)
            RULE-HV-01..04 (SPEC-019 v1.0) · RULE-HD-02..04
            RULE-CF-010 (SPEC-003, BASELINE) · CONFLICT-MAP "Inversões contextuais" #1 (homologado 2026-09-20)
            WORKFLOW v2.1: WF-01, WF-04, WF-06, WF-07, WF-C01, WF-K02, WF-K04, WF-A01, WF-A02, WF-F02, WF-X03, WF-X04, WF-X05, WF-D04
-ADDED    : nenhum requisito novo. Só a regra de leitura do §1 e o uso de números de seção como índice (§8.2) — ambos [PROPOSTA].
+ADDED    : nenhum requisito novo. Só a regra de leitura do §1 e o uso de números de seção como índice (§8.2) — ambos [PROPOSTA]. Filiação da Spec de Tempo (§8.1) = [PROPOSTA], pendente de A-2.
 MODIFIED : nenhum
 REMOVED  : nenhum
 ```
