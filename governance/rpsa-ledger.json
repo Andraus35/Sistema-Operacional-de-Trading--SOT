@@ -745,6 +745,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Muda só o fluxo de ramos e PRs das sessões; não toca agentes, método nem leitura obrigatória."
+    },
+    {
+      "id": "DHR-SPEC008-001",
+      "data": "2026-11-07",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologacao de abertura de Spec: nao altera texto de agente nem metodo"
     }
   ]
 }
