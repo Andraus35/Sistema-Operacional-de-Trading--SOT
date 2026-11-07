@@ -1,6 +1,6 @@
 # PAUTA DE DECISÕES DE ANDRAUS — uma página, uma sessão (A3; DHR-A3-001)
 
-> **Documento vivo, NÃO normativo.** Só reúne o que depende de Andraus, com a recomendação do Orquestrador marcada. Não decide, não homologa, não fecha decisão aberta (CONS-01). Cada pedido responde em uma palavra (**aprovar · recusar · adiar**); a decisão dele vira ata curta (`MODELO-ATA-OPERACIONAL-CURTA.md`) ou ata completa (se normativa). Estado de **2026-11-01** (conferido ao vivo; o PR #157 já foi mesclado por Andraus às 14:55); em divergência, valem o `ROADMAP.md` e o `RMR-001`. **Validade (A3, regra 2):** pedido sem decisão volta ao topo com a *recomendação padrão* — vencimento no `HANDOFF.md` (`[PRAZO]`, detector HO-10).
+> **Documento vivo, NÃO normativo.** Só reúne o que depende de Andraus, com a recomendação do Orquestrador marcada. Não decide, não homologa, não fecha decisão aberta (CONS-01). Cada pedido responde em uma palavra (**aprovar · recusar · adiar**); a decisão dele vira ata curta (`MODELO-ATA-OPERACIONAL-CURTA.md`) ou ata completa (se normativa). Estado de **2026-11-01** (conferido ao vivo; o PR #157 já foi mesclado por Andraus às 14:55); em divergência, valem o `ROADMAP.md` e o `RMR-001`. **Validade (A3, regra 2):** pedido sem decisão volta ao topo com a *recomendação padrão* — vencimento no handoff do ramo (`handoffs/ccr-a79e19ef-2zl738.md`; `[PRAZO]`, detector HO-10).
 
 ## A. Para decidir
 | # | Pedido | Classe | Recomendação |
