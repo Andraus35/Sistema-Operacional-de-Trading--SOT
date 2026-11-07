@@ -39,6 +39,7 @@ Substituiria as 3 primeiras linhas da seção; as demais ficam como estão.
 - **NÃO aplicado:** passos 2 e 3 (migrar o handoff da raiz, que é o HO-163 da frente dos logs, e reescrever a raiz como texto estático). Dependem de combinar com essa frente. **Até lá a raiz continua com o handoff da frente dos logs** e o `AGENTS.md` já descreve a raiz como texto estático: sessões novas devem ler a raiz só pelo roteiro "Reverificar ao vivo" e criar o próprio `handoffs/<ramo>.md`.
 - **Exceção temporária à regra de arquivar ao mesclar:** o handoff da frente de concorrência (handoffs/ccr-b7c09dc1-y4rafd.md) continua em `handoffs/` até o lembrete de medição (2026-11-14) ser concluído; o aviso de ramo morto (HO-16) não está instalado.
 - **HO-16/HO-17 (detectores):** decisão separada, não instalados.
+- **Atualização de status (2026-11-07, nota acrescentada por ordem de Andraus no chat; o texto acima fica como estava, INV-07):** os passos 2 e 3 **foram aplicados** pelo PR #181 da frente dos logs (mesclado por Andraus): HO-163 arquivado em `docs/handoffs/`, handoff da frente em `handoffs/ccr-a79e19ef-2zl738.md`, `HANDOFF.md` da raiz como texto estático (`HO-2026-11-07-raiz-1`). O PR #180 (passos 1, 4 e 5) foi mesclado na `main` (34d9e29). Portanto a frase "até lá a raiz continua com o handoff da frente dos logs" **já não vale**.
 
 ## 4. Evidência `[FATO]`
 Na `main` de 2026-11-06 havia dois handoffs diferentes com o ID `HO-2026-11-01-157`; a raiz era de outra frente; os dois `handoffs/<ramo>.md` eram de ramos já apagados. Pré-teste: 2 ramos com arquivos próprios mesclam sem conflito; a tabela na raiz conflita; ramo novo sem arquivo próprio recebe `WARN HO-03` e ERRO=0.
@@ -47,4 +48,4 @@ Na `main` de 2026-11-06 havia dois handoffs diferentes com o ID `HO-2026-11-01-1
 Migrar a raiz mexe no trabalho de outra frente; durante a transição coexistem os dois modelos (o código já aceita). O `HO-03` vira ruído enquanto sessões novas não criarem o próprio arquivo.
 
 ## 6. Registro
-- [x] Assinatura de Andraus (chat) · [x] passos 1, 4 e 5 aplicados em PR · [ ] passos 2 e 3 (migração da raiz, depois de combinar com a frente dos logs) · [ ] merge (Andraus) · [ ] `MECANISMOS.json` só se instalar HO-16/HO-17 · [ ] CATALOGO
+- [x] Assinatura de Andraus (chat) · [x] passos 1, 4 e 5 aplicados em PR · [x] passos 2 e 3 (migração da raiz, PR #181) · [x] merge (Andraus; #180 e #181) · [ ] `MECANISMOS.json` só se instalar HO-16/HO-17 · [ ] CATALOGO
