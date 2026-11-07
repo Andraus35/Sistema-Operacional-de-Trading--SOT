@@ -1,0 +1,66 @@
+diff --git a/scripts/check_handoff.py b/scripts/check_handoff.py
+index 4be921e..13cac94 100644
+--- a/scripts/check_handoff.py
++++ b/scripts/check_handoff.py
+@@ -67,6 +67,7 @@ CLOSED_WORDS = re.compile(r"FECHAD|DECIDID|RESOLVID", re.I)
+ HOMOLOG_WORDS = re.compile(r"\b(foi|ficou|fica|está|estão|é|são|agora)\s+(homologad[oa]s?|baseline[d]?)\b", re.I)
+ DHR = re.compile(r"\bDHR-[A-Z0-9]+(?:-[A-Z0-9]+)*\b")
+ PRAZO = re.compile(r"\[PRAZO:\s*(\d{4}-\d{2}-\d{2})\]")
++ID_RAMO = re.compile(r"^HO-\d{4}-\d{2}-\d{2}-[a-z0-9]{3,12}-\d+$")  # R2 (proposta): HO-<data>-<ramo curto>-<n>
+ IGNORED_PREFIXES = ("HANDOFF.md", "handoffs/", "docs/handoffs/", "docs/mapa/")
+ ANEXO_KEYS = ["tipo", "anexo_id", "tarefa", "serve_handoff", "base_commit", "status"]
+ ANEXO_STATUS = ("ATIVO", "CONSUMIDO")
+@@ -189,6 +190,17 @@ def analyze(root: Path, today=None):
+                         else:
+                             f.append(("ERRO", "HO-04", f"{arch.name} difere do handoff que substituiu (arquivo deve ser cópia exata)"))
+ 
++    # HO-16 / HO-17 (proposta M1/M2 — handoff por ramo): só INFO, nunca bloqueia
++    hdir = root / "handoffs"
++    if hdir.is_dir():
++        refs = git(root, "for-each-ref", "--format=%(refname:short)", "refs/heads", "refs/remotes/origin")
++        vivos = {re.sub(r"[^A-Za-z0-9._-]+", "_", r.replace("origin/", "", 1)) for r in (refs or "").split()}
++        for hf in sorted(hdir.glob("*.md")):
++            if refs is not None and hf.stem not in vivos:
++                f.append(("INFO", "HO-16", f"handoffs/{hf.name}: o ramo não existe mais; arquivar em docs/handoffs/ramo-{hf.stem}/ (INV-07)"))
++            hid = parse(hf.read_text(encoding="utf-8", errors="replace"))[0].get("handoff_id", "")
++            if hid and not ID_RAMO.match(hid):
++                f.append(("INFO", "HO-17", f"handoffs/{hf.name}: ID '{hid}' fora do formato HO-<data>-<ramo curto>-<n> (ID antigo é aceito)"))
+     # HO-06
+     gov = root / "governance"
+     names = [p.name for p in gov.glob("DHR-*")] if gov.exists() else []
+diff --git a/tests/test_check_handoff.py b/tests/test_check_handoff.py
+index 6130377..e84cd6b 100644
+--- a/tests/test_check_handoff.py
++++ b/tests/test_check_handoff.py
+@@ -322,6 +322,31 @@ class Handoff(unittest.TestCase):
+         _, _, ach = self.run_check()
+         self.assertIn(("ERRO", "HO-01"), ach)
+ 
++    # --- M1/M2 (proposta): HO-16 ramo morto, HO-17 formato do ID --------------------------------------
++    def _handoff_de_ramo(self, nome, hid):
++        base = self.first()  # HANDOFF.md da raiz válido + commit
++        (self.d / "handoffs").mkdir(exist_ok=True)
++        (self.d / "handoffs" / f"{nome}.md").write_text(doc(hid=hid, base=base), encoding="utf-8")
++        self.commit("handoff de ramo")
++
++    def test_ho16_acusa_handoff_de_ramo_que_nao_existe(self):
++        self._handoff_de_ramo("ramo-morto", "HO-2026-11-07-morto-1")
++        _, _, ach = self.run_check()
++        self.assertIn(("INFO", "HO-16"), ach)
++
++    def test_ho16_nao_acusa_handoff_do_ramo_vivo(self):
++        ramo = self.git("symbolic-ref", "--short", "HEAD")
++        self._handoff_de_ramo(ramo, "HO-2026-11-07-vivo-1")
++        _, _, ach = self.run_check()
++        self.assertNotIn(("INFO", "HO-16"), ach)
++
++    def test_ho17_id_fora_do_formato_e_so_info(self):
++        ramo = self.git("symbolic-ref", "--short", "HEAD")
++        self._handoff_de_ramo(ramo, "HO-2026-11-01-157")
++        code, _, ach = self.run_check()
++        self.assertIn(("INFO", "HO-17"), ach)
++        self.assertEqual(code, 0)
++
+ 
+ if __name__ == "__main__":
+     unittest.main()
