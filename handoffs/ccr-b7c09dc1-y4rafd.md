@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-07-ccrb7c0-6
-previous: HO-2026-11-07-ccrb7c0-5
+handoff_id: HO-2026-11-07-ccrb7c0-7
+previous: HO-2026-11-07-ccrb7c0-6
 data: 2026-11-07
 branch: ccr-b7c09dc1-y4rafd
-base_commit: 2d79e82
+base_commit: 5a7cbab
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -23,7 +23,7 @@ anexo: null
 
 **Sessão de 2026-11-07 (Andraus aprovou a direção da regra do handoff e autorizou pré-teste e triagem):** pré-teste feito (`CONCORRENCIA-DE-SESSOES/PRETESTE-HANDOFF-2026-11-07.md`): a tabela de frentes na raiz AINDA conflita; recomendação revista = raiz estática sem tabela. Protótipo HO-16/HO-17 (31/31 testes, 4 mutantes mortos) em patch, **não instalado**. Triagem de ramos refeita com histórico completo (os "101/175/120 commits" eram de clone raso): grupo A (4 contidos) e B (3 só handoff/mapa) apagáveis; grupo C (6) com tag `arquivo/<ramo>` antes; script `arquivar-ramos.sh` para o Termux de Andraus. Nada apagado nem aplicado.
 
-**Camada B FEITA (2026-11-07, Andraus rodou o script no Termux e mostrou a saída):** ruleset `proteger-main` **id 26739886**, `enforcement: active`, **bypass 0**, regras `deletion`, `non_fast_forward`, `pull_request` (0 aprovações, Code Owners desligado) e `required_status_checks` (`Validate SOT Harness`, ramo atualizado obrigatório). `allow_update_branch=true`; `delete_branch_on_merge` já estava ligado. **Merge queue indisponível** (conta pessoal). Desligar em emergência: `bash ~/proteger-main.sh desligar` (Termux de Andraus). Efeito esperado: nenhum push direto na `main`; PR só mescla com CI verde e ramo em dia, inclusive para agentes. **Ainda não observei uma recusa real**: o PR deste handoff é o primeiro a passar pela regra.
+**Camada B FEITA (2026-11-07, Andraus rodou o script no Termux e mostrou a saída):** ruleset `proteger-main` **id 26739886**, `enforcement: active`, **bypass 0**, regras `deletion`, `non_fast_forward`, `pull_request` (0 aprovações, Code Owners desligado) e `required_status_checks` (`Validate SOT Harness`, ramo atualizado obrigatório). `allow_update_branch=true`; `delete_branch_on_merge` já estava ligado. **Merge queue indisponível** (conta pessoal). Desligar em emergência: `bash ~/proteger-main.sh desligar` (Termux de Andraus). Efeito esperado: nenhum push direto na `main`; PR só mescla com CI verde e ramo em dia, inclusive para agentes. **Recusa real OBSERVADA (PR de teste #178, fechado sem mesclar, commit vazio, ramo 4 commits atrás da `main`):** (1) merge com o CI na fila → `405 Repository rule violations found` (check `Validate SOT Harness` "queued/expected"); (2) merge com CI verde mas ramo desatualizado → mesma recusa (o check "is expected" sobre o ramo em dia). Efeito vale para os agentes (sem bypass). Caminho quando recusar: *Update branch* ou a ferramenta de atualizar o ramo e esperar o CI.
 
 **Estado em 2026-11-06:** os PRs #167, #168, #169, #170 e #171 estão mesclados; nenhum PR aberto. Os comandos do ruleset `proteger-main` (sem bypass) e `allow_update_branch` foram entregues a Andraus para rodar no Termux; **não sei se ele rodou** (a ferramenta não lê rulesets). Esta sessão escreveu a proposta de regra do handoff (`governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-HANDOFF-ENTRADA-E-CICLO-DE-VIDA-2026-11-06.md`): raiz como índice, ID por ramo, arquivar handoff de ramo mesclado. **Nada aplicado.** Colisão viva: dois handoffs com o ID HO-2026-11-01-157 na `main`.
 **Problema (ordem de Andraus, chat 2026-11-01):** várias sessões mexem no repositório ao mesmo tempo e geram docs, ramos, PRs e merges conflitantes. **Causa-raiz medida:** arquivos únicos e gerados tocados por toda sessão (mapa 214 toques/30 dias, `HANDOFF.md` 124, ledgers), numeração sequencial de handoff e nenhuma serialização no servidor.
