@@ -324,7 +324,7 @@ O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLO
 - [x] Estimativa de tamanho com derivação; teto ultrapassado na Spec única ⇒ divisão proposta antes do Plan — RULE-ECC-07.
 - [x] Classe orientativa (D + C; zero H/P); pisos E1/E2/E3; fail-closed na trava E3.
 - [x] Nenhum invariante violado (INV-01/02/04/05/06/07/09; hierarquia; Conviction Vector intocado; SOT não executa).
-- [x] CONS-01: nenhuma decisão aberta usada como fechada (§10, §13); pontos novos que dependem de Andraus marcados como pergunta (P-11, P-12, CONF-5), não como invariante.
+- [x] CONS-01: nenhuma decisão aberta usada como fechada (§10, §13); pontos novos que dependem de Andraus marcados como pergunta (P-11, P-12, P-12.1, P-13, CONF-5), não como invariante. *[antes: "(P-11, P-12, CONF-5)"]*
 - [x] Backlog: 5 itens vinculados com disposição proposta; nada promovido.
 - [x] Nada editado fora de `specs/features/SPEC-008/`; nenhum Plan/checks escrito; nenhum artefato inventado (o número da Spec de Tempo é só **proposta**, candidato SPEC-050).
 - [ ] Gates do Orquestrador (`backlog_triggers --abertura`, `check_repo_research`, `build_map`, `check_refs`, `check_doc_sync`) — pendentes (sem Bash).
