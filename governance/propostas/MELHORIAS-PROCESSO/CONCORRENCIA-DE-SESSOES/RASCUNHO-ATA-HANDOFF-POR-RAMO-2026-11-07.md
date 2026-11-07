@@ -29,7 +29,7 @@ Substituiria as 3 primeiras linhas da seção; as demais ficam como estão.
 
 ## 3. Passos de aplicação (só depois da assinatura; PR separado, sem mesclar)
 1. Trocar as 3 linhas do `AGENTS.md` §11 pelo texto da §2 (texto anterior preservado).
-2. **Migrar o conteúdo atual do `HANDOFF.md` da raiz** (HO-163, frente de logs, pauta e medições A5, ramo `ccr-a79e19ef-2zl738`) para `handoffs/ccr-a79e19ef-2zl738.md`, com a cópia exata do HO-163 em `docs/handoffs/`. **Combinar antes com a sessão dessa frente.**
+2. **Migrar o conteúdo atual do `HANDOFF.md` da raiz** (HO-163, frente de logs, pauta e medições A5, ramo `ccr-a79e19ef-2zl738`) para handoffs/ccr-a79e19ef-2zl738.md (arquivo ainda a criar), com a cópia exata do HO-163 em `docs/handoffs/`. **Combinar antes com a sessão dessa frente.**
 3. Reescrever o `HANDOFF.md` da raiz como texto estático (frontmatter e 11 seções mínimas, para o `check_handoff` não dar ERRO nas sessões sem handoff próprio; elas recebem só o `WARN HO-03`, que as empurra a criar o seu).
 4. Mover para `docs/handoffs/ramo-<ramo>/` os handoffs de ramos já encerrados que ainda estão em `handoffs/` (hoje `ccr-4bd4e8a0-d92lc7.md`).
 5. `python scripts/check_handoff.py`, `check_coesao`, suíte; registrar a classificação RPSA (`check_rpsa.py --register`); CATALOGO se Andraus mandar.
