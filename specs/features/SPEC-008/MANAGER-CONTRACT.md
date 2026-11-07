@@ -64,7 +64,7 @@ Neste contrato, "Fase" sem qualificador = **Fase do Manager** (1ª linha). Quand
 |---|---|---|
 | 3.1.1 | A Fase 1 é **mecânica/determinística**: resolve grafo de dependências, sem julgamento analítico. | `[FATO]` ADR-MANAGER-001 §2.3 ("DISPATCH (mecânica/determinística)") e §2.5 |
 | 3.1.2 | O controle de horário do Manager é determinístico (ENF-03); o gate da FSM do alarme **nunca** é LLM. (A FSM do **ciclo** é obrigação transversal às Fases — §3.2.) | `[FATO]` WORKFLOW v2.1: WF-K02, WF-A02 *[antes: "O controle de horário do Manager é determinístico (ENF-03); o gate da FSM do ciclo e o da FSM do alarme **nunca** são LLM." — âncora "WF-K02, WF-F02, WF-A02"; a FSM do ciclo atravessa a Fase 2 (R1-m03)]* |
-| 3.1.3 | Na abertura homologada da SPEC-008: Classe **D** em tudo + **C** na trava constitutiva; **nenhuma** BASpec H/P na Fase 1; se o Plan precisar de julgamento, o escopo está errado e volta a Andraus. **Alcance:** só SPEC-008 e Spec de Tempo (§8.2-bis). | `[FATO]` DHR-SPEC008-001 §1 (frase de abertura: respostas "confirmadas pela homologação da `ABERTURA.md` como está") e §4 (homologa a abertura); texto em ABERTURA.md §4 (não-baseline — ver cabeçalho) — a declaração por BASpec continua sendo do Plan *[antes: "`[FATO]` ABERTURA.md §4, homologada 'como está' (DHR-SPEC008-001 §1) — a declaração por BASpec continua sendo do Plan" (R1-M03)]* |
+| 3.1.3 | Na abertura homologada da SPEC-008: Classe **D** em tudo + **C** na trava constitutiva; **nenhuma** BASpec H/P na Fase 1; se o Plan precisar de julgamento, o escopo está errado e volta a Andraus. **Alcance:** só SPEC-008 e, se A-2 = sim, Spec de Tempo (§8.2-bis). | `[FATO]` DHR-SPEC008-001 §1 (frase de abertura: respostas "confirmadas pela homologação da `ABERTURA.md` como está") e §4 (homologa a abertura); texto em ABERTURA.md §4 (não-baseline — ver cabeçalho) — a declaração por BASpec continua sendo do Plan *[antes: "`[FATO]` ABERTURA.md §4, homologada 'como está' (DHR-SPEC008-001 §1) — a declaração por BASpec continua sendo do Plan" (R1-M03)]* |
 | 3.1.4 | Julgamento leve pertence às Fases 0 e 2, não à Fase 1. | `[FATO]` ADR-MANAGER-001 §2.5 (Fase 0 "Decisório leve", Fase 2 "Cognitivo leve", Fase 1 "sem julgamento analítico"); mesma leitura em ABERTURA.md §4 (não-baseline) *[antes: "`[FATO]` ADR-MANAGER-001 §2.5; ABERTURA.md §4"]* |
 
 ### 3.2 FSM do ciclo — obrigação **transversal** às Fases (R1-m03)
@@ -72,7 +72,7 @@ Neste contrato, "Fase" sem qualificador = **Fase do Manager** (1ª linha). Quand
 | # | Obrigação | Etiqueta e âncora |
 |---|---|---|
 | 3.2.1 | "**FSM do ciclo inteiro** (determinística, auditável): `AGUARDANDO → CONTEXTO_FORMADO → ARMADO → ATIVADO → EM_SÍNTESE → EM_RISCO → {SINAL_ENVIADO \| RECUSADO \| EXPIRADO}`. O gate nunca é LLM (ENF-03)." | `[FATO]` WF-F02 (transcrição; a frase final do item, "implementação no Plan do Manager (SPEC-015)", **não** é herdada — §8.3) |
-| 3.2.2 | O "gate nunca é LLM" vale para **todos os trechos** da FSM, qualquer que seja a Fase dona: Fase 1 (SPEC-008, até a entrada em `EM_SÍNTESE`), Fase 2 (SPEC-014, Classe predominante H/P, a partir de `EM_SÍNTESE`) e `EM_RISCO` (família RISK-SPEC). Na Fase 2, o julgamento leve pode **produzir** a decisão (ex.: enviar ou não ao Risco), mas a **transição de estado** que a registra passa por gate determinístico. | `[INFERÊNCIA]` WF-F02 ("ciclo **inteiro**") + divisão por trecho da CONF-1 (DHR-SPEC008-001 §1, linha CONF-1..5); ADR §2.5 (Fase 2 cognitivo leve) |
+| 3.2.2 | O "gate nunca é LLM" vale para **todos os trechos** da FSM, qualquer que seja a Fase dona: Fase 1 (SPEC-008, até a entrada em `EM_SÍNTESE`), Fase 2 (SPEC-014, Classe predominante H/P, a partir de `EM_SÍNTESE`) e `EM_RISCO` (família RISK-SPEC). Na Fase 2, o julgamento leve pode **produzir** a decisão (ex.: enviar ao Risco; a saída por "não enviar" em `EM_SÍNTESE` não é seta escrita em WF-F02 — §3.2.3, P-12), mas a **transição de estado** que a registra passa por gate determinístico. | `[INFERÊNCIA]` WF-F02 ("ciclo **inteiro**") + divisão por trecho da CONF-1 (DHR-SPEC008-001 §1, linha CONF-1..5); ADR §2.5 (Fase 2 cognitivo leve) |
 | 3.2.3 | Nenhuma Fase cria, renomeia ou remove estado ou transição da FSM; setas não escritas em WF-F02 só com decisão de Andraus. | `[FATO]` DHR-SPEC008-001 §4 ("nenhum estado/transição foi criado; só Andraus decide e edita"); WORKFLOW, regra de uso 1 e 3 |
 
 ---
@@ -155,10 +155,10 @@ As decisões tomadas **na abertura da SPEC-008** (DHR-SPEC008-001) são decisõe
 
 | Item(ns) | Origem | Alcance vertical | Etiqueta |
 |---|---|---|---|
-| §2, §3 (tabela, exceto a coluna "Classe predominante"), §3.1.1, §3.1.2, §3.1.4, §3.2, §4 (linhas Anti-paradoxo, Fase 2 → Risco, Manager × SPEC-003, Fase 2 × SPEC-016, Manager × agentes analíticos), §5.1–§5.5, §6.1–§6.5, §7 | ADR, DHR-ARQ-001/002, DHR-EUA-E23, CEE-001, INV, RULE-*, WORKFLOW | **todas as filhas** (conservação-como-conjunto, RULE-HV-01) | `[FATO]` das âncoras de cada linha |
+| §2, §3 (tabela, exceto a coluna "Classe predominante"), §3.1.1, §3.1.2, §3.1.4, §3.2, §4 (linhas Anti-paradoxo, Fase 2 → Risco, Manager × SPEC-003, Fase 2 × SPEC-016, Manager × agentes analíticos), §5.1–§5.5, §6.1–§6.5, §7 | ADR, DHR-ARQ-001/002, DHR-EUA-E23, CEE-001, INV, RULE-*, WORKFLOW | **todas as filhas** (conservação-como-conjunto, RULE-HV-01) | etiqueta própria de cada linha (`[FATO]` ou `[INFERÊNCIA]` — §2.6, §3.2.2, aplicação do 6.1 e 6.4-a são `[INFERÊNCIA]`); alcance = RULE-HV-01 |
 | Coluna "Classe predominante" (§3) | DHR-EUA-E23 §2 item 1, nota * | **nenhuma** — orientação não-vinculante, não entra na conservação | `[FATO]` DHR-EUA-E23 §2 item 1, nota * |
-| §3.1.3 (Classe D/C da Fase 1) · §6.6 (P-7) | DHR-SPEC008-001 §1 (abertura "como está"; P-4..P-9) | **SPEC-008 e Spec de Tempo**. Para SPEC-014/015: só o limite que já decorre do ADR §2.5 (não levar julgamento para a Fase 1), não as Classes de suas próprias BASpecs | `[INFERÊNCIA]` DHR-EUA-E23 §2 item 3 + DHR-SPEC008-001 §4 ("homologa a **abertura**" da SPEC-008) |
-| §4 Fase 0 → Fase 1 · Fase 1 → Fase 0 (P-12) · Fase 1 → Fase 2 (CONF-1) · Manager × Spec de Tempo (CONF-5) | DHR-SPEC008-001 §1 (abertura; P-2, P-12, CONF-1..5) | **SPEC-008/Spec de Tempo**: obrigação. **SPEC-014/015**: fronteira **vigente** do lado da SPEC-008, que a abertura delas parte de; mudá-la na abertura delas é revisão de decomposição com homologação de Andraus (DHR-EUA-E23 §2 item 3), não supressão silenciosa | `[INFERÊNCIA]` DHR-EUA-E23 §2 item 3 · se Andraus quer que essas fronteiras sejam herança fixa das SPEC-014/015 = `[DECISÃO NECESSÁRIA]` (§9, A-5) |
+| §3.1.3 (Classe D/C da Fase 1) · §6.6 (P-7) | DHR-SPEC008-001 §1 (abertura "como está"; P-4..P-9) | **SPEC-008 e Spec de Tempo** (esta, se A-2 = sim). Para SPEC-014/015: só o limite que já decorre do ADR §2.5 (não levar julgamento para a Fase 1), não as Classes de suas próprias BASpecs | `[INFERÊNCIA]` DHR-EUA-E23 §2 item 3 + DHR-SPEC008-001 §4 ("homologa a **abertura**" da SPEC-008) |
+| §4 Fase 0 → Fase 1 · Fase 1 → Fase 0 (P-12) · Fase 1 → Fase 2 (CONF-1) · Manager × Spec de Tempo (CONF-5) | DHR-SPEC008-001 §1 (abertura; P-2, P-12, CONF-1..5) | **SPEC-008/Spec de Tempo** (esta, se A-2 = sim): obrigação. **SPEC-014/015**: fronteira **vigente** do lado da SPEC-008, que a abertura delas parte de; mudá-la na abertura delas é revisão de decomposição com homologação de Andraus (DHR-EUA-E23 §2 item 3), não supressão silenciosa | `[INFERÊNCIA]` DHR-EUA-E23 §2 item 3 · se Andraus quer que essas fronteiras sejam herança fixa das SPEC-014/015 = `[DECISÃO NECESSÁRIA]` (§9, A-5) |
 | "Quantas vezes tentar" como requisito à SPEC-015 (§4, P-12) | texto da opção C (ABERTURA.md §13, não-baseline) | **nenhuma** — `[PROPOSTA]` à abertura da SPEC-015 | `[PROPOSTA]` |
 
 ### 8.3 Bloco Herança/Delta deste próprio contrato (CC-08)
@@ -182,7 +182,7 @@ INHERITS : ADR-MANAGER-001 v1.0 (§1.2–1.3, §2.1–2.3, §2.5, §4.3, §5)
            RULE-HV-01..04 (SPEC-019 v1.0) · RULE-HD-02..04 · RULE-MECH-01 · RULE-ECC-01/02
            RULE-CF-010 (SPEC-003 v1.5, BASELINE) · CONFLICT-MAP "Inversões contextuais" #1 (homologado 2026-09-20)
            AGENTS.md §6 (itens 2, 3, 4, 9, 11 — Questionário v1, 2026-09-14)
-           WORKFLOW v2.1: WF-01, WF-04, WF-06, WF-07, WF-C01, WF-T01, WF-K02, WF-K04, WF-A01,
+           WORKFLOW v2.1: regras de uso 1 e 3, WF-01, WF-04, WF-06, WF-07, WF-C01, WF-T01, WF-K02, WF-K04, WF-A01,
              WF-A02, WF-F01, WF-F02, WF-X03, WF-X04, WF-X05, WF-D04
              — WF-F02: NÃO herdada a frase "implementação no Plan do Manager (SPEC-015)" → prevalece
                CONF-1 (DHR-SPEC008-001 §1, linha CONF-1..5: dono por trecho), até Andraus corrigir o texto
@@ -191,7 +191,7 @@ INHERITS : ADR-MANAGER-001 v1.0 (§1.2–1.3, §2.1–2.3, §2.5, §4.3, §5)
              — WF-F01 ramos 3 e 5: NÃO herdado "reset" → prevalece P-12 (DHR-SPEC008-001 §1: "Só encerrar")
 CONTEXTO (citado, NÃO herdado — RULE-HD-04):
            ABERTURA.md da SPEC-008 (redação homologada 2026-11-07; não-baseline; sem versão — cabeçalho)
-           ROADMAP.md (l.33, l.36, l.247 — estado, não baseline versionado) · GLOSSARIO (Fase; §1-bis)
+           ROADMAP.md (l.33, l.35, l.36, l.247, §7, §10-bis — estado, não baseline versionado) · GLOSSARIO (Fase; §1-bis)
            WORKFLOW WF-02, WF-03, WF-05 (só para o vocabulário do §1-bis)
 ADDED    : nenhum requisito novo. Só a regra de leitura do §1 e o uso de números de seção como índice (§8.2) — ambos [PROPOSTA]. Filiação da Spec de Tempo (§8.1) = [PROPOSTA], pendente de A-2. "Quantas vezes tentar" como requisito à SPEC-015 (§4/§8.2-bis) = [PROPOSTA], transcrita da opção C da P-12.
 MODIFIED : nenhum
