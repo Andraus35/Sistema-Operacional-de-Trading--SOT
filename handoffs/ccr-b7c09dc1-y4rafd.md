@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-07-ccrb7c0-5
-previous: HO-2026-11-07-ccrb7c0-4
+handoff_id: HO-2026-11-07-ccrb7c0-6
+previous: HO-2026-11-07-ccrb7c0-5
 data: 2026-11-07
 branch: ccr-b7c09dc1-y4rafd
-base_commit: 489494f
+base_commit: 2d79e82
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,6 +14,8 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece. Este ID usa o formato proposto HO-<data>-<ramo curto>-<n> porque o HO-2026-11-01-157 já existia com outro conteúdo em `docs/handoffs/` (ramo `ccr-a79e19ef-2zl738`); a cópia exata do meu HO-157 está em `docs/handoffs/ramo-ccr-b7c09dc1-y4rafd/`.
 
 ## 1. Frente atual
+
+**Grupo C FEITO por Andraus no Termux (conferido ao vivo):** as 6 tags `arquivo/<ramo>` existem no remoto, cada uma no SHA esperado (`ef7baa1`, `62f8cac`, `32d45b2`, `c345d8f`, `4a7d14e`, `0fbfb89`), e os 6 ramos históricos foram apagados. **Só a `main` resta no remoto**; `check_branches` ERRO=0 WARN=0. Ler um ramo arquivado: `git fetch origin 'refs/tags/arquivo/*:refs/tags/arquivo/*'` e `git checkout arquivo/<ramo>`. **Isto substitui a frase anterior de que o grupo C estava pendente.** Rascunho da ata do handoff por ramo: segue em leitura com Andraus (nada a fazer até a ordem dele).
 
 **Fechamento da sessão de 2026-11-07 (ordens de Andraus no chat):** PRs #173, #174 e #175 **mesclados** (o #175 traz o rascunho da ata do handoff por ramo, que **não vigora**). **Limpeza dos ramos A e B feita por Andraus no Termux:** os 7 ramos (4 contidos na `main` + 3 só handoff/mapa) sumiram do remoto; restam só os 6 do grupo C (`ccr-e3c0fb7e-63d2l9`, `spec-006-abertura`, `auditor-externo-integracao`, `ferramentas-estresse`, `ccr-3a0d581c-6cj4ig`, `spec006-plan`), que Andraus roda depois de ler a triagem (`bash ~/arquivar-ramos.sh C`: cria a tag `arquivo/<ramo>`, confere o SHA e só então apaga). O ruleset `proteger-main` passou por 3 merges sem recusa. **Medição do efeito agendada para ~7 dias** (lembrete via `send_later`, ordem de Andraus): contar merges de integração, conflitos em handoff/mapa/ledger e colisões de ID contra a linha de base (6 merges de integração/30 dias; mapa 214 toques; `HANDOFF.md` 124). Nada novo aplicado.
 
@@ -48,7 +50,7 @@ anexo: null
 Sem parecer novo nesta frente; categorias recorrentes e lacunas: rodar `python scripts/loop_ledger.py --stdout` ao receber o próximo parecer.
 
 ## 5. Próximo passo único
-Na data do lembrete (~2026-11-14): fazer `git fetch --unshallow` (clone raso infla contagens), medir e relatar a Andraus em AskUserQuestion. Antes disso: aguardar Andraus assinar/editar o rascunho da ata do handoff (só então aplicar em PR separado), e conferir o grupo C com `check_branches.py` se ele rodar o script. Frente do handoff da raiz (HO-163): combinar com `ccr-a79e19ef-2zl738` antes de qualquer migração.
+Na data do lembrete (~2026-11-14): fazer `git fetch --unshallow` (clone raso infla contagens), medir e relatar a Andraus em AskUserQuestion. Antes disso: aguardar Andraus assinar/editar o rascunho da ata do handoff (só então aplicar em PR separado),. Frente do handoff da raiz (HO-163): combinar com `ccr-a79e19ef-2zl738` antes de qualquer migração.
 
 ## 6. Decisões (por ID — NÃO copiar lista; o ROADMAP prevalece)
 `DHR-LEDGER-GERADO-001`. A ata do mapa gerado está no PR #169. Decisões abertas do ROADMAP: nenhuma tocada.
