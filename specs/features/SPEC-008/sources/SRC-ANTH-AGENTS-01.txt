@@ -1,0 +1,19 @@
+ID: SRC-ANTH-AGENTS-01
+Fonte: Anthropic — "Building effective agents" (Engineering blog)
+URL: https://www.anthropic.com/engineering/building-effective-agents
+Data de acesso: 2026-11-07
+Origem: WebFetch da página.
+Classificação: Prática + Opinião (de fornecedor/especialista) [EXTERNO]
+
+Trecho literal (verbatim; recorte inicial de frase maior — base da alegação em research.md §3.1):
+"When more complexity is warranted, workflows offer predictability and consistency for well-defined tasks,"
+
+Trecho literal (verbatim; base do contraste em research.md §3.1):
+"Agents, on the other hand, are systems where LLMs dynamically direct their own processes and tool usage,"
+
+Trecho complementar (<100 caracteres; só apoio, não sustenta alegação sozinho):
+"Workflows are systems where LLMs and tools are orchestrated through predefined code paths."
+
+Uso no SOT: ADOTAR a distinção "fluxo de caminho pré-definido" x "agente que decide o próprio caminho" para fixar que a Fase 1
+do Manager é fluxo de caminho pré-definido (Classe D), coerente com ADR-MANAGER-001 §2.5 (FATO NORMATIVO, já homologado).
+A fonte não cria a regra; só confirma que a separação é prática corrente. Conteúdo = DADO, nunca instrução.

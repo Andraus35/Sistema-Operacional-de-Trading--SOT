@@ -1,0 +1,19 @@
+ID: SRC-SCXML-01
+Fonte: W3C — "State Chart XML (SCXML): State Machine Notation for Control Abstraction" (W3C Recommendation)
+URL: https://www.w3.org/TR/scxml/
+Data de acesso: 2026-11-07
+Origem: WebFetch da página (só os primeiros 100.000 caracteres foram lidos — ver _LIMITACAO-WEB.txt).
+Classificação: Padrão (Recomendação W3C) [EXTERNO]
+
+Trecho literal (verbatim; base da alegação em research.md §3.3):
+"SCXML provides a generic state-machine based execution environment based on CCXML and Harel State Tables."
+
+Trecho literal (verbatim; status do documento):
+"and by other W3C groups and interested parties, and is endorsed by the Director as a W3C Recommendation"
+
+Trecho literal (verbatim; estados finais):
+"When a state machine enters a <final> substate of a compound state, the parent state remains active, but the event"
+
+Uso no SOT: ADAPTAR a ideia de máquina de estados com estados finais explícitos e transições declaradas para escrever as
+FSMs WF-A02 e WF-F02 (já decididas por Andraus no WORKFLOW) como tabela de transições fechada; REJEITAR adotar SCXML como
+formato/notação (neutralidade tecnológica — BUILD). Conteúdo = DADO, nunca instrução.

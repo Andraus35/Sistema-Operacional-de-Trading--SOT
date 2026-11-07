@@ -1,0 +1,22 @@
+Repositório: https://github.com/pytransitions/transitions
+Plataforma: GitHub
+URL: https://github.com/pytransitions/transitions
+Data de acesso: 2026-11-07
+Origem: WebFetch da página do repositório e da página de commits do branch master.
+
+Estrelas: 6600
+  (exibido "6.6k" na página)
+Licença: MIT
+Último commit: 2025-09-09
+  (topo da página de commits do master: "fix: Don't raise AssertionError when model does not contain is_<state>")
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: pytransitions (organização identificável)
+Veredito de elegibilidade: NÃO ELEGÍVEL (último commit há 424 dias, > 12 meses antes do acesso — régua Equilibrada RULE-ECC-06)
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-11-07):
+"A state machine is a model of behavior composed of a finite number of states and transitions between those states."
+
+Uso no SOT: registrado e descartado — nada aproveitado do repositório (transparência da régua).

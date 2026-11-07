@@ -1,0 +1,23 @@
+Repositório: https://github.com/statelyai/xstate
+Plataforma: GitHub
+URL: https://github.com/statelyai/xstate
+Data de acesso: 2026-11-07
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 30400
+  (exibido "30.4k" na página)
+Licença: MIT
+Último commit: 2026-11-03
+  (topo da página de commits do main: "fix(core): fix assertEvent narrowing for generic event type parameters (continues #5621) (#5827)")
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: statelyai (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-11-07; recorte de frase maior):
+"It uses event-driven programming, state machines, statecharts, and the actor model to handle complex logic"
+
+Uso no SOT: referência de prática (máquina de estados/statecharts com transições explícitas e eventos); NÃO é
+dependência; nada instalado nem executado. Motor = BUILD.

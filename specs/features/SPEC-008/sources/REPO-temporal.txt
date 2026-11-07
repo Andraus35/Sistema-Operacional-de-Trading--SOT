@@ -1,0 +1,23 @@
+Repositório: https://github.com/temporalio/temporal
+Plataforma: GitHub
+URL: https://github.com/temporalio/temporal
+Data de acesso: 2026-11-07
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 24200
+  (exibido "24.2k" na página)
+Licença: MIT
+Último commit: 2026-11-06
+  (topo da página de commits do main: "Add gradual join to matching (#12949)")
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: temporalio (organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-11-07; recorte de frase maior):
+"Temporal is a durable execution platform that enables developers to build scalable applications without"
+
+Uso no SOT: referência de prática (execução durável; temporizadores registrados como eventos; reexecução determinística);
+NÃO é dependência; nada instalado nem executado. Motor = BUILD.

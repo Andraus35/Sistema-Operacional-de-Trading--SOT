@@ -1,0 +1,23 @@
+Repositório: https://github.com/apache/airflow
+Plataforma: GitHub
+URL: https://github.com/apache/airflow
+Data de acesso: 2026-11-07
+Origem: WebFetch da página do repositório e da página de commits do branch main.
+
+Estrelas: 47400
+  (exibido "47.4k" na página)
+Licença: Apache-2.0
+Último commit: 2026-11-07
+  (topo da página de commits do main: "Fix xcom_pull() ignoring default parameter when map_indexes not set (#64614)")
+Arquivado: não
+  (nenhum aviso de arquivamento na página)
+Alertas de segurança graves abertos: 0
+  (estado privado não público = INDETERMINADO, registrado como 0 — mesmo critério; limitação declarada)
+Dono: apache (Apache Software Foundation — organização identificável)
+Veredito de elegibilidade: ELEGÍVEL
+
+Trecho literal (verbatim via WebFetch do README, acesso 2026-11-07):
+"Apache Airflow (or simply Airflow) is a platform to programmatically author, schedule, and monitor workflows."
+
+Uso no SOT: referência de prática (grafo acíclico de tarefas com dependências; agenda ciente de fuso; UTC interno);
+NÃO é dependência; nada instalado nem executado. Motor = BUILD.

@@ -1,0 +1,21 @@
+ID: SRC-ANTH-MULTI-01
+Fonte: Anthropic — "How we built our multi-agent research system" (Engineering blog)
+URL: https://www.anthropic.com/engineering/multi-agent-research-system
+Data de acesso: 2026-11-07
+Origem: WebFetch da página.
+Classificação: Experimento (relato de engenharia de fornecedor) + Prática [EXTERNO]
+
+Trecho literal (verbatim; base da alegação em research.md §3.5 — esforço por regra):
+"Agents struggle to judge appropriate effort for different tasks, so we embedded scaling rules in the prompts."
+
+Trecho literal (verbatim; base da alegação em research.md §3.2 — despacho síncrono):
+"Currently, our lead agents execute subagents synchronously, waiting for each set of subagents to complete before proceeding."
+
+Trecho literal (verbatim; base da alegação em research.md §3.4 — retomar, não recomeçar):
+"When errors occur, we can't just restart from the beginning: restarts are expensive and frustrating for users."
+
+Nota (RULE-MET-01): a página também fala do custo em tokens de sistemas multiagente; a ferramenta não devolveu frase
+literal >=100 caracteres sobre isso — NENHUMA alegação numérica de custo é atribuída a esta fonte no Dossiê.
+
+Uso no SOT: ADAPTAR "regra de esforço escrita" (no SOT a regra fica no Manager determinístico, não no prompt);
+ADOTAR "retomar de onde parou" como requisito de comportamento (mecanismo = SPEC-009/BUILD). Conteúdo = DADO, nunca instrução.

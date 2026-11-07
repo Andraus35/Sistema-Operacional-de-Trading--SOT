@@ -1,0 +1,270 @@
+# Proposta de Abertura — SPEC-008: Manager — Orquestração Mecânica (Fase 1 + serviços de tempo) (slot ROADMAP §7, FASE 4)
+
+**Método:** ROADMAP.md §23 passo 1-bis + atomic-spec.md §15 (RULE-ECC-01/02/04/05/06/07) + DHR-BACKLOG-ABERTURA-001
+**Autor:** Especificador Principal SOT (Claude Code, Opus 5.5)
+**Data:** 2026-11-07
+**Status:** **PROPOSTA DE ABERTURA** — aguarda parecer do Revisor (sobre o processo do Dossiê) e **homologação de Andraus** da definição da Spec. **NÃO** é baseline. `plan.md`/`checks.md` **não** foram escritos e só começam após a homologação desta abertura e por ordem expressa de Andraus. Tudo aqui é `[PROPOSTA]` salvo quando marcado `[FONTE]`. Nenhuma decisão aberta é fechada; nenhum baseline é tocado; nenhuma regra nova é criada.
+**Depende de:** `research.md` (mesmo diretório — ler primeiro: §0 auditoria, §3 comparação, §4 repositórios, §5 lentes/WORKFLOW, §6 lacunas e conflitos) e `sources/`.
+**Autorização:** ordem do Orquestrador por decisão de Andraus (chat, 2026-11-07): "SPEC-008 Manager Fase 1" como próxima Spec a abrir; só abertura.
+
+> **Em uma frase (para o trader):** o Manager tem três trabalhos — escolher a missão (Fase 0), **tocar a operação do ciclo** (Fase 1) e decidir se manda o sinal (Fase 2); esta Spec é a **Fase 1, o "despachante com relógio"**: ele chama o analista de Elliott primeiro, chama o de SMC só se o primeiro viu oportunidade, pede a leitura de convicção de contexto, deixa um **alarme de preço armado**, abre a Killzone no **horário de Nova York**, chama o ICT **só** se o alarme tocar dentro da janela, e passa o caso para a Fase 2 — tudo por **regra fixa**, sem opinar sobre o mercado, sem gastar menos quando o mercado pede análise, e **nunca** mandando ordem.
+
+---
+
+## 1. Número, nome, complexidade, profundidade
+
+| Campo | Proposta | Justificativa |
+|---|---|---|
+| **Número** | **SPEC-008** (mantido) + uma 2ª Spec, chamada aqui de **"Spec de Tempo"**, **se** a divisão for aceita (P-2); número candidato **SPEC-050** | SPEC-008 é o slot (`ROADMAP.md` §7; DHR-EUA-E23). O número candidato SPEC-050 é o próximo livre (046/047/048/049 em uso ou reservados; busca 2026-11-07: o texto "SPEC-050" só aparece como dado de teste em `tests/test_telemetria_tokens.py`, e "COG-SPEC-050" é outro espaço de nomes, do MC-COG-001). Número = Andraus decide; até lá o texto usa "Spec de Tempo". |
+| **Nome** | **SPEC-008 — Manager — Despacho e Ciclo (Fase 1)**; **Spec de Tempo — Manager — Relógio, Killzone e Alarme-gatilho** | Se a divisão for **recusada**: mantém-se "Manager — Orquestração Mecânica (Fase 1 + serviços de tempo)" (`[FONTE]` DHR-EUA-E23). |
+| **Complexidade** | **CRITICAL — recomendado para a SPEC-008 (mantém o slot)**. Spec de Tempo: **HIGH — recomendado** (alternativa CRITICAL). | Despacho e ciclo: concorrência entre ativos, aviso duplicado/fora de ordem, reinício no meio do ciclo, tentativa de pular etapa por custo — terreno de D8 adversarial. Relógio/alarme: função de tempo pura, sem efeito externo, sem modelo; casos difíceis (horário de verão, meia-noite, prazo vencido na queda) cabem como cenários negativos de D7 (research §8.1). |
+| **Profundidade-alvo** | SPEC-008 **D0–D8** (standard + adversarial); Spec de Tempo **D0–D7** (standard) | AGENTS.md §4. D6 (protocolo do quadro) **aplicável** na SPEC-008 (despacho via quadro — RULE-BB-001/005); na Spec de Tempo só pela publicação de eventos de tempo/alarme. |
+| **Maturidade-alvo** | L3 (Testável) na baseline; gate E3 por-Spec (RULE-MM-05, SPEC-021) | Mesmo regime das Specs anteriores. |
+| **Classe predominante** (orientação, não vinculante — CC-11 por BASpec) | **D** em tudo + **C** na trava constitutiva · **H/P: nenhuma** | ADR-MANAGER-001 §2.5 (Fase 1 mecânica). Ver §4. |
+
+**Natureza:** Spec de **comportamento do Manager** (Trilha B), **dentro** do ciclo de trading. **RULE-ECC-05 incide** (três lentes — research §5). **CC-12 não incide** (o Manager não é especialista de escola — research §9).
+
+**Validade do Dossiê (ECC-VAL-001):** acesso 2026-11-07 → **2027-02-05** (HIGH ou CRITICAL, 90 dias), para as duas peças.
+
+---
+
+## 2. Fronteira e escopo
+
+### Dentro do escopo — SPEC-008 (Despacho e Ciclo)
+- **S1 Pedido de ciclo:** entrada = campos de WF-01 (ativo, tipo de trading, tripla de TFs de WF-T01, Killzone, assistida/pré-programada — WF-K04); campo faltante ⇒ pedido recusado e registrado. Um ciclo por ativo/missão, **isolado** dos outros (WF-P01). Quem cria a missão é a Fase 0 (SPEC-015); até ela existir, o pedido vem de Andraus (WF-01).
+- **S2 Grafo de despacho:** dado versionado; recusado se tiver ciclo (research §3.2); ordem = hierarquia (INV-01/CC-01) + pipeline WF-02→WF-03→WF-04→WF-05; desempate por regra fixa.
+- **S3 Despacho via quadro e barramento:** o Manager publica o pedido no **seu** espaço do quadro (RULE-BB-002) e o aviso sai pelo barramento (SPEC-005); **nunca** chama agente diretamente (RULE-BB-001/005). Cada etapa espera a publicação da anterior (despacho síncrono no ciclo — research §3.2); prazo por etapa = parâmetro.
+- **S4 Ativação progressiva:** Institucional só se o Estrutural publicar oportunidade (WF-03); Operacional só com alarme `TRIGGERED` dentro da janela (WF-05). **Inversão #1** (CONFLICT-MAP): ruptura da hipótese dominante ⇒ ciclo completo, **independente de custo**.
+- **S5 Leitura macro:** invoca o mecanismo da SPEC-003 sobre o subconjunto estrutural+institucional (RULE-CF-010; 1ª das 2 invocações — Q-A5) e aplica **gate D "conclusiva?"** com limiar **parâmetro** (valor = P-5); discordância direcional Estrutural×Institucional ⇒ NEUTRO e encerra (AGENTS §6.4; WF-F01 ramo 2). Não calcula vetor, não pesa, não arbitra.
+- **S6 Pedido de alarme e disparo do Operacional:** convicção macro conclusiva ⇒ **pede** à peça de tempo (Spec de Tempo) que arme o alarme com os campos **copiados** da hipótese-origem (P-8); ao receber `TRIGGERED` dentro da janela, despacha o Operacional; confere o **alinhamento** de direção do setup com a hipótese de contexto (WF-T02 — dono a confirmar, C-4).
+- **S7 Máquina de estados do ciclo:** WF-F02 como tabela fechada (estado × evento → próximo; par não listado = recusado e registrado); seis ramos de falha de WF-F01 como transições nomeadas; nenhum estado novo nem renomeado (WORKFLOW soberano). Dono da FSM = C-1.
+- **S8 Tetos e orçamento:** teto de passos por ciclo, de voltas que cada agente recebe (inclui `max_retrieval_rounds` pedido pelas SPEC-007/048), de falhas seguidas por agente/ferramenta, prazo por etapa — tabela fixa por tipo de missão × etapa; valores **INDETERMINADOS** (CC-09). Estouro ⇒ estado nomeado + registro + aviso, nunca silêncio. **Nunca** pula etapa com evento estruturalmente relevante por custo (CEE-001 §10 S2). Custo vive em espaço próprio, **nunca** no Conviction Vector (INV-04).
+- **S9 Interromper / aguardar / escalar / encerrar:** cada parada tem motivo nomeado; INDETERMINADO é estado válido com abstenção produtiva (RULE-MET-02: o que falta, o que muda a conclusão); escalada a Andraus = registro + aviso, sem decidir por ele.
+- **S10 Registro do ciclo:** só-inserção (INV-07); cada despacho grava regra, versão do grafo, evento causador e instante como **fato registrado** (D9: "por que este agente rodou agora"); retomada após queda a partir do registro, sem refazer etapa concluída (research §3.4); mecanismo de guarda = SPEC-009 (P-6).
+- **S11 Entrega à Fase 2:** passa o caso à SPEC-014 e **para** na fronteira (`EM_SÍNTESE`); em missão pré-programada (WF-K04) o resultado fica em fila para revisão.
+- **S12 Trava constitutiva (Classe C, E3):** o Manager-Fase-1 **não** analisa mercado, **não** cria nem edita hipótese, **não** calcula convicção, **não** muda classe de modelo de agente (CEE-001 §10 S1/S5), **não** monta TMP nem Signal Package e **não** emite ordem (INV-05; RULE-DEC-01).
+
+### Dentro do escopo — Spec de Tempo (Relógio, Killzone e Alarme-gatilho) — **se** a divisão for aceita; senão, volta à SPEC-008
+- **T1 Fonte de tempo registrada:** cada decisão de tempo usa um instante gravado como fato; a reexecução lê o registro, nunca o relógio (research §3.4/§3.6).
+- **T2 Calendário de Killzones:** tabela por ativo, versionada e editável só por Andraus (WF-K01; WF-R02/R03 `[REVISAR · BL-026]`); valores nunca constantes.
+- **T3 Fuso e horário de verão:** cálculo em `America/New_York` pelo banco IANA; fuso da máquina só exibe/agenda (WF-K03); casos obrigatórios: hora inexistente, hora ambígua, janela que cruza meia-noite, máquina em outro fuso.
+- **T4 Pré-aviso:** evento 1h antes de cada janela (WF-K02).
+- **T5 Objeto do alarme:** campos de WF-A01, **copiados** da hipótese-origem/publicação dos agentes; o alarme é gatilho de **análise**, nunca ordem (INV-05).
+- **T6 FSM do alarme:** WF-A02 como tabela fechada; `TRIGGERED` **só** dentro da janela; o preço que dispara é Observação de fonte de dados (Observação ≠ Evidência — INV-06), fonte = INDETERMINADA (research §6 L-5).
+- **T7 Morte do alarme:** expira por prazo; cancela se a hipótese-origem vai a `SUPERSEDED`/`REFUTED` (WF-A03; estados CHM-001); prazo vencido durante queda ⇒ `EXPIRED`, nunca disparo atrasado.
+- **T8 Mercado fechado / calendário ausente:** parâmetro por ativo (WF-P02); sem calendário ⇒ registro "calendário de mercado não informado" (P-9).
+
+### Fora do escopo (Non-goals)
+| Item | Motivo | Dono |
+|---|---|---|
+| Tipo de missão, portfólio de missões, Campanha, Plano B | Fase 0 (ADR §2.3); **SPEC-015-SCOPE ABERTA** | **SPEC-015** |
+| Arbitragem entre agentes, convicção global, decisão de envio, pacote risco-retorno, TMP | Fase 2 (DHR-ARQ-002) | **SPEC-014** / **SPEC-016** |
+| Cálculo do Conviction Vector, fórmula, pesos, limiares definitivos | **J-001/N-001 ABERTAS**; WF-D03 ABERTA | **SPEC-003**/CCM-001 |
+| Esquema e mecanismo de persistência do estado | **G-001 ABERTA** | **SPEC-009** |
+| Estados de objeto não-hipótese no quadro | **M-001 ABERTA** | SPEC-004 / Andraus |
+| Transporte de avisos; canal de saída do Signal Package | BASELINE | **SPEC-005** |
+| Análise de mercado, hipótese, setup (entrada/stop/alvo) | INV-02; RULE-BB-005 | **SPEC-010..013** |
+| R:R, sizing, heat, avaliação de risco | WF-X01..X05; FASE RISK | **RISK-SPEC** |
+| Provedor de preço/dados de mercado | BL-033; DHR-DEC-004 | Market Data / **SPEC-038** |
+| Formalização de Skills (o que é Skill e quando despertar como unidade) | I-001 fechada; corte exato adiado | **SPEC-025** |
+| Telemetria de tokens e observabilidade | BL-036..042 | **SPEC-040/041** |
+| Overtrading; execução de ordem | WF-X04; INV-05 | Bot Trade Finance |
+| Journal / checkpoint humano formal | WF-J01 | **SPEC-018** |
+| Motor (biblioteca de FSM, agendador, banco) | ROADMAP §22 | BUILD |
+| Coordenação entre "Cognitive Orchestrator" e Manager | possível dupla posse futura (research §6 C-5) | SPEC-023 (quando abrir) |
+
+### Anti-dupla-posse (anti-double-ownership)
+| Vizinha | A SPEC-008 faz | A vizinha faz | Linha de corte |
+|---|---|---|---|
+| **SPEC-003** (BASELINE) | **invoca** a leitura macro e aplica gate D com limiar-parâmetro | **calcula** o vetor (subconjunto/completo) | Nada de fórmula/peso aqui (RULE-CF-010; DHR-ARQ-001) |
+| **SPEC-009** | declara **o que** precisa sobreviver a queda e o registro só-inserção | define **como** guardar, serializar, expirar (G-001) | Requisito de interface `[PROPOSTA]`; SPEC-009 vem depois (P-6) |
+| **SPEC-014** | conduz até `EM_SÍNTESE` e entrega | arbitra, forma convicção global (2ª invocação), decide envio, gera TMP | Fronteira = estado `EM_SÍNTESE` de WF-F02 |
+| **SPEC-015** | executa o ciclo de um pedido já definido | cria/decide/gerencia missões | Interface = pedido de ciclo com campos de WF-01 |
+| **SPEC-004/005** (BASELINE) | publica no próprio espaço; assina avisos | quadro e barramento | RULE-BB-001/002/005; transporte ≠ controle (SPEC-005) |
+
+---
+
+## 3. Quantidade e dimensionamento (RULE-ECC-07) — **divisão proposta**
+
+**BASpecs candidatas (só títulos; numeração no Plan; prefixos a definir):**
+- **SPEC-008 (12):** 1 pedido de ciclo e isolamento por ativo · 2 grafo de despacho sem ciclo e ordem pela hierarquia · 3 despacho via quadro/barramento e espera · 4 ativação progressiva + Inversão #1 · 5 leitura macro + gate "conclusiva" + NEUTRO · 6 pedido de alarme + despacho do Operacional + alinhamento · 7 FSM do ciclo e seis ramos · 8 tetos e orçamento (sem cortar etapa relevante) · 9 interromper/aguardar/escalar/encerrar · 10 registro do ciclo, reconstrução e retomada · 11 entrega à Fase 2 · 12 trava constitutiva (C/E3).
+- **Spec de Tempo (8):** 1 fonte de tempo registrada · 2 calendário de Killzones versionado · 3 fuso e horário de verão · 4 pré-aviso · 5 objeto do alarme · 6 FSM do alarme · 7 morte do alarme · 8 mercado fechado/calendário ausente.
+
+**Linhas previstas do corpo normativo** `[INFERÊNCIA]` — mesma base e método da abertura da SPEC-049 (§3 de lá): SPEC-048 (CRITICAL D0–D8, 12 BASpecs, corpo 1.935 linhas) decomposta em **fixo ≈887**, **≈74 por BASpec** em CRITICAL ((810 + 75 de D8) / 12) e **≈67,5** em HIGH, **≈20 por Enforcement Contract**. Verificação cruzada pela contagem de linhas dos arquivos `plan.md` (Grep, 2026-11-07): SPEC-004 1.325 linhas / 14 BASpecs (≈95 por BASpec, tudo incluído — densidade **baixa**, pré-RULE-ECC-07); SPEC-048 1.935 / 12 (≈161 — densidade **alta**); SPEC-049 1.583 / 11 (≈144).
+
+| Cenário | Central (fixo + BASpecs + ECs) | Faixa (densidade baixa ≈95 · alta ≈161 por BASpec) | Leitura RULE-ECC-07 |
+|---|---|---|---|
+| **Spec única** (20 BASpecs, ~9 ECs, CRITICAL) | 887 + 20×74 + 9×20 = **≈2.547** | 1.900 – 3.220 | **Acima do teto 2.000** ⇒ divisão **deve** ser proposta antes do Plan |
+| **SPEC-008** (12 BASpecs, ~6 ECs, CRITICAL) | 887 + 12×74 + 6×20 = **≈1.895** | 1.140 – 1.932 | Abaixo do teto e do alerta (1.900) por pouco; **acima de 1.600 ⇒ Andraus confirma** (P-3) |
+| **Spec de Tempo** (8 BASpecs, ~3 ECs, HIGH) | 839 + 8×67,5 + 3×20 = **≈1.439** | 760 – 1.290 | Abaixo de 1.600 (em CRITICAL: 887 + 8×74 + 60 ≈ **1.539**) |
+
+**Proposta de decomposição (recomendada): duas Specs por fronteira de contrato.** A Spec de Tempo **produz** eventos de tempo (janela aberta/fechada, pré-aviso) e estados do alarme, e **consome** o pedido de armar, os estados da hipótese-origem (CHM-001) e a Observação de preço; a SPEC-008 **consome** esses eventos e **produz** despachos e transições do ciclo. O que muda junto fica junto: mudar horário de Killzone ou regra de horário de verão (BL-026) não mexe no grafo de despacho; mudar a ordem dos agentes não mexe no relógio. Não é divisão por fase nem por tipo de tarefa (RULE-ECC-07). Cada peça é revisável sozinha.
+
+**Alternativas registradas:** (B) **Spec única** — passa do teto; só se Andraus mandar mesmo assim. (C) **Três peças** (tempo · alarme+ciclo · despacho+orçamento) — o fixo de ~840–890 linhas se repete três vezes (≈4.200 linhas no total contra ≈3.330 das duas peças) e corta o alarme do ciclo, que mudam juntos (`ARMADO`/`ATIVADO` do ciclo espelham `ARMED`/`TRIGGERED` do alarme). **Incertezas:** base n=1 decomposta; densidade varia ~1,7× entre Specs; o histórico de rodadas cresce com o número de rodadas. **Gatilho processual:** mudar escopo ou dividir depois de o Plan começar = nova abertura.
+
+**Ordem proposta:** Plan da **SPEC-008 primeiro** (ordem de Andraus), declarando a interface com a Spec de Tempo como requisito `[PROPOSTA]` (padrão SPEC-048→SPEC-049); depois o Plan da Spec de Tempo. **Este Dossiê cobre as duas** (research §3.6/§3.7 e repositórios); se Andraus preferir Dossiê próprio para a Spec de Tempo, ela abre depois com o seu (P-2).
+
+---
+
+## 4. Classe RULE-MECH-01 (CC-11) — orientação por tipo de BASpec
+
+- **Classe D (regra fixa, sem modelo):** pedido de ciclo; grafo e ordem; despacho e espera; ativação progressiva; gate "conclusiva" (comparação com parâmetro); NEUTRO por discordância; alinhamento de direção; FSM do ciclo; tetos e estouro; paradas e escalada; registro; entrega à Fase 2; todo o relógio, Killzone, pré-aviso e alarme.
+- **Classe C (E3, fail-closed):** a trava constitutiva S12 — se o Manager-Fase-1 tentar qualquer capacidade negada (analisar, criar hipótese, calcular convicção, mudar classe de modelo, montar TMP/Signal Package, emitir ordem), a ação é **recusada** e registrada. **Justificativa CC-11** `[INFERÊNCIA]`: o risco negado é alto e irreversível (ordem/sinal fora do caminho governado violaria INV-05 e as Salvaguardas de Sinal); a trava não chama modelo nem acrescenta etapa cara (Economicidade preservada).
+- **Classe H/P: nenhuma** — julgamento leve é das Fases 0/2 (ADR §2.5). Se o Plan precisar de julgamento, é sinal de escopo errado ⇒ volta a Andraus.
+- **Pisos de nível (D2) propostos:** publicação do pedido de despacho **E2** (desvia o caminho da análise); armar/cancelar alarme **E2**; transição do ciclo **E2**; registro **E1**; entrega à Fase 2 **E2**; trava **E3**. Economicidade nunca rebaixa nível. ENF-07: a trava E3 declara método de falso-DENY (despacho legítimo recusado), limiar = lacuna aberta.
+
+**Critério 4Es:** Eficácia — um despachante que opina ou corta análise por custo cria caminho de sinal sem governo; por isso tudo é D e a trava é C. Efetividade — mesma entrada, mesma sequência de despachos (reconstrução). Eficiência — ativação progressiva evita rodar SMC/ICT sem oportunidade. Economicidade — zero chamada de modelo na Fase 1.
+
+---
+
+## 5. Princípios de Domínio (RULE-PD-01 / CC-12) — **NÃO incide**
+O Manager não é Spec de especialidade de escola (ADR-MANAGER-001 §2.5). Nenhum `PD-xx`. `[INFERÊNCIA]`
+
+---
+
+## 6. Constitution Check preliminar (CC-01..CC-12) — a completar no Plan
+
+| ID | Situação | Nota |
+|---|---|---|
+| CC-01 | **Aplica — foco** | Ordem de despacho = hierarquia; ICT só depois do contexto; ICT não cria hipótese. |
+| CC-02 | Aplica | Não redefine CHM-001/CEM-001/CCM-001/CEE-001; consome por referência. |
+| CC-03 | **Aplica** | Só **invoca**; limiar macro = parâmetro (P-5); J-001/N-001 abertas; 8 dimensões intocadas. |
+| CC-04 | **Aplica** | CEE-001 §10 S1/S2/S5 (roteamento e "não suprimir por custo") e §11 (nenhum sinal sai daqui). |
+| CC-05 | Aplica | CRITICAL (SPEC-008) / HIGH (Spec de Tempo) propostos — P-1/P-2. |
+| CC-06/07 | Diferido ao Plan | Engineering Cards no BUILD. |
+| CC-08 | **Aplica — foco** | Pai vertical = "Manager Contract" (P-4) ou ADR-MANAGER-001 v1.0; INHERITS: ADR §2.2/2.3/2.5, DHR-ARQ-001/002, DHR-EUA-E23, RULE-CF-010 (SPEC-003), RULE-BB-001/002/005, CEE-001 §10, CONFLICT-MAP Inversão #1, interfaces pedidas por SPEC-004/005/007/048. REMOVED vazio (proposta). |
+| CC-09 | **Aplica** | Nenhum número (tetos, prazos, limiar macro = INDETERMINADOS); INDETERMINADO como estado válido. |
+| CC-10 | **Aplica** | Acepções: "despachar" ≠ "chamar diretamente"; "orçamento" (custo/tetos) ≠ convicção; "convicção macro" = leitura do mesmo vetor (WF-C01), ≠ convicção global; "alarme" = gatilho de análise ≠ ordem; "Killzone" (janela de tempo ICT) ≠ sessão de pregão. |
+| CC-11 | Aplica (§4) | Por BASpec; D + C; zero H/P. |
+| CC-12 | **NÃO incide** (§5) | — |
+
+---
+
+## 7. Decisões de Andraus que entram nesta Spec — disposição proposta
+
+| Decisão | Fonte | Disposição |
+|---|---|---|
+| Manager ator único; Fase 1 mecânica | ADR-MANAGER-001 §2.2/§2.5 | **Incorporar** como herança (S12; Classe D). |
+| 3 Specs sob "Manager Contract"; slots indicativos | DHR-EUA-E23 | Aplicado; divisão interna proposta (§3) é permitida pelo item 3 da ata. |
+| Invocação 2x (macro Fase 1) | Q-A5 / DHR-DEC-001; RULE-CF-010 | **Incorporar** (S5). Fórmula **não**. |
+| Killzone e alarme como mecanismos formais | WF-D01, WF-D02 FECHADAS | **Incorporar** (S6, T1–T8). |
+| ICT = Operacional, não cria hipótese | WF-D04 FECHADA | **Incorporar** (S4/S6). |
+| Event Bus existe como camada fina | EVENT-BUS-001 FECHADA (DHR-SPEC005-002) | **Usar** para avisos de despacho. |
+| Ruptura de hipótese dominante ⇒ análise completa | CONFLICT-MAP Inversão #1 (HOMOLOGADO 2026-09-20) | **Incorporar** (S4). |
+
+---
+
+## 8. Re-apontamento — errata e gatilhos (só proposta; nada executado)
+
+- **Sem divisão:** nenhuma errata.
+- **Com divisão:** nota aditiva de re-apontamento (padrão ERRATUM-REAPONT-001) para `SPEC-003/plan.md` l.46 e l.224 (Killzone/alarme "Manager/Scheduler (SPEC-008…") → Spec de Tempo; demais referências à SPEC-008 (orquestração, orçamento, latência — SPEC-004/005/007/048) **ficam**. Lista exata reconferida por Grep no Plan. Sem reescrever a SPEC-003 (INV-09).
+- **Gatilhos do RMR-001:** com divisão, BL-026 ganha `∨ spec:<número da Spec de Tempo> em redação` (aditivo). BL-043..046 ficam como estão.
+- **ROADMAP §7/§21/§26:** registrar a abertura e, se aceita, o slot da Spec de Tempo com o número que Andraus decidir (só Orquestrador/Andraus — §12).
+
+---
+
+## 9. Itens do backlog vinculados por regra — disposições PROPOSTAS (declaradas no Plan; o Especificador não promove)
+
+- **BL-026** (WF-R01..R03, `Em espera`) — `Disposição: PARCIAL` — motivo: a SPEC-008 consome WF-R01 (TFs) pelo pedido de ciclo e trata tudo como parâmetro editável; WF-R02/R03 (horários e Killzones por ativo) vão à Spec de Tempo (ou ficam aqui se não houver divisão). A pauta de valores é **recolocada agora** a Andraus (P-10), como o item manda.
+- **BL-043** (log dos Construtores, F2b) — `Disposição: FORA` — motivo: processo dos Construtores, não comportamento do Manager; a execução (auditoria do código da F2a, F2b, selo) segue com o Orquestrador **por ordem de Andraus**, independente do conteúdo desta Spec.
+- **BL-044** (medição do pré-gate na abertura e no Plan) — `Disposição: REFERÊNCIA` — motivo: o protocolo mede o **processo** desta Spec (Médias e tokens por rodada da abertura e do Plan; pré-gate antes de cada entrega). Cabe ao Orquestrador rodar e registrar; nada entra no texto normativo.
+- **BL-045** (autopré-check legível por máquina) — `Disposição: REFERÊNCIA` — motivo: depende da medição do BL-044.
+- **BL-046** (checklist único D/H) — `Disposição: REFERÊNCIA` — motivo: depende da medição do BL-044; agentes reservados.
+- **Não vinculados, só visibilidade:** BL-029 (consumidor fail-closed do vetor — Fase 2/SPEC-014; não toca a Fase 1), BL-033 (provedor de preço do alarme — L-5), BL-036 (telemetria de custo — o orçamento da SPEC-008 é de controle, não de medição; SPEC-040).
+
+---
+
+## 10. Dependências e decisões abertas (CONS-01 — não fechar)
+
+**Montante homologado:** SPEC-001 (estados da hipótese via CHM-001), SPEC-002, SPEC-003 (RULE-CF-010), SPEC-004 (quadro), SPEC-005 (barramento), SPEC-019/020/021, CEE-001 v2.0, ADR-MANAGER-001, `WORKFLOW.md` v2.1. **A jusante e depois no caminho crítico:** SPEC-009 (estado), SPEC-014/015 (Fases 2/0) — interfaces declaradas como requisito.
+
+**Abertas que esta Spec toca e não fecha:** **J-001/N-001** (limiar macro e tetos — P-5), **G-001** (persistência — P-6), **M-001** (estados no quadro — P-6), **SPEC-015-SCOPE** (fronteira com a Fase 0), **WF-D03** (só para dizer que a Fase 1 invoca e não define fórmula), **C-001** (redação EARS). **Não tocadas:** K-001, SPEC-045-RUNTIME-001, ECC-03-001, D-PCC-4.
+
+---
+
+## 11. Riscos (com contenção)
+
+- **R-1 Despachante vira analista** — S12 (C/E3); RULE-BB-005; zero modelo.
+- **R-2 Corte de análise por custo** — S8 + CEE-001 §10 S2 + Inversão #1; orçamento avisa/escala, não pula (P-7).
+- **R-3 ICT rodando fora da janela ou sem contexto** — S4/S6 + T6; INV-02; divergência RULE-ICT-003 registrada (C-3).
+- **R-4 Horário errado na troca de horário de verão / máquina em outro fuso** — T3 com casos obrigatórios; tabela em NY, não em UTC fixo (research §3.7).
+- **R-5 Ciclo perdido ou duplicado após queda** — S10 registro só-inserção; retomada; alarme vencido ⇒ `EXPIRED`.
+- **R-6 Aviso duplicado ou fora de ordem do barramento** — transições idempotentes pela tabela fechada; par não listado recusado (D8).
+- **R-7 Limiar macro inventado** — P-5: parâmetro; sem valor ⇒ não arma (fail-closed).
+- **R-8 Ativos se contaminando** — S1: um ciclo isolado por ativo/missão.
+- **R-9 Dupla posse com SPEC-003/009/014/015** — §2 anti-dupla-posse; C-1/C-2/C-4.
+- **R-10 Plan grande demais** — §3: divisão; P-3.
+- **R-11 Persistência indefinida até a SPEC-009** — P-6; requisito declarado; lacuna registrada.
+- **R-12 Alarme sem fonte de preço** — L-5; T6 fail-closed: sem Observação de preço, alarme não dispara.
+
+---
+
+## 12. Edições a documentos de governança — NÃO executadas
+
+O Especificador **não** edita ROADMAP, CATALOGO, RMR-001, CONFLICT-MAP, WORKFLOW, RULES, atas, AGENTS.md, agentes, canon nem Specs baselined. Após a homologação, cabe ao Orquestrador/Andraus: ata de abertura; ROADMAP §7 (e slot Spec de Tempo + §21/§26, se aceito); CATALOGO; RMR-001 (re-apontamento aditivo do BL-026, se aceito); nota aditiva à SPEC-003 (§8, se aceito); WORKFLOW **só Andraus** (WF-F02 "SPEC-015", se ele decidir alinhar — C-1).
+
+**Comandos a rodar (não tenho Bash — para o Orquestrador):**
+- `python scripts/backlog_triggers.py --abertura SPEC-008` (esperado: BL-026, BL-043, BL-044, BL-045, BL-046)
+- `python scripts/check_repo_research.py specs/features/SPEC-008` e `--all` (esperado OK: 4 elegíveis, 1 não elegível coerente)
+- `python scripts/build_map.py` e `--check` (BL-019)
+- `python scripts/check_refs.py` · `python scripts/check_doc_sync.py` · `python scripts/check_invariants.py` (informativos)
+- `python scripts/pre_entrega.py specs/features/SPEC-008` se aplicável à abertura (protocolo do BL-044)
+
+---
+
+## 13. Perguntas a Andraus (linguagem de trader)
+
+1. **P-1 (peso do despachante).** *Recomendação: tratar a parte que chama os analistas e conduz o ciclo como peça **crítica** (CRITICAL), com testes de ataque.* É ela que decide se o ICT roda, se o SMC é chamado e quando o caso vai para a decisão final; um erro aqui abre caminho de sinal fora do roteiro. **Confirma crítico?**
+   > *Nota técnica:* CRITICAL D0–D8 (slot); alternativa HIGH D0–D7 sem suíte D8.
+2. **P-2 (dividir em duas).** *Recomendação: separar em **duas** Specs — "Despacho e Ciclo" (SPEC-008) e "Relógio, Killzone e Alarme" (a "Spec de Tempo", número novo — candidato SPEC-050 —, peso alto/HIGH).* Numa só, o plano passa do tamanho máximo que a regra permite revisar de uma vez. O relógio e o alarme mudam por motivos próprios (horários, horário de verão) e não mexem na ordem dos analistas. **Aceita a divisão, o número candidato SPEC-050 e que este mesmo Dossiê valha para as duas?**
+   > *Nota técnica:* §3; RULE-ECC-07 (única ≈2.547 > 2.000); alternativas única e três peças; Spec de Tempo em CRITICAL ≈1.539.
+3. **P-3 (tamanho da SPEC-008).** *Recomendação: manter "Despacho e Ciclo" como **um documento só**.* A conta dá cerca de **1.900 linhas** (faixa 1.140–1.930), acima de 1.600 — por isso a regra pede sua confirmação. Dividir mais partiria coisas que mudam juntas. **Confirma?**
+   > *Nota técnica:* RULE-ECC-07 (`RULES.md` l.526-527); o Plan mede e declara o corpo.
+4. **P-4 (contrato comum do Manager).** *Recomendação: escrever **antes** do Plan da SPEC-008 um documento curto, o "Manager Contract", que só junta o que você já decidiu sobre o Manager (ator único, três fases, Fase 1 mecânica, nunca executa, nunca corta análise por custo) — sem regra nova —, e homologá-lo junto.* As três Specs do Manager herdam dele. Alternativa: usar a própria ADR do Manager como "pai" agora e escrever o contrato só quando abrir a Fase 0. **Qual prefere?**
+   > *Nota técnica:* DHR-EUA-E23 §2 item 2; RULE-HV-01..04; contrato inexistente (research §0 d). Opção rejeitada: contrato dentro da SPEC-008 (irmã viraria mãe).
+5. **P-5 (quando a convicção de contexto é "conclusiva").** Para armar o alarme, o Manager precisa saber se a convicção de contexto (Elliott + SMC) basta — e **não existe número decidido** para isso (os 70% e 7/9 são do **sinal**, não do contexto). *Recomendação: **adiar o número** (vai com a calibração, J-001/N-001); a Spec escreve a regra com um limiar a preencher e, enquanto ele não existir, o alarme **não é armado** e o ciclo encerra registrado ("contexto não conclusivo").* Alternativa: você fixa agora um valor-piloto. **Adiar (recomendado) ou fixar um piloto?**
+   > *Nota técnica:* WF-04; RULE-CF-010; CC-03/CC-09; J-001 e WF-D03 seguem ABERTAS.
+6. **P-6 (onde fica a "memória" do ciclo até a SPEC-009).** *Recomendação: a SPEC-008 mantém o próprio **livro de bordo só-de-acréscimo** (cada passo do ciclo e do alarme), que permite retomar depois de uma queda; os estados do ciclo e do alarme **não** viram estados de objeto no quadro; **como** guardar fica para a SPEC-009.* **Confirma?**
+   > *Nota técnica:* G-001 e M-001 seguem ABERTAS; research §3.4, §6 L-3/L-4.
+7. **P-7 (orçamento × "nunca deixar de analisar por custo").** *Recomendação: o orçamento do ciclo **avisa e escala** quando estoura; **nunca** pula o Elliott (nem outra etapa com evento estrutural relevante) para economizar; o "botão de parada por gasto" que o documento de economia permite só é apertado **por você**, nunca automaticamente.* **Confirma?**
+   > *Nota técnica:* CEE-001 §10 S2 × §9.3 (tensão no canon, não reescrito — CONST-01); Inversão #1.
+8. **P-8 (de onde vêm o preço do alarme e a "oportunidade").** *Recomendação: o nível, a direção, a invalidação e a validade do alarme são **copiados** do que os analistas publicaram (hipótese de contexto); a "oportunidade" que libera o SMC é um campo que o Elliott publica. O Manager **nunca** calcula preço nem decide se há oportunidade.* **Confirma?**
+   > *Nota técnica:* WF-A01; WF-03; ADR §2.5; requisito às SPEC-010/012 (`[INFERÊNCIA]`).
+9. **P-9 (relógio da máquina e mercado fechado).** *Recomendação: a fonte de hora confiável, a tolerância de atraso do relógio e o calendário de feriados/pregão por ativo ficam como **parâmetros a preencher** na construção; sem calendário, a Killzone vale pela tabela e o livro de bordo anota "calendário de mercado não informado" — sem preço, o alarme não dispara de qualquer forma.* **Confirma?**
+   > *Nota técnica:* research §3.6, §6 L-6 (pesquisa inconclusiva); WF-P02/N-001.
+10. **P-10 (horários das Killzones — BL-026 em pauta).** As fontes de varejo concordam com a sua tabela em Londres, NY PM e London Close, mas **divergem** em duas janelas: **Ásia** (sua tabela 20:00–24:00; há quem use 20:00–22:00) e **NY AM** (sua tabela 07:00–10:00; há quem use 08:30–11:00), sempre em horário de Nova York. Também falta decidir **quais Killzones valem por ativo** e conciliar a **entrada M5** do ICT com a tabela de tempos gráficos. *Recomendação: manter a sua tabela atual como valor-padrão editável e refinar por ativo só depois do backtest; a Spec trata tudo como parâmetro.* **Mantém, ou quer editar algum valor agora (edição sua no WORKFLOW)?**
+    > *Nota técnica:* WF-R01..R03; SRC-KZ-LUX-01, SRC-KZ-BTX-01; research §3.7.
+
+**Confirmações (na homologação):**
+- **C-1 — quem conduz a máquina de estados do ciclo.** O WORKFLOW (WF-F02) diz "Plan do Manager (SPEC-015)"; o ROADMAP e a ata EUA-E23 põem "FSM do ciclo" na SPEC-008. *Recomendação: a SPEC-008 conduz a máquina (é mecânica), citando WF-F02 por ID; se quiser, você ajusta o texto do WORKFLOW depois.* **Confirma?**
+- **C-2 — a 1ª leitura de convicção.** *Recomendação: a SPEC-008 pede a leitura macro e aplica a regra "conclusiva?"; a arbitragem entre analistas é da Fase 2 (SPEC-014).* (RULE-CF-010 × EUA-E23 §4) **Confirma?**
+- **C-3 — ICT fora da Killzone.** A regra antiga RULE-ICT-003 aceita entrada fora da Killzone com convicção reduzida; o seu WORKFLOW (WF-A02/WF-05) só aceita disparo **dentro** da janela. *Recomendação: a SPEC-008 segue o WORKFLOW; a divergência fica registrada para quando a Spec do ICT (SPEC-013) abrir.* **Confirma?**
+- **C-4 — conferir se o setup do ICT está na direção do contexto.** *Recomendação: a SPEC-008 faz essa conferência por regra fixa (direção igual ou não) antes de passar à Fase 2; desalinhado = sem entrada e o alarme é resetado (WF-T02, WF-F01 ramo 3).* **Confirma?**
+
+> Nenhuma decisão aberta é fechada (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03 e D-PCC-4 seguem abertas.
+
+---
+
+## 14. Próximo passo
+`research.md` + `sources/` + esta Proposta seguem para **parecer do Revisor** sobre o processo do Dossiê (RULE-ECC-02/04/05/06/07; não incidência de CC-12; disposições do backlog; conflitos registrados) e, depois, **homologação de Andraus** (P-1..P-10, C-1..C-4, fronteira, divisão e Classe orientativa) — **antes** de qualquer `plan.md`/`checks.md`.
+
+---
+
+## 15. Autopré-check (PEP-001 §7) — resumo
+
+- [x] ROADMAP lido (§7 slot SPEC-008/009; §9 SPEC-014/015; §21; §23 passo 1-bis; decisões abertas/fechadas; EUA-E21/E23). Slot **indicativo, não aberto**; abertura ordenada (2026-11-07).
+- [x] atomic-spec §15 lido (Dossiê, verbatim, multi-lente, repositórios, dimensionamento).
+- [x] Dossiê presente e completo — RULE-ECC-02 (questões, fontes classificadas `[EXTERNO]`, adotar/adaptar/rejeitar/adiar, lacunas, escopo, re-apontamento).
+- [x] Captura verbatim por fonte carregada (14 SRC) — RULE-ECC-04; citações no Dossiê copiadas das capturas.
+- [x] "Pesquisa em repositórios" com régua Equilibrada (4 elegíveis, 1 não elegível; nenhum adotado como motor) — RULE-ECC-06.
+- [x] Multi-Lente (RULE-ECC-05): Arquitetura + Escola (ICT/Killzone; risco-retorno declarado não pertinente) + WORKFLOW por ID, com divergências registradas.
+- [x] Estimativa de tamanho com derivação; teto ultrapassado na Spec única ⇒ divisão proposta antes do Plan — RULE-ECC-07.
+- [x] Classe orientativa (D + C; zero H/P); pisos E1/E2/E3; fail-closed na trava E3.
+- [x] Nenhum invariante violado (INV-01/02/04/05/06/07/09; hierarquia; Conviction Vector intocado; SOT não executa).
+- [x] CONS-01: nenhuma decisão aberta usada como fechada (§10, §13).
+- [x] Backlog: 5 itens vinculados com disposição proposta; nada promovido.
+- [x] Nada editado fora de `specs/features/SPEC-008/`; nenhum Plan/checks escrito; nenhum artefato inventado (o número da Spec de Tempo é só **proposta**, candidato SPEC-050).
+- [ ] Gates do Orquestrador (`backlog_triggers --abertura`, `check_repo_research`, `build_map`, `check_refs`, `check_doc_sync`) — pendentes (sem Bash).
+- [x] "VERIFY" não apresentado como CONFORME nem homologação.
+
+**Pronto para revisão.**
