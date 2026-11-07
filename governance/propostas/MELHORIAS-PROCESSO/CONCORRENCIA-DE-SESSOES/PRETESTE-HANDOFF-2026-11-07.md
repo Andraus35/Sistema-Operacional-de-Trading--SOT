@@ -12,7 +12,7 @@
 | C2 | ramo com `handoffs/<ramo>.md` e ID no formato novo | ERRO=0, sem aviso |
 | C3 | `handoffs/` de ramo morto presente | **nenhum aviso hoje** (falta o M1) |
 | M1/M2 | protótipo HO-16 (ramo morto) e HO-17 (formato do ID), só INFO | `tests.test_check_handoff` **31/31**; **4 mutantes mortos**; `gate_manifest` íntegro; `git apply --check` limpo na `main` |
-Efeito do protótipo na `main` real: `HO-16` e `HO-17` acusam só `handoffs/ccr-4bd4e8a0-d92lc7.md` (ramo morto, ID antigo `HO-2026-11-01-152`); ERRO=0.
+Efeito do protótipo na `main` real: `HO-16` e `HO-17` acusam só handoffs/ccr-4bd4e8a0-d92lc7.md (movido depois para docs/handoffs/ramo-ccr-4bd4e8a0-d92lc7/, DHR-HANDOFF-RAMO-001) (ramo morto, ID antigo `HO-2026-11-01-152`); ERRO=0.
 
 ## 2. O que muda na proposta (correção)
 **R1 estava errada num ponto:** a "tabela de frentes ativas" na raiz **ainda conflita** (S1b). Recomendação revista: **a raiz não lista frentes**. Ela vira texto estático curto ("o estado de cada frente é um arquivo em `handoffs/`; use `ls handoffs/`") + o roteiro "Reverificar ao vivo". Quem abre ramo novo cria só o próprio arquivo; nenhum arquivo compartilhado é editado. O `WARN HO-03` do C1 já serve de empurrão. Descoberta por `ls handoffs/` (e o `SessionStart` pode listar, sem arquivo gerado). M3 (índice gerado) deixa de ser necessário.
