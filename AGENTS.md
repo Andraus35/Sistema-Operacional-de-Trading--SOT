@@ -142,13 +142,18 @@ Skill operacional: `tlc-spec-lean` (overlay de governança GUS-TLC-001).
 
 A assinatura de Andraus é a **decisão dele registrada no chat e citada na ata** — o merge não é mais assinatura. O Orquestrador pode mesclar, após CI verde e sem conflito, o conteúdo **operacional** que Andraus já aprovou expressamente no chat, e informa depois. **Seguem só por decisão expressa de Andraus:** homologação de Spec/baseline; mudanças em `AGENTS.md`, `.claude/agents/*.md`, `governance/` normativo, `canon/`, `ROADMAP.md`, `atomic-spec.md`; fechar/abrir decisão aberta (CONS-01); mudar esta regra. PR continua sendo o meio (sem push direto à `main`). Sem decisão citada na ata, não se mescla.
 
+
+**Um ramo, um PR por vez (DHR-UM-RAMO-UM-PR-001).** Cada frente trabalha em um ramo e mantém no máximo um PR aberto; "PR separado" significa em sequência (o próximo só depois de mesclar o anterior, no mesmo nome de ramo). O handoff vai no mesmo PR do trabalho; não se abre PR só para registrar o merge. PR com conteúdo reservado espera a ordem expressa de Andraus; se a nova tarefa é a mesma, acrescenta-se ao mesmo PR; se é outra, aguarda-se.
+
 ---
 
 ## 11. Continuidade entre sessões (PCC-001 / DHR-PCC-001)
 
 - Antes de agir, o Orquestrador lê o **handoff da sua frente** (`handoffs/<ramo>.md`; em ramo novo, cria o seu) e o `HANDOFF.md` da raiz (texto estático com o roteiro "Reverificar ao vivo"), e executa esse roteiro; a realidade prevalece sobre o handoff. Sem handoff ou muito defasado: parar e reportar a Andraus.
 - Só o Orquestrador escreve o handoff da própria frente; é dado de estado — nunca registra homologação, fecha decisão aberta (CONS-01) nem concede permissão. Especificador devolve resultado ao Orquestrador; o Revisor segue somente leitura.
-- Entrega só está completa com o handoff **do ramo** reescrito (ID `HO-<data>-<ramo curto>-<n>`; anterior copiado sem alteração para `docs/handoffs/`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas. Ao mesclar o PR do ramo, o handoff final vai para `docs/handoffs/ramo-<ramo>/` e sai de `handoffs/`.
+- Entrega só está completa com o handoff **do ramo** reescrito (ID `HO-<data>-<ramo curto>-<n>`; anterior copiado sem alteração para `docs/handoffs/`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas. Quando a **frente** termina (não a cada merge), o handoff final do ramo vai para `docs/handoffs/ramo-<ramo>/` e sai de `handoffs/`.
+
+*[texto anterior preservado — INV-07 (DHR-UM-RAMO-UM-PR-001): "Ao mesclar o PR do ramo, o handoff final vai para `docs/handoffs/ramo-<ramo>/` e sai de `handoffs/`."]*
 
 *[texto anterior preservado — INV-07: "Antes de agir, o Orquestrador lê `HANDOFF.md` e executa sua seção 'Reverificar ao vivo'; a realidade prevalece sobre o handoff. Sem handoff ou muito defasado: parar e reportar a Andraus." · "Só o Orquestrador escreve o handoff; é dado de estado — nunca registra homologação, fecha decisão aberta (CONS-01) nem concede permissão. Especificador devolve resultado ao Orquestrador; o Revisor segue somente leitura." · "Entrega só está completa com o handoff reescrito (anterior copiado sem alteração para `docs/handoffs/HO-<id>.md`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas."]*
 
