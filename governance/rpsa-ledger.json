@@ -731,6 +731,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Muda só onde o mapa vive (gerado, não versionado); não toca agentes, método nem leitura obrigatória."
+    },
+    {
+      "id": "DHR-HANDOFF-RAMO-001",
+      "data": "2026-11-07",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda só onde o estado de cada frente é escrito e como os IDs são numerados; não toca agentes, método nem leitura obrigatória."
     }
   ]
 }

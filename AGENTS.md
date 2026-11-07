@@ -146,9 +146,12 @@ A assinatura de Andraus é a **decisão dele registrada no chat e citada na ata*
 
 ## 11. Continuidade entre sessões (PCC-001 / DHR-PCC-001)
 
-- Antes de agir, o Orquestrador lê `HANDOFF.md` e executa sua seção "Reverificar ao vivo"; a realidade prevalece sobre o handoff. Sem handoff ou muito defasado: parar e reportar a Andraus.
-- Só o Orquestrador escreve o handoff; é dado de estado — nunca registra homologação, fecha decisão aberta (CONS-01) nem concede permissão. Especificador devolve resultado ao Orquestrador; o Revisor segue somente leitura.
-- Entrega só está completa com o handoff reescrito (anterior copiado sem alteração para `docs/handoffs/HO-<id>.md`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas.
+- Antes de agir, o Orquestrador lê o **handoff da sua frente** (`handoffs/<ramo>.md`; em ramo novo, cria o seu) e o `HANDOFF.md` da raiz (texto estático com o roteiro "Reverificar ao vivo"), e executa esse roteiro; a realidade prevalece sobre o handoff. Sem handoff ou muito defasado: parar e reportar a Andraus.
+- Só o Orquestrador escreve o handoff da própria frente; é dado de estado — nunca registra homologação, fecha decisão aberta (CONS-01) nem concede permissão. Especificador devolve resultado ao Orquestrador; o Revisor segue somente leitura.
+- Entrega só está completa com o handoff **do ramo** reescrito (ID `HO-<data>-<ramo curto>-<n>`; anterior copiado sem alteração para `docs/handoffs/`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas. Ao mesclar o PR do ramo, o handoff final vai para `docs/handoffs/ramo-<ramo>/` e sai de `handoffs/`.
+
+*[texto anterior preservado — INV-07: "Antes de agir, o Orquestrador lê `HANDOFF.md` e executa sua seção 'Reverificar ao vivo'; a realidade prevalece sobre o handoff. Sem handoff ou muito defasado: parar e reportar a Andraus." · "Só o Orquestrador escreve o handoff; é dado de estado — nunca registra homologação, fecha decisão aberta (CONS-01) nem concede permissão. Especificador devolve resultado ao Orquestrador; o Revisor segue somente leitura." · "Entrega só está completa com o handoff reescrito (anterior copiado sem alteração para `docs/handoffs/HO-<id>.md`, INV-07) no mesmo commit, e tudo empurrado ao ramo designado. Máx. 150 linhas."]*
+
 - Fase 2 (DHR-PCC-002): `python scripts/check_handoff.py` + hooks `SessionStart`/`Stop`/`SubagentStop` (`scripts/handoff-hook.js`) injetam o handoff e avisam de defasagem de forma **não-bloqueante**; CI informativo. É Detector (ENF-03), não Gate; promoção a bloqueante só por decisão de Andraus (D-PCC-4, em aberto).
 - Anexo de tarefa (DHR-PCC-003): trabalho grande entre sessões leva **um** anexo `ATIVO` (`tipo: anexo-de-tarefa`), citado pelo campo `anexo:` do handoff, **só ponteiros** (ID/linha; nada de copiar decisão), ≤80 linhas; ao terminar vira `CONSUMIDO` e é movido para `docs/handoffs/anexos/` (INV-07). O handoff segue sendo o único ponto de entrada; `check_handoff.py` (HO-11..HO-15) é Detector, informativo.
 
