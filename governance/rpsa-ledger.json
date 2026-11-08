@@ -752,6 +752,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologacao de abertura de Spec: nao altera texto de agente nem metodo"
+    },
+    {
+      "id": "DHR-SPEC008-002",
+      "data": "2026-11-08",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de contrato de herança vertical: não altera texto de agente nem método."
     }
   ]
 }

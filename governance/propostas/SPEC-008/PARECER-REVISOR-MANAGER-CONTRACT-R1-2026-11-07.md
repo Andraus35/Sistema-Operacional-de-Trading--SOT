@@ -1,6 +1,6 @@
 # Parecer do Revisor — Manager Contract v0.1 (proposta) — R1 — 2026-11-07
 
-> Transcrição pelo Orquestrador do retorno do Revisor SOT (somente leitura). Objeto: `specs/features/SPEC-008/MANAGER-CONTRACT.md` (âncora de roteamento: `ABERTURA.md`, CRITICAL). Modo integral, 1ª rodada. Gate determinístico **NÃO VERIFICADO** (ferramenta indisponível; não é plan.md) ⇒ teto CONFORME condicional mesmo sem achados.
+> Transcrição pelo Orquestrador do retorno do Revisor SOT (somente leitura). Objeto: `governance/MMC-001_Manager_Contract.md` (âncora de roteamento: `ABERTURA.md`, CRITICAL). Modo integral, 1ª rodada. Gate determinístico **NÃO VERIFICADO** (ferramenta indisponível; não é plan.md) ⇒ teto CONFORME condicional mesmo sem achados.
 
 ## Veredito
 **NÃO CONFORME** — 4 Médias e 8 Menores. Atendidos: nenhuma decisão aberta aparece fechada; nenhum modelo canônico redefinido; as 4 divergências de §9 A-4 são reais; nenhum agente/estado novo. Falhas: duas âncoras [FATO] que não dizem o que o contrato afirma (M-01, M-04); INHERITS herda textos que o próprio contrato declara divergentes, sem precedência (M-02); herança de fonte sem versão baseline (M-03).
@@ -38,8 +38,8 @@ m-08|MENOR|C01|Decisoes da abertura da SPEC-008 (CONF-1, Classe orientativa) vir
 -->
 
 <!-- FICHA-M {"achados":[
-{"id":"m-01a","sev":"MENOR","arquivo":"specs/features/SPEC-008/MANAGER-CONTRACT.md","antigo":"ID normativo nem agente.","novo":"ID normativo nem agente de trading.","condicao":"GLOSSARIO §1-bis regra 1: 'agente' qualificado (AT) na linha Natureza do cabeçalho"},
-{"id":"m-01b","sev":"MENOR","arquivo":"specs/features/SPEC-008/MANAGER-CONTRACT.md","antigo":"não é agente nem componente separado","novo":"não é agente de trading nem componente separado","condicao":"GLOSSARIO §1-bis regra 1: 'agente' qualificado na linha 2.4"},
-{"id":"m-01c","sev":"MENOR","arquivo":"specs/features/SPEC-008/MANAGER-CONTRACT.md","antigo":"**não** criam agente adicional","novo":"**não** criam agente de trading adicional","condicao":"GLOSSARIO §1-bis regra 1: 'agente' qualificado na linha 2.5"},
-{"id":"m-05a","sev":"MENOR","arquivo":"specs/features/SPEC-008/MANAGER-CONTRACT.md","antigo":"como índice (§8.2) — ambos [PROPOSTA].","novo":"como índice (§8.2) — ambos [PROPOSTA]. Filiação da Spec de Tempo (§8.1) = [PROPOSTA], pendente de A-2.","condicao":"ADDED lista todo item [PROPOSTA] do documento, inclusive o do §8.1"}
+{"id":"m-01a","sev":"MENOR","arquivo":"governance/MMC-001_Manager_Contract.md","antigo":"ID normativo nem agente.","novo":"ID normativo nem agente de trading.","condicao":"GLOSSARIO §1-bis regra 1: 'agente' qualificado (AT) na linha Natureza do cabeçalho"},
+{"id":"m-01b","sev":"MENOR","arquivo":"governance/MMC-001_Manager_Contract.md","antigo":"não é agente nem componente separado","novo":"não é agente de trading nem componente separado","condicao":"GLOSSARIO §1-bis regra 1: 'agente' qualificado na linha 2.4"},
+{"id":"m-01c","sev":"MENOR","arquivo":"governance/MMC-001_Manager_Contract.md","antigo":"**não** criam agente adicional","novo":"**não** criam agente de trading adicional","condicao":"GLOSSARIO §1-bis regra 1: 'agente' qualificado na linha 2.5"},
+{"id":"m-05a","sev":"MENOR","arquivo":"governance/MMC-001_Manager_Contract.md","antigo":"como índice (§8.2) — ambos [PROPOSTA].","novo":"como índice (§8.2) — ambos [PROPOSTA]. Filiação da Spec de Tempo (§8.1) = [PROPOSTA], pendente de A-2.","condicao":"ADDED lista todo item [PROPOSTA] do documento, inclusive o do §8.1"}
 ]} -->
