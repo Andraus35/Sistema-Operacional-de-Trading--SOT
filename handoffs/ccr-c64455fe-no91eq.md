@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-08-c64455f-2
-previous: HO-2026-11-08-c64455f-1
+handoff_id: HO-2026-11-08-c64455f-3
+previous: HO-2026-11-08-c64455f-2
 data: 2026-11-08
 branch: ccr-c64455fe-no91eq
-base_commit: 97703af
+base_commit: 13c3516
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-008 = ABERTURA HOMOLOGADA (DHR-SPEC008-001, 2026-11-07; CRITICAL D0–D8, dividida com a Spec de Tempo [candidata SPEC-050]; Plan pendente; sem BUILD); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,22 +14,22 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-**MANAGER CONTRACT HOMOLOGADO — MMC-001 v1.0 — BASELINE, com condição (R3-m07).** Andraus escolheu "Homologar com condição" por AskUserQuestion (2026-11-08); ata `DHR-SPEC008-002` em `governance/`. Contrato movido para `governance/MMC-001_Manager_Contract.md` (só o cabeçalho mudou); ROADMAP, CATALOGO e RPSA atualizados ("Próximo trabalho autorizado" não mudou). PR do ramo ainda não aberto; merge é assinatura de Andraus.
+**ERRATA R3-m07 ao MMC-001 — HOMOLOGADA e APLICADA no ramo (PR ainda não aberto).** PR #190 (homologação do MMC-001 v1.0) já mesclado (`13c3516`). Ordem de Andraus "Aplicar a errata do R3-m07"; escolhas por AskUserQuestion: Patch sem mudar o número, aplicação in loco com `[antes]`. Ata `DHR-SPEC008-003`; pareceres R1 (NÃO CONFORME, 1 Média sobre classificação de versão) e R2 (CONFORME condicional) em `governance/propostas/SPEC-008/`. Contrato segue v1.0 (4 alvos editados; ponteiro à ata no cabeçalho, ER2-m01).
 
 ## 2. Estado (ao vivo, 2026-11-08)
 `gate_manifest` íntegro · `check_refs` ERRO=0 · `check_rpsa` ok · `check_coesao` ERRO=0 · mapa em dia · `unittest` 504 OK · hooks e `npm test` OK. Ramo = `origin/main` (97703af) ao iniciar.
 
 ## 3. Lições
-Homologação = ata + `git mv` + ROADMAP (seção, tabela, FECHADAS) + CATALOGO + `check_rpsa --register`. Minuta que cita o arquivo futuro da ata com caminho completo gera ERRO no `check_refs`: citar sem extensão/caminho.
+Roteador: Revisor só deriva classe com `ALVO` que traga `Complexidade` (usar `ABERTURA.md`); `Patch` na CR-001 não muda a versão (não existe "v1.0.1"). Homologação = ata + `git mv` + ROADMAP (seção, tabela, FECHADAS) + CATALOGO + `check_rpsa --register`. Minuta que cita o arquivo futuro da ata com caminho completo gera ERRO no `check_refs`: citar sem extensão/caminho.
 
 ## 4. Verificado (LOOP-001 passo 4)
 3 categorias mais recorrentes do ledger: C07 (45), C01 (33), C02 (32). Lacunas abertas: C99, C06, C10, C03.
 
 ## 5. Próximo passo único
-Andraus mandar abrir/mesclar o PR deste ramo (um ramo, um PR). Depois, por ordem expressa: (i) errata aditiva R3-m07 ao MMC-001; (ii) Plan da SPEC-008. Antes de abrir outra Spec: `loop_ledger.py --retro-check SPEC-008`. Filhas já podem declarar o pai por ID+versão (MMC-001 v1.0).
+Andraus mandar abrir o PR do ramo e mesclar (assinatura). Depois, por ordem expressa: Plan da SPEC-008; antes de outra Spec, `loop_ledger.py --retro-check SPEC-008`.
 
 ## 6. Decisões
-DHR-SPEC008-001; DHR-SPEC008-002 (homologação do MMC-001); A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
+DHR-SPEC008-001; DHR-SPEC008-002 (homologação do MMC-001); DHR-SPEC008-003 (errata R3-m07, Patch); A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
 
 ## 7. Becos sem saída
 Gate determinístico não vale para o contrato (não é plan.md; `revisor_gate` inerte em nuvem).
@@ -45,7 +45,7 @@ Gate determinístico não vale para o contrato (não é plan.md; `revisor_gate` 
 - [ ] ROADMAP: decisões abertas/fechadas; versão de `WORKFLOW.md`; `loop_ledger.py --stdout`
 
 ## 10. Aguardando Andraus
-Ordem para o PR/merge; errata R3-m07; ordem para o Plan da SPEC-008. Pauta: `governance/PAUTA-DE-DECISOES.md`.
+Ordem para o PR/merge; ordem para o Plan da SPEC-008. Pauta: `governance/PAUTA-DE-DECISOES.md`.
 
 ## 11. Ponteiros
 `governance/propostas/SPEC-008/` (minuta histórica `MINUTA-ATA-*` e pareceres R1–R3) · `governance/MMC-001_Manager_Contract.md` · `governance/DHR-SPEC008-001_Ata_Homologacao_Abertura_SPEC-008.md` · `handoffs/ccr-7dbcb1d1-e5d5dd.md` · `handoffs/` · `docs/handoffs/`
