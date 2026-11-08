@@ -14,7 +14,7 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-**Minuta da ata `DHR-SPEC008-002` (homologação do Manager Contract, MMC-001 v1.0) — PREPARADA, NÃO é ata e NÃO homologa.** Pedido de Andraus (chat 2026-11-08). Arquivo: `governance/propostas/SPEC-008/MINUTA-ATA-DHR-SPEC008-002-HOMOLOGACAO-MMC-001-2026-11-08.md`. Contrato-alvo: `specs/features/SPEC-008/MANAGER-CONTRACT.md` v0.3 (commit `16b11f0`, parecer R3 CONFORME condicional). Nenhum PR aberto. Nada foi movido nem editado no ROADMAP/CATALOGO.
+**Minuta da ata de homologação (ID da ata ainda não vigente; homologação do Manager Contract, MMC-001 v1.0) — PREPARADA, NÃO é ata e NÃO homologa.** Pedido de Andraus (chat 2026-11-08). Arquivo: o `MINUTA-ATA-*` em `governance/propostas/SPEC-008/`. Contrato-alvo: `specs/features/SPEC-008/MANAGER-CONTRACT.md` v0.3 (commit `16b11f0`, parecer R3 CONFORME condicional). Nenhum PR aberto. Nada foi movido nem editado no ROADMAP/CATALOGO.
 
 ## 2. Estado (ao vivo, 2026-11-08)
 `gate_manifest` íntegro · `check_refs` ERRO=0 · `check_rpsa` ok · `check_coesao` ERRO=0 · mapa em dia · `unittest` 504 OK · hooks e `npm test` OK. Ramo = `origin/main` (97703af) ao iniciar.
@@ -48,4 +48,4 @@ Gate determinístico não vale para o contrato (não é plan.md; `revisor_gate` 
 Condição do R3-m07 e ordem para homologar o MMC-001; depois, ordem para o Plan da SPEC-008. Pauta: `governance/PAUTA-DE-DECISOES.md`.
 
 ## 11. Ponteiros
-`governance/propostas/SPEC-008/` (minuta e pareceres R1–R3) · `specs/features/SPEC-008/MANAGER-CONTRACT.md` · `governance/DHR-SPEC008-001_Ata_Homologacao_Abertura_SPEC-008.md` · `handoffs/ccr-7dbcb1d1-e5d5dd.md` · `handoffs/` · `docs/handoffs/`
+`governance/propostas/SPEC-008/` (minuta `MINUTA-ATA-*` e pareceres R1–R3) · `specs/features/SPEC-008/MANAGER-CONTRACT.md` · `governance/DHR-SPEC008-001_Ata_Homologacao_Abertura_SPEC-008.md` · `handoffs/ccr-7dbcb1d1-e5d5dd.md` · `handoffs/` · `docs/handoffs/`
