@@ -1,6 +1,6 @@
 # MINUTA — DHR-SPEC008-002 — Ata de Homologação — Manager Contract (MMC-001 v1.0)
 
-> **MINUTA, NÃO É ATA. Não vigora, não homologa, não fecha decisão aberta (CONS-01).** Preparada pelo Orquestrador a pedido de Andraus (chat, 2026-11-08). Só vira a ata `DHR-SPEC008-002_Ata_Homologacao_Manager_Contract_MMC-001` (em `governance/`) com a ordem expressa de Andraus (AGENTS.md §10). Os campos `‹…›` são dele ou dependem do dia da homologação. Insumos: `specs/features/SPEC-008/MANAGER-CONTRACT.md` v0.3 (commit `16b11f0`), parecer R3 e `DHR-SPEC008-001` (forma: `DHR-SPEC049-002`).
+> **MINUTA, NÃO É ATA. Não vigora, não homologa, não fecha decisão aberta (CONS-01).** Preparada pelo Orquestrador a pedido de Andraus (chat, 2026-11-08). Só vira a ata `DHR-SPEC008-002_Ata_Homologacao_Manager_Contract_MMC-001` (em `governance/`) com a ordem expressa de Andraus (AGENTS.md §10). Os campos `‹…›` são dele ou dependem do dia da homologação. Insumos: `governance/MMC-001_Manager_Contract.md` v0.3 (commit `16b11f0`), parecer R3 e `DHR-SPEC008-001` (forma: `DHR-SPEC049-002`).
 > **Por que ata completa e não a curta:** a mudança cria documento normativo em `governance/` e toca `ROADMAP.md` (MODELO-ATA-OPERACIONAL-CURTA, "Não vale").
 
 ---
@@ -11,7 +11,7 @@
 |---|---|
 | De | Andraus — Decisor Final / Consensus Authority (registro pelo Orquestrador) |
 | Para | Especificador SOT / Revisor SOT / Controlador |
-| Ref | `specs/features/SPEC-008/MANAGER-CONTRACT.md` v0.3 (361 linhas; commit `16b11f0`) · pareceres do Revisor em `governance/propostas/SPEC-008/`: R1 (NÃO CONFORME, 4 Médias), R2 (CONFORME condicional, 0 Média, por delta) e R3 (CONFORME condicional, 0 Média, 7 Menores; 6 aplicados como classe M) · `DHR-SPEC008-001` (abertura; §3 manda o contrato antes do Plan) · `DHR-EUA-E23` §2 item 2 (contrato comum do Manager) · `ADR-MANAGER-001` |
+| Ref | `governance/MMC-001_Manager_Contract.md` v0.3 (361 linhas; commit `16b11f0`) · pareceres do Revisor em `governance/propostas/SPEC-008/`: R1 (NÃO CONFORME, 4 Médias), R2 (CONFORME condicional, 0 Média, por delta) e R3 (CONFORME condicional, 0 Média, 7 Menores; 6 aplicados como classe M) · `DHR-SPEC008-001` (abertura; §3 manda o contrato antes do Plan) · `DHR-EUA-E23` §2 item 2 (contrato comum do Manager) · `ADR-MANAGER-001` |
 | Data | ‹AAAA-MM-DD› |
 | Status | **MANAGER CONTRACT HOMOLOGADO — MMC-001 v1.0 — BASELINE** (decisão direta de Andraus em chat, ‹data›: "‹citação literal›"). Assinatura = decisão registrada no chat e citada nesta ata (AGENTS.md §10). Homologação ‹CONDICIONADA (§4) / SEM CONDIÇÃO›. *[Estado anterior preservado — INV-07: "PROPOSTA v0.3 — CONFORME condicional (R3); NÃO é baseline"]* |
 | Compatibilidade | Minor (não toca modelo canônico baselined; nenhuma fonte editada — A-4) |
@@ -30,7 +30,7 @@
 | Homologação | MMC-001 v1.0 | **Homologar** (decisão desta ata) |
 
 ## 2. Efeitos a aplicar na homologação (ações do Orquestrador, na ordem)
-1. Mover `specs/features/SPEC-008/MANAGER-CONTRACT.md` → `governance/MMC-001_Manager_Contract.md` com `git mv` (histórico preservado); cabeçalho: ID **MMC-001**, versão **v1.0**, Status baseline, remover "PROPOSTA — não é baseline" **mantendo** o texto anterior em `[antes: …]` (INV-07). **Só o cabeçalho muda**; o corpo não é editado (INV-09 vale daqui em diante: mudança só por errata homologada).
+1. Mover `governance/MMC-001_Manager_Contract.md` → `governance/MMC-001_Manager_Contract.md` com `git mv` (histórico preservado); cabeçalho: ID **MMC-001**, versão **v1.0**, Status baseline, remover "PROPOSTA — não é baseline" **mantendo** o texto anterior em `[antes: …]` (INV-07). **Só o cabeçalho muda**; o corpo não é editado (INV-09 vale daqui em diante: mudança só por errata homologada).
 2. `ROADMAP.md`: seção e tabela do §25 da SPEC-008 ("Manager Contract homologado"); item em "Decisões FECHADAS" (`SPEC-008-MMC-001`, A-1..A-5). **"Próximo trabalho autorizado" não muda** (precedente DHR-SPEC049-001).
 3. `governance/CATALOGO-OFICIAL.md`: registro de MMC-001 v1.0 e desta ata.
 4. Referências: corrigir ponteiros ao caminho antigo (`handoffs/`, `ABERTURA.md`, pareceres só com `[antes]`); rodar `check_refs.py`.
@@ -65,5 +65,5 @@ J-001 · G-001 · K-001 · C-001 · M-001 · N-001 · SPEC-015-SCOPE · SPEC-045
 ## Notas do Orquestrador (fora da ata; apagar ao converter)
 - **ID da ata:** `DHR-SPEC008-002` está livre (só existe `DHR-SPEC008-001` em `governance/`).
 - **Nome do arquivo do contrato** (`MMC-001_Manager_Contract.md`) é sugestão: A-3 fixou só a pasta. Confirmar antes do `git mv`.
-- **Verificar ao vivo antes de converter:** `git log -1 -- specs/features/SPEC-008/MANAGER-CONTRACT.md` ainda `16b11f0` (se mudou, o R3 não cobre o texto) e `check_refs.py`/`check_doc_sync.py` sem ERRO.
+- **Verificar ao vivo antes de converter:** `git log -1 -- governance/MMC-001_Manager_Contract.md` ainda `16b11f0` (se mudou, o R3 não cobre o texto) e `check_refs.py`/`check_doc_sync.py` sem ERRO.
 - **Fora desta minuta:** R3-m07 não foi aplicado; nada em `ROADMAP.md`, `CATALOGO`, `WORKFLOW.md` foi tocado.

@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-08-c64455f-1
-previous: null
+handoff_id: HO-2026-11-08-c64455f-2
+previous: HO-2026-11-08-c64455f-1
 data: 2026-11-08
 branch: ccr-c64455fe-no91eq
 base_commit: 97703af
@@ -14,22 +14,22 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-**Minuta da ata de homologação (ID da ata ainda não vigente; homologação do Manager Contract, MMC-001 v1.0) — PREPARADA, NÃO é ata e NÃO homologa.** Pedido de Andraus (chat 2026-11-08). Arquivo: o `MINUTA-ATA-*` em `governance/propostas/SPEC-008/`. Contrato-alvo: `specs/features/SPEC-008/MANAGER-CONTRACT.md` v0.3 (commit `16b11f0`, parecer R3 CONFORME condicional). Nenhum PR aberto. Nada foi movido nem editado no ROADMAP/CATALOGO.
+**MANAGER CONTRACT HOMOLOGADO — MMC-001 v1.0 — BASELINE, com condição (R3-m07).** Andraus escolheu "Homologar com condição" por AskUserQuestion (2026-11-08); ata `DHR-SPEC008-002` em `governance/`. Contrato movido para `governance/MMC-001_Manager_Contract.md` (só o cabeçalho mudou); ROADMAP, CATALOGO e RPSA atualizados ("Próximo trabalho autorizado" não mudou). PR do ramo ainda não aberto; merge é assinatura de Andraus.
 
 ## 2. Estado (ao vivo, 2026-11-08)
 `gate_manifest` íntegro · `check_refs` ERRO=0 · `check_rpsa` ok · `check_coesao` ERRO=0 · mapa em dia · `unittest` 504 OK · hooks e `npm test` OK. Ramo = `origin/main` (97703af) ao iniciar.
 
 ## 3. Lições
-Minuta que cita o arquivo futuro da ata com caminho completo gera ERRO no `check_refs`: citar sem extensão/caminho.
+Homologação = ata + `git mv` + ROADMAP (seção, tabela, FECHADAS) + CATALOGO + `check_rpsa --register`. Minuta que cita o arquivo futuro da ata com caminho completo gera ERRO no `check_refs`: citar sem extensão/caminho.
 
 ## 4. Verificado (LOOP-001 passo 4)
 3 categorias mais recorrentes do ledger: C07 (45), C01 (33), C02 (32). Lacunas abertas: C99, C06, C10, C03.
 
 ## 5. Próximo passo único
-Andraus escolher a condição do R3-m07 (minuta §4: a = homologar com condição e errata depois; b = corrigir antes; c = sem condição) e mandar homologar. Então: `git mv` do contrato para `governance/` (ID MMC-001 v1.0, só cabeçalho muda), ROADMAP (sem mudar "Próximo trabalho autorizado"), CATALOGO, `check_rpsa --register`, handoff. Antes de converter, conferir que o contrato segue em `16b11f0`. Plan da SPEC-008 só por ordem expressa; antes de outra Spec, `loop_ledger.py --retro-check SPEC-008`.
+Andraus mandar abrir/mesclar o PR deste ramo (um ramo, um PR). Depois, por ordem expressa: (i) errata aditiva R3-m07 ao MMC-001; (ii) Plan da SPEC-008. Antes de abrir outra Spec: `loop_ledger.py --retro-check SPEC-008`. Filhas já podem declarar o pai por ID+versão (MMC-001 v1.0).
 
 ## 6. Decisões
-DHR-SPEC008-001; A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
+DHR-SPEC008-001; DHR-SPEC008-002 (homologação do MMC-001); A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
 
 ## 7. Becos sem saída
 Gate determinístico não vale para o contrato (não é plan.md; `revisor_gate` inerte em nuvem).
@@ -45,7 +45,7 @@ Gate determinístico não vale para o contrato (não é plan.md; `revisor_gate` 
 - [ ] ROADMAP: decisões abertas/fechadas; versão de `WORKFLOW.md`; `loop_ledger.py --stdout`
 
 ## 10. Aguardando Andraus
-Condição do R3-m07 e ordem para homologar o MMC-001; depois, ordem para o Plan da SPEC-008. Pauta: `governance/PAUTA-DE-DECISOES.md`.
+Ordem para o PR/merge; errata R3-m07; ordem para o Plan da SPEC-008. Pauta: `governance/PAUTA-DE-DECISOES.md`.
 
 ## 11. Ponteiros
-`governance/propostas/SPEC-008/` (minuta `MINUTA-ATA-*` e pareceres R1–R3) · `specs/features/SPEC-008/MANAGER-CONTRACT.md` · `governance/DHR-SPEC008-001_Ata_Homologacao_Abertura_SPEC-008.md` · `handoffs/ccr-7dbcb1d1-e5d5dd.md` · `handoffs/` · `docs/handoffs/`
+`governance/propostas/SPEC-008/` (minuta histórica `MINUTA-ATA-*` e pareceres R1–R3) · `governance/MMC-001_Manager_Contract.md` · `governance/DHR-SPEC008-001_Ata_Homologacao_Abertura_SPEC-008.md` · `handoffs/ccr-7dbcb1d1-e5d5dd.md` · `handoffs/` · `docs/handoffs/`

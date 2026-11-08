@@ -1,6 +1,6 @@
 # Manager Contract — contrato comum do Manager Agent (Fases 0, 1 e 2)
 
-> **PROPOSTA — não é baseline; só vigora com homologação de Andraus.** (INV-09)
+> **MMC-001 v1.0 — BASELINE** (homologado por Andraus em 2026-11-08, `DHR-SPEC008-002`; condição R3-m07 na ata §3). Daqui em diante, mudança só por errata homologada (INV-09). *[antes: "**PROPOSTA — não é baseline; só vigora com homologação de Andraus.** (INV-09)"]* O corpo abaixo é o v0.3 revisado pelo R3, sem edição; as frases "a homologação ainda não ocorreu" e "a vigorar na homologação" são histórico de redação e passam a valer como ocorridas nesta data.
 
 | Campo | Valor |
 |---|---|
