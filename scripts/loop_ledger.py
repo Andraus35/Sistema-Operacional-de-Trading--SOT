@@ -16,7 +16,7 @@ Uso:
   python scripts/loop_ledger.py            # (re)gera o ledger
   python scripts/loop_ledger.py --check    # exit 1 se o ledger está desatualizado
   python scripts/loop_ledger.py --stdout   # imprime sem gravar
-  python scripts/loop_ledger.py --retro-check SPEC-007   # exit 1 se falta a retrospectiva da Spec com aprovação final (antes de abrir outra Spec; DHR-LOOP-002)
+  python scripts/loop_ledger.py --retro-check SPEC-007   # exit 1 se falta a retrospectiva da Spec com aprovação final ou a avaliação de desempenho respondida (DHR-LOOP-002; DHR-AVALIACAO-001)
 """
 import argparse
 import re
@@ -291,6 +291,12 @@ def main(argv=None):
     root = Path(a.root)
     if a.retro_check:
         if a.retro_check in retros_feitas(root):
+            # DHR-AVALIACAO-001: a avaliação de desempenho de fim de Spec (perguntas automatizadas) precisa estar RESPONDIDA por Andraus.
+            import avaliacao_spec as AV
+            if AV.exigida(root, a.retro_check) and AV.estado(root, a.retro_check) != "RESPONDIDA":
+                print(f"AVALIAÇÃO DE DESEMPENHO {AV.estado(root, a.retro_check)} para {a.retro_check} — rode: python scripts/avaliacao_spec.py gerar {a.retro_check} --write, "
+                      "apresente as perguntas a Andraus (AskUserQuestion) e registre a resposta (`registrar`) antes de abrir outra Spec, ou Andraus dispensa.")
+                return 1
             print(f"Retrospectiva de {a.retro_check}: FEITA.")
             return 0
         print(f"RETROSPECTIVA PENDENTE para {a.retro_check} — faça (individual e coletiva) em {RETRO} antes de abrir outra Spec, ou Andraus dispensa.")

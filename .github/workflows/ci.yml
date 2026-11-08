@@ -103,6 +103,14 @@ jobs:
       - name: Gate integrity manifest
         run: python scripts/gate_manifest.py --check
 
+      # Avaliação de desempenho de fim de Spec (DHR-AVALIACAO-001, ordem de Andraus 2026-11-08): BLOQUEANTE. Spec com aprovação final
+      # (ata de homologação do Plan, a partir do corte) sem avaliação gerada e atual reprova; a resposta de Andraus é barrada no --retro-check.
+      - name: Spec performance evaluation (blocking)
+        run: python scripts/avaliacao_spec.py --ci
+
+      - name: Spec performance evaluation tests
+        run: python -m unittest tests/test_avaliacao_spec.py tests/test_loop_ledger.py
+
       - name: Gate manifest and read-only subagent tests
         run: python -m unittest tests/test_gate_manifest.py
 

@@ -101,9 +101,9 @@
       "canal": "settings.json Stop",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Bloqueia fim de turno sem AskUserQuestion após entrega do Especificador/Revisor ou pergunta em texto; 3ª regra: avisa deterministicamente (1 vez por commit-cabeça do PR) quando já é possível e seguro mesclar (via scripts/merge_ready.py) e manda perguntar a Andraus; nunca mescla",
+      "enforca": "Bloqueia fim de turno sem AskUserQuestion após entrega do Especificador/Revisor ou pergunta em texto; 3ª regra: avisa deterministicamente (1 vez por commit-cabeça do PR) quando já é possível e seguro mesclar (via scripts/merge_ready.py) e manda perguntar a Andraus; nunca mescla | 4ª regra (DHR-AVALIACAO-001): bloqueia 1 vez por (Spec:estado) por sessão enquanto houver Spec com aprovação final sem avaliação de desempenho RESPONDIDA (via scripts/avaliacao_spec.py --pendentes) e manda apresentar as perguntas automatizadas a Andraus por AskUserQuestion; fail-open",
       "ata": "DHR-MERGE-001",
-      "verificado_em": "2026-10-30: tests/test-ask-guard.js (+8 casos da 3ª regra) no CI; ao vivo [conferir no 1º PR verde]"
+      "verificado_em": "2026-11-08: tests/test-ask-guard.js (+7 casos da 4ª regra) no CI | 2026-10-30: tests/test-ask-guard.js (+8 casos da 3ª regra) no CI; ao vivo [conferir no 1º PR verde]"
     },
     {
       "id": "lib.merge-ready",
@@ -535,10 +535,21 @@
       "canal": "CLI do Orquestrador + CI (ledger informativo; teste bloqueante)",
       "tipo": "detector",
       "estado": "ativo",
-      "enforca": "Coleta determinística de achados dos pareceres: recorrência por categoria, tendência de Médias por rodada, lacunas de prevenção (LOOP-001, 4Es)",
+      "enforca": "Coleta determinística de achados dos pareceres: recorrência por categoria, tendência de Médias por rodada, lacunas de prevenção (LOOP-001, 4Es); --retro-check também exige a avaliação de desempenho de fim de Spec RESPONDIDA (DHR-AVALIACAO-001), só para Spec com aprovação final a partir do corte",
       "ata": "DHR-LOOP-001",
       "nota": "Detector (ENF-03), classificação por palavra-chave indicativa; não promove nem fecha decisão aberta. DHR-LEDGER-GERADO-001 (2026-11-01): o ledger passou a ser saída gerada e não versionada (.gitignore); o passo de CI virou geração informativa (--stdout).",
       "verificado_em": "2026-10-24: ao vivo — gerou governance/aprendizado/LEDGER-ACHADOS.md sobre 19 pareceres; tests/test_loop_ledger.py (7 testes) no CI"
+    },
+    {
+      "id": "det.avaliacao-spec",
+      "arquivo": "scripts/avaliacao_spec.py",
+      "canal": "CLI do Orquestrador + CI (BLOQUEANTE: --ci) + hook Stop (andraus-ask-guard, 4ª regra) + loop_ledger --retro-check",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "Avaliação de desempenho de fim de Spec, determinística e obrigatória: mede rodadas/Médias/Menores/classe M/tokens/categorias recorrentes/tamanho do Plan a partir dos pareceres (via loop_ledger), escolhe por regra fixa do catálogo governance/aprendizado/BOAS-PRATICAS.json as recomendações (PROPOSTAS, fonte INTERNA ou EXTERNA não verificada) e as perguntas automatizadas para AskUserQuestion (lotes ≤4, recomendada em 1º lugar); grava AVALIACAO-SPEC-nnn.md (GERADA→RESPONDIDA, DIGEST contra avaliação velha); exigida só para Spec cuja ata de aprovação final (Homologacao_Plan*/Homologacao_SPEC-nnn, Status HOMOLOGADO … BASELINE) tem Data >= corte 2026-11-08",
+      "ata": "DHR-AVALIACAO-001",
+      "nota": "Detector (ENF-03): não decide, não homologa, não aplica proposta, não fecha decisão aberta (CONS-01). Prospectivo: Specs já homologadas ficam fora (retroatividade proibida). Catálogo versionado, não normativo; acrescentar item não exige mudar código. Economicidade segue INDETERMINADO enquanto tokens n/m.",
+      "verificado_em": "2026-11-08: tests/test_avaliacao_spec.py (15 testes, 5 mutantes mortos) + tests/test_loop_ledger.py no CI; calibração ao vivo: nenhuma Spec anterior ao corte é exigida"
     },
     {
       "id": "rot.aplicar-ficha-m",

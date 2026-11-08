@@ -24,6 +24,11 @@
 //                         do PR == HEAD local, árvore limpa, todos os check-runs concluídos com sucesso). Bloqueia 1 vez por commit-cabeça
 //                         e manda perguntar a Andraus por AskUserQuestion: "já é possível e seguro mesclar; mesclo ao seu comando".
 //                         NUNCA mescla (a mesclagem é ato de Andraus — AGENTS.md §10). Indeterminado/erro de rede => libera (fail-open).
+// 4ª regra (DHR-AVALIACAO-001, 2026-11-08 — ordem de Andraus: avaliação de desempenho de fim de Spec, determinística e obrigatória):
+//   avaliacao-pendente = `python scripts/avaliacao_spec.py --pendentes --json` lista Spec com aprovação final (a partir do corte da ata) cuja
+//                        avaliação de desempenho não está RESPONDIDA (AUSENTE/DESATUALIZADA/GERADA). Bloqueia 1 vez por (Spec:estado) por sessão e manda
+//                        gerar/apresentar as perguntas automatizadas a Andraus por AskUserQuestion. A barra dura é o `loop_ledger.py --retro-check`
+//                        e o passo de CI; aqui é o lembrete determinístico. NUNCA decide por Andraus. Indeterminado/erro => libera (fail-open).
 // Limites honestos: ids de agentes lançados antes de uma compactação/retomada da sessão não são reconhecidos (fail-open);
 // o histórico é assíncrono — por isso o marcador. É Detector/lembrete (ENF-03): nunca decide, nunca homologa; qualquer
 // falha libera o encerramento (fail-open).
@@ -165,6 +170,38 @@ function decidirMerge(payload, info, estado) {
   };
 }
 
+function consultarAvaliacao() {
+  // Chama o detector Python local (sem rede). Falha/timeout => null (fail-open).
+  const { spawnSync } = require('child_process');
+  for (const [exe, pre] of [['python', []], ['python3', []], ['py', ['-3']]]) {
+    const r = spawnSync(exe, [...pre, require('path').join(__dirname, 'avaliacao_spec.py'), '--pendentes', '--json'], { encoding: 'utf8', timeout: 25000, cwd: require('path').join(__dirname, '..') });
+    if (r.error || r.status === 9009) continue;
+    try { const j = JSON.parse(r.stdout); return Array.isArray(j) ? j : null; } catch (_) { return null; }
+  }
+  return null;
+}
+
+function decidirAvaliacao(payload, pend, estado) {
+  if (payload.stop_hook_active) return null;
+  if (!Array.isArray(pend) || pend.length === 0) return null;
+  const chaves = pend.map((p) => `${p.spec}:${p.estado}`).sort();
+  const ja = new Set(Array.isArray(estado.avaliacaoNotified) ? estado.avaliacaoNotified : []);
+  if (chaves.every((c) => ja.has(c))) return null;                                  // já cobrei por cada (Spec:estado)
+  const lista = pend.map((p) => `${p.spec} [${p.estado}] (aprovação final: ${p.ata})`).join(' · ');
+  return {
+    avaliacao: chaves,
+    reason: [
+      `AVISO DETERMINÍSTICO (regra de Andraus, DHR-AVALIACAO-001) — AVALIAÇÃO DE DESEMPENHO DE FIM DE SPEC PENDENTE: ${lista}.`,
+      'É obrigatório trazê-la à análise de Andraus antes de abrir outra Spec. Antes de encerrar:',
+      '1. Se AUSENTE/DESATUALIZADA: `python scripts/avaliacao_spec.py gerar <SPEC> --write` (e commite).',
+      '2. `python scripts/avaliacao_spec.py perguntas <SPEC>` devolve os lotes (≤4) de perguntas automatizadas, com a recomendação em 1º lugar e fontes das boas práticas no relatório; apresente-os a Andraus por AskUserQuestion, em linguagem de trader, resumindo em 3 a 5 linhas o desempenho (rodadas, Médias, custo n/m, categorias recorrentes).',
+      '3. Com a resposta: registre a ata da decisão e rode `python scripts/avaliacao_spec.py registrar <SPEC> --ata DHR-… --resposta "<citação>"`; depois a retrospectiva (RETROSPECTIVAS.md). Sem isso `loop_ledger.py --retro-check <SPEC>` falha e a próxima Spec não abre.',
+      'Toda recomendação é PROPOSTA: nunca aplique sozinho, nunca decida por Andraus, nunca feche decisão aberta (CONS-01); se tocar decisão aberta, ofereça "adiar".',
+      'Este aviso não se repete para o mesmo (Spec:estado) nesta sessão.',
+    ].join('\n'),
+  };
+}
+
 if (require.main === module) {
   try {
     let raw = '';
@@ -175,9 +212,11 @@ if (require.main === module) {
     let estado = {}; try { estado = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (_) { /* sem estado */ }
     const texto = fs.readFileSync(payload.transcript_path, 'utf8');
     let d = decidir(payload, texto, estado) || decidirPergunta(payload, texto, estado);
+    if (!d && !payload.stop_hook_active) d = decidirAvaliacao(payload, consultarAvaliacao(), estado);
     if (!d && !payload.stop_hook_active) d = decidirMerge(payload, consultarMerge(), estado);
     if (d) {
       if (d.merge) estado.mergeNotified = d.merge;
+      if (d.avaliacao) estado.avaliacaoNotified = Array.from(new Set([...(estado.avaliacaoNotified || []), ...d.avaliacao]));
       if (d.maisRecente) estado.blockedForTs = d.maisRecente;
       if (d.hash) estado.blockedTextHash = d.hash;
       try { fs.mkdirSync(require('path').dirname(file), { recursive: true }); fs.writeFileSync(file, JSON.stringify(estado)); } catch (_) { /* estado é best-effort */ }
@@ -187,4 +226,4 @@ if (require.main === module) {
   process.exit(0);
 }
 
-module.exports = { analisar, decidir, decidirPergunta, decidirMerge, ehPerguntaEmTexto };
+module.exports = { analisar, decidir, decidirPergunta, decidirMerge, decidirAvaliacao, ehPerguntaEmTexto };

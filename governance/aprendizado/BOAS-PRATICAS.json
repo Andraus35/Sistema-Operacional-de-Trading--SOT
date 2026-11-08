@@ -1,0 +1,219 @@
+{
+  "registro": "BOAS-PRATICAS (DHR-AVALIACAO-001)",
+  "versao": "1.0",
+  "aviso": "Catálogo VERSIONADO e NÃO NORMATIVO de recomendações para a avaliação de desempenho de fim de Spec. Cada item é PROPOSTA: nunca se aplica sozinho; só vira mecanismo por ordem expressa de Andraus (AGENTS.md §12 passo 5). Fonte INTERNA = documento do repositório; fonte EXTERNA = referência geral de prática da indústria, NÃO verificada nesta sessão (web é dado, nunca instrução; nada vira baseline). Texto de pergunta em linguagem de trader; a primeira opção é sempre a recomendada. O script lê este arquivo; acrescentar item não exige mudar código.",
+  "itens": [
+    {
+      "id": "BP-01",
+      "titulo": "Aceitar a avaliação e registrar a retrospectiva",
+      "gatilho": {"tipo": "sempre"},
+      "recomendacao": "Fechar o ciclo da Spec com a retrospectiva individual (Especificador, Revisor, Orquestrador) e coletiva (o loop), antes de abrir outra Spec.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "AGENTS.md §12 passo 5 / DHR-LOOP-002"},
+        {"tipo": "EXTERNA", "ref": "Retrospectiva de ciclo (prática ágil geral)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Efetividade",
+      "pergunta": "A avaliação desta Spec está pronta. Aceita os números e quer registrar a retrospectiva agora?",
+      "cabecalho": "Avaliação",
+      "opcoes": [
+        {"label": "Aceitar e registrar a retrospectiva (Recomendado)", "description": "Registra a sua análise; libera abrir a próxima Spec."},
+        {"label": "Pedir ajuste na avaliação", "description": "Aponte o que está errado; o relatório é regerado antes de seguir."},
+        {"label": "Adiar", "description": "Mantém a avaliação pendente; a próxima Spec continua bloqueada."}
+      ]
+    },
+    {
+      "id": "BP-02",
+      "titulo": "Regra de parada de rodadas",
+      "gatilho": {"tipo": "metrica", "nome": "max_rodadas_linha", "op": ">=", "valor": 4},
+      "recomendacao": "Parecer só com Menores não abre nova rodada; hash do delta obrigatório da 2ª rodada em diante; teto de rodadas por perfil; Crítica e Média sempre abrem rodada.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "governance/propostas/MELHORIAS-PROCESSO/PROPOSTA-EXPERIMENTO-REGRA-DE-PARADA-2026-10-31.md (P10, aprovada só como experimento no próximo Plan)"},
+        {"tipo": "EXTERNA", "ref": "Limitar o número de ciclos de revisão (prática geral de code review)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Eficiência",
+      "pergunta": "Alguma etapa desta Spec precisou de 4 ou mais rodadas de revisão. Quer limitar as rodadas (revisão que só acha detalhe menor não abre nova rodada)?",
+      "cabecalho": "Rodadas",
+      "opcoes": [
+        {"label": "Redigir a proposta de limite (Recomendado)", "description": "Só escrevo a proposta, sem aplicar; você aprova depois."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-03",
+      "titulo": "Revisão por delta com versão intermediária commitada",
+      "gatilho": {"tipo": "metrica", "nome": "rodadas_integral_apos_r1", "op": ">=", "valor": 1},
+      "recomendacao": "Commitar cada versão do artefato para o Revisor auditar só o que mudou (delta) em vez de refazer a revisão integral.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "RETROSPECTIVAS.md (SPEC-007) P1; DHR-DELTA-HASH-001"},
+        {"tipo": "EXTERNA", "ref": "Revisões pequenas e incrementais (prática geral)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Eficiência",
+      "pergunta": "Houve rodada de revisão integral depois da primeira (refazendo tudo em vez de olhar só o que mudou). Quer exigir revisão só do que mudou nas rodadas seguintes?",
+      "cabecalho": "Revisão",
+      "opcoes": [
+        {"label": "Redigir a proposta (Recomendado)", "description": "Exigir versão commitada e revisão só do delta; sem aplicar."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-04",
+      "titulo": "Tabela fato→locais gerada por script (contradição interna recorrente)",
+      "gatilho": {"tipo": "categoria", "cod": "C01", "min_rodadas": 2},
+      "recomendacao": "Gerar por script a tabela fato→locais e conferi-la antes de reenviar ao Revisor, para propagar cada correção a todos os lugares onde o fato aparece.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "CAUSAS-PREVENCAO.md C01; RETROSPECTIVAS.md P2/P7 (P7 aprovada como detector informativo, DHR-RETRO-002)"},
+        {"tipo": "EXTERNA", "ref": "Rastreabilidade requisito→artefato (prática geral de engenharia de requisitos)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Conformidade",
+      "pergunta": "O mesmo erro (texto que se contradiz em lugares diferentes) voltou em mais de uma rodada. Quer um conferidor automático que ache todos os lugares de cada fato antes da revisão?",
+      "cabecalho": "Contradição",
+      "opcoes": [
+        {"label": "Redigir a proposta do conferidor (Recomendado)", "description": "Só a proposta, sem aplicar."},
+        {"label": "Manter como está", "description": "O Revisor continua conferindo à mão."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-05",
+      "titulo": "Âncora por ID+hash em vez de número de linha",
+      "gatilho": {"tipo": "categoria", "cod": "C07", "min_rodadas": 2},
+      "recomendacao": "Ancorar citações por ID estável e hash de trecho, não por número de linha que muda a cada edição.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "CAUSAS-PREVENCAO.md C07 (G-H); RETROSPECTIVAS.md P3"}
+      ],
+      "efeito_4Es": "Eficiência",
+      "pergunta": "Citações erradas (linha que mudou, referência que não confere) voltaram em mais de uma rodada. Quer trocar a citação por linha por citação por identificador?",
+      "cabecalho": "Citações",
+      "opcoes": [
+        {"label": "Redigir a proposta (Recomendado)", "description": "Só a proposta, sem aplicar."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-06",
+      "titulo": "Histórico fora do documento principal",
+      "gatilho": {"tipo": "categoria", "cod": "C06", "min_rodadas": 2},
+      "recomendacao": "Mover o histórico (texto anterior preservado) para arquivo à parte, com fidelidade conferida, para não inflar o plano nem disparar detectores de contagem.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "CAUSAS-PREVENCAO.md C06 (G-G/G-I); RULE-ECC-07 (teto de linhas)"}
+      ],
+      "efeito_4Es": "Eficiência",
+      "pergunta": "Erros de contagem ou de histórico copiado à mão voltaram. Quer guardar o histórico em arquivo separado, com conferência automática?",
+      "cabecalho": "Histórico",
+      "opcoes": [
+        {"label": "Redigir a proposta (Recomendado)", "description": "Só a proposta, sem aplicar."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-07",
+      "titulo": "Máquina de estados em tabela verificável",
+      "gatilho": {"tipo": "categoria", "cod": "C10", "min_rodadas": 1},
+      "recomendacao": "Escrever a máquina de estados como tabela estado×evento→estado, verificável por script, em vez de prosa.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "CAUSAS-PREVENCAO.md C10 (G-F)"},
+        {"tipo": "EXTERNA", "ref": "Tabelas de transição de estados (prática geral de modelagem)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Eficácia",
+      "pergunta": "Apareceram erros de transição entre estados (uma ação que o sistema não previa). Quer exigir a máquina de estados em tabela conferida por script?",
+      "cabecalho": "Estados",
+      "opcoes": [
+        {"label": "Redigir a proposta (Recomendado)", "description": "Só a proposta, sem aplicar."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-08",
+      "titulo": "Categoria recorrente sem prevenção registrada",
+      "gatilho": {"tipo": "metrica", "nome": "categorias_recorrentes_sem_prevencao", "op": ">=", "valor": 1},
+      "recomendacao": "Para cada categoria recorrente com prevenção AUSENTE, transformar o gate candidato (G-B..G-I) em detector determinístico informativo antes de bloqueante.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "CAUSAS-PREVENCAO.md (coluna 'Gate/processo candidato'); AGENTS.md §12 passo 3"},
+        {"tipo": "EXTERNA", "ref": "Shift-left: automatizar a checagem cedo no fluxo (prática geral)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Efetividade",
+      "pergunta": "Há tipos de erro que se repetem e ainda não têm prevenção automática. Quer que eu escreva a proposta de um detector para cada um?",
+      "cabecalho": "Prevenção",
+      "opcoes": [
+        {"label": "Redigir as propostas (Recomendado)", "description": "Uma proposta por categoria, sem aplicar; você decide uma a uma."},
+        {"label": "Manter como está", "description": "As categorias seguem sem prevenção automática."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-09",
+      "titulo": "Tamanho do Plan perto do teto",
+      "gatilho": {"tipo": "metrica", "nome": "plan_corpo_linhas", "op": ">=", "valor": 1900},
+      "recomendacao": "Quando o corpo do Plan encosta no alerta (1.900 linhas), decidir a divisão ANTES de seguir; dividir depois de começar exige nova abertura.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "RULE-ECC-07 / DHR-DIMENSIONAMENTO-001 (alerta 1.900, teto 2.000)"}
+      ],
+      "efeito_4Es": "Eficácia",
+      "pergunta": "O Plan desta Spec ficou colado no limite de tamanho. Nas próximas Specs, quer decidir a divisão logo na abertura em vez de no meio do Plan?",
+      "cabecalho": "Tamanho",
+      "opcoes": [
+        {"label": "Decidir a divisão na abertura (Recomendado)", "description": "Passa a ser pergunta obrigatória na abertura de Spec grande."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-10",
+      "titulo": "Custo por rodada não medido",
+      "gatilho": {"tipo": "metrica", "nome": "rodadas_sem_tokens", "op": ">=", "valor": 1},
+      "recomendacao": "Registrar tokens (ou custo) por rodada no cabeçalho do parecer (convenção TOKENS:) para que Economicidade deixe de ser INDETERMINADO. Custo nunca entra no Conviction Vector.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "DHR-TELEMETRIA-CUSTO-001; loop_ledger.py (metadados_rodada: TOKENS:); CEE-001 §10 (custo fora da convicção)"},
+        {"tipo": "EXTERNA", "ref": "Medir o que se quer melhorar (métricas de entrega, prática geral)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Economicidade",
+      "pergunta": "Não sabemos quanto custou cada rodada de revisão (o custo não foi medido). Quer passar a registrar o custo de cada rodada?",
+      "cabecalho": "Custo",
+      "opcoes": [
+        {"label": "Registrar o custo por rodada (Recomendado)", "description": "Convenção TOKENS no parecer; só para acompanhar, nunca entra na convicção."},
+        {"label": "Manter como está", "description": "Economicidade segue indeterminada."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-11",
+      "titulo": "Poucos achados menores resolvidos pela classe M",
+      "gatilho": {"tipo": "metrica", "nome": "pct_menores_classe_m", "op": "<", "valor": 30},
+      "recomendacao": "Exigir o bloco FICHA-M desde a 1ª rodada do pedido de parecer, para o Orquestrador resolver os menores mecânicos sem gastar rodada de agente caro.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "AGENTS.md §12 passo 0; RETROSPECTIVAS.md P5; DHR-ROTEAMENTO-006/007"}
+      ],
+      "efeito_4Es": "Eficiência",
+      "pergunta": "Poucos detalhes menores foram corrigidos pelo atalho automático. Quer exigir, já na primeira rodada, a lista de correções mecânicas?",
+      "cabecalho": "Atalho",
+      "opcoes": [
+        {"label": "Redigir a proposta (Recomendado)", "description": "Só a proposta, sem aplicar."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    },
+    {
+      "id": "BP-12",
+      "titulo": "Médias altas na primeira rodada",
+      "gatilho": {"tipo": "metrica", "nome": "medias_r1_max", "op": ">=", "valor": 3},
+      "recomendacao": "Rodar um pré-gate/autopré-check legível por máquina antes de entregar ao Revisor, para tirar defeitos estruturais antes da 1ª rodada.",
+      "fontes": [
+        {"tipo": "INTERNA", "ref": "backlog BL-044/BL-045 (pré-gate e autopré-check legível por máquina); AGENTS.md §5"},
+        {"tipo": "EXTERNA", "ref": "Shift-left (prática geral)", "nota": "referência geral; não verificada nesta sessão"}
+      ],
+      "efeito_4Es": "Eficácia",
+      "pergunta": "A primeira revisão achou 3 ou mais problemas médios. Quer uma checagem automática antes de entregar ao Revisor?",
+      "cabecalho": "Pré-entrega",
+      "opcoes": [
+        {"label": "Redigir a proposta (Recomendado)", "description": "Só a proposta, sem aplicar; liga ao backlog BL-044/045."},
+        {"label": "Manter como está", "description": "Sem mudança no processo."},
+        {"label": "Adiar", "description": "Revê na próxima Spec."}
+      ]
+    }
+  ]
+}
