@@ -759,6 +759,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologação de contrato de herança vertical: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-SPEC008-003",
+      "data": "2026-11-08",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Errata de texto em contrato de herança vertical: não altera texto de agente nem método."
     }
   ]
 }
