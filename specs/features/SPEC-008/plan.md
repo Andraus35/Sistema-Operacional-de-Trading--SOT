@@ -120,7 +120,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 - [x] **CC-01 — Hierarquia Elliott → Fibonacci → Fractal → SMC → ICT respeitada:** o grafo de despacho exige, para toda aresta, posto hierárquico de origem menor que o de destino (RULE-MDC-002 (c)); mapa nível a nível de INV-01: Elliott → nó ESTRUTURAL (WF-02); Fibonacci e Fractal → **sem nó** na versão 1 (P-11 = decidir depois; acrescentar = nova versão do dado, sem reescrever a Spec); SMC → nó INSTITUCIONAL (WF-03); ICT → nó OPERACIONAL (WF-05), só depois do contexto. ICT não cria hipótese: publicação do Operacional do tipo hipótese é recusada como insumo (RULE-MDC-006 (e)). [FATO: INV-01/INV-02; AGENTS.md §6 itens 1–2; P-11]
 - [x] **CC-02 — Não redefine Modelo Canônico nem Spec baselined:** CHM-001 (estados da hipótese — só lidos), CCM-001 (campos `directional_conflict` e valor agregado — só lidos), CEM-001, CEE-001 v2.0; SPEC-003/004/005 usadas por referência. Os estados da FSM do ciclo são **os de WF-F02**, sem acréscimo nem renomeação. [FATO: CC-02; MMC-001 §3.2.3]
 - [x] **CC-03 — Conviction Vector (J-001 ABERTA, pendente):** dimensionalidade = 8 intocada; esta Spec só **invoca** a leitura macro (RULE-CF-010) e **compara** o valor devolvido com parâmetro sem número; fórmula/pesos/limiares definitivos **pendentes** (J-001, N-001 ABERTAS; WF-D03 ABERTA). Os limiares-piloto interinos (≥70%, ≥7/9 — INV-03, FATO NORMATIVO) são do **sinal**, não da leitura de contexto, e **não** são usados como limiar "conclusivo" (P-5). [FATO: INV-03; CEE-001 §11; DHR-SPEC008-001 §3 (ii)]
-- [x] **CC-04 — Salvaguardas CEE-001 §10/§11:** §10 S1/S5 (roteamento de modelo — a Fase 1 não muda classe de modelo de ninguém: INV-MDC-01), S2 (nunca suprimir por custo diante de evento estruturalmente relevante — RULE-MDC-008 (c)), S4 (= INV-04: custo nunca entra no Conviction Vector — RULE-MDC-008 (d)); §11 (nenhum sinal sai desta Spec; `directional_conflict = true` ⇒ NEUTRO — RULE-MDC-005 (c)). [FATO: CEE-001 v2.0 §10, §11]
+- [x] **CC-04 — Salvaguardas CEE-001 §10/§11:** §10 S1/S5 (roteamento de modelo — a Fase 1 não muda classe de modelo de ninguém: INV-MDC-01), S2 (nunca suprimir por custo diante de evento estruturalmente relevante — RULE-MDC-008 (c)), S4 (= INV-04: custo nunca entra no Conviction Vector — RULE-MDC-008 (d)); §11 (nenhum sinal sai desta Spec; `directional_conflict = true` ⇒ NEUTRO — RULE-MDC-005 (b)). [FATO: CEE-001 v2.0 §10, §11]
 - [x] **CC-05 — Complexidade declarada:** CRITICAL · D0–D8 (P-1).
 - [x] **CC-06 — SES-001 §59:** N/A — Spec/Plan; Engineering Cards no BUILD (atomic-spec §14). Omissão justificada.
 - [x] **CC-07 — SES-001 §60:** N/A (idem); rastreabilidade: ROADMAP §7 → DHR-EUA-E23 → Dossiê → DHR-SPEC008-001 → MMC-001 v1.0 → este Plan.
@@ -157,11 +157,11 @@ INHERITS (horizontal — referência por ID + VERSÃO baseline; RULE-HD-04; NÃO
       version, domain_state separado de publication_state), RULE-CBP-002 (publica só no próprio workspace),
       RULE-CBP-005 (chave de idempotência), RULE-CBP-006 (ordem total por workspace), RULE-CBP-014 (identidade
       autenticada pelo runtime); RULE-CBP-009 (enum não-hipótese = M-001 ABERTA — não usado)
-  - specs/features/SPEC-005 v1.0 (BASELINE — DHR-SPEC005-002): RULE-CEB-001 (envelope), RULE-CEB-004 (consumo
+  - specs/features/SPEC-005 v1.0 (BASELINE — DHR-SPEC005-002): RULE-CEB-001 (envelope), RULE-CEB-003 (cursor/replay), RULE-CEB-004 (consumo
       idempotente), RULE-CEB-006 (at-least-once, retry com teto, dead-letter), RULE-CEB-007 (transporte ≠ fonte
       de verdade), RULE-CEB-008 (quem é invocado e quando = Manager/SPEC-008), RULE-CEB-010 (latência = parâmetro)
   - canon/CEE-001 v2.0 (BASELINED): §9.2, §9.3 (pausa emergencial), §10 S1/S2/S4/S5, §11, §12
-  - governance/RULES.md: RULE-BB-001/002/004/005; RULE-DEC-01; RULE-MET-01/02; RULE-HV-01..04; RULE-HD-02..04;
+  - governance/RULES.md: RULE-BB-001/002/003/004/005; RULE-DEC-01; RULE-MET-01/02; RULE-HV-01..04; RULE-HD-02..04;
       RULE-MECH-01..04; RULE-ECC-07; RULE-ICT-003 (só como divergência registrada — CONF-3)
   - governance/CONFLICT-MAP.md "Inversões contextuais" #1 (HOMOLOGADO 2026-09-20)
   - WORKFLOW.md v2.1 (SOBERANO; só por ID): WF-01..WF-07, WF-K02, WF-K04, WF-T01, WF-T02, WF-A01, WF-A02, WF-A03,
@@ -522,7 +522,7 @@ RULE-MDC-010: LIVRO DE BORDO DO CICLO.
                 confirmado ⇒ na retomada é reemitido com a MESMA chave de idempotência (sem duplicar).
             (c) SEM relógio: o Manager nunca lê a hora da máquina; `recorded_instant` vem do evento ou timer da Spec
                 de Tempo (ou do envelope SPEC-005); replay do livro reproduz a mesma sequência de decisões.
-            (d) Cada despacho grava POR QUE este agente rodou agora: aresta, condição satisfeita, evento causador,
+            (d) Cada despacho grava POR QUE este agente analítico rodou agora: aresta, condição satisfeita, evento causador,
                 regra e versões (D9).
             (e) Retomada após queda: estado = replay do livro; publicação já consumida não é pedida de novo;
                 eventos perdidos recuperados pelo cursor (RULE-CEB-003/007). COMO guardar = SPEC-009 (G-001
@@ -1109,7 +1109,7 @@ VERIFICAÇÃO code == "MDC_STAGE_DEADLINE_EXCEEDED"; recorded_instant == instant
 
 ### Cenário-MDC-T15 — Tetos de controle (MDC-008 (b))
 ```
-DADO        M0, exceto: (a) steps atinge Smax + 1; (b) agente devolve aviso de voltas esgotadas (Rmax); (c) Fmax + 1 falhas seguidas
+DADO        M0, exceto: (a) steps atinge Smax + 1; (b) agente analítico devolve aviso de voltas esgotadas (Rmax); (c) Fmax + 1 falhas seguidas
             ao publicar o pedido do INSTITUCIONAL
 QUANDO      o contador é atualizado
 ENTÃO       ENC + aviso a Andraus
@@ -1504,7 +1504,7 @@ Unidades rastreáveis, sem órfãs, para o BUILD: TK-01 registro de capacidades 
 | `research.md` l.300 | "**Fora do escopo** — Manager/Scheduler (SPEC-008/015)" (WF-D01) | inteira → Spec de Tempo |
 | `research.md` l.301 | "**Fora do escopo** — Manager (SPEC-008/015)" (WF-D02) | inteira → Spec de Tempo |
 
-Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `checks.md` l.40, l.54, l.63. As outras 23 ocorrências (invocação, nome de decisão aberta, "Manager/Scheduler" sem número) **ficam**.
+Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `checks.md` l.40, l.54, l.63. As outras 23 linhas FICA do research §8.3 (invocação, nome de decisão aberta, "Manager/Scheduler" sem número) **ficam**.
 
 **E-2 — Gatilho do BL-026 no RMR-001 (aditivo).** Antigo: `spec:SPEC-008 em redação ∨ spec:SPEC-010..015 em redação`. Novo: `spec:SPEC-008 em redação ∨ spec:SPEC-010..015 em redação ∨ spec:<número da Spec de Tempo> em redação` — o número entra quando Andraus o fixar (candidata SPEC-050). BL-043..046 ficam como estão.
 
