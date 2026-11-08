@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "spec_dir": "specs/features/SPEC-008",
+  "plan_sha256": "1cfca7637c85a9e013374953de4cdb19219f07f5a4964dfdfa6ef4fc9f0a96f9",
+  "checks_sha256": "45bccd6d1c32d9f950aa06b952d8e244506b9b5d4eb3abd8fc2ce81f09037aa8",
+  "verificacoes": [
+    {
+      "id": "validate_spec_sot",
+      "tipo": "bloqueante",
+      "exit": 0,
+      "status": "OK",
+      "output_sha256": "e486a7476d0db29b8da2bb8053d7539270d880bd536069870224138a85541b7c",
+      "cauda": [
+        "Próximo passo: Revisor prossegue com protocolo semântico (GRE-001/HRE-001).",
+        "LEMBRETE: exit 0 ≠ CONFORME ≠ homologação. Gate estrutural apenas (ENF-03).",
+        "============================================================"
+      ]
+    },
+    {
+      "id": "check_repo_research",
+      "tipo": "bloqueante",
+      "exit": 0,
+      "status": "OK",
+      "output_sha256": "d43e3948a56dd3fd50d93d3cdee48988b51a28bdaf33477882c8136eb88afa23",
+      "cauda": [
+        "  [OK] SPEC-008",
+        "ERRO=0",
+        "LEMBRETE: gate estrutural; não verifica a veracidade dos números (sem web — ENF-03). exit 0 ≠ CONFORME."
+      ]
+    },
+    {
+      "id": "build_map_check",
+      "tipo": "bloqueante",
+      "exit": 0,
+      "status": "OK",
+      "output_sha256": "4c277516e0e32d42df6447a6dea520126a22ecd6015635eb11fdf35557152177",
+      "cauda": [
+        "Mapa em dia."
+      ]
+    },
+    {
+      "id": "check_invariants",
+      "tipo": "informativo",
+      "exit": 0,
+      "status": "OK",
+      "output_sha256": "3351a092609d1641253d7c855c8f569611abb9b1d3f536e113fc7304a75948b5",
+      "cauda": [
+        "ACHADOS=0 em 1 arquivo(s)",
+        "LEMBRETE: detector informativo. exit 0 ≠ CONFORME ≠ homologação; o Revisor audita, Andraus decide."
+      ]
+    },
+    {
+      "id": "check_dimensionamento",
+      "tipo": "informativo",
+      "exit": 0,
+      "status": "OK",
+      "output_sha256": "11760c3a8554a0a781d2fe8b1cdc5e3ee83089e0d9881858b9f3b7d5f9a8c6ff",
+      "cauda": [
+        "ERRO=0 WARN=1 INFO=14 OK=1",
+        "Somente leitura — Detector (ENF-03): não bloqueia, não decide.",
+        "LEMBRETE: exit 0 ≠ CONFORME ≠ homologação."
+      ]
+    },
+    {
+      "id": "check_refs",
+      "tipo": "informativo",
+      "exit": 0,
+      "status": "OK",
+      "output_sha256": "244a9a5c4f684593afc2b4448e75aa9ad298792b106504a651181af9401804b6",
+      "cauda": [
+        "------------------------------------------------------------",
+        "ERRO=0 WARN=7 INFO=404  (use --info para ver os históricos)",
+        "LEMBRETE: gate auxiliar. exit 0 ≠ CONFORME ≠ homologação."
+      ]
+    },
+    {
+      "id": "backlog_triggers",
+      "tipo": "informativo",
+      "exit": 1,
+      "status": "RED",
+      "output_sha256": "ba4c928d88bba47b88a3ac962dbc0d7676567a0411816b58ede86803fe6401b2",
+      "cauda": [
+        "  BL-047 → SPEC-040 [Indicativa (não aberta)]",
+        "------------------------------------------------------------",
+        "Somente leitura: não promove itens. exit 0 ≠ CONFORME ≠ homologação."
+      ]
+    },
+    {
+      "id": "gate_extra.citacoes_arquivo_linha",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "gate_extra.contagens_declaradas",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "gate_extra.piso_enforcement",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "gate_extra.decisoes_abertas_fechadas",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "gate_extra.invariantes_estritos",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "gate_extra.assertivas_checks",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "gate_extra.corrigidos_sem_assertiva",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "revisor_detectores.mapeamento_conflitante",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "revisor_detectores.id_norma_inexistente",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "revisor_detectores.contagem_declarada",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "revisor_detectores.spec_nome_incoerente",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "revisor_detectores.valor_fonte",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    },
+    {
+      "id": "revisor_detectores.dhr_backlog",
+      "tipo": "informativo",
+      "status": "OK",
+      "n_achados": 0,
+      "achados": []
+    }
+  ],
+  "bloqueantes_vermelhos": [],
+  "informativos_com_achado": [
+    "backlog_triggers"
+  ],
+  "nota": "exit 0 ≠ CONFORME ≠ homologação (ENF-03). Detectores informativos até ordem de Andraus."
+}
