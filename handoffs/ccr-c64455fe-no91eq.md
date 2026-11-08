@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-08-c64455f-3
-previous: HO-2026-11-08-c64455f-2
+handoff_id: HO-2026-11-08-c64455f-4
+previous: HO-2026-11-08-c64455f-3
 data: 2026-11-08
 branch: ccr-c64455fe-no91eq
-base_commit: 13c3516
+base_commit: eaa1a1c
 spec_autorizada: SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-008 = ABERTURA HOMOLOGADA (DHR-SPEC008-001, 2026-11-07; CRITICAL D0–D8, dividida com a Spec de Tempo [candidata SPEC-050]; Plan pendente; sem BUILD); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,7 +14,7 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-**ERRATA R3-m07 ao MMC-001 — HOMOLOGADA e APLICADA no ramo (PR ainda não aberto).** PR #190 (homologação do MMC-001 v1.0) já mesclado (`13c3516`). Ordem de Andraus "Aplicar a errata do R3-m07"; escolhas por AskUserQuestion: Patch sem mudar o número, aplicação in loco com `[antes]`. Ata `DHR-SPEC008-003`; pareceres R1 (NÃO CONFORME, 1 Média sobre classificação de versão) e R2 (CONFORME condicional) em `governance/propostas/SPEC-008/`. Contrato segue v1.0 (4 alvos editados; ponteiro à ata no cabeçalho, ER2-m01).
+**MMC-001 + errata R3-m07 na `main`** (PRs #190 `13c3516` e #191 `eaa1a1c`). Nova ordem de Andraus (AskUserQuestion 2026-11-08): **marco da retrospectiva = aprovação final da Spec** (Plan homologado, sem achados). Aplicado no ramo, **PR ainda não aberto**: `AGENTS.md` §12 passo 5 (texto anterior preservado), texto do `loop_ledger.py` (comportamento inalterado, 11 testes OK), ata `DHR-LOOP-002`, CATALOGO, RPSA. Efeito: a retrospectiva da SPEC-008 **só nasce com o Plan aprovado**.
 
 ## 2. Estado (ao vivo, 2026-11-08)
 `gate_manifest` íntegro · `check_refs` ERRO=0 · `check_rpsa` ok · `check_coesao` ERRO=0 · mapa em dia · `unittest` 504 OK · hooks e `npm test` OK. Ramo = `origin/main` (97703af) ao iniciar.
@@ -26,10 +26,10 @@ Roteador: Revisor só deriva classe com `ALVO` que traga `Complexidade` (usar `A
 3 categorias mais recorrentes do ledger: C07 (45), C01 (33), C02 (32). Lacunas abertas: C99, C06, C10, C03.
 
 ## 5. Próximo passo único
-Andraus mandar abrir o PR do ramo e mesclar (assinatura). Depois, por ordem expressa: Plan da SPEC-008; antes de outra Spec, `loop_ledger.py --retro-check SPEC-008`.
+Andraus mandar abrir/mesclar o PR do `DHR-LOOP-002` (mexe no `AGENTS.md`: só por ordem expressa, já dada). Depois, por ordem expressa: Plan da SPEC-008; só com o Plan aprovado vence a retrospectiva da SPEC-008. Ao terminar a frente, mover este handoff para `docs/handoffs/ramo-ccr-c64455fe-no91eq/`.
 
 ## 6. Decisões
-DHR-SPEC008-001; DHR-SPEC008-002 (homologação do MMC-001); DHR-SPEC008-003 (errata R3-m07, Patch); A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
+DHR-SPEC008-001; DHR-SPEC008-002 (homologação do MMC-001); DHR-SPEC008-003 (errata R3-m07, Patch); DHR-LOOP-002 (marco da retrospectiva); A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
 
 ## 7. Becos sem saída
 Gate determinístico não vale para o contrato (não é plan.md; `revisor_gate` inerte em nuvem).

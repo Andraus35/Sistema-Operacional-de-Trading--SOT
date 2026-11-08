@@ -766,6 +766,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Errata de texto em contrato de herança vertical: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-LOOP-002",
+      "data": "2026-11-08",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Muda o marco de uma regra do Orquestrador (AGENTS.md §12); não altera texto de agente de construção nem método."
     }
   ]
 }
