@@ -160,6 +160,17 @@ check('sem cabeça não avisa (sem chave de deduplicação)', guard.decidirMerge
 mg = guard.decidirMerge({}, { ...pronto, extra: { ...pronto.extra, arquivos_de_andraus: ['scripts/roteador_modelos.py'] } }, {});
 check('avisa quando o PR toca arquivos do CODEOWNERS', /CODEOWNERS/.test(mg.reason) && /roteador_modelos/.test(mg.reason));
 
+// 23. 4ª regra (DHR-AVALIACAO-001): avaliação de desempenho de fim de Spec pendente — função pura, 1 vez por (Spec:estado)
+const pend = [{ spec: 'SPEC-123', estado: 'GERADA', ata: 'DHR-SPEC123-002' }];
+let av = guard.decidirAvaliacao({}, pend, {});
+check('avaliação pendente bloqueia e manda perguntar a Andraus', !!av && /AVALIAÇÃO DE DESEMPENHO DE FIM DE SPEC PENDENTE/.test(av.reason) && /AskUserQuestion/.test(av.reason) && /SPEC-123 \[GERADA\]/.test(av.reason), JSON.stringify(av));
+check('aviso aponta a barra da próxima Spec e proíbe decidir por Andraus', /retro-check/.test(av.reason) && /nunca decida por Andraus/.test(av.reason) && /PROPOSTA/.test(av.reason));
+check('mesmo (Spec:estado) já avisado libera', guard.decidirAvaliacao({}, pend, { avaliacaoNotified: av.avaliacao }) === null);
+check('mudança de estado avisa de novo', guard.decidirAvaliacao({}, [{ ...pend[0], estado: 'DESATUALIZADA' }], { avaliacaoNotified: av.avaliacao }) !== null);
+check('outra Spec pendente avisa de novo', guard.decidirAvaliacao({}, [...pend, { spec: 'SPEC-124', estado: 'AUSENTE', ata: 'DHR-SPEC124-002' }], { avaliacaoNotified: av.avaliacao }) !== null);
+check('nada pendente / indeterminado libera', guard.decidirAvaliacao({}, [], {}) === null && guard.decidirAvaliacao({}, null, {}) === null && guard.decidirAvaliacao({}, undefined, {}) === null);
+check('stop_hook_active libera (sem laço)', guard.decidirAvaliacao({ stop_hook_active: true }, pend, {}) === null);
+
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log(fail ? `\n${fail} falha(s)` : '\nTodos os testes do guard/marcador/lembrete passaram');
 process.exit(fail ? 1 : 0);
