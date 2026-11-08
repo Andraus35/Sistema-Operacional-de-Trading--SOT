@@ -16,7 +16,7 @@ Uso:
   python scripts/loop_ledger.py            # (re)gera o ledger
   python scripts/loop_ledger.py --check    # exit 1 se o ledger está desatualizado
   python scripts/loop_ledger.py --stdout   # imprime sem gravar
-  python scripts/loop_ledger.py --retro-check SPEC-007   # exit 1 se falta a retrospectiva de fechamento (antes de abrir outra Spec)
+  python scripts/loop_ledger.py --retro-check SPEC-007   # exit 1 se falta a retrospectiva da Spec com aprovação final (antes de abrir outra Spec; DHR-LOOP-002)
 """
 import argparse
 import re
@@ -275,7 +275,7 @@ def gerar(root):
     out += ["", "## 5. Retrospectivas de fechamento (individual e coletiva) — regra LOOP-001", "",
             "O tratamento de melhoria ocorre ao FIM do trabalho completo de uma Spec e ANTES de abrir outra (ordem de Andraus, 2026-10-24). "
             "Specs com parecer e sem retrospectiva `FEITA` em `" + RETRO + "` (a Spec ainda em curso aparece aqui até fechar; o Orquestrador confere "
-            "`--retro-check SPEC-nnn` de cada Spec FECHADA antes de abrir outra): " + (", ".join(pend) if pend else "nenhuma"), ""]
+            "`--retro-check SPEC-nnn` de cada Spec com aprovação final (Plan homologado, sem achados pendentes — DHR-LOOP-002) antes de abrir outra): " + (", ".join(pend) if pend else "nenhuma"), ""]
     out += ["## 6. Frase de controle", "",
             "Contagens por palavra-chave são **indicativas**; a fonte de verdade de cada achado é o parecer. Nenhuma decisão aberta é fechada por este arquivo (CONS-01).", ""]
     return "\n".join(out)
@@ -285,7 +285,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--stdout", action="store_true")
-    ap.add_argument("--retro-check", metavar="SPEC-nnn", help="exit 1 se a Spec não tem retrospectiva de fechamento FEITA (usar antes de abrir outra Spec)")
+    ap.add_argument("--retro-check", metavar="SPEC-nnn", help="exit 1 se a Spec não tem retrospectiva FEITA (obrigação nasce na aprovação final da Spec — DHR-LOOP-002) (usar antes de abrir outra Spec)")
     ap.add_argument("--root", default=str(ROOT))
     a = ap.parse_args(argv)
     root = Path(a.root)
