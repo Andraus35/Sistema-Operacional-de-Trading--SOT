@@ -131,3 +131,6 @@ ER2-m01|MENOR|C04|Na forma (A) em Patch, cabecalho do MMC (l.3) nao aponta a ata
 <!-- FICHA-M {"achados":[]} -->
 
 Os achados ER1-M01 e ER1-m02..m04 foram resolvidos nesta rodada. Não há Menor mecânico, por isso a FICHA-M está vazia.
+
+## Adendo G1 (guarda pós-revisor, DHR-AUDITOR-EXTERNO-018) — atomic-spec.md
+Aberto pelo Orquestrador (Grep) após a guarda apontar o núcleo do Passo 0 não aberto. **Nada muda no veredito, sem achado novo.** As afirmações da errata que dependem do `atomic-spec.md` conferem: **CC-11** (l.292) exige que toda BASpec com efeito declare a Classe D/H/P/C — compatível com "a Classe de cada BASpec é declarada no Plan"; **CC-08** (l.289, l.297) define o bloco Herança/Delta com INHERITS/ADDED/REMOVED (a errata não cria campo novo; a proposta usa ADDED/MODIFIED como o contrato); **CC-10 / RULE-SEM-03** (l.291) = modalidade preservada, que é o objetivo da errata; **INV-07** (l.407) = versionamento monotônico, atendido pelo `[antes]`. INV-09 não é item do `atomic-spec.md` (a citação vem do próprio contrato, l.3). O Revisor não abriu o arquivo nesta rodada; o Orquestrador sim.
