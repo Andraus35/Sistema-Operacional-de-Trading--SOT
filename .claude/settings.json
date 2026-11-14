@@ -19,6 +19,15 @@
             "timeout": 15
           }
         ]
+      },
+      {
+        "matcher": "Agent|SendMessage",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/experimentos-ativos.js"
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -90,6 +99,14 @@
             "timeout": 120
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/telemetria-tokens.js"
+          }
+        ]
       }
     ],
     "SubagentStop": [
@@ -114,6 +131,14 @@
             "type": "command",
             "command": "node scripts/revisor-guard.js",
             "timeout": 120
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/telemetria-tokens.js"
           }
         ]
       }

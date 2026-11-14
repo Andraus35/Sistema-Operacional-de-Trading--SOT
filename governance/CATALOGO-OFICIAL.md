@@ -386,3 +386,7 @@ Localização das atas: `governance/DHR-*.md`. ADRs do cluster HOC-003: `governa
 **Registro (2026-11-14, DHR-FIBFRAC-002 — decisões de Andraus por AskUserQuestion):** **roteiro v1 do despachante (Elliott → SMC → ICT) CONFIRMADO (DN-3 da SPEC-008); glossário de 'confluência' aprovado como proposta de texto (GLOSSARIO não editado).** Plan e GLOSSARIO não alterados por esta ata. Nenhuma decisão aberta fechada.
 
 **Registro (2026-11-14, DHR-SPEC008-004 — respostas de Andraus por AskUserQuestion de 2026-11-08):** **DN-2 do Plan da SPEC-008 decidida (Fase 1 só detecta e avisa a ruptura de hipótese dominante); DN-1 (rótulo final do ciclo encerrado) = decidir depois, com a SPEC-014 (pendente, não fechada).** Plan não alterado por esta ata. Nenhuma decisão aberta fechada.
+
+**Registro (2026-11-14, DHR-PROCESSO-EXPERIMENTOS-001 — ordem de Andraus no chat):** **experimentos aprovados entram nos pedidos aos agentes por código** (`governance/EXPERIMENTOS-ATIVOS.json` + hook `experimentos-ativos` + CI bloqueante); **teto do experimento da regra de parada reduzido para 3 rodadas de revisão** (aplicado por código); baseline de tokens corrigido. Nenhuma decisão aberta fechada.
+
+**Registro (2026-11-14, DHR-TELEMETRIA-002 — ordem de Andraus no chat):** **telemetria de subagentes corrigida deterministicamente** — uso real lido do transcript (deduplicado por id de resposta), reconciliado no SubagentStop/Stop; 9 chamadas antes sem tokens agora medidas. Nenhuma decisão aberta fechada.

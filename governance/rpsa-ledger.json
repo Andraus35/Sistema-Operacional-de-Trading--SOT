@@ -808,6 +808,20 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Aplica experimento de processo já aprovado ao pedido de rodadas de um Plan; não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-PROCESSO-EXPERIMENTOS-001",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Mecanismo de processo (pedidos ao Especificador/Revisor e CI); não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-TELEMETRIA-002",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Correção de mecanismo de medição; não altera texto de agente de construção nem método."
     }
   ]
 }

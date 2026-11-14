@@ -2,6 +2,7 @@
 
 > Transcrição pelo Orquestrador do retorno do Revisor SOT (somente leitura; classe S3, âncora `plan.md`). **NÃO CONFORME (0 Críticas, 2 Médias, 11 Menores)**, recuperável. Objeto: `specs/features/SPEC-008/plan.md` v1.1 (commit `366af09`, SHA256-ALVO `a198b8e619b6…`) + `checks.md` + `HISTORICO.md`.
 
+TOKENS: 276350  <!-- tokens NOVOS (in+out+cache criado) do Revisor nesta rodada, via `telemetria_tokens.py tokens a0d4dbf69a6a3ce09` (DHR-TELEMETRIA-002); cache lido à parte -->
 RELATÓRIO DE REVISÃO — SPEC-008 Plan v1.1 (candidata) — 2026-11-14 — Revisor de Especificação SOT — Rodada R2
 
 MODO: integral (82 de 126 blocos alterados, mais da metade, então a regra do §3-bis.6 manda revisão integral; usei o delta só para priorizar as 5 Médias)

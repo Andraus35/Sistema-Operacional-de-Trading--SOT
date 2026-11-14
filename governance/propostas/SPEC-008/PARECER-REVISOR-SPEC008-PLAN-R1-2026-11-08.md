@@ -2,6 +2,7 @@
 
 > Transcrição pelo Orquestrador do retorno do Revisor SOT (somente leitura; classe S3, âncora `plan.md`). **NÃO CONFORME (0 Críticas, 5 Médias, 8 Menores)**, recuperável. Objeto: `specs/features/SPEC-008/plan.md` v1.0 (commit `55d0989`, SHA256-ALVO `1cfca7637c85…`) + `checks.md`.
 
+TOKENS: 258937  <!-- tokens NOVOS (in+out+cache criado) do Revisor nesta rodada, via `telemetria_tokens.py tokens aebd281384c384bd6` (DHR-TELEMETRIA-002); cache lido à parte -->
 RELATÓRIO DE REVISÃO — SPEC-008 Plan v1.0 (candidata) — 2026-11-08 — Revisor de Especificação SOT — Rodada R1
 
 MODO: integral · SHA256-ALVO: 1cfca7637c85a9e013374953de4cdb19219f07f5a4964dfdfa6ef4fc9f0a96f9 (é o valor que o Orquestrador enviou; não consigo calcular o hash sem Bash)

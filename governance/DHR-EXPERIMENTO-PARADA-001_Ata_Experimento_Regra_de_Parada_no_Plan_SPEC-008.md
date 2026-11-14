@@ -14,3 +14,6 @@ O experimento da regra de parada (`governance/propostas/MELHORIAS-PROCESSO/PROPO
 Plan: Especificador 1ª entrega 419.289 tokens (≈66 min); Revisor R1 **n/m**; Especificador R1→R2 319.385 (≈73 min); Revisor R2 241.418. Médias por rodada: 5 → 2 (Menores 8 → 11). Plan 1.626 → 1.829 linhas. Rodadas feitas: 2 (ambas NÃO CONFORME).
 ## Verificação / Não toca
 Sem mudança de código. Não toca `AGENTS.md`, `.claude/agents/*`, ROADMAP nem decisões abertas; a retrospectiva da SPEC-008 (aprovação final do Plan, `DHR-LOOP-002`) decide se a regra vira norma.
+
+## Correção (2026-11-14, `DHR-PROCESSO-EXPERIMENTOS-001` / `DHR-TELEMETRIA-002` — texto acima preservado, INV-07)
+Por ordem de Andraus (chat, 2026-11-14): **teto reduzido de 5 para 3 rodadas de revisão** (aplicado por código no hook `experimentos-ativos`); o experimento passou a constar de `governance/EXPERIMENTOS-ATIVOS.json` e a falha de não aplicá-lo é barrada por hook e CI. O **baseline de tokens acima é INVÁLIDO** (números do harness, não reproduzíveis e menores que o consumo real): vale a tabela da seção 3 de `DHR-PROCESSO-EXPERIMENTOS-001` (transcript). Plan: Especificador v1.0 989.947 tokens novos; Revisor R1 258.937; Especificador R1→R2 5.700.916; Revisor R2 276.350.
