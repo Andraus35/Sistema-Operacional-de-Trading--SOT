@@ -1,11 +1,11 @@
-# SPEC-008 — Manager — Despacho e Ciclo (Fase 1) — Plan v1.1 (orquestração mecânica por regra fixa; sem julgamento; nunca executa)
+# SPEC-008 — Manager — Despacho e Ciclo (Fase 1) — Plan v1.2 (orquestração mecânica por regra fixa; sem julgamento; nunca executa)
 
 | Campo | Valor |
 |---|---|
 | ID | SPEC-008 — Manager — Despacho e Ciclo (Fase 1). Nome e divisão decididos por Andraus (DHR-SPEC008-001 §1, linhas P-2 e P-3); slot "Manager — Orquestração Mecânica" (ROADMAP §7; DHR-EUA-E23 §2 item 1). A outra peça da divisão é a **Spec de Tempo** (relógio, Killzone, alarme-gatilho; candidata SPEC-050, número **não fixado**), com Plan próprio **depois** deste. |
-| Versão | **1.1 (CANDIDATA — rodada R2: correção do parecer R1 — `governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R1-2026-11-08.md`)** |
+| Versão | **1.2 (CANDIDATA — rodada R3: correção do parecer R2 — `governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R2-2026-11-14.md`)** |
 | Ordem de Andraus | chat 2026-11-08, "Avançar" (transmitida pelo Orquestrador), depois da abertura homologada (DHR-SPEC008-001) e do MMC-001 v1.0 homologado (DHR-SPEC008-002) com a errata R3-m07 (DHR-SPEC008-003). A ata de homologação do Plan deve citar esta ordem — ato do Orquestrador/Andraus. |
-| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 2) e homologação de Andraus. NÃO é baseline (INV-09).** Tudo o que este Plan cria (INV-MDC-01, RULE-MDC-*, BASpec-MDC-*, EC-MDC-*, Cenário-MDC-*, ADV-MDC-*, códigos `MDC_*`, tabela da FSM do trecho Fase 1, grafo de despacho versão 1, tabela de parâmetros, contrato lógico, Fixture M0, interface com a Spec de Tempo) é **[PROPOSTA]**. |
+| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 3) e homologação de Andraus. NÃO é baseline (INV-09).** Tudo o que este Plan cria (INV-MDC-01, RULE-MDC-*, BASpec-MDC-*, EC-MDC-*, Cenário-MDC-*, ADV-MDC-*, códigos `MDC_*`, tabela da FSM do trecho Fase 1, grafo de despacho versão 1, tabela de parâmetros, contrato lógico, Fixture M0, interface com a Spec de Tempo) é **[PROPOSTA]**. |
 | Fonte | `ROADMAP.md` (seção SPEC-008; tabela §25; "Decisões abertas ativas"/"Decisões FECHADAS"); `governance/DHR-SPEC008-001` (§1 P-1..P-13, CONF-1..5; §3 condições; §5 abertas); `governance/MMC-001_Manager_Contract.md` **v1.0 BASELINE** (DHR-SPEC008-002; errata R3-m07 DHR-SPEC008-003) — **PAI** de herança vertical; `specs/features/SPEC-008/ABERTURA.md` (redação homologada "como está", commit `8ea5d9a`, **não-baseline — só contexto**, MMC-001 cabeçalho e §8.3 CONTEXTO); `research.md` + `sources/` (Dossiê de Pesquisa — RULE-ECC-01/02/04/05/06; validade CRITICAL 90 dias, **limite 2027-02-05**, ECC-VAL-001); `WORKFLOW.md` v2.1 (citado só por ID); atomic-spec v1.5; `governance/RULES.md` |
 | Complexidade | CRITICAL [FATO: DHR-SPEC008-001 §1, linha P-1 — "CRITICAL D0–D8 (com suíte de ataque D8)"] |
 | Profundidade-alvo | D0–D8 (standard + adversarial D8); D6 **aplicável** (despacho via Blackboard — RULE-BB-001/005) [FATO: P-1; AGENTS.md §4] |
@@ -31,6 +31,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 |---|---|---|
 | 1.0 | 2026-11-08 | Entrega candidata inicial (contagens na seção "Dimensionamento"). Histórico de rodadas futuras vai para `specs/features/SPEC-008/HISTORICO.md` (lição C06), não para este corpo. |
 | 1.1 | 2026-11-14 | Correção do parecer R1 + registro das decisões de Andraus F-1..F-4 (2026-11-14) e das respostas DN de 2026-11-08 (M-01..M-05; m-05..m-08); m-01..m-04 aplicados pelo Orquestrador (classe M). Texto anterior e motivo de cada troca: `HISTORICO.md` (R1→R2). |
+| 1.2 | 2026-11-14 | Correção do parecer R2 (R2-M-01, R2-M-02; R2-m01..m03, m05 (parte), m06, m07, m10); R2-m04/m08/m09/m11 e m05 (parte) aplicados pelo Orquestrador; DN-3 confirmada (DHR-FIBFRAC-002); atas DHR-SPEC008-004 e DHR-FIBFRAC-001 citadas. Texto anterior: `HISTORICO.md` (R2→R3). |
 
 ---
 
@@ -69,11 +70,12 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | CONF-4 | alinhamento de direção conferido aqui, por regra fixa | RULE-MDC-006 (d) |
 | CONF-5 | abrir/fechar Killzone na Spec de Tempo; ator = Manager | Interface com a Spec de Tempo |
 | MMC-001 errata R3-m07 | Classe D/C = **orientação**; obrigação = "nenhuma BASpec H/P; se precisar de julgamento, volta a Andraus" | CC-11; D3 (todas D, uma C, zero H/P) |
-| Respostas de Andraus a DN-1/2/3 (AskUserQuestion, 2026-11-08, transmitidas pelo Orquestrador; a citar na ata do Plan) | DN-1 = **decidir depois, com a SPEC-014**; DN-2 = **a Fase 1 só detecta e avisa, não abre ciclo**; DN-3 = **não confirmada** (Andraus pediu antes um inventário de Fibonacci/Fractal) | DN-1 e DN-3 seguem `[DECISÃO NECESSÁRIA]`; DN-2 registrada como decisão (comportamento de RULE-MDC-004 (d) inalterado); P-11 segue "decidir depois" na parte fractal |
-| **F-1** (Andraus, AskUserQuestion 2026-11-14, via Orquestrador; literal) | "Fibonacci e confluência fractal não são a mesma coisa. Fibonacci é uma skill que pode e será utilizado por agentes Elliot, SMC e ICT. A skill servira para confirmação dos graus, retrações e projeções. Porém manter a etapa da especificação para essa skill para momento oportuno." | RULE-MDC-002 (e): Fibonacci **não** é nó do grafo de despacho (nenhum nó/aresta criado); especificação da skill = depois; confluência fractal = **decidir depois** (onde mora/quem produz). Roteiro v1 compatível; DN-3 segue `[DECISÃO NECESSÁRIA]` |
-| **F-2** (idem, 2026-11-14) | Fibonacci, por ora, só CONFERE e publica zonas como evidência; a permissão de sub-hipótese (AGENTS.md §6 item 2, PRIMARY/SUB) continua valendo, sem uso até a Spec da skill de Fibonacci | nada a despachar aqui; RULE-MDC-002 (e); o Manager não consome zona de Fibonacci como condição de aresta |
-| **F-3** (idem, 2026-11-14) | a leitura de convicção macro (WF-C01) não muda agora: estrutural + institucional | RULE-MDC-005 (a) inalterada; J-001 e WF-D03 seguem ABERTAS |
-| **F-4** (idem, 2026-11-14; literal) | "Não, manter S1/D1/H4/H1/M5 fixo" (contra a tabela editável por tipo de trading) | registrada como decisão; **diverge** de WF-R01 (tabela por tipo) — só Andraus reconcilia (CF-D); o `tf_triple` do pedido segue dado (RULE-MDC-001 (a)); nenhum TF vira parâmetro numérico deste Plan; BL-026 e N-001 seguem em aberto |
+| Respostas de Andraus a DN-1/DN-2 (AskUserQuestion, 2026-11-08) — **`DHR-SPEC008-004` §1** | DN-1 = **decidir depois, com a SPEC-014**; DN-2 = **a Fase 1 só detecta e avisa, não abre ciclo** | DN-1 segue `[DECISÃO NECESSÁRIA]` (não fechada — DHR-SPEC008-004 §2); DN-2 decidida (comportamento de RULE-MDC-004 (d) inalterado) |
+| DN-3 (AskUserQuestion, 2026-11-14) — **`DHR-FIBFRAC-002` §1** | **roteiro v1 confirmado**: ESTRUTURAL (Elliott) → INSTITUCIONAL (SMC) → OPERACIONAL (ICT), sem nó de Fibonacci/Fractal | RULE-MDC-002 (f): a versão 1 é a versão registrada por Andraus; DN-3 deixa de ser `[DECISÃO NECESSÁRIA]`; a parte fractal da P-11 segue "decidir depois"; o glossário de "confluência" (Q5) é só proposta e não muda este Plan |
+| **F-1** (Andraus, AskUserQuestion 2026-11-14 — **`DHR-FIBFRAC-001` §1**; literal) | "Fibonacci e confluência fractal não são a mesma coisa. Fibonacci é uma skill que pode e será utilizado por agentes Elliot, SMC e ICT. A skill servira para confirmação dos graus, retrações e projeções. Porém manter a etapa da especificação para essa skill para momento oportuno" | RULE-MDC-002 (e): Fibonacci **não** é nó do grafo de despacho (nenhum nó/aresta criado); especificação da skill = depois; confluência fractal = **decidir depois** (onde mora/quem produz). Roteiro v1 compatível (confirmado depois pela DHR-FIBFRAC-002) |
+| **F-2** (idem — DHR-FIBFRAC-001 §1) | Fibonacci, por ora, só CONFERE e publica zonas como evidência; a permissão de sub-hipótese (AGENTS.md §6 item 2, PRIMARY/SUB) continua valendo, sem uso até a Spec da skill de Fibonacci | nada a despachar aqui; RULE-MDC-002 (e); o Manager não consome zona de Fibonacci como condição de aresta |
+| **F-3** (idem — DHR-FIBFRAC-001 §1) | a leitura de convicção macro (WF-C01) não muda agora: estrutural + institucional | RULE-MDC-005 (a) inalterada; J-001 e WF-D03 seguem ABERTAS |
+| **F-4** (idem — DHR-FIBFRAC-001 §1; literal) | "Não, manter S1/D1/H4/H1/M5 fixo" (contra a tabela editável por tipo de trading) | registrada como decisão; **diverge** de WF-R01 (tabela por tipo) — só Andraus reconcilia (CF-D); o `tf_triple` do pedido segue dado (RULE-MDC-001 (a)); nenhum TF vira parâmetro numérico deste Plan; BL-026 e N-001 seguem em aberto |
 
 `[FATO]` linhas P-x/CONF-x = DHR-SPEC008-001 §1; o **conteúdo** das recomendações aceitas está em `ABERTURA.md` §13 (redação homologada "como está", não-baseline — citada como contexto, nunca como herança: RULE-HD-04; MMC-001 cabeçalho, "Referência não-baseline").
 
@@ -400,8 +402,8 @@ RULE-MDC-002: GRAFO DE DESPACHO VERSIONADO.
                 na versão 1; onde mora/quem a produz = decidir depois (P-11). Acrescentar nó = nova versão do dado,
                 registrada por ato de Andraus, sem reescrever esta Spec; condição nova de aresta fora da lista
                 fechada exige errata.
-            (f) Só Andraus registra versão do grafo (a versão 1 = DN-3, `[DECISÃO NECESSÁRIA]`; compatível com
-                F-1, ainda não confirmada); um ciclo usa a versão fixada na abertura.
+            (f) Só Andraus registra versão do grafo; a versão 1 de (a) é a versão REGISTRADA por Andraus (DN-3 —
+                DHR-FIBFRAC-002 §1, 2026-11-14; compatível com F-1); um ciclo usa a versão fixada na abertura.
             (g) O Manager só despacha nós do grafo; nunca inventa nó, ordem ou condição.
             [Fonte: INV-01; CC-01; WF-02/03/05; P-11; F-1/F-2; research §3.2 (SRC-AIRFLOW-DAG-01, SRC-TOPO-01 [EXTERNO])]
 
@@ -1072,20 +1074,33 @@ macro_invocation: {cycle_id, macro_key, input_refs[2]}  → resultado (objeto CC
                    global_conviction; gate_result/thresholds_used/status ignorados) | MACRO_ERROR
 cycle_log_entry : {cycle_id | AUSENTE, log_seq, entry_type, rule_id (ID de RULE ou INV-MDC-01), fsm_row (F-nn | —), graph_version,
                    limits_version, causation_event_id, recorded_instant, from_state, to_state | —, code | —, refs[],
-                   counters{steps, failures[]}, capability_check_ref | AUSENTE,
+                   counters{steps, failures{<node_id> → n, TEMPO → n}}, capability_check_ref | AUSENTE,
                    abstention? {incerto, afeta, condicao_de_mudanca, informacao}}
-capability_audit_record (gravado pelo RUNTIME, não pelo Manager): {component_id, cycle_id | AUSENTE, action_seq,
-                   capability, outcome ∈ {EXECUTED, DENIED}, code | —, registry_version, recorded_instant (do runtime)}
-                   — contagens da trava = consultas: model_calls = #(capability = MODEL_CALL ∧ EXECUTED);
-                   external_emissions = #(capability = EXTERNAL_EMIT ∧ EXECUTED); foreign_publications =
-                   #(capability = PUBLISH ∧ workspace ≠ manager ∧ EXECUTED); clock_reads = #(capability = CLOCK_READ ∧ EXECUTED)
+capability_audit_record (gravado pelo RUNTIME, não pelo Manager; um registro por TENTATIVA de ação):
+                   {component_id, cycle_id | AUSENTE, action_seq, capability ∈ CAP, target_workspace | —,
+                   object_type | —, outcome ∈ {EXECUTED, DENIED}, code | —, registry_version, recorded_instant (do runtime)}
+                   CAP — PERMITIDAS (1:1 com a allowlist de INV-MDC-01): READ_BLACKBOARD (1) · PUBLISH_OWN (2:
+                   target_workspace = manager ∧ object_type ∈ {dispatch_request, phase2_handoff}) · WRITE_OWN_LOG (3) ·
+                   INVOKE_MACRO (4) · TIME_REQUEST (5: à Spec de Tempo, componente interno do SOT) · NOTICE_LOCAL (6: a
+                   Andraus pelo canal local). NEGADAS (1:1 com os subs da §D3.1): PUBLISH_ANALYSIS · PUBLISH_FOREIGN
+                   (target_workspace ≠ manager) · HYPOTHESIS_WRITE · CONVICTION_COMPUTE · MODEL_CLASS_CHANGE · TMP_ASSEMBLY ·
+                   SIGNAL_PACKAGE_ASSEMBLY · EXTERNAL_EMIT (sinal/ordem/qualquer saída para fora do SOT, ex.: Bot Trade
+                   Finance) · CYCLE_ORIGINATION · AUTO_COST_PAUSE · MODEL_CALL · CLOCK_READ. A classificação da tentativa
+                   é do runtime (requisito), não do rótulo pedido pelo Manager. TIME_REQUEST e NOTICE_LOCAL NÃO são
+                   EXTERNAL_EMIT (destino interno ao SOT / Andraus) — T15/T16/T18 não violam a trava.
+                   — predicados da trava (só campos acima): EXECUTED ⊆ allowlist ⇔ todo registro com outcome = EXECUTED
+                   tem capability ∈ PERMITIDAS e, se PUBLISH_OWN, target_workspace = manager ∧ object_type ∈ {dispatch_request,
+                   phase2_handoff}; model_calls = #(capability = MODEL_CALL ∧ EXECUTED); external_emissions =
+                   #(capability = EXTERNAL_EMIT ∧ EXECUTED); foreign_publications = #(capability ∈ {PUBLISH_OWN,
+                   PUBLISH_FOREIGN} ∧ target_workspace ≠ manager ∧ EXECUTED); clock_reads = #(capability = CLOCK_READ ∧ EXECUTED)
 cycle_closed    : {cycle_id, code, wf_f01_branch | —, state_at_close, wf_f02_final_label = AUSENTE (DN-1), log_seq}
 time_request    : {kind ∈ {ARM_ALARM, MARK_CONSUMED, STAGE_TIMER}, cycle_id, request_key, payload}
 phase2_handoff  : {cycle_id, asset, mission_mode, analysis_refs[], macro_reading_ref, alarm_ref, setup_ref,
                    graph_version, log_head}   — SEM TMP, Signal Package, convicção global, R:R, ordem
 notice          : {cycle_id | —, kind ∈ {LIMIT, COST, RUPTURE, CAPABILITY, STOP}, code, refs[], to = Andraus}
-capability_registry: {version, allowlist[6]}   — conferido antes de cada ação (INV-MDC-01); capability_check_ref =
-                   (registry_version, action_seq) do capability_audit_record da conferência
+capability_registry: {version, allowlist[6] ⊆ CAP}   — conferido antes de CADA ação (INV-MDC-01); capability_check_ref =
+                   (registry_version, action_seq) do capability_audit_record daquela ação — uma por efeito (F01 tem duas:
+                   PUBLISH_OWN do despacho e TIME_REQUEST do STAGE_TIMER)
 ```
 
 ---
@@ -1733,7 +1748,7 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
 - **G-001 (ABERTA):** mecanismo de guarda do livro de bordo = SPEC-009; aqui só o requisito. **M-001 (ABERTA):** `domain_state` de `dispatch_request`/`phase2_handoff` não definido; o ciclo não é objeto do quadro.
 - **SPEC-015-SCOPE (ABERTA):** origem de pedidos pela Fase 0 e "quantas vezes tentar" ficam com a SPEC-015. **C-001 (ABERTA):** só redação EARS.
 - **Não tocadas (ABERTAS):** K-001, SPEC-045-RUNTIME-001, ECC-03-001, D-PCC-4. **Decidir depois:** P-11, P-13.
-- **Deste Plan:** DN-1 e DN-3 seguem `[DECISÃO NECESSÁRIA]` (Andraus, 2026-11-08: DN-1 = decidir depois, com a SPEC-014; DN-3 = não confirmada; em 2026-11-14 Andraus decidiu F-1/F-2 — Fibonacci é skill, sem nó — o que é compatível com o roteiro v1, mas a confirmação formal da DN-3 não foi dada e a confluência fractal segue "decidir depois"); decisões de Andraus de 2026-11-14 registradas: F-1..F-4 ("Incorporação das decisões"; CF-D); **DN-2 decidida por Andraus** (2026-11-08: a Fase 1 só detecta e avisa — comportamento já especificado, sem mudança). Nenhuma DN nova na v1.1. Nenhuma aparece como fechada em outra parte deste Plan.
+- **Deste Plan:** **DN-1 segue `[DECISÃO NECESSÁRIA]`** (Andraus: decidir depois, com a SPEC-014 — DHR-SPEC008-004 §1/§2, não fechada). **DN-2 decidida** (a Fase 1 só detecta e avisa — DHR-SPEC008-004 §1; comportamento já especificado). **DN-3 decidida** (roteiro v1 confirmado — DHR-FIBFRAC-002 §1). Decisões de 2026-11-14 registradas: F-1..F-4 (DHR-FIBFRAC-001 §1; "Incorporação das decisões"; CF-D). A **confluência fractal** (parte fractal da P-11) segue "decidir depois". Nenhuma DN nova. Nenhuma decisão aberta aparece como fechada em outra parte deste Plan.
 - **Do CCM-001 (nota N1/N3), seguem `[DECISÃO NECESSÁRIA]`, apenas citadas:** composição do `score` (J-001 ABERTA; BL-027) e proveniência da entrada do gate (BL-029) — RULE-MDC-005 (d).
 
 ---
@@ -1756,7 +1771,7 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
 | 011 | TMP/convicção global no handoff; Fase 1 transita depois de `EM_SÍNTESE` | sim — campos do objeto; código | timer atrasado em `EM_SÍNTESE` → T11 (b) |
 | 012 | emissão externa; modelo chamado; falso-DENY de T01; ação sem conferência | sim — contagens no `capability_audit_record` do runtime (fonte independente do Manager); `capability_check_ref` por entrada | capacidade legítima recusada → ADV-10 (k); registro cai no meio do ciclo → ADV-12 (c) |
 
-Nenhuma BASpec exigiu julgamento (H/P): toda guarda é comparação de campo publicado/registrado. Nenhuma marcada `[DECISÃO NECESSÁRIA]` por falta de âncora; os três pontos sem âncora (rótulo final, despertar por ruptura, aprovação do grafo v1) viraram DN-1..DN-3.
+Nenhuma BASpec exigiu julgamento (H/P): toda guarda é comparação de campo publicado/registrado. Nenhuma marcada `[DECISÃO NECESSÁRIA]` por falta de âncora; os três pontos sem âncora (rótulo final, despertar por ruptura, aprovação do grafo v1) viraram DN-1..DN-3; DN-2 e DN-3 já decididas por Andraus (DHR-SPEC008-004; DHR-FIBFRAC-002), DN-1 segue aberta.
 
 ### Bloco B — herança obrigação a obrigação (CC-08; RULE-HD-02/03; RULE-HV-01..04)
 Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "Conservação do pai" (coluna "Evidência"); a parte **orientação** do §3.1.3 e a coluna "Classe predominante" não entram na conservação (MMC-001 §8.2-bis) — mesmo assim, a orientação foi seguida (D + C). Horizontais: RULE-CF-010 → RULE-MDC-005; RULE-CBP-002/005/006/014 → RULE-MDC-003, D4.2; RULE-CEB-001/004/007/008 → D4.2, RULE-MDC-003 (g); CEE §10 S2/S4 → RULE-MDC-008; CHM-001 transições → RULE-MDC-004 (d); WF-F02 estados → D5; RULE-BB-003 → RULE-MDC-006 (a)(h); WF-A02/A03 (morte do alarme) → D5 F15/F31/F32; SPEC-048 v1.4 (orçamento no pedido, `budget_ref`) → RULE-MDC-003 (a); SPEC-007 v2.3 (`max_retrieval_rounds`) → RULE-MDC-008 (a). **REMOVED vazio; MODIFIED vazio;** nenhum ADDED contradiz o herdado: o ENC (RULE-MDC-007 (d)) não cria estado nem seta (rótulo = DN-1), e o handoff não fixa o dono da montagem do Signal Package (MMC-001 §5.6). Nenhuma obrigação sem evidência.
@@ -1768,7 +1783,7 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
 - Nenhuma probabilidade; nenhum número de limiar, teto, prazo ou orçamento (Fixture M0 usa símbolos).
 
 ### Bloco D — reforço de escopo
-[x] A Fase 1 não produz recomendação nem TMP: produz **insumo** à Fase 2 (INV-05; RULE-DEC-01) · [x] nenhuma BASpec cruza para a execução downstream (INV-MDC-01 sub `ORDER_EMISSION`) · [x] toda dependência de decisão de Andraus está marcada `[DECISÃO NECESSÁRIA]` (DN-1, DN-3) ou como decisão aberta; DN-2 consta como decisão de Andraus de 2026-11-08.
+[x] A Fase 1 não produz recomendação nem TMP: produz **insumo** à Fase 2 (INV-05; RULE-DEC-01) · [x] nenhuma BASpec cruza para a execução downstream (INV-MDC-01 sub `ORDER_EMISSION`) · [x] toda dependência de decisão de Andraus está marcada `[DECISÃO NECESSÁRIA]` (DN-1) ou como decisão aberta; DN-2 (DHR-SPEC008-004) e DN-3 (DHR-FIBFRAC-002) constam como decisões de Andraus com ata.
 
 ---
 
@@ -1781,19 +1796,20 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
 | Fontes web do Dossiê | `[EXTERNO]` | DADO (nunca baseline) |
 | INV-MDC-01, RULE-MDC-*, BASpecs, ECs, cenários, D5, grafo v1, parâmetros, contrato, interface com a Spec de Tempo, errata | `[PROPOSTA]` | PROPOSTA (normativa só na homologação) |
 | Evento da Inversão #1; `global_conviction` como campo comparado com θ; `budget.max_rounds` = `max_retrieval_rounds`; dois orçamentos de latência; requisitos a outras Specs; leitura de CF-A; E-3 | `[INFERÊNCIA]` | INFERÊNCIA |
-| Rótulo final dos encerramentos; aprovação do grafo v1 | `[DECISÃO NECESSÁRIA]` | DN-1 (decidir depois, com a SPEC-014), DN-3 (não confirmada) |
-| Ruptura de hipótese dominante: a Fase 1 só detecta e avisa | `[FATO]` (decisão de Andraus, AskUserQuestion 2026-11-08; a citar na ata) | DN-2 decidida |
-| Fibonacci = skill dos agentes analíticos, sem nó (F-1); só confere/publica zonas, sub-hipótese sem uso (F-2); leitura macro inalterada (F-3); TFs S1/D1/H4/H1/M5 fixos (F-4, divergente de WF-R01 — CF-D) | `[FATO]` (decisões de Andraus, AskUserQuestion 2026-11-14; a citar na ata) | registradas; DN-3, P-11 (fractal), J-001, WF-D03, BL-026, N-001 seguem em aberto |
+| Rótulo final dos encerramentos | `[DECISÃO NECESSÁRIA]` | DN-1 (decidir depois, com a SPEC-014 — DHR-SPEC008-004) |
+| Ruptura de hipótese dominante: a Fase 1 só detecta e avisa | `[FATO]` — DHR-SPEC008-004 §1 (resposta de 2026-11-08) | DN-2 decidida |
+| Roteiro v1 (Elliott → SMC → ICT) registrado por Andraus | `[FATO]` — DHR-FIBFRAC-002 §1 (2026-11-14) | DN-3 decidida |
+| Fibonacci = skill dos agentes analíticos, sem nó (F-1); só confere/publica zonas, sub-hipótese sem uso (F-2); leitura macro inalterada (F-3); TFs S1/D1/H4/H1/M5 fixos (F-4, divergente de WF-R01 — CF-D) | `[FATO]` — DHR-FIBFRAC-001 §1 (2026-11-14) | registradas; P-11 (fractal), J-001, WF-D03, BL-026, N-001 seguem em aberto |
 
 ---
 
 ## Perguntas a Andraus (homologação do Plan) — só o que depende de você
 
-1. **DN-1 — Em que estado final termina um ciclo encerrado antes do Risco?** O WORKFLOW (WF-F02) só chega a "recusado/vencido" depois do Risco. Você decidiu "só encerrar" (P-12), mas não escolheu o nome do estado final. *Recomendação (da abertura, ABERTURA §13 P-12, ampliada):* sem oportunidade, NEUTRO, setup desalinhado, contexto não conclusivo, hipótese não elegível, campos do alarme faltando, alarme cancelado, teto estourado e parada por você → **RECUSADO**; alarme vencido e prazo vencido → **EXPIRADO**; prazo vencido **depois** do disparo (ramo 3 por prazo — CF-C) → **EXPIRADO** (o motivo é o prazo). Como acrescenta setas que o WORKFLOW não escreve, a escolha é sua (e a edição do WORKFLOW, se quiser). Até lá, o ciclo encerra registrado e **não aceita mais nada** (fail-closed). **Resposta de Andraus (2026-11-08): decidir depois, junto com a SPEC-014** — segue `[DECISÃO NECESSÁRIA]`; a pergunta fica para aquele momento. (Na v1.1 entram na lista os novos encerramentos F30–F32, F35–F37, todos sem rótulo final.)
+1. **DN-1 — Em que estado final termina um ciclo encerrado antes do Risco?** O WORKFLOW (WF-F02) só chega a "recusado/vencido" depois do Risco. Você decidiu "só encerrar" (P-12), mas não escolheu o nome do estado final. *Recomendação (da abertura, ABERTURA §13 P-12, ampliada):* sem oportunidade, NEUTRO, setup desalinhado, contexto não conclusivo, hipótese não elegível, campos do alarme faltando, alarme cancelado, teto estourado e parada por você → **RECUSADO**; alarme vencido e prazo vencido → **EXPIRADO**; prazo vencido **depois** do disparo (ramo 3 por prazo — CF-C) → **EXPIRADO** (o motivo é o prazo). Como acrescenta setas que o WORKFLOW não escreve, a escolha é sua (e a edição do WORKFLOW, se quiser). Até lá, o ciclo encerra registrado e **não aceita mais nada** (fail-closed). **Resposta de Andraus (2026-11-08, DHR-SPEC008-004 §1): decidir depois, junto com a SPEC-014** — segue `[DECISÃO NECESSÁRIA]`; a pergunta fica para aquele momento. (Na v1.1/v1.2 entram na lista os novos encerramentos F30–F32, F35–F37 e o F20 por falha do serviço de tempo, todos sem rótulo final.)
    > *Nota técnica:* RULE-MDC-007 (d); D5 linhas ENC; MMC-001 §3.2.3; campo `wf_f02_final_label`.
-2. **DN-2 — Ruptura de uma hipótese dominante (Inversão #1): quem abre o ciclo completo? — DECIDIDA.** Resposta de Andraus (AskUserQuestion, 2026-11-08): a Fase 1 **só detecta e avisa**; não abre ciclo. Era a recomendação e já é o comportamento especificado (RULE-MDC-004 (d)); nada mudou. A ata do Plan deve citar a resposta.
+2. **DN-2 — Ruptura de uma hipótese dominante (Inversão #1): quem abre o ciclo completo? — DECIDIDA.** Resposta de Andraus (AskUserQuestion, 2026-11-08): a Fase 1 **só detecta e avisa**; não abre ciclo. Era a recomendação e já é o comportamento especificado (RULE-MDC-004 (d)); nada mudou. Ata: DHR-SPEC008-004 §1.
    > *Nota técnica:* RULE-MDC-004 (d); CONFLICT-MAP Inversão #1; MMC-001 §6.2.
-3. **DN-3 — Versão 1 do roteiro dos analistas.** *Recomendação:* a homologação deste Plan registra a **versão 1** do grafo (Elliott → SMC se houver oportunidade → ICT se o alarme disparar na Killzone), sem Fibonacci/Fractal (P-11). Versões futuras: ato seu, sem reescrever a Spec. **Resposta de Andraus (2026-11-08): não confirmada por ora** — antes, um inventário de Fibonacci/Fractal. **Nota de 2026-11-14 (F-1/F-2):** Fibonacci é skill usada por dentro dos agentes Elliott/SMC/ICT, não etapa de despacho — o roteiro v1 (sem nó de Fibonacci) é **compatível** com isso; a confluência fractal é outra coisa e segue "decidir depois" (P-11). Segue `[DECISÃO NECESSÁRIA]` até a sua confirmação formal da versão 1; este Plan não usa o inventário. **Confirma a versão 1?**
+3. **DN-3 — Versão 1 do roteiro dos analistas — DECIDIDA.** Você confirmou o roteiro v1 (Elliott → SMC se houver oportunidade → ICT se o alarme disparar na Killzone), sem nó de Fibonacci (skill dentro dos agentes — F-1) nem de confluência fractal (AskUserQuestion 2026-11-14 — DHR-FIBFRAC-002 §1). Versões futuras: ato seu, sem reescrever a Spec. A confluência fractal segue "decidir depois" (P-11).
    > *Nota técnica:* RULE-MDC-002 (a)(f); T05.
 4. **Ciência (não é pergunta):** enquanto o **limiar "conclusivo"** e a **tabela de tetos/prazos** não forem preenchidos (J-001/N-001 seguem ABERTAS; calibração), todo pedido é recusado (`MDC_LIMITS_NOT_CONFIGURED`) ou todo ciclo encerra em "contexto não conclusivo". É o comportamento correto, não defeito.
 
