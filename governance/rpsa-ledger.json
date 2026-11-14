@@ -780,6 +780,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Regra do Orquestrador (AGENTS.md §12) e mecanismos de processo; não altera texto de agente de construção nem método de Spec."
+    },
+    {
+      "id": "DHR-FIBFRAC-001",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro de decisões de especificação (papel de uma skill e tempos gráficos); não altera texto de agente de construção nem método."
     }
   ]
 }
