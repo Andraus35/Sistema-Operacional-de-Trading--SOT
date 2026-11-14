@@ -7,8 +7,8 @@
 **Ordem de Andraus:** chat 2026-11-08, "Avançar" (via Orquestrador). Abertura: DHR-SPEC008-001 (CRITICAL D0–D8, um documento). Pai: MMC-001 v1.0 (DHR-SPEC008-002; errata R3-m07, DHR-SPEC008-003). Respostas a DN-1/2/3: AskUserQuestion 2026-11-08 (via Orquestrador).
 **Regra deste arquivo (lição SPEC-049 R1-M01 / C05):** nenhum ✔ sem linha de evidência (número de linha do `plan.md` **v1.1** ou resultado de Grep). O que não foi executado aparece como **NÃO VERIFICADO**, nunca como ✔. Histórico de rodadas: `HISTORICO.md` (C06).
 
-**Contagens declaradas (Grep no `plan.md` v1.1, 2026-11-14):** **1** INV-MDC (`^INV-MDC-01:` — l.320), **11** RULE-MDC (`^RULE-MDC-0nn:` — l.352..600), **13** EARS (`^N. (MDC`/`(INV-MDC` — l.630..642), **12** BASpec (`^### BASpec-MDC-` — l.691..914), **9** EC (`^### EC-MDC-` — l.1461..1587), **22** cenários D7 (`^### Cenário-MDC-T` — l.1091..1287), **15** ADV D8 (`^### ADV-MDC-` — l.1305..1437). Soma = 83. Blocos `CLASSE :` = 12 (onze D l.702..904; uma C l.927).
-**Medida do corpo (RULE-ECC-07):** **1.812 linhas** (última linha do arquivo, "Pronto para revisão", l.1812; nenhuma seção `## Anexo`) — > 1.600 (confirmado por Andraus, P-3), < 1.900 (alerta; folga 88), < 2.000 (teto). **A reconferir** pelo Orquestrador com `scripts/check_dimensionamento.py`.
+**Contagens declaradas (Grep no `plan.md` v1.1, 2026-11-14):** **1** INV-MDC (`^INV-MDC-01:` — l.326), **11** RULE-MDC (`^RULE-MDC-0nn:` — l.358..613), **13** EARS (`^N. (MDC`/`(INV-MDC` — l.643..655), **12** BASpec (`^### BASpec-MDC-` — l.704..927), **9** EC (`^### EC-MDC-` — l.1476..1602), **22** cenários D7 (`^### Cenário-MDC-T` — l.1104..1302), **15** ADV D8 (`^### ADV-MDC-` — l.1320..1452). Soma = 83. Blocos `CLASSE :` = 12 (onze D; uma C l.940).
+**Medida do corpo (RULE-ECC-07):** **1.829 linhas** (última linha do arquivo, "Pronto para revisão", l.1829; nenhuma seção `## Anexo`) — > 1.600 (confirmado por Andraus, P-3), < 1.900 (alerta; folga 71), < 2.000 (teto). Linhas citadas neste arquivo = `plan.md` v1.1 final (após o registro de F-1..F-4). **A reconferir** pelo Orquestrador com `scripts/check_dimensionamento.py`.
 
 ---
 
