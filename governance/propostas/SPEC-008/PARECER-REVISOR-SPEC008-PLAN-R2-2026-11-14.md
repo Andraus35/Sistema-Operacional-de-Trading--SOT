@@ -273,3 +273,6 @@ Arquivos:
 ## Adendo G1/G2 (guarda pós-revisor, DHR-AUDITOR-EXTERNO-018)
 **G2:** `GATE-D: PASSOU_D | cmd: python scripts/revisor_gate.py specs/features/SPEC-008/plan.md | SHA256-ALVO: a198b8e619b6cd8c4b9b5b70048a8ab14a28b2f1284734c365b2e32f2867072e | data: 2026-11-14` (sinais H: 0; o Revisor conferiu que o SHA da linha GATE-D é igual ao SHA256-ALVO). `validate_spec_sot.py` 14/14.
 **G1:** o próprio Revisor abriu ROADMAP, atomic-spec (§10.2, ENF-04/07, CC-11), RMR-001 (BL-026/029, BL-043..046), MMC-001, SPEC-048/005/003/007, CCM-001 e WORKFLOW; declarou não reaberto apenas SPEC-004 (RULE-CBP-*) e CHM-001, herdados da R1 e não tocados pelo delta. Nada a acrescentar pelo Orquestrador.
+
+## Adendo G1 (guarda pós-revisor, DHR-AUDITOR-EXTERNO-018) — governance/RULES.md
+Aberto pelo Orquestrador (Grep). **Nada muda no veredito, sem achado novo.** As regras que o Plan cita e dependem do `RULES.md` existem: RULE-BB-001/002/004/005, RULE-BB-003 (marcada SUPERSEDED por Q-006 no próprio arquivo — o Plan usa só o texto "hipótese só é base de decisão em ACTIVE ou DOMINANT", conferido pelo Revisor na R1 l.318-321), RULE-DEC-01, RULE-MET-01, RULE-HV-01, RULE-HD-02, RULE-SEM-03 e RULE-ECC-07. O Revisor registrou o `RULES.md` como conferido nas rodadas R1/R2 (RULE-BB-003) e não declarou nenhum item como não verificado por indisponibilidade.
