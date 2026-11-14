@@ -47,4 +47,22 @@ Contexto novo recebido: respostas de Andraus por AskUserQuestion em 2026-11-08 (
 | m-06 | ADV-05 | "(b) chega ALARM_ARMED sem ARM_ALARM pedido … (b) \"MDC_TRANSITION_NOT_LISTED\"" | a D4.2 para antes, no passo (2) |
 | m-06 | ADV-07 | "\"MDC_TRANSITION_NOT_LISTED\" para o disparo" | idem |
 | M-02 | ADV-06 | "DADO ciclo com CV1 já lido (F07 ou F08)" | cobrir tentativa após erro |
-| — | contagens | v1.0: 8 EC, 20 cenários, 14 ADV, 1.626 linhas | v1.1: 9 EC, 22 cenários (T21, T22), 15 ADV (ADV-15), 1.812 linhas |
+| F-1/F-2 | linha P-11 da Incorporação | "Fibonacci/Fractal no roteiro = **decidir depois**; roteiro como dado versionado \| RULE-MDC-002 (grafo versão 1 sem nó Fibonacci/Fractal; acréscimo = nova versão do dado)" | decisões de Andraus de 2026-11-14 (abaixo) |
+| F-1/F-2 | RULE-MDC-002 (e)(f) | "(e) Fibonacci/Fractal: SEM nó na versão 1 (P-11 = decidir depois). Acrescentá-los = nova versão do dado, registrada por ato de Andraus, sem reescrever esta Spec; condição nova de aresta fora da lista fechada exige errata. (f) Só Andraus registra versão do grafo (a versão 1 = DN-3); …" | Fibonacci = skill, sem nó; confluência fractal distinta, decidir depois |
+| F-1 | CC-01; tabela WORKFLOW (WF-02/03); D1 Non-goals; BASpec-002 | "Fibonacci e Fractal → **sem nó** na versão 1 (P-11 …)"; "Fibonacci/Fractal sem passo (P-11)"; "\| Posição de Fibonacci/Fractal no roteiro \| **P-11 = decidir depois** \| abertura SPEC-010/011 \|"; "versão 1 sem Fibonacci/Fractal (P-11)" | idem |
+| F-1 | T04 (c); T05 | "(c) nó FIBONACCI sem posto declarado"; T05 "Grafo com Fibonacci em versão futura … ESTRUTURAL(1) →[OPORTUNIDADE_SIM] FIBONACCI(2) →[OPORTUNIDADE_SIM] INSTITUCIONAL(4) …" | não criar nó/aresta de Fibonacci; T05 passa a nó fictício NOVO_X |
+| F-1 | DN-3 (Perguntas; Decisões abertas) | "…não confirmada por ora — antes, um inventário de Fibonacci/Fractal. Segue `[DECISÃO NECESSÁRIA]`…" | nota de compatibilidade; DN-3 segue aberta |
+| F-4 | RULE-MDC-001 (a); Nota de gate BL-026; tabela WORKFLOW | (sem menção a F-4) | registrar divergência com WF-R01 (CF-D) sem criar tabela/parâmetro |
+| — | contagens | v1.0: 8 EC, 20 cenários, 14 ADV, 1.626 linhas | v1.1: 9 EC, 22 cenários (T21, T22), 15 ADV (ADV-15), 1.829 linhas |
+
+## Decisões de Andraus registradas na R2 (AskUserQuestion, via Orquestrador)
+
+| ID | Data | Conteúdo | Onde no Plan v1.1 |
+|---|---|---|---|
+| DN-1 | 2026-11-08 | decidir depois, com a SPEC-014 (segue `[DECISÃO NECESSÁRIA]`) | RULE-MDC-007 (d); Perguntas 1 |
+| DN-2 | 2026-11-08 | a Fase 1 só detecta e avisa; não abre ciclo | RULE-MDC-004 (d); EARS 5; Perguntas 2 |
+| DN-3 | 2026-11-08 | não confirmada (inventário de Fibonacci/Fractal antes) | RULE-MDC-002 (f); Perguntas 3 |
+| F-1 | 2026-11-14 | literal: "Fibonacci e confluência fractal não são a mesma coisa. Fibonacci é uma skill que pode e será utilizado por agentes Elliott, SMC e ICT. A skill servirá para confirmação dos graus, retrações e projeções. Porém manter a etapa da especificação para essa skill para momento oportuno." | Incorporação; RULE-MDC-002 (e); CC-01; D1; DN-3 (nota) |
+| F-2 | 2026-11-14 | Fibonacci por ora só confere e publica zonas como evidência; permissão de sub-hipótese mantida sem uso até a Spec da skill | Incorporação; RULE-MDC-002 (e) |
+| F-3 | 2026-11-14 | leitura macro (WF-C01) inalterada: estrutural + institucional; J-001/WF-D03 seguem abertas | Incorporação; tabela WORKFLOW (WF-04/WF-C01) |
+| F-4 | 2026-11-14 | literal: "Não, manter S1/D1/H4/H1/M5 fixo" — diverge de WF-R01; só Andraus reconcilia | Incorporação; RULE-MDC-001 (a); CF-D; Nota de gate BL-026 |

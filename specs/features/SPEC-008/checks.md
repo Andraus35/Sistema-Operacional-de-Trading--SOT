@@ -20,14 +20,15 @@
 | **F2** θ sem número; limiares-piloto do sinal ≠ θ; campo comparado = `global_conviction` `[INFERÊNCIA]`; `gate_result`/`thresholds_used` ignorados | DHR-SPEC008-001 §3 (ii); P-5; INV-03; CCM-001 Cap.3/Cap.4 e nota N1/N3 | CC-02; CC-03; Termo 4; INHERITS CCM-001; RULE-MDC-005 (c)(d); D4.4; EARS 6; BASpec-005; EC-MDC-009; Fixture CV1; T01; T08 (b); tabela TRACE-06 | Grep "valor agregado" restante só em RULE-MDC-005 (d) (explicação do nome do campo); nenhum dígito associado a θ ✔ |
 | **F3** A Fase 1 nunca origina ciclo (nem rearme); ruptura: só detecta e avisa | P-12; MMC-001 §4; DN-2 (Andraus, 2026-11-08) | RULE-MDC-001 (c); INV-MDC-01; RULE-MDC-004 (d); RULE-MDC-007 (e); EARS 5; T13, T18; ADV-10 (i); Perguntas DN-2; Incorporação | mesma afirmação em todos; DN-2 registrada como decisão, sem mudança de comportamento ✔ |
 | **F4** Pisos e níveis: despacho/transição/pedido de tempo/pedido de ciclo/entrega/invocação macro E2; livro e aviso E1; trava E3; BASpec-009 = E2 | ABERTURA §4; atomic-spec §10.2; parecer R1 m-07 | cabeçalhos `[E1/E2/E3]` das BASpecs; EC LEVEL; Escala E0–E3; CC-11 | Grep `^### BASpec-MDC-` (l.691..914): 010 = E1; 009 = E2; 012 = E3; demais E2; EC-005/007 = E1; EC-008 = E3; demais (incl. EC-009) E2 — iguais à Escala ✔ |
-| **F5** Allowlist = seis capacidades; cada uma com EC | MMC-001 §2.2/§5/§6.4-a/§6.6; parecer R1 m-07 | INV-MDC-01 (l.320); BASpec-012; EC-008; contrato `capability_registry`; tabela "Capacidade da allowlist → EC" (l.1601) | mesma lista; (1) ler = sem efeito, só trava ✔ |
+| **F5** Allowlist = seis capacidades; cada uma com EC | MMC-001 §2.2/§5/§6.4-a/§6.6; parecer R1 m-07 | INV-MDC-01 (l.326); BASpec-012; EC-008; contrato `capability_registry`; tabela "Capacidade da allowlist → EC" (l.1616) | mesma lista; (1) ler = sem efeito, só trava ✔ |
 | **F6** `MARK_CONSUMED`: alarme disparado e vivo (F16, F17; F19, F20, F22, F35 em `ATIVADO`; F30 em `ARMADO`/`ATIVADO`); nunca em `CONTEXTO_FORMADO`/`ARMADO` sem disparo, nem em F32/F37 | P-12; WF-A02 | RULE-MDC-006 (d)(f)(g)(h); RULE-MDC-007 (d); D5 (nota + linhas); Interface; EC-MDC-004 PRECOND; T13, T21, ADV-12 (c) | Grep "MARK_CONSUMED" = 29 linhas; Interface e EC-004 PRECOND listam o mesmo conjunto; RULE-MDC-007 (d) é a regra-fonte ✔ |
-| **F7** Estados = WF-F02; nenhuma seta de volta | WF-F02; MMC-001 §3.2.3 | RULE-MDC-007 (a)(e); D5; ADV-13 | D5 (l.960–1007): estados ⊆ WF-F02; F30–F37 só ENC ou "sem transição" ✔ |
+| **F7** Estados = WF-F02; nenhuma seta de volta | WF-F02; MMC-001 §3.2.3 | RULE-MDC-007 (a)(e); D5; ADV-13 | D5 (l.973–1020): estados ⊆ WF-F02; F30–F37 só ENC ou "sem transição" ✔ |
 | **F8** Sem relógio; contagem `clock_reads` vem do runtime | research §3.4/§3.6; P-9 | RULE-MDC-010 (c); INV-MDC-01; D4.2; T-2; ADV-14; EC-005/008 | EC-005 e ADV-14 citam o `capability_audit_record` ✔ |
-| **F9** Medida 1.812 / alerta 1.900 / teto 2.000 | RULE-ECC-07; P-3 | Dimensionamento; este checks | mesmos valores ✔ |
+| **F9** Medida 1.829 / alerta 1.900 / teto 2.000 | RULE-ECC-07; P-3 | Dimensionamento; este checks | mesmos valores ✔ |
 | **F10** Disposições do backlog | ABERTURA §9 | "Nota de gate" | cinco linhas inalteradas ✔ |
 | **F11** (R2) Orçamento de rodadas e de TEMPO no pedido + `budget_ref` | SPEC-048 v1.4 (Requisitos: "SPEC-008: fornecer orçamento (rodadas, tempo) no pedido"; `query_request.budget_ref`) | RULE-MDC-003 (a); RULE-MDC-008 (a); tabela de parâmetros + reconciliação; INHERITS; Requisitos; contrato `dispatch_request`; EC-002; T01; 4Es e latência | Grep "budget" — mesmas duas chaves {`max_rounds`, `stage_deadline`} + `budget_ref` em todos ✔ |
 | **F12** (R2) "Invocação" = pedida; sem nova tentativa macro | RULE-CF-010 (2x por ciclo) | RULE-MDC-005 (a)(e); RULE-MDC-003 (f) (última frase); D4.4; D5 F06/F36; EARS 6; BASpec-005; EC-009; T22 (c)(d); ADV-06 | nenhuma linha manda nova tentativa macro (Grep "nova tentativa" — só nó do despacho) ✔ |
+| **F14** (R2) Decisões de Andraus de 2026-11-14: F-1 Fibonacci = skill dos agentes analíticos, sem nó; confluência fractal = decidir depois; F-2 só confere/publica zonas, sub-hipótese sem uso; F-3 leitura macro inalterada; F-4 TFs S1/D1/H4/H1/M5 fixos (diverge de WF-R01) | AskUserQuestion 2026-11-14 (via Orquestrador) | Incorporação (linhas P-11, F-1..F-4); CC-01; tabela WORKFLOW (WF-02/03, WF-04, WF-R01); D1 Non-goals; RULE-MDC-001 (a); RULE-MDC-002 (e)(f); BASpec-002; Nota de gate BL-026; T04 (c), T05 (nó fictício NOVO_X); R-13; CF-D; Decisões abertas; TRACE-06; DN-3 | Grep "FIBONACCI" no plan = 0 (nenhum nó/aresta de Fibonacci); "S1/D1/H4/H1/M5" só em texto de decisão/conflito, nunca como parâmetro; DN-3 segue `[DECISÃO NECESSÁRIA]`; J-001, WF-D03, BL-026, N-001 seguem em aberto ✔ |
 | **F13** (R2) Contagens da trava = consultas ao `capability_audit_record` do runtime | parecer R1 M-05 | INV-MDC-01; contrato; BASpec-012 GATE; EC-005/008; T01; ADV-10/11/14; Requisitos (Runtime/SPEC-040); R-20 | toda ocorrência de `model_calls`/`external_emissions`/`foreign_publications`/`clock_reads` em POSTCOND/EVIDENCE/VERIFICAÇÃO cita o registro do runtime ou o contrato ✔ |
 
 ---
@@ -39,16 +40,16 @@
 | 1 | Plan só por ordem expressa; Manager Contract antes | cabeçalho "Ordem de Andraus"; Herança (pai MMC-001 v1.0) | ✔ (registro na ata = Orquestrador) |
 | 2 | Gate `validate_spec_sot.py` sobre o `plan.md` | §3 abaixo (conferência manual) | **NÃO VERIFICADO por execução** — sem Bash |
 | 3 | J-001/N-001 abertas; "conclusivo" sem número | F2 | ✔ |
-| 4 | Teto 2.000 / alerta 1.900 | F9 (1.812) | ✔ (medida a reconferir por script) |
-| 5 | Interface com a Spec de Tempo como `[PROPOSTA]` | seção "Interface com a Spec de Tempo" (l.1017); T-9 novo | ✔ |
-| 6 | Errata de re-apontamento só aqui, aditiva | "Proposta de errata aditiva" (l.1672) — inalterada na R2 (só m-04 do Orquestrador) | ✔ |
+| 4 | Teto 2.000 / alerta 1.900 | F9 (1.829) | ✔ (medida a reconferir por script) |
+| 5 | Interface com a Spec de Tempo como `[PROPOSTA]` | seção "Interface com a Spec de Tempo" (l.1030); T-9 novo | ✔ |
+| 6 | Errata de re-apontamento só aqui, aditiva | "Proposta de errata aditiva" (l.1687) — inalterada na R2 (só m-04 do Orquestrador) | ✔ |
 | 7 | FSM em tabela verificável; toda ação mapeada; sem "reset" | D5 (38 linhas: F01..F37 com F08a/F08b); §5 abaixo | ✔ |
-| 8 | Herança MMC-001 v1.0; conservação do conjunto | Herança/Delta (l.141) + "Conservação do pai" | ✔ |
+| 8 | Herança MMC-001 v1.0; conservação do conjunto | Herança/Delta (l.145) + "Conservação do pai" | ✔ |
 | 9 | Nenhuma BASpec H/P | 12 blocos `CLASSE :` — 11 D, 1 C | ✔ |
 | 10 | Fronteiras CONF-1/P-12/CONF-5 | D5 coluna Dono; RULE-MDC-011 (c); Interface | ✔ |
 | 11 | Respostas homologadas aplicadas; P-11/P-13 sem fechar; respostas DN de 2026-11-08 aplicadas sem fechar DN-1/DN-3 | "Incorporação das decisões" (linha "Respostas de Andraus a DN-1/2/3"); Perguntas | ✔ |
 | 12 | Nenhuma decisão aberta fechada | §6 abaixo | ✔ |
-| 13 | Todo EC com campo de registro que prove a execução; recusas da trava com código e cenário | Cada EVIDENCE/POSTCOND usa campo do contrato lógico (`cycle_log_entry` com `fsm_row`/`rule_id`/`capability_check_ref`; `dispatch_request.budget`; `macro_invocation`) **ou** a fonte declarada `capability_audit_record` do runtime (contrato l.1064; requisito em "Requisitos a outras Specs"). Contagens `model_calls`/`external_emissions`/`foreign_publications`/`clock_reads` definidas como consultas a esse registro. A prova só é executável quando o runtime gravar o registro — até lá, INDETERMINADO e trava **não** declarada verificada (INV-MDC-01) | ✔ quanto à **especificação** do lastro; a **existência** do registro do runtime é requisito (BUILD/SPEC-040) — **NÃO VERIFICÁVEL** nesta fase |
+| 13 | Todo EC com campo de registro que prove a execução; recusas da trava com código e cenário | Cada EVIDENCE/POSTCOND usa campo do contrato lógico (`cycle_log_entry` com `fsm_row`/`rule_id`/`capability_check_ref`; `dispatch_request.budget`; `macro_invocation`) **ou** a fonte declarada `capability_audit_record` do runtime (contrato l.1077; requisito em "Requisitos a outras Specs"). Contagens `model_calls`/`external_emissions`/`foreign_publications`/`clock_reads` definidas como consultas a esse registro. A prova só é executável quando o runtime gravar o registro — até lá, INDETERMINADO e trava **não** declarada verificada (INV-MDC-01) | ✔ quanto à **especificação** do lastro; a **existência** do registro do runtime é requisito (BUILD/SPEC-040) — **NÃO VERIFICÁVEL** nesta fase |
 | 14 | Pesquisa não refeita; fontes do Dossiê citadas por ID | "Classificação das fontes externas" | ✔ |
 
 ---
@@ -99,11 +100,11 @@
 | Check | Regra do script | Evidência no `plan.md` v1.1 | Estado (manual) |
 |---|---|---|---|
 | STRUCT-01 | `complexidade [|:=] CRITICAL` e `profundidade-alvo [|:=] D\d` | tabela do cabeçalho + "Complexidade: CRITICAL. Profundidade-alvo: D0–D8" (l.20) | ✔ (manual) |
-| STRUCT-02 | "Constitution Check"; "elliott"; "conviction … (pendente\|J-001\|…\|aberto)" | l.122; CC-01; CC-03 "Conviction Vector (J-001 ABERTA, pendente)" | ✔ (manual) |
+| STRUCT-02 | "Constitution Check"; "elliott"; "conviction … (pendente\|J-001\|…\|aberto)" | l.126; CC-01; CC-03 "Conviction Vector (J-001 ABERTA, pendente)" | ✔ (manual) |
 | STRUCT-03 | ao menos uma etiqueta | `[FONTE]`, `[INFERÊNCIA]`, `[PROPOSTA]`, `[DECISÃO NECESSÁRIA]`, `[EXTERNO]` | ✔ (manual) |
-| STRUCT-04 | EARS "quando …, … DEVE" | EARS 1–13 (l.630..642) | ✔ (manual) |
+| STRUCT-04 | EARS "quando …, … DEVE" | EARS 1–13 (l.643..655) | ✔ (manual) |
 | STRUCT-05 | QUANDO/ENTÃO/PORQUE/REFERÊNCIA/VERIFICADO POR | 12 BASpecs | ✔ (manual) |
-| STRUCT-06 | efeito ⇒ 8 campos de EC | EC-MDC-001..009 com CAPABILITY…EVIDENCE (EC-009 novo, l.1587) | ✔ (manual) |
+| STRUCT-06 | efeito ⇒ 8 campos de EC | EC-MDC-001..009 com CAPABILITY…EVIDENCE (EC-009 novo, l.1602) | ✔ (manual) |
 | STRUCT-07 | nenhum limiar "estrutural ≥60", "total ≥75", "conviction … 60/75%" | nenhum desses padrões; `thresholds_used` citado só como campo ignorado, sem número | ✔ (manual) |
 | STRUCT-08 | marcador de status | "FATO NORMATIVO", "documentado ≠ homologado", `[DECISÃO NECESSÁRIA]` | ✔ (manual) |
 | STRUCT-09 | profundidade ≤ teto | D0–D8 com CRITICAL | ✔ (manual) |
@@ -111,7 +112,7 @@
 | STRUCT-11 | RULE-ECC-01/02 ⇒ `research.md` com "Dossiê de Pesquisa" | inalterado | ✔ (manual) |
 | STRUCT-12 | régua RULE-ECC-06 | inalterado (5 capturas REPO) | **NÃO VERIFICADO por execução** |
 | STRUCT-13 | BL-nnn + `Disposição:` | "Nota de gate" inalterada | ✔ (manual) |
-| STRUCT-14 | todo `CLASSE : X` com MECANISMO e CRITÉRIO 4Es (C: + GATE DE SAÍDA), antes de VERIFICADO POR | 12 blocos; o C (l.927) tem GATE DE SAÍDA (l.931) | ✔ (manual) |
+| STRUCT-14 | todo `CLASSE : X` com MECANISMO e CRITÉRIO 4Es (C: + GATE DE SAÍDA), antes de VERIFICADO POR | 12 blocos; o C (l.940) tem GATE DE SAÍDA (l.944) | ✔ (manual) |
 
 ---
 
@@ -138,12 +139,12 @@ Nenhuma regra sem BASpec, EC e cenário; nenhum cenário órfão. Tasks TK-01..1
 
 ## 5. Máquina de estados (C10)
 
-- [x] Tabela estado × evento × guarda → próximo/ENC, com código e dono (D5, l.960–1007).
-- [x] **Toda ação de efeito mapeia numa linha** (conferida linha a linha contra a coluna "Ação" e a Interface): despacho (F01, F03, F13), **republicação** (F33), **novo `attempt`** (F34), invocação macro (F06 — uma; nenhuma linha reinvoca), `ARM_ALARM` (F09), `MARK_CONSUMED` (F16, F17; F19, F20, F22, F35 em `ATIVADO`; F30 com alarme disparado), handoff (F16), aviso (F20, F21, F35), timer (F01, F03, F06, F09, F13). Evidência: tabela D5 + Interface (l.1021..) + EC-MDC-004 PRECOND — mesmo conjunto ✔.
+- [x] Tabela estado × evento × guarda → próximo/ENC, com código e dono (D5, l.973–1020).
+- [x] **Toda ação de efeito mapeia numa linha** (conferida linha a linha contra a coluna "Ação" e a Interface): despacho (F01, F03, F13), **republicação** (F33), **novo `attempt`** (F34), invocação macro (F06 — uma; nenhuma linha reinvoca), `ARM_ALARM` (F09), `MARK_CONSUMED` (F16, F17; F19, F20, F22, F35 em `ATIVADO`; F30 com alarme disparado), handoff (F16), aviso (F20, F21, F35), timer (F01, F03, F06, F09, F13). Evidência: tabela D5 + Interface (l.1030..) + EC-MDC-004 PRECOND — mesmo conjunto ✔.
 - [x] **Todo FAILURE-MODE com "nova tentativa" tem evento + linha + timer:** falha de publicação → `DISPATCH_PUBLISH_FAILED`/F33 (timer da etapa mantido); erro do agente analítico → `PUB_ERROR`/F34 (timer mantido); voltas esgotadas → `PUB_ROUNDS_EXHAUSTED`/F35 (sem nova tentativa); erro do mecanismo macro → `MACRO_ERROR`/F36 (sem nova tentativa — RULE-MDC-005 (a)(e)); silêncio do mecanismo → timer pedido em F06 → F19. Conferido contra a regra de cardinalidade (RULE-MDC-005 (a): invocação = pedida) — sem contradição ✔.
-- [x] **Cruzamento alarme (WF-A02) × estado do ciclo** (nota após D5, l.1005): `CONTEXTO_FORMADO` (ARMED F12/F30; EXPIRED/CANCELLED F31; TRIGGERED F29), `ARMADO` (TRIGGERED F13/F14/F30; EXPIRED/CANCELLED F15), `ATIVADO` (EXPIRED/CANCELLED F32), `AGUARDANDO` (D4.2 passo (2)), ENC (F28) ✔.
+- [x] **Cruzamento alarme (WF-A02) × estado do ciclo** (nota após D5, l.1018): `CONTEXTO_FORMADO` (ARMED F12/F30; EXPIRED/CANCELLED F31; TRIGGERED F29), `ARMADO` (TRIGGERED F13/F14/F30; EXPIRED/CANCELLED F15), `ATIVADO` (EXPIRED/CANCELLED F32), `AGUARDANDO` (D4.2 passo (2)), ENC (F28) ✔.
 - [x] Elegibilidade reconferida no consumo de alarme/setup (F12, F13, F16, F17 guarda "elegível"; F30) ✔.
-- [x] Nenhuma seta de volta (nota l.1007; ADV-13) ✔. Nenhum estado fora de WF-F02 ✔.
+- [x] Nenhuma seta de volta (nota l.1020; ADV-13) ✔. Nenhum estado fora de WF-F02 ✔.
 - [x] Dono por linha: F01–F23, F27–F37 = SPEC-008; F24–F25 = SPEC-014; F26 = RISK-SPEC ✔.
 - [x] Ramos de WF-F01: 1 = F04; 2 = F08a; 3 = F17 (e F19 em `ATIVADO`); 4 = F26; 5 = F15, F31, F32 (EXPIRED); 6 = fora (P-13) ✔.
 - [ ] Rótulo final dos ENC — **pendente de Andraus (DN-1, decidir depois com a SPEC-014)**; decisão aberta declarada, não falha.
@@ -163,6 +164,7 @@ Nenhuma regra sem BASpec, EC e cenário; nenhum cenário órfão. Tasks TK-01..1
 | DN-1, DN-3 | `[DECISÃO NECESSÁRIA]` (Andraus 2026-11-08: DN-1 decidir depois com a SPEC-014; DN-3 não confirmada) | ✔ não fechadas |
 | DN-2 | decidida por Andraus (2026-11-08): só detecta e avisa — comportamento inalterado | ✔ registrada (não é decisão do ROADMAP) |
 | DNs novas na R2 | nenhuma | ✔ |
+| F-1..F-4 (Andraus, 2026-11-14) | registradas como decisões; F-1 compatível com o roteiro v1 sem confirmar DN-3; F-4 diverge de WF-R01 → CF-D (só Andraus); J-001, WF-D03, BL-026, N-001, P-11 (fractal) seguem em aberto | ✔ nada fechado |
 
 ---
 
