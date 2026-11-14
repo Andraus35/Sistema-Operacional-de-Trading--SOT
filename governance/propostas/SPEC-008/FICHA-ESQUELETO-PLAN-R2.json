@@ -1,0 +1,56 @@
+{
+ "achados": [
+  {
+   "id": "R2-M-01",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-M-02",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m01",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m02",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m03",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m04",
+   "natureza": "aplicado_m"
+  },
+  {
+   "id": "R2-m05",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m06",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m07",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m08",
+   "natureza": "aplicado_m"
+  },
+  {
+   "id": "R2-m09",
+   "natureza": "aplicado_m"
+  },
+  {
+   "id": "R2-m10",
+   "natureza": "desenho"
+  },
+  {
+   "id": "R2-m11",
+   "natureza": "aplicado_m"
+  }
+ ]
+}

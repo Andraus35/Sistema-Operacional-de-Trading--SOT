@@ -70,7 +70,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | CONF-5 | abrir/fechar Killzone na Spec de Tempo; ator = Manager | Interface com a Spec de Tempo |
 | MMC-001 errata R3-m07 | Classe D/C = **orientação**; obrigação = "nenhuma BASpec H/P; se precisar de julgamento, volta a Andraus" | CC-11; D3 (todas D, uma C, zero H/P) |
 | Respostas de Andraus a DN-1/2/3 (AskUserQuestion, 2026-11-08, transmitidas pelo Orquestrador; a citar na ata do Plan) | DN-1 = **decidir depois, com a SPEC-014**; DN-2 = **a Fase 1 só detecta e avisa, não abre ciclo**; DN-3 = **não confirmada** (Andraus pediu antes um inventário de Fibonacci/Fractal) | DN-1 e DN-3 seguem `[DECISÃO NECESSÁRIA]`; DN-2 registrada como decisão (comportamento de RULE-MDC-004 (d) inalterado); P-11 segue "decidir depois" na parte fractal |
-| **F-1** (Andraus, AskUserQuestion 2026-11-14, via Orquestrador; literal) | "Fibonacci e confluência fractal não são a mesma coisa. Fibonacci é uma skill que pode e será utilizado por agentes Elliott, SMC e ICT. A skill servirá para confirmação dos graus, retrações e projeções. Porém manter a etapa da especificação para essa skill para momento oportuno." | RULE-MDC-002 (e): Fibonacci **não** é nó do grafo de despacho (nenhum nó/aresta criado); especificação da skill = depois; confluência fractal = **decidir depois** (onde mora/quem produz). Roteiro v1 compatível; DN-3 segue `[DECISÃO NECESSÁRIA]` |
+| **F-1** (Andraus, AskUserQuestion 2026-11-14, via Orquestrador; literal) | "Fibonacci e confluência fractal não são a mesma coisa. Fibonacci é uma skill que pode e será utilizado por agentes Elliot, SMC e ICT. A skill servira para confirmação dos graus, retrações e projeções. Porém manter a etapa da especificação para essa skill para momento oportuno." | RULE-MDC-002 (e): Fibonacci **não** é nó do grafo de despacho (nenhum nó/aresta criado); especificação da skill = depois; confluência fractal = **decidir depois** (onde mora/quem produz). Roteiro v1 compatível; DN-3 segue `[DECISÃO NECESSÁRIA]` |
 | **F-2** (idem, 2026-11-14) | Fibonacci, por ora, só CONFERE e publica zonas como evidência; a permissão de sub-hipótese (AGENTS.md §6 item 2, PRIMARY/SUB) continua valendo, sem uso até a Spec da skill de Fibonacci | nada a despachar aqui; RULE-MDC-002 (e); o Manager não consome zona de Fibonacci como condição de aresta |
 | **F-3** (idem, 2026-11-14) | a leitura de convicção macro (WF-C01) não muda agora: estrutural + institucional | RULE-MDC-005 (a) inalterada; J-001 e WF-D03 seguem ABERTAS |
 | **F-4** (idem, 2026-11-14; literal) | "Não, manter S1/D1/H4/H1/M5 fixo" (contra a tabela editável por tipo de trading) | registrada como decisão; **diverge** de WF-R01 (tabela por tipo) — só Andraus reconcilia (CF-D); o `tf_triple` do pedido segue dado (RULE-MDC-001 (a)); nenhum TF vira parâmetro numérico deste Plan; BL-026 e N-001 seguem em aberto |
@@ -553,7 +553,7 @@ RULE-MDC-007: MÁQUINA DE ESTADOS DO CICLO (trecho Fase 1).
                 ainda está vivo: encerramento em `ATIVADO` ou no próprio evento `ALARM_TRIGGERED` (F30) pede
                 `MARK_CONSUMED` (P-12: termina "usado"), EXCETO quando o alarme já morreu (F32 — `EXPIRED`/
                 `CANCELLED`) ou quando o registro de capacidades falhou (F37 — nenhum efeito); em `CONTEXTO_FORMADO`
-                e `ARMADO`, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo).
+                e `ARMADO` sem disparo, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo).
             (e) Nenhuma seta de volta, nenhum rearme, nenhum ciclo aberto pela Fase 1 (P-12; MMC-001 §3.2.3).
             (f) Toda guarda é comparação de campos publicados ou registrados; o gate nunca é modelo (ENF-03).
             [Fonte: WF-F01, WF-F02; MMC-001 §3.2; CONF-1; P-12; research §3.3 (SRC-SCXML-01 [EXTERNO] — tabela fechada)]
@@ -594,7 +594,7 @@ RULE-MDC-009: PARAR, AGUARDAR, ESCALAR, ENCERRAR.
 
 RULE-MDC-010: LIVRO DE BORDO DO CICLO.
             (a) Só-inserção, por ciclo (INV-07). Entrada: `cycle_id`, `log_seq`, `entry_type`, `rule_id` (SEMPRE o
-                ID de uma RULE — ex.: `RULE-MDC-006`), `fsm_row` (linha F-nn de D5 aplicada | —), `graph_version`,
+                ID de uma RULE ou INV-MDC-01 — ex.: `RULE-MDC-006`), `fsm_row` (linha F-nn de D5 aplicada | —), `graph_version`,
                 `limits_version`, `causation_event_id`, `recorded_instant`, `from_state`, `to_state` | —, `code` | —,
                 `refs`, `capability_check_ref` (por ação com efeito — INV-MDC-01).
             (b) Gravar ANTES do efeito (despacho, `time_request`, entrega, aviso). Livro indisponível ⇒ nenhum
@@ -892,7 +892,7 @@ BASpec-MDC-010:
   QUANDO:       Qualquer efeito vai ser produzido, ou o componente reinicia
   ENTÃO:        Aplica RULE-MDC-010 — entrada antes do efeito; livro indisponível ⇒ nenhum efeito; instante só de
                 evento/timer; replay reconstrói o estado e reemite efeito pendente com a mesma chave
-  PORQUE:       "Por que este agente rodou agora" deve ser reconstruível (D9); reinício não refaz etapa (research §3.4)
+  PORQUE:       "Por que este agente analítico rodou agora" deve ser reconstruível (D9); reinício não refaz etapa (research §3.4)
   REFERÊNCIA:   RULE-MDC-010; INV-07; P-6; RULE-CEB-003/007
   CLASSE/MECANISMO:
     CLASSE      : D (Determinístico)
@@ -972,7 +972,7 @@ BASpec-MDC-012:
 
 ## D5 — Estado: máquina do ciclo em TABELA (WF-F02; dono por linha — CONF-1)
 
-> Leitura: "ENC" = encerramento (RULE-MDC-007 (d)): grava `cycle_closed`; nenhum evento posterior aceito; rótulo final de WF-F02 = DN-1. Toda ação é precedida da conferência de capacidades e da entrada no livro de bordo (D4.2 passos (7)(8)). `MARK_CONSUMED` conforme RULE-MDC-007 (d): encerramento em `ATIVADO` ou no próprio `ALARM_TRIGGERED` pede, salvo F32 (alarme já morto) e F37 (sem efeito); em `CONTEXTO_FORMADO`/`ARMADO`, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo). "Elegível" = RULE-MDC-006 (h). Linhas F30–F37 acrescentadas na v1.1 (numeração nova para não renumerar referências). Linhas de outros donos: listadas, **não** especificadas aqui; gate determinístico do dono (MMC-001 §3.2.2).
+> Leitura: "ENC" = encerramento (RULE-MDC-007 (d)): grava `cycle_closed`; nenhum evento posterior aceito; rótulo final de WF-F02 = DN-1. Toda ação é precedida da conferência de capacidades e da entrada no livro de bordo (D4.2 passos (7)(8)). `MARK_CONSUMED` conforme RULE-MDC-007 (d): encerramento em `ATIVADO` ou no próprio `ALARM_TRIGGERED` pede, salvo F32 (alarme já morto) e F37 (sem efeito); em `CONTEXTO_FORMADO`/`ARMADO` sem disparo, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo). "Elegível" = RULE-MDC-006 (h). Linhas F30–F37 acrescentadas na v1.1 (numeração nova para não renumerar referências). Linhas de outros donos: listadas, **não** especificadas aqui; gate determinístico do dono (MMC-001 §3.2.2).
 
 | ID | Estado | Evento | Guarda (D) | Próximo | Ação | Código (`entry_type`/code) | Dono |
 |---|---|---|---|---|---|---|---|
@@ -1070,7 +1070,7 @@ dispatch_response (lido; publicado pelo agente analítico): {cycle_id, dispatch_
                    result_ref | —}
 macro_invocation: {cycle_id, macro_key, input_refs[2]}  → resultado (objeto CCM-001, lido: directional_conflict,
                    global_conviction; gate_result/thresholds_used/status ignorados) | MACRO_ERROR
-cycle_log_entry : {cycle_id | AUSENTE, log_seq, entry_type, rule_id (ID de RULE), fsm_row (F-nn | —), graph_version,
+cycle_log_entry : {cycle_id | AUSENTE, log_seq, entry_type, rule_id (ID de RULE ou INV-MDC-01), fsm_row (F-nn | —), graph_version,
                    limits_version, causation_event_id, recorded_instant, from_state, to_state | —, code | —, refs[],
                    counters{steps, failures[]}, capability_check_ref | AUSENTE,
                    abstention? {incerto, afeta, condicao_de_mudanca, informacao}}
@@ -1467,7 +1467,7 @@ VERIFICAÇÃO "MDC_ORIGIN_HYPOTHESIS_NOT_ELIGIBLE" sub "MDC_CONTEXT_LOST" (F30, 
 
 ## D9 — Auditabilidade (por referência)
 
-Todo despacho é reconstruível: `phase2_handoff.log_head` → livro de bordo do `cycle_id` (entradas em ordem de `log_seq`, cada uma com regra, versões, evento causador e instante registrado) → `dispatch_request` (chave) → publicações dos agentes analíticos (`object_id@version`, SPEC-004) → resultado macro (contrato CCM-001) → eventos da Spec de Tempo. Replay do livro com os mesmos eventos reproduz a mesma sequência de estados ("por que este agente rodou agora").
+Todo despacho é reconstruível: `phase2_handoff.log_head` → livro de bordo do `cycle_id` (entradas em ordem de `log_seq`, cada uma com regra, versões, evento causador e instante registrado) → `dispatch_request` (chave) → publicações dos agentes analíticos (`object_id@version`, SPEC-004) → resultado macro (contrato CCM-001) → eventos da Spec de Tempo. Replay do livro com os mesmos eventos reproduz a mesma sequência de estados ("por que este agente analítico rodou agora").
 
 ---
 
