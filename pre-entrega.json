@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "spec_dir": "specs/features/SPEC-008",
-  "plan_sha256": "44e6131fd9035c7030eccde2671c44cf159079390d1542f93a7e5dd48a33f8e8",
-  "checks_sha256": "e62dff7d7843b06f1ed0c7a85ca5b7e4bcfc7ac46005e9f10af9744100f42bf9",
+  "plan_sha256": "9eec405cc2136f760fc9fc756a6495360b6afb2665fc6cb5ea4cfac6066205fa",
+  "checks_sha256": "83288a65b00b901bf5bd092ad820941b96dd45d80ba68d61f2b72e55534493c6",
   "verificacoes": [
     {
       "id": "validate_spec_sot",
@@ -54,7 +54,7 @@
       "tipo": "informativo",
       "exit": 0,
       "status": "OK",
-      "output_sha256": "2d9ae534db4342c873bee0997bc91588fc3e2cf803671f36ff110e1b5d53a9d7",
+      "output_sha256": "855962bf23be8cb4c08e95c513cee8cdddaa79a0b3731d6e78182e4cf4712877",
       "cauda": [
         "ERRO=0 WARN=1 INFO=14 OK=1",
         "Somente leitura — Detector (ENF-03): não bloqueia, não decide.",
@@ -66,7 +66,7 @@
       "tipo": "informativo",
       "exit": 0,
       "status": "OK",
-      "output_sha256": "3624586f25f06e14cb895a843e7d5e6e4d6d1146618e5281344ff3335d0e4fbd",
+      "output_sha256": "3e9f003c64f6e72f4f8bee003759281e8972f127bc56b9f86ad33983b5ac0222",
       "cauda": [
         "------------------------------------------------------------",
         "ERRO=0 WARN=7 INFO=400  (use --info para ver os históricos)",

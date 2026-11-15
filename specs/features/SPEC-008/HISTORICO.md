@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | R1 | 2026-11-08 | v1.0 (commit `55d0989`; correções M do Orquestrador em `5c172dc`) | `governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R1-2026-11-08.md` | NÃO CONFORME — 5 Médias (M-01..M-05), 8 Menores (m-01..m-04 classe M aplicados pelo Orquestrador; m-05..m-08 ao Especificador) |
 | R2 | 2026-11-14 | v1.1 (commit `366af09`) | `governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R2-2026-11-14.md` | NÃO CONFORME — 2 Médias (R2-M-01, R2-M-02), 11 Menores (R2-m04/m05 parte/m08/m09/m11 aplicados pelo Orquestrador) |
-| R3 | 2026-11-15 | v1.2 | (pendente) | correção de R2-M-01, R2-M-02 e R2-m01..m03, m05 (parte), m06, m07, m10 |
+| R3 | 2026-11-15 | v1.2 (commit `f93c1af`) | `governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R3-2026-11-15.md` | CONFORME condicional — 0 Críticas, 0 Médias, 9 Menores; R3-m09 aplicado pelo Orquestrador; R3-m01/m02/m03/m06 corrigidos sem nova rodada (ordem de Andraus, AskUserQuestion 2026-11-15); R3-m04/m05/m07/m08 = condição de homologação/construção |
 
 ## R1 → R2 (v1.0 → v1.1) — texto anterior preservado (INV-07)
 
@@ -131,6 +131,20 @@ Contexto: atas DHR-SPEC008-004 (DN-1 decidir depois — não fechada; DN-2 decid
 | R2-m07 | RULE-MDC-006 (g) | "(g) Morte do alarme (WF-A02: `ARMED`/`TRIGGERED` → `EXPIRED` \| `CANCELLED`; WF-A03), em QUALQUER estado" | atribuição literal + `[INFERÊNCIA]` |
 | obs. (a)(b) | Conflitos | CF-E e CF-F não existiam | observações sem achado do parecer R2 |
 | — | Itens e medida | v1.1: 22 cenários, 1.829 linhas | v1.2: 23 cenários (T23), 1.883 linhas |
+
+## Pós-R3 (v1.2, commit `f93c1af` → correção de redação sem nova rodada; ordem de Andraus, AskUserQuestion 2026-11-15) — texto anterior preservado (INV-07; lido do arquivo antes da edição)
+
+| Achado | Local | Texto anterior (v1.2 do R3) | Motivo |
+|---|---|---|---|
+| R3-m01 | T19 QUANDO / VERIFICAÇÃO | "QUANDO      chega ALARM_TRIGGERED(A1) tardio e PUB(INSTITUCIONAL) atrasada" / "VERIFICAÇÃO code == \"MDC_CYCLE_CLOSED\" nas duas; dispatch_request == 0; estado e cycle_closed inalterados" | a PUB(INSTITUCIONAL) já consumida (F06) pararia na D4.2 (1) com `MDC_DUPLICATE_IGNORED`; trocada por `STAGE_TIMER_FIRED` tardio (chega ao (3)) |
+| R3-m01 | `checks.md` §2, parágrafo "Simulação passo a passo da D4.2" | "**Simulação passo a passo da D4.2 (R1-m06 / R2-m02 / R2-m03):** ADV-04 → (0); …; T19, ADV-06 (b), ADV-13, cancelamentos tardios de T21/ADV-15 → (3); …; ADV-06 (a) e ADV-12 (c) → (7). Nenhum cenário espera código de passo posterior ao que o pararia ✔." | o ✔ era falso para T19 |
+| R3-m02 | D4.2 passo (3) | "(3) ciclo encerrado ou em estado final → `MDC_CYCLE_CLOSED`;" | exceção nomeada: recusa do `MARK_CONSUMED` do ENC é resultado do efeito da linha (passo (9)), não evento |
+| R3-m03 | EARS 3 | "…tratar falha de publicação e erro do agente analítico como falha contada até o teto e NÃO DEVE consumir publicação de outro ciclo, de outro papel ou sem envelope." | propagar RULE-MDC-003 (h) |
+| R3-m03 | BASpec-MDC-003 ENTÃO (última linha) | "                erro do agente analítico ⇒ novo attempt; ambas contam para o teto (F33/F34); voltas esgotadas ⇒ F35" | idem |
+| R3-m06 | D4.2 passo (0) | "(0) envelope mínimo SPEC-005 → `MDC_EVENT_ENVELOPE_INVALID`;" | evento interno não tem envelope |
+| — | Histórico de versões, linha 1.2 | "…atas DHR-SPEC008-004 e DHR-FIBFRAC-001 citadas. Texto anterior: `HISTORICO.md` (R2→R3). \|" | registro da correção pós-R3 |
+| — | Dimensionamento, medida | "**1.883 linhas de corpo** (arquivo inteiro, última linha lida após a redação; não há seção `## Anexo`) — acima de 1.600 (confirmação já dada, P-3), **−17 sob o alerta de 1.900**, −117 sob o teto. v1.0 = 1.626; v1.1 = 1.829." | 1.885 linhas (+2) |
+| — | `checks.md` medida | "**1.883 linhas** (última linha, \"Pronto para revisão\", l.1883; nenhuma seção `## Anexo`) — > 1.600 (confirmado por Andraus, P-3), < 1.900 (alerta; folga 17)" | idem |
 
 ## Decisões de Andraus registradas na R2 (AskUserQuestion, via Orquestrador)
 
