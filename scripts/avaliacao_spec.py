@@ -70,6 +70,18 @@ def exigida(root, spec):
     return bool(a and a["data"] >= CUTOFF)
 
 
+def _veredito(txt):
+    """Veredito do parecer: a linha que contém "Veredito" (e as 2 seguintes) tem prioridade sobre qualquer menção solta de CONFORME no texto
+    (ex.: "teto CONFORME condicional"); sem a linha, cai no 1º casamento antes de "## Achados"."""
+    linhas = txt.splitlines()
+    for i, ln in enumerate(linhas):
+        if re.search(r"veredito", ln, re.I):
+            m = VEREDITO_RE.search(" ".join(linhas[i:i + 3]))
+            if m:
+                return m
+    return VEREDITO_RE.search(txt.split("## Achados")[0]) or VEREDITO_RE.search(txt)
+
+
 # ---------- métricas ----------
 def metricas(root, spec):
     root = Path(root)
@@ -88,7 +100,7 @@ def metricas(root, spec):
                 cod = a["cat"][0]
                 cats.setdefault(cod, set()).add((chave, rod))
             txt = (root / d["arquivo"]).read_text(encoding="utf-8", errors="replace")
-            vm = VEREDITO_RE.search(txt.split("## Achados")[0]) or VEREDITO_RE.search(txt)
+            vm = _veredito(txt)
             ficha = 0
             for b in FICHA_RE.findall(txt):
                 try:

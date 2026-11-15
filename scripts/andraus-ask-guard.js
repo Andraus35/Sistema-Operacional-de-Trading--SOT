@@ -171,6 +171,7 @@ function decidirMerge(payload, info, estado) {
 }
 
 function consultarAvaliacao() {
+  if (process.env.SOT_ASK_GUARD_SKIP_AVALIACAO === '1') return null;   // isolamento dos testes (não herdar o estado real do repositório)
   // Chama o detector Python local (sem rede). Falha/timeout => null (fail-open).
   const { spawnSync } = require('child_process');
   for (const [exe, pre] of [['python', []], ['python3', []], ['py', ['-3']]]) {

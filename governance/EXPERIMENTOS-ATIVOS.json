@@ -7,12 +7,19 @@
       "id": "P10-REGRA-DE-PARADA",
       "descricao": "(1) parecer só com Menores NÃO abre nova rodada (mecânicos por ficha M; demais viram condição de homologação ou ficam para a construção, à escolha de Andraus); Crítica e Média SEMPRE abrem rodada; (2) hash do delta obrigatório no pedido ao Revisor (SHA256-ALVO) da rodada 2 em diante; (3) teto de 3 rodadas de revisão do Plan — ao chegar nele com Média aberta, escala a Andraus; (4) métricas de tokens por papel e por rodada via `python scripts/telemetria_tokens.py reconciliar` (convenção `TOKENS:` no parecer).",
       "ata": "DHR-EXPERIMENTO-PARADA-001",
-      "estado": "ativo",
-      "escopo": {"tipo": "spec", "specs": ["SPEC-008"]},
+      "estado": "encerrado",
+      "escopo": {
+        "tipo": "spec",
+        "specs": [
+          "SPEC-008"
+        ]
+      },
       "teto_rodadas_revisao": 3,
       "hash_a_partir_da_rodada": 2,
       "escalado_por_andraus": false,
-      "marcador": "EXPERIMENTO: P10-REGRA-DE-PARADA"
+      "marcador": "EXPERIMENTO: P10-REGRA-DE-PARADA",
+      "encerrado_em": "2026-11-15",
+      "encerrado_por": "DHR-SPEC008-005"
     }
   ]
 }

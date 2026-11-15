@@ -1,6 +1,6 @@
 # checks.md — Verificação de Spec da SPEC-008 (fase spec-first)
 
-**Objeto:** `specs/features/SPEC-008/plan.md` **v1.2 (CANDIDATA — rodada R3: correção do parecer R2; aguarda Revisor rodada 3 e homologação de Andraus)** (Manager — Despacho e Ciclo, Fase 1).
+**Objeto:** `specs/features/SPEC-008/plan.md` **v1.2 — BASELINE (homologado por Andraus em 2026-11-15, `DHR-SPEC008-005`)** *[antes: "v1.2 (CANDIDATA — rodada R3 …; aguarda Revisor rodada 3 e homologação de Andraus)"]* (Manager — Despacho e Ciclo, Fase 1).
 **Natureza:** verificação estrutural da Spec (BASpec/EARS/Enforcement/Classe/FSM bem-formados) — **NÃO** é teste de runtime, **NÃO** é parecer do Revisor, **NÃO** é homologação. "VERIFY" interno = feedback. [FONTE: atomic-spec §14]
 **Método:** atomic-spec.md v1.5 · tlc-spec-lean (PLAN = Spec; CHECKS = verificação de spec) · overlay GUS-TLC-001
 **Data:** 2026-11-15 (v1.0: 2026-11-08; v1.1: 2026-11-14)

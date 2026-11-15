@@ -83,9 +83,23 @@ class TestAprovacaoProspectiva(unittest.TestCase):
             f.write_text(f.read_text(encoding="utf-8").replace("— BASELINE", ""), encoding="utf-8")
             self.assertFalse(A.exigida(td, "SPEC-123"))
 
-    def test_repositorio_real_nenhuma_spec_antiga_exigida(self):
-        for spec in A.aprovadas(REPO):
-            self.assertFalse(A.exigida(REPO, spec), spec)
+    def test_repositorio_real_so_exige_spec_aprovada_a_partir_do_corte(self):
+        """Retroatividade proibida: toda Spec aprovada ANTES do corte fica fora; a exigência segue exatamente a data da ata de aprovação final."""
+        aprov = A.aprovadas(REPO)
+        self.assertTrue(aprov)
+        for spec, info in aprov.items():
+            self.assertEqual(A.exigida(REPO, spec), info["data"] >= A.CUTOFF, spec)
+        for antiga in ("SPEC-007", "SPEC-048", "SPEC-049"):   # as três Specs fechadas com retrospectiva antes desta regra
+            self.assertFalse(A.exigida(REPO, antiga), antiga)
+
+
+class TestVeredito(unittest.TestCase):
+    def test_linha_veredito_tem_prioridade_sobre_mencao_solta(self):
+        txt = "# Parecer\nO teto seria CONFORME condicional por falta de gate.\n## Veredito\n**NÃO CONFORME.** 2 Médias.\n"
+        self.assertEqual(A._veredito(txt).group(1).upper(), "NÃO CONFORME")
+        self.assertEqual(A._veredito("## Veredito: CONFORME condicional — 0 Médias").group(1).lower(), "conforme condicional")
+        self.assertEqual(A._veredito("sem a palavra no cabeçalho\nCONFORME").group(1).upper(), "CONFORME")
+        self.assertIsNone(A._veredito("nada aqui"))
 
 
 class TestMetricas(unittest.TestCase):
