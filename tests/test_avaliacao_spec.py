@@ -83,9 +83,23 @@ class TestAprovacaoProspectiva(unittest.TestCase):
             f.write_text(f.read_text(encoding="utf-8").replace("— BASELINE", ""), encoding="utf-8")
             self.assertFalse(A.exigida(td, "SPEC-123"))
 
-    def test_repositorio_real_nenhuma_spec_antiga_exigida(self):
-        for spec in A.aprovadas(REPO):
-            self.assertFalse(A.exigida(REPO, spec), spec)
+    def test_repositorio_real_so_exige_spec_aprovada_a_partir_do_corte(self):
+        """Retroatividade proibida: toda Spec aprovada ANTES do corte fica fora; a exigência segue exatamente a data da ata de aprovação final."""
+        aprov = A.aprovadas(REPO)
+        self.assertTrue(aprov)
+        for spec, info in aprov.items():
+            self.assertEqual(A.exigida(REPO, spec), info["data"] >= A.CUTOFF, spec)
+        for antiga in ("SPEC-007", "SPEC-048", "SPEC-049"):   # as três Specs fechadas com retrospectiva antes desta regra
+            self.assertFalse(A.exigida(REPO, antiga), antiga)
+
+
+class TestVeredito(unittest.TestCase):
+    def test_linha_veredito_tem_prioridade_sobre_mencao_solta(self):
+        txt = "# Parecer\nO teto seria CONFORME condicional por falta de gate.\n## Veredito\n**NÃO CONFORME.** 2 Médias.\n"
+        self.assertEqual(A._veredito(txt).group(1).upper(), "NÃO CONFORME")
+        self.assertEqual(A._veredito("## Veredito: CONFORME condicional — 0 Médias").group(1).lower(), "conforme condicional")
+        self.assertEqual(A._veredito("sem a palavra no cabeçalho\nCONFORME").group(1).upper(), "CONFORME")
+        self.assertIsNone(A._veredito("nada aqui"))
 
 
 class TestMetricas(unittest.TestCase):
@@ -190,6 +204,19 @@ class TestDeterminismoEEstado(unittest.TestCase):
             monta(td)
             pend = A.pendentes(td)
             self.assertEqual(pend, [{"spec": "SPEC-123", "estado": "AUSENTE", "ata": "DHR-SPEC123-002"}])
+
+
+class TestRetrospectivaNaoInvalidaAvaliacao(unittest.TestCase):
+    def test_marcar_retrospectiva_feita_nao_desatualiza_a_avaliacao_respondida(self):
+        with tempfile.TemporaryDirectory() as td:
+            monta(td)
+            (Path(td) / L.RETRO).write_text("| SPEC-999 | x | 2026-01-01 | FEITA |\n", encoding="utf-8")   # retrospectiva de SPEC-123 ainda não feita
+            A.main(["--root", td, "gerar", "SPEC-123", "--write"])
+            A.main(["--root", td, "registrar", "SPEC-123", "--ata", "DHR-X-001", "--resposta", "ok"])
+            self.assertEqual(A.estado(td, "SPEC-123"), "RESPONDIDA")
+            (Path(td) / L.RETRO).write_text("| SPEC-123 | x | 2026-11-09 | FEITA |\n", encoding="utf-8")  # agora FEITA
+            self.assertEqual(A.estado(td, "SPEC-123"), "RESPONDIDA")                                  # continua válida
+            self.assertEqual(L.main(["--root", td, "--retro-check", "SPEC-123"]), 0)
 
 
 class TestBarraDaProximaSpec(unittest.TestCase):

@@ -6,6 +6,8 @@ const os = require('os');
 const path = require('path');
 const root = path.join(__dirname, '..');
 let fail = 0;
+// DHR-AVALIACAO-001: a 4ª regra da guarda consulta o estado REAL do repositório; os testes dos hooks reais não podem herdá-lo.
+process.env.SOT_ASK_GUARD_SKIP_AVALIACAO = '1';
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'sot-ask-test-'));
 const iso = (ms) => new Date(ms).toISOString();

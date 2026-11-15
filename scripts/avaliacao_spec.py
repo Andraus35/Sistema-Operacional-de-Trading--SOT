@@ -70,6 +70,18 @@ def exigida(root, spec):
     return bool(a and a["data"] >= CUTOFF)
 
 
+def _veredito(txt):
+    """Veredito do parecer: a linha que contém "Veredito" (e as 2 seguintes) tem prioridade sobre qualquer menção solta de CONFORME no texto
+    (ex.: "teto CONFORME condicional"); sem a linha, cai no 1º casamento antes de "## Achados"."""
+    linhas = txt.splitlines()
+    for i, ln in enumerate(linhas):
+        if re.search(r"veredito", ln, re.I):
+            m = VEREDITO_RE.search(" ".join(linhas[i:i + 3]))
+            if m:
+                return m
+    return VEREDITO_RE.search(txt.split("## Achados")[0]) or VEREDITO_RE.search(txt)
+
+
 # ---------- métricas ----------
 def metricas(root, spec):
     root = Path(root)
@@ -88,7 +100,7 @@ def metricas(root, spec):
                 cod = a["cat"][0]
                 cats.setdefault(cod, set()).add((chave, rod))
             txt = (root / d["arquivo"]).read_text(encoding="utf-8", errors="replace")
-            vm = VEREDITO_RE.search(txt.split("## Achados")[0]) or VEREDITO_RE.search(txt)
+            vm = _veredito(txt)
             ficha = 0
             for b in FICHA_RE.findall(txt):
                 try:
@@ -159,7 +171,10 @@ def lotes(itens):
 
 
 def digest(m, itens):
-    base = json.dumps({"m": m, "itens": [i["id"] for i in itens], "cutoff": CUTOFF}, sort_keys=True, ensure_ascii=False)
+    # `retrospectiva_feita` é CONSEQUÊNCIA do estado (registrar a retrospectiva), não dado de desempenho: fora do digest, senão marcar a
+    # retrospectiva `FEITA` invalidaria a avaliação já RESPONDIDA.
+    mm = {k: v for k, v in m.items() if k != "retrospectiva_feita"}
+    base = json.dumps({"m": mm, "itens": [i["id"] for i in itens], "cutoff": CUTOFF}, sort_keys=True, ensure_ascii=False)
     return hashlib.sha256(base.encode("utf-8")).hexdigest()
 
 
@@ -191,7 +206,7 @@ def gerar_texto(root, spec, estado="GERADA", resposta="—", ata_reg="—"):
           f"| Categorias recorrentes (≥2 rodadas) | {', '.join(m['categorias_recorrentes']) or 'nenhuma'} |",
           f"| …delas, sem prevenção registrada | {m['categorias_recorrentes_sem_prevencao']} ({', '.join(m['categorias_recorrentes_sem_prevencao_lista']) or '—'}) |",
           f"| Plan: linhas totais / corpo (alerta 1.900, teto 2.000) | {m['plan_linhas_total']} / {m['plan_corpo_linhas']} |",
-          f"| Retrospectiva registrada (`FEITA`) | {'sim' if m['retrospectiva_feita'] else 'não'} |", "",
+          "",
           "## 2. Recomendações de boas práticas (PROPOSTAS; fontes e 4Es por item)", ""]
     for i in itens:
         o.append(f"- **{i['id']} — {i['titulo']}** ({i['efeito_4Es']}): {i['recomendacao']}")

@@ -780,6 +780,62 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Regra do Orquestrador (AGENTS.md §12) e mecanismos de processo; não altera texto de agente de construção nem método de Spec."
+    },
+    {
+      "id": "DHR-FIBFRAC-001",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro de decisões de especificação (papel de uma skill e tempos gráficos); não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-FIBFRAC-002",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro de decisões de especificação; não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-SPEC008-004",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro de decisões de especificação; não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-EXPERIMENTO-PARADA-001",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Aplica experimento de processo já aprovado ao pedido de rodadas de um Plan; não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-PROCESSO-EXPERIMENTOS-001",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Mecanismo de processo (pedidos ao Especificador/Revisor e CI); não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-TELEMETRIA-002",
+      "data": "2026-11-14",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Correção de mecanismo de medição; não altera texto de agente de construção nem método."
+    },
+    {
+      "id": "DHR-SPEC008-005",
+      "data": "2026-11-15",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Homologação de Plan de Spec em redação: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-AVALIACAO-002",
+      "data": "2026-11-15",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro das respostas a uma avaliação de fim de Spec; não altera texto de agente nem método."
     }
   ]
 }

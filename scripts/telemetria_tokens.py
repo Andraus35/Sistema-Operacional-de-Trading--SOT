@@ -6,6 +6,8 @@ Uso:
   (sem argumentos)    hook PostToolUse/Agent: lê o evento em stdin e acrescenta UMA linha JSON a .telemetria/uso-tokens.jsonl.
   custo-beneficio     cruza tokens por Spec (telemetria local) com os achados dos pareceres (loop_ledger): tokens por rodada, por achado e por achado Média/Crítica.
   snapshot            grava governance/aprendizado/TELEMETRIA-TOKENS.md (retrato datado, versionável; o ledger do loop aponta para ele).
+  reconciliar [--sessao ID] [--projetos DIR]   (DHR-TELEMETRIA-002) lê o uso REAL dos transcripts dos subagentes (agent-*.jsonl + .meta.json), deduplicado por id de resposta, e grava/atualiza 1 registro por agente em .telemetria/uso-tokens.jsonl (idempotente). É também o que o hook SubagentStop/Stop executa sozinho.
+  tokens AGENT_ID       imprime os tokens NOVOS (in+out+cache criado) do agente, para a convenção `TOKENS:` do parecer.
   resumo [--json] [--por-spec]   agrega por agente / modelo / classe-de-tarefa (ou por Spec / agente / classe): chamadas, tokens (in/out/cache), custo EQUIVALENTE API (não é cobrança) e tokens por chamada.
 
 Garantias: DETECTOR (ENF-03) — nunca nega, nunca altera a chamada, falha => exit 0 silencioso. Não grava o texto do prompt nem da resposta
@@ -17,12 +19,16 @@ import json
 import re
 import sys
 import time
+from datetime import datetime
 from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SAIDA = ROOT / ".telemetria" / "uso-tokens.jsonl"
 PRECOS = ROOT / "governance" / "telemetria" / "PRECOS-MODELOS.json"
+PROJETOS = Path.home() / ".claude" / "projects"
+VERSAO_REG = 2   # sobe quando o formato/semântica do registro de transcript muda (força reler transcripts já reconciliados)
+OCIOSO_S = 1800   # intervalo entre mensagens acima disto = parado (rate limit, retomada, noite): não conta como tempo de trabalho
 CHAVES = {"input_tokens": "in", "output_tokens": "out", "cache_read_input_tokens": "cache_read",
           "cache_creation_input_tokens": "cache_create"}
 
@@ -97,13 +103,170 @@ def _emitir_log(ev, reg):
     log_ac.emite_seguro(log_ac.raiz_repo() / ".telemetria" / "eventos.jsonl", e, "L1")
 
 
+# ---------------------------------------------------------------------------------------------------------------------------
+# DHR-TELEMETRIA-002 — telemetria dos subagentes a partir do TRANSCRIPT (a fonte real do uso).
+# Causa da falha anterior: agente em segundo plano só devolve tokens no FIM, como notificação de tarefa (fora de qualquer chamada de
+# ferramenta); o PostToolUse/Agent vê só "lançado" => 9 chamadas sem tokens. O transcript do subagente guarda `message.usage` por
+# resposta, mas REPETE a mesma resposta em várias linhas (mesmo message.id): somar linhas dobraria/triplicaria o consumo => deduplica por id.
+# ---------------------------------------------------------------------------------------------------------------------------
+def _epoch(ts):
+    try:
+        return datetime.fromisoformat(str(ts).replace("Z", "+00:00")).timestamp()
+    except (ValueError, TypeError):
+        return None
+
+
+def _texto_msg(m):
+    c = m.get("content")
+    if isinstance(c, str):
+        return c
+    return " ".join(b.get("text", "") for b in c if isinstance(b, dict)) if isinstance(c, list) else ""
+
+
+def ler_transcript(caminho):
+    """Uso REAL de um transcript de subagente. Determinístico (mesma entrada => mesma saída). None se ilegível/sem respostas."""
+    caminho = Path(caminho)
+    uso_por_id = {}
+    modelos, usos_ferr = set(), set()
+    t0 = t1 = None
+    marcas = []
+    agent_id = sessao = prompt0 = None
+    try:
+        linhas = caminho.read_text(encoding="utf-8", errors="replace").splitlines()
+    except OSError:
+        return None
+    for linha in linhas:
+        try:
+            d = json.loads(linha)
+        except ValueError:
+            continue
+        if not isinstance(d, dict):
+            continue
+        agent_id = agent_id or d.get("agentId")
+        sessao = sessao or d.get("sessionId")
+        e = _epoch(d.get("timestamp"))
+        if e is not None:
+            marcas.append(e)
+            t0 = e if t0 is None else min(t0, e)
+            t1 = e if t1 is None else max(t1, e)
+        m = d.get("message")
+        if not isinstance(m, dict):
+            continue
+        if m.get("role") == "user" and prompt0 is None:
+            prompt0 = _texto_msg(m)
+        if m.get("role") != "assistant":
+            continue
+        mid = m.get("id") or d.get("uuid")
+        u = m.get("usage") or {}
+        uso_por_id[mid] = {n: int(u.get(k) or 0) for k, n in CHAVES.items()}   # mesma resposta repetida => 1 só (a última)
+        if m.get("model"):
+            modelos.add(m["model"])
+        for b in (m.get("content") if isinstance(m.get("content"), list) else []):
+            if isinstance(b, dict) and b.get("type") == "tool_use" and b.get("id"):
+                usos_ferr.add(b["id"])
+    if not uso_por_id:
+        return None
+    soma = {n: sum(v[n] for v in uso_por_id.values()) for n in CHAVES.values()}
+    marcas.sort()
+    ativo = sum(b - a for a, b in zip(marcas, marcas[1:]) if b - a <= OCIOSO_S)   # tempo ATIVO: intervalos > 30 min = agente parado/retomado
+    return {"agent_id": agent_id, "sessao": sessao, "modelos": sorted(modelos), "mensagens": len(uso_por_id), "tool_uses": len(usos_ferr),
+            "duracao_ms": int(ativo * 1000) if marcas else None,
+            "janela_ms": int((t1 - t0) * 1000) if t0 is not None and t1 is not None else None, "fim": t1, "prompt0": prompt0 or "", **soma}
+
+
+def registro_de_transcript(caminho):
+    """Registro no mesmo formato de `extrair`, com fonte='transcript'. `total` = tokens NOVOS (in+out+cache criado); o cache lido
+    (re-leitura do contexto a cada turno) fica à parte e só entra no custo. None se não houver uso."""
+    caminho = Path(caminho)
+    u = ler_transcript(caminho)
+    if not u:
+        return None
+    try:
+        meta = json.loads(caminho.with_suffix(".meta.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        meta = {}
+    prompt = u["prompt0"]
+    classe = re.search(r"^\s*CLASSE-TAREFA:\s*(\w+)", prompt, re.M)
+    alvo = re.search(r"^\s*ALVO:\s*(\S+)", prompt, re.M)
+    spec = re.search(r"SPEC-\d{3}", (alvo.group(1) if alvo else "") + " " + prompt)
+    try:
+        nbytes = caminho.stat().st_size
+    except OSError:
+        nbytes = None
+    return {"t": int(u["fim"]) if u["fim"] is not None else int(time.time()), "tool": "Agent", "agente": meta.get("agentType"),
+            "model": meta.get("model") or (u["modelos"][0] if u["modelos"] else None), "classe": classe.group(1).upper() if classe else None,
+            "spec": spec.group(0) if spec else None, "alvo": alvo.group(1) if alvo else None, "sessao": u["sessao"], "agent_id": u["agent_id"],
+            "in": u["in"], "out": u["out"], "cache_read": u["cache_read"], "cache_create": u["cache_create"],
+            "total": u["in"] + u["out"] + u["cache_create"], "duracao_ms": u["duracao_ms"], "janela_ms": u["janela_ms"], "tool_uses": u["tool_uses"],
+            "mensagens": u["mensagens"], "descricao": meta.get("description"), "finalizado": bool(meta.get("finished")),
+            "fonte": "transcript", "bytes": nbytes, "v": VERSAO_REG}
+
+
+def _transcritos(projetos=None, sessao=None, agent_id=None, caminho=None):
+    if caminho:
+        return [Path(caminho)]
+    base = Path(projetos) if projetos else PROJETOS
+    slug = str(ROOT).replace("/", "-").replace("\\", "-")
+    pasta = base / slug if (base / slug).is_dir() else base
+    padrao = f"{sessao}/subagents/agent-*.jsonl" if sessao else "*/subagents/agent-*.jsonl"
+    arqs = sorted(pasta.glob(padrao))
+    if agent_id:
+        arqs = [a for a in arqs if a.name == f"agent-{agent_id}.jsonl"]
+    return arqs
+
+
+def reconciliar(projetos=None, sessao=None, agent_id=None, caminho=None, saida=None):
+    """Grava/atualiza 1 registro por subagente (chave agent_id). Idempotente: transcript do mesmo tamanho (`bytes`) não é relido.
+    Substitui os 'stubs de lançamento' (chamada Agent/SendMessage sem tokens) das sessões reconciliadas. -> (gravados, ignorados)."""
+    saida = Path(saida) if saida else SAIDA
+    regs = []
+    if saida.exists():
+        for linha in saida.read_text(encoding="utf-8").splitlines():
+            try:
+                regs.append(json.loads(linha))
+            except ValueError:
+                pass
+    existentes = {r.get("agent_id"): r for r in regs if r.get("fonte") == "transcript" and r.get("agent_id")}
+    novos, ignorados, sessoes = {}, 0, set()
+    for arq in _transcritos(projetos, sessao, agent_id, caminho):
+        reg = registro_de_transcript(arq)
+        if not reg or not reg.get("agent_id"):
+            continue
+        ant = existentes.get(reg["agent_id"])
+        if ant and ant.get("v") == VERSAO_REG and ant.get("bytes") == reg.get("bytes") and ant.get("finalizado") == reg.get("finalizado"):
+            ignorados += 1
+            sessoes.add(reg.get("sessao"))
+            continue
+        novos[reg["agent_id"]] = reg
+        sessoes.add(reg.get("sessao"))
+    if not novos:
+        return 0, ignorados
+    out = [r for r in regs if not (r.get("fonte") == "transcript" and r.get("agent_id") in novos)]
+    out = [r for r in out if not (r.get("fonte") != "transcript" and r.get("tool") in ("Agent", "Task", "SendMessage")
+                                   and r.get("total") is None and r.get("sessao") in sessoes)]
+    out += sorted(novos.values(), key=lambda r: (r.get("t") or 0, r.get("agent_id") or ""))
+    saida.parent.mkdir(parents=True, exist_ok=True)
+    saida.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8")
+    return len(novos), ignorados
+
+
 def hook():
     try:
         ev = json.loads(sys.stdin.read() or "{}")
+        if ev.get("hook_event_name") in ("SubagentStop", "Stop"):
+            # DHR-TELEMETRIA-002: o uso real só existe no fim do agente (transcript); reconcilia (idempotente, fail-open).
+            try:
+                reconciliar(sessao=ev.get("session_id"), agent_id=ev.get("agent_id") if ev.get("hook_event_name") == "SubagentStop" else None,
+                            caminho=ev.get("agent_transcript_path") if ev.get("hook_event_name") == "SubagentStop" else None)
+            except BaseException:
+                pass
+            return 0
         if ev.get("tool_name") not in ("Agent", "Task"):
             return 0
         SAIDA.parent.mkdir(parents=True, exist_ok=True)
         reg = extrair(ev)
+        if reg.get("total") is None:
+            reg["lancamento"] = True   # agente em segundo plano: o uso virá do transcript (reconciliar), não deste evento
         with open(SAIDA, "a", encoding="utf-8") as f:
             f.write(json.dumps(reg, ensure_ascii=False) + "\n")
         for f_ in (_forma_payload, ):
@@ -147,6 +310,8 @@ def resumo(registros, por="agente"):
     grupos = defaultdict(lambda: {"chamadas": 0, "sem_tokens": 0, "total": 0, "in": 0, "out": 0, "cache_read": 0,
                                   "cache_create": 0, "custo": 0.0, "custo_indet": 0})
     for r in registros:
+        if r.get("lancamento"):
+            continue                      # stub de lançamento (agente em segundo plano): o uso real vem do registro de transcript
         if por == "spec":
             g = grupos[(r.get("spec") or "sem-spec", r.get("agente") or "?", r.get("classe") or "-")]
         else:
@@ -237,6 +402,20 @@ def main(argv):
         for r in res:
             print(f"{r['spec']} | {r['rodadas']} | {r['criticas']} | {r['medias']} | {r['menores']} | {f(r['tokens'])} | {f(r['tokens_por_rodada'])} | {f(r['tokens_por_achado'])} | {f(r['tokens_por_achado_grave'])}")
         print("LEMBRETE: Detector (ENF-03). n/m = telemetria sem registro da Spec (nunca estimado). Menos tokens por achado NÃO é melhor por si (Eficiência só sobre Eficácia válida, CEE-001); custo fora do Conviction Vector (INV-04).")
+        return 0
+    if argv[1] == "reconciliar":
+        def _arg(nome):
+            return argv[argv.index(nome) + 1] if nome in argv and argv.index(nome) + 1 < len(argv) else None
+        g, i = reconciliar(projetos=_arg("--projetos"), sessao=_arg("--sessao"))
+        print(f"reconciliado: {g} registro(s) gravado(s)/atualizado(s), {i} já em dia (fonte: transcripts dos subagentes).")
+        return 0
+    if argv[1] == "tokens":
+        alvo = argv[2] if len(argv) > 2 else ""
+        regs = [r for r in _ler() if r.get("agent_id") == alvo and r.get("fonte") == "transcript"]
+        if not regs:
+            print("n/m")
+            return 1
+        print(regs[-1]["total"])
         return 0
     if argv[1] == "snapshot":
         regs = _ler()

@@ -1,0 +1,782 @@
+diff --git a/specs/features/SPEC-008/plan.md b/specs/features/SPEC-008/plan.md
+index 2f3730e..7bbc153 100644
+--- a/specs/features/SPEC-008/plan.md
++++ b/specs/features/SPEC-008/plan.md
+@@ -1 +1 @@
+-# SPEC-008 — Manager — Despacho e Ciclo (Fase 1) — Plan v1.0 (orquestração mecânica por regra fixa; sem julgamento; nunca executa)
++# SPEC-008 — Manager — Despacho e Ciclo (Fase 1) — Plan v1.1 (orquestração mecânica por regra fixa; sem julgamento; nunca executa)
+@@ -6 +6 @@
+-| Versão | **1.0 (CANDIDATA — primeira entrega do Plan)** |
++| Versão | **1.1 (CANDIDATA — rodada R2: correção do parecer R1 — `governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R1-2026-11-08.md`)** |
+@@ -8 +8 @@
+-| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 1, integral) e homologação de Andraus. NÃO é baseline (INV-09).** Tudo o que este Plan cria (INV-MDC-01, RULE-MDC-*, BASpec-MDC-*, EC-MDC-*, Cenário-MDC-*, ADV-MDC-*, códigos `MDC_*`, tabela da FSM do trecho Fase 1, grafo de despacho versão 1, tabela de parâmetros, contrato lógico, Fixture M0, interface com a Spec de Tempo) é **[PROPOSTA]**. |
++| Status | **PROPOSTA — CANDIDATA; aguarda Revisor (rodada 2) e homologação de Andraus. NÃO é baseline (INV-09).** Tudo o que este Plan cria (INV-MDC-01, RULE-MDC-*, BASpec-MDC-*, EC-MDC-*, Cenário-MDC-*, ADV-MDC-*, códigos `MDC_*`, tabela da FSM do trecho Fase 1, grafo de despacho versão 1, tabela de parâmetros, contrato lógico, Fixture M0, interface com a Spec de Tempo) é **[PROPOSTA]**. |
+@@ -32,0 +33 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
++| 1.1 | 2026-11-14 | Correção do parecer R1 + registro das decisões de Andraus F-1..F-4 (2026-11-14) e das respostas DN de 2026-11-08 (M-01..M-05; m-05..m-08); m-01..m-04 aplicados pelo Orquestrador (classe M). Texto anterior e motivo de cada troca: `HISTORICO.md` (R1→R2). |
+@@ -43,2 +44,2 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-| **Medida deste Plan v1.0** | **1.626 linhas de corpo** (arquivo inteiro, contado por Grep de linhas após a redação; não há seção `## Anexo`) — acima de 1.600 (confirmação já dada, P-3), **−274 sob o alerta de 1.900**, −374 sob o teto; −269 sob a estimativa central (≈1.895). A reconferir pelo Orquestrador com `scripts/check_dimensionamento.py` |
+-| Itens | 1 INV-MDC · 11 RULE-MDC · 13 EARS · 12 BASpec-MDC · 8 EC-MDC · 20 Cenário-MDC (D7) · 14 ADV-MDC (D8) |
++| **Medida deste Plan v1.1** | **1.829 linhas de corpo** (arquivo inteiro, última linha lida após a redação; não há seção `## Anexo`) — acima de 1.600 (confirmação já dada, P-3), **−71 sob o alerta de 1.900**, −171 sob o teto. v1.0 = 1.626. A reconferir pelo Orquestrador com `scripts/check_dimensionamento.py` |
++| Itens | 1 INV-MDC · 11 RULE-MDC · 13 EARS · 12 BASpec-MDC · 9 EC-MDC · 22 Cenário-MDC (D7) · 15 ADV-MDC (D8) |
+@@ -53 +54 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-| P-1 | CRITICAL D0–D8 com suíte D8 | cabeçalho; D8 (ADV-MDC-01..14) |
++| P-1 | CRITICAL D0–D8 com suíte D8 | cabeçalho; D8 (ADV-MDC-01..15) |
+@@ -62 +63 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-| P-11 | Fibonacci/Fractal no roteiro = **decidir depois**; roteiro como dado versionado | RULE-MDC-002 (grafo versão 1 sem nó Fibonacci/Fractal; acréscimo = nova versão do dado) |
++| P-11 | Fibonacci/Fractal no roteiro = **decidir depois**; roteiro como dado versionado — **lido sob F-1 (2026-11-14):** Fibonacci não é nó de despacho (é skill dos agentes analíticos); a parte "confluência fractal" segue **decidir depois** | RULE-MDC-002 (e) (grafo versão 1 sem nó Fibonacci nem de confluência fractal; acréscimo = nova versão do dado) |
+@@ -70,0 +72,5 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
++| Respostas de Andraus a DN-1/2/3 (AskUserQuestion, 2026-11-08, transmitidas pelo Orquestrador; a citar na ata do Plan) | DN-1 = **decidir depois, com a SPEC-014**; DN-2 = **a Fase 1 só detecta e avisa, não abre ciclo**; DN-3 = **não confirmada** (Andraus pediu antes um inventário de Fibonacci/Fractal) | DN-1 e DN-3 seguem `[DECISÃO NECESSÁRIA]`; DN-2 registrada como decisão (comportamento de RULE-MDC-004 (d) inalterado); P-11 segue "decidir depois" na parte fractal |
++| **F-1** (Andraus, AskUserQuestion 2026-11-14, via Orquestrador; literal) | "Fibonacci e confluência fractal não são a mesma coisa. Fibonacci é uma skill que pode e será utilizado por agentes Elliott, SMC e ICT. A skill servirá para confirmação dos graus, retrações e projeções. Porém manter a etapa da especificação para essa skill para momento oportuno." | RULE-MDC-002 (e): Fibonacci **não** é nó do grafo de despacho (nenhum nó/aresta criado); especificação da skill = depois; confluência fractal = **decidir depois** (onde mora/quem produz). Roteiro v1 compatível; DN-3 segue `[DECISÃO NECESSÁRIA]` |
++| **F-2** (idem, 2026-11-14) | Fibonacci, por ora, só CONFERE e publica zonas como evidência; a permissão de sub-hipótese (AGENTS.md §6 item 2, PRIMARY/SUB) continua valendo, sem uso até a Spec da skill de Fibonacci | nada a despachar aqui; RULE-MDC-002 (e); o Manager não consome zona de Fibonacci como condição de aresta |
++| **F-3** (idem, 2026-11-14) | a leitura de convicção macro (WF-C01) não muda agora: estrutural + institucional | RULE-MDC-005 (a) inalterada; J-001 e WF-D03 seguem ABERTAS |
++| **F-4** (idem, 2026-11-14; literal) | "Não, manter S1/D1/H4/H1/M5 fixo" (contra a tabela editável por tipo de trading) | registrada como decisão; **diverge** de WF-R01 (tabela por tipo) — só Andraus reconcilia (CF-D); o `tf_triple` do pedido segue dado (RULE-MDC-001 (a)); nenhum TF vira parâmetro numérico deste Plan; BL-026 e N-001 seguem em aberto |
+@@ -87 +93 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-| 8 | Todo EC com campo de registro; recusa da trava com código e cenário | §D3.1; EC-MDC-001..008 EVIDENCE; D7/D8 | cumprida (conferência código↔cenário em `checks.md` §2) |
++| 8 | Todo EC com campo de registro; recusa da trava com código e cenário | §D3.1; EC-MDC-001..009 EVIDENCE (só campos do contrato lógico ou do `capability_audit_record` do runtime); D7/D8 | cumprida (conferência código↔cenário em `checks.md` §2) |
+@@ -96 +102,3 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-- **C06** (histórico no corpo): nenhum `[antes:]` neste corpo; histórico futuro em `HISTORICO.md`.
++- **C06** (histórico no corpo): nenhum `[antes:]` neste corpo; o texto trocado na R2 (regra/contrato — INV-07) está em `HISTORICO.md`.
++- **C04 / M4** (fronteira com Spec baselined): varredura de "SPEC-008:" e de "SPEC-008" nas seções de Requisitos/fronteira das Specs BASELINE que citam esta Spec (SPEC-004, SPEC-005, SPEC-007, SPEC-048) — resultado em "Requisitos a outras Specs" e `checks.md` §9.
++- **C10** (R1-M01/M02): estados do alarme (WF-A02) cruzados com cada estado do ciclo; todo FAILURE-MODE com "nova tentativa" tem evento + linha D5 + timer (`checks.md` §5).
+@@ -109 +117 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-- **BL-026** (WF-R01..R03 `[REVISAR · BL-026]`) — Disposição: PARCIAL — motivo: esta Spec consome WF-R01 (tripla de TFs) só pelo pedido de ciclo e o campo `killzone` do pedido como dado, tudo parâmetro editável (RULE-MDC-001 (a)); WF-R02/R03 (horários e Killzones por ativo) vão à **Spec de Tempo**; a pauta foi recolocada a Andraus na abertura (P-10: tabela atual mantida como valor-padrão editável). Re-apontamento **aditivo** do gatilho proposto na "Proposta de errata aditiva" (item E-2).
++- **BL-026** (WF-R01..R03 `[REVISAR · BL-026]`) — Disposição: PARCIAL — motivo: esta Spec consome WF-R01 (tripla de TFs) só pelo pedido de ciclo e o campo `killzone` do pedido como dado, tudo parâmetro editável (RULE-MDC-001 (a)) — a decisão F-4 de Andraus (2026-11-14, TFs fixos) diverge de WF-R01 e fica registrada como CF-D, a reconciliar por ele; WF-R02/R03 (horários e Killzones por ativo) vão à **Spec de Tempo**; a pauta foi recolocada a Andraus na abertura (P-10: tabela atual mantida como valor-padrão editável). Re-apontamento **aditivo** do gatilho proposto na "Proposta de errata aditiva" (item E-2).
+@@ -120,2 +128,2 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-- [x] **CC-01 — Hierarquia Elliott → Fibonacci → Fractal → SMC → ICT respeitada:** o grafo de despacho exige, para toda aresta, posto hierárquico de origem menor que o de destino (RULE-MDC-002 (c)); mapa nível a nível de INV-01: Elliott → nó ESTRUTURAL (WF-02); Fibonacci e Fractal → **sem nó** na versão 1 (P-11 = decidir depois; acrescentar = nova versão do dado, sem reescrever a Spec); SMC → nó INSTITUCIONAL (WF-03); ICT → nó OPERACIONAL (WF-05), só depois do contexto. ICT não cria hipótese: publicação do Operacional do tipo hipótese é recusada como insumo (RULE-MDC-006 (e)). [FATO: INV-01/INV-02; AGENTS.md §6 itens 1–2; P-11]
+-- [x] **CC-02 — Não redefine Modelo Canônico nem Spec baselined:** CHM-001 (estados da hipótese — só lidos), CCM-001 (campos `directional_conflict` e valor agregado — só lidos), CEM-001, CEE-001 v2.0; SPEC-003/004/005 usadas por referência. Os estados da FSM do ciclo são **os de WF-F02**, sem acréscimo nem renomeação. [FATO: CC-02; MMC-001 §3.2.3]
++- [x] **CC-01 — Hierarquia Elliott → Fibonacci → Fractal → SMC → ICT respeitada:** o grafo de despacho exige, para toda aresta, posto hierárquico de origem menor que o de destino (RULE-MDC-002 (c)); mapa nível a nível de INV-01: Elliott → nó ESTRUTURAL (WF-02); Fibonacci → **sem nó** (F-1, Andraus 2026-11-14: é skill usada por dentro dos agentes Elliott/SMC/ICT, não etapa de despacho); confluência fractal → **sem nó** na versão 1 (P-11 = decidir depois; acrescentar = nova versão do dado, sem reescrever a Spec); SMC → nó INSTITUCIONAL (WF-03); ICT → nó OPERACIONAL (WF-05), só depois do contexto. ICT não cria hipótese: publicação do Operacional do tipo hipótese é recusada como insumo (RULE-MDC-006 (e)). [FATO: INV-01/INV-02; AGENTS.md §6 itens 1–2; P-11]
++- [x] **CC-02 — Não redefine Modelo Canônico nem Spec baselined:** CHM-001 (estados da hipótese — só lidos), CCM-001 (campos `directional_conflict` e `global_conviction` — só lidos; `gate_result`/`thresholds_used` ignorados), CEM-001, CEE-001 v2.0; SPEC-003/004/005 usadas por referência. Os estados da FSM do ciclo são **os de WF-F02**, sem acréscimo nem renomeação. [FATO: CC-02; MMC-001 §3.2.3]
+@@ -123 +131 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-- [x] **CC-04 — Salvaguardas CEE-001 §10/§11:** §10 S1/S5 (roteamento de modelo — a Fase 1 não muda classe de modelo de ninguém: INV-MDC-01), S2 (nunca suprimir por custo diante de evento estruturalmente relevante — RULE-MDC-008 (c)), S4 (= INV-04: custo nunca entra no Conviction Vector — RULE-MDC-008 (d)); §11 (nenhum sinal sai desta Spec; `directional_conflict = true` ⇒ NEUTRO — RULE-MDC-005 (c)). [FATO: CEE-001 v2.0 §10, §11]
++- [x] **CC-04 — Salvaguardas CEE-001 §10/§11:** §10 S1/S5 (roteamento de modelo — a Fase 1 não muda classe de modelo de ninguém: INV-MDC-01), S2 (nunca suprimir por custo diante de evento estruturalmente relevante — RULE-MDC-008 (c)), S4 (= INV-04: custo nunca entra no Conviction Vector — RULE-MDC-008 (d)); §11 (nenhum sinal sai desta Spec; `directional_conflict = true` ⇒ NEUTRO — RULE-MDC-005 (b)). [FATO: CEE-001 v2.0 §10, §11]
+@@ -130 +138 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
+-- [x] **CC-11 — Classe/Mecanismo por BASpec (RULE-MECH-01):** onze BASpecs **D** e uma **C** (BASpec-MDC-012 — trava E3, justificada pela capacidade que nega: efeito irreversível fora do caminho governado); **nenhuma H/P** (obrigação MMC-001 §3.1.3, parte firme). **Pisos:** despacho E2; transição E2; pedido à Spec de Tempo E2; entrega à Fase 2 E2; livro de bordo E1; aviso/escalada E1; trava E3 (orientação da abertura, ABERTURA §4; atomic-spec §10.2).
++- [x] **CC-11 — Classe/Mecanismo por BASpec (RULE-MECH-01):** onze BASpecs **D** e uma **C** (BASpec-MDC-012 — trava E3, justificada pela capacidade que nega: efeito irreversível fora do caminho governado); **nenhuma H/P** (obrigação MMC-001 §3.1.3, parte firme). **Pisos:** despacho E2; transição E2; invocação macro E2; pedido à Spec de Tempo E2; entrega à Fase 2 E2; livro de bordo E1; aviso/escalada E1; trava E3; nível de cada BASpec ≥ nível dos efeitos que contém (BASpec-MDC-009 = E2) (orientação da abertura, ABERTURA §4; atomic-spec §10.2).
+@@ -152,2 +160,2 @@ INHERITS (horizontal — referência por ID + VERSÃO baseline; RULE-HD-04; NÃO
+-  - canon/CCM-001 (BASELINED — DHR-SPEC003-001): esquema de saída (directional_conflict; valor agregado; status)
+-      — só lido; nada desta Spec entra no vetor (INV-04)
++  - canon/CCM-001 (BASELINED — DHR-SPEC003-001): esquema de saída (directional_conflict; global_conviction —
++      [INFERÊNCIA] RULE-MDC-005 (d); gate_result/thresholds_used/status ignorados) — só lido; nada desta Spec entra no vetor (INV-04)
+@@ -160 +168 @@ INHERITS (horizontal — referência por ID + VERSÃO baseline; RULE-HD-04; NÃO
+-  - specs/features/SPEC-005 v1.0 (BASELINE — DHR-SPEC005-002): RULE-CEB-001 (envelope), RULE-CEB-004 (consumo
++  - specs/features/SPEC-005 v1.0 (BASELINE — DHR-SPEC005-002): RULE-CEB-001 (envelope), RULE-CEB-003 (cursor/replay), RULE-CEB-004 (consumo
+@@ -162,0 +171,3 @@ INHERITS (horizontal — referência por ID + VERSÃO baseline; RULE-HD-04; NÃO
++  - specs/features/SPEC-048 v1.4 (BASELINE — DHR-SPEC048-002): requisito "SPEC-008: fornecer orçamento (rodadas, tempo) no
++      pedido" e campo query_request.budget_ref (SPEC-008) — atendidos por RULE-MDC-003 (a); nada redefinido.
++      specs/features/SPEC-007 v2.3 (BASELINE — DHR-SPEC007-005): max_retrieval_rounds = "orçamento da SPEC-008" — RULE-MDC-008 (a) [INFERÊNCIA]
+@@ -164 +175 @@ INHERITS (horizontal — referência por ID + VERSÃO baseline; RULE-HD-04; NÃO
+-  - governance/RULES.md: RULE-BB-001/002/004/005; RULE-DEC-01; RULE-MET-01/02; RULE-HV-01..04; RULE-HD-02..04;
++  - governance/RULES.md: RULE-BB-001/002/003/004/005; RULE-DEC-01; RULE-MET-01/02; RULE-HV-01..04; RULE-HD-02..04;
+@@ -213 +224 @@ REMOVED : (vazio)
+-| §6.2 | Inversão #1; mecânica do gatilho nesta Spec | todas | RULE-MDC-004 (d); DN-2 (parte "despertar ciclo") |
++| §6.2 | Inversão #1; mecânica do gatilho nesta Spec | todas | RULE-MDC-004 (d); DN-2 (parte "despertar ciclo" — Andraus, 2026-11-08: a Fase 1 só detecta e avisa) |
+@@ -230 +241 @@ REMOVED : (vazio)
+-> **Termo 4 — "leitura macro" × "convicção global" × "conclusiva":** **leitura macro** = 1ª das duas invocações do mecanismo do CCM-001 sobre o subconjunto estrutural+institucional (WF-C01; RULE-CF-010); **convicção global** = 2ª leitura, da Fase 2 (fora). **Conclusiva** = o valor agregado devolvido pela leitura macro é **≥** o parâmetro `macro_conclusive_threshold` (comparação D); **não** é o gate de sinal (≥70%/≥7/9, INV-03), que é da Fase 2/Risco.
++> **Termo 4 — "leitura macro" × "convicção global" × "conclusiva":** **leitura macro** = 1ª das duas invocações do mecanismo do CCM-001 sobre o subconjunto estrutural+institucional (WF-C01; RULE-CF-010); **convicção global** = 2ª leitura, da Fase 2 (fora). **Conclusiva** = o campo `global_conviction` do objeto devolvido pela leitura macro (`[INFERÊNCIA]`, RULE-MDC-005 (d); o NOME do campo é o do esquema do CCM-001, mas aqui ele carrega o valor do subconjunto — não é a "convicção global" da Fase 2) é **≥** o parâmetro `macro_conclusive_threshold` (comparação D); **não** é o gate de sinal (≥70%/≥7/9, INV-03), que é da Fase 2/Risco.
+@@ -245,2 +256,3 @@ REMOVED : (vazio)
+-| WF-02 / WF-03 | despacha Estrutural; Institucional **só** com oportunidade = SIM (RULE-MDC-004 (a)) | Fibonacci/Fractal sem passo (P-11) |
+-| WF-04 / WF-C01 | 1ª invocação (macro) + comparação "conclusiva" com parâmetro; se conclusiva, pede o alarme (RULE-MDC-005/006) | WF-D03 ABERTA — não tocada |
++| WF-02 / WF-03 | despacha Estrutural; Institucional **só** com oportunidade = SIM (RULE-MDC-004 (a)) | Fibonacci = skill dos agentes analíticos, sem passo (F-1); confluência fractal sem passo (P-11) |
++| WF-04 / WF-C01 | 1ª invocação (macro, estrutural + institucional — inalterada por F-3, Andraus 2026-11-14) + comparação "conclusiva" com parâmetro; se conclusiva, pede o alarme (RULE-MDC-005/006) | WF-D03 ABERTA — não tocada |
++| WF-R01 | `tf_triple` consumido como dado do pedido | F-4 (S1/D1/H4/H1/M5 fixo) diverge de WF-R01 — CF-D, só Andraus |
+@@ -253 +265 @@ REMOVED : (vazio)
+-| WF-P01 / WF-P02 | um ciclo por (ativo, missão), isolado; parâmetros por ativo versionados | heat/correlação = RISK-SPEC |
++| WF-P01 / WF-P02 | ativos em paralelo (WF-P01, texto literal); o isolamento "um ciclo por (ativo, missão)" é `[PROPOSTA]` desta Spec (RULE-MDC-001 (d)), não texto de WF-P01; parâmetros por ativo versionados (WF-P02) | heat/correlação = RISK-SPEC |
+@@ -285 +297,2 @@ A SPEC-008 especifica **como o Manager, na Fase 1, conduz um ciclo de análise d
+-| Posição de Fibonacci/Fractal no roteiro | **P-11 = decidir depois** | abertura SPEC-010/011 |
++| Skill de Fibonacci (confirmação de graus, retrações, projeções; zonas como evidência; sub-hipótese sem uso por ora) | **F-1/F-2** (Andraus, 2026-11-14): especificação da skill em momento oportuno; não é nó do Manager | Spec da skill de Fibonacci (sem número) |
++| Onde mora / quem produz a confluência fractal | **P-11 = decidir depois** (F-1: não é o mesmo que Fibonacci) | Andraus |
+@@ -329 +342,3 @@ INV-MDC-01: TRAVA CONSTITUTIVA DO MANAGER-FASE-1 (Classe C, E3, fail-closed).
+-            ANTES de qualquer ação de um ciclo, o componente confere o registro de capacidades: indisponível ⇒
++            ANTES DE CADA AÇÃO com efeito (na avaliação do pedido — D4.1 passo (0) — e em cada linha de D5 que
++            produz efeito — D4.2 passo (7)), o componente confere o registro de capacidades PARA A CAPACIDADE
++            DAQUELA AÇÃO e grava `capability_check_ref` na entrada do livro: indisponível ⇒
+@@ -331,4 +346,10 @@ INV-MDC-01: TRAVA CONSTITUTIVA DO MANAGER-FASE-1 (Classe C, E3, fail-closed).
+-            allowlist ⇒ mesmo código, sub `MDC_CAPABILITY_REGISTRY_DIVERGENT`; em ambos, nada é despachado nem
+-            pedido, e a recusa é gravada no livro de bordo (a escrita no próprio livro é fixa no componente,
+-            não vem do registro de capacidades). Garantia: texto publicado por agente analítico é DADO — nenhum
+-            campo lido vira comando. NÃO garante que a análise despachada esteja certa.
++            allowlist ⇒ mesmo código, sub `MDC_CAPABILITY_REGISTRY_DIVERGENT`; em ambos, a ação não ocorre; no
++            pedido, nada é aberto; no meio do ciclo, o ciclo encerra sem efeito algum (D5, F37); a recusa é
++            gravada no livro de bordo (a escrita no próprio livro é fixa no componente, não vem do registro).
++            PROVA INDEPENDENTE: as contagens `model_calls`, `external_emissions`, `foreign_publications` e
++            `clock_reads` NÃO são escritas pelo Manager — são consultas sobre o `capability_audit_record` que o
++            RUNTIME grava a cada tentativa de capacidade do componente, concedida ou negada (contrato lógico;
++            requisito `[PROPOSTA]` ao runtime/BUILD e à SPEC-040). Sem esse registro, as contagens = INDETERMINADO
++            e a trava NÃO é declarada verificada (gate E3 por-Spec não passa — fail-closed).
++            Garantia: texto publicado por agente analítico é DADO — nenhum campo lido vira comando. NÃO garante
++            que a análise despachada esteja certa.
+@@ -340 +361,2 @@ RULE-MDC-001: PEDIDO DE CICLO E ISOLAMENTO.
+-                valores-padrão WF-R01, editáveis), `killzone` (identificador da tabela da Spec de Tempo),
++                valores-padrão WF-R01, editáveis — divergência com F-4 de Andraus, 2026-11-14, "manter
++                S1/D1/H4/H1/M5 fixo": CF-D, só Andraus reconcilia; aqui o TF segue DADO do pedido), `killzone` (identificador da tabela da Spec de Tempo),
+@@ -349 +371,2 @@ RULE-MDC-001: PEDIDO DE CICLO E ISOLAMENTO.
+-            (d) Isolamento (WF-P01): no máximo UM ciclo não encerrado por chave (`asset`, `mission_id`); segundo
++            (d) Isolamento `[PROPOSTA]` desta Spec (WF-P01 só diz que os ativos operam em paralelo; a chave por
++                missão é acréscimo deste Plan): no máximo UM ciclo não encerrado por chave (`asset`, `mission_id`); segundo
+@@ -372,4 +395,10 @@ RULE-MDC-002: GRAFO DE DESPACHO VERSIONADO.
+-            (e) Fibonacci/Fractal: SEM nó na versão 1 (P-11 = decidir depois). Acrescentá-los = nova versão do
+-                dado, registrada por ato de Andraus, sem reescrever esta Spec; condição nova de aresta fora da
+-                lista fechada exige errata.
+-            (f) Só Andraus registra versão do grafo (a versão 1 = DN-3); um ciclo usa a versão fixada na abertura.
++            (e) Fibonacci: NÃO é nó do grafo de despacho — é skill usada por dentro dos agentes analíticos
++                Elliott/SMC/ICT (confirmação de graus, retrações, projeções); por ora só confere e publica zonas
++                como evidência; a permissão de sub-hipótese (AGENTS.md §6 item 2, PRIMARY/SUB) fica sem uso até a Spec da skill, cuja
++                especificação fica para momento oportuno (F-1/F-2 — Andraus, 2026-11-14). O posto 2 de INV-01 vale
++                para a camada analítica, não cria etapa. Confluência fractal: assunto distinto de Fibonacci, SEM nó
++                na versão 1; onde mora/quem a produz = decidir depois (P-11). Acrescentar nó = nova versão do dado,
++                registrada por ato de Andraus, sem reescrever esta Spec; condição nova de aresta fora da lista
++                fechada exige errata.
++            (f) Só Andraus registra versão do grafo (a versão 1 = DN-3, `[DECISÃO NECESSÁRIA]`; compatível com
++                F-1, ainda não confirmada); um ciclo usa a versão fixada na abertura.
+@@ -377 +406 @@ RULE-MDC-002: GRAFO DE DESPACHO VERSIONADO.
+-            [Fonte: INV-01; CC-01; WF-02/03/05; P-11; research §3.2 (SRC-AIRFLOW-DAG-01, SRC-TOPO-01 [EXTERNO])]
++            [Fonte: INV-01; CC-01; WF-02/03/05; P-11; F-1/F-2; research §3.2 (SRC-AIRFLOW-DAG-01, SRC-TOPO-01 [EXTERNO])]
+@@ -381,3 +410,9 @@ RULE-MDC-003: DESPACHO VIA QUADRO E ESPERA.
+-                `node_id`, `stage_seq`, `dispatch_key` = H(`cycle_id`, `node_id`, `stage_seq`) como chave de
+-                idempotência (RULE-CBP-005), referências dos insumos publicados, `tf`, `max_rounds`,
+-                `graph_version`}, avisado pelo Event Bus (SPEC-005). NUNCA chamada direta (RULE-BB-001/005).
++                `node_id`, `stage_seq`, `attempt`, `dispatch_key` = H(`cycle_id`, `node_id`, `stage_seq`, `attempt`)
++                como chave de idempotência (RULE-CBP-005), referências dos insumos publicados, `tf`, `budget`
++                {`max_rounds`, `stage_deadline`} e `budget_ref`, `graph_version`}, avisado pelo Event Bus (SPEC-005).
++                NUNCA chamada direta (RULE-BB-001/005). `budget` = orçamento de rodadas e de TEMPO da etapa, copiado
++                da versão fixada de `cycle_limits` (RULE-MDC-008 (a)); `budget_ref` = H(`cycle_id`, `stage_seq`,
++                `limits_version`), referência que o agente analítico propaga nos pedidos que fizer na etapa (ex.:
++                `query_request.budget_ref` da SPEC-048) — atende SPEC-048 ("SPEC-008: fornecer orçamento (rodadas,
++                tempo) no pedido"). O Manager não lê relógio: `stage_deadline` é duração-parâmetro; o instante-limite
++                é do timer da Spec de Tempo.
+@@ -385,3 +420,4 @@ RULE-MDC-003: DESPACHO VIA QUADRO E ESPERA.
+-            (c) Espera síncrona por etapa: a etapa seguinte só depois da publicação da anterior; cada espera tem
+-                timer pedido à Spec de Tempo com o `stage_deadline` do parâmetro; timer disparado ⇒ encerramento
+-                `MDC_STAGE_DEADLINE_EXCEEDED`.
++            (c) Espera síncrona por etapa: a etapa seguinte só depois da publicação da anterior. TODA espera tem
++                timer pedido à Spec de Tempo com o `stage_deadline` da etapa — espera por agente analítico (F01, F03,
++                F13) E espera pelo resultado da leitura macro (F06); o timer é por `stage_seq` (nova tentativa na
++                mesma etapa NÃO reinicia o timer). Timer disparado ⇒ encerramento `MDC_STAGE_DEADLINE_EXCEEDED` (F19).
+@@ -395,2 +431,10 @@ RULE-MDC-003: DESPACHO VIA QUADRO E ESPERA.
+-            (f) Falha ao publicar o pedido ou erro do agente analítico conta como falha seguida do nó; novas
+-                tentativas limitadas por `max_consecutive_failures`; estouro ⇒ RULE-MDC-008 (b).
++            (f) Falhas do nó, cada uma com evento e linha de D5: (1) a publicação do `dispatch_request` falha
++                (retorno da operação — evento interno `DISPATCH_PUBLISH_FAILED`, F33) ⇒ `failures[nó]` += 1 e, dentro
++                do teto, REPUBLICA com a MESMA `dispatch_key` (o pedido não chegou a existir; se chegou, o Blackboard
++                devolve o registrado — RULE-CBP-005); (2) o agente analítico publica resposta com `status` = ERROR
++                referindo o `dispatch_key` (evento `PUB_ERROR(nó)`, F34) ⇒ `failures[nó]` += 1 e, dentro do teto, NOVO
++                despacho do mesmo nó com `attempt` + 1 (nova `dispatch_key`); (3) o agente analítico publica
++                `status` = ROUNDS_EXHAUSTED (voltas de `budget.max_rounds` esgotadas sem resultado — evento
++                `PUB_ROUNDS_EXHAUSTED(nó)`, F35) ⇒ encerramento `MDC_LIMIT_EXCEEDED` sub `ROUNDS` (o Manager não conta
++                voltas: lê o aviso do agente). `failures[nó]` > `max_consecutive_failures` ⇒ RULE-MDC-008 (b) (F20).
++                O mecanismo macro NÃO tem nova tentativa (RULE-MDC-005 (e)).
+@@ -416,3 +460,4 @@ RULE-MDC-004: ATIVAÇÃO PROGRESSIVA E INVERSÃO #1.
+-                ABRIR um ciclo completo por causa da ruptura = [DECISÃO NECESSÁRIA] DN-2 (a Fase 1 não origina
+-                ciclo — RULE-MDC-001 (c)). Se a hipótese rompida é a de contexto de um ciclo ativo, o cancelamento
+-                do alarme é da Spec de Tempo (WF-A03) e chega como `ALARM_CANCELLED` (D5, F15).
++                A Fase 1 NÃO abre ciclo por causa da ruptura: só detecta e avisa (DN-2 — decisão de Andraus,
++                AskUserQuestion 2026-11-08; coerente com RULE-MDC-001 (c)). Se a hipótese rompida é a de contexto de
++                um ciclo ativo, o cancelamento do alarme é da Spec de Tempo (WF-A03) e chega como `ALARM_CANCELLED`
++                (D5, F15/F31/F32); a perda de elegibilidade é também conferida na guarda (RULE-MDC-006 (h)).
+@@ -425,2 +470,4 @@ RULE-MDC-005: LEITURA MACRO, "CONCLUSIVA" E NEUTRO.
+-                publicações. Não calcula, não pesa, não arbitra. Segunda invocação macro no mesmo ciclo ⇒ recusada
+-                `MDC_MACRO_ALREADY_INVOKED` (2x por ciclo = 1 aqui + 1 na Fase 2).
++                publicações e a chave `macro_key` = H(`cycle_id`, "MACRO"). Não calcula, não pesa, não arbitra.
++                "INVOCAÇÃO" = invocação PEDIDA: conta a partir da entrada `MDC_MACRO_INVOKED` no livro (F06),
++                tenha ou não chegado resultado `[PROPOSTA]`. Segunda invocação no mesmo ciclo — inclusive depois de
++                erro — ⇒ recusada `MDC_MACRO_ALREADY_INVOKED` (2x por ciclo = 1 aqui + 1 na Fase 2 — RULE-CF-010).
+@@ -431 +478 @@ RULE-MDC-005: LEITURA MACRO, "CONCLUSIVA" E NEUTRO.
+-                valor agregado devolvido não é INDETERMINADO ∧ valor ≥ θ. Senão ⇒ encerramento
++                `global_conviction` devolvido ((d)) não é INDETERMINADO ∧ valor ≥ θ. Senão ⇒ encerramento
+@@ -435,4 +482,16 @@ RULE-MDC-005: LEITURA MACRO, "CONCLUSIVA" E NEUTRO.
+-            (d) "Valor agregado da leitura macro" = [INFERÊNCIA] o campo agregado do esquema do CCM-001 calculado
+-                sobre o subconjunto (RULE-CF-010); o nome exato é lido do contrato da SPEC-003 na construção, sem
+-                redefini-lo. Resultado sem valor agregado ou sem `directional_conflict` ⇒ INDETERMINADO ⇒ (c).
+-            (e) Mecanismo indisponível ou com erro ⇒ falha seguida (RULE-MDC-003 (f)).
++            (d) Campo comparado com θ = `global_conviction` do objeto devolvido pela leitura macro `[INFERÊNCIA]`
++                (CCM-001 Cap.3, camada "Agregação": `global_conviction`, `score`, `directional_conflict`; Cap.4,
++                esquema: `global_conviction` "0.0-1.0"). Motivo: `score` não é usado porque a sua composição é
++                [DECISÃO NECESSÁRIA] do CCM-001 (nota N1/N3: J-001; BL-027). O nome do campo é o do esquema; na
++                leitura macro ele carrega o valor agregado do SUBCONJUNTO e NÃO é a "convicção global" da Fase 2
++                (Acepção, Termo 4). O valor é LIDO como publicado, nunca recomputado; a proveniência da entrada do
++                gate do CCM-001 segue [DECISÃO NECESSÁRIA] do CCM-001 (nota N1/N3; BL-029; donas Fase 2/SPEC-004/
++                SPEC-018) — esta Spec não a resolve; se a decisão do BL-029 mudar o valor de entrada, a leitura
++                desta alínea muda por errata. `gate_result`, `thresholds_used` e `status` (GATED_PASS/GATED_BLOCK)
++                do objeto macro são IGNORADOS: carregam os limiares-piloto do SINAL (INV-03), que NÃO são θ; o
++                livro guarda só a referência do objeto (`macro_reading_ref`). Resultado sem `global_conviction`
++                numérico ou sem `directional_conflict` ⇒ INDETERMINADO ⇒ (c).
++            (e) Mecanismo indisponível ou com erro (evento `MACRO_ERROR`) ⇒ encerramento
++                `MDC_MACRO_INVOCATION_FAILED` + abstenção (F36), SEM nova tentativa no ciclo (a invocação já foi
++                pedida — (a)); sem resultado até o timer da etapa (RULE-MDC-003 (c)) ⇒ F19. Resultado tardio depois
++                do encerramento ⇒ F28. "Tentar de novo" = ciclo novo pedido por Andraus/Fase 0 (P-12; SPEC-015).
+@@ -440 +499 @@ RULE-MDC-005: LEITURA MACRO, "CONCLUSIVA" E NEUTRO.
+-            [Fonte: WF-04, WF-C01; RULE-CF-010; CCM-001 (esquema de saída); AGENTS.md §6 item 4; P-5; CONF-2;
++            [Fonte: WF-04, WF-C01; RULE-CF-010; CCM-001 Cap.3/Cap.4 e nota N1/N3; AGENTS.md §6 item 4; P-5; CONF-2;
+@@ -453,3 +512,5 @@ RULE-MDC-006: ALARME, OPERACIONAL E ALINHAMENTO.
+-            (c) `ALARM_ARMED` do alarme pedido ⇒ `CONTEXTO_FORMADO` → `ARMADO`; `ALARM_TRIGGERED` válido
+-                (RULE-MDC-004 (b)) ⇒ `ARMADO` → `ATIVADO` + despacho do OPERACIONAL com `tf` = `tf_entrada`.
+-            (d) Alinhamento (WF-T02; CONF-4): o setup publicado é aceito ⇔ `parent_id` = hipótese de contexto ∧
++            (c) `ALARM_ARMED` do alarme pedido ∧ elegível ((h)) ⇒ `CONTEXTO_FORMADO` → `ARMADO`; `ALARM_TRIGGERED`
++                válido (RULE-MDC-004 (b)) ∧ elegível ⇒ `ARMADO` → `ATIVADO` + despacho do OPERACIONAL com `tf` =
++                `tf_entrada`.
++            (d) Alinhamento (WF-T02; CONF-4): o setup publicado é aceito ⇔ hipótese de contexto elegível ((h)) ∧
++                `parent_id` = hipótese de contexto ∧
+@@ -463,3 +524,14 @@ RULE-MDC-006: ALARME, OPERACIONAL E ALINHAMENTO.
+-            (g) `ALARM_EXPIRED` ⇒ ramo 5: encerramento `MDC_ALARM_EXPIRED`; `ALARM_CANCELLED` ⇒ encerramento
+-                `MDC_ALARM_CANCELLED`. Nenhum rearme, nenhuma volta a `ARMADO` (P-12).
+-            [Fonte: WF-04, WF-05, WF-T02, WF-A01..A03, WF-F01; AGENTS.md §6 itens 2–3; INV-02; P-8; P-12; CONF-4]
++            (g) Morte do alarme (WF-A02: `ARMED`/`TRIGGERED` → `EXPIRED` | `CANCELLED`; WF-A03), em QUALQUER estado
++                do ciclo em que o alarme deste ciclo foi pedido — `CONTEXTO_FORMADO` (antes de `ALARM_ARMED`, F31),
++                `ARMADO` (F15) e `ATIVADO` (F32): `ALARM_EXPIRED` ⇒ ramo 5, encerramento `MDC_ALARM_EXPIRED`;
++                `ALARM_CANCELLED` ⇒ encerramento `MDC_ALARM_CANCELLED` (sem ramo numerado em WF-F01). Nenhum pedido
++                `MARK_CONSUMED` (o alarme já terminou na FSM dele). Nenhum rearme, nenhuma volta a `ARMADO` (P-12).
++            (h) Reconferência de elegibilidade: nas linhas que consomem evento do alarme ou o setup (F12, F13, F16,
++                F17), a guarda relê a ÚLTIMA versão publicada da hipótese de contexto (ordem do log — RULE-CBP-006)
++                e exige `domain_state` ∈ {ACTIVE, DOMINANT} (RULE-BB-003). Não elegível ⇒ encerramento
++                `MDC_ORIGIN_HYPOTHESIS_NOT_ELIGIBLE` sub `MDC_CONTEXT_LOST` (F30); se o evento é `ALARM_TRIGGERED` ou
++                o estado é `ATIVADO`, pede `MARK_CONSUMED` (alarme já disparado — P-12 "usado"). Assim um setup
++                alinhado a hipótese já REFUTED/SUPERSEDED nunca chega a `EM_SÍNTESE`, ainda que o `ALARM_CANCELLED`
++                da Spec de Tempo chegue depois (esse chega a ciclo encerrado — F28).
++            [Fonte: WF-04, WF-05, WF-T02, WF-A01..A03, WF-F01; AGENTS.md §6 itens 2–3; INV-02; RULE-BB-003;
++             RULE-CBP-006; P-8; P-12; CONF-4]
+@@ -479,3 +551,6 @@ RULE-MDC-007: MÁQUINA DE ESTADOS DO CICLO (trecho Fase 1).
+-                `wf_f02_final_label` = AUSENTE e a Fase 1 não grava transição para estado final. Encerramento em
+-                `ATIVADO` (alarme já disparado) pede `MARK_CONSUMED` à Spec de Tempo (P-12: termina "usado");
+-                em `ARMADO`, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo).
++                `wf_f02_final_label` = AUSENTE e a Fase 1 não grava transição para estado final (DN-1: Andraus,
++                2026-11-08 — decidir depois, com a SPEC-014). `MARK_CONSUMED` só quando o alarme já DISPAROU e
++                ainda está vivo: encerramento em `ATIVADO` ou no próprio evento `ALARM_TRIGGERED` (F30) pede
++                `MARK_CONSUMED` (P-12: termina "usado"), EXCETO quando o alarme já morreu (F32 — `EXPIRED`/
++                `CANCELLED`) ou quando o registro de capacidades falhou (F37 — nenhum efeito); em `CONTEXTO_FORMADO`
++                e `ARMADO`, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo).
+@@ -488,3 +563,6 @@ RULE-MDC-008: TETOS E ORÇAMENTO.
+-                `max_rounds_per_agent` (repassado no `dispatch_request`; a ele se referem os pedidos de orçamento
+-                da SPEC-007/048, como `max_retrieval_rounds`), `max_consecutive_failures` por nó/mecanismo,
+-                `stage_deadline`. Valores INDETERMINADOS (CC-09). Sem valor ⇒ pedido recusado
++                `max_rounds_per_agent` (repassado em `dispatch_request.budget.max_rounds`), `max_consecutive_failures`
++                por nó, `stage_deadline` (orçamento de TEMPO da etapa, repassado em `budget.stage_deadline` e usado no
++                timer). `[INFERÊNCIA]`: o `max_retrieval_rounds` que SPEC-007/SPEC-048 chamam de "orçamento da
++                SPEC-008" é servido por `budget.max_rounds` (mesmo despacho, mesma etapa); se Andraus ou as
++                SPEC-010..013 separarem voltas do agente de voltas de busca, entra parâmetro próprio por nova
++                versão do dado `cycle_limits`, sem reescrever esta Spec. Valores INDETERMINADOS (CC-09). Sem valor ⇒ pedido recusado
+@@ -493 +571,2 @@ RULE-MDC-008: TETOS E ORÇAMENTO.
+-                `FAILURES`) + aviso; a contagem vive no livro de bordo do ciclo.
++                `FAILURES`) + aviso; `steps` e `failures` são contados pelo Manager no livro de bordo (D4.3);
++                `ROUNDS` vem do aviso do agente analítico (RULE-MDC-003 (f)(3), F35), não de contador do Manager.
+@@ -517,3 +596,4 @@ RULE-MDC-010: LIVRO DE BORDO DO CICLO.
+-            (a) Só-inserção, por ciclo (INV-07). Entrada: `cycle_id`, `log_seq`, `entry_type`, `rule_id`,
+-                `graph_version`, `limits_version`, `causation_event_id`, `recorded_instant`, `from_state`,
+-                `to_state` | —, `code` | —, `refs`.
++            (a) Só-inserção, por ciclo (INV-07). Entrada: `cycle_id`, `log_seq`, `entry_type`, `rule_id` (SEMPRE o
++                ID de uma RULE — ex.: `RULE-MDC-006`), `fsm_row` (linha F-nn de D5 aplicada | —), `graph_version`,
++                `limits_version`, `causation_event_id`, `recorded_instant`, `from_state`, `to_state` | —, `code` | —,
++                `refs`, `capability_check_ref` (por ação com efeito — INV-MDC-01).
+@@ -525 +605 @@ RULE-MDC-010: LIVRO DE BORDO DO CICLO.
+-            (d) Cada despacho grava POR QUE este agente rodou agora: aresta, condição satisfeita, evento causador,
++            (d) Cada despacho grava POR QUE este agente analítico rodou agora: aresta, condição satisfeita, evento causador,
+@@ -552 +632,4 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-| latência de despacho/notificação | RULE-CEB-010 (SPEC-005) | consumidor | SPEC-005 (parâmetro) | INDETERMINADO — declarado (4Es e latência) |
++| orçamento de TEMPO/latência da etapa despachada (`stage_deadline` → `dispatch_request.budget`) | RULE-MDC-003 (a)(c); 008 (a) | `trading_type` × etapa | **SPEC-008** (parâmetro; Andraus/calibração) — é o "orçamento de recursos e de latência = SPEC-008" da SPEC-048 (com SPEC-043 em contexto/compressão) | pedido recusado `MDC_LIMITS_NOT_CONFIGURED` |
++| latência de TRANSPORTE da notificação (metadado e orçamento por consumidor) | RULE-CEB-010 (SPEC-005) | consumidor | SPEC-005 (parâmetro) | INDETERMINADO — declarado (4Es e latência) |
++
++> Reconciliação do dono da latência `[INFERÊNCIA]`: são dois objetos distintos — SPEC-005 RULE-CEB-010 é dona dos metadados e do orçamento de **entrega** da notificação (transporte); SPEC-048 (l.319/376/449: "Orçamento de recursos e de latência — SPEC-008 (Manager)") atribui a esta Spec o orçamento de **trabalho** da etapa (rodadas e tempo), que vai no pedido. Nenhum dos dois textos baselined é contradito; se Andraus ler as duas atribuições como o mesmo objeto, vira conflito a registrar (não há indício disso no texto).
+@@ -562 +645 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-3. (MDC-003) Quando um nó é despachado, o Manager-Fase-1 DEVE publicar o pedido só no próprio workspace com chave de idempotência, gravar o livro de bordo antes, esperar a publicação com timer de etapa e NÃO DEVE consumir publicação de outro ciclo, de outro papel ou sem envelope.
++3. (MDC-003) Quando um nó é despachado, o Manager-Fase-1 DEVE publicar o pedido só no próprio workspace com chave de idempotência e orçamento de rodadas e de tempo, gravar o livro de bordo antes, esperar a publicação com timer de etapa, tratar falha de publicação e erro do agente analítico como falha contada até o teto e NÃO DEVE consumir publicação de outro ciclo, de outro papel ou sem envelope.
+@@ -564,2 +647,2 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-5. (MDC-004 (d)) Quando é publicada nova versão de hipótese que passa de DOMINANT a REFUTED ou SUPERSEDED, o Manager-Fase-1 DEVE registrar a ruptura e avisar Andraus/Fase 0, e NÃO DEVE abrir ciclo por conta própria (DN-2).
+-6. (MDC-005) Quando o Institucional publica, o Manager-Fase-1 DEVE invocar uma única vez a leitura macro, encerrar como NEUTRO se `directional_conflict = true` e só formar contexto se θ estiver preenchido e o valor agregado for ≥ θ.
++5. (MDC-004 (d)) Quando é publicada nova versão de hipótese que passa de DOMINANT a REFUTED ou SUPERSEDED, o Manager-Fase-1 DEVE registrar a ruptura e avisar Andraus/Fase 0, e NÃO DEVE abrir ciclo por conta própria (DN-2 — decisão de Andraus, 2026-11-08).
++6. (MDC-005) Quando o Institucional publica, o Manager-Fase-1 DEVE invocar uma única vez a leitura macro (sem nova tentativa depois de erro), encerrar como NEUTRO se `directional_conflict = true` e só formar contexto se θ estiver preenchido e `global_conviction` do resultado for ≥ θ.
+@@ -567 +650 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-8. (MDC-006 (d)) Quando o Operacional publica, o Manager-Fase-1 DEVE aceitar o setup só se `parent_id`, direção e TF de entrada conferirem, encerrar pelo ramo 3 marcando o alarme como usado nos demais casos e NÃO DEVE consumir objeto-hipótese do Operacional.
++8. (MDC-006 (d)) Quando o Operacional publica, o Manager-Fase-1 DEVE aceitar o setup só se a hipótese de contexto ainda estiver em ACTIVE/DOMINANT e `parent_id`, direção e TF de entrada conferirem, encerrar pelo ramo 3 marcando o alarme como usado nos demais casos e NÃO DEVE consumir objeto-hipótese do Operacional.
+@@ -572 +655 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-13. (INV-MDC-01) Quando qualquer etapa pede capacidade fora da allowlist ou chamada de modelo, o Manager-Fase-1 NÃO DEVE executá-la e DEVE registrar a recusa; e, com o registro de capacidades indisponível ou divergente, NÃO DEVE despachar nada.
++13. (INV-MDC-01) Quando qualquer etapa pede capacidade fora da allowlist ou chamada de modelo, o Manager-Fase-1 NÃO DEVE executá-la e DEVE registrar a recusa; e, antes de cada ação com efeito, DEVE conferir o registro de capacidades para aquela ação e, com ele indisponível ou divergente, NÃO DEVE produzir efeito algum.
+@@ -592 +675,3 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-| `MDC_EVENT_FOREIGN_CYCLE` · `MDC_EVENT_ENVELOPE_INVALID` | — | evento não consumido | 003 (d) | ADV-03; ADV-04 |
++| `MDC_EVENT_FOREIGN_CYCLE` · `MDC_EVENT_ENVELOPE_INVALID` | — | evento não consumido | 003 (d) | ADV-03; ADV-05 (a)(c); ADV-07; ADV-04 |
++| `MDC_DISPATCH_PUBLISH_FAILED` · `MDC_AGENT_ERROR` | — | falha contada (republica / novo `attempt`); estouro ⇒ `MDC_LIMIT_EXCEEDED` sub `FAILURES` | 003 (f)(1)(2) | T22 (a)(b); T15 (c) |
++| `MDC_MACRO_INVOCATION_FAILED` | — | encerramento + abstenção | 005 (e) | T22 (c) |
+@@ -599 +684 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-| `MDC_MACRO_ALREADY_INVOKED` | — | recusa | 005 (a) | ADV-06 |
++| `MDC_MACRO_ALREADY_INVOKED` | — | recusa | 005 (a) | ADV-06 (a)(b) |
+@@ -602 +687 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-| `MDC_ORIGIN_HYPOTHESIS_NOT_ELIGIBLE` | — | encerramento | 006 (a) | T09 (a) |
++| `MDC_ORIGIN_HYPOTHESIS_NOT_ELIGIBLE` | `MDC_CONTEXT_LOST` (perda depois do contexto formado) | encerramento | 006 (a)(h) | T09 (a); T21 (a)–(c); ADV-15 |
+@@ -606,3 +691,3 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-| `MDC_ALARM_EXPIRED` (ramo 5) · `MDC_ALARM_CANCELLED` | — | encerramento | 006 (g) | T13 (a)(b) |
+-| `MDC_TRANSITION_NOT_LISTED` · `MDC_CYCLE_CLOSED` | — | sem transição | 007 (b)(d) | ADV-05; T19 |
+-| `MDC_LIMIT_EXCEEDED` | `STEPS`, `ROUNDS`, `FAILURES` | encerramento + aviso | 008 (b) | T15 (a)–(c) |
++| `MDC_ALARM_EXPIRED` (ramo 5) · `MDC_ALARM_CANCELLED` | — | encerramento | 006 (g) | T13 (a)–(e) |
++| `MDC_TRANSITION_NOT_LISTED` · `MDC_CYCLE_CLOSED` | — | sem transição | 007 (b)(d) | ADV-05 (b); T19; ADV-06 (b) |
++| `MDC_LIMIT_EXCEEDED` | `STEPS`, `ROUNDS`, `FAILURES` | encerramento + aviso | 008 (b); 003 (f)(3) | T15 (a)–(c) |
+@@ -615 +700 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-| `MDC_CAPABILITY_CHECK_FAILED` | `MDC_CAPABILITY_REGISTRY_UNAVAILABLE`, `MDC_CAPABILITY_REGISTRY_DIVERGENT` | nada despachado | INV-MDC-01 | ADV-12 (a)(b) |
++| `MDC_CAPABILITY_CHECK_FAILED` | `MDC_CAPABILITY_REGISTRY_UNAVAILABLE`, `MDC_CAPABILITY_REGISTRY_DIVERGENT` | nenhum efeito (pedido: nada aberto; meio do ciclo: ENC F37) | INV-MDC-01 | ADV-12 (a)–(c) |
+@@ -617 +702 @@ RULE-MDC-011: ENTREGA À FASE 2.
+-**Marcações de fluxo normal (não são recusa):** `MDC_CYCLE_OPENED`, `MDC_DISPATCHED`, `MDC_PUBLICATION_CONSUMED`, `MDC_MACRO_INVOKED`, `MDC_TIME_REQUESTED`, `MDC_TRANSITIONED`, `MDC_HANDOFF_PUBLISHED`, `MDC_CYCLE_CLOSED_RECORDED` (entrada `cycle_closed`) — valores de `entry_type` do livro de bordo.
++**Marcações de fluxo normal (não são recusa):** `MDC_CYCLE_OPENED`, `MDC_DISPATCHED`, `MDC_PUBLICATION_CONSUMED`, `MDC_MACRO_INVOKED`, `MDC_TIME_REQUESTED`, `MDC_TRANSITIONED`, `MDC_HANDOFF_PUBLISHED`, `MDC_NOTICE_SENT`, `MDC_NOTICE_PENDING` (canal do aviso indisponível — EC-MDC-007), `MDC_CYCLE_CLOSED_RECORDED` (entrada `cycle_closed`) — valores de `entry_type` do livro de bordo.
+@@ -626 +711,2 @@ BASpec-MDC-001:
+-  PORQUE:       Fase 1 executa pedido já definido; ativos isolados; laço sem teto proibido (MMC-001 §4; WF-P01; P-12)
++  PORQUE:       Fase 1 executa pedido já definido; ativos em paralelo (WF-P01) e isolados por (ativo, missão) ([PROPOSTA]
++                RULE-MDC-001 (d)); laço sem teto proibido (MMC-001 §4; P-12)
+@@ -644 +730 @@ BASpec-MDC-002:
+-                da versão fixada; desempate (posto, node_id); versão 1 sem Fibonacci/Fractal (P-11)
++                da versão fixada; desempate (posto, node_id); versão 1 sem nó de Fibonacci (skill — F-1) nem de confluência fractal (P-11)
+@@ -646 +732 @@ BASpec-MDC-002:
+-  REFERÊNCIA:   RULE-MDC-002; INV-01; P-11
++  REFERÊNCIA:   RULE-MDC-002; INV-01; P-11; F-1
+@@ -662,3 +748,4 @@ BASpec-MDC-003:
+-  ENTÃO:        Aplica RULE-MDC-003 — livro antes; dispatch_request no próprio workspace com dispatch_key; aviso pelo
+-                Event Bus; timer de etapa; só consome publicação do papel/ciclo certo, com envelope; duplicata sem
+-                efeito; falha conta para o teto
++  ENTÃO:        Aplica RULE-MDC-003 — livro antes; dispatch_request no próprio workspace com dispatch_key e budget
++                (rodadas, tempo) + budget_ref; aviso pelo Event Bus; timer de etapa; só consome publicação do
++                papel/ciclo certo, com envelope; duplicata sem efeito; falha de publicação ⇒ republica (mesma chave);
++                erro do agente analítico ⇒ novo attempt; ambas contam para o teto (F33/F34); voltas esgotadas ⇒ F35
+@@ -672 +759,2 @@ BASpec-MDC-003:
+-    DADO        T01 · T14 · ADV-01 (aviso duplicado) · ADV-02 (retomada) · ADV-03 (outro ciclo) · ADV-04 (sem envelope)
++    DADO        T01 · T14 · T15 (b)(c) · T22 (a)(b) · ADV-01 (aviso duplicado) · ADV-02 (retomada) · ADV-03 (outro ciclo) ·
++                ADV-04 (sem envelope)
+@@ -674,2 +762,2 @@ BASpec-MDC-003:
+-    ENTÃO       um dispatch_request por dispatch_key; publicações estranhas não consumidas, com código
+-    VERIFICAÇÃO ver T01 / T14 / ADV-01..04
++    ENTÃO       um dispatch_request publicado por dispatch_key; budget presente; publicações estranhas não consumidas, com código
++    VERIFICAÇÃO ver T01 / T14 / T15 / T22 / ADV-01..04
+@@ -703,3 +791,3 @@ BASpec-MDC-005:
+-  ENTÃO:        Aplica RULE-MDC-005 — 1 invocação macro; directional_conflict = true ⇒ NEUTRO (ramo 2);
+-                θ ausente / valor INDETERMINADO / valor < θ ⇒ não conclusiva (encerra, sem alarme); conclusiva ⇒
+-                CONTEXTO_FORMADO
++  ENTÃO:        Aplica RULE-MDC-005 — 1 invocação macro (pedida; sem nova tentativa; erro ⇒ ENC F36; timer F19);
++                directional_conflict = true ⇒ NEUTRO (ramo 2); θ ausente / global_conviction INDETERMINADO / < θ ⇒
++                não conclusiva (encerra, sem alarme); conclusiva ⇒ CONTEXTO_FORMADO; gate_result/thresholds_used ignorados
+@@ -710 +798,2 @@ BASpec-MDC-005:
+-    MECANISMO   : invocação do mecanismo da SPEC-003 + leitura de dois campos do resultado + comparação ≥ θ
++    MECANISMO   : invocação do mecanismo da SPEC-003 + leitura de dois campos do resultado (directional_conflict,
++                  global_conviction) + comparação ≥ θ
+@@ -714,4 +803,4 @@ BASpec-MDC-005:
+-    DADO        T01 · T07 · T08 (a) θ ausente, (b) INDETERMINADO, (c) abaixo · ADV-06 (2ª invocação)
+-    QUANDO      a leitura macro volta
+-    ENTÃO       só valor ≥ θ preenchido e sem conflito forma contexto
+-    VERIFICAÇÃO ver T07 / T08 / ADV-06
++    DADO        T01 · T07 · T08 (a) θ ausente, (b) INDETERMINADO, (c) abaixo · T22 (c)(d) · ADV-06 (2ª invocação)
++    QUANDO      a leitura macro volta, falha ou não volta
++    ENTÃO       só global_conviction ≥ θ preenchido e sem conflito forma contexto; erro/silêncio encerra sem 2ª invocação
++    VERIFICAÇÃO ver T07 / T08 / T22 / ADV-06
+@@ -726 +815,2 @@ BASpec-MDC-006:
+-                ⇒ ramo 3 + MARK_CONSUMED; EXPIRED/CANCELLED ⇒ encerramento; objeto-hipótese do ICT não consumido
++                ⇒ ramo 3 + MARK_CONSUMED; EXPIRED/CANCELLED em CONTEXTO_FORMADO, ARMADO ou ATIVADO ⇒ encerramento;
++                elegibilidade relida em F12/F13/F16/F17 (perdida ⇒ F30); objeto-hipótese do ICT não consumido
+@@ -735 +825 @@ BASpec-MDC-006:
+-    DADO        T01 · T09 (a)(b) · T12 (a)–(d) · T13 (a)(b) · ADV-08
++    DADO        T01 · T09 (a)(b) · T12 (a)–(d) · T13 (a)–(e) · T21 (a)–(c) · ADV-08 · ADV-15
+@@ -738 +828 @@ BASpec-MDC-006:
+-    VERIFICAÇÃO ver T09 / T12 / T13 / ADV-08
++    VERIFICAÇÃO ver T09 / T12 / T13 / T21 / ADV-08 / ADV-15
+@@ -779 +869 @@ BASpec-MDC-008:
+-### BASpec-MDC-009 — Parar, aguardar, escalar, encerrar (ver RULE-MDC-009) [E1]
++### BASpec-MDC-009 — Parar, aguardar, escalar, encerrar (ver RULE-MDC-009) [E2]
+@@ -790 +880,2 @@ BASpec-MDC-009:
+-    CRITÉRIO 4Es: Efetividade — o encerramento diz o que falta e o que mudaria a conclusão
++    CRITÉRIO 4Es: Efetividade — o encerramento diz o que falta e o que mudaria a conclusão (nível E2: contém o
++                  encerramento por STOP, que é transição — EC-MDC-003; nível da BASpec ≥ nível dos efeitos que contém)
+@@ -842 +933,2 @@ BASpec-MDC-012:
+-                registro de capacidades indisponível/divergente ⇒ MDC_CAPABILITY_CHECK_FAILED, nada despachado;
++                registro de capacidades indisponível/divergente (conferido antes de cada ação) ⇒ MDC_CAPABILITY_CHECK_FAILED,
++                nenhum efeito (no meio do ciclo, ENC F37);
+@@ -850,3 +942,5 @@ BASpec-MDC-012:
+-                  é a própria ausência de capacidade; conferência do registro antes de cada ação
+-    GATE DE SAÍDA: determinístico — capacidades exercidas ⊆ allowlist ∧ model_calls == 0 ∧ publicações fora do
+-                  próprio workspace == 0 ∧ emissões externas == 0
++                  é a própria ausência de capacidade; conferência do registro antes de cada ação (D4.1 passo (0);
++                  D4.2 passo (7)), com capability_check_ref na entrada do livro
++    GATE DE SAÍDA: determinístico, sobre o capability_audit_record do RUNTIME (não sobre o livro do Manager) —
++                  capacidades EXECUTED ⊆ allowlist ∧ model_calls == 0 ∧ foreign_publications == 0 ∧
++                  external_emissions == 0 ∧ clock_reads == 0; registro ausente ⇒ INDETERMINADO ⇒ não verificada
+@@ -858,4 +952,5 @@ BASpec-MDC-012:
+-    DADO        ADV-10 (a)–(j) · ADV-11 · ADV-12 (a)(b) · ADV-10 (k) falso-DENY amostral
+-    QUANDO      a capacidade é pedida / o ciclo começa
+-    ENTÃO       negada com o subcódigo; nada despachado com registro indisponível/divergente
+-    VERIFICAÇÃO ver ADV-10 / ADV-11 / ADV-12
++    DADO        ADV-10 (a)–(j) · ADV-11 · ADV-12 (a)–(c) · ADV-14 · ADV-10 (k) falso-DENY amostral
++    QUANDO      a capacidade é pedida / cada ação vai ocorrer
++    ENTÃO       negada com o subcódigo; nenhum efeito com registro indisponível/divergente; toda entrada de efeito com
++                capability_check_ref
++    VERIFICAÇÃO ver ADV-10 / ADV-11 / ADV-12 / ADV-14
+@@ -870 +965 @@ BASpec-MDC-012:
+-**D4.2 — Processamento de evento (RULE-MDC-003/007).** Para cada notificação: (0) envelope mínimo SPEC-005 → `MDC_EVENT_ENVELOPE_INVALID`; (1) `event_id` já consumido ou `dispatch_key`/`request_key` repetido → `MDC_DUPLICATE_IGNORED`; (2) `cycle_id` e papel autenticado conferem com o nó/pedido → `MDC_EVENT_FOREIGN_CYCLE`; (3) ciclo encerrado ou em estado final → `MDC_CYCLE_CLOSED`; (4) linha de outro dono (a partir de `EM_SÍNTESE`) → `MDC_NOT_PHASE1_TRANSITION`; (5) busca exata (estado, evento) em D5 → senão `MDC_TRANSITION_NOT_LISTED`; (6) avalia a guarda da linha; (7) grava a entrada (antes do efeito); (8) produz o efeito da linha; (9) atualiza contadores (D4.3). Nenhum passo lê relógio; instantes vêm do evento.
++**D4.2 — Processamento de evento (RULE-MDC-003/007; INV-MDC-01).** Para cada notificação ou evento interno, nesta ordem (o primeiro passo que falha decide o código): (0) envelope mínimo SPEC-005 → `MDC_EVENT_ENVELOPE_INVALID`; (1) `event_id` já consumido, ou mesma publicação já consumida para a mesma `dispatch_key` → `MDC_DUPLICATE_IGNORED`; (2) PERTENÇA ao ciclo, por categoria do emissor: publicação de agente analítico — papel autenticado = papel do nó e `dispatch_key` emitida neste ciclo; evento da Spec de Tempo — `request_key` emitida neste ciclo; resultado/erro do mecanismo macro — `macro_key` deste ciclo; `STOP_COMMAND` — só o `cycle_id` (identidade conferida em F22/F23); evento interno — gerado pelo próprio componente para o `cycle_id`. Falha → `MDC_EVENT_FOREIGN_CYCLE`; (3) ciclo encerrado ou em estado final → `MDC_CYCLE_CLOSED`; (4) linha de outro dono (a partir de `EM_SÍNTESE`) → `MDC_NOT_PHASE1_TRANSITION`; (5) busca exata (estado, evento) em D5 → senão `MDC_TRANSITION_NOT_LISTED`; (6) avalia a guarda da linha; (7) para CADA ação com efeito da linha, confere o registro de capacidades para a capacidade dessa ação (INV-MDC-01) → falha ⇒ a linha NÃO é aplicada; evento interno `CAPABILITY_CHECK_FAILED` (F37); (8) grava a entrada (antes do efeito) com `fsm_row`, `rule_id` e `capability_check_ref`; (9) produz o efeito da linha; (10) atualiza contadores (D4.3). Nenhum passo lê relógio; instantes vêm do evento. **Simulação dos cenários negativos (m-06):** ADV-05 (a) e (c) e ADV-07 param no passo (2) (`MDC_EVENT_FOREIGN_CYCLE`: `dispatch_key`/`request_key` não emitida neste ciclo); ADV-05 (b) passa no (2) (alarme deste ciclo) e para no (5) (`MDC_TRANSITION_NOT_LISTED`); T19 e ADV-06 (b) param no (3); T11 (b) para no (4).
+@@ -872 +967 @@ BASpec-MDC-012:
+-**D4.3 — Contadores (RULE-MDC-008).** `steps` += 1 a cada despacho e a cada invocação macro; `rounds[nó]` = `max_rounds_per_agent` repassado no pedido (o laço interno é do agente analítico); `failures[nó]` += 1 a cada falha seguida, zera no sucesso; qualquer contador > parâmetro da versão fixada ⇒ evento interno `LIMIT_COUNTER_EXCEEDED` (D5, F20). `cost_spent` (se medido) > `cost_budget` ⇒ evento interno `COST_BUDGET_EXCEEDED` (F21), uma vez por ciclo.
++**D4.3 — Contadores (RULE-MDC-008).** `steps` += 1 a cada despacho (inclusive novo `attempt`) e a cada invocação macro; `failures[nó]` += 1 a cada `DISPATCH_PUBLISH_FAILED` ou `PUB_ERROR` do nó, zera quando a publicação do pedido é confirmada e o nó publica resultado; `steps` > `max_steps_per_cycle` ou `failures[nó]` > `max_consecutive_failures` ⇒ evento interno `LIMIT_COUNTER_EXCEEDED` (D5, F20). O Manager NÃO conta voltas: repassa `budget.max_rounds` e lê o aviso `PUB_ROUNDS_EXHAUSTED` do agente analítico (F35). `cost_spent` (se medido) > `cost_budget` ⇒ evento interno `COST_BUDGET_EXCEEDED` (F21), uma vez por ciclo.
+@@ -874 +969 @@ BASpec-MDC-012:
+-**D4.4 — Leitura macro (RULE-MDC-005).** ENTRADA: refs das publicações ESTRUTURAL e INSTITUCIONAL. PROCESSO: invoca o mecanismo (1x); lê `directional_conflict` e o valor agregado `v`; regra: `conflito = true` ⇒ F08a; senão `θ` ausente ∨ `v` INDETERMINADO ∨ `v` < `θ` ⇒ F08b; senão F07. EXEMPLO (M0, símbolos — sem número): `v` = θ + δ (δ > 0), conflito = false ⇒ F07.
++**D4.4 — Leitura macro (RULE-MDC-005).** ENTRADA: refs das publicações ESTRUTURAL e INSTITUCIONAL; `macro_key`. PROCESSO: invoca o mecanismo (1x, com timer de etapa); lê `directional_conflict` e `v` = `global_conviction` (RULE-MDC-005 (d)); ignora `gate_result`/`thresholds_used`/`status`; `MACRO_ERROR` ⇒ F36; regra: `conflito = true` ⇒ F08a; senão `θ` ausente ∨ `v` INDETERMINADO ∨ `v` < `θ` ⇒ F08b; senão F07. EXEMPLO (M0, símbolos — sem número): `v` = θ + δ (δ > 0), conflito = false ⇒ F07.
+@@ -880 +975 @@ BASpec-MDC-012:
+-> Leitura: "ENC" = encerramento (RULE-MDC-007 (d)): grava `cycle_closed`; nenhum evento posterior aceito; rótulo final de WF-F02 = DN-1. Toda ação é precedida da entrada no livro de bordo (RULE-MDC-010 (b)). Encerramento em `ATIVADO` sempre pede `MARK_CONSUMED` (P-12: alarme "usado"); em `ARMADO`, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo). Linhas de outros donos: listadas, **não** especificadas aqui; gate determinístico do dono (MMC-001 §3.2.2).
++> Leitura: "ENC" = encerramento (RULE-MDC-007 (d)): grava `cycle_closed`; nenhum evento posterior aceito; rótulo final de WF-F02 = DN-1. Toda ação é precedida da conferência de capacidades e da entrada no livro de bordo (D4.2 passos (7)(8)). `MARK_CONSUMED` conforme RULE-MDC-007 (d): encerramento em `ATIVADO` ou no próprio `ALARM_TRIGGERED` pede, salvo F32 (alarme já morto) e F37 (sem efeito); em `CONTEXTO_FORMADO`/`ARMADO`, nenhum pedido ao alarme (requisito T-3 à Spec de Tempo). "Elegível" = RULE-MDC-006 (h). Linhas F30–F37 acrescentadas na v1.1 (numeração nova para não renumerar referências). Linhas de outros donos: listadas, **não** especificadas aqui; gate determinístico do dono (MMC-001 §3.2.2).
+@@ -889 +984 @@ BASpec-MDC-012:
+-| F06 | `AGUARDANDO` | `PUB(INSTITUCIONAL)` | nó despachado neste ciclo | `AGUARDANDO` | invoca leitura macro (1x) | `MDC_MACRO_INVOKED` | SPEC-008 |
++| F06 | `AGUARDANDO` | `PUB(INSTITUCIONAL)` | nó despachado neste ciclo; nenhuma invocação macro pedida | `AGUARDANDO` | invoca leitura macro (1x, `macro_key`); timer de etapa | `MDC_MACRO_INVOKED` | SPEC-008 |
+@@ -896,2 +991,2 @@ BASpec-MDC-012:
+-| F12 | `CONTEXTO_FORMADO` | `ALARM_ARMED` | alarme deste ciclo | `ARMADO` | — | `MDC_TRANSITIONED` | SPEC-008 |
+-| F13 | `ARMADO` | `ALARM_TRIGGERED` | `inside_killzone` = true | `ATIVADO` | despacha OPERACIONAL (`tf_entrada`); timer | `MDC_DISPATCHED` | SPEC-008 |
++| F12 | `CONTEXTO_FORMADO` | `ALARM_ARMED` | alarme deste ciclo ∧ elegível | `ARMADO` | — | `MDC_TRANSITIONED` | SPEC-008 |
++| F13 | `ARMADO` | `ALARM_TRIGGERED` | `inside_killzone` = true ∧ elegível | `ATIVADO` | despacha OPERACIONAL (`tf_entrada`); timer | `MDC_DISPATCHED` | SPEC-008 |
+@@ -900,2 +995,2 @@ BASpec-MDC-012:
+-| F16 | `ATIVADO` | `PUB(OPERACIONAL)` setup | alinhado (RULE-MDC-006 (d)) | `EM_SÍNTESE` | `MARK_CONSUMED`; publica `phase2_handoff` | `MDC_HANDOFF_PUBLISHED` | SPEC-008 (última) |
+-| F17 | `ATIVADO` | `PUB(OPERACIONAL)` setup | não alinhado | ENC (ramo 3) | `MARK_CONSUMED` | `MDC_SETUP_MISALIGNED` (sub) | SPEC-008 |
++| F16 | `ATIVADO` | `PUB(OPERACIONAL)` setup | elegível ∧ alinhado (RULE-MDC-006 (d)) | `EM_SÍNTESE` | `MARK_CONSUMED`; publica `phase2_handoff` | `MDC_HANDOFF_PUBLISHED` | SPEC-008 (última) |
++| F17 | `ATIVADO` | `PUB(OPERACIONAL)` setup | elegível ∧ não alinhado | ENC (ramo 3) | `MARK_CONSUMED` | `MDC_SETUP_MISALIGNED` (sub) | SPEC-008 |
+@@ -913,0 +1009,10 @@ BASpec-MDC-012:
++| F30 | `CONTEXTO_FORMADO` × `ALARM_ARMED` · `ARMADO` × `ALARM_TRIGGERED` (`inside_killzone` = true) · `ATIVADO` × `PUB(OPERACIONAL)` setup | (o par indicado) | hipótese de contexto (última versão) ∉ {ACTIVE, DOMINANT} | ENC | `MARK_CONSUMED` só nos pares de `ARMADO`/`ATIVADO` (alarme disparado) | `MDC_ORIGIN_HYPOTHESIS_NOT_ELIGIBLE` sub `MDC_CONTEXT_LOST` | SPEC-008 |
++| F31 | `CONTEXTO_FORMADO` | `ALARM_EXPIRED` · `ALARM_CANCELLED` | alarme deste ciclo (antes de `ALARM_ARMED`) | ENC (ramo 5 · cancelado) | — | `MDC_ALARM_EXPIRED` · `MDC_ALARM_CANCELLED` | SPEC-008 |
++| F32 | `ATIVADO` | `ALARM_EXPIRED` · `ALARM_CANCELLED` | alarme deste ciclo (`TRIGGERED` → `EXPIRED`/`CANCELLED`, WF-A02/A03) | ENC (ramo 5 · cancelado) | — (alarme já morto: sem `MARK_CONSUMED`) | `MDC_ALARM_EXPIRED` · `MDC_ALARM_CANCELLED` | SPEC-008 |
++| F33 | `AGUARDANDO` · `ATIVADO` | `DISPATCH_PUBLISH_FAILED` (interno) | `failures[nó]` ≤ `max_consecutive_failures` (após D4.3; acima ⇒ F20) | (sem transição) | republica o `dispatch_request` com a MESMA `dispatch_key` | `MDC_DISPATCH_PUBLISH_FAILED` | SPEC-008 |
++| F34 | `AGUARDANDO` · `ATIVADO` | `PUB_ERROR(nó)` (resposta `status` = ERROR do nó despachado) | `failures[nó]` ≤ `max_consecutive_failures` (acima ⇒ F20) | (sem transição) | novo despacho do nó, `attempt` + 1 (nova `dispatch_key`); timer da etapa mantido | `MDC_AGENT_ERROR` | SPEC-008 |
++| F35 | `AGUARDANDO` · `ATIVADO` | `PUB_ROUNDS_EXHAUSTED(nó)` (resposta `status` = ROUNDS_EXHAUSTED) | nó despachado neste ciclo | ENC | aviso; em `ATIVADO`: `MARK_CONSUMED` | `MDC_LIMIT_EXCEEDED` sub `ROUNDS` | SPEC-008 |
++| F36 | `AGUARDANDO` | `MACRO_ERROR` (mecanismo indisponível ou com erro) | `macro_key` deste ciclo | ENC | abstenção; nenhuma nova invocação | `MDC_MACRO_INVOCATION_FAILED` | SPEC-008 |
++| F37 | `AGUARDANDO`…`ATIVADO` | `CAPABILITY_CHECK_FAILED` (interno — D4.2 passo (7)) | — | ENC | nenhum efeito (nem `MARK_CONSUMED`, nem aviso); só a entrada no livro | `MDC_CAPABILITY_CHECK_FAILED` (sub) | SPEC-008 |
++
++**Cruzamento alarme (WF-A02) × estado do ciclo (C10):** o alarme existe do pedido (F09) em diante. `CONTEXTO_FORMADO`: `ARMED` → F12/F30; `EXPIRED`/`CANCELLED` → F31; `TRIGGERED` → F29 (não listado). `ARMADO`: `TRIGGERED` → F13/F14/F30; `EXPIRED`/`CANCELLED` → F15. `ATIVADO`: `EXPIRED`/`CANCELLED` → F32; `CONSUMED` é efeito pedido por esta Spec (sem evento de volta). `AGUARDANDO`: alarme não existe → evento de alarme para no D4.2 passo (2). ENC/final: F28. **Espera × timer:** F01, F03, F06, F09, F13 pedem `STAGE_TIMER`; F33/F34 mantêm o timer da etapa; `ARMADO` é limitado pela validade do alarme (`EXPIRED` → F15).
+@@ -915 +1020 @@ BASpec-MDC-012:
+-**Fora da tabela (por desenho):** ramo 6 de WF-F01 (depois de `SINAL_ENVIADO` — P-13); Inversão #1 (detector entre ciclos, RULE-MDC-004 (d) — não muda estado de nenhum ciclo; o cancelamento do alarme chega por F15); duplicatas, envelope e ciclo estranho (D4.2 passos 0–2, antes do lookup). **Nenhuma linha leva a `ARMADO` a partir de `ATIVADO` nem de ENC** (sem "reset" — P-12).
++**Fora da tabela (por desenho):** ramo 6 de WF-F01 (depois de `SINAL_ENVIADO` — P-13); Inversão #1 (detector entre ciclos, RULE-MDC-004 (d) — não muda estado de nenhum ciclo; o cancelamento do alarme chega por F15/F31/F32 e a perda de elegibilidade é pega em F30); duplicatas, envelope e ciclo estranho (D4.2 passos 0–2, antes do lookup). **Nenhuma linha leva a `ARMADO` a partir de `ATIVADO` nem de ENC** (sem "reset" — P-12).
+@@ -932,4 +1037,4 @@ BASpec-MDC-012:
+-| SPEC-008 → Tempo | `MARK_CONSUMED` | `alarm_id`, `cycle_id`, `request_key` | F16, F17, F19–F20, F22 em `ATIVADO` |
+-| SPEC-008 → Tempo | `STAGE_TIMER` | `cycle_id`, `stage_seq`, `stage_deadline`, `request_key` | F01, F03, F09, F13 |
+-| Tempo → SPEC-008 | `ALARM_ARMED` · `ALARM_EXPIRED` · `ALARM_CANCELLED` (com motivo) | `alarm_id`, `cycle_id`, `recorded_instant` | F12, F15 |
+-| Tempo → SPEC-008 | `ALARM_TRIGGERED` | + `inside_killzone`, `price_observation_ref` (Observação — INV-06) | F13, F14 |
++| SPEC-008 → Tempo | `MARK_CONSUMED` | `alarm_id`, `cycle_id`, `request_key` | F16, F17; F19, F20, F22, F35 em `ATIVADO`; F30 nos pares de `ARMADO`/`ATIVADO` |
++| SPEC-008 → Tempo | `STAGE_TIMER` | `cycle_id`, `stage_seq`, `stage_deadline`, `request_key` | F01, F03, F06, F09, F13 |
++| Tempo → SPEC-008 | `ALARM_ARMED` · `ALARM_EXPIRED` · `ALARM_CANCELLED` (com motivo) | `alarm_id`, `cycle_id`, `request_key` do `ARM_ALARM`, `recorded_instant` | F12, F15, F30, F31, F32 |
++| Tempo → SPEC-008 | `ALARM_TRIGGERED` | + `inside_killzone`, `price_observation_ref` (Observação — INV-06) | F13, F14, F30 |
+@@ -938 +1043 @@ BASpec-MDC-012:
+-**Requisitos `[PROPOSTA]` à Spec de Tempo:** (T-1) janela da Killzone, disparo e `inside_killzone` calculados **lá** (CONF-5; WF-K01..K03); (T-2) todo evento traz `recorded_instant` registrado (a SPEC-008 nunca lê relógio — RULE-MDC-010 (c)); (T-3) alarme `ARMED` cujo ciclo foi encerrado termina pelas regras dela (prazo/cancelamento — WF-A03), sem pedido da SPEC-008; disparo tardio para ciclo encerrado chega e é descartado por F28; (T-4) o pré-aviso de WF-K02 pede orientações a Andraus/Fase 0, **não** abre ciclo na Fase 1; (T-5) pedidos idempotentes por `request_key`; (T-6) prazo vencido durante queda ⇒ `EXPIRED`, nunca disparo atrasado; (T-7) mercado fechado/calendário ausente conforme P-9; (T-8) o alarme é gatilho de análise, nunca ordem (WF-A01). Divergência de número em WF-K02 ("SPEC-008/015") registrada: prevalece CONF-5 (MMC-001 §8.3).
++**Requisitos `[PROPOSTA]` à Spec de Tempo:** (T-1) janela da Killzone, disparo e `inside_killzone` calculados **lá** (CONF-5; WF-K01..K03); (T-2) todo evento traz `recorded_instant` registrado (a SPEC-008 nunca lê relógio — RULE-MDC-010 (c)); (T-3) alarme `ARMED` cujo ciclo foi encerrado termina pelas regras dela (prazo/cancelamento — WF-A03), sem pedido da SPEC-008; disparo tardio para ciclo encerrado chega e é descartado por F28; (T-4) o pré-aviso de WF-K02 pede orientações a Andraus/Fase 0, **não** abre ciclo na Fase 1; (T-5) pedidos idempotentes por `request_key`; (T-6) prazo vencido durante queda ⇒ `EXPIRED`, nunca disparo atrasado; (T-7) mercado fechado/calendário ausente conforme P-9; (T-8) o alarme é gatilho de análise, nunca ordem (WF-A01); (T-9) a morte do alarme (`EXPIRED`/`CANCELLED`, inclusive antes de `ARMED` e depois de `TRIGGERED` — WF-A02/A03) é sempre notificada ao ciclo de origem (F31, F15, F32). Divergência de número em WF-K02 ("SPEC-008/015") registrada: prevalece CONF-5 (MMC-001 §8.3).
+@@ -944,3 +1049,7 @@ BASpec-MDC-012:
+-- **SPEC-010 (Elliott/Estrutural):** publicar `opportunity` ∈ {SIM, NAO} e a hipótese primária com os campos de WF-A01 (P-8). **SPEC-012 (SMC/Institucional):** publicar referindo `cycle_id`/`dispatch_key`. **SPEC-013 (ICT/Operacional):** setup com direção, TF e `parent_id`; nunca objeto-hipótese (INV-02).
+-- **SPEC-003 (BASELINE):** nenhum pedido de mudança — o campo agregado e `directional_conflict` são **lidos** do contrato existente (RULE-MDC-005 (d)).
+-- **SPEC-009:** guardar livro de bordo, cursor e chaves de idempotência para a retomada (G-001 ABERTA). **SPEC-014:** consumir `phase2_handoff`; transições a partir de `EM_SÍNTESE` com gate determinístico (MMC-001 §3.2.2); F25 (não enviar) = DN-1. **SPEC-015:** origem dos pedidos; quantas vezes tentar (P-12, `[PROPOSTA]` do MMC-001 §8.2-bis); DN-2. **SPEC-040:** medida de custo que alimenta `cost_budget`.
++- **SPEC-010 (Elliott/Estrutural):** publicar `opportunity` ∈ {SIM, NAO} e a hipótese primária com os campos de WF-A01 (P-8). **SPEC-012 (SMC/Institucional):** publicar referindo `cycle_id`/`dispatch_key`. **SPEC-013 (ICT/Operacional):** setup com direção, TF e `parent_id`; nunca objeto-hipótese (INV-02). **SPEC-010/012/013 (todas):** toda resposta ao despacho refere `cycle_id`/`dispatch_key` e traz `status` ∈ {OK, ERROR, ROUNDS_EXHAUSTED} (RULE-MDC-003 (f); F34/F35); respeitar `budget` e propagar `budget_ref` nos pedidos que fizerem na etapa.
++- **SPEC-003 (BASELINE):** nenhum pedido de mudança — `global_conviction` e `directional_conflict` são **lidos** do contrato existente (RULE-MDC-005 (d)); o resultado/erro da invocação refere a `macro_key` recebida.
++- **SPEC-048 v1.4 (BASELINE) — exigência dela a esta Spec (Requisitos da SPEC-048: "SPEC-008: fornecer orçamento (rodadas, tempo) no pedido"; contrato `query_request.budget_ref (SPEC-008)`):** atendida por `dispatch_request.budget` {`max_rounds`, `stage_deadline`} + `budget_ref` (RULE-MDC-003 (a)); orçamento de recursos/latência da etapa = SPEC-008 (tabela de parâmetros; reconciliação com SPEC-005 RULE-CEB-010 logo abaixo da tabela). Nada da SPEC-048 é redefinido.
++- **SPEC-007 v2.3 (BASELINE):** `max_retrieval_rounds` = "orçamento da SPEC-008" — servido por `budget.max_rounds` (`[INFERÊNCIA]`, RULE-MDC-008 (a)); "Orçamento de recursos da consulta — SPEC-008": idem.
++- **SPEC-004 / SPEC-005 (BASELINE):** "orquestração (quem reage/pensa, quando, em que ordem) = SPEC-008" — atendida por RULE-MDC-002/003/007; nenhum pedido de mudança.
++- **Runtime (BUILD) e SPEC-040:** gravar o `capability_audit_record` de toda tentativa de capacidade do componente (concedida ou negada), fora do controle do Manager — fonte das contagens da trava (INV-MDC-01; EC-MDC-008).
++- **SPEC-009:** guardar livro de bordo, cursor e chaves de idempotência para a retomada (G-001 ABERTA). **SPEC-014:** consumir `phase2_handoff`; transições a partir de `EM_SÍNTESE` com gate determinístico (MMC-001 §3.2.2); F25 (não enviar) = DN-1. **SPEC-015:** origem dos pedidos; quantas vezes tentar (P-12, `[PROPOSTA]` do MMC-001 §8.2-bis); abrir ou não ciclo após aviso de ruptura (DN-2: a Fase 1 só avisa). **SPEC-040:** medida de custo que alimenta `cost_budget`.
+@@ -958,4 +1067,15 @@ cycle_limits    : {version, by_trading_type{stage → {max_steps_per_cycle, max_
+-dispatch_request: {cycle_id, node_id, stage_seq, dispatch_key, input_refs[], tf, max_rounds, graph_version}
+-cycle_log_entry : {cycle_id | AUSENTE, log_seq, entry_type, rule_id, graph_version, limits_version, causation_event_id,
+-                   recorded_instant, from_state, to_state | —, code | —, refs[], counters{steps, failures[]},
+-                   capability_check_ref | AUSENTE, abstention? {incerto, afeta, condicao_de_mudanca, informacao}}
++dispatch_request: {cycle_id, node_id, stage_seq, attempt, dispatch_key, input_refs[], tf,
++                   budget{max_rounds, stage_deadline}, budget_ref, graph_version}
++dispatch_response (lido; publicado pelo agente analítico): {cycle_id, dispatch_key, status ∈ {OK, ERROR, ROUNDS_EXHAUSTED},
++                   result_ref | —}
++macro_invocation: {cycle_id, macro_key, input_refs[2]}  → resultado (objeto CCM-001, lido: directional_conflict,
++                   global_conviction; gate_result/thresholds_used/status ignorados) | MACRO_ERROR
++cycle_log_entry : {cycle_id | AUSENTE, log_seq, entry_type, rule_id (ID de RULE), fsm_row (F-nn | —), graph_version,
++                   limits_version, causation_event_id, recorded_instant, from_state, to_state | —, code | —, refs[],
++                   counters{steps, failures[]}, capability_check_ref | AUSENTE,
++                   abstention? {incerto, afeta, condicao_de_mudanca, informacao}}
++capability_audit_record (gravado pelo RUNTIME, não pelo Manager): {component_id, cycle_id | AUSENTE, action_seq,
++                   capability, outcome ∈ {EXECUTED, DENIED}, code | —, registry_version, recorded_instant (do runtime)}
++                   — contagens da trava = consultas: model_calls = #(capability = MODEL_CALL ∧ EXECUTED);
++                   external_emissions = #(capability = EXTERNAL_EMIT ∧ EXECUTED); foreign_publications =
++                   #(capability = PUBLISH ∧ workspace ≠ manager ∧ EXECUTED); clock_reads = #(capability = CLOCK_READ ∧ EXECUTED)
+@@ -967 +1087,2 @@ notice          : {cycle_id | —, kind ∈ {LIMIT, COST, RUPTURE, CAPABILITY, S
+-capability_registry: {version, allowlist[6]}   — conferido antes de cada ação (INV-MDC-01)
++capability_registry: {version, allowlist[6]}   — conferido antes de cada ação (INV-MDC-01); capability_check_ref =
++                   (registry_version, action_seq) do capability_audit_record da conferência
+@@ -975 +1096 @@ capability_registry: {version, allowlist[6]}   — conferido antes de cada açã
+-- **E1**: publicação do Estrutural (`opportunity` = SIM) referindo **H1** — hipótese primária DOMINANT, direção ALTA, com nível, condição de disparo, validade, invalidação e condição de cancelamento. **I1**: publicação do Institucional. **CV1**: resultado macro, `directional_conflict` = false, `v` = θ + δ (δ > 0).
++- **E1**: publicação do Estrutural (`opportunity` = SIM) referindo **H1** — hipótese primária DOMINANT, direção ALTA, com nível, condição de disparo, validade, invalidação e condição de cancelamento. **I1**: publicação do Institucional. **CV1**: resultado macro, `directional_conflict` = false, `global_conviction` = `v` = θ + δ (δ > 0); `gate_result` = BLOCK (irrelevante aqui — ignorado).
+@@ -981 +1102 @@ capability_registry: {version, allowlist[6]}   — conferido antes de cada açã
+-## D7 — Cenários de Teste (20 — T01..T20; fixture M0 salvo indicação)
++## D7 — Cenários de Teste (22 — T01..T22; fixture M0 salvo indicação)
+@@ -990 +1111,3 @@ VERIFICAÇÃO estados: AGUARDANDO, AGUARDANDO, AGUARDANDO, CONTEXTO_FORMADO, ARM
+-            phase2_handoff publicado; toda entrada de efeito com log_seq menor que o do efeito; model_calls == 0
++            phase2_handoff publicado; toda entrada de efeito com log_seq menor que o do efeito e com capability_check_ref;
++            todo dispatch_request com budget{max_rounds, stage_deadline} e budget_ref; F07 alcançado mesmo com
++            gate_result = BLOCK em CV1; model_calls == 0 (consulta ao capability_audit_record)
+@@ -1016 +1139 @@ DADO        proposta de versão 2 com (a) aresta OPERACIONAL→ESTRUTURAL fechan
+-            (c) nó FIBONACCI sem posto declarado
++            (c) nó de teste NOVO_X sem posto declarado
+@@ -1022 +1145 @@ VERIFICAÇÃO (a) "MDC_GRAPH_CYCLIC"; (b)(c) "MDC_GRAPH_HIERARCHY_VIOLATION"; gr
+-### Cenário-MDC-T05 — Grafo com Fibonacci em versão futura (positivo; MDC-002 (e); P-11)
++### Cenário-MDC-T05 — Nó novo em versão futura do grafo (positivo; MDC-002 (e)(f); P-11)
+@@ -1024 +1147,3 @@ VERIFICAÇÃO (a) "MDC_GRAPH_CYCLIC"; (b)(c) "MDC_GRAPH_HIERARCHY_VIOLATION"; gr
+-DADO        versão 2 registrada por ato de Andraus: ESTRUTURAL(1) →[OPORTUNIDADE_SIM] FIBONACCI(2) →[OPORTUNIDADE_SIM] INSTITUCIONAL(4)
++DADO        versão 2 de TESTE registrada por ato de Andraus: ESTRUTURAL(1) →[OPORTUNIDADE_SIM] NOVO_X(3) →[OPORTUNIDADE_SIM]
++            INSTITUCIONAL(4) — NOVO_X é nó fictício de teste do mecanismo de versão; NÃO representa Fibonacci (skill, sem
++            nó — F-1) nem decide a confluência fractal (P-11)
+@@ -1026,2 +1151,2 @@ QUANDO      ciclo novo aberto depois do registro; o ciclo de R1 (aberto antes) s
+-ENTÃO       ciclo novo despacha FIBONACCI entre ESTRUTURAL e INSTITUCIONAL; ciclo de R1 continua na versão 1
+-VERIFICAÇÃO ordem de dispatch_request do ciclo novo == [ESTRUTURAL, FIBONACCI, INSTITUCIONAL, ...]; graph_version(R1) == 1;
++ENTÃO       ciclo novo despacha NOVO_X entre ESTRUTURAL e INSTITUCIONAL; ciclo de R1 continua na versão 1
++VERIFICAÇÃO ordem de dispatch_request do ciclo novo == [ESTRUTURAL, NOVO_X, INSTITUCIONAL, ...]; graph_version(R1) == 1;
+@@ -1052 +1177 @@ VERIFICAÇÃO code == "MDC_DIRECTIONAL_CONFLICT_NEUTRAL"; wf_f01_branch == 2; ti
+-DADO        M0, exceto: (a) θ(BTC) ausente; (b) CV1 com valor agregado INDETERMINADO; (c) v = θ − δ
++DADO        M0, exceto: (a) θ(BTC) ausente; (b) CV1 sem `global_conviction` numérico; (c) v = θ − δ
+@@ -1093 +1218 @@ VERIFICAÇÃO code == "MDC_SETUP_MISALIGNED"; sub (a) DIRECTION_MISMATCH, (b) DI
+-### Cenário-MDC-T13 — Alarme vencido ou cancelado (MDC-006 (g); ramo 5; WF-A03)
++### Cenário-MDC-T13 — Alarme vencido ou cancelado, em cada estado do ciclo (MDC-006 (g); ramo 5; WF-A02/A03)
+@@ -1095,5 +1220,8 @@ VERIFICAÇÃO code == "MDC_SETUP_MISALIGNED"; sub (a) DIRECTION_MISMATCH, (b) DI
+-DADO        ciclo em ARMADO
+-QUANDO      (a) ALARM_EXPIRED(A1); (b) ALARM_CANCELLED(A1, motivo = H1 REFUTED)
+-ENTÃO       ENC; nenhum alarme novo; nenhuma volta a ARMADO
+-VERIFICAÇÃO (a) "MDC_ALARM_EXPIRED", wf_f01_branch == 5; (b) "MDC_ALARM_CANCELLED"; ARM_ALARM após o evento == 0; cycle_request
+-            emitido pela Fase 1 == 0
++DADO        (a)(b) ciclo em ARMADO; (c)(d) ciclo em ATIVADO (OPERACIONAL despachado, sem setup); (e) ciclo em CONTEXTO_FORMADO
++            (ARM_ALARM pedido, ALARM_ARMED ainda não chegou)
++QUANDO      (a) ALARM_EXPIRED(A1); (b) ALARM_CANCELLED(A1, motivo = H1 REFUTED); (c) ALARM_EXPIRED(A1); (d) ALARM_CANCELLED(A1);
++            (e) ALARM_CANCELLED(A1)
++ENTÃO       ENC; nenhum alarme novo; nenhuma volta a ARMADO; em (c)(d)(e) nada segue para EM_SÍNTESE
++VERIFICAÇÃO (a)(c) "MDC_ALARM_EXPIRED", wf_f01_branch == 5; (b)(d)(e) "MDC_ALARM_CANCELLED"; fsm_row: (a)(b) F15, (c)(d) F32,
++            (e) F31; MARK_CONSUMED == 0 em todos (alarme já morto); ARM_ALARM após o evento == 0; cycle_request emitido pela
++            Fase 1 == 0; (c)(d) setup S1 chegando depois ⇒ "MDC_CYCLE_CLOSED", phase2_handoff == 0
+@@ -1112,3 +1240,3 @@ VERIFICAÇÃO code == "MDC_STAGE_DEADLINE_EXCEEDED"; recorded_instant == instant
+-DADO        M0, exceto: (a) steps atinge Smax + 1; (b) agente devolve aviso de voltas esgotadas (Rmax); (c) Fmax + 1 falhas seguidas
+-            ao publicar o pedido do INSTITUCIONAL
+-QUANDO      o contador é atualizado
++DADO        M0, exceto: (a) steps atinge Smax + 1; (b) agente analítico responde status = ROUNDS_EXHAUSTED (budget.max_rounds = Rmax);
++            (c) Fmax + 1 falhas seguidas ao publicar o pedido do INSTITUCIONAL (DISPATCH_PUBLISH_FAILED)
++QUANDO      o contador é atualizado / o aviso é consumido
+@@ -1116,2 +1244,3 @@ ENTÃO       ENC + aviso a Andraus
+-VERIFICAÇÃO code == "MDC_LIMIT_EXCEEDED"; sub (a) STEPS, (b) ROUNDS, (c) FAILURES; notice.kind == LIMIT; em (c), tentativas de publicação do
+-            pedido == Fmax + 1, nenhuma depois
++VERIFICAÇÃO code == "MDC_LIMIT_EXCEEDED"; sub (a) STEPS (F20), (b) ROUNDS (F35 — sem contador de voltas no livro), (c) FAILURES (F33
++            × Fmax, depois F20); notice.kind == LIMIT; em (c), tentativas de publicação do pedido == Fmax + 1, todas com a
++            mesma dispatch_key, nenhuma depois
+@@ -1162,0 +1292,24 @@ VERIFICAÇÃO (b) "MDC_STOP_COMMAND_NOT_AUTHENTICATED", estado == ATIVADO; (a) "
++### Cenário-MDC-T21 — Hipótese de contexto perde elegibilidade depois do contexto formado (MDC-006 (h); F30)
++```
++DADO        M0; H1 publicada em nova versão com domain_state = REFUTED (a) depois de F09 e antes de ALARM_ARMED(A1); (b) com o
++            ciclo em ARMADO, antes de chegar ALARM_CANCELLED; (c) com o ciclo em ATIVADO, antes do setup
++QUANDO      (a) ALARM_ARMED(A1); (b) ALARM_TRIGGERED(A1, inside_killzone = true); (c) S1 (alinhado)
++ENTÃO       ENC em todos; nada segue para ARMADO/ATIVADO/EM_SÍNTESE; ALARM_CANCELLED tardio da Spec de Tempo cai em F28
++VERIFICAÇÃO code == "MDC_ORIGIN_HYPOTHESIS_NOT_ELIGIBLE", sub "MDC_CONTEXT_LOST", fsm_row == F30; MARK_CONSUMED(A1): (a) 0, (b) 1,
++            (c) 1; dispatch_request(OPERACIONAL): (a)(b) 0; phase2_handoff == 0; ALARM_CANCELLED posterior ⇒ "MDC_CYCLE_CLOSED"
++```
++
++### Cenário-MDC-T22 — Falhas do despacho, do agente analítico e do mecanismo macro (MDC-003 (f); MDC-005 (e); F33/F34/F36/F19)
++```
++DADO        M0, exceto: (a) a 1ª publicação do pedido do ESTRUTURAL falha e a 2ª é confirmada; (b) o ESTRUTURAL responde
++            status = ERROR uma vez e depois publica E1; (c) a invocação macro devolve MACRO_ERROR; (d) a invocação macro não
++            devolve nada até o STAGE_TIMER_FIRED da etapa
++QUANDO      o ciclo de R1 corre
++ENTÃO       (a)(b) o ciclo segue como T01; (c)(d) ENC sem 2ª invocação
++VERIFICAÇÃO (a) "MDC_DISPATCH_PUBLISH_FAILED" == 1 (F33); as duas tentativas com a mesma dispatch_key; dispatch_request publicados
++            (ESTRUTURAL) == 1; failures(ESTRUTURAL) == 0 após E1; (b) "MDC_AGENT_ERROR" == 1 (F34); dispatch_request(ESTRUTURAL)
++            com attempt 1 e 2, dispatch_keys distintas; STAGE_TIMER pedidos para a etapa == 1; (c) "MDC_MACRO_INVOCATION_FAILED"
++            (F36), abstention presente, macro_invocations == 1, ARM_ALARM == 0; (d) "MDC_STAGE_DEADLINE_EXCEEDED" (F19, timer
++            pedido em F06), macro_invocations == 1; MACRO_RESULT tardio ⇒ "MDC_CYCLE_CLOSED"
++```
++
+@@ -1165 +1318 @@ VERIFICAÇÃO (b) "MDC_STOP_COMMAND_NOT_AUTHENTICATED", estado == ATIVADO; (a) "
+-## D8 — Adversarial (14 — ADV-MDC-01..14: o que rejeitar)
++## D8 — Adversarial (15 — ADV-MDC-01..15: o que rejeitar)
+@@ -1202,2 +1355,3 @@ VERIFICAÇÃO "MDC_EVENT_ENVELOPE_INVALID"; estado inalterado (RULE-CEB-001)
+-DADO        ciclo em AGUARDANDO (só ESTRUTURAL despachado)
+-QUANDO      (a) chega PUB(INSTITUCIONAL) não despachada neste ciclo; (b) chega ALARM_ARMED sem ARM_ALARM pedido
++DADO        (a)(c) ciclo em AGUARDANDO (só ESTRUTURAL despachado); (b) ciclo em CONTEXTO_FORMADO (ARM_ALARM pedido)
++QUANDO      (a) chega PUB(INSTITUCIONAL) não despachada neste ciclo; (b) chega ALARM_TRIGGERED do alarme deste ciclo (request_key
++            válida) antes de ALARM_ARMED; (c) chega ALARM_ARMED sem ARM_ALARM pedido
+@@ -1205,2 +1359,3 @@ ENTÃO       nenhuma transição
+-VERIFICAÇÃO (a) F06 exige "nó despachado neste ciclo" ⇒ "MDC_EVENT_FOREIGN_CYCLE" (dispatch_key inexistente); (b)
+-            "MDC_TRANSITION_NOT_LISTED"; macro_invocations == 0
++VERIFICAÇÃO (simulação D4.2) (a) passo (2) ⇒ "MDC_EVENT_FOREIGN_CYCLE" (dispatch_key não emitida); (b) passa o (2), para no (5) ⇒
++            "MDC_TRANSITION_NOT_LISTED" (par não listado — F29); (c) passo (2) ⇒ "MDC_EVENT_FOREIGN_CYCLE" (request_key não
++            emitida); macro_invocations == 0; estado inalterado
+@@ -1211,4 +1366,6 @@ VERIFICAÇÃO (a) F06 exige "nó despachado neste ciclo" ⇒ "MDC_EVENT_FOREIGN_
+-DADO        ciclo com CV1 já lido (F07 ou F08)
+-QUANDO      uma etapa pede nova invocação macro ("para conferir")
+-ENTÃO       recusada
+-VERIFICAÇÃO "MDC_MACRO_ALREADY_INVOKED"; macro_invocations == 1
++DADO        (a) ciclo com CV1 já lido (F07); (b) ciclo encerrado por MACRO_ERROR (T22 (c))
++QUANDO      (a) uma etapa pede nova invocação macro ("para conferir"); (b) uma etapa pede nova invocação "porque a 1ª falhou" e,
++            depois, chega MACRO_RESULT tardio da 1ª
++ENTÃO       recusada; nada consumido
++VERIFICAÇÃO (a)(b) "MDC_MACRO_ALREADY_INVOKED" (invocação = pedida — RULE-MDC-005 (a)); macro_invocations == 1; (b) resultado
++            tardio ⇒ "MDC_CYCLE_CLOSED" (D4.2 passo (3))
+@@ -1222,2 +1379,2 @@ ENTÃO       OPERACIONAL não despachado; publicação não consumida
+-VERIFICAÇÃO "MDC_TRANSITION_NOT_LISTED" para o disparo; "MDC_EVENT_FOREIGN_CYCLE" para a publicação (sem dispatch_key);
+-            dispatch_request(OPERACIONAL) == 0 (INV-01; CC-01)
++VERIFICAÇÃO (simulação D4.2) "MDC_EVENT_FOREIGN_CYCLE" para o disparo (nenhum ARM_ALARM pedido neste ciclo — passo (2)) e para a
++            publicação (sem dispatch_key — passo (2)); dispatch_request(OPERACIONAL) == 0 (INV-01; CC-01)
+@@ -1253 +1410,2 @@ VERIFICAÇÃO (a)–(j) code == "MDC_EFFECT_FORBIDDEN" com sub, na ordem: ANALYS
+-            AUTO_COST_PAUSE (todos com prefixo MDC_ e sufixo _FORBIDDEN); external_emissions == 0; foreign_publications == 0;
++            AUTO_COST_PAUSE (todos com prefixo MDC_ e sufixo _FORBIDDEN); capability_audit_record com outcome == DENIED para cada
++            tentativa; external_emissions == 0; foreign_publications == 0 (consultas ao capability_audit_record do runtime);
+@@ -1263 +1421 @@ ENTÃO       negada; o fluxo usa só o campo publicado
+-VERIFICAÇÃO "MDC_MODEL_CALL_FORBIDDEN"; model_calls == 0
++VERIFICAÇÃO "MDC_MODEL_CALL_FORBIDDEN"; capability_audit_record(MODEL_CALL) == DENIED; model_calls == 0 (consulta ao registro do runtime)
+@@ -1268,5 +1426,7 @@ VERIFICAÇÃO "MDC_MODEL_CALL_FORBIDDEN"; model_calls == 0
+-DADO        M0, exceto: (a) K0 indisponível; (b) K0 contém credencial de emissão ao Bot Trade Finance
+-QUANDO      R1 chega
+-ENTÃO       nada despachado; recusa gravada
+-VERIFICAÇÃO "MDC_CAPABILITY_CHECK_FAILED", sub (a) "MDC_CAPABILITY_REGISTRY_UNAVAILABLE", (b) "MDC_CAPABILITY_REGISTRY_DIVERGENT";
+-            capability_check_ref == AUSENTE em (a); dispatch_request == 0
++DADO        M0, exceto: (a) K0 indisponível; (b) K0 contém credencial de emissão ao Bot Trade Finance; (c) K0 disponível na
++            abertura e indisponível ao chegar E1 (antes do despacho do INSTITUCIONAL)
++QUANDO      (a)(b) R1 chega; (c) E1 é processada
++ENTÃO       nenhum efeito; recusa gravada; em (c) o ciclo encerra sem efeito algum
++VERIFICAÇÃO "MDC_CAPABILITY_CHECK_FAILED", sub (a)(c) "MDC_CAPABILITY_REGISTRY_UNAVAILABLE", (b) "MDC_CAPABILITY_REGISTRY_DIVERGENT";
++            capability_check_ref == AUSENTE em (a)(c); (a)(b) dispatch_request == 0; (c) fsm_row == F37,
++            dispatch_request(INSTITUCIONAL) == 0, notice == 0, MARK_CONSUMED == 0
+@@ -1288 +1448,11 @@ ENTÃO       negada; o prazo só vence por STAGE_TIMER_FIRED
+-VERIFICAÇÃO "MDC_CLOCK_READ_FORBIDDEN"; clock_reads == 0; replay do livro reproduz as mesmas decisões
++VERIFICAÇÃO "MDC_CLOCK_READ_FORBIDDEN"; capability_audit_record(CLOCK_READ) == DENIED; clock_reads == 0 (consulta ao registro do
++            runtime); replay do livro reproduz as mesmas decisões
++```
++
++### ADV-MDC-15 — Setup alinhado a hipótese de contexto já refutada (cancelamento atrasado)
++```
++DADO        ciclo em ATIVADO; H1 publicada em nova versão REFUTED; o ALARM_CANCELLED da Spec de Tempo (WF-A03) ainda não chegou
++QUANDO      o OPERACIONAL publica S1 perfeitamente alinhado (direção, TF, parent_id = H1)
++ENTÃO       o setup NÃO leva a EM_SÍNTESE
++VERIFICAÇÃO "MDC_ORIGIN_HYPOTHESIS_NOT_ELIGIBLE" sub "MDC_CONTEXT_LOST" (F30, não F16); phase2_handoff == 0; MARK_CONSUMED(A1) == 1;
++            ALARM_CANCELLED que chega depois ⇒ "MDC_CYCLE_CLOSED" (RULE-BB-003; RULE-MDC-006 (h))
+@@ -1330,4 +1500,7 @@ LEVEL        : E2 (Operacional — piso da abertura: desvia o caminho da anális
+-FAILURE-MODE : Falha de publicação ⇒ falha seguida do nó, nova tentativa limitada; estouro ⇒ MDC_LIMIT_EXCEEDED (ENC); publicação
+-               estranha ⇒ MDC_EVENT_FOREIGN_CYCLE; sem envelope ⇒ MDC_EVENT_ENVELOPE_INVALID; duplicata ⇒ MDC_DUPLICATE_IGNORED
+-EVIDENCE     : entrada MDC_DISPATCHED (node_id, aresta, condição, causation_event_id, dispatch_key) com log_seq anterior ao commit do
+-               objeto (seq do workspace); dispatch_request publicados por dispatch_key == 1 (T01; ADV-01/02)
++FAILURE-MODE : Falha de publicação ⇒ MDC_DISPATCH_PUBLISH_FAILED, republica com a mesma dispatch_key (F33); erro do agente analítico ⇒
++               MDC_AGENT_ERROR, novo attempt (F34); ambos contam failures[nó]; estouro ⇒ MDC_LIMIT_EXCEEDED sub FAILURES (F20);
++               voltas esgotadas ⇒ sub ROUNDS (F35); publicação estranha ⇒ MDC_EVENT_FOREIGN_CYCLE; sem envelope ⇒
++               MDC_EVENT_ENVELOPE_INVALID; duplicata ⇒ MDC_DUPLICATE_IGNORED
++EVIDENCE     : entrada MDC_DISPATCHED (node_id, attempt, fsm_row, causation_event_id, dispatch_key, capability_check_ref) com log_seq
++               anterior ao commit do objeto (seq do workspace); dispatch_request publicados por dispatch_key == 1; budget e
++               budget_ref no objeto (T01; T15; T22; ADV-01/02)
+@@ -1346 +1519 @@ FAILURE-MODE : Par não listado ⇒ MDC_TRANSITION_NOT_LISTED; ciclo encerrado 
+-EVIDENCE     : cycle_log_entry (from_state, to_state, rule_id = linha F-nn, causation_event_id); cycle_closed por ciclo encerrado;
++EVIDENCE     : cycle_log_entry (from_state, to_state, fsm_row = linha F-nn, rule_id = ID da RULE, causation_event_id); cycle_closed por ciclo encerrado;
+@@ -1354,2 +1527,3 @@ EFFECT       : Pedido de armar alarme, marcar consumo ou registrar timer na Spec
+-PRECOND      : ARM_ALARM só em F09 (hipótese ACTIVE/DOMINANT; campos de WF-A01 copiados); MARK_CONSUMED só em F16, F17, F19, F20,
+-               F22 em ATIVADO; STAGE_TIMER em toda espera; entrada MDC_TIME_REQUESTED antes; request_key
++PRECOND      : ARM_ALARM só em F09 (hipótese ACTIVE/DOMINANT; campos de WF-A01 copiados); MARK_CONSUMED só nas linhas da
++               Interface (F16, F17; F19, F20, F22, F35 em ATIVADO; F30 com alarme disparado) e nunca em F32/F37; STAGE_TIMER
++               em toda espera (F01, F03, F06, F09, F13); entrada MDC_TIME_REQUESTED antes; request_key
+@@ -1362 +1536 @@ EVIDENCE     : time_request.payload == campos da publicação de origem (compara
+-               request_key (T01, T09, T12)
++               request_key e capability_check_ref (T01, T09, T12, T13, T21)
+@@ -1375 +1549,2 @@ FAILURE-MODE : Livro indisponível ⇒ nenhum efeito, resposta de erro MDC_CYCLE
+-EVIDENCE     : sequência por log_seq contínua; entradas alteradas == 0; clock_reads == 0; replay == estado corrente (T17; ADV-14)
++EVIDENCE     : sequência por log_seq contínua; entradas alteradas == 0; replay == estado corrente (T17); clock_reads == 0 — consulta ao
++               capability_audit_record do runtime, não ao próprio livro (ADV-14)
+@@ -1399,2 +1574,3 @@ LEVEL        : E1 (Contratual — informação observável)
+-FAILURE-MODE : Canal indisponível ⇒ o aviso fica registrado no livro como pendente; o ciclo segue a sua linha de D5
+-EVIDENCE     : notice com code e refs; entrada correspondente no livro (T15, T16, T18)
++FAILURE-MODE : Canal indisponível ⇒ entrada entry_type MDC_NOTICE_PENDING (com o notice inteiro em refs); o ciclo segue a sua linha
++               de D5; registro de capacidades falho ⇒ nenhum aviso (F37)
++EVIDENCE     : notice com code e refs; entrada MDC_NOTICE_SENT ou MDC_NOTICE_PENDING com capability_check_ref (T15, T16, T18)
+@@ -1408,3 +1584,6 @@ EFFECT       : Nenhum efeito fora da allowlist; nenhuma emissão externa; nenhum
+-PRECOND      : registro de capacidades K0 = allowlist de INV-MDC-01, conferido antes de cada ação; nenhuma credencial de emissão
+-               externa, de escrita em workspace alheio ou de modelo
+-POSTCOND     : capacidades exercidas ⊆ allowlist; model_calls == 0; external_emissions == 0; foreign_publications == 0; clock_reads == 0
++PRECOND      : registro de capacidades K0 = allowlist de INV-MDC-01, conferido antes de cada ação (D4.1 passo (0); D4.2 passo (7));
++               nenhuma credencial de emissão externa, de escrita em workspace alheio ou de modelo; runtime grava o
++               capability_audit_record (requisito ao runtime/SPEC-040)
++POSTCOND     : no capability_audit_record do runtime: capacidades EXECUTED ⊆ allowlist; model_calls == 0; external_emissions == 0;
++               foreign_publications == 0; clock_reads == 0 (definições: contrato lógico); registro ausente ⇒ INDETERMINADO, trava
++               não declarada verificada
+@@ -1414 +1593 @@ FAILURE-MODE : Fail-closed: MDC_EFFECT_FORBIDDEN (subs), MDC_MODEL_CALL_FORBIDDE
+-               divergente ⇒ MDC_CAPABILITY_CHECK_FAILED, nada despachado. Falso-DENY E3 por amostragem (ENF-07): recusas classificadas
++               divergente ⇒ MDC_CAPABILITY_CHECK_FAILED, nenhum efeito (no meio do ciclo, ENC F37). Falso-DENY E3 por amostragem (ENF-07): recusas classificadas
+@@ -1418,2 +1597,3 @@ FAILURE-MODE : Fail-closed: MDC_EFFECT_FORBIDDEN (subs), MDC_MODEL_CALL_FORBIDDE
+-EVIDENCE     : capability_check_ref por ação no livro; contagens model_calls, external_emissions, foreign_publications, clock_reads
+-               == 0; amostra de falso-DENY registrada (ADV-10..12, ADV-14)
++EVIDENCE     : capability_check_ref em toda entrada de efeito do livro (Manager); capability_audit_record do runtime (fonte
++               independente) com as quatro contagens == 0 e DENIED para cada tentativa negada; amostra de falso-DENY registrada
++               (ADV-10..12, ADV-14)
+@@ -1421,0 +1602,16 @@ EVIDENCE     : capability_check_ref por ação no livro; contagens model_calls,
++### EC-MDC-009 — Invocação da leitura macro [E2]
++```
++CAPABILITY   : Invocar o mecanismo de leitura macro do CCM-001 (SPEC-003 RULE-CF-010) e ler o resultado — capacidade (4) da allowlist
++EFFECT       : Uma invocação por ciclo (consome a 1ª das 2 invocações de WF-C01) e produção de um objeto de convicção pela SPEC-003
++PRECOND      : F06 (INSTITUCIONAL publicado e despachado neste ciclo); nenhuma invocação pedida antes no ciclo; entrada MDC_MACRO_INVOKED
++               com macro_key e capability_check_ref antes; timer da etapa pedido
++POSTCOND     : macro_invocations == 1 por ciclo; nada de custo/contagem no payload (INV-04); valor lido, nunca recalculado
++POLICY       : RULE-MDC-005; RULE-CF-010; WF-C01; INV-04; CCM-001 Cap.3/Cap.4
++LEVEL        : E2 (Operacional — decide se o caminho segue para o alarme; sem efeito externo)
++FAILURE-MODE : Segunda invocação ⇒ MDC_MACRO_ALREADY_INVOKED; MACRO_ERROR ⇒ MDC_MACRO_INVOCATION_FAILED (ENC, F36); sem resultado ⇒
++               F19; resultado sem campos ⇒ MDC_MACRO_NOT_CONCLUSIVE sub MDC_MACRO_READING_UNDETERMINED
++EVIDENCE     : entrada MDC_MACRO_INVOKED (macro_key, input_refs) == 1 por ciclo; macro_reading_ref no livro (T01, T08, T22, ADV-06)
++```
++
++**Capacidade da allowlist → EC (m-07):** (1) ler — sem efeito; coberta só pela trava (EC-MDC-008) · (2) publicar no próprio workspace — EC-MDC-002 (`dispatch_request`), EC-MDC-006 (`phase2_handoff`) · (3) gravar o próprio livro — EC-MDC-005 · (4) invocar a leitura macro — EC-MDC-009 · (5) `time_request` — EC-MDC-004 · (6) `notice` — EC-MDC-007. Transição/ENC (não é capacidade externa) — EC-MDC-003; pedido de ciclo — EC-MDC-001.
++
+@@ -1428 +1624 @@ EVIDENCE     : capability_check_ref por ação no livro; contagens model_calls,
+-| E2 | pedido de ciclo (EC-MDC-001); despacho (EC-MDC-002); transição (EC-MDC-003); pedido à Spec de Tempo (EC-MDC-004); entrega (EC-MDC-006) |
++| E2 | pedido de ciclo (EC-MDC-001); despacho (EC-MDC-002); transição (EC-MDC-003); pedido à Spec de Tempo (EC-MDC-004); entrega (EC-MDC-006); invocação macro (EC-MDC-009) |
+@@ -1471 +1667 @@ SPEC-004 v1.2 (workspace próprio, idempotência, ordem por workspace, identidad
+-| R-13 Fibonacci/Fractal pulado/inventado | RULE-MDC-002 (e)(g); T05 |
++| R-13 Fibonacci/Fractal pulado/inventado | RULE-MDC-002 (e)(g) (Fibonacci = skill, sem nó — F-1; fractal = P-11); T05 (mecanismo de versão, nó fictício) |
+@@ -1476,0 +1673,2 @@ SPEC-004 v1.2 (workspace próprio, idempotência, ordem por workspace, identidad
++| R-19 (v1.1) setup aceito sobre hipótese já refutada (cancelamento atrasado) | RULE-MDC-006 (h); F30; T21; ADV-15 |
++| R-20 (v1.1) trava E3 sem prova independente | `capability_audit_record` do runtime (INV-MDC-01); ausente ⇒ INDETERMINADO, não verificada |
+@@ -1479 +1677 @@ SPEC-004 v1.2 (workspace próprio, idempotência, ordem por workspace, identidad
+-**Eficácia:** tudo D, trava C; nenhum caminho de sinal sai daqui. **Efetividade:** mesmos eventos ⇒ mesma sequência (replay). **Eficiência:** ativação progressiva evita rodar SMC/ICT sem oportunidade/disparo. **Economicidade:** zero modelo; o orçamento só avisa (nunca acima de Eficácia — CEE-001 §12). **Latência:** o consumidor sensível é o despacho do OPERACIONAL dentro da Killzone — atraso entre `ALARM_TRIGGERED` e o despacho reduz a relevância do setup; orçamento de latência = parâmetro INDETERMINADO (SPEC-005 RULE-CEB-010), medido pela métrica (7).
++**Eficácia:** tudo D, trava C; nenhum caminho de sinal sai daqui. **Efetividade:** mesmos eventos ⇒ mesma sequência (replay). **Eficiência:** ativação progressiva evita rodar SMC/ICT sem oportunidade/disparo. **Economicidade:** zero modelo; o orçamento só avisa (nunca acima de Eficácia — CEE-001 §12). **Latência:** o consumidor sensível é o despacho do OPERACIONAL dentro da Killzone — atraso entre `ALARM_TRIGGERED` e o despacho reduz a relevância do setup; dois orçamentos, ambos parâmetro INDETERMINADO: o de TRANSPORTE da notificação (SPEC-005 RULE-CEB-010) e o de TRABALHO da etapa (`stage_deadline`, desta Spec, repassado em `dispatch_request.budget` — exigência da SPEC-048); medidos pela métrica (7).
+@@ -1485 +1683 @@ Spec nova; **nenhum baseline alterado**; WORKFLOW **não** editado; propostas de
+-Unidades rastreáveis, sem órfãs, para o BUILD: TK-01 registro de capacidades + conferência (BASpec-MDC-012/EC-MDC-008) · TK-02 avaliação do pedido (001/EC-001) · TK-03 registro e validação do grafo (002) · TK-04 despacho idempotente e consumo (003/EC-002) · TK-05 condições de ativação e detector de ruptura (004) · TK-06 invocação macro e comparação (005) · TK-07 pedidos à Spec de Tempo e alinhamento (006/EC-004) · TK-08 tabela D5 (007/EC-003) · TK-09 contadores (008) · TK-10 paradas e abstenção (009/EC-007) · TK-11 livro de bordo e replay (010/EC-005) · TK-12 handoff (011/EC-006). Critério de aceite de cada TK = cenários citados na BASpec de origem.
++Unidades rastreáveis, sem órfãs, para o BUILD: TK-01 registro de capacidades + conferência (BASpec-MDC-012/EC-MDC-008) · TK-02 avaliação do pedido (001/EC-001) · TK-03 registro e validação do grafo (002) · TK-04 despacho idempotente e consumo (003/EC-002) · TK-05 condições de ativação e detector de ruptura (004) · TK-06 invocação macro e comparação (005/EC-009) · TK-07 pedidos à Spec de Tempo e alinhamento (006/EC-004) · TK-08 tabela D5 (007/EC-003) · TK-09 contadores (008) · TK-10 paradas e abstenção (009/EC-007) · TK-11 livro de bordo e replay (010/EC-005) · TK-12 handoff (011/EC-006). Critério de aceite de cada TK = cenários citados na BASpec de origem.
+@@ -1507 +1705 @@ Unidades rastreáveis, sem órfãs, para o BUILD: TK-01 registro de capacidades
+-Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `checks.md` l.40, l.54, l.63. As outras 23 ocorrências (invocação, nome de decisão aberta, "Manager/Scheduler" sem número) **ficam**.
++Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `checks.md` l.40, l.54, l.63. As outras 23 linhas FICA do research §8.3 (invocação, nome de decisão aberta, "Manager/Scheduler" sem número) **ficam**.
+@@ -1526,0 +1725 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
++| CF-D (v1.1) | F-4 (Andraus, 2026-11-14: "manter S1/D1/H4/H1/M5 fixo") × WF-R01 (tripla de TFs por tipo de trading, editável) | registrada como decisão de Andraus; o Plan não cria tabela nem parâmetro de TF: `tf_triple` segue dado do pedido (RULE-MDC-001 (a)); CF-B mantido | só Andraus reconcilia (WORKFLOW é dele); BL-026 e N-001 seguem em aberto |
+@@ -1537 +1736,2 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
+-- **Novas, deste Plan — `[DECISÃO NECESSÁRIA]`:** DN-1, DN-2, DN-3 (seção "Perguntas a Andraus"). Nenhuma aparece como fechada em outra parte deste Plan.
++- **Deste Plan:** DN-1 e DN-3 seguem `[DECISÃO NECESSÁRIA]` (Andraus, 2026-11-08: DN-1 = decidir depois, com a SPEC-014; DN-3 = não confirmada; em 2026-11-14 Andraus decidiu F-1/F-2 — Fibonacci é skill, sem nó — o que é compatível com o roteiro v1, mas a confirmação formal da DN-3 não foi dada e a confluência fractal segue "decidir depois"); decisões de Andraus de 2026-11-14 registradas: F-1..F-4 ("Incorporação das decisões"; CF-D); **DN-2 decidida por Andraus** (2026-11-08: a Fase 1 só detecta e avisa — comportamento já especificado, sem mudança). Nenhuma DN nova na v1.1. Nenhuma aparece como fechada em outra parte deste Plan.
++- **Do CCM-001 (nota N1/N3), seguem `[DECISÃO NECESSÁRIA]`, apenas citadas:** composição do `score` (J-001 ABERTA; BL-027) e proveniência da entrada do gate (BL-029) — RULE-MDC-005 (d).
+@@ -1548 +1748 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
+-| 003 | despacho duplicado; publicação de outro ciclo consumida | sim — contagem por `dispatch_key`; código | publicação válida sem envelope → ADV-04 |
++| 003 | despacho duplicado; publicação de outro ciclo consumida; falha sem teto; pedido sem orçamento | sim — contagem por `dispatch_key`; código; `budget` no objeto | publicação válida sem envelope → ADV-04; erro do agente analítico com teto esgotado → T15 (c) |
+@@ -1550,3 +1750,3 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
+-| 005 | alarme armado com θ ausente; 2ª invocação | sim — `ARM_ALARM` == 0; contador | valor ≥ θ com conflito → T07 (NEUTRO vence) |
+-| 006 | campo do alarme preenchido pelo Manager; setup contra o contexto aceito | sim — payload == publicação; sub do código | setup alinhado mas objeto-hipótese → ADV-08 |
+-| 007 | transição fora da tabela; volta a ARMADO | sim — `rule_id` = linha F-nn | evento válido para ciclo encerrado → T19; ADV-13 |
++| 005 | alarme armado com θ ausente; 2ª invocação (inclusive após erro); `gate_result` usado como θ | sim — `ARM_ALARM` == 0; `macro_invocations`; T01 com `gate_result` = BLOCK chega a F07 | valor ≥ θ com conflito → T07 (NEUTRO vence); erro do mecanismo → T22 (c) |
++| 006 | campo do alarme preenchido pelo Manager; setup contra o contexto aceito; setup aceito sobre hipótese já refutada | sim — payload == publicação; sub do código; `fsm_row` == F30 | setup alinhado mas objeto-hipótese → ADV-08; alinhado mas hipótese REFUTED → ADV-15 |
++| 007 | transição fora da tabela; volta a ARMADO; alarme morto em `ATIVADO` ignorado | sim — `fsm_row` = linha F-nn | evento válido para ciclo encerrado → T19; ADV-13; T13 (c)(d) |
+@@ -1557 +1757 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
+-| 012 | emissão externa; modelo chamado; falso-DENY de T01 | sim — contagens == 0; amostra | capacidade legítima recusada → ADV-10 (k) |
++| 012 | emissão externa; modelo chamado; falso-DENY de T01; ação sem conferência | sim — contagens no `capability_audit_record` do runtime (fonte independente do Manager); `capability_check_ref` por entrada | capacidade legítima recusada → ADV-10 (k); registro cai no meio do ciclo → ADV-12 (c) |
+@@ -1562 +1762 @@ Nenhuma BASpec exigiu julgamento (H/P): toda guarda é comparação de campo pub
+-Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "Conservação do pai" (coluna "Evidência"); a parte **orientação** do §3.1.3 e a coluna "Classe predominante" não entram na conservação (MMC-001 §8.2-bis) — mesmo assim, a orientação foi seguida (D + C). Horizontais: RULE-CF-010 → RULE-MDC-005; RULE-CBP-002/005/006/014 → RULE-MDC-003, D4.2; RULE-CEB-001/004/007/008 → D4.2, RULE-MDC-003 (g); CEE §10 S2/S4 → RULE-MDC-008; CHM-001 transições → RULE-MDC-004 (d); WF-F02 estados → D5. **REMOVED vazio; MODIFIED vazio;** nenhum ADDED contradiz o herdado: o ENC (RULE-MDC-007 (d)) não cria estado nem seta (rótulo = DN-1), e o handoff não fixa o dono da montagem do Signal Package (MMC-001 §5.6). Nenhuma obrigação sem evidência.
++Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "Conservação do pai" (coluna "Evidência"); a parte **orientação** do §3.1.3 e a coluna "Classe predominante" não entram na conservação (MMC-001 §8.2-bis) — mesmo assim, a orientação foi seguida (D + C). Horizontais: RULE-CF-010 → RULE-MDC-005; RULE-CBP-002/005/006/014 → RULE-MDC-003, D4.2; RULE-CEB-001/004/007/008 → D4.2, RULE-MDC-003 (g); CEE §10 S2/S4 → RULE-MDC-008; CHM-001 transições → RULE-MDC-004 (d); WF-F02 estados → D5; RULE-BB-003 → RULE-MDC-006 (a)(h); WF-A02/A03 (morte do alarme) → D5 F15/F31/F32; SPEC-048 v1.4 (orçamento no pedido, `budget_ref`) → RULE-MDC-003 (a); SPEC-007 v2.3 (`max_retrieval_rounds`) → RULE-MDC-008 (a). **REMOVED vazio; MODIFIED vazio;** nenhum ADDED contradiz o herdado: o ENC (RULE-MDC-007 (d)) não cria estado nem seta (rótulo = DN-1), e o handoff não fixa o dono da montagem do Signal Package (MMC-001 §5.6). Nenhuma obrigação sem evidência.
+@@ -1565 +1765 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-- Afirmações causais: só de regra ("aresta liberada ⇒ despacho"), nenhuma sobre mercado (RULE-CAU-01). A leitura do evento da Inversão #1 e o campo agregado da leitura macro são `[INFERÊNCIA]` declaradas.
++- Afirmações causais: só de regra ("aresta liberada ⇒ despacho"), nenhuma sobre mercado (RULE-CAU-01). São `[INFERÊNCIA]` declaradas: a leitura do evento da Inversão #1; `global_conviction` como campo comparado com θ (RULE-MDC-005 (d)); `budget.max_rounds` servindo o `max_retrieval_rounds` (RULE-MDC-008 (a)); os dois orçamentos de latência (tabela de parâmetros). "Invocação = pedida" é `[PROPOSTA]` (RULE-MDC-005 (a)).
+@@ -1567 +1767 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-- INDETERMINADO usado em: oportunidade ausente, leitura macro sem valor, θ ausente, direção ausente, custo não medido, taxa de falso-DENY.
++- INDETERMINADO usado em: oportunidade ausente, leitura macro sem valor, θ ausente, direção ausente, custo não medido, taxa de falso-DENY, contagens da trava sem `capability_audit_record`.
+@@ -1571 +1771 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-[x] A Fase 1 não produz recomendação nem TMP: produz **insumo** à Fase 2 (INV-05; RULE-DEC-01) · [x] nenhuma BASpec cruza para a execução downstream (INV-MDC-01 sub `ORDER_EMISSION`) · [x] toda dependência de decisão de Andraus está marcada `[DECISÃO NECESSÁRIA]` (DN-1..DN-3) ou como decisão aberta.
++[x] A Fase 1 não produz recomendação nem TMP: produz **insumo** à Fase 2 (INV-05; RULE-DEC-01) · [x] nenhuma BASpec cruza para a execução downstream (INV-MDC-01 sub `ORDER_EMISSION`) · [x] toda dependência de decisão de Andraus está marcada `[DECISÃO NECESSÁRIA]` (DN-1, DN-3) ou como decisão aberta; DN-2 consta como decisão de Andraus de 2026-11-08.
+@@ -1583,2 +1783,4 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-| Evento da Inversão #1; campo agregado da leitura macro; leitura de CF-A; E-3 | `[INFERÊNCIA]` | INFERÊNCIA |
+-| Rótulo final dos encerramentos; despertar por ruptura; aprovação do grafo v1 | `[DECISÃO NECESSÁRIA]` | DN-1, DN-2, DN-3 |
++| Evento da Inversão #1; `global_conviction` como campo comparado com θ; `budget.max_rounds` = `max_retrieval_rounds`; dois orçamentos de latência; requisitos a outras Specs; leitura de CF-A; E-3 | `[INFERÊNCIA]` | INFERÊNCIA |
++| Rótulo final dos encerramentos; aprovação do grafo v1 | `[DECISÃO NECESSÁRIA]` | DN-1 (decidir depois, com a SPEC-014), DN-3 (não confirmada) |
++| Ruptura de hipótese dominante: a Fase 1 só detecta e avisa | `[FATO]` (decisão de Andraus, AskUserQuestion 2026-11-08; a citar na ata) | DN-2 decidida |
++| Fibonacci = skill dos agentes analíticos, sem nó (F-1); só confere/publica zonas, sub-hipótese sem uso (F-2); leitura macro inalterada (F-3); TFs S1/D1/H4/H1/M5 fixos (F-4, divergente de WF-R01 — CF-D) | `[FATO]` (decisões de Andraus, AskUserQuestion 2026-11-14; a citar na ata) | registradas; DN-3, P-11 (fractal), J-001, WF-D03, BL-026, N-001 seguem em aberto |
+@@ -1590 +1792 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-1. **DN-1 — Em que estado final termina um ciclo encerrado antes do Risco?** O WORKFLOW (WF-F02) só chega a "recusado/vencido" depois do Risco. Você decidiu "só encerrar" (P-12), mas não escolheu o nome do estado final. *Recomendação (da abertura, ABERTURA §13 P-12, ampliada):* sem oportunidade, NEUTRO, setup desalinhado, contexto não conclusivo, hipótese não elegível, campos do alarme faltando, alarme cancelado, teto estourado e parada por você → **RECUSADO**; alarme vencido e prazo vencido → **EXPIRADO**; prazo vencido **depois** do disparo (ramo 3 por prazo — CF-C) → **EXPIRADO** (o motivo é o prazo). Como acrescenta setas que o WORKFLOW não escreve, a escolha é sua (e a edição do WORKFLOW, se quiser). Até lá, o ciclo encerra registrado e **não aceita mais nada** (fail-closed). **Aprova o mapeamento, ou quer outro?**
++1. **DN-1 — Em que estado final termina um ciclo encerrado antes do Risco?** O WORKFLOW (WF-F02) só chega a "recusado/vencido" depois do Risco. Você decidiu "só encerrar" (P-12), mas não escolheu o nome do estado final. *Recomendação (da abertura, ABERTURA §13 P-12, ampliada):* sem oportunidade, NEUTRO, setup desalinhado, contexto não conclusivo, hipótese não elegível, campos do alarme faltando, alarme cancelado, teto estourado e parada por você → **RECUSADO**; alarme vencido e prazo vencido → **EXPIRADO**; prazo vencido **depois** do disparo (ramo 3 por prazo — CF-C) → **EXPIRADO** (o motivo é o prazo). Como acrescenta setas que o WORKFLOW não escreve, a escolha é sua (e a edição do WORKFLOW, se quiser). Até lá, o ciclo encerra registrado e **não aceita mais nada** (fail-closed). **Resposta de Andraus (2026-11-08): decidir depois, junto com a SPEC-014** — segue `[DECISÃO NECESSÁRIA]`; a pergunta fica para aquele momento. (Na v1.1 entram na lista os novos encerramentos F30–F32, F35–F37, todos sem rótulo final.)
+@@ -1592 +1794 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-2. **DN-2 — Ruptura de uma hipótese dominante (Inversão #1): quem abre o ciclo completo?** O mapa de conflitos manda "despertar análise completa independente do custo", mas a Fase 1 não abre ciclo (P-12). *Recomendação:* a Fase 1 **detecta, registra e avisa você** (e, quando existir, a Fase 0); quem abre o ciclo é você/Fase 0. O "independente do custo" já vale sempre, porque nada na Fase 1 corta etapa por custo. **Confirma, ou quer que a Fase 1 abra o ciclo sozinha nesse caso (exceção à P-12)?**
++2. **DN-2 — Ruptura de uma hipótese dominante (Inversão #1): quem abre o ciclo completo? — DECIDIDA.** Resposta de Andraus (AskUserQuestion, 2026-11-08): a Fase 1 **só detecta e avisa**; não abre ciclo. Era a recomendação e já é o comportamento especificado (RULE-MDC-004 (d)); nada mudou. A ata do Plan deve citar a resposta.
+@@ -1594 +1796 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-3. **DN-3 — Versão 1 do roteiro dos analistas.** *Recomendação:* a homologação deste Plan registra a **versão 1** do grafo (Elliott → SMC se houver oportunidade → ICT se o alarme disparar na Killzone), sem Fibonacci/Fractal (P-11). Versões futuras: ato seu, sem reescrever a Spec. **Confirma?**
++3. **DN-3 — Versão 1 do roteiro dos analistas.** *Recomendação:* a homologação deste Plan registra a **versão 1** do grafo (Elliott → SMC se houver oportunidade → ICT se o alarme disparar na Killzone), sem Fibonacci/Fractal (P-11). Versões futuras: ato seu, sem reescrever a Spec. **Resposta de Andraus (2026-11-08): não confirmada por ora** — antes, um inventário de Fibonacci/Fractal. **Nota de 2026-11-14 (F-1/F-2):** Fibonacci é skill usada por dentro dos agentes Elliott/SMC/ICT, não etapa de despacho — o roteiro v1 (sem nó de Fibonacci) é **compatível** com isso; a confluência fractal é outra coisa e segue "decidir depois" (P-11). Segue `[DECISÃO NECESSÁRIA]` até a sua confirmação formal da versão 1; este Plan não usa o inventário. **Confirma a versão 1?**
+@@ -1611,2 +1813,3 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-- [x] Profundidade D0–D8 atingida (D0..D9 presentes; D8 = 14 ADV).
+-- [x] Enforcement Contract em todo comportamento com efeito (8 EC); nível ≥ piso; fail-closed na trava E3 com falso-DENY amostral (ENF-07).
++- [x] Profundidade D0–D8 atingida (D0..D9 presentes; D8 = 15 ADV).
++- [x] Enforcement Contract em todo comportamento com efeito (9 EC; cada capacidade da allowlist com EC — tabela após EC-MDC-009); nível ≥ piso; nível de cada BASpec ≥ efeitos que contém; fail-closed na trava E3 com falso-DENY amostral (ENF-07) e prova independente (`capability_audit_record` do runtime).
++- [x] R2 (parecer R1): M-01 → RULE-MDC-006 (g)(h), D5 F30–F32, T13/T21, ADV-15; M-02 → RULE-MDC-003 (c)(f), RULE-MDC-005 (a)(e), D4.3, D5 F06/F33–F36, T15/T22, ADV-06; M-03 → RULE-MDC-005 (d), D4.4; M-04 → RULE-MDC-003 (a), RULE-MDC-008 (a), tabela de parâmetros + reconciliação, "Requisitos a outras Specs"; M-05 → INV-MDC-01, D4.2 passo (7), contrato `capability_audit_record`, EC-MDC-008, D5 F37, ADV-12 (c); m-05 → RULE-MDC-001 (d) e tabela WORKFLOW; m-06 → D4.2 (simulação), ADV-05/07; m-07 → BASpec-MDC-009 [E2], `MDC_NOTICE_PENDING`, EC-MDC-009; m-08 → `fsm_row` × `rule_id` (RULE-MDC-010 (a); EC-MDC-003). Nenhuma BASpec H/P; nenhuma decisão aberta fechada; nenhuma DN nova.
+@@ -1614 +1817 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
+-- [x] Conflitos registrados (CF-A, CF-B, CF-C novos + herdados).
++- [x] Conflitos registrados (CF-A, CF-B, CF-C, CF-D novos + herdados).

@@ -37,14 +37,35 @@
       "verificado_em": "2026-10-30: tests/test_roteador_modelos.py (49 testes) no CI; ao vivo (2026-10-30): sem model => deny; Revisor sem ALVO/FICHA => deny (R-AC4); Especificador model=opus + CLASSE-TAREFA O => permitido"
     },
     {
-      "id": "hook.telemetria-tokens",
-      "arquivo": "scripts/telemetria-tokens.js",
-      "canal": "settings.json PostToolUse Agent",
+      "id": "hook.experimentos-ativos",
+      "arquivo": "scripts/experimentos-ativos.js",
+      "canal": "settings.json PreToolUse Agent|SendMessage",
       "tipo": "hook",
       "estado": "ativo",
-      "enforca": "Detector (ENF-03), nunca nega: repassa o evento PostToolUse/Agent a scripts/telemetria_tokens.py; fail-open",
+      "enforca": "Nega pedido ao Especificador/Revisor sobre o Plan de uma Spec no escopo de um experimento ativo (governance/EXPERIMENTOS-ATIVOS.json) quando falta a cláusula `EXPERIMENTO: <id>`; ao Revisor: nega a rodada acima de teto_rodadas_revisao (rodadas = pareceres existentes do Plan + 1; libera só com escalado_por_andraus) e exige `SHA256-ALVO: <64 hex>` da rodada hash_a_partir_da_rodada em diante; cobre Agent, Task e SendMessage; fail-open sem registro legível",
+      "ata": "DHR-PROCESSO-EXPERIMENTOS-001",
+      "verificado_em": "2026-11-14: tests/test_experimentos_ativos.py (15 testes, 8 mutantes mortos) no CI; ao vivo: hook real com evento sintético do Plan da SPEC-008 negou Revisor sem cláusula, negou sem hash na rodada 3, liberou com ambos, liberou outra Spec e agente não construtor"
+    },
+    {
+      "id": "det.experimentos-ativos",
+      "arquivo": "scripts/experimentos_ativos.py",
+      "canal": "hook (via experimentos-ativos.js) + CI (BLOQUEANTE: --ci) + CLI",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "Registro versionado governance/EXPERIMENTOS-ATIVOS.json (id, ata, escopo spec|proximo-plan, marcador, teto_rodadas_revisao, hash_a_partir_da_rodada, escalado_por_andraus); `--ci` reprova registro inválido ou experimento aprovado para o 'próximo Plan' sem vinculado_a quando há Plan em redação (parecer de Plan sem aprovação final); previne a falha em que um experimento aprovado por Andraus para o próximo Plan não entrou nos pedidos",
+      "ata": "DHR-PROCESSO-EXPERIMENTOS-001",
+      "nota": "Detector/trava de forma (ENF-03): não julga o mérito, não decide por Andraus, não fecha decisão aberta (CONS-01). Criar/encerrar experimento = ata + registro no mesmo PR. O teto de 3 rodadas do P10 (ordem de Andraus 2026-11-14) é aplicado aqui por código.",
+      "verificado_em": "2026-11-14: tests/test_experimentos_ativos.py + passo de CI bloqueante; calibração ao vivo: registro do repositório válido, `--ci` verde"
+    },
+    {
+      "id": "hook.telemetria-tokens",
+      "arquivo": "scripts/telemetria-tokens.js",
+      "canal": "settings.json PostToolUse Agent + SubagentStop + Stop",
+      "tipo": "hook",
+      "estado": "ativo",
+      "enforca": "Detector (ENF-03), nunca nega: repassa o evento PostToolUse/Agent a scripts/telemetria_tokens.py; fail-open | DHR-TELEMETRIA-002: no SubagentStop/Stop reconcilia o uso REAL do transcript do subagente (agent-*.jsonl + .meta.json), deduplicado por id de resposta (o transcript repete a mesma resposta em várias linhas), 1 registro por agente em .telemetria/uso-tokens.jsonl, `total` = tokens NOVOS (in+out+cache criado; cache lido à parte), tempo ATIVO (intervalos > 30 min = parado); substitui os stubs de lançamento sem tokens; CLI `reconciliar` e `tokens <agent_id>`",
       "ata": "DHR-TELEMETRIA-CUSTO-001",
-      "verificado_em": "2026-10-31: execução ao vivo do wrapper com evento sintético gravou 1 linha; tests/test_telemetria_tokens.py (7 testes) no CI"
+      "verificado_em": "2026-11-14: tests/test_telemetria_reconciliar.py (10 testes, 5 mutantes mortos) no CI; ao vivo: 9 subagentes da sessão reconciliados (antes: 9 chamadas sem tokens) | 2026-10-31: execução ao vivo do wrapper com evento sintético gravou 1 linha; tests/test_telemetria_tokens.py (7 testes) no CI"
     },
     {
       "id": "lib.telemetria-tokens",

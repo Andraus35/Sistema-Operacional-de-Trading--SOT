@@ -111,6 +111,14 @@ jobs:
       - name: Spec performance evaluation tests
         run: python -m unittest tests/test_avaliacao_spec.py tests/test_loop_ledger.py
 
+      # Experimentos ativos (DHR-PROCESSO-EXPERIMENTOS-001, ordem de Andraus 2026-11-14): BLOQUEANTE. Registro inválido, ou experimento aprovado
+      # para o "próximo Plan" sem vinculo quando já há Plan em redação, reprova (a falha que originou o mecanismo: regra aprovada e não aplicada).
+      - name: Active experiments registry (blocking)
+        run: python scripts/experimentos_ativos.py --ci
+
+      - name: Active experiments and telemetry reconciliation tests
+        run: python -m unittest tests/test_experimentos_ativos.py tests/test_telemetria_reconciliar.py
+
       - name: Gate manifest and read-only subagent tests
         run: python -m unittest tests/test_gate_manifest.py
 

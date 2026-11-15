@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Hook PostToolUse/Agent (BL-036): repassa o evento ao scripts/telemetria_tokens.py (detector; nunca nega).
+// Hook PostToolUse/Agent + SubagentStop + Stop (BL-036; DHR-TELEMETRIA-002: no fim do agente reconcilia o uso REAL do transcript): repassa o evento ao scripts/telemetria_tokens.py (detector; nunca nega).
 // Qualquer falha do wrapper = exit 0 (fail-open).
 const { spawnSync } = require('child_process');
 const fs = require('fs');
