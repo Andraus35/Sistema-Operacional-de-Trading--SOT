@@ -5,10 +5,10 @@
 | Campo | Valor |
 |---|---|
 | Spec | SPEC-008 |
-| Estado | GERADA |
+| Estado | RESPONDIDA |
 | Ata de aprovação final | DHR-SPEC008-005 (2026-11-15) |
-| Resposta de Andraus | — |
-| Ata do registro | — |
+| Resposta de Andraus | Andraus, AskUserQuestion 2026-11-15 (lotes 1-2): todas as recomendadas — redigir propostas BP-03/04/05/06/07/08/12 (sem aplicar), registrar custo por rodada (BP-10), aceitar e registrar a retrospectiva (BP-01) |
+| Ata do registro | DHR-AVALIACAO-002 |
 
 ## 1. Desempenho (4Es; Economicidade = INDETERMINADO enquanto tokens n/m)
 
@@ -34,7 +34,6 @@
 | Categorias recorrentes (≥2 rodadas) | C01, C02, C04, C05, C06, C07, C08, C10 |
 | …delas, sem prevenção registrada | 1 (C06) |
 | Plan: linhas totais / corpo (alerta 1.900, teto 2.000) | 1885 / 1885 |
-| Retrospectiva registrada (`FEITA`) | não |
 
 ## 2. Recomendações de boas práticas (PROPOSTAS; fontes e 4Es por item)
 
@@ -261,4 +260,4 @@
 
 1. Apresentar os lotes acima a Andraus por AskUserQuestion (linguagem de trader). 2. Registrar a decisão dele em ata (DHR-…) e rodar `python scripts/avaliacao_spec.py registrar SPEC-008 --ata DHR-… --resposta "<citação>"`. 3. Registrar a retrospectiva (`RETROSPECTIVAS.md`, `FEITA`). Sem isso `loop_ledger.py --retro-check SPEC-008` falha e a próxima Spec não abre (salvo dispensa expressa de Andraus).
 
-<!-- DIGEST:700a01ab3784b45cb405d5ec764e47054e88fc5271b4da022c6a391f5c14bc89 -->
+<!-- DIGEST:3d42aa778ac3ad172f92e687e0746a0307f667b59e2f4082bf649a2c32a7267f -->

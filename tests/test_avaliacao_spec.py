@@ -206,6 +206,19 @@ class TestDeterminismoEEstado(unittest.TestCase):
             self.assertEqual(pend, [{"spec": "SPEC-123", "estado": "AUSENTE", "ata": "DHR-SPEC123-002"}])
 
 
+class TestRetrospectivaNaoInvalidaAvaliacao(unittest.TestCase):
+    def test_marcar_retrospectiva_feita_nao_desatualiza_a_avaliacao_respondida(self):
+        with tempfile.TemporaryDirectory() as td:
+            monta(td)
+            (Path(td) / L.RETRO).write_text("| SPEC-999 | x | 2026-01-01 | FEITA |\n", encoding="utf-8")   # retrospectiva de SPEC-123 ainda não feita
+            A.main(["--root", td, "gerar", "SPEC-123", "--write"])
+            A.main(["--root", td, "registrar", "SPEC-123", "--ata", "DHR-X-001", "--resposta", "ok"])
+            self.assertEqual(A.estado(td, "SPEC-123"), "RESPONDIDA")
+            (Path(td) / L.RETRO).write_text("| SPEC-123 | x | 2026-11-09 | FEITA |\n", encoding="utf-8")  # agora FEITA
+            self.assertEqual(A.estado(td, "SPEC-123"), "RESPONDIDA")                                  # continua válida
+            self.assertEqual(L.main(["--root", td, "--retro-check", "SPEC-123"]), 0)
+
+
 class TestBarraDaProximaSpec(unittest.TestCase):
     def test_retro_check_exige_avaliacao_respondida(self):
         with tempfile.TemporaryDirectory() as td:

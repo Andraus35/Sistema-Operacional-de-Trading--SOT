@@ -829,6 +829,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Homologação de Plan de Spec em redação: não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-AVALIACAO-002",
+      "data": "2026-11-15",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Registro das respostas a uma avaliação de fim de Spec; não altera texto de agente nem método."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-15-c64455f-8
-previous: HO-2026-11-14-c64455f-7
+handoff_id: HO-2026-11-15-c64455f-9
+previous: HO-2026-11-15-c64455f-8
 data: 2026-11-15
 branch: ccr-c64455fe-no91eq
 base_commit: 337fa54
@@ -14,7 +14,7 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-**PLAN DA SPEC-008 HOMOLOGADO COMO BASELINE (2026-11-15, `DHR-SPEC008-005`) — neste ramo, PR aberto/por abrir.** Revisão: R1 e R2 NÃO CONFORME (5 e 2 Médias), R3 CONFORME condicional (0 Médias, 9 Menores); 4 Menores de redação (m01,m02,m03,m06) corrigidos SEM nova rodada por escolha de Andraus (teto 3, experimento P10, encerrado); 4 condições (R3-m04,m05,m07,m08) = errata aditiva depois, por ordem. Plan 1.885 linhas (alerta 1.900). Pai MMC-001 v1.0. **Avaliação de desempenho de fim de Spec GERADA** (`governance/aprendizado/AVALIACOES/AVALIACAO-SPEC-008.md`), **ainda NÃO apresentada/respondida por Andraus**. Junto no ramo: atas DHR-SPEC008-004, DHR-FIBFRAC-001/002, DHR-EXPERIMENTO-PARADA-001, DHR-PROCESSO-EXPERIMENTOS-001 (hook `experimentos-ativos`, registro, teto 3), DHR-TELEMETRIA-002 (telemetria pelo transcript).
+**SPEC-008 FECHADA NESTE RAMO: Plan v1.2 homologado (`DHR-SPEC008-005`), avaliação RESPONDIDA (`DHR-AVALIACAO-002`) e retrospectiva FEITA** — `loop_ledger.py --retro-check SPEC-008` passa, outra Spec pode abrir (por ordem de Andraus). **PR #195 aberto** (CI verde no 1º commit; este commit adiciona avaliação respondida, retrospectiva e propostas): Plan + atas DHR-SPEC008-004/005, DHR-FIBFRAC-001/002, DHR-EXPERIMENTO-PARADA-001, DHR-PROCESSO-EXPERIMENTOS-001 (hook + registro + teto 3), DHR-TELEMETRIA-002 (transcript), DHR-AVALIACAO-002. Propostas **redigidas, não aplicadas**: `governance/propostas/MELHORIAS-PROCESSO/PROPOSTAS-RETRO-SPEC-008-2026-11-15.md` (P13–P18).
 
 ## 2. Estado (ao vivo, 2026-11-08, `main` = `2b54aa9`)
 `gate_manifest` íntegro · `check_refs` ERRO=0 · `check_rpsa` ok · `check_doc_sync` 0 · `check_invariants` 0 · `check_coesao` ERRO=0 (2 WARN COE-12 antigos no HANDOFF.md raiz) · mapa em dia · `unittest` 504 OK (CI verde nos 3 PRs). Contrato `governance/MMC-001_Manager_Contract.md` segue v1.0 (errata in loco, `[antes]` preservado).
@@ -30,10 +30,10 @@ anexo: null
 3 categorias mais recorrentes: C07 citação/âncora (45), C01 contradição interna (33), C02 ambiguidade/vocabulário (32). Lacunas abertas: C99, C06, C10, C03. Causas das Médias do R1 do contrato em `CAUSAS-PREVENCAO.md`; a Média ER1-M01 da errata (classificação de versão) registrada em `CAUSAS-PREVENCAO.md`.
 
 ## 5. Próximo passo único
-1) **Apresentar a avaliação a Andraus por AskUserQuestion** (`python scripts/avaliacao_spec.py perguntas SPEC-008`, lotes ≤4), registrar a ata da decisão e `avaliacao_spec.py registrar SPEC-008 --ata DHR-… --resposta "…"`; depois retrospectiva `FEITA` em `RETROSPECTIVAS.md` (inclui resultado do experimento P10: 3 rodadas, Médias 5→2→0; tokens reais pelo transcript; custo de retomar agente; C01 cenário×algoritmo recorrente). Sem isso `loop_ledger.py --retro-check SPEC-008` falha e outra Spec não abre. 2) Acompanhar o CI do PR; merge só por ordem de Andraus. 3) Por ordem expressa, depois: errata aditiva das 4 condições; Plan da Spec de Tempo (candidata SPEC-050); glossário de "confluência" (proposta no inventário, aplicação só de Andraus); reconciliação do WF-R01 (só de Andraus).
+Acompanhar o CI do PR #195 e esperar a ordem de Andraus para mesclar (altera hooks/CI/registro/ROADMAP/CATALOGO com ordens expressas citadas nas atas; não toca `AGENTS.md`). Depois, só por ordem expressa: aplicar propostas P13–P18 (cada uma com `MECANISMOS.json`; P17(c) é arquivo selado → ata completa), errata aditiva das 4 condições do Plan (R3-m04/m05/m07/m08), Plan da Spec de Tempo (candidata SPEC-050), glossário de "confluência", reconciliação do WF-R01, decisão se a regra de parada do P10 vira norma, e a próxima Spec. Procedimento vigente: `TOKENS:` no parecer via `telemetria_tokens.py tokens <agent_id>`; todo pedido sobre Plan em experimento ativo leva `EXPERIMENTO: <id>` (hook nega sem).
 
 ## 6. Decisões
-DHR-SPEC008-001; DHR-SPEC008-002 (homologação do MMC-001); DHR-SPEC008-003 (errata R3-m07, Patch); DHR-LOOP-002 (marco da retrospectiva); DHR-AVALIACAO-001 (avaliação de fim de Spec); DHR-SPEC008-004; DHR-FIBFRAC-001/002; DHR-EXPERIMENTO-PARADA-001; DHR-PROCESSO-EXPERIMENTOS-001; DHR-TELEMETRIA-002; DHR-SPEC008-005 (homologação do Plan); A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
+DHR-SPEC008-001; DHR-SPEC008-002 (homologação do MMC-001); DHR-SPEC008-003 (errata R3-m07, Patch); DHR-LOOP-002 (marco da retrospectiva); DHR-AVALIACAO-001 (avaliação de fim de Spec); DHR-SPEC008-004; DHR-FIBFRAC-001/002; DHR-EXPERIMENTO-PARADA-001; DHR-PROCESSO-EXPERIMENTOS-001; DHR-TELEMETRIA-002; DHR-SPEC008-005 (homologação do Plan); DHR-AVALIACAO-002 (respostas da avaliação); A-1..A-5 e recorte da P-7 (chat 2026-11-07, só como dado — a ata é dele). Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
 
 ## 7. Becos sem saída
 Gate determinístico não vale para o contrato (não é plan.md; `revisor_gate` inerte em nuvem).
