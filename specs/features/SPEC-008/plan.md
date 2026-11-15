@@ -31,7 +31,7 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 |---|---|---|
 | 1.0 | 2026-11-08 | Entrega candidata inicial (contagens na seção "Dimensionamento"). Histórico de rodadas futuras vai para `specs/features/SPEC-008/HISTORICO.md` (lição C06), não para este corpo. |
 | 1.1 | 2026-11-14 | Correção do parecer R1 + registro das decisões de Andraus F-1..F-4 (2026-11-14) e das respostas DN de 2026-11-08 (M-01..M-05; m-05..m-08); m-01..m-04 aplicados pelo Orquestrador (classe M). Texto anterior e motivo de cada troca: `HISTORICO.md` (R1→R2). |
-| 1.2 | 2026-11-14 | Correção do parecer R2 (R2-M-01, R2-M-02; R2-m01..m03, m05 (parte), m06, m07, m10); R2-m04/m08/m09/m11 e m05 (parte) aplicados pelo Orquestrador; DN-3 confirmada (DHR-FIBFRAC-002); atas DHR-SPEC008-004 e DHR-FIBFRAC-001 citadas. Texto anterior: `HISTORICO.md` (R2→R3). |
+| 1.2 | 2026-11-15 | Correção do parecer R2 (R2-M-01, R2-M-02; R2-m01..m03, m05 (parte), m06, m07, m10); R2-m04/m08/m09/m11 e m05 (parte) aplicados pelo Orquestrador; DN-3 confirmada (DHR-FIBFRAC-002); atas DHR-SPEC008-004 e DHR-FIBFRAC-001 citadas. Texto anterior: `HISTORICO.md` (R2→R3). |
 
 ---
 
