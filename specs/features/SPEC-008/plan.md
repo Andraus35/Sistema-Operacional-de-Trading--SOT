@@ -42,8 +42,8 @@ Complexidade: CRITICAL. Profundidade-alvo: D0–D8 (standard + adversarial).
 | Teto / alerta / confirmação | 2.000 / 1.900 / 1.600 linhas de corpo [FATO: `governance/RULES.md` RULE-ECC-07] |
 | Estimativa da abertura | ≈1.895 (faixa 1.140–1.932), doze BASpecs, seis contratos de enforcement estimados (o Plan entrega a contagem real na linha Itens abaixo) [FONTE: ABERTURA §3] |
 | Confirmação de Andraus | **um documento só**, ciente do risco de passar de 2.000 [FATO: DHR-SPEC008-001 §1, linha P-3] |
-| **Medida deste Plan v1.1** | **1.829 linhas de corpo** (arquivo inteiro, última linha lida após a redação; não há seção `## Anexo`) — acima de 1.600 (confirmação já dada, P-3), **−71 sob o alerta de 1.900**, −171 sob o teto. v1.0 = 1.626. A reconferir pelo Orquestrador com `scripts/check_dimensionamento.py` |
-| Itens | 1 INV-MDC · 11 RULE-MDC · 13 EARS · 12 BASpec-MDC · 9 EC-MDC · 22 Cenário-MDC (D7) · 15 ADV-MDC (D8) |
+| **Medida deste Plan v1.2** | **1.883 linhas de corpo** (arquivo inteiro, última linha lida após a redação; não há seção `## Anexo`) — acima de 1.600 (confirmação já dada, P-3), **−17 sob o alerta de 1.900**, −117 sob o teto. v1.0 = 1.626; v1.1 = 1.829. A reconferir pelo Orquestrador com `scripts/check_dimensionamento.py` |
+| Itens | 1 INV-MDC · 11 RULE-MDC · 13 EARS · 12 BASpec-MDC · 9 EC-MDC · 23 Cenário-MDC (D7) · 15 ADV-MDC (D8) |
 | Gatilho processual | mudança de escopo ou divisão depois deste Plan = **nova abertura** (RULE-ECC-07; DHR-SPEC008-001 §3) |
 
 ---
@@ -768,11 +768,11 @@ BASpec-MDC-003:
     MECANISMO   : publicação com chave de idempotência + filtro por (cycle_id, dispatch_key, papel autenticado)
     CRITÉRIO 4Es: Eficácia — sem chamada direta nem efeito duplicado; Efetividade — replay reproduz o consumo
   VERIFICADO POR:
-    DADO        T01 · T14 · T15 (b)(c) · T22 (a)(b) · ADV-01 (aviso duplicado) · ADV-02 (retomada) · ADV-03 (outro ciclo) ·
+    DADO        T01 · T14 · T15 (b)(c) · T22 (a)(b) · T23 · ADV-01 (aviso duplicado) · ADV-02 (retomada) · ADV-03 (outro ciclo) ·
                 ADV-04 (sem envelope)
     QUANDO      o despacho e o consumo rodam
     ENTÃO       um dispatch_request publicado por dispatch_key; budget presente; publicações estranhas não consumidas, com código
-    VERIFICAÇÃO ver T01 / T14 / T15 / T22 / ADV-01..04
+    VERIFICAÇÃO ver T01 / T14 / T15 / T22 / T23 / ADV-01..04
 ```
 
 ### BASpec-MDC-004 — Ativação progressiva e Inversão #1 (ver RULE-MDC-004) [E2]
@@ -1128,7 +1128,7 @@ capability_registry: {version, allowlist[6] ⊆ CAP}   — conferido antes de CA
 
 ---
 
-## D7 — Cenários de Teste (22 — T01..T22; fixture M0 salvo indicação)
+## D7 — Cenários de Teste (23 — T01..T23; fixture M0 salvo indicação)
 
 ### Cenário-MDC-T01 — Caminho feliz até a entrega (positivo; MDC-001..007, 011)
 ```
@@ -1343,6 +1343,18 @@ VERIFICAÇÃO (a) "MDC_DISPATCH_PUBLISH_FAILED" == 1 (F33); as duas tentativas c
             com attempt 1 e 2, dispatch_keys distintas; STAGE_TIMER pedidos para a etapa == 1; (c) "MDC_MACRO_INVOCATION_FAILED"
             (F36), abstention presente, macro_invocations == 1, ARM_ALARM == 0; (d) "MDC_STAGE_DEADLINE_EXCEEDED" (F19, timer
             pedido em F06), macro_invocations == 1; MACRO_RESULT tardio ⇒ "MDC_CYCLE_CLOSED"
+```
+
+### Cenário-MDC-T23 — Falha de `time_request` (MDC-003 (h); F38/F20; T-10)
+```
+DADO        M0, exceto: (a) o STAGE_TIMER de F03 é recusado 1x e confirmado no reenvio; (b) o ARM_ALARM de F09 é recusado Fmax + 1
+            vezes; (c) ciclo em ATIVADO, STOP_COMMAND de Andraus (F22) e o MARK_CONSUMED do ENC é recusado
+QUANDO      o ciclo de R1 corre
+ENTÃO       (a) segue como T01; (b) ENC sem alarme; (c) ENC mantido, sem reenvio
+VERIFICAÇÃO (simulação D4.2) (a) (5b) failures[TEMPO] = 1 ≤ Fmax ⇒ F38, mesma request_key; failures[TEMPO] == 0 após a confirmação;
+            (b) falha k ⇒ failures[TEMPO] = k; k ≤ Fmax ⇒ F38; k = Fmax + 1 ⇒ F20, code "MDC_LIMIT_EXCEEDED" sub FAILURES;
+            tentativas de ARM_ALARM == Fmax + 1, todas com a mesma request_key; nenhuma espera sem timer além delas; (c)
+            "MDC_STOP_BY_ANDRAUS"; entrada "MDC_TIME_REQUEST_FAILED" == 1; MARK_CONSUMED reenviados == 0
 ```
 
 ---
@@ -1760,6 +1772,7 @@ Histórico **não editado** (INV-07), lido sob a nota: `plan.md` l.30, l.33; `ch
 | CF-1 · CF-6 · CF-7 | WF-F02 "SPEC-015" · WF-K02 "SPEC-008/015" · WF-F01 "reset" | prevalece CONF-1 · CONF-5 · P-12 (MMC-001 §8.3) | WORKFLOW só Andraus |
 | CF-5 | "Cognitive Orchestrator" (SPEC-023) × ator único | fora | abertura da SPEC-023 |
 | CF-B (novo) | WF-R01 sem TF de entrada para `position` × WF-05 (TF de entrada ≠ contexto) | pedido `position` recusado `MDC_FIELD_MISSING` até reconciliação | BL-026 (Andraus) |
+| CF-F (v1.2; observação do parecer R2 (b)) | `ALARM_TRIGGERED` que chegue antes de `ALARM_ARMED` cai em F29 (par não listado) e o disparo se perde | fail-safe (nenhum ICT sem contexto armado); requisito de ordem por alarme à Spec de Tempo (T-11) | abertura da Spec de Tempo |
 | CF-E (v1.2; observação do parecer R2 (a)) | precondição proposta no BL-029 ("Manager só consome `status` == GATED_PASS") × leitura macro desta Spec, que ignora `gate_result`/`status` (RULE-MDC-005 (d)) | `[INFERÊNCIA]`: o escopo da precondição é a convicção GLOBAL da Fase 2; aplicada à Fase 1, bloquearia toda leitura macro (o gate do CCM-001 usa os limiares-piloto do sinal, que não são θ) | BL-029 em espera (Andraus); nada fechado aqui |
 | CF-D (v1.1) | F-4 (Andraus, 2026-11-14: "manter S1/D1/H4/H1/M5 fixo") × WF-R01 (tripla de TFs por tipo de trading, editável) | registrada como decisão de Andraus; o Plan não cria tabela nem parâmetro de TF: `tf_triple` segue dado do pedido (RULE-MDC-001 (a)); CF-B mantido | só Andraus reconcilia (WORKFLOW é dele); BL-026 e N-001 seguem em aberto |
 | CF-C (novo) | F19 em `ATIVADO`: é ramo 3 (proposta ABERTURA: RECUSADO) e prazo (proposta: EXPIRADO) ao mesmo tempo | sem rótulo final até decisão | DN-1 |
@@ -1854,7 +1867,8 @@ Pai MMC-001 v1.0: cada item dos §2–§7 no alcance tem evidência na tabela "C
 - [x] Enforcement Contract em todo comportamento com efeito (9 EC; cada capacidade da allowlist com EC — tabela após EC-MDC-009); nível ≥ piso; nível de cada BASpec ≥ efeitos que contém; fail-closed na trava E3 com falso-DENY amostral (ENF-07) e prova independente (`capability_audit_record` do runtime).
 - [x] R2 (parecer R1): M-01 → RULE-MDC-006 (g)(h), D5 F30–F32, T13/T21, ADV-15; M-02 → RULE-MDC-003 (c)(f), RULE-MDC-005 (a)(e), D4.3, D5 F06/F33–F36, T15/T22, ADV-06; M-03 → RULE-MDC-005 (d), D4.4; M-04 → RULE-MDC-003 (a), RULE-MDC-008 (a), tabela de parâmetros + reconciliação, "Requisitos a outras Specs"; M-05 → INV-MDC-01, D4.2 passo (7), contrato `capability_audit_record`, EC-MDC-008, D5 F37, ADV-12 (c); m-05 → RULE-MDC-001 (d) e tabela WORKFLOW; m-06 → D4.2 (simulação), ADV-05/07; m-07 → BASpec-MDC-009 [E2], `MDC_NOTICE_PENDING`, EC-MDC-009; m-08 → `fsm_row` × `rule_id` (RULE-MDC-010 (a); EC-MDC-003). Nenhuma BASpec H/P; nenhuma decisão aberta fechada; nenhuma DN nova.
 - [x] Status epistemológico aplicado (tabela TRACE-06); CONS-01 respeitado (decisões abertas sempre marcadas ABERTAS).
-- [x] Conflitos registrados (CF-A, CF-B, CF-C, CF-D novos + herdados).
+- [x] R3 (parecer R2): R2-M-01 → contrato `capability_audit_record` (enum CAP 1:1, `target_workspace`, `object_type`, predicados), BASpec-MDC-012 GATE, EC-MDC-008 POSTCOND, D4.1 SAÍDA (F01: duas conferências); R2-M-02 → RULE-MDC-003 (h), D4.3 `failures[TEMPO]`, D5 F38 + nota "Falha de `time_request`", F20, EC-MDC-004, T-10, T23; R2-m01 → RULE-MDC-006 (d), EARS 8; R2-m02 → D4.2 (5b)/(6), F33/F34, T15; R2-m03 → RULE-MDC-007 (b) `MDC_GUARD_NOT_SATISFIED`, D4.2 (1)/(7), T14 (b), ADV-06; R2-m05/m06 → atas DHR-FIBFRAC-001/002, DHR-SPEC008-004; R2-m07 → RULE-MDC-006 (g) `[INFERÊNCIA]`; R2-m10 → `HISTORICO.md`. Zero H/P; nenhuma decisão aberta fechada (DN-1, P-11 fractal seguem abertas).
+- [x] Conflitos registrados (CF-A..CF-F novos + herdados).
 - [x] Integridade: nenhum número inventado; nenhum ID de outra Spec reutilizado (prefixo `MDC` livre — Grep 2026-11-08); nenhuma fonte inventada.
 - [x] 4Es na ordem; latência declarada.
 - [x] Montante homologado (SPEC-003/004/005, MMC-001 v1.0); Spec de Tempo e SPEC-009 a jusante, com requisito declarado.
