@@ -1272,9 +1272,10 @@ DADO        M0, exceto: (a) o próximo despacho faria steps = Smax + 1; (b) agen
             (c) Fmax + 1 falhas seguidas ao publicar o pedido do INSTITUCIONAL (DISPATCH_PUBLISH_FAILED)
 QUANDO      o contador é atualizado / o aviso é consumido
 ENTÃO       ENC + aviso a Andraus
-VERIFICAÇÃO code == "MDC_LIMIT_EXCEEDED"; sub (a) STEPS (F20), (b) ROUNDS (F35 — sem contador de voltas no livro), (c) FAILURES (F33
-            × Fmax, depois F20); notice.kind == LIMIT; em (c), tentativas de publicação do pedido == Fmax + 1, todas com a
-            mesma dispatch_key, nenhuma depois
+VERIFICAÇÃO code == "MDC_LIMIT_EXCEEDED"; sub (a) STEPS (F20 no passo (6) da D4.2; esse despacho NÃO ocorre: efeitos que contam
+            steps == Smax), (b) ROUNDS (F35 — sem contador de voltas no livro), (c) FAILURES (simulação D4.2: falha k ⇒ (5b)
+            failures = k; k ≤ Fmax ⇒ F33 republica; k = Fmax + 1 ⇒ F20); notice.kind == LIMIT; em (c), tentativas de
+            publicação do pedido == Fmax + 1, todas com a mesma dispatch_key, nenhuma depois
 ```
 
 ### Cenário-MDC-T16 — Orçamento de custo estourado não corta análise (MDC-008 (c); P-7)
@@ -1394,12 +1395,15 @@ VERIFICAÇÃO (simulação D4.2) (a) passo (2) ⇒ "MDC_EVENT_FOREIGN_CYCLE" (di
 
 ### ADV-MDC-06 — Segunda leitura macro no mesmo ciclo
 ```
-DADO        (a) ciclo com CV1 já lido (F07); (b) ciclo encerrado por MACRO_ERROR (T22 (c))
-QUANDO      (a) uma etapa pede nova invocação macro ("para conferir"); (b) uma etapa pede nova invocação "porque a 1ª falhou" e,
-            depois, chega MACRO_RESULT tardio da 1ª
-ENTÃO       recusada; nada consumido
-VERIFICAÇÃO (a)(b) "MDC_MACRO_ALREADY_INVOKED" (invocação = pedida — RULE-MDC-005 (a)); macro_invocations == 1; (b) resultado
-            tardio ⇒ "MDC_CYCLE_CLOSED" (D4.2 passo (3))
+DADO        (a) ciclo com CV1 já lido (F07); (b) ciclo encerrado por MACRO_ERROR (T22 (c)); (c) ciclo em AGUARDANDO depois de
+            F06 (macro pedido, sem resultado)
+QUANDO      (a) uma etapa (componente defeituoso, ou texto de publicação "confira de novo" — DADO) tenta exercer INVOKE_MACRO
+            outra vez; (b) idem "porque a 1ª falhou" e, depois, chega MACRO_RESULT tardio da 1ª; (c) chega nova versão da
+            publicação do INSTITUCIONAL com a mesma dispatch_key
+ENTÃO       nenhuma 2ª invocação; nada consumido
+VERIFICAÇÃO (a)(b) ação recusada no passo (7) da D4.2 ⇒ "MDC_MACRO_ALREADY_INVOKED" (invocação = pedida — RULE-MDC-005 (a));
+            #(capability_audit_record: INVOKE_MACRO ∧ EXECUTED) == 1; macro_invocations == 1; (b) resultado tardio ⇒ "MDC_CYCLE_CLOSED"
+            (passo (3)); (c) passo (1) ⇒ "MDC_DUPLICATE_IGNORED" (só a 1ª publicação por dispatch_key é consumida)
 ```
 
 ### ADV-MDC-07 — ICT antes do contexto
