@@ -18,8 +18,22 @@
 ## B. Esperando evento (nada a decidir agora)
 P10 (experimento da regra de parada) — no **próximo Plan** que ele mandar abrir. **BL-043** (F2b do log dos Construtores, auditoria do código da F2a, decisões (e)/(g)/(l)) e **BL-044..047** — voltam quando a **SPEC-008** abrir. Mecanismo de assinatura antes de BUILD (`DHR-SPEC007-007`).
 
-## C. Fora desta pauta (decisões abertas do ROADMAP — NÃO tocadas)
-J-001 (reduzido) · G-001 · K-001 · C-001 · M-001 · N-001 · SPEC-045-RUNTIME-001 · ECC-03-001 · WF-D03.
+## C. Decisões abertas do ROADMAP — quadro com bloqueio e prazo por evento (2026-11-17; `PROPOSTAS-REPO-BOAS-PRATICAS-2026-11-17.md` H3)
+> **NÃO tocadas nem fechadas** (CONS-01): o quadro só organiza. O estado vive no `ROADMAP.md` ("Decisões abertas ativas"), que prevalece. "Prazo" = evento, não data; `[a confirmar]` = o Orquestrador não achou o enunciado exato no repositório e não o inventa.
+
+| ID | O que decide | Bloqueia / vence quando | Recomendação do Orquestrador |
+|---|---|---|---|
+| J-001 | Fórmula, pesos e limiares **definitivos** do Conviction Vector (dimensionalidade 8 e limiares-piloto já fechados) | Fim da fase piloto: precisa de backtest (dona do backtest = BL-032) | **Adiar** até haver backtest; nada a fazer na fase spec-first |
+| N-001 | Pesos por ativo do Conviction Vector | Junto com J-001 | **Adiar** com J-001 |
+| M-001 | Estados de objeto não-hipótese no quadro (Blackboard) — SPEC-004 / SPEC-009 | **Antes de abrir a SPEC-009** (e referenciada pelo Plan da SPEC-008) | **Decidir** na abertura da SPEC-009, com o Dossiê |
+| G-001 | Estado cognitivo e persistência — o ROADMAP diz que a SPEC-009 o resolve | **Antes de abrir a SPEC-009** | **Decidir** na abertura da SPEC-009 |
+| K-001 | Ciclo de aprendizado de estratégia — o ROADMAP diz que a SPEC-018 o resolve | **Antes de abrir a SPEC-018** | **Adiar** até a SPEC-018 |
+| SPEC-015-SCOPE | Escopo detalhado da SPEC-015 (Manager — Fase 0) | **Antes de abrir a SPEC-015** | **Decidir** na abertura da SPEC-015 |
+| SPEC-045-RUNTIME-001 | Caminho de leitura em runtime → baseline na SPEC-045 | **Antes de abrir a SPEC-045** | **Adiar** até a SPEC-045 |
+| ECC-03-001 | Escopo da RULE-ECC-03 ("modelo de especialização"; RULE-ECC-03 RESERVADA) | Ao precisar da RULE-ECC-03 numa abertura de Spec | **Adiar** |
+| WF-D03 | Relação convicção-macro × convicção-global com o Conviction Vector 8D (resíduo de WORKFLOW-SOT-001) | **Antes do Plan da SPEC-014** (Manager — Fase 2) | **Decidir** junto com J-001 na abertura da SPEC-014 |
+| C-001 | `[a confirmar]` — enunciado não localizado no ROADMAP/CATALOGO vigentes | Não determinado | **Pedir a Andraus** o enunciado ou o fechamento formal |
+| D-PCC-4 | Promover `check_handoff.py` de informativo a bloqueante (PCC-001) | Quando houver evidência de ruído baixo | **Adiar**; aplicar a regra H2 (medir antes de promover) |
 
 ## D. Já decidido (ponteiros; histórico curto)
 higiene pós-arquivamento e errata da SPEC-007 (PR #157) · A5-O1 em `revisor.md` e `especificador.md` e arquivo de `revisao-independente/` (`DHR-A5O1-001/002`) · Auditor Externo **arquivado** (`DHR-AUDITOR-EXTERNO-019`) · A6.1/A6.4, A2.1 e P11 na `main` · A7-lite, A4-b e A9-teste (`DHR-A7A4-001`, `DHR-A9TESTE-001`) · log dos Construtores F2a (`DHR-LOGS-AC-001`) e pendências baratas (PR #161) · A6.2 medido e reformulado.
