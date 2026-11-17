@@ -13,6 +13,9 @@ Uso:
   python scripts/fato_locais.py --conferir <lista.md> <doc.md>
       lê tabela markdown `| fato | linhas |` (linhas como `12, 40-42, 77`) e confere contra o doc: linhas OMITIDAS
       (o fato ocorre ali e a lista não tem) e linhas SOBRANDO (a lista cita, mas o fato não ocorre ali)
+  python scripts/fato_locais.py --blocos <plan.md> <fato> [--exigir <texto|re:regex>] [--checks <checks.md>]
+      (P13) lista, por TIPO de bloco do Plan (RULE, EARS, BASpec, cenário, ADV, D5, checks, outros), os blocos que citam o fato;
+      com --exigir destaca os blocos que citam o fato mas NÃO trazem o texto exigido (ex.: a alínea nova de uma RULE)
   --strict   exit 1 se houver omissão, linha sobrando ou propagação parcial (padrão: sempre exit 0 — informativo)
   --json     saída estruturada
 
@@ -107,6 +110,64 @@ def tabela(docs, fatos, base=None):
     return res
 
 
+_HEAD = re.compile(r"^(#{2,4})\s+(.*?)\s*$")
+_DEFR = re.compile(r"^[\s>*|`-]*\**((?:RULE|INV)-[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*)\**\s*:")
+
+
+def tipo_bloco(titulo):
+    t = titulo.strip()
+    for pref, tipo in (("RULE-", "RULE"), ("INV-", "RULE"), ("BASpec-", "BASpec"), ("Cenário-", "cenário"), ("Cenario-", "cenário"),
+                       ("ADV-", "ADV"), ("EC-", "EC")):
+        if t.startswith(pref):
+            return tipo
+    tl = t.lower()
+    if tl.startswith("d4"):
+        return "D4"
+    if tl.startswith("d5") or "máquina" in tl or "estado:" in tl:
+        return "D5"
+    if "critérios de aceitação" in tl or "ears" in tl:
+        return "EARS"
+    return "outros"
+
+
+def blocos_plan(linhas):
+    """[(tipo, titulo, linha_inicial, [linhas])] — seções `##…####` e, dentro delas, cada definição `RULE-/INV-…:`."""
+    out, cur = [], None
+    for i, ln in enumerate(linhas, 1):
+        m = _HEAD.match(ln)
+        d = _DEFR.match(ln)
+        if m or d:
+            if cur:
+                out.append(cur)
+            if m:
+                tit = m.group(2)
+                cur = [tipo_bloco(tit), tit[:90], i, [ln]]
+            else:
+                cur = ["RULE", d.group(1), i, [ln]]
+        elif cur:
+            cur[3].append(ln)
+        else:
+            cur = ["outros", "cabeçalho", i, [ln]]
+    if cur:
+        out.append(cur)
+    return out
+
+
+def blocos_do_fato(plan, fato, exigir=None, checks=None):
+    """P13: blocos (por tipo) que citam `fato`; `faltam` = os que citam e não têm o texto `exigir`."""
+    rx, rx_ex = compilar(fato), (compilar(exigir) if exigir else None)
+    res = []
+    fontes = [("plan", ler(plan))] + ([("checks", ler(checks))] if checks else [])
+    for nome, linhas in fontes:
+        bl = blocos_plan(linhas) if nome == "plan" else [("checks", "checks.md", 1, linhas)]
+        for tipo, tit, ini, corpo in bl:
+            txt = "\n".join(corpo)
+            if rx.search(txt):
+                res.append({"tipo": tipo, "bloco": tit, "linha": ini, "arquivo": nome,
+                            "tem_exigido": (bool(rx_ex.search(txt)) if rx_ex else None)})
+    return res
+
+
 def conferir(lista, doc):
     """lista: arquivo md com tabela `| fato | linhas |`. -> lista de dicts por fato."""
     linhas_doc = ler(doc)
@@ -137,12 +198,32 @@ def main(argv=None):
     ap.add_argument("--em", nargs="*", default=[])
     ap.add_argument("--base")
     ap.add_argument("--conferir", metavar="LISTA")
+    ap.add_argument("--blocos", action="store_true", help="(P13) fato -> blocos do Plan por tipo")
+    ap.add_argument("--exigir", help="com --blocos: texto/re: que todo bloco citante deve trazer")
+    ap.add_argument("--checks", help="com --blocos: checks.md a varrer também")
     ap.add_argument("--strict", action="store_true")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
     problema = False
 
-    if a.conferir:
+    if a.blocos:
+        if len(a.args) != 2:
+            ap.error("--blocos <plan.md> <fato> [--exigir X] [--checks checks.md]")
+        res = blocos_do_fato(a.args[0], a.args[1], a.exigir, a.checks)
+        faltam = [r for r in res if r["tem_exigido"] is False]
+        problema = bool(faltam)
+        if a.json:
+            print(json.dumps(res, ensure_ascii=False, indent=2))
+        else:
+            print(f"BLOCOS que citam `{a.args[1]}` (informativo — Detector ≠ Gate)")
+            for r in res:
+                marca = "" if r["tem_exigido"] is None else (" ✓ traz o exigido" if r["tem_exigido"] else " ⚠ NÃO traz o exigido")
+                print(f"- [{r['tipo']}] {r['bloco']} ({r['arquivo']} l.{r['linha']}){marca}")
+            if not res:
+                print("(nenhum bloco cita o fato)")
+            if a.exigir:
+                print(f"\n{len(faltam)} bloco(s) citam o fato sem `{a.exigir}`.")
+    elif a.conferir:
         if len(a.args) != 1:
             ap.error("--conferir <lista.md> <doc.md>")
         res = conferir(a.conferir, a.args[0])

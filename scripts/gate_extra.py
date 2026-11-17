@@ -149,6 +149,15 @@ _CONTA = [
 ]
 
 
+_APROX_ANTES = re.compile(r"(?:[~≈≅]|§\s*\d*\.?|\d\.|(?:aprox\w*|estimativ\w*|cerca|em torno)(?:\s+de)?)\s*$", re.I)
+
+
+def _aproximado(linha, m):
+    """P17(c): o número casado é aproximação/estimativa ou parte de número de seção (`10.3`, `§10.3`)? Olha o texto antes do número."""
+    antes = linha[max(0, m.start(1) - 24):m.start(1)]
+    return bool(_APROX_ANTES.search(antes))
+
+
 def contagens_declaradas(texto):
     reais = {nome: len(h.findall(texto)) for nome, h, _d in _CONTA}
     achados = []
@@ -159,6 +168,8 @@ def contagens_declaradas(texto):
             if reais[nome] == 0:
                 continue
             for m in dec.finditer(linha):
+                if _aproximado(linha, m):  # P17(c): "~6 EC", "≈6", "estimativa de 6", "§10.3 EC" não são contagens declaradas
+                    continue
                 if int(m.group(1)) != reais[nome]:
                     achados.append((i, f"declara {m.group(1)} {nome}, mas há {reais[nome]} cabeçalhos"))
     return achados

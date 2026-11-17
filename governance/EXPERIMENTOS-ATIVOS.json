@@ -20,6 +20,19 @@
       "marcador": "EXPERIMENTO: P10-REGRA-DE-PARADA",
       "encerrado_em": "2026-11-15",
       "encerrado_por": "DHR-SPEC008-005"
+    },
+    {
+      "id": "P15-REVISAO-DO-DELTA",
+      "descricao": "(1) hash do delta obrigatório no pedido ao Revisor (SHA256-ALVO) da rodada 2 em diante, em todo Plan novo; (2) o Orquestrador gera o pacote com `python scripts/delta_pacote.py <plan.md> --base <ref> --out <pasta>` e, se a fração de blocos alterados passar de 50%, devolve ao Especificador para dividir a correção em duas entregas (Médias primeiro; Menores depois), cada uma commitada antes do pedido ao Revisor; revisão integral por conveniência não vale (P15 da retrospectiva da SPEC-008).",
+      "ata": "DHR-RETRO-004",
+      "estado": "ativo",
+      "escopo": {
+        "tipo": "proximo-plan",
+        "apos": "2026-11-15"
+      },
+      "hash_a_partir_da_rodada": 2,
+      "escalado_por_andraus": false,
+      "marcador": "EXPERIMENTO: P15-REVISAO-DO-DELTA"
     }
   ]
 }

@@ -154,6 +154,10 @@ jobs:
       - name: Fato-locais tests
         run: python -m unittest tests/test_fato_locais.py
 
+      # Detectores/geradores informativos da retrospectiva da SPEC-008 (P14, P16, P17(b); DHR-RETRO-004): os scripts só informam; o TESTE é bloqueante.
+      - name: Retro SPEC-008 detectors tests
+        run: python -m unittest tests/test_fsm_check.py tests/test_historico_do_diff.py tests/test_ancora_hash.py tests/test_cenario_precondicao.py
+
       # Pré-gate unificado (DHR-PRE-ENTREGA-001; bloqueante: se o teste falhar, o pré-gate deixou de compor os gates).
       - name: Pre-entrega tests
         run: python -m unittest tests/test_pre_entrega.py

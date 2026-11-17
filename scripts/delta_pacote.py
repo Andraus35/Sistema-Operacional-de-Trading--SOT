@@ -29,6 +29,15 @@ def sha(texto):
     return hashlib.sha256(texto.encode("utf-8")).hexdigest()
 
 
+LIMITE_DIVIDIR = 0.5  # P15: acima disso o Orquestrador devolve ao Especificador para dividir a correção em duas entregas
+
+
+def fracao_alterada(d):
+    """Fração de blocos atuais alterados ou adicionados (P15). 0.0 se não há blocos."""
+    tot = d["total_atual"]
+    return (len(d["alterados"]) + len(d["adicionados"])) / tot if tot else 0.0
+
+
 def montar(alvo, base, out_dir):
     """Devolve (caminho_do_arquivo, texto_do_pacote, linhas_do_prompt). Grava o arquivo."""
     alvo_p = Path(alvo)
@@ -37,12 +46,17 @@ def montar(alvo, base, out_dir):
     d = spec_delta.delta(base_txt, novo)
     f = spec_delta.fontes(novo)
     sha_alvo, sha_base = sha(novo), sha(base_txt)
+    frac = fracao_alterada(d)
+    dividir = frac > LIMITE_DIVIDIR
     corpo = [
         f"DELTA {alvo} vs {base}",
         f"SHA256-ALVO: {sha_alvo}",
         f"SHA256-BASE: {sha_base}",
         f"blocos: {len(d['alterados'])} alterados · {len(d['adicionados'])} adicionados · {len(d['removidos'])} removidos · "
         f"{d['inalterados']} inalterados (de {d['total_atual']} atuais; {d['total_base']} na base)",
+        f"fração alterada: {frac:.0%} (alterados+adicionados / atuais)" + (
+            f" — ACIMA de {LIMITE_DIVIDIR:.0%}: DIVIDIR a correção em duas entregas (Médias primeiro; Menores depois), cada uma commitada "
+            "antes do pedido ao Revisor (P15)" if dividir else ""),
         "alterados: " + (", ".join(d["alterados"]) or "—"),
         "adicionados: " + (", ".join(d["adicionados"]) or "—"),
         "removidos: " + (", ".join(d["removidos"]) or "—"),
@@ -57,6 +71,9 @@ def montar(alvo, base, out_dir):
     arq = out / nome
     arq.write_text(texto, encoding="utf-8")
     prompt = [f"ALVO: {alvo}", f"BASE: {base}", f"SHA256-ALVO: {sha_alvo}", f"DELTA: {arq.as_posix()}"]
+    if dividir:
+        prompt.append(f"# ATENÇÃO P15: {frac:.0%} dos blocos mudaram (> {LIMITE_DIVIDIR:.0%}) — devolva ao Especificador para dividir a "
+                      "correção; não peça revisão integral por conveniência")
     return arq, texto, prompt
 
 
@@ -65,12 +82,13 @@ def main(argv=None):
     ap.add_argument("alvo")
     ap.add_argument("--base", required=True, help="commit/ref ou arquivo da versão já revisada")
     ap.add_argument("--out", required=True, help="pasta onde gravar o arquivo de delta (ao lado do parecer)")
+    ap.add_argument("--strict", action="store_true", help="exit 1 se a fração alterada passar de 50%% (P15; padrão: só avisa)")
     a = ap.parse_args(argv)
-    arq, _, prompt = montar(a.alvo, a.base, a.out)
+    arq, texto, prompt = montar(a.alvo, a.base, a.out)
     print(f"delta gravado: {arq}")
     print("--- cole no prompt do Revisor ---")
     print("\n".join(prompt))
-    return 0
+    return 1 if (a.strict and any(x.startswith("# ATENÇÃO P15") for x in prompt)) else 0
 
 
 if __name__ == "__main__":

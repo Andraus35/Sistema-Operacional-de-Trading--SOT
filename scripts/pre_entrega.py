@@ -28,6 +28,7 @@ def cli(root, nome, tipo, cmd, achados_de=None):
 def detectores(root, plan_t, checks_t):
     sys.path.insert(0, str(Path(root) / "scripts"))
     import gate_extra as g, revisor_detectores as d
+    import fsm_check as fc, cenario_precondicao as cp  # P16/P17(b) (DHR-RETRO-004): detectores de máquina de estados e de pré-condição de cenário
     R = Path(root)
     lote = [("gate_extra.citacoes_arquivo_linha", lambda: g.citacoes_arquivo_linha(plan_t, R)),
             ("gate_extra.contagens_declaradas", lambda: g.contagens_declaradas(plan_t)),
@@ -41,7 +42,9 @@ def detectores(root, plan_t, checks_t):
             ("revisor_detectores.contagem_declarada", lambda: d.contagem_declarada(plan_t)),
             ("revisor_detectores.spec_nome_incoerente", lambda: d.spec_nome_incoerente(plan_t, R)),
             ("revisor_detectores.valor_fonte", lambda: d.valor_fonte(plan_t, R)),
-            ("revisor_detectores.dhr_backlog", lambda: d.dhr_backlog(plan_t, R))]
+            ("revisor_detectores.dhr_backlog", lambda: d.dhr_backlog(plan_t, R)),
+            ("fsm_check.tabela_x_cenarios", lambda: [(x["linha"], x["msg"]) for x in fc.verificar(plan_t)["achados"] if x["verif"] in ("i", "ii", "iii")]),
+            ("cenario_precondicao.dado_declarado", lambda: [(x["linha"], x["msg"]) for x in cp.verificar(plan_t)["achados"] if x["verif"] in ("a", "c")])]
     res = []
     for nome, fn in lote:
         try:
