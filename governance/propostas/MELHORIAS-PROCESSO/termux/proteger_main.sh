@@ -13,6 +13,8 @@
 # deixa enforce_admins=false: você (admin) ainda mescla com "Merge without waiting for requirements". Se preferir NÃO exigir
 # Code Owners, use CODEOWNERS=0 (só CI + PR obrigatórios). Nunca force-push nem exclusão da main são permitidos pelo payload.
 set -euo pipefail
+# Termux não tem /tmp: usa diretório temporário portátil (corrige falha vista em 2026-11-17).
+TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 
 REPO="${REPO:-Andraus35/Sistema-Operacional-de-Trading--SOT}"
 BRANCH="${BRANCH:-main}"
@@ -27,13 +29,13 @@ gh auth status >/dev/null 2>&1 || { echo "gh não autenticado. Rode: gh auth log
 
 echo "== Repositório: $REPO · branch: $BRANCH"
 echo "== Proteção ATUAL (leitura):"
-if gh api "repos/$REPO/branches/$BRANCH/protection" >/tmp/prot_atual.json 2>/tmp/prot_err.txt; then
+if gh api "repos/$REPO/branches/$BRANCH/protection" >$TMP/prot_atual.json 2>$TMP/prot_err.txt; then
   jq '{checks: .required_status_checks.contexts, strict: .required_status_checks.strict,
        pr_reviews: (.required_pull_request_reviews // "NÃO exigido"),
        code_owners: (.required_pull_request_reviews.require_code_owner_reviews // false),
-       enforce_admins: .enforce_admins.enabled, force_push: .allow_force_pushes.enabled, delete: .allow_deletions.enabled}' /tmp/prot_atual.json
+       enforce_admins: .enforce_admins.enabled, force_push: .allow_force_pushes.enabled, delete: .allow_deletions.enabled}' $TMP/prot_atual.json
 else
-  echo "Sem proteção (ou sem permissão): $(head -c 200 /tmp/prot_err.txt)"
+  echo "Sem proteção (ou sem permissão): $(head -c 200 $TMP/prot_err.txt)"
 fi
 
 if [ "$CODEOWNERS" = "1" ]; then CO=true; else CO=false; fi

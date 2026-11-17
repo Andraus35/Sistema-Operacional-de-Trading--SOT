@@ -8,6 +8,8 @@
 - **Risco declarado `[FATO]` do GitHub:** os PRs desta sessão são abertos pela conta `Andraus35`, e o autor não aprova o próprio PR; com Code Owners ligado, PR que toque arquivo selado só mescla por bypass de admin ("Merge without waiting for requirements"). Se isso atrapalhar o fluxo, `CODEOWNERS=0` mantém só CI + PR obrigatórios. Desfazer: `gh api -X DELETE repos/<dono>/<repo>/branches/main/protection`.
 - **4Es:** Conformidade ↑↑. **Custo:** pequeno; a decisão de ligar é só dele.
 
+- **Status (2026-11-17):** Andraus rodou o script e **ligou a proteção** (CI + PR + Code Owners; confirmado na saída do script). Defeito achado na execução: o Termux não tem `/tmp`, então a leitura inicial mostrou "Sem proteção" falsa; o aplicar não foi afetado. Corrigido com `mktemp`.
+
 ## H5 — Ciclo de feedback do CI (resposta: "Redigir proposta de otimização")
 - **Problema:** a suíte local leva ~139 s (594 testes); o CI roda de 3 a 4 minutos.
 - **Evidência medida** (`python -m unittest discover -s tests --durations 15`, 2026-11-17): **1 teste = 66 s (47% do total)** — `test_revisor_gate.TestRodar.test_todas_as_specs_vigentes_sem_falso_alarme` (roda o gate em todas as Specs vigentes); depois 11,6 s (`test_revisor_gate_mcp…modo_completo_inclui_detectores`), 11,3 s (`test_revisor_guard…hook_como_processo`) e `test_pre_entrega` (3 testes de ~4,5 s, um deles copia o repositório). Os 10 mais lentos somam ~115 s; os outros 584 testes, ~25 s.
