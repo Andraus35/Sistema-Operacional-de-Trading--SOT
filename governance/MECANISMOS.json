@@ -534,10 +534,10 @@
       "canal": "biblioteca de revisor_gate.py (Classe D, gate do Revisor)",
       "tipo": "detector",
       "estado": "ativo",
-      "enforca": "Citações arquivo:linha, contagens declaradas, piso de enforcement do KG, decisões abertas tratadas como fechadas (subtrai as FECHADAS do ROADMAP), invariantes estritos, assertivas do checks.md, teto de veredito",
+      "enforca": "Citações arquivo:linha, contagens declaradas, piso de enforcement do KG, decisões abertas tratadas como fechadas (subtrai as FECHADAS do ROADMAP), invariantes estritos, assertivas do checks.md, teto de veredito; P17(c): `contagens_declaradas` ignora aproximação/estimativa (`~6 EC`, `≈`, `estimativa de`) e número de seção (`§10.3 EC`)",
       "ata": "DHR-AUDITOR-EXTERNO-017",
-      "verificado_em": "2026-10-18: tests/test_gate_extra.py (32 testes, CI)",
-      "nota": "Selado em GATE-MANIFEST.sha256 e com dono em CODEOWNERS desde 2026-10-18 (decisão de Andraus, chat)."
+      "verificado_em": "2026-11-17: tests/test_gate_extra.py (35 testes, CI); selo regravado",
+      "nota": "Selado em GATE-MANIFEST.sha256 e com dono em CODEOWNERS desde 2026-10-18 (decisão de Andraus, chat). Ampliado por DHR-RETRO-004 (P13–P18, 2026-11-17)."
     },
     {
       "id": "det.spec-delta",
@@ -589,10 +589,10 @@
       "canal": "CLI do Orquestrador; entrega ao Revisor o delta gravado em arquivo + SHA256-ALVO (revisor.md §3-bis item 7)",
       "tipo": "detector",
       "estado": "ativo",
-      "enforca": "Delta por hash SEMPRE gravado ao lado do parecer e sha256 do alvo no pedido (o Revisor não tem Bash). Não é gate",
+      "enforca": "Delta por hash SEMPRE gravado ao lado do parecer e sha256 do alvo no pedido (o Revisor não tem Bash). Não é gate; P15: informa a fração de blocos alterados e, acima de 50%, manda dividir a correção em duas entregas (Médias primeiro) — `--strict` reprova",
       "ata": "DHR-DELTA-HASH-001",
-      "verificado_em": "2026-10-31: tests/test_delta_pacote.py (CI)",
-      "nota": "Reaproveita spec_delta.py (selado) sem alterá-lo; instrumentação correspondente na seção 2-ter do loop_ledger."
+      "verificado_em": "2026-11-17: tests/test_delta_pacote.py (6 testes; CI)",
+      "nota": "Reaproveita spec_delta.py (selado) sem alterá-lo; instrumentação correspondente na seção 2-ter do loop_ledger. Ampliado por DHR-RETRO-004 (P13–P18, 2026-11-17)."
     },
     {
       "id": "det.check-dimensionamento",
@@ -611,10 +611,10 @@
       "canal": "CLI do Orquestrador (antes de reenviar um Plan ao Revisor); sem hook nem passo de CI do script (só o teste)",
       "tipo": "detector",
       "estado": "ativo",
-      "enforca": "Proposta P7 (aprovada por Andraus em 2026-10-31): tabela fato→locais por script e conferência de listas de linhas escritas à mão (omitidas/sobrando); --base sinaliza propagação parcial. Ataca C07 (citação/âncora) e C01 (contradição interna). Exit 0 sempre (só --strict reprova): Detector, não Gate",
+      "enforca": "Proposta P7 (aprovada por Andraus em 2026-10-31): tabela fato→locais por script e conferência de listas de linhas escritas à mão (omitidas/sobrando); --base sinaliza propagação parcial. Ataca C07 (citação/âncora) e C01 (contradição interna). Exit 0 sempre (só --strict reprova): Detector, não Gate; P13: `--blocos <plan.md> <fato> [--exigir X] [--checks checks.md]` lista os blocos do Plan por tipo (RULE, EARS, BASpec, cenário, ADV, D5, D4, checks) que citam o fato e destaca quem não traz a alínea nova",
       "ata": "DHR-RETRO-002",
-      "verificado_em": "2026-10-31: tests/test_fato_locais.py (20 testes, 8 mutantes mortos; CI)",
-      "nota": "Informativo. Acha ocorrências de TEXTO (não sinônimos). Não altera arquivo selado nem agente. Promoção a bloqueante só por ordem de Andraus."
+      "verificado_em": "2026-11-17: tests/test_fato_locais.py (24 testes; CI)",
+      "nota": "Informativo. Acha ocorrências de TEXTO (não sinônimos). Não altera arquivo selado nem agente. Promoção a bloqueante só por ordem de Andraus. Ampliado por DHR-RETRO-004 (P13–P18, 2026-11-17)."
     },
     {
       "id": "util.pre-entrega",
@@ -622,10 +622,10 @@
       "canal": "CLI do Orquestrador (antes de entregar um Plan ao Revisor); o Especificador não tem Bash",
       "tipo": "utilitario",
       "estado": "ativo",
-      "enforca": "Pré-gate unificado (auditoria do Especificador A-1/A-2/A-3): compõe validate_spec_sot, check_repo_research e build_map --check (bloqueantes, como no CI) e check_invariants, check_dimensionamento, check_refs, backlog_triggers e 13 detectores de gate_extra/revisor_detectores (informativos); grava pre-entrega.json com sha256 de plan/checks. Sem lógica nova de detecção",
+      "enforca": "Pré-gate unificado (auditoria do Especificador A-1/A-2/A-3): compõe validate_spec_sot, check_repo_research e build_map --check (bloqueantes, como no CI) e check_invariants, check_dimensionamento, check_refs, backlog_triggers e 15 detectores (13 de gate_extra/revisor_detectores + fsm_check + cenario_precondicao; informativos); grava pre-entrega.json com sha256 de plan/checks. Sem lógica nova de detecção",
       "ata": "DHR-PRE-ENTREGA-001",
-      "verificado_em": "2026-11-01: tests/test_pre_entrega.py (3 testes; CI)",
-      "nota": "Selado em GATE-MANIFEST.sha256 e CODEOWNERS. Detectores informativos; promoção a bloqueante só por ordem de Andraus. Recall dos detectores atuais no backtest da SPEC-049 = 0/3 Médias: o ganho é prova anexa e antecipação."
+      "verificado_em": "2026-11-17: tests/test_pre_entrega.py (4 testes; CI); selo regravado",
+      "nota": "Selado em GATE-MANIFEST.sha256 e CODEOWNERS. Detectores informativos; promoção a bloqueante só por ordem de Andraus. Recall dos detectores atuais no backtest da SPEC-049 = 0/3 Médias: o ganho é prova anexa e antecipação. Ampliado por DHR-RETRO-004 (P13–P18, 2026-11-17)."
     },
     {
       "id": "det.agentes-fatos-defasados",
@@ -657,6 +657,50 @@
       "enforca": "Esquema JSON do evento de log dos Construtores (família AC): campos obrigatórios, enum de event/decision (allow|deny|ask|defer|block)/severity, limites de tamanho, metrics com chaves fechadas, refs com caminho relativo + sha256",
       "ata": "DHR-LOGS-AC-001",
       "verificado_em": "2026-11-01: coberto por tests/test_log_ac.py"
+    },
+    {
+      "id": "det.fsm-check",
+      "arquivo": "scripts/fsm_check.py",
+      "canal": "CLI do Orquestrador (antes de reenviar um Plan ao Revisor) e, informativo, em pre_entrega.py",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "P16: confere a tabela de estados (D5) contra cenários e adversariais: linha/evento/código citado sem linha na tabela, estado de origem inalcançável (e ciclos, com --aciclico), ação com efeito sem linha de falha (--efeitos), linha nunca coberta. Ataca C10 (máquina de estados)",
+      "ata": "DHR-RETRO-004",
+      "verificado_em": "2026-11-17: tests/test_fsm_check.py (12 testes, 7 mutantes mortos; CI); ao vivo no Plan da SPEC-008: 39 linhas lidas, 0 achados (i)/(ii)",
+      "nota": "Informativo (exit 0; só --strict reprova). Convenção em governance/propostas/MELHORIAS-PROCESSO/CONVENCAO-TABELA-FSM.md. Acha texto e estrutura, não guarda semântica. Promoção a bloqueante só por ordem de Andraus."
+    },
+    {
+      "id": "det.historico-do-diff",
+      "arquivo": "scripts/historico_do_diff.py",
+      "canal": "CLI do Orquestrador (ao registrar uma rodada no HISTORICO.md)",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "P14(b): gera a tabela `texto anterior` do HISTORICO.md a partir do diff entre duas versões do Plan (ancorada em RULE/INV/cabeçalho); o Especificador só preenche o Motivo. Ataca C06 (histórico à mão)",
+      "ata": "DHR-RETRO-004",
+      "verificado_em": "2026-11-17: tests/test_historico_do_diff.py (8 testes, 4 mutantes mortos; CI)",
+      "nota": "Gerador somente leitura (escreve só --out). Granularidade de linha. Não decide o que é achado."
+    },
+    {
+      "id": "det.ancora-hash",
+      "arquivo": "scripts/ancora_hash.py",
+      "canal": "CLI do Orquestrador/Especificador (citação `ID#hhhh` em vez de número de linha)",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "P14(a): âncora por identificador + hash curto do bloco (mesmo hash de spec_delta.py): `hash` imprime `ID#hhhh`; `conferir` marca âncora OK, DEFASADA (bloco mudou) ou INEXISTENTE. Ataca C07 (citação por linha deriva)",
+      "ata": "DHR-RETRO-004",
+      "verificado_em": "2026-11-17: tests/test_ancora_hash.py (7 testes, 3 mutantes mortos; CI)",
+      "nota": "Informativo. NÃO integrado ao check_refs.py (selado): integração à régua de referências e aviso de citação por linha em Plan novo ficam para decisão à parte de Andraus."
+    },
+    {
+      "id": "det.cenario-precondicao",
+      "arquivo": "scripts/cenario_precondicao.py",
+      "canal": "CLI do Orquestrador e, informativo, em pre_entrega.py",
+      "tipo": "detector",
+      "estado": "ativo",
+      "enforca": "P17(b): todo `### Cenário-…` tem linha DADO e só usa nomes de fixture declarados na seção `## Fixture` (ou definidos no próprio DADO); T\\d+/F\\d+ são referências, não fixtures. Ataca C03 (pré-condição de teste)",
+      "ata": "DHR-RETRO-004",
+      "verificado_em": "2026-11-17: tests/test_cenario_precondicao.py (9 testes, 4 mutantes mortos; CI)",
+      "nota": "Informativo. Acha nomes, não se o valor da fixture basta."
     }
   ],
   "vigente_desde": "2026-10-19"

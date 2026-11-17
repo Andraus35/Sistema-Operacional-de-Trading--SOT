@@ -17,6 +17,12 @@ class T(unittest.TestCase):
             import hashlib
             self.assertEqual(ev["plan_sha256"], hashlib.sha256((ROOT / "specs/features/SPEC-049/plan.md").read_bytes()).hexdigest())
             self.assertGreaterEqual(len(ev["verificacoes"]), 20)
+    def test_detectores_p16_p17b_compostos(self):  # P18 (DHR-RETRO-004)
+        with tempfile.TemporaryDirectory() as d:
+            run("specs/features/SPEC-008", Path(d) / "o.json")
+            ids = [v["id"] for v in json.loads((Path(d) / "o.json").read_text())["verificacoes"]]
+            self.assertIn("fsm_check.tabela_x_cenarios", ids)
+            self.assertIn("cenario_precondicao.dado_declarado", ids)
     def test_spec_inexistente_falha(self):
         with tempfile.TemporaryDirectory() as d:
             self.assertEqual(run("specs/features/SPEC-999", Path(d) / "o.json").returncode, 2)

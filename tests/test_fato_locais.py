@@ -158,3 +158,58 @@ class TestBaseGit(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+PLAN_BLOCOS = """# T
+## D2
+RULE-X-001: regra com alínea (f) nova citando RULE-X-009.
+RULE-X-002: outra, cita RULE-X-009 sem alínea.
+## D3
+### BASpec-X-001 — cita RULE-X-009 (f)
+texto
+### Cenário-X-T01 — nada aqui
+## D4 — Algoritmo
+passo (3) usa RULE-X-009
+## D5 — Estado: máquina
+| ID | Estado |
+| F01 | RULE-X-009 |
+"""
+
+
+class TestBlocos(Base):
+    """P13 — fato → blocos do Plan por tipo; --exigir destaca quem não traz a alínea nova."""
+
+    def test_tipos_dos_blocos(self):
+        p = self.arq("plan.md", PLAN_BLOCOS)
+        res = fl.blocos_do_fato(p, "RULE-X-009")
+        tipos = [(r["tipo"], r["bloco"]) for r in res]
+        self.assertIn(("RULE", "RULE-X-001"), tipos)
+        self.assertIn(("RULE", "RULE-X-002"), tipos)
+        self.assertIn(("BASpec", "BASpec-X-001 — cita RULE-X-009 (f)"), tipos)
+        self.assertIn(("D4", "D4 — Algoritmo"), tipos)
+        self.assertIn(("D5", "D5 — Estado: máquina"), tipos)
+        self.assertNotIn("cenário", [t for t, _ in tipos])  # cenário T01 não cita
+
+    def test_exigir_destaca_quem_nao_traz(self):  # mutante: sem --exigir ninguém é destacado
+        p = self.arq("plan.md", PLAN_BLOCOS)
+        res = fl.blocos_do_fato(p, "RULE-X-009", exigir=r"re:\(f\)")
+        faltam = {r["bloco"] for r in res if r["tem_exigido"] is False}
+        self.assertEqual(faltam, {"RULE-X-002", "D4 — Algoritmo", "D5 — Estado: máquina"})
+        self.assertIsNone(fl.blocos_do_fato(p, "RULE-X-009")[0]["tem_exigido"])
+
+    def test_checks_incluido(self):
+        p = self.arq("plan.md", PLAN_BLOCOS)
+        c = self.arq("checks.md", "assert RULE-X-009 (f)\n")
+        res = fl.blocos_do_fato(p, "RULE-X-009", exigir="(f)", checks=c)
+        self.assertEqual(res[-1]["arquivo"], "checks")
+        self.assertTrue(res[-1]["tem_exigido"])
+
+    def test_cli_strict_reprova_so_com_falta(self):
+        p = self.arq("plan.md", PLAN_BLOCOS)
+        rc0, _ = run("--blocos", p, "RULE-X-009", "--exigir", "re:\\(f\\)")
+        rc1, out = run("--blocos", p, "RULE-X-009", "--exigir", "re:\\(f\\)", "--strict")
+        self.assertEqual(rc0, 0)
+        self.assertEqual(rc1, 1)
+        self.assertIn("NÃO traz o exigido", out)
+        rc2, _ = run("--blocos", p, "RULE-X-009", "--exigir", "RULE", "--strict")
+        self.assertEqual(rc2, 0)

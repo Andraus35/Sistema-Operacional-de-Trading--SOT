@@ -43,3 +43,6 @@
 
 ## Ordem sugerida (do Orquestrador, `[INFERÊNCIA]`; decisão de Andraus)
 P16 (maior retorno, maior custo) e P14(b) (determinístico, barato, evita reconstrução manual) primeiro; P13 e P15 depois; P17(c) só com ata completa; P18 por último, depende das anteriores.
+
+## Status de aplicação (2026-11-17, `DHR-RETRO-004`)
+Aplicadas por ordem de Andraus (AskUserQuestion 2026-11-17): P13, P14(a)(b), P15, P16, P17(b)(c), P18 — ver a ata para arquivo, teste e limites. Pendente de decisão à parte: integrar a âncora `ID#hhhh` ao `check_refs.py` (selado) e a checklist D/H legível por máquina (BL-046/A9).

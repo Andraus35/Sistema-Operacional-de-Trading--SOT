@@ -836,6 +836,13 @@
       "em_escopo": false,
       "sync": "fonte-unica",
       "motivo": "Registro das respostas a uma avaliação de fim de Spec; não altera texto de agente nem método."
+    },
+    {
+      "id": "DHR-RETRO-004",
+      "data": "2026-11-17",
+      "em_escopo": false,
+      "sync": "fonte-unica",
+      "motivo": "Detectores e geradores informativos do Orquestrador, experimento de processo e regravação de selo de dois scripts de gate; não altera agente, Spec nem canon."
     }
   ]
 }

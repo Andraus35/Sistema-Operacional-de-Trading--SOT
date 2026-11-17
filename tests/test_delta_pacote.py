@@ -39,6 +39,35 @@ class TestDeltaPacote(unittest.TestCase):
     def test_hash_muda_quando_o_alvo_muda(self):
         self.assertNotEqual(D.sha(BASE), D.sha(NOVO))
 
+    # --- P15: acima de 50% de blocos alterados, dividir a correção ---
+    def test_p15_abaixo_do_limite_nao_avisa(self):
+        grande = "".join(f"## S{i}\ntexto {i}\n\n" for i in range(10))
+        novo = grande.replace("texto 3", "texto 3 alterado")
+        with tempfile.TemporaryDirectory() as t:
+            t = Path(t)
+            (t / "plan.md").write_text(novo, encoding="utf-8")
+            (t / "base.md").write_text(grande, encoding="utf-8")
+            _, texto, prompt = D.montar(str(t / "plan.md"), str(t / "base.md"), t / "o")
+            self.assertNotIn("DIVIDIR", texto)
+            self.assertFalse(any("P15" in l for l in prompt))
+
+    def test_p15_acima_do_limite_avisa_e_strict_reprova(self):  # mutante: limite ignorado
+        base = "".join(f"## S{i}\ntexto {i}\n\n" for i in range(10))
+        novo = "".join(f"## S{i}\ntexto {i} mudou\n\n" for i in range(7)) + "".join(f"## S{i}\ntexto {i}\n\n" for i in range(7, 10))
+        with tempfile.TemporaryDirectory() as t:
+            t = Path(t)
+            (t / "plan.md").write_text(novo, encoding="utf-8")
+            (t / "base.md").write_text(base, encoding="utf-8")
+            _, texto, prompt = D.montar(str(t / "plan.md"), str(t / "base.md"), t / "o")
+            self.assertIn("DIVIDIR a correção", texto)
+            self.assertTrue(any("ATENÇÃO P15" in l for l in prompt))
+            self.assertEqual(D.main([str(t / "plan.md"), "--base", str(t / "base.md"), "--out", str(t / "o2")]), 0)
+            self.assertEqual(D.main([str(t / "plan.md"), "--base", str(t / "base.md"), "--out", str(t / "o3"), "--strict"]), 1)
+
+    def test_p15_fracao(self):
+        self.assertEqual(D.fracao_alterada({"total_atual": 0, "alterados": [], "adicionados": []}), 0.0)
+        self.assertEqual(D.fracao_alterada({"total_atual": 4, "alterados": ["a"], "adicionados": ["b"]}), 0.5)
+
 
 if __name__ == "__main__":
     unittest.main()

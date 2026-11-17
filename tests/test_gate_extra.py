@@ -40,6 +40,20 @@ class Contagens(unittest.TestCase):
     def test_ec_cog_nao_e_contagem(self):
         self.assertFalse(g.contagens_declaradas(self.DOC + "\nCONSTITUTION l.233 EC-COG-003\n"))
 
+    # --- P17(c): aproximação/estimativa e número de seção não são contagem declarada ---
+    def test_p17c_aproximacao_nao_acusa(self):
+        for t in ("tem ~6 EC", "≈ 6 BASpecs", "estimativa de 6 BASpecs", "aproximadamente 6 BASpecs", "ver §10.3 EC", "seção 10.3 EC"):
+            self.assertFalse(g.contagens_declaradas(self.DOC + "\n" + t + "\n"), t)
+
+    def test_p17c_contagem_real_errada_continua_acusada(self):  # mutante: isenção larga demais
+        for t in ("tem 6 BASpecs", "a Spec define 5 EC", "(6 BASpecs)"):
+            self.assertTrue(g.contagens_declaradas(self.DOC + "\n" + t + "\n"), t)
+
+    def test_p17c_aproximacao_numa_linha_nao_isenta_contagem_exata_noutra(self):
+        t = self.DOC + "\nabertura: ~6 EC\nA Spec tem 6 EC.\n"
+        achados = g.contagens_declaradas(t)
+        self.assertEqual(len(achados), 1)
+
 
 class Enforcement(unittest.TestCase):
     def doc(self, level):
