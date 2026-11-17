@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-17-d9583a3-2
-previous: HO-2026-11-17-d9583a3-1
+handoff_id: HO-2026-11-17-d9583a3-3
+previous: HO-2026-11-17-d9583a3-2
 data: 2026-11-17
 branch: ccr-d9583a3d-s5p73b
 base_commit: e63e901
@@ -14,7 +14,7 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-P13–P18 aplicadas e **mescladas** (PR #196, `e63e901`, `DHR-RETRO-004`). Em seguida Andraus respondeu a um questionário de boas práticas (AskUserQuestion 2026-11-17): **H1** limpeza do repo (só proposta), **H2** medir detectores na próxima Spec antes de promover, **H3** pauta de decisões abertas com bloqueio/prazo por evento, e **próxima frente = errata das 4 condições do Plan da SPEC-008**. Este PR traz H1–H3 (docs): `governance/propostas/MELHORIAS-PROCESSO/PROPOSTAS-REPO-BOAS-PRATICAS-2026-11-17.md` + quadro na seção C de `governance/PAUTA-DE-DECISOES.md`. Nada aplicado; nenhuma decisão fechada.
+P13–P18 aplicadas e **mescladas** (PR #196, `e63e901`, `DHR-RETRO-004`). Em seguida Andraus respondeu a um questionário de boas práticas (AskUserQuestion 2026-11-17): **H1** limpeza do repo (só proposta), **H2** medir detectores na próxima Spec antes de promover, **H3** pauta de decisões abertas com bloqueio/prazo por evento, e **próxima frente = errata das 4 condições do Plan da SPEC-008**. Este PR (#197) traz H1–H3 e, depois do 2º questionário (mesmo dia), H4 (script do Termux para proteger a `main`, para Andraus rodar), H5 (CI: 1 teste = 66 s de ~139 s) e H6 (ficha gerada do ROADMAP) — todos docs/proposta, nada aplicado, em `PROPOSTAS-REPO-BOAS-PRATICAS-2-2026-11-17.md` e `termux/proteger_main.sh`. Andraus mandou mesclar o #197 com CI verde. Este PR traz H1–H3 (docs): `governance/propostas/MELHORIAS-PROCESSO/PROPOSTAS-REPO-BOAS-PRATICAS-2026-11-17.md` + quadro na seção C de `governance/PAUTA-DE-DECISOES.md`. Nada aplicado; nenhuma decisão fechada.
 
 ## 2. Estado (ao vivo, 2026-11-17, `main` = `263a5a5`)
 `gate_manifest` íntegro · `check_rpsa` ok · `check_coesao` ERRO=0 (2 WARN COE-12 antigos no HANDOFF.md raiz) · testes novos: fsm_check 12, historico_do_diff 8, ancora_hash 7, cenario_precondicao 9, fato_locais 24, delta_pacote 6, gate_extra 35, pre_entrega 4 — todos OK. `check_refs` ERRO=4 só por `docs/mapa/MAPA-PROJETO.md` (arquivo gerado, não versionado; some após `build_map.py`).
