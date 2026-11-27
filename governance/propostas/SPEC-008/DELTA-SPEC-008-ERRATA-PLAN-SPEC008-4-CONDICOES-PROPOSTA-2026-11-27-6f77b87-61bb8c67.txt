@@ -1,0 +1,11 @@
+DELTA governance/propostas/SPEC-008/ERRATA-PLAN-SPEC008-4-CONDICOES-PROPOSTA-2026-11-27.md vs 6f77b87
+SHA256-ALVO: 61bb8c6764f60b0e5c0544d50b53f0c300779585d1a66819ec3ead0b12e796b7
+SHA256-BASE: 4be8c4b9e69c5fd47a590ce153e685bdad8570ca663ef14abc0b7a9e27c2afa5
+blocos: 10 alterados · 2 adicionados · 1 removidos · 32 inalterados (de 44 atuais; 43 na base)
+fração alterada: 27% (alterados+adicionados / atuais)
+alterados: 1.-escopo-e-alvos-únicos-, 10.-autopré-check-curto-, 2.3-d5-linha-f16-célula-ação-, 3.0-problema-e-decisão-de-desenho, 3.1-inv-mdc-01-frase-reconciliada, 3.2-adv-mdc-12-variante-d-, 3.3-propagação-contagem-de-variantes-e-definição-, 6.-compatibilidade-rule-hg-04-minor-decidida-por-andraus-em-, 8.-o-que-a-homologação-desta-errata-não-afirma, cabeçalho
+adicionados: 3.0-bis-lacuna-residual-o-que-o-plan-vigente-garante-e-o-que, 3.1-bis-d4.1-saída-sem-alteração-retirado-na-r3-
+removidos: 3.1-bis-d4.1-saída-uma-frase-r1-m01-
+fontes citadas (sha256 de 12): {"canon/CHM-001-canonical-hypothesis-model.md": "18e685930480", "specs/features/SPEC-006/plan.md": "f4addd7d7273", "specs/features/SPEC-008/plan.md": "21a52c6b015c", "atomic-spec.md": "b9679bfd60b5"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.
