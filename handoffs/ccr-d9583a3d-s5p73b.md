@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-27-d9583a3-6
-previous: HO-2026-11-27-d9583a3-5
+handoff_id: HO-2026-11-27-d9583a3-7
+previous: HO-2026-11-27-d9583a3-6
 data: 2026-11-27
 branch: ccr-d9583a3d-s5p73b
 base_commit: 4852f4d
@@ -14,7 +14,7 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-**Errata aditiva das 4 condições do Plan da SPEC-008** (R3-m04/m05/m07/m08; DHR-SPEC008-005 §3), ordem de Andraus ("Prossiga", 2026-11-27). Arquivo à parte: `governance/propostas/SPEC-008/ERRATA-PLAN-SPEC008-4-CONDICOES-PROPOSTA-2026-11-27.md` (**PROPOSTA**; nada aplicado ao baseline). Três rodadas do Revisor: R1 CONFORME condicional (7 Menores), R2 NÃO CONFORME (1 Média: ordem de gravação da abertura), R3 **CONFORME** (3 Menores; m02 aplicada por FICHA-M; m01 e m03 abertos). Decisões de Andraus (2026-11-27): destinatário só Andraus; retirar STOP do enum (LIMIT, COST, RUPTURE); R3-m04 = desfecho aceito + cenário T24; Minor v1.2→v1.3; forma = arquivo à parte; R2-M1 = seguir o plano homologado (lacuna residual §3.0-bis fica `[DECISÃO NECESSÁRIA]`). Proteção da `main` ligada por Andraus (CI + Code Owners, `enforce_admins=false`).
+**Errata aditiva das 4 condições do Plan da SPEC-008** (R3-m04/m05/m07/m08; DHR-SPEC008-005 §3), ordem de Andraus ("Prossiga", 2026-11-27). Arquivo à parte: `governance/propostas/SPEC-008/ERRATA-PLAN-SPEC008-4-CONDICOES-PROPOSTA-2026-11-27.md` (**PROPOSTA**; nada aplicado ao baseline). Três rodadas do Revisor: R1 CONFORME condicional (7 Menores), R2 NÃO CONFORME (1 Média: ordem de gravação da abertura), R3 **CONFORME** (3 Menores; m02 por FICHA-M; m01 reescrito como risco e m03 corrigido pelo Especificador por decisão de Andraus, sem nova rodada do Revisor — diff conferido pelo Orquestrador). Decisões de Andraus (2026-11-27): destinatário só Andraus; retirar STOP do enum (LIMIT, COST, RUPTURE); R3-m04 = desfecho aceito + cenário T24; Minor v1.2→v1.3; forma = arquivo à parte; R2-M1 = seguir o plano homologado (lacuna residual §3.0-bis fica `[DECISÃO NECESSÁRIA]`). Proteção da `main` ligada por Andraus (CI + Code Owners, `enforce_admins=false`).
 
 ## 2. Estado (ao vivo, 2026-11-17, `main` = `263a5a5`)
 `gate_manifest` íntegro · `check_rpsa` ok · `check_coesao` ERRO=0 (2 WARN COE-12 antigos no HANDOFF.md raiz) · testes novos: fsm_check 12, historico_do_diff 8, ancora_hash 7, cenario_precondicao 9, fato_locais 24, delta_pacote 6, gate_extra 35, pre_entrega 4 — todos OK. `check_refs` ERRO=4 só por `docs/mapa/MAPA-PROJETO.md` (arquivo gerado, não versionado; some após `build_map.py`).
@@ -28,7 +28,7 @@ anexo: null
 Ledger lido na SPEC-008: categorias mais recorrentes C07 (45), C01 (33), C02 (32); lacunas C99, C06, C10, C03 — P14/P16/P17 atacam C07/C06/C10/C03. Medição de ganho fica para a próxima Spec.
 
 ## 5. Próximo passo único
-PR da errata (só propostas/pareceres; não toca arquivo selado) e **homologação por Andraus** (ata de homologação (número definido por Andraus): versão v1.3, ponteiro no Status do plan, ROADMAP/CATALOGO — só por ele). Antes: decidir R3-m01 (a frase "a construção não pode adotar a leitura híbrida" sem âncora normativa — redação curta ao Especificador ou condição de homologação). Depois, só por ordem: H1/H5/H6, promover detectores (regra H2), próxima Spec; C-001 sem enunciado.
+PR da errata (só propostas/pareceres; não toca arquivo selado) e **homologação por Andraus** (ata de homologação (número definido por Andraus): versão v1.3, ponteiro no Status do plan, ROADMAP/CATALOGO — só por ele). Depois, só por ordem: H1/H5/H6, promover detectores (regra H2), próxima Spec; C-001 sem enunciado.
 
 ## 6. Decisões
 `DHR-RETRO-004` (esta frente); herdadas: DHR-SPEC008-005, DHR-AVALIACAO-002. Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
