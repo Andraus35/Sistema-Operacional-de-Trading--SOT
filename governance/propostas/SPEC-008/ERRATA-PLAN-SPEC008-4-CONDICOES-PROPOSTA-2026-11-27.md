@@ -215,7 +215,7 @@ QUANDO      (a)(b)(d) R1 chega; (c) E1 é processada
 ENTÃO       nenhum efeito; recusa gravada; em (c) o ciclo encerra sem efeito algum; em (d) nenhum dos efeitos da F01 ocorre
 VERIFICAÇÃO "MDC_CAPABILITY_CHECK_FAILED", sub (a)(c)(d) "MDC_CAPABILITY_REGISTRY_UNAVAILABLE", (b) "MDC_CAPABILITY_REGISTRY_DIVERGENT";
             capability_check_ref == AUSENTE em (a)(c) e na 2ª conferência de (d); (a)(b) dispatch_request == 0; (c) fsm_row == F37,
-            dispatch_request(INSTITUCIONAL) == 0, notice == 0, MARK_CONSUMED == 0; (d) recusa gravada no livro (D4.1 SAÍDA;
+            dispatch_request(INSTITUCIONAL) == 0, notice == 0, MARK_CONSUMED == 0; (d) recusa gravada no livro (INV-MDC-01;
             D4.2 (7)), dispatch_request(ESTRUTURAL) == 0, STAGE_TIMER == 0, #(capability_audit_record: PUBLISH_OWN ∧ EXECUTED)
             == 0, #(capability_audit_record: TIME_REQUEST ∧ EXECUTED) == 0, notice == 0; em (d) NÃO verificados (lacuna da
             errata v1.3 §3.0-bis): fsm_row, from_state, entrada de abertura do ciclo e cycle_closed
