@@ -15,3 +15,7 @@ R2-M1|MEDIA|C10|nova frase D4.1 SAÍDA afirma abertura MDC_CYCLE_OPENED/AGUARDAN
 R2-m01|MENOR|C01|F16 recebe uma tentativa mas a coluna Entrada da F16 em D5 não lista MDC_TIME_REQUEST_FAILED|declarar uma vez se é intencional (mesma forma da F20)
 R2-m02|MENOR|C06|§10 diz Pronto para revisão sem mencionar R2-M1 e mantém contagem de subcódigos|atualizar o Autopré-check ao fechar achado de ordem
 -->
+
+## Adendo do Orquestrador — guardas G1/G2 pós-Revisor (DHR-AUDITOR-EXTERNO-018), 2026-11-27
+- **G2 (gate de código sobre `specs/features/SPEC-008/plan.md`, rodado pelo harness):** `PASSOU_D`, sinais H = 0; 4 verificações informativas do repositório inteiro apontam para outros arquivos (fora desta Spec). Nenhum achado a confirmar ou descartar com arquivo:linha. O gate cobre o Plan, **não** a errata (arquivo de proposta).
+- **G1:** nesta sessão foram abertos `governance/RULES.md` (RULE-SEM-03, Patch/Minor/Major — ver adendo do parecer R1), `backlog/RMR-001_Painel_Backlog.md` e `atomic-spec.md` (leitura parcial, por Grep) e o `ROADMAP.md` por Grep da linha da SPEC-008 (Plan homologado). As afirmações do R2 que dependem deles (RULE-SEM-03, compatibilidade, decisões abertas não fechadas) não foram contraditas. Limite: `atomic-spec.md` e RMR-001 não foram lidos inteiros.
