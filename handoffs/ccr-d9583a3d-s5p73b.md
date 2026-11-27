@@ -28,7 +28,7 @@ anexo: null
 Ledger lido na SPEC-008: categorias mais recorrentes C07 (45), C01 (33), C02 (32); lacunas C99, C06, C10, C03 — P14/P16/P17 atacam C07/C06/C10/C03. Medição de ganho fica para a próxima Spec.
 
 ## 5. Próximo passo único
-PR da errata (só propostas/pareceres; não toca arquivo selado) e **homologação por Andraus** (ata `DHR-SPEC008-006`: versão v1.3, ponteiro no Status do plan, ROADMAP/CATALOGO — só por ele). Antes: decidir R3-m01 (a frase "a construção não pode adotar a leitura híbrida" sem âncora normativa — redação curta ao Especificador ou condição de homologação). Depois, só por ordem: H1/H5/H6, promover detectores (regra H2), próxima Spec; C-001 sem enunciado.
+PR da errata (só propostas/pareceres; não toca arquivo selado) e **homologação por Andraus** (ata de homologação (número definido por Andraus): versão v1.3, ponteiro no Status do plan, ROADMAP/CATALOGO — só por ele). Antes: decidir R3-m01 (a frase "a construção não pode adotar a leitura híbrida" sem âncora normativa — redação curta ao Especificador ou condição de homologação). Depois, só por ordem: H1/H5/H6, promover detectores (regra H2), próxima Spec; C-001 sem enunciado.
 
 ## 6. Decisões
 `DHR-RETRO-004` (esta frente); herdadas: DHR-SPEC008-005, DHR-AVALIACAO-002. Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
