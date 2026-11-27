@@ -1,6 +1,6 @@
 ---
-handoff_id: HO-2026-11-27-d9583a3-5
-previous: HO-2026-11-17-d9583a3-4
+handoff_id: HO-2026-11-27-d9583a3-6
+previous: HO-2026-11-27-d9583a3-5
 data: 2026-11-27
 branch: ccr-d9583a3d-s5p73b
 base_commit: 4852f4d
