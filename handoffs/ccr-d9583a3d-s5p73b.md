@@ -1,9 +1,9 @@
 ---
-handoff_id: HO-2026-11-17-d9583a3-4
-previous: HO-2026-11-17-d9583a3-3
-data: 2026-11-17
+handoff_id: HO-2026-11-27-d9583a3-7
+previous: HO-2026-11-27-d9583a3-6
+data: 2026-11-27
 branch: ccr-d9583a3d-s5p73b
-base_commit: 28bf86c
+base_commit: 4852f4d
 spec_autorizada: SPEC-008 = PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC008-005, 2026-11-15; 4 condições na ata §3; sem BUILD); SPEC-006 = BASELINE v1.7 + ERRATAS v1.11/v1.12/v1.13 HOMOLOGADAS (v1.13 = arquivo à parte, DHR-SPEC006-005); SPEC-007 = Plan reduzido v2.3 HOMOLOGADO — BASELINE (DHR-SPEC007-005; sem BUILD); SPEC-020 = BASELINE + ERRATUM-001 (tool correctness) + ERRATUM-002 (F1 de RAG faithfulness, prospectivo, DHR-SPEC020-002); SPEC-048 = Plan v1.4 HOMOLOGADO — BASELINE (DHR-SPEC048-002; sem BUILD); ERRATUM-REAPONT-001 HOMOLOGADO (DHR-REAPONT-001); SPEC-008 = ABERTURA HOMOLOGADA (DHR-SPEC008-001, 2026-11-07; CRITICAL D0–D8, dividida com a Spec de Tempo [candidata SPEC-050]; Plan pendente; sem BUILD); SPEC-049 (WikiRAG Reading View) = ABERTURA HOMOLOGADA (DHR-SPEC049-001; HIGH D0–D7, uma Spec); PLAN v1.2 HOMOLOGADO — BASELINE (DHR-SPEC049-002, 2026-10-31; 3 condições na ata §3; sem BUILD)
 fase: spec-first
 autor: Orquestrador
@@ -14,7 +14,7 @@ anexo: null
 > Dado de estado (PCC-001), não autoridade: não registra homologação, não fecha decisão aberta (CONS-01), não concede permissão. Em divergência, a realidade prevalece.
 
 ## 1. Frente atual
-P13–P18 (PR #196) e boas práticas H1–H6 (PR #197, `28bf86c`) **mesclados**. Andraus **ligou a proteção da `main`** pelo script do Termux (CI + PR + Code Owners; `enforce_admins=false`). Este PR (só docs): script corrigido (`mktemp`, Termux sem `/tmp`) e registro na pauta. Nada aplicado além disso; nenhuma decisão fechada.
+**Errata aditiva das 4 condições do Plan da SPEC-008** (R3-m04/m05/m07/m08; DHR-SPEC008-005 §3), ordem de Andraus ("Prossiga", 2026-11-27). Arquivo à parte: `governance/propostas/SPEC-008/ERRATA-PLAN-SPEC008-4-CONDICOES-PROPOSTA-2026-11-27.md` (**PROPOSTA**; nada aplicado ao baseline). Três rodadas do Revisor: R1 CONFORME condicional (7 Menores), R2 NÃO CONFORME (1 Média: ordem de gravação da abertura), R3 **CONFORME** (3 Menores; m02 por FICHA-M; m01 reescrito como risco e m03 corrigido pelo Especificador por decisão de Andraus, sem nova rodada do Revisor — diff conferido pelo Orquestrador). Decisões de Andraus (2026-11-27): destinatário só Andraus; retirar STOP do enum (LIMIT, COST, RUPTURE); R3-m04 = desfecho aceito + cenário T24; Minor v1.2→v1.3; forma = arquivo à parte; R2-M1 = seguir o plano homologado (lacuna residual §3.0-bis fica `[DECISÃO NECESSÁRIA]`). Proteção da `main` ligada por Andraus (CI + Code Owners, `enforce_admins=false`).
 
 ## 2. Estado (ao vivo, 2026-11-17, `main` = `263a5a5`)
 `gate_manifest` íntegro · `check_rpsa` ok · `check_coesao` ERRO=0 (2 WARN COE-12 antigos no HANDOFF.md raiz) · testes novos: fsm_check 12, historico_do_diff 8, ancora_hash 7, cenario_precondicao 9, fato_locais 24, delta_pacote 6, gate_extra 35, pre_entrega 4 — todos OK. `check_refs` ERRO=4 só por `docs/mapa/MAPA-PROJETO.md` (arquivo gerado, não versionado; some após `build_map.py`).
@@ -28,7 +28,7 @@ P13–P18 (PR #196) e boas práticas H1–H6 (PR #197, `28bf86c`) **mesclados**.
 Ledger lido na SPEC-008: categorias mais recorrentes C07 (45), C01 (33), C02 (32); lacunas C99, C06, C10, C03 — P14/P16/P17 atacam C07/C06/C10/C03. Medição de ganho fica para a próxima Spec.
 
 ## 5. Próximo passo único
-Mesclar este PR (só docs/pauta; não toca arquivo selado, então a proteção não pede bypass) e depois, em PR separado e em sequência (DHR-UM-RAMO-UM-PR-001), a **errata aditiva das 4 condições do Plan da SPEC-008** (R3-m04/m05/m07/m08; parecer R3 em `governance/propostas/SPEC-008/`). Só por ordem expressa: H1 (`check_refs` selado), H5 (CI mais rápido), H6 (ficha do ROADMAP), promover detectores (regra H2), próxima Spec. Pendente: enunciado de **C-001**.
+PR da errata (só propostas/pareceres; não toca arquivo selado) e **homologação por Andraus** (ata de homologação (número definido por Andraus): versão v1.3, ponteiro no Status do plan, ROADMAP/CATALOGO — só por ele). Depois, só por ordem: H1/H5/H6, promover detectores (regra H2), próxima Spec; C-001 sem enunciado.
 
 ## 6. Decisões
 `DHR-RETRO-004` (esta frente); herdadas: DHR-SPEC008-005, DHR-AVALIACAO-002. Abertas (CONS-01): J-001, G-001, K-001, C-001, M-001, N-001, SPEC-015-SCOPE, SPEC-045-RUNTIME-001, ECC-03-001, WF-D03, D-PCC-4. O `ROADMAP.md` prevalece.
