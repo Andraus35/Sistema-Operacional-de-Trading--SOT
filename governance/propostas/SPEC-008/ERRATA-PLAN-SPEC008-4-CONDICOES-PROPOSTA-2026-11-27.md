@@ -8,8 +8,9 @@
 | Autor | Especificador Principal SOT |
 | Data | 2026-11-27 |
 | Status | **PROPOSTA** — nada aplicado. Só vigora com homologação de Andraus (INV-09; RULE-HG-02/03). Nenhuma decisão aberta é fechada (CONS-01). |
-| Forma recomendada | **Arquivo à parte + ponteiro de uma linha** no Status do `plan.md` (e, se Andraus quiser, uma linha no "Objeto" do `checks.md`), sem alterar o texto baselined — precedente `DHR-SPEC006-005` D2 (l.19). O §2–§5 traz, para cada alvo, o **texto vigente literal** e o **texto novo** com `[antes: …]` já pronto, para que a mesma errata sirva à forma "no próprio lugar" se Andraus a preferir (§7, E-2). |
-| Compatibilidade | **Minor** recomendada (Plan v1.2 → v1.3); hipótese Major registrada (§6). Escolha de Andraus. |
+| Rodada | R2 — correção do parecer R1 (`PARECER-REVISOR-ERRATA-PLAN-SPEC008-R1-2026-11-27.md`, CONFORME condicional, 7 Menores): R1-m01 (§3), R1-m02 (§2.1-bis, §1, §2.0, §6), R1-m07 (§4.6, §4.0). R1-m03..m06 aplicados pelo Orquestrador (FICHA-M), mantidos. Decisões E-1..E-5 de Andraus (AskUserQuestion, 2026-11-27) incorporadas (§9). |
+| Forma | **Decidida por Andraus em 2026-11-27 (E-2):** **arquivo à parte + ponteiro de uma linha** no Status do `plan.md` (e, se Andraus quiser, uma linha no "Objeto" do `checks.md`), sem alterar o texto baselined — precedente `DHR-SPEC006-005` D2 (l.19). O §2–§5 traz, para cada alvo, o **texto vigente literal** e o **texto novo** (com `[antes: …]`), que é o texto a ler sob a errata. *[antes: "Forma recomendada | … para que a mesma errata sirva à forma \"no próprio lugar\" se Andraus a preferir (§7, E-2)."]* |
+| Compatibilidade | **Minor — decidida por Andraus em 2026-11-27 (E-1):** Plan v1.2 → v1.3 (§6). *[antes: "**Minor** recomendada (Plan v1.2 → v1.3); hipótese Major registrada (§6). Escolha de Andraus."]* |
 
 Convenção desta proposta: `[FATO]` = texto homologado/baseline ou ata, com âncora; `[INFERÊNCIA]` = leitura derivada, com âncora; `[PROPOSTA]` = texto novo desta errata; `[DECISÃO NECESSÁRIA]` = só Andraus. Os alvos são citados por **ID do bloco + trecho literal** (sem número de linha como âncora; os números entre parênteses são só auxílio de leitura, foto de 2026-11-27).
 
@@ -25,12 +26,12 @@ Convenção desta proposta: `[FATO]` = texto homologado/baseline ou ata, com ân
 
 | Condição | Alvos no `plan.md` | Alvos no `checks.md` | Outros |
 |---|---|---|---|
-| 1 — R3-m04 [C10] | RULE-MDC-003 (h); D4.2 passo (3) + simulação; D5 F16 (célula Ação) e nota "Falha de `time_request`"; EC-MDC-004 FAILURE-MODE; EARS 3; BASpec-MDC-003 (ENTÃO, DADO, VERIFICAÇÃO); BASpec-MDC-011 (DADO, VERIFICAÇÃO); D3.1 linha `MDC_TIME_REQUEST_FAILED`; **Cenário-MDC-T24 (novo)**; contagens | §0 F6; §2 linha `MDC_TIME_REQUEST_FAILED` e parágrafo da simulação; §4 matriz (RULE-MDC-003, RULE-MDC-011); **§5 ✔ da falha por capacidade** | — |
-| 2 — R3-m05 [C05] | INV-MDC-01 (frase "no pedido, nada é aberto"); ADV-MDC-12 (variante (d)); D3.1 linha `MDC_CAPABILITY_CHECK_FAILED`; BASpec-MDC-012 DADO; §7-bis Bloco A linha 012 | §2 linha `MDC_CAPABILITY_CHECK_FAILED` e simulação | — |
-| 3 — R3-m07 [C01] | contrato lógico `notice`; EC-MDC-007 CAPABILITY; RULE-MDC-004 (d); EARS 5; Cenário-MDC-T18 (ENTÃO, VERIFICAÇÃO) | — | — |
+| 1 — R3-m04 [C10] | RULE-MDC-003 (h); **RULE-MDC-010 (b) e BASpec-MDC-010 ENTÃO (exceção nomeada de retomada — R1-m02)**; D4.2 passo (3) + simulação; D5 F16 (célula Ação) e nota "Falha de `time_request`"; EC-MDC-004 FAILURE-MODE; EARS 3; BASpec-MDC-003 (ENTÃO, DADO, VERIFICAÇÃO); BASpec-MDC-011 (DADO, VERIFICAÇÃO); D3.1 linha `MDC_TIME_REQUEST_FAILED`; **Cenário-MDC-T24 (novo)**; contagens | §0 F6; §2 linha `MDC_TIME_REQUEST_FAILED` e parágrafo da simulação; §4 matriz (RULE-MDC-003, RULE-MDC-011); **§5 ✔ da falha por capacidade** | — |
+| 2 — R3-m05 [C05] | INV-MDC-01 (frase "no pedido, nada é aberto"); **D4.1 SAÍDA (uma frase — R1-m01)**; ADV-MDC-12 (variante (d)); D3.1 linha `MDC_CAPABILITY_CHECK_FAILED`; BASpec-MDC-012 DADO; §7-bis Bloco A linha 012 | §2 linha `MDC_CAPABILITY_CHECK_FAILED` e simulação | — |
+| 3 — R3-m07 [C01] | contrato lógico `notice`; EC-MDC-007 CAPABILITY; RULE-MDC-004 (d); EARS 5; Cenário-MDC-T18 (ENTÃO, VERIFICAÇÃO); **"Requisitos a outras Specs", item SPEC-015 (R1-m07)** | — | — |
 | 4 — R3-m08 [C06] | — | — | `HISTORICO.md`, tabela "R2 → R3": 3 linhas acrescentadas (§5) |
 
-**Nada mais é tocado** `[PROPOSTA]`: nenhuma outra RULE, EARS, BASpec, EC, linha de D5, cenário ou ADV; nenhum estado, seta, evento, código `MDC_*` ou campo de contrato novo; nenhuma linha de WF-F02 nova (WORKFLOW.md §3.2.3 intocado). IDs novos: só **Cenário-MDC-T24** e a variante **ADV-MDC-12 (d)** (sem renumerar — INV-07). Nenhum subcódigo novo foi necessário.
+**Nada mais é tocado** `[PROPOSTA]`: nenhuma outra RULE, EARS, BASpec, EC, linha de D5, cenário ou ADV; nenhum estado, seta, evento, código `MDC_*` ou campo de contrato novo; nenhuma linha de WF-F02 nova (WORKFLOW.md §3.2.3 intocado). IDs novos: só **Cenário-MDC-T24** e a variante **ADV-MDC-12 (d)** (sem renumerar — INV-07). Nenhum subcódigo novo foi necessário. **Exceções nomeadas a regras gerais** (R1-m02), declaradas aqui e no §6: (1) RULE-MDC-003 (h) / D4.2 (3) — a recusa do `MARK_CONSUMED` da F16 entra na exceção que já existia para o ENC; (2) RULE-MDC-010 (b) / BASpec-MDC-010 — o `MARK_CONSUMED` de ENC/F16 com recusa registrada **não** é "efeito registrado e não confirmado" e não é reemitido na retomada. Nenhuma das duas cria regra (ID) nova: são alíneas de exceção dentro das regras existentes. *[antes: "…Nenhum subcódigo novo foi necessário."]*
 
 ---
 
@@ -40,11 +41,10 @@ Convenção desta proposta: `[FATO]` = texto homologado/baseline ou ata, com ân
 
 `[FATO]` F16: `ATIVADO` × `PUB(OPERACIONAL)` setup, guarda "elegível ∧ alinhado" → `EM_SÍNTESE`, ação "`MARK_CONSUMED`; publica `phase2_handoff`" (D5). F38 só vale em "`AGUARDANDO`…`ATIVADO`" (D5). A exceção nomeada da D4.2 passo (3) só cobre "a recusa do `MARK_CONSUMED` pedido pela própria linha de ENC — F20/F22 etc." `[INFERÊNCIA]` (parecer R3 l.144): a recusa do `MARK_CONSUMED` da F16, tratada como evento interno `TIME_REQUEST_FAILED`, chega com o ciclo já em `EM_SÍNTESE` e para na D4.2 passo (4) (`MDC_NOT_PHASE1_TRANSITION`, F27): sem reenvio e sem cenário; o ✔ do `checks.md` §5 ("Falha de cada capacidade com efeito … tem caminho fechado") é amplo demais.
 
-**Opções** (ata §3 item 1):
-- **(a) Ordem — confirmação antes da transição.** A F16 só passaria a `EM_SÍNTESE` depois de o `MARK_CONSUMED` ser aceito. Recusa ⇒ ciclo fica em `ATIVADO` com setup aceito pendente, F38 reenvia, e acima do teto F20 encerra. Custos: exige memória de "setup aceito à espera" e guarda nova na F16/F38 (linha ou estado de fato novo dentro de `ATIVADO`); e um setup **válido e alinhado** se perde por falha do serviço de tempo (F20), o que troca Eficácia por consistência do rótulo do alarme `[INFERÊNCIA]`.
-- **(b) Desfecho aceito (escolhida).** A recusa do `MARK_CONSUMED` da F16 é **resultado do efeito da própria linha** (como já é para o ENC — exceção R3-m02, D4.2 passo (3)): grava a entrada `MDC_TIME_REQUEST_FAILED` no passo (9), uma tentativa, sem reenvio, sem F38/F20/F27; a transição e o `phase2_handoff` seguem; o alarme, que já está `TRIGGERED`, termina pela FSM dele (WF-A02: `TRIGGERED` → {`CONSUMED` | `EXPIRED` | `CANCELLED`}) e o aviso dessa morte chega ao ciclo em `EM_SÍNTESE` ⇒ D4.2 (4)/F27, sem efeito (T-9).
+**Decisão — opção (b), desfecho aceito + T24 (decidida por Andraus em 2026-11-27, E-5).** A ata §3 item 1 admitia (a) ordem (confirmação antes da transição) ou (b) desfecho aceito. (a) foi descartada: exigiria memória de "setup aceito à espera" e guarda nova na F16/F38 e perderia um setup válido por falha do serviço de tempo (F20) `[INFERÊNCIA]`. *[antes: lista "Opções (ata §3 item 1)" com o item "(a) Ordem — confirmação antes da transição. A F16 só passaria a `EM_SÍNTESE` depois de o `MARK_CONSUMED` ser aceito. Recusa ⇒ ciclo fica em `ATIVADO` com setup aceito pendente, F38 reenvia, e acima do teto F20 encerra. Custos: …" e "(b) Desfecho aceito (escolhida)."]*
+- **(b) Desfecho aceito.** A recusa do `MARK_CONSUMED` da F16 é **resultado do efeito da própria linha** (como já é para o ENC — exceção R3-m02, D4.2 passo (3)): grava a entrada `MDC_TIME_REQUEST_FAILED` no passo (9), uma tentativa, sem reenvio, sem F38/F20/F27; a transição e o `phase2_handoff` seguem; o alarme, que já está `TRIGGERED`, termina pela FSM dele (WF-A02: `TRIGGERED` → {`CONSUMED` | `EXPIRED` | `CANCELLED`}) e o aviso dessa morte chega ao ciclo em `EM_SÍNTESE` ⇒ D4.2 (4)/F27, sem efeito (T-9).
 
-**Por que (b)** `[INFERÊNCIA]`: (1) é a **menos invasiva**: estende uma exceção que já existe (R3-m02) a uma linha a mais; não cria estado, seta, evento, guarda, linha de D5 nem código (WF-F02 intacto); (2) **fail-safe**: o alarme `TRIGGERED` não dispara de novo (WF-A02 só tem saídas terminais a partir de `TRIGGERED`) e nenhum ICT é redespachado (ciclo fora da Fase 1 — RULE-MDC-011 (c)); (3) preserva a Eficácia: o setup aceito chega à Fase 2; (4) mesmo desfecho observável que a leitura atual "sem reenvio", agora declarado e testado. Efeito colateral declarado: a Fase 2 recebe um `alarm_ref` cujo estado final pode ser `EXPIRED`/`CANCELLED` em vez de `CONSUMED` — observação para a abertura da SPEC-014, nada decidido aqui (§8).
+**Por que (b)** `[INFERÊNCIA]`: (1) é a **menos invasiva**: estende uma exceção que já existe (R3-m02) a uma linha a mais; não cria estado, seta, evento, guarda, linha de D5 nem código (WF-F02 intacto); (2) **fail-safe**: o alarme `TRIGGERED` não dispara de novo (WF-A02 só tem saídas terminais a partir de `TRIGGERED`) e nenhum ICT é redespachado (ciclo fora da Fase 1 — RULE-MDC-011 (c)); (3) preserva a Eficácia: o setup aceito chega à Fase 2; (4) mesmo desfecho observável que a leitura atual "sem reenvio", agora declarado e testado. **Não cria regra (ID) nova**; cria duas **exceções nomeadas** dentro de regras existentes — RULE-MDC-003 (h) (já tinha a do ENC; ganha a F16) e RULE-MDC-010 (b) (retomada: recusa registrada não é reemitida — §2.1-bis; R1-m02) —, ambas nomeadas no texto da regra geral e declaradas no §1 e no §6. Efeito colateral declarado: a Fase 2 recebe um `alarm_ref` cujo estado final pode ser `EXPIRED`/`CANCELLED` em vez de `CONSUMED` — observação para a abertura da SPEC-014, nada decidido aqui (§8).
 
 ### 2.1 RULE-MDC-003 (h) — última frase
 
@@ -64,6 +64,17 @@ Convenção desta proposta: `[FATO]` = texto homologado/baseline ou ata, com ân
                 — falha do MARK_CONSUMED da F16 sem desfecho declarado (R3-m04)]*
 ```
 Nota `[INFERÊNCIA]`: a frase sobre a retomada fecha um furo que o mesmo caminho do ENC já tinha (T23 (c) diz "sem reenvio", e RULE-MDC-010 (b) manda reemitir "efeito registrado e não confirmado"); a recusa síncrona (T-10) é confirmação **negativa**, não ausência de confirmação.
+
+### 2.1-bis RULE-MDC-010 (b) e BASpec-MDC-010 ENTÃO — exceção nomeada na regra geral (R1-m02)
+
+A frase de retomada de 2.1 excepciona a regra geral de reemissão; por isso a exceção é nomeada **também** no texto da regra geral e da BASpec que a aplica (prevenção R1-m02: "toda exceção a regra geral nomeada no próprio texto da regra geral").
+
+- **RULE-MDC-010 (b), vigente (trecho literal):** `Efeito registrado e não⏎                confirmado ⇒ na retomada é reemitido com a MESMA chave de idempotência (sem duplicar).`
+  **Novo `[PROPOSTA]`:** `Efeito registrado e não confirmado ⇒ na retomada é reemitido com a MESMA chave de idempotência (sem duplicar). Exceção nomeada: \`MARK_CONSUMED\` de ENC ou da F16 cuja recusa já está gravada (entrada \`MDC_TIME_REQUEST_FAILED\`) tem desfecho registrado — não é "não confirmado" e não é reemitido (RULE-MDC-003 (h); T23 (c); T24). *[antes: "Efeito registrado e não confirmado ⇒ na retomada é reemitido com a MESMA chave de idempotência (sem duplicar)." (R1-m02)]*`
+- **BASpec-MDC-010 ENTÃO, vigente (literal):** `evento/timer; replay reconstrói o estado e reemite efeito pendente com a mesma chave`
+  **Novo `[PROPOSTA]`:** `evento/timer; replay reconstrói o estado e reemite efeito pendente com a mesma chave (salvo \`MARK_CONSUMED\` de ENC/F16 com recusa já gravada — RULE-MDC-010 (b)) *[antes: "…replay reconstrói o estado e reemite efeito pendente com a mesma chave"]*`
+
+Nota: o "⏎" marca a quebra de linha do bloco cercado no `plan.md`. A DADO/VERIFICAÇÃO da BASpec-MDC-010 não muda: T24 (cuja VERIFICAÇÃO inclui "inclusive depois de replay do livro") é citado pela BASpec-MDC-003 e pela BASpec-MDC-011, e a exceção é verificada ali.
 
 ### 2.2 D4.2 — passo (3) e simulação
 
@@ -112,7 +123,7 @@ Modalidade preservada (RULE-SEM-03): o "DEVE reenviar" continua DEVE; a exceçã
 ### 2.9 D3.1 — linha `MDC_TIME_REQUEST_FAILED`
 
 **Vigente:** `| \`MDC_TIME_REQUEST_FAILED\` | — | falha contada em \`failures[TEMPO]\` (reenvio, mesma \`request_key\`); estouro ⇒ \`MDC_LIMIT_EXCEEDED\` sub \`FAILURES\` | 003 (h) | T23 (a)–(c) |`
-**Novo `[PROPOSTA]`:** `| \`MDC_TIME_REQUEST_FAILED\` | — | falha contada em \`failures[TEMPO]\` (reenvio, mesma \`request_key\`); estouro ⇒ \`MDC_LIMIT_EXCEEDED\` sub \`FAILURES\`; \`MARK_CONSUMED\` de ENC/F16: só entrada, sem reenvio | 003 (h) | T23 (a)–(c); T24 |` *[antes: a linha vigente acima]*
+**Novo `[PROPOSTA]`:** `| \`MDC_TIME_REQUEST_FAILED\` | — | falha contada em \`failures[TEMPO]\` (reenvio, mesma \`request_key\`); estouro ⇒ \`MDC_LIMIT_EXCEEDED\` sub \`FAILURES\`; \`MARK_CONSUMED\` de ENC/F16: só entrada, sem reenvio | 003 (h) | T23 (a)–(c); T24 |` *[antes: a linha vigente acima]*. Idem, linha `MDC_NOT_PHASE1_TRANSITION`: `| 011 (c) | T11 (b) |` → `| 011 (c) | T11 (b); T24 |` *[antes: "T11 (b)"]* (R1-m03).
 
 ### 2.10 Cenário-MDC-T24 (novo — aditivo, logo depois de T23, antes do separador e de "## D8"; sem renumerar)
 
@@ -134,11 +145,11 @@ Bloco cercado por ` ``` ` como os demais cenários. "M0" = Fixture M0 do Plan; n
 - **§5, item "Falha de cada capacidade com efeito (allowlist) tem caminho fechado na D5"** — vigente (trecho): `(5) \`time_request\` → \`TIME_REQUEST_FAILED\`/F38 → F20, e \`MARK_CONSUMED\` de ENC sem reenvio (T23 (c));` → **novo:** `(5) \`time_request\` → \`TIME_REQUEST_FAILED\`/F38 → F20; \`MARK_CONSUMED\` de ENC sem reenvio (T23 (c)); \`MARK_CONSUMED\` da F16 (ciclo já em \`EM_SÍNTESE\`) = resultado do efeito, só entrada \`MDC_TIME_REQUEST_FAILED\`, sem reenvio e sem F27 — desfecho aceito; a morte posterior do alarme cai em F27 (T24);` e, no fim do item, `Evidência: D5 F20/F33–F38 + notas (l.1032) ✔` → `Evidência: D5 F16/F20/F33–F38 + notas; D4.2 passo (3); RULE-MDC-003 (h); T24 ✔` *[antes: os dois trechos vigentes]*. Restrição explícita do ✔: ele cobre a falha **de cada efeito em cada linha de dono SPEC-008**, incluindo a F16; não cobre linhas de outro dono (F24–F26).
 - **§0, F6** — `MARK_CONSUMED de ENC que falhe ⇒ sem reenvio` → `MARK_CONSUMED de ENC ou da F16 que falhe ⇒ sem reenvio`; coluna Locais: acrescentar `D4.2 (3); D5 F16; T24`.
 - **§2, linha `MDC_TIME_REQUEST_FAILED` (novo R3)** — `T23 (a)–(c)` → `T23 (a)–(c); T24`. **Parágrafo da simulação** — depois de `T11 (b) → (4);` acrescentar `T24: recusa do \`MARK_CONSUMED\` da F16 = passo (9), não evento; \`ALARM_EXPIRED\` posterior → (4);`.
-- **§4, matriz** — RULE-MDC-003, coluna D7: `+ T24`; RULE-MDC-011, coluna D7: `T11` → `T11, T24`.
+- **§4, matriz** — RULE-MDC-003, coluna D7: `+ T24`; RULE-MDC-010, coluna D7: `T14, T17` → `T14, T17, T24` (exceção de retomada — §2.1-bis; R1-m02); RULE-MDC-011, coluna D7: `T11` → `T11, T24`. **§2, linha `MDC_NOT_PHASE1_TRANSITION`** — `T11 (b)` → `T11 (b); T24` (R1-m03).
 
 ### 2.12 Contagens lidas sob a errata
 
-`plan.md` Dimensionamento "23 Cenário-MDC (D7)"; título "## D7 — Cenários de Teste (23 — T01..T23; …)"; `checks.md` l.10 "**23** cenários D7"; `DHR-SPEC008-005` §2 "23 cenários" e ROADMAP "23 cenários" → **24 (T01..T24)** na v1.3 = v1.2 + esta errata. ADV continua **15** (ADV-12 ganha uma variante, sem ID novo). Na forma B nenhum desses textos é editado: a contagem vale lida sob a errata (como na errata v1.13 da SPEC-006). Atualizar ROADMAP/CATALOGO é da aplicação (Orquestrador), depois da homologação.
+`plan.md` Dimensionamento "23 Cenário-MDC (D7)"; título "## D7 — Cenários de Teste (23 — T01..T23; …)"; `checks.md` l.10 "**23** cenários D7"; `DHR-SPEC008-005` §2 "23 cenários" e ROADMAP "23 cenários" → **24 (T01..T24)** na v1.3 = v1.2 + esta errata. ADV continua **15** (ADV-12 ganha uma variante, sem ID novo). Na forma decidida (arquivo à parte — E-2) nenhum desses textos é editado *[antes: "Na forma B nenhum desses textos é editado"]*: a contagem vale lida sob a errata (como na errata v1.13 da SPEC-006). Atualizar ROADMAP/CATALOGO é da aplicação (Orquestrador), depois da homologação.
 
 ---
 
@@ -148,9 +159,9 @@ Bloco cercado por ` ``` ` como os demais cenários. "M0" = Fixture M0 do Plan; n
 
 `[FATO]` D4.1 SAÍDA: "`cycle_id` + abertura gravada + linha F01 de D5 (aplicada pela D4.2 passos (7)–(9): DUAS conferências por ação — PUBLISH_OWN do `dispatch_request` e TIME_REQUEST do `STAGE_TIMER` —, cada uma com a sua entrada e o seu `capability_check_ref`; qualquer uma falha ⇒ nenhum dos dois efeitos, F37)". `[FATO]` INV-MDC-01: "no pedido, nada é aberto; no meio do ciclo, o ciclo encerra sem efeito algum (D5, F37)". `[INFERÊNCIA]` (parecer R3 l.145): quando a 2ª conferência falha, o ciclo já tem abertura gravada; o desfecho é F37 (já prescrito pela D4.1 SAÍDA), mas a frase da INV-MDC-01 pode ser lida como "nada aberto" e nenhum ADV cobre o caso.
 
-**Decisão:** (i) variante **(d)** em ADV-MDC-12 (o caminho de falha ganha cenário — prevenção R3-m05: "todo caminho de falha novo tem variante em ADV ou frase no passo"); (ii) reconciliar **na fonte** (INV-MDC-01) o sentido de "pedido" × "meio do ciclo", sem mudar comportamento. A frase em D4.1 SAÍDA não é necessária: ela já prescreve F37 `[INFERÊNCIA]`. Como INV-MDC-01 é a fonte única (D2), BASpec-MDC-012 ENTÃO e EC-MDC-008 FAILURE-MODE ("no meio do ciclo, ENC F37") **não** são editados: passam a ler "meio do ciclo" com a definição da INV.
+**Decisão:** (i) variante **(d)** em ADV-MDC-12 (o caminho de falha ganha cenário — prevenção R3-m05: "todo caminho de falha novo tem variante em ADV ou frase no passo"); (ii) reconciliar **na fonte** (INV-MDC-01) o sentido de "pedido" × "meio do ciclo", sem mudar comportamento; (iii) uma frase em D4.1 SAÍDA que torna explícita a ordem "abertura gravada → conferências da F01" (§3.1-bis; R1-m01). *[antes: "A frase em D4.1 SAÍDA não é necessária: ela já prescreve F37 `[INFERÊNCIA]`."]* Como INV-MDC-01 é a fonte única (D2), BASpec-MDC-012 ENTÃO e EC-MDC-008 FAILURE-MODE ("no meio do ciclo, ENC F37") **não** são editados: passam a ler "meio do ciclo" com a definição da INV.
 
-`[INFERÊNCIA]` declarada (ponto para o Revisor): F37 parte de "`AGUARDANDO`…`ATIVADO`" (D5); com a abertura gravada pela D4.1 SAÍDA, o ciclo é tratado como em `AGUARDANDO` para aplicar F37 — leitura do parecer R3 l.145 ("com o ciclo já aberto em AGUARDANDO. F37 serve"). Nenhuma linha de D5 muda.
+**Âncora do estado de origem (R1-m01).** `[FATO]` BASpec-MDC-001 ENTÃO: "aceito ⇒ abertura gravada com versões fixadas e AGUARDANDO"; BASpec-MDC-001 VERIFICADO POR: "aceito ⇒ entry_type MDC_CYCLE_OPENED e estado AGUARDANDO"; D4.1 SAÍDA: "`cycle_id` + abertura gravada + linha F01 de D5 (… qualquer uma falha ⇒ nenhum dos dois efeitos, F37)"; D5 F37: Estado "`AGUARDANDO`…`ATIVADO`". `[INFERÊNCIA]`: o pedido aceito pela D4.1 grava a abertura — entrada `MDC_CYCLE_OPENED`, `to_state` = `AGUARDANDO` — **antes** das duas conferências por ação da F01; o que a D4.2 passo (7) impede quando uma conferência falha são os **efeitos** da F01 (despacho do ESTRUTURAL e `STAGE_TIMER`), não a abertura já gravada. Logo, na variante (d), **a entrada `MDC_CYCLE_OPENED` existe** e F37 parte de `AGUARDANDO` (não F29: o par `AGUARDANDO` × `CAPABILITY_CHECK_FAILED` é listado). A frase do §3.1-bis põe essa ordem no texto da D4.1. Nenhuma linha de D5 muda. *[antes: "`[INFERÊNCIA]` declarada (ponto para o Revisor): F37 parte de \"`AGUARDANDO`…`ATIVADO`\" (D5); com a abertura gravada pela D4.1 SAÍDA, o ciclo é tratado como em `AGUARDANDO` para aplicar F37 — leitura do parecer R3 l.145 (\"com o ciclo já aberto em AGUARDANDO. F37 serve\"). Nenhuma linha de D5 muda." — âncora só no parecer (R1-m01)]*
 
 ### 3.1 INV-MDC-01 — frase reconciliada
 
@@ -159,6 +170,13 @@ Bloco cercado por ` ``` ` como os demais cenários. "M0" = Fixture M0 do Plan; n
 **Novo `[PROPOSTA]`:** `em ambos, a ação não ocorre; na avaliação do pedido (D4.1 passo (0)), nada é aberto; depois da abertura gravada — inclusive em qualquer das duas conferências da F01 (D4.1 SAÍDA) — e no meio do ciclo, o ciclo encerra sem efeito algum (D5, F37; ADV-12 (c)(d)); *[antes: "em ambos, a ação não ocorre; no pedido, nada é aberto; no meio do ciclo, o ciclo encerra sem efeito algum (D5, F37);" — "pedido" ambíguo para a falha nas conferências da F01 (R3-m05)]*`
 
 Modalidade preservada: a trava continua fail-closed; só se nomeia onde termina "pedido" (D4.1 (0)) e onde começa "meio do ciclo".
+
+### 3.1-bis D4.1 — SAÍDA (uma frase; R1-m01)
+
+**Vigente (trecho literal):** `qualquer uma falha ⇒ nenhum dos dois efeitos, F37), ou recusa.`
+**Novo `[PROPOSTA]`:** `qualquer uma falha ⇒ nenhum dos dois efeitos, F37), ou recusa. A abertura (entrada \`MDC_CYCLE_OPENED\`, \`to_state\` = \`AGUARDANDO\` — BASpec-MDC-001) é gravada ANTES dessas duas conferências e não depende delas (a escrita no próprio livro é fixa no componente — INV-MDC-01); por isso a falha de uma delas encerra por F37 a partir de \`AGUARDANDO\` (ADV-12 (d)). *[antes: "qualquer uma falha ⇒ nenhum dos dois efeitos, F37), ou recusa."]*`
+
+Âncora da independência `[FATO]`: INV-MDC-01, "a recusa é gravada no livro de bordo (a escrita no próprio livro é fixa no componente, não vem do registro)". A frase não muda a F01 nem a D4.2: só explicita a ordem que BASpec-MDC-001 (ENTÃO e VERIFICADO POR) e a D4.1 SAÍDA já dão.
 
 ### 3.2 ADV-MDC-12 — variante (d)
 
@@ -181,11 +199,13 @@ QUANDO      (a)(b)(d) R1 chega; (c) E1 é processada
 ENTÃO       nenhum efeito; recusa gravada; em (c)(d) o ciclo encerra sem efeito algum
 VERIFICAÇÃO "MDC_CAPABILITY_CHECK_FAILED", sub (a)(c)(d) "MDC_CAPABILITY_REGISTRY_UNAVAILABLE", (b) "MDC_CAPABILITY_REGISTRY_DIVERGENT";
             capability_check_ref == AUSENTE em (a)(c) e na 2ª conferência de (d); (a)(b) dispatch_request == 0; (c) fsm_row == F37,
-            dispatch_request(INSTITUCIONAL) == 0, notice == 0, MARK_CONSUMED == 0; (d) cycle_id ≠ AUSENTE (abertura gravada —
-            D4.1 SAÍDA), fsm_row == F37, dispatch_request(ESTRUTURAL) == 0, STAGE_TIMER == 0, #(capability_audit_record:
-            PUBLISH_OWN ∧ EXECUTED) == 0, notice == 0
+            dispatch_request(INSTITUCIONAL) == 0, notice == 0, MARK_CONSUMED == 0; (d) entrada MDC_CYCLE_OPENED == 1
+            (to_state == AGUARDANDO — D4.1 SAÍDA; BASpec-MDC-001), depois fsm_row == F37 com from_state == AGUARDANDO,
+            dispatch_request(ESTRUTURAL) == 0, STAGE_TIMER == 0, #(capability_audit_record: PUBLISH_OWN ∧ EXECUTED) == 0,
+            notice == 0
 *[antes: o bloco vigente acima — variante (d) acrescentada (R3-m05)]*
 ```
+*[antes (R1 desta errata, linhas de (d)): "(d) cycle_id ≠ AUSENTE (abertura gravada — D4.1 SAÍDA), fsm_row == F37, dispatch_request(ESTRUTURAL) == 0, STAGE_TIMER == 0, #(capability_audit_record: PUBLISH_OWN ∧ EXECUTED) == 0, notice == 0" — estado de origem não observável (R1-m01)]*
 
 ### 3.3 Propagação (contagem de variantes e definição)
 
@@ -222,7 +242,7 @@ Grep em `specs/features/SPEC-008/` e em `governance/MMC-001_Manager_Contract.md`
 
 | Ocorrência | Local | Tratamento |
 |---|---|---|
-| `to = Andraus` | contrato `notice` (l.1115) — única ocorrência de `notice.to`; as outras 14 de "to = " no `plan.md` são final de palavra ("contexto = ", "conflito = ", "encerramento = ", "custo = ", "desalinhamento = ", "incerto = ") | mantém |
+| `to = Andraus` | contrato `notice` (l.1115) — única ocorrência de `notice.to`; as outras 10 de "to = " no `plan.md` são final de palavra ("contexto = ", "conflito = ", "encerramento = ", "custo = ", "desalinhamento = ", "incerto = ") | mantém |
 | "(6) ENVIAR `notice` (aviso/escalada) a Andraus pelo canal local" | INV-MDC-01 allowlist (l.334) — **fonte** do destinatário (Classe C, E3, lista fechada) | mantém |
 | "NOTICE_LOCAL (6: a Andraus pelo canal local)"; "(destino interno ao SOT / Andraus)" | contrato `capability_audit_record` (l.1097–1098, l.1103) | mantém |
 | "aviso + escalada a Andraus" · "Escalada a Andraus = `notice`" · "ENC + aviso a Andraus" · "`notice` a Andraus" · "Aviso e escalada a Andraus"/"Aviso a Andraus" · "avisar Andraus" | RULE-MDC-008 (c); RULE-MDC-009 (c); T15 ENTÃO; Métricas; EC-007 título/EFFECT; EC-008 CAPABILITY | já "Andraus" — não tocados |
@@ -232,17 +252,17 @@ Grep em `specs/features/SPEC-008/` e em `governance/MMC-001_Manager_Contract.md`
 | "ciclo novo pedido por Andraus/Fase 0" | RULE-MDC-005 (e) (l.503) | origem de **pedido de ciclo**, não `notice` — não tocado |
 | "pede orientações a Andraus/Fase 0" | Interface, requisito T-4 à Spec de Tempo (l.1058) | pré-aviso WF-K02 da **Spec de Tempo**, não `notice` desta Spec — não tocado |
 | "ruptura ⇒ registro + aviso"; "ruptura com aviso" | BASpec-MDC-004 ENTÃO/VERIFICADO (l.784, l.796) | sem destinatário — não tocado |
-| "abrir ou não ciclo após aviso de ruptura" | Requisitos, SPEC-015 (l.1070) | coerente — não tocado |
+| "abrir ou não ciclo após aviso de ruptura" | Requisitos a outras Specs, item SPEC-015 (l.1070) | **altera** (§4.6): recebe o requisito novo que a RULE-MDC-004 (d) delega à SPEC-015 (R1-m07) *[antes: "coerente — não tocado"]* |
 | "Fase 0" (demais 11 linhas: l.13, 214, 215, 257, 290, 369, 653, 719, 977, 1529, 1788) | cabeçalho, Herança, WORKFLOW, origem do pedido, decisões abertas | não tratam de destinatário de aviso — não tocados |
 | "avisa Andraus/Fase 0" | `DHR-SPEC008-004` §1, DN-2 (ata homologada) | fonte — não tocada; leitura em §4.3 e E-3 |
 | `checks.md` | só "(6) `notice` → `MDC_NOTICE_PENDING`" (§5) e F13 (T15/T16/T18) — sem kind nem destinatário | não tocado |
 
-Conclusão `[INFERÊNCIA]`: depois da errata, nenhum local do Plan nomeia valor de kind sem linha emissora nem destinatário de `notice` diferente de "Andraus"; os únicos "Andraus/Fase 0" que ficam (l.503, l.1058) não são destinatário de `notice`.
+Conclusão `[INFERÊNCIA]`: depois da errata, nenhum local do Plan nomeia valor de kind sem linha emissora nem destinatário de `notice` diferente de "Andraus"; os únicos "Andraus/Fase 0" que ficam (l.503, l.1058) não são destinatário de `notice`; o requisito à SPEC-015 que a nova RULE-MDC-004 (d) cria está listado em "Requisitos a outras Specs" (§4.6).
 
 ### 4.0-bis Decisão de desenho
 
-- **Enum:** derivar `kind` das linhas que avisam (prevenção R3-m07: "enum e destinatário derivados da allowlist"; aqui, das linhas que exercem a capacidade (6)) ⇒ `{LIMIT, COST, RUPTURE}`. Tornar `CAPABILITY` alcançável exigiria avisar quando o registro de capacidades falhou — contraria F37/ADV-12 (fail-closed: "nenhum efeito") `[INFERÊNCIA]`. **STOP** não estava no achado; está aqui porque a mesma prova (Fato A) mostra que também é inalcançável — retirar é o mínimo; mantê-lo exigiria acrescentar "aviso" à F22 (comportamento novo) — escolha em E-4.
-- **Destinatário:** fica **`to = Andraus`** (allowlist (6) da INV-MDC-01, Classe C/E3 — lista fechada). As três frases "Andraus/Fase 0" passam a "Andraus", com a menção à Fase 0 preservada como **remissão à SPEC-015** (a Fase 0 não existe ainda; RULE-MDC-001 (b) já a trata como "SPEC-015, quando existir"). Alternativa (acrescentar Fase 0 como destinatário) muda a lista fechada da trava E3 e o enum CAP `NOTICE_LOCAL` — mais invasiva (§6, Major). Como a frase de DN-2 na ata diz "avisa Andraus/Fase 0", a leitura é submetida a Andraus (E-3) `[DECISÃO NECESSÁRIA]`; DN-2 em si ("a Fase 1 só detecta e avisa; não abre ciclo") não muda.
+- **Enum — `kind` = {LIMIT, COST, RUPTURE}; STOP retirado (decidido por Andraus em 2026-11-27, E-4):** derivar `kind` das linhas que avisam (prevenção R3-m07: "enum e destinatário derivados da allowlist"; aqui, das linhas que exercem a capacidade (6)). Tornar `CAPABILITY` alcançável exigiria avisar quando o registro de capacidades falhou — contraria F37/ADV-12 (fail-closed: "nenhum efeito") `[INFERÊNCIA]`. **STOP** não estava no achado; entra porque a mesma prova (Fato A) mostra que também é inalcançável. *[antes: "…retirar é o mínimo; mantê-lo exigiria acrescentar \"aviso\" à F22 (comportamento novo) — escolha em E-4."]*
+- **Destinatário — só Andraus; Fase 0 por remissão à SPEC-015 (decidido por Andraus em 2026-11-27, E-3):** fica **`to = Andraus`** (allowlist (6) da INV-MDC-01, Classe C/E3 — lista fechada). As três frases "Andraus/Fase 0" passam a "Andraus", com a menção à Fase 0 preservada como **remissão à SPEC-015** (a Fase 0 não existe ainda; RULE-MDC-001 (b) já a trata como "SPEC-015, quando existir"); o requisito correspondente vai a "Requisitos a outras Specs" (§4.6). DN-2 em si ("a Fase 1 só detecta e avisa; não abre ciclo") não muda. *[antes: "Alternativa (acrescentar Fase 0 como destinatário) muda a lista fechada da trava E3 e o enum CAP `NOTICE_LOCAL` — mais invasiva (§6, Major). Como a frase de DN-2 na ata diz \"avisa Andraus/Fase 0\", a leitura é submetida a Andraus (E-3) `[DECISÃO NECESSÁRIA]`; …"]*
 
 ### 4.1 Contrato lógico — linha `notice`
 
@@ -274,6 +294,15 @@ notice          : {cycle_id | —, kind ∈ {LIMIT, COST, RUPTURE}, code, refs[]
 - ENTÃO, **vigente:** `ENTÃO       ruptura registrada e aviso a Andraus/Fase 0; nenhum ciclo aberto pela Fase 1` → **novo:** `ENTÃO       ruptura registrada e aviso a Andraus; nenhum ciclo aberto pela Fase 1` *[antes: "…aviso a Andraus/Fase 0; …"]*
 - VERIFICAÇÃO, **vigente (trecho):** `notice.kind == RUPTURE com asset == XAU e ref H7` → **novo:** `notice.kind == RUPTURE, notice.to == Andraus, com asset == XAU e ref H7` *[antes: "notice.kind == RUPTURE com asset == XAU e ref H7"]*
 
+### 4.6 "Requisitos a outras Specs" — item SPEC-015 (R1-m07)
+
+A nova RULE-MDC-004 (d) (§4.3) delega à SPEC-015 o meio pelo qual a Fase 0 toma conhecimento da ruptura; o requisito entra na seção própria no mesmo passo (prevenção R1-m07).
+
+**Vigente (trecho literal):** `**SPEC-015:** origem dos pedidos; quantas vezes tentar (P-12, \`[PROPOSTA]\` do MMC-001 §8.2-bis); abrir ou não ciclo após aviso de ruptura (DN-2: a Fase 1 só avisa).`
+**Novo `[PROPOSTA]`:** `**SPEC-015:** origem dos pedidos; quantas vezes tentar (P-12, \`[PROPOSTA]\` do MMC-001 §8.2-bis); abrir ou não ciclo após aviso de ruptura (DN-2: a Fase 1 só avisa); meio pelo qual a Fase 0 toma conhecimento da ruptura — o \`notice\` desta Spec vai só a Andraus (RULE-MDC-004 (d); INV-MDC-01 (6)); qualquer outro meio é da SPEC-015, sem capacidade nova na Fase 1. *[antes: "…abrir ou não ciclo após aviso de ruptura (DN-2: a Fase 1 só avisa)."]*`
+
+Etiqueta: requisito `[INFERÊNCIA]`, como os demais da seção; não fecha SPEC-015-SCOPE (segue ABERTA — CONS-01).
+
 ---
 
 ## 5. Condição 4 — R3-m08 [C06]: `HISTORICO.md`, R2 → R3
@@ -290,8 +319,8 @@ notice          : {cycle_id | —, kind ∈ {LIMIT, COST, RUPTURE}, code, refs[]
 
 ```
 | R2-M-02 (T23) | BASpec-MDC-003 VERIFICADO POR — DADO e VERIFICAÇÃO | DADO: "T01 · T14 · T15 (b)(c) · T22 (a)(b) · ADV-01 (aviso duplicado) · ADV-02 (retomada) · ADV-03 (outro ciclo) · ADV-04 (sem envelope)"; VERIFICAÇÃO: "ver T01 / T14 / T15 / T22 / ADV-01..04" (linhas `+` do `DIFF-PLAN-V1.0-ATUAL-2026-11-14.patch`, l.337–338 e l.343 = v1.1) | T23 (falha de `time_request`) acrescentado a DADO e VERIFICAÇÃO; ENTÃO inalterado na R2→R3 (a troca da última linha do ENTÃO é Pós-R3, R3-m03) |
-| — (T22) | Cenário-MDC-T22 | conteúdo v1.1 (patch l.561–573) **idêntico** ao da v1.2: nenhuma palavra trocada | o DELTA o marca "alterado" porque, na v1.1, o bloco de T22 ia até "## D8" e incluía o separador "---"; na v1.2, T23 entrou logo depois e o "---" passou a fechar o bloco de T23 (`spec_delta.py` `blocos`, l.33–51) — `[INFERÊNCIA]`, não conferida por git |
-| R2-m04, m05 (parte), m08, m09, m11 (classe M) | edições do Orquestrador entre a v1.1 e a v1.2 (plan.md e checks.md) | texto anterior **literal** = campo `"antigo"` de cada entrada do bloco `<!-- FICHA-M … -->` do parecer R2 (`governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R2-2026-11-14.md`, entradas R2-m04a/b, m05a/b/c, m08a/b, m09a/b, m11a/b); classificação "aplicado_m" em `governance/propostas/SPEC-008/FICHA-ESQUELETO-PLAN-R2.json` (só natureza, sem texto) | aplicadas pelo Orquestrador (classe M), fora das linhas acima; R2-m05b e R2-m05c têm também linha própria nesta tabela (R2-m05; R2-m06 TRACE-06) |
+| — (T22) | Cenário-MDC-T22 | conteúdo v1.1 (patch l.561–573) **idêntico** ao da v1.2: nenhuma palavra trocada | o DELTA o marca "alterado" porque, na v1.1, o bloco de T22 ia até "## D8" e incluía o separador "---"; na v1.2, T23 entrou logo depois e o "---" passou a fechar o bloco de T23 (`spec_delta.py` `blocos`, l.33–51) — conferido pelo Orquestrador por `git show 366af09` (2026-11-27): conteúdo idêntico, só a fronteira do bloco mudou |
+| R2-m04, m05 (parte), m08, m09, m11 (classe M) | edições do Orquestrador entre a v1.1 e a v1.2 (plan.md e checks.md) | texto anterior **literal** = campo `"antigo"` de cada entrada do bloco `<!-- FICHA-M … -->` do parecer R2 (`governance/propostas/SPEC-008/PARECER-REVISOR-SPEC008-PLAN-R2-2026-11-14.md`, entradas R2-m04a/b, m05a/b/c, m08a/b, m09a/b, m11a/b); classificação "aplicado_m" (R2-m04, m08, m09, m11; R2-m05 = "desenho", com entradas a/b/c na FICHA-M) em `governance/propostas/SPEC-008/FICHA-ESQUELETO-PLAN-R2.json` (só natureza, sem texto) | aplicadas pelo Orquestrador (classe M), fora das linhas acima; R2-m05b e R2-m05c têm também linha própria nesta tabela (R2-m05; R2-m06 TRACE-06) |
 ```
 
 ### 5.3 O que não consegui recuperar (dito, não inventado)
@@ -302,29 +331,28 @@ notice          : {cycle_id | —, kind ∈ {LIMIT, COST, RUPTURE}, code, refs[]
 
 ---
 
-## 6. Compatibilidade (RULE-HG-04) — `[PROPOSTA]`; escolha de Andraus
+## 6. Compatibilidade (RULE-HG-04) — Minor, decidida por Andraus em 2026-11-27 (E-1) *[antes: "— `[PROPOSTA]`; escolha de Andraus"]*
 
 `[FATO]` CR-001 §7.7 (l.437–441): **Patch** = "Correções exclusivamente editoriais (ortografia, formatação, referências cruzadas, notas sem efeito normativo)" — "Não altera a versão"; **Minor** = "Mudanças compatíveis que adicionam comportamento sem invalidar comportamento anterior" — "Incremento Minor (ex.: 1.0 → 1.1)"; **Major** = "Mudanças que removem, invalidam ou alteram comportamento normativo vigente" — "Nova baseline major". CRR55 (l.450): Minor preserva a validade dos identificadores vigentes; CRR56 (l.451): quebra só como Major declarada.
 
-**Análise de impacto** `[INFERÊNCIA]`: schemas — nenhum (Grep em `schemas/`: 0 ocorrências de `notice`, `MDC_`, `SPEC-008`); RAG — nenhum; Skills — nenhuma; testes — `tests/test_fsm_check.py` (l.95) e `tests/test_cenario_precondicao.py` (l.56) **leem** o `plan.md` da SPEC-008 (tabela D5 e cenários): na forma B o arquivo não muda; na forma A a célula da F16 e o T24 entram na leitura desses testes — rodar a suíte depois de aplicar (Orquestrador); modelos canônicos — nenhum (CEM/CHM/CCM/CEE intocados, CC-02); dependentes — Spec de Tempo, SPEC-009/014/015 ainda sem Plan; não há BUILD.
+**Análise de impacto** `[INFERÊNCIA]`: schemas — nenhum (Grep em `schemas/`: 0 ocorrências de `notice`, `MDC_`, `SPEC-008`); RAG — nenhum; Skills — nenhuma; testes — `tests/test_fsm_check.py` (l.95) e `tests/test_cenario_precondicao.py` (l.56) **leem** o `plan.md` da SPEC-008 (tabela D5 e cenários): na forma decidida (arquivo à parte) o arquivo só ganha o ponteiro no Status — rodar a suíte depois de aplicar (Orquestrador) *[antes: "na forma B o arquivo não muda; na forma A a célula da F16 e o T24 entram na leitura desses testes — rodar a suíte depois de aplicar (Orquestrador)"]*; modelos canônicos — nenhum (CEM/CHM/CCM/CEE intocados, CC-02); dependentes — Spec de Tempo, SPEC-009/014/015 ainda sem Plan; não há BUILD.
 
 | Parte | Leitura |
 |---|---|
-| C1 (R3-m04) | declara o desfecho de um caminho sem desfecho e acrescenta T24 → **adiciona** comportamento verificável; o observável antigo ("sem reenvio") continua; nada invalidado |
+| C1 (R3-m04) | declara o desfecho de um caminho sem desfecho e acrescenta T24 → **adiciona** comportamento verificável; o observável antigo ("sem reenvio") continua; nada invalidado. **Exceções nomeadas declaradas** (R1-m02): RULE-MDC-003 (h)/D4.2 (3) passam a incluir a F16; RULE-MDC-010 (b)/BASpec-MDC-010 deixam de reemitir, na retomada, o `MARK_CONSUMED` de ENC/F16 com recusa já gravada. A 2ª estreita a regra geral de reemissão só num caso em que a reemissão contradiria o "sem reenvio" já vigente (T23 (c)); nenhum caminho alcançável que antes reemitia com sucesso deixa de fazê-lo `[INFERÊNCIA]` — por isso não é tratada como quebra (CRR56) |
 | C2 (R3-m05) | ADV-12 (d) novo; frase da INV alinhada à D4.1 SAÍDA vigente (F37) → adiciona cenário, sem mudar desfecho |
-| C3 (R3-m07) | retira do enum dois valores **sem linha emissora** (nenhum comportamento alcançável removido); alinha três frases ao destinatário que a trava E3 já fixava (`to = Andraus`) |
+| C3 (R3-m07) | retira do enum dois valores **sem linha emissora** (nenhum comportamento alcançável removido); alinha três frases ao destinatário que a trava E3 já fixava (`to = Andraus`); acrescenta um requisito `[INFERÊNCIA]` à SPEC-015 (§4.6) |
 | C4 (R3-m08) | só histórico (não-norma) → editorial |
 
 - **Patch — não se aplica** `[INFERÊNCIA]`: T24 e ADV-12 (d) são obrigações verificáveis novas (não "exclusivamente editoriais").
-- **Minor — recomendada**: Plan **v1.2 → v1.3** (v1.3 = v1.2 + esta errata, como a "errata v1.13" da SPEC-006). Nenhum identificador vigente perde validade (CRR55): T01–T23, ADV-01–15 e EC-001–009 seguem verificáveis; T18 só ganha uma verificação.
-- **Major — hipótese registrada**: (i) se Andraus ler "avisar Andraus/Fase 0" (EARS 5, vigente) como **obrigação de avisar a Fase 0**, a troca para "Andraus" estreita obrigação vigente → Major (CRR56); (ii) se Andraus escolher **acrescentar** a Fase 0 como destinatário (E-3 (b)), muda a lista fechada da trava E3 (INV-MDC-01 (6), `NOTICE_LOCAL`) → Major. Em Major, a forma B (arquivo à parte) fica mais próxima da cláusula CE2 (sucessão, l.443) do que a troca no lugar.
+- **Minor — decidida por Andraus em 2026-11-27 (E-1)**: Plan **v1.2 → v1.3** (v1.3 = v1.2 + esta errata, como a "errata v1.13" da SPEC-006). Nenhum identificador vigente perde validade (CRR55): T01–T23, ADV-01–15 e EC-001–009 seguem verificáveis; T18 só ganha uma verificação. Minor se sustenta com E-3 = só Andraus (destinatário que a trava E3 já fixava) e E-4 = retirar STOP (valor sem linha emissora) — ambas decididas por Andraus na mesma data (parecer R1, ponto prioritário (4)). *[antes: "**Minor — recomendada**: …; T18 só ganha uma verificação." e o item "**Major — hipótese registrada**: (i) se Andraus ler \"avisar Andraus/Fase 0\" (EARS 5, vigente) como obrigação de avisar a Fase 0 … → Major (CRR56); (ii) se Andraus escolher acrescentar a Fase 0 como destinatário (E-3 (b)) … → Major. …" — hipóteses sem uso depois de E-1/E-3]*
 
 ---
 
 ## 7. Forma de aplicação e dimensionamento
 
-- **Forma B (recomendada):** esta errata vira arquivo à parte (sugestão: `specs/features/SPEC-008/errata-v1.3 (arquivo a criar na homologação)`, nome final na aplicação) + ponteiro de uma linha no Status do `plan.md` ("Errata v1.3 aditiva: `errata-v1.3.md` (DHR-…); lê-se o Plan sob ela") e, opcionalmente, no "Objeto" do `checks.md`. Precedente: `DHR-SPEC006-005` D2 (l.19): "nenhuma regra/BASpec/EARS/EC/T/ADV/contagem alterada" no texto baselined.
-- **Forma A (no lugar):** as mesmas trocas do §2–§4 com `[antes]` (INV-07). Estimativa `[INFERÊNCIA]`: +~18 linhas de corpo (T24 ≈ 11; ADV-12 (d) ≈ 3; quebras de linha em RULE-MDC-003 (h), INV-MDC-01, RULE-MDC-004 (d), contrato) ⇒ ≈ 1.903 linhas, **acima do alerta de 1.900** (abaixo do teto 2.000; RULE-ECC-07; o `checks.md` l.11 já avisava: "qualquer acréscimo numa R4 passa do alerta"). Medida real só por `scripts/check_dimensionamento.py` (Orquestrador). Na forma B o corpo do `plan.md` não muda de tamanho.
+- **Forma — arquivo à parte + ponteiro (decidida por Andraus em 2026-11-27, E-2):** esta errata vira arquivo à parte (sugestão: `specs/features/SPEC-008/errata-v1.3 (arquivo a criar na homologação)`, nome final na aplicação) + ponteiro de uma linha no Status do `plan.md` ("Errata v1.3 aditiva: `errata-v1.3.md` (DHR-…); lê-se o Plan sob ela") e, opcionalmente, no "Objeto" do `checks.md`. Precedente: `DHR-SPEC006-005` D2 (l.19): "nenhuma regra/BASpec/EARS/EC/T/ADV/contagem alterada" no texto baselined.
+- **Dimensionamento (RULE-ECC-07):** o corpo do `plan.md` não muda de tamanho (só o ponteiro, na célula de Status). *[antes: item "**Forma A (no lugar):** as mesmas trocas do §2–§4 com `[antes]` (INV-07). Estimativa `[INFERÊNCIA]`: +~18 linhas de corpo … ⇒ ≈ 1.903 linhas, **acima do alerta de 1.900** … Na forma B o corpo do `plan.md` não muda de tamanho." — alternativa sem uso depois de E-2]*
 - Em qualquer forma, o Orquestrador deve conferir, antes de aplicar, que os trechos "vigentes" citados aqui ainda existem literalmente (hash do `plan.md` na ata: `21a52c6b…`).
 
 ---
@@ -337,19 +365,23 @@ notice          : {cycle_id | —, kind ∈ {LIMIT, COST, RUPTURE}, code, refs[]
 - Não decide nada pela SPEC-014: o fato de o alarme poder terminar `EXPIRED`/`CANCELLED` (e não `CONSUMED`) depois de um handoff (C1) fica como **observação** para a abertura dela.
 - Não prova que as linhas `+` do patch são a v1.1 exata (§5.3) nem reconcilia os 35 blocos do DELTA.
 - Não foi revisada pelo Revisor; nenhum script rodou (sem Bash): `validate_spec_sot.py` não se aplica a este arquivo; `check_refs.py`, `build_map.py --check` e `check_dimensionamento.py` ficam com o Orquestrador.
-- Não muda versão, ROADMAP, CATALOGO nem RPSA: isso é da aplicação, depois da escolha de Andraus (E-1/E-2).
+- Não muda versão, ROADMAP, CATALOGO nem RPSA por si: isso é da aplicação, depois da homologação (com E-1/E-2 já decididas por Andraus). As respostas de Andraus de 2026-11-27 (E-1..E-5) fixam o texto desta proposta; **não** são a homologação da errata.
 
 ---
 
-## 9. Pendências de Andraus — `[DECISÃO NECESSÁRIA]` (nada decidido aqui)
+## 9. Decisões de Andraus sobre esta errata (AskUserQuestion, 2026-11-27, repassadas pelo Orquestrador)
 
-| # | Ponto | Opções (recomendada primeiro) | Observação |
+As cinco foram respondidas por Andraus; fixam o texto da proposta. A homologação da errata continua pendente (Status = PROPOSTA; INV-09). *[antes: título "## 9. Pendências de Andraus — `[DECISÃO NECESSÁRIA]` (nada decidido aqui)"]*
+
+| # | Ponto | Estado | Justificativa (mantida da R1) |
 |---|---|---|---|
-| E-1 | Compatibilidade | **Minor** (v1.3) · Major (v2.0) | §6; Patch não cabe |
-| E-2 | Forma | **B — arquivo à parte + ponteiro** · A — no lugar | §7; A passa do alerta de 1.900 (estimativa) |
-| E-3 | Destinatário do aviso de ruptura | **(a) `to = Andraus`; Fase 0 por remissão à SPEC-015** · (b) acrescentar Fase 0 à allowlist (6) e a `to` | a frase de DN-2 na ata diz "avisa Andraus/Fase 0"; (b) muda a trava E3 → Major |
-| E-4 | `STOP` no enum | **retirar** (sem linha emissora) · manter e acrescentar "aviso" à F22 (comportamento novo) | achado acessório da prova do §4.0 |
-| E-5 | R3-m04 | **(b) desfecho aceito** · (a) ordem (confirmação antes da transição) | §2.0; (a) cria guarda/memória nova e pode perder setup válido |
+| E-1 | Compatibilidade | **Minor (v1.2 → v1.3) — decidida por Andraus em 2026-11-27** | §6; Patch não cabe (T24 e ADV-12 (d) são obrigações novas) |
+| E-2 | Forma | **Arquivo à parte + ponteiro — decidida por Andraus em 2026-11-27** | §7; a troca no lugar passaria do alerta de 1.900 linhas (estimativa) |
+| E-3 | Destinatário do aviso de ruptura | **Só Andraus (`to = Andraus`); Fase 0 por remissão à SPEC-015 — decidida por Andraus em 2026-11-27** | a trava E3 (INV-MDC-01 (6)) já fixava Andraus; acrescentar a Fase 0 mudaria a lista fechada (Major) |
+| E-4 | `STOP` no enum | **Retirar (kind = LIMIT, COST, RUPTURE) — decidida por Andraus em 2026-11-27** | sem linha emissora (§4.0, Fato A); mantê-lo exigiria aviso novo na F22 |
+| E-5 | R3-m04 | **Opção (b) desfecho aceito + T24 — decidida por Andraus em 2026-11-27** | §2.0; a opção (a) criaria guarda/memória nova e poderia perder setup válido |
+
+*[antes (colunas "Opções (recomendada primeiro)"): E-1 "**Minor** (v1.3) · Major (v2.0)"; E-2 "**B — arquivo à parte + ponteiro** · A — no lugar"; E-3 "**(a) `to = Andraus`; Fase 0 por remissão à SPEC-015** · (b) acrescentar Fase 0 à allowlist (6) e a `to`"; E-4 "**retirar** (sem linha emissora) · manter e acrescentar \"aviso\" à F22 (comportamento novo)"; E-5 "**(b) desfecho aceito** · (a) ordem (confirmação antes da transição)"]*
 
 ---
 
@@ -362,7 +394,8 @@ notice          : {cycle_id | —, kind ∈ {LIMIT, COST, RUPTURE}, code, refs[]
 - [x] C01 (recorrente): tabela fato → locais por Grep para `notice.kind`, `CAPABILITY`, `Andraus/Fase 0`, `to = ` (e `STOP`, `Fase 0`, aviso); propagação a EARS/BASpec/D3.1/checks listada em cada condição.
 - [x] RULE-SEM-03: DEVE/NÃO DEVE preservados em EARS 3 e EARS 5; DN-2 não reescrita.
 - [x] CONS-01: J-001, N-001, G-001, M-001 (e demais) seguem abertas (§8).
-- [x] Compatibilidade contra CR-001 l.437–451 literal; Patch não cabe; Minor recomendada, Major registrada.
+- [x] Compatibilidade contra CR-001 l.437–451 literal; Patch não cabe; Minor (decidida por Andraus, E-1); exceções nomeadas (RULE-MDC-003 (h), RULE-MDC-010 (b)) declaradas no §1, §2.0 e §6 (R1-m02).
+- [x] R2: R1-m01 (âncora BASpec-MDC-001 + D4.1 SAÍDA; frase §3.1-bis; `from_state == AGUARDANDO` e `MDC_CYCLE_OPENED` em ADV-12 (d)); R1-m02 (exceção nomeada em RULE-MDC-010 (b) e BASpec-MDC-010); R1-m07 (requisito à SPEC-015, §4.6; tabela §4.0 corrigida). R1-m03..m06 do Orquestrador intocados.
 - [x] R3-m08: o que não foi possível recuperar está dito (§5.3); nenhum texto anterior inventado.
 - [ ] Gates mecânicos (`check_refs.py`, `build_map.py --check`, `check_dimensionamento.py`, conferência dos trechos vigentes por hash) — com o Orquestrador (sem Bash).
 

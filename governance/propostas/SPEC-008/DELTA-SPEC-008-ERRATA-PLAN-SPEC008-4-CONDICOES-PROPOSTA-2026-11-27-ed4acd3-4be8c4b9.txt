@@ -1,0 +1,11 @@
+DELTA governance/propostas/SPEC-008/ERRATA-PLAN-SPEC008-4-CONDICOES-PROPOSTA-2026-11-27.md vs ed4acd3
+SHA256-ALVO: 4be8c4b9e69c5fd47a590ce153e685bdad8570ca663ef14abc0b7a9e27c2afa5
+SHA256-BASE: f7f3718273422ec4c1f566e0169c1191319456333c9aed0b56194a4b5f0af0a6
+blocos: 15 alterados · 5 adicionados · 2 removidos · 23 inalterados (de 43 atuais; 40 na base)
+fração alterada: 47% (alterados+adicionados / atuais)
+alterados: 1.-escopo-e-alvos-únicos-, 10.-autopré-check-curto-, 2.0-problema-e-decisão-de-desenho, 2.11-checks.md-verificação-ajustado, 2.12-contagens-lidas-sob-a-errata, 2.9-d3.1-linha-mdc_time_request_failed-, 3.0-problema-e-decisão-de-desenho, 3.2-adv-mdc-12-variante-d-, 4.0-bis-decisão-de-desenho, 4.0-prova-de-completude-grep-2026-11-27-tabela-fato-locais, 4.5-cenário-mdc-t18, 5.2-linhas-propostas-proposta-, 7.-forma-de-aplicação-e-dimensionamento, 8.-o-que-a-homologação-desta-errata-não-afirma, cabeçalho
+adicionados: 2.1-bis-rule-mdc-010-b-e-baspec-mdc-010-então-exceção-nomead, 3.1-bis-d4.1-saída-uma-frase-r1-m01-, 4.6-requisitos-a-outras-specs-item-spec-015-r1-m07-, 6.-compatibilidade-rule-hg-04-minor-decidida-por-andraus-em-, 9.-decisões-de-andraus-sobre-esta-errata-askuserquestion-202
+removidos: 6.-compatibilidade-rule-hg-04-proposta-escolha-de-andraus, 9.-pendências-de-andraus-decisão-necessária-nada-decidido-aq
+fontes citadas (sha256 de 12): {"canon/CHM-001-canonical-hypothesis-model.md": "18e685930480", "specs/features/SPEC-006/plan.md": "f4addd7d7273", "specs/features/SPEC-008/plan.md": "21a52c6b015c", "atomic-spec.md": "b9679bfd60b5"}
+
+Auxílio de leitura (Classe D): diz o que mudou, não se está certo. Revisão integral obrigatória nos casos do revisor.md §3-bis item 6.
