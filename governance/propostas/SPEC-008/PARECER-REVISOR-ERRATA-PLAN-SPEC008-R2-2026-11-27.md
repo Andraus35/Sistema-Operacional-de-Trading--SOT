@@ -1,0 +1,17 @@
+# Parecer do Revisor SOT — R2 (delta) — errata aditiva ao Plan v1.2 da SPEC-008 (4 condições)
+
+> **Transcrição pelo Orquestrador** do relatório do Revisor (somente leitura; subagente `a5191badf2e265f67`, 2026-11-27), preservando veredicto, achados e o bloco `ACHADOS-ESTRUTURADOS`. Não é homologação.
+
+- **Modo:** delta (47% alterado) · **SHA256-ALVO:** `4be8c4b9e69c5fd47a590ce153e685bdad8570ca663ef14abc0b7a9e27c2afa5` (commit `6f77b87`; base `ed4acd3`) · CRITICAL D0–D8 · **TOKENS:** INDETERMINADO. Gate NÃO VERIFICADO (inerte em nuvem; não se aplica a errata) ⇒ teto CONFORME condicional.
+- **Veredicto: NÃO CONFORME** — 1 Média nova (R2-M1), 2 Menores. m01, m02 e m07 da R1 resolvidos (m01 só fica pleno depois de R2-M1). Sem Crítica. Volta ao Especificador (classe O).
+- **Conferido e OK:** trechos "vigentes" citados para os alvos novos batem literalmente com `plan.md` (RULE-MDC-010 (b), BASpec-MDC-010 ENTÃO, D4.1 SAÍDA, D4.2 (3), D3.1 `MDC_NOT_PHASE1_TRANSITION`, item SPEC-015); exceção nomeada em RULE-MDC-003 (h), RULE-MDC-010 (b) e BASpec-MDC-010, sem ID/estado/seta/código novo; E-1..E-5 propagadas (Grep C01), sem alternativa não usada fora de `[antes]`; nenhuma decisão aberta fechada; RULE-SEM-03 preservada; amostra anti-leniência em 5 blocos inalterados sem achado.
+- **R2-M1 (Média):** a nova frase da D4.1 SAÍDA afirma que a abertura (`MDC_CYCLE_OPENED`, `to_state = AGUARDANDO`) é gravada ANTES das duas conferências da F01. O plan vigente diz o oposto: a D5 F01 traz `MDC_CYCLE_OPENED` como entrada da própria F01 (origem "—"), a D4.2 (7) confere todas as capacidades antes de qualquer efeito e, se falha, "a linha NÃO é aplicada" (F37), e o (8) só grava depois. Se a F01 não é aplicada, não há entrada nem estado `AGUARDANDO`, e F37 não teria origem (cairia em F29). A errata pressupõe duas gravações separadas: interpretação nova de ordem de gravação e estado inicial da FSM, não explicitação. **Ação:** (a) declarar a ordem como alteração normativa (D4.1/D4.2/F01/RULE-MDC-001/BASpec-MDC-001 reconciliadas, declaradas no §1 e §6), ou (b) reformular ADV-12 (d) sem afirmar essa ordem (exigir F37 ou o que a D4.2 vigente produz). Condição de nova revisão: Grep de `MDC_CYCLE_OPENED`, `AGUARDANDO`, `F01` coerente com D4.2 (7)–(8) e a D5.
+- **R2-m01 (C01):** a exceção de "uma tentativa" da F16 não leva `MDC_TIME_REQUEST_FAILED` à coluna Entrada da F16 (mesma forma da F20); confirmar que é intencional e dizê-lo uma vez no §2.3.
+- **R2-m02 (C06):** §1 "nenhum subcódigo novo" e §10 "Pronto para revisão" sem mencionar R2-M1; atualizar o Autopré-check ao fechar.
+- **Risco residual:** git não conferido; fontes externas não verificadas; `checks.md` e `HISTORICO.md` não relidos integralmente (herdado da R1, sha256 inalterado).
+
+<!-- ACHADOS-ESTRUTURADOS
+R2-M1|MEDIA|C10|nova frase D4.1 SAÍDA afirma abertura MDC_CYCLE_OPENED/AGUARDANDO gravada antes das conferências; D5 F01 e D4.2 (7)-(8) dizem que a entrada MDC_CYCLE_OPENED é da própria F01 e só é gravada depois do (7); F37 sem origem|ao inserir ordem de gravação nova, declará-la como alteração normativa e reconciliar D4.1/D4.2/D5 F01/BASpec-MDC-001 com Grep por MDC_CYCLE_OPENED e AGUARDANDO
+R2-m01|MENOR|C01|F16 recebe uma tentativa mas a coluna Entrada da F16 em D5 não lista MDC_TIME_REQUEST_FAILED|declarar uma vez se é intencional (mesma forma da F20)
+R2-m02|MENOR|C06|§10 diz Pronto para revisão sem mencionar R2-M1 e mantém contagem de subcódigos|atualizar o Autopré-check ao fechar achado de ordem
+-->
