@@ -21,3 +21,6 @@ R3-m03|MENOR|C06|linha Rodada do cabeçalho lista §1/§10 para R2-m02, mas §6/
 -->
 
 <!-- FICHA-M {"achados":[{"id":"R3-m02","sev":"MENOR","arquivo":"governance/propostas/SPEC-008/ERRATA-PLAN-SPEC008-4-CONDICOES-PROPOSTA-2026-11-27.md","antigo":"(d) recusa gravada no livro (D4.1 SAÍDA;","novo":"(d) recusa gravada no livro (INV-MDC-01;","condicao":"a recusa gravada é de INV-MDC-01 (plan l.349-350), não da D4.1 SAÍDA"}]} -->
+
+## Adendo do Orquestrador — guarda G1 pós-Revisor (DHR-AUDITOR-EXTERNO-018), 2026-11-27
+Nesta sessão o Orquestrador abriu `governance/RULES.md` (RULE-SEM-03, Patch/Minor/Major), `backlog/RMR-001_Painel_Backlog.md` e `atomic-spec.md` (leituras parciais, por Grep) e o `ROADMAP.md` (Grep da linha da SPEC-008) — detalhes e limites nos adendos dos pareceres R1 e R2. O R3 só confere o delta contra `plan.md` e não depende de afirmação nova sobre esses quatro; nada foi contradito. Limite mantido: `atomic-spec.md` e RMR-001 não foram lidos inteiros. Gate de código sobre o Plan: `PASSOU_D` (adendo do R2); não se aplica à errata.
